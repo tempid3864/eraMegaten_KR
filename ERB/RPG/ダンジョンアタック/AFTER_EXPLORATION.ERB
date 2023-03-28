@@ -16,17 +16,17 @@
 ;=====================================================================
 ;探索の終了後、各ダンジョンの脱出時イベントの後に発生するイベント
 ;各ダンジョンの、ダンジョン脱出時イベントの後に発生する、特定のダンジョンに限らない、ダンジョン脱出時のイベント
-;（初めてダンジョンに行ったあとに発生する「マヨーネ様のマッカチュートリアルイベント」など）
+;（初めてダンジョンに行ったあとに発生する「마요네様のマッカチュートリアルイベント」など）
 ;その他、例えば「同期と会って、お前百太郎持ってる？みたいな会話をする」みたいな運用を想定
 ;=====================================================================
 
 @AFTER_EXPLORATION
 
 	;=====================================================================
-	;01.マヨーネ様のマッカチュートリアルイベント
+	;01.마요네様のマッカチュートリアルイベント
 	;=====================================================================
 	;１周目かつ戦闘難易度NOMAL以下、初めて探索に行って帰ったあとに発生
-	;念のため、「マヨーネがまだいない」こともチェック
+	;念のため、「마요네がまだいない」こともチェック
 	;/
 	;上述の通りチュートリアル
 	;意図は下記の通り
@@ -35,7 +35,7 @@
 	;「プライドを捨てて拾ったら、上納第一段階、１万円分のマッカをあげるからお金にしてみてもいいよ」
 	;「他のアイテムも、ちょっと交換できるかもね」
 	;「２周目以降と初手ハード選んだら知らん」
-	;「マヨーネ様マジメインヒロイン」
+	;「마요네様マジメインヒロイン」
 	IF !GETBIT(FLAG:탐색종료후이벤트발생보존플래그, 1) && FLAG:주회횟수 == 0 && FLAG:전투난이도 < 3 && FINDCHARA_B([[キャラ:마요네]]) < 1
 
 		CUSTOMDRAWLINE =
@@ -45,77 +45,77 @@
 		PRINTFORML …………
 		PRINTFORML ……
 		PRINTFORML 　
-		PRINTFORML ＞異界の探索を終えた%CALLNAME:MASTER%がセーフハウス兼事務所に帰ると、豪奢な服を着た女……
-		PRINTFORMW ＞……%CALLNAME:MASTER%の上司、マヨーネが待ち構えていた。
+		PRINTFORML ＞이계의 탐색을 마친 %CALLNAME:MASTER%이 세이프 하우스 겸 사무소에 돌아오자、호사스러운 옷을 입은 여자……
+		PRINTFORMW ＞……%CALLNAME:MASTER%의 상사、마요네가 기다리고 있었다。
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「異界から無事に生きて帰ってこれたようですわね。
-		PRINTFORMW 　まずは重畳……といったところかしら？」
+		PRINTFORML 마요네：
+		PRINTFORML 「이계에서 무사히 살아 돌아온 모양이네요。
+		PRINTFORMW 　일단은 대만족……이라고나 할까？」
 		PRINTFORML 
-		PRINTFORML ＞フフフ、とマヨーネは笑い、%CALLNAME:MASTER%を見る。
-		PRINTFORML ＞嗜虐的な視線だ。
-		PRINTFORMW ＞上司に対し、%CALLNAME:MASTER%は――
+		PRINTFORML ＞후후후、하고 마요네가 웃으며、%CALLNAME:MASTER%을 본다。
+		PRINTFORML ＞기학적인 시선이다。
+		PRINTFORMW ＞상사에게、%CALLNAME:MASTER%은――
 		PRINTFORML 
-		PRINTFORML [0] “様子を見に来てくれたとはありがたいことです”
-		PRINTFORML [1] “帰ってこなかった時は掃除でもしてくれるつもりだったのか？”
-		PRINTFORML [2] “疲れたのでもう寝ていいですか？”
+		PRINTFORML [0] “상황을 살피러 와주셨다니 감사할 따름입니다”
+		PRINTFORML [1] “돌아오지 못했을 때는 청소라도 해줄 생각이었나？”
+		PRINTFORML [2] “지쳐서 그런데 자러 가도 되겠습니까？”
 		INPUT
 		$AFTER_EXPLORATION_LOOP_1_1
 		IF RESULT == 0
 			PRINTFORML 
-			PRINTFORMW “様子を見に来てくれたとはありがたいことです”
+			PRINTFORMW “상황을 살피러 와주셨다니 감사할 따름입니다”
 			PRINTFORML 
-			PRINTFORML ＞そう言って、%CALLNAME:MASTER%はマヨーネの対面に座る。
-			PRINTFORMW ＞決して遊びに来たわけではあるまい……
+			PRINTFORML ＞그렇게 말하고、%CALLNAME:MASTER%은 마요네를 마주보며 앉는다。
+			PRINTFORMW ＞결코 놀러 온 것은 아닐 것이다……
 		ELSEIF RESULT == 1
 			PRINTFORML 
-			PRINTFORMW “帰ってこなかった時は掃除でもしてくれるつもりだったのか？”
+			PRINTFORMW “돌아오지 못했을 때는 청소라도 해줄 생각이었나？”
 			PRINTFORML 
-			PRINTFORML ＞%CALLNAME:MASTER%の言葉に、マヨーネは笑みを深くした。
-			PRINTFORML ＞一応期待しておりましたのよ――などと嘯くが、本心ではないだろう。
-			PRINTFORMW ＞%CALLNAME:MASTER%は警戒しつつ、マヨーネの対面に座った。
+			PRINTFORML ＞%CALLNAME:MASTER%의 말에、마요네는 미소를 짙게 했다。
+			PRINTFORML ＞일단 기대하고 있었어요――따위로 딴청을 피우고 있지만、본심을 아닐 터이다。
+			PRINTFORMW ＞%CALLNAME:MASTER%은 경계하며、마요네를 마주보고 앉았다。
 		ELSEIF RESULT == 2
 			PRINTFORML 
-			PRINTFORMW “疲れたのでもう寝ていいですか？”
+			PRINTFORMW “지쳐서 그런데 자러 가도 되겠습니까？”
 			PRINTFORML 
-			PRINTFORML ＞……申し訳ないですが、と付け加えると、マヨーネは少々意表を突かれたような表情で、%CALLNAME:MASTER%を見た。
-			PRINTFORMW ＞それから、小さく、押さえきれない、といった風情で、笑みを漏らす。
+			PRINTFORML ＞……죄송하지만、이라고 덧붙이자、마요네는 조금 의표를 찔린 것 같은 표정으로、%CALLNAME:MASTER%을 본다。
+			PRINTFORMW ＞그리고、작게、억누를 수 없다、라는 듯、미소를 흘렸다。
 			PRINTFORML 
-			PRINTFORML マヨーネ：
-			PRINTFORML 「フ、フフ……一応、期待しておりましたのよ。
-			PRINTFORMW 　座りなさい。無事に帰ってきたことですし、少しお話をしてあげますわ」
+			PRINTFORML 마요네：
+			PRINTFORML 「후、후후……일단、기대하고 있었어요。
+			PRINTFORMW 　앉으세요。무사히 돌아왔고、조금 얘기해줄 게 있어요」
 			PRINTFORML 
-			PRINTFORMW ＞長話にならなきゃいいなぁ、と思いながら、%CALLNAME:MASTER%はマヨーネの対面に座った。
+			PRINTFORMW ＞긴 이야기가 아니면 좋겠네、라고 생각하며、%CALLNAME:MASTER%은 마요네를 마주보고 앉았다。
 		ELSE
 			GOTO AFTER_EXPLORATION_LOOP_1_1
 		ENDIF
 		PRINTFORML 
-		PRINTFORML ＞マヨーネは、どこからか、金貨を取り出した。
-		PRINTFORMW ＞『ｔ』と『ｈ』を組み合わせたようなマークの刻まれたコインである。
+		PRINTFORML ＞마요네는、어디선가、금화를 꺼내 들었다。
+		PRINTFORMW ＞『ｔ』와『ｈ』를 조합한 듯한 마크가 새겨진 코인이다。
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「これは魔貨＜マッカ＞。魔界の貨幣ですわ。
-		PRINTFORML 　魔界の宰相が鋳造したという、悪魔のお金。
-		PRINTFORML 　この人間界でも、裏では流通しているのですけれど……
+		PRINTFORML 마요네：
+		PRINTFORML 「이건 마화＜마카＞。마계의 화폐에요。
+		PRINTFORML 　마계의 재상이 주조했다고 하는、악마의 돈。
+		PRINTFORML 　여기 인간계에서도、뒤에서는 유통되고 있지만……
 
 		;選択肢は何を選んでも変わらない
-		;奴隷をもらっていない、マヨーネ／フィネガンが欲しいとは言っていない＝マッカをもらった、のハズ
+		;奴隷をもらっていない、마요네／フィネガンが欲しいとは言っていない＝マッカをもらった、のハズ
 		IF FLAG:초기파트너 == 0 && 이벤트플래그:1:0 == 0
-			PRINTFORMW 　最初に会った時に、少し差し上げていたかしら？」
+			PRINTFORMW 　처음 만났을 때、약간 주었던가？」
 			PRINTFORML 
-			PRINTFORML [0] “貰いました”
-			PRINTFORML [1] “初めて見る”
+			PRINTFORML [0] “받았습니다”
+			PRINTFORML [1] “처음 본다”
 		;あなたの表向きの職業が「生粋のデビルサマナー」
 		ELSEIF CFLAG:MASTER:당신의표면적인직업 == 1
-			PRINTFORMW 　貴方は元からデビルサマナーだったようですし、見たことくらいはあるかしら？」
+			PRINTFORMW 　당신은 원래부터 데빌 서머너였던 것 같고、본 적은 있으려나？」
 			PRINTFORML 
-			PRINTFORML [0] “見たことがある”
-			PRINTFORML [1] “初めて見る”
+			PRINTFORML [0] “본 적이 있다”
+			PRINTFORML [1] “처음 본다”
 		ELSE
-			PRINTFORMW 　見たことくらいはあるかしら？」
+			PRINTFORMW 　본 적은 있으려나？」
 			PRINTFORML 
-			PRINTFORML [0] “見たことがある”
-			PRINTFORML [1] “初めて見る”
+			PRINTFORML [0] “본 적이 있다”
+			PRINTFORML [1] “처음 본다”
 		ENDIF
 
 		INPUT
@@ -126,101 +126,101 @@
 			GOTO AFTER_EXPLORATION_LOOP_1_2
 		ENDIF
 		PRINTFORML 
-		PRINTFORML ＞答えると、マヨーネは、小さく、フフ、と笑った。
-		PRINTFORML ＞もしやこれは、新人教育＜チュートリアル＞なのだろうか？
+		PRINTFORML ＞대답하자、마요네는、작게、후후、하고 웃었다。
+		PRINTFORML ＞혹시 이건、신인 교육＜튜토리얼＞인가？
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「異界で悪魔と交渉はしてみたかしら？
-		PRINTFORMW 　人間はそう魔貨を持っているものではないから、悪魔もあまり要求はしてきませんけれど、いくらか要求されることもありますわね」
+		PRINTFORML 마요네：
+		PRINTFORML 「이계에서 악마와 교섭은 해보았으려나？
+		PRINTFORMW 　인간은 그렇게 마카를 가지고 있지 않으니까、악마도 그다지 요구하지는 않지만、얼마 정도 요구하는 경우도 있죠」
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「それと、悪魔との交渉で使えるということは、人間との交渉でも使いどころがありますわ。
-		PRINTFORML 　ファントムでの相場は、１マッカで50円相当、といったところかしら。
-		PRINTFORML 　貴重な呪物との現物交換も行っていますけれど……ああ、ＣＯＭＰの改造や、インストールソフトの類との交換もできますわね。
-		PRINTFORML 　百太郎、ＤＤＭ、ゲートサーチ、ギボ・アイズ、バックアッパー……フフ、幸運はそう続くものではありませんもの。
-		PRINTFORMW 　自らの身を守るため、この辺りは押さえておくといいのではないかしら」
+		PRINTFORML 마요네：
+		PRINTFORML 「거기에、악마와의 교섭에 쓰인다는 것은、인간과의 교섭에서도 쓰인다는 거에요。
+		PRINTFORML 　팬텀에서의 시세는、１마카에 50엔 상당、이라고나 할까。
+		PRINTFORML 　귀중한 주물과의 현물교환도 행해지고 있지만요……아、ＣＯＭＰ의 개조나、인스톨 소프트 종류와도 교환할 수 있어요。
+		PRINTFORML 　햐쿠타로、ＤＤＭ、게이트 서치、기보・아이즈、백업ー……후후、행운은 그렇게 계속되는 것이 아닌걸요。
+		PRINTFORMW 　스스로의 몸을 지키기 위해、그런 것들을 확보해두는 것도 좋겠죠」
 		PRINTFORML 
-		PRINTFORML ＞自らの身を守るため……そして、組織へ忠誠を尽くすため、だろう。
-		PRINTFORMW ＞顔に出てしまったのか、マヨーネはまた小さく笑って、念押しするように言う。
+		PRINTFORML ＞스스로의 몸을 지키기 위해……그리고、조직에 충성을 다하기 위해서、겠지。
+		PRINTFORMW ＞얼굴에 드러내 버린 것일까、마요네는 또 작게 웃고、거듭 확인하듯 말한다。
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORM 「もしマッカを手に入れたなら、
+		PRINTFORML 마요네：
+		PRINTFORM 「혹시 마카를 손에 넣었다면、
 		SETCOLOR 200, 0, 0
-		PRINTFORM 『魔貨交換』
+		PRINTFORM 『마카교환』
 		RESETCOLOR
-		PRINTFORMW を覗いてみるといいでしょうね」
+		PRINTFORMW 을 들러보는 것도 좋겠네요」
 		PRINTFORML 
-		PRINTFORML ＞……なるほど、色々と使えるらしい……
-		PRINTFORML ＞悪魔との交渉、人間界のカネやモノとの交換。
-		PRINTFORML ＞円と同時に魔貨も並行して集めて行けば、組織への上納金を効率よく集めることができるだろう。
-		PRINTFORMW ＞どう集めるべきか、と思案していると、マヨーネが言葉を続けた。
+		PRINTFORML ＞……과연、다양하게 쓸 수 있는 것 같다……
+		PRINTFORML ＞악마와의 교섭、인간계의 돈이나 물건과의 교환。
+		PRINTFORML ＞엔과 동시에 마카도 병행해서 모으면、조직의 상납금을 효율 좋게 모을 수 있을 것 같다。
+		PRINTFORMW ＞어떻게 모아야 할까、하고 궁리하고 있자、마요네가 말을 이었다。
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「先ほども言った通り、魔貨は魔界の貨幣。
-		PRINTFORML 　当然、一番多く持っているのは、魔界の富豪――そうではなくて？
-		PRINTFORML 　フフ……好事家が好むような、魔界にいない動物……それも"芸事"を仕込んだそれを売ってあげれば、魔貨立てで支払ってくれるのではないかしら？
-		PRINTFORML 　もし"芸を仕込んだ動物"を売りたいときは言いなさい？」
+		PRINTFORML 마요네：
+		PRINTFORML 「앞서 말했듯이、마카는 마계의 화폐。
+		PRINTFORML 　당연히、가장 많이 가지고 있는 건、마계의 부호――그렇지 않겠어요？
+		PRINTFORML 　후후……호사가가 좋아할 만한、마계에는 없는 동물……그것도 "연예"를 가르친 것을 팔아준다면、기꺼이 마카를 지불해주지 않을까요？
+		PRINTFORML 　혹시 "연예를 가르친 동물"을 팔고 싶다면 말하세요？」
 		PRINTFORML 
-		PRINTFORML ＞マヨーネは意味深に笑う。
-		PRINTFORML ＞魔界に通じるバイヤーとのルートも、組織を通せば確保できるようだ。
-		PRINTFORMW ＞頷く%CALLNAME:MASTER%に、マヨーネはコインを振って見せる。
+		PRINTFORML ＞마요네는 의미심장하게 웃는다。
+		PRINTFORML ＞마계에서 통하는 바이어와의 루트도、조직을 통하면 확보할 수 있는 것 같다。
+		PRINTFORMW ＞고개를 끄덕이는 %CALLNAME:MASTER%에게、마요네는 코인을 흔들어 보였다。
 		PRINTFORML 
-		PRINTFORML マヨーネ：
-		PRINTFORML 「貴方は異界から生きて帰ってきた――一度も生きて帰って来れない者もいますのよ？
-		PRINTFORMW 　フフ……そのお祝いと、少しばかりの期待を込めて、ご褒美を差し上げますわ」
+		PRINTFORML 마요네：
+		PRINTFORML 「당신은 이계에서 살아 돌아왔다――한 번도 살아 돌아오지 못하는 사람도 있어요？
+		PRINTFORMW 　후후……그 축하와、약간의 기대를 담아서、상을 드리겠어요」
 		PRINTFORML 
-		PRINTFORML ＞マヨーネはそう言って、コイン……魔貨を足元に落とした。
-		PRINTFORML ＞這いつくばって、犬のように拾いなさい――ということだろう。
+		PRINTFORML ＞마요네는 그렇게 말하고、코인……마카를 발밑에 떨어뜨렸다。
+		PRINTFORML ＞납작 엎드려、개처럼 주우세요――라는 것일 터이다。
 		PRINTFORML 
-		PRINTFORML [0] “拾う”
-		PRINTFORML [1] “拾わない”
-		PRINTFORML [2] “スカートの中を覗けまいか”
+		PRINTFORML [0] “줍는다”
+		PRINTFORML [1] “줍지 않는다”
+		PRINTFORML [2] “치마 속을 들여다볼 수 없을까”
 		INPUT
 		$AFTER_EXPLORATION_LOOP_1_3
 		;素直に拾った場合のみ200マッカ貰える
 		IF RESULT == 0
 			PRINTFORML 
-			PRINTFORMW ＞%CALLNAME:MASTER%はマヨーネの足元に這いつくばり、魔貨を拾った。
+			PRINTFORMW ＞%CALLNAME:MASTER%은 마요네의 발밑에 엎드려、마카를 주웠다。
 			PRINTFORML 
-			PRINTFORML マヨーネ：
-			PRINTFORML 「フフ……そう。這いつくばってでも探しなさい。
-			PRINTFORMW 　そして、組織へ忠誠をつくしなさい……？」
+			PRINTFORML 마요네：
+			PRINTFORML 「후후……그래。기어서라도 찾으세요。
+			PRINTFORMW 　그리고、조직에 충성을 다하세요……？」
 			PRINTFORML 
-			PRINTFORMW ＞マヨーネは低く笑いながら帰って行った。
+			PRINTFORMW ＞마요네는 낮게 웃으며 돌아갔다。
 			PRINTFORML 
-			PRINTFORMW ＞200魔貨を手に入れた
+			PRINTFORMW ＞200마카를 손에 넣었다
 			MONEY:1 += 200
 		;拾わない場合はもちろん貰えませんよ
 		ELSEIF RESULT == 1
 			PRINTFORML 
-			PRINTFORML ＞%CALLNAME:MASTER%は椅子に座ったまま、マヨーネに視線で返答をした。
-			PRINTFORML ＞マヨーネは気分を害するか――と思ったが、
+			PRINTFORML ＞%CALLNAME:MASTER%은 의자에 앉은 채로、마요네에게 시선으로 대답했다。
+			PRINTFORML ＞마요네가 기분 나빠할까――하고 생각했지만、
 			PRINTFORML 
-			PRINTFORML マヨーネ：
-			PRINTFORML 「フフ……拾わないのね。その意気よ。
-			PRINTFORMW 　組織へ忠誠を尽くすのならば、構いませんわ……？」
+			PRINTFORML 마요네：
+			PRINTFORML 「후후……줍지 않는구나。그런 자세야。
+			PRINTFORMW 　조직에 충성을 다한다면、상관없어요……？」
 			PRINTFORML 
-			PRINTFORML ＞マヨーネは低く笑いながら帰って行った。
-			PRINTFORMW ＞%CALLNAME:MASTER%は魔貨を拾い、窓の外へ放り投げた。
+			PRINTFORML ＞마요네는 낮게 웃으면서 돌아갔다。
+			PRINTFORMW ＞%CALLNAME:MASTER%은 마카를 주워、창 밖에 내던졌다。
 		;クソバカ選択肢でももちろん貰えませんよ
 		;仮にもチュートリアルでいいのか？とは思う
 		ELSEIF RESULT == 2
 			PRINTFORML 
-			PRINTFORML ＞マヨーネのスカートは長いが、もしかすると勢いで覗けないだろうか。
-			PRINTFORML ＞%CALLNAME:MASTER%は欲望に従った。
+			PRINTFORML ＞마요네의 치마는 길지만、어쩌면 기세로 엿볼 수 있지 않을까。
+			PRINTFORML ＞%CALLNAME:MASTER%은 욕망에 따랐다。
 			IF RAND:3 == 0
-				PRINTFORMW ＞……Ｏｈ、セクシー。
+				PRINTFORMW ＞……Ｏｈ、섹시ー。
 			ELSEIF RAND:2 == 0
-				PRINTFORMW ＞……Ｏｈ、セクシー……
+				PRINTFORMW ＞……Ｏｈ、섹시ー……
 			ELSE
-				PRINTFORMW ＞……Ｏｈ！　セクシー！
+				PRINTFORMW ＞……Ｏｈ！　섹시ー！
 			ENDIF
 			PRINTFORML 
-			PRINTFORML マヨーネ：
+			PRINTFORML 마요네：
 			PRINTFORMW 「…………。」
 			PRINTFORML 
-			PRINTFORML ＞マヨーネは%CALLNAME:MASTER%の頭をたっぷりゴスゴス踏みつけてから帰って行った。
-			PRINTFORMW ＞魔貨はどこかに行ってしまった……
+			PRINTFORML ＞마요네는 %CALLNAME:MASTER%의 머리를 잔뜩 꾹꾹 짓밟고 돌아갔다。
+			PRINTFORMW ＞마카는 어딘가로 사라져 버렸다……
 		ELSE
 			GOTO AFTER_EXPLORATION_LOOP_1_3
 		ENDIF
@@ -239,27 +239,27 @@
 	;XX.サンプル
 	;=====================================================================
 ;	IF !GETBIT(FLAG:探索終了後イベント発生保存フラグ, XX) && FLAG:周回回数 == 0 && FLAG:戦闘難易度 < 3
-;		PRINTFORMW 「１周目で戦闘難易度ノーマル以下なら何度も発生するイベント想定だぜ。
+;		PRINTFORMW 「1주째에 전투 난이도 노멀 이하라면 몇번이나 발생하는 이벤트 상정이야。
 ;		IF RAND:2 == 0
-;			PRINTFORMW 　ところでお前、百太郎持ってる？」
+;			PRINTFORMW 　그런데 너、햐쿠타로 가지고 있어？」
 ;		ELSE
-;			PRINTFORMW 　ところでお前、ＤＤＭ持ってる？」
+;			PRINTFORMW 　그런데 너、ＤＤＭ 가지고 있어？」
 ;		ENDIF
 ;
 ;		;たまに「もう二度と出てくるな」の選択肢が出る
 ;		IF RAND:3 == 0
-;			PRINTFORMW 「ところで俺、うるさい？」
+;			PRINTFORMW 「그보다 나、시끄럽나？」
 ;			PRINTFORML 
-;			PRINTFORML [0] うるさい
-;			PRINTFORML [1] うるさくない
+;			PRINTFORML [0] 시끄러워
+;			PRINTFORML [1] 시끄럽지 않아
 ;			$AFTER_EXPLORATION_LOOP_2
 ;			INPUT
 ;			IF RESULT == 0
-;				PRINTFORMW 「そうか……悪かったよ、二度と話しかけねえことにする……」
+;				PRINTFORMW 「그렇구나……미안했다、두 번 다시 말걸지 않을게……」
 ;				SETBIT FLAG:探索終了後イベント発生保存フラグ, XX
 ;	
 ;			ELSEIF RESULT == 1
-;				PRINTFORMW 「そっか、まあ懲りずに話しかけるぜ」
+;				PRINTFORMW 「그래、뭐 꾸준히 말 걸게」
 ;			ELSE
 ;				GOTO AFTER_EXPLORATION_LOOP_XX
 ;			ENDIF

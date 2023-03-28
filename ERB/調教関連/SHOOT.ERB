@@ -1011,7 +1011,7 @@ ELSEIF FLAG:콘돔자동장착처리 < 3 && (SELECTCOM == 64 || SELECTCOM == 92 
 					;射精側の絶倫（固定値100）、사정경험/2000によって最大値が雑めに増加
 					;ただし+1900＝合計2000まで
 					;あとで使うのでLOCAL:2に保存
-					LOCAL:2 = 100 + RAND:(MIN(1900 , (TALENT:PLAYER:절륜 * 100 + (EXP:PLAYER:사정경험 / 2000))))
+					LOCAL:2 = 100 + RAND:(MIN(1900 , (TALENT:PLAYER:절륜 * 100 + (EXP:PLAYER:사정경험 / 2000))) + 1)
 					CFLAG:PLAYER:자궁현재용량 += LOCAL:2
 				ELSE
 					CFLAG:PLAYER:자궁현재용량 += 100

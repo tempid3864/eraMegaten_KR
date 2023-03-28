@@ -8,7 +8,7 @@
 ;던전플래그:69:11 第1ボス（アオパシャ）撃破
 ;던전플래그:69:12 第2ボス（ブーシャヤンスタ）撃破
 ;던전플래그:69:13 第3ボス（ドゥルジ）撃破
-;던전플래그:69:14 第4ボス（アレックス）撃破
+;던전플래그:69:14 第4ボス（알렉스）撃破
 ;던전플래그:69:15 第5ボス（アンリ・マンユ）撃破
 ;던전플래그:69:16 第6ボス（ズルワーン）撃破
 ;던전플래그:69:17 ラスボス（シェキナー）撃破
@@ -17,9 +17,9 @@
 ;던전플래그:69:4　ハトホル加入フラグ
 ;던전플래그:69:5　セベク加入フラグ
 ;던전플래그:69:6　トート加入フラグ
-;던전플래그:69:7  アレックスとの対決その１フラグ
-;던전플래그:69:8  アレックスとの対決その２フラグ
-;던전플래그:69:9  アレックスとの対決その３フラグ
+;던전플래그:69:7  알렉스との対決その１フラグ
+;던전플래그:69:8  알렉스との対決その２フラグ
+;던전플래그:69:9  알렉스との対決その３フラグ
 ;던전플래그:69:10 デモニカの男フラグ
 ;던전플래그:69:20  長老のお礼
 ;던전플래그:69:21  aエレベーターの壁
@@ -139,9 +139,9 @@ FLAG:현Y = 2
 @EVENT_DUNGEON_START_69
 IF 던전플래그:69:1 == 0
 	CUSTOMDRAWLINE =
-	CALL MESSAGE_WINDOW_D, "", "＞次元門を通った先は薄暗い地下だった…"
-	CALL MESSAGE_WINDOW_D, "", "＞ここがデメテルの言っていた魔王の領土なのだろうか？"
-	CALL MESSAGE_WINDOW_D, "", "＞悪魔たちの気配を感じつつ、あなたは歩を進めた……"
+	CALL MESSAGE_WINDOW_D, "", "＞차원문을 통과한 곳은 어두컴컴한 지하였다…"
+	CALL MESSAGE_WINDOW_D, "", "＞이곳이 데메테르가 말했던 마왕의 영토일까?？"
+	CALL MESSAGE_WINDOW_D, "", "＞악마들의 기척을 느끼면서 당신은 걸음을 옮겼다.……"
 	
 	던전플래그:69:1 = 1
 ENDIF
@@ -156,11 +156,11 @@ IF FLAG:현M == 5 && ARG == 2 && ARG:1 == 11
 	IF 던전플래그:69:2 == 2
 		RETURN 1
 	ELSEIF 던전플래그:69:2 == 1
-		CALL MESSAGE_WINDOW_D, "", "＞鍵を使って扉を開けた"
+		CALL MESSAGE_WINDOW_D, "", "＞열쇠를 써서 문을 열었다"
 		던전플래그:69:2 = 2
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉にはカギがかかっている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 자물쇠가 잠겨 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -169,7 +169,7 @@ IF FLAG:현M == 12 && ARG == 9 && ARG:1 == 11
 	IF 던전플래그:69:12 == 1
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉には封印が施されている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 봉인이 되어 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -178,7 +178,7 @@ IF FLAG:현M == 18 && ARG == 2 && ARG:1 == 7
 	IF 던전플래그:69:13 == 1
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉には封印が施されている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 봉인이 되어 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -187,7 +187,7 @@ IF FLAG:현M == 18 && ARG == 13 && ARG:1 == 15
 	IF 던전플래그:69:15 == 1
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉には封印が施されている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 봉인이 되어 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -196,7 +196,7 @@ IF FLAG:현M == 25 && ARG == 12 && ARG:1 == 11
 	IF 던전플래그:69:14 == 1
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉には封印が施されている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 봉인이 되어 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -205,7 +205,7 @@ IF FLAG:현M == 30 && ARG == 12 && ARG:1 == 10
 	IF 던전플래그:69:30 == 1 && 던전플래그:69:31 == 1
 		RETURN 1
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", "＞扉には封印が施されている……"
+		CALL MESSAGE_WINDOW_D, "", "＞문에는 봉인이 되어 있다……"
 		RETURN 0
 	ENDIF
 ENDIF
@@ -1498,96 +1498,96 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 	SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 			
 		CASE 0
-			CALL MESSAGE_WINDOW_D, "不良少年", "何だここは……/何故マンホールの下がこんな所に繋がってるんだ "
-			CALL MESSAGE_WINDOW_D, "", "＞不良少年は独り言を呟いている"
+			CALL MESSAGE_WINDOW_D, "불량 소년", "뭐야 여긴.../왜 맨홀 밑이 이런데로 연결되어 있는거야? "
+			CALL MESSAGE_WINDOW_D, "", "＞불량 소년은 혼잣말을 중얼거리고 있다."
 			IF FINDCHARA_B([[キャラ:타마키]]) == 2
-				CALL MESSAGE_WINDOW_D, "たまき", "あっ、軽子坂高綱ボクサー目ヤンキー科ミヤモト属のアキラくんだ/ヒーホー "
-				CALL MESSAGE_WINDOW_D, "アキラ", "内田か…　一体どうなってやがる/マンホールを降りたらこんな所に出ちまった"
-				CALL MESSAGE_WINDOW_D, "", "＞たまきはここまでの経緯を説明した……"
-				CALL MESSAGE_WINDOW_D, "アキラ", "救援が来ただと？/だったらマンホールなんざ使わなくてもよかったんじゃねえか…"
-				CALL MESSAGE_WINDOW_D, "たまき", "まあまあ　怪我がなくて良かったよ/宮本くんも一緒に来る？"
-				CALL MESSAGE_WINDOW_D, "アキラ", "……他に外に出るアテもねえからな"
-				CALL MESSAGE_WINDOW_D, "", "＞宮本明が仲間になった"
+				CALL MESSAGE_WINDOW_D, "타마키", "앗, 카루코자카타카츠나 복서목 양키과 미야모토속 아키라군이다/히호"
+				CALL MESSAGE_WINDOW_D, "아키라", "우치다인가… 도대체 어떻게 된단 말이야/맨홀에서 내렸더니 이런 곳으로 나와 버렸다"
+				CALL MESSAGE_WINDOW_D, "", "＞타마키는 여기까지의 경위를 설명했다.……"
+				CALL MESSAGE_WINDOW_D, "아키라", "구원이 왔다고?/그렇다면 맨홀따위 사용하지 않아도 되지 않았을까?…"
+				CALL MESSAGE_WINDOW_D, "타마키", "그럭저럭 다치지 않아서 다행이야/미야모토군도 같이 왔어？"
+				CALL MESSAGE_WINDOW_D, "아키라", "……달리 밖에 나갈리도 없으니까."
+				CALL MESSAGE_WINDOW_D, "", "＞미야모토 아키라가 동료가 되었다."
 				CALL ADD_NEW_COMPANION,[[キャラ:아키라]],500
 				SIF RESULT
 					CFLAG:(RESULT:1):전투참가불가능 = -1
-				CALL MESSAGE_WINDOW_D, "たまき", "ヤンキー　宮本アキラくんが仲魔になった/コンゴトモヨロシク　アオーン"
-				CALL MESSAGE_WINDOW_D, "アキラ", "異変前と変化がないなお前は"
+				CALL MESSAGE_WINDOW_D, "타마키", "얀키 미야모토 아키라군이 중마가 되었다/오늘부터 잘부탁해"
+				CALL MESSAGE_WINDOW_D, "아키라", "이변 전과 변화가 없구나 너는"
 				던전플래그:69:3 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ENDIF
 			
 		CASE 1
-			CALL MESSAGE_WINDOW_D, "魔界人", "ここは幽閉の塔/大いなる魔王様によって古の悪魔たちが封じられたという魔界の底さ "
-			CALL MESSAGE_WINDOW_D, "魔界人", "……だけど最近なんだか様子がおかしいんだよなぁ/さっきもニンゲンの女の子が上へ登っていったよ "
+			CALL MESSAGE_WINDOW_D, "마계인", "이곳은 유폐의 탑/큰 마왕에 의해 옛 악마들이 봉해졌다는 마계의 밑바닥이야 "
+			CALL MESSAGE_WINDOW_D, "마계인", "...하지만 최근 왠지 상태가 이상해. / 아까도 인간 여자아이가 위로 올라갔어. "
 		CASE 2
-			CALL MESSAGE_WINDOW_D, "魔界人", "ここには古の悪魔が幽閉されているの/もしかしたらあなたに協力してくれる悪魔もいるかもしれないわね"
+			CALL MESSAGE_WINDOW_D, "마계인", "여기에는 오래된 악마가 유폐되어 있어/어쩌면 너에게 협력해주는 악마도 있을지도 모르겠네"
 			
 		CASE 200
-			CALL MESSAGE_WINDOW_D, "魔界人", "地のノモスには悪魔アモンの元仲魔だった悪魔たちがいるよ/アモンが来るのを待っているんだってさ "
+			CALL MESSAGE_WINDOW_D, "마계인", "땅의 노모스에는 악마 아몬의 전중마였던 악마들이 있어 / 아몬이 오기를 기다리고 있대 "
 		CASE 201
-			CALL MESSAGE_WINDOW_D, "魔界人", "ノモスを繋ぐ門は魔王様の部下たちによって封じられているんだ/もし上を目指すなら戦いは避けられないだろうね "
+			CALL MESSAGE_WINDOW_D, "마계인", "노모스를 잇는 문은 마왕의 부하들에 의해 닫혀 있어/만약 위를 향한다면 싸움은 피할 수 없겠지 "
 			
 		CASE 300
-			CALL MESSAGE_WINDOW_D, "", "＞あなたが部屋に入ると、ワニが筋トレしていた… "
-			CALL MESSAGE_WINDOW_D, "セベク", "フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！"
-			CALL MESSAGE_WINDOW_D, "セベク", "フンフンフン…ん？　なんだニンゲンか/見ての通り俺様は筋トレの最中なんだ/用があるならまた今度にしてくれ"
+			CALL MESSAGE_WINDOW_D, "", "＞당신이 방에 들어가자 악어가 근육 트레이닝을 하고 있었다… "
+			CALL MESSAGE_WINDOW_D, "세벡", "フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！"
+			CALL MESSAGE_WINDOW_D, "세벡", "フンフンフン…ん？　뭐야 닝겐인가 / 보다시피 우리는 근육 트레이닝 중이야 / 볼일이 있으면 다음에 해줘"
 			IF FINDCHARA_B([[キャラ:아키라]]) == 2
-				CALL MESSAGE_WINDOW_D, "セベク", "あれ？/そこのニンゲン、アモンの気配がするぞ？ "
-				CALL MESSAGE_WINDOW_D, "アキラ", "…俺に宿った悪魔はそう名乗っていたな"
-				CALL MESSAGE_WINDOW_D, "セベク", "おお！　お前はアモンと一つになったのか！/だったらお前はアモンと同じってことだな！ "
-				CALL MESSAGE_WINDOW_D, "アキラ", "よーし！　じゃあこの神獣セベク様がお前らの力になってやろう！/今後ともよろしくな！"
+				CALL MESSAGE_WINDOW_D, "세벡", "어?/거기 인간 아몬 기척이 난다？ "
+				CALL MESSAGE_WINDOW_D, "아키라", "…내게 깃든 악마는 그렇게 자칭하고 있었군"
+				CALL MESSAGE_WINDOW_D, "세벡", "오! 너는 아몬과 하나가 되었구나!/그렇다면 너는 아몬과 같다는 말이구나.！ "
+				CALL MESSAGE_WINDOW_D, "아키라", "준비! 그럼 이 신수 세백님이 너희들에게 힘이 되어주마!/앞으로도 잘 부탁해!"
 				CALL ADD_NEW_COMPANION,[[キャラ:세벡]],500
 				던전플래그:69:5 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ENDIF
 			
 		CASE 301
-			CALL MESSAGE_WINDOW_D, "モコイさん", "ここまで来るなんてグッドだね、チミ" 
-			CALL MESSAGE_WINDOW_D, "モコイさん", "でもここから先は見晴らしの玉を持って行った方がいいよ" 
+			CALL MESSAGE_WINDOW_D, "모코이 씨", "여기까지 오다니 굿이네 자네" 
+			CALL MESSAGE_WINDOW_D, "모코이 씨", "하지만 여기서부터는 전망이 좋은 구슬을 가지고 가는 것이 좋을 거야." 
 			
 		CASE 400
 			IF FLAG:월령 == 0
-				CALL MESSAGE_WINDOW_D, "ハトホル", "ふう…/あら？ ニンゲンがこの部屋に来るなんて珍しいわね" 
-				CALL MESSAGE_WINDOW_D, "ハトホル", "ですが私は今仲魔が来るのを待っています/用があるならまた今度来てくれるかしら"
+				CALL MESSAGE_WINDOW_D, "하트호르", "휴... / 어머? 닝겐이 이 방에 오다니 신기하네" 
+				CALL MESSAGE_WINDOW_D, "하트호르", "하지만 저는 지금 중마가 오기를 기다리고 있어요 / 볼일이 있다면 다음에 또 와줄까요?"
 				IF FINDCHARA_B([[キャラ:아키라]]) == 2
-					CALL MESSAGE_WINDOW_D, "ハトホル", "…？/そこのあなた　アモンと同じ気配を感じますわ"
-					CALL MESSAGE_WINDOW_D, "アキラ", "…俺に宿った悪魔はアモンと名乗っていた"
-					CALL MESSAGE_WINDOW_D, "ハトホル", "そうですか…アモンはあなたと一つに…/ならば私もあなた達に力を貸しましょう"
-					CALL MESSAGE_WINDOW_D, "ハトホル", "私は女神ハトホル/今後ともよろしくお願いいたします"
+					CALL MESSAGE_WINDOW_D, "하트호르", "…？/그곳의 당신 아몬과 같은 낌새를 느껴요"
+					CALL MESSAGE_WINDOW_D, "아키라", "…나에게 깃든 악마는 아몬이라고 자칭하고 있었다."
+					CALL MESSAGE_WINDOW_D, "하트호르", "그렇군요.. 아몬은 당신과 하나로.. / 그럼 저도 당신들에게 힘을 보태겠습니다."
+					CALL MESSAGE_WINDOW_D, "하트호르", "저는 여신 하트로홀/앞으로도 잘부탁드립니다."
 					CALL ADD_NEW_COMPANION,[[キャラ:하트호르]],500
 					던전플래그:69:4 = 1
 					DA:(FLAG:현X):(FLAG:현Y) = 1
 				ENDIF
 			ELSE
-				CALL MESSAGE_WINDOW_D, "", "＞あなたが部屋に入ると、メモが置かれていた…" 
-				CALL MESSAGE_WINDOW_D, "", "＊御用の方は新月の時にまたいらしてください＊/＊ハトホル＊" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "", "＞당신이 방에 들어가자 메모가 놓여 있었다…" 
+				CALL MESSAGE_WINDOW_D, "", "* 용무가 있으신 분은 신월때 다시 와주세요*/*하트홀*" , , , , , , , , , "CENTER"
 			ENDIF
 
 		CASE 500
 			IF 던전플래그:69:11 == 1
-				CALL MESSAGE_WINDOW_D, "ジャックフロスト", "もしかして、上の階に行けるお宝見つけたホ？/お尻ぶつけてる間に先を越されちゃったホ…" 
+				CALL MESSAGE_WINDOW_D, "잭 프로스트", "혹시 위층으로 갈 수 있는 보물 찾은 호?/엉덩이 부딪히는 사이에 앞질러져버린 호…" 
 			ELSE
-				CALL MESSAGE_WINDOW_D, "ジャックフロスト", "いたた…　オイラまたお尻ぶつけちゃったホ…/この上は穴だらけでどこ行っても落ちちゃうホ……" 
-				CALL MESSAGE_WINDOW_D, "ジャックフロスト", "それにオイラ地図持ってないからどこで落ちたか忘れちゃうホ/何かヒントでもあればいいのに見つからないホ" 
+				CALL MESSAGE_WINDOW_D, "잭프로스트", "아야... 오라 또 엉덩이 부딪혀버린 호... / 이 위는 구멍투성이여서 어딜가도 떨어져버리는 호...……" 
+				CALL MESSAGE_WINDOW_D, "잭 프로스트", "게다가 이몸 지도가 없어서 어디서 떨어졌는지 잊어버리는 호/무슨 힌트라도 있으면 좋을텐데 못찾겠어 호" 
 			ENDIF
 			
 		CASE 501
-			CALL MESSAGE_WINDOW_D, "？？？？", "誰じゃい！/このワシに断りなく鍵を開けよってからに！"
-			CALL MESSAGE_WINDOW_D, "", "＞ドクロ頭の馬のような悪魔が現れた"
-			CALL MESSAGE_WINDOW_D, "アオパシャ", "……さてはお前、侵入者じゃな？/誰の命令でこの塔に来た？"
-			CALL INPUT_SELECT_D , "＞誰の命令でこの塔に来た？//[1]答える必要はない/[2]依頼で来た/[3]ちわ～　三河屋で～す" , , , , 3
+			CALL MESSAGE_WINDOW_D, "？？？？", "누구냐! / 이 몸에게 거절하지 말고 열쇠를 열어라!"
+			CALL MESSAGE_WINDOW_D, "", "＞해골 머리의 말 같은 악마가 나타났다"
+			CALL MESSAGE_WINDOW_D,"아오파샤", "……그럼 너가 침입자냐?/누구의 명령으로 이 탑에 왔지？"
+			CALL INPUT_SELECT_D , "＞누구의 명령으로 이 탑에 왔지？//[1]대답할 필요는 없다/[2]의뢰때문에 왔다/[3]치와~ 미카와야입니다~" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "アオパシャ", "答える必要はないじゃと？/フン、生意気な"
+				CALL MESSAGE_WINDOW_D,"아오파샤", "대답할 필요는 없다?/흥 건방진"
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "アオパシャ", "依頼？/馬鹿め、コインに目が眩んで高い代償を払うことになったぞ"
+				CALL MESSAGE_WINDOW_D,"아오파샤", "의뢰? / 바보야, 동전에 눈이 부셔서 비싼 대가를 치르게 되었어."
 			ELSEIF RESULT == 3
-				CALL MESSAGE_WINDOW_D, "アオパシャ", "ほう…　三河屋…/なるほど……"
-				CALL MESSAGE_WINDOW_D, "アオパシャ", "このワシをおちょくってんのかお前！！"
+				CALL MESSAGE_WINDOW_D,"아오파샤", "호…미카와야…/과연……"
+				CALL MESSAGE_WINDOW_D,"아오파샤", "이몸을 조롱할셈이냐 네놈은?!"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "アオパシャ", "こんなおイタをしたらどんな目に会うか……　分かっとるんじゃろうな！/こっちへ来い！"
-			;「ワシの名前はアパオシャです……」
-			CALL MESSAGE_WINDOW_D, "", "/＞妖獣　アオパシャが１体出た！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D,"아오파샤", "이런 장난을 치다가는 무슨 일을 당할지.....알겠지!/이리 와라！"
+			;「이몸의 이름은 아파오샤입니다.……」
+			CALL MESSAGE_WINDOW_D, "", "/＞요수 아오파샤가 1체 나왔다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -1600,10 +1600,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "アオパシャ", "お前…　まさかあのチビ女神の…/いかん…　魔王様に…お伝えせねば……"
-			CALL MESSAGE_WINDOW_D, "", "/＞妖獣　アオパシャを倒した/" , , , , , , , , , "CENTER"
-			CALL MESSAGE_WINDOW_D, "", "＞アオパシャの死体から何か転がり落ちてきた……"
-			CALL MESSAGE_WINDOW_D, "", "＞『実り』の欠片を手に入れた"
+			CALL MESSAGE_WINDOW_D,"아오파샤", "너.. 설마 그 꼬마여신의... / 안돼... 마왕님께... 전하지 않으면……"
+			CALL MESSAGE_WINDOW_D, "", "/＞요수 아오파샤를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞아오파샤의 시체에서 뭔가 굴러 떨어졌다……"
+			CALL MESSAGE_WINDOW_D, "", "＞『열매』의 조각을 손에 넣었다"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -1612,23 +1612,23 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 600
 			IF 던전플래그:69:2 == 0
-				CALL MESSAGE_WINDOW_D, "", "扉の鍵が落ちている……"
-				CALL MESSAGE_WINDOW_D, "", "＞青の鍵を手に入れた"
+				CALL MESSAGE_WINDOW_D, "", "문 열쇠가 떨어져 있다……"
+				CALL MESSAGE_WINDOW_D, "", "＞파란색 열쇠를 손에 넣었다"
 				던전플래그:69:2 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ENDIF
 		
 		CASE 601
-			CALL MESSAGE_WINDOW_D, "", "＞あなたが部屋に入ると、猿が本を読んでいた… "
-			CALL MESSAGE_WINDOW_D, "トート", "ううむ…/ううむ……/ううむ……………………"
-			CALL MESSAGE_WINDOW_D, "トート", "…………………………………………/…………………………………………/……………………おお！びっくりした！"
-			CALL MESSAGE_WINDOW_D, "トート", "ニンゲンが来るなんて珍しい事もあるもんじゃ/あいにくワシは読書の最中だから、用があるならまた今度来ておくれ"
+			CALL MESSAGE_WINDOW_D, "", "＞당신이 방에 들어가자 원숭이가 책을 읽고 있었다.… "
+			CALL MESSAGE_WINDOW_D, "토트", "ううむ…/ううむ……/ううむ……………………"
+			CALL MESSAGE_WINDOW_D, "토트", "…………………………………………/…………………………………………/……………………오! 깜짝이야！"
+			CALL MESSAGE_WINDOW_D, "토트", "인간이 오다니 신기한 일도 있구나 / 공교롭게도 이몸은 독서 중이니까, 볼일이 있으면 다음에 와 주게"
 			IF FINDCHARA_B([[キャラ:아키라]]) == 2
-				CALL MESSAGE_WINDOW_D, "セベク", "ううむ…？/なんだかおぬしから懐かしい力を感じるぞい、まるでアモンのような… "
-				CALL MESSAGE_WINDOW_D, "アキラ", "…俺はそのアモンと一つになったらしい"
-				CALL MESSAGE_WINDOW_D, "セベク", "なんと！/あのアモンがのう…… "
-				CALL MESSAGE_WINDOW_D, "アキラ", "ううむ…/よし、これも何かの縁じゃ/ワシも一つお前さんたちに力を貸すとしよう"
-				CALL MESSAGE_WINDOW_D, "セベク", "ワシは魔神トート/今後ともよろしく頼むぞ"
+				CALL MESSAGE_WINDOW_D, "세벡", "음...? / 왠지 그대에게서 그리운 힘을 느낄거야, 마치 아몬같은… "
+				CALL MESSAGE_WINDOW_D, "아키라", "…나는 그 아몬과 하나가 된 것 같아"
+				CALL MESSAGE_WINDOW_D, "세벡", "이럴수가!/그 아몬이…… "
+				CALL MESSAGE_WINDOW_D, "아키라", "으음... / 좋아, 이것도 무슨 인연이지 / 이몸도 너희에게 힘을 보태준다고 하자."
+				CALL MESSAGE_WINDOW_D, "세벡", "이몸은 마신 토트/앞으로도 잘 부탁한다"
 				CALL ADD_NEW_COMPANION,[[キャラ:토트]],500
 				던전플래그:69:6 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1636,36 +1636,36 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 800
 			IF 던전플래그:69:7 == 1
-				CALL MESSAGE_WINDOW_D, "ウェンディゴ", "うーん　まだ腹痛が…/えっ？　あの女はもういない？"
-				CALL MESSAGE_WINDOW_D, "ウェンディゴ", "…そうか　逃げたなら仕方ないな/まあ今日のところはこの勝負、俺の不戦勝ってとこか"
+				CALL MESSAGE_WINDOW_D, "웬디고", "음 아직 복통이... / 어? 저 여자는 이제 없어？"
+				CALL MESSAGE_WINDOW_D, "웬디고", "…그렇구나 도망쳤다면 어쩔 수 없지 / 뭐 오늘로써는 이 승부, 나의 부전승이라고나 할까"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "ウェンディゴ", "ヤベェ！　マジヤベェ女がいるんだ！/いいケツしてたから犯そうと襲い掛かったダチが、皆殺しにされちまった！" 
-				CALL MESSAGE_WINDOW_D, "ウェンディゴ", "俺のデカマラぶち込んでダチの仇を取って……/やりたいけど今はちょっと腹痛が…　いやー腹痛さえなければなぁ"
+				CALL MESSAGE_WINDOW_D, "웬디고", "위험햇! 진짜 위험한 여자가 있구나!/소용하고 있었기 때문에 저지르려고 덤벼든 친구가, 몰살당하고 말았다.！" 
+				CALL MESSAGE_WINDOW_D, "웬디고", "나의 왕자지를 때려넣고 친구의 원수를 갚…/고는 싶지만 지금은 조금 복통이… 아니- 복통만 없었으면 말야."
 			ENDIF
 			
 		CASE 900
 			CALL MESSAGE_WINDOW_D, "", "＞………"
 			CALL MESSAGE_WINDOW_D, "", "＞……？"
-			CALL MESSAGE_WINDOW_D, "", "＞気配を感じて振り返ると、/＞そこには黒いデモニカスーツを着た少女が立っていた"
-			CALL MESSAGE_WINDOW_D, "", "＞少女は全身から殺気を漂わせている……"
-			CALL MESSAGE_WINDOW_D, "電子音声", "＜＜照合完了。バディ、残念ながら外れだ。＞＞/＜＜我々が探しているターゲットではない。＞＞"
-			CALL MESSAGE_WINDOW_D, "謎の少女", "…それでも、宇宙卵を狙う者であることに変わりはないわ"
-			CALL MESSAGE_WINDOW_D, "", "＞少女は銃を抜いてこちらに向けてきた"
-			CALL MESSAGE_WINDOW_D, "謎の少女", "私たちが用があるのは、その宇宙卵の欠片だけよ/大人しく渡して"
-			CALL MESSAGE_WINDOW_D, "", "＞宇宙卵の欠片とはこの『実り』のことだろうか？"
-			CALL INPUT_SELECT_D , "＞大人しく渡して//[1]取れるもんなら取ってみろ/[2]依頼だから渡せない/[3]代わりにおっぱい揉ませろ" , , , , 3
+			CALL MESSAGE_WINDOW_D, "", "＞낌새를 느끼고 돌아보니, />거기에는 검은 데모니카 슈트를 입은 소녀가 서 있었다."
+			CALL MESSAGE_WINDOW_D, "", "＞소녀는 온몸에서 살기를 띠고 있다……"
+			CALL MESSAGE_WINDOW_D, "전자 음성", "<< 조회 완료. 버디, 유감스럽게도 빗나갔다.>>/<우리가 찾고 있는 타겟이 아니다.＞＞"
+			CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "…그래도 우주란을 노리는 자임에는 변함이 없어요."
+			CALL MESSAGE_WINDOW_D, "", "＞소녀는 총을 빼들고 이쪽으로 다가왔다"
+			CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "우리가 볼일이 있는건 그 우주란 조각뿐이야/순순히 넘겨줘"
+			CALL MESSAGE_WINDOW_D, "", "＞우주란 조각이란 이 열매를 말하는 것일까?"
+			CALL INPUT_SELECT_D , "＞순순히 넘겨줘//[1]가져갈 수 있으면 가져가 봐/[2]의뢰라서 줄 수 없다/[3]대신 가슴을 주무르게해라" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "謎の少女", "へえ……/だったら、こっちも話が早くて助かるわ"
+				CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "헤에... / 그럼 이쪽도 말이 빨라서 좋지."
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "謎の少女", "……仕事熱心ね/だけど、こっちも引き下がるわけにはいかないの"
+				CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "……일 열심히 하네/하지만, 이쪽도 물러설 수는 없어."
 			ELSEIF RESULT == 3
-				CALL MESSAGE_WINDOW_D, "謎の少女", "……………"
-				CALL MESSAGE_WINDOW_D, "", "＞少女の眼がさっきよりも険しくなり　空気が冷えたような気がする……"
+				CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "……………"
+				CALL MESSAGE_WINDOW_D, "", "＞소녀의 눈이 아까보다 더 험악해지고 공기가 차가워진 것 같다.……"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "謎の少女", "…ジョージ、戦闘準備！！"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜自己紹介は無しか…　まあいいだろう。＞＞"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜ＯＫ、バディ。デモニカの戦闘モードを起動する。＞＞"
-			CALL MESSAGE_WINDOW_D, "", "/＞謎の少女が襲いかかってきた！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "…조지, 전투 준비！！"
+			CALL MESSAGE_WINDOW_D, "조지", "<<자기 소개는 없나…뭐, 괜찮겠지.>>"
+			CALL MESSAGE_WINDOW_D, "조지", "<<OK 버디.데모니카의 전투 모드를 기동한다.＞＞"
+			CALL MESSAGE_WINDOW_D, "", "/＞수수께끼의 소녀가 덤벼들었다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -1681,12 +1681,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "謎の少女", "ッ！？/まさか、ここまでやるなんて……！"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜対象の戦力を再評価……。＞＞"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜アレックス、ここは撤退を進言する。＞＞/＜＜現在スーツの性能は52％以下しか発揮されていない。＞＞"
-			CALL MESSAGE_WINDOW_D, "アレックス", "………"
-			CALL MESSAGE_WINDOW_D, "アレックス", "……ここは見逃す/だけど、宇宙卵は必ず私たちが手に入れる"
-			CALL MESSAGE_WINDOW_D, "", "＞謎の少女は去っていった"
+			CALL MESSAGE_WINDOW_D,"수수께끼 소녀", "!?/설마 여기까지 하다니...!"
+			CALL MESSAGE_WINDOW_D, "조지", "<<대상의 전력을 재평가….＞＞"
+			CALL MESSAGE_WINDOW_D, "조지", "<<알렉스, 여기는 철퇴를 진언한다.>>/<<현재 슈트의 성능은 52%이하 밖에 발휘되고 있지 않다.＞＞"
+			CALL MESSAGE_WINDOW_D, "알렉스", "………"
+			CALL MESSAGE_WINDOW_D, "알렉스", "……여긴 놓쳐주는 거야/하지만 우주란은 꼭 우리가 손에 넣을 거야"
+			CALL MESSAGE_WINDOW_D, "", "＞수수께끼의 소녀는 떠나갔다"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -1695,24 +1695,24 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 1000
 			IF 던전플래그:69:12 == 1
-				CALL MESSAGE_WINDOW_D, "魔界人", "ブーシャヤンスタが倒されたらしいね/僕もタペトの街に行こうかな "
+				CALL MESSAGE_WINDOW_D, "마계인", "부샤얀스타가 쓰러졌다나봐나도 타펫의 거리로 갈까 "
 			ELSE
-				CALL MESSAGE_WINDOW_D, "魔界人", "ここから上の方にタペトの街があるんだけど/魔王の手下、鬼女ブーシャヤンスタに皆眠らされちゃったみたいなんだ" 
+				CALL MESSAGE_WINDOW_D, "마계인", "여기서 위쪽에 타페토 거리가 있는데 / 마왕의 수하, 귀녀 부샤얀스타에게 모두 잠들어 버린 것 같아" 
 			ENDIF
 			
 		CASE 1200
 			IF 던전플래그:69:12 == 1
-				CALL MESSAGE_WINDOW_D, "魔界人", "うーん…なんだか随分長いこと眠ってたような/目が覚めたら腹が減ってきたよ "
+				CALL MESSAGE_WINDOW_D, "마계인", "음..왠지 꽤 오랫동안 잠을 잤던 것 같아/ 눈을 떴더니 배가 고파졌어 "
 			ELSE
-				CALL MESSAGE_WINDOW_D, "魔界人", "ぐうぐう…/むにゃ…もう食べられない……" 
+				CALL MESSAGE_WINDOW_D, "마계인", "음냐음냐.../우냐... 이제 못 먹겠어……" 
 			ENDIF
 			
 		CASE 1201
-			CALL MESSAGE_WINDOW_D, "", "＞手足が異様に長い女悪魔が鎮座している…… "
-			CALL MESSAGE_WINDOW_D, "ブーシャヤンスタ", "あら、やぁだ/まぁだ眠ってない子がいたのねぇ/いけない子達だわぁ "
-			CALL MESSAGE_WINDOW_D, "ブーシャヤンスタ", "魔界人や悪魔じゃなさそうねぇ/ということはぁ　アオパシャの奴やられちゃったのかしらぁ "
-			CALL MESSAGE_WINDOW_D, "ブーシャヤンスタ", "まあ、いいわぁ　ここで眠らせてあげるわよぉ/眠ってる間に死んじゃうけどねぇ "
-			CALL MESSAGE_WINDOW_D, "", "/＞鬼女　ブーシャヤンスタが１体出た！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞손발이 이상하게 긴 여악마가 진좌하고 있다…… "
+			CALL MESSAGE_WINDOW_D, "부샤얀스타", "어머, 싫어 / 뭐 잠 안든 애가 있었구나 / 못든 애들이네에 "
+			CALL MESSAGE_WINDOW_D, "부샤얀스타", "마계인이나 악마는 아닌 것 같은데 / 그렇다면, 아오파샤 녀석 당해 버린 것일까? "
+			CALL MESSAGE_WINDOW_D, "부샤얀스타", "뭐, 좋아. 여기서 자게 해줄께. / 잠든 사이에 죽겠지만 말야. "
+			CALL MESSAGE_WINDOW_D, "", "/＞귀녀 부샤얀스타 1체 나타났다!/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -1729,10 +1729,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "ブーシャヤンスタ", "だ…駄目よ…/みんな…まだ…起きちゃ……"
-			CALL MESSAGE_WINDOW_D, "", "/＞鬼女　ブーシャヤンスタを倒した/" , , , , , , , , , "CENTER"
-			CALL MESSAGE_WINDOW_D, "", "＞ブーシャヤンスタの死体から何か転がり落ちてきた……"
-			CALL MESSAGE_WINDOW_D, "", "＞『実り』の欠片を手に入れた"
+			CALL MESSAGE_WINDOW_D, "부샤얀스타", "안 돼... / 얘들아... 아직... 일어나버리면……"
+			CALL MESSAGE_WINDOW_D, "", "/＞귀녀 부샤얀스타를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞부샤얀스타의 시체에서 뭔가 굴러 떨어졌다……"
+			CALL MESSAGE_WINDOW_D, "", "＞『열매』의 조각을 입수했다."
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -1741,96 +1741,96 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 1202
 			IF 던전플래그:69:12 == 1
-				CALL MESSAGE_WINDOW_D, "魔界人", "うう…リリムとサキュバスとナイトメアに襲われる夢を見ていたんだ…/まだ股間が痛いような気がする… "
+				CALL MESSAGE_WINDOW_D, "마계인", "으... 리림이랑 사큐버스랑 나이트메어한테 습격당하는 꿈을 꾸고 있었어... / 아직도 사타구니가 아픈 것 같아… "
 			ELSE
-				CALL MESSAGE_WINDOW_D, "魔界人", "うーん…/うーん…"
-				CALL MESSAGE_WINDOW_D, "", "＞魔界人は眠りながらうなされている"
+				CALL MESSAGE_WINDOW_D, "마계인", "우웅…/우웅…"
+				CALL MESSAGE_WINDOW_D, "", "＞마계인은 잠을 자면서 고개를 떨구고 있다."
 			ENDIF
 			
 		CASE 1203
 			IF 던전플래그:69:12 == 1
 				CALL RAMEN_DUNGEON_69
 			ELSE
-				CALL MESSAGE_WINDOW_D, "", "＞店は閉まっている"
+				CALL MESSAGE_WINDOW_D, "", "＞가게는 문을 닫았다"
 			ENDIF
 			
 		CASE 1204
 			IF 던전플래그:69:12 == 1
-				CALL MESSAGE_WINDOW_D, "魔界人", "夢の中で俺は異世界の調教師になって、美女たちと毎日遊んで暮らしていた…/あれが全部夢だったなんて… "
+				CALL MESSAGE_WINDOW_D, "마계인", "꿈속에서 나는 다른 세계의 조교사가 되어 미녀들과 매일 놀고 살았다... / 저게 다 꿈이었다니… "
 			ELSE
-				CALL MESSAGE_WINDOW_D, "魔界人", "うへへ…/うへへへ…"
-				CALL MESSAGE_WINDOW_D, "", "＞魔界人は眠りながら笑みを浮かべている"
+				CALL MESSAGE_WINDOW_D, "마계인", "우헤헤…/우헤헤헤…"
+				CALL MESSAGE_WINDOW_D, "", "＞마계인은 잠을 자면서 미소를 짓고 있다."
 			ENDIF
 			
 		CASE 1205
 			IF 던전플래그:69:12 == 0
-				CALL MESSAGE_WINDOW_D, "長老", "ぐうぐう…… "
-				CALL MESSAGE_WINDOW_D, "", "＞長老は眠っている "
+				CALL MESSAGE_WINDOW_D, "장로", "ぐうぐう…… "
+				CALL MESSAGE_WINDOW_D, "", "＞장로는 잠들어 있다 "
 			ELSEIF 던전플래그:69:12 == 1
 				IF 던전플래그:69:20 == 0
-				CALL MESSAGE_WINDOW_D, "長老", "おお…/あなた方がブーシャヤンスタを退治してくださったのですな "
-				CALL MESSAGE_WINDOW_D, "長老", "これは我々の感謝の印です/受け取ってくだされ "
-				CALL MESSAGE_WINDOW_D, "", "＞ジャイロジェットとホットロード弾99発を手に入れた "
+				CALL MESSAGE_WINDOW_D, "장로", "오... / 당신들이 부샤얀스타를 퇴치해 주셨군요 "
+				CALL MESSAGE_WINDOW_D, "장로", "이것은 우리의 감사의 표시입니다/받아주십시오. "
+				CALL MESSAGE_WINDOW_D, "", "＞자이로제트와 핫로드탄 99발을 손에 넣었다 "
 				CALL GET_ITEMS , "MBA자이로제트피스톨" , 1
 				CALL GET_ITEMS , "핫로드탄" , 99
 				던전플래그:69:20 = 1
 			ELSE
-				CALL MESSAGE_WINDOW_D, "長老", "ここから上には更に強力な魔王の配下が待ち受けていると言われております/お気をつけて "
+				CALL MESSAGE_WINDOW_D, "장로", "여기서부터 위로는 더욱 강력한 마왕의 휘하가 기다리고 있다고 합니다/조심하세요 "
 				ENDIF
 			ENDIF
 		
 		CASE 1400
 			IF 던전플래그:69:13 == 1
-				CALL MESSAGE_WINDOW_D, "ゾンビ", "おかしいな、魔王が倒されたのに臭いが消えないぞ/…もしかしてこれ俺の臭いなのか？"
+				CALL MESSAGE_WINDOW_D, "좀비", "이상하군, 마왕이 쓰러졌는데 냄새가 지워지지 않는다구/…혹시 이거 내 냄새일까？"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "ゾンビ", "うっぷ…/あんたも臭うだろう、このひどい悪臭……"
-				CALL MESSAGE_WINDOW_D, "ゾンビ", "このノモスを支配してる悪魔は、汚物と病を司る魔王らしいぜ"
+				CALL MESSAGE_WINDOW_D, "좀비", "으흠... / 너도 냄새나겠지, 이 지독한 악취……"
+				CALL MESSAGE_WINDOW_D, "좀비", "이 노모스를 지배하고 있는 악마는 오물과 병을 관장하는 마왕인 것 같아."
 			ENDIF
 		
 		CASE 1500
 			IF 던전플래그:69:13 == 1
-				CALL MESSAGE_WINDOW_D, "ハエ男", "すごい！/君たちドゥルジを倒したのか！"
-				CALL MESSAGE_WINDOW_D, "ハエ男", "…でも、なんかこの姿のままでもいい気がしてきたよ"
+				CALL MESSAGE_WINDOW_D, "파리남자", "대박! / 너희 드루즈를 쓰러뜨렸구나!"
+				CALL MESSAGE_WINDOW_D, "파리남자", "…하지만 왠지 이 모습 그대로도 좋은 생각이 들어."
 			ELSE
-				CALL MESSAGE_WINDOW_D, "ハエ男", "助けてぇ！/このノモスの主、魔王ドゥルジにこんな姿にされちゃった！"
-				CALL MESSAGE_WINDOW_D, "ハエ男", "…ハエってどうやって治せばいいんだ？"
+				CALL MESSAGE_WINDOW_D, "파리남자", "살려줘! / 이 노모스의 주인 마왕 드루즈에게 이런 모습이 되어버렸어.！"
+				CALL MESSAGE_WINDOW_D, "파리남자", "…파리는 어떻게 고칠 수 있지?？"
 			ENDIF
 			
 		CASE 1600
 			IF 던전플래그:69:22 == 0
-				CALL MESSAGE_WINDOW_D, "", "＞ど派手な服と帽子に身を包んだ悪魔が飛び跳ねている"
-				CALL MESSAGE_WINDOW_D, "派手悪魔", "あっ、ニンゲンだ　こんちゃ/こんなとこで見かけるなんて珍しいね"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "ボクは人呼んでゴーストＱ/気軽にＱちゃんって呼んでもいいよ"
-				CALL INPUT_SELECT_D , "＞気軽にＱちゃんって呼んでもいいよ//[1]よろしくゴーストＱ/[2]よろしくＱちゃん/" , , , , 3
+				CALL MESSAGE_WINDOW_D, "", "＞화려한 옷과 모자에 몸을 감싼 악마가 펄쩍펄쩍 뛰고 있다"
+				CALL MESSAGE_WINDOW_D, "화려한 악마", "아, 인간이다 안녕/이런 곳에서 볼 수 있다니 신기하네"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "나는 사람 불러서 고스트Q/편안하게 Q라고 불러도 돼."
+				CALL INPUT_SELECT_D , "＞편안하게 Q라고 불러도 돼//[1]잘 부탁해 고스트Ｑ/[2]잘부탁해Q짱/" , , , , 3
 				IF RESULT == 1
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "うーん他人行儀/でも、そういう見知らぬ悪魔に礼儀を欠かさないニンゲン/嫌いじゃないよ"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "음 남의 버릇/하지만 그런 낯선 악마에게 예의를 빠뜨리지 않는 DLSRKS/싫지 않아"
 				ELSEIF RESULT == 2
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "おっいいねぇいいねぇ/ノリいいねぇ/Ｑちゃんちょっとテンションアゲアゲだよ"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "옷 좋네 좋아/분위기 잘 타네/Q야 조금 텐션이 좋아."
 				ENDIF
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "ニンゲンかー…/ボクも昔は地上に行って　ニンゲンの友達いっぱい作ったんだ"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "だけど久しぶりに会いに行ったらみんな大人になっちゃって、/もうＱちゃんと遊んでる暇なんかなくてさ/Ｑちゃんちょっとショックだったよ"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "ところでニンゲンは魔界に何しに来たの？"
-				CALL INPUT_SELECT_D , "＞魔界に何しに来たの？//[1]実りを探してる/[2]女の子探してる/[3]青い鳥探してる" , , , , 3
+				CALL MESSAGE_WINDOW_D, "고스트Q", "인간인가... / 나도 옛날에는 지상에 가서 인간 친구들 많이 사귀었어."
+				CALL MESSAGE_WINDOW_D, "고스트Q", "하지만 오랜만에 만나러 갔더니 모두 어른이 되어버려서, / 이제 Q랑 놀 틈이 없어서 말야 / Q가 조금 충격이었어."
+				CALL MESSAGE_WINDOW_D, "고스트Q", "근데 인간은 마계에 뭐하러 왔어?"
+				CALL INPUT_SELECT_D , "＞ 마계에 뭐하러 왔어？//[1]열매를 찾고 있다/[2]여자애 찾고 있어/[3]파랑새 찾고 있어" , , , , 3
 				IF RESULT == 1
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "実り？/それってあの魔王たちが持ってる宝物のこと？"
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "すごいね/Ｑちゃんこう見えてもあちこち行ってる魔人なんだけど、/魔王を倒しに行く勇者に出会ったのは初めてだよ"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "열매? /그것은 그 마왕들이 가지고 있는 보물을 말하는 것？"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "굉장하네/Q 이래봬도 여기저기 다니는 마인이지만, /마왕을 쓰러뜨리러 가는 용사를 만난 것은 처음이야."
 				ELSEIF RESULT == 2
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "魔界までナンパ？/へー　近頃のニンゲンは進んでるんだね"
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "ここもいずれ観光地化するのかな/デートスポット出来たらＱちゃんちょっと居づらいかも"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "마계까지 헌팅?헤- 요즘의 인간은 빠르구나"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "여기도 언젠가 관광지가 될까? 데이트 장소가 생긴다면 Q가 좀 있기 어려울지도 몰라."
 				ELSEIF RESULT == 3
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "青い鳥？/魔界よりカナダ行った方がよくない？"
-					CALL MESSAGE_WINDOW_D, "ゴーストＱ", "そういうのじゃなくて幸せを探してる…/大人は夢の代わりに苦労いっぱいだねぇ"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "파랑새? / 마계보다 캐나다 가는 게 낫지 않아?"
+					CALL MESSAGE_WINDOW_D, "고스트Q", "그런게 아니라 행복을 찾고 있어... / 어른은 꿈대신 고생이 많구나.."
 				ENDIF
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "なんかボク、君に興味マシマシになってきたな/君と一緒に旅しようか"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "…でも安っぽい悪魔と思われるのも嫌なんだよね/よし、ここはバトルでニンゲンが勝ったら仲魔になるよ"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "왠지 나, 너에게 흥미가 좋아졌네/너와 함께 여행할까?"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "…하지만 싸구려 악마라고 생각하는 것도 싫지/좋아, 여기는 배틀에서 인간이 이기면 중마가 될 거야."
 				던전플래그:69:22 = 1
 			ELSE
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "ゴーストＱ", "どうする？　Ｑちゃんとバトってみる？"
-			CALL INPUT_SELECT_D , "＞Ｑちゃんとバトってみる？//[1]バトっちゃう/[2]バトっちゃわない/" , , , , 3
+			CALL MESSAGE_WINDOW_D, "고스트Q", "어떡할래? Q하고 제대로 싸워볼래？"
+			CALL INPUT_SELECT_D , "＞ Q하고 제대로 싸워볼래？//[1]배틀한다/[2배틀하지 않는다/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "よっしゃ/じゃあいくよ"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "両の掌で汲めども汲めども尽きぬ欲/それに狂う心は魔か人か…/我は魔人ゴーストＱ　汝、死中を往くべし…"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "좋아/그럼 갈게"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "양 손바닥으로 읽어도 읽어도 끝이 없는 욕심/거기에 미칠 마음은 마인가 사람인가…/ 나는 마인 고스트 Q 너, 죽음 속을 떠나리라…"
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
@@ -1842,8 +1842,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CALL BATTLE_START
 				CALL SHOW_PICTURE, "D"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "ありゃりゃ　せっかくカッコつけたのにあっさり負けてしまった/すごいねニンゲン"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "じゃあ　あらためて…/ボクは魔人ゴーストＱ　今後ともよろしくね"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "이런 모처럼 멋을 부렸는데도 깨끗이 져버렸다/대단하네 인간"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "그럼 다시한번... / 나는 마인고스트Q 앞으로도 잘 부탁해."
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
@@ -1852,18 +1852,18 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				던전플래그:69:22 = 2
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "うーん残念無念/でも仕方ないよね"
-				CALL MESSAGE_WINDOW_D, "ゴーストＱ", "気が変わったらまた来てよ/ボクはここで飛び跳ねてるからさ"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "음 유감이야/하지만 어쩔 수 없지"
+				CALL MESSAGE_WINDOW_D, "고스트Q", "마음이 바뀌면 다시 와 / 나는 여기서 뛰어다니고 있으니까"
 			ENDIF
 		
 		CASE 1700
-			CALL MESSAGE_WINDOW_D, "", "＞腐臭が漂っている……"
-			CALL MESSAGE_WINDOW_D, "？？？？", "こんなとこまでなんのご用？/もしかしてあたしのこのダイナマイト・ボディがお目当てかしら？"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたの前に蠅頭の女悪魔が現れた"
-			CALL MESSAGE_WINDOW_D, "ドゥルジ", "なぁんてね　目的はわかってるわよ/あたしたちの持ってる宝物を狙うなんてヤンチャねぇ/イキのいいニンゲンだこと"
-			CALL MESSAGE_WINDOW_D, "ドゥルジ", "でも　若いコっていいわぁー/無茶するところが　とってもステキよぉ"
-			CALL MESSAGE_WINDOW_D, "ドゥルジ", "さあいらっしゃい/かわいがってあげるわぁ"
-			CALL MESSAGE_WINDOW_D, "", "/＞魔王　ドゥルジが１体出た！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞썩은 냄새가 감돌고 있다……"
+			CALL MESSAGE_WINDOW_D, "？？？？", "이런 데까지 무슨 일이야?/혹시 나의 이 다이너마이트 바디가 목표일까?"
+			CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 파리머리 여자 악마가 나타났다"
+			CALL MESSAGE_WINDOW_D, "드루즈", "글쎄, 목적은 알고 있어 / 우리가 가진 보물을 노리다니 장난꾸러기네 / 생기가 좋은 인간이라는 것"
+			CALL MESSAGE_WINDOW_D, "드루즈", "그래도 젊은 아이는 좋아~/엉뚱한 점이 너무 멋져~"
+			CALL MESSAGE_WINDOW_D, "드루즈", "자 어서와/ 귀여워해줄게 와"
+			CALL MESSAGE_WINDOW_D, "", "/＞마왕 드루즈가 1체 나왔다！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -1878,10 +1878,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "ドゥルジ", "あなた達…　とっても…強くってよ……"
-			CALL MESSAGE_WINDOW_D, "", "/＞魔王　ドゥルジを倒した/" , , , , , , , , , "CENTER"
-			CALL MESSAGE_WINDOW_D, "", "＞ドゥルジの死体から何か転がり落ちてきた……"
-			CALL MESSAGE_WINDOW_D, "", "＞『実り』の欠片を手に入れた"
+			CALL MESSAGE_WINDOW_D, "드루즈", "당신들...매우...강하네요……"
+			CALL MESSAGE_WINDOW_D, "", "/＞마왕 드루즈를 쓰러뜨렸다/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞드루즈의 시체에서 뭔가 굴러 떨어졌다……"
+			CALL MESSAGE_WINDOW_D, "", "＞『열매』의 조각을 손에 넣었다"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -1890,31 +1890,31 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 1800
 			IF 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "コッパテング", "…驚いたね/扉が開いたよ"
-				CALL MESSAGE_WINDOW_D, "コッパテング", "魔王様を倒すなんて、一体どんな奴なんだ？"
+				CALL MESSAGE_WINDOW_D, "콧파텐구", "…놀랐네 / 문이 열렸어"
+				CALL MESSAGE_WINDOW_D, "콧파텐구", "마왕님을 쓰러뜨리다니 도대체 어떤 놈이냐？"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "コッパテング", "そこの扉が開かない？/そりゃそうさ、その扉は魔王様の宝物庫の扉だもの"
-				CALL MESSAGE_WINDOW_D, "コッパテング", "魔王様が倒されたら開くようになってるらしいが/そんなことは万が一にもありえないだろうね"
+				CALL MESSAGE_WINDOW_D, "콧파텐구", "거기 문 안 열려?/그야 그렇겠지, 그곳은 마왕님의 보물창고인걸"
+				CALL MESSAGE_WINDOW_D, "콧파텐구", "마왕님이 쓰러지면 열리게 되어 있다던데 / 그런 일은 만에 하나도 있을 수 없겠지"
 			ENDIF
 			
 		CASE 2000
-			CALL MESSAGE_WINDOW_D, "", "＞強そうな悪魔がいる"
-			CALL MESSAGE_WINDOW_D, "悪魔", "なんだあ？　あのお方の命で来てみれば、/こんなニンゲンに拝火教の悪神たちはやられたのかぁ？"
-			CALL MESSAGE_WINDOW_D, "悪魔", "へっへっへ/どうやら俺にも運って奴が回ってきたようだな/雑魚一匹狩るだけで俺の名が上がる事になる…"
-			CALL MESSAGE_WINDOW_D, "悪魔", "ついでにお前の集めた宝物とやらも俺の物にしちまえば/明星に連なる魔王たちと同格になるのも夢じゃねえ"
-			CALL MESSAGE_WINDOW_D, "悪魔", "というわけで、お前にはさっさと死んでもらうぜぇ"
-			CALL MESSAGE_WINDOW_D, "", "＞悪魔の頭上で何か動いた…"
-			CALL MESSAGE_WINDOW_D, "悪魔", "くらえ俺様の究極奥義！/万能属性防御相性無視攻撃力低下即死付与連続十連砲で塵も残さず消え―――"
-			CALL MESSAGE_WINDOW_D, "", "＞悪魔が言い終わらないうちに、頭上から降って来た何者かが悪魔を両断した！"
-			CALL MESSAGE_WINDOW_D, "悪魔", "き…消え…/俺のほうが…斬られちゃってれびゅー……"
-			CALL MESSAGE_WINDOW_D, "", "＞血の雨が降り注ぐ中に立っているのは　以前戦った少女、アレックスだ"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜ターゲットを確認した。アレックス、やれるか？＞＞"
-			CALL MESSAGE_WINDOW_D, "アレックス", "…問題ないわ/今ならスーツの性能も100％発揮できる"
-			CALL MESSAGE_WINDOW_D, "", "＞アレックスはこちらを睨んでいる"
-			CALL MESSAGE_WINDOW_D, "アレックス", "今さら言っても無駄だろうけど、もう一度だけ言っておく/宇宙卵の欠片を渡して"
-			CALL MESSAGE_WINDOW_D, "", "＞……あなたは無言で武器を抜いて、答えとした"
-			CALL MESSAGE_WINDOW_D, "アレックス", "そう……/なら、後悔しなさい！"
-			CALL MESSAGE_WINDOW_D, "", "/＞謎の少女　アレックスが襲いかかってきた！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞강해 보이는 악마가 있다"
+			CALL MESSAGE_WINDOW_D, "악마", "뭐야? 그분의 명령으로 와보니 / 이런 인간에게 배화교 악신들은 당한건가?"
+			CALL MESSAGE_WINDOW_D, "악마", "헤헤헤 / 아무래도 나도 꽤 운이 좋은 모양이군 / 잡졸 한 놈 사냥하는 것만으로 내 이름이 올라가게 된다…"
+			CALL MESSAGE_WINDOW_D, "악마", "내친김에 네가 모은 보물이라든가 내 것으로 치면/명성(明星)에 버금가는 마왕들과 동격이 되는 것도 꿈이 아니야"
+			CALL MESSAGE_WINDOW_D, "악마", "그런 이유로, 너는 빨리 죽어줘야겠어."
+			CALL MESSAGE_WINDOW_D, "", "＞악마의 머리 위에서 뭔가 움직였다…"
+			CALL MESSAGE_WINDOW_D, "악마", "먹어랏, 나님의 궁극 오의!/만능 속성 방어 상성 무시 공격력 저하 즉사 부여 연속 십연포로 티끌 하나 없이 사라―――"
+			CALL MESSAGE_WINDOW_D, "", "＞악마가 다 말하기도 전에 머리 위에서 내려온 누군가가 악마를 양단했다.！"
+			CALL MESSAGE_WINDOW_D, "악마", "히...히엑.../내쪽이...베여버려서 흐갹……"
+			CALL MESSAGE_WINDOW_D, "", "＞핏비가 쏟아지는 가운데 서 있는 것은 이전에 싸운 소녀 알렉스이다"
+			CALL MESSAGE_WINDOW_D, "조지", "<< 타겟을 확인했다.알렉스, 할 수 있어?＞＞"
+			CALL MESSAGE_WINDOW_D, "알렉스", "…문제없어 / 지금은 슈트 성능도 100% 발휘할 수 있어"
+			CALL MESSAGE_WINDOW_D, "", "＞알렉스는 이쪽을 노려보고 있다"
+			CALL MESSAGE_WINDOW_D, "알렉스", "이제 와서 말해도 소용없겠지만 한번만 더 말해둘게 / 우주란 조각을 내놔"
+			CALL MESSAGE_WINDOW_D, "", "＞……당신은 말없이 무기를 뽑았다."
+			CALL MESSAGE_WINDOW_D, "알렉스", "그래…/그렇다면 후회하세요!"
+			CALL MESSAGE_WINDOW_D, "", "/＞수수께끼의 소녀 알렉스가 덤벼들었다!/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -1929,37 +1929,37 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたの猛攻を受けたアレックスは、片腕を抑えてふらついている"
-			CALL MESSAGE_WINDOW_D, "アレックス", "っ…どうして…/この時代にこんなに強い奴が……"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜被害甚大…戦闘の継続は不可能と判断。＞＞"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜退却だアレックス。＞＞/＜＜今回はスーツだけでなく、君自身も深刻なダメージを負っている。＞＞"
-			CALL MESSAGE_WINDOW_D, "アレックス", "…嫌！/未来から私だけ逃げて、この世界でも負けて逃げて…/もう逃げるのは嫌よ！"
-			CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜アレックス！＞＞"
-			CALL MESSAGE_WINDOW_D, "アレックス", "私は諦めない…/諦めるなんて認めない…！"
-			CALL INPUT_SELECT_D , "＞どうしますか？//[1]とどめを刺す/[2]捕まえる/" , , , , 3
+			CALL MESSAGE_WINDOW_D, "", "＞당신의 맹공을 받은 알렉스는 한쪽 팔을 잡고 비틀거리고 있다."
+			CALL MESSAGE_WINDOW_D, "알렉스", "윽...어째서... / 이 시대에 이렇게 강한 놈이……"
+			CALL MESSAGE_WINDOW_D, "조지", "<<피해심대…전투의 계속은 불가능하다고 판단.＞＞"
+			CALL MESSAGE_WINDOW_D, "조지", "<<퇴각이다 알렉스.>>/<이번에는 슈트뿐만 아니라 너 자신도 심각한 데미지를 입고 있다.＞＞"
+			CALL MESSAGE_WINDOW_D, "알렉스", "…싫어! / 미래에서 나만 도망가고, 이 세상에서도 지고 도망가고... / 이젠 도망가기 싫어.！"
+			CALL MESSAGE_WINDOW_D, "조지", "<<알렉스!>>"
+			CALL MESSAGE_WINDOW_D, "알렉스", "나는 포기하지 않아.../포기하다니 인정못해...!"
+			CALL INPUT_SELECT_D , "＞어떻게 해요?//[1]마무리를 짓는다/[2]붙잡는다/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "アレックス", "がはっ……"
-				CALL MESSAGE_WINDOW_D, "", "＞あなたの一撃で、アレックスは致命傷を負った"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜…生命維持能力の喪失を確認。デモニカ機能停止。＞＞/＜＜グッドバイ、アレクサンドラ。＞＞"
-				CALL MESSAGE_WINDOW_D, "アレックス", "私…みんなを…/救え……"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスは死んだ……"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜…ターゲットに告ぐ。お前の勝ちだ。＞＞/＜＜この子は私が連れていく。＞＞"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜デモニカの自爆シークエンスを起動……！＞＞"
-				CALL MESSAGE_WINDOW_D, "", "＞あなたは慌てて距離をとる！"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスの死体を中心に、すさまじい大爆発が起きた！"
+				CALL MESSAGE_WINDOW_D, "알렉스", "가핫……"
+				CALL MESSAGE_WINDOW_D, "", "＞당신의 일격에 알렉스는 치명상을 입었다"
+				CALL MESSAGE_WINDOW_D, "조지", "<<…생명유지능력 상실 확인.데모니카 기능 정지.>/<<굿바이 알렉산드라.＞＞"
+				CALL MESSAGE_WINDOW_D, "알렉스", "나...모두를.../구하지……"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스는 죽었다……"
+				CALL MESSAGE_WINDOW_D, "조지", "<<… 타겟에게 고한다.너의 승리다.>/<<< 이 아이는 내가 데리고 가지.＞＞"
+				CALL MESSAGE_WINDOW_D, "조지", "<<데모니카의 자폭 시퀀스를 기동…!＞＞"
+				CALL MESSAGE_WINDOW_D, "", "＞당신은 황급히 거리를 뒀다!"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스의 시체를 중심으로 엄청난 대폭발이 일어났다!"
 				CALL MESSAGE_WINDOW_D, "", "＞・・・・・・・・・・・・・"
-				CALL MESSAGE_WINDOW_D, "", "＞爆発が起きた場所には、何も残っていない……"
+				CALL MESSAGE_WINDOW_D, "", "＞폭발이 일어난 장소에는 아무것도 남아 있지 않다……"
 				던전플래그:69:9 = 2
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "", "＞あなたの一撃で、アレックスは倒れた"
-				CALL MESSAGE_WINDOW_D, "アレックス", "あぐっ……"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスは気を失った"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜着装者の意識喪失。＞＞/＜＜重大な危機と判断し、緊急離脱を支援AIの権限で発動。＞＞/＜＜目標地点へ転移を開始……＞＞"
-				CALL MESSAGE_WINDOW_D, "", "＞デモニカのＡＩが何かしようとしているので、/＞あなたはデモニカを強制的にシャットダウンすることにした…"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜やめろ…！　この子に触れるな――＞＞"
-				CALL MESSAGE_WINDOW_D, "", "＞デモニカの機能を停止した"
-				CALL MESSAGE_WINDOW_D, "アレックス", "う…/ジョー…ジ……"
-				CALL MESSAGE_WINDOW_D, "", "＞あなたはアレックスの身体を担いだ"
+				CALL MESSAGE_WINDOW_D, "", "＞당신의 일격에 알렉스는 쓰러졌다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "아굿……"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스는 정신을 잃었다"
+				CALL MESSAGE_WINDOW_D, "조지", "<<착장자의 의식상실.>>/<<중대한 위기로 판단해 긴급이탈을 지원 AI의 권한으로 발동.>>/<<목표지점으로의 전이를 개시…>>"
+				CALL MESSAGE_WINDOW_D, "", "＞데모니카의 AI가 뭔가 하려고 하기 때문에, /> 당신은 데모니카를 강제로 셧다운 하기로 했다..."
+				CALL MESSAGE_WINDOW_D, "조지", "<<그만둬...! 이 아이를 건드리지마-->>"
+				CALL MESSAGE_WINDOW_D, "", "＞데모니카의 기능을 정지했다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "으…/조…지……"
+				CALL MESSAGE_WINDOW_D, "", "＞당신은 알렉스의 몸을 짊어졌다"
 				CALL ADD_NEW_COMPANION,[[キャラ:알렉스]],-100
 				LOCAL = (GETCHARA([[キャラ:알렉스]]))
 				IF CFLAG:LOCAL:인계횟수 == 0
@@ -1975,8 +1975,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA, LOCAL
 				던전플래그:69:9 = 1
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "", "＞この場を立ち去ろうとしたその時、靴の先に何か当たった……"
-			CALL MESSAGE_WINDOW_D, "", "＞『実り』の欠片を手に入れた"
+			CALL MESSAGE_WINDOW_D, "", "＞이 자리를 떠나려던 그 때 구두 끝에 뭔가 맞았다……"
+			CALL MESSAGE_WINDOW_D, "", "＞『열매』의 조각을 손에 넣었다"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -1985,10 +1985,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		;CASE 2001
 			;IF 던전플래그:69:14 == 1
-				;CALL MESSAGE_WINDOW_D, "バジリスク", "怖い奴いなくなった？/じゃあフェザーマンがやっつけたんだ！/やっぱりフェザーマンはサイキョーだね！"
+				;CALL MESSAGE_WINDOW_D, "바실리스크", "무서운 놈 없어졌어?/그럼 페더맨이 해치웠구나!/역시 페더맨은 최고야！"
 				;ELSE
-				;CALL MESSAGE_WINDOW_D, "バジリスク", "あわわ…どうしよう/黒いぴっちりスーツと仮面に赤い目がギラギラしてる怖い奴が、/さっきここを通ったんだ"
-				;CALL MESSAGE_WINDOW_D, "バジリスク", "きっと不死鳥戦隊フェザーマンの新しい敵だ！//…フェザーマンの秘密基地ってどうやって連絡すればいいのかな"
+				;CALL MESSAGE_WINDOW_D, "바실리스크", "아아아아... 어떡해 / 까만색의 딱붙는 슈트랑랑 가면에 빨간 눈이 반짝반짝 빛나는 무서운 놈이 / 아까 여기 지나갔어"
+				;CALL MESSAGE_WINDOW_D, "바실리스크", "분명 불사조전대 페더맨의 새로운 적이야!//… 페더맨의 비밀기지는 어떻게 연락하면 좋을까?"
 			;ENDIF
 			
 		CASE 2200 TO 2216
@@ -2001,31 +2001,31 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 			
 		CASE 2500
-			CALL MESSAGE_WINDOW_D, "", "＞床にあるスイッチを踏んだようだ/＞どこかで塔の仕掛けが切り替わったような気がする"
+			CALL MESSAGE_WINDOW_D, "", "＞바닥에 있는 스위치를 밟은 것 같다 />어디선가 탑의 장치가 바뀐 것 같은 기분이 든다"
 			던전플래그:69:21 = 1
 			DA:(FLAG:현X):(FLAG:현Y) = 1
 		CASE 2501
-			CALL MESSAGE_WINDOW_D, "魔界人", "ここのノモスを支配していたのは、拝火教とは別の悪魔だったんだけど/どこか他所に引っ越しちゃったんだ "
-			CALL MESSAGE_WINDOW_D, "魔界人", "もっと上の方から嫌な予感がするとか…/魔王様のことかな？ "
+			CALL MESSAGE_WINDOW_D, "마계인", "여기 노모스를 지배하고 있던 것은 배화교와는 다른 악마였는데 / 어딘가 다른 곳으로 이사해 버렸어 "
+			CALL MESSAGE_WINDOW_D, "마계인", "더 윗쪽에서 안 좋은 예감이 든다던가... / 마왕님 인가? "
 			
 		CASE 2700
 			IF 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "サイクロプス", "まさか魔王様をも殺っちまうとは…/あんた本当にニンゲンなのか？"
+				CALL MESSAGE_WINDOW_D, "사이클롭스", "설마 마왕님도 죽여버릴 줄이야... / 너 정말 인간이냐?？"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "サイクロプス", "あんたが噂のニンゲンか/ここに来るまで魔王様の配下を全員殺ったらしいな"
-				CALL MESSAGE_WINDOW_D, "サイクロプス", "でも、この階層はそう簡単に攻略できないと思うぜ/魔王様に会うには魔王様の３人の側近を倒さないと無理だからな"
+				CALL MESSAGE_WINDOW_D, "사이클롭스", "당신이 소문의 인간인가 / 여기 올 때까지 마왕의 휘하를 모두 죽였다고 하더군"
+				CALL MESSAGE_WINDOW_D, "사이클롭스", "하지만 이 계층은 그렇게 쉽게 공략할 수 없을 거야 / 마왕을 만나려면 마왕의 세 측근을 쓰러뜨리지 않으면 무리니까"
 			ENDIF
 			
 		CASE 2900 TO 2945
 			IF FLAG:현X == 6 && FLAG:현Y == 17
-				CALL MESSAGE_WINDOW_D, "", "＞不気味な顔をした長身の悪魔がいる"
-				CALL MESSAGE_WINDOW_D, "サルワ", "ニンゲンが…/貴様ごときを魔王様が相手にするとでも思っていたのか？/お前の相手はこのオレで十分だ"
-				CALL MESSAGE_WINDOW_D, "サルワ", "さて　ショウタイムだ/オレが踊らせてやろう…　死の舞をな！"
-				CALL INPUT_SELECT_D , "＞オレが踊らせてやろう…　死の舞をな！//[1]雑魚に用はない/" , , , , 3
+				CALL MESSAGE_WINDOW_D, "", "＞으스스한 얼굴을 한 장신의 악마가 있다"
+				CALL MESSAGE_WINDOW_D, "사루와", "인간이... / 네놈 따위를 마왕님께서 상대하실 줄 알았나?너의 상대는 이 나로 충분해"
+				CALL MESSAGE_WINDOW_D, "사루와", "자, 쇼 타임이다 / 내가 춤추게 해주지 ... 죽음의 춤을 말야！"
+				CALL INPUT_SELECT_D , "＞내가 춤추게 해주지...죽음의 춤을 말이야！//[1]잡졸에는 볼일이 없다/" , , , , 3
 				IF RESULT == 1
-					CALL MESSAGE_WINDOW_D, "サルワ", "その台詞/そっくりそのまま返してくれる！"
+					CALL MESSAGE_WINDOW_D, "사루와", "그 대사/똑바로 돌려주마！"
 				ENDIF
-				CALL MESSAGE_WINDOW_D, "", "/＞悪神　サルワが１体出た！/" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "", "/＞악신 사루와가 1체 나타났다!/" , , , , , , , , , "CENTER"
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
@@ -2047,19 +2047,19 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CALL BATTLE_START
 				CALL SHOW_PICTURE, "D"
-				CALL MESSAGE_WINDOW_D, "サルワ", "き…貴様…/本当にニンゲンか…？"
-				CALL MESSAGE_WINDOW_D, "", "/＞悪神　サルワを倒した/" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "사루와", "네...네놈.../정말로 인간인가？"
+				CALL MESSAGE_WINDOW_D, "", "/＞악신 사루와를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
 				던전플래그:69:30 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ELSEIF FLAG:현X == 26 && FLAG:현Y == 12
-				CALL MESSAGE_WINDOW_D, "？？？？", "ヒーッヒッヒッヒッヒ！/ヒーッヒッヒッヒッヒ！/ヒーッヒッヒッヒッヒ！"
-				CALL MESSAGE_WINDOW_D, "", "＞あなたの前に、不気味に輝く女魔が現れた"
-				CALL MESSAGE_WINDOW_D, "ジャヒー", "アタシをどうしようってぇんだい？/どうしようってぇんだい？/どうしようってぇんだい？"
-				CALL MESSAGE_WINDOW_D, "ジャヒー", "ほら　答えてごらんよ！"
-				CALL MESSAGE_WINDOW_D, "", "/＞鬼女　ジャヒーが１体出た！/" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "？？？？", "히히히히히!/히히히히히!/히히히히히!"
+				CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 섬뜩하게 빛나는 여마가 나타났다."
+				CALL MESSAGE_WINDOW_D, "쟈히", "나를 어쩌려는 거야?/어쩌려는 거야?/어쩌려는 거야?"
+				CALL MESSAGE_WINDOW_D, "쟈히", "자, 대답해 봐!"
+				CALL MESSAGE_WINDOW_D, "", "/＞귀녀 자희 1체가 나타났다!/" , , , , , , , , , "CENTER"
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
@@ -2074,9 +2074,9 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CALL BATTLE_START
 				CALL SHOW_PICTURE, "D"
-				CALL MESSAGE_WINDOW_D, "ジャヒー", "アタシが/アタシが/アタシが"
-				CALL MESSAGE_WINDOW_D, "ジャヒー", "負ける…/はず…/が…"
-				CALL MESSAGE_WINDOW_D, "", "/＞鬼女　ジャヒーを倒した/" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "쟈히", "내가/내가/내가"
+				CALL MESSAGE_WINDOW_D, "쟈히", "질리가…/없…/어…"
+				CALL MESSAGE_WINDOW_D, "", "/＞귀녀 쟈히를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
@@ -2087,22 +2087,22 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 			
 		CASE 3000
-			CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "ノコノコ来オッタカ！/我ラガ主ニ敵ナサントスル/身ノホド知ラズノ　愚カ者メラガ！"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたを待ち受けていたのは、三つの頭を持った見上げるほどの巨体の邪龍だ！"
-			CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "今カラデモ遅クハナイ/奪ッタ宝物ヲ差シ出シ、偉大ナル魔王様ニ平伏スルノダ！"
-			CALL INPUT_SELECT_D , "＞平伏スルノダ！//[1]嫌だ/[2]そっちが平伏しろ/[3]手本を見せて" , , , , 3
+			CALL MESSAGE_WINDOW_D, "아지・다하카", "히죽히죽 쳐 웃었겠다!/ 우리들의 주인님께 적따위 없다!/주제를 알아라 쓰래기가!"
+			CALL MESSAGE_WINDOW_D, "", "＞당신을 기다리고 있던 것은 세 개의 머리를 가진 올려다볼 정도의 거대한 사룡이다.！"
+			CALL MESSAGE_WINDOW_D, "아지・다하카", "이미 늦었다!/빼았아간 보물을 돌려주고、위대하신 마왕님께 복종해라！"
+			CALL INPUT_SELECT_D , "＞복종해라！//[1]싫다/[2]그쪽이 복종해라/[3]시범을 보여달라" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "ガアー！！　所詮下郎ニ慈悲ヲ垂レテモ無駄デアッタカ！"
+				CALL MESSAGE_WINDOW_D, "아지・다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "ガアー！！　所詮下郎ニ慈悲ヲ垂レテモ無駄デアッタカ！"
+				CALL MESSAGE_WINDOW_D, "아지・다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
 			ELSEIF RESULT == 3
-				CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "手本？/平伏モ知ラヌノカ　下郎"
-				CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "平伏トハコウシテ/頭ヲ地面ニ着ケテ…"
-				CALL MESSAGE_WINDOW_D, "", "＞あなたはアジ・ダハーカが平べったくなった所をスマホで撮影した"
-				CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "…何ヤッテンダ貴様ァア！！！"
+				CALL MESSAGE_WINDOW_D, "아지・다하카", "시범？/엎드리는 것도 모르는 거냐, 천한것"
+				CALL MESSAGE_WINDOW_D, "아지・다하카", "엎드린다는 건 이렇게 머리를 땅에 붙여서…"
+				CALL MESSAGE_WINDOW_D, "", "＞당신은 아지 다하카가 엎드리고있는 것을 스마트폰으로 촬영했다."
+				CALL MESSAGE_WINDOW_D, "아지・다하카", "…무슨짓냐 네놈！！！"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "覚悟スルガイイ！/フサワシイ災イヲ　コノワシガ与エテクレル！"
-			CALL MESSAGE_WINDOW_D, "", "/＞邪龍　アジ・ダハーカが１体出た！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "아지・다하카", "각오해라아! 걸맞는 재해를 이몸이 선사해주마！"
+			CALL MESSAGE_WINDOW_D, "", "/＞사룡 아지 다하카가 1체 나타났다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -2117,8 +2117,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "アジ・ダハーカ", "オ…オノレ…　下郎ノ分際デ…/魔王様…コノ者タチニ災イヲ…"
-			CALL MESSAGE_WINDOW_D, "", "/＞邪龍　アジ・ダハーカを倒した/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "아지・다하카", "네…네이놈 천한놈 주제에…/마왕님 이 자들에게 재앙을…"
+			CALL MESSAGE_WINDOW_D, "", "/＞사룡 아지 다하카를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -2127,27 +2127,27 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 3100
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたの前に闇が広がっている……"
-			CALL MESSAGE_WINDOW_D, "？？？？？？", "……お前がこの塔を騒がせているニンゲンか"
-			CALL MESSAGE_WINDOW_D, "", "＞闇の中で二つの光が輝いた"
-			CALL MESSAGE_WINDOW_D, "？？？？？？", "ニンゲンというのは不思議なものだ/何度無駄なことだと教えても無謀に事を繰り返し/そして死んでゆく"
-			CALL MESSAGE_WINDOW_D, "？？？？？？", "死をもって教えれば消えまいとして増えてゆく/地を埋め海にこぼれんかのごとく増えようとする"
-			CALL MESSAGE_WINDOW_D, "？？？？？？", "いくらワレとワレの配下が　ニンゲンに死を与えても/ニンゲンは増え続ける"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたは闇の中にある二つの輝きの正体が、眼光だということに気がついた"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "この魔王アンリ・マンユに勝利することなどできぬというのに…"
-			CALL MESSAGE_WINDOW_D, "", "＞……あなたの目の前にいるのは、アジ・ダハーカをも上回る巨大な魔王だ！"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "ニンゲン　お前の望みはこの宝物であろう"
-			CALL MESSAGE_WINDOW_D, "", "＞アンリ・マンユはあなたに『実り』の欠片を見せつけた"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "エレウシスの小娘がこれを欲しているのはワレも知っている…/だが、お前にこの宝物をくれてやるつもりはない"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "しかし宝物が目的とはいえ奇妙なことよ……/あの堕ちた明星ではなく　ワレに対してニンゲンの刺客を送り込むとは/それも忌々しいアフラ・マズダではない　稲食みの女神が…"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "このままお前に死を与えてもいいのだが…/一度だけ機会を与えてやろう/ワレの部下にならぬか？"
-			CALL INPUT_SELECT_D , "＞ワレの部下にならぬか？//[1]断る/" , , , , 3
+			CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 어둠이 펼쳐져 있다……"
+			CALL MESSAGE_WINDOW_D, "？？？？？？", "……네가 이 탑을 들쑤시고 다니는 인간이냐"
+			CALL MESSAGE_WINDOW_D, "", "＞어둠 속에서 두 개의 빛이 빛났다"
+			CALL MESSAGE_WINDOW_D, "？？？？？？", "인간이라는 것은 신기한 것이다/몇 번이나 쓸데없는 일이라고 가르쳐도 무모하게 일을 반복하고/그리고 죽어간다"
+			CALL MESSAGE_WINDOW_D, "？？？？？？", "죽음으로써 가르치면 사라지지 않고 오히려 늘어간다 / 땅을 메우고 바다에 쏟아질 듯이 늘어나려 한다"
+			CALL MESSAGE_WINDOW_D, "？？？？？？", "아무리 나와 내 부하들이 죽음을 선사해도/ 인간들은 계속 증식한다."
+			CALL MESSAGE_WINDOW_D, "", "＞당신은 어둠 속에 있는 두 빛의 정체가 안광이라는 것을 깨달았다."
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "이 마왕 앙리마유에게 승리할 수는 없는데도…"
+			CALL MESSAGE_WINDOW_D, "", "＞……당신의 눈앞에 있는 것은 아지 다하카를 능가하는 거대한 마왕이다.！"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "인간, 너의 소망은 이 보물일 것이다"
+			CALL MESSAGE_WINDOW_D, "", "＞앙리 마유는 당신에게 열매의 조각을 보여주었다"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "엘레우시스의 계집애가 이것을 갖고 싶어하는 것은 짐도 알고 있다…/하지만 너에게 이 보물을 넘겨 줄 생각은 없다"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "그러나 보물이 목적이라고는 하지만 기묘한 일이다...... / 저 타락한 명성이 아니라 짐에게 인간의 자객을 보내다니 / 그것도 꺼림칙한 아프라 마즈다가 아닌 번개 여신이…"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "이대로 너에게 죽음을 줘도 좋겠지만…/한번만 기회를 주마 / 짐의 부하가 되지 않겠는가?"
+			CALL INPUT_SELECT_D , "＞짐의 부하가 되지 않겠는가?//[1]거절한다/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "…ためらいも無しか　ならば仕方がない"
-				CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "無意味で無駄なニンゲン…/身の程知らずのお前には相応の死を与えよう"
+				CALL MESSAGE_WINDOW_D, "앙리・마유", "…망설임도 없는가, 어쩔 수 없군"
+				CALL MESSAGE_WINDOW_D, "앙리・마유", "무의미하고 쓸데없는 인간... / 분수를 모르는 너에겐 합당한 죽음을 주마"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "迷わし者よ/魔王アンリ・マンユの悪を知るがいい……！"
-			CALL MESSAGE_WINDOW_D, "", "/＞魔王　アンリ・マンユが襲いかかってきた！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "미혹자여 / 마왕 앙리마유의 악을 아는 것이 좋다……！"
+			CALL MESSAGE_WINDOW_D, "", "/＞마왕 앙리 만유가 덤벼들었다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -2164,11 +2164,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "おお……　ニンゲンにワレが敗れるというのか…/だがこれで終わりではないぞ…"
-			CALL MESSAGE_WINDOW_D, "アンリ・マンユ", "悪は滅びぬ……/この世に静寂をもたらす理を拓くもの現れし時、/ワレはそやつに力を与えるだろう……"
-			CALL MESSAGE_WINDOW_D, "", "/＞魔王　アンリ・マンユは死んだ/" , , , , , , , , , "CENTER"
-			CALL MESSAGE_WINDOW_D, "", "＞アンリ・マンユの死体から何か転がり落ちてきた……"
-			CALL MESSAGE_WINDOW_D, "", "＞最後の『実り』の欠片を手に入れた"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "오오 ……인간에게 짐이 패했다는 말인가…/그러나 이걸로 끝은 아니다…"
+			CALL MESSAGE_WINDOW_D, "앙리・마유", "악은 멸망하지 않는다…/이 세상에 정적을 가져오는 이치를 개척하는 것이 나타날 때/짐은 그에게 힘을 줄 것이다……"
+			CALL MESSAGE_WINDOW_D, "", "/＞마왕 앙리 망유는 죽었다/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞앙리 마유의 시체에서 뭔가 굴러 떨어졌다.……"
+			CALL MESSAGE_WINDOW_D, "", "＞마지막『열매』의 조각을 입수했다."
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -2176,7 +2176,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			DA:(FLAG:현X):(FLAG:현Y) = 1
 			
 		CASE 3200
-			CALL MESSAGE_WINDOW_D, "", "＞次元の裂け目が広がっている……/＞前に進みますか？"
+			CALL MESSAGE_WINDOW_D, "", "＞차원의 균열이 확대되고 있다…/>앞으로 나아갈까？"
 			CALL INPUT_YN_D, "예", "아니오"
 			IF RESULT == 0
 				CALL DUNGEON_WORP,34,28,13
@@ -2186,92 +2186,92 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 3300 TO 3309
 			IF FLAG:현X == 15 && FLAG:현Y == 15
-				CALL MESSAGE_WINDOW_D, "流入思念体", "ハガクレ少将は悪魔を資源にした超力艦隊と霊的国防兵器の力によって/我が国が世界を支配すると言っているが/連合陣営も悪魔を利用した霊的兵器の開発に成功したと聞いている…"
-				CALL MESSAGE_WINDOW_D, "流入思念体", "私は恐ろしい…/このまま超常存在の力に頼っていったら、人類はどうなってしまうのだ…？"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "하가쿠레 소장은 악마를 자원으로 한 초능력 함대와 영적 국방 무기의 힘으로 / 우리나라가 세계를 지배한다고 하는데 / 연합 진영도 악마를 이용한 영적 무기 개발에 성공한 것으로 알고 있다…"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "나는 무섭다…/이대로 초상존재의 힘에 의지해간다면 인류는 어떻게 되어 버리는 것일까.…？"
 			ELSEIF FLAG:현X == 12 && FLAG:현Y == 13
-				CALL MESSAGE_WINDOW_D, "流入思念体", "はは…あいつを倒して帰って来たのに、/悪魔がこっちの世界にも現れて終いにゃ核戦争？/冗談きついぜ…"
-				CALL MESSAGE_WINDOW_D, "流入思念体", "レイコちゃん…　俺、駄目だったよ…"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "하하... 그놈을 쓰러뜨리고 돌아왔는데 / 악마가 이쪽 세계에도 나타나서 끝장이야 핵전쟁?/농담하지말라구…"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "레이코... 나 무리였어..."
 			ELSEIF FLAG:현X == 9 && FLAG:현Y == 15
-				CALL MESSAGE_WINDOW_D, "流入思念体", "だから！何度も言ってるだろう！/銃だよ！武器が必要だったんだ！/素人のあんたらが持ってたって何の役にもたちゃしない！"
-				CALL MESSAGE_WINDOW_D, "流入思念体", "クソッ！分からずやどもが！/俺を病人扱いしてるお前らも死ぬんだ！　悪魔に殺される！！/その時に後悔しても遅いぞ！！"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "그러니까! 몇번이나 말했잖아!/총이야! 무기가 필요했어!/초짜인 너희들이 가지고 있어도 아무 소용이 없어！"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "빌어먹을! 벽창호들이!/ 나를 정신병자 취급하는 너희들도 죽는다고! 악마에게 죽임을 당한다!!/그때 후회해도 늦는다고！！"
 			ELSEIF FLAG:현X == 6 && FLAG:현Y == 13
-				CALL MESSAGE_WINDOW_D, "流入思念体", "なんか、退屈だな…/毎日毎日ダラダラしてるだけで終わる……/これが平和か…？"
-				CALL MESSAGE_WINDOW_D, "流入思念体", "これなら魔界で悪魔と戦った時のが張り合いがあったな…/戦争でも起きねえかなぁ……"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "뭔가 심심한데...매일매일 빈둥빈둥 거리기만 하면 끝나.../이게 평화인가?…？"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "이거라면 마계에서 악마와 싸웠을 때의 싸움이 더 보람있었겠어... / 전쟁이라도 일어나지 않을까……"
 			ELSEIF FLAG:현X == 5 && FLAG:현Y == 15
-				CALL MESSAGE_WINDOW_D, "流入思念", "続いて、軽子坂高校消失事件の続報を現地上空から中継でお送りします/リポーターのオオヤマさん？"
-				CALL MESSAGE_WINDOW_D, "流入思念", "はい、こちらオオヤマです/軽子坂高校正門前は多数の報道陣、教職員や生徒の家族、警官隊が詰め寄せ/騒然としています"
-				CALL MESSAGE_WINDOW_D, "流入思念", "そして軽子坂高校の校舎があった場所はくり抜かれたように穴が開いて、/底が見えません"
-				CALL MESSAGE_WINDOW_D, "流入思念", "まるで何か…神話の再現のような…/畏怖すら感じさせ……させ…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "オオヤマさん？/大丈夫ですかオオヤマさん？"
-				CALL MESSAGE_WINDOW_D, "流入思念", "ヘリ…戻してくれ…あんなおぞましい…/おい…パイロット…/あんたも…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "オオヤマさん！？/ヘリが穴に向かって落ちて…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "ただいま映像が乱れております。/しばらくお待ちください。"
+				CALL MESSAGE_WINDOW_D, "유입사념", "이어서, 카루코자카 고교 소실 사건의 속보를 현지 상공에서 중계로 보내드립니다/리포터 오오야마 씨?"
+				CALL MESSAGE_WINDOW_D, "유입사념", "네, 여기 오오야마입니다/카루코자카 고등학교 정문 앞은 다수의 보도진, 교직원이나 학생의 가족, 경관대가 몰려들어/ 소란스럽습니다."
+				CALL MESSAGE_WINDOW_D, "유입사념", "그리고 카루코자카 고등학교 교사가 있던 자리는 도려낸 듯 구멍이 뚫려 / 바닥이 보이지 않습니다."
+				CALL MESSAGE_WINDOW_D, "유입사념", "마치 뭔가…신화의 재현같은…/외감마저 느끼게 …하게 하고…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "오오야마씨? / 괜찮아요 오오야마씨？"
+				CALL MESSAGE_WINDOW_D, "유입사념", "헬기...돌려줘...저런 끔찍한.../야...파일럿.../당신도…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "오오야마씨!?/헬기가 구멍을 향해 떨어져…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "지금 통신이 끊어졌습니다./잠시만 기다려주세요。"
 			ELSEIF FLAG:현X == 12 && FLAG:현Y == 5
-				CALL MESSAGE_WINDOW_D, "流入思念", "悪魔と出会ったらageるスレ"
-				CALL MESSAGE_WINDOW_D, "流入思念", "1 名前：ナナシさん [sage] 投稿日：XXXXXX/悪魔見た？"
-				CALL MESSAGE_WINDOW_D, "流入思念", "2 名前：ナナシさん [sage] 投稿日：XXXXXX/1の母です/申し訳ありません　こんな知力5の息子を育ててしまって"
-				CALL MESSAGE_WINDOW_D, "流入思念", "5 名前：ナナシさん [sage] 投稿日：XXXXXX/>>2/製造者責任とって悪魔に食われろ"
-				CALL MESSAGE_WINDOW_D, "流入思念", "12 名前：ナナシさん [sage] 投稿日：XXXXXX/なんかニュースでマジトーンで悪魔が出たと言ってて笑える"
-				CALL MESSAGE_WINDOW_D, "流入思念", "37 名前：ナナシさん [sage] 投稿日：XXXXXX/本当にヤバくない？/近所で空から人間の内蔵が降ってきたって大騒ぎになってるんだけど"
-				CALL MESSAGE_WINDOW_D, "流入思念", "40 名前：ナナシさん [sage] 投稿日：XXXXXX/東京人の不幸で飯がうまい！今日もメシウマ！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "68 名前：ナナシさん [sage] 投稿日：XXXXXX/>>40/東京以外もやばいことになってきてるみたいだぞ"
-				CALL MESSAGE_WINDOW_D, "流入思念", "76 名前：ナナシさん [sage] 投稿日：XXXXXX/駅が自衛隊に封鎖されてておうちに帰れない( ；∀；)"
-				CALL MESSAGE_WINDOW_D, "流入思念", "89 名前：ナナシさん [sage] 投稿日：XXXXXX/すげえ！自衛隊仕様のブラックデモニカスーツ初めて見た！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "94 名前：ナナシさん [sage] 投稿日：XXXXXX/>>89/ブラックデモニカは去年結成された特殊部隊のだから厳密には自衛隊と違う"
-				CALL MESSAGE_WINDOW_D, "流入思念", "100 名前：ナナシさん 投稿日：XXXXXX/あくまみた/おまえらあくましょうかんぷろぐらむきたらけすな/あれないところされる"
+				CALL MESSAGE_WINDOW_D, "유입사념", "악마와 만나면 age하는 스레"
+				CALL MESSAGE_WINDOW_D, "유입사념", "1 이름 : 나나시상 [sage] 투고일 :XXXXXX/악마 봤어？"
+				CALL MESSAGE_WINDOW_D, "유입사념", "2 이름 : 나나시상 [sage] 투고일 :XXXXXX/1의 엄마입니다 / 죄송합니다 이런 지력5의 아들을 키워버려서"
+				CALL MESSAGE_WINDOW_D, "유입사념", "5 이름 : 나나시상 [sage] 투고일 :XXXXXX/>> 2/제조자 책임지고 악마에게 잡아먹혀라."
+				CALL MESSAGE_WINDOW_D, "유입사념", "12 이름 : 나나시상 [sage] 투고일 :XXXXXX/왠지 뉴스에서 찐텐으로 악마가 나왔다고 해서 웃긴다."
+				CALL MESSAGE_WINDOW_D, "유입사념", "37 이름 : 나나시상 [sage] 투고일 :XXXXXX/진짜 대박이지 않아?근처에 하늘에서 인간 내장이 떨어졌다고 난리가 났는데"
+				CALL MESSAGE_WINDOW_D, "유입사념", "40 이름 : 나나시상 [sage] 투고일 :XXXXXX/도쿄인의 불행으로 밥을 잘 먹는다!오늘도 존맛！"
+				CALL MESSAGE_WINDOW_D, "유입사념", "68 이름 : 나나시상 [sage] 투고일 :XXXXXX/>>40/도쿄 이외에도 큰일이 일어나고 있는 것 같아."
+				CALL MESSAGE_WINDOW_D, "유입사념", "76 이름 : 나나시상 [sage] 투고일 :XXXXXX/역이 자위대에 봉쇄되어 있어서 집에 돌아갈 수 없다( ；∀；)"
+				CALL MESSAGE_WINDOW_D, "유입사념", "89 이름 : 나나시상 [sage] 투고일 :XXXXXX/대단해! 자위대 사양의 블랙 데모니카 슈트 처음 봤어！"
+				CALL MESSAGE_WINDOW_D, "유입사념", "94 이름 : 나나시상 [sage] 투고일 :XXXXXX/>>89/블랙데모니카는 작년에 결성된 특수부대이기 때문에 엄밀히 말하면 자위대와 다르다"
+				CALL MESSAGE_WINDOW_D, "유입사념", "100 이름 : 나나시씨 투고일 :XXXXXX/악마 봤다 / 너희들 악마소환프로그램 이라고 발견하면 지우지마라 / 어이없는 곳을 당한다"
 			ELSEIF FLAG:현X == 17 && FLAG:현Y == 3
-				CALL MESSAGE_WINDOW_D, "流入思念", "＞街頭ビジョンに少女の姿が映し出されている…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "本日は皆さんに真実をお伝えします…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "日本国を悪魔から守るために結成されたはずの組織…/悪魔討伐隊は実際は悪魔を生み出す温床となり果てていたのです"
-				CALL MESSAGE_WINDOW_D, "流入思念", "悪魔討伐隊最高責任者、タマガミ防衛大臣は霊的国防兵器を生み出すために/日本国民に冤罪を被せ収容し　人体実験を繰り返していました…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "そして国防の要になるとされた無限発電炉ヤマト/あの力が悪魔を東京に呼び寄せています"
-				CALL MESSAGE_WINDOW_D, "流入思念", "皆さん　悪魔討伐隊に協力してはいけません…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "＞거리 전광판에 소녀의 모습이 비춰지고 있다…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "오늘은 여러분께 진실을 전하겠습니다…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "일본을 악마로부터 보호하기 위해 결성되었던 조직…/악마 토벌대는 실제론 악마를 만들어내는 온상이 되어 있었습니다."
+				CALL MESSAGE_WINDOW_D, "유입사념", "악마 토벌대 최고 책임자, 타마가미 방위대신은 영적 국방 무기를 만들어내기 위해/일본 국민에게 누명을 씌워 수용하고 인체 실험을 반복하고 있었습니다.…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "그리고 국방의 요체가 된다고 여겨지는 무한발전로 야마토/그 힘이 악마를 도쿄로 불러들이고 있습니다."
+				CALL MESSAGE_WINDOW_D, "유입사념", "여러분 악마 토벌대에 협력해서는 안됩니다…"
 			ELSEIF FLAG:현X == 21 && FLAG:현Y == 5
-				CALL MESSAGE_WINDOW_D, "流入思念", "…昨日の英雄は今日の怨敵か"
-				CALL MESSAGE_WINDOW_D, "流入思念", "珠閒瑠市機動班から応答がない/スガワラの野郎、真っ先に討伐隊を悪魔に売りやがった"
-				CALL MESSAGE_WINDOW_D, "流入思念", "他の支部も脱走者が続出している/ここもいつまで持つか…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "…こうなったらいっそ、本当に悪魔の手下になっちまうのも手かもな"
-				CALL MESSAGE_WINDOW_D, "流入思念", "ケンジ！/僕たちは悪魔と戦うために討伐隊に入ったはずだろう！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "それはこうなる事なんて考えてもなかった時の話だろうが！/笑えるじゃねえか/討伐隊の看板掲げてた組織の大将が、悪魔を呼んだ張本人だとはな！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "たしかにタマガミ大臣はゴトウ派の人間だったかもしれない/でも天使様は機動班はタマガミ大臣に騙されていただけだから、/僕たちが神への信仰を示せば人々の誤解を解くと…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "タマガミの次は天使か？/あんな連中が本当に信用できると思ってんのかキヨハル！/奴らが競技場跡地に建ててるもんは見ただろう！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "……方舟で地球を脱出するなんて計画は方便のはずだ/あの大きさじゃ、東京の民どころかメシア教徒も乗りきらない…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "へっ、どうだかな/ペ天使様たちは人類をお見捨てになるつもりかもしれねえぜ/人は悪魔召喚プログラムを使うなんて余計な知恵つけちまったんだからな"
-				CALL MESSAGE_WINDOW_D, "流入思念", "ケンジ…ッ！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "やるか！？/お坊ちゃんのキヨハルさんよ！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "もうよせ二人とも！/喧嘩なんかしてる場合じゃないだろ！"
-				CALL MESSAGE_WINDOW_D, "流入思念", "………/クソッタレ…なんでこうなっちまったんだ…"
-				CALL MESSAGE_WINDOW_D, "流入思念", "………/僕たちは　東京を元に戻したかっただけなのに…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "…어제의 영웅은 오늘의 원수인가?"
+				CALL MESSAGE_WINDOW_D, "유입사념", "주한루시기동반에서 응답이 없다 / 스가와라놈, 제일 먼저 토벌대를 악마에게 팔아넘겼다"
+				CALL MESSAGE_WINDOW_D, "유입사념", "다른 지부도 탈영자가 속출하고 있다/여기도 언제까지 버틸까…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "…이렇게 되면 차라리 정말 악마의 하수인이 되어버리는 것도 방법일지도 몰라."
+				CALL MESSAGE_WINDOW_D, "유입사념", "켄지! / 우리는 악마와 싸우기 위해 토벌대에 들어갔을 것이다!"
+				CALL MESSAGE_WINDOW_D, "유입사념", "그건 이렇게 될 거라곤 생각도 못했을 때의 이야기겠지!/웃기잖아 / 토벌대 간판 내걸었던 조직의 대장이 악마를 부른 장본인이라니!"
+				CALL MESSAGE_WINDOW_D, "유입사념", "분명히 타마가미 대신은 고토파 인간이었을지도 모른다 / 하지만 천사님은 기동반은 타마가미 대신에게 속고 있었을 뿐이니까 / 우리가 신에 대한 신앙을 보여주면 사람들의 오해를 풀수있다고…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "타마가미 다음은 천사인가?/저런 놈들이 정말 믿을 수 있다고 생각하는 거야? 키요하루!/놈들이 경기장 터에 짓고 있는 걸 봤잖아!"
+				CALL MESSAGE_WINDOW_D, "유입사념", "……방주로 지구를 탈출하다니 계획은 방편일 것이다/저 크기로는 도쿄의 백성은커녕 메시아교도도 다 못탄다…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "헤, 어떨까 / 천사님들은 인류를 버리실 생각일지도 모르지 / 사람들이 악마 소환 프로그램을 쓰다니 쓸데없는 지혜가 생겼으니까"
+				CALL MESSAGE_WINDOW_D, "유입사념", "켄지...！"
+				CALL MESSAGE_WINDOW_D, "유입사념", "한번 해볼까!?/도련님 키요하루씨이！"
+				CALL MESSAGE_WINDOW_D, "유입사념", "이제 그만해 둘 다!/싸울 때가 아니잖아！"
+				CALL MESSAGE_WINDOW_D, "유입사념", "………/빌어먹을... 왜 이렇게 된거지?…"
+				CALL MESSAGE_WINDOW_D, "유입사념", "………/우리는 도쿄를 원래대로 되돌리고 싶었을 뿐인데…"
 			ELSEIF FLAG:현X == 27 && FLAG:현Y == 3
-				CALL MESSAGE_WINDOW_D, "ボロボロのスーツを着た男", "チクショー……あのポニーテールの小僧…/俺は東京の支配者様だぞぉ…"
-				CALL MESSAGE_WINDOW_D, "ボロボロのスーツを着た男", "誰かいねえのかぁ…/東京はどっちだぁ…"
-				CALL MESSAGE_WINDOW_D, "", "＞…どうやらあなたの姿は見えていないらしい"
+				CALL MESSAGE_WINDOW_D, "너덜너덜한 정장을 입은 남자", "칙쇼……저 포니테일의 꼬마.../나는 도쿄의 지배자님이란 말이다…"
+				CALL MESSAGE_WINDOW_D, "너덜너덜한 정장을 입은 남자", "누구 없나.../도쿄는 어느쪽이지?…"
+				CALL MESSAGE_WINDOW_D, "", "＞…아무래도 당신의 모습은 보이지 않는 것 같다"
 			ELSEIF FLAG:현X == 33 && FLAG:현Y == 5
-				CALL MESSAGE_WINDOW_D, "流入思念体", "生き物は生まれた瞬間死ぬことが約束されている…/苦痛の生を経て到達するのが死ならば…/全てが死に新たな生が絶たれた世界こそ…静寂と救済の完成……"
-				CALL MESSAGE_WINDOW_D, "流入思念体", "現世への執着を捨てれば楽になれる…/何も間違っていない……/大いなる死、ニュクスよ　人類全てに救済を与えたまえ……"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "생물은 태어나는 순간 죽는 것이 약속되어 있다…/고통의 삶을 거쳐 도달하는 것이 죽음이라면... /모든 것이 죽고 새로운 삶이 끊어진 세계야말로... 정적과 구제의 완성……"
+				CALL MESSAGE_WINDOW_D, "유입사념체", "이승에 대한 집착을 버리면 편해질 수 있다…/아무것도 틀리지 않았다…/위대한 죽음, 뉵스여 인류 모두를 구제해 주어라……"
 			ENDIF
 			
 		CASE 3310
-			CALL MESSAGE_WINDOW_D, "", "＞最終階層に足を踏み入れたあなた達の前に、デメテルが姿を現した" 
-			CALL MESSAGE_WINDOW_D, "デメテル", "なんということですの…！？/ヒト猿がここまで追ってくるなんて！！" 
-			CALL MESSAGE_WINDOW_D, "デメテル", "ですがここはあのお方の領域/最上層まで辿りつけるはずありませんわ！" 
-			CALL MESSAGE_WINDOW_D, "", "＞デメテルは姿を消した" 
+			CALL MESSAGE_WINDOW_D, "", "＞최종 계층에 들어선 당신들 앞에 데메테르가 모습을 드러냈다." 
+			CALL MESSAGE_WINDOW_D, "데메테르", "어찌된일이죠...!?/인간원숭이가 여기까지 쫓아오다니！！" 
+			CALL MESSAGE_WINDOW_D, "데메테르", "하지만 여기는 그분의 영역/최상층까지 다다를수 있을리가 없어요！" 
+			CALL MESSAGE_WINDOW_D, "", "＞데메테르는 사라졌다" 
 			던전플래그:69:43 = 1
 			DA:(FLAG:현X):(FLAG:현Y) = 1
 			
 		CASE 3400
-			CALL MESSAGE_WINDOW_D, "", "＞気高き声が聞こえてくる……"
-			CALL MESSAGE_WINDOW_D, "？？？？", "永劫の宮を侵すのは汝か…"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたの前に、宇宙空間を内包したような神霊が現れた"
-			CALL MESSAGE_WINDOW_D, "ズルワーン", "我はズルワーン/過去、現在、未来を支配する神霊なり"
-			CALL MESSAGE_WINDOW_D, "ズルワーン", "定命の者よ、去ぬるがよい"
-			CALL MESSAGE_WINDOW_D, "ズルワーン", "我はかつて過ちを犯した/全善なる存在を生み出せなかったのだ"
-			CALL MESSAGE_WINDOW_D, "ズルワーン", "絶対であるべき我に過ちがあってはならぬ/あの宇宙卵はその過ちを正すために必要なのだ"
-			CALL INPUT_SELECT_D , "＞あの宇宙卵はその過ちを正すために必要なのだ//[1]邪魔だからそこをどけ/" , , , , 3
+			CALL MESSAGE_WINDOW_D, "", "＞도도한 목소리가 들려오다……"
+			CALL MESSAGE_WINDOW_D, "？？？？", "영겁의 궁을 침범하는 것은 너냐?…"
+			CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 우주공간을 내포한 듯한 신령이 나타난"
+			CALL MESSAGE_WINDOW_D, "주르반", "우리는 주르반 / 과거, 현재, 미래를 지배하는 신령이니라"
+			CALL MESSAGE_WINDOW_D, "주르반", "정명한 자여, 떠나도록하여랴."
+			CALL MESSAGE_WINDOW_D, "주르반", "우리는 일찍이 실수를 저질렀다 / 진실로 선한 존재를 만들어내지 못한 것이다"
+			CALL MESSAGE_WINDOW_D, "주르반", "절대적이어야 할 우리에게 실수는 없어야 한다 / 저 우주란은 그 실수를 바로잡기 위해 필요한 것이다"
+			CALL INPUT_SELECT_D , "＞저 우주란은 그 실수를 바로잡기 위해 필요한 것이다//[1]방해되니 거기를 비켜라/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "ズルワーン", "……我と戦うつもりか？　愚かなニンゲンよ/不可能を口にするその愚かさ度し難い/不完全なニンゲンは正さねばならぬ！"
+				CALL MESSAGE_WINDOW_D, "주르반", "……우리와 싸울 것인가? 어리석은 인간이여 / 불가능을 말하는 그 어리석음도 어찌할 도리가 없군 / 불완전한 인간은 바로잡아야 한다!"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "", "/＞神霊　ズルワーンが１体出た！/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "/＞신령 주르반이 1체 나타났다!/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -2286,8 +2286,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "ズルワーン", "このようなこと…ありえるはずがない…//ニンゲンは…時すら乗り越えるのか……"
-			CALL MESSAGE_WINDOW_D, "", "/＞神霊　ズルワーンは砕け散った/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "주르반", "이런 일...있을리가 없어.../인간은...시간조차 극복할 수 있단 말인가?……"
+			CALL MESSAGE_WINDOW_D, "", "/＞신령 주르반은 산산조각이 났다./" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
@@ -2295,7 +2295,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			DA:(FLAG:현X):(FLAG:현Y) = 1
 			
 		CASE 3401
-			CALL MESSAGE_WINDOW_D, "", "＞次元の裂け目が広がっている……/＞前に進みますか？"
+			CALL MESSAGE_WINDOW_D, "", "＞차원의 균열이 확대되고 있다…/>앞으로 가나요?"
 			CALL INPUT_YN_D, "예", "아니오"
 			IF RESULT == 0
 				CALL DUNGEON_WORP,32,23,20
@@ -2305,36 +2305,36 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		CASE 3500
 			IF FINDCHARA_B([[キャラ:알렉스]]) == 2 && 던전플래그:69:10 == 0 && 의뢰플래그:42:10 == 2
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜……これは？＞＞"
-				CALL MESSAGE_WINDOW_D, "アレックス", "ジョージ？　どうしたの？"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜…私のシステムに…何らかの介入が……強制的に…＞＞"
-				CALL MESSAGE_WINDOW_D, "アレックス", "ジョージ！？/しっかりして！ジョージ！！"
-				CALL MESSAGE_WINDOW_D, "", "＞ジョージは強制的にシャットダウンさせられたようだ"
-				CALL MESSAGE_WINDOW_D, "", "＞いつの間にか、部屋の中心にデモニカスーツの男が立っている"
-				CALL MESSAGE_WINDOW_D, "アレックス", "金色のデモニカスーツとマスク…/シュバルツバース調査隊が使っていた初期生産型…？"
-				CALL MESSAGE_WINDOW_D, "アレックス", "何者か知らないけど/私たちにそれ以上近づいたら、殺す！！"
-				CALL MESSAGE_WINDOW_D, "", "＞銃を向けられてもデモニカの男に動じた様子はない…"
-				CALL MESSAGE_WINDOW_D, "アレックス", "…………/あなたは…敵じゃない…？"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスは銃を下ろした"
-				CALL MESSAGE_WINDOW_D, "", "＞デモニカの男はアレックスに歩み寄ると、アレックスの顔をじっと見ている"
-				CALL MESSAGE_WINDOW_D, "アレックス", "あなたは誰？/私の事を知っているの？"
-				CALL MESSAGE_WINDOW_D, "デモニカの男", "……"
-				CALL MESSAGE_WINDOW_D, "", "＞男はポケットから何かを取り出すと、アレックスに見せた"
-				CALL MESSAGE_WINDOW_D, "", "＞男の手に指輪がのせられている"
-				CALL MESSAGE_WINDOW_D, "アレックス", "それは…"
-				CALL MESSAGE_WINDOW_D, "アレックス", "私は…/私は昔…　とても大事な約束をした…"
-				CALL MESSAGE_WINDOW_D, "", "＞デモニカの男は何も言わず、アレックスの額に手をかざす"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスの身体から黄金色のオーラが溢れ出る…"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスに新たなスキルの可能性が目覚めた"
+				CALL MESSAGE_WINDOW_D, "조지", "<<…이건?＞＞"
+				CALL MESSAGE_WINDOW_D, "알렉스", "조지? 왜 그래?"
+				CALL MESSAGE_WINDOW_D, "조지", "<<…내 시스템에…모종의 개입이…강제적으로…>"
+				CALL MESSAGE_WINDOW_D, "알렉스", "조지!?/정신 차려!조지!!"
+				CALL MESSAGE_WINDOW_D, "", "＞조지는 강제로 셧다운된 것 같다"
+				CALL MESSAGE_WINDOW_D, "", "＞어느새 방 한가운데 데모니카 슈트를 입은 남자가 서 있다."
+				CALL MESSAGE_WINDOW_D, "알렉스", "금색 데모니카 정장과 마스크…/슈바르츠버스 조사대가 쓰던 초기 생산형…?"
+				CALL MESSAGE_WINDOW_D, "알렉스", "누군지 모르지만 / 우리에게 그 이상 다가온다면 죽여버릴거야!!"
+				CALL MESSAGE_WINDOW_D, "", "＞총을 겨누어지고도 데모니카 남자에게 동요하는 기색은 없다…"
+				CALL MESSAGE_WINDOW_D, "알렉스", "…………/당신은...적이 아니야...?"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스는 총을 내려놓았다"
+				CALL MESSAGE_WINDOW_D, "", "＞데모니카 남자는 알렉스에게 다가가 알렉스의 얼굴을 물끄러미 바라보고 있다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "당신은 누구지?/나를 알아?"
+				CALL MESSAGE_WINDOW_D, "데모니카 남자", "……"
+				CALL MESSAGE_WINDOW_D, "", "＞남자는 주머니에서 무언가를 꺼내 알렉스에게 보여주었다"
+				CALL MESSAGE_WINDOW_D, "", "＞남자의 손에 반지가 얹혀 있다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "그건…"
+				CALL MESSAGE_WINDOW_D, "알렉스", "나는... / 나는 옛날에... 아주 중요한 약속을 했다..."
+				CALL MESSAGE_WINDOW_D, "", "＞데모니카 남자는 아무 말도 하지 않고 알렉스의 이마에 손을 얹는다"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스의 몸에서 황금빛 아우라가 쏟아져 나온다…"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스에게 새로운 스킬의 가능성이 눈을 떴다"
 				ABL:(RESULT:1):습득스킬11 = 2420
 				ABL:(RESULT:1):습득LV11 = 75
 				ABL:(RESULT:1):습득스킬12 = 78
 				ABL:(RESULT:1):습득LV12 = 80
 				CALL SYNC_STATUS, RESULT:1
-				CALL MESSAGE_WINDOW_D, "", "＞オーラが収まると、デモニカの男はあなた達に背を向けて去っていく…"
-				CALL MESSAGE_WINDOW_D, "", "＞デモニカの男は姿を消した"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜……システムの正常復帰を確認。＞＞/＜＜アレックス、何があった？＞＞"
-				CALL MESSAGE_WINDOW_D, "アレックス", "…わからない//でも、あの人は私との約束を守り続けてくれた…/これからもずっと…"
+				CALL MESSAGE_WINDOW_D, "", "＞아우라가 진정되자 데모니카 남자는 너희들에게 등을 돌리고 떠난다.…"
+				CALL MESSAGE_WINDOW_D, "", "＞데모니카 남자는 자취를 감췄다."
+				CALL MESSAGE_WINDOW_D, "조지", "<<....시스템의 정상 복귀를 확인.>>/<알렉스, 무슨 일이 있었지?＞＞"
+				CALL MESSAGE_WINDOW_D, "알렉스", "…모르겠어//하지만 그 사람은 나와의 약속을 계속 지켜줬어.../앞으로도 계속…"
 				던전플래그:69:10 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ELSE
@@ -2342,22 +2342,22 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 			
 		CASE 3600
-			CALL MESSAGE_WINDOW_D, "1人目の声", "よくぞ、ここまで辿りついた…"
-			CALL MESSAGE_WINDOW_D, "2人目の声", "ズルワーンを斃すとは…/大人しく神の御業の後に訪れる再生の時を待っておればよいものを…"
-			CALL MESSAGE_WINDOW_D, "3人目の声", "魔王討伐の礼なら十分に与えたはずだがな…"
-			CALL MESSAGE_WINDOW_D, "1人目の声", "法の神の創生を邪魔せぬなら　我らも手出しはせぬ"
-			CALL MESSAGE_WINDOW_D, "2人目の声", "しかし…亡霊の犬に過ぎない身でありながら　我らを討とうなどと/身の程を知らぬ大言壮語を吐こうものなら…"
-			CALL MESSAGE_WINDOW_D, "3人目の声", "その思い上がりは正さねばならない…"
-			CALL MESSAGE_WINDOW_D, "声たち", "我ら…"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "神霊シェキナーがその驕りを改めよう/神罰をもって清めようぞ"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "ベルの王…星化身…盤古…北極星…黒き太陽の神…異界の電霊…/私以外の王と神々、それを奉じるニンゲンも必要ない"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "地球は私という神のものと知れ！"
-			CALL INPUT_SELECT_D , "＞地球は私という神のものと知れ！//[1]お前なんかいらん/[2]間に合ってます/[3]他の星にでも行ってください" , , , , 3
-			CALL MESSAGE_WINDOW_D, "シェキナー", "ニンゲンよ、おぬしらの意志など関係ないのだ"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "私の慈悲を、おぬしらは拒むことなど出来はしない"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "もはや法に従う救世主が現れるのを待つ必要もない/力を取り戻した今、この手で新たな世界を創造する"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "手始めに死ぬがいい、ニンゲン/そして歓喜せよ！"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "おぬしの霊は、新たな世界の礎となるのだ！"
+			CALL MESSAGE_WINDOW_D, "첫 번째 목소리", "용케도, 여기까지 당도했다..."
+			CALL MESSAGE_WINDOW_D, "두 번째 목소리", "즈루반을 쓰러뜨리다니…/ 얌전히 신의 어업 후 찾아오는 재생의 때를 기다리고 있으면 좋을 것을…"
+			CALL MESSAGE_WINDOW_D, "세 번째 목소리", "마왕 토벌의 예라면 충분히 주었을 텐데…"
+			CALL MESSAGE_WINDOW_D, "첫 번째 목소리", "법신의 창생을 방해하지 않는다면 우리도 손대지 않겠다"
+			CALL MESSAGE_WINDOW_D, "두 번째 목소리", "그러나…망령의 개에 불과한 몸이면서도 우리를 공격하는 / 분수를 모르는 호언장담을 하는 자라면…"
+			CALL MESSAGE_WINDOW_D, "세 번째 목소리", "그 자만심은 바로잡아야 한다…"
+			CALL MESSAGE_WINDOW_D, "목소리들", "우리들…"
+			CALL MESSAGE_WINDOW_D, "셰키나", "신령 셰키나가 그 교만을 고쳐주겠다/신벌로써 정화시켜주겠다"
+			CALL MESSAGE_WINDOW_D, "셰키나", "벨의 왕…성화신…반고…북극성…검은 태양의 신…이계의 전령…/나 이외의 왕과 신들, 그것을 받드는 인간도 필요 없다"
+			CALL MESSAGE_WINDOW_D, "셰키나", "지구는 나라는 신의 소유물임을 알아라！"
+			CALL INPUT_SELECT_D , "＞지구는 나라는 신의 소유물임을 알아라！//[1]너 따위 필요 없어/[2]늦었습니다/[3]다른 별에라도 가 주세요" , , , , 3
+			CALL MESSAGE_WINDOW_D, "셰키나", "인간이여, 그대들의 의지 따위는 관계없는 것이다."
+			CALL MESSAGE_WINDOW_D, "셰키나", "나의 자비를 그대들은 거부할 수 없다"
+			CALL MESSAGE_WINDOW_D, "셰키나", "이제 법을 따르는 구세주가 나타나기만을 기다릴 필요도 없다/힘을 되찾은 지금, 이 손으로 새로운 세계를 창조하다"
+			CALL MESSAGE_WINDOW_D, "셰키나", "본보기로서 죽는 것이 좋다. 인간/그리고 환희하라.！"
+			CALL MESSAGE_WINDOW_D, "셰키나", "그대의 영혼은 새로운 세계의 초석이 되는 것이다!"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
@@ -2372,32 +2372,32 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "ア…アア…　なんということだ…"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "私はシェキナー…/この星に新たな法を敷く　唯一の神となる神霊シェキナーぞ……"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "古き神に代わるはずの私が滅ぶというのか、大いなる意志よ…"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "ニ…ニンゲン…/人を殺し悪魔を殺し神を殺し…/地球をも滅ぼして……"
-			CALL MESSAGE_WINDOW_D, "シェキナー", "これ以上…　何を…　望むのだ……"
-			CALL MESSAGE_WINDOW_D, "", "/＞神霊シェキナーは粉々に砕け散った…/" , , , , , , , , , "CENTER"
-			CALL MESSAGE_WINDOW_D, "", "＞シェキナーが消滅した跡から、鈍く光る卵が浮かび上がってきた"
-			CALL MESSAGE_WINDOW_D, "", "＞宇宙卵を手に入れた"
-			CALL MESSAGE_WINDOW_D, "？？？？？", "フフ…　神を名乗る者がニンゲンに滅ぼされる/何とも痛快な結末だね"
-			CALL MESSAGE_WINDOW_D, "", "＞あなたの前に、ルイ・サイファーが現れた"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "成功を収めるには馬鹿のふりをして賢く行動すること…/だが肝心な所で利口ぶるような間抜けは、何もかも台無しにしてしまう"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "結局、お前はまたしても見くびり過ぎたのさ/ニンゲンを"
-			CALL MESSAGE_WINDOW_D, "", "＞ルイ・サイファーは笑顔であなたを称えている/＞…その内心はうかがい知れない"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "そう身構える必要はないよ、私は奴らとは違う/ここで君と戦うような無粋な真似はしないさ"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "その宇宙卵はあの時とは違って、力の大半を失ってしまったようだしね…/だが、いずれ力を取り戻すこともあるだろう"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "頑張った君へのご褒美だ/宇宙卵は君に預けておくよ"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "いつかまた力を取り戻した時、その宇宙卵を手にしているのは何者か…/悪魔か、神か、ニンゲンか、/それとも…"
-			CALL MESSAGE_WINDOW_D, "ルイ・サイファー", "その時を楽しみに待たせてもらうとしよう……"
-			CALL MESSAGE_WINDOW_D, "", "＞ルイ・サイファーは姿を消した…"
+			CALL MESSAGE_WINDOW_D, "셰키나", "아…아아…대체 무슨일이냐…"
+			CALL MESSAGE_WINDOW_D, "셰키나", "나는 셰키나…/이 별에 새로운 법을 펴는 유일한 신이 될 신령 셰키나이건만……"
+			CALL MESSAGE_WINDOW_D, "셰키나", "옛 신을 대신해야 할 내가 패한다는 것인가, 큰 의지여…"
+			CALL MESSAGE_WINDOW_D, "셰키나", "이...인간.../사람을 죽이고 악마를 죽이고 신을 죽이고.../지구도 멸망시키고……"
+			CALL MESSAGE_WINDOW_D, "셰키나", "더이상...무엇을...원한다는 것이냐……"
+			CALL MESSAGE_WINDOW_D, "", "/＞신령 셰키나는 산산조각이 났다…/" , , , , , , , , , "CENTER"
+			CALL MESSAGE_WINDOW_D, "", "＞셰키너가 소멸한 흔적에서 무디게 빛나는 알이 떠올랐다"
+			CALL MESSAGE_WINDOW_D, "", "＞우주란을 손에 넣었다"
+			CALL MESSAGE_WINDOW_D, "？？？？？", "후후… 신을 자칭하는 자가 인간에게 쓰러지다니/정말 통쾌한 결말이군"
+			CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 루이 사이퍼가 나타났다."
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "성공을 거두기 위해서는 바보인 척 현명하게 행동해야 하지... / 하지만 중요한 때에 영리한 척하는 얼빠짐은 모든 것을 망쳐버린다."
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "결국, 넌 또다시 너무 간과한거다/인간을"
+			CALL MESSAGE_WINDOW_D, "", "＞루이사이퍼는 웃는 얼굴로 당신을 찬양하고 있다/>…그 속내는 짐작할 수 없다."
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그렇게 경계할 필요는 없어, 난 놈들과는 달라 / 여기서 너와 싸우는 것 같은 바보짓은 하지 않을 거야"
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그 우주란은 그때와는 달리 힘의 대부분을 잃어버린 것 같군... / 하지만 언젠가 힘을 되찾을 수도 있겠지"
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "열심히 한 너를 위한 보상이다/우주란은 너에게 맡겨둘게"
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "언젠가 다시 힘을 되찾았을 때, 그 우주란을 손에 쥐고 있는 사람은 누구인가…/악마인가, 신인가, 인간인가,/아니면…"
+			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그때를 기대하며 기다리도록 하지.……"
+			CALL MESSAGE_WINDOW_D, "", "＞루이 사이퍼는 사라졌다.…"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
 			던전플래그:69:17 = 1
 			CALL MESSAGE_WINDOW_D, "", "・・・/・・・・・・/・・・・・・・・・"
 			IF 던전플래그:69:41 == 1
-				CALL MESSAGE_WINDOW_D, "", "＞女神　デメテルの特殊合体が解禁されました"
+				CALL MESSAGE_WINDOW_D, "", "＞여신 데메테르의 특수 합체가 해금되었습니다"
 				FLAG:(10000+[[キャラ:데메테르（여신）]]) = 1
 			ENDIF
 			던전플래그:69:0 = 1
@@ -5352,17 +5352,17 @@ ENDIF
 IF NO:(CHARANUM-1) == [[キャラ:셰키나]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃歓喜せよ！そして賛美せよ！　　　　　　　　┃
-	PRINTFORML ┃私こそ、真にこの世界を統べるべき存在…　　┃
-	PRINTFORML ┃神霊シェキナーぞ！　　　　　　　　　　　　┃
+	PRINTFORML ┃환희하라! 그리고 찬양하라!　　　　　　　　┃
+	PRINTFORML ┃나야말로 진정으로 이 세상을 통솔해야 할 존재...　　┃
+	PRINTFORML ┃신령 셰키나다！　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리・만유]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃ワレの悪は秩序も混沌も選ばない迷わし者には┃
-	PRINTFORML ┃格別の災いとなる…　　　　　　　　　　　　┃
-	PRINTFORML ┃ニンゲン　お前は耐えられるかな…　　　　　┃
+	PRINTFORML ┃짐의 악은 질서도 혼돈도 가리지 않는 미혹자에게는┃
+	PRINTFORML ┃각별한 재앙이 되지…　　　　　　　　　　　　┃
+	PRINTFORML ┃인간이여 너는 견딜 수 있을까?…　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 ENDIF
@@ -5377,48 +5377,48 @@ ENDIF
 IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 80 && 던전플래그:69:40 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃まだ神に抗うか…　　　　　　　　　　　　　┃
-	PRINTFORML ┃これだからニンゲンは度し難い！　　　　　　┃
+	PRINTFORML ┃아직도 신에게 저항하는 건가…　　　　　　　　　　　　　┃
+	PRINTFORML ┃이래서 인간은 어찌할 수가 없다！　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃この私が自ら救いを施そうというのだ！　　　┃
-	PRINTFORML ┃喜びと共に神罰を受け入れよ！　　　　　　　┃
+	PRINTFORML ┃이 내가 스스로 구원을 베풀겠다는 것이다！　　　┃
+	PRINTFORML ┃기쁨과 함께 신벌을 받아라！　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:40 = 1
 ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:40 == 1 && 던전플래그:69:41 == 1
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃バカな……！　　　　　　　　　　　　　　　┃
-	PRINTFORML ┃なぜニンゲンにここまでの力が…！　　　　　┃
+	PRINTFORML ┃바보같은……！　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃어떻게 인간에게 이런 힘이…！　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃いや！　いやいやいやいや！　　　　　　　　┃
+	PRINTFORML ┃아니！　아니아니아니아니！　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃私は神！　　　　　　　　　　　　　　　　　┃
-	PRINTFORML ┃私は神霊シェキナー！　　　　　　　　　　　┃
+	PRINTFORML ┃나는 신이다！　　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃나는 신령 셰키나다！　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃この星に新たな法を敷くのは…　　　　　　　┃
-	PRINTFORML ┃私だ！　　　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃이 별에 새로운 법을 펴는 것은…　　　　　　　┃
+	PRINTFORML ┃나다！　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:40 = 2
 ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:40 == 2
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃おのれぇぇぇ……　小賢しきニンゲンどもが！┃
-	PRINTFORML ┃おぬしらのようなヒト猿が浄化されなければ、┃
-	PRINTFORML ┃この星は滅ぶのだぞ！！　　　　　　　　　　┃
+	PRINTFORML ┃네 이놈……소현한 인간들이！┃
+	PRINTFORML ┃자네들 같은 인간원숭이가 정화되지 않으면、┃
+	PRINTFORML ┃이 별은 멸망하고 만다！！　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃私を称えよ！　　　　　　　　　　　　　　　┃
-	PRINTFORML ┃栄光を手にいれ、並ぶもの無き神となる　　　┃
-	PRINTFORML ┃私の名を称えよ！！　　　　　　　　　　　　┃
+	PRINTFORML ┃나를 찬양하라！　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃영광을 손에 넣고, 견줄 것 없는 신인　　　┃
+	PRINTFORML ┃내 이름을 기려라！！　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃私の慈悲と法を受け入れるのだ！！　　　　　┃
+	PRINTFORML ┃나의 자비와 법을 받아들여라!!　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:40 = 3
@@ -5429,7 +5429,7 @@ IF FLAG:경과턴수 % 3 == 0
 	IF RAND:6 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第１の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제1의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 100
@@ -5462,7 +5462,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:5 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第２の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제2의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5495,7 +5495,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:4 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第３の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제3의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 100
@@ -5528,7 +5528,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:3 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第４の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제4의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5561,7 +5561,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:2 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第５の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제5의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 200
@@ -5594,7 +5594,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSE
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーの眼が輝いた！　　　　　　　　┃
+		PRINTFORML ┃＞셰키나의 눈이 반짝인다！　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 100
@@ -5632,7 +5632,7 @@ IF FLAG:경과턴수 % 3 == 0
 	IF RAND:6 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第１の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제1의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5665,7 +5665,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:5 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第２の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제2의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5698,7 +5698,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:4 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第３の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제3의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5731,7 +5731,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:3 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第４の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제4의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5764,7 +5764,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSEIF RAND:2 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーが第５の実りを使った！　　　　┃
+		PRINTFORML ┃＞셰키나가 제5의 열매를 사용했다！　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 200
@@ -5797,7 +5797,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ELSE
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃＞シェキナーの眼が輝いた！　　　　　　　　┃
+		PRINTFORML ┃＞셰키나의 눈이 반짝인다！　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
 		MAXBASE:(CHARANUM-1):검격 = 50
@@ -5835,64 +5835,64 @@ ENDIF
 IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:41 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃デメテル！　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃데메테르！　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0x00ff66
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃ここにいますわ！　　　　　　　　　　　　　┃
+	PRINTFORML ┃여기있습니다！　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃私に忠誠の証を示せ…！　　　　　　　　　　┃
-	PRINTFORML ┃お前の全ての豊穣をもって、私を回復させよ！┃
+	PRINTFORML ┃나에게 충성의 증거를 보여라…！　　　　　　　　　　┃
+	PRINTFORML ┃너의 모든 풍요로 나를 회복시켜라！┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0x00ff66
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃ま、待ってくださいませ！　　　　　　　　　┃
-	PRINTFORML ┃それでは…私は死んでしまいますわっ！？　　┃
+	PRINTFORML ┃기, 기다려주십시오！　　　　　　　　　┃
+	PRINTFORML ┃그러면… 저는 죽고만답니다！？　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃お前は死ぬのではない　　　　　　　　　　　┃
-	PRINTFORML ┃私の…　法の一部となるのだ！！　　　　　　┃
+	PRINTFORML ┃너는 죽지 않는다…　　　　　　　　　　　┃
+	PRINTFORML ┃나의… 법의 일부가 되는 것이다！！　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0x00ff66
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃は、ハーベスト……　　　　　　　　　　　　┃
-	PRINTFORML ┃わ、わかりましたわ……　　　　　　　　　　┃
+	PRINTFORML ┃하, 하베스트……　　　　　　　　　　　　┃
+	PRINTFORML ┃아, 알겠습니다……　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃＞デメテルの身体から光が溢れ出る…　　　　┃
+	PRINTFORML ┃＞데메테르의 몸에서 빛이 쏟아져 나온다…　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃＞神霊シェキナーは再生した！　　　　　　　┃
+	PRINTFORML ┃＞신령 셰키나는 재생되었다.！　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	SETCOLOR 0x00ff66
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃ああ…なくなっていきますのよ…　　　　　　┃
-	PRINTFORML ┃私の豊穣…　私の新たなせか…　　　　　　　┃
+	PRINTFORML ┃아아…사라져가고 있어요…　　　　　　┃
+	PRINTFORML ┃나의 풍요… 나의 세로운 세상이…　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	SETCOLOR 0x00ff66
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃うっ……　　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃읏……　　　　　　　　　　　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　┃
-	PRINTFORML ┃うわぁあああああああ！！！！　　　　　　　┃
+	PRINTFORML ┃으아아아앗！！！！　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃＞女神デメテルは消滅した…　　　　　　　　┃
+	PRINTFORML ┃＞여신 데메테르는 소멸했다.…　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃仕切り直しだ…　　　　　　　　　　　　　　┃
-	PRINTFORML ┃ニンゲン！！　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃지금부터다…　　　　　　　　　　　　　　┃
+	PRINTFORML ┃인간！！　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	CFLAG:(CHARANUM-1):물리피데미지보정 = -90
@@ -5934,9 +5934,9 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 &&
 ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리・만유]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:42 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃やるな…ニンゲン　だが遊びはここまでだ　　┃
-	PRINTFORML ┃お前の生など所詮、闇の中では一瞬の火花…　┃
-	PRINTFORML ┃静寂と虚無へと帰するがいい…　　　　　　　┃
+	PRINTFORML ┃꽤 하는군 인간… 하지만 장난은 여기까지다　　┃
+	PRINTFORML ┃너의 삶 따위는 어차피 어둠 속에서는 한순간의 불꽃…　┃
+	PRINTFORML ┃정적과 허무로 돌아가라…　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:42 = 1
@@ -5944,49 +5944,49 @@ ENDIF
 
 @RAMEN_DUNGEON_69
 	;ラーメン屋
-	CALL MESSAGE_WINDOW_D, "オヤジ", "らっしゃーい"
+	CALL MESSAGE_WINDOW_D, "아저씨", "어서옵쇼"
 	$BAR_LOOP
-	CALL MESSAGE_WINDOW_D, "オヤジ", "何にしやすかー？"
-	CALL INPUT_SELECT_D, "[1]ラーメンを頼む/[2]話を聞く/////[0]外に出る" , , , 2
+	CALL MESSAGE_WINDOW_D, "아저씨", "나니니 시마스까？"
+	CALL INPUT_SELECT_D, "[1]라면을 시키다/[2]이야기를 듣다/////[0]밖으로 나가다" , , , 2
 
 	IF RESULT == 0
-		CALL MESSAGE_WINDOW_D, "オヤジ", "あいあとやしたー"
+		CALL MESSAGE_WINDOW_D, "아저씨", "감솸다"
 	ELSEIF RESULT == 1
 		$BAR_LOOP_1
-		CALL INPUT_SELECT_D , "おしながき//[1]らぁめん 30魔貨/[0]やめる" , , , 2
+		CALL INPUT_SELECT_D , "품목//[1]라면 30마카/[0]그만둔다" , , , 2
 		IF RESULT == 0
 			GOTO BAR_LOOP
 		ELSEIF RESULT == 1
 			IF MONEY:1 < 30
-				CALL MESSAGE_WINDOW_D, "オヤジ", @"お客さーん、お金が足りないよー"
+				CALL MESSAGE_WINDOW_D, "아저씨", @"손님~ 돈이 부족해~"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "オヤジ", @"ほい、ラーメン一丁ー"
+				CALL MESSAGE_WINDOW_D, "아저씨", @"넵、라면 한 그릇~"
 				LOCALS = 
 				FOR LOCAL, 1, 7
 					SIF POS(LOCAL) >= 0 && CFLAG:POS(LOCAL):상태이상 == 0
 						LOCALS += @"[{LOCAL}] %CALLNAME:POS(LOCAL)%/"
 				NEXT
-				LOCALS +=  "[9] やめておく"
+				LOCALS +=  "[9] 그만둔다"
 				CALL INPUT_SELECT_D, LOCALS, , , 2
 				IF RESULT < 7
 					LOCAL = POS(RESULT)
 					MONEY:1 -= 30
-						CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:LOCAL%は出てきたラーメンを食べた"
+						CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:LOCAL%는 나온 라면을 먹었다"
 					SELECTCASE RAND:100
 						CASE IS < 10
-							CALL MESSAGE_WINDOW_D, "", @"＞うっ！/＞%CALLNAME:LOCAL%はダメージを受けた"
+							CALL MESSAGE_WINDOW_D, "", @"＞웃！/＞%CALLNAME:LOCAL%는 데미지를 받았다"
 							BASE:LOCAL:ＨＰ = BASE:LOCAL:ＨＰ/2+1
 						CASE IS < 30
-							CALL MESSAGE_WINDOW_D, "", @"＞至高の一杯だ！/＞%CALLNAME:LOCAL%は全回復した"
+							CALL MESSAGE_WINDOW_D, "", @"＞최고의 일품이다!/>%CALLNAME:LOCAL%는 전회복했다."
 							BASE:LOCAL:ＨＰ = MAXBASE:LOCAL:ＨＰ
 						CASEELSE
-							CALL MESSAGE_WINDOW_D, "", @"＞うまい！/＞%CALLNAME:LOCAL%は回復した"
+							CALL MESSAGE_WINDOW_D, "", @"＞맛있다!/>%CALLNAME:LOCAL%는 회복되었다"
 							CALL VAR_HP, LOCAL, MAXBASE:LOCAL:ＨＰ/2
 							BASE:LOCAL:ＨＰ = MIN(MAXBASE:LOCAL:ＨＰ, BASE:LOCAL:ＨＰ)
 					ENDSELECT
 					GOTO BAR_LOOP_1
 				ELSEIF RESULT == 9
-					CALL MESSAGE_WINDOW_D, "オヤジ", "あいよー"
+					CALL MESSAGE_WINDOW_D, "아저씨", "네~"
 					GOTO BAR_LOOP_1
 				ENDIF
 			ENDIF
@@ -5996,86 +5996,86 @@ ENDIF
 	ELSEIF RESULT == 2
 		$BAR_LOOP_2
 		IF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 1
-			CALL INPUT_SELECT_D , "＞誰に話しかける？//[1]カタキラウワ/[2]スーツの男/[3]ボンレスハム/[4]エリゴール/[0]やめる" , , , 2
+			CALL INPUT_SELECT_D , "＞누구에게 말을 걸까？//[1]카타키라우와/[2]양복을 입은 사나이/[3]본레스햄/[4]에레골/[0]그만두다" , , , 2
 		ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 0 
-			CALL INPUT_SELECT_D , "＞誰に話しかける？//[1]チュパカブラ/[2]デカラビア/[3]エンジェル/[4]エリゴール/[0]やめる" , , , 2
+			CALL INPUT_SELECT_D , "＞누구에게 말을 걸까？//[1]추파카브라/[2]데카라비아/[3]엔젤/[4]에레골/[0]그만두다" , , , 2
 		ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 0 && 던전플래그:69:15 == 0 
-			CALL INPUT_SELECT_D , "＞誰に話しかける？//[1]カタキラウワ/[2]ハエ男/[3]エンジェル/[4]エリゴール/[0]やめる" , , , 2
+			CALL INPUT_SELECT_D , "＞누구에게 말을 걸까？//[1]카타키라우와/[2]ハエ男/[3]엔젤/[4]에레골/[0]그만두다" , , , 2
 		ELSE
-			CALL INPUT_SELECT_D , "＞誰に話しかける？//[1]カタキラウワ/[2]スーツの男/[3]アレックス/[4]エリゴール/[0]やめる" , , , 2
+			CALL INPUT_SELECT_D , "＞누구에게 말을 걸까？//[1]카타키라우와/[2]양복을 입은 사나이/[3]알렉스/[4]에레골/[0]그만두다" , , , 2
 		ENDIF
 
 		IF RESULT == 0
 			GOTO BAR_LOOP
 		ELSEIF RESULT == 1
 			IF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "", "＞悪魔が寸胴鍋に浸かりながら手ぬぐいで汗を拭いている……"
-				CALL MESSAGE_WINDOW_D, "カタキラウワ", "わざわざこんな豚に話しかけに来るなんて/あんたも暇なニンゲンだな"
-				CALL MESSAGE_WINDOW_D, "カタキラウワ", "じゃあ俺も、もう一度言っておこうか/…今日もいいダシ出てるぜ"
+				CALL MESSAGE_WINDOW_D, "", "＞악마가 곰솥에 몸을 담그면서 수건으로 땀을 닦고 있다……"
+				CALL MESSAGE_WINDOW_D, "카타키라우와", "일부러 이런 돼지에게 말을 걸러 오다니 / 너도 한가한 닝겐이구나"
+				CALL MESSAGE_WINDOW_D, "카타키라우와", "그럼 나도 다시한번 말해둘까/…오늘도 좋은 국물이 나오네."
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "", "＞悪魔が寸胴鍋に浸かりながら手ぬぐいで汗を拭いている……"
-				CALL MESSAGE_WINDOW_D, "チュパカブラ", "アー極楽極楽…/ン？オイラハカタキラウワニ頼マレタ代理ダヨ"
+				CALL MESSAGE_WINDOW_D, "", "＞악마가 곰솥에 몸을 담그면서 수건으로 땀을 닦고 있다……"
+				CALL MESSAGE_WINDOW_D, "추파카브라", "아~ 극락극락…/응？나님은 카타키라우와의 대리야"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 0 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "", "＞悪魔が寸胴鍋に浸かりながら手ぬぐいで汗を拭いている……"
-				CALL MESSAGE_WINDOW_D, "カタキラウワ", "世間は騒がしいが、オレは今日もこうしてダシをとるだけさ/人生ってそういうもんじゃないか？"
+				CALL MESSAGE_WINDOW_D, "", "＞악마가 곰솥에 몸을 담그면서 수건으로 땀을 닦고 있다……"
+				CALL MESSAGE_WINDOW_D, "카타키라우와", "세상은 시끄럽지만, 나는 오늘도 이렇게 국물을 낼 뿐이야 / 인생이란 그런거잖아？"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "", "＞悪魔が寸胴鍋に浸かりながら手ぬぐいで汗を拭いている……"
-				CALL MESSAGE_WINDOW_D, "カタキラウワ", "ふう…　ん？オレの事は気にするな/今日もいいダシ出てるぜ"
+				CALL MESSAGE_WINDOW_D, "", "＞악마가 곰솥에 몸을 담그면서 수건으로 땀을 닦고 있다……"
+				CALL MESSAGE_WINDOW_D, "카타키라우와", "휴... 응? 나 신경쓰지마 / 오늘도 좋은 국물 나와있네"
 			ENDIF
 		ELSEIF RESULT == 2
 			IF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "スーツの男", "何度来てもこの店は変わらないな/こういう店が一つぐらいあってもいいよな"
+				CALL MESSAGE_WINDOW_D, "양복을 입은 사나이", "몇번 와도 이 가게는 변하지 않네 / 이런 가게가 하나쯤 있어도 좋겠지?"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "デカラビア", "この店は美味と評判であるから、我も直々に食しに来たぞ/…この箸という食器はどうやって持てばいいのだ？"
+				CALL MESSAGE_WINDOW_D, "데카라비아", "이 가게는 맛이 좋기로 소문났으니, 짐도 직접 먹으러 왔다구 /… 이 젓가락이라는 식기는 어떻게 사용하지？"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 0 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "ハエ男", "ドゥルジが倒されたからようやくこの店に来れたよ！/…この口でどうやって麺を啜ればいいんだ？"
+				CALL MESSAGE_WINDOW_D, "파리남자", "드루즈가 쓰러졌으니 이제 이 가게에 올 수 있어!/…이 입으로 어떻게 국수를 홀짝여야 하지?"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "スーツの男", "よし、このラーメン正解って感じだ/でもこの店　ライスがないんだよなぁ"
+				CALL MESSAGE_WINDOW_D, "양복을 입은 사나이", "좋아, 이 라면 정답이라는 느낌이야 / 근데 이 집 밥이 없어"
 			ENDIF
 		ELSEIF RESULT == 3
 			IF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "", "＞デブデブになったエンジェルが山のようなラーメンを貪っている…/＞拘束具が食い込んでお中元のハムのようだ…"
-				CALL MESSAGE_WINDOW_D, "エンジェル", "んまっんまっんまーっ！！/ブタちゃん！私はこの一杯の為に生きているブタちゃんです！"
+				CALL MESSAGE_WINDOW_D, "", "＞뚱보가 된 엔젤이 산더미 같은 라면을 먹고 있다…/> 구속구가 파고들어 백중 햄 같다…"
+				CALL MESSAGE_WINDOW_D, "엔젤", "마마마마맛있어!!/부타짱! 저는 이 한잔을 위해 살고 있는 부타짱입니다!"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "エンジェル", "この地の人々は中々私のいう事を聞いてくれません/私も溶け込む努力をするべきでしょうか"
-				CALL MESSAGE_WINDOW_D, "エンジェル", "仕方ありませんね…/店主、私にもラーメンとやらを一杯お願いします"
-				CALL MESSAGE_WINDOW_D, "エンジェル", "は？/ニンニク追加？　どういう意味ですか？"
+				CALL MESSAGE_WINDOW_D, "엔젤", "이 땅 사람들은 좀처럼 제 말을 들어주지 않습니다 / 저도 녹아드는 노력을 해야 할까요"
+				CALL MESSAGE_WINDOW_D, "엔젤", "어쩔수없죠.../가게주인님 저한테도 라면이나 한잔 부탁드려요."
+				CALL MESSAGE_WINDOW_D, "엔젤", "네? / 마늘 추가? 무슨 뜻이에요?"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 0 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "エンジェル", "ああ　なんということでしょう…/主の命でこの地に来てみれば、こんな不健康な食物を堂々と…"
-				CALL MESSAGE_WINDOW_D, "エンジェル", "人の子よ/いけませんよ　こんな物を食べて堕落しては"
+				CALL MESSAGE_WINDOW_D, "엔젤", "아아 무슨 말씀이신지…/주님의 목숨으로 이 땅에 와보면 이런 건강하지 못한 음식을 당당히…"
+				CALL MESSAGE_WINDOW_D, "엔젤", "사람의 아이여 / 안됩니다 이런걸 먹고 타락해서는"
 			ELSE
 			IF 던전플래그:69:8 == 0
-				CALL MESSAGE_WINDOW_D, "", "＞黒いデモニカスーツを着た少女がラーメンを啜っている"
-				CALL MESSAGE_WINDOW_D, "アレックス", "！！/お前は…！"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスは銃を抜こうとしている"
-				CALL INPUT_SELECT_D , "＞アレックスは銃を抜こうとしている//[1]落ち着け/[2]行儀が悪いぞ/[3]宇宙卵の代わりに煮卵をあげよう/" , , , , 3
+				CALL MESSAGE_WINDOW_D, "", "＞검은 데모니카 정장을 입은 소녀가 라면을 홀짝이고 있다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "！！/너는…！"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스총을 뽑으려 하고 있다"
+				CALL INPUT_SELECT_D , "＞알렉스총을 뽑으려 하고 있다//[1]진정해./[2]버릇이 없다/[3]우주란 대신 삶은 달걀을 주자/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "アレックス", "こっちは十分落ち着いてる！"
+				CALL MESSAGE_WINDOW_D, "알렉스", "이쪽은 충분히 침착해！"
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "アレックス", "ダークサマナーが行儀を説くな！"
+				CALL MESSAGE_WINDOW_D, "알렉스", "다크서머너가 예의 바르게 행동하지 마라.！"
 			ELSEIF RESULT == 3
-				CALL MESSAGE_WINDOW_D, "アレックス", "ちっとも笑えないわよ、そのギャグ…！"
+				CALL MESSAGE_WINDOW_D, "알렉스", "조금도 웃을 수 없어, 그 개그…！"
 			ENDIF
-				CALL MESSAGE_WINDOW_D, "オヤジ", "お客さーん/喧嘩はやめてねー"
-				CALL MESSAGE_WINDOW_D, "ジョージ", "＜＜バディ、ここで仕掛けるのはまずい。＞＞/＜＜デモニカの修復はまだ万全ではない。＞＞"
-				CALL MESSAGE_WINDOW_D, "アレックス", "くっ…"
-				CALL MESSAGE_WINDOW_D, "アレックス", "次に戦う時はこうはいかない/…覚悟しておくのね"
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスは再びラーメンを啜り始めた"
+				CALL MESSAGE_WINDOW_D, "아저씨", "손님/싸우지마~"
+				CALL MESSAGE_WINDOW_D, "조지", "<< 버디, 여기서 싸우는 것은 곤란하다.>>/<데모니카의 수복은 아직 만전은 아니다.＞＞"
+				CALL MESSAGE_WINDOW_D, "알렉스", "큭…"
+				CALL MESSAGE_WINDOW_D, "알렉스", "다음에 싸울때는 이렇지않아/…각오해둬"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스는 다시 라면을 훌쩍거리기 시작했다."
 				던전플래그:69:8 = 1
 			ELSE
-				CALL MESSAGE_WINDOW_D, "", "＞アレックスがラーメンを啜っている"
-				CALL MESSAGE_WINDOW_D, "アレックス", "…まだ何か用？/ラーメン屋に来たならラーメン食べたら？"
+				CALL MESSAGE_WINDOW_D, "", "＞알렉스가라면을 홀짝이고 있다"
+				CALL MESSAGE_WINDOW_D, "알렉스", "…아직도 무슨 볼일이라도 있어? / 라면집에 왔다면 라면이나 먹지？"
 			ENDIF
 		ENDIF
 		ELSEIF RESULT == 4
 			IF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 1
-				CALL MESSAGE_WINDOW_D, "エリゴール", "わ、我のせいではないぞ　あの天使がああなったのは…/あやつがこれほどドハマリするとは思わなかった…"
+				CALL MESSAGE_WINDOW_D, "에레골", "와, 내 잘못이 아니야. 저 천사가 저렇게 된 것은... / 그놈이 이토록 흐트러질 줄은 몰랐어.…"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 1 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "エリゴール", "やれやれ…/あの天使め初心者丸出しではないか　ウーロン茶も持参せぬとは/…後で作法を色々教えてやるか"
+				CALL MESSAGE_WINDOW_D, "에레골", "맙소사... / 저 천사놈 완전 초짜잖아 우롱차도 안 가져오다니 / 나중에 예의범절을 여러가지 가르쳐 줄까"
 			ELSEIF 던전플래그:69:13 == 1 && 던전플래그:69:14 == 0 && 던전플래그:69:15 == 0 
-				CALL MESSAGE_WINDOW_D, "エリゴール", "フン、何やら臭いと思ったらこの店にも天使が来たのか/この麺とスープの味が理解出来ぬとは　神の下僕も哀れなものよ"
+				CALL MESSAGE_WINDOW_D, "에레골", "흥, 뭔가 냄새가 난다고 생각하니 이 집에도 천사가 왔구나 / 이 국수와 국물 맛을 이해하지 못하다니 신의 하인도 불쌍하구나"
 			ELSE
-				CALL MESSAGE_WINDOW_D, "エリゴール", "ううむ…　ニンゲンはこんな混沌とした物を食べているのか/我らがいなくとも十分堕落しているのではないか"
+				CALL MESSAGE_WINDOW_D, "에레골", "음…인간은 이런 혼돈스러운 것을 먹고 있는가/우리가 없어도 충분히 타락해 있지 않은가"
 			ENDIF
 		ENDIF
 		GOTO BAR_LOOP_2

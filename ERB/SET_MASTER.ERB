@@ -230,8 +230,8 @@ PRINTLC [2]오토코노코
 PRINTLC [3]후타나리
 PRINTLC [4]로리바바
 PRINTLC [5]쇼타지지
-PRINTLC [6]ふたなりのロリババァ
-PRINTLC [7]男の娘ジジィ
+PRINTLC [6]후타나리 로리바바
+PRINTLC [7]오토노코노 로리바바
 PRINTL 
 CALL INPUTINT,0,1,2,3,4,5,6,7
 SELECTCASE RESULT
@@ -331,7 +331,7 @@ SELECTCASE RESULT
 		CALL SET_초기의상, "속옷（하）" , [[衣装:트렁크스]]
 		CALL SET_초기의상, "양말" , [[衣装:양말]]
 		CALL SET_초기의상, "신발" , [[衣装:스니커]]
-		PRINTW 性別：[ショタジジィ]で始めます
+		PRINTW 성별：[쇼타자지]로 시작합니다
 		CALL SET_MASTER_ILLEGAL_TALENT
 	CASE 6
 		NO:MASTER = 4999
@@ -349,7 +349,7 @@ SELECTCASE RESULT
 		CALL SET_초기의상, "속옷（하）" , [[衣装:팬티]]
 		CALL SET_초기의상, "양말" , [[衣装:양말]]
 		CALL SET_초기의상, "신발" , [[衣装:부츠]]
-		PRINTW [ふたなりのロリババァ]で始めます
+		PRINTW [후타나리 로리바바]로 시작합니다
 		CALL SET_MASTER_ILLEGAL_TALENT
 	CASE 7
 		NO:MASTER = 0
@@ -368,7 +368,7 @@ SELECTCASE RESULT
 		CALL SET_초기의상, "속옷（하）" , [[衣装:트렁크스]]
 		CALL SET_초기의상, "양말" , [[衣装:양말]]
 		CALL SET_초기의상, "신발" , [[衣装:스니커]]
-		PRINTW 性別：[男の娘ジジィ]で始めます
+		PRINTW 성별：[오토노코노 로리바바]로 시작합니다
 		CALL SET_MASTER_ILLEGAL_TALENT
 ENDSELECT
 
@@ -2758,11 +2758,11 @@ PRINTL
 PRINTL [0]아케미 호무라의 소울젬
 SIF ITEM:리본의조각
 	PRINTL [1]카나메 마도카의 소울젬
-SIF GETBIT(FLAG:발견ED, 18)
+SIF GETBIT(FLAG:발견ED2, 8)
 	PRINTL [2]다크오브
-SIF GETBIT(FLAG:발견ED, 63)
+SIF GETBIT(FLAG:발견ED2, 9)
 	PRINTL [3]토모에 마미의 소울젬(악마 빙의자)
-	CALL INPUTINT,0,(ITEM:리본의조각)*1,(GETBIT(FLAG:발견ED, 18))*2,(GETBIT(FLAG:발견ED, 63))*3
+	CALL INPUTINT,0,(ITEM:리본의조각)*1,(GETBIT(FLAG:발견ED2, 8))*2,(GETBIT(FLAG:발견ED2, 9))*3
 	SELECTCASE RESULT
 		CASE 0
 			ABL:MASTER:종족 = 44
@@ -2824,12 +2824,12 @@ SIF GETBIT(FLAG:발견ED, 63)
 			ABL:MASTER:습득스킬12 = 2998;침식하는검은날개
 			ABL:MASTER:습득LV12 = 58
 
-			IF GETBIT(FLAG:발견ED, 63)
+			IF GETBIT(FLAG:발견ED2, 9)
 				TALENT:MASTER:서머너 = 1
 				ABL:MASTER:습득스킬13 = 2958;네버기브업
 				ABL:MASTER:습득LV13 = 70
 			ENDIF
-			IF GETBIT(FLAG:발견ED, 18)
+			IF GETBIT(FLAG:발견ED2, 8)
 				TALENT:MASTER:서머너 = 1
 				ABL:MASTER:습득스킬14 = 2988;사랑을품은검은날개
 				ABL:MASTER:습득LV14 = 80
@@ -2840,7 +2840,7 @@ SIF GETBIT(FLAG:발견ED, 63)
 			CSTR:MASTER:종족명 = 마법소녀
 			TALENT:MASTER:도구지식 = 3
 			TALENT:MASTER:서머너 = 1
-			SIF GETBIT(FLAG:발견ED, 18)
+			SIF GETBIT(FLAG:발견ED2, 8)
 				TALENT:MASTER:서머너 = 3
 			BASE:MASTER:검격 = 75
 			BASE:MASTER:비구 = 100
@@ -2902,7 +2902,7 @@ SIF GETBIT(FLAG:발견ED, 63)
 			TALENT:MASTER:건슬링거 = 1
 			TALENT:MASTER:도구지식 = 3
 			TALENT:MASTER:서머너 = 1
-			SIF GETBIT(FLAG:발견ED, 63)
+			SIF GETBIT(FLAG:발견ED2, 9)
 				TALENT:MASTER:서머너 = 3
 			BASE:MASTER:검격 = 100
 			BASE:MASTER:비구 = 150
@@ -3970,7 +3970,6 @@ SIF FLAG:20951 < 1
 	FLAG:20951 = 1
 ;引っかかる人は居ないと思うけど罠。
 ITEM:벼랑끝분말 += 1
-
 
 @OPENING_MESSAGE_0
 IF TALENT:MASTER:서머너 || TALENT:MASTER:페르소나구사자 || TALENT:MASTER:이능자 || TALENT:MASTER:식노 || TALENT:MASTER:달인 || TALENT:MASTER:데빌시프터

@@ -3,12 +3,12 @@
 ;悪魔のアナライズ数に応じてご褒美がもらえるイベント
 ;
 ;更新日時　　　更新者				更新内容
-;2021/06/25　　ロッド@カヤノソト	他の処理で解析済の悪魔の種類を返す関数「ANALYZE_COUNT_CHECK」を新規作成したため、こちらも処理を共通化する。
-;									ついでに関係する一文字変数「A」「B」をそれぞれ「ANALYZE_COUNT_ALL」「ANALYZE_COUNT_100」に変更。
-;									※これ以前の履歴が記載されていないため、とりあえずロッドがこれを記載します。
-;2022/04/01　　NAMELESS				;EXキャラがEXフィルターを無視して悪魔全書に出てこないようにするため、1%にする処理をDEBUG専用に変更する。
-;									※本来は個別のEXキャラやEXフィルターごとに表示の有無を設定するのが望ましいですが、管理しきれないので、1%にする処理をDEBUGモード専用にすることで一時的な対処とします。
-;									　これによって、一度もプレイしていないEXのキャラが悪魔全書出てきてしまうことは防げるはず。
+;2021/06/25　　ロッド@カヤノソト	他の処理で解析済の悪魔の種類を返す関数「ANALYZE_COUNT_CHECK」を新規作成したため、こちらも処理を共通化する. 
+;									ついでに関係する一文字変数「A」「B」をそれぞれ「ANALYZE_COUNT_ALL」「ANALYZE_COUNT_100」に変更. 
+;									※これ以前の履歴が記載されていないため、とりあえずロッドがこれを記載します. 
+;2022/04/01　　NAMELESS				;EXキャラがEXフィルターを無視して悪魔全書に出てこないようにするため、1%にする処理をDEBUG専用に変更する. 
+;									※本来は個別のEXキャラやEXフィルターごとに表示の有無を設定するのが望ましいですが、管理しきれないので、1%にする処理をDEBUGモード専用にすることで一時的な対処とします. 
+;									　これによって、一度もプレイしていないEXのキャラが悪魔全書出てきてしまうことは防げるはず. 
 ;=================================================================
 
 
@@ -47,7 +47,7 @@ ANALYZE_COUNT_100 = ANALYZE_COUNT_CHECK(1, 100, 100, 1, 999, -1)
 
 CUSTOMDRAWLINE =
 IF 이벤트플래그:39:0 >= 1
-	PRINTFORML
+	PRINTL
 	PRINTW ＞악마 연구가 엘리고르를 방문했다
 	PRINTL
 	PRINTL 엘리고르：
@@ -89,7 +89,7 @@ IF RESULT == 1
 
 	CALL EVENT_39_CHECK
 
-	; -1は完成後の景品となる악마を除外しているため。
+	; -1は完成後の景品となる악마を除外しているため. 
 	PRINTL
 	PRINTL 엘리고르：
 	PRINTFORMW 「전 {ANALYZE_COUNT_ALL - 2}종 중 {ANALYZE_COUNT_100}종을 완전히 해석했군」
@@ -109,7 +109,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 30종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 30
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -134,7 +134,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 50종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 50
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -167,7 +167,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 100종……여기까지 온 자네라면 불가능하진 않을 터」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 100
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -258,7 +258,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 150종. 뭐, 전서 완성에 비하면 쉬운 일이지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 150
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -271,24 +271,24 @@ IF RESULT == 1
 			;150종류
 			CASE 5
 				IF ANALYZE_COUNT_100 >= 150
-					PRINTL 「축하한다！　150종류에 도달했다」
+					PRINTL 「축하한다! 150종류에 도달했다」
 					PRINTW 「보수로 리빙・엣지를 주지」
 					PRINTL
-					PRINTL ＞리빙・엣지를 받았다。
+					PRINTL ＞리빙・엣지를 받았다.
 					PRINTL
 					ITEM:리빙・엣지 += 1
 					PRINTL 엘리고르：
 					PRINTL 「이 무기는 장비하는 사람의 능력으로 강함이 바뀌는 이상한 무기다」
 					PRINTL 「싸울 때 잘 활용해 주었으면 한다」
-					PRINTW 「다음은 200종류……여기까지 온 너라면 불가능하지 않겠지」
+					PRINTW 「다음은 200종……여기까지 온 너라면 불가능하지 않겠지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 200
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음은 200종류……여기까지 온 너라면 불가능하지 않겠지」
+					PRINTW 「다음은 200종……여기까지 온 너라면 불가능하지 않겠지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -300,7 +300,7 @@ IF RESULT == 1
 					IF ITEM:젠더프리 == 0
 						ITEM:젠더프리 = 1
 						PRINTL
-						PRINTW ＞인스톨 소프트, 젠더프리를 받았다.
+						PRINTW ＞인스톨소프트 젠더프리를 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「성별을 무시하고 합체할 수 있게 해주는 소프트다」
@@ -317,12 +317,12 @@ IF RESULT == 1
 					PRINTW 「일단락이라 해도 과언은 아니네」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 300
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음은 200종류. 뭐, 전서의 완성에 비하면 편한 도전이다」
+					PRINTW 「다음은 200종. 뭐, 전서의 완성에 비하면 편한 도전이다」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -330,7 +330,7 @@ IF RESULT == 1
 			;300종류
 			CASE 7
 				IF ANALYZE_COUNT_100 >= 300
-					PRINTL 「300종…… 꽤 노력하고 있는 것 같군」
+					PRINTL 「300종……꽤 노력하고 있는 것 같군」
 					PRINTW 「이번 보수는 미라이의 도플갱어다」
 					IF BASE:MASTER:LV >= 50
 						PRINTL
@@ -338,7 +338,7 @@ IF RESULT == 1
 						PRINTL
 						CALL ADD_NEW_COMPANION,1006,1000
 						LOCAL = RESULT:1
-						; 通称が短ければ、표시崩れはない？
+						; 通称が短ければ、표시崩れはない?
 						NAME:LOCAL = 미라이의도플갱어
 						CALLNAME:LOCAL = 미라이
 						ABL:LOCAL:스킬3 = 4; 양팔찍기
@@ -413,12 +413,12 @@ IF RESULT == 1
 					PRINTW 「다음은 400종. 이것을 넘으면 악마에 대해 전문가를 자칭해도 좋을지도 모르겠군」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 400
-						PRINTW 「おや？」
+						PRINTW 「おや?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음은 400종.이것을 넘으면 악마에 대해 남들만큼의 지식이 있다고 할 수 있지」
+					PRINTW 「다음은 400종. 이것을 넘으면 악마에 대해 남들만큼의 지식이 있다고 할 수 있지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -429,12 +429,12 @@ IF RESULT == 1
 					PRINTL 「400종을 돌파…… 슬슬 악마의 전문가를 자칭해도 좋겠는걸」
 					PRINTW 「이번 보수는 모든 종류의 향을 주지」
 					PRINTL
-					PRINTL ＞힘의 향을 받았다。
-					PRINTL ＞지혜의 향을 받았다。
-					PRINTL ＞마력의 향을 받았다。
-					PRINTL ＞인내력의 향을 받았다。
-					PRINTL ＞속도의 향을 받았다。
-					PRINTW ＞운의 향을 받았다。
+					PRINTL ＞힘의 향을 받았다.
+					PRINTL ＞지혜의 향을 받았다.
+					PRINTL ＞마력의 향을 받았다.
+					PRINTL ＞인내력의 향을 받았다.
+					PRINTL ＞속도의 향을 받았다.
+					PRINTW ＞운의 향을 받았다.
 					PRINTL
 					ITEM:힘의향 += 1
 					ITEM:지혜의향 += 1
@@ -446,15 +446,15 @@ IF RESULT == 1
 					PRINTL 엘리고르：
 					PRINTL 「자네만한 서머너라면 익숙한 물건이겠지만, 능력치를 상승시키는 향들일세」
 					PRINTL 「이거라면 아무리 있어도 나쁠 건 없지」
-					PRINTW 「다음은 500종류. 이를 달성하면 전서 컴플리트의 위업이 눈에 보일 것이야」
+					PRINTW 「다음은 500종. 이를 달성하면 전서 컴플리트의 위업이 눈에 보일 것이야」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 500
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음은 400종류. 악마의 아마추어와 프로의 경계, 그리고 본 게임의 시작이기도 하다」
+					PRINTW 「다음은 400종. 악마의 아마추어와 프로의 경계, 그리고 본 게임의 시작이기도 하다」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -507,15 +507,15 @@ IF RESULT == 1
 					PRINTL 「귀여운 악마지만…… 네게 있어 새삼스런 존재는 아니겠지」
 					PRINTL 「하지만 그녀는 80레벨까지 성장하면 강력한 스킬을 배우게 되는 모양이네」
 					PRINTL 「이 기회에 시험해보는 건 어떠려나?」
-					PRINTW 「다음은 600종류. 이걸 넘어서면 악마의 전문가를 자칭해도 무방할 것이야」
+					PRINTW 「다음은 600종. 이걸 넘어서면 악마의 전문가를 자칭해도 무방할 것이야」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 600
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음은 600종. 초조해할 건 없네. 노력하게나」
+					PRINTW 「다음은 500종. 초조해할 건 없네. 노력하게나」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -535,12 +535,12 @@ IF RESULT == 1
 					PRINTW 「다음엔 650종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 650
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음엔 650종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
+					PRINTW 「다음엔 600종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -553,7 +553,7 @@ IF RESULT == 1
 					IF ITEM:파라켈수스 == 0
 						ITEM:파라켈수스 = 1
 						PRINTL
-						PRINTW ＞인스톨 소프트, 파라켈수스를 받았다.
+						PRINTW ＞인스톨소프트 파라켈수스를 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「현재의 레벨을 사용한 악마합체를 가능하게 하는 소프트야」
@@ -569,12 +569,12 @@ IF RESULT == 1
 					PRINTW 「다음엔 700종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 700
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTFORMW 「다음엔 700종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
+					PRINTFORMW 「다음엔 650종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -594,12 +594,12 @@ IF RESULT == 1
 					PRINTW 「다음엔 750종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 750
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음엔 750종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
+					PRINTW 「다음엔 700종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -612,7 +612,7 @@ IF RESULT == 1
 					IF ITEM:허니문 == 0
 						ITEM:허니문 = 1
 						PRINTL
-						PRINTW ＞인스톨 소프트 허니문을 받았다.
+						PRINTW ＞인스톨소프트 허니문을 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「친밀한 악마의 능력을 상승시키는 소프트웨어야」
@@ -628,12 +628,12 @@ IF RESULT == 1
 					PRINTW 「다음엔 800종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 800
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음엔 600종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
+					PRINTW 「다음엔 750종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -646,7 +646,7 @@ IF RESULT == 1
 					IF ITEM:에너미호이호이 == 0
 						ITEM:에너미호이호이 = 1
 						PRINTL
-						PRINTW ＞인스톨 소프트 에너미호이호이를 받았다.
+						PRINTW ＞인스톨소프트 에너미호이호이를 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「악마와 조우확률을 상승시키는 소프트야」
@@ -662,12 +662,12 @@ IF RESULT == 1
 					PRINTW 「다음엔 850종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 850
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
 				ELSE
-					PRINTW 「다음엔 850종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
+					PRINTW 「다음엔 800종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
@@ -680,7 +680,7 @@ IF RESULT == 1
 					IF ITEM:아르센 == 0
 						ITEM:아르센 = 1
 						PRINTL
-						PRINTW ＞인스톨소프트, 아르센을 받았다.
+						PRINTW ＞인스톨소프트 아르센을 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「그 인스톨소프트를 사용하면 보석을 얻을 수 있어」
@@ -697,7 +697,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 900종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 900
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -720,7 +720,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 950종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 950
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -754,7 +754,7 @@ IF RESULT == 1
 					PRINTW 「다음엔 1000종 이상 해석을 끝마쳤을 때, 보수를 주도록 하지」
 					이벤트플래그:39:0 ++
 					IF ANALYZE_COUNT_100 >= 1000
-						PRINTW 「이런？」
+						PRINTW 「이런?」
 					ELSE
 						C = 1
 					ENDIF
@@ -772,7 +772,7 @@ IF RESULT == 1
 					IF ITEM:스티븐 == 0
 						ITEM:스티븐 = 1
 						PRINTL
-						PRINTW ＞인스톨 소프트, 스티븐을 받았다.
+						PRINTW ＞인스톨소프트 스티븐을 받았다.
 						PRINTL
 						PRINTL 엘리고르：
 						PRINTW 「악마를 합체하는데 레벨 제한이 없어지는 소프트야」
@@ -801,7 +801,7 @@ IF RESULT == 1
 					CALL EVENT_39_Advice, ANALYZE_COUNT_100
 					C = 1
 				ENDIF
-			; ラスト。악마全書が完成
+			; ラスト. 악마全書が完成
 			CASEELSE
 				IF ANALYZE_COUNT_100 < (ANALYZE_COUNT_ALL - 2)
 					PRINTL 「자, 다음 보수를 넘기는 건 악마전서가 완성되었을 때다」
@@ -889,10 +889,10 @@ RETURN 0
 ; 一応、여신転生シリーズに絞り、アナライズの대상外である조마も除外しておく
 
 ;-----------------------------------------------------------------------------------------------------
-;悪魔のアナライズ数をチェックする関数「ANALYZE_COUNT_CHECK」を新規作成したため、そちらを使用する。
-;※下記のforループでは「2周目以降、悪魔全書をすべて1%にする」処理のみ引き続き実行する。
+;悪魔のアナライズ数をチェックする関数「ANALYZE_COUNT_CHECK」を新規作成したため、そちらを使用する. 
+;※下記のforループでは「2周目以降、悪魔全書をすべて1%にする」処理のみ引き続き実行する. 
 ;2021/06/30	ロッド@カヤノソト
-;EXキャラがEXフィルターを無視して悪魔全書に出てこないようにするため、1%にする処理をDEBUG専用に変更する。
+;EXキャラがEXフィルターを無視して悪魔全書に出てこないようにするため、1%にする処理をDEBUG専用に変更する. 
 ;2022/04/01	NAMELESS
 ;-----------------------------------------------------------------------------------------------------
 ;2周目以降&DEBUG時に、悪魔全書をすべて1%にする
@@ -986,7 +986,7 @@ IF ANALYZE_COUNT_100 < 200 || RAND:4 == 0
 	CASE 6
 	PRINTL 「동료마로 들일 수가 없으며 만날 기회도 한정적이다.
 	PRINTL 　그런 악마를 해석할 경우에는 능동적인 애널라이즈를 활용하게.
-	PRINTW 　인스톨 소프트, Ｈｉ－ＤＡＳ에 갖춰진 기능이지」
+	PRINTW 　인스톨소프트 Ｈｉ－ＤＡＳ에 갖춰진 기능이지」
 
 	CASE 7
 	PRINTL 「안타깝지만 이 세계에는 결코 조우할 수 없는 억마가 존재한다, 추측되네.
@@ -1053,7 +1053,7 @@ ELSE
 			PRINTL 「아메노사기리를 소환하기 위해서는 그 부모만으로는 부족한 모양이야.
 			PRINTW 　어머니인 카야노히메와 노즈치가 동일시되는 것과 관계가 있을지도 모르네」
 			CASE 19
-			PRINTL 「후지와라노 치카타타가 거느렸다는 네 오니(四鬼). 그 중 한 마리와 만나는 건 어렵지만……
+			PRINTL 「후지와라노 치카타타가 거느렸다는 네 마리의 오니. 그 중 한 마리와 만나는 건 어렵지만……
 			PRINTW 　나머지 세 마리의 힘을 빌리면 결코 불가능한 일은 아니야」
 			CASE 20
 			PRINTW 「능천사와 요정기사의 힘을 빌려, 잭프로스트는 영웅이 된다」
@@ -1079,7 +1079,7 @@ ELSE
 					PRINTL 　기묘하게도 그런 선택지도 존재하는 모양이야.
 					PRINTW 　물론 강요할 마음은 없네. 그저 유용할지도 모른다, 라는 정도의 소문이지」
 				ELSE
-					PRINTL 「인스톨 소프트는 갖춰놓고 있는가?
+					PRINTL 「인스톨소프트는 갖춰놓고 있는가?
 					PRINTL 　환상향, 마법소녀… 세계는 무한한 가능성으로 가득하지.
 					PRINTW 　두려워하지 말고 시험해보길 바라네」
 				ENDIF

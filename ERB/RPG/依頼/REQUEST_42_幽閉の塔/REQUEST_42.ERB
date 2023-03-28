@@ -4,31 +4,31 @@
 ;====================
 @PLAYABLE_REQUEST_42
 IF 의뢰플래그:2:0 == 1 && 의뢰플래그:3:0 == 1 && 의뢰플래그:42:0 == 0 
-	RESULTS = 実りを集めてくださいませ
+	RESULTS = 열매를 모아주세요
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 1 && 던전플래그:69:11 == 1
-	RESULTS = 実りを集めてくださいませⅡ
+	RESULTS = 열매를 모아주세요Ⅱ
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 2 && 던전플래그:69:12 == 1
-	RESULTS = 実りを集めてくださいませⅢ
+	RESULTS = 열매를 모아주세요Ⅲ
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 3 && 던전플래그:69:13 == 1
-	RESULTS = 実りを集めてくださいませⅣ
+	RESULTS = 열매를 모아주세요Ⅳ
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 4 && 던전플래그:69:14 == 1
-	RESULTS = 実りを集めてくださいませⅤ
+	RESULTS = 열매를 모아주세요Ⅴ
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 5 && 던전플래그:69:15 == 1
-	RESULTS = 実りを集めてくださいませⅥ
+	RESULTS = 열매를 모아주세요Ⅵ
 	RETURN 1
 ELSEIF 의뢰플래그:42:0 == 6 && 던전플래그:69:17 == 1 && DAY < 50
-	RESULTS = 振り子は揺れる、針は進む
+	RESULTS = 진자는 흔들리고 바늘은 나아간다
 	RETURN 1
 ELSEIF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キャラ:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
-	RESULTS = アレックスの依頼
+	RESULTS = 알렉스의 의뢰
 	RETURN 1
 ELSEIF 의뢰플래그:42:10 == 1 && 의뢰플래그:42:0 == 6 && 던전플래그:69:17 == 0 && FINDCHARA_B([[キャラ:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
-	RESULTS = 日の老いたる者
+	RESULTS = 해묵은 자
 	RETURN 1
 ENDIF
 RETURN 0

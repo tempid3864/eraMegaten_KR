@@ -16,7 +16,7 @@ SIF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0
 
 ;あなたのレベル20以上か名声200か納金総額10万円以上
 IF BASE:MASTER:LV > 19 || FLAG:명성 > 200 || FLAG:조직공헌도 > 100000 && 이벤트플래그:108:0 == 0
-	RESULTS = 依頼斡旋の通達
+	RESULTS = 의뢰 알선 통달
 	RETURN 1
 ENDIF
 RETURN 0
@@ -24,11 +24,11 @@ RETURN 0
 ;内容
 ;====================
 @SHOPCOM_EVENT_108
-PRINTFORMW ファントムソサエティからメールが届いている。
+PRINTFORMW 팬텀 소사이어티로부터 메일이 도착했다。
 PRINTFORML 
-PRINTFORMW 『ファントムソサエティに新たに入った構成員へ。』
-PRINTFORMW 『君の組織への忠誠を認め、依頼の斡旋を開始する。』
-PRINTFORMW 『これからも忠誠を示し続ける事を期待している。』
+PRINTFORMW 『팬텀 소사이어티에 새롭게 들어온 구성원에게。』
+PRINTFORMW 『그대의 조직에 대한 충성을 인정하고、의뢰 알선을 개시한다。』
+PRINTFORMW 『앞으로도 충성을 계속 보여주기를 기대하고 있다。』
 PRINTFORML 
-PRINTFORMW ランダム依頼が出現するようになった。
+PRINTFORMW 랜덤 의뢰가 출현하게 되었다。
 이벤트플래그:108:0 = 1

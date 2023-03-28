@@ -6,56 +6,56 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 SETCOLOR COLOR("p-green")
-PRINTW 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　カチリ。
+PRINTW 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　찰칵。
 RESETCOLOR
 CLEARLINE 1
 PRINTL 
-PRINTW …どこかからか、何かの物音がした気がする。
+PRINTW …어디에선가、무슨 소리가 난 것 같다。
 PRINTL 
-PRINTW ふと作業を止めて、周囲を見渡してみるが、誰もいない。
-PRINTW 幽霊…もとい、何かの悪魔の仕業か？とも一瞬考えてはみたが、その類の気配も感じられない。
+PRINTW 문득 작업을 멈추고、주위를 둘러보지만、아무도 없다。
+PRINTW 유령…혹은、어떤 무슨 악마의 짓인가？하고 순간 생각해 보긴 했지만、그런 류의 기척도 느껴지지 않는다。
 PRINTL 
-PRINTFORMW ならば、本物の怪奇現象か、或いは勘違いか……などと思考を巡らせて、%CALLNAME:MASTER%は思わず小さく苦笑した。
-PRINTW 全く持って、自分は何を恐れているのやら。
+PRINTFORMW 혹은、진짜 괴기현상인가、혹은 착각인가……라고 생각을 돌리며、%조사처리(CALLNAME:MASTER,"는")% 무심코 작게 쓴웃음을 지었다。
+PRINTW 정말이지、자신이 뭘 두려워하는건가。
 PRINTL 
-PRINT 悪魔が跋扈するこの世界で、
+PRINT 악마가 설치는 이 세계에서、
 IF TALENT:MASTER:200
-	PRINTFORMW 悪魔を使役し、異能者を”扱う”存在である%CALLNAME:MASTER%が、”怪奇現象”などと。
+	PRINTFORMW 악마를 사역하고、이능자를”다루는”존재인 %CALLNAME:MASTER%가、”괴기현상”같은걸。
 ELSE
-	PRINTW この世ならざる悪魔達や異能者に何より深く携わっておきながら、”怪奇現象”などと。
+	PRINTW 이 세상이 아닌 악마들이나 이능자들에게 무엇보다 깊이 관여해 놓고、”괴기현상”같은걸。
 ENDIF
 PRINTL 
-PRINTW そのような存在を恐れていては、自分のような”生業”をやってはいれなかっただろうに…
-PRINTL 今まで出会ってきた、そして戦う羽目になった、
-PRINTL 決して少なくない種類の死霊や悪魔…異能、異形、異質のものたちを思い浮かべながら、
-PRINTFORMW %CALLNAME:MASTER%は軽く周囲を見まわし音の出所を探してみた…
+PRINTW 그런 존재를 두려워해서는、자신과 같은”생업”을 하지는 못했을 텐데…
+PRINTL 지금까지 만나왔고、싸우는 처지가 되었다、
+PRINTL 결코 적지 않은 종류의 사령이나 악마…이능、이형、이질적인 것들을 떠올리며、
+PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 가볍게 주위를 둘러보며 소리의 출처를 찾아보았다…
 PRINTL 
 SETCOLOR COLOR("p-green")
-PRINTW 　　　　　　　　　　　　　　　　　　　　カチッ
+PRINTW 　　　　　　　　　　　　　　　　　　　　딸깍
 RESETCOLOR
 CLEARLINE 1
 PRINTL 
 IF TALENT:MASTER:200
-	PRINTW と、手元を見れば、COMPが依頼メールの到着を告げている。
+	PRINTW 하고、수중을 보면、COMP가 의뢰 메일의 도착을 알리고 있다。
 ELSE
-	PRINTW どうやら、組織との連絡に用いている端末に依頼の通知が入っていた。
+	PRINTW 아무래도、조직과의 연락에 이용하고 있는 단말기에 의뢰 통지가 들어와 있었다。
 ENDIF
 IF TIME == 0
-	PRINTW ……何も、こんな早朝に依頼を寄越さなくても良いだろうに。
+	PRINTW ……특별히、이런 이른 아침에 의뢰를 보내지 않아도 될 텐데。
 ELSEIF TIME == 1
-	PRINTW ……昼の食事を済ませてからでは、駄目だろうか。
+	PRINTW ……점심 식사를 마치고 나서는、안될까。
 ELSEIF TIME == 2
-	PRINTW ……日も落ちたところで、今日の仕事も一段落…とは、いかなくなったらしい。
+	PRINTW ……해도 떨어진 마당에、오늘의 일도 일단락…은、아니게 된 것 같다。
 ELSE
-	PRINTW ……流石に、ここまで夜が更けてから連絡を寄越すのはどうかと思うのだが。
+	PRINTW ……역시、이 정도로 밤이 깊었다가 연락을 보내는 것은 어떨까 생각하는데。
 ENDIF
-PRINTFORMW 内心で少しばかり毒づきながら、%CALLNAME:MASTER%はメールを操作し、データを展開した。
+PRINTFORMW 내심 속으로 악담을 하면서、%조사처리(CALLNAME:MASTER,"는")% 메일을 조작해、데이터를 전개했다。
 PRINTL 
 SETCOLOR COLOR("p-green")
-PRINTW 　　　　　　　　　　カチッ
+PRINTW 　　　　　　　　　　딸깍
 RESETCOLOR
 CLEARLINE 1
-PRINTW さて、依頼の内容は――――――――
+PRINTW 자、의뢰 내용은――――――――
 PRINTL 
 PRINTW ………………
 PRINTW …………
@@ -103,47 +103,47 @@ SETFONT "DotumChe"
 CLEARLINE 19
 RESETCOLOR
 CUSTOMDRAWLINE =
-PRINTW ――――何処からか、あなたの運命がまた捻じ曲がった音が聞こえた気がした。
-PRINTW …或いは、既に歪んでしまった誰かの運命が、軋みを上げている音が。
+PRINTW ――――어디선가、당신의 운명이 다시 삐뚤어진 소리가 들린 것 같았다。
+PRINTW …혹은、이미 비뚤어져 버린 누군가의 운명이、삐걱거리는 소리가。
 CUSTOMDRAWLINE =
 PRINTFORML 
-PRINTFORML ―――――放棄された都市区画の一画において、多量の屍鬼…即ち、ゾンビの類が発生している。
-PRINTFORMW この原因を探り、可能であれば適切な”処理”を行うように。
+PRINTFORML ―――――버려진 도시 구획의 한 획에서、다량의 시귀…즉、좀비류가 발생하고 있다。
+PRINTFORMW 이 원인을 찾아、가능하면 적절한”처리”를 실시하도록。
 PRINTFORML 
 PRINTFORML 
-PRINTFORML %CALLNAME:MASTER%の下に、そのような依頼が届けられたのが、つい数時間前の事。
+PRINTFORML %CALLNAME:MASTER%의 아래에、그러한 의뢰가 도착한 것이、바로 몇 시간 전의 일。
 PRINTFORML 
 PRINTFORML 
-PRINTFORMW …率直に言うのであれば、ゾンビとは極めて低級の悪魔だ。
-PRINTFORML 生前から武装を行っていたり、多量の魔力によって変異を行った存在であれば事情は異なるが
-PRINTFORMW そうではない、”市街に湧く”ようなゾンビは、そもそも元々が一般人の死体なのである。
-PRINTFORML 言い方は悪くなるが、その程度の存在がマグネタイトや悪魔の影響によって蘇ったとしても、
-PRINTFORMW サマナーや異能者といった悪魔に携わるものからすれば、余程でなければそもそも苦戦をするような存在とは言いがたい。
-PRINTFORMW 常人の身に人ならざる魂が宿り、一般人程度の器にマグネタイトを注ぎ込んだとしても、所詮は”その程度”でしかないのだ。
+PRINTFORMW …솔직히 말하자면、좀비란 지극히 저급한 악마다。
+PRINTFORML 생전부터 무장을 했거나、다량의 마력에 의해 변이를 행한 존재라면 사정은 다르지만
+PRINTFORMW 그렇지 않은、”시가지에 솟아난”좀비는、원래가 일반인의 시체인 것이다。
+PRINTFORML 말하기엔 나쁘지만、그 정도의 존재가 마그네타이트나 악마의 영향으로 되살아났다 하더라도、
+PRINTFORMW 서머너나 이능자처럼 악마 관련해 종사하는 입장에서 보면、얼마 되지 않으면 원래 고전을 하는 존재라고 말하기 어렵다。
+PRINTFORMW 보통 사람의 몸에 사람이 아닌 영혼이 깃들어、일반인 정도의 그릇에 마그네타이트를 쏟아 붓는다 해도、결국은”그 정도”일 뿐이다。
 PRINTFORML 
-PRINTFORML 或いは組織にとっての要所に近い位置であれば、その脅威度とは無関係に原因を調査せよという指示が下ることは在り得るだろうが、
-PRINTFORMW そうですらない、街外れで起きた単なる”ゾンビ騒ぎ”程度を調査するというのは、一体どういうことかとも考えていたが…
+PRINTFORML 혹은 조직의 요소에 가까운 위치라면、그 위협 정도와는 무관하게 원인을 조사하라는 지시가 내려질 수도 있겠지만、
+PRINTFORMW 그렇지 않은、거리 변두리에서 일어난 단순한”좀비 소동”정도를 조사한다는 것은、도대체 무슨 일인가 하는 생각도 하고 들지만…
 PRINTFORML 
-PRINTFORMW ……が、成程。これは、組織が調査の依頼を出すわけである。
-PRINTFORMW 地図を頼りに目的地に赴いた%CALLNAME:MASTER%は、半ば呆れる様に呟いた。
+PRINTFORMW ……그러나、과연。이건、조직이 조사의 의뢰를 내는 것이다。
+PRINTFORMW 지도에 의지해 목적지로 간 %조사처리(CALLNAME:MASTER,"는")%、반쯤 어이없다는 듯이 중얼거렸다。
 PRINTFORML  
-PRINTFORML %CALLNAME:MASTER%の眼前に広がっているのは、どこに目を向けても視界に入るほどに多量のゾンビの群れに、
-PRINTFORMW 宙を飛び交う夥しいまでの霊魂と怪火。
+PRINTFORML %CALLNAME:MASTER%의 눈앞에 펼쳐져 있는 것은、어디로 눈을 돌려도 시야에 들어올 정도로 다량의 좀비 스웜에、
+PRINTFORMW 허공을 난무하는 엄청난 영혼과 괴화。
 PRINTFORML 
-PRINTFORMW 周囲の空気が澱んで見えるのは、どうにも決して見間違いではなく。
-PRINTFORMW 澱んだ霧か、腐った大気のような、濃密に穢れの気配を湛えた瘴気が一帯に広がって視界を遮っている。
-PRINTFORML 一帯は当に放棄され、悪魔たちの跋扈を妨げることのない区画であるということを指し引いたとしても、
-PRINTFORMW 異界化もしていない領域に、”自然”に発生しているというには無理がある数だろう。
+PRINTFORMW 주위의 공기가 녹아 보이는 것은、아무래도 잘못 본 것이 아니라。
+PRINTFORMW 자욱한 안개나、썩은 대기와 같은、짙게 더러운 기운을 머금은 잔기가 일대로 퍼져 시야를 가린다。
+PRINTFORML 일대는 당연히 버려져、악마들이 솟아나는 걸 방해하지 않는 구획임을 가리켰다 하더라도、
+PRINTFORMW 이계화도 하지 않은 영역에、”자연스럽게”발생하고 있다고 하기에는 무리가 있는 수이리라。
 PRINTFORML 
-PRINTFORML …つまり、原因となる何かが、そしてあれらの屍鬼に力を与えている何かが存在する。
-PRINTFORMW それが、人なのか、モノなのか、あるいは悪魔なのかは知れたものではないが…
+PRINTFORML …즉、원인이 되는 무언가가、그리고 저 시체들에게 힘을 주고 있는 무언가가 존재한다。
+PRINTFORMW 그게、사람인지、물건인지、아니면 악마인지는 알려지지 않았지만…
 PRINTFORMW 
-PRINTFORMW まず間違いなく、利用価値はあるだろう。
-PRINTFORMW 死者を使役する”異能”か、もしくはそれを実現しうる”出力”の持ち主として。
+PRINTFORMW 우선 틀림없이、이용가치는 있을 것이다。
+PRINTFORMW 사망자를 사역하는”이능”이거나、또는 그것을 실현할 수 있는”출력”의 소유자로서。
 PRINTFORML 
 PRINTFORML 
-PRINTFORML 先に潜む何者の事を考えながら、強行突破するべく%CALLNAME:MASTER%が物陰から一歩踏み出すと、
-PRINTFORMW 物音に反応した数体の屍鬼が我先に飛び掛かってきた！
+PRINTFORML 앞에 숨어있는 누군가를 생각하며、강행 돌파하기 위해 %조사처리(CALLNAME:MASTER,"가")% 그늘에서 한 발짝 내딛자、
+PRINTFORMW 소리에 반응한 몇 구의 시체가 앞다퉈 덤벼들었다！
 
 ;◆前哨戦
 CUSTOMDRAWLINE =
@@ -164,17 +164,17 @@ BASE:(CHARANUM-1):파마 = 200
 MAXBASE:(CHARANUM-1):DYING = 50
 CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 ABL:(CHARANUM-1):스킬5 = [[스킬:독가스브레스]]
-NAME:(CHARANUM-1) = ロッティング
-CALLNAME:(CHARANUM-1) = ロッティング
-CSTR:(CHARANUM-1):30 = ロッティング・コープス。端的に日本語に換言すれば”腐った死体”。
-CSTR:(CHARANUM-1):31 = 全身が酷く腐敗した、通常であればゾンビとしての第二の生すら得られるはずも無い骸。
+NAME:(CHARANUM-1) = 로팅
+CALLNAME:(CHARANUM-1) = 로팅
+CSTR:(CHARANUM-1):30 = 로팅・콥스。단적으로 일본어로 환언하면”썩은 시체”。
+CSTR:(CHARANUM-1):31 = 온몸이 심하게 부패한、보통이라면 좀비로서의 제2의 생조차 얻을 수 없을 유해。
 CSTR:(CHARANUM-1):32 = 　
 CSTR:(CHARANUM-1):33 = 　
-CSTR:(CHARANUM-1):34 = その有り様故に耐久力には乏しいが、元より半壊した肉体であるために物理的な攻撃には強くなっているほか、
-CSTR:(CHARANUM-1):35 = 己の損壊を躊躇う意識すら持ち合わせていないため、他のゾンビに比べ力が強い。
+CSTR:(CHARANUM-1):34 = 그 상태로 내구력은 부족하지만、원래보다 반파된 육체이기 때문에 물리적인 공격에는 강해지고 있으며、
+CSTR:(CHARANUM-1):35 = 자신의 손괴를 주저하는 의식조차 갖고 있지 않아、다른 좀비에 비해 힘이 세다。
 CSTR:(CHARANUM-1):36 = 　
-CSTR:(CHARANUM-1):37 = おおよそ真面な人格も意思も宿っておらず、ただ生への渇望の身を動力に動き回るが、
-CSTR:(CHARANUM-1):38 = 存在を維持している魔力が切れてしまえば即座にあるべき姿へと立ち返るだろう。
+CSTR:(CHARANUM-1):37 = 대략 진정한 인격도 의사도 깃들어 있지 않고、오직 삶에 대해 갈망하는 몸을 동력으로 움직이지만、
+CSTR:(CHARANUM-1):38 = 존재를 유지하고 있는 마력이 끊어지면 즉시 있어야 할 모습으로 되돌아갈 것이다。
 LOCAL = CHARANUM-1
 LOCAL = CHARANUM-1
 CALL SYNC_STATUS,(CHARANUM-1)
@@ -185,8 +185,8 @@ CALL SET_ENEMY,9,[[キャラ:드래그퀸]],23,0
 ;水中でサメと戦えるゾンビだからね。無理がある？そうね…
 BASE:(CHARANUM-1):힘 -= 3
 BASE:(CHARANUM-1):인내력 += 3
-NAME:(CHARANUM-1) = サンゲリア
-CALLNAME:(CHARANUM-1) = サンゲリア
+NAME:(CHARANUM-1) = 산겔리아
+CALLNAME:(CHARANUM-1) = 산겔리아
 MAXBASE:(CHARANUM-1):파마 = 200
 BASE:(CHARANUM-1):파마 = 200
 MAXBASE:(CHARANUM-1):신경 = 0
@@ -204,16 +204,16 @@ ABL:(CHARANUM-1):스킬4 = [[스킬:물의벽]]
 ABL:(CHARANUM-1):스킬5 = 0
 ABL:(CHARANUM-1):스킬6 = 0
 ABL:(CHARANUM-1):스킬7 = 0
-CSTR:(CHARANUM-1):30 = 全身を朽ち果てさせた、蠢く埋葬死体。
-CSTR:(CHARANUM-1):31 = 原典となるのは、ブードゥの秘術によって蘇った数百年前の土葬死体。
-CSTR:(CHARANUM-1):32 = 一般的なゾンビにみられる腐敗し血肉に塗れた姿ではなく、
-CSTR:(CHARANUM-1):33 = 死蝋化し、土に塗れて蟲の集った外観をしていることが特徴的。
+CSTR:(CHARANUM-1):30 = 온몸이 썩어버린、꿈틀거리는 매장 시체。
+CSTR:(CHARANUM-1):31 = 원전이 되는 것은、부두의 비술로 되살아난 수백 년 전 토장사체。
+CSTR:(CHARANUM-1):32 = 일반적인 좀비에서 볼 수 있는 부패하고 피칠갑한 모습이 아닌、
+CSTR:(CHARANUM-1):33 = 시랍화되어、흙투성이에 벌레가 모인 외관을 하고 있는 것이 특징이다。
 CSTR:(CHARANUM-1):34 = 　
-CSTR:(CHARANUM-1):35 = ”サンゲリア”は「流血」を意味するSangueと「息切れ」を意味するSusperiaを組み合わせた造語。
-CSTR:(CHARANUM-1):36 = より正確に言うならば、映画『サスペリア』にあやかって名付けられたとあるゾンビ映画の邦題であり、
-CSTR:(CHARANUM-1):37 = 特定の外観や形質をもったゾンビを形容する単語という訳ではない。
+CSTR:(CHARANUM-1):35 = ”산겔리아”는「유혈」을 의미하는 Sangue와「숨차다」를 의미하는 Susperia를 조합한 조어。
+CSTR:(CHARANUM-1):36 = 더 정확하게 말하자면、영화『서스페리어』에 빗대어 붙여진 어떤 좀비 영화의 제목이며、
+CSTR:(CHARANUM-1):37 = 특정 외관이나 형질을 가진 좀비를 형용하는 단어는 아니다。
 CSTR:(CHARANUM-1):38 = 　
-CSTR:(CHARANUM-1):39 = 余談ではあるが、映画『サンゲリア』はサメとゾンビが海中で戦うシーンが存在する。すごい。
+CSTR:(CHARANUM-1):39 = 여담이긴 하지만、영화『산겔리아』는 상어와 좀비가 바닷속에서 싸우는 장면이 존재한다。대단하다。
 LOCAL = CHARANUM-1
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -234,17 +234,17 @@ BASE:(CHARANUM-1):파마 = 200
 ABL:(CHARANUM-1):스킬5 = [[스킬:독가스브레스]]
 MAXBASE:(CHARANUM-1):DYING = 50
 CFLAG:(CHARANUM-1):ＨＰ보정 += 100
-NAME:(CHARANUM-1) = ロッティング
-CALLNAME:(CHARANUM-1) = ロッティング
-CSTR:(CHARANUM-1):30 = ロッティング・コープス。端的に日本語に換言すれば”腐った死体”。
-CSTR:(CHARANUM-1):31 = 全身が酷く腐敗した、通常であればゾンビとしての第二の生すら得られるはずも無い骸。
+NAME:(CHARANUM-1) = 로팅
+CALLNAME:(CHARANUM-1) = 로팅
+CSTR:(CHARANUM-1):30 = 로팅・콥스。단적으로 일본어로 환언하면”썩은 시체”。
+CSTR:(CHARANUM-1):31 = 온몸이 심하게 부패한、보통이라면 좀비로서의 제2의 생조차 얻을 수 없을 유해。
 CSTR:(CHARANUM-1):32 = 　
 CSTR:(CHARANUM-1):33 = 　
-CSTR:(CHARANUM-1):34 = その有り様故に耐久力には乏しいが、元より半壊した肉体であるために物理的な攻撃には強くなっているほか。
-CSTR:(CHARANUM-1):35 = 己の損壊を躊躇う意識すら持ち合わせていないため、他のゾンビに比べ力が強い。
+CSTR:(CHARANUM-1):34 = 그 상태로 내구력은 부족하지만、원래보다 반파된 육체이기 때문에 물리적인 공격에는 강해지고 있으며、
+CSTR:(CHARANUM-1):35 = 자신의 손괴를 주저하는 의식조차 갖고 있지 않아、다른 좀비에 비해 힘이 세다。
 CSTR:(CHARANUM-1):36 = 　
-CSTR:(CHARANUM-1):37 = おおよそ真面な人格も意思も宿っておらず、ただ生への渇望の身を動力に動き回るが、
-CSTR:(CHARANUM-1):38 = 存在を維持している魔力が切れてしまえば即座にあるべき姿へと立ち返るだろう。
+CSTR:(CHARANUM-1):37 = 대략 진정한 인격도 의사도 깃들어 있지 않고、오직 삶에 대해 갈망하는 몸을 동력으로 움직이지만、
+CSTR:(CHARANUM-1):38 = 존재를 유지하고 있는 마력이 끊어지면 즉시 있어야 할 모습으로 되돌아갈 것이다。
 LOCAL = CHARANUM-1
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -253,8 +253,8 @@ CALL HEALTH_CHARA,(CHARANUM-1)
 CALL SET_ENEMY,14,[[キャラ:드래그퀸]],23,0
 BASE:(CHARANUM-1):힘 -= 3
 BASE:(CHARANUM-1):인내력 += 3
-NAME:(CHARANUM-1) = サンゲリア
-CALLNAME:(CHARANUM-1) = サンゲリア
+NAME:(CHARANUM-1) = 산겔리아
+CALLNAME:(CHARANUM-1) = 산겔리아
 MAXBASE:(CHARANUM-1):파마 = 200
 BASE:(CHARANUM-1):파마 = 200
 MAXBASE:(CHARANUM-1):신경 = 0
@@ -272,16 +272,16 @@ ABL:(CHARANUM-1):스킬4 = [[스킬:물의벽]]
 ABL:(CHARANUM-1):스킬5 = 0
 ABL:(CHARANUM-1):스킬6 = 0
 ABL:(CHARANUM-1):스킬7 = 0
-CSTR:(CHARANUM-1):30 = 全身を朽ち果てさせた、蠢く埋葬死体。
-CSTR:(CHARANUM-1):31 = 原典となるのは、ブードゥの秘術によって蘇った数百年前の土葬死体。
-CSTR:(CHARANUM-1):32 = 一般的なゾンビにみられる腐敗し血肉に塗れた姿ではなく、
-CSTR:(CHARANUM-1):33 = 死蝋化し、土に塗れて蟲の集った外観をしていることが特徴的。
+CSTR:(CHARANUM-1):30 = 온몸이 썩어버린、꿈틀거리는 매장 시체。
+CSTR:(CHARANUM-1):31 = 원전이 되는 것은、부두의 비술로 되살아난 수백 년 전 토장사체。
+CSTR:(CHARANUM-1):32 = 일반적인 좀비에서 볼 수 있는 부패하고 피칠갑한 모습이 아닌、
+CSTR:(CHARANUM-1):33 = 시랍화되어、흙투성이에 벌레가 모인 외관을 하고 있는 것이 특징이다。
 CSTR:(CHARANUM-1):34 = 　
-CSTR:(CHARANUM-1):35 = ”サンゲリア”は「流血」を意味するSangueと「息切れ」を意味するSusperiaを組み合わせた造語。
-CSTR:(CHARANUM-1):36 = より正確に言うならば、映画『サスペリア』にあやかって名付けられたとあるゾンビ映画の邦題であり、
-CSTR:(CHARANUM-1):37 = 特定の外観や形質をもったゾンビを形容する単語という訳ではない。
+CSTR:(CHARANUM-1):35 = ”산겔리아”는「유혈」을 의미하는 Sangue와「숨차다」를 의미하는 Susperia를 조합한 조어。
+CSTR:(CHARANUM-1):36 = 더 정확하게 말하자면、영화『서스페리어』에 빗대어 붙여진 어떤 좀비 영화의 제목이며、
+CSTR:(CHARANUM-1):37 = 특정 외관이나 형질을 가진 좀비를 형용하는 단어는 아니다。
 CSTR:(CHARANUM-1):38 = 　
-CSTR:(CHARANUM-1):39 = 余談ではあるが、映画『サンゲリア』はサメとゾンビが海中で戦うシーンが存在する。すごい。
+CSTR:(CHARANUM-1):39 = 여담이긴 하지만、영화『산겔리아』는 상어와 좀비가 바닷속에서 싸우는 장면이 존재한다。대단하다。
 LOCAL = CHARANUM-1
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -292,46 +292,46 @@ WAIT
 FLAG:도주불가플래그 = 1
 IF FLAG:승리플래그
 	LOCAL:5 = 1
-	PRINTFORMW ……聊か呆れるほどの量のゾンビの群勢を撃退した%CALLNAME:MASTER%は、ひとまずその場で一息を付いた。
+	PRINTFORMW ……조금 질릴 정도의 양의 좀비 떼를 격퇴한 %조사처리(CALLNAME:MASTER,"는")%、일단 그 자리에서 한숨을 돌렸다。
 	PRINTFORMW 
-	PRINTFORMW 確かに強力と言えば強力な群れではあったが、押し切れない程ではないのは幸運だった。
-	PRINTFORMW だが、むしろ莫大な数にそれなりの質が伴っているのは、それでもなお脅威であることに変わりはない。
+	PRINTFORMW 분명 강력하면 강력한 무리이긴 했지만、물리치지 못할 정도는 아닌 것은 행운이었다。
+	PRINTFORMW 하지만、오히려 막대한 수에 나름의 질이 따르고 있는 것은、그래도 여전히 위협임에 변함이 없다。
 	PRINTFORMW 
 ELSE
 	LOCAL:5 = 2
-	PRINTFORMW ……なんとかゾンビの群勢の隙を付いて逃げ出すことに成功した%CALLNAME:MASTER%は、手近な建物へと逃げ込んで一息をつけた。
+	PRINTFORMW ……가까스로 좀비 떼의 빈틈을 틈타 도망치는 데 성공한 %조사처리(CALLNAME:MASTER,"는")%、가까운 건물로 도망쳐 한숨을 돌렸다。
 	PRINTFORML 
-	PRINTFORMW …”ゾンビ”の類が如何に発生しやすい悪魔とは言え、いくらなんでもこの数は常軌を逸している。
-	PRINTFORML 普通に考えるのであれば、恐らくこの街を覆っている瘴気がゾンビの大量発生の原因であり
-	PRINTFORMW この瘴気の発生源にこそ事件の元凶が存在してはいるのだろうが…
+	PRINTFORMW …”좀비”류가 아무리 발생하기 쉬운 악마라고는 하지만、아무리 그래도 이 수는 상궤를 벗어난다。
+	PRINTFORML 평범하게 생각한다면、아마도 이 거리를 덮고 있는 장기가 좀비 대량 발생의 원인이며
+	PRINTFORMW 이 장기의 발생원에야말로 사건의 원흉이 존재하기는 하겠지만…
 	PRINTFORMW 
 ENDIF
 	PRINTFORML 
-	PRINTFORMW …どちらにせよ、次の行動を決めるべきだろう。
+	PRINTFORMW …어느 쪽이든、다음 행동을 결정해야 할 것이다。
 	$REQUEST_80_10_LOOP
-	PRINTFORMW %CALLNAME:MASTER%は……
-	PRINTL [0] 少し休憩する
-	PRINTL [1] 使えそうな道具を探す
-	PRINTL [99] 任務を放棄する
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%……
+	PRINTL [0] 잠시 휴식한다
+	PRINTL [1] 쓸 만한 도구를 찾아본다
+	PRINTL [99] 임무를 포기한다
 	CALL INPUTINT,0,1,99
 	SELECTCASE RESULT
 	CASE 0
 	;体力の小回復と状態異常治癒。アイテムゲットと択一。
 	PRINTFORML 
-		PRINTFORMW ……時間に余裕があるかないかと言われれば、然程余裕はない。
-		PRINTFORMW いつ再びゾンビの大群に襲われるかもわからず、後どれだけゾンビが存在しいるかも定かではない。
-		PRINTFORMW だが、だからと言って気を逸り行動して良いほど容易い自体出ないこともまた確かだ。
+		PRINTFORMW ……시간에 여유가 있느냐 없느냐 하면、그다지 여유가 없다。
+		PRINTFORMW 언제 또다시 좀비 떼에게 습격당할지도 모르고、앞으로 얼마나 좀비가 존재하는지도 확실치 않다。
+		PRINTFORMW 그렇지만、그렇다고 초조하게 행동해도 좋을 만큼 쉽지 않은 것 또한 확실하다。
 		PRINTFORML 
-		PRINTFORML 周囲を未だ徘徊するゾンビ達から逃れるため、場所を移す必要はあるだろうし、
-		PRINTFORMW 万全を期すことまでは望めないだろうが、ひとまず多少なりとも態勢を整えてから、
-		PRINTFORMW ”元凶”が存在するであろう瘴気の奥先へと向かうべきだろうか……
+		PRINTFORML 주위를 아직도 배회하는 좀비들로부터 벗어나기 위해、장소를 옮길 필요는 있을 것이고、
+		PRINTFORMW 만전을 기하는 것까지는 기대할 수 없겠지만、일단 다소나마 대비태세를 갖추고 나서、
+		PRINTFORMW ”원흉”이 존재할터인 장기의 깊숙한 곳으로 향해야 할 것인가……
 		PRINTFORMW 
-		CALL INPUT_YN, "少し休憩する(少量の体力と、状態異常を回復します)", "考え直す"
+		CALL INPUT_YN, "조금 휴식한다(소량의 체력과、상태이상을 회복합니다)", "다시 생각한다"
 		IF RESULT == 0
 			PRINTFORMW …………
-			PRINTFORML ひっそりと場所を移し、息を殺し、
-			PRINTFORMW 周囲を徘徊する無数の死者達に気付かれぬように意識を張りつめさせながら、
-			PRINTFORMW 暫しの間%CALLNAME:MASTER%達は休憩を行い、体調を整え直した。
+			PRINTFORML 조용하게 자리를 옮겨、숨죽이고、
+			PRINTFORMW 주위를 배회하는 무수한 사망자들이 눈치채지 못하도록 의식을 가다듬으면서、
+			PRINTFORMW 잠시동안 %CALLNAME:MASTER%들은 휴식을 취하며、컨디션을 회복했다。
 				FOR LOCAL, 1, 7
 					SIF POS(LOCAL) < 0
 						CONTINUE
@@ -345,40 +345,40 @@ ENDIF
 						CFLAG:POS(LOCAL):상태이상 = 0
 				NEXT
 			PRINTFORML 
-			PRINTFORML 万全と言えるかと言えば微妙なところではあるが、
-			PRINTFORMW これ以上長々と時間を浪費するわけにもいかないだろう…
+			PRINTFORML 만전이라고 할 수 있는가 하면 미묘한 부분이긴 하지만、
+			PRINTFORMW 더 이상 시간을 낭비할 수도 없겠지…
 			PRINTFORML 
-			PRINTFORMW 一刻一刻と強くなり続けている死臭と無数の屍鬼の気配を振り切るように、
-			PRINTFORMW そして、明瞭に濃く、深くなり続けている瘴気を振り払うように、
-			PRINTFORMW %CALLNAME:MASTER%はその場を後に死、”瘴気”の中心地へと進み始めた……
+			PRINTFORMW 한시가 다르게 강해지고 있는 사취와 무수한 시귀의 기척을 뿌리치듯、
+			PRINTFORMW 그리고、명료하게、짙고 계속 깊어지고 있는 장기를 떨쳐내듯이、
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그 자리를 뒤로하고 죽음、”장기”의 중심지로 나아가기 시작했다……
 		ELSE
 			GOTO REQUEST_80_10_LOOP
 		ENDIF
 	CASE 1
 	;アイテムが確保できる。
 	;最初はチェーンソーとか聖なる弾丸あたりも考えたがイベント内で装備イジるのもどうかと…
-		PRINTFORMW ……幸いにも、現在身を潜めている建物は、商業施設…いわゆるスーパーマーケットの類だ。
-		PRINTFORML 今なお散在するゾンビ達によるものか、或いは今やどこにも存在していない生存者の手によるものか、
-		PRINTFORMW ひどく散乱し、嘗て陳列されていたであろう商品のほとんどは失せ、或いは破損してしまっているが、
-		PRINTFORMW それでも多少の時間を使えば、何かしらの有用な道具は手に入るだろう。
+		PRINTFORMW ……다행이도、현재 잠적해 있는 건물은、상업시설…이른바 슈퍼마켓 종류다。
+		PRINTFORML 지금도 산재한 좀비들에 의한 것인지、아니면 지금은 어디에도 존재하지 않는 생존자들의 손에 의한 것인지、
+		PRINTFORMW 심하게 흩어져、진열되어 있었을 상품의 대부분은 사라지거나、혹은 파손되어 버렸지만、
+		PRINTFORMW 그래도 약간의 시간을 사용하면、뭔가 유용한 도구는 얻을 수 있을 것이다。
 		PRINTFORML 
-		PRINTFORMW 当然、それ以外の行動…体調や装備を整える様な事までは、している余裕はなくなってしまうだろうが…
+		PRINTFORMW 당연히、그 이외의 행…몸 상태나 장비를 갖추는 일까지는、하고 있을 여유가 없어지겠지만…
 		PRINTFORML 
-		CALL INPUT_YN, "探索する", "考え直す"
+		CALL INPUT_YN, "탐색한다", "다시 생각한다"
 		IF RESULT == 0
 			PRINTFORMW …………
 			IF LOCAL:5 == 1
 				PRINTFORML 
-				PRINTFORMW マーケットの地下倉庫の一画を探索していたところ、恐らくは”同業者”であろう誰かの死体を発見した。
-				PRINTFORML ゾンビ達に襲われた惨状を物語る様に全身を食い千切られ、引き千切られており、
-				PRINTFORML 新鮮な生命力…生体マグネタイトを求めてか、或いはただのゾンビの本能によるものか、
-				PRINTFORMW 生命活動に重要な幾つかの器官の近い部位ほどにその有り様は惨憺たるものとなっている。
-				PRINTFORML 装備の類も恐らくは死に瀕しての蛮用によってひどく損壊しており、そちらを回収、再利用するのは不可能だろうが、
-				PRINTFORMW 道具に関してはゾンビ達の関心を引く事もなかったのか、乱雑にその場に撒き散らされている。
-				PRINTFORMW 死人に口なし。幾つかの使えるものは有効活用させてもらうとしよう……
+				PRINTFORMW 마켓 지하창고의 한 획을 탐색하던 중、아마도 ”동업자”일 누군가의 시체를 발견했다。
+				PRINTFORML 좀비들에게 습격당한 참상을 말해주듯 온몸을 다 뜯어먹고、찢겨진 상태이며、
+				PRINTFORML 신선한 생명력…생체 마그네타이트를 찾아서인지、아니면 그냥 좀비의 본능에 의한 것인지、
+				PRINTFORMW 생명활동에 중요한 여러 기관의 가까운 부위일수록 그 모습은 참담하다。
+				PRINTFORML 장비류도 아마도 죽음에 처한 만용에 의해 심하게 훼손되어 있어、그쪽을 회수、재사용하는 것은 불가능하겠지만、
+				PRINTFORMW 도구에 관해서는 좀비들의 관심을 끌지도 않았는지、난잡하게 그 자리에 뿌려져 있다。
+				PRINTFORMW 죽은 사람은 말이 없다。몇가지 사용할 수 있는 것은 유효 활용하도록 하자……
 				PRINTFORML 
-				PRINTFORMW ＞ナパーム弾×2　を手に入れた
-				PRINTFORMW ＞銀のマニシャ×2　を手に入れた
+				PRINTFORMW ＞네이팜탄×2　를 손에 넣었다
+				PRINTFORMW ＞은의 마니샤×2　를 손에 넣었다
 				IF ITEM:[[아이템:네이팜탄]] > 8
 					ITEM:[[아이템:네이팜탄]] = 10
 				ELSE
@@ -386,14 +386,14 @@ ENDIF
 				ENDIF
 			ELSEIF LOCAL:5 == 2
 				PRINTFORML 
-				PRINTFORMW 徘徊する無数のゾンビに見つからないように、崩れた棚の合間を抜け、道具となりそうなものを探していると、
-				PRINTFORMW いくつかの揮発性の高い燃料や、薬品の類を見つけることができた。
-				PRINTFORMW ゾンビの大群に用いるにしては数が心許ないが、役に立たないということは無いだろう…
-				PRINTFORMW 何より、単なる商業施設に、これ以上の質の道具を求めるというのも酷ではある。
+				PRINTFORMW 배회하는 무수한 좀비들에게 발견되지 않도록、무너진 선반 사이를 벗어나、도구가 될 만한 것을 찾다 보면、
+				PRINTFORMW 몇 가지 휘발성이 높은 연료나、약품류를 찾을 수 있었다。
+				PRINTFORMW 좀비의 대군에 이용하는 것치고는 수가 불안하지만、도움이 안 될 일은 없겠지…
+				PRINTFORMW 무엇보다、단순한 상업시설에、이 이상의 질적 도구를 요구하는 것도 가혹하기는 하다。
 				PRINTFORML 
-				PRINTFORMW ＞火炎瓶×5　を手に入れた
-				PRINTFORMW ＞牛黄丹×2　を手に入れた
-				PRINTFORMW ＞イワクラの水　を手に入れた
+				PRINTFORMW ＞화염병×5　를 손에 넣었다
+				PRINTFORMW ＞우황단×2　를 손에 넣었다
+				PRINTFORMW ＞이와쿠라의물　를 손에 넣었다
 				IF ITEM:[[아이템:화염병]] > 5
 					ITEM:[[아이템:화염병]] = 10
 				ELSE
@@ -408,11 +408,11 @@ ENDIF
 					ITEM:[[아이템:이와쿠라의물]]  ++
 			ENDIF
 			PRINTFORML 
-			PRINTFORMW …さて、これ以上にめぼしいものは…流石になさそうだ。
-			PRINTFORMW そして何より、流石に最早時間も無くなりつつあるらしい。
-			PRINTFORMW 一刻一刻と強くなり続けている死臭と無数の屍鬼の気配を振り切るように、
-			PRINTFORMW そして、明瞭に濃く、深くなり続けている瘴気を振り払うように、
-			PRINTFORMW %CALLNAME:MASTER%はその場を後にして、”瘴気”の中心地へと進み始めた……
+			PRINTFORMW …자、이보다 더 값진 것은…역시 없을 것 같다.。
+			PRINTFORMW 그리고 무엇보다、역시 벌써 시간이 없어지고 있는 것 같다。
+			PRINTFORMW 한시가 다르게 강해지고 있는 사취와 무수한 시귀의 기척을 뿌리치듯、
+			PRINTFORMW 그리고、명료하게、짙고 계속 깊어지고 있는 장기를 떨쳐내듯이、
+			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 그 자리를 뒤로하고 죽음、”장기”의 중심지로 나아가기 시작했다……
 		ELSE
 			GOTO REQUEST_80_10_LOOP
 		ENDIF
@@ -420,39 +420,39 @@ ENDIF
 	;もりくぼは森へ帰りますけど…むりくぼですけど…
 		PRINTFORML 
 		IF BASE:MASTER:LV > 30
-			PRINTFORMW ……あの”程度”であれば対処ができない訳ではないが、量が多いというのは単純に脅威である。
-			PRINTFORML 明らかに普通ではなかったゾンビが、更に数を伴って湧き続けているというだけでも問題なのだが、
-			PRINTFORMW それはそのまま、それを発生させている何かしらがいるという事に他ならないのだから。
+			PRINTFORMW ……그”정도”라면 대처를 할 수 없는 것은 아니지만、양이 많다는 것은 단순히 위협이다。
+			PRINTFORML 분명 평범하지 않았던 좀비들이、계속 늘어나며 솟아나고 있다는 것만으로도 문제지만、
+			PRINTFORMW 그것은 그대로、그것을 발생시키고 있는 무언가가 있다는 것이나 다름없으니까。
 			PRINTFORML
-			PRINTFORMW …何より、ここはまだ”瘴気”の沸いている場所としては外縁と言っていい。
-			PRINTFORMW ならば、中央に存在しているであろう”何か”は、これ以上の脅威と考えられる。
-			PRINTFORMW 流石に、それほどの何かと戦うとなると、現状の準備では辛いものがあるかもしれない。
+			PRINTFORMW …무엇보다、이곳은 아직”장기”가 끓고 있는 곳으로는 가장자리라고 해도 좋다。
+			PRINTFORMW 그렇다면、중앙에 존재하고 있을”무언가”는、이 이상의 위협이라고 생각할 수 있다。
+			PRINTFORMW 역시、그 정도의 무언가와 싸운다면、현재의 준비로는 괴로운 것이 있을지도 모른다。
 		ELSE
-			PRINTFORMW ……端的に言ってしまえば、聊かこの依頼は身に余ると言わざるを得ない。
-			PRINTFORMW 一般的に湧くようなごく普通のゾンビならばまだしも、先程戦闘した”あれ”は、それどころの話ではない。
+			PRINTFORMW ……단적으로 말해 버리면、조금 이 의뢰는 분에 넘친다고 말하지 않을 수 없다。
+			PRINTFORMW 일반적으로 샘솟는 지극히 평범한 좀비라면 몰라도、조금 전에 전투한”그것”은、그 정도의 이야기가 아니다。
 			PRINTFORML
-			PRINTFORMW …何より、ここはまだ”瘴気”の沸いている場所としては外縁と言っていい。
-			PRINTFORMW ならば、中央に存在しているであろう”何か”は、これ以上の脅威と考えられる。
-			PRINTFORMW 流石に、それほどの存在と戦うとなると、現状の準備では辛いものがあるかもしれない。
+			PRINTFORMW …무엇보다、이곳은 아직”장기”가 끓고 있는 곳으로는 가장자리라고 해도 좋다。
+			PRINTFORMW 그렇다면、중앙에 존재하고 있을”무언가”는、이 이상의 위협이라고 생각할 수 있다。
+			PRINTFORMW 역시、그 정도의 존재와 싸운다면、현재의 준비로는 괴로운 것이 있을지도 모른다。
 		ENDIF
-		PRINTFORMW 依頼は失敗という形になるだろうが、何より命あっての物種なのだから…
+		PRINTFORMW 의뢰는 실패의 형태가 되겠지만、무엇보다 목숨이 제일이니까…
 		PRINTFORML 
-		CALL INPUT_YN, "放棄する", "考え直す"
+		CALL INPUT_YN, "포기한다", "다시 생각한다"
 		IF RESULT == 0
 			PRINTFORMW
 			PRINTFORMW ………………
 			PRINTFORMW …………
 			PRINTFORMW ……
 			PRINTFORML 
-			PRINTFORML 結局、依頼は失敗という形に終わったが、
-			PRINTFORMW 数日後、その一帯に湧いていた大量のゾンビの群れは一斉に崩れ落ちる様に消滅し、事態はあっさりと解決したらしい。
+			PRINTFORML 결국、의뢰는 실패의 형태로 끝났지만、
+			PRINTFORMW 며칠 후、그 일대에 솟았던 대량의 좀비떼는 일제히 무너져 내리듯 소멸했고、사태는 깨끗이 해결된 것 같다。
 			PRINTFORML 
-			PRINTFORMW 結局原因は不明だが、例の怪しげな”瘴気”の中心地、
-			PRINTFORMW それなりの規模の音楽施設であったそこには、真新しい少量の血痕と、幾つかの死体が残っていたとのことだ。
-			PRINTFORMW それの”どれ”が元凶だったのか、或いはその全てが被害者だったのか。
-			PRINTFORMW 或いは”それ”に関わったものたちは生きているのか、死んでいるのか。
+			PRINTFORMW 결국 원인은 알 수 없지만、예의 수상한”장기”의 중심지、
+			PRINTFORMW 나름의 규모의 음악시설이었던 그곳에는、아주 새로운 소량의 혈흔과、시신 몇 구가 남아 있었다는 것이다。
+			PRINTFORMW 그것의”어느쪽”이 원흉이었는지、아니면 그 모든 것이 피해자였는지。
+			PRINTFORMW 혹은”그것”에 관련된 사람들은 살아 있는가、죽어 있는가。
 			PRINTFORML 
-			PRINTFORMW すべては分からず仕舞いだが、最早%CALLNAME:MASTER%には関係のない事だろう……
+			PRINTFORMW 전부는 모르고 끝이지만、이미 %조사처리(CALLNAME:MASTER,"과")%는 관계없는 일이겠지……
 			PRINTFORML 
 			PRINTFORML 
 			CALL REQUEST80_10_CLOCKVIEW,2
@@ -462,51 +462,51 @@ ENDIF
 		ENDIF
 	ENDSELECT
 PRINTFORMW 
-PRINTFORMW むせ返るような死臭と、漂う瘴気の濃い方角へと気を張りながら足を進めていると、
-PRINTFORMW そこそこに大きな音楽施設…いわゆる、ライブホールの類へと辿り着いた。
+PRINTFORMW 숨막히는 사취와、감도는 장기 짙은 쪽으로 기를 펴면서 발걸음을 옮기다 보면、
+PRINTFORMW 그럭저럭 큰 음악 시설…이른바、라이브 홀의 종류에 도달했다。
 PRINTFORML 
-PRINTFORML 壁に貼られている血と泥にまみれたポスターを見る限り、
-PRINTFORMW 『白坂 小梅』というアイドルのライブイベントが”あった”らしい。
+PRINTFORML 벽에 붙어있는 피와 진흙으로 얼룩진 포스터를 보는 한、
+PRINTFORMW 『시라사카 코우메』라고 하는 아이돌의 라이브 이벤트가”있었다”고 한다。
 PRINTFORML 
-PRINTFORMW 日付をみるにそれなりに前のものではあるようだが、
-PRINTFORMW 剥がされていないということは、つまりそういうことなのだろうか。
-PRINTFORMW ”被害に遭った”のか、”被害を起こしたのか”は…先に進めばわかるかもしれないが……
+PRINTFORMW 날짜를 보니 나름대로 예전 것이긴 하지만、
+PRINTFORMW 벗겨지지 않았다는 것은、즉 그러한 것일까。
+PRINTFORMW ”피해를 입었따”는 것인지、”피해를 일으켰는지”는…앞으로 나아가면 알 수 있을지도 모르지만……
 PRINTFORML 
 PRINTFORMW …………
 PRINTFORMW ……
 PRINTFORMW …
 PRINTFORML 
-PRINTFORML 沸き立つ瘴気の大本であろうライブホールの内へと踏み込むと
-PRINTFORMW そこはより一層強く大気を澱ませるほどの死臭と瘴気に満たされているにも関わらず、ゾンビは殆ど存在していなかった。
+PRINTFORML 끓어오르는 장기의 대본일 라이브 홀 안으로 들어서면
+PRINTFORMW 그곳은 더욱 강하게 대기를 녹일 정도의 사취와 장기로 가득 차 있음에도、좀비는 거의 존재하지 않았다。
 PRINTFORML 
-PRINTFORMW 廃墟の館を模したような背景セットを濃密な瘴気が包み込み、無数の気配がその隅々に感じられる。
-PRINTFORMW 或いは本物の異界に来たかと見紛う程の空ろな静寂で満ちた死者達の空間に、しかしそぐわないものが一つ。
+PRINTFORMW 폐허의 관을 본뜬 듯한 배경 세트를 농밀한 장기가 감싸며、무수한 낌새가 그 구석구석에서 느껴진다。
+PRINTFORMW 혹은 진짜 외계에 왔는가를 헷갈릴 정도로 공허한 정적으로 가득 찬 죽은 자들의 공간、그런데 맞지 않는 게 하나。
 PRINTFORML 
-PRINTFORMW ぼうと揺らめき、おどろおどろしく周囲を照らし染める無数の怪火を統べる様に、
-PRINTFORMW 這い出す時を今かと待ち侘びる、そこに存在しているであろう死者達を統べる様に、
-PRINTFORMW ホールの中央に、まるでこの空間の主役のように一人の少女が存在している。
+PRINTFORMW 멍하니 흔들리며、놀랍게도 주위를 비추는 무수한 괴화를 통솔하는 것 처럼、
+PRINTFORMW 기어나올 때를 지금인가 하고 기다리고 있는、그곳에 존재하고 있을 죽은 자들을 통솔하는 것 처럼、
+PRINTFORMW 프린토프 홀 중앙에、마치 이 공간의 주역처럼 한 소녀가 존재한다。
 PRINTFORML 
-PRINTFORMW …否、確かにその少女は、この舞台の主役なのだろう。
+PRINTFORMW …아니、확실히 그 소녀는、이 무대의 주역일 것이다。
 PRINTFORML 
-PRINTFORML 先程目にしたポスターと一致する容姿の…『白坂 小梅』という名の、かつてアイドルであった少女は
-PRINTFORMW 確かにこの舞台で歌い踊ることを望まれた存在に間違いなく、
-PRINTFORMW そして、この膨大な死者達の空間を生み出した存在であることも、間違いない。
+PRINTFORML 조금 전에 본 포스터와 일치하는 외모의…『시라사카 코우메』라는 이름의、한때 아이돌이었던 소녀는
+PRINTFORMW 확실히 이 무대에서 노래하고 춤추기를 원했던 존재임에 틀림없고,、
+PRINTFORMW 그리고、이 방대한 사망자들의 공간을 만들어낸 존재임에도、틀림없다。
 PRINTFORML 
-PRINTFORML %CALLNAME:MASTER%の思考を肯定するように、ごぼり、と、少女の口の端から、眼孔から、そして身を包む衣装の内側から。
-PRINTFORMW 淀んだ瘴気が滲む様に溢れ出し、そして一層に周囲の死の気配を濃密なものに変えていく。
+PRINTFORML %CALLNAME:MASTER%의 생각을 긍정하듯、물컹、하고、소녀의 입 끝에서、동공에서、그리고 몸을 감싸는 의상의 안쪽에서。
+PRINTFORMW 고여 있는 장기가 번지듯이 쏟아져 나오고、그리고 한층 더 주위의 죽음의 기색을 짙게 바꾸어 간다。
 PRINTFORML 
-PRINTFORML その眼には光は宿っておらず、その居振る舞いにもおよそ本人の意識らしい意識も感じられず、
-PRINTFORMW 時折不規則に体を痙攣すらさせており、およそまともな状態とは言いがたい。
-PRINTFORMW と、なれば、何かの存在に意識を乗っ取られているか、その体に身に余る何かを宿してしまっているのか。
+PRINTFORML 그 눈에는 빛이 깃들어 있지 않고、그 거동에도 대략 본인의 의식다운 의식도 느껴지지 않으며、
+PRINTFORMW 시도 때도 없이 몸을 경련시키고 있어、대략 제대로 된 상태라고 보기 어렵다。
+PRINTFORMW 라고、한다면、무언가의 존재에 의식을 빼앗기고 있는지、그 몸에 분에 넘치는 무언가를 간직해 버리고 말았는지。
 PRINTFORML
-PRINTFORML このような規模の事件を起こして見せたということは、元々異能…霊的な資質を持ち合わせていたのだろうが、
-PRINTFORMW 少なくとも現状に彼女の意思は介在しておらず、むしろ彼女自身の命をすら削っているかもしれないが…
-PRINTFORML どうにせよ、いかなる理由でゾンビを生み出したのかは知る由も無いが、
-PRINTFORMW この依頼のメインターゲットが何で、どうすればよいかは、最早明白である。
+PRINTFORML 이런 규모의 사건을 일으켜 보였다는 것은、원래 이능…영적 자질을 갖고 있었겠지만、
+PRINTFORMW  적어도 현상에 그녀의 의사는 존재하지 않고、오히려 그녀 자신의 목숨을 깎고 있을지도 모르지만…
+PRINTFORML 어쨌든、어떤 이유로 좀비를 만들어냈는지는 알 수 없지만、
+PRINTFORMW 이 의뢰의 메인 타겟이 무엇이며、어떻게 하면 좋을지는、이미 명백하다。
 PRINTFORML 
 PRINTFORML 
-PRINTFORML %CALLNAME:MASTER%が武器を構え、仲魔達に命令を下すと同時に、
-PRINTFORMW 何かに操られるような動きでゆらりと少女が此方へと向き直り、同時に莫大な瘴気が一帯に沸き立った！
+PRINTFORML %조사처리(CALLNAME:MASTER,"가")% 무기를 들고、동료마들에게 명령을 내리는 동시에、
+PRINTFORMW 무언가에 조종당하는 듯한 움직임으로 흔들흔들 소녀가 이쪽으로 돌아섰고、동시에 엄청난 장기가 일대에 끓어올랐다！
 PRINTFORML 
 PRINTFORML 
 ;◆メイン戦闘ここから
@@ -519,16 +519,16 @@ CALL SET_ENEMY,9,[[キャラ:좀비쨩]],25,0,1
 BASE:(CHARANUM-1):인내력 += 15
 CFLAG:(CHARANUM-1):ＨＰ보정 += 200 
 MAXBASE:(CHARANUM-1):DYING = -100
-NAME:(CHARANUM-1) = ゾンビ
-CALLNAME:(CHARANUM-1) = ゾンビ
+NAME:(CHARANUM-1) = 좀비
+CALLNAME:(CHARANUM-1) = 좀비
 ABL:(CHARANUM-1):스킬8 = [[스킬:자애의기도]]
-CSTR:(CHARANUM-1):30 = 仮初の命を与えられ、歩き出した誰かの屍。
-CSTR:(CHARANUM-1):31 = 自然発生したものではなく、単独において活動できるだけの魔力を注ぎ込まれることで生まれた存在。
-CSTR:(CHARANUM-1):32 = 魂などは当に消え、かつて人であった時の記憶も持ち合わせてはいない。
+CSTR:(CHARANUM-1):30 = 일시적인 목숨을 부여받아、걷기 시작한 누군가의 시체。
+CSTR:(CHARANUM-1):31 = 자연발생한 것이 아니라、단독으로 활동할 수 있는 만큼의 마력을 쏟아 부음으로써 생겨난 존재。
+CSTR:(CHARANUM-1):32 = 영혼 등은 정작 사라졌고、한때 사람이었을 때의 기억도 갖고 있지 않다。
 CSTR:(CHARANUM-1):33 = 　
-CSTR:(CHARANUM-1):34 = 或いはかつて人であった時、なにかの運命を背負っていたとしても、
-CSTR:(CHARANUM-1):35 = いまやそれを知る術はなく、決してそれが明らかとなる事もない。
-CSTR:(CHARANUM-1):36 = ただそれだけの、ごくありふれた存在。
+CSTR:(CHARANUM-1):34 = 혹은 한때 사람이었을 때、어떤 운명을 짊어졌다 하더라도、
+CSTR:(CHARANUM-1):35 = 이제 그것을 알 길이 없으며、결코 그것이 밝혀지는 일도 없다。
+CSTR:(CHARANUM-1):36 = 단지 그만큼의、지극히 흔한 존재。
 LOCAL = CHARANUM-1
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -555,24 +555,24 @@ CALL BATTLE_START
 CUSTOMDRAWLINE =
 WAIT
 PRINTFORML 
-PRINTFORMW ……少女が斃れ、周囲の瘴気が晴れるとともに、夥しい死臭とゾンビの気配が薄れていく……
+PRINTFORMW ……소녀가 쓰러지고、주위의 장기가 맑아짐과 동시에、수많은 사취와 좀비의 기척이 희미해져 간다……
 PRINTFORML 
-PRINTFORMW どうやら、ようやくこのゾンビ騒動も、一段落がついたらしい。
-PRINTFORMW まるで映画か何かの様な、しかし冗談では済まない一幕が。
+PRINTFORMW 아무래도、이제야 이 좀비 소동도、일단락이 된 것 같다。
+PRINTFORMW 마치 영화인가 뭔가 같은、하지만 농담으로는 끝나지 않는 한 막이。
 PRINTFORML 
-PRINTFORMW そして、崩れ落ちた少女に対して手早くアナライズを行うと、やはり異能者の類であることが確認できる。
-PRINTFORMW 死者と交感し、それらを呼び出すともなれば、恐らくは典型的な”霊能力者”だったのだろう。
-PRINTFORMW それが、何らかの悪魔との契約を行ったのか、逆に悪魔に乗っ取られたのか。
-PRINTFORMW 一個人の身に余るほどの力を宿し、死の権能を振るい、魂を削ってまで死霊を呼び出していた。
-PRINTFORMW 恐らくではあるが、それがこの事件の原因で、顛末だったのだろうか。
+PRINTFORMW 그리고、무너져 내린 소녀에 대해 재빨리 분석을 실시하자、역시 이능자류임을 확인할 수 있다。
+PRINTFORMW 사망자와 교감하고、그것들을 호출하기도 하니、아마도 전형적인 ”영능력자”였을 것이다。
+PRINTFORMW 그것이、 어떤 악마와의 계약을 한 것인지、반대로 악마에게 납치된 것인지。
+PRINTFORMW 한 개인의 분에 넘치는 힘을 담아、죽음의 권능을 떨치고、영혼을 깎으면서까지 사령을 불러내고 있었다。
+PRINTFORMW 아마도 그것이、이 사건의 원인이며、전말이었을까。
 PRINTFORML 
-PRINTFORMW ……どちらにせよ、この少女をどうにかすれば、晴れて依頼は達成といえる。
+PRINTFORMW ……어느 쪽이든、이 소녀를 어떻게든 하면、경사스럽게도 의뢰는 달성이라고 할 수 있다。
 PRINTFORML 
-PRINTFORMW %CALLNAME:MASTER%は……
-PRINTL [0] 少女を連れ帰る
-PRINTL [1] 少女を組織へ渡す
+PRINTFORMW %조사처리(CALLNAME:MASTER,"는")%……
+PRINTL [0] 소녀를 데리고 돌아온다
+PRINTL [1] 소녀를 조직에 넘긴다
 SETCOLOR 0xFF0000
-PRINTL [2] ”処理”を行う
+PRINTL [2] ”처리”한다
 RESETCOLOR
 CALL INPUTINT,0,1,2
 SELECTCASE RESULT
@@ -587,232 +587,232 @@ CASE 0
 	PRINTFORMW ……
 	PRINTFORMW …
 	PRINTFORML 
-	PRINTFORMW 組織から下された依頼は、あくまで”ゾンビの異常発生への対処”である。
-	PRINTFORML その元凶が目の前に倒れる少女…「白坂 小梅」という異能者であることはもはや疑うまでも無いが、
-	PRINTFORMW 彼女をどうするかに関しては、少なくとも今この場においては%CALLNAME:MASTER%が決定を下してよいはずだ。
+	PRINTFORMW 조직으로부터 내려진 의뢰는、어디까지나”좀비의 이상 발생에 대한 대처”이다。
+	PRINTFORML 그 원흉이 눈앞에 쓰러져있는 소녀…「시라사카 코우메」라는 이능자임은 이제 의심할 필요도 없지만、
+	PRINTFORMW 그녀를 어떻게 할 것인가에 관해서는、적어도 지금 이 자리에서는 %조사처리(CALLNAME:MASTER,"가")% 결정을 내려도 좋을 것이다。
 	PRINTFORML 
-	PRINTFORMW そして、あれほどの力の持ち主をみすみす取り逃すというのは、%CALLNAME:MASTER%にとっては損失でしかない。
+	PRINTFORMW 그리고、이 정도의 힘의 소유자를 간과한다는 것은、%CALLNAME:MASTER%에게는 손실일 뿐이다。
 	PRINTFORML 
-	PRINTFORMW 「…………ん、ぁ……れ……？」
+	PRINTFORMW 「…………응、어……라……？」
 	PRINTFORML 
-	PRINTFORMW と、%CALLNAME:MASTER%が思考を巡らせていると、少女が意識を取り戻したのか、ふらふらと頭を振りながら起き上がろうとしていた。
-	PRINTFORML 手早く仲魔たちを送還させ、気遣う風に少女へと近寄ると、ようやく意識が確りとしてきたのか、
-	PRINTFORMW 立ち上がった少女が周囲を見回しながら、困惑しきった顔で%CALLNAME:MASTER%へと不安と恐怖を綯い交ぜにした視線を向けてくる。
+	PRINTFORMW と、%조사처리(CALLNAME:MASTER,"가")% 생각에 잠겨 있자、소녀가 의식을 되찾았는지、휘청휘청 머리를 흔들며 일어나려 하고 있었다。
+	PRINTFORML 재빠르게 동료마들을 송환시키고、배려하는 듯 소녀에게 다가가자、비로소 의식이 확실해졌는지、
+	PRINTFORMW 일어선 소녀가 주위를 둘러보며、곤혹스러운 얼굴로 %CALLNAME:MASTER%에게 불안과 두려움을 뒤섞은 시선을 보낸다。
 	PRINTFORML 
-	PRINTFORMW 「私……は…？ここ、は…えっと……」
+	PRINTFORMW 「나……는…？여기、는…그러니까……」
 	PRINTFORML 
-	PRINTFORMW …どうやら、記憶が断絶してる様子である。
-	PRINTFORMW 悪魔に憑かれていた上に、明らかに正気ではなかった以上、ある程度は想定していたが…
+	PRINTFORMW …아무래도、기억이 단절된 모습이다。
+	PRINTFORMW 악마에게 홀린데다、분명히 제정신이 아니었던 이상、어느 정도는 상정하고 있었지만…
 	PRINTFORML 
-	PRINTFORML 「あく、ま…？それに、あなた、は…………」
+	PRINTFORML 「악、마…？게다가、당신、은…………」
 	PRINTFORML 
-	PRINTFORMW 周囲に不安げに目を向けながら、体を小さく震わせている少女に%CALLNAME:MASTER%は簡単に自己紹介と状況の説明を行った。
-	PRINTFORMW 受けた依頼のこと、”ここ”がどうなっていたか、少女がどのような”状態”だったか……
-	PRINTFORMW …無論、%CALLNAME:MASTER%の素性などは、意図的に伏せて。
+	PRINTFORMW 주위로 불안하게 눈을 돌리며、몸을 작게 떨고 있는 소녀에게 %조사처리(CALLNAME:MASTER,"는")% 간단하게 자기소개와 상황 설명을 진행했다。
+	PRINTFORMW 받은 의뢰의 것、”여기”가 어떻게 되어 있었는지、소녀가 어떤”상태”였는지……
+	PRINTFORMW …물론、%CALLNAME:MASTER%의 신상 등은、의도적으로 숨긴채。
 	PRINTFORML 
-	PRINTFORMW 「え……っと………。う、うぅ…………思い出せ、ない…です…。わたし、ここで……」
+	PRINTFORMW 「저……기………。으、으으…………기억이 안、나…요…。나、여기서……」
 	PRINTFORML 
-	PRINTFORMW そして少女は、泣き出しそうな表情で%CALLNAME:MASTER%を見つめながら座り込んでしまった。
-	PRINTFORMW 当然と言えば、当然ではあるだろう。
-	PRINTFORMW 恐らくはこの少女からすれば、長い微睡から覚めたら、眼前の世界が様変わりしていたに等しい現状だ。
-	PRINTFORMW 今この場で即座に状況を理解し、行動を行うことなど、そうそう出来るわけがない。
+	PRINTFORMW 그리고 소녀는、울음을 터뜨릴 듯한 표정으로 %조사처리(CALLNAME:MASTER,"를")% 바라보며 주저앉아 버렸다。
+	PRINTFORMW 당연하다고 하면、당연하기는 할 것이다。
+	PRINTFORMW 아마도 이 소녀 입장에서는、긴 잠에서 깨어나니、눈앞의 세계가 완전히 달라진 것이나 다름없는 상황이다。
+	PRINTFORMW 지금 이 자리에서 즉시 상황을 이해하고、행동을 하는 것은、쉽게쉽게 할 수 있을 리 없다。
 	PRINTFORML 
-	PRINTFORMW …だが、決断はしてもらわねばならない。
+	PRINTFORMW …하지만、결단은 내려야만 한다。
 	PRINTFORML 
-	PRINTFORMW 「…………え、え…？」
+	PRINTFORMW 「…………에、에…？」
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW あるいは、彼女がただの一般人であれば話は違っただろう。
+	PRINTFORMW 혹은、그녀가 그냥 일반인이었다면 이야기는 달랐을 것이다。
 	PRINTFORML 
-	PRINTFORML 世界の裏側で、悪魔と異能、それを使役する様々な勢力が跋扈するこの世界とはいえ、
-	PRINTFORMW 世界の片隅で何も知らずに生きていくことは難しいわけではない。
+	PRINTFORML 세계의 뒤편에서、악마와 이능、그것을 사역하는 여러 세력이 설치는 이 세계라고는 하지만、
+	PRINTFORMW 세상 한구석에서 아무것도 모르고 산다는 것은 어려운 일이 아니다。
 	PRINTFORML 
-	PRINTFORMW 例え異能を持っていたとしても、それをひた隠し社会に溶け込んでいれば、また別の道があったかもしれない。
+	PRINTFORMW 가령 이능을 가지고 있었다고 해도、그것을 숨긴채 사회에 녹아 들었다면、또 다른 길이 있었을지도 모른다。
 	PRINTFORML 
-	PRINTFORMW だが、彼女は既に異能を振るい、事件を起こしている。
-	PRINTFORMW それが彼女自身の意思によるものではなかったとしても、それはもはや決して少なくない人間の目に留まってしまっている。
+	PRINTFORMW 하지만、그녀는 이미 이능을 발휘해、사건을 일으켰다。
+	PRINTFORMW 그것이 그녀 자신의 의사에 의한 것은 아니었다 하더라도、그것은 이미 결코 적지 않은 인간의 눈에 머물러 버렸다。
 	PRINTFORML 
-	PRINTFORMW で、ある以上、もはや彼女のとれる選択肢は少ない。。
+	PRINTFORMW 이로서、어느 이상、그녀가 취할 수 있는 선택지는 적다。。
 	PRINTFORML 
-	PRINTFORMW 異能を武器とする”戦力”として居場所を己の手で確保するか、異能を使う”道具”として利用されるか。
-	PRINTFORMW 逃れることは、できないだろう。
-	PRINTFORMW …そして、%CALLNAME:MASTER%もまた、逃がすつもりはない。
+	PRINTFORMW 이능을 무기로 하는”전력”으로서 거처를 자신의 손으로 확보할 것인가、이능을 사용하는”도구”로서 이용될 것인가。
+	PRINTFORMW 도망칠 수는、없을 것이다。
+	PRINTFORMW …그리고、%CALLNAME:MASTER% 또한、놓칠 생각이 없다。
 	PRINTFORML 
-	PRINTFORMW 「え…あ、ぅ……わたし、は……その……」
+	PRINTFORMW 「에…아、으……나、는……그게……」
 	PRINTFORML 
-	PRINTFORMW 少女は突然突き付けられた選択にしどろもどろになっているが、あまり時間があるわけではない。
-	PRINTFORML 他の勢力が今この場で介入してくるという事は考えにくいとはいえ、
-	PRINTFORMW ゾンビの発生こそ抑えられているが、他の悪魔が湧き出し始めない保証も無いのだから。
+	PRINTFORMW 소녀는 갑자기 들이닥친 선택에 횡설수설하고 있지만、그렇게 시간이 있는 것은 아니다。
+	PRINTFORML 다른 세력이 지금 이 자리에서 개입해 온다는 것은 생각하기 어렵다고는 하나、
+	PRINTFORMW 좀비의 발생이야말로 억제되고 있지만、다른 악마가 솟아나기 시작하지 않는다는 보장도 없다。
 	PRINTFORML 
-	PRINTFORMW 「…………ぇ……？ゾンビ…です、か…？」
+	PRINTFORMW 「…………에……？좀비…인가、요…？」
 	PRINTFORML 
-	PRINTFORMW …と、%CALLNAME:MASTER%が言葉を続けていると、明らかに少女の瞳が揺れ動いた。
-	PRINTFORMW しかし、それは未知のものに対する恐怖、というよりは……
+	PRINTFORMW …라고、%조사처리(CALLNAME:MASTER,"가")% 말을 이어가자、분명히 소녀의 눈동자가 요동쳤다。
+	PRINTFORMW 그러나、그것은 미지의 것에 대한 공포、라기보다는……
 	PRINTFORML 
-	PRINTFORMW 「あ、悪魔が、いて…異能の持ち主が、いて……ぞ、ゾンビも……いる…の…？…いるん、ですか……？」
+	PRINTFORMW 「아、악마가、있고…이능을 소유한 자가、있고……조、좀비도……있…어…？…있나、요……？」
 	PRINTFORML 
-	PRINTFORML ある種の逃避なのか、あるいは本当に現状に対する混乱以上の関心があるのか、
-	PRINTFORMW 少女の目に光が戻り、おずおずと質問を行ってきた。
-	PRINTFORML …確かに、このような舞台のセットでイベントを行うようなアイドルだったのであれば、
-	PRINTFORMW オカルトの趣味があってもおかしくはない。
+	PRINTFORML 모종의 도피인지、아니면 정말 현 상황에 대한 혼란 이상의 관심이 있는지,、
+	PRINTFORMW 소녀의 눈에 빛이 돌아와、머뭇거리며 질문을 해왔다。
+	PRINTFORML …확실히、이러한 무대 세트로 이벤트를 진행하는 아이돌이었다면、
+	PRINTFORMW 오컬트 취미가 있어도 이상하지 않다。
 	PRINTFORML 
-	PRINTFORMW …これは、好都合かもしれない。 
-	PRINTFORMW 内心で僅かにほくそ笑みながら、%CALLNAME:MASTER%は言葉を続けた。
-	PRINTFORMW 自分の知る”ゾンビ”の事、そして、自分にとっての”ゾンビ”という存在の身近さなど……
+	PRINTFORMW …이건、편리할지도 모른다。 
+	PRINTFORMW 속으로 살짝 미소 지으며、%조사처리(CALLNAME:MASTER,"는")% 말을 이었다。
+	PRINTFORMW 자신이 아는”좀비”에 대한 것、그리고、자신에게 있어서의”좀비”라는 존재의 친밀함 등……
 	PRINTFORML
-	PRINTFORML 「そ、そうなの…？なんです、か…？じゃ、じゃあ…
-	PRINTFORML 　あなたに付いていけば、ゾンビとかと、いっぱい…………」
+	PRINTFORML 「그、그래요…？그런가요、요…？그、그럼…
+	PRINTFORML 　당신을 따라가면、좀비라던가、잔뜩…………」
 	PRINTFORML 
-	PRINTFORML すると、不安の色を拭い去るほどではないが、明らかな好奇心を浮かべ、少女が身を乗り出してきた。
+	PRINTFORML 하고、불안의 빛을 씻어낼 정도는 아니지만、분명한 호기심을 보이며、소녀가 몸을 내밀었다。
 	PRINTFORML 
 	IF TALENT:MASTER:이능자 == 1
 	;異能者の場合、CHECK_SKILLで初期スキルを確認してクラスを判別する。
 		IF CHECK_SKILL(MASTER, [[스킬:무드]]);呪術師
-			PRINTFORML …確かに、ゾンビの生成は流石に専門からは若干外れるが、呪術そのものは%CALLNAME:MASTER%の得意分野である。
-			PRINTFORMW おそらくは天性の霊感のままに能力を振るっていた彼女に、%CALLNAME:MASTER%の技術がどこまで応用できるかはわからないが…
+			PRINTFORML …확실히、좀비 생성은 역시 전문에서 약간 벗어나지만、주술 자체는 %CALLNAME:MASTER%의 특기 분야이다。
+			PRINTFORMW 아마 천성의 영감대로 능력을 발휘하던 그녀에게、%CALLNAME:MASTER%의 기술이 어디까지 응용될 수 있을지는 모르겠지만…
 			PRINTFORML 
-			PRINTFORML 考えを巡らせながら簡易な呪術を組み上げ、周囲の屍へと呪詛を掛けると、
-			PRINTFORMW ずず、と音を立てながらそれらが再び動き出した。
+			PRINTFORML 생각을 가다듬으며 간단한 주술을 짜내어、주위의 시체들에게 저주를 내리자、
+			PRINTFORMW 스스、하고 소리를 내면서 그것들이 다시 움직이기 시작했다。
 			PRINTFORML 
-			PRINTFORMW …最も、これは正しい意味での”ゾンビ”と言えるほどの能力すらも持たない、極めて稚拙かつ矮弱なものではあるが…
+			PRINTFORMW …무엇보다도、이것은 올바른 의미에서의”좀비”라고 말할 수 있을 정도의 능력조차 가지지 못한、지극히 조잡하고 왜약한 것이긴 하지만…
 			PRINTFORML 
-			PRINTFORMW 「ふ、わあぁ…！すごい……ほ、本物の、ゾンビ……！？」
+			PRINTFORMW 「후、와아…！굉장해……지、진짜、좀비……！？」
 			PRINTFORMW 
-			PRINTFORML 本物のゾンビは、これよりは強力な存在であり、そして今の世界にはありふれた存在でもあり。
-			PRINTFORMW 何より、外ならぬ彼女自身が、それを無数に召喚していたのだが…
-			PRINTFORMW 内心で呟きながら、%CALLNAME:MASTER%は説得の言葉を続ける。
+			PRINTFORML 진짜 좀비는、이보다는 강력한 존재이고、그리고 지금 세상에는 흔한 존재이기도 하다。
+			PRINTFORMW 무엇보다、다름 아닌 그녀 자신이、그것을 무수히 소환하고 있었는데…
+			PRINTFORMW 속으로 중얼거리며、%조사처리(CALLNAME:MASTER,"는")% 설득의 말을 이어간다。
 			PRINTFORML 
 		ELSEIF  CHECK_SKILL(MASTER, [[스킬:부흐]]);降霊師
-			PRINTFORMW …確かに、霊を使役する技術は%CALLNAME:MASTER%の専門分野ではある。
-			PRINTFORMW おそらくは天性の霊感のままに能力を振るっていた彼女に、%CALLNAME:MASTER%の技術がどこまで応用できるかはわからないが…
+			PRINTFORMW …확실히、영을 사역하는 기술은 %CALLNAME:MASTER%의 전문분야이긴 하다。
+			PRINTFORMW 아마 천성의 영감대로 능력을 발휘하던 그녀에게、%CALLNAME:MASTER%의 기술이 어디까지 응용될 수 있을지는 모르겠지만…
 			PRINTFORML 
-			PRINTFORMW 考えを巡らせながら極めて格の低い霊魂を降霊させて見せると、少女はきらきらと目を輝かせて%CALLNAME:MASTER%を見つめてきた。
+			PRINTFORMW 생각을 돌리며 지극히 격이 낮은 영혼을 강령시켜 보이자、소녀는 반짝반짝 눈을 빛내며 %조사처리(CALLNAME:MASTER,"를")% 응시해왔다。
 			PRINTFORML 
-			PRINTFORMW 「わぁ…！すごい……あ、あなたも…み、みんなと…いっしょで……！」
+			PRINTFORMW 「와아…！굉장해……다、당신도…모、모두와…같이……！」
 			PRINTFORML 
-			PRINTFORMW 確かに”こういったこと”を行うことは%CALLNAME:MASTER%にとって特段難しいことではない。
-			PRINTFORMW むしろ、彼女にしてみれば、自分よりもはるかに容易く実現して見せるのではないだろうか…
-			PRINTFORMW 内心で呟きながら、%CALLNAME:MASTER%は説得の言葉を続ける。
+			PRINTFORMW 확실히”이러한 일”을 실시하는 것은 %CALLNAME:MASTER%에게 있어서 특별히 어려운 일은 아니다。
+			PRINTFORMW 오히려、그녀로서는、자신보다 훨씬 쉽게 실현시킬 수 있지 않을까…
+			PRINTFORMW 속으로 중얼거리며、%조사처리(CALLNAME:MASTER,"는")% 설득의 말을 이어간다。
 		ELSE
-			PRINTFORML …確かに、%CALLNAME:MASTER%もまた異能を持ち合わせる人間ではあるが
-			PRINTFORMW その霊感に由来するであろう呪術の類を振るう彼女とは能力の形も質も全く異なっている。
-			PRINTFORMW 異能者としての心得や、戦い方の類を教えられない訳ではないが、応用はどこまで効くか…
+			PRINTFORML …확실히、%CALLNAME:MASTER% 또한 이능을 가진 인간이긴 하지만
+			PRINTFORMW 그 영감에서 유래했을 주술의 종류를 휘두르는 그녀와는 능력의 형태도 질도 전혀 다르다。
+			PRINTFORMW 이능자로서의 마음가짐이나、싸우는 방법의 종류를 가르쳐 줄 수 없는 것은 아니지만、용은 어디까지 효과가 있을지…
 			PRINTFORML 
-			PRINTFORML 「えっと…あなたも、その…い、異能？を…持ってるん、ですか…？」
+			PRINTFORML 「그러니까…당신도、그게…이、이능？을…가지고、있나요…？」
 			PRINTFORML 
-			PRINTFORML おずおずと視線を向けてきた少女に対し、肯定と、その有り様を簡単に説明した。
-			PRINTFORMW 異能者自体は、今現在はもはや特段に貴重と言えるほどの存在ではないが。
-			PRINTFORMW だからといって、自由に平穏に生きていくことが出来る程の存在でもない。
+			PRINTFORML 머뭇거리며 시선을 돌려온 소녀에 대해、긍정과、그 모습을 간단히 설명했다。
+			PRINTFORMW 이능자 자체는、지금 현재는 더 이상 특별히 귀중하다고 할 수 있을 정도의 존재는 아니지만。
+			PRINTFORMW 그렇다고 해서、자유롭고 평온하게 살아갈 수 있을 정도의 존재도 아니다。
 			PRINTFORML 
-			PRINTFORMW だから、選ばねばならないのだ。と、続けて、
+			PRINTFORMW 그러기에、선택하지 않으면 안되는것 이다。라고、계속해서、
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW それこそ、その”資質”の使い方を教える程度の事はしよう。と、提案すると、
+		PRINTFORMW 그야말로、그”자질”의 사용법을 가르치는 정도의 일은 하자。라고、제안하자、
 	ELSEIF TALENT:MASTER:서머너 >= 1
-		PRINTFORMW …とはいえ、%CALLNAME:MASTER%は異能者の類ではなく、悪魔召喚士である。
+		PRINTFORMW …그렇다고 해도、%조사처리(CALLNAME:MASTER,"는")% 이능자의 종류가 아니라、악마 소환사다。
 		PRINTFORML 
-		PRINTFORMW 「えっと…デビル、サマナー…なんですか？それは、えっと……」
+		PRINTFORMW 「저기…데빌、서머너…뭔가요？그거、음……」
 		PRINTFORML 
-		PRINTFORML …こればかりは、見せた方が早いだろう。
-		PRINTFORMW COMPを操作して、悪魔全書から数体のゾンビを召喚すると、
-		PRINTFORMW それまでの不安は何処へやら、きらきらと少女は目を輝かせ始めた。
+		PRINTFORML …이것만은、보여주는 게 빠를겠다。
+		PRINTFORMW COMP를 조작하여、악마전서에서 좀비 몇 마리를 소환하자、
+		PRINTFORMW 그때까지의 불안은 어디론가、반짝반짝거리며 소녀는 눈을 빛내기 시작했다。
 		PRINTFORML 
-		PRINTFORMW 「わ、わ…！わぁ……！すごい…！ほ、本物のゾンビが、いっぱい…！」
+		PRINTFORMW 「와、와…！와아……！굉장해…！지、진짜 좀비가、잔뜩…！」
 		PRINTFORML 
-		PRINTFORML 最も、これらはあくまである種の悪魔としてのゾンビであって、
-		PRINTFORMW 呪術によって死体が変質したような、正しい意味でのゾンビとは若干異なってはいるのだが…
+		PRINTFORML 무엇보다、이것들은 어디까지나 모종의 악마로서의 좀비이며、
+		PRINTFORMW 주술에 의해 시체가 변질된 것 같은、올바른 의미의 좀비와는 약간 다르긴 하지만…
 		PRINTFORML 
-		PRINTFORML だが、このように、超常の存在を使役して、”仕事”をしているのが自分たちである。
-		PRINTFORMW 端的に、そして意図的に幾つかの要素を伏せながら自己紹介を済ませ、ゾンビたちを送還する。
+		PRINTFORML 그러나、이와 같이、초자연의 존재를 사역하고、”일”을 하고 있는 것이 자신들이다。
+		PRINTFORMW 단적으로、그리고 의도적으로 몇 가지 요소를 숨기며 자기소개를 마치고、좀비들을 송환한다。
 		PRINTFORML 
-		PRINTFORML 「……あ……え……ぅ…………そ、その…さ、サマナー…さん？は…
-		PRINTFORMW 　ゾンビを…呼んだり…できるんです、ね……じゃ、じゃあ…私も……？」
+		PRINTFORML 「……아……에……우…………그、그러니…까、서머너…씨？는…
+		PRINTFORMW 　좀비를…부르거나…할 수 있군、요……그、그럼…저도……？」
 		PRINTFORML 
 		PRINTFORML 
-		PRINTFORMW 主語を欠いた質問が%CALLNAME:MASTER%へと投げかけられるが、大凡言いたいことは理解できる。
-		PRINTFORMW 確かに彼女の異能であればゾンビ…死霊の類を召喚することは不可能ではなく…
-		PRINTFORMW そして、その異能の使い方を教える程度の事は、%CALLNAME:MASTER%にも不可能ではないだろう。
+		PRINTFORMW 주어가 결여된 질문이 %CALLNAME:MASTER%에게 던져지지만、대충 말하고 싶은 것은 이해할 수 있다。
+		PRINTFORMW 확실히 그녀의 이능이라면 좀비…사령류를 소환하는 것은 불가능하지 않다…
+		PRINTFORMW 그리고、그 이능의 사용법을 가르치는 정도의 일은、%CALLNAME:MASTER%에게도 불가능하지 않을 것이다。
 		PRINTFORML 
-		PRINTFORMW そう説得の言葉を重ねていると、少女は何らかの決断をしたように立ち上がって、
+		PRINTFORMW 그렇게 설득의 말을 계속하고 있자、소녀는 어떤 결단을 내린 듯 일어서서、
 	ELSEIF CFLAG:MASTER:당신의전공분야 == 9
 		;ふざけました。許してくださいなんでもはできません。
-		PRINTFORMW ……しかし、%CALLNAME:MASTER%はたけしである。
-		PRINTFORMW そして、たけしである%CALLNAME:MASTER%にとって、ゾンビとは頼れる仲間どころかどちらかと言えば脅威でしかない。
+		PRINTFORMW ……그러나、%조사처리(CALLNAME:MASTER,"는")% 타케시이다。
+		PRINTFORMW 그리고、타케시인 %CALLNAME:MASTER%에게 좀비란、의지할 수 있는 동료는 커녕 위협일 뿐이다。
 		PRINTFORML 
-		PRINTFORMW これはまずい。
-		PRINTFORMW とてもまずい。
-		PRINTFORMW 非常にまずい。
+		PRINTFORMW 이거 맛없어。
+		PRINTFORMW 너무 맛없어。
+		PRINTFORMW 심각하게 맛없어。
 		PRINTFORML 
-		PRINTFORMW 少女に対する説得材料にゾンビを使えれば話が早かったが、
-		PRINTFORML ゾンビなどこの場に出てきたら%CALLNAME:MASTER%は死んでしまうかもしれない。割と本気で。
-		PRINTFORMW 背中に絶望の汗をかきながら説得材料を探していたその時、ｶｰﾁｬﾝの声が脳裏に響いて来た…！
+		PRINTFORMW 소녀에 대한 설득 재료로 좀비를 사용할 수 있다면 이야기가 빨랐지만、
+		PRINTFORML 좀비 등이 이 자리에 나온다면 %조사처리(CALLNAME:MASTER,"는")% 죽어버릴지도 모른다。비교적 진심으로。
+		PRINTFORMW 등에 절망의 땀을 흘리며 설득 재료를 찾던 그 때、엄마의 목소리가 뇌리에 울려왔다…！
 		PRINTFORML 
-		PRINTFORMW  J( ´ー`)し 『たけしへ。こんなこともあろうかとダンスを仕込んだゾンビを送っておきました。』
+		PRINTFORMW  J( ´ー`)し 『타케시에게。이럴 수도 있을까 하고 춤을 배운 좀비를 보내 놓았습니다。』
 		PRINTFORML 
-		PRINTFORMW と、見れば、%CALLNAME:MASTER%の後ろに華麗にダンスを踊るゾンビたちが召喚されている！
+		PRINTFORMW 라고、보면、%CALLNAME:MASTER%의 뒤에 화려하게 춤을 추는 좀비들이 소환되어 있다！
 		SIF RAND:10 == 0 && TIME == 3
-			PRINTFORMW しかも完璧に『Thriller』を踊り切ったゾンビたちはそのまま『Ghosts』を踊り出した！二曲目だ！すげえ！
+			PRINTFORMW 게다가 완벽하게『Thriller』를 춤춘 좀비들은 그대로『Ghosts』를 추기 시작했다！두 번째 곡이다！대단해！
 		PRINTFORML 
-		PRINTFORMW ありがとう…ありがとうｶｰﾁｬﾝ……これでなんとかなるよｶｰﾁｬﾝ…
-		PRINTFORMW 内心で感謝の念を捧げながら、背後で踊り狂うゾンビたちを従えている風に装って%CALLNAME:MASTER%は言葉を続けた。
+		PRINTFORMW 고마워요…고마워요 엄마……이걸로 어떻게든 될거에요 엄마…
+		PRINTFORMW 속으로 감사의 마음을 전하며、등 뒤에서 춤추는 좀비들을 거느리고 있는 것처럼 가장해 %조사처리(CALLNAME:MASTER,"는")% 말을 이었다。
 		PRINTFORMW 
-		PRINTFORMW ……この通り、%CALLNAME:MASTER%の下であれば異能の使い方を教えられる…
-		PRINTFORMW …人材はいる…かもしれない。…いる筈だ。……いたと思う。うん。
-		PRINTFORML 説得材料にはいささか乏しい説明を行っていると、%CALLNAME:MASTER%の言葉というよりは
-		PRINTFORMW その背後のゾンビに対する興味によるものな気はするが。
-		PRINTFORM 少女は立ち上がり、
+		PRINTFORMW ……이와 같이、%CALLNAME:MASTER%의 아래서라면 이능의 사용법을 가르쳐 줄 수 있다…
+		PRINTFORMW …인재는 있을…지도 모른다。…있을 것이다。……있었다고 생각한다。응。
+		PRINTFORML 설득 재료에는 약간 부족한 설명을 하고 있자、%CALLNAME:MASTER%의 말이라기 보다는
+		PRINTFORMW 그 배후 좀비에 대한 흥미 때문인 것 같은데。
+		PRINTFORM 소녀는 일어섰고、
 	ELSE
-		PRINTFORMW …とはいえ、%CALLNAME:MASTER%は異能者の類ではなく、ゾンビを直接使役する術も持ってはいない。
-		PRINTFORML だが、そんなものは問題にならない程度には%CALLNAME:MASTER%は悪魔や異能に深く触れてきているし
-		PRINTFORMW 何より、%CALLNAME:MASTER%の抱える”戦力”には、そういった手合いも含まれている。
+		PRINTFORMW …그렇다고 해도、%조사처리(CALLNAME:MASTER,"는")% 이능자의 종류가 아니라、좀비를 직접 사역하는 방법도 갖고 있지 않다。
+		PRINTFORML 하지만、그런 것들은 문제가 되지 않을 정도로는 %조사처리(CALLNAME:MASTER,"는")% 악마나 이능을 깊이 접해오고 있고
+		PRINTFORMW 무엇보다、%조사처리(CALLNAME:MASTER,"가")% 안고 있는”전력”에는、그러한 수법도 포함되어 있다。
 		PRINTFORML 
-		PRINTFORMW …故に、その異能の使い方を教えることは、%CALLNAME:MASTER%にも可能だろう。
+		PRINTFORMW …고로、그 이능의 사용법을 가르치는 것은、%CALLNAME:MASTER%에게도 가능할 것이다。
 		PRINTFORML 
-		PRINTFORMW そう説得の言葉を重ねていると、少女は何らかの決断をしたように立ち上がって、
+		PRINTFORMW 그렇게 설득의 말을 계속하고 있자、소녀는 어떤 결단을 내린 듯 일어서서、
 	ENDIF
-	PRINTFORMW 不安をわずかに上回ったであろう好奇心と、そして憧憬に類する色の視線を%CALLNAME:MASTER%へと向けてきた。
+	PRINTFORMW 불안을 조금 웃돌았을 호기심과、그리고 동경과 유사한 색의 시선을 %CALLNAME:MASTER%에게 향했다。
 	PRINTFORML 
-	PRINTFORMW 「…わ、わかり、ました…あ、あなたと、いっしょに、いれば……みんなと、いっしょに、いれる…なら…」
+	PRINTFORMW 「…아、알겠、습니다…다、당신과、함께、있으면……모두와、함께、있을 수…있어…」
 	PRINTFORML 
-	PRINTFORML どうやら、仮初とはいえ、意思は固まったらしい。
-	PRINTFORMW …ささやかな平穏を捨て、悪魔や異能…”怪異”の蔓延る世界へと踏み込む覚悟が。
+	PRINTFORML 아무래도、일시적이라고는 해도、의사는 굳어진 것 같다。
+	PRINTFORMW …소소한 평온을 버리고、악마나 이능…”괴이”가 만연한 세계로 발을 들여놓을 각오가。
 	PRINTFORML 
-	PRINTFORMW 「は…はい、そ、その…白坂小梅…です…。ホ、ホラー映画を見るのが、好き…でした……それで、えっと…
+	PRINTFORMW 「네…네에、그、그게…시라사카 코우메…에요…。고、공포영화를 보는 것을、좋아…해서……그리고、그게…
 	IF TALENT:MASTER:서머너 >= 1
-		CSTR:(LOCAL):이인칭 = サマナーさん
-		PRINTFORMW 　よろしく…おねがい、します……えっ、と…サマナー、さん…？」
+		CSTR:(LOCAL):이인칭 = 서머너씨
+		PRINTFORMW 　잘 부탁…드립、니다……저、기…서머너、씨…？」
 	ELSE
 		IF TALENT:MASTER:남자
-			CSTR:(LOCAL):이인칭 = お兄さん
-			PRINTFORMW 　よろしく…おねがい、します……えっ、と…おにい、さん…？」
+			CSTR:(LOCAL):이인칭 = 오빠
+			PRINTFORMW 　잘 부탁…드립、니다……저、기…오、빠…？」
 		ELSE
-			CSTR:(LOCAL):이인칭 = お姉さん
-			PRINTFORMW 　よろしく…おねがい、します……えっ、と…おねえ、さん…？」
+			CSTR:(LOCAL):이인칭 = 언니
+			PRINTFORMW 　잘 부탁…드립、니다……저、기…언、니…？」
 		ENDIF
 	ENDIF
 	PRINTFORML 
-	PRINTFORML 未だ拭い去れない不安と、そして僅かに刹那的な好奇心の混ざった表情で、
-	PRINTFORML おずおずと長い袖に隠れた手を伸ばしてきた少女と握手を交わしながら、
-	PRINTFORMW %CALLNAME:MASTER%は内心と表情とで、異なった意味の笑みを浮かべた。
+	PRINTFORML 아직 씻을 수 없는 불안과、그리고 약간의 찰나적 호기심이 섞인 표정으로、
+	PRINTFORML 머뭇거리면서 긴 소매에 숨은 손을 뻗어온 소녀와 악수를 나누며、
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 속내와 표정으로、다른 의미의 미소를 지었다。
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW …………そもそもの話として。
-	PRINTFORMW 自分が”戦力”と”道具”のどちらとして彼女を扱うかは、明言した覚えはないのだから……
+	PRINTFORMW …………원래의 이야기로서。
+	PRINTFORMW 자신이”전력”과”도구”의 어느쪽으로서 그녀를 취급할지는、확실히 말한 기억은 없으니까……
 	PRINTFORML 
 	;たけし用。
 	IF CFLAG:MASTER:당신의전공분야 == 9 
-		PRINTFORMW …とりあえず、背後でムーンウォークを行っているゾンビたちの事は考えないようにしながら、%CALLNAME:MASTER%はその場を後にした…
+		PRINTFORMW …일단은、뒤에서 문워크를 하고 있는 좀비들 생각은 안 하려고 하면서、%조사처리(CALLNAME:MASTER,"는")% 그 자리를 떠났다…
 		IF RAND:10 <= 2 && ＣＯＭＰ빈용량() >= 1
 			CALL ADD_NEW_COMPANION,[[キャラ:좀비군]],0
 			IF RESULT == 1
-				NAME:(RESULT:1) = ゾンビダンサー
-				CALLNAME:(RESULT:1) = ソンビダンサー
+				NAME:(RESULT:1) = 좀비 댄서
+				CALLNAME:(RESULT:1) = 좀비 댄서
 				ABL:(RESULT:1):스킬3 = [[스킬:해피스텝]]
-				CSTR:(RESULT:1):30 = 二度目の生を受け、歩き出した誰かの屍。
-				CSTR:(RESULT:1):31 = ｶｰﾁｬﾝの手によって躾けられた結果なのか、或いは生来の気質なのか、
-				CSTR:(RESULT:1):32 = 恐ろしく華麗にステップを踏み、キレッキレにスタイリッシュなダンスを踊っている。
-				CSTR:(RESULT:1):34 = そもそも、あなたは別にこれを従える気はなかったんだが。なぜCOMPに入っているのだこいつ。
-				CSTR:(RESULT:1):35 = ねえｶｰﾁｬﾝ…俺にこのゾンビをどうしろっていうんだいｶｰﾁｬﾝ……
+				CSTR:(RESULT:1):30 = 두 번째 생을 받고、걷기 시작한 누군가의 시체。
+				CSTR:(RESULT:1):31 = 엄마의 손에 의해 훈육된 결과인지、아니면 타고난 기질인지、
+				CSTR:(RESULT:1):32 = 무섭고 화려하게 스텝을 밟으며、짜릿하고 스타일리쉬한 춤을 추고 있다。
+				CSTR:(RESULT:1):34 = 애초에、당신은 애초에 이 녀석을 따르게 할 생각은 없었는데。왜 COMP 들어가 있는 거야 이 녀석은。
+				CSTR:(RESULT:1):35 = 있잖아 엄마…나보고 이 좀비를 어쩌라는거야 엄마……
 			ENDIF
 		ENDIF
 	ENDIF
@@ -822,10 +822,10 @@ CASE 0
 	PRINTFORMW 
 	CALL REQUEST80_10_CLOCKVIEW,1
 	PRINTFORMW 
-	PRINTFORMW ＞白坂 小梅が仲間として加入した。
+	PRINTFORMW ＞시라사카 코우메가 동료로 가입했다。
 	PRINTFORML 
-	PRINTFORMW ＞依頼の報酬に関しては”元凶”である異能者が健在であるということで、暫く保留との事だ…
-	PRINTFORMW ＞名声を20得た。
+	PRINTFORMW ＞의뢰의 보수에 관해서는”원흉”인 이능자가 건재하다고 해서、당분간 보류라고 한다…
+	PRINTFORMW ＞명성을 20 얻었다。
 	FLAG:명성 += 20
 
 CASE 1
@@ -834,49 +834,49 @@ CASE 1
 	PRINTFORMW ……
 	PRINTFORMW …
 	PRINTFORML 
-	PRINTFORMW 組織から下された依頼は、あくまで”ゾンビの異常発生への対処”である。
-	PRINTFORML その元凶が目の前に倒れる少女であることはもはや疑うまでも無いが、
-	PRINTFORMW 同時に、これほどの現象を巻き起こし得る存在を抱え込むことが、どれほどのリスクかは明白である。
+	PRINTFORMW 조직으로부터 내려진 의뢰는、어디까지나”좀비의 이상 발생에 대한 대처”이다。
+	PRINTFORML 그 원흉이 눈앞에 쓰러지는 소녀임은 이제 의심할 필요도 없지만,、
+	PRINTFORMW 동시에、이 정도 현상을 일으킬 수 있는 존재를 떠안는 것이、어느 정도의 리스크인지는 명백하다。
 	PRINTFORML 
-	PRINTFORMW そして、”処分”ではなく”処理”を行えという依頼の意味が、理解できないわけでもない。
+	PRINTFORMW 그리고、”처분”이 아닌”처리”를 하라는 의뢰의 의미를、이해할 수 없는 것도 아니다。
 	PRINTFORML 
-	PRINTFORMW 「…………ん、ぁ…………」
+	PRINTFORMW 「…………응、아…………」
 	PRINTFORML 
-	PRINTFORML 目を覚ましつつある少女に数種類の薬剤を投与して、少女の意識をしっかりと奪い去ると、
-	PRINTFORMW %CALLNAME:MASTER%は手早く組織への連絡を行う。
-	PRINTFORML ”元凶”を確保したと通信をしたところ、やはりというべきか、
-	PRINTFORMW ”即座に”回収要員を派遣するとの回答が返ってきた。
+	PRINTFORML 눈을 뜨고 있는 소녀에게 여러 종류의 약제를 투여하여、소녀의 의식을 제대로 빼앗아 버리고、
+	PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 신속하게 조직에 연락한다。
+	PRINTFORML 조직에”원흉”을 확보했다고 통신을 했더니、역시라고 해야하나、
+	PRINTFORMW ”즉시”회수요원을 파견한다는 회답이 돌아왔다。
 	PRINTFORML 
-	PRINTFORMW つまるところ、そういうことなのだろう。
-	PRINTFORMW 後詰を用意されていた…と、言うよりは、この依頼自体が元々”そのような”理由による依頼であり、
-	PRINTFORMW 聊か以上に%CALLNAME:MASTER%個人の手に余る存在を、わざわざ自分の手で管理し続ける必要も無いが、
-	PRINTFORMW それだけの力を持った存在を、組織が欲しがらない訳も無いのだから。
+	PRINTFORMW 결국、그런 것일 것이다。
+	PRINTFORMW 후속 조치는 준비되어 있었다…라고、말하기보다는、 이 의뢰 자체가 원래”그런”이유에 의한 의뢰이며、
+	PRINTFORMW 조금 이상으로 %CALLNAME:MASTER% 개인의 손에는 버거운 존재를、일부러 자신의 손으로 계속 관리할 필요도 없지만、
+	PRINTFORMW 그만큼의 힘을 가진 존재를、조직이 원하지 않을 수도 없으니까。
 	PRINTFORML 
 	PRINTFORMW ………
 	PRINTFORMW ……
 	PRINTFORMW …
 	PRINTFORML 
-	PRINTFORMW 「……ぅ……さ……、ん――――――」
+	PRINTFORMW 「……우……ㅆ……、응――――――」
 	PRINTFORML 
-	PRINTFORML 何かの、或いはかつての光景でも夢見ているのか、小さな声で何かを呟きながら、
-	PRINTFORMW しかし目を覚まさずに、少女が組織の手で”護送”されていく。
+	PRINTFORML 뭔가、혹은 과거의 광경이라도 꿈꾸고 있는지、작은 소리로 무언가를 중얼거리며、
+	PRINTFORMW 그러나 눈을 뜨지 않고、소녀가 조직의 손에”호송”되어 간다。
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW …これから先、彼女がどういった扱いを受けるかは、もはや%CALLNAME:MASTER%の預かる事ではない。
-	PRINTFORMW 最も、高いポテンシャルをもった異能者を、組織がそれほど無碍に扱うことは無いだろう。
-	PRINTFORMW だが、確実にそうとは言えないし、むしろ利用しやすくするために”何か”をされる可能性は付いて回る。
-	PRINTFORMW それはあるいはあなたのような”運用”かもしれないし、それ以上のものかもしれない。
+	PRINTFORMW …앞으로、그녀가 어떤 대우를 받을지는、더 이상 %조사처리(CALLNAME:MASTER,"가")% 맡을 일이 아니다。
+	PRINTFORMW 애당초、높은 잠재력을 가진 이능자를、조직이 그렇게 무애하게 취급하지는 않을 것이다。
+	PRINTFORMW 하지만、확실히 그렇다고는 할 수 없고、오히려 이용하기 쉽게 하기 위해서”뭔가”를 당할 가능성은 따라다닌다。
+	PRINTFORMW 그것은 혹은 당신과 같은”운용”일 수도 있고、그 이상일 수도 있다。
 	PRINTFORML 
-	PRINTFORMW だが結局のところ、何もかもは%CALLNAME:MASTER%には既に無関係な話であり、
-	PRINTFORMW そしてどちらにしたところで、最早%CALLNAME:MASTER%の手から”それ”は離れている。
-	PRINTFORMW ただ、それだけの。
-	PRINTFORMW そして、よくある話でしかなかったのだ。
+	PRINTFORMW 하지만 결국、모든 것은 %조사처리(CALLNAME:MASTER,"과")%는 이미 무관한 이야기이며、
+	PRINTFORMW 그리고 어느 쪽으로 했든、벌써 %CALLNAME:MASTER%의 손에서”그것”은 떨어져 있다。
+	PRINTFORMW 그저、그 정도。
+	PRINTFORMW 그리고、흔한 얘기일 뿐이었다。
 	PRINTFORML 
 	CALL REQUEST80_10_CLOCKVIEW,2
 	PRINTFORML 
-	PRINTFORMW ＞依頼達成報酬として組織から￥30,000を受け取り、名声を20得た。
+	PRINTFORMW ＞의뢰 달성 보수로 조직에서 ￥30,000을 받고、명성을 20 얻었다。
 	PRINTFORML 
-	PRINTFORMW ＞”検体”確保の特別報酬として、追加で\20,000を受け取った。
+	PRINTFORMW ＞”검체”확보 특별보수로、추가로 \20,000을 받았다。
 	MONEY += 50000
 	FLAG:명성 += 20
 CASE 2
@@ -888,135 +888,135 @@ CASE 2
 	PRINTFORMW ……
 	PRINTFORMW …
 	PRINTFORML 
-	PRINTFORMW やはり、危険な存在であることは自明である。
-	PRINTFORML 或いはこの少女自身の意思によるものではなかったとしても、
-	PRINTFORML そして、少女自身の力によるものではなかったとしても、
-	PRINTFORMW あれだけの量の屍鬼と霊魂を呼び立たせ、使役していたという事実が変わるわけではない。
+	PRINTFORMW 역시、위험한 존재임은 자명하다。
+	PRINTFORML 혹은 이 소녀 자신의 의사에 의한 것은 아니었다 하더라도、
+	PRINTFORML 그리고、소녀 자신의 힘에 의한 것은 아니었다 하더라도、
+	PRINTFORMW 그토록 많은 양의 시귀와 영혼을 불러 일으켜、사역했다는 사실이 달라지는 것은 아니다。
 	PRINTFORML 
-	PRINTFORMW ”持ち帰る”にしても、完全な無力化を行わずに実行するには、リスクが大きすぎるだろう。
+	PRINTFORMW ”가져간다”고 해도、완전한 무력화를 하지 않고 실행하기에는、리스크가 너무 클 것이다。
 	PRINTFORML 
-	PRINTFORMW 「…………ん、ぁ……れ……？」
+	PRINTFORMW 「…………응、어……라……？」
 	PRINTFORML 
-	PRINTFORMW と、%CALLNAME:MASTER%が思考を巡らせていると、少女が意識を取り戻したのか、
-	PRINTFORML ふらふらと頭を振りながら起き上がろうとしていた。
-	PRINTFORMW 反射的に武器を後ろ手に構え直し、周囲の仲魔に警戒を強める様に指示を出すと、
-	PRINTFORML 意識を覚醒させた少女が身を竦ませ、小さな悲鳴を上げる。
+	PRINTFORMW 라고、%조사처리(CALLNAME:MASTER,"가")% 생각을 돌리자、되찾았는지、
+	PRINTFORML 휘청휘청 머리를 흔들며 일어나려 하고 있었다。
+	PRINTFORMW 반사적으로 무기를 뒤로 숨기고、주위의 동료마들에게 경계를 강화하도록 지시를 내린뒤、
+	PRINTFORML 의식을 일깨운 소녀가 몸을 움츠리고、작은 비명을 지른다。
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW 「……っ、ひ……っ、え…！？な、なに……？」
+	PRINTFORMW 「……읏、히……잇、에…！？뭐、뭐야……？」
 	PRINTFORML 
-	PRINTFORMW ……失念していた。
-	PRINTFORMW 彼女は恐らく、今の今まで何らかの悪魔か何かにその意識を乗っ取られていたと想定できる状態で、
-	PRINTFORMW それはつまり、長らく意識のない状態であったという事だ。
-	PRINTFORMW それが何時からかなのかは知りようも無いが、或いはそれが”崩壊”よりも前であったとしたら。
-	PRINTFORMW 眼前に広がる光景…即ち、%CALLNAME:MASTER%の仲魔たちは、
-	PRINTFORMW 或いはどう見ても、己へと警戒の意識を向ける、異様の脅威でしかない。
+	PRINTFORMW ……깜박하고 있었다。
+	PRINTFORMW 그녀는 아마도、지금까지 어떤 악마인가 뭔가에 그 의식을 빼앗겼다고 상정할 수 있는 상태에서、
+	PRINTFORMW 그것은 곧、오랫동안 의식이 없는 상태였다는 것이다。
+	PRINTFORMW 그게 몇 시부터인지는 알 수 없지만、아니면 그게”붕괴”보다 앞이었다고 한다면。
+	PRINTFORMW 눈앞에 펼쳐진 광경…즉、%CALLNAME:MASTER%의 동료마들은、
+	PRINTFORMW 아무리 봐도、자신에게 경계 의식을 돌리는、이상한 위협일 뿐이다。
 	PRINTFORML 
-	PRINTFORMW 「い…や……っ！？ 
-	PRINTFORMW 　こない……で…………ッ！！」
+	PRINTFORMW 「시…싫……엇！？ 
+	PRINTFORMW 　오자……마…………앗！！」
 	PRINTFORMW 
-	PRINTFORML 少女が叫ぶと、その身体から再び澱んだ瘴気が溢れる様に放たれ、
-	PRINTFORMW 周囲に散らばる数体の屍が再びぐずりと、仮初の魂を与えられて蠢き始めた。
-	PRINTFORML 少女を守る様に、というよりは、明確な殺意と飢えの意識を滲ませて、
-	PRINTFORMW 不完全なゾンビたちは%CALLNAME:MASTER%は、生者へと向かい我先にと朽ち崩れた身体で這いずって、距離を詰め始める。
+	PRINTFORML 소녀가 외치자、그 몸에서 다시 녹은 장기가 넘쳐흐르며、
+	PRINTFORMW 주위에 흩어지는 몇 구의 시체가 다시 꾸물꾸물、일시적으로 영혼을 주어 꿈틀거리기 시작했다。
+	PRINTFORML 소녀를 지킨다、라고 하기보다는、뚜렷한 살의와 굶주림의 의식을 가진채、
+	PRINTFORMW 불완전 좀비들은 %조사처리(CALLNAME:MASTER,"과")%、산자를 향해 앞다퉈 썩어버린 몸으로 기어가、거리를 좁히기 시작한다。
 	PRINTFORMW 
-	PRINTFORMW 「……、ぁ……――――――っ！」
+	PRINTFORMW 「……、아……――――――읏！」
 	PRINTFORMW 
-	PRINTFORMW そして、少女との間にゾンビの壁が生まれ、その先で少女が逃げ出そうとしているのがかろうじて目に付いた。
-	PRINTFORML このままであれば、あるいは少女を取り逃してしまうかもしれない。
-	PRINTFORML 手早く排除するには、聊か敵の数も多いだろう。
+	PRINTFORMW 그리고、소녀와의 사이에、그 앞에서 소녀가 도망치려는 것이 간신히 눈에 띄었다。
+	PRINTFORML 이대로라면、어쩌면 소녀를 놓쳐 버릴지도 모른다。
+	PRINTFORML 신속하게 배제하려고 하니、다소 적의 수도 많다。
 	PRINTFORML 
-	PRINTFORMW …………だが、しかし、
+	PRINTFORMW …………하지만、그러나、
 	PRINTFORML 
-	PRINTFORMW 突然ではあるが、悪魔は生者を襲う理由はいくつか存在する。
-	PRINTFORML それは単なる残虐な享楽によるものであったり、本能に基づいた行動であったり、
-	PRINTFORMW あるいは”害をなすべし”と定められた存在すらも在り得るのだが。
+	PRINTFORMW 갑작스럽긴 하지만、악마는 산자를 습격하는 몇 가지 이유가 존재한다。
+	PRINTFORML 그것은 단순한 잔학한 향락에 의한 것이거나、본능에 근거한 행동이거나、
+	PRINTFORMW 혹은”해를 끼쳐야 한다”고 정해진 존재조차도 있을 수 있다。
 	PRINTFORML 
-	PRINTFORMW …だが、それらと同様に、むしろそれ以上に多い理由は、マグネタイトの不足によるもの。
-	PRINTFORMW より簡単に言うのであれば、”飢えている”が故の”捕食”である。
+	PRINTFORMW …하지만、이들과 마찬가지로、오히려 그 이상으로 많은 이유는、마그네타이트 부족 때문。
+	PRINTFORMW 보다 간단히 말한다면、”굶주리고 있다”는 이유로”포식”이다。
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW ……そもそも、彼女に死霊達が付き従っていたのは、恐らくは彼女に憑いていたであろう悪魔の力によるものだ。
-	PRINTFORMW そして、それは先程の戦闘によって打倒され、彼女自身の気力も尽きつつある。
+	PRINTFORMW ……애초에、그녀에게 사령들이 따라다녔던 것은、아마도 그녀에게 홀렸을 악마의 힘에 의한 것이다。
+	PRINTFORMW 그리고、그것은 조금 전의 전투에 의해 타도되어、그녀 자신의 기력도 소진되고 있다。
 	PRINTFORMW 
 	PRINTFORMW 
-	PRINTFORMW ならば、どうなるか。
+	PRINTFORMW 그렇다면、어떻게 될까。
 	PRINTFORML 
 	PRINTFORMW 
 	PRINTFORML 
-	PRINTFORMW 「―――――――ぇ――――……？」
+	PRINTFORMW 「―――――――에――――……？」
 	PRINTFORML 
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW ぞぶり、と異音が鳴り響いた。
-	PRINTFORMW それは少女の肩口と腕から。…より厳密にいうのであれば、周囲のゾンビたちに喰らい付かれた部位から。
+	PRINTFORMW 하고、이상한 소리가 울려 퍼졌다。
+	PRINTFORMW 그것은 소녀의 어깻죽지와 팔에서。…보다 엄밀하게 말한다면、주위 좀비들에게 먹힌 부위로부터。
 	PRINTFORML 
-	PRINTFORMW 「な、ん―――――で――――？」
+	PRINTFORMW 「어、째―――――서――――？」
 	PRINTFORML 
-	PRINTFORMW 少女は驚きに目を見開いているようだが、むしろ当然の帰結でしかない。
+	PRINTFORMW 소녀는 놀라움에 눈을 크게 뜬 듯 하지만、오히려 당연한 결과일 뿐이다。
 	PRINTFORML 
-	PRINTFORML 一個の悪魔として自我を成立させる程度にしっかりと力を蓄えている”ゾンビ”であればともかく、
-	PRINTFORMW 彼女の周囲に群がっていたあれらは、外的な力による補助があって初めて個として成立する程度には極めて朧な存在でしかない。
+	PRINTFORML 하나의 악마로서 자아를 성립시키는 정도로 확고히 힘을 모으고 있는”좀비”라면 모를까、
+	PRINTFORMW 그녀의 주위에 몰려 있던 저것들은、외부의 힘에 의한 보조가 있어야 비로소 개체로서 성립하는 정도에는 지극히 흐릿한 존재일 뿐이다。
 	PRINTFORML 
-	PRINTFORMW そして、その元凶であった彼女の力は、もはや尽きる寸前であり、
-	PRINTFORMW そんな、何もしなければこのまま再び消滅しかねない存在からしてみれば、
-	PRINTFORMW 既に死者達を使役しきる力も残っていない、しかし潤沢なマグネタイトを蓄えた異能者の少女など、
+	PRINTFORMW 그리고、그 원흉이었던 그녀의 힘은、이제 다 떨어지기 직전이며、
+	PRINTFORMW 그런、아무것도 하지 않으면 이대로 다시 소멸할 수 있는 존재로 보면、
+	PRINTFORMW 이미 죽은 자들을 사역할 힘도 남아 있지 않은、그러나 윤택한 마그네타이트를 축적한 이능자 소녀 같은건、
 	PRINTFORML 
-	PRINTFORMW 「ぎ……っ―――――ぃ、あﾞ、あﾞ…っ、ぁﾞ――――！！？」
+	PRINTFORMW 「기……으―――――이、아ﾞ、아ﾞ…읏、아ﾞ――――！！？」
 	PRINTFORML 
-	PRINTFORMW それは、”糧”以外の何物でもないのだろう。
+	PRINTFORMW 그것은、”양식”이외의 아무것도 아닐 것이다。
 	PRINTFORML 
-	PRINTFORMW 「ぐ…ぇﾞ――っ、ひゅ―――ぃﾞ…っ、おﾞ…ぅﾞ――ッ……　…　　…」
+	PRINTFORMW 「머…ㄱﾞ――혓、히―――이ﾞ…읏、오ﾞ…우ﾞ――읏……　…　　…」
 	PRINTFORML 
-	PRINTFORML ぐしゃり、ぐずり、ぶちりと、絶え間なく柔らかい”もの”を引き千切り噛み潰す音が響き、
-	PRINTFORMW その度、絞り出されるような少女のか細い悲鳴が響く。
+	PRINTFORML 으직、콰직、쿠직 하고、끊임없이 부드러운”물건”을 썰어서 씹는 소리가 울리고、
+	PRINTFORMW 그때마다、쥐어짜는 듯한 소녀의 가냘픈 비명이 울린다。
 	PRINTFORML 
-	PRINTFORML まき散らされた血潮で朱に染まり、力任せに引き割かれ、しかし尚脈動する臓腑がより一層に引き摺り出されて噛み潰される。
-	PRINTFORML 手足の腱は既に散々と食い千切られて、逃げ出すことは愚か、動くことも不可能であろう。
+	PRINTFORML 흩뿌려진 핏물로 주홍빛으로 물들었고、힘껏 당겨져서、그리고 아직 맥동하는 오장육부가 더욱 끌려나와 물어뜯긴다。
+	PRINTFORML 손발의 힘줄은 이미 산산조각이 나서、도망치는 것은 커녕、움직이는 것도 불가능할 것이다
 	PRINTFORML 
-	PRINTFORML 「――――――……ぃﾞ　　ぁﾞ……　…　　…」
+	PRINTFORML 「――――――……이ﾞ　　아ﾞ……　…　　…」
 	PRINTFORML 
-	PRINTFORMW しかし。なまじ異能に目覚めている故か、多量のマグネタイトを蓄えていたが故か。
-	PRINTFORMW それでもなお、彼女は死んではいない。
-	PRINTFORML もはや人としての形を半ば保ててすらいないほどに食い散らかされて、
-	PRINTFORMW それでもなお、彼女は死んではいない。
-	PRINTFORMW 最も、このまま放置していれば、そのまま死者達に貪り尽くされてしまうだろうが…
+	PRINTFORMW 하지만。어설프게 이능에 눈을 뜨고 있어서일까、다량의 마그네타이트를 축적하고 있었기 때문일까。
+	PRINTFORMW 그럼에도 불구하고、그녀는 죽지 않았다。
+	PRINTFORML 더 이상 사람의 형태를 반도 유지하지도 못할 정도로 마구잡이로 뜯겨 먹혔지만、
+	PRINTFORMW 그럼에도 불구하고、그녀는 죽지 않았다。
+	PRINTFORMW 무엇보다도、이대로 방치하다간、그대로 죽은 자들에게 먹혀버리고 말겠지만…
 	PRINTFORML 
-	CALL INPUT_YN, "”回収”する", "”処分”する"
+	CALL INPUT_YN, "”회수”한다", "”처분”한다"
 	IF RESULT == 0
 		PRINTFORML 
 		PRINTFORMW …………
 		PRINTFORMW ……
 		PRINTFORMW …
 		PRINTFORML 
-		PRINTFORMW 血臭に満ちたライブホールに、数発の銃声が響く。
-		PRINTFORMW 元来は屍鬼の類に対しては効きが悪い道具ではあるが、この程度の存在を無力化する程度なら造作もなく。
-		PRINTFORML 足を、首を、或いは頭部自体を吹き飛ばされたゾンビ”もどき”達は、
-		PRINTFORMW その活動能力を奪われて乱雑に大地へと撒き散らされた。
+		PRINTFORMW 피냄새 가득한 라이브홀에、몇 발의 총성이 울린다。
+		PRINTFORMW 원래는 시귀류에 대해서는 효과가 나쁜 도구이긴 하지만、이 정도의 존재를 무력화하는 정도라면 번거롭지도 않고。
+		PRINTFORML 다리를、목을、혹은 머리 자체를 날려버린 좀비”비슷한”것들은、
+		PRINTFORMW 그 활동 능력을 빼앗겨 난잡하게 대지로 흩어졌다。
 		PRINTFORML 
-		PRINTFORML 「―――――ぇﾞ…… ぁ　………　…」
+		PRINTFORML 「―――――에ﾞ…… 아　………　…」
 		PRINTFORML 
-		PRINTFORMW そして、そこに残った、最後の動くもの。
-		PRINTFORMW 少女であった”もの”が、残った瞳を向けて、ごぼりと血を泡立たせながら%CALLNAME:MASTER%を見つめてきた。
+		PRINTFORMW 그리고、거기 남은、마지막으로 움직이는 거。
+		PRINTFORMW 소녀였던”물건”이、남아있는 눈동자를 돌려、물컹 하고 피와 거품을 내면서 %조사처리(CALLNAME:MASTER,"를")% 바라봤다。
 		PRINTFORML 
-		PRINTFORMW ……確かに、ここで死なれては困るのも、事実ではある。
-		PRINTFORML %CALLNAME:MASTER%が仲魔を呼び出し、回復魔法をかけると、
-		PRINTFORMW その全身の傷口が歪ながらも塞がり始め、それは人としての形を取り戻し始めた。
-		PRINTFORMW だが、直しきる必要もあるまい。
+		PRINTFORMW ……확실히、여기서 죽으면 곤란한 것도、사실이긴 하다。
+		PRINTFORML %조사처리(CALLNAME:MASTER,"가")% 동료마를 호출하여、회복마법을 걸자、
+		PRINTFORMW 그 온몸의 상처가 일그러지면서도 막히기 시작했고、그것은 사람으로서의 형태를 되찾기 시작했다。
+		PRINTFORMW 하지만、고칠 필요는 없겠지。
 		PRINTFORML 
-		PRINTFORML 一先ず死にはしないであろう程度まで回復が効いたことを確認して、
-		PRINTFORML 組織へと”元凶”を確保したと連絡を入れると、
-		PRINTFORMW ”即座に”回収要員を派遣するとの回答が返ってきた。
+		PRINTFORML 일단 죽지는 않을 정도까지 회복이 효과가 있었음을 확인하고、
+		PRINTFORML 조직에”원흉”을 확보했다고 연락을 하자、
+		PRINTFORMW ”즉시”회수요원을 파견한다는 회답이 돌아왔다。
 		PRINTFORML 
-		PRINTFORMW それは、つまるところ、そういうことなのだろう。
-		PRINTFORMW 後詰を用意されていた…と、言うよりは、この依頼自体が元々”そのような”理由による依頼であったということで。
-		PRINTFORMW 聊か以上に%CALLNAME:MASTER%個人の手に余る存在を、わざわざ自分の手で管理し続ける必要も無いが、
-		PRINTFORMW それだけの力を持った存在を、組織が欲しがらない訳も無い。
-		PRINTFORML そして、目的が”能力”にあるならば、”このような”状態であろうと、何も問題は無い。
+		PRINTFORMW 그것은、결국엔、그런 것일 것이다。
+		PRINTFORMW 후속 조치는 준비되어 있었다…라고、말하기보다는、이 의뢰 자체가 원래”그런”이유에 의한 의뢰였으므로。
+		PRINTFORMW 조금 이상으로 %CALLNAME:MASTER% 개인의 손에는 버거운 존재를、일부러 자신의 손으로 계속 관리할 필요도 없지만、
+		PRINTFORMW 그만큼의 힘을 가진 존재를、조직이 원하지 않을 수도 없다。
+		PRINTFORML 그리고、목적이”능력”에 있다면、”이러한”상태라도、아무 문제가 없다。
 		PRINTFORML 
-		PRINTFORMW 或いは救いを求めているのか、それとも絶望しているのか。
-		PRINTFORMW 静かに、ただ静かに向けられた少女の視線を振り切って、%CALLNAME:MASTER%は撤退の準備を始めた。
-		PRINTFORMW 最早、長居は無用だ。
+		PRINTFORMW 혹은 구원을 원하는 것인가、아니면 절망하고 있는 것인가。
+		PRINTFORMW 조용히、그저 조용히 향한 소녀의 시선을 뿌리치、%조사처리(CALLNAME:MASTER,"는")% 철수 준비를 시작했다。
+		PRINTFORMW 이제와서、오래 있을 필요는 없다。
 		PRINTFORML 
 		LOCAL:5 = 3
 		CUSTOMDRAWLINE =
@@ -1030,58 +1030,58 @@ CASE 2
 		PRINTFORMW ……
 		PRINTFORMW …
 		PRINTFORML 
-		PRINTFORMW 血臭に満ちたライブホールに、数発の銃声が響いた。
-		PRINTFORMW 少女の身体へと打ち込まれたそれは、一人の人間の命を奪いきるには十分な威力であり。
-		PRINTFORMW そして、その命の灯火を吹き消せば、まず間違いなくこの”事態”は収束するだろう。
+		PRINTFORMW 피냄새 가득한 라이브홀에、몇 발의 총성이 울렸다。
+		PRINTFORMW 소녀의 몸에 박힌 그것은、한 인간의 생명을 앗아가기에 충분한 위력이다。
+		PRINTFORMW 그리고、 그 생명의 등불을 불어 끄면、우선 틀림없이 이”사태”는 수습될 것이다。
 		PRINTFORML 
-		PRINTFORMW ……或いは、前提さえ間違っていなければ。
+		PRINTFORMW ……혹은、전제만 틀리지 않았다면。
 		PRINTFORML 
-		PRINTFORMW そして突如、爆発するように少女の身体から瘴気が吹き上がり、世界の全てを暗く染め上げた。
-		PRINTFORMW それは少女の死による魔力の散逸というよりは、何かが呼び出されたような反応に近く。
-		PRINTFORML 
-		PRINTFORML 
-		PRINTFORMW 　　　　　　そして、かたり、と、音が鳴った。
+		PRINTFORMW 그리고 갑자기、폭발하듯 소녀의 몸에서 장기가 뿜어져 나와、세상의 모든 것을 어둡게 물들였다。
+		PRINTFORMW 그것은 소녀의 죽음으로 인한 마력의 흩어짐이라기보다는、뭔가가 호출된 듯한 반응에 가깝다。
 		PRINTFORML 
 		PRINTFORML 
-		PRINTFORMW それは%CALLNAME:MASTER%足元から、少女が居たはずの方角から、そして続いて、周囲一帯から無数に。
-		PRINTFORML 意識を緩ませることなく音の下へと視線の端を向けると、
-		PRINTFORMW 地面を突き破る様に、そして暗闇から滲み出すように、何かの”存在”が無数に沸き出してきている。
-		PRINTFORMW それは戯画化した骸骨を象ったような、土や木、紙でできた人形のような”もの”であり。
-		PRINTFORMW それは色とりどりの刺繍を施した布で全身をすっぽりと覆った、形があるのかないのかも分からない”もの”であり。
-		PRINTFORMW まるで何かに狂うかのように這い出し、列をなし、舞い踊るそれらを統べるように、何かが顕現しつつある。
+		PRINTFORMW 　　　　　　그리고、달그락、하고、소리가 났다。
 		PRINTFORML 
-		PRINTFORMW 濃密な魔力、積み上げられた死体、そして一人の少女。
-		PRINTFORML 或いは、この状況自体が何かしらの儀式となったのか、
-		PRINTFORMW それとも少女に力を与えていた存在が、その死に瀕して顕れたのか。
 		PRINTFORML 
-		PRINTFORMW 吹き上がり渦を巻く瘴気の中央、少女が居たはずのそこには、
-		PRINTFORMW 豪奢なドレスを身に纏った、一体の骸骨が存在していた。
-		PRINTFORMW まるで周囲を塗りつぶす死の気配を愛おしむかのように、或いは周囲に溢れだした無数の戯画化された死者達を統べるかのように、
-		PRINTFORMW ”それ”は周囲を深い闇を湛えた眼孔で一瞥しながら、周囲を塗り潰す瘴気を纏って、ただそこに存在している。
+		PRINTFORMW 그것은 %CALLNAME:MASTER% 발밑에서、소녀가 있었을 방향에서、그리고 이어서、주위 일대에서 무수히。
+		PRINTFORML 의식을 늦추지 않고 소리 아래로 시선을 돌리자、
+		PRINTFORMW 땅을 뚫듯이、그리고 어둠 속에서 배어나오듯、무언가의”존재”가 무수히 끓어오르고 있다。
+		PRINTFORMW 그것은 희화화된 해골을 본뜬 듯한、흙이나 나무、종이로 만든 인형 같은”것”이다。
+		PRINTFORMW 그것은 형형색색의 자수를 놓은 천으로 온몸을 푹 덮은、모양이 있는지 없는지도 모르는”물건”이다。
+		PRINTFORMW 마치 무언가에 미치듯 기어나와、줄을 서고、춤을 추는 그것들을 통솔하듯이、무언가가 드러나고 있다。
+		PRINTFORML 
+		PRINTFORMW 농밀한 마력、쌓인 시체、그리고 한 소녀。
+		PRINTFORML 혹은、이 상황 자체가 어떤 의식이 되었는지、
+		PRINTFORMW 아니면 소녀에게 힘을 실어주던 존재가、그 죽음을 앞두고 나타난 것일까。
+		PRINTFORML 
+		PRINTFORMW 치솟아 소용돌이치는 장기의 중앙、소녀가 있었을 그곳에는、
+		PRINTFORMW 호사스러운 드레스를 입은、일체의 해골이 존재하고 있었다。
+		PRINTFORMW 마치 주위를 도배하는 죽음의 기색을 사랑하듯、혹은 주위에 쏟아져 나온 무수한 희화화된 죽은 자들을 통솔하듯、
+		PRINTFORMW ”그것”은 주위를 깊은 어둠을 머금은 동공으로 언뜻 보면서、주위를 칠하는 장기를 휘감아、그저 거기에 존재한다。
 		PRINTFORML
-		PRINTFORMW …だが、それ以上のことをする訳でもなく。
+		PRINTFORMW …하지만、그 이상의 것을 하는 것도 아니고。
 		PRINTFORML 
-		PRINTFORMW 死に瀕していた少女一人”だけ”では不足していたのか、そもそも先の戦闘で力を消費していたのか、
-		PRINTFORMW その存在はそのまま周囲の瘴気と共に、急激に存在を薄れさせていく。
+		PRINTFORMW 죽음에 직면해 있던 소녀 한 명”만”으로는 부족했던 것일까、애초에 지난 전투에서 힘을 소비하고 있었던 것일까、
+		PRINTFORMW 그 존재는 그대로 주위의 장기와 함께、급격하게 존재를 희석시켜 간다。
 		PRINTFORMW 
-		PRINTFORMW そして、最後に一際強く瘴気が吹き荒れ、ほんの一瞬%CALLNAME:MASTER%の視界を真暗に染めるとともに、
-		PRINTFORMW そこに居たはずのそれらは、そこにあったはずの少女と共に、その存在の痕跡すら残さずに消え去っていた。
+		PRINTFORMW 그리고、그리고 마지막으로 한층 강하게 장기가 휘몰아쳐、아주 잠깐 %CALLNAME:MASTER%의 시야를 어둡게 물들이는 동시에、
+		PRINTFORMW 그곳에 있었을 그것들은、그곳에 있었을 소녀와 함께、그 존재의 흔적조차 남기지 않고 사라져 있었다。
 		PRINTFORML 
-		PRINTFORMW 最早そこには先の戦闘の痕跡以外に、死者達が存在していたことを示すものはなく。
-		PRINTFORMW 何かの祭りの後のような静寂を後目に、%CALLNAME:MASTER%は撤退の準備を始めた。
-		PRINTFORMW 最早、長居は無用だ。
-		PRINTFORMW ここに死者達は存在せず、そしてもはや再び沸く事も無いだろう。
-		PRINTFORMW …或いは、あの少女が生きていたのとしても、そして死んでいたとしても。
+		PRINTFORMW 이미 거기에는 그곳에는 앞선 전투의 흔적 외에、죽은 사람들이 존재했음을 보여주는 것은 없다。
+		PRINTFORMW 무슨 축제 후와 같은 정적을 뒤로하고、%조사처리(CALLNAME:MASTER,"는")% 철수 준비를 시작했다。
+		PRINTFORMW 이제와서、오래 있을 필요는 없다。
+		PRINTFORMW 이곳에 죽은 자들은 존재하지 않으며、그리고 더 이상 다시 끓지도 않을 것이다。
+		PRINTFORMW …혹은、그 소녀가 살아있었든、죽어있었다 해도。
 		PRINTFORML 
 		CUSTOMDRAWLINE =
 	ENDIF
 	CALL REQUEST80_10_CLOCKVIEW,2
 	
 	PRINTFORML 
-	PRINTFORMW ＞依頼達成報酬として組織から￥30,000を受け取り、名声を20得た。
+	PRINTFORMW ＞의뢰 달성 보수로 조직에서 ￥30,000을 받고、명성을 20 얻었다。
 	PRINTFORML 
 	IF LOCAL:5 == 3
-		PRINTFORMW ＞”検体”確保の特別報酬として、追加で\20,000を受け取った。
+		PRINTFORMW ＞”검체”확보 특별보수로、추가로 \20,000을 받았다。
 		MONEY += 50000
 	ELSE
 		MONEY += 30000
@@ -1133,7 +1133,7 @@ CASE 1
 	PRINTL 　　 　 　 　 　 　 　 　 　 / /　　 　 　 　 　 　 　 '　. ′
 	PRINTL 　　　　　　　　　　　　　 .' .'Ⅸ　 　　　　　 Ⅴ／　, ′
 	PRINTL 　　　　 　 　 　 　 　 　 {　{　　　　 　　Ⅵ ／　／
-	PRINTL 　　　　　　　 　 　 　 　 ∨ﾞ､Ⅷ　　Ⅶ　／　／　　　　　　　　カ　　　チ　　　ッ
+	PRINTL 　　　　　　　 　 　 　 　 ∨ﾞ､Ⅷ　　Ⅶ　／　／　　　　　　　　딸　　　까　　　악
 	PRINTL 　　　　　　　　　 　 　 　 ヽ、`ｰ-- ‐ '" .　"
 	PRINTW 　　　　　　　　　 　 　 　 　 ｀ ー-- ‐ ´
 	SETFONT "ＭＳ ゴシック"
@@ -1142,8 +1142,8 @@ CASE 1
 	PRINTL 
 	PRINTL 
 	CUSTOMDRAWLINE =
-	PRINTW ――何処からか、だれかの運命がまた捻じ曲がった音が聞こえた気がした。
-	PRINTW …もしくは、既に歪んでしまった何かを、更に捻じ曲げた音が。
+	PRINTW ――어디선가、누군가의 운명이 다시 뒤틀리는 소리가 들린 것 같았다。
+	PRINTW …혹은、이미 뒤틀려버린 무언가를、더욱 비틀어 놓은 소리가。
 CASE 2
 	PRINTL 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　 `ｰi y' .
 	PRINTL 　　　　　　　　　　　　　　　　 　 　 　 　 　 　 　 　 __　　r'ｿ'
@@ -1168,8 +1168,8 @@ CASE 2
 	PRINTL 
 	PRINTL 
 	CUSTOMDRAWLINE =
-	PRINTW ――何処からか、何かが。
-	PRINTW 誰かの運命が、砕ける音が、聞こえた気がした。
+	PRINTW ――어디선가、뭔가가。
+	PRINTW 누군가의 운명이、부서지는 소리가、들린 것 같았다。
 ENDSELECT
 CUSTOMDRAWLINE =
 
@@ -1185,7 +1185,7 @@ CUSTOMDRAWLINE =
 ;	ENDIF
 ;NEXT
 ;PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-;PRINTFORML ┃周囲に漂う澱んだ瘴気が、ゾンビたちの周囲に集っていく…　　　　┃
+;PRINTFORML ┃주위에 감도는 녹은 잔기가、좀비들 주위로 모여든다…			┃
 ;PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 
@@ -1201,24 +1201,24 @@ IF FINDCHARA_ENEMY(1036) >= 1
 		;最初だけヤベえ増えたみたいなメッセージを出すとわかりやすい気がした。
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃戦闘の物音を聞きつけたのか、呻き声を上げながら数体のゾンビが近づいてきた…！　┃
-			PRINTFORML ┃さらに、周囲から複数の物音が聞こえてくる……　　　　　　　　　　　　　　　　　┃
+			PRINTFORML ┃전투의 소리를 들었는지、신음소리를 내며 좀비 몇 마리가 다가왔다…！		   ┃
+			PRINTFORML ┃게다가、주위에서 복수의 소리가 들려온다……								   ┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 		ELSEIF FLAG:경과턴수 >= 7
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃ゾンビの数は未だ増え続けている…キリがない！　　　　　　　　　　　　　　　　┃
-			PRINTFORML ┃幸いというべきか、眼前のゾンビの群勢からは知性のようなものは感じられない。　┃
-			PRINTFORML ┃一度逃走し、状況を立て直すべきかもしれない……　　　　　　　　　　　　　　　┃
+			PRINTFORML ┃좀비의 수는 아직도 계속 증가하고 있다…끝이 없다！　　　　　　　　　　　　　┃
+			PRINTFORML ┃다행이랄까、눈앞의 좀비 떼에게에서는 지성 같은 것은 느껴지지 않는다。		 ┃
+			PRINTFORML ┃한 번 도주해、상황을 바로잡아야 할지도 모른다……							 ┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			FLAG:도주불가플래그 = 0
 		ELSE
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃濃い瘴気の奥から、再び数体のゾンビがうめき声と共に飛び出してきた…！　　┃
-			PRINTFORML ┃どうやら、本格的に感づかれてしまったようだ…　　　　　　　　　　　　　　┃
+			PRINTFORML ┃짙은 장기 속에서、다시 좀비 몇 마리가 신음소리와 함께 튀어나왔다…！　　┃
+			PRINTFORML ┃아무래도、본격적으로 눈치채고 만 것 같다…								 ┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 		ENDIF
@@ -1242,8 +1242,8 @@ IF FINDCHARA_ENEMY(1036) >= 1
 						CALL SET_ENEMY,LOCAL:5,[[キャラ:드래그퀸]],22,0
 						BASE:(CHARANUM-1):힘 -= 4
 						BASE:(CHARANUM-1):인내력 += 3
-						NAME:(CHARANUM-1) = サンゲリア
-						CALLNAME:(CHARANUM-1) = サンゲリア
+						NAME:(CHARANUM-1) = 산겔리아
+						CALLNAME:(CHARANUM-1) = 산겔리아
 						MAXBASE:(CHARANUM-1):파마 = 200
 						BASE:(CHARANUM-1):파마 = 200
 						MAXBASE:(CHARANUM-1):신경 = 0
@@ -1261,16 +1261,16 @@ IF FINDCHARA_ENEMY(1036) >= 1
 						ABL:(CHARANUM-1):스킬5 = 0
 						ABL:(CHARANUM-1):스킬6 = 0
 						ABL:(CHARANUM-1):스킬7 = 0
-						CSTR:(CHARANUM-1):30 = 全身を朽ち果てさせた、蠢く埋葬死体。
-						CSTR:(CHARANUM-1):31 = 原典となるのは、ブードゥの秘術によって蘇った数百年前の土葬死体。
-						CSTR:(CHARANUM-1):32 = 一般的なゾンビにみられる腐敗し血肉に塗れた姿ではなく、
-						CSTR:(CHARANUM-1):33 = 死蝋化し、土に塗れて蟲の集った外観をしていることが特徴的。
+						CSTR:(CHARANUM-1):30 = 온몸이 썩어버린、꿈틀거리는 매장 시체。
+						CSTR:(CHARANUM-1):31 = 원전이 되는 것은、부두의 비술로 되살아난 수백 년 전 토장사체。
+						CSTR:(CHARANUM-1):32 = 일반적인 좀비에서 볼 수 있는 부패하고 피칠갑한 모습이 아닌、
+						CSTR:(CHARANUM-1):33 = 시랍화되어、흙투성이에 벌레가 모인 외관을 하고 있는 것이 특징이다。
 						CSTR:(CHARANUM-1):34 = 　
-						CSTR:(CHARANUM-1):35 = ”サンゲリア”は「流血」を意味するSangueと「息切れ」を意味するSusperiaを組み合わせた造語。
-						CSTR:(CHARANUM-1):36 = より正確に言うならば、映画『サスペリア』にあやかって名付けられたとあるゾンビ映画の邦題であり、
-						CSTR:(CHARANUM-1):37 = 特定の外観や形質をもったゾンビを形容する単語という訳ではない。
+						CSTR:(CHARANUM-1):35 = ”산겔리아”는「유혈」을 의미하는 Sangue와「숨차다」를 의미하는 Susperia를 조합한 조어。
+						CSTR:(CHARANUM-1):36 = 더 정확하게 말하자면、영화『서스페리어』에 빗대어 붙여진 어떤 좀비 영화의 제목이며、
+						CSTR:(CHARANUM-1):37 = 특정 외관이나 형질을 가진 좀비를 형용하는 단어는 아니다。
 						CSTR:(CHARANUM-1):38 = 　
-						CSTR:(CHARANUM-1):39 = 余談ではあるが、映画『サンゲリア』はサメとゾンビが海中で戦うシーンが存在する。すごい。
+						CSTR:(CHARANUM-1):39 = 여담이긴 하지만、영화『산겔리아』는 상어와 좀비가 바닷속에서 싸우는 장면이 존재한다。대단하다。
 						LOCAL = CHARANUM-1
 						CALL SYNC_STATUS,(CHARANUM-1)
 						CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1292,18 +1292,18 @@ IF FINDCHARA_ENEMY(1036) >= 1
 						CALL HEALTH_CHARA,(CHARANUM-1)
 					ELSEIF RAND:2==0
 						CALL SET_ENEMY,LOCAL:5,[[キャラ:워커홀릭]],23,0
-						NAME:(CHARANUM-1) = クリープス
-						CALLNAME:(CHARANUM-1) = クリープス
+						NAME:(CHARANUM-1) = 크립스
+						CALLNAME:(CHARANUM-1) = 크립스
 						BASE:(CHARANUM-1):힘 -= 4
 						MAXBASE:(CHARANUM-1):인내력 += 9
 						MAXBASE:(CHARANUM-1):속도 -= 8
 						CFLAG:(CHARANUM-1):ＨＰ보정 += 140
-						CSTR:(CHARANUM-1):30 = 這いずるもの。体の大規模な損壊などを理由として、二足による歩行が不可能となったゾンビ。
+						CSTR:(CHARANUM-1):30 = 기어다니는 것。신체의 대규모 손괴 등을 이유로、두 발에 의한 보행이 불가능해진 좀비。
 						CSTR:(CHARANUM-1):31 = 　
-						CSTR:(CHARANUM-1):32 = 人間であれば甚大な、そうでなくても致命となり得るほどのダメージを受けて尚動き回る存在であり、
-						CSTR:(CHARANUM-1):33 = 移動能力に障害こそ発生しているが、その生命力はなおも高い。
+						CSTR:(CHARANUM-1):32 = 인간이라면 심대한、그렇지 않아도 치명적일 수 있을 정도의 피해를 입고 더욱 움직이는 존재이며、
+						CSTR:(CHARANUM-1):33 = 이동능력에 장애가 발생하고 있지만、그 생명력은 더욱 높다.。
 						CSTR:(CHARANUM-1):34 = 　
-						CSTR:(CHARANUM-1):35 = 特定の原典が存在するわけではなく、ゾンビパニック映画全般における不死性の極めて高いゾンビのイメージの具現に近い。
+						CSTR:(CHARANUM-1):35 = 특정 원전이 존재하는 것이 아니라、좀비 패닉 영화 전반에서 불사성이 극히 높은 좀비 이미지 구현에 가깝다。
 						LOCAL = CHARANUM-1
 						CALL SYNC_STATUS,(CHARANUM-1)
 						CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1345,13 +1345,13 @@ ELSE
 			IF LOCAL == POS(14)
 				PRINTFORML 
 				PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-				PRINTFORML ┃少女の周囲に漂う瘴気が、ゆっくりと滲み、広がり出していく…　　　　　　┃
-				PRINTFORML ┃濃密な死穢の気配を纏ったそれが周囲の大地へと染み込むと、　　　　　　　┃
-				PRINTFORML ┃ひどく朽ち果て、身体の崩れた無数の屍が床板を突き破り這い出してきた！　┃
+				PRINTFORML ┃소녀의 주위에 감도는 장기가、천천히 번지고、퍼지기 시작한다…		   ┃
+				PRINTFORML ┃농밀한 사예의 기미를 감싼 그것이 주위 대지로 스며들면、　　　　　 　　┃
+				PRINTFORML ┃몹시 썩어가고、몸이 무너진 무수한 시체들이 마루판을 뚫고 기어나왔다！ ┃
 				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 				PRINTFORML 
 				PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
-				PRINTFORML ┃[13] 小梅　　　　　　　　 ┃　┃死霊召喚　　　　　　　　　　　　　　　　┃
+				PRINTFORML ┃[13] 코우메　　　　　　　 ┃　┃사령소환　　　　　　　　　　　　　　　　┃
 				PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 				PRINTL
 				;前衛にゾンビスウォームを召喚
@@ -1379,19 +1379,19 @@ ELSE
 					ABL:(CHARANUM-1):스킬6 = 0
 					ABL:(CHARANUM-1):스킬7 = 0
 					ABL:(CHARANUM-1):스킬8 = 0
-					CSTR:(CHARANUM-1):30 = 死穢の瘴気を注ぎ込まれ、強制的に仮初の命を与えられた無数の死体と残骸の集合体。
-					CSTR:(CHARANUM-1):31 = 崩れおち、朽ち果て、おおよそゾンビとしてすら本来は成立し得ないほどに損壊した死体たちが
-					CSTR:(CHARANUM-1):32 = 寄り集まり、絡み合い、一個の群体として疑似的に個をなしたもの。
+					CSTR:(CHARANUM-1):30 = 사예의 장기를 쏟아 부어、강제로 일시적인 생명을 부여받은 무수한 시체와 잔해의 집합체。
+					CSTR:(CHARANUM-1):31 = 무너져 내리고、썩고、대충 좀비로서도 원래는 성립할 수 없을 정도로 손괴된 시체들이
+					CSTR:(CHARANUM-1):32 = 모이고 모여、얽히고 설키며、하나의 군체로서 의사적인 물건을 이룬 것。
 					CSTR:(CHARANUM-1):33 = 　
-					CSTR:(CHARANUM-1):34 = 単一の意識すら持たない雑多な集合体でしかない”彼ら”が個として成立しているのは
-					CSTR:(CHARANUM-1):35 = より強力な意思と魔力によって使役され、崩れ落ちぬように制御されているからでしかない。
+					CSTR:(CHARANUM-1):34 = 단일한 의식조차 갖지 않는 잡다한 집합체일 뿐인”그들”이 개별적으로 성립되어 있는 것은
+					CSTR:(CHARANUM-1):35 = 보다 강력한 의사와 마력에 의해 사역되어、무너져 내리지 않도록 제어되고 있기 때문일 뿐이다。
 					CSTR:(CHARANUM-1):36 = 　
 					CSTR:(CHARANUM-1):37 = 　
-					CSTR:(CHARANUM-1):38 = 屍鬼の霊に漏れず破魔や火炎には弱いものの、彼らは群である。
-					CSTR:(CHARANUM-1):39 = おおよそ一撃で浄化しきることは不可能であり、物理的な攻撃も通り辛いだろう。
+					CSTR:(CHARANUM-1):38 = 시귀의 영혼에서 벗어나지 않아 파마나 화염에는 약하지만、그들은 무리다。
+					CSTR:(CHARANUM-1):39 = 대략 일격에 정화하는 것은 불가능하며、물리적인 공격도 통용되기 힘들 것이다。
 					CALL SYNC_STATUS,(CHARANUM-1)
-					NAME:(CHARANUM-1) = ゾンビスクアッド
-					CALLNAME:(CHARANUM-1) = ゾンビスクアッド
+					NAME:(CHARANUM-1) = 좀비 스쿼드
+					CALLNAME:(CHARANUM-1) = 좀비 스쿼드
 					 CFLAG:(CHARANUM-1):고유게이지H1 = 3
 					 CFLAG:(CHARANUM-1):고유게이지H2 = 3
 					 CFLAG:(CHARANUM-1):고유게이지H3 = MAXBASE:(CHARANUM-1):ＨＰ
@@ -1419,7 +1419,7 @@ ELSE
 				IF POS(LOCAL) > 0 && POS(LOCAL) != LOCAL:12
 					IF (CFLAG:POS(LOCAL):고유게이지H3 - BASE:POS(LOCAL):ＨＰ) >= 100
 						RESETCOLOR
-						PRINTFORMW ＞[{LOCAL,2}]%CALLNAME:POS(LOCAL)%を構成する屍の一部が、力を失い崩れ落ちていく…
+						PRINTFORMW ＞[{LOCAL,2}]%CALLNAME:POS(LOCAL)%를 구성하는 시체의 일부가、힘을 잃고 무너져 내린다…
 						SETCOLOR 0xFF0000
 						PRINTFORML 
 						CFLAG:POS(LOCAL):고유게이지H1 -= (CFLAG:POS(LOCAL):고유게이지H3 - BASE:POS(LOCAL):ＨＰ)/100
@@ -1445,8 +1445,8 @@ ELSE
 								ABL:(POS(LOCAL)):스킬7 = 0
 								ABL:(POS(LOCAL)):스킬8 = 0
 								CALL SYNC_STATUS,(POS(LOCAL))
-								NAME:(POS(LOCAL)) = ゾンビ
-								CALLNAME:(POS(LOCAL)) = ゾンビ
+								NAME:(POS(LOCAL)) = 좀비
+								CALLNAME:(POS(LOCAL)) = 좀비
 								 CFLAG:POS(LOCAL):고유게이지H2 = 0
 							CASE 3 TO 5
 								CFLAG:(POS(LOCAL)):ＨＰ보정 = 300
@@ -1460,8 +1460,8 @@ ELSE
 								ABL:(POS(LOCAL)):스킬7 = 0
 								ABL:(POS(LOCAL)):스킬8 = 0
 								CALL SYNC_STATUS,(POS(LOCAL))
-								NAME:(POS(LOCAL)) = ゾンビスクアッド
-								CALLNAME:(POS(LOCAL)) = ゾンビスクアッド
+								NAME:(POS(LOCAL)) = 좀비 스쿼드
+								CALLNAME:(POS(LOCAL)) = 좀비 스쿼드
 								 CFLAG:POS(LOCAL):고유게이지H2 = 3
 							CASE 6 TO 8
 								CFLAG:(POS(LOCAL)):ＨＰ보정 = 450
@@ -1474,8 +1474,8 @@ ELSE
 								ABL:(POS(LOCAL)):스킬7 = [[스킬:어설트다이브]]
 								ABL:(POS(LOCAL)):스킬8 = 0
 								CALL SYNC_STATUS,(POS(LOCAL))
-								NAME:(POS(LOCAL)) = ゾンビスウォーム
-								CALLNAME:(POS(LOCAL)) = ゾンビスウォーム
+								NAME:(POS(LOCAL)) = 좀비 스웜
+								CALLNAME:(POS(LOCAL)) = 좀비 스웜
 								 CFLAG:POS(LOCAL):고유게이지H2 = 6
 							ENDSELECT
 							;変異前HPが変異後HP上限より上ならHPを上限に、そうでないならHPを変異前と揃える。
@@ -1515,12 +1515,12 @@ ELSE
 			
 			;ターンエンド時の召喚処理。前衛ゾンビにランダムでカウンタを3点配点(固有ゲージH1を使用)。1体に3点溜まっていたら1段変異させる。
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃少女の纏う瘴気が一際濃く溢れ出すとともに周囲へと振り撒かれ、　　　　　┃
-			PRINTFORML ┃無数の死体が再び這い出し、群がる死体の群勢の一部となっていく……！　　┃
+			PRINTFORML ┃소녀가 휘감는 장기가 한층 짙게 흘러넘치는 동시에 주위에 뿌려져、	   ┃
+			PRINTFORML ┃무수한 시체들이 다시 나타나、군집한 시체들의 일부가 되어 간다……！   ┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃[13] 小梅　　　　　　　　 ┃　┃死霊召喚　　　　　　　　　　　　　　　　┃
+			PRINTFORML ┃[13] 코우메　　　　　　　 ┃　┃사령소환　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 			PRINTL
 			;ゾンビカウンタを3点ランダム配点
@@ -1534,7 +1534,7 @@ ELSE
 				IF POS(LOCAL:3) > 0
 					IF POS(LOCAL:3) > 0 && POS(LOCAL:3) != LOCAL:12
 						RESETCOLOR
-						PRINTFORMW ＞[{LOCAL:3,2}]%CALLNAME:POS(LOCAL:3)%に　新たなゾンビが集積した！
+						PRINTFORMW ＞[{LOCAL:3,2}]%CALLNAME:POS(LOCAL:3)%에　새로운 좀비가 모였다！
 						SETCOLOR 0xFF0000
 						IF (MAXBASE:POS(LOCAL:3):ＨＰ - BASE:POS(LOCAL:3):ＨＰ) > 30
 							;それ以外の場合は30点の回復、記録ゲージも30点増加。
@@ -1558,7 +1558,7 @@ ELSE
 						RESETCOLOR
 						SELECTCASE CFLAG:POS(LOCAL):고유게이지H1
 						CASE 3 TO 5
-							PRINTW ＞寄り集まった複数のゾンビたちが、まるで一つの意思によって動いているかのように振舞いだした…
+							PRINTW ＞모여든 다수의 좀비들이、마치 하나의 뜻에 따라 움직이는 것처럼 행동하기 시작했다…
 							CFLAG:(POS(LOCAL)):ＨＰ보정 = 300
 							MAXBASE:(POS(LOCAL)):검격 = 100
 							BASE:(POS(LOCAL)):검격 = 100
@@ -1568,11 +1568,11 @@ ELSE
 							BASE:(POS(LOCAL)):힘 += 2
 							ABL:(POS(LOCAL)):스킬6 = [[스킬:독물어뜯기]]
 							CALL SYNC_STATUS,(POS(LOCAL))
-							NAME:(POS(LOCAL)) = ゾンビスクアッド
-							CALLNAME:(POS(LOCAL)) = ゾンビスクアッド
+							NAME:(POS(LOCAL)) = 좀비 스쿼드
+							CALLNAME:(POS(LOCAL)) = 좀비 스쿼드
 							 CFLAG:POS(LOCAL):고유게이지H2 = 3
 						CASE 6 TO 8
-							PRINTW ＞寄り集まった複数のゾンビたちが、その崩れた身体を合体させ一際大きな異形となり蠢き始めた…！
+							PRINTW ＞모여든 다수의 좀비들이、그 무너진 몸을 합체시켜 한층 더 큰 이형을 이루며 꿈틀거리기 시작했다…！
 							CFLAG:(POS(LOCAL)):ＨＰ보정 = 450
 							MAXBASE:(POS(LOCAL)):검격 = 80
 							BASE:(POS(LOCAL)):검격 = 80
@@ -1583,8 +1583,8 @@ ELSE
 							ABL:(POS(LOCAL)):스킬6 = [[스킬:마비물어뜯기]]
 							ABL:(POS(LOCAL)):스킬7 = [[스킬:어설트다이브]]
 							CALL SYNC_STATUS,(POS(LOCAL))
-							NAME:(POS(LOCAL)) = ゾンビスウォーム
-							CALLNAME:(POS(LOCAL)) = ゾンビスウォーム
+							NAME:(POS(LOCAL)) = 좀비 스웜
+							CALLNAME:(POS(LOCAL)) = 좀비 스웜
 							 CFLAG:POS(LOCAL):고유게이지H2 = 6
 						CASE IS >= 9
 							;ゾンビレギオン
@@ -1601,8 +1601,8 @@ ELSE
 							ABL:(POS(LOCAL)):스킬7 = [[스킬:베어넘기기]]
 							ABL:(POS(LOCAL)):스킬8 = [[스킬:눌러으깨기]]
 							CALL SYNC_STATUS,(POS(LOCAL))
-							NAME:(POS(LOCAL)) = ゾンビレギオン
-							CALLNAME:(POS(LOCAL)) = ゾンビレギオン
+							NAME:(POS(LOCAL)) = 좀비 레기온
+							CALLNAME:(POS(LOCAL)) = 좀비 레기온
 							 CFLAG:POS(LOCAL):고유게이지H2 = 9
 						ENDSELECT
 						;体力は変異前の3割増しに調整する
@@ -1626,7 +1626,7 @@ ELSE
 				;物理を完全に無効する代わりにHPが紙以下。申し訳程度の攻撃スキルと共に只管バフデバフを積んでくる支援ビット。
 				IF FINDCHARA_ENEMY([[キャラ:잭랜턴]]) <= 0
 					RESETCOLOR
-					PRINTFORMW ＞一層に濃度を増し始めた周囲の瘴気に惹かれた様に、朧な怪火が踊り始めた…！
+					PRINTFORMW ＞농도가 한층 높아지기 시작한 주위의 장기에 끌린 듯、흐릿한 괴화가 춤을 추기 시작했다…！
 						CALL SET_ENEMY,13,[[キャラ:잭랜턴]],15,0
 						ABL:(CHARANUM-1):스킬1 = [[스킬:아기]]
 						ABL:(CHARANUM-1):스킬2 = [[스킬:저주의언령]]
@@ -1650,14 +1650,14 @@ ELSE
 						BASE:(CHARANUM-1):파마 = 200
 						MAXBASE:(CHARANUM-1):속도 += 12
 						MAXBASE:(CHARANUM-1):마력 += 3
-						NAME:(CHARANUM-1) = ウィルオウィスプ
-						CALLNAME:(CHARANUM-1) = ウィルオウィスプ
-						CSTR:(CHARANUM-1):30 = 世界各地に伝承の残る”鬼火”あるいは”人魂”の怪異の一つ。
-						CSTR:(CHARANUM-1):31 = 青白い光を放つ空飛ぶ火球。愚者の火。夜の湖沼や墓場などに出現するという。
+						NAME:(CHARANUM-1) = 윌로우쉽
+						CALLNAME:(CHARANUM-1) = 윌로우쉽
+						CSTR:(CHARANUM-1):30 = 세계 각지에 전승이 남아 있는”귀화”혹은”인혼”의 괴이 중 하나。
+						CSTR:(CHARANUM-1):31 = 창백한 빛을 내는 하늘을 나는 화구。어리석은 자의 불。밤의 호소나 무덤 등에 출현한다고 한다。
 						CSTR:(CHARANUM-1):32 = 　
-						CSTR:(CHARANUM-1):33 = その正体は、生前罪を犯したものや洗礼を施されずに死んだものの魂であるとも、妖精の変身した姿ともいわれる。
-						CSTR:(CHARANUM-1):34 = 最もこの個体に限定して言うのであれば、多量のMAGを注ぎ込まれることにより強制的に析出した、
-						CSTR:(CHARANUM-1):35 = おおよそ魂とも呼べないような希薄な死者の念の残滓に由来する存在でしかない。
+						CSTR:(CHARANUM-1):33 = 그 정체는、생전에 죄를 지은 것이나 세례를 받지 못하고 죽은 것의 영혼이라고도 하고、요정의 변신한 모습이라고도 한다。
+						CSTR:(CHARANUM-1):34 = 애초에 이 개체에 한정해서 말한다면、다량의 MAG를 주입함으로써 강제적으로 분리된、
+						CSTR:(CHARANUM-1):35 = 대략 영혼이라고도 부를 수 없는 희박한 죽은 자의 생각의 잔재에서 유래한 존재일 뿐이다。
 						CSTR:(CHARANUM-1):36 = 　
 						CSTR:(CHARANUM-1):37 = 　
 						CSTR:(CHARANUM-1):38 = 　
@@ -1688,14 +1688,14 @@ ELSE
 						BASE:(CHARANUM-1):파마 = 200
 						MAXBASE:(CHARANUM-1):속도 += 15
 						MAXBASE:(CHARANUM-1):마력 += 10
-						NAME:(CHARANUM-1) = ウィルオウィスプ
-						CALLNAME:(CHARANUM-1) = ウィルオウィスプ
-						CSTR:(CHARANUM-1):30 = 世界各地に伝承の残る”鬼火”あるいは”人魂”の怪異の一つ。
-						CSTR:(CHARANUM-1):31 = 青白い光を放つ空飛ぶ火球。愚者の火。夜の湖沼や墓場などに出現するという。
+						NAME:(CHARANUM-1) = 윌로우쉽
+						CALLNAME:(CHARANUM-1) = 윌로우쉽
+						CSTR:(CHARANUM-1):30 = 세계 각지에 전승이 남아 있는”귀화”혹은”인혼”의 괴이 중 하나。
+						CSTR:(CHARANUM-1):31 = 창백한 빛을 내는 하늘을 나는 화구。어리석은 자의 불。밤의 호소나 무덤 등에 출현한다고 한다。
 						CSTR:(CHARANUM-1):32 = 　
-						CSTR:(CHARANUM-1):33 = その正体は、生前罪を犯したものや洗礼を施されずに死んだものの魂であるとも、妖精の変身した姿ともいわれる。
-						CSTR:(CHARANUM-1):34 = 最もこの個体に限定して言うのであれば、多量のMAGを注ぎ込まれることにより強制的に析出した、
-						CSTR:(CHARANUM-1):35 = おおよそ魂とも呼べないような希薄な死者の念の残滓に由来する存在でしかない。
+						CSTR:(CHARANUM-1):33 = 그 정체는、생전에 죄를 지은 것이나 세례를 받지 못하고 죽은 것의 영혼이라고도 하고、요정의 변신한 모습이라고도 한다。
+						CSTR:(CHARANUM-1):34 = 애초에 이 개체에 한정해서 말한다면、다량의 MAG를 주입함으로써 강제적으로 분리된、
+						CSTR:(CHARANUM-1):35 = 대략 영혼이라고도 부를 수 없는 희박한 죽은 자의 생각의 잔재에서 유래한 존재일 뿐이다。
 						CSTR:(CHARANUM-1):36 = 　
 						CSTR:(CHARANUM-1):37 = 　
 						CSTR:(CHARANUM-1):38 = 　
@@ -1714,41 +1714,41 @@ ELSE
 			;台詞演出は【ヨモスガラ・パーティ】のホーム台詞および【Lunatic Show】のプロフィール台詞。どっちもかわいい。すき。
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃――――――…しあわせ、だった…記憶は……無くならないの……　　　　　┃
+			PRINTFORML ┃――――――…행복했、던…기억은……없어지지 않아……		 　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			RESETCOLOR
 			PRINTFORML 
-			PRINTFORMW …突如、およそ戦場に不釣り合いな、澄んだ声が響いた。
-			PRINTFORML 見れば、今まで夢でも見ているかのように呆と光を失っていた少女の瞳に薄らと光が宿り、
-			PRINTFORML その口元はにこりと薄い笑みの形に歪められている。
+			PRINTFORMW …갑자기、전쟁터에 어울리지 않는、맑은 목소리가 울려 퍼졌다。
+			PRINTFORML 봐보니、지금까지 꿈이라도 꾸고 있는 듯 멍하니 빛을 잃었던 소녀의 눈동자에 희미하게 빛이 깃들고、
+			PRINTFORML 그 입가는 히죽히죽 옅은 미소의 형태로 일그러져 있다。
 			PRINTFORML 
 			SETCOLOR 0xFF0000
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃みんな、ずっと…みんな、ここにいるよ……だいじょうぶ、だから……　　　┃
+			PRINTFORML ┃얘들아、계속…얘들아、여기 있어……괜찮으、니까……				   ┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			RESETCOLOR
 			PRINTFORML 
-			PRINTFORMW だが、少女は意識を取り戻しつつはあるようだが、未だ完全とは言いがたい様子で。
-			PRINTFORMW 口から発せられる言葉は夢現に朧気で、周囲に滲み出す瘴気もまた、明らかに少女の意識とは無関係に世界を穢している。
+			PRINTFORMW 하지만、소녀는 의식을 되찾고 있는 것 같지만、아직 완전하다고는 말하기 어려운 모습이다。
+			PRINTFORMW 입에서 뿜어져 나오는 말은 비몽사몽에 몽롱하고、주위에 배어나는 장기 또한、분명히 소녀의 의식과는 무관하게 세상을 더럽히고 있다。
 			PRINTFORML 
 			PRINTFORML 
-			PRINTFORML と、少女の全身から今までとは比べ物にならないほどに濃密な瘴気が吐き落され、
-			PRINTFORMW 周囲に集っていた死霊の軍勢を呑み込み、ぐずりと蠕動した。
+			PRINTFORML 그리고、소녀의 온몸에서 지금까지와는 비교할 수 없을 정도로 농밀한 장기가 뿜어져 나오고、
+			PRINTFORMW 주위에 모여 있던 사령의 군세를 삼키고、꾸물꾸물 연동했다。
 			PRINTFORML 
-			PRINTFORMW まるで何かを磨り潰すような、捏ね上げるような異音と共に、無数の死者の怨嗟の声が鳴り響く。
-			PRINTFORMW 屍肉を湛えた瘴気の塊が脈動するかの如く大きく震え、4つの巨大な塊を形成する。
+			PRINTFORMW 마치 무언가를 갈아엎는 듯한、반죽하는 듯한 이상한 소리와 함께、무수한 죽은 이의 원성이 울려 퍼진다。
+			PRINTFORMW 시육을 가득 채운 장기 덩어리가 맥동하듯 크게 떨리며、4개의 거대한 덩어리를 형성한다。
 			PRINTFORML 
 			SETCOLOR 0xFF0000
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃もう、どこにも…行かせない……さめてほしく、ない、か…ら…………　　　┃
+			PRINTFORML ┃이제、어디에도…보내지 않아……깨어나고 싶지、않으、니…까…………　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			RESETCOLOR
 			PRINTFORML 
-			PRINTFORMW そして、4つの瘴気の塊が薄れていくと、そこに居たのは今までそこにあった屍とは似ても似つかない四体の怪物。
-			PRINTFORMW 唸りを上げ、此方への敵意を剥き出しにしているそれは、狼男にミイラ男、スケルトンにピエロと、風変りな、
-			PRINTFORMW しかし今まで周囲に存在していた悪魔達よりは、明白に強大な存在ばかりが。
+			PRINTFORMW 그리고、4개의 장기 덩어리가 희미해지면서、그곳에 있었던 것은 지금까지 그곳에 있던 시체와는 전혀 닮지 않은 네 구의 괴물。
+			PRINTFORMW 신음소리를 내며、이쪽에 대한 적의를 드러내고 있는 그것은、늑대인간에게 미라남자、스켈레톤에 광대라니、색다른、
+			PRINTFORMW 그러나 지금까지 주위에 존재했던 악마들보다는、명백히 막강한 존재들뿐이다。
 			PRINTFORML 
-			PRINTFORMW そして、悪魔というよりは何かのホラー映画にでも出てきそうな怪物の群れが、一斉に襲い掛かってきた！
+			PRINTFORMW 그리고、악마라기보다는 무슨 공포영화에나 나올 법한 괴물 무리가、일제히 덤벼들었다！
 			PRINTFORML 
 			SETCOLOR 0xFF0000
 			PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
@@ -1799,17 +1799,17 @@ ELSE
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 			MAXBASE:(CHARANUM-1):속도 += 8
 			MAXBASE:(CHARANUM-1):힘 += 6
-			NAME:(CHARANUM-1) = ウルフマン
-			CALLNAME:(CHARANUM-1) = ウルフマン
-			CSTR:(CHARANUM-1):30 = ウェアウルフ、人狼、狼男。”狼憑き”や”狼祖伝承”などを基としたホラーの怪物。
-			CSTR:(CHARANUM-1):31 = 狼に姿を変じさせる事ができ、その特性を持って夜な夜な人を襲う”潜む恐怖”として描かれることが多く、
-			CSTR:(CHARANUM-1):32 = スプラッタというよりは、サスペンスなどに近い領分にその身を置くといえる。
+			NAME:(CHARANUM-1) = 울프맨
+			CALLNAME:(CHARANUM-1) = 울프맨
+			CSTR:(CHARANUM-1):30 = 웨어울프、인랑、늑대인간。”늑대 빙의”나”늑대 전승”등을 바탕으로 한 공포 괴물。
+			CSTR:(CHARANUM-1):31 = 늑대로 모습을 변하게 할 수 있으며、그 특성을 가지고 밤에 밤에 사람을 덮치는”숨어있는 공포”로 묘사되는 경우가 많아、
+			CSTR:(CHARANUM-1):32 = 스플래터라기보다는、서스펜스 등에 가까운 영역에 그 몸을 둔다고 할 수 있다。
 			CSTR:(CHARANUM-1):33 = 　
-			CSTR:(CHARANUM-1):34 = 最も、この悪魔は少女のイメージによって生み出された存在にすぎないため
-			CSTR:(CHARANUM-1):35 = 伝承における概念よりも、むしろ映画のセオリーに沿った実像を持っているだろう。
+			CSTR:(CHARANUM-1):34 = 애초에、이 악마는 소녀의 이미지에 의해 만들어진 존재일 뿐이기 때문에
+			CSTR:(CHARANUM-1):35 = 전승의 개념보다는、오히려 영화의 이론에 따른 실상을 지니고 있을 것이다。
 			CSTR:(CHARANUM-1):36 = 　
-			CSTR:(CHARANUM-1):37 = なお、”狼男に噛まれたものは狼男となる”といったものや”狼男は銀の武器によって殺傷可能である”
-			CSTR:(CHARANUM-1):38 = などといった設定は、民間伝承によるものではなく映画において設定され有名になった俗説である。
+			CSTR:(CHARANUM-1):37 = 덧붙여、”늑대 인간에게 물린 사람은 늑대 인간이 된다”는 것이나”늑대 인간은 은제 무기에 의해 살상 가능하다”
+			CSTR:(CHARANUM-1):38 = 등의 설정은、민간 전승에 의한 것이 아니라 영화에서 설정되어 유명해진 속설이다。
 			LOCAL = CHARANUM-1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1840,19 +1840,19 @@ ELSE
 			MAXBASE:(CHARANUM-1):힘 += 8
 			MAXBASE:(CHARANUM-1):인내력 += 4
 			MAXBASE:(CHARANUM-1):속도 -= 4
-			NAME:(CHARANUM-1) = マミー
-			CALLNAME:(CHARANUM-1) = マミー
-			CSTR:(CHARANUM-1):30 = 全身を乱雑に巻き付けた包帯で覆った動死体、木乃伊。
-			CSTR:(CHARANUM-1):31 = 既に死んでいるが故に死ぬことのない、止まる事のない暴力的な恐怖として描かれることが多い。
+			NAME:(CHARANUM-1) = 마귀
+			CALLNAME:(CHARANUM-1) = 마귀
+			CSTR:(CHARANUM-1):30 = 온몸을 난잡하게 감싼 붕대로 덮은 시체、미라。
+			CSTR:(CHARANUM-1):31 = 이미 죽었기 때문에 죽지 않는、멈추지 않는 폭력적인 공포로 그려지는 경우가 많다。
 			CSTR:(CHARANUM-1):32 = 　
-			CSTR:(CHARANUM-1):33 = 一般的に想起される”ミイラ”は古代エジプトの王族の死体を当時の技術で防腐処理したものであり、
-			CSTR:(CHARANUM-1):34 = 元来は高い霊格、ないし神徳を持ち合わせる存在であるといえる。
+			CSTR:(CHARANUM-1):33 = 일반적으로 상기되는”미라”는 고대 이집트 왕족의 사체를 당시 기술로 방부 처리한 것으로、
+			CSTR:(CHARANUM-1):34 = 원래는 높은 영격、내지 신덕을 지닌 존재라고 할 수 있다。
 			CSTR:(CHARANUM-1):35 = 　
-			CSTR:(CHARANUM-1):36 = 最も、この悪魔は少女のイメージによって生み出された存在にすぎないため
-			CSTR:(CHARANUM-1):37 = 伝承における概念よりも、むしろ映画のセオリーに沿った実像を持っているだろう。
+			CSTR:(CHARANUM-1):36 = 애초에、이 악마는 소녀의 이미지에 의해 만들어진 존재일 뿐이기 때문에
+			CSTR:(CHARANUM-1):37 = 전승의 개념보다는、오히려 영화의 이론에 따른 실상을 지니고 있을 것이다。
 			CSTR:(CHARANUM-1):38 = 　
-			CSTR:(CHARANUM-1):39 = 余談ではあるが、”包帯を纏ったミイラが人を襲う”という極めて一般的なミイラのイメージ像は
-			CSTR:(CHARANUM-1):40 = ミイラ映画の原点ともいえる映画『ミイラ再生(The Mummy)』には存在しない。
+			CSTR:(CHARANUM-1):39 = 여담이지만、”붕대를 감싼 미라가 사람을 덮친다"”는 지극히 일반적인 미라 이미지는
+			CSTR:(CHARANUM-1):40 = 미라 영화의 원점이라 할 수 있는 영화『미라 재생(The Mummy)』는 존재하지 않는다。
 			LOCAL = CHARANUM-1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1884,19 +1884,19 @@ ELSE
 			MAXBASE:(CHARANUM-1):인내력 += 4
 			MAXBASE:(CHARANUM-1):마력 += 4
 			MAXBASE:(CHARANUM-1):지혜 += 4
-			NAME:(CHARANUM-1) = スケルトン
-			CALLNAME:(CHARANUM-1) = スケルトン
-			CSTR:(CHARANUM-1):30 = 意思を持ち動く白骨死体。
-			CSTR:(CHARANUM-1):31 = ゾンビと並び立ちアンデッドのイメージの中心となっているであろう存在。極めて普遍的なホラーの怪物。
+			NAME:(CHARANUM-1) = 스켈레톤
+			CALLNAME:(CHARANUM-1) = 스켈레톤
+			CSTR:(CHARANUM-1):30 = 의사를 가지고 움직이는 백골 시체。
+			CSTR:(CHARANUM-1):31 = 좀비와 나란히 선 언데드 이미지의 중심이 될 것이다。지극히 보편적인 공포 괴물。
 			CSTR:(CHARANUM-1):32 = 　
-			CSTR:(CHARANUM-1):33 = 怪異としての”動く白骨”のイメージは中世の寓話『死の舞踏』などを含め古くから存在するが、
-			CSTR:(CHARANUM-1):34 = 広く認知される契機となった作品としては1958年の映画『シンドバッド七回目の航海』などが挙げられる。
+			CSTR:(CHARANUM-1):33 = 괴이로서의”움직이는 백골”의 이미지는 중세 우화『죽음의 무도』등을 포함하여 오래전부터 존재하지만、
+			CSTR:(CHARANUM-1):34 = 널리 인지되는 계기가 된 작품으로는 1958년 영화『신밧드 일곱 번째 항해』등이 꼽힌다。
 			CSTR:(CHARANUM-1):35 = 　
-			CSTR:(CHARANUM-1):36 = 該当作におけるスケルトンは魔法によって動かされる武器を持った白骨の兵士として描かれ、
-			CSTR:(CHARANUM-1):37 = このイメージが後のテーブルトークＲＰＧやコンピュータＲＰＧに使用されたとも言われる。
+			CSTR:(CHARANUM-1):36 = 해당작에서 스켈레톤은 마법에 의해 움직이는 무기를 든 백골병사로 그려지며、
+			CSTR:(CHARANUM-1):37 = 이 이미지가 나중의 테이블 토크 ＲＰＧ나 컴퓨터 ＲＰＧ에 사용되었다고도 한다。
 			CSTR:(CHARANUM-1):38 = 　
-			CSTR:(CHARANUM-1):39 = その例のように、どちらかといえば冒険活劇やファンタジー作品などにおける敵役としてのイメージが強く
-			CSTR:(CHARANUM-1):40 = スケルトンという存在そのものをテーマとしたホラー映画自体は少ない。
+			CSTR:(CHARANUM-1):39 = 그 예처럼、모험활극이나 판타지 작품 등에서 적역으로서의 이미지가 강하며
+			CSTR:(CHARANUM-1):40 = 스켈레톤이라는 존재 자체를 테마로 한 공포영화 자체는 적다。
 			LOCAL = CHARANUM-1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1935,18 +1935,18 @@ ELSE
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			MAXBASE:(CHARANUM-1):지혜 += 8
 			MAXBASE:(CHARANUM-1):마력 += 4
-			NAME:(CHARANUM-1) = クラウン
-			CALLNAME:(CHARANUM-1) = クラウン
-			CSTR:(CHARANUM-1):30 = 恐怖の道化師。殺人ピエロ。
-			CSTR:(CHARANUM-1):31 = 元来は愉快な、おどけたものである道化師が、その振舞いのまま恐怖を巻き起こす、主にサイコ・ホラーの領分に存在する怪物。
+			NAME:(CHARANUM-1) = 크라운
+			CALLNAME:(CHARANUM-1) = 크라운
+			CSTR:(CHARANUM-1):30 = 공포의 광대。살인 광대。
+			CSTR:(CHARANUM-1):31 = 원래는 유쾌한、익살스러운 광대가、그 행동 그대로 공포를 일으키는、주로 사이코・호러의 영역에 존재하는 괴물。
 			CSTR:(CHARANUM-1):32 = 　
-			CSTR:(CHARANUM-1):33 = ピエロと恐怖の心理を結び付けている要因は、”ピエロの化粧は感情を読み取ることが出来ないから”
-			CSTR:(CHARANUM-1):34 = ”想像力が豊かで、何にでも恐怖を感じる多感な時期にピエロを見ることが多いから”などの説がある。
+			CSTR:(CHARANUM-1):33 = 광대와 공포의 심리를 연결하고 있는 요인은、”광대의 화장은 감정을 읽을 수 없기 때문”
+			CSTR:(CHARANUM-1):34 = ”상상력이 풍부하고、무엇이든 두려움을 느끼는 다감한 시기에 광대를 보는 경우가 많기 때문”등의 설이 있다。
 			CSTR:(CHARANUM-1):35 = 　
-			CSTR:(CHARANUM-1):36 = 特定の伝承など元ネタとしては持たず、イメージの形成自体も近代であり、
-			CSTR:(CHARANUM-1):37 = 映画などのメディアそのものをイメージの発端とする持つ珍しい存在ともいえる。
+			CSTR:(CHARANUM-1):36 = 특정 전승 등 원재료로는 갖지 않으며、이미지 형성 자체도 근대이며、
+			CSTR:(CHARANUM-1):37 = 영화 등의 미디어 자체를 이미지의 발단으로 하는 희귀한 존재라고도 할 수 있다。
 			CSTR:(CHARANUM-1):38 = 　
-			CSTR:(CHARANUM-1):39 = なお、ピエロをホラーと結び付けた決定的な作品が、有名なホラー映画『ＩＴ』である。
+			CSTR:(CHARANUM-1):39 = 덧붙여、광대를 공포와 연결시킨 결정적인 작품이、유명한 공포 영화『ＩＴ』이다。
 			LOCAL = CHARANUM-1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1967,9 +1967,9 @@ ELSE
 			IF 현HP비율(LOCAL) <= 0
 				PRINTFORML 
 				PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-				PRINTFORML ┃死穢の瘴気を沸き立たせていた少女が斃れ、周囲の気配が澄んでいく…　　　┃
-				PRINTFORML ┃と、同時に、瘴気によって存在を維持していたであろう周囲の屍霊達が、　　┃
-				PRINTFORML ┃再びあるべき物言わぬ死体へと戻り、崩れ落ちていった…　　　　　　　　　┃
+				PRINTFORML ┃사예의 장기를 들끓던 소녀가 쓰러지고、주위의 낌새가 맑아진다…		   ┃
+				PRINTFORML ┃그리고、동시에、장기에 의해 존재를 유지하고 있었을 주위의 사령들이、  ┃
+				PRINTFORML ┃다시 있어야 할 말 없는 시체로 돌아와、무너져 내렸다…				   ┃
 				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 				FOR LOCAL,7,17
 					IF POS(LOCAL) >= 0

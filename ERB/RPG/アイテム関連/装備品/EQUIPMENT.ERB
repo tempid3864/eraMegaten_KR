@@ -308,7 +308,7 @@ ELSEIF RESULTS == "장비상세선택" && 변경장비부위 >= 0
 	CALL 장비변경시스테이터스갱신 , LOCAL:10
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "+" || RESULTS == "-"
-	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시전환%RESULTS%"
+	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시변경%RESULTS%"
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "≫"
 	FLAG:윈도우내성표시설정 = ++FLAG:윈도우내성표시설정 % 3

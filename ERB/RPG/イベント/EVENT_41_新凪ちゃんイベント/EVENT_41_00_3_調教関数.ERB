@@ -1,9 +1,9 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:EVENT_41_00_3_調教関数.ERB
-;	Facility	:コドクノマレビトMOD/凪ちゃんイベント群/ダンジョン内凌辱イベント
+;	Facility	:コドクノマレビトMOD/나기ちゃんイベント群/ダンジョン内凌辱イベント
 ;
-;	Licence		:ライセンスフリー。
+;	Licence		:ライセンスフリー.
 ;
 ;	Modification Data:
 ;
@@ -11,9 +11,9 @@
 ;	001		20XX/XX/XX		？？？					新規作成
 ;	002		2022/05/07		NEO						ヘッダー挿入
 ;													テキストお直し
-;													あと、さすがに１ファイル作るまでもないので、イベント「（凪をPTに入れてください）」もここにin
-;	003		2022/06/01		NEO						Ver0.1。まだまだ未完成。
-;													　また、まだ未完成なので、「凪ちゃんイベントは進行中のプロセスです。」もここに。
+;													あと, さすがに１ファイル作るまでもないので, イベント「（나기をPTに入れてください）」もここにin
+;	003		2022/06/01		NEO						Ver0.1.まだまだ未完成.
+;													　また, まだ未完成なので, 「나기ちゃんイベントは進行中のプロセスです.」もここに.
 ;
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
@@ -22,257 +22,257 @@
 ;================================================================================================================
 ;メモ
 ;================================================================================================================
-;나기敵対ルートの進行中、凪とは４回戦える
+;나기敵対ルートの進行中, 나기とは４回戦える
 ;勝利後凌辱する選択肢で凌辱した場合のテキスト群
-;……と、あとイベント「（凪をPTに入れてください）」もここ、「凪ちゃんイベントは制作中のプロセスです。」もここ。
+;……と, あとイベント「（나기をPTに入れてください）」もここ, 「나기ちゃんイベントは制作中のプロセスです.」もここ.
 
-;vs凪１回目はイベントでの戦闘になるので、メッセージウィンドウ式はよろしくない（混載になるため）（混載ぶっ飛ばすぞ）
-;ゆえに、vs凪１回目後の場合はメッセージウィンドウ式ではなくす
+;vs나기１回目はイベントでの戦闘になるので, メッセージウィンドウ式はよろしくない（混載になるため）（混載ぶっ飛ばすぞ）
+;ゆえに, vs나기１回目後の場合はメッセージウィンドウ式ではなくす
 ;================================================================================================================
 
 
 @EVENT_41_Nagi_Rape
-	PRINTFORML 
+	PRINTL 
 	;당신にちんちんがある場合
 	IF HAVE_PENIS(MASTER) == 1
-		;나기敵対ルート、かつ、イベント進行が1
+		;나기敵対ルート, かつ, イベント進行が1
 		;　＝イベント「ダークサマナーの護衛」中の場合
 		IF 이벤트플래그:41:0 == 2 && 이벤트플래그:41:1 == 1
 			;１回目の戦闘なので初回凌辱で固定
-			PRINTFORML 　凪
-			PRINTFORMW 「あっ……やぁあっ……！」
-			PRINTFORML 
-			PRINTFORML ＞抵抗する凪を組み伏せ、服を引き裂く。
-			PRINTFORML ＞必死で抵抗しているが、%CALLNAME:MASTER%を押しのけることはできない。
-			PRINTFORML ＞だが、少々うざったい……%CALLNAME:MASTER%は、凪の頬を張った。
-			PRINTFORMW ＞抵抗するな――命令すれば、凪は多少は大人しくなった。
-			PRINTFORML 
-			PRINTFORML ＞うつぶせになって悔しさに身をよじる凪の残った服を破りさって、%CALLNAME:MASTER%は改めて裸体を眺めた。
-			PRINTFORML ＞鍛えられ締まってはいるが、女らしい肉も乗りつつある身体だ。
-			PRINTFORML ＞床と身の間で潰れた乳房が、柔らかくはみ出している……顔だちもいい。そそる目つきだ。
-			PRINTFORMW ＞つまりは、売り物になる。まあ、ヤタガラスの女なので、味見程度になるが。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「うぐっ、くっ、ううっ……！」
-			PRINTFORML 
-			PRINTFORML ＞凪はまだ抵抗を諦めていない。
-			PRINTFORML ＞“わからせて”やるには――と%CALLNAME:MASTER%は考え、そしてそれを実行する。
-			PRINTFORML ＞%CALLNAME:MASTER%は、凪の股を開かせ、唾を吐いた。
-			PRINTFORMW ＞凪は嫌悪感に震え、その後、どうして唾を吐かれたのか、理解が及んだらしい。
-			PRINTFORML 
-			PRINTFORML ＞暴れだす前に腕をまとめて握り、腰で股を割る。
-			PRINTFORML ＞空いた片手で肉棒を露出させる。
-			PRINTFORMW ＞準備を整えてやってもいいが、この抵抗はねじ伏せてやったほうが早い。
-			;反発刻印１ついてもヤったほうが早いよね！という話
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「あっ、っ……このっ……や、だっ……ァっ……!?」
-			PRINTFORML 
-			PRINTFORML ＞濡れてもいない膣内へと押し入る。
-			PRINTFORMW ＞ほぐれていない肉を割り開いていく。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「い゛、ッ、ぅ、ぐぅ、ぎゅッ……！！」
-			PRINTFORML 
-			PRINTFORML ＞凪は、目を見開いて、歯を食いしばっている。
-			PRINTFORMW ＞憎悪よりも、初体験の痛みと混乱が勝っている。
-			PRINTFORML 
-			PRINTFORML ＞膣肉はぎちぎちと男根を締め付ける。
-			PRINTFORML ＞全身に力が入っている。
-			PRINTFORMW ＞だが、筋肉はずっと力を入れていることはできない。
-			PRINTFORML 
-			PRINTFORML ＞凪が呼吸を思い出したころ――ひゅうひゅうと、笛の鳴るような息を漏らすころには、痛いほどの締め付けは緩んでいた。
-			PRINTFORML ＞裂けた血の滑りもおおよそ膣内にいきわたったところだ。
-			PRINTFORMW ＞%CALLNAME:MASTER%は、ゆるく腰を振り、凪の膣内を味わう。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「い゛ぃいイっ!?」
-			PRINTFORML 
-			PRINTFORML ＞凪がひっくり返った声を出す。
-			PRINTFORML ＞ばたばたと脚が暴れる。
-			PRINTFORML ＞%CALLNAME:MASTER%は無視して、軽く抜き差しをする。
-			PRINTFORML ＞凪の目じりから涙があふれた。
-			PRINTFORMW ＞……動くにはまだ不足か。
-			PRINTFORML 
-			PRINTFORML ＞凪を犯し殺したいとか、失神させたいとか、そういうわけではない。
-			PRINTFORML ＞凪の体で楽しみたい――そのために凪を屈服させたい。
-			PRINTFORMW ＞凪に意識を失ってもらっては、面白くない。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「ん゛ぃっ、い゛ッ！　ぅ、ア゛ッ！」
-			PRINTFORML 
-			PRINTFORML ＞ず、と奥を突くと、凪はナイフでも刺されたように敏感に反応した。
-			PRINTFORML ＞食いしばっていた口が開く。
-			PRINTFORMW ＞%CALLNAME:MASTER%は凪の顎をつかみ、唇を奪った。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「ん、むぅーっ……!?」
-			PRINTFORML 
-			PRINTFORML ＞%CALLNAME:MASTER%の服を、凪の手が引っ張る。
-			PRINTFORML ＞唇や舌を噛もうとする顎の動きは、%CALLNAME:MASTER%が押さえている。
-			PRINTFORMW ＞凪は涙をこぼしながら、%CALLNAME:MASTER%を叩く。
-			PRINTFORML 
-			PRINTFORML ＞HPを1も減らせないような攻撃を受けながら、%CALLNAME:MASTER%は凪の膣奥をこね回し、舌をなぶった。
-			PRINTFORML ＞歯を食いしばれない分、凪の身には力が入らない。
-			PRINTFORMW ＞目や耳を狙う腕を押さえつけながら、%CALLNAME:MASTER%は凪の口内と膣内を蹂躙し続ける。
-			PRINTFORML 
-			PRINTFORML ＞そのうち、股座から、ぐち、と湿った音が聞こえてくる。
-			PRINTFORML ＞防御反応、というやつだ。
-			PRINTFORMW ＞唇を離して、濡れてきたぞ、と囁いてやる。初めてでチンポを突っ込まれただけで濡れるのか。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「…………っ！！」
-			PRINTFORML 
-			PRINTFORML ＞凪の視線に力が戻る。
-			PRINTFORML ＞そう、その調子だ――犯されることを受け入れないまま、元気に抵抗するといい。
-			PRINTFORMW ＞%CALLNAME:MASTER%は、その全てをねじ伏せて、凪に望まぬ痛みと法悦をくれてやろう。
-			PRINTFORML 
-			PRINTFORMW ＞%CALLNAME:MASTER%は、抽送を始めた。
-			PRINTFORML 
+			PRINTL 　나기
+			PRINTW 「앗……싫어엇……!」
+			PRINTL 
+			PRINTL ＞저항하는 나기를 깔아 눕혀, 옷을 찢는다.
+			PRINTFORML ＞필사적으로 저항하고 있지만, %조사처리(CALLNAME:MASTER,"를")% 밀어낼 수는 없다.
+			PRINTFORML ＞하지만, 조금 거슬린다……%조사처리(CALLNAME:MASTER,"는")%, 나기의 뺨을 때렸다.
+			PRINTW ＞저항하지 마라――명령하자, 나기는 다소 얌전해졌다.
+			PRINTL 
+			PRINTFORML ＞덮쳐져 분통에 몸을 꼬는 나기의 남은 옷을 찢어버리고, %조사처리(CALLNAME:MASTER,"는")% 새삼스럽게 나체를 바라보았다.
+			PRINTL ＞단련되어 버렸다지만, 여성스러운 살도 타고난 몸이다.
+			PRINTL ＞바닥과 몸 사이에 뭉그러진 젖가슴이 부드럽게 모습을 드러내고 있다……용모도 좋다. 돋우는 눈빛이다.
+			PRINTW ＞즉, 매물이 된다. 뭐, 야타가라스의 여자인 탓에, 맛보기 정도지만.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「으긋, 큿, 으윽……!」
+			PRINTL 
+			PRINTL ＞나기는 아직 저항을 포기하고 있지 않다.
+			PRINTFORML ＞“참교육”을 하려면――하고 %조사처리(CALLNAME:MASTER,"는")% 생각하고, 그것을 실행한다.
+			PRINTFORML ＞%조사처리(CALLNAME:MASTER,"는")%, 나기의 가랑이를 젖히고 침을 뱉었다.
+			PRINTW ＞나기는 혐오감에 떨고, 그 후에 어째서 침을 뱉었는지 이해할 수 있었던 것 같다.
+			PRINTL 
+			PRINTL ＞날뛰기 전에 팔을 붙잡고 허리로 가랑이를 벌린다.
+			PRINTL ＞다른 한 손으로 육봉을 노출시킨다.
+			PRINTW ＞준비를 갖추고 해도 좋겠지만, 이런 저항은 깔아 뭉개서 해버리는 편이 빠르다.
+			;反発刻印１ついてもヤったほうが早いよね!という話
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「앗, 읏……이익……싫, 엇……아앗……!?」
+			PRINTL 
+			PRINTL ＞젖지도 않은 질내로 밀어넣는다.
+			PRINTW ＞풀어지지 않은 육벽을 갈라 열어간다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「아, ㅍ, 으, 그윽, 끄으……!!」
+			PRINTL 
+			PRINTL ＞나기는, 눈을 부릅뜨고 이를 악물고 있다.
+			PRINTW ＞증오보다는, 첫 경험에서 오는 고통과 혼란이 앞선다.
+			PRINTL 
+			PRINTL ＞질육은 뻑뻑하게 남근을 조인다.
+			PRINTL ＞전신에 힘이 들어가 있다.
+			PRINTW ＞하지만 근육은 계속 힘을 주고 있을 수는 없다.
+			PRINTL 
+			PRINTL ＞나기가 호흡을 떠올려――후우후우 하고, 피리 소리 같은 숨을 몰아쉴 때 쯤, 아플 정도의 조임이 풀어져 있었다.
+			PRINTL ＞파과혈의 미끄러움도 어느정도 질내로 퍼졌다.
+			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")%, 느긋하게 허리를 흔들며, 나기의 질내를 맛본다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「흐이이익!?」
+			PRINTL 
+			PRINTL ＞나기가 뒤집어진 소리를 낸다.
+			PRINTL ＞다리가 펄떡펄떡 날뛴다.
+			PRINTFORML ＞%조사처리(CALLNAME:MASTER,"는")% 무시하고, 가볍게 추삽을 이어간다.
+			PRINTL ＞나기의 눈가에 눈물이 쏟아졌다.
+			PRINTW ＞……움직이기에는 아직 부족한걸까.
+			PRINTL 
+			PRINTL ＞나기를 범하다 죽인다거나, 실신시킨다거나, 그러고 싶지는 않다.
+			PRINTL ＞나기의 몸을 즐기고 싶다――그것을 위해 나기를 굴복시키고 싶다.
+			PRINTW ＞나기의 의식을 잃게 한다니, 재미없다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「응히익, 으윽! 흐, 하악!」
+			PRINTL 
+			PRINTL ＞푸욱, 하고 안쪽을 찌르자, 나기는 나이프에 찔린 것처럼 민감하게 반응했다.
+			PRINTL ＞악물고 있던 입이 벌어진다.
+			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")% 나기의 턱을 잡고, 입술을 빼앗았다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「응, 브흐ー읍……!?」
+			PRINTL 
+			PRINTFORML ＞%CALLNAME:MASTER%의 옷을, 나기의 손이 당긴다.
+			PRINTFORML ＞입술이나 혀를 물려는 턱의 움직임은, %조사처리(CALLNAME:MASTER,"가")% 억누르고 있다.
+			PRINTFORMW ＞나기는 눈물을 흘리면서, %조사처리(CALLNAME:MASTER,"를")% 때린다.
+			PRINTL 
+			PRINTFORML ＞HP 1도 깎을 수 없을 법한 공격을 받아주면서, %조사처리(CALLNAME:MASTER,"는")% 나기의 질 안쪽을 후비고 혀를 희롱한다.
+			PRINTL ＞이를 악물지 않는 만큼, 나기의 몸에 힘이 들어가지 않는다.
+			PRINTFORMW ＞눈과 귀를 노리는 팔을 억누르면서, %조사처리(CALLNAME:MASTER,"는")% 나기의 입안과 질내를 유린한다.
+			PRINTL 
+			PRINTL ＞그러는 사이에 사타구니에서 축축해지는 소리가 들려온다.
+			PRINTL ＞방어반응, 이라는 놈이다.
+			PRINTW ＞입술을 떼고, 젖었네, 하고 속삭여준다. 첫경험에 자지로 박히는 것만으로도 젖어버리는건가.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「…………읏!!」
+			PRINTL 
+			PRINTL ＞나기의 시선에 힘이 돌아온다.
+			PRINTL ＞그래, 바로 그거다――범해지는 걸 받아들이지 않고, 힘차게 저항하는 게 좋다.
+			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")%, 그 모든 것을 짓누르고, 나기에게 바라지 않은 고통과 법열(法悦)을 선사할 것이다.
+			PRINTL 
+			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")%, 추삽을 시작했다.
+			PRINTL 
 			CALL AA_EV41_tenten
-			PRINTFORML 
-			PRINTFORMW ＞うつぶせに横たわる凪の横にしゃがみ込み、全身を観察する。
-			PRINTFORML 
-			PRINTFORML ＞白い――白かった――真っ赤になった凪の尻を張る。
-			PRINTFORML ＞ぶぴょッ、と音を立てて、精液が噴出する。
-			PRINTFORMW ＞凪は、ぴくぴくと痙攣するだけだ。
-			PRINTFORML 
-			PRINTFORML ＞幾度も犯され、精液を噴きこぼす雌穴に三本の指を入れ、丁寧に愛撫してやる。
-			PRINTFORML ＞既に幾度も漏らした小便が、ほんの少しだけ流れ出た。
-			PRINTFORMW ＞凪は、ぴくぴくと痙攣するだけだ。
-			PRINTFORML 
-			PRINTFORML ＞固くしこりきった乳首をつまみ、軽く引っ張ってみる。
-			PRINTFORML ＞若くハリのある乳房は、揉みしだかれて柔らかく伸びる。
-			PRINTFORMW ＞凪は、ぴくぴくと痙攣するだけだ。
-			PRINTFORML 
-			PRINTFORML ＞尻の穴に指をゆっくり挿入し、広げてみる。
-			PRINTFORML ＞未処理の穴に突っ込む気はさすがにない。
-			PRINTFORMW ＞凪は、ぴくぴくと痙攣するだけだ。
-			PRINTFORML 
-			PRINTFORML ＞凪をひっくり返し、顔を見る。
-			PRINTFORML ＞涙と鼻水と涎と精液で、美少女は見る影もない。
-			PRINTFORMW ＞凪は、白目をむいて、完全に失神していた。
-			PRINTFORML 
-			PRINTFORML ＞なにをやっても、凪は意識を取り戻さない。
-			PRINTFORMW ＞しばらく休ませなければならないだろう。
-			PRINTFORML 
-			PRINTFORML ＞……が、それを待つ気はない。
-			PRINTFORML ＞ヤタガラスの人員を持ち帰って、面倒まで持ち帰る気はない。
-			PRINTFORMW ＞しっかり楽しませていただいたし、ここらが潮時だろう……
-			PRINTFORML 
+			PRINTL 
+			PRINTW ＞엎어진 나기 옆에 쭈그려 앉아, 전신을 관찰한다.
+			PRINTL 
+			PRINTL ＞하얀――하얗던――새빨개진 나기의 엉덩이를 벌린다.
+			PRINTL ＞꿀렁꿀렁 소리를 내면서, 정액이 분출한다.
+			PRINTW ＞나기는, 흠칫흠칫 경련할 뿐이다.
+			PRINTL 
+			PRINTL ＞여러 번 범해져, 정액을 뿜어내는 암컷 구멍에 손가락 셋을 넣고 정성껏 애무해 준다.
+			PRINTL ＞이미 몇 번이고 새버린 소변이, 아주 살짝 흘러나왔다.
+			PRINTW ＞나기는, 흠칫흠칫 경련할 뿐이다.
+			PRINTL 
+			PRINTL ＞딱딱하게 응어리진 유두를 잡고 가볍게 잡아당겨 본다.
+			PRINTL ＞풋풋하고 탄력 있는 젖가슴은, 뭉그러지더니 유연하게 퍼진다.
+			PRINTW ＞나기는, 흠칫흠칫 경련할 뿐이다.
+			PRINTL 
+			PRINTL ＞엉덩이 구멍에 손가락을 천천히 삽입하고, 넓혀본다.
+			PRINTL ＞미처리된 구멍에 박을 생각은 역시 없다.
+			PRINTW ＞나기는, 흠칫흠칫 경련할 뿐이다.
+			PRINTL 
+			PRINTL ＞나기를 뒤집고 얼굴을 본다.
+			PRINTL ＞눈물과 콧물, 침, 정액 때문에, 미소녀로 보이지도 않는다.
+			PRINTW ＞나기는, 눈을 까뒤집은 채 완전히 실신해 있었다.
+			PRINTL 
+			PRINTL ＞무슨 짓을 해도, 나기는 의식을 되찾지 않는다.
+			PRINTW ＞잠시 쉬게 해야 할 것 같다.
+			PRINTL 
+			PRINTL ＞……만, 그걸 기다릴 생각은 없다.
+			PRINTL ＞야타가라스의 인원을 성가셔질 때까지 데리고 있을 생각은 없다.
+			PRINTW ＞확실히 즐겁게 썼고, 이 쯤이 적당할 것이다……
+			PRINTL 
 
 		;現在ELSEには行かない
 		ELSE
-;			CALL MESSAGE_WINDOW, "凪" , 		@"「い…嫌ぁ…そんなプロセス…」", ,  , "CENTER" , , 4
+;			CALL MESSAGE_WINDOW, "나기" , 		@"「시…싫어…이런 프로세스…」", ,  , "CENTER" , , 4
 			;나기を辱めた回数で分岐
 			SELECTCASE 이벤트플래그:41:3
 				;1回目
 				CASE 0
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をたっぷりと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기를 잔뜩 능욕했다.", ,  , "CENTER" , , 4
 				;2回目
 				CASE 1
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をねちねちと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기를 끈덕지게 능욕했다.", ,  , "CENTER" , , 4
 				;3回目
 				CASE 2
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をガッツリと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기를 실컷 능욕했다.", ,  , "CENTER" , , 4
 				;4回目
 				CASE 3
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をグチャグチャに凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기를 질척하게 능욕했다.", ,  , "CENTER" , , 4
 			ENDSELECT
 		ENDIF
 	;レズレイプ
 	;あんまりレズシーンを描いたことがないので自信があんまりない
 	ELSE
-		;나기敵対ルート、かつ、イベント進行が1
+		;나기敵対ルート, かつ, イベント進行が1
 		;　＝イベント「ダークサマナーの護衛」中の場合
 		IF 이벤트플래그:41:0 == 2 && 이벤트플래그:41:1 == 1
 			;１回目の戦闘なので初回凌辱で固定
-			PRINTFORML 　凪
-			PRINTFORMW 「あっ……やぁあっ……！」
-			PRINTFORML 
-			PRINTFORML ＞抵抗する凪を組み伏せ、服を脱がせていく。
-			PRINTFORMW ＞必死で抵抗しているが、%CALLNAME:MASTER%を押しのけることはできない。
-			PRINTFORML 
-			PRINTFORML ＞体術も多少心得はあるようだが、%CALLNAME:MASTER%はベッドの上での体術に、非常に長けている。
-			PRINTFORML ＞絡みつく蛇のように、%CALLNAME:MASTER%は凪を押さえ込み、その白い肌をあらわにさせる……
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「なっ……なにをする、つもりですかっ……!?」
-			PRINTFORML 
-			PRINTFORML ＞まあ――気持ちよくしてあげるだけだ。
-			PRINTFORMW ＞大丈夫。女同士でもやりようはある。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「えっ!?」
-			PRINTFORML 
-			PRINTFORMW ＞凪は目を白黒させて、しなやかに動く%CALLNAME:MASTER%の手と、にっこり笑う%CALLNAME:MASTER%の顔を交互に見た。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「――えっ!?」
-			PRINTFORML 
-			PRINTFORML ＞大丈夫大丈夫。
-			PRINTFORML ＞ゆっくりじっくり、真綿で首を絞めるように気持ちよくしてあげよう――
-			PRINTFORML 
+			PRINTL 　나기
+			PRINTW 「앗……싫어엇……!」
+			PRINTL 
+			PRINTL ＞저항하는 나기를 깔아 눕혀, 옷을 찢는다.
+			PRINTFORML ＞필사적으로 저항하고 있지만, %조사처리(CALLNAME:MASTER,"를")% 밀어낼 수는 없다.
+			PRINTL 
+			PRINTFORML ＞체술도 어느 정도 익힌 것 같지만, %조사처리(CALLNAME:MASTER,"는")% 침대 위 체술에, 수상할 정도로 통달해 있다.
+			PRINTFORML ＞얽혀오는 뱀처럼, %조사처리(CALLNAME:MASTER,"는")% 나기를 억누르고, 그 하얀 피부를 드러낸다……
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「무……무슨 짓을 할, 셈입니까……!?」
+			PRINTL 
+			PRINTL ＞뭐――기분 좋게 해줄 뿐이다.
+			PRINTW ＞괜찮다. 여자끼리 할 방법도 있으니까.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「네!?」
+			PRINTL 
+			PRINTFORMW ＞나기는 눈이 휘둥그레해져, 간드러지게 움직이는 %CALLNAME:MASTER%의 손과, 싱글벙글 웃는 %CALLNAME:MASTER%의 얼굴을 번갈아 본다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「――네에!?」
+			PRINTL 
+			PRINTL ＞괜찮아 괜찮아.
+			PRINTL ＞느긋하고 천천히, 풀솜으로 목이 죄이듯 기분 좋게 해줄테니――
+			PRINTL 
 			CALL AA_EV41_tenten
-			PRINTFORML 
-			PRINTFORML ＞――ふう。
-			PRINTFORML ＞%CALLNAME:MASTER%は額の汗をぬぐう。
-			PRINTFORMW ＞いい汗をかいた。
-			PRINTFORML 
-			PRINTFORML ＞凪は、尻を%CALLNAME:MASTER%に見せたまま、立ち上がる気配を見せない。
-			PRINTFORML ＞ぴゅ、ぴしゃ、と、汁が零れ続けている。
-			PRINTFORMW ＞全身が紅潮して、汗でてらてらと光っている。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「……ぁ……は、ひ……ひぃ……ひ……っ……」
-			PRINTFORML 
-			PRINTFORML ＞凪の意識はある。
-			PRINTFORML ＞ただ、腰は抜けているし、絶頂の余韻にいまだ浸っている。
-			PRINTFORMW ＞%CALLNAME:MASTER%に男根があれば確実に突っ込んでいる蕩けっぷりだ。
-			PRINTFORML 
-			PRINTFORML ＞やはり美少女はいい――自慰の経験が少ない身を開発するのはとても楽しかった。
-			PRINTFORMW ＞興が乗って処女膜を破ってしまったのもクリを可愛がりながら謝ったら許してくれた。よかった。
-			PRINTFORML 
-			PRINTFORML ＞……汗のせいもあって、戦闘後の粉塵が、きめ細やかな肌に張り付いてしまっている。
-			PRINTFORML ＞できれば、シャワールームに連れ込んでまた可愛がってあげたいところだが……これ以上は、凪の身が持たないか。
-			PRINTFORMW ＞しばらく休ませなければならないだろう。
-			PRINTFORML 
-			PRINTFORML ＞残念ながら、それを待つ時間まではないし、ヤタガラスの人員を持ち帰って、面倒まで持ち帰る気はない。
-			PRINTFORMW ＞しっかり楽しませていただいたし、ここらが潮時だろう……
-			PRINTFORML 
+			PRINTL 
+			PRINTL ＞――후우.
+			PRINTFORML ＞%조사처리(CALLNAME:MASTER,"는")% 이마에 맺힌 땀을 닦는다.
+			PRINTW ＞좋은 땀을 흘렸다.
+			PRINTL 
+			PRINTFORML ＞나기는, 엉덩이를 %CALLNAME:MASTER%에게 드러낸 채, 일어설 기미를 보이지 않는다.
+			PRINTL ＞팍, 푸슉 하고 즙이 계속 흐르고 있다.
+			PRINTW ＞온몸이 붉게 달아오르고, 땀으로 번들거리고 있다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「……아……하, 히……히이……히……잇……」
+			PRINTL 
+			PRINTL ＞나기의 의식은 있다.
+			PRINTL ＞그저, 허리가 빠져 있고, 절정에 여운에 젖어 있다.
+			PRINTFORMW ＞%CALLNAME:MASTER%에게 남근이 있었다면 확실히 쑤셔 박았을 정도로 녹아 있다.
+			PRINTL 
+			PRINTL ＞역시 미소녀는 좋네――자위 경험이 적은 몸을 개발하는 것은 매우 즐거웠다.
+			PRINTW ＞흥이 올라 처녀막을 찢어버린 것도 클리를 귀여워하면서 사과했더니 용서해줬다. 다행이다.
+			PRINTL 
+			PRINTL ＞……땀 때문에 전투 후의 분진이 피부에 다닥다닥 붙어 있다.
+			PRINTL ＞된다면 샤워실로 데려가서 또 귀여워해주고 싶지만……이 이상은, 나기의 몸이 못 버틸 것 같다.
+			PRINTW ＞잠시 쉬게 해야 할 것 같다.
+			PRINTL 
+			PRINTL ＞아쉽게도 그걸 기다릴 시간까지는 없고, 야타가라스의 인원을 성가셔질 때까지 데리고 있을 생각은 없다.
+			PRINTW ＞확실히 즐겁게 썼고, 이 쯤이 적당할 것이다……
+			PRINTL 
 
 
 		;現在ELSEには行かない
 		ELSE
-;			CALL MESSAGE_WINDOW, "凪" , 		@"「い…嫌ぁ…そんなプロセス…」", ,  , "CENTER" , , 4
+;			CALL MESSAGE_WINDOW, "나기" , 		@"「い…嫌ぁ…そんなプロセス…」", ,  , "CENTER" , , 4
 			;나기を辱めた回数で分岐
 			SELECTCASE 이벤트플래그:41:3
 				;1回目
 				CASE 0
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をたっぷりと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기をたっぷりと凌辱した.", ,  , "CENTER" , , 4
 				;2回目
 				CASE 1
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をねちねちと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기をねちねちと凌辱した.", ,  , "CENTER" , , 4
 				;3回目
 				CASE 2
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をガッツリと凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기をガッツリと凌辱した.", ,  , "CENTER" , , 4
 				;4回目
 				CASE 3
-;					CALL MESSAGE_WINDOW, "" , 	@"凪をグチャグチャに凌辱した。", ,  , "CENTER" , , 4
+;					CALL MESSAGE_WINDOW, "" , 	@"나기をグチャグチャに凌辱した.", ,  , "CENTER" , , 4
 			ENDSELECT
 		ENDIF
 	ENDIF
 
 	;레이호우プ後のAA表示
-	;당신がちんぽ持ってるかで分岐……は、呼んだ関数の方で。
+	;당신がちんぽ持ってるかで分岐……は, 呼んだ関数の方で.
 	CALL AA_EV41_AfterRape
 
-	;すけべ終わったよ！のウェイト
+	;すけべ終わったよ!のウェイト
 	FORCEWAIT
 
-	;「たっぷりと辱めた」とか「＞追手を防ぐ時間は十分に稼げただろう/＞%CALLNAME:MASTER%は更なる増援が来る前に立ち去った」とかの反応はダンジョン側で。
+	;「たっぷりと辱めた」とか「＞追手を防ぐ時間は十分に稼げただろう/＞%CALLNAME:MASTER%は更なる増援が来る前に立ち去った」とかの反応はダンジョン側で.
 
-	;CALL MESSAGE_WINDOW, "" , 	@"＞%CALLNAME:MASTER%は、凪をたっぷりと辱めた", ,  , "CENTER" , , 4
+	;CALL MESSAGE_WINDOW, "" , 	@"＞%CALLNAME:MASTER%は, 나기をたっぷりと辱めた", ,  , "CENTER" , , 4
 
 	;나기を辱めた回数＋１
 	이벤트플래그:41:3 += 1
@@ -281,47 +281,47 @@
 
 
 ;=======================================================================================================================================================
-;イベント「（凪をPTに入れてください）」
+;イベント「（나기をPTに入れてください）」
 ;=======================================================================================================================================================
-;나기を入れてから来いよ！！！
+;나기を入れてから来いよ!!!
 ;……というだけのイベント
 ;===========================================================================================================================================================================
 @EVENT_41_1_X
-	PRINTFORML （コドクノマレビトルートの進行には、凪のPT入りが必要です）
+	PRINTL （고독의 마레비토 루트 진행을 위해 나기의 PT 편성이 필요합니다）
 
 	RETURN 0
 
 
 ;=======================================================================================================================================================
-;イベント「凪ちゃんイベントは制作中のプロセスです。」
+;イベント「나기ちゃんイベントは制作中のプロセスです.」
 ;=======================================================================================================================================================
-;ごめんね！ここから先は未完成だよ！
-;……というだけのイベント。可及的速やかに消したい。
+;ごめんね!ここから先は未完成だよ!
+;……というだけのイベント.可及的速やかに消したい.
 ;===========================================================================================================================================================================
 @EVENT_41_0_X
-	PRINTFORMW （コドクノマレビトルートの進行は現在ここまでです）
-	PRINTFORML 
-	PRINTFORML （……仲魔にするイベントとかまだだけど、ルート途中で仲魔になるキャラ、加入させちゃう？）
-	PRINTFORML （片方は【初期レベルが50】だから色々な意味で気を付けてね）
-	PRINTFORML （正式実装されたら【一回削除してもらう前提】の選択肢だよ……）
-	PRINTFORML 
-	PRINTFORML [0] 加入させちゃう
-	PRINTFORML [1] きちんと仲間にしたいから遠慮しとく
+	PRINTW (고독의 마레비토 루트의 진행은 현재 여기까지입니다.)
+	PRINTL 
+	PRINTL (……동료마로 영입하는 이벤트는 아직 없지만, 루트 진행 도중에 동료마가 되는 캐릭터, 가입시켜버려?)
+	PRINTL (한쪽은 【초기 레벨이 50】이니 여러가지 의미로 조심해야 해)
+	PRINTL (정식 실장된다면 【1번 삭제한다는 전제】가 있는 선택사항이야……)
+	PRINTL 
+	PRINTL [0] 해버려
+	PRINTL [1] 제대로 동료마로 삼고 싶으니까 사양한다
 	$INPUT_LOOP_EVENT_41_EVENT_41_0_X
 	INPUT
 	IF RESULT == 0
-		PRINTFORML 
-		PRINTFORML （アイヨー……）
-		PRINTFORMW 
+		PRINTL 
+		PRINTL (그럽죠(アイヨ―)……)
+		PRINTW 
 
 		CALL ADD_NEW_COMPANION,4792,500
 		CALL ADD_NEW_COMPANION,4793,500
 
 
 	ELSEIF RESULT == 1
-		PRINTFORML 
-		PRINTFORML （鋭意制作中なんよ……）
-		PRINTFORMW 
+		PRINTL 
+		PRINTL (예의제작 중이걸랑……)
+		PRINTW 
 
 	ELSE
 		GOTO INPUT_LOOP_EVENT_41_EVENT_41_0_X

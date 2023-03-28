@@ -1,24 +1,24 @@
 ﻿
 @EVENT_19_LIST_0(ARG,ARG:1)
-;ARG:1 0 = タイトル
-;　　　1 = 出現チェック
-;　　　2 = イベント
+;ARG:1 0 = 타이틀       Translated by "패러독스 인터랙티브 갤러리"
+;　　　1 = 출현 체크
+;　　　2 = 이벤트
 ;
 SELECTCASE ARG
 CASE 1
 	IF ARG:1 == 0
-		@
-		RESULTS = (タイトル)
+		①
+		RESULTS = (타이틀)
 	ELSEIF ARG:1 == 1
-		A
-		;貢献度860000以上だと出現　※貢献度についてはSHOP.ERB参照
+		②
+		;공헌도 860000 이상이면 출현　※공헌도에 대해서는 SHOP.ERB 참조
 		SIF FLAG:조직공헌도 + FLAG:명성 * 100 >= 860000
 			RETURN 1
 	ELSEIF ARG:1 == 2
-		B
-		PRINTFORMW （イベント）
-		PRINTFORMW （イベント）
-		PRINTFORMW （イベント）
+		③
+		PRINTFORMW （이벤트）
+		PRINTFORMW （이벤트）
+		PRINTFORMW （이벤트）
 		CALL ADD_NEW_COMPANION, （キャラ）, 100
 		SIF RESULT
 			CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -29,27 +29,27 @@ CASEELSE
 ENDSELECT
 RETURN 0
 
-@
-RESULTS にタイトルを入れる
+①
+RESULTS 에 타이틀을 넣음
 
-A
-イベントの出現条件を入れる
-闘技場、依頼、イベントなどの出現条件とやり方は一緒
-RETURN 1で出現する
+②
+이벤트의 출현조건을 넣음
+투기장, 의뢰, 이벤트 등의 출현조건과 방식은 같음
+RETURN 1이면 출현함
 
-B
-イベントを出す
-ここでPRINTFORMを使ったイベントや仲間を手に入れたりする
-仲間を手に入れるとき↓
+③
+이벤트를 출력
+여기서 PRINTFORM을 이용한 이벤트나 동료를 손에 넣거나 함
+동료를 손에 넣을 때↓
 CALL ADD_NEW_COMPANION, （キャラ）, 100
 SIF RESULT == 0
 	CFLAG:(RESULT:1):전투참가불가능 = -1
-RETURN 1 で二度目は出現しないようになる
+RETURN 1 이면 두번째는 출현하지 않게 됨
 	
 
 
-※전체的に普通のイベントなどとやり方は一緒（EVENT_3が結構シンプルで分かりやすい）
-　違いはタイトルと出現条件が分かれていることくらい
+※전체적으로 평범한 이벤트 등과 방식은 같다（EVENT_3이 꽤 심플하고 알기 쉬움）
+　차이점은 타이틀과 출현조건이 나뉘어져 있다는 점 정도
 
 
 

@@ -1,144 +1,144 @@
 ﻿@INDIVIDUAL_EVENT_K812_AN_SOULSURRENDER,ARG
 #DIMS 呼び名
-#DIMS アーミヤ
-#DIM ポジション確保
+#DIMS 아미야
+#DIM 포지션확보
 #DIM LCOUNT
-VARSET ポジション確保
+VARSET 포지션확보
 SELECTCASE CFLAG:MASTER:당신의전공분야
 	CASE 1
-		呼び名 = サマナー
+		呼び名 = 서머너
 	CASE 3,6
-		呼び名 = バスター
+		呼び名 = 버스터
 	CASE 5
-		呼び名 = 喰奴
+		呼び名 = 식노
 	CASE 7
-		呼び名 = ハンター
+		呼び名 = 헌터
 	CASE 8
-		呼び名 = シフター
+		呼び名 = 시프터
 	CASE 10
-		呼び名 = たけし
+		呼び名 = 타케시
 	CASEELSE
 		呼び名 = %CALLNAME:MASTER%
 ENDSELECT
-アーミヤ = %CALLNAME:ARG%
+아미야 = %CALLNAME:ARG%
 CALL 疑似的画面クリア()
 SETCOLOR COLOR("BROWN")
 PRINTL
 PRINTL
-PRINTFORMW %アーミヤ%は夢を見ていた。
+PRINTFORMW %아미야%는 꿈을 꾸고 있었다。
 PRINTL
-PRINTW 打ち合う鉄と共に響く怒号。
-PRINTW 痛みと共に吐き出される悲痛の声。
-PRINTW 肉が焼ける臭いと熱狂を感じさせる炎。
+PRINTW 부딪치는 쇠와 함께 울리는 고함。
+PRINTW 통증과 함께 내뱉는 비통의 목소리。
+PRINTW 고기 타는 냄새와 열광을 느끼게 하는 불꽃。
 PRINTL
-PRINTW ここは戦場──────見たことも、感じたこともないはずの惨劇の場。
-PRINTFORMW その真ん中に、%アーミヤ%は周囲の熱狂に置いていかれたかのように一人立っていた。
+PRINTW 여기는 전쟁터──────본 적도、느낀 적도 없을 참극의 장。
+PRINTFORMW 그 한가운데、%아미야%는 주위의 광적인 열기에 남겨진 듯 홀로 서 있었다。
 PRINTL
-PRINTW ……いや、違う。
-PRINTFORMW もう一人、%アーミヤ%と同じように喧騒の波に取り残された者がいた。
+PRINTW ……아니、아니다。
+PRINTFORMW 또 한 명、%아미야%와 마찬가지로 시끄러운 파도에 남겨진 자가 있었다。
 PRINTL
-PRINTW どこか薄幸で、あまりにも儚くて、人波に巻き込まれれば崩れてしまいそうな程に脆そうな……そんな印象がする、頭に角が生えた女の人。
-PRINTFORMW 頭に角が生えた────『サルカズ』と呼ばれる種族の彼女は%アーミヤ%の視線に気づき、微笑みを返した。
+PRINTW 어딘가 박복하고、너무나 덧없고、인파에 휘말리면 무너져 버릴 정도로 연약할 것 같은……그런 인상이 드는、머리에 뿔이 난 여자。
+PRINTFORMW 머리에 뿔이 돋았다────『살카즈』로 불리는 종족인 그녀는 %아미야%의 시선을 알아차리고、미소를 지었다。
 PRINTL
-PRINTFORMW 知っている。 %アーミヤ%は彼女を知っている。 初めてあったはずなのに。 彼女の名前を。 彼女の存在を。
-PRINTW 彼女の声から伝わる優しさが。 温もりが。 悲しみが。 決意が。
-PRINTFORMW 覚えているのだ。 %アーミヤ%ではなく、『アーミヤ』が。
+PRINTFORMW 알고 있다。 %아미야%는 그녀을 알고 있다。 처음 만났을텐데。 그녀의 이름을。 그녀의 존재를。
+PRINTW 그녀의 목소리에서 전해지는 상냥함이。 온기가。 슬픔이。 결의가。
+PRINTFORMW 기억하고 있는 것이다。 %아미야%가 아니라、『아미야』가。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「アーミヤ」
+CALL 色変えAN("테레시아")
+PRINTW 「아미야」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW 名前を呼ばれた。
-IF アーミヤ == "アーミヤ"
-	PRINTW 自身のオリジンの名前であり、しかし同時に生みの親であるプロフェッサー・ヴィクトルから与えられたその名前を。
+PRINTW 이름이 불려졌다。
+IF 아미야 == "아미야"
+	PRINTW 자신의 오리지널의 이름이며、그러나 동시에 친부모인 프로페서・빅토르로부터 주어진 그 이름을。
 ELSE
-	PRINTFORMW 自身のオリジンの名前であり、しかし新たな名である%アーミヤ%が定義されると同時に、過去に埋もれてしまったその名前を。
+	PRINTFORMW 자신의 오리지널의 이름이며、그러나 새로운 이름인 %아미야%가 정의됨과 동시에、과거에 묻혀버린 그 이름을。
 ENDIF
 PRINTL
-PRINTW 「ッ……！」
-PRINTFORMW %アーミヤ%は反射的に、警戒するように構えを取った。
+PRINTW 「읏……！」
+PRINTFORMW %아미야%는 반사적으로、경계하며 자세를 취했다。
 PRINTL
-CALL 色変えAN("テレジア")
+CALL 色変えAN("테레시아")
 PRINTW 「………」
 SETCOLOR COLOR("BROWN")
-PRINTW そんな警戒の意を見せられたサルカズの女性の、どことなく寂しそうな、だけど慈しみも感じるような微笑みは変わらず。
+PRINTW 그런 경계하는 모습을 본 살카즈 여성의、어딘지 모르게 쓸쓸해 보이는、하지만 인자한 미소는 변하지 않고。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「アーミヤ」
+CALL 色変えAN("테레시아")
+PRINTW 「아미야」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW そして『アーミヤ』の名前を呼ぶその声も、変わらず。
+PRINTW 그리고『아미야』의 이름을 부르는 그 목소리도、변함이 없다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「あなたは目覚めなければならないわ」
-PRINTW 「たとえ今のあなたが、資格無き継承者だったとしても」
+CALL 色変えAN("테레시아")
+PRINTW 「당신은 깨어나야만 해요」
+PRINTW 「설령 지금의 당신이、자격이 없는 계승자였다 하더라도」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW その声が終わると同時に、周囲の景色が一変した。
+PRINTW 그 목소리가 끝남과 동시에、주위의 경치가 일변했다。
 PRINTL
-PRINTW 肌が熱くなるほどの熱気。
-PRINTW 近くに何かが爆発し、それと共に鳴り響く崩落する鉄骨の音。
-PRINTW そして……
+PRINTW 피부가 뜨거워질 정도의 열기。
+PRINTW 근처에 무언가가 폭발하고、그와 함께 울려 퍼지는 붕괴하는 철골 소리。
+PRINTW 그리고……
 SETCOLOR COLOR("RED")
-PRINTW 揺らめく炎の奥から伝わる、数多の殺意の視線。
+PRINTW 흔들리는 불꽃 속에서 전해지는、수많은 살의의 시선。
 SETCOLOR COLOR("BROWN")
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「乗り越えなさい。 かつてのあなたが乗り越えた試練を、今のあなたで────」
+CALL 色変えAN("테레시아")
+PRINTW 「극복하세요。 예전의 당신이 극복한 시련을、지금의 당신으로────」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW その冷酷にも思える言葉と共に、炎の陰からは規律正しく前進する軍隊。
-PRINTW そして、それらを率いる、龍の角が生えた一人の女性が現れた……。
+PRINTW 그 냉혹하게 여겨지는 말과 함께、불길 뒤에서는 규율 있게 전진하는 군대。
+PRINTW 그리고、그것들을 이끄는、용의 뿔이 난 한 여성이 나타났다……。
 PRINTL
-PRINTW この数を相手に一人で迎え撃つのはあまりにも無謀だ…。 とても乗り越えられるものではない…！
+PRINTW 이 수를 상대로 혼자서 맞서 싸우는 것은 너무 무모하다…。 도저히 극복할 수 있는 것이 아니야…！
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「────いいえ、大丈夫よ。 かつてのあなたも、今のあなたも、一人で戦ってたわけじゃないんだから」
+CALL 色変えAN("테레시아")
+PRINTW 「────아니、괜찮아요。 예전의 당신도、지금의 당신도、혼자 싸운 것이 아니니까」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTFORMW サルカズの女性の言葉と同時に、%アーミヤ%の地面に魔法の陣が描かれ、そして周囲に光の柱が立ち上がった！
+PRINTFORMW 살카즈 여성의 말과 동시에、%아미야%의 지면에 마법의 진이 그려졌고、그리고 주위에 빛의 기둥이 일어섰다上がった！
 ;イメージは某究極幻想14漆黒編のアレ
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「率いなさい、今のあなたの仲魔を。 今までのあなたがそうしたように」
+CALL 色変えAN("테레시아")
+PRINTW 「이끄세요、지금의 당신의 동료마를。 지금까지의 당신이 그랬던 것처럼」
 SETCOLOR COLOR("BROWN")
-PRINTFORMW %CALLNAME:MASTER%の仲魔が光の柱から連鎖的に召喚された！
-PRINTFORMW ……しかし肝心の%CALLNAME:MASTER%の姿が見当たらない…！
+PRINTFORMW %CALLNAME:MASTER%의 동료마가 빛의 기둥에서 연쇄 소환되었다！
+PRINTFORMW ……하지만 중요한 %CALLNAME:MASTER%의 모습이 보이지 않는다…！
 SETCOLOR COLOR("BROWN")
-CALL 色変えAN("テレジア")
-PRINTW 「これはあなたが越えなければならない戦いよ、アーミヤ。 あなた自身の手で、仲魔を導きなさい」
+CALL 色変えAN("테레시아")
+PRINTW 「이건 네가 넘어야 할 싸움입니다、아미야。 당신 자신의 손으로、동료마를 이끄세요」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTFORMW どうやら%CALLNAME:MASTER%の召喚までは望めないようだ……。 こうなれば今ある仲魔で乗り越えるしかない。
+PRINTFORMW 아무래도 %CALLNAME:MASTER%의 소환까지는 바랄 수 없는 것 같다……。 이렇게 되면 지금 있는 동료마로 극복하는 수밖에 없다。
 PRINTL
-PRINTW 「っ……皆さんっ、よろしくお願いします！」
+PRINTW 「읏……여러분、잘 부탁드립니다！」
 PRINTL
-PRINTFORMW %アーミヤ%の号令と共に、仲魔達が立ち上がる！
+PRINTFORMW %아미야%의 구령과 함께、동료마들이 일어선다！
 PRINTL
 RESETCOLOR
-PRINTW タルラ と 帝国の先鋒達 が 立ちはだかった！
+PRINTW 탈룰라 와 제국의 선봉들이 가로막았다！
 
 
 ;＠だけをハブる機械かよ！？
-ポジション確保 = CFLAG:MASTER:포지션
+포지션확보 = CFLAG:MASTER:포지션
 CALL REMOVE_POSITION, CFLAG:MASTER:포지션
 
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
-;Talulah戦。 もう歩けないタル～な闘士タルラの方ではない。
-;まぁCSV用意してないからアークナイツ勢と同じく既存の改造物なんだがな、ぶぇへへ
+;Talulah전。 더 이상 걸을 수 없는 탈룰～라 투사 탈룰라 쪽이 아니다。
+;뭐 CSV 준비하지 않았기 때문에 아크나이츠와 마찬가지로 기존의 개조물이지만、베헤헤
 CALL SET_ENEMY,9,[[キャラ:청룡]],70,1,3
-NAME:(CHARANUM-1) = タルラ
-CALLNAME:(CHARANUM-1) = タルラ
+NAME:(CHARANUM-1) = 탈룰라
+CALLNAME:(CHARANUM-1) = 탈룰라
 CFLAG:(CHARANUM-1):ＨＰ보정 += 7500
 CFLAG:(CHARANUM-1):ＭＰ보정 += 70000
 CFLAG:(CHARANUM-1):행동횟수 = 3
 CFLAG:(CHARANUM-1):COOP피데미지보정 = -20
 CFLAG:(CHARANUM-1):마법피데미지보정 = -50
 CSTR:(CHARANUM-1):사고패턴 = TALULAH
-CSTR:(CHARANUM-1):종족명 = 龍人
+CSTR:(CHARANUM-1):종족명 = 용인
 BASE:(CHARANUM-1):힘 += 20
 BASE:(CHARANUM-1):인내력 += 20
 BASE:(CHARANUM-1):속도 += 20
@@ -196,10 +196,10 @@ ABL:(CHARANUM-1):스킬13  = [[스킬:브레이브스텝]]
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
 
-;帝国砲撃誘導機。
+;제국 포격 아틸러리。
 CALL SET_ENEMY,14,[[キャラ:T95메두사]],68,1,1
-NAME:(CHARANUM-1) = 帝国砲撃誘導機
-CALLNAME:(CHARANUM-1) = 帝国砲撃誘導機
+NAME:(CHARANUM-1) = 제국 아틸러리 타게티어
+CALLNAME:(CHARANUM-1) = 제국 아틸러리 타게티어
 CFLAG:(CHARANUM-1):ＨＰ보정 += 4500
 CFLAG:(CHARANUM-1):ＭＰ보정 += 70000
 CFLAG:(CHARANUM-1):마법피데미지보정 = -30
@@ -226,7 +226,7 @@ BASE:(CHARANUM-1):수격 = 150
 MAXBASE:(CHARANUM-1):수격 = 150
 BASE:(CHARANUM-1):핵열 = 100
 MAXBASE:(CHARANUM-1):핵열 = 100
-;マシンなので精神系バステは受けない…受けないが、SLEEPは普通に通す謎
+;기계이므로 정신계 배드 스테이터스는 받지 않는다…받지 않지만、SLEEP는 보통으로 통과시키는 수수께끼
 BASE:(CHARANUM-1):HAPPY = -100
 BASE:(CHARANUM-1):PANIC = -100
 BASE:(CHARANUM-1):CHARM = -100
@@ -248,12 +248,12 @@ FOR LCOUNT,7,17
 		CONTINUE
 	;帝国精鋭先鋒
 	CALL SET_ENEMY,LCOUNT,[[キャラ:터미네이터]],65,1,1
-	NAME:(CHARANUM-1) = 帝国精鋭先鋒
-	CALLNAME:(CHARANUM-1) = 帝国精鋭先鋒
+	NAME:(CHARANUM-1) = 제국 정예 선봉
+	CALLNAME:(CHARANUM-1) = 제국 정예 선봉
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2400
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 20000
 	CSTR:(CHARANUM-1):사고패턴 = 帝国精鋭先鋒
-	CSTR:(CHARANUM-1):종족명 = ウルサス
+	CSTR:(CHARANUM-1):종족명 = 우르수스
 	BASE:(CHARANUM-1):힘 += 15
 	BASE:(CHARANUM-1):인내력 += 15
 	BASE:(CHARANUM-1):속도 += 10
@@ -304,22 +304,22 @@ FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0
 
 ;もし元々＠がいたポジションが既に埋まっていた場合の処理
-SELECTCASE POS(ポジション確保)
+SELECTCASE POS(포지션확보)
 	CASE ARG
-		;アーミヤだった場合、上もしくは下のポジション番号のキャラを外す
+		;아미야だった場合、上もしくは下のポジション番号のキャラを外す
 		SIF CPOS(ARG) == 1
-			LCOUNT = ポジション確保 + 1
+			LCOUNT = 포지션확보 + 1
 		SIF CPOS(ARG) == 6
-			LCOUNT = ポジション確保 - 1
+			LCOUNT = 포지션확보 - 1
 		CALL REMOVE_POSITION,LCOUNT
 		;ポジション変更メッセージ表示用に値を設定
 		LCOUNT = -10
 	CASE IS > 0
-		CALL REMOVE_POSITION,ポジション確保
+		CALL REMOVE_POSITION,포지션확보
 		;ポジション変更メッセージ表示用に値を設定
 		LCOUNT = -10
 ENDSELECT
-CALL INSERT_POSITION,ポジション確保,MASTER
+CALL INSERT_POSITION,포지션확보,MASTER
 
 CALL 疑似的画面クリア()
 PRINTL …
@@ -328,10 +328,10 @@ PRINTL ………
 PRINTL …………
 PRINTL
 SETCOLOR COLOR("BROWN")
-PRINTFORMW %アーミヤ%達の奮闘により、仲魔達はなんとか敵を打ち倒すことが出来た。
-PRINTW サルカズの女性が言う『試練』を達成したからなのか、夢の風景がその役割を終えるかのようにひび割れ始めた……。
+PRINTFORMW %아미야%들의 분투로、동료마들은 어떻게든 적을 무찔렀다。
+PRINTW 살카즈 여성이 말하는『시련』달성했기 때문인지、꿈의 풍경이 그 역할을 마치듯 갈라지기 시작했다……。
 PRINTL
-PRINTFORMW そして空間の崩壊は%アーミヤ%の足元の地面にも及び、足場を失った%アーミヤ%と仲魔たちは虚空の彼方へと落ちて行った……。
+PRINTFORMW 그리고 공간의 붕괴는 %아미야%의 발밑 땅에도 미치고、발판을 잃은 %아미야%와 동료마들은 허공의 저편으로 떨어져 갔다……。
 RESETCOLOR
 PRINTL
 PRINTL …
@@ -339,72 +339,72 @@ PRINTL ……
 PRINTL ………
 PRINTL …………
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「試練達成おめでとう、アーミヤ」
-IF アーミヤ != "アーミヤ"
-	PRINTFORMW 「あぁ、いえ……今のあなたは%アーミヤ%、だったわね」
+CALL 色変えAN("테레시아")
+PRINTW 「시련 달성 축하해、아미야」
+IF 아미야 != "아미야"
+	PRINTFORMW 「아아、아니……지금의 당신은 %아미야%、였군요」
 ENDIF
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW 気が付けば白色で染められた空間と、いつぞやのサルカズの女性が視界に入っていた。
-PRINTW いつの間にか謎の空間に跳ばされていたようだ……。
+PRINTW 정신을 차려보니 흰색으로 물든 공간과、어느새 살카즈 여성이 시야에 들어왔다。
+PRINTW 어느새 수수께끼의 공간으로 날려졌던 것 같다……。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「本来であれば今のあなたに逢う事はなかったのだけれど…」
-PRINTW 「今回は変わった金髪のかっこいい人にお願いされてね、少しだけお節介を焼く事になったの」
+CALL 色変えAN("테레시아")
+PRINTW 「원래대로라면 지금의 당신을 만날 일은 없었을 텐데…」
+PRINTW 「이번에는 특이한 금발의 멋진 사람이 부탁해서、조금만 참견을 하게 되었어」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW サルカズの女性はそう語りながら、こちらへと近づいてきた。
+PRINTW 살카즈의 여성은 그렇게 말하면서、이쪽으로 다가왔다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「お手、少し触るわね」
+CALL 色変えAN("테레시아")
+PRINTW 「손、조금만 만질게」
 SETCOLOR COLOR("BROWN")
-PRINTFORMW 彼女はそう言いながら、%アーミヤ%の右手を両手で優しく包み、そして互いの目の前へと運び移す。
+PRINTFORMW 그녀는 그러면서、%아미야%의 오른손을 양손으로 부드럽게 감싸고、서로의 눈앞으로 옮긴다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTFORMW 「%アーミヤ%。 あなたはこれから先、大きな困難の壁にぶつかる時が来るわ」
-PRINTFORMW 「その困難に挑む時、今のあなたでは力及ばず、太刀打ちできないかもしれない」
+CALL 色変えAN("테레시아")
+PRINTFORMW 「%아미야%。 너는 이제 앞으로、커다란 어려움의 벽에 부딪힐 때가 올 거야」
+PRINTFORMW 「그 어려움에 도전할 때、지금의 당신으로는 역부족이고、당해낼 수 없을지도 몰라」
 PRINTL
-PRINTFORMW 「だから……今あなたに眠っている力、その一つを目覚めさせるわ」
-SETCOLOR COLOR("BROWN")
-PRINTL
-PRINTFORMW どうやらこのサルカズの女性は、%アーミヤ%のオリジンに深く関係のある人物のようだ……
-PRINTW 一体何者なのだろうか…？
-PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「んー？ ふふっ、そうね……親代わりのお姉ちゃん、とでも言っておきましょうか」
+PRINTFORMW 「그러니까……지금 당신에게 잠들어 있는 힘、그중 하나를 깨우도록 할게」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW なるほど……道理でどことなく、安心感を覚えた事に納得できた。
-PRINTFORMW しかし……ここからどうやって、%アーミヤ%に眠る力を解放できるのだろうか？
+PRINTFORMW 아무래도 이 살카즈의 여성은、%아미야%의 오리지널에 깊이 관계가 있는 인물인 것 같다……
+PRINTW 도대체 누구일까…？
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「そうね…先ほど力を目覚めさせるとは言ったけど」
-PRINTW 「実を言うと、今の私が与えられるのはきっかけだけで、解放まではできないのよね」
+CALL 色変えAN("테레시아")
+PRINTW 「응ー？ 후훗、글쎄요……부모 대신 언니、라고 말해둘까요」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW それ詐欺では？
+PRINTW 과연……어쩐지 어딘지 모르게、안심감을 느낀 것은 납득할 수 있었다。
+PRINTFORMW 그러나……여기서 어떻게、%아미야%에게 잠들어있는 힘을 해방시킬 수 있을까？
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「もう！ そんな酷い事を言うのはやめて」
-PRINTW 「確かに私からは解放させてあげられないのは悪かったけど、過程はどうあれ力の解放自体は起こるのだからいいでしょう？」
+CALL 色変えAN("테레시아")
+PRINTW 「그렇네…아까 힘을 깨운다고는 했지만」
+PRINTW 「사실을 말한다면、지금의 내가 주어지는 것은 계기일 뿐、해방까지는 안되요」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW そう言ってサルカズの女性は頬を膨らませながら捲し立てた。
-PRINTFORMW %アーミヤ%としてはただ単に軽い冗談を投げてみただけだが、やはりこのサルカズの女性は雰囲気に反して感性豊かのようだ。
-PRINTW それはさておき、彼女では力を目覚めさせられないというのなら、やはり他の要因で解放するのだろうか？
+PRINTW 그거 사기 아닌가？
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTFORMW 「いいえ、力の解放は%アーミヤ%、あなた自身の手で行うのよ」
+CALL 色変えAN("테레시아")
+PRINTW 「정말！ 그런 심한 말은 그만둬」
+PRINTW 「확실히 내가 해방시켜줄 수 없는 건 미안하지만、과정이야 어떻든 힘의 해방 자체는 일어나니까 좋잖아요？」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTFORMW まさかの丸投げである。 %アーミヤ%は困惑した。
+PRINTW 그렇게 말하며 살카즈 여인은 볼을 불룩거리며 넘겨버렸다。
+PRINTFORMW %아미야%로서는 단지 가벼운 농담을 던져봤을 뿐이지만、역시 이 살카즈 여성은 분위기와는 달리 감성이 풍부한 것 같다。
+PRINTW  그것은 차치하고、그녀로는 힘을 깨울 수 없다면、역시 다른 요인으로 해방시키는 건가？
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTFORMW 「大丈夫。 目を閉じて、心を落ち着かせて、声に耳を澄ませなさい。 私の言う通りにすれば、きっと上手くいくわ」
+CALL 色変えAN("테레시아")
+PRINTFORMW 「아니오、힘의 해방은 %아미야%、당신 손으로 하는 거예요」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTFORMW サルカズの女性の言葉に若干の猜疑心を抱くも、%アーミヤ%は渋々その言葉に従い、精神を集中させた……。
+PRINTFORMW 뜻 밖의 돌직구다。 %아미야%는 당황했다。
+PRINTL
+CALL 色変えAN("테레시아")
+PRINTFORMW 「괜찮아。 눈을 감고、마음을 진정시키고、목소리에 귀를 기울이세요。 내 말대로 하면、분명 잘 될 거야」
+SETCOLOR COLOR("BROWN")
+PRINTL
+PRINTFORMW 살카즈 여성의 말에 약간의 의구심을 품어도、%아미야%는 마지못해 그 말을 따르고、정신을 집중시켰다……。
 RESETCOLOR
 PRINTL
 PRINTL …
@@ -413,16 +413,16 @@ PRINTL ………
 PRINTL …………
 PRINTL
 SETCOLOR 0x7f7fff
-PRINTFORMW %アーミヤ%の脳裏に様々なビジョンが浮かび上がっていく……
+PRINTFORMW %아미야%의 뇌리에 다양한 광경이 떠오른다……
 PRINTL
 PRINTL
-PRINTW 炎に焼かれる大地と、その光景に憤怒の叫びを上げるサルカズの男の姿がいた。
+PRINTW 불길에 타오르는 대지와、그 광경에 분노의 외침을 지르는 살카즈 남자의 모습이 있었다。
 PRINTL
-PRINTW 守るべき民を、憎悪によってその手で焼き尽くしてしまった龍人の女の姿がいた。
+PRINTW 지켜야 할 백성을、증오에 의해 그 손으로 다 태워버린 용인 여자의 모습이 있었다。
 PRINTL
-PRINTW 誤った道を歩んだ親愛なる者を止める為に、ひたすらに突き進む赤き剣の持ち主の姿がいた。
+PRINTW 잘못된 길을 걷던 친애하는 자를 막기 위해、오로지 돌진하는 붉은 검의 소유자의 모습이 있었다。
 PRINTL
-PRINTW そして、死なずの悪神が放つ炎を斬り捨てた、小さな魔王の姿がいた。
+PRINTW 그리고、죽지 않는 악신이 내뿜는 불길을 베어버린、작은 마왕의 모습이 있었다。
 PRINTL
 PRINTW …
 CLEARLINE 1
@@ -431,26 +431,26 @@ CLEARLINE 1
 PRINTW ………
 CLEARLINE 1
 PRINTL
-PRINTFORMW 存在しない記憶のビジョンでしかなかった魔王は、いつしか鏡合わせのように%アーミヤ%の前に立っていた。
+PRINTFORMW 존재하지 않는 기억의 광경일 뿐이었던 마왕은、어느새 맞춰진 거울처럼 %아미야%의 앞에 서 있었다。
 PRINTL
 PRINTL
-PRINTFORMW 少しの間を置いた後に、小さな魔王は%アーミヤ%に剣の柄を差し出し、そして囁いた。
+PRINTFORMW 잠깐의 시간을 둔 후、작은 마왕은 %아미야%에게 검자루를 내밀고、속삭였다。
 PRINTL
-PRINTFORMW ……声は聞こえなかった。
+PRINTFORMW ……목소리는 들리지 않았다。
 PRINTL
-PRINTFORMW だが、%アーミヤ%は直感的に、その言葉を理解した。
+PRINTFORMW 하지만、%아미야%는 직감적으로、그 말을 이해했다。
 PRINTL
 PRINTL
 SETCOLOR COLOR("BROWN")
-PRINTW 『次はお前の番だ』
+PRINTW 『다음은 네 차례야』
 SETCOLOR 0x7f7fff
 PRINTL
 PRINTL
-PRINTFORM ……%アーミヤ%は、オリジンから憤怒の剣───
+PRINTFORM ……%아미야%는、오리지널로부터 분노의 검───
 SETCOLOR COLOR("GRAY")
-PRINTFORM 『影霄』
+PRINTFORM 『영소』
 SETCOLOR 0x7f7fff
-PRINTW を受け継いだ。
+PRINTW 를 계승받았다。
 RESETCOLOR
 PRINTL
 PRINTL …
@@ -458,52 +458,52 @@ PRINTL ……
 PRINTL ………
 PRINTL …………
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「ね？ 私の言った通り、上手くいったでしょう？」
+CALL 色変えAN("테레시아")
+PRINTW 「어때？ 내가 말한대로、잘 됐죠？」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW 追想からの目覚めと同時に、サルカズの女性の声が響く。
-PRINTW 色々と不思議な光景を見せられた上に、記憶の中にいるオリジンから力を受け取りはしたが……
-PRINTW …実の所、あまり実感が沸かない。
+PRINTW 추상으로부터 깨어남과 동시에、살카즈 여인의 목소리가 울려 퍼진다。
+PRINTW 여러가지 신기한 광경을 보여준데다、기억속에 있는 오리진으로부터 힘을 받기는 했지만……
+PRINTW …사실은、별로 실감이 나지 않는다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「あら、そう？ 私から見たら随分と様変わりしたと思うけど」
+CALL 色変えAN("테레시아")
+PRINTW 「어머、그래？ 내가 봤을 때 많이 달라진 것 같은데」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW サルカズの女性はああ言っているが、本当にそうだろうか？
+PRINTW 살카즈 여성은 저렇게 말하지만、정말로 그럴까？
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「ほら、右手をごらんなさい」
+CALL 色変えAN("테레시아")
+PRINTW 「자、오른손을 보세요」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW 言われるがままに右手を見やれば、いつの間にか黒い甲冑が右腕まで覆われていた。
-PRINTFORMW ───そして、オリジンから受け継いだ『影霄』もまた、%アーミヤ%の右手の中に握られてあった。
+PRINTW 말하는대로 오른손을 바라보니、어느새 검은 갑옷이 오른팔까지 덮여 있었다。
+PRINTFORMW ───그리고、오리진에게서 물려받은『영소』역시、%아미야%의 오른손 안에 쥐어져 있었다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「身体に馴染み過ぎて変化した事に気づかなかったみたいね、悪魔だから感覚的に鈍くなっちゃうのかしら」
+CALL 色変えAN("테레시아")
+PRINTW 「몸에 너무 익숙해서 변화된 것을 눈치채지 못했나 봐、악마라서 감각적으로 둔해지는 걸려나」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW 彼女の言う通り、あまりにも馴染み過ぎて違和感を感じられなかった。
-PRINTW 改めて確認するように自身の身体を動かすと、身体が剣を持った戦い方に違和感なく付いてこれている。 戦闘方法に合わせて身体が最適化されたかのようだ。
+PRINTW 그녀의 말대로、너무 익숙해서 위화감을 느낄 수 없었다。
+PRINTW 다시 확인하듯 자신의 몸을 움직이자、몸이 검을 든 싸움 방식에 위화감 없이 따라오고 있다。 전투 방법에 맞춰 신체가 최적화된 것 같다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「その様子だと身体への負担もあまり大きくなさそう…うん、帰る前に心配事が一つ減って安心したわ」
+CALL 色変えAN("테레시아")
+PRINTW 「그 모습이라면 몸에 부담도 별로 크지 않을 것 같아…응、돌아가기 전에 걱정거리가 하나 줄어 안심했어」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW しばらく身体を動かしていたが、どうやらサルカズの女性は帰ってしまうらしい。
-PRINTW 試練を吹っ掛けられたと思ったら、新たな力への目覚めを手助けしてくれたりしたが…
-PRINTW 結局何者だったのかは分からないまま別れるというのに、なぜか不思議と寂しい思いを抱いてしまう。
+PRINTW 잠시 몸을 움직이고 있었지만、아무래도 살카즈의 여성은 돌아가 버리는 것 같다。
+PRINTW 시련을 받았다고 생각했는데、새로운 힘에 눈뜨는 것을 도와주기도 하고…
+PRINTW 결국 누구였는지는 모른 채 헤어진다는데、왠지 신기하고 쓸쓸한 마음을 품게 된다。
 PRINTL
-CALL 色変えAN("テレジア")
-PRINTW 「ふふっ、そんなに寂しがらなくても大丈夫よ。 一生のお別れって訳じゃないんだから」
-PRINTFORMW 「本来であれば会う事のない出会いだったけど…あなたとお話出来て楽しかったわ、%アーミヤ%」
-PRINTW 「色々大変だとは思うけど、誰かの助けになれるように頑張りなさい」
-PRINTW 「あ、もし金髪のお兄さんに出会えたら、『よろしく』って伝えてあげてね？」
+CALL 色変えAN("테레시아")
+PRINTW 「후훗、그렇게 외로워하지 않아도 돼。 평생 헤어지는 게 아니니까」
+PRINTFORMW 「원래 같으면 만날 수 없는 만남이었지만…너랑 얘기할 수 있어서 즐거웠어、%아미야%」
+PRINTW 「여러모로 힘들겠지만、누군가에게 도움이 되도록 노력하도록 해」
+PRINTW 「아、만약 금발의 오빠를 만나면、『안부』좀 잘 전해주렴？」
 SETCOLOR COLOR("BROWN")
 PRINTL
-PRINTW その言葉を最後に、サルカズの女性の気配が消えてしまった。
+PRINTW 그 말을 끝으로、살카즈 여인의 기척이 사라져 버렸다。
 PRINTL
-PRINTFORMW それと同時に%アーミヤ%の意識も遠のいてしまった……。
+PRINTFORMW 그와 동시에 %아미야%의 의식도 멀어지고 말았다……。
 CALL 疑似的画面クリア()
 RESETCOLOR
 PRINTL …
@@ -512,8 +512,8 @@ PRINTL ………
 PRINTL …………
 PRINTL
 RESETCOLOR
-PRINTFORML %アーミヤ%は前衛クラスにクラスチェンジ出来るようになった…！
-PRINTFORMW これに伴い、アーミヤのスキル強化イベントにてクラスチェンジ機能が解禁された！
+PRINTFORML %아미야%는 전위반으로 역할을 바꿀 수 있게 되었다…！
+PRINTFORMW 이에 따라、아미야 스킬 강화 이벤트에서 클래스 체인지 기능이 해제되었다！
 
 
 @SET_ACTION_TALULAH, ARG
@@ -781,10 +781,10 @@ IF CHARA > -1 && GET_STATE(CFLAG:CHARA:상태이상) != "DYING"
 	IF 현HP비율(CHARA) <= 50 && タルラ強化フラグ == 0
 		SETCOLOR COLOR("RED")
 		PRINTL
-		PRINTFORMW %CALLNAME:CHARA%は妖しげな笑みを浮かべると同時に、圧倒するプレッシャーを解き放った！
+		PRINTFORMW %CALLNAME:CHARA%는 요염한 미소를 짓는 동시에、압도하는 압박감을 풀어냈다！
 		RESETCOLOR
-		PRINTFORML %CALLNAME:CHARA%の受ける魔法ダメージがほとんど軽減されるようになった！
-		PRINTFORMW %CALLNAME:CHARA%の受ける物理ダメージが大きく軽減されるようになった！
+		PRINTFORML %CALLNAME:CHARA%가 받는 마법 데미지가 거의 경감되었다！
+		PRINTFORMW %CALLNAME:CHARA%가 받는 물리적 피해가 크게 경감되었다！
 		PRINTL
 		タルラ強化フラグ = 1
 		CFLAG:CHARA:COOP피데미지보정 = -30
@@ -801,9 +801,9 @@ FOR LCOUNT,0,8
 	IF 현HP비율(CHARA) <= 50 && 先鋒強化フラグ:LCOUNT == 0
 		SETCOLOR COLOR("YELLOW")
 		PRINTL
-		PRINTFORMW 追い詰められた%CALLNAME:CHARA%は不屈の心で自身の士気を引き上げた！
+		PRINTFORMW 궁지에 몰린 %CALLNAME:CHARA%은 불굴의 마음으로 자신의 사기를 끌어올렸다！
 		RESETCOLOR
-		PRINTFORMW %CALLNAME:CHARA%の与える物理ダメージが大きく上昇した！
+		PRINTFORMW %CALLNAME:CHARA%이 주는 물리적 데미지가 크게 상승했다！
 		先鋒強化フラグ:LCOUNT = 1
 		CFLAG:CHARA:물리여데미지보정 = 50
 	ENDIF
@@ -817,16 +817,16 @@ NEXT
 CHARA = FINDCHARA(CSTR:사고패턴,"帝国砲撃誘導機")
 IF CHARA > -1 && GET_STATE(CFLAG:CHARA:상태이상) != "DYING"
 	PRINTL
-	PRINTFORML %CALLNAME:CHARA%は攻撃対象を探している……
+	PRINTFORML %CALLNAME:CHARA%는 공격 대상을 찾고 있다……
 	$LAUNCHER_TARGET_LOOP
 	攻撃対象 ++
 	SIF POS(攻撃対象) < 0
 		GOTO LAUNCHER_TARGET_LOOP
-	PRINT どうやら次の攻撃対象は
+	PRINT 아무래도 다음 공격 대상은 
 	SETCOLOR COLOR("YELLOW")
 	PRINTFORM %CALLNAME:POS(攻撃対象)%
 	RESETCOLOR
-	PRINTW のようだ…！
+	PRINTW 인것 같다…！
 	CALL SKILLGAGE_H_SET(CHARA,PU_SKILLNUM_GET(CHARA,"爆撃（ＡＮ）"),攻撃対象) 
 	SIF 攻撃対象 >= 6
 		攻撃対象 = 0
@@ -836,15 +836,15 @@ CHARA = FINDCHARA(CSTR:사고패턴,"TALULAH")
 IF CHARA > -1 && GET_STATE(CFLAG:CHARA:상태이상) != "DYING"
 	IF SKILLGAGE_F_GET(CHARA,PU_SKILLNUM_GET(CHARA,"日輪")) >= 40
 		SETCOLOR COLOR("RED")
-		PRINTW 嫌な予感がする………！
+		PRINTW 안좋은 예감이 든다………！
 		RESETCOLOR
 	ENDIF
 ENDIF
 
 @色変えAN,ARGS
 SELECTCASE ARGS
-	CASE "アーミヤ"
+	CASE "아미야"
 		SETCOLOR COLOR("BROWN")
-	CASE "テレジア"
+	CASE "테레시아"
 		SETCOLOR 0xa898ab
 ENDSELECT

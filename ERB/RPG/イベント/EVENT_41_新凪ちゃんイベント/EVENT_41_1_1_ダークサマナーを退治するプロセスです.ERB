@@ -3,19 +3,19 @@
 ;	Module		:EVENT_41_1_1_ダークサマナーを退治するプロセスです.ERB
 ;	Facility	:コドクノマレビトMOD/凪ちゃんイベント群/凪仲間ルートその１
 ;
-;	Licence		:ライセンスフリー。
+;	Licence		:ライセンスフリー.
 ;
 ;	Modification Data:
 ;
 ;	Edit	Date			Author					Reason
-;	001		20XX/XX/XX		？？？					新規作成
+;	001		20XX/XX/XX		???					新規作成
 ;	002		2022/05/03		NEO						ヘッダー追加
 ;													テキスト関連の修正・改稿
 ;													戦闘面の調整
 ;	003		2022/05/07		NEO						色々あってだいたい再作成することにした
 ;													凪仲間ルートと凪敵対ルートの分割
-;	004		2022/06/01		NEO						Ver0.1。まだまだ未完成。
-;													　まあ、ここはほぼ完成でいいかな、というあたり。
+;	004		2022/06/01		NEO						Ver0.1.まだまだ未完成.
+;													　まあ, ここはほぼ完成でいいかな, というあたり.
 ;
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
@@ -29,9 +29,9 @@
 ;나기がLv25以上でないと進行できない
 ;나기が抜けるので5人戦闘からスタート
 ;
-;原作では、凪ちゃんはわりとあっさりやられて、ライドウがそれをかばって撤退……
-;二戦目を挑んで、ライドウがフツヌシを、凪ちゃんがワーグナーを撃破、という流れ。
-;戦闘場所は橋であり、「千本の剣を集める」ということを目的にしていたようだ。
+;原作では, 凪ちゃんはわりとあっさりやられて, ライドウがそれをかばって撤退……
+;二戦目を挑んで, ライドウがフツヌシを, 凪ちゃんがワーグナーを撃破, という流れ.
+;戦闘場所は橋であり, 「千本の剣を集める」ということを目的にしていたようだ.
 ;
 ;================================================================================================================
 
@@ -47,160 +47,160 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 
 	;나기のLvが25未満だと進行できない
 	IF BASE:LOCAL:LV < 25
-		PRINTFORML ＞ヤタガラスの見習いサマナー　凪
-		PRINTFORMW ＞彼女が任務に臨むには、もっと強くなる必要がある。
-	;나기のLvが25以上、本編
+		PRINTL ＞야타가라스의 견습 서머너 나기.
+		PRINTW ＞그녀가 임무를 수행하기 위해서는, 더욱 강해질 필요가 있다.
+	;나기のLvが25以上, 本編
 	ELSE
-		PRINTFORML 
-		PRINTFORML 
-		;『コドクノマレビト』では、黒い丸薬を飲むことで悪魔変身する・させることが可能だった。
-		;これを一般流通させて大変なことにしようとしてたのが秘密結社コドクノマレビト。
-		;「コカコオラよりもいいぞ！」というふうなうたい文句を売り手は行っていたので、おそらくは飲料として流通させている。
-		;名称は不明。ここでは「マレビト」としておいた。（まあわりとどうでもいいところであるし……）
-		;大正20年当時では新聞広告などを打っていたのだろうが、現代では当然CMも打っているだろう。
-		;ジジババ向けに、「にんにく黒酢」とかなんかそんな感じでも売り出しているものと思われる。
-		PRINTFORML 　ＴＶ
-		PRINTFORML 『～～♪
-		PRINTFORML 　生命力を、遥かなソラよりあなたの元へ。
-		PRINTFORML 　クロム、マグネタイト、スピネルグループが身に染みわたる。
-		PRINTFORML 　＼MAREBITO／
-		PRINTFORMW 　～～♪』
-		PRINTFORML 
-		PRINTFORML ＞そんなＣＭが聞こえてきて、ふと%CALLNAME:MASTER%は、目線をテレビにやった。
-		PRINTFORML ＞マグネタイト……ＭＡＧ、と聞くと反応してしまうのは、サマナーの職業病のようなものだろうか。
-		PRINTFORMW ＞もちろん表の製品であるので、実際にＭＡＧが含まれているわけでもなかろうが。
-		PRINTFORML 
-		PRINTFORML ＞%CALLNAME:MASTER%は仕事にひと段落をつけ、お茶を飲んでいた彼女に視線を向ける。
-		PRINTFORMW ＞葛葉の見習いサマナーである凪だ。
-		PRINTFORML 
+		PRINTL 
+		PRINTL 
+		;『コドクノマレビト』では, 黒い丸薬を飲むことで悪魔変身する・させることが可能だった.
+		;これを一般流通させて大変なことにしようとしてたのが秘密結社コドクノマレビト.
+		;「コカコオラよりもいいぞ!」というふうなうたい文句を売り手は行っていたので, おそらくは飲料として流通させている.
+		;名称は不明.ここでは「マレビト」としておいた.（まあわりとどうでもいいところであるし……）
+		;大正20年当時では新聞広告などを打っていたのだろうが, 現代では当然CMも打っているだろう.
+		;ジジババ向けに, 「にんにく黒酢」とかなんかそんな感じでも売り出しているものと思われる.
+		PRINTL 　TV
+		PRINTL 『∼∼♪
+		PRINTL 　생명력을, 아득한 하늘로부터 당신의 곁에.
+		PRINTL 　크롬, 마그네타이트, 스피넬그룹이 몸에 스며든다.
+		PRINTL 　＼MAREBITO／
+		PRINTW 　∼∼♪』
+		PRINTL 
+		PRINTFORML ＞그런 CM이 들려서, 문득 %조사처리(CALLNAME:MASTER,"는")%, TV에 시선을 돌린다.
+		PRINTL ＞마그네타이트……MAG, 라고 들으면 반응하는 건, 서머너의 직업병 같은 것일까?
+		PRINTW ＞물론 양지의 제품(表の製品)이니, 실제로 MAG가 포함되어 있지는 않겠지만.
+		PRINTL 
+		PRINTFORML ＞%조사처리(CALLNAME:MASTER,"는")% 하던 일을 일단락 짓고, 차를 마시던 그녀에게 시선을 돌린다.
+		PRINTW ＞쿠즈노하의 견습 서머너 나기다.
+		PRINTL 
 		CALL AA_EV41_Nagi
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「どうも、お忙しいところ申し訳ないセオリーです、%CALLNAME:MASTER%殿。
-		PRINTFORML 　今日は手を借りるプロセスを希望します。
-		PRINTFORMW 　ヤタガラスより任務が与えられたプロセスで、ダークサマナーを退治せよとのセオリーです」
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「相手は十文字ワーグナーと名乗っていて、元ヤタガラスのカテゴリーだとか。
-		PRINTFORMW 　ひとりで任務をこなせば一人前として認める、との指令でしたが……」
-		PRINTFORML 
-		PRINTFORMW ＞……ならなぜ、自分の手を借りようとするのだろうか。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「万が一自分が失敗しては、ダークサマナーがまた野放しになるセオリーです。
-		PRINTFORML 　そのようなセオリーはナイスではありません。
-		PRINTFORMW 　なので自分がもし倒された場合は、十文字ワーグナーを代わりに倒していただくプロセスを希望します」
-		PRINTFORML 
-		PRINTFORML ＞なるほど、事情は分かった。
-		PRINTFORML ＞凪はダークサマナーを一刻も早く、そして確実に撃破することが重要と判断したようだ。
-		PRINTFORML ＞戦術眼が成長したようで、一応の師としては少し嬉しい……。
-		PRINTFORMW ＞……まあ、手段を選ばない、というダークサマナー寄りの成長のような気もするが。
-		PRINTFORML 
-		PRINTFORML ＞幸い、十文字ワーグナーなる名前はファントムでも聞いたことはない。
-		PRINTFORMW ＞手伝ってみたところで問題はないだろう。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「ありがとうございます。
-		PRINTFORMW 　潜伏場所は既に割れているので、早速行くのがナイスなセオリーでしょう」
-		PRINTFORML 
+		PRINTL 
+		PRINTL 　나기
+		PRINTFORML 「그러니까, 바쁘신 와중에 죄송한 시어리입니다, %CALLNAME:MASTER% 님.
+		PRINTL 　오늘은 도움을 받는 프로세스를 희망합니다.
+		PRINTW 　야타가라스로부터 임무를 받는 프로세스에서, 다크 서머너를 퇴치하라는 시어리입니다」
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「상대는 쥬몬지 바그너(十文字ワーグナー)라고 하며, 전직 야타가라스 카테고리라던가.
+		PRINTW 　홀로 임무를 완수하면 1명 몫은 한다고 인정한다는 지령이었습니다만……」
+		PRINTL 
+		PRINTW ＞……그렇다면 어째서 손을 빌리려고 하는 것일까.
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「만일 제가 실패한다면 다크 서머너가 다시 날뛰게 될 시어리입니다.
+		PRINTL 　그런 시어리, 나이스하지 않습니다.
+		PRINTW 　그러므로 만약 제가 쓰러진다면, 쥬몬지 바그너를 대신 처리하는 프로세스를 희망합니다」
+		PRINTL 
+		PRINTL ＞그런가. 사정은 이해했다.
+		PRINTL ＞나기는 다크 서머너를 한시라도 빨리, 그리고 확실하게 격파하는 것이 중요하다고 판단한 모양이다.
+		PRINTL ＞전술안이 성장한 것 같아서 일단 스승으로서는 조금 기쁘다…….
+		PRINTW ＞……그, 수단을 가리지 않는, 그런 다크 서머너의 성장인 것 같기도 하지만.
+		PRINTL 
+		PRINTL ＞다행이도 쥬몬지 바그너라는 이름은 팬텀에서도 들어본 적이 없다.
+		PRINTW ＞도와줘도 문제는 없을 것이다.
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「감사합니다.
+		PRINTW 　잠복장소는 이미 분열되었으니, 서둘러 가는 것이 나이스한 시어리겠죠 」
+		PRINTL 
 		CALL AA_EV41_tenten
-		PRINTFORML 
-		PRINTFORML ＞凪に案内されたのは、郊外の森の中にある洋館だった。
-		PRINTFORMW ＞ワーグナーの『ワルキューレの騎行』が中から聞こえてくる……。
-		PRINTFORML 
-		PRINTFORML ＞資料によれば、ダークサマナー、十文字ワーグナーの本名は『山田 源五郎』。
-		PRINTFORML ＞元ヤタガラス所属であり、いくらかの悪魔も連れているようだ。
-		PRINTFORMW ＞恐らくワーグナーとはこの音楽から採った名前だろう。十文字が何かは分からないが……。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「では、%CALLNAME:MASTER%殿はここで待つプロセスを希望します。
-		PRINTFORML 　もし自分がやられた場合は、この子が合図を出すセオリーです。その時には屋敷の中に突入してください」
-		PRINTFORML 
-		PRINTFORMW ＞そう言って、凪は管からハイピクシーを召喚した。
-		PRINTFORML 
-		PRINTFORML 　ハイピクシー
-		PRINTFORML 「アタシ、ハイピクシーだよ！　よろしくー！
-		PRINTFORMW 　ナニカあったらアタシがアギとかで合図するから、その時はよろしくね？」
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「自分の予測のカテゴリーではダークサマナーへの勝算は４割程度……
-		PRINTFORMW 　ですが今の自分にはこれもあります」
-		PRINTFORML 
-		PRINTFORML ＞そう言って凪は、古い籠手を見せてくる。
-		PRINTFORML ＞日本の……少なくとも戦国時代以前の、大鎧の籠手だろうか。
-		PRINTFORML ＞非常に古く、そして、強い神秘が染みついたものだ。
-		PRINTFORMW ＞博物館に飾られてきたものではなく、実際に使用されてきたのであろう凄みを感じる。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「これはさる英雄が使っていた籠手のカテゴリーです。
-		PRINTFORML 　過日、これを媒介にその英雄とセルフ契約したセオリー。
-		PRINTFORMW 　これで勝算は七割に達する見込みです」
-		PRINTFORML 
-		PRINTFORML 　ハイピクシー
-		PRINTFORMW 「大丈夫、凪？　前にもそう言ってやられたことなかった……？」
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「……いえ、今度は……万が一勝てないとしてもなるべくすぐ撤退し、%CALLNAME:MASTER%殿と合流するセオリーです。
-		PRINTFORMW 　無理なプロセスを踏むつもりはありません……行きます」
-		PRINTFORML 
-		PRINTFORMW ＞了解した。自分たちは暫しここで待つとしよう……
-		PRINTFORML 
-		PRINTFORML 　ハイピクシー
-		PRINTFORMW 「ばいばーい。また後でねー」
-		PRINTFORML 
+		PRINTL 
+		PRINTL ＞나기에게 안내를 받은 곳은, 교외 숲 속에 있는 서양식 건물이었다.
+		PRINTW ＞바그너의 『발퀴레의 기행』이 안에서 들려온다…….
+		PRINTL 
+		PRINTL ＞자료에 따르면, 다크 서머너 쥬몬지 바그너의 본명은 『야마다 겐고로(山田 源五郎)』.
+		PRINTL ＞전에는 야타가라스에 속해 있었고, 몇몇 악마도 데리고 있는 것 같다.
+		PRINTW ＞아마도 바그너란 이름은 이 음악에서 따온 이름일 것이다. 쥬몬지(十文字)가 뭔지는 모르겠지만…….
+		PRINTL 
+		PRINTL 　나기
+		PRINTFORML 「그럼, %CALLNAME:MASTER% 님은 여기서 기다리는 프로세스를 희망합니다.
+		PRINTL 　만약 제가 당한다면, 이 아이가 신호를 보내는 시어리입니다. 그때 저택 안으로 돌입해주세요」
+		PRINTL 
+		PRINTW ＞그렇게 말하고 나서, 나기는 관에서 하이픽시를 소환했다.
+		PRINTL 
+		PRINTL 　하이픽시
+		PRINTL 「나, 하이픽시야!　잘 부탁해!
+		PRINTW 　무슨 일이 생기면 내가 아기 같은 걸로 신호를 줄 테니까, 그 때엔 잘 부탁할게?」
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「제 예측 카테고리로는 다크 서머너에 대한 승산은 4할 정도……
+		PRINTW 　하지만 지금의 저에겐 이것도 있습니다」
+		PRINTL 
+		PRINTL ＞그렇게 말하며 나기는 낡은 토시를 꺼내든다.
+		PRINTL ＞일본의……적어도 전국시대 이전의, 큰 갑옷의 토시일까.
+		PRINTL ＞대단히 낡고, 거기에 강한 신비가 스며든 물건이다.
+		PRINTW ＞박물관에 장식된 그런게 아닌 실제로 사용되었을 것이라는 오싹함이 느껴진다.
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「이건 원숭이 영웅이 쓰던 토시 카테고리입니다.
+		PRINTL 　과거, 이것을 매개로 그 영웅과 셀프 계약을 맺었던 시어리.
+		PRINTW 　이것으로 승산은 7할에 달할 전망입니다」
+		PRINTL 
+		PRINTL 　하이픽시
+		PRINTW 「괜찮겠어, 나기?　전에도 그렇게 말하고 당하지 않았어……?」
+		PRINTL 
+		PRINTL 　나기
+		PRINTFORML 「……아뇨, 이번에는……만일 이길 수 없다 하더라도 가능하다면 즉시 철수하고, %CALLNAME:MASTER% 님과 합류하는 시어리입니다.
+		PRINTW 　무리한 프로세스를 거칠 생각은 없습니다……갑니다」
+		PRINTL 
+		PRINTW ＞알겠다. 이쪽은 잠시 여기서 기다리기로 하자……
+		PRINTL 
+		PRINTL 　하이픽시
+		PRINTW 「네에네에. 나중에 봐―」
+		PRINTL 
 		CALL AA_EV41_tenten
-		PRINTFORML 
-		PRINTFORMW ＞――待つこと十数分――
-		PRINTFORML 
-		PRINTFORMW ＞突如洋館の一部から大量の剣が生えてきた！
-		PRINTFORML 
-		PRINTFORML ＞現状の凪の戦力を鑑みるに、あれほどの攻撃を防ぎきることは不可能だろう……
-		PRINTFORMW ＞凪からの合図はないが、洋館に突入させてもらおう。
-		PRINTFORML 
+		PRINTL 
+		PRINTW ＞――기다리는 데에 십수 분――
+		PRINTL 
+		PRINTW ＞갑자기 양옥 일부에서 대량의 검이 자라났다!!
+		PRINTL 
+		PRINTL ＞현재 나기의 전력을 감안하면, 저런 공격은 불가능할 것이다……
+		PRINTW ＞나기로부터의 신호는 없지만. 양옥에 돌입하도록 하자.
+		PRINTL 
 		CALL AA_EV41_tenten
-		PRINTFORML 
-		;原作、剣を突き付けられて震えてる凪ちゃんがかわいい。
-		PRINTFORML ＞剣が生えてきたと思しき洋館の一室に飛び込んだ%CALLNAME:MASTER%が見たのは、
-		PRINTFORMW ＞正に無数の剣を突きつけられている凪の姿と、強大な力を持つ悪魔、そして髭の生えた男だった。
-		PRINTFORML 
-		PRINTFORML ＞踏み込んだ%CALLNAME:MASTER%に気づいたのか、髭の男と悪魔は凪に向けていた剣を即座に構えなおした。
-		PRINTFORMW ＞髭の男が、山田源五郎……十文字ワーグナーで相違あるまい。
-		;ちなみにというか「山田源五郎」という名前は大嫌いらしく、呼ばれるとキレる。
-		;ここではあなたは（そういうのに理解があるので）きちんと「十文字ワーグナー」と呼んであげる……という設定とする。
-		PRINTFORML 
-		PRINTFORML ＞……中々のやり手だ。
-		PRINTFORML ＞%CALLNAME:MASTER%が最初に出会った頃のマヨーネと同格だろうか。
-		PRINTFORML ＞この力量で、名前を聞いたこともない、というのは、いささか不自然なような気もするが……
-		PRINTFORMW ＞……まあ、%CALLNAME:MASTER%の情報網も、決して完璧ではない。特筆すべき力量でもなさそうだ。
-		;おそらくワーグナーも（制御できる程度に）丸薬を飲んで、この時点から多少パワーアップしていたものと思われる
-		PRINTFORML 
-		PRINTFORML 　十文字ワーグナー
-		PRINTFORML 「クッ……まさか増援とは、なんと卑劣な！
-		PRINTFORMW 　ええい、フツヌシ！　やってしまいなさい！」
-		PRINTFORML 
-		PRINTFORML 　フツヌシ
-		PRINTFORML 「儂もヨシツネとやらと小娘だけではちと足りんかったところよ！
-		PRINTFORML 　『千本剣の儀式』成就のため――
+		PRINTL 
+		;原作, 剣を突き付けられて震えてる凪ちゃんがかわいい.
+		PRINTFORML ＞검이 자라났다고 생각되는 어느 방으로 뛰어든 %조사처리(CALLNAME:MASTER,"가")% 본 것은,
+		PRINTW ＞어째서인지 무수한 검에 겨누어지고 있는 나기의 모습과 강대한 힘을 가진 악마, 그리고 수염난 남자였다.
+		PRINTL 
+		PRINTFORML ＞발을 디딘 %조사처리(CALLNAME:MASTER,"를")% 눈치챈 것인지, 수염난 남자와 악마는 나기를 향해 겨누고 있던 검을 즉시 바로잡았다.
+		PRINTW ＞수염난 남자가, 야마다 겐고로……쥬몬지 바그너가 틀림없을 것이다.
+		;ちなみにというか「山田源五郎」という名前は大嫌いらしく, 呼ばれるとキレる.
+		;ここではあなたは（そういうのに理解があるので）きちんと「十文字ワーグナー」と呼んであげる……という設定とする.
+		PRINTL 
+		PRINTL ＞……상당한 수완가이다.
+		PRINTFORML ＞%조사처리(CALLNAME:MASTER,"가")% 처음 만났을 때의 마요네와 동격일까.
+		PRINTL ＞이 역량으로 이름을 들어본 적도 없다는 것은 약간 부자연스럽기도 하지만……
+		PRINTFORMW ＞……어쨌든, %CALLNAME:MASTER%의 정보망도, 결코 완벽하지 않다. 크게 볼 역량도 아닌 것 같다.
+		;おそらくワーグナーも（制御できる程度に）丸薬を飲んで, この時点から多少パワーアップしていたものと思われる
+		PRINTL 
+		PRINTL 　쥬몬지 바그너
+		PRINTL 「큭……설마하던 증원이라니, 이 어찌나 비열한지!
+		PRINTW 　에잇, 후츠누시!　해치우십시오!」
+		PRINTL 
+		PRINTL 　후츠누시
+		PRINTL 「나 역시 요시츠네라는 계집만으로는 좀 부족했던 참일세!
+		PRINTL 　『천본검(千本剣)의 의식』 성취를 위해――
 		IF IS_LOOKSLIKE_MALE(MASTER)
-			PRINTFORMW 　――小僧！　貴様の得物も頂くぞ！」
+			PRINTW 　――꼬맹이여!　네놈의 무기도 받아가겠다!」
 		ELSE
-			PRINTFORMW 　――小娘！　貴様の得物も頂くぞ！」
+			PRINTW 　――계집이여!　네년의 무기도 받아가겠다!」
 		ENDIF
-		PRINTFORML 
-		PRINTFORMW ＞ダークサマナー　十文字ワーグナーが１体出た！　フツヌシが１体出た！
+		PRINTL 
+		PRINTW ＞다크 서머너 쥬몬지 바그너가 나타났다!　후츠누시가 나타났다!
 
 		;나기を一時離脱
-		;場合によっちゃ5人PTで戦うことになるので、多少手加減
+		;場合によっちゃ5人PTで戦うことになるので, 多少手加減
 		SIF CPOS(NAGI_NO) > 0
 			CALL REMOVE_POSITION,CPOS(NAGI_NO)
 
 		;다크서머너流用
 		;→能力補正とかMP持たせるのとか装備とかむしろめんどくさいので3118番の狂人の方のダークサマナーに変更
-		;　すっげー微妙なんだけど、一応の殺意として、多少殺せる技を搭載
-		;　完ッ全に物理型なので、ポジションを14から8に変更
+		;　すっげー微妙なんだけど, 一応の殺意として, 多少殺せる技を搭載
+		;　完ッ全に物理型なので, ポジションを14から8に変更
 		CALL SET_ENEMY,8,3118,35,0,1
-		NAME:(CHARANUM-1) = ワーグナー
-		CALLNAME:(CHARANUM-1) = ワーグナー
+		NAME:(CHARANUM-1) = 바그너
+		CALLNAME:(CHARANUM-1) = 바그너
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 500
 		CFLAG:(CHARANUM-1):속도보정 += 5
@@ -213,7 +213,7 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 		;両腕落としをよくやってくる
 		ABL:(CHARANUM-1):스킬4 = 4
 		ABL:(CHARANUM-1):스킬5 = 4
-		;木っ端みじん切り、千烈突き、狼牙天誅斬をたまにやってくる
+		;木っ端みじん切り, 千烈突き, 狼牙天誅斬をたまにやってくる
 		ABL:(CHARANUM-1):스킬6 = 7
 		ABL:(CHARANUM-1):스킬7 = 230
 		ABL:(CHARANUM-1):스킬8 = 26
@@ -223,19 +223,19 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 
 
 		;후츠누시
-		;ワーグナーのポジションを8に移したので、こちらは10に変更
+		;ワーグナーのポジションを8に移したので, こちらは10に変更
 		CALL SET_ENEMY,10,1420,40,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 700
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 500
 		CFLAG:(CHARANUM-1):속도보정 += 5
 		CFLAG:(CHARANUM-1):행동횟수 = 2
-		;通常のフツヌシの習得スキルはあるが、ちょっとスキルを調整持たせる
-		;木っ端みじん切り、剛切断、テトラカーン……の通常習得範囲のスキルに加えて、
-		;デスバウンド、タルカジャオートを持たせる
-		;コドクノマレビト本編ではヨシツネを打ち倒している。
-		;まあ、パワーバランスが違ーう、という感じである。
-		;……こっちでLv57のヨシツネをどう倒したんだっていうと、たぶんテトラカーンの反射じゃないだろうか。
-		;→凪敵対ルートで『生命消耗』持たせたので、まあそんな感じで。
+		;通常のフツヌシの習得スキルはあるが, ちょっとスキルを調整持たせる
+		;木っ端みじん切り, 剛切断, テトラカーン……の通常習得範囲のスキルに加えて, 
+		;デスバウンド, タルカジャオートを持たせる
+		;コドクノマレビト本編ではヨシツネを打ち倒している.
+		;まあ, パワーバランスが違ーう, という感じである.
+		;……こっちでLv57のヨシツネをどう倒したんだっていうと, たぶんテトラカーンの反射じゃないだろうか.
+		;→凪敵対ルートで『生命消耗』持たせたので, まあそんな感じで.
 		ABL:(CHARANUM-1):스킬1 = 0
 		ABL:(CHARANUM-1):스킬2 = 7
 		ABL:(CHARANUM-1):스킬3 = 15
@@ -260,88 +260,88 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 
 		CALLF FINDCHARA_B([[キャラ:나기]])
 		LOCAL = RESULT:1
-		PRINTFORML 
-		PRINTFORML 　十文字ワーグナー
-		PRINTFORMW 「グッ……この私が……こんなところで……」
-		PRINTFORML 
-		PRINTFORML ＞ワーグナーはその場に倒れた。
-		PRINTFORMW ＞フツヌシも深く傷つき、その体は薄れてきている。
-		PRINTFORML 
-		PRINTFORML 　フツヌシ
-		PRINTFORML 「ふむ……儂がこれほどまでにやられるとはな……これは些か人間を侮っておったかもしれん。
+		PRINTL 
+		PRINTL 　쥬몬지 바그너
+		PRINTW 「끄윽……내가……이런 곳에서……」
+		PRINTL 
+		PRINTL ＞바그너는 그 자리에 쓰러졌다.
+		PRINTW ＞후츠누시도 깊은 상처를 입었고, 그 몸은 희미해지고 있다.
+		PRINTL 
+		PRINTL 　후츠누시
+		PRINTL 「흠……내가 이렇게까지 당할줄이야……이는 어쩌면 인간을 얕보고 있었을지도 모르겠구나.
 		IF IS_LOOKSLIKE_MALE(MASTER)
-			PRINTFORMW 　小僧、次があれば、貴様のようなサマナーに喚ばれたいものじゃな……」
+			PRINTW 　꼬맹아, 다음이 있다면, 네놈 같은 서머너에게 불리고 싶구나……」
 		ELSE
-			PRINTFORMW 　小娘、次があれば、貴様のようなサマナーに喚ばれたいものじゃな……」
+			PRINTW 　계집아, 다음이 있다면, 네놈 같은 서머너에게 불리고 싶구나……」
 		ENDIF
-		PRINTFORML 
-		PRINTFORMW ＞フツヌシは消え去った……凪は……幸い、無事なようだ。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「う……ここは……
-		PRINTFORMW 　っ！　十文字ワーグナーはっ……」
-		PRINTFORML 
-		PRINTFORML ＞ワーグナーはそこに倒れている。
-		PRINTFORML ＞それにしても、フツヌシとは……事前情報よりも強大な悪魔を引き連れていたが、
-		PRINTFORMW ＞ヤタガラスの諜報能力は一体どうしたのだ？
+		PRINTL 
+		PRINTW ＞후츠누시는 사라졌다……나기는……다행이도 무사한 것 같다.
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「으……여기는……
+		PRINTW 　윽! 쥬몬지 바그너는……」
+		PRINTL 
+		PRINTL ＞바그너는 저기에 쓰러져 있다.
+		PRINTL ＞그건 그렇고, 후츠누시라……사전 정보보다도 강대한 악마를 거느리고 있었는데, 
+		PRINTW ＞야타가라스의 첩보 능력은 대체 어떻게 되먹은 거지?
 		;答え：「達成できないこたぁ分かってたがそれで凪がどうするかを見てた」
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「そのセオリーは、自分にもわかりません……ですが、ひとまず……ありがとうございました。
-		PRINTFORMW 　試験は失敗でしたが、ダークサマナーを倒すプロセスは達成できました」
-		PRINTFORML 
-		PRINTFORML ＞%CALLNAME:MASTER%は頷き、次からは合図を送るように、と言い含めた。
-		PRINTFORML ＞凪は、ソーリーです、と、縮こまって言った。
-		PRINTFORMW ＞助けたことを、感謝してくれているらしい。
-		PRINTFORML 
-		PRINTFORML [0] 褒める
-		PRINTFORML [1] もう一言二言は小言がある
+		PRINTL 
+		PRINTL 　나기
+		PRINTL 「그 시어리는, 저도 모릅니다……그렇지만, 우선……감사합니다.
+		PRINTW 　시험은 실패했지만, 다크 서머너를 쓰러트리는 프로세스는 달성했습니다」
+		PRINTL 
+		PRINTFORML ＞%조사처리(CALLNAME:MASTER,"는")% 고개를 끄덕이고, 다음부터는 신호를 보내라고 당부했다.
+		PRINTL ＞나기는, 쏘리입니다, 하고 움츠러들며 말했다.
+		PRINTW ＞도와준 것을 감사해하고 있는 것 같다.
+		PRINTL 
+		PRINTL [0] 칭찬한다
+		PRINTL [1] 잔소리 한 두마디가 남았다
 		$INPUT_LOOP1
 		INPUT
 		;褒める
 		IF RESULT == 0
-			PRINTFORML 
-			PRINTFORML ＞十文字ワーグナーは、凪の実力を明らかに上回った敵だった。
-			PRINTFORML ＞凪は、そうであるかもしれない――と見越して、%CALLNAME:MASTER%に事前に助けを求めていた。
-			PRINTFORML ＞確かに負けてしまったが、外すべきでない部分を外すことはしなかった。
-			PRINTFORML ＞試験としては失敗であっても、任務であったダークサマナー討伐依頼は完遂したのだ。
-			PRINTFORMW ＞ナイスな判断だった、踏むべきプロセスを踏んだ、と言えるだろう。
-			PRINTFORML 
-			;原作、ライドウに頭をなでられてアワワってなる凪ちゃんがかわいい。
-			PRINTFORML 　凪
-			PRINTFORMW 「そっ……そんなお褒めのプロセスなどっ……！」
-			PRINTFORML 
-			PRINTFORML ＞認めるべきは認めねば、と%CALLNAME:MASTER%が真面目に言うと、凪は真っ赤になった顔を手で覆って黙ってしまった。
-			PRINTFORML ＞洋館を出よう、と凪に声をかけ、脱出する。
+			PRINTL 
+			PRINTL ＞쥬몬지 바그너는 나기의 실력을 훨씬 웃도는 적이었다.
+			PRINTFORML ＞나기는, 그럴지도 모른다――고 예측하고, %CALLNAME:MASTER%에게 사전에 도움을 요청했다.
+			PRINTL ＞확실히 져버렸지만, 빠지지 안하야 할 때 빠지지 않았다.
+			PRINTL ＞시험으로서는 실패했지만, 임무로서인 다크 서머너 토벌 의뢰는 완수한 것이다.
+			PRINTW ＞나이스한 판단이었다, 거쳐야 하는 프로세스를 거쳤다, 라고 말할 수 있을 것이다.
+			PRINTL 
+			;原作, ライドウに頭をなでられてアワワってなる凪ちゃんがかわいい.
+			PRINTL 　나기
+			PRINTW 「그……그런 칭찬 프로세스라니……!」
+			PRINTL 
+			PRINTFORML ＞인정할 건 인정해야 한다면서 %조사처리(CALLNAME:MASTER,"가")% 진지하게 말하자, 나기는 붉어진 얼굴을 손으로 가리고 침묵해 버렸다.
+			PRINTL ＞양옥에서 나가자고 나기에게 말하며 탈출했다.
 		ELSEIF RESULT == 1
-			PRINTFORML 
-			PRINTFORML ＞そもそも、凪と同行していたのだから、同じ監督するにしても、洋館内で邪魔にならないようにするなどの方策はあった。
-			PRINTFORML ＞一歩間違えれば命を失っていたかもしれない。
-			PRINTFORML ＞リカームなどで蘇生ができると甘えていないだろうか。
-			PRINTFORML ＞等々……
-			PRINTFORMW ＞十文字ワーグナーを縛り上げながら言っていると、凪はがっくりと膝をついてしまった。
-			PRINTFORML 
-			PRINTFORML 　凪
-			PRINTFORMW 「ううっ……セルフ未熟が恨めしいセオリーです……」
-			PRINTFORML 
-			PRINTFORML ＞めそめそする凪に声をかけ、洋館を脱出する。
-			PRINTFORML ＞これで、ダークサマナー討伐任務は完了だ。
+			PRINTL 
+			PRINTL ＞그보다, 나기와 동행하고 있었으니, 같이 감독한다고 해도 양옥 내에서 방해가 되지 않도록 하는 등의 방법이 있었다.
+			PRINTL ＞자칫했다간 목숨을 잃었을지도 모른다.
+			PRINTL ＞리캄 같은 거로 소생할 수 있다고 어리광이라도 부린게 아닌가?
+			PRINTL ＞등등……
+			PRINTW ＞쥬몬지 바그너를 묶으며 말하고 있을 때, 나기는 무릎을 푹 꿇고 말았다.
+			PRINTL 
+			PRINTL 　나기
+			PRINTW 「으으……셀프 미숙이 원망스러운 시어리입니다……」
+			PRINTL 
+			PRINTL ＞훌쩍이는 나기에게 말을 걸고 양옥을 탈출한다.
+			PRINTL ＞이것으로 다크 서머너 토벌 임무는 완료다.
 		ELSE
 			GOTO INPUT_LOOP1
 		ENDIF
-		PRINTFORMW ＞……凪は、%CALLNAME:MASTER%がファントムのサマナーだと知ったらどんな顔をするのだろうか。
-		PRINTFORML 
-		PRINTFORMW ＞%CALLNAME:MASTER%を追いかけてきた凪が、懐から小さな薬瓶を取り出した。
-		PRINTFORML 
-		PRINTFORML 　凪
-		PRINTFORML 「%CALLNAME:MASTER%殿、これは今回の分と、今まで修行していただいたお礼です。
-		PRINTFORMW 　今後とも、よろしくお願いするセオリーを希望です」
-		PRINTFORML 
+		PRINTFORMW ＞……나기는, %조사처리(CALLNAME:MASTER,"가")% 팬텀의 서머너라는 것을 알면 어떤 표정을 지을까.
+		PRINTL 
+		PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"를")% 뒤쫓아온 나기가 품에서 작은 약병을 꺼냈다.
+		PRINTL 
+		PRINTL 　나기
+		PRINTFORML 「%CALLNAME:MASTER% 님, 이건 이번 일과 지금까지 수행해 주신 사례입니다.
+		PRINTW 　앞으로도, 잘 부탁드리는 시어리를 희망합니다」
+		PRINTL 
 		
 		;ソーマの所持数は１まで
 		;もう持ってる場合はその他回復アイテム詰め合わせセットとする
 		IF ITEM:[[아이템:소마]] > 0
-			PRINTFORMW ＞宝玉や魔石の詰め合わせセットを手に入れた。
+			PRINTW ＞보옥과 마석 세트를 입수했다.
 
 			ITEM:[[아이템:메디컬파우더]] = 10
 			ITEM:[[아이템:우황단]] = 10
@@ -351,15 +351,15 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 			ITEM:[[아이템:챠크라드롭]] = 5
 
 		ELSE
-			PRINTFORMW ＞ソーマを手に入れた。
+			PRINTW ＞소마를 입수했다.
 			ITEM:[[아이템:소마]] = 1
 		ENDIF
 
-		;忠誠度上昇量が！！！　雑！！！
+		;忠誠度上昇量が!!!　雑!!!
 ;		BASE:(LOCAL):충성도 = BASE:(LOCAL):충성도 + 4000
 		BASE:(LOCAL):충성도 += 500
 
-		;나기ちゃんがセルフ修行したプロセスです。
+		;나기ちゃんがセルフ修行したプロセスです.
 		이벤트플래그:41:4 = 1
 		CALL EVENT_41_Nagi_Learn_Skill
 
