@@ -1,8 +1,14 @@
 ﻿;KR판 고유요소 추정, 기본 DEBUG 메뉴
 
 @SHOPCOMABLE_997
-RESULTS = 데이터 수정
-RETURN 1
+
+;DEBUG중이라면 나온다
+[IF_DEBUG]
+	RESULTS = 데이터 수정
+	RETURN 1
+[ENDIF]
+RESULTS = ？？？？？
+RETURN 0
 
 @SHOP_COM_997
 
