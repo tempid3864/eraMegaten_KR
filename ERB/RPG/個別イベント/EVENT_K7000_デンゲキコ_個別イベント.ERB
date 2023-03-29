@@ -11,9 +11,9 @@
 #DIM BLADE
 #DIM GV
 #DIM L_PARTY_SLOT,7
-;ARG:0　キャラ番号
-;ARG:1　関数種類　1,開放条件　2,タイトル　3,イベント
-;ARG:2　イベント番号（0～63まで）
+;ARG:0　캐릭터번호
+;ARG:1　함수종류　1,개방조건　2,타이틀　3,이벤트
+;ARG:2　이벤트번호（0～63까지）
 COPEN = GETCHARA([[キャラ:아큐라(X)]])
 BLADE = GETCHARA([[キャラ:블레이드(X)]])
 GV = GETCHARA([[キャラ:GV]])
@@ -21,17 +21,17 @@ SELECTCASE ARG:2
 CASE 0
 	;解放条件
 	IF ARG:1 == 1
-		;DEBUG中ならば出てくる
+		;DEBUG중이라면 나온다
 		[IF_DEBUG]
 			RETURN 1
 		[ENDIF]
-		;EXTRA組を出さない or 白き鋼鉄のXイベントにフィルタ掛けてるなら出ない
+		;EXTRA가 나오지 않는다 or 하얀 강철의 X 이벤트에 필터를 적용하고 있다면 나오지 않는다
 		SIF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0 || GETBIT(FLAG:EXTRA이벤트필터,18) == 1
 			RETURN 0
-		;デンゲキコのイベントを見てないと出ない
+		;덴게키코 이벤트를 보지 않으면 나오지 않는다
 		SIF GETBIT(이벤트플래그:19:19, 11) == 0
 			RETURN 0
-		;デンゲキコ陥落してなきゃ出ない
+		;덴게키코가 함락되지 않으면 나오지 않는다
 		SIF 함락(ARG) < 1
 			RETURN 0
 		;アキュラくんがいない or 電気仕掛けの狂神をクリアしてなければ出ない
@@ -59,22 +59,22 @@ CASE 0
 	;タイトル
 		IF GETBIT(CFLAG:ARG:개별이벤트개방, ARG:2)
 			;タイトル
-			RESULTS = 甦れ、プロセッサユニット！
+			RESULTS = 살아나라、프로세서 유닛！
 		ELSE
 			;未開放時のタイトル（解放条件を入れておく）
-			RESULTS = (①%CALLNAME:ARG%バーティ参加中、LV50以上、陥落済み 『邂逅！ 異次元からの流れ人』クリア 『白き鋼鉄のX』EDイベクリア、全キャラ加入中　で解放)
+			RESULTS = (①%CALLNAME:ARG% 파티 참가중、LV50이상、함락완료 『해후！ 이차원에서 온 떠돌이』클리어 『하얀 강철의 X』ED 이벤트 클리어、전 캐릭터 가입 중 해방)
 		ENDIF
 	;イベント
 	ELSEIF ARG:1 == 3
 		SETCOLOR COLOR("YELLOW")
 		PRINTL ※ＣＡＵＴＩＯＮ！
 		RESETCOLOR
-		PRINTFORML このイベントは%CALLNAME:ARG%1체で戦うイベントが発生します
-		PRINT 準備はよろしいですか？ （推奨LV65 電撃耐性以上、無効
+		PRINTFORML 이 이벤트는%CALLNAME:ARG% 1체로 싸우는 이벤트가 발생합니다.
+		PRINT 준비는 되셨나요？ （권장LV65 전격내성이상、무효
 		SETCOLOR COLOR("RED")
-		PRINT 未満
+		PRINT 미만
 		RESETCOLOR
-		PRINTW の装備推奨）
+		PRINTW 장비권장）
 		CALL INPUT_YN
 		SIF RESULT == 1
 			RETURN 0
@@ -106,186 +106,187 @@ CASE 0
 		;同シリーズ出身のキャラが互いの名前を呼ぶときはデフォ名を、それ以外はCALLNAMEで呼ぶ
 		CUSTOMDRAWLINE =
 		PRINTL
-		PRINTFORMW 「ぎょぇぇぇぇぇぇぇぇぇぇぇぇっ！！！」
+		PRINTFORMW 「뭐야아아아아아아아！！！」
 		PRINTL
-		PRINTFORMW 久々の休暇を満喫していたところに、なにやら%CALLNAME:ARG%の悲鳴が響き渡った。
-		PRINTW しかもなんか煙臭い……明らかに何かやらかしている。
-		PRINTFORMW ちょっと不安になって覗いてみれば、何やら作業着を身に着けた焦げ気味の%CALLNAME:ARG%と煙を上げている機械の残骸が転がっていた。
+		PRINTFORMW 오랜만의 휴가를 만끽하던 차에、왠지 %CALLNAME:ARG%의 비명이 울려퍼졌다。
+		PRINTW 게다가 뭔가 연기 냄새가 난다……분명히 뭔가 저지르고 있다。
+		PRINTFORMW 조금 불안해서 들여다보니、작업복을 입은 불에 탄 듯한%CALLNAME:ARG%와 연기를 내뿜는 기계 잔해가 굴러다니고 있었다。
 		PRINTL
-		PRINTW 「ぐえー」
+		PRINTW 「그에ー」
 		PRINTL
-		PRINTW そんな潰れたカエルみたいな声を目の前で出されても反応に困る。
-		PRINTW というか、何をやらかしたんだ、こいつは。
+		PRINTW 그런 찌그러진 개구리 같은 소리를 눈앞에서 내뱉어도 반응하기 힘들다。
+		PRINTW 아니、뭘 저지른거야、이 녀석。
 		PRINTL
-		PRINTW 「うぅ……実は、破損してそのまま放置しっぱなしだったプロセッサユニットを修理しようと思いまして…」
-		PRINTW 「素人ながらカンを頼りに直そうとしたんですが、その……ダメでした…ぐすん」
+		PRINTW 「우우……실은、파손된채로 그대로 방치해둔 프로세서 유닛을 수리하려고…」
+		PRINTW 「아마추어지만 감을 믿고 고쳐보려고 했는데、그……잘 안됐어요…흑흑」
 		PRINTL
-		PRINTFORMW プロセッサユニット…確か、%CALLNAME:ARG%と出会った時に身に着けていた防具の事だろう。
-		PRINTW あんな精密そうな機械を素人が直そうとしたら高確率で悪化するのは目に見えているはずだが……
-		PRINTW というか、修理しようとしたとしてなぜあんな悲鳴が出るのか。 まさか素手でやったのだろうか？
+		PRINTFORMW 프로세서 유닛…아마、%CALLNAME:ARG%와 만났을때 착용하고있던 갑옷이겠지。
+		PRINTW 저런 정밀해 보이는 기계를 아마추어가 고치려고 하면 높은 확률로 망가질게 뻔히 보이는데……
+		PRINTW 라고 할까、고치려고 했는데 왜 저런 비명소리가 나오는건지。 설마 맨손으로 한 것일까？
 		PRINTL
-		PRINTW 「まさかー！ さすがにそんなことはしませんよ！」
-		PRINTW 「ちょっとプロセッサユニット目掛けて電撃をビリビリ～！ ってしただけです！」
+		PRINTW 「설마ー！ 역시 그런 짓은 하지 않아요！」
+		PRINTW 「잠깐 프로세서 유닛을 노리고 전격을 찌릿찌릿～！ 했을 뿐입니다！」
 		PRINTL
-		PRINTW アホかこいつは。 精密機械に規格外の電流を流したらショートするに決まっているだろう。
+		PRINTW 바보냐 얘는。 정밀 기계에 규격 외의 전류를 흘리면 쇼트가 날수밖에 없잖아。
 		PRINTL
-		PRINTW 「えぇ！？ じゃあどうすれば良かったんですか！？」
+		PRINTW 「에！？ 그럼 어떻게 헀어야 했나요！？」
 		PRINTL
-		PRINTW そこは技術者に預けて直してもらうなり、色々あるだろう。
+		PRINTW 그건 기술자에게 맡겨서 고치던지、여러 방법이 있었을것이다。
 		PRINTL
-		PRINTW 「いや、でも他人に預けるのはちょっと機密的にアレですし……」
+		PRINTW 「아니、하지만 남에게 맡기는건 좀 기밀적으로 그렇고……」
 		PRINTL
-		PRINTFORMW 確かに%CALLNAME:ARG%の言い分も理解できなくはない。 下手に異世界に関する知識が組織に知れ渡ったら一大事である。
-		PRINTW こちらの身内で尚且つ機械に強く、更に異能者や異世界に関して一定の理解を持つ者に預けるのが無難だろうが……
+		PRINTFORMW 확실히 %CALLNAME:ARG%의 주장도 이해할수 없는 것은 아니다。 자칫 이세계에 대한 지식이 조직에 알려지면 큰일이다。
+		PRINTW 이쪽 무리이면서 기계에 강하고、게다가 이능자나 이세계에 대해 어느정도 이해가 있는 사람에게 맡기는 것이 무난하겠지만……
 		PRINTL
-		PRINTFORMW 「%CALLNAME:MASTER%さん、そんな都合のいい人材ウチにいましたっけ？」
+		PRINTFORMW 「%CALLNAME:MASTER%씨、그런 편리한 인재 우리 무리에 있었나요？」
 		PRINTL
-		PRINTW ……なくはない。 ないが……恐らくタダ働きはしてくれないだろう。
-		PRINTFORMW 物のついでだ、プロセッサユニットと同時に%CALLNAME:ARG%を\@ TALENT:COPEN:남자 == 1 ? 彼 # "彼" \@の下に送ることにしよう。
+		PRINTW ……없는건 아니다。 하지만……아마 공짜로 일해 주지는 않을 것이다。
+		;원래 있던부분, ts시켰으면 "그" 라고 강조처리함
+		PRINTFORMW 내친김에、프로세서 유닛과 동시에 %CALLNAME:ARG%를 \@ TALENT:COPEN:남자 == 1 ? 그 # "그" \@의 휘하로 보내는 것으로 하자。
 		PRINTL
-		PRINTW 「えっ、ちょっ、何が始まるんです！？」
+		PRINTW 「어、잠깐、무슨 일이 시작하나요！？」
 		PRINTL
-		PRINTW なんてことはない。 少し『ビリビリ』が増えるだけである。
+		PRINTW 무슨 일 같은건 없다。 조금 더『찌릿찌릿』이 늘어날 뿐이다。
 		CALL 疑似的画面クリア
 		PRINTL
 		PRINTL ………
 		PRINTL ……
 		PRINTL …
 		PRINTL
-		PRINTW 「───それで、こちらに鉢が回ったという事か」
+		PRINTW 「───그래서、이쪽으로 순서가 돌아왔다는 뜻인가」
 		PRINTL
-		PRINTFORMW そんな訳で機械や異能、異世界に関して一定の知識を持っており、尚且つ──電撃使いにそこそこ縁のある%CALLNAME:COPEN%に白羽の矢が立った。
+		PRINTFORMW 그런 이유로 기계와 이능、이세계에 대해 어느 정도 지식을 가지고 있고、게다가──전결술에 어느정도 인연이 있는 %CALLNAME:COPEN%로 지명되었다。
 		PRINTL
-		PRINTW 「俺としては、件の代物───プロセッサユニットとやらの修理を受託することに異存はない。 元々機械修理に関しては腕に覚えがあるからな」
-		PRINTW 「もっとも、精密機械を修理する以上、『見られたくない物』を見てしまう可能性はあるが……」
+		PRINTW 「내 입장에서는、그 물건───프로세서 유닛의 수리를 맡기는 것에 이견은 없어。 원래 기계 수리에 관해서는 솜씨가 있으니깐」
+		PRINTW 「물론、정밀 기계를 수리하는 이상、『보이고 싶지 않은 물건』을 봐 버릴 가능성은 있지만……」
 		PRINTL
-		PRINTFORMW それに関しては構わない。 元々%CALLNAME:COPEN%達の目的は元の世界への帰還である。
-		PRINTFORMW 異世界からの技術を手掛かりにする事はこちらとしても困る事ではないし、不用意に技術を流す理由なぞ、それこそ%CALLNAME:COPEN%側にはないだろう。
+		PRINTFORMW 그 점에 관해서는 상관없다。 원래 %CALLNAME:COPEN%의 목적은 원래 세계로의 귀환이다。
+		PRINTFORMW 이세계의 기술을 단서로 삼는것은 이쪽으로서도 곤란한 일이 아니고、부주의하게 기술을 유출할 이유도 수수께끼、그야말로 %CALLNAME:COPEN%측에는 없을것이다。
 		PRINTL
-		PRINTW 「そうか。 ならありがたく活用するとしよう」
+		PRINTW 「그래。 그럼 고맙게 활용한다고 하지」
 		PRINTL
-		PRINTFORMW 『しっかし%CALLNAME:MASTER%も薄情者だよね～、付き合いも長いのにこんな隠し事を抱えてたなんてさー』
-		PRINTFORMW 「言ってやるな、RoRo。 %CALLNAME:MASTER%にも立場という物がある」
-		PRINTW 『そりゃあそうだけど…ここまで来ておいて、やっぱり僕たち信用されてないんだなーって事実を知っちゃうとなんだかモヤモヤしない？』
-		PRINTW 「機密情報を可能な限り晒さないでおくのはおかしい行動ではない。 信用要素を抜きにしても、情報の伝達はそれだけでリスクになる」
-		PRINTW 『んむむぅ……』
+		PRINTFORMW 『근데 %CALLNAME:MASTER%도 박정한 사람이네～、교제한지도 오래됐는데 이런 비밀을 품고있다니ー』
+		PRINTFORMW 「말하지마、RoRo。 %CALLNAME:MASTER%에게도 입장이라는게 있어」
+		PRINTW 『그렇긴 하지만…여기까지 와놓고、역시 우리는 신용받지 못하고 있구나ー라는 사실을 알게되면 왠지 찜찜하지 않아？』
+		PRINTW 「기밀 정보를 가능한 노출시키지 않는 것은 이상한 행동이 아니다。 신뢰의 여부를 배제하더라도、정보의 전달은 그 자체로 위험하나」
+		PRINTW 『음음음……』
 		PRINTL
-		PRINTW どうやら隠し事をしていた事に対してRoRoはご不満の様子だ。
-		PRINTFORMW 理由は大体%CALLNAME:COPEN%が代弁してくれたので、こちらとしては説明の手間が省けて助かったが。
+		PRINTW 아무래도 비밀을 숨기고 있던 것에 대해 RoRo는 불만스러운 눈치다。
+		PRINTFORMW 이유는 대략 %CALLNAME:COPEN%가 대변해 주었기 때문에、설명할 필요가 없어서 다행이다。
 		PRINTL
-		PRINTFORMW 「それで…そのプロセッサユニットの保有者の%CALLNAME:ARG%はどこに？」
+		PRINTFORMW 「그래서…그 프로세서 유닛의 소유자 %CALLNAME:ARG%는 어디에있어？」
 		PRINTL
-		PRINTFORMW %CALLNAME:ARG%は今、例の二人に面倒を見てもらっている。
+		PRINTFORMW %CALLNAME:ARG%는 지금、예의 두 사람이 돌봐주고 있다。
 		PRINTL
-		PRINTFORMW 「……なるほど、奴らの所にか」
-		PRINTFORMW 『ブレイドとＧＶのところにっていうと…同じ電撃の異能を持ってる者同士で集まって、なんか巨大な電池に充電でもしたりするの？』
-		PRINTFORMW 「いや、奴らが出ていく時に予備の武具と…普段使わない『斧』の武器を抱えていたのを見ている。
-		PRINTFORMW 　長期の依頼にでも出向いていくのかと思っていたが…%CALLNAME:MASTER%の様子と、武器型プロセッサユニットが『斧』の形状をしていた事から察するに、
-		PRINTFORMW 　プロセッサユニットの修復を頼んでいる間に、%CALLNAME:ARG%の戦闘技術向上の為、あの二人に稽古を付けさせた…といったところだろう」
+		PRINTFORMW 「……과연、놈들이 있는곳인가」
+		PRINTFORMW 『블레이드와 GV가 있는 것이라고 하면…같은 전기의 이능을 가진 자들끼리 모여서、거대한 배터리를 충전이라도 하는 건가？』
+		PRINTFORMW 「아니、그들이 나갈 때 예비의 무구와…평소에 사용하지 않는 『도끼』의 무기를 들고있는것을 봤다。
+		PRINTFORMW 　장기 의뢰라도 받으러 가는 줄 알았는데…%CALLNAME:MASTER%의 모습과、무기형 프로세서 유닛이『도끼』모양인것으로 미루어 짐작해보면、
+		PRINTFORMW 　프로세서 유닛의 수리를 의뢰하는 동안、%CALLNAME:ARG%의 전투기술 향상을 위해、그 두 사람에게 연습을 시켰다…라고 했을것이다」
 		PRINTL
-		PRINTFORMW %CALLNAME:COPEN%の御推察通り、%CALLNAME:ARG%には%CALLNAME:BLADE%と%CALLNAME:GV%の二人に稽古を付けさせている。
-		PRINTFORMW %CALLNAME:ARG%はあの二人の中間的な戦い方をする為、同じ電撃の異能者の下であれば学べることもあるのでは？
-		PRINTL という魂胆でシゴかせることにしたのだ。
+		PRINTFORMW %CALLNAME:COPEN%의 추측대로、%CALLNAME:ARG%에게는 %CALLNAME:BLADE%와 %CALLNAME:GV% 두 사람에게 연습을 시키고 있다。
+		PRINTFORMW %CALLNAME:ARG%는 그 두사람의 중간적인 전투 방식을 하기때문에、같은 전기의 이능자 밑에서 배울수도 있지않을까？
+		PRINTL 라는 꿍꿍이로 같이 하기로 한것이다。
 		PRINTL
-		PRINTW 『うわぁ…それってアニメやマンガでよくある特訓期間ってやつじゃん。 血と汗と涙を糧に新しい必殺技を編み出せーってやつ。
-		PRINTFORMW 　…っていうか、ブレイドとＧＶの二人による特訓って…その%CALLNAME:ARG%って子、大丈夫？ 特訓に耐えられたりする？」
+		PRINTW 『우와…그거 애니메이션이나 만화에서 흔한 특훈기간이잖아。 피땀눈물을 양식삼아 새로운 필살기를 짜내라는놈。
+		PRINTFORMW 　…랄까、블레이드랑 GV 두 사람의 특훈이라니…그 %CALLNAME:ARG%라는 애、괜찮아？ 특훈을 견딜 수 있겠어？」
 		PRINTL
-		PRINTFORMW 打ちのめされても復帰した瞬間にケロっとしてる%CALLNAME:ARG%の事だ、恐らく頑張ってはいるだろう。
+		PRINTFORMW 쓰러졌다가도 다시 일어서고 있는 %CALLNAME:ARG% 말이다、아마 노력하고는 있겠지。
 		PRINTL
-		PRINTFORMW 『無事（無事とは言ってない）の流れだコレ！？』
-		PRINTW 「……修復を終えた、という所で肝心の使用者が再起不能になっていないよう、祈っておこう」
+		PRINTFORMW 『무사（무사하다고는 말하지 않았다）의 흐름이잖아！？』
+		PRINTW 「……수리를 끝냈다、라는 부분에서 정작 중요한 사용자가 재기 불능이 되지 않도록、기도해두자」
 		PRINTL
-		PRINTFORMW %CALLNAME:ARG%の心配をしてくれる%CALLNAME:COPEN%とRoRoを横に、%CALLNAME:MASTER%は適当な飲み物を飲んでゆっくりすることにした。
+		PRINTFORMW %CALLNAME:ARG%의 걱정을 해주는 %CALLNAME:COPEN%와 RoRo를 옆에 두고、%CALLNAME:MASTER%는 적당한 음료를 마시며 휴식을 취하기로 했다。
 		CALL 疑似的画面クリア
 		PRINTL
 		PRINTL ………
 		PRINTL ……
 		PRINTL …
 		PRINTL
-		PRINTW ───一方そのころ、某セーフハウスの訓練施設にて。
+		PRINTW ───一한편 그 무렵、어느 세이프 하우스의 훈련시설。
 		PRINTL
-		PRINTW 「ぎぇぇぇぇぇぇぇぇぇっ！！」
+		PRINTW 「게에에에엑！！」
 		PRINTL
-		PRINTFORMW %CALLNAME:BLADE%と%CALLNAME:GV%の指導の下、特訓を開始していた%CALLNAME:ARG%は派手に吹き飛ばされていた。
+		PRINTFORMW %CALLNAME:BLADE%와 %CALLNAME:GV%의 지도 아래、특훈을 개시하고 있던 %CALLNAME:ARG%는 화려하게 날아가 버렸다。
 		PRINTL
-		PRINTFORMW 「立て、%CALLNAME:ARG%！ 実戦ではこの程度では済まされないぞ！」
+		PRINTFORMW 「일어서、%CALLNAME:ARG%！ 실전에서는 이 정도로 끝낼수 없어！」
 		PRINTL
-		PRINTFORMW %CALLNAME:ARG%を吹き飛ばした元凶、その片割れである%CALLNAME:BLADE%が%CALLNAME:ARG%に厳しく語る。
-		PRINTFORMW %CALLNAME:ARG%という、自身と似た能力を使う仲間の育成を任された事もあってか、やけに気合が入っているようだ。
+		PRINTFORMW %CALLNAME:ARG%를 날려버린 원흉、그 일당인 %CALLNAME:BLADE%와 %CALLNAME:ARG%가 엄하게 말했다。
+		PRINTFORMW %CALLNAME:ARG%라고 하는、자신과 비슷한 능력을 사용하는 동료의 육성을 맡게 된 탓인지、상당히 기합이 들어가 있는 것 같다。
 		PRINTL
-		PRINTW 『これで10対2、さすがＧＶね！』
-		PRINTW 「うーん……」
-		PRINTW 『ＧＶ…？ 大丈夫？ どこか調子でも悪いの？』
-		PRINTW 「ん、ああ…大丈夫だよ、シアン。 ちょっと考え事をしていただけさ」
+		PRINTW 『이걸로 10대2、역시ＧＶ네！』
+		PRINTW 「으음……」
+		PRINTW 『ＧＶ…？ 괜찮아？ 어디 아파？』
+		PRINTW 「응、아아…괜찮아、시안。 잠깐 생각할게 있었어」
 		PRINTL
-		PRINTFORMW 対して、もう片方の元凶である%CALLNAME:GV%は、今回の特訓に対してあまり乗り気になれないでいた。
-		PRINTFORMW 心の中に宿している電子の謡精のシアンは特訓の内容に微塵も興味を抱かなかったが、仕事の最中に悩む姿を見せる%CALLNAME:GV%を見て心配している。
+		PRINTFORMW 이에 반해、다른 한명의 원흉인 %CALLNAME:GV%는、이번 특훈에 그다지 흥미를 느끼지 못하고 있었다。
+		PRINTFORMW 마음속에 깃든 전자요정 시안은 특훈 내용에는 조금도 흥미를 느끼지 못했지만、업무중 고민하는 모습을 보이는 %CALLNAME:GV%를 보며 걱정이 되었다。
 		PRINTL
-		PRINTFORMW 「（ボクやアキュラ、ブレイドをこの世界に呼び出した事の発端、それに関わっていた黒幕を倒すことはできた…）
-		PRINTFORMW 　（しかし……未だにボクたちは、元の世界への帰り方を掴めていない……）
-		PRINTFORMW 　（アキュラが言うには、%CALLNAME:MASTER%が連れてきた%CALLNAME:ARG%って子が手掛かりになるかもしれないと言っていたけど…）
-		PRINTFORMW 　（やはり不安だ……こっちはシアンのミラーピースを取り戻せていないし、エデンの侵略だって放置されたままだ）
-		PRINTFORMW 　（オウカやシャオが無事なのかどうかも気になる……早く元の世界に戻らないといけないのに、戻れないというのは……やっぱり───）」
+		PRINTFORMW 「（나와 아큐라、블레이드를 이 세계로 불러낸 일의 발단、그 일에 관여한 흑막을 쓰러트릴수는 있었어…）
+		PRINTFORMW 　（그러나……아직도 우리는、원래의 세계로 돌아갈 방법을 찾지 못하고 있어……）
+		PRINTFORMW 　（아큐라가 말하길、%CALLNAME:MASTER%가 데려온 %CALLNAME:ARG%라는 애가 단서가 될지도 모른다고 하던데…）
+		PRINTFORMW 　（역시 불안하다……이쪽은 시안의 미러피스를 되찾지 못했고、에덴의 침략도 방치된 채야）
+		PRINTFORMW 　（오우카나 샤오우가 무사한지도 궁금해……빨리 원래 세계로 돌아가야 하는데、돌아갈수 없다는건……역시나───）」
 		PRINTL
-		PRINTFORMW 『───ＧＶ！ 前っ！』
+		PRINTFORMW 『───ＧＶ！ 앞！』
 		PRINTL
-		PRINTW 「っ！？」
+		PRINTW 「엣！？」
 		PRINTL
-		PRINTW 「うぉーっ！ 3本目いただきーっ！！」
+		PRINTW 「우오옷！ 3번째를 받아라！！」
 		PRINTL
-		PRINTFORMW 未だに元の世界に帰れぬ事に焦りを抱いていた%CALLNAME:GV%の目の前に、%CALLNAME:ARG%が振るう斧の刃が首目掛けて迫り来る！
+		PRINTFORMW 아직도 원래에 세계로 돌아갈 수 없는 것에 조바심을 품고 있던 %CALLNAME:GV%의 눈앞에、%CALLNAME:ARG%가 휘두르는 도끼날이 목을 노리고 다가온다！
 		PRINTL
-		PRINTW 「ぐぅっ！」
+		PRINTW 「으윽！」
 		PRINTL
-		PRINTFORMW %CALLNAME:ARG%の猛攻を間一髪で凌ぎ、距離を稼ぐ為に後退する%CALLNAME:GV%。
-		PRINTFORMW 無論、それを見逃す程%CALLNAME:ARG%も甘くはない。
+		PRINTFORMW %CALLNAME:ARG%의 맹공을 간발의 차이로 따돌리고、거리를 벌리기 위해 후퇴하는 %CALLNAME:GV%。
+		PRINTFORMW 물론、그것을 놓칠 정도로 %CALLNAME:ARG%도 만만친 않다。
 		PRINTL
-		PRINTW 「なんのっ、逃がしは───」
+		PRINTW 「뭐야、도망치는게───」
 		PRINTL
-		PRINTW 「そうはさせん！」
+		PRINTW 「그렇게 하진 않겠어！」
 		PRINTL
-		PRINTFORMW しかし、突破を許してしまったものの、即座にリカバーに入っていた%CALLNAME:BLADE%により再び膠着状態に持ち込まれてしまう。
+		PRINTFORMW 그러나、돌파를 허용했지만、곧바로 리커버에 들어간 %CALLNAME:BLADE%에 의해 다시 교착상태에 빠진다。
 		PRINTL
-		PRINTFORMW 「あぁっ！？ ちょっと%CALLNAME:BLADE%さん邪魔ですって！！ もうちょっとこう、ゆっくりしてってくださいよ！？」
+		PRINTFORMW 「아악！？ 잠깐 %CALLNAME:BLADE%씨 방해된다구요！！ 좀 더 이렇게、천천히 해주세요！？」
 		PRINTL
-		PRINTFORMW 「甘えるな、%CALLNAME:ARG%！ 突破を許された状況でゆっくりする敵などいない！」
+		PRINTFORMW 「응석부리지 마、%CALLNAME:ARG%！ 돌파당한 상황에서 천천히 하는 적 따위는 없어！」
 		PRINTL
 		PRINTL
-		PRINTW 「…すまない、ブレイド。 助かったよ」
+		PRINTW 「…미안해、블레이드。 덕분에 살았어」
 		PRINTL
-		PRINTW 「礼には及ばない、ＧＶ。 ……しかし、調子が悪そうなら休んだ方がいいのでは？」
+		PRINTW 「별거 아니야、ＧＶ。 ……그런데、몸 상태가 안좋으면 쉬는것이 좋지 않을까？」
 		PRINTL
-		PRINTFORMW やはりというべきか、特訓の最中の%CALLNAME:GV%の様子はどこかおかしかったらしい。
-		PRINTFORMW %CALLNAME:ARG%に絶好のチャンスとして狙われ、そして%CALLNAME:BLADE%に心配される程に顕著だったようだ。
+		PRINTFORMW 역시라고 해야 할까、특별훈련중인 %CALLNAME:GV%의 모습은 어딘가 이상했던 모양이다。
+		PRINTFORMW %CALLNAME:ARG%에게 절호의 기회로 노려졌고、그리고 %CALLNAME:BLADE%에게 걱정스러울 정도로 눈에 띄였던 것 같다。
 		PRINTL
-		PRINTFORMW 「……いや、大丈夫。ブレイドが%CALLNAME:ARG%を上手く引き付けてくれるから手持無沙汰になってたんだ。
-		PRINTW ここからはボクも援護する。 ブレイドは射程範囲内から素早く逃れるようにポジショニングしてほしい」
+		PRINTFORMW 「……아니、괜찮아。블레이드가 %CALLNAME:ARG%를 잘 끌어당겨주니깐 부담이 없었어。
+		PRINTW 여기서부터는 나도 원호할게。 블레이드는 사거리 안에서 빠르게 벗어날수 있도록 포지셔닝을 잡아줘」
 		PRINTL
-		PRINTFORMW 「そうか……では手筈通り、%CSTR:BLADE:일인칭%が前衛で──」
+		PRINTFORMW 「그렇구나……그럼 절차대로、%CSTR:BLADE:일인칭%가 전위에서──」
 		PRINTL
-		PRINTFORMW 「───ボクが後衛だね、了解！」
+		PRINTFORMW 「───내가 후위네、알겠어！」
 		PRINTL
 		PRINTW 『ＧＶ……』
-		PRINTW 「心配いらないよ、シアン。…11本目も、取ってくる！」
-		PRINTW 「（そうだ……今ここで考えていても、仕方がない…！ 今やれる事をやっていこう…！）」
+		PRINTW 「걱정할 필요 없어、시안。…11번째도、가져올게！」
+		PRINTW 「（그래……지금 여기서 고민하고 있어도、어쩔수 없어…！ 지금 할 수 있는 일을 해나가자…！）」
 		PRINTL
-		PRINTFORMW しばらく思い悩んでいた%CALLNAME:GV%だったが、ここに来て思考を切り替えてきたようだ。
+		PRINTFORMW 한동안 고민하던 %CALLNAME:GV%였지만、여기 와서 생각을 다잡은것 같다。
 		PRINTL
-		PRINTFORMW 「うーわっ、%CALLNAME:GV%さんが本気出してきた！？ もうちょっとぼーっとしててもいいんですよー！？」
+		PRINTFORMW 「우왓、%CALLNAME:GV%님이 진심으로 나왔어！？ 좀 더 멍하니 있어도 괜찮아요ー！？」
 		PRINTL
-		PRINTFORMW 「生憎ながら、今はその時じゃない！ ここからは詰めに行くよ、%CALLNAME:ARG%！」
+		PRINTFORMW 「아쉽게도、지금은 그럴 때가 아니야！ 여기서부터는 마무리 하러 갈게、%CALLNAME:ARG%！」
 		PRINTL
-		PRINTFORMW 「くっそぉ！ こうなったらヤケですよ、ヤケ！ 徹底的にとっちめてやります！」
+		PRINTFORMW 「젠장！ 이렇게 되면 큰일이에요、큰일！ 철저하게 해치워줄게요！」
 		PRINTL
-		PRINTFORMW 改めて二人の雷撃の異能使いと対峙する%CALLNAME:ARG%は訓練用の斧の柄を、
-		PRINTW そして、もう片方の手に握られた素朴な剣の柄を握りしめ、果敢に突貫した！
+		PRINTFORMW 다시 한번 두명의 뇌격의 이능사와 대치하는 %CALLNAME:ARG%는 훈련용 도끼자루를、
+		PRINTW 그리고、다른 한 손에 쥐어진 소박한 검자루를 움켜쥐고、과감하게 돌진했다！
 		PRINTL
-		PRINTW 「フッ、やれるものなら───」
+		PRINTW 「훗、할 수 있다면───」
 		PRINTL
-		PRINTW 「────やってみせろ！」
+		PRINTW 「────해봐라！」
 		PRINTL
-		PRINTFORML セプティマホルダー　ブレイドが　　　１体と
-		PRINTFORMW 蒼き雷霆　　　　　　ガンヴォルトが　１体出た！
+		PRINTFORML 뇌격의 셉티마 홀더　블레이드　　　１명과
+		PRINTFORMW 푸른 뇌정　　　　　　건볼트　１명이 나타났다！
 		FOR LOCAL,1,7
 			SIF POS(LOCAL) < 0
 				CONTINUE
@@ -298,8 +299,8 @@ CASE 0
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		CALL SET_ENEMY, 9, [[キャラ:블레이드(X)]], 50, 1, 1
-		NAME:(CHARANUM-1) = ブレイド
-		CALLNAME:(CHARANUM-1) = ブレイド
+		NAME:(CHARANUM-1) = 블레이드
+		CALLNAME:(CHARANUM-1) = 블레이드
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
 		CSTR:(CHARANUM-1):사고패턴 = ライトニングウォーリアー
@@ -339,8 +340,8 @@ CASE 0
 		CALL HEALTH_CHARA, (CHARANUM-1)
 
 		CALL SET_ENEMY, 14, [[キャラ:GV]], 50, 1, 1
-		NAME:(CHARANUM-1) = ガンヴォルト
-		CALLNAME:(CHARANUM-1) = ガンヴォルト
+		NAME:(CHARANUM-1) = GV
+		CALLNAME:(CHARANUM-1) = GV
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
 		CSTR:(CHARANUM-1):사고패턴 = コーチングブルー
@@ -423,69 +424,69 @@ CASE 0
 		PRINTL ……
 		PRINTL …
 		PRINTL
-		PRINTFORMW ───数日後、%CALLNAME:COPEN%の部屋にて。
+		PRINTFORMW ───며칠후、%CALLNAME:COPEN%의 방。
 		;そんな徹子の部屋みたいな扱い。
 		PRINTL
-		PRINTFORMW %CALLNAME:COPEN%からプロセッサユニットの修復が完了したという報せが届いた。
-		PRINTFORMW 受け取りの為に、\@TALENT:COPEN:남자 == 1 ? 彼 # "彼"\@の部屋にやってきたわけだが……
+		PRINTFORMW %CALLNAME:COPEN%로부터 프로세서 유닛의 수복이 완료되었다는 연락이 왔다。
+		PRINTFORMW 수령을 위해、\@ TALENT:COPEN:남자 == 1 ? 그 # "그" \@의 방에 왔는데……
 		PRINTL
-		PRINTW 「ぎゃあああああああっ！！！」
+		PRINTW 「으아아아아아악！！！」
 		PRINTL
-		PRINTFORMW 何やら聞き慣れた悲鳴が%CALLNAME:COPEN%の部屋の中から響いてきた。
-		PRINTFORMW どうやら%CALLNAME:ARG%もちょうど特訓から帰ってきたらしい。 なぜまた悲鳴を出しているのかは分からないが…
-		PRINTFORMW %CALLNAME:MASTER%は合流すべく、早歩きで部屋の中に入った。
+		PRINTFORMW 뭔가 익숙한 비명이 %CALLNAME:COPEN%의 방에서 울려퍼졌다。
+		PRINTFORMW 아무래도 %CALLNAME:ARG%도 특훈을 마치고 돌아온 모양이다。 왜 또 비명을 지르는지는 모르겠지만…
+		PRINTFORMW %CALLNAME:MASTER%는 합류하기 위해、빠른 걸음으로 방 안으로 들어갔다。
 		PRINTL
-		PRINTFORMW 『あっ、%CALLNAME:MASTER%が来た！ もうみんな集まってるよー！』
+		PRINTFORMW 『어、%CALLNAME:MASTER%가 왔어！ 벌써 다 모였네ー！』
 		PRINTL
-		PRINTW 開幕早々、RoRoに出迎えられた。 やはり自分が一番最後らしい。
-		PRINTFORMW 部屋の周りを見ると、%CALLNAME:BLADE%に%CALLNAME:GV%、そして%CALLNAME:COPEN%が揃っていた。
+		PRINTW 개막하자마자、RoRo를 맞이했다。 역시 내가 제일 마지막인것 같다。
+		PRINTFORMW 방 안을 둘러보니、%CALLNAME:BLADE%에 %CALLNAME:GV%、그리고 %CALLNAME:COPEN%까지 모두 모여있었다。
 		PRINTL
-		PRINTFORMW 「久しぶりだな、%CALLNAME:MASTER%。 息災そうでなによりだ」
+		PRINTFORMW 「오랜만이다、%CALLNAME:MASTER%。 무사해 보여서 다행이다」
 		PRINTL
-		PRINTFORMW 「お久しぶりです、%CALLNAME:MASTER%さん。 ほら、シアンも挨拶を」
-		PRINTW 『あ、えっと…お久しぶりです』
+		PRINTFORMW 「오랜만입니다、%CALLNAME:MASTER%님。 자、시안도 인사를」
+		PRINTW 『아、어…오랜만이에요』
 		PRINTL
-		PRINTFORMW 「………遅かったな、%CALLNAME:MASTER%」
+		PRINTFORMW 「………늦었네、%CALLNAME:MASTER%」
 		PRINTL
-		PRINTFORMW 普通に元気そうな二人に反して、どうやら%CALLNAME:COPEN%の顔が浮かない様子……というより、なんだか遠い目をしている。
-		PRINTFORMW 理由はなんとなく察せるが……肝心の%CALLNAME:ARG%が見当たらない。 どこかへ行ったのだろうか？
+		PRINTFORMW 평소처럼 활가치 보이는 두 사람과 달리、아무래도 %CALLNAME:COPEN%의 표정이 밝지 않은듯한 모습……이라기 보다、어쩐지 먼 눈빛을 하고 있다。
+		PRINTFORMW 이유는 대충 짐작이 가지만……중요한 %CALLNAME:ARG%를 찾을수 없다。 어디 갔을까？
 		PRINTL
-		PRINTW 「あ、あぁ……それは…」
+		PRINTW 「아、아아……그건…」
 		PRINTL
-		PRINTW 「えーと、その…」
-		PRINTW 『じーっ…』
+		PRINTW 「음、그…」
+		PRINTW 『지이…』
 		PRINTL
-		PRINTW 「………はぁ」
+		PRINTW 「………하아」
 		PRINTL
-		PRINTFORMW %CALLNAME:ARG%の名前を出した途端に%CALLNAME:BLADE%と%CALLNAME:GV%が目を逸らし始め、更には%CALLNAME:COPEN%がため息を吐き始めた。
-		PRINTW 心なしか、シアンの見る目が冷たい。
+		PRINTFORMW %CALLNAME:ARG%의 이름을 꺼내는 순간 %CALLNAME:BLADE%와 %CALLNAME:GV%가 시선을 돌리기 시작했고、더 나아가 %CALLNAME:COPEN%는 한숨을 내쉬기 시작했다。
+		PRINTW 마음이 없어서 그런지、시안의 눈빛이 차갑다。
 		PRINTL
-		PRINTW 「……奴ならそこにいる」
+		PRINTW 「……녀석이라면 저기에 있다」
 		PRINTL
-		PRINTFORMW %CALLNAME:COPEN%が指す場所は、確か%CALLNAME:COPEN%用のメンテナンスベッドだったはずだ。 一体そこに何が────
+		PRINTFORMW %CALLNAME:COPEN%가 가르키는 장소는、확실히 %CALLNAME:COPEN%용 유지보수 침대였을 것이다。 도대체 거기에 무슨 일이────
 		PRINTL
-		PRINTW 「ぐえー」（3回目）
+		PRINTW 「그에」（세번째）
 		PRINTL
-		PRINTFORMW ────なぜか%CALLNAME:COPEN%用のメンテナンスベッドに%CALLNAME:ARG%が仰向けになって倒れていた。
-		PRINTW よく見るとプロセッサユニットを装着している状態だ。
-		PRINTW プロセッサユニットの具合を見るに、修復は無事に済んだみたいだが……一体なぜあんな状態に？
+		PRINTFORMW ────왠지 %CALLNAME:COPEN%용 유지보수 침대에 %CALLNAME:ARG%가 천장을 향해 쓰러져있었다。
+		PRINTW 자세히 보니 프로세서 유닛을 장착한 상태다。
+		PRINTW 프로세서 유닛의 상태를 보니、수리는 무사히 끝난것 같은데……도대체 왜 저런 상태로？
 		PRINTL
-		PRINTW 「試しにプロセッサユニットを装着させたら倒れた」
+		PRINTW 「시험삼아 프로세서 유닛을 장착시켰더니 쓰러졌다」
 		PRINTL
-		PRINTW えぇ……。
+		PRINTW 에……。
 		PRINTL
-		PRINTW 『いやー、酷かったね。「うぉー！ これで私もパワーアップして皆さんの役に立てるようになりますよー！」って言った直後にああなるなんて…。
-		PRINTW 　こういうのなんていうんだっけ。 即オチ２コマっていうんだっけ？』
+		PRINTW 『이야、끔찍했어。「우와ー！ 이걸로 저도 파워업해서 여러분께 도움이 될 거예요ー！」라고 말한 직후에 저렇게 되다니…。
+		PRINTW 　이런걸 뭐라고 하는거였지。 즉 ２컷이라고나 할까？』
 		PRINTL
-		PRINTFORMW 「申し訳ない……%CSTR:BLADE:일인칭%とＧＶで実戦形式の訓練をやらせていたんだが、その反動がここに来て現れてしまうとは…」
+		PRINTFORMW 「죄송해요……%CSTR:BLADE:일인칭%랑 ＧＶ와 함께 실전 형식의 훈련을 시켰는데、그 반동이 여기와서 나타나다니…」
 		PRINTL
-		PRINTFORMW 「ボクからも謝罪をさせてください。 %CALLNAME:ARG%の肉体的負荷を配慮できなかったのは完全にボクのミスです、本当にごめんなさい！」
-		PRINTFORMW 『大丈夫、ＧＶは悪くないから！ あれは誰がどう見ても%CALLNAME:ARG%の頑張りすぎだもの、自業自得よ』
+		PRINTFORMW 「저도 사과를 하게 해주세요。 %CALLNAME:ARG%의 육체적 부담을 고려하지 못한 것은 전적으로 제 실수입니다、정말 죄송합니다！」
+		PRINTFORMW 『괜찮아、ＧＶ는 나쁘지 않으니깐！ 그건 누가 봐도 %CALLNAME:ARG%가 너무 열심히 한거니깐、자업자득이야』
 		PRINTL
-		PRINTW どうやらプロセッサユニット装着の負荷が想像以上に大きかったらしい。
-		PRINTW 誰かの責任にするのも不毛なので、これは不幸な事故だったという事にしておこう……。
+		PRINTW 아무래도 프로세서 유닛 장착의 부하가 생각보다 컸던 것 같다。
+		PRINTW 누군가의 책임으로 돌리기에도 무리가 있으니、이것은 불행한 사고였다고 해두자……。
 		PRINTL
-		PRINTW 「うぅ……私の扱い、ひどくね…？」
+		PRINTW 「으으……내 취급、너무 심하지 않아…？」
 		PRINTL
 		PRINTL
 		PRINTL ………
@@ -493,22 +494,22 @@ CASE 0
 		PRINTL …
 		PRINTL
 		PRINTL
-		PRINTFORMW 「あのー、%CALLNAME:COPEN%さん？ ちょーっと、気になるところがあるんですけど。
-		PRINTW 　その…なんです？ この、クマっぽいモチーフのアクセサリ」
+		PRINTFORMW 「저기요、%CALLNAME:COPEN%씨？ 잠깐、궁금한점이 있는데요。
+		PRINTW 　그…뭐예요？ 이、곰돌이 모티브의 액세서리」
 		PRINTL
-		PRINTW 「…あぁ。 それは待機状態になっているお前のプロセッサユニットだ。 起動状態になると変形、展開される」
+		PRINTW 「…아아。 그건 대기 상태인 네 프로세서 유닛이다。 기동 상태가 되면 변형、전개된다」
 		PRINTL
-		PRINTW 「えっ。 いやあの、すいません、元々こんな機能なかったんですけど！？ 態々アクセサリーにする必要なくないですか！？
-		PRINTW 　いや、可愛くはあるんですけど！ っていうかこれよく見たらポリタンがモチーフですね、これ！？」
+		PRINTW 「엣。 아니요、죄송합니다、원래 이런 기능이 없었는데요！？ 일부러 액세서리로 할 필요 없지 않나요！？
+		PRINTW 　아니、귀엽긴 한데！ 근데 이거 자세히 보니 폴리탄이 모티브네요、이거！？」
 		PRINTL
-		PRINTW 「…プロセッサユニットに備わっていた転送機能には手が付けられなかったからな…妥協案として、小型化する事にした。
-		PRINTW 　性質上、装備しなければ起動は出来ない。 必要ならばちゃんと身に着けておく事だ」
+		PRINTW 「…프로세서 유닛에 갖추어져 있던 전송 기능에는 손을 댈 수 없었기 떄문에…타협안으로、소형화 하기로 했다。
+		PRINTW 　성질상、장비하지 않으면 기동할 수 없다。 필요하다면 제대로 장착해야한다」
 		PRINTL
-		PRINTW 「えぇ…それって状態異常耐性のアクセサリとかと択一になるって事ですか…うーん、相応のメリットあるんですかね、これ…？」
+		PRINTW 「에에…그게 상태 이상 액세서리 같은거랑 택일이 된다는 건가요…으음、나름대로의 메리트가 있을까요、이거…？」
 		PRINTL
-		PRINTFORMW 「それについては俺から言えることはない。 戦う相手に応じて身に着けるかどうかは%CALLNAME:MASTER%と相談しておくといい」
+		PRINTFORMW 「그것에 대해서는 내가 말할 수 있는 것이 없다。 싸우는 상대에 따라 착용 여부는 %CALLNAME:MASTER%에게 상의하는게 좋을거다」
 		PRINTL
-		PRINTW 「ちぇー、この様子だと必殺技は変身中じゃなきゃ使えなさそうですね…。 あー、世知辛いです…」
+		PRINTW 「체엣、이 상태라면 필살기는 변신중이 아니면 쓸 수 없을 것 같네요…。 아ー、각박해라…」
 		PRINTL
 		PRINTL
 		DRAWLINE
@@ -525,10 +526,10 @@ CASE 0
 			;CSTR:ARG:専用装備 = ＰＵ・ポリタン_アクセサリ
 			CALL PUEQ_ADD, ARG, "ＰＵ・ポリタン", [[아이템:전용장비악세서리]], 0
 			CALL PUEQ_SET, ARG
-			;PRINTFORMW %CALLNAME:ARG%は専用アクセサリ『ＰＵ・ポリタン』を装備できるようになった！
-			PRINTFORMW %CALLNAME:ARG%は『変身・覚醒！』及び『スタービーナスビリビリーム』を使えるようになった！
+			;PRINTFORMW %CALLNAME:ARG%는 전용 액세서리『ＰＵ・폴리탄』를 장착할 수 있게 되었다！
+			PRINTFORMW %CALLNAME:ARG%는『변신・각성！』및『스타 비너스 찌릿찌릿 빔』을 사용할 수 있게 되었다！
 			SETCOLOR COLOR("YELLOW")
-			PRINTW ※このスキルは『ＰＵ・ポリタン』装備中に限り使用できるスキルです、合わせて一つのスキルとして扱われる点にご注意ください。
+			PRINTW ※본 스킬은『ＰＵ・폴리탄』장착 시에만 사용할 수 있는 스킬이며、하나의 스킬로 취급되므로 주의해 주시기 바랍니다。
 			RESETCOLOR
 		ENDIF
 		RETURN 1
@@ -674,7 +675,7 @@ LOCAL = 0
 ;:0 の方は使う予定がなくなったのでコメントアウト
 ;GV:0 = FINDCHARA(NO,[[キャラ:GV]])
 GV:1 = FINDLASTCHARA(NO,[[キャラ:GV]])
-;BLADE:0 = FINDCHARA(NO,[[キャラ:블레이드(X)]])
+BLADE:0 = FINDCHARA(NO,[[キャラ:블레이드(X)]])
 BLADE:1 = FINDLASTCHARA(NO,[[キャラ:블레이드(X)]])
 DENGEKIKO = FINDCHARA(NO,[[キャラ:덴게키코]])
 IF GET_STATE(CFLAG:(BLADE:1):상태이상) == "DYING" && 進行度 < 100
@@ -685,29 +686,29 @@ ENDIF
 SELECTCASE 進行度
 	CASE 0
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = 前々から思ってたんですけど、やっぱり1対2って卑怯じゃないですか！？
-		LOCALS:1 = 明らかに私のキャパ超えてる気がしてならないんですけど！！
+		LOCALS:0 = 예전부터 생각해고 있었습니다만、역시 1대2는 비겁하지 않나요！？
+		LOCALS:1 = 분명히 제 한계를 넘었다는 생각이 들어서 견딜수가 없습니다만！！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = ほう？ その割にお喋りする余裕はあるように見えるが？
+		LOCALS:0 = 호오？ 그정도면 수다를 떨 여유는 있어 보이는데？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = お喋りして必死に誤魔化さないとやってられないんですよ、こっちは！？
+		LOCALS:0 = 수다를 떨며 필사적으로 속이지 않으면 못하겠어요、이쪽은！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = ふんっ！
-		LOCALS:1 = ならばその減らず口を叩かずとも戦えるように、仕上げてやるまでだ！
+		LOCALS:0 = 흥！
+		LOCALS:1 = 그렇다면 그 억지를 부리지 않고 싸울 수 있도록、마무리 해줄 뿐이야！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
-		LOCALS:0 = （いや……確かにあの軽快な口は恐怖を誤魔化す意味合いもあるんだろうけど）
-		LOCALS:1 = （それと同時に、ヘイトコントロールの類として利用している気がしてならないな…）
+		LOCALS:0 = （아니……확실히 저 경쾌한 입담은 공포를 속이는 의미도 있겠지만）
+		LOCALS:1 = （그와 동시에、헤이트 컨트롤의 일종으로 이용하고 있다는 생각이 들지 않을수 없는데…）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
@@ -715,136 +716,136 @@ SELECTCASE 進行度
 		RESETCOLOR
 	CASE 10
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = 大体っ！ マンツーマンで戦闘のコツを教える感じの指導で良かったですよね！？
-		LOCALS:1 = こんな態々実戦形式でやる必要性あります！？
+		LOCALS:0 = 대충！ 맨투맨으로 전투 요령을 알려주는 느낌의 지도가 좋았어요！？
+		LOCALS:1 = 이렇게 일부러 실전 형식으로 할 필요성이 있나요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 生憎ながら、お前を指導してやれる時間はそう多くない！
-		LOCALS:1 = だから、手っ取り早く学べる実戦形式にした！ それだけの事だっ！
+		LOCALS:0 = 안타깝게도、내가 너를 지도해 줄 수 있는 시간은 그리 많지 않아！
+		LOCALS:1 = 그래서、빠르게 배울 수 있는 실전 형식으로 만들었다！ 그뿐이다！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = だからって、そんな殺気丸出しにならなくてもっ！
-		LOCALS:1 = というかワンチャン大ケガしかねませんよね、これ！？
+		LOCALS:0 = 그렇다고 해서、그렇게 살기를 내뿜지 않아도 돼요！
+		LOCALS:1 = 자칫 잘못하면 크게 다칠수도 있잖아요、이거！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 戦いにおいて傷を受けるの当然の摂理だ！
-		LOCALS:1 = ケガをしたくなければ……全力で、戦えッ！
+		LOCALS:0 = 전투에서 부상을 당하는 것은 당연한 섭리다！
+		LOCALS:1 = 다치고 싶지 않다면……전력으로、싸워라！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
-		LOCALS:0 = ブレイド、なんだからしくないね…
-		LOCALS:1 = いつもはキレのいい動きしてるのに、今は…乱暴って感じがする
+		LOCALS:0 = 블레이드、왠지 어울리지 않네요…
+		LOCALS:1 = 평소에는 기분 좋은 움직임을 하고 있는데、지금은…난폭하다는 느낌이 들어요
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("シアン",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = （無理もない。 育った環境の違いがあるとはいえ、デンゲキコとボクたちとでは戦いへの認識に差がありすぎる）
-		LOCALS:1 = （最近まで平穏とは無縁だったブレイドにとって、中途半端な姿勢のデンゲキコにはどこか思うところがあるんだろう）
+		LOCALS:0 = （무리도 아니다。 자라온 환경의 차이도 있지만、덴게키코와 우리 사이에는 싸움에 대한 인식이 너무 다르다）
+		LOCALS:1 = （최근까지 평온과는 무관했던 블레이드에게、어정쩡한 태도를 보이는 덴게키코에게 뭔가 생각이 있는것 같다）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
-		LOCALS:0 = （時間が惜しいから、うっかり実戦形式にするのに賛同しちゃったけど…）
-		LOCALS:1 = （万が一に備えて、二人を止められるようにしなきゃいけなさそうだ）
+		LOCALS:0 = （시간이 아까워서、무심코 실전 형식으로 만드는데 동의해버렸지만…）
+		LOCALS:1 = （만일의 사태에 대비해、두 사람을 막을 수 있도록 해야 할 것 같다）
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 20
 		RESETCOLOR
 	CASE 20
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = あぁ、もう！ ブレイドさんで手一杯なのに、ＧＶさんの援護が地味にしつこい！
-		LOCALS:1 = ちょっとＧＶさん！ またぼーっとしながらハミングしてていいんですから、横やりするの止めません！？
+		LOCALS:0 = 아아、이런！ 블레이드씨로도 벅찬데、ＧＶ씨가 끈질기게 엄호를！
+		LOCALS:1 = 잠깐 ＧＶ씨！ 또 멍하니 허밍하고 있어도 괜찮으니、옆으로 하는거 멈추지 않을래요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = えっ。 ぼーっとしていたとは思っていたけど、ハミングまでしてたのか、ボク！？
+		LOCALS:0 = 어라。 멍하니 있는 줄은 알았는데、허밍까지 하고 있었구나、나！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = してましたよ！？ なんか触れちゃいけない人だってレベルの雰囲気丸出しでしたよ！？
+		LOCALS:0 = 하던데요！？ 뭔가 건들이면 안 되는 사람이라는 분위기가 물씬 풍겼어요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = そ、そんなに………。
+		LOCALS:0 = 그、그렇게………。
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
-		LOCALS:0 = ちょっと！ ＧＶを変な人みたいに言わないでよ！
-		LOCALS:1 = ＧＶはあなたと違って、いつも頑張ってくれる天使なんだから！
+		LOCALS:0 = 잠깐！ ＧＶ를 이상한 사람처럼 말하지 마！
+		LOCALS:1 = ＧＶ는 너와 달리、항상 열심히 해주는 천사니깐！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("シアン",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = 天使さんならもっとこう、人に優しくして欲しいんですけどぉ！
-		LOCALS:1 = っていうかなんですか、天使って！？ ＧＶさん、妖精さんにそう呼ぶように言いつけてるんですか！？
+		LOCALS:0 = 천사라면 좀더 이렇게、사람들에게 잘해줬으면 좋겠는데요！
+		LOCALS:1 = 뭐랄까요、천사라니！？ ＧＶ씨、요정님께 그렇게 부르라고 하시는 거예요！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = いや、言いつけてない！ アキュラの『イクス』と同じだ！
-		LOCALS:1 = それと妖精さんじゃなくて、彼女にはシアンという立派な名前がある！ ちゃんと名前で呼んであげてくれ！
+		LOCALS:0 = 아니、일러주지 않았어！ 아큐라의『익스』랑 똑같아！
+		LOCALS:1 = 그리고 요정이 아니라、그녀에게는 시안이라는 훌륭한 이름이 있어！ 제대로 이름으로 불러줘！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = えっ。 アキュラさんの『イクス』と同じ…それって、つまり…！
-		LOCALS:1 = つまり、そういうことなんですか！？ ブレイドさん！！？？
+		LOCALS:0 = 엣。 아큐라씨의 『익스』와 같은…그건、그러니깐…！
+		LOCALS:1 = 즉、즉 그런 건가요！？ 블레이드씨！！？？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 何を言っているんだ、お前は…！？
+		LOCALS:0 = 무슨 소리야、너는…！？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 30
 		RESETCOLOR
 	CASE 30
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = くぅっ！ 二つの武器を同時に扱うのって思った以上に難しいですね、これ！？
+		LOCALS:0 = 크윽！ 두개의 무기를 동시에 다루는게 생각보다 어렵네요、이거！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 敵の攻撃に合わせて刀身を振れ！ 柄を握る力をもっと強くしろ！
-		LOCALS:1 = そんなヤワな持ち方では攻撃を受け流すどころか、剣が弾かれるだけだぞ！
+		LOCALS:0 = 적의 공격에 맞춰 칼날을 휘둘러！ 자루를 잡는 힘을 더 강하게 해！
+		LOCALS:1 = 그런 얄팍한 자세로는 공격을 막아내기는 커녕、칼이 튕겨져 나갈 뿐이야！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = すいません！ これ受け流し用じゃなくて攻撃用なんです！
-		LOCALS:1 = というか受け流しに関してはほぼ忘れてました！ ごめんなさい！
+		LOCALS:0 = 죄송하지만！ 이거 회피용이 아니라 공격용이거든요！
+		LOCALS:1 = 그렇다기보다 회피에 관해서는 거의 잊고있었어요！ 죄송합니다！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 攻撃用だと？ だったらもっと攻めの姿勢を見せろ！
-		LOCALS:1 = 受け身のままでは木偶の坊にしかならないぞ、それは！
+		LOCALS:0 = 공격용이라고？ 그럼 좀 더 공격적인 자세를 보여！
+		LOCALS:1 = 수동적인 자세로는 목각인형밖에 안돼、그건！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = 攻撃用は攻撃用でも奥の手ってやつなんですぅ！
-		LOCALS:1 = トドメって時に使わないとなんか勿体ないじゃないですか！ スコアとかっ！
+		LOCALS:0 = 공격용은 공격용이라도 비장의 무기라는 거예요！
+		LOCALS:1 = 결정적일 때 사용하지 않으면 뭔가 아깝잖아요！ 스코어라던가！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = ええいっ、注文の多い奴だな…ッ！
+		LOCALS:0 = 에에잇、주문이 많은 녀석이구나…쯧！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
-		LOCALS:0 = （接近戦用にチャタンヤラクーシャンクを習ってはいるけど、近接武器の技術は未だ習ってないままだったな……）
-		LOCALS:1 = （念の為に近接武器の扱いも、と思ったけど……ここまで大変そうだと、後回しにした方が正解かもしれない）
+		LOCALS:0 = （근접전용으로 차탄야라쿠샹쿠를 배우고는 있지만、근접무기의 기술은 아직 배우지 않은 채로 있었군……）
+		LOCALS:1 = （만약을 위해 근접무기 취급도、라고 생각했지만……이렇게까지 힘들것 같으면、뒤로 미루는 것이 맞을지도 모르겠어）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
@@ -852,60 +853,60 @@ SELECTCASE 進行度
 		進行度 = 40
 	CASE 40
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = くっ、かくなる上は……！ 現時点で使える奥の手を出すしかありません！
+		LOCALS:0 = 큭、이렇게 되면……！ 지금 당장 쓸수 있는 비장의 무기를 꺼낼수밖에 없어요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = むっ……！
+		LOCALS:0 = 읏……！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
-		LOCALS:0 = 奥の手だって…！？
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		LOCALS:0 = 비장의 무기라고…！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = おぉぉぉぉっ！！！ 迸れ─────、
+		LOCALS:0 = 오오오오오！！！ 뿜어져라─────、
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
-		LOCALS:0 = 　　　　　ｱｰﾑﾄﾞﾌﾞﾙｰ
-		LOCALS:1 = ─────蒼き雷霆よッ！！！
+		LOCALS:0 = 　　　　　암드블루
+		LOCALS:1 = ─────푸른뇌정이여！！！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = ｱｰﾑﾄﾞﾌﾞﾙｰ
-		LOCALS:1 = 蒼き雷霆……！？
+		LOCALS:0 = 암드블루
+		LOCALS:1 = 푸른뇌정……！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
-		LOCALS:0 = 待って、ＧＶ！ あれは……！
+		LOCALS:0 = 잠깐만、ＧＶ！ 저건……！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("シアン",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = 今ですッ！ そぉい！
+		LOCALS:0 = 지금입니다！ 그래！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		RESETCOLOR
 		PRINTL
-		PRINTFORMW %CALLNAME:DENGEKIKO%は催涙弾を投擲した！
+		PRINTFORMW %CALLNAME:DENGEKIKO%는 최루탄을 투척했다！
 		PRINTL
 		SETCOLOR 0xff0033
-		LOCALS:0 = っ、しまった……！
+		LOCALS:0 = 앗、당했다……！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
-		LOCALS:0 = くっ、ブラフに引っかかるとは…！
+		LOCALS:0 = 큭、블러프에 걸리다니…！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x1d9eff
-		LOCALS:0 = もう！ あれはフリだってわかってたのに！
+		LOCALS:0 = 아아！ 저건 가짜인줄 알았는데！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("シアン",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 50
 		RESETCOLOR
 		PRINTL
-		PRINTFORMW 敵の能力が大幅に低下した！
+		PRINTFORMW 적의 능력이 크게 떨어졌다！
 		FOR LOCAL,7,17
 			SIF POS(LOCAL) < 0
 				CONTINUE
@@ -919,31 +920,31 @@ SELECTCASE 進行度
 	CASE 100
 		;ブレイド撃破、GV生存ルート
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = よしっ！ なんとかブレイドさんを突破できました！
-		LOCALS:1 = ほんっと、ここまで来るのに苦労したんですからねっ！
+		LOCALS:0 = 좋아！ 어떻게든 블레이드씨를 돌파할 수 있었어요！
+		LOCALS:1 = 아、여기까지 오는데 고생했다니깐요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = くっ、接近戦に持ち込まれたか…！
+		LOCALS:0 = 큿、접근전에 돌입했구나…！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = さぁ、今度こそ3本目は頂きますよ、ＧＶさん！
+		LOCALS:0 = 자、이번에야말로 3번째는 잘 먹겠습니다、ＧＶ씨！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0xff0033
-		LOCALS:0 = っ、いや……ここは攻める！ 逆に11本目は貰っていくよ、デンゲキコ！
+		LOCALS:0 = 앗、아니……여기는 공격한다！ 반대로 11번째는 받아갈게、덴게키코！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x1d9eff
-		LOCALS:0 = 頑張って、ＧＶ！ あんな奴に負けないで！
+		LOCALS:0 = 힘내、ＧＶ！ 저런 녀석에게 지지마！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("シアン",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		RESETCOLOR
-		PRINTFORMW シアンの声援によって%CALLNAME:(GV:1)%の能力が強化された！
-		PRINTFORMW %CALLNAME:(GV:1)%から凄まじい集中力が発揮されているのを感じる…！
+		PRINTFORMW 시안의 응원으로 %CALLNAME:(GV:1)%의 능력이 강화되었다！
+		PRINTFORMW %CALLNAME:(GV:1)%에게서 엄첨난 집중력이 발휘되고 있는 것을 느낀다…！
 		FOR LOCAL,0,6
 			CFLAG:(GV:1):(GET_BATTLESTATUS(LOCAL) + "강화") = MIN(32, CFLAG:(GV:1):(GET_BATTLESTATUS(LOCAL) + "강화") + 4)
 		NEXT
@@ -958,31 +959,31 @@ SELECTCASE 進行度
 	CASE 200
 		;GV撃破、ブレイド生存ルート
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = よしっ！ ＧＶさん撃破！ これで3本目はもう取ったも同然ですね！
+		LOCALS:0 = 좋아요！ ＧＶ씨 격파！ 이걸로 3번째는 벌써 딴 거나 다름없네요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0xff0033
-		LOCALS:0 = ふん、もう勝った気でいるのか。 まだ敵が残っているというのに随分と余裕そうだな？
+		LOCALS:0 = 흥、벌써 이겼다고 생각하는건가。 아직 적이 남아있는데도 여유가 있어보이네？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
-		LOCALS:0 = いやいやいや、私が負けてる理由って大体ブレイドさんにくっつかれてる間に、
-		LOCALS:1 = ＧＶさんの横やりが直撃した時が多いですからね？
+		LOCALS:0 = 아니아니아니、내가 지는 이유는 대부분 블레드이 씨에게 붙들려 있는 동안에、
+		LOCALS:1 = ＧＶ씨의 간섭이 강타했을때가 많으니깐요？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
-		LOCALS:0 = それに、ＧＶさんと単独でやり合うより、ブレイドさんとタイマン張る回数が多いですからね！
-		LOCALS:1 = 必然的にブレイドさんの対処には慣れるという事です！ ここまで来たら勝率は五分五分ですよ、五分五分！
+		LOCALS:0 = 게다가、ＧＶ씨와 단독으로 싸우는 것보다、블레이드씨와 타이밍을 맞추는 횟수가 더 많으니깐요！
+		LOCALS:1 = 필연적으로 블레이드 씨의 대처에는 익숙해진다는 것입니다！ 여기까지 오면 승률은 반반이에요、반반！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
 		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
-		LOCALS:0 = 言ってくれるな…！ ならばお前のその驕り、私の雷撃で打ち砕いてやろう！
+		LOCALS:0 = 말했겠다…！ 그렇다면 너의 그 교만함、나의 뇌격으로 부숴버리겠어！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ブレイド",0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		RESETCOLOR
-		PRINTFORML %CALLNAME:(BLADE:1)%は剣を構え直した！
-		PRINTFORMW %CALLNAME:(BLADE:1)%から気合が止めどなく溢れ出ているのを感じる……！
+		PRINTFORML %CALLNAME:(BLADE:1)%가 검을 다시 잡았다！
+		PRINTFORMW %CALLNAME:(BLADE:1)%에게서 기합이 끝없이 흘러나오는 것을 느낀다……！
 		;暗にナメられている（ナメてない）事を察したブレイド＝サンは静かにﾌﾟｯﾂﾝした…！
 		CFLAG:(BLADE:1):물리피데미지보정 = -15
 		CFLAG:(BLADE:1):마법피데미지보정 = -15
