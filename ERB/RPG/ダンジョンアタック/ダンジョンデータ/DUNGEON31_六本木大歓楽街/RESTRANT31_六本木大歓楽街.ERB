@@ -21,20 +21,20 @@ CALL MESSAGE_WINDOW_D, "노출한여자", @"카페・큐피드의 화살에 어�
 IF 던전플래그:31:26 == 0
 	;初回時
 	CALL MESSAGE_WINDOW_D, "", @"＞비밀스런 그곳이나 풍만한 가슴을 숨기기는 커녕、거기만 노출된 웨이트리스 옷을 입은 여자가 있다/＞이 가게의 접수원인것 같다/＞여자는 맥이 풀린 말투로 이쪽에 말을 걸어왔다…"
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"이런, 고객님은 본 점포의 이용이 처음이시네요/룰을 설명하겠습니다ー"
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"이러언, 고객니임은 본 점포의 이용이 처음이시네요오/룰을 설명하겠습니다아"
 	;再説明時はここから
 	$RESTRANT_INFO
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"본 점포는 고객님의 욕망을 충분히 만족시킬 수 있는 여자들과ー/조금 야한 식사를 즐기는 카페입니다."
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"본 점포는 식기로서 여성을 채용하고 있습니다 그러니ー/마음껏 즐기고 먹고 가세요ー"
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"또한 본 점포는 식당이니ー/핥는 정도의 식사는 상관없습니다만ー/그 이상의 행위는 금지되어 있습니다ー"
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"본 점포는 고객니임의 욕망을 충분히 만족시킬 수 있는 여자들과아/조금 야한 식사를 즐기는 카페입니다아."
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"본 점포는 식기로서 여성을 채용하고 있습니다 그러니이/마음껏 즐기고 먹고 가세요오"
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"또한 본 점포는 식당이니이/핥는 정도의 식사는 상관없습니다마안/그 이상의 행위는 금지되어 있습니다아"
 	;ここ追記分(21/11/19)
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"대신이라고는 합니다만ー/본 점포는 원조를 희망하는 여자아이를 중개하고 있기 때문에ー/희망하시는 분은 그쪽으로 부탁드립니다ー"
-	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그럼 부디ー/본 점포의 서비스를 즐겨가 주시길ー"
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"대신이라고는 합니다마안/본 점포는 원조를 희망하는 여자아이를 중개하고 있기 때문에에/희망하시는 분은 그쪽으로 부탁드립니다아"
+	CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그럼 부디이/본 점포의 서비스를 즐겨가 주시기일"
 	SIF 던전플래그:31:26 == 0
 		던전플래그:31:26 = 1
 ENDIF
 $REST_LOOP
-CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그럼ー/오늘은 어떻게 하시겠습니까아？"
+CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러엄/오늘은 어떻게 하시겠습니까아？"
 CALL INPUT_SELECT_D, "[1]요리를 주문한다く/[2]설명을 듣는다/[3]원조한다/[4]데리고 돌아간다///[0]그만둔다" , , , 2
 SELECTCASE RESULT
 	CASE 2
@@ -45,7 +45,7 @@ SELECTCASE RESULT
 		CALL DUNGEON_WORP,2,14,1
 	CASE 1
 		;食事
-		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러며언/오늘의 메뉴는 이쪽입니다만ー/어떻게 하시겠습니까아？"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러며언/오늘의 메뉴는 이쪽입니다마안/어떻게 하시겠습니까아？"
 		$REST_LOOP_1
 		CALLFORM RESTRANT31_MENU_LIST
 		IF RESULT == 0
@@ -53,7 +53,7 @@ SELECTCASE RESULT
 			GOTO REST_LOOP
 		ELSE
 			CALLFORM RESTRANT31_MENU, RESULT
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"고객니임/다른 주문은ー/있으신가요오？"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"고객니임/다른 주문으은/있으신가요오？"
 			GOTO REST_LOOP_1
 		ENDIF
 	CASE 3
@@ -79,26 +79,26 @@ SELECTCASE RESULT
 		CALL MESSAGE_WINDOW_D, "", @"%RESULTS%を援助しますか？"
 		CALL INPUT_YN_D , "원조한다" , "다른 계집으로 한다"
 		IF RESULT == 0
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러며연/あちらの個室でお待ちくださいー"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러며연/저쪽의 개인실에서 기다려주세요오"
 			CALLFORM SORP_PLAY_{LOCAL}, "価格"
 			MONEY:1 -= RESULT
 			CALLFORM SORP_PLAY_{LOCAL}, "プレイ口上"
 			CALL DUNGEON_WORP,2,14,1
 		ELSE
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"他に希望の女の子はー/ございますかー？"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"또 희망하시는 여자아이느은/없으십니까아？"
 			GOTO REST_LOOP_2
 		ENDIF
 	CASE 4
-		;お持ち帰り
-		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"女の子のー/お持ち帰りですかー？"
+		;테이크 ㅇ웃
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"여자아이의ー/포장은 해드릴까요오？"
 		CALLFORM SORP_CAN_BUY_COUNT_NEW, 3
 		LOCAL = RESULT
 		IF LOCAL == 0
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"残念ですがお持ち帰り希望の女の子がいませんよー/当店はあくまでも仲介なのでー/女の子の同意がないとお持ち帰りできませんよー"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"유감이지만 테이크 아웃을 원하는 여자아이가 없네요오/당점은 어디까지느 중계이므로오/여자아이의 동의가 없으면 테이크 아웃 할 수 없습니다아"
 			GOTO REST_LOOP
 		ENDIF
 		$REST_LOOP_3
-		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"お持ち帰りを希望している女の子はー/以下となりますー"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"테이크 아웃을 희망하는 여자아이느은/이하입니다아"
 		CALLFORM SORP_LIST_NEW, 2, 3
 		IF RESULT == 0
 			;やめる
