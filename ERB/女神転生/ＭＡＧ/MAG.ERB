@@ -6,23 +6,24 @@
 ;
 ;	Edit	Date			Author					Reason
 ;	001		XXXX/XX/XX		------					新規作成
-;	002		2019/09/26		空気 					ショップ画面・調教画面の顔グラを個別に選択できるように
-;	003		2020/02/02		木綿豆腐 				デビルシフター/喰奴/悪魔憑きは悪魔変身時の画面の顔グラを設定できるように
-;	004		2020/06/07		Jガン					顔グラ変更を一新、64種類まで設定できるように
-;	005		2020/06/19		JK好き					武器修練の表示条件が誤っているのを修正
-;	006		2020/07/31		スパロボガスキー		スキル強化者によりスキル名・解説文が変わる処理追記に対応
-;	007		2020/08/08		kamedakeisuke(ﾟдﾟ)		達人シフターは初期リンク悪魔のスキルも編集できないように
-;	008		2020/08/26		MkjX					陥落履歴により耐性強化を更に追加で可能に
-;	009		2020/08/20		Jガン					特殊変身顔グラ追加
-;	010		2020/09/07		Jガン					ペルソナ使いのペルソナを仲魔強化から行えるように、喰奴のスキル変化と追加時の必要MAGを10倍から5倍に
-;	011		2020/08/20		Schrott 				特殊変身顔グラ変更の項目にRabi-RibiMOD（ノア）の記述を追加。
-;	012		2020/12/02		Jガン					顔グラ変更条件の変更、関数追加、選択できる顔グラを制限含めて99までに
-;	013		2021/02/07		Rsp暇人					MAG表示にカンマ区切りを導入
-;	014		2021/02/20		亜人いいよね			悪魔用陥落ボーナス強化の追加
-;	015		2021/04/07		Jガン					スキルロック処理追加(「スキルロック」で検索すると変更場所がわかります)
-;	016		2022/05/22		Collared				外見固定処理追加
-;	017		2022/06/07		Collared				UI整理プロジェクトにより配置変更
-;	018		2022/08/19		JK好き					@MAG_LEARN_SKILL デビルシフター変身後が習得済みのスキルをスキルカードで追加習得出来た問題を修正
+;	002		2019/09/26		空気 					SHOP화면・조교화면の얼굴이미지を個別に選択できるように
+;	003		2020/02/02		木綿豆腐 				데빌시프터/식노/악마憑きは악마변신時の화면の얼굴이미지を설정できるように
+;	004		2020/06/07		Jガン					얼굴이미지변경を一新、64종류まで설정できるように
+;	005		2020/06/19		JK好き					무기수련の표시조건が誤っているのを修正
+;	006		2020/07/31		スパロボガスキー		스킬강화者により스킬名・해설文が変わる処理追記に対応
+;	007		2020/08/08		kamedakeisuke(ﾟдﾟ)		달인シフターは초기링크악마の스킬も編集できないように
+;	008		2020/08/26		MkjX					함락履歴により내성강화を更に추가で可能に
+;	009		2020/08/20		Jガン					특수변신얼굴이미지추가
+;	010		2020/09/07		Jガン					페르소나구사자の페르소나を동료마강화から行えるように、식노の스킬変化と추가時の필요MAGを10倍から5倍に
+;	011		2020/08/20		Schrott 				특수변신얼굴이미지변경の항목にRabi-RibiMOD（ノア）の記述を추가。
+;	012		2020/12/02		Jガン					얼굴이미지변경조건の변경、関数추가、選択できる얼굴이미지を制限含めて99までに
+;	013		2021/02/07		Rsp暇人					MAG표시にカンマ区切りを導入
+;	014		2021/02/20		亜人いいよね			악마用함락ボーナス강화の추가
+;	015		2021/04/07		Jガン					스킬ロック処理추가(「스킬ロック」で検索すると변경場所がわかります)
+;	016		2022/05/22		Collared				外見固定処理추가
+;	017		2022/06/07		Collared				UI整理プロジェクトにより配置변경
+;	018		2022/08/19		JK好き					@MAG_LEARN_SKILL 데빌시프터 변신 후 습득이 완료된 스킬을 스킬카드로 추가 습득할 수 있었던 문제를 수정
+;	019		2022/09/17		kamedakeisuke			Aion식 소환술 쪽 사양을 추가
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
 @SHOPCOMABLE_111
@@ -46,11 +47,11 @@ SIF CFLAG:ARG:노역플래그 == 3 || CFLAG:ARG:이자리에없는플래그 || C
 	RETURN 0
 RETURN 1
 
-;ARG:0…対象キャラ		LOCAL:3…開始時の行数(行削除用)
-;ARG:1…リストの人数	LOCAL:4…スキル変更可否共通判定(異能者でないMASTER、ペルソナ使い、達人は変更不可)
-;LOCAL:0…計算用		LOCAL:5…空きスキル位置(ABL:ARG:(LOCAL:5)で空きスキル。無い場合は-1)
-;LOCAL:1…RESULT保護	LOCAL:6…基本能力強化コスト
-;LOCAL:2…リスト位置	LOCAL:7…造魔レベルアップコスト
+;ARG:0…대상キャラ		LOCAL:3…開始時の行数(行削除用)
+;ARG:1…リストの人数	LOCAL:4…스킬변경可否共通판정(이능자でないMASTER、페르소나구사자、달인は변경不可)
+;LOCAL:0…計算用		LOCAL:5…空き스킬位置(ABL:ARG:(LOCAL:5)で空き스킬。無い場合は-1)
+;LOCAL:1…RESULT保護	LOCAL:6…기본능력강화コスト
+;LOCAL:2…リスト位置	LOCAL:7…조마레벨アップコスト
 @ENHANCE(ARG, ARG:1)
 #LOCALSIZE 10
 #DIMS CONST FUNCNAME = "ENHANCE_BASE", "MAG_SKILL_RANKUP", "MAG_SKILL_DELETE", "", "MAG_ENHANCE_ATTACK", "MAG_ENHANCE_DEFTYPE", "MAG_GROWTH"
@@ -90,13 +91,13 @@ DO
 ;---007 MOD START---
 	LOCAL:4 = ((TALENT:ARG:데빌시프터 || TALENT:ARG:식노 || TALENT:ARG:악마빙의자) && 어느쪽의강화？  == 1) && !TALENT:ARG:달인
 ;---007 MOD END---
-	LOCAL:4 += ((TALENT:ARG:이능자 || ABL:ARG:종족 != 0 || TALENT:ARG:악마빙의자) && !TALENT:ARG:달인 && !TALENT:ARG:페르소나구사자)
-	;↓純サマナーをMPで識別
+	LOCAL:4 += ((TALENT:ARG:이능자 || TALENT:ARG:Aion식소환술 ||ABL:ARG:종족 != 0 || TALENT:ARG:악마빙의자) && !TALENT:ARG:달인 && !TALENT:ARG:페르소나구사자)
+	;↓純서머너をMPで識別
 	LOCAL:4 += (MAXBASE:ARG:ＭＰ == 0 && TALENT:ARG:서머너 == 5)
 	IF (TALENT:ARG:이능자 || TALENT:ARG:달인 || TALENT:ARG:인수라)&&(어느쪽의강화？  == 2|| (TALENT:ARG:데빌시프터 || TALENT:ARG:식노 || TALENT:ARG:악마빙의자)==0)
 		LOCAL:5 = FINDELEMENT(ABL:ARG:0, 0, LOCAL, LOCAL + FLAG:이능자스킬수)
 	ELSE
-		LOCAL:5 = FINDELEMENT(ABL:ARG:0, 0, LOCAL, LOCAL + FLAG:스킬수)
+		LOCAL:5 = FINDELEMENT(ABL:ARG:0, 0, LOCAL, LOCAL + CHARA_SKILLCOUNT_스킬조작용(ARG:0))
 	ENDIF
 	LOCAL:6 = (FLAG:전투난이도 > 3 ? 100 # 250) * (CFLAG:ARG:능력강화횟수 / 3 + 1) * (CFLAG:ARG:능력강화횟수 / 3 + 2) * ＭＡＧ강화ＣＰ보정(ARG) / 1000
 	LOCAL:7 = MAX(1, 2 * (BASE:ARG:LV - 1) * BASE:ARG:LV * (BASE:ARG:LV + 1))
@@ -152,9 +153,12 @@ DO
 	;---- EDIT 014 MOD END -----------------------------
 
 	;---- EDIT 016 MOD START ---------------------------
-	SIF CFLAG:ARG:외견번호 > 0 || LOCAL:9
+	IF CFLAG:ARG:외견번호 > 0
 		PRINTFORML [20] 얼굴 그래픽 변경
 	;---- EDIT 016 MOD END ---------------------------
+	ELSEIF LOCAL:9
+		PRINTFORML [20] 얼굴 그래픽 변경
+	ENDIF
 	PRINTFORM %"\n" * MAX(0, 10 + LOCAL:3 - LINECOUNT)%
 	DRAWLINE
 	PRINTFORMLC \@ LOCAL:2 > 0 ? [107] 이전캐릭터 # %" " * 16% \@
@@ -186,7 +190,7 @@ DO
 		IF !LOCAL
 			CLEARLINE 1
 			;SIF (RESULT == 1 && ARG != MASTER && BASE:ARG:ＭＡＧ < LOCAL:6) || (RESULT == 8 && ABL:ARG:종족 == 45 && BASE:ARG:ＭＡＧ < LOCAL:7)
-			;	REUSELASTLINE ＭＡＧが足りません
+			;	REUSELASTLINE ＭＡＧが발りません
 			SIF RESULT == 4 && LOCAL:4 && ABL:ARG:종족 != 45 && LOCAL:5 < 0
 				REUSELASTLINE 비어있는 스킬 칸이 없습니다
 		ENDIF
@@ -345,12 +349,14 @@ RESTART
 ;스킬랭크업
 ;===================================================
 @MAG_SKILL_RANKUP,ARG,ARG:1
+#DIM 대상者の스킬수, 1
 #DIM 素質ないよ , 1
 #DIM 필요ＭＡＧ , 1
 #DIM ＣＰ보정, 1
 #DIM 어느쪽의강화？ , 1
 
 어느쪽의강화？ = ARG:1
+대상者の스킬수 = CHARA_SKILLCOUNT_스킬조작용(ARG)
 
 ;---- EDIT 013 MOD START -------------------------
 PRINTFORML □ 스킬 랭크업　　(현재ＭＡＧ：{BASE:ARG:ＭＡＧ})
@@ -395,7 +401,7 @@ ELSE
 	어느쪽의강화？  = 1
 ENDIF
 
-FOR LOCAL,0,FLAG:이능자스킬수
+FOR LOCAL, 0, 대상者の스킬수
 ;	IF TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:식노 == 0
 	IF (TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:식노 == 0 && TALENT:ARG:악마빙의자 == 0) || 어느쪽의강화？  == 2
 		LOCALS = 스킬{LOCAL+1}
@@ -438,7 +444,7 @@ INPUT
 
 IF RESULT == 0
 	RETURN 0
-ELSEIF RESULT < 1 || RESULT > FLAG:이능자스킬수
+ELSEIF RESULT < 1 || RESULT > 대상者の스킬수
 	GOTO INPUT_LOOP
 ELSE
 ;	IF TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:식노 == 0
@@ -529,6 +535,10 @@ ELSE
 					CDFLAG:ARG:식노습득스킬:LOCAL = 1
 				CALLFORM SKILL_NAME_{ABL:ARG:LOCALS}
 				PRINTFORMW %조사처리(RESULTS,"으로")% 랭크업 시켰다!
+				
+				SIF TALENT:ARG:Aion식소환술
+					CALL Aion식소환술_인간시스킬반영, ARG
+				
 			CASE 1
 				GOTO PRINT_LIST
 		ENDSELECT
@@ -545,6 +555,9 @@ RESTART
 ;스킬변이
 ;===================================================
 @MAG_SKILL_MUTATION,ARG
+#DIM 대상者の스킬수, 1
+대상者の스킬수 = CHARA_SKILLCOUNT_스킬조작용(ARG)
+
 ;---- EDIT 013 MOD START -------------------------
 PRINTFORML □ 스킬 변이　　(현재 ＭＡＧ：%TOSTR(BASE:ARG:ＭＡＧ, "#,###")%)
 ;---- EDIT 013 MOD END -------------------------
@@ -553,7 +566,7 @@ PRINTL 어느 스킬을 변이시키겠습니까?
 
 
 
-FOR LOCAL,0,FLAG:이능자스킬수
+FOR LOCAL, 0, 대상者の스킬수
 	IF TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:식노 == 0 && TALENT:ARG:악마빙의자 == 0
 		LOCALS = 스킬{LOCAL+1}
 	ELSE
@@ -570,7 +583,7 @@ FOR LOCAL,0,FLAG:이능자스킬수
 		LOCALS = ({LOCAL:2}MAG)
 		PRINTFORM %LOCALS,11%
 	ENDIF
-	SIF LOCAL % 3 == 2 || LOCAL+1 == FLAG:이능자스킬수
+	SIF LOCAL % 3 == 2 || LOCAL+1 == 대상者の스킬수
 		PRINTL 
 NEXT
 DRAWLINE
@@ -581,7 +594,7 @@ INPUT
 
 IF RESULT == 0
 	RETURN 0
-ELSEIF RESULT < 1 || RESULT > FLAG:이능자스킬수
+ELSEIF RESULT < 1 || RESULT > 대상者の스킬수
 	GOTO INPUT_LOOP
 ELSE
 	LOCALS = 스킬{RESULT}
@@ -631,6 +644,8 @@ ELSE
 		CDFLAG:ARG:식노습득스킬:LOCAL = 1
 	CALLFORM SKILL_NAME_{ABL:ARG:LOCALS}
 	PRINTFORMW %조사처리(RESULTS,"를")% 습득했다!
+	SIF TALENT:ARG:Aion식소환술
+		CALL Aion식소환술_인간시스킬반영, ARG
 ENDIF
 CALL SYNC_STATUS,ARG
 CALL HEALTH_CHARA,ARG
@@ -702,7 +717,7 @@ ELSE
 			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %조사처리(RESULTS,"를")% 습득했다
 			ITEM:(10000+LOCAL) -= 1
 			CALL SP_SKILL_CHECK,LOCAL
-			;特殊スキルだとスキルロック
+			;特殊스킬だと스킬ロック
 			IF RESULT
 				IF 어느쪽의강화？ == 1 && (TALENT:ARG:데빌시프터 || TALENT:ARG:식노 || TALENT:ARG:악마빙의자)
 					SETBIT CFLAG:ARG:악마변신스킬잠금설정,HAVE_SKILL(ARG,LOCAL,1)
@@ -710,6 +725,8 @@ ELSE
 					SETBIT CFLAG:ARG:스킬잠금설정,HAVE_SKILL(ARG,LOCAL,1)
 				ENDIF
 			ENDIF
+			SIF TALENT:ARG:Aion식소환술
+				CALL Aion식소환술_인간시스킬반영, ARG
 		CASE 1
 			RESTART
 	ENDSELECT
@@ -720,6 +737,7 @@ RETURN 0
 ;스킬소거
 ;======================================
 @MAG_SKILL_DELETE,ARG,ARG:1
+#DIM 대상者の스킬수, 1
 #DIM 필요ＭＡＧ, 1
 #DIM ＣＰ보정, 1
 #DIM 어느쪽의강화？ , 1
@@ -727,6 +745,7 @@ RETURN 0
 #DIM LINE , 1
 
 어느쪽의강화？ = ARG:1
+대상者の스킬수 = CHARA_SKILLCOUNT_스킬조작용(ARG)
 
 ;---- EDIT 013 MOD START -------------------------
 PRINTFORML □ 스킬 소거　　(현재ＭＡＧ：%TOSTR(BASE:ARG:ＭＡＧ, "#,###")%)
@@ -786,7 +805,7 @@ LINE = LINECOUNT
 ＣＰ보정 = ＭＡＧ강화ＣＰ보정(ARG)
 $SKILL_LOOP
 CLEARLINE LINECOUNT - LINE
-FOR LOCAL,0,FLAG:이능자스킬수
+FOR LOCAL,0, 대상者の스킬수
 	IF (TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:식노 == 0) || 어느쪽의강화？  == 2
 		LOCALS = 스킬{LOCAL+1}
 	ELSE
@@ -812,7 +831,7 @@ FOR LOCAL,0,FLAG:이능자스킬수
 			PRINTFORM %TOSTR(POWER(RESULT,2)*200 * ＣＰ보정 / 1000, "#,###"), 11%MAG
 			;---- EDIT 013 MOD END -------------------------
 		ENDIF
-		SIF LOCAL % 3 == 2 || LOCAL+1 == FLAG:이능자스킬수
+		SIF LOCAL % 3 == 2 || LOCAL+1 == 대상者の스킬수
 			PRINTL 
 	ENDIF
 	RESETCOLOR
@@ -829,7 +848,7 @@ ELSEIF RESULT == 99
 	;스킬잠금설정
 	CALL SKILL_ROCK_SETTING, ARG, LOCKS == "악마변신스킬잠금설정" ? 1 # 0
 	GOTO SKILL_LOOP
-ELSEIF RESULT < 1 || RESULT > FLAG:이능자스킬수 || GETBIT(CFLAG:ARG:LOCKS,RESULT)
+ELSEIF RESULT < 1 || RESULT > 대상者の스킬수 || GETBIT(CFLAG:ARG:LOCKS,RESULT)
 	CLEARLINE 1
 	GOTO INPUT_LOOP
 ELSE
@@ -855,6 +874,8 @@ ELSE
 	ABL:ARG:LOCALS = 0
 	;대상キャラが악마で장비지식스킬が削除대상で장비지식스킬系をまったく소지していない場合は장비を해제する
 	CALL SKILL_EQUIPTHEORY_DEL_SKILL, ARG, LOCAL:1
+	SIF TALENT:ARG:Aion식소환술
+		CALL Aion식소환술_인간시스킬반영, ARG
 ENDIF
 CALL SYNC_STATUS,ARG
 CALL HEALTH_CHARA,ARG
@@ -864,7 +885,7 @@ CALL HEALTH_CHARA,ARG
 
 
 ;===================================================
-;通常攻撃カスタマイズ
+;通常공격カスタ마이ズ
 ;===================================================
 @MAG_ENHANCE_ATTACK,ARG
 #LOCALSIZE 6
@@ -2397,10 +2418,10 @@ CALL INPUT_SELECT,LOCAL:LOCAL,LOCALS:(LOCAL ++),LOCAL:LOCAL,LOCALS:(LOCAL ++),LO
 		INPUT
 		IF (RESULT >= 0 && RESULT < 64 && GETBIT(SELECT_P,RESULT)) || (RESULT >= 64 && RESULT < 100 && GETBIT(SELECT_P:1,RESULT - 64))
 			CFLAG:ARG:얼굴이미지 = RESULT
-		;	CFLAG:ARG:ショップ顔グラ = RESULT
-		;	CFLAG:ARG:調教顔グラ = RESULT
-		;	CFLAG:ARG:悪魔変身顔グラ = RESULT
-		;	CFLAG:ARG:汎用悪魔変身顔グラ = RESULT
+		;	CFLAG:ARG:SHOP얼굴이미지 = RESULT
+		;	CFLAG:ARG:조교얼굴이미지 = RESULT
+		;	CFLAG:ARG:악마변신얼굴이미지 = RESULT
+		;	CFLAG:ARG:범용악마변신얼굴이미지 = RESULT
 		ENDIF
 	ELSEIF RESULT == 1
 		LOCAL = 1
@@ -2457,7 +2478,7 @@ CALL INPUT_SELECT,LOCAL:LOCAL,LOCALS:(LOCAL ++),LOCAL:LOCAL,LOCALS:(LOCAL ++),LO
 		LOCAL = 1
 		SELECT_P = 0
 		PRINTFORML □%LOCALS:RESULT%
-		PRINTFORML どの顔グラに変更しますか？
+		PRINTFORML どの얼굴이미지に변경しますか？
 		FOR LCOUNT:1,0,LOCAL:10 + 1
 			IF EXIST_PICTURE((CFLAG:ARG:외견번호), LCOUNT:1 * 100 + IMG_TYPE % 100)
 				IF LCOUNT:1 < 64
@@ -2660,9 +2681,9 @@ RESTART
 ;---- EDIT 008 ADD START -------------------------
 @특수변신얼굴이미지변경,ARG
 #FUNCTION
-;-RETURNF 0	特殊変身顔グラの条件を持っていない
-;		 -1	特殊変身顔グラの条件を持っているけどまだ変更しない
-;		  1	特殊変身顔グラの条件を持っていて変更する
+;-RETURNF 0	특수변신얼굴이미지の조건を持っていない
+;		 -1	특수변신얼굴이미지の조건を持っているけどまだ변경しない
+;		  1	특수변신얼굴이미지の조건を持っていて변경する
 
 ;IF HAVE_SKILL(ARG, XXXX)
 ;	IF SKILL_GAGE__GET(ARG, XXXX)
@@ -3318,8 +3339,8 @@ RETURNF MIN((ABL:ARG:종족 == 36 ? 905 # 900+MAXBASE:ARG:CP), 1100)
 
 @스킬변경가능확인(ARG)
 #FUNCTION
-;人間時のみだと　1
-;変身後のみだと　2
+;인간시のみだと　1
+;변신後のみだと　2
 ;両方とも可だと　3　を返す
 LOCAL:0 = 0
 LOCAL:1 = 0

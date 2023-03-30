@@ -22,8 +22,9 @@
 ;	010		2019/07/02		JK好き					장비화면생략설정を調整
 ;	011		2019/12/25		Jガン					SKILL_NAMEの引数を正しいものに
 ;	012		2019/01/13		Jガン					「장비상세선택」選択時の処理を추가
-;	013		2021/06/23		lemukot					半魔あなたに対する生得武器の装備制限の緩和
-;	014		2021/09/16		JK好き					@全装備解除 特殊弾は解除されないように変更
+;	013		2021/06/23		lemukot					半魔당신に対する생득무기の장비制限の緩和
+;	014		2021/09/16		JK好き					@全장비해제 특수탄は해제されないように변경
+;	015		2022/09/24		kamedakeisuke			생득무기의 장비제한을 완화（반마＋무기 or사격무기 보유시도 추가）、및 Aion도 생득무기（COMP）를 운용할 수 있게
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;===================================================================
 ;장비品の변경等
@@ -83,7 +84,7 @@ SIF 변경장비부위 != -1
 	CALL STATUS_WINDOW_EQUIP_ITEM_LIST , LOCAL:10 , 0 , 0 , 변경장비부위 , "リスト作成"
 VARSET 변경예정장비 , -1
 CALL 장비변경시스테이터스갱신 , LOCAL:10
-;ここまでが変数など初期化処理
+;ここまでが変数など초기화処理
 CALL PUEQ_SET(LOCAL:10);PUEQ
 
 $PRINTLOOP
@@ -308,7 +309,7 @@ ELSEIF RESULTS == "장비상세선택" && 변경장비부위 >= 0
 	CALL 장비변경시스테이터스갱신 , LOCAL:10
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "+" || RESULTS == "-"
-	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시변경%RESULTS%"
+	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시전환%RESULTS%"
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "≫"
 	FLAG:윈도우내성표시설정 = ++FLAG:윈도우내성표시설정 % 3
@@ -604,7 +605,7 @@ RETURN 0
 
 @PRINT_EQUIPLIST,ARG
 #DIM LCOUNT
-;1行目に레벨・속성を표시
+;1行눈に레벨・속성を표시
 CALL PRINT_BASE_STATUS,ARG
 
 IF FLAG:커스텀게임화면
@@ -664,14 +665,14 @@ IF FLAG:커스텀게임화면
 		PRINTL
 	ENDIF
 	DRAWLINE
-	;5～10行目に기본能力値と전투能力値を표시
+	;5～10行눈に기본能力値と전투能力値を표시
 	FOR LCOUNT, 0, 6
 		PRINTFORM %GET_BASESTATUS(LCOUNT+1),5%{MAXBASE:ARG:(GET_BASESTATUS(LCOUNT+1)),5}({BASE:ARG:(GET_BASESTATUS(LCOUNT+1)),5})　　　　　　　　
 		PRINTFORM %GET_BATTLESTATUS(LCOUNT),10,LEFT% 
 		PRINTFORML {MAXBASE:ARG:(GET_BATTLESTATUS(LCOUNT)),6}
 	NEXT
 	DRAWLINE
-	;11、12行目に被공격상성と継承可能표시
+	;11、12行눈に被공격상성と継承可能표시
 	PRINTL  전투상성
 	LOCAL:1 = GETCOLOR()
 	;現在の色を退避しておく（적の스테이터스を표시した時など）
@@ -725,7 +726,7 @@ IF FLAG:커스텀게임화면
 	ENDIF
 ELSE
 	PRINTFORML ＨＰ[{BASE:ARG:ＨＰ,4}/{MAXBASE:ARG:ＨＰ,4}]　　ＭＰ[{BASE:ARG:ＭＰ,4}/{MAXBASE:ARG:ＭＰ,4}]　　\@MAXBASE:ARG:CP>0?ＣＰ:{MAXBASE:ARG:CP,3}#\@
-	;4行目に통상공격の性能を表示
+	;4行눈に통상공격の性能を표시
 	PRINTFORM 통상공격：%GET_TYPE(ABL:ARG:공격상성),6,LEFT%　{ABL:ARG:최저공격횟수,2}-{ABL:ARG:최대공격횟수,2}회　사거리:
 	IF ABL:ARG:사거리 == 1
 		PRINT Ｓ
@@ -767,14 +768,14 @@ ELSE
 		PRINTL
 	ENDIF
 	DRAWLINE
-	;5～10行目に기본能力値と전투能力値を표시
+	;5～10行눈に기본能力値と전투能力値を표시
 	FOR LCOUNT, 0, 6
 		PRINTFORM %GET_BASESTATUS(LCOUNT+1),4%{MAXBASE:ARG:(GET_BASESTATUS(LCOUNT+1)),4}({BASE:ARG:(GET_BASESTATUS(LCOUNT+1)),4})　　　　　　　　
 		PRINTFORM %GET_BATTLESTATUS(LCOUNT),8,LEFT% 
 		PRINTFORML {MAXBASE:ARG:(GET_BATTLESTATUS(LCOUNT)),5}
 	NEXT
 	DRAWLINE
-	;11、12行目に被공격상성と継承可能표시
+	;11、12行눈に被공격상성と継承可能표시
 	PRINTL 전투상성
 	FOR LOCAL,0,FLAG:상성수
 			PRINTFORM %GET_TYPE(LOCAL) %\@(MAXBASE:ARG:(GET_TYPE(LOCAL)) < 0) ? 흡 # 　\@
@@ -938,12 +939,12 @@ IF L_MODE
 
 		;上記以外
 		CASEELSE
-			;- 通常出力
+			;- 通常出힘
 			L_MODE = 0
 	ENDSELECT
 ENDIF
 
-;- 通常出力時
+;- 通常出힘時
 IF !L_MODE
 	FOR LOCAL,2000+ARG*500,2000+(ARG+1)*500
 		SIF ITEMPRICE:LOCAL == 0
@@ -2139,7 +2140,7 @@ RETURN
 ;---- EDIT 006 MOD START -------------------------
 @생득무기소지,ARG
 #FUNCTION
-SIF NO:ARG == [[キャラ:유리아]] || NO:ARG == [[キャラ:에레지]] ||  NO:ARG == [[キャラ:제트]] || (ABL:ARG:종족 == 36 &&( ARG == MASTER || TALENT:ARG:갈퀴 || TALENT:ARG:날개 ||  TALENT:ARG:갈퀴발 ||  TALENT:ARG:꼬리 ||  TALENT:ARG:부리 ||  TALENT:ARG:촉수 ||  TALENT:ARG:짐승 ||  TALENT:ARG:새 ||  TALENT:ARG:파충류 ||  TALENT:ARG:물고기))
+SIF NO:ARG == [[キャラ:유리아]] || NO:ARG == [[キャラ:에레지]] || NO:ARG == [[キャラ:제트]] || TALENT:ARG:Aion || (ABL:ARG:종족 == 36 &&( ARG == MASTER || TALENT:ARG:갈퀴 || TALENT:ARG:날개 ||  TALENT:ARG:갈퀴발 ||  TALENT:ARG:꼬리 ||  TALENT:ARG:부리 ||  TALENT:ARG:촉수 ||  TALENT:ARG:짐승 ||  TALENT:ARG:새 ||  TALENT:ARG:파충류 ||  TALENT:ARG:물고기 || TALENT:ARG:무기 || TALENT:ARG:사격무기))
 	RETURNF 1
 RETURNF 0
 ;---- EDIT 006 MOD END   -------------------------

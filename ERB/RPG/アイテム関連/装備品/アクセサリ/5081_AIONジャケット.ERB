@@ -1,0 +1,77 @@
+﻿;======================================================
+;장비품의 데이터
+;Aion 자켓, 또다른 이름은 게이밍 자켓
+;반짝반짝 빛나는 화려한 상의
+;효과는 지금부터 생각함（잠정적으로 활천효과
+;======================================================
+
+@기본능력수정_5081,ARG,ARG:1 = -1
+SELECTCASE ARG
+	CASE 6
+		RETURN 2
+ENDSELECT
+RETURN 0
+
+@전투능력수정_5081,ARG,ARG:1 = -1
+
+SELECTCASE ARG
+ENDSELECT
+RETURN 0
+
+@방어상성_5081,ARG,ARG:1 = -1
+
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+@공격상성_5081, ARG = -1
+
+RETURN 2
+
+@최저공격횟수_5081, ARG = -1
+
+RETURN 1
+
+@최대공격횟수_5081, ARG = -1
+
+RETURN 1
+
+@사거리_5081, ARG = -1
+
+RETURN 1
+
+@공격범위_5081, ARG = -1
+
+RETURN 1
+
+@장비箇所_5081
+
+RETURN GET_EQUIPNUM("악세서리")
+
+@필요레벨_5081
+RETURN 1
+
+@장비조건_5081,ARG
+SIF TALENT:ARG:Aion
+	RETURN 0
+RETURN 1
+
+@장비조건설명_5081
+PRINTL 장비조건：Aion
+
+@구입조건_5081
+RETURN 0
+
+@引継ぎ可不可_5081
+RETURN 0
+
+@장비추가스킬_5081,ARG,ARG:1 = -1
+SELECTCASE ARG
+	CASE 0
+		RETURN 2400
+ENDSELECT
+RETURN 0
+
+@장비해설_5081
+PRINTL 최대 HP가 10％ 오른다
+PRINTL Aion의 기술로 만들어진 재킷. 왠지 빛이 난다

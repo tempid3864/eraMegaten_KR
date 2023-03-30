@@ -1,4 +1,5 @@
-﻿
+﻿;장비조건판정을 @생득무기소지 의 함수를 쓰는 형태로 변경
+
 ;======================================================
 ;장비품의 데이터
 ;생득무기
@@ -70,7 +71,7 @@ RETURN 0
 RETURN 1
 
 @장비조건_2093,ARG
-SIF ABL:ARG:종족 == 36 && (NO:ARG == [[キャラ:유리아]] || TALENT:ARG:갈퀴 || TALENT:ARG:날개 || TALENT:ARG:갈퀴발 || TALENT:ARG:꼬리 || TALENT:ARG:부리 || TALENT:ARG:촉수 || TALENT:ARG:짐승 || TALENT:ARG:새 || TALENT:ARG:파충류 || TALENT:ARG:물고기)
+SIF 생득무기소지(ARG)
 	RETURN 1
 RETURN 0
 

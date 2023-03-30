@@ -1,12 +1,34 @@
 ﻿;==========================================================
-;そのキャラが최대でいくつ스킬を持てるのか調べる
+;그 캐릭터가 최대 몇 개의 스킬을 가질 수 있는지 조사함
 ;ARG 대상のキャラ
-;ARG:1 0=人間時　1=今の状態時
+;ARG:1 0=인간시　1=今の상태時
 ;==========================================================
-@CHARA_SKILLCOUNT(ARG,ARG:1 = 1)
+@CHARA_SKILLCOUNT(ARG, ARG:1 = 1)
 #FUNCTION
 SIF CFLAG:ARG:PT플래그 < 1 && CFLAG:ARG:보스플래그
 	RETURNF 20
+SIF TALENT:ARG:Aion식소환술 && CFLAG:ARG:링크악마 > 0
+	RETURNF 4+FLAG:스킬수
+SIF TALENT:ARG:Aion식소환술
+	RETURNF 4
+SIF TALENT:ARG:페르소나구사자
+	RETURNF FLAG:스킬수
+SIF (TALENT:ARG:이능자 || TALENT:ARG:달인 || TALENT:ARG:인수라) && (!CFLAG:ARG:악마변신 || ARG:1 == 0)
+	RETURNF FLAG:이능자스킬수
+RETURNF FLAG:스킬수
+
+
+;==========================================================
+;↑の関数の別バージョン。主にAion式の스킬操作時に사용する（링크악마の有無にかかわらず4までしか見ない）
+;ARG 대상のキャラ
+;ARG:1 0=인간시　1=今の상태時
+;==========================================================
+@CHARA_SKILLCOUNT_스킬조작용(ARG, ARG:1 = 1)
+#FUNCTION
+SIF CFLAG:ARG:PT플래그 < 1 && CFLAG:ARG:보스플래그
+	RETURNF 20
+SIF TALENT:ARG:Aion식소환술
+	RETURNF 4
 SIF TALENT:ARG:페르소나구사자
 	RETURNF FLAG:스킬수
 SIF (TALENT:ARG:이능자 || TALENT:ARG:달인 || TALENT:ARG:인수라) && (!CFLAG:ARG:악마변신 || ARG:1 == 0)

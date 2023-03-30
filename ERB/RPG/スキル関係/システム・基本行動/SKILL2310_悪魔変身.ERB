@@ -1,9 +1,11 @@
-﻿;ＣＨＡＮＧＥ
-;システム用スキルです
+﻿;	002		2022/09/17			kamedakeisuke		Aion식 소환술 쪽의 사양을 추가
+
+;ＣＨＡＮＧＥ
+;システム用스킬です
 
 ;스킬명
 @SKILL_NAME_2310,ARG
-;キャラ指定なしまたは凡例表示(REmane含む)の場合
+;キャラ指定なしまたは凡例표시(REmane含む)の場合
 IF ARG == -1
 	RESULTS = 악마변신
 ELSE
@@ -15,7 +17,6 @@ ELSE
 ENDIF
 SIF SKILL_CHANGE(ARG, [[キャラ:다이고]])
 		RESULTS = 백호변생
-
 
 ;　명중
 @SKILL_HITRATE_2310, ARG
@@ -96,75 +97,112 @@ RETURN 0
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
+;데빌시프터 등의 변신직, 및 Aion식 소환술의 동료마 세트시의 처리
+;ARG   변신하는 캐릭터
+;ARG:1 변신시의 메세지를 띄울까 말까？
 @ACTION_2310,ARG,ARG:1 = 0
 #DIM 仲魔
-#DIM 変身前ＨＰ
-#DIM 変身前ＭＰ
+#DIM 변신前ＨＰ
+#DIM 변신前ＭＰ
 #DIM 変数
 仲魔 = FINDCHARA_ID(CFLAG:ARG:링크악마)
 
 SIF ARG:1 == 1
 	PRINTFORMW %AUTO_SPLIT("악마로 모습을 바꾸었다！_인간으로 모습으로 돌아왔다！","_",CFLAG:ARG:악마변신)%
 
-CFLAG:ARG:악마변신 = !CFLAG:ARG:악마변신
+SIF TALENT:ARG:Aion식소환술 < 1
+	CFLAG:ARG:악마변신 = !CFLAG:ARG:악마변신
+
 SIF 仲魔 > 0 && TALENT:ARG:데빌시프터
 	CFLAG:仲魔:피변신플래그 = CFLAG:ARG:악마변신
 
-;変身先悪魔がパーティに居るなら外す
+;변신先악마がパーティに居るなら外す
 SIF CFLAG:ARG:악마변신 && CFLAG:ARG:링크악마 > 0 && 仲魔 > 0 && CPOS(仲魔) > 0
 	CALL REMOVE_POSITION, CPOS(仲魔)
 
-FOR LOCAL,1,FLAG:이능자스킬수 + 1
-	SELECTCASE 1
-		;변신해제
-		CASE CFLAG:ARG:악마변신 == 0
-			;仲魔に変身ではない＝初期変身悪魔から変身解除なら、初期変身悪魔スキルの並び順を更新
-			SIF !(MIN(CFLAG:ARG:링크악마,仲魔) > 0)
-				ABL:ARG:@"초기변신악마스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
-			ABL:ARG:@"스킬{LOCAL}" = ABL:ARG:@"인간시스킬{LOCAL}"
-		;仲魔に변신
-		CASE MIN(CFLAG:ARG:링크악마,仲魔) > 0
-			ABL:ARG:@"인간시스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
-			ABL:ARG:@"스킬{LOCAL}"       = ABL:仲魔:@"스킬{LOCAL}"
-		;초기변신악마に변신
-		CASEELSE
-			ABL:ARG:@"인간시스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
-			ABL:ARG:@"스킬{LOCAL}"       = ABL:ARG:@"초기변신악마스킬{LOCAL}"
-	ENDSELECT
-NEXT
+
+;Aion식소환술処理
+IF TALENT:ARG:Aion식소환술
+	;-1以外が返ってきたときは장비악마の설정
+	IF CFLAG:ARG:링크악마 > 0 && 仲魔 > 0 && CPOS(仲魔) > 0
+		CALL REMOVE_POSITION, CPOS(仲魔)
+		;피변신플래그で処理
+		CFLAG:仲魔:피변신플래그 = 1
+	ENDIF
+ENDIF
+
+
+;Aion식소환술
+IF TALENT:ARG:Aion식소환술
+	;本体側스킬をセット
+	FOR LOCAL,1, 5
+		ABL:ARG:@"스킬{LOCAL}" = ABL:ARG:@"인간시스킬{LOCAL}"
+	NEXT
+	IF CFLAG:ARG:링크악마 < 1
+		;링크악마が無い場合、스킬5～12をクリア
+		FOR LOCAL,5, FLAG:스킬수 + 5
+			ABL:ARG:@"스킬{LOCAL}" = 0
+		NEXT
+	ELSE
+		;스킬5～12に仲魔側스킬をセット
+		FOR LOCAL,5, FLAG:스킬수 + 5
+			ABL:ARG:@"스킬{LOCAL}"       = ABL:仲魔:@"스킬{LOCAL-4}"
+		NEXT
+	ENDIF
+;それ以外の변신処理
+ELSE
+	FOR LOCAL,1,FLAG:이능자스킬수 + 1
+		SELECTCASE 1
+			;변신해제
+			CASE CFLAG:ARG:악마변신 == 0
+				;仲魔に변신ではない＝초기변신악마から변신해제なら、초기변신악마스킬の並び順を更新
+				SIF !(MIN(CFLAG:ARG:링크악마,仲魔) > 0)
+					ABL:ARG:@"초기변신악마스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
+				ABL:ARG:@"스킬{LOCAL}" = ABL:ARG:@"인간시스킬{LOCAL}"
+			;仲魔に변신
+			CASE MIN(CFLAG:ARG:링크악마,仲魔) > 0
+				ABL:ARG:@"인간시스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
+				ABL:ARG:@"스킬{LOCAL}"       = ABL:仲魔:@"스킬{LOCAL}"
+			;초기변신악마に변신
+			CASEELSE
+				ABL:ARG:@"인간시스킬{LOCAL}" = ABL:ARG:@"스킬{LOCAL}"
+				ABL:ARG:@"스킬{LOCAL}"       = ABL:ARG:@"초기변신악마스킬{LOCAL}"
+		ENDSELECT
+	NEXT
+ENDIF
 
 IF BASE:ARG:ＨＰ == MAXBASE:ARG:ＨＰ
-	変身前ＨＰ = -1
+	변신前ＨＰ = -1
 ELSE
-	変身前ＨＰ = MAXBASE:ARG:ＨＰ
+	변신前ＨＰ = MAXBASE:ARG:ＨＰ
 ENDIF
 IF BASE:ARG:ＭＰ == MAXBASE:ARG:ＭＰ
-	変身前ＭＰ = -1
+	변신前ＭＰ = -1
 ELSE
-	変身前ＭＰ = MAXBASE:ARG:ＭＰ
+	변신前ＭＰ = MAXBASE:ARG:ＭＰ
 ENDIF
 
 CALL SYNC_STATUS,ARG
-IF 変身前ＨＰ == -1
+IF 변신前ＨＰ == -1
 	BASE:ARG:ＨＰ = MAXBASE:ARG:ＨＰ
 ELSE
-	仲魔 = 10000000 * MAXBASE:ARG:ＨＰ / 変身前ＨＰ
+	仲魔 = 10000000 * MAXBASE:ARG:ＨＰ / 변신前ＨＰ
 	BASE:ARG:ＨＰ = MAX(1 , BASE:ARG:ＨＰ * 仲魔 / 10000000)
 	;失われたであろう小数点以下の数字を補填
-	SIF !CFLAG:ARG:악마변신 && BASE:ARG:ＨＰ > 1 && MAXBASE:ARG:ＨＰ != 変身前ＨＰ
+	SIF !CFLAG:ARG:악마변신 && BASE:ARG:ＨＰ > 1 && MAXBASE:ARG:ＨＰ != 변신前ＨＰ
 		BASE:ARG:ＨＰ += 1
 ENDIF
-IF 変身前ＭＰ == -1
+IF 변신前ＭＰ == -1
 	BASE:ARG:ＭＰ = MAXBASE:ARG:ＭＰ
 ELSE
-	仲魔 = 10000000 * MAXBASE:ARG:ＭＰ / 変身前ＭＰ
+	仲魔 = 10000000 * MAXBASE:ARG:ＭＰ / 변신前ＭＰ
 	BASE:ARG:ＭＰ = MAX(0 , BASE:ARG:ＭＰ * 仲魔 / 10000000)
 	;失われたであろう小数点以下の数字を補填
-	SIF !CFLAG:ARG:악마변신 && BASE:ARG:ＭＰ > 1 && MAXBASE:ARG:ＭＰ != 変身前ＭＰ
+	SIF !CFLAG:ARG:악마변신 && BASE:ARG:ＭＰ > 1 && MAXBASE:ARG:ＭＰ != 변신前ＭＰ
 		BASE:ARG:ＭＰ += 1
 ENDIF
 
-;入力行動をATTACK→GUN→GUARDの順に試行していく
+;입력행동をATTACK→GUN→GUARDの順に試行していく
 CALL CHECK_ACTIONABLE,ARG,0
 IF RESULT == 1
 	CFLAG:(ARG):입력행동 = 0

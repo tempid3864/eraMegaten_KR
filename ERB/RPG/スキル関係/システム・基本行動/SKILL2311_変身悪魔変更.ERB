@@ -1,9 +1,15 @@
-﻿;ＣＨＡＮＧＥ
-;システム用スキルです
+﻿;	002		2022/09/17			kamedakeisuke		Aion식 소환술 쪽의 사양을 추가
+
+;ＣＨＡＮＧＥ
+;システム用스킬です
 
 ;스킬명
 @SKILL_NAME_2311,ARG
-RESULTS = 변신악마변경
+IF TALENT:ARG:Aion식소환술
+	RESULTS = SET악마변경
+ELSE
+	RESULTS = 변신악마변경
+ENDIF
 
 ;　명중
 @SKILL_HITRATE_2311, ARG
@@ -85,7 +91,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @CASTING_LINK_DEVIL(ARG:0)
-;人間・造間・半魔は無理
+;인간・造間・半魔は無理
 SIF (ABL:(ARG:0):종족 == 0 || ABL:(ARG:0):종족 == 45 || ABL:(ARG:0):종족 == 36)
 	RETURN 0
 SIF CFLAG:(ARG:0):피링크플래그 > -1
@@ -104,7 +110,18 @@ RETURN 1
 		PRINTFORM ＜page.{P + 1}/{A / 리스트표시수() + 1}＞
 	PRINTL
 DRAWLINE
+
 PRINTFORML 　　　[1001] %CSVNAME(CFLAG:Z:초기링크악마,0)%
+
+@UP_PRINT_ACTION_2311_Aion
+	PRINTFORM 누구를 COMP에 SET합니까？　
+	SIF A > 리스트표시수()
+		PRINTFORM ＜page.{P + 1}/{A / 리스트표시수() + 1}＞
+	PRINTL
+DRAWLINE
+
+PRINTFORML 　　　[1001] 동료마를 COMP에서 뺀다
+
 
 @CASTING_RESULT_ACTION_2311 , ARG
 SIF ARG == 1001
@@ -114,13 +131,17 @@ RETURN ARG , 1
 @ACTION_2311,ARG,ARG:1
 #LOCALSIZE 1
 SWAP Z , ARG
-;キャラリストを表示・選択
-CALL INPUT_CHARA_LIST("누구와 링크합니까？", "CASTING_LINK_DEVIL" , "UP_PRINT_ACTION_2311" , , "CASTING_RESULT_ACTION_2311")
+;キャラリストを표시・選択
+IF TALENT:Z:Aion식소환술
+	CALL INPUT_CHARA_LIST("누구를 COMP에 SET합니까？", "CASTING_LINK_DEVIL" , "UP_PRINT_ACTION_2311_Aion" , , "CASTING_RESULT_ACTION_2311")
+ELSE
+	CALL INPUT_CHARA_LIST("누구와 링크합니까？", "CASTING_LINK_DEVIL" , "UP_PRINT_ACTION_2311" , , "CASTING_RESULT_ACTION_2311")
+ENDIF
 SWAP Z , ARG
 IF RESULT == 1000
 	RETURN 0
 ELSEIF RESULT == 1001
-
+	;변신している場合변신해제
 	SIF CFLAG:ARG:악마변신 == 1
 		CALL ACTION_2310 , ARG , 0
 	IF FINDCHARA_ID(CFLAG:ARG:링크악마) > 0
@@ -128,6 +149,11 @@ ELSEIF RESULT == 1001
 		CFLAG:FINDCHARA_ID(CFLAG:ARG:링크악마):피변신플래그 = 0
 	ENDIF
 	CFLAG:ARG:링크악마 = -1
+	
+	;Aion식소환술の場合はここで스킬再설정（関数は악마변신と同じ）
+	SIF TALENT:ARG:Aion식소환술
+		CALL ACTION_2310 , ARG , 0
+	
 	;CFLAG:ARG:악마변신 = 0
 	RETURN 0
 ENDIF
@@ -137,15 +163,20 @@ IF FINDCHARA_ID(CFLAG:ARG:링크악마) > 0
 	CFLAG:FINDCHARA_ID(CFLAG:ARG:링크악마):피변신플래그 = 0
 ENDIF
 
-;変身している場合変身解除
+;변신している場合변신해제
 SIF CFLAG:ARG:악마변신 == 1
 	CALL ACTION_2310 , ARG , 0
 
 CFLAG:LOCAL:피링크플래그 = CFLAG:ARG:캐릭터고유번호
 CFLAG:LOCAL:피변신플래그 = 0
 CFLAG:ARG:링크악마 = CFLAG:LOCAL:캐릭터고유번호
+
+;Aion식소환술の場合は스킬再설정（関数は악마변신と同じ）
+SIF TALENT:ARG:Aion식소환술
+	CALL ACTION_2310 , ARG , 0
+
 ;CFLAG:ARG:악마변신 = 0
-;スキルを復元
+;스킬を復元
 ;FOR LOCAL,1, FLAG:스킬수 + 1
 ;	ABL:ARG:("스킬" + TOSTR(LOCAL)) = ABL:ARG:("인간시스킬" + TOSTR(LOCAL))
 ;NEXT

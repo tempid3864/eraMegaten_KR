@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:STATUS_WINDOW_MAIN.ERB
-;	Facility	:各種能力値等をステータスウィンドウ風に表示する関数
+;	Facility	:各種能力値等を스테이터스ウィンドウ風に표시する関数
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -9,8 +9,9 @@
 ;
 ;	Edit	Date			Author					Reason
 ;	001		20XX/XX/XX		Ｎ烏					新規作成
-;	002		2021/01/29		Rsp暇人					도구명중/道具威力を表示できるように
-;	003		2021/02/07		Rsp暇人					文字数が多くてレイアウトが崩れる場合に短縮形を使うように
+;	002		2021/01/29		Rsp暇人					도구명중/道具威힘を표시できるように
+;	003		2021/02/07		Rsp暇人					文字数が多くて레이アウトが崩れる場合に短縮形を使うように
+;	004		2022/09/17		kamedakeisuke			Aion식 소환술 쪽 사양을 추가
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
 ;=======================================
@@ -127,7 +128,7 @@ LOCAL = ARG:1
 ;		RETURN 0
 ;	ENDIF
 
-	SIF !TALENT:ARG:데빌시프터 && !TALENT:ARG:식노 && !TALENT:ARG:페르소나구사자 && TALENT:ARG:악마빙의자
+	SIF !TALENT:ARG:데빌시프터 && !TALENT:ARG:식노 && !TALENT:ARG:페르소나구사자 && !TALENT:ARG:Aion식소환술 && TALENT:ARG:악마빙의자
 		RETURN 0
 
 	IF TALENT:ARG:데빌시프터 || TALENT:ARG:식노 || TALENT:ARG:악마빙의자
@@ -147,6 +148,15 @@ LOCAL = ARG:1
 			CALL SET_PICTURE , @"[취득] %CSVCALLNAME(CFLAG:ARG:초기링크악마, 0),20,LEFT% \@CFLAG:ARG:악마변신 ?변신중#변신가\@,,,만트라취득" , LOCAL+1 , , ARG:2 + 2
 		ELSEIF TALENT:ARG:식노 || TALENT:ARG:악마빙의자
 			CALL SET_PICTURE , @"　　　 %CSVCALLNAME(CFLAG:ARG:초기링크악마, 0),20,LEFT% \@CFLAG:ARG:악마변신 ?변신중#변신가\@" , LOCAL+1 , , ARG:2 + 2
+		ENDIF
+	ENDIF
+	IF TALENT:ARG:Aion식소환술
+		CALL SET_PICTURE , @"┏EQUIPPED-DEVIL%"━" * (横幅 / 2 - 7)%┓" , LOCAL , , ARG:2
+		CALL SET_PICTURE , @"┃%" " * (横幅)%┃" , LOCAL+1 , , ARG:2
+		IF CFLAG:ARG:링크악마 > 0
+			CALL SET_PICTURE , @"[변경] %CALLNAME:FINDCHARA_ID(CFLAG:ARG:링크악마),20,LEFT% SET 中,,,악마변경" , LOCAL+1 , , ARG:2 + 2
+		ELSEIF TALENT:ARG:Aion식소환술
+			CALL SET_PICTURE , @"[변경] 동료마를 SET하지 않았습니다,,,악마변경" , LOCAL+1 , , ARG:2 + 2
 		ENDIF
 	ENDIF
 	IF TALENT:ARG:페르소나구사자
@@ -745,7 +755,7 @@ IF GROUPMATCH(ABL:ARG:종족 , 0 , 36) || SKILL_EQUIPTHEORY_IS_HAVE_SKILL(ARG)
 			;ELSE
 			;	LOCALS += ITEMNAME:(변경예정장비:LOCAL)+ @",{COLOR("パ緑")}"
 			;ENDIF
-				LOCALS += DOT_CHANGE(장비의명칭(변경예정장비:LOCAL,ARG)) + @",{COLOR("パ緑")}"
+			LOCALS += DOT_CHANGE(장비의명칭(변경예정장비:LOCAL,ARG)) + @",{COLOR("パ緑")}"
 		ELSEIF EQUIP:ARG:GET_EQUIP(LOCAL) == 0
 			LOCALS += "ＥＭＰＴＹ,0x404040"
 		; ELSEIF 개조장비(EQUIP:ARG:GET_EQUIP(LOCAL))

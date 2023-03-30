@@ -1,23 +1,22 @@
-﻿;「ビジョン퀘스트が필요한んですよね？」
+﻿;「비전 퀘스트가 필요하신거죠？」
 
-;2020/xx/xx										ビジョン퀘스트の샘플として作成
-;2020/08/19			kamedakeisuke(ﾟдﾟ)			有志が作った샘플がコンタミしてしまったようなので差しさわりの無いように調整
-;												デバッグ限定かつ「ビジョン퀘스트方式の샘플ですよ」と明記する
-;												ワイが触るからには当たり障りない感じにするからな！　っていうかなんで샘플がスタァライトなのですか！　おまえもスタァライトしてやろうか！！！
-;2020/08/19			kamedakeisuke(ﾟдﾟ)			天堂마야（무대소녀）がすでに加入している場合は発生させないように수정（実行すると消えるじゃねーか！）
-
+;2020/xx/xx										비전 퀘스트의 샘플로서 작성
+;2020/08/19			kamedakeisuke(ﾟдﾟ)			有志가 만든 샘플이 오염되어버린 것 같아 차질이 없도록 조정
+;												디버그 한정으로 「비전퀘스트 방식의 샘플이에요」이라고 명기한다
+;2020/08/19			kamedakeisuke(ﾟдﾟ)			텐도마야가 이미 가입해있는 경우에는 발생시키지 않도록 수정（실행하면 사라지자너ー！）
+;2022/09/19			kamedakeisuke				검격 부스터의 표기 오류 수정
 
 
 ;====================
 ;조건
 ;====================
 @PLAYABLE_COLOSSEUM_25
-;天堂마야（무대소녀）が居ない
+;天堂真矢が居ない
 IF 투기장플래그:25:0 == 0 && GETCHARA([[キャラ:마야（무대소녀）]]) < 0
 	;DEBUG時のみ作動
 	[IF_DEBUG]
 		;RESULTS = Vision Quest:Star Divine
-		RESULTS = ビジョンクエストサンプル
+		RESULTS = 비전 퀘스트 샘플
 		RETURN 1
 	[ENDIF]
 	RETURN 0
@@ -29,12 +28,12 @@ RETURN 0
 ;内容
 ;====================
 @COLOSSEUM_25
-PRINTFORMW これはビジョン퀘스트です
+PRINTFORMW 이것은 비전퀘스트입니다
 
 
 ;포지션1-6に存在する아군をすべてポイする
 FOR LOCAL, 1, 7
-	; LOCALSに포지션にいるキャラを취득
+	; LOCALSに포지션にいるキャラを取得
 	LOCALS = 포지션{LOCAL}
 	LOCAL:1 = FLAG:LOCALS
 	
@@ -42,16 +41,16 @@ FOR LOCAL, 1, 7
 	SIF LOCAL:1 < 0
 		CONTINUE
 	
-	; 포지션を外す（リターン同等処理）
+	; 포지션を外す（리턴同等処理）
 	CALL REMOVE_POSITION, CFLAG:(LOCAL:1):포지션
 	; 메시지の표시
-	PRINTFORMW %CALLNAME:(LOCAL:1)%　がパーティから外れた
+	PRINTFORMW %CALLNAME:(LOCAL:1)%　가 파티에서 제외되었다
 NEXT
 
-;ゲストとして天堂마야（무대소녀）を配置する
+;ゲストとして天堂真矢を配置する
 CALL ADD_GUEST_COMPANION([[キャラ:마야（무대소녀）]], 0)
 LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
-;何かつけとかないと전투不能扱いになって即敗北する（天堂마야（무대소녀）が연모とか解釈違いなんですけど）
+;何かつけとかないと전투不能扱いになって即敗北する（天堂真矢が연모とか解釈違いなんですけど）
 TALENT:LOCAL:연모 = 1
 
 ;任意の스테이터스にする
@@ -63,7 +62,7 @@ BASE:LOCAL:인내력 = 99
 BASE:LOCAL:속도 = 50
 BASE:LOCAL:운 = 65
 
-;레벨だけ上げても스킬の습득は行われないので손動で設定する
+;레벨だけ上げても스킬の습득は行われないので손動で설정する
 ABL:LOCAL:스킬4 = [[스킬:도발]]
 ABL:LOCAL:스킬5 = [[스킬:바람의춤]]
 ABL:LOCAL:스킬6 = [[스킬:밤벚꽃의춤]]
@@ -78,28 +77,28 @@ ABL:LOCAL:스킬12 = [[스킬:브레이브재퍼]]
 CALL SYNC_STATUS, LOCAL
 CALL HEALTH_CHARA, LOCAL
 
-PRINTFORMW ※この이벤트は、ビジョン퀘스트実現のための技術샘플です。デバッグモード時のみ動作します
+PRINTFORMW ※이 이벤트는, 비전 퀘스트 실현을 위한 기술 샘플입니다. 디버그 모드 시에만 동작합니다
 FORCEWAIT
 PRINTFORML 
-PRINTFORMW ──%CALLNAME:MASTER%は夢を見ていた。
-PRINTFORMW 夢の中で%CALLNAME:MASTER%は──무대소녀だった──
-PRINTFORMW 私의 이름は、そう──
+PRINTFORMW ──%CALLNAME:MASTER%는 꿈을 꾸고 있었다.
+PRINTFORMW 꿈속에서 %CALLNAME:MASTER%는──무대소녀였다──
+PRINTFORMW 나의 이름은, 그래──
 PRINTFORML 
-PRINTFORMW 『This is 天堂마야（무대소녀）』
+PRINTFORMW 『This is 텐도 마야』
 PRINTFORML 
 CUSTOMDRAWLINE =
 PRINTL
-PRINTW ──ステージに立つ무대소녀をスポットライトが照らし出す。
+PRINTW ──무대에 선 무대소녀를 스포트라이트가 비추어낸다.
 PRINTL
 SETCOLOR 0xfdca57
-	PRINTFORML -大場나나-
+	PRINTFORML -다이바 나나-
 RESETCOLOR
-PRINTFORMW 「무대に実ったたわわな果実。
-PRINTFORMW 　だけど、みんな柔らかだから、誰かが守ってあげなくちゃ
-PRINTFORMW 　99期生、大場나나
-PRINTFORMW 　私が守るの。ずっと、何度でも！」
+PRINTFORMW 「무대 위에 맺힌 탐스러운 과실.
+PRINTFORMW 　하지만, 모두들 연약하니까, 내가 지켜주어야만 해
+PRINTFORMW 　99기생, 다이바 나나
+PRINTFORMW 　내가 지킬거야. 계속, 몇번이라도！」
 PRINTFORML 
-PRINTFORMW 무대소녀 大場나나が一体出た！
+PRINTFORMW 무대소녀 다이바 나나 가 1체 나타났다！
 
 CUSTOMDRAWLINE =
 WAIT
@@ -128,7 +127,7 @@ ABL:(CHARANUM-1):스킬12 = 0
 CSTR:(CHARANUM-1):종족명 = 무대소녀
 ABL:(CHARANUM-1):최저공격횟수 = 2
 ABL:(CHARANUM-1):최대공격횟수 = 2
-;CSTR:(CHARANUM-1):사고패턴 = 大場나나
+;CSTR:(CHARANUM-1):사고패턴 = 大場なな
 ;ABL:(CHARANUM-1):아이템1 = X
 ;ABL:(CHARANUM-1):입수확률1 = X
 CALL SYNC_STATUS,(CHARANUM-1)
@@ -147,16 +146,16 @@ PRINTW ……
 PRINTW …
 PRINTL
 PRINTFORML 
-CALL MESSAGE_WINDOW_D, "기린", "レヴュー종료です"
-PRINTW ＞勝ったはずなのに손ごたえがなかった
-PRINTW ＞気が付くと、自分の上掛けが無くなっていた
-;天堂마야（무대소녀）をＰＴから外す
+CALL MESSAGE_WINDOW_D, "기린", "레뷰 종료입니다"
+PRINTW ＞이겼을텐데 느낌이 없다
+PRINTW ＞정신을 차리고보니, 자신의 겉옷이 없어져 있었다
+;天堂真矢をＰＴから外す
 LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
 CALL DEL_GUEST, LOCAL
 PRINTL
-PRINTW ──夢の時間は終わりだ。당신の意識は急激に각성する。
+PRINTW ──꿈의 시간은 끝났다. 당신의 의식은 급격하게 각성한다.
 
-;당신を초기位置に세트する
+;당신を초기位置にセットする
 CFLAG:MASTER:포지션 = 2
 FLAG:포지션2 = 0
 CFLAG:MASTER:PT플래그 = 2

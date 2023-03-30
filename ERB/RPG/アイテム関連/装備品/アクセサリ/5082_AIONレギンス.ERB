@@ -1,0 +1,77 @@
+﻿;======================================================
+;장비품의 데이터
+;Aion레깅스, 또다른 이름은 게이밍 타이츠
+;빤짝빤짝 빛나는 화려한 레깅스
+;효과는 지금부터 생각한다（잠정적으로 마맥효과
+;======================================================
+
+@기본능력수정_5082,ARG,ARG:1 = -1
+SELECTCASE ARG
+	CASE 6
+		RETURN 2
+ENDSELECT
+RETURN 0
+
+@전투능력수정_5082,ARG,ARG:1 = -1
+
+SELECTCASE ARG
+ENDSELECT
+RETURN 0
+
+@방어상성_5082,ARG,ARG:1 = -1
+
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+@공격상성_5082, ARG = -1
+
+RETURN 2
+
+@최저공격횟수_5082, ARG = -1
+
+RETURN 1
+
+@최대공격횟수_5082, ARG = -1
+
+RETURN 1
+
+@사거리_5082, ARG = -1
+
+RETURN 1
+
+@공격범위_5082, ARG = -1
+
+RETURN 1
+
+@장비箇所_5082
+
+RETURN GET_EQUIPNUM("악세서리")
+
+@필요레벨_5082
+RETURN 1
+
+@장비조건_5082,ARG
+SIF TALENT:ARG:Aion || TALENT:ARG:Aion식소환술
+	RETURN 0
+RETURN 1
+
+@장비조건설명_5082
+PRINTL 장비조건：Aion、또는 Aion식 소환술
+
+@구입조건_5082
+RETURN 0
+
+@引継ぎ可不可_5082
+RETURN 0
+
+@장비추가스킬_5082,ARG,ARG:1 = -1
+SELECTCASE ARG
+	CASE 0
+		RETURN 2403
+ENDSELECT
+RETURN 0
+
+@장비해설_5082
+PRINTL 최대 MP가 10％ 오른다.
+PRINTL Aion의 기술로 만들어진 레깅스. 왠지 빛이 난다.
