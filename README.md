@@ -12,7 +12,9 @@
 
 ## 현재 패치 이식상황 (main_temp 기준)
 
-__eraMegaten_5604__ (Rev.143 통합) + __eraMegaten_6047__ + __eraMegaten_6071__ + __eraMegaten_6076__ (不具合修正パッチ 1+2+3+4+5)
+Rev.143 KR 통합판
+ + __eraMegaten_6047__ + __eraMegaten_6055__ + __eraMegaten_6071__ + __eraMegaten_6076__ + __eraMegaten_6101__ + __eraMegaten_6119__ + __eraMegaten_6225__
+
 
 ## 도입법
 
