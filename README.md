@@ -12,7 +12,9 @@
 
 ## 현재 패치 이식상황 (main_temp 기준)
 
-Rev.143 KR 통합판 + __eraMegaten_6047__ + __eraMegaten_6055__ + __eraMegaten_6071__ + __eraMegaten_6076__ + __eraMegaten_6101__ + __eraMegaten_6119__ + __eraMegaten_6225__
+Rev.143 KR 통합판을 기반으로 패치가 적용된 상태
+
+자세한 내용은 __Patch.md__ 참고
 
 
 ## 도입법
@@ -39,18 +41,16 @@ https://ux.getuploader.com/eraMegaten_picture/
 
 ## 실행
 
-* __Emuera1824+v8.1__ : 기본 실행기. 로딩이 느리고 메모리 사용량이 많다
+* __Emuera1824+v8.1__ : 기본 실행기
 
- 아래의 __Emuera1824_lazyloading__ 실행기 사용 중 버그 발생 시 이용할 것
+    아래의 __Emuera1824_lazyloading__ 실행기 사용 중 버그 발생 시 이용할 것
 
-* __Emuera1824_lazyloading__  : 지연로딩 실행기. 초기 로딩 속도와 메모리 사용량이 개선되었다
+* __Emuera1824_lazyloading__  : 초기 로딩과 메모리 사용량이 개선된 실행기
 
- __lazyloading.cfg__ 파일과 한 쌍이며 최초 실행시 __lazyloading.dat__ 파일을 생성하며
-
- 최초 실행 후 프로그램을 재실행해야 지연로딩 기능이 제대로 작동한다.
+    최초 실행시 __lazyloading.cfg__ 을 참조하여 __lazyloading.dat__ 파일을 생성하며 이후 프로그램을 재실행해야 기능이 제대로 작동한다.
  
- 게임 파일 변경 시 __lazyloading.dat__ 파일을 삭제 후 재생성 할 것
+    게임 파일 변경 시 __lazyloading.dat__ 파일을 삭제 후 재생성 할 것
  
- LFD나 SRW 등 다른 실행기도 있지만 사용의 편의성 때문에 해당 실행기를 넣어두었다
+    LFD나 SRW 등 다른 실행기도 있지만 사용의 편의성 때문에 해당 실행기를 넣어두었다
 
-* __Debug.bat__ : 디버그용 실행 파일. 기본 실행기를 디버그 모드로 실행한다
+* __Debug.bat__ : 기본 실행기를 디버그 모드로 실행하는 bat 파일
