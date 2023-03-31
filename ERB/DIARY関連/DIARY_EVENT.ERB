@@ -3413,11 +3413,11 @@ FOR LOCAL ,0, 64
 	SIF !GETBIT(FLAG:발견ED, LOCAL)
 		SETCOLORBYNAME Gray
 	SELECTCASE LOCAL
-		;0-9は調教系エンド枠
+		;0-9는 조교계 엔딩 슬롯
 		CASE 0
 			PRINTL Ending No.000 (팬텀 간부 엔딩)
 		CASE 1
-			PRINTL Ending No.001 (武断派ハーレムエンド)
+			PRINTL Ending No.001 (무투파 하렘 엔딩)
 		CASE 2
 			PRINTL Ending No.002 (조교사 엔딩)
 		CASE 3
@@ -3434,21 +3434,21 @@ FOR LOCAL ,0, 64
 
 		CASE 9
 
-		;10-19は労役系エンド枠
+		;10-19는 노역계 엔딩 슬롯
 		CASE 10
-			PRINTL Ending No.010 (食堂運営エンド"Neutral restaurant")
+			PRINTL Ending No.010 (식당 운영 엔딩"Neutral restaurant")
 		CASE 11
 			;シェフエンド枠
-;			PRINTL Ending No.011 (～～～エンド "～～～～")
+;			PRINTL Ending No.011 (～～～엔딩 "～～～～")
 		CASE 12
-			PRINTL Ending No.012 (娼館経営エンド)
+			PRINTL Ending No.012 (창관 경영 엔딩)
 		CASE 13
-			PRINTFORML Ending No.013 (夜の\@TALENT:MASTER:남자 ? 王 # 女王 \@エンド)
+			PRINTFORML Ending No.013 (밤의\@TALENT:MASTER:남자 ? 왕 # 여왕 \@엔딩)
 		CASE 14
-			;流浪の娼婦エンド枠
-;			PRINTL Ending No.014 (～～～エンド "～～～～")
+			;유랑의 창부 엔딩 슬롯
+;			PRINTL Ending No.014 (～～～엔딩 "～～～～")
 		CASE 15
-			PRINTL Ending No.015 (堕落エンド)
+			PRINTL Ending No.015 (타락 엔딩)
 		CASE 16
 
 		CASE 17
@@ -3456,90 +3456,90 @@ FOR LOCAL ,0, 64
 		CASE 18
 
 		CASE 19
-			PRINTL Ending No.019 (アイドルエンド)
+			PRINTL Ending No.019 (아이돌 엔딩)
 		;20～はRPG系エンド
 		CASE 20
-			;ファントム乗っ取りエンド枠
-;			PRINTL Ending No.020 (～～～エンド "～～～～")
+			;팬텀 탈취 엔딩 슬롯
+;			PRINTL Ending No.020 (～～～엔딩 "～～～～")
 		CASE 21
 		CASE 22
 		CASE 23
-			PRINTL Ending No.023 (真・女神転生　デビルサマナーエンド"The Devil Summoner")
+			PRINTL Ending No.023 진・여신전생　데빌 서머너 엔딩"The Devil Summoner")
 		CASE 24
-				;ソウルハッカーズ用に空けておく
+				;소울해커스 용으로 비워둠
 		CASE 25
-			PRINTL Ending No.025 (デビルサマナー　葛葉ライドウ対超力兵団エンド　"vs. the Soulless Army")
+			PRINTL Ending No.025 (데빌 서머너　쿠즈노하 라이도우 대 초력병단 엔딩　"vs. the Soulless Army")
 		CASE 26
-				;葛葉ライドウ対アバドン王用に空けておく
+				;쿠즈노하 라이도우대 아바돈 왕 용으로 비워둠
 		CASE 27
-			PRINTL Ending No.027 (デビルサマナー　葛葉ライドウ対コドクノマレビトエンド　"vs. KODOKUNO MAREBITO")
+			PRINTL Ending No.027 (데빌 서머너　쿠즈노하 라이도우 대 고독의 마레비토 엔딩　"vs. KODOKUNO MAREBITO")
 		CASE 28
-			PRINTL Ending No.028 (女神異聞録ペルソナ　セベク編エンド　　"be your true mind")
+			PRINTL Ending No.028 (여신이문록 페르소나　세베크 편 엔딩　　"be your true mind")
 		CASE 29
-			PRINTL Ending No.029 (女神異聞録ペルソナ　雪の女王編エンド　"be your another mind")
+			PRINTL Ending No.029 (여신이문록 페르소나　눈의 여왕 편 엔딩　"be your another mind")
 		CASE 30
-			PRINTL Ending No.030 (ペルソナ２罪エンド"Innocent Sin")
+			PRINTL Ending No.030 ((페르소나 2 죄 엔딩"Innocent Sin")
 		CASE 31
-			PRINTL Ending No.031 (ペルソナ２罪　聖槍騎士団ハーレムエンド"Ehemann von Longinus")
+			PRINTL Ending No.031 (페르소나 2 죄　성창기사단 하렘 엔딩"Ehemann von Longinus")
 		CASE 32
-			PRINTL Ending No.032 (真・女神転生　NEUTRAL-END)
+			PRINTL Ending No.032 (진・여신전생　NEUTRAL-END)
 		CASE 33
-			PRINTL Ending No.033 (真・女神転生　LAW-END)
+			PRINTL Ending No.033 (진・여신전생　LAW-END)
 		CASE 34
-			PRINTL Ending No.034 (真・女神転生　CHAOS-END)
+			PRINTL Ending No.034 (진・여신전생　CHAOS-END)
 		CASE 35
-			PRINTL Ending No.035 (真・女神転生20XX　ロウエンド　"Patentibus portis regnum Dei semper")
+			PRINTL Ending No.035 (진・여신전생20XX　로우엔드　"Patentibus portis regnum Dei semper")
 		CASE 36
-			PRINTL Ending No.036 (真・女神転生20XX　ニュートラルエンド　"Meipsum iudico")
+			PRINTL Ending No.036 (진・여신전생20XX　뉴트럴엔드　"Meipsum iudico")
 		CASE 37
-			PRINTL Ending No.037 (真・女神転生20XX　カオスエンド　"Iuro potentis diabolus Lucifer")
+			PRINTL Ending No.037 (진・여신전생20XX　카오스엔드　"Iuro potentis diabolus Lucifer")
 		CASE 38
-			PRINTL Ending No.038 (偽典・女神転生　"新・聖王伝説")
+			PRINTL Ending No.038 (위전・여신전생　"신・성왕전설")
 		CASE 39
 		CASE 40
-			PRINTL Ending No.040 (真・女神転生デビルコロシアム20XX　True end　"The night before Armageddon")
+			PRINTL Ending No.040 (진・여신전생 데빌 콜로세움 20XX　True end　"The night before Armageddon")
 		CASE 41
-			PRINTL Ending No.041 (デビルサバイバー２　"Strength.")
+			PRINTL Ending No.041 (데빌 서바이버 ２　"Strength.")
 		CASE 42
-			PRINTL Ending No.042 (デビルサバイバー２　"All for one. One for all.")
+			PRINTL Ending No.042 (데빌 서바이버 ２　"All for one. One for all.")
 		CASE 43
-			PRINTL Ending No.043 (デビルサバイバー２　"Second Stage.")
+			PRINTL Ending No.043 (데빌 서바이버 ２　"Second Stage.")
 		CASE 44
-			PRINTL Ending No.044 (デビルサバイバー２　"Anguisheid One END")
+			PRINTL Ending No.044 (데빌 서바이버 ２　"Anguisheid One END")
 		CASE 45
-			PRINTL Ending No.045 (DIGITAL DEVIL SAGA アバタールチューナー２　"shan-ti shan-ti..")
+			PRINTL Ending No.045 (DIGITAL DEVIL SAGA 아바탈 튜너 ２　"shan-ti shan-ti..")
 		CASE 46
-			PRINTL Ending No.046 (デビルチルドレン　セクンドゥス　ゾズマエンド)
+			PRINTL Ending No.046 (데빌 칠드런　세쿤두스　시즈마 엔딩)
 		CASE 47
-			PRINTL Ending No.047 (デビルチルドレン　世界の夜明けエンド)
+			PRINTL Ending No.047 (데빌 칠드런　세계의 새벽 엔딩)
 		CASE 48
 			;空き
 		CASE 49
 			;空き
 		CASE 50
-			PRINTL Ending No.050 (ナイト・テイル　神野 古代　TRUE-END　“La Maternite.”)
+			PRINTL Ending No.050 (나이트 테일 진노 코시로　TRUE-END　“La Maternite.”)
 		CASE 51
-			PRINTL Ending No.051 (ナイト・テイル　神野 古代エンド　　　“to the HERO.”)
+			PRINTL Ending No.051 (나이트 테일 진노 코시로 엔딩　　　“to the HERO.”)
 		CASE 52
-			PRINTL Ending No.052 (ナイト・テイル　神野 古代　666-END　 “R A G N A R O K .”)
+			PRINTL Ending No.052 (나이트 테일 진노 코시로　666-END　 “R A G N A R O K .”)
 		CASE 53
-			PRINTL Ending No.053 (幽閉の塔編　エンド"Life goes on")
+			PRINTL Ending No.053 (유폐의 탑 편　엔딩"Life goes on")
 		CASE 54
-			PRINTL Ending No.054 (真・女神転生if...END)
+			PRINTL Ending No.054 (진・여신전생 if...END)
 		CASE 55
-			PRINTL Ending No.055 (真・女神転生 III Nocturne Maniacs Dark-END　“混沌王”)
+			PRINTL Ending No.055 (진・여신전생 III Nocturne Maniacs Dark-END　"혼돈왕")
 		CASE 56
 			;真・女神転生 IIIのMハゲルート枠
 		CASE 57
-			PRINTL Ending No.057 (めしあ・プロジェクト TRUE-END“救世主よ、永遠なれ”)
+			PRINTL Ending No.057 (메시아・프로젝트 TRUE-END“구세주여, 영원하라”)
 		CASE 58
-			PRINTL Ending No.058 (ヒメミヤキクエ　END　“Moo Moo Moo”)
+			PRINTL Ending No.058 (히메미야 키쿠에　END　“Moo Moo Moo”)
 		CASE 59
 			;空き
 		CASE 60
-			PRINTL Ending No.060 (デビルチルドレン　新世界エンド)
+			PRINTL Ending No.060 (데빌 칠드런　신세계 엔딩)
 		CASE 61
-			PRINTL Ending No.061 (デビルチルドレン　ホシガミエンド)
+			PRINTL Ending No.061 (데빌 칠드런　호시가미 엔딩)
 		CASE 62
 			;空き
 		CASE 63
@@ -3551,7 +3551,7 @@ NEXT
 
 @DAIRY_ENDING_LIST2
 DRAWLINE
-PRINTL 発見済みのエンディング
+PRINTL 발견이 끝난 엔딩
 DRAWLINE
 ;Ending No.064～127
 FOR LOCAL ,0, 64
@@ -3561,16 +3561,16 @@ FOR LOCAL ,0, 64
 	SELECTCASE LOCAL
 		CASE 0
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 3)
-				PRINTL Ending No.064 (メルティブラッド　END　“Melty　Blood”)
+				PRINTL Ending No.064 (멜티 블러드　END　“Melty　Blood”)
 		CASE 1
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 14)
-				PRINTL Ending No.065 (セブンスドラゴン2020　END　"SeventH-HeaveN")
+				PRINTL Ending No.065 (세븐스 드래곤2020　END　"SeventH-HeaveN")
 		CASE 2
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 14)
-				PRINTL Ending No.066 (セブンスドラゴン2020-Ⅱ　END　"HeavenZ-ArmZ")
+				PRINTL Ending No.066 (세븐스 드래곤2020-Ⅱ　END　"HeavenZ-ArmZ")
 		CASE 3
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 7)
-				PRINTL Ending No.067 (アイドルマスター　END“シンデレラガールズ”)
+				PRINTL Ending No.067 (아이돌 마스터　END“신데렐라 걸즈”)
 		CASE 4
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 16)
 				PRINTL Ending No.068 (Rabi-Ribi Normal A/B END)
@@ -3579,24 +3579,24 @@ FOR LOCAL ,0, 64
 				PRINTL Ending No.069 (Rabi-Ribi Secret "Welcome to Rabi-Rabi TOWN！！")
 		CASE 6
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 18)
-				PRINTL Ending No.070 (白き鋼鉄のＸ　END　"Luminous Avenger iX")
+				PRINTL Ending No.070 (하얀 강철의Ｘ　END　"Luminous Avenger iX")
 		CASE 7
 			;全般のフィルタに変更。
 			SIF (GETBIT(FLAG:EXTRA이벤트설정, 0) == 1) 
-				PRINTL Ending No.071 (溶鉄のマルフーシャ　END　"Marufusha The Metal melter")
+				PRINTL Ending No.071 (용철의 마르푸샤　END　"Marufusha The Metal melter")
 		CASE 8
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 5)
-				PRINTL Ending No.072 (叛逆の物語　"Puella Magi ex Defectionis END")
+				PRINTL Ending No.072 (반역의 이야기　"Puella Magi ex Defectionis END")
 		CASE 9
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 5)
-				PRINTL Ending No.073 (冷めていく宇宙の物語　"Puella Magi Madoka☆Magica END")
+				PRINTL Ending No.073 식어가는 우주 이야기　"Puella Magi Madoka☆Magica END")
 		CASE 10
 			SIF !GETBIT (FLAG:EXTRA이벤트필터, 20)
-				PRINTL Ending No.074 (東京魔人學園　END　"鬼道衆外法編")
+				PRINTL Ending No.074 (도쿄마인학원　END　"귀도중외법편")
 
 		CASE 35
 			;マレット島の出現条件はダンテ撃破のみなのでエンディング取得済みなら無条件出現に変更。
-				PRINTL Ending No.099 (Devil May Cry　END　"魔帝狩り")
+				PRINTL Ending No.099 (Devil May Cry　END　"마제 사냥")
 
 		CASEELSE
 	ENDSELECT
