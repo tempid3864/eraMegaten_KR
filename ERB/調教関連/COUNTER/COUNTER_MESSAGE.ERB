@@ -1,64 +1,64 @@
 ﻿
 ;色っぽい仕草
 @EVENT_COUNTER_MESSAGE10
-PRINTFORML %CALLNAME:TARGET%は色っぽい仕草で誘惑してきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 요염한 몸짓으로 유혹해 왔다…
 RETURN 1
 
-;見つめる
+;바라보기
 @EVENT_COUNTER_MESSAGE11
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%を潤んだ瞳でじっと見つめている…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 촉촉한 눈빛으로 바라보고있다…
 RETURN 1
 
-;体を摺り寄せる
+;몸 밀착
 @EVENT_COUNTER_MESSAGE12
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%に体を摺り寄せてきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에게 몸을 밀착시켰다…
 RETURN 1
 
-;息を吹きかける
+;입김불기
 @EVENT_COUNTER_MESSAGE13
-PRINTFORM %CALLNAME:TARGET%は%CALLNAME:PLAYER%の背後に忍び寄り耳元に熱い吐息を吹きかけた…
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER% 뒤로 살금살금 다가와 귓가에 뜨거운 숨을 불어넣었다…
 RETURN 1
 
-;尻を撫でる
+;엉덩이 쓰다듬기
 @EVENT_COUNTER_MESSAGE14
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のお尻を撫でてきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 엉덩이를 쓰다듬었다…
 RETURN 1
 
 
 
-;キス
+;키스
 @EVENT_COUNTER_MESSAGE30
 IF ABL:TARGET:기교 > 3
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔に近づき、不意に唇を奪うとねっとりとした舌使いで口内を蹂躙した…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴에 다가와、갑자기 입술을 빼았고 끈적끈적한 혀놀림으로 입안을 유린했다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔に近づき、不意に唇を奪った…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴에 다가와、갑자기 입술을 빼았았다…
 ENDIF
 RETURN 1
 
-;後ろから抱きつく
+;뒤에서 껴안기
 @EVENT_COUNTER_MESSAGE31
-PRINTFORML %CALLNAME:PLAYER%は背後から%CALLNAME:TARGET%に抱きつかれた
+PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 뒤에서 %조사처리(CALLNAME:TARGET,"를")% 껴안았다
 SIF !TALENT:TARGET:110
-	PRINTFORML %CALLNAME:PLAYER%の背中に%CALLNAME:TARGET%の柔らかな胸が押し当てられる…
+	PRINTFORML %CALLNAME:PLAYER%의 등 뒤에서 %CALLNAME:TARGET%의 부드러운 가슴이 밀착됐다…
 RETURN 1
 
-;前ろから抱きつく
+;앞에서 껴안기
 @EVENT_COUNTER_MESSAGE32
-PRINTFORM %CALLNAME:TARGET%は%CALLNAME:PLAYER%を抱きしめ
-PRINTFORML 息を荒らげながら体を摺り寄せてきた…
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 껴안았다
+PRINTFORML 숨을 헐떡이며 몸을 껴안아왔다…
 
 RETURN 1
 
-;가슴を揉ませる
+;스킨쉽
 @EVENT_COUNTER_MESSAGE33
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の手を取り、自分の胸に導いた
-PRINTFORML %CALLNAME:TARGET%の心臓の鼓動が手から伝わってくる…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 손을 잡아、자신의 가슴으로 이끌었다
+PRINTFORML %CALLNAME:TARGET%의 심장 박동이 손에서 전해져 온다…
 RETURN 1
 
 
-;後ろから가슴もみもみ
+;뒤에서 가슴 주물럭
 @EVENT_COUNTER_MESSAGE36
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の背後から胸を揉みしだいてきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 등 뒤에서 가슴을 주물러 왔다…
 RETURN 1
 
 ;수음
@@ -66,280 +66,280 @@ RETURN 1
 IF HAVE_PENIS(PLAYER)
 	IF BASE:PLAYER:사정 > MAXBASE:PLAYER:2*2/3
 		IF SELECTCOM == 501 || SELECTCOM == 508
-			PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%の顔にまたがったまま
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 얼굴에 걸친 채
 		ELSE
-			PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%の顔を見つめながら
+			PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 얼굴을 바라보며
 		ENDIF
 		IF TALENT:TARGET:새드
-			PRINTFORML 激しく男性器をしごきあげじゅうぶんに焦らした後射精へと導いた…
+			PRINTFORML 격렬하게 페니스를 조여 충분히 조급하게 만든 뒤 사정을 유도했다…
 		ELSE
-			PRINTFORML 激しく男性器をしごきあげ射精へと導いた…
+			PRINTFORML 격렬하게 페니스를 쥐어짜 사정으로 이끌었다…
 		ENDIF
 	ELSE
-		PRINTFORM %CALLNAME:TARGET%は
+		PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 
 		SIF SELECTCOM == 501 || SELECTCOM == 508
-			PRINTFORM %CALLNAME:MASTER%の顔にまたがったまま
-		PRINTFORML 露出したた男性器に指を絡めてこすりだした…
+			PRINTFORM %CALLNAME:MASTER%의 얼굴에 걸친 채
+		PRINTFORML 노출된 페니스에 손가락을 감아 문지르기 시작했다…
 	ENDIF
 ELSE
-	PRINTFORM %CALLNAME:TARGET%は
-	PRINTFORML 顕になった%CALLNAME:PLAYER%の秘所を指でまさぐりだした・・・
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
+	PRINTFORML 드러난 %CALLNAME:PLAYER%의 보지를 손가락으로 더듬었다・・・
 ENDIF
 RETURN 1
 
 ;입淫
 @EVENT_COUNTER_MESSAGE51
 IF HAVE_PENIS(PLAYER)
-	PRINTFORM %CALLNAME:TARGET%は
-	PRINTFORM 露出させた男性器を
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
+	PRINTFORM 노출된 페니스를
 	IF ABL:TARGET:기교 > 3
-		PRINTFORML 口でくわえて巧みな舌使いでしゃぶりだした…
+		PRINTFORML 입에 물고 능숙한 입놀림으로 빨기 시작했다…
 	ELSE
-		PRINTFORML 口でくわえてしゃぶりだした…
+		PRINTFORML 입에 물고 빨기 시작했다…
 	ENDIF
 ELSE
-	PRINTFORM %CALLNAME:TARGET%は
+	PRINTFORM %조사처리(CALLNAME:TARGET,"는")%
 	IF TEQUIP:PLAYER:속옷（하） || TEQUIP:PLAYER:전신속옷
-		PRINTFORML %CALLNAME:PLAYER%の下着をずらし、
+		PRINTFORML %CALLNAME:PLAYER%의 속옷을 벗기고、
 	ENDIF
-	PRINTFORML 顕になった%CALLNAME:PLAYER%の秘所に舌を這わせた…
+	PRINTFORML 드러난 %CALLNAME:PLAYER%의 보지에 혀를 넣었다…
 ENDIF
 RETURN 1
 
 ;스마타
 @EVENT_COUNTER_MESSAGE52
 IF HAVE_PENIS(PLAYER)
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%に馬乗りになってペニスを秘所でこすり始めた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%에게 올라타 페니스를 보지에 문지르기 시작했다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は二人の性器を重ねてこすり始めた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 두 사람의 성기를 겹쳐서 문지르기 시작했다…
 ENDIF
 RETURN 1
 
 ;파이즈리
 @EVENT_COUNTER_MESSAGE53
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の男性器を
-PRINTFORML 胸で挟んでこすり始めた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를
+PRINTFORML 가슴에 끼고 문지르기 시작했다…
 RETURN 1
 
 ;풋잡
 @EVENT_COUNTER_MESSAGE54
 IF TALENT:TARGET:새드
-	PRINTFORML %CALLNAME:TARGET%は微笑みながら%CALLNAME:PLAYER%の男性器を踏みつけてこすり始めた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 미소지으며 %CALLNAME:PLAYER%의 페니스를 밟고 문지르기 시작했다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の男性器を踏みつけてこすり始めた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 페니스를 밟고 문지르기 시작했다…
 ENDIF
 RETURN 1
 
 ;애널애무
 @EVENT_COUNTER_MESSAGE55
 IF TALENT:TARGET:새드
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のアヌスに指をねじ込み愛撫した…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애널에 손가락을 비틀어 애무했다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のアヌスを指で愛撫した…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애널을 손가락으로 애무했다…
 ENDIF
 RETURN 1
 
 ;애널핥기
 @EVENT_COUNTER_MESSAGE56
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のアヌスを丁寧に舐めはじめた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애널을 정성스럽게 핥기 시작했다…
 RETURN 1
 
-;指挿入
+;손가락 삽입
 @EVENT_COUNTER_MESSAGE57
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の秘所にゆっくりと指を挿入した…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 보지에 천천히 손가락을 삽입했다…
 RETURN 1
 
 ;가슴애무
 @EVENT_COUNTER_MESSAGE58
-PRINTFORM %CALLNAME:TARGET%は%CALLNAME:PLAYER%の
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의
 IF HAVE_VAGINA(PLAYER)
-	PRINTFORML 胸を揉みしだいた…
+	PRINTFORML 가슴을 주물러주었다…
 ELSE
-	PRINTFORML 乳首を指でつまんでいじりだした…
+	PRINTFORML 젖꼭지를 손가락으로 꼬집어 만지작거리기 시작했다…
 ENDIF
 RETURN 1
 
 ;유두吸い
 @EVENT_COUNTER_MESSAGE59
-PRINTFORM %CALLNAME:TARGET%は%CALLNAME:PLAYER%の
-PRINTFORML 乳首に吸いついてきた…
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의
+PRINTFORML 젖꼭지를 빨아먹었다…
 RETURN 1
 
 ;ディープキス
 @EVENT_COUNTER_MESSAGE60
 IF ABL:TARGET:기교 > 3
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔をつかんでくちづけし情熱的に舌を絡め唾液を流し込んできた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴을 잡고 입맞춤하며 열정적으로 혀을 얽고 침을 흘려왔다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔をつかんでくちづけし情熱的に舌を絡めてきた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴을 잡고 입맞춤하며 열정적으로 혀를 휘감아왔다…
 ENDIF
 RETURN 1
 
 ;커닐링구스강제
 @EVENT_COUNTER_MESSAGE70
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔にゆっくりとまたがり口元に秘所を押し付けた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴에 천천히 걸쳐 입가에 보지를 눌렀다…
 RETURN 1
 
 ;펠라치오強制
 @EVENT_COUNTER_MESSAGE71
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の口でペニスに奉仕させた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 입에 페니스를 넣었다…
 RETURN 1
 
 ;애널봉사
 @EVENT_COUNTER_MESSAGE72
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の顔にまたがって口元にアヌスを押し付けた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 얼굴에 걸쳐 입가에 애널을 눌렀다…
 RETURN 1
 
 ;파후파후
 @EVENT_COUNTER_MESSAGE73
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%の顔を抱えて胸を押し付けた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 얼굴을 안고 가슴을 밀어붙였다…
 RETURN 1
 
-;乳合わせ
+;가슴 맞대기
 @EVENT_COUNTER_MESSAGE74
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の体に胸を押し付けてきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 몸에 가슴을 눌러왔다…
 RETURN 1
 
 ;タワシ洗い
 @EVENT_COUNTER_MESSAGE75
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の腕にまたがって性器をこすりつけている…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 팔에 성기를 문지르고있다…
 RETURN 1
 
-;挿入される
+;삽입됨
 @EVENT_COUNTER_MESSAGE80
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の秘所にペニスをねじ込み、腰を動かし始めた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 보지에 페니스를 박고、허리를 움직이기 시작했다…
 IF TALENT:PLAYER:처녀 && TALENT:2 >= 1
-	PRINTFORML 結合部からは%CALLNAME:PLAYER%の破瓜の血が流れ出している…
+	PRINTFORML 결합부에서는 %CALLNAME:PLAYER%의 파과혈이 흘러나오고 있다…
 ELSE
-	PRINTFORML 結合部からは%CALLNAME:TARGET%と%CALLNAME:PLAYER%の体液が溢れ出している…
+	PRINTFORML 결합부에서는 %조사처리(CALLNAME:TARGET,"과")% %CALLNAME:PLAYER%의 체액이 흘러나오고있다…
 ENDIF
 RETURN 1
 
 ;후배위애널
 @EVENT_COUNTER_MESSAGE82
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%を四つん這いにすると
-PRINTFORM %CALLNAME:PLAYER%の、
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 앞으로 엎드리게 한 뒤 
+PRINTFORM %CALLNAME:PLAYER%의、
 IF PALAM:PLAYER:윤활 < PALAMLV:2
-	PRINTFORML 湿り気の無いアナルに強引にペニスを押し込んだ…
+	PRINTFORML 축축하지 않은 애널에 강제로 페니스를 밀어넣었다…
 ELSE
-	PRINTFORML %CALLNAME:PLAYER%のアナルにペニスを挿入した…
+	PRINTFORML %CALLNAME:PLAYER%의 애널에 페니스를 삽입했다…
 ENDIF
 RETURN 1
 ;---------------------------------------------------------------------------
 ;배면좌위애널
 @EVENT_COUNTER_MESSAGE83
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%を背後から抱きかかえると
-PRINTFORM %CALLNAME:PLAYER%の、
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 뒤에서 껴안으면서 
+PRINTFORM %CALLNAME:PLAYER%의、
 IF PALAM:PLAYER:윤활 < PALAMLV:2
-	PRINTFORML 湿り気の無いアナルに強引にペニスを押し込んだ…
+	PRINTFORML 축축하지 않은 애널에 강제로 페니스를 밀어넣었다…
 ELSE
-	PRINTFORML %CALLNAME:PLAYER%のアナルにペニスを挿入した…
+	PRINTFORML %CALLNAME:PLAYER%의 애널에 페니스를 삽입했다…
 ENDIF
 RETURN 1
 ;--------------------------------------------------------------------------
 ;기승위애널
 @EVENT_COUNTER_MESSAGE81
-PRINTFORML %CALLNAME:TARGET%は横になると、%CALLNAME:PLAYER%に自分からペニスを咥え込むよう命令した。
-PRINTFORM %CALLNAME:PLAYER%は
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 누워서、%CALLNAME:PLAYER%에게 스스로 페니스를 물도록 명령했다。
+PRINTFORM %조사처리(CALLNAME:PLAYER,"는")%
 IF PALAM:PLAYER:윤활 < PALAMLV:2
-	PRINTFORML 痛みを堪えながら湿り気の無いアナルにペニスを迎え入れた…
+	PRINTFORML 고통을 참아가며 축축한 애널에 페니스를 맞이했다…
 ELSE
-	PRINTFORML 自身の愛液で潤滑剤にアナルにペニスを迎え入れた…
+	PRINTFORML 자신의 애액을 윤할제 삼아 애널에 페니스를 맞이했다…
 ENDIF
 RETURN 1
 ;---------------------------------------------------------------------------
 ;;기승위 
 @EVENT_COUNTER_MESSAGE91
-PRINTFORM %CALLNAME:TARGET%は%CALLNAME:PLAYER%の上にまたがって、ゆっくりと腰を下ろしていった…
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 위에 천천히 걸쳐앉았다…
 RETURN 1
 ;----------------------------------------------------------------------------
-;膣性交
+;질성교
 @EVENT_COUNTER_MESSAGE500_1
-PRINTFORML %CALLNAME:TARGET%は膣壁を操り%CALLNAME:PLAYER%のペニスをしごいてきた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 질벽을 조여 %CALLNAME:PLAYER%의 페니스를 쥐었다…
 RETURN 1
 ;----------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE500_2
-;だいしゅきホールド
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%に抱きつきながら両足で腰を抱え込んだ…
+;다이슈키홀드
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %조사처리(CALLNAME:PLAYER,"를")% 껴안으면서 두 다리로 허리를 감싸안았다…
 RETURN 1
 ;----------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE500_3
-;性交見せつけ
-PRINTFORML %CALLNAME:TARGET%は上体をそらして%CALLNAME:PLAYER%に結合部を見せつけながらペニスをしごいている…
+;성교 과시
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 상체를 돌려 %CALLNAME:PLAYER%에게 결합부를 보여주면서 페니스를 쥐고있다…
 
 RETURN 1
 ;--------------------------------------------------------------------------------
 ;수음
 @EVENT_COUNTER_MESSAGE502
 IF NOWEX:PLAYER:사정
-	PRINTFORML %CALLNAME:TARGET%は溢れ出る先走りをペニス전체に広げると一気に速度を上げてペニスをしごきあげた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 넘쳐흐르는 정액을 페니스 전체에 퍼뜨리고 단번에 속도를 높에 페니스를 쥐어짰다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%のペニスを握りゆっくりと上下させている…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 페니스를 잡고 천천히 위아래로 움직이고있다…
 ENDIF
 RETURN 1
 ;---------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE503_1
 ;펠라치오
-PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%のペニスを咥え、唇で亀頭をしごいている…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 페니스를 물고、입술로 귀두를 쥐고있다…
 RETURN 1
 ;---------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE503_2
-;ディープスロート
-PRINTFORM %CALLNAME:TARGET%は限界まで勃起した%CALLNAME:MASTER%のペニスを根元まで飲み込み
-PRINTFORML 激しく頭を動かしている…
+;딥 스롯
+PRINTFORM %조사처리(CALLNAME:TARGET,"는")% 한계까지 발기한 %CALLNAME:MASTER%의 페니스를 뿌리까지 삼켜버렸다
+PRINTFORML 격렬하게 머리를 움직이고 있다…
 RETURN 1
 ;------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE504_1
 ;파이즈리
 IF !TALENT:TARGET:110
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%のペニスを胸で挟んできた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 페니스를 가슴에 끼고있다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:MASTER%のペニスに乳首をこすりつけている…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:MASTER%의 페니스에 젖꼭지를…
 ENDIF
 RETURN 1
 ;------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE504_2
 ;세로파이즈리,젖성교
-PRINTFORML %CALLNAME:PLAYER%は%CALLNAME:TARGET%の豊満な胸の隙間にペニスを突き入れて腰を振った…
+PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%의 풍만한 가슴 틈으로 페니스를 집어넣고 허리를 흔들었다…
 RETURN 1
 ;------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE504_3
-;谷間を作る
+;계곡만들기
 IF TALENT:TARGET:110
-	PRINTFORML %CALLNAME:TARGET%は平らな胸を懸命に寄せて何とかペニスを挟もうとしている…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 평평한 가슴을 열심히 끌어당겨 어떻게든 페니스를 끼우려고 하고있다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は胸を寄せて作った谷間でペニスを挟み上半身を激しく動かしている…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 가슴을 모아 만든 틈새에 페니스를 끼우고 상체를 격렬하게 움직이고있다…
 ENDIF
 RETURN 1
 ;---------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE505_1
 ;스마타
-PRINTFORML %CALLNAME:TARGET%は太ももで%CALLNAME:MASTER%のペニスをはさみ腰を動かした…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 허벅지로 %CALLNAME:MASTER%의 페니스를 끼우고 허리를 움직였다…
 RETURN 1
 ;---------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE505_2
 ;수음추가
-PRINTFORML %CALLNAME:TARGET%は太ももで%CALLNAME:MASTER%のペニスをはさみ余った亀頭を指で責め立てた…
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 허벅지로 %CALLNAME:MASTER%의 페니스를 끼우고 귀두를 손가락으로 자극했다…
 RETURN 1
 ;------------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE600_1
-;玉揉み
+;구슬 주무르기
 IF TALENT:TARGET:새드
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の陰嚢に手を伸ばし揉みほぐしてきた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 음낭에 손을 뻗어 주물러 왔다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%の陰嚢に手を伸ばし優しく揉みほぐしてきた…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 음낭에 손을 뻗어 부드럽게 주물렀다…
 ENDIF
 RETURN 1
 ;------------------------------------------------------------------------------------------
 @EVENT_COUNTER_MESSAGE600_2
-PRINTFORML %CALLNAME:TARGET%は陰嚢を咥えて口の中でコロコロと玉を転がしている
+PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 음낭을 입에 물고 입안에서 구슬을 굴리고있다
 RETURN 1
 ;------------------------------------------------------------------------------------------
 ;애널애무
 @EVENT_COUNTER_MESSAGE601
 IF ABL:PLAYER:Ａ감각 < 2
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のアヌスを指で刺激している…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애널을 손가락으로 자극하고 있다…
 ELSE
-	PRINTFORML %CALLNAME:TARGET%は%CALLNAME:PLAYER%のアヌスに指を挿入し直腸までかき回した…
+	PRINTFORML %조사처리(CALLNAME:TARGET,"는")% %CALLNAME:PLAYER%의 애널에 손가락을 삽입하여 직장까지 휘저었다…
 ENDIF
 RETURN 1
 ;-------------------------------------------------------------------------------------------

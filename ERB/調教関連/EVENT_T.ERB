@@ -265,9 +265,9 @@ RETURN 0
 ;조교자が유치
 IF TALENT:PLAYER:유치
 	PRINTS NAME:PLAYER
-	PRINTFORM %조사만처리(NAME:PLAYER,"가")% 젖을 들이마시는 동안에
+	PRINTFORM %조사처리(NAME:PLAYER,"가")% 젖을 들이마시는 동안에
 	PRINTS NAME:TARGET
-	PRINTFORMW %조사만처리(NAME:TARGET,"가")% 모유가 나오게 되었다
+	PRINTFORMW %조사처리(NAME:TARGET,"가")% 모유가 나오게 되었다
 	TALENT:모유체질 = 1
 ENDIF
 
@@ -364,9 +364,9 @@ ELSE
 			PRINTFORMW 조교를 받은 것 때문에、%조사처리(NAME:TARGET,"는")% %NAME:MASTER%의 노예임을 재인식한 듯하다.
 		ENDIF
 		SIF TALENT:TARGET:신뢰
-			PRINTFORMW %조사만처리(NAME:TARGET,"는")% 【신뢰】를 잃었다
+			PRINTFORMW %조사처리(NAME:TARGET,"는")% 【신뢰】를 잃었다
 		SIF TALENT:TARGET:동료
-			PRINTFORMW %조사만처리(NAME:TARGET,"는")% 【동료】를 잃었다
+			PRINTFORMW %조사처리(NAME:TARGET,"는")% 【동료】를 잃었다
 		TALENT:TARGET:신뢰 = 0
 		TALENT:TARGET:동료 = 0
 		CFLAG:TARGET:미조교함락 = 0
