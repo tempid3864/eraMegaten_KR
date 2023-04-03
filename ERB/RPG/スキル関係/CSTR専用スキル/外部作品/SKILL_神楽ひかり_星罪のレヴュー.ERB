@@ -1,6 +1,7 @@
 ﻿;更新履歴
 ;001	2019/09/XX		kamedakeisuke(ﾟдﾟ)			新規作成
 ;002	2021/XX/XX		kamedakeisuke(ﾟдﾟ)			トップスタァイベント後の強化処理追加
+;003	2022/08/20		kamedakeisuke(ﾟдﾟ)			強化後の複合相性に万能を追加
 
 ;スキル名
 @SKILL_NAME_星罪のレヴュー,ARG
@@ -61,7 +62,8 @@ IF 다이바나나의기억:3:2 > 0 && EQUIP:ARG:악세서리 == [[아이템:별
 	LOCALS = 파마
 	LOCALS:1 = 파마
 	LOCALS:2 = 주살
-	FOR LOCAL:1, 1, 3
+	LOCALS:3 = 만능
+	FOR LOCAL:1, 1, 4
 		;判定用に数値を仕舞う。反射は-200扱い
 		LOCAL:3 = MAXBASE:LOCAL:(LOCALS:(LOCAL:1)) == 999 ? -200 # MAXBASE:LOCAL:(LOCALS:(LOCAL:1))
 		LOCAL:3 = !(HAVE_SKILL(ARG,[[스킬:영세라이도우]]) || HAVE_SKILL(ARG,2947)) && CFLAG:LOCAL:(LOCALS:(LOCAL:1)+"무효화횟수") ? -5 # LOCAL:3

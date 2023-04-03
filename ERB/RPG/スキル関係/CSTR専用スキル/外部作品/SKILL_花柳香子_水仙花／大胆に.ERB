@@ -1,5 +1,6 @@
 ﻿;更新履歴
 ;001	2019/09/XX		kamedakeisuke(ﾟдﾟ)			新規作成
+;002	2022/08/20		kamedakeisuke(ﾟдﾟ)			性能の方向を変更
 
 ;スキル名
 @SKILL_NAME_水仙花／大胆に,ARG
@@ -20,28 +21,28 @@ ELSEIF BASE:ARG:LV < 20
 ELSEIF BASE:ARG:LV < 30
 	RETURN 80
 ELSEIF BASE:ARG:LV < 40
-	RETURN 100
+	RETURN 85
 ELSEIF BASE:ARG:LV < 50
-	RETURN 120
+	RETURN 90
 ELSEIF BASE:ARG:LV < 60
-	RETURN 140
+	RETURN 95
 ELSEIF BASE:ARG:LV < 70
-	RETURN 150
+	RETURN 100
 ELSEIF BASE:ARG:LV < 80
-	RETURN 155
+	RETURN 105
 ELSE
-	RETURN 160
+	RETURN 110
 ENDIF
 ;エラー避け
 RETURN 1
 
 ;クリティカル率
-;@SKILL_CRITICAL_RATE_水仙花／大胆に, ARG
-;RETURN 0
+@SKILL_CRITICAL_RATE_水仙花／大胆に, ARG
+RETURN 5
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_水仙花／大胆に,ARG
-RETURN 1
+RETURN 4
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_水仙花／大胆に,ARG
@@ -58,7 +59,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_水仙花／大胆に,ARG
-RETURN 22
+RETURN 20
 
 ;　상성
 @SKILL_TYPE_水仙花／大胆に,ARG
@@ -157,7 +158,7 @@ CALL ATTACK_RAND,ARG,ARG:1,SKILL_NUM,1
 ;　説明文の表示
 @SKILL_EXPLAIN_水仙花／大胆に,ARG
 PRINTL 소녀의 반짝임으로 주조된 나기나타。
-PRINTL 대담한 발놀림으로 적 전체 랜덤하게 １～８회 물리 질풍데미지
+PRINTL 대담한 발놀림으로 적 전체 랜덤하게 ４～８회 물리 질풍데미지
 PRINTL 다만 위력은 Lv의 10단위에 비례한다
 
 ;没

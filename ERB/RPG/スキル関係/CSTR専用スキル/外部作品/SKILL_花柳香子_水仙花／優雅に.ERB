@@ -1,6 +1,7 @@
 ﻿;更新履歴
 ;001	2019/09/XX		kamedakeisuke(ﾟдﾟ)			新規作成
 ;002	2022/06/05		kamedakeisuke(ﾟдﾟ)			専用スキルとしてあんまりにもあんまりだったため、主に高レベル時の威力を大幅アップ
+;003	2022/08/20		kamedakeisuke(ﾟдﾟ)			水仙花／大胆に　に合わせる形で再設計
 
 ;スキル名
 @SKILL_NAME_水仙花／優雅に,ARG
@@ -18,21 +19,21 @@ SIF ARG == -1
 IF BASE:ARG:LV < 10
 	RETURN 10
 ELSEIF BASE:ARG:LV < 20
-	RETURN 100
+	RETURN 30
 ELSEIF BASE:ARG:LV < 30
-	RETURN 175
+	RETURN 60
 ELSEIF BASE:ARG:LV < 40
-	RETURN 195
+	RETURN 70
 ELSEIF BASE:ARG:LV < 50
-	RETURN 205
+	RETURN 75
 ELSEIF BASE:ARG:LV < 60
-	RETURN 225
+	RETURN 80
 ELSEIF BASE:ARG:LV < 70
-	RETURN 245
+	RETURN 85
 ELSEIF BASE:ARG:LV < 80
-	RETURN 265
+	RETURN 90
 ELSE
-	RETURN 300
+	RETURN 95
 ENDIF
 ;エラー避け
 RETURN 1
@@ -43,11 +44,11 @@ RETURN 1
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_水仙花／優雅に,ARG
-RETURN 1
+RETURN 4
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_水仙花／優雅に,ARG
-RETURN 1
+RETURN 8
 
 ;　2 ＨＰ지불　3 ＭＰ지불
 @SKILL_COSTTYPE_水仙花／優雅に, ARG
@@ -56,7 +57,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_水仙花／優雅に,ARG
-RETURN 16
+RETURN 20
 
 ;　상성
 @SKILL_TYPE_水仙花／優雅に,ARG
@@ -145,7 +146,7 @@ RETURN 70
 ;====================================================
 @ACTION_水仙花／優雅に,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
-CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
+CALL ATTACK_RAND,ARG,ARG:1,SKILL_NUM,1
 
 
 ;====================================================
@@ -154,7 +155,8 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 
 ;　説明文の表示
 @SKILL_EXPLAIN_水仙花／優雅に,ARG
-PRINTL 소녀의 반짝임으로 주조된 나기나타。우아한 발걸음으로 적 전체에 마법데미지＋PANIC
+PRINTL 소녀의 반짝임으로 주조된 나기나타
+PRINTL 우아한 발걸음으로 적 전체에 ４～８회의 마법데미지＋PANIC
 PRINTL 다만 위력은 Lv의 10단위에 비례한다
 
 ;没
