@@ -1,4 +1,7 @@
 ﻿;元バルカンキック
+;21/3/1：NEO：専用スキルとは言えクッソ強いしキャラにも合ってなさそう。
+;他スキルと見比べたり高垣楓のスペックを考え、「威力は低いけどクリティカル率高め」調整
+;っていうか力いっぱいぶん殴りながらダジャレで魅了って狂人かなにか？？？するほうもされるほうも？？？
 
 ;스킬명
 @SKILL_NAME_280,ARG
@@ -10,7 +13,7 @@ RETURN 90
 
 ;　위력
 @SKILL_POWER_280, ARG
-RETURN 170
+RETURN 45
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_280,ARG
@@ -26,7 +29,10 @@ RETURN 8
 
 ;一体辺りの最低ＨＩＴ数
 @SKILL_MINATK_PER_280,ARG
-RETURN 1
+RETURN 0
+
+@SKILL_CRITICAL_RATE_280
+RETURN 15
 
 ;　2 ＨＰ지불　3 ＭＰ지불
 @SKILL_COSTTYPE_280, ARG
@@ -42,11 +48,11 @@ RETURN 30
 RETURN GET_TYPE_NUM("타격")
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_280, ARG
+@SKILL_DECIDE_TYPE_280
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_280, ARG
+@SKILL_DAMAGETYPE_280
 RETURN 1
 
 

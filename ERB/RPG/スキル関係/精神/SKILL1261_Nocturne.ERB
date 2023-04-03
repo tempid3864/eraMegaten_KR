@@ -1,5 +1,6 @@
 ﻿;元ファイナルヌード
 ; ランダムでアンコール(2回目)できたらな
+;21/3/1：NEO：専用スキルとは言えクッソ安い、安すぎるのでコストを増大
 
 ;스킬명
 @SKILL_NAME_1261,ARG
@@ -29,43 +30,43 @@ RETURN 3
 ;　코스트량
 @SKILL_COST_1261,ARG
 SIF ARG == -1
-    RETURN 38
+    RETURN 65
 IF ABL:ARG:가창기능 == 0
-    RETURN 38
+    RETURN 65
 ELSEIF ABL:ARG:가창기능 == 1
-    RETURN 37
+    RETURN 63
 ELSEIF ABL:ARG:가창기능 == 2
-    RETURN 36
+    RETURN 61
 ELSEIF ABL:ARG:가창기능 == 3
-    RETURN 35
+    RETURN 59
 ELSEIF ABL:ARG:가창기능 == 4
-    RETURN 34
+    RETURN 57
 ELSEIF ABL:ARG:가창기능 == 5
-    RETURN 33
+    RETURN 55
 ELSEIF ABL:ARG:가창기능 == 6
-    RETURN 32
+    RETURN 53
 ELSEIF ABL:ARG:가창기능 == 7
-    RETURN 32
+    RETURN 51
 ELSEIF ABL:ARG:가창기능 == 8
-    RETURN 31
+    RETURN 49
 ELSEIF ABL:ARG:가창기능 == 9
-    RETURN 31
+    RETURN 47
 ELSE
-    RETURN 30
+    RETURN 45
 ENDIF
-    RETURN 38
+    RETURN 65
 
 ;　상성
 @SKILL_TYPE_1261,ARG
 RETURN GET_TYPE_NUM("정신")
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_1261, ARG
+@SKILL_DECIDE_TYPE_1261
 RETURN 2
 ;魔法
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_1261, ARG
+@SKILL_DAMAGETYPE_1261
 RETURN 0
 
 
@@ -131,31 +132,31 @@ RETURN GET_TYPE_NUM("정신")
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_1261,ARG
 SIF ARG == -1
-    RETURN 65
+    RETURN 45
 IF ABL:ARG:가창기능 == 0
-    RETURN 67
+    RETURN 47
 ELSEIF ABL:ARG:가창기능 == 1
-    RETURN 69
+    RETURN 49
 ELSEIF ABL:ARG:가창기능 == 2
-    RETURN 71
+    RETURN 51
 ELSEIF ABL:ARG:가창기능 == 3
-    RETURN 74
+    RETURN 54
 ELSEIF ABL:ARG:가창기능 == 4
-    RETURN 77
+    RETURN 57
 ELSEIF ABL:ARG:가창기능 == 5
-    RETURN 80
+    RETURN 60
 ELSEIF ABL:ARG:가창기능 == 6
-    RETURN 82
+    RETURN 62
 ELSEIF ABL:ARG:가창기능 == 7
-    RETURN 84
+    RETURN 64
 ELSEIF ABL:ARG:가창기능 == 8
-    RETURN 86
+    RETURN 66
 ELSEIF ABL:ARG:가창기능 == 9
-    RETURN 88
+    RETURN 68
 ELSE
-    RETURN 90
+    RETURN 70
 ENDIF
-    RETURN 65
+    RETURN 45
 ;RETURN 85
 
 ;추가효과 부여확률상한
@@ -199,6 +200,7 @@ PRINTFORMW 회장에 쾌감의 마비가 퍼져나간다！
 ;　 설명문 표시
 @SKILL_EXPLAIN_1261
 PRINTL 라이브「Nocturne」으로 적 전체를 뼛속 깊이 사로잡는다。
+PRINTL 즉, 강화를 해제하고 마비시킨다。
 PRINTL 가창기능에 따라 성공률↑、코스트가 저하된다。
 
 ;계승에 필요한 부위
