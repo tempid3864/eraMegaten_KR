@@ -1,13 +1,11 @@
 emuera.config
 emuera.log
 macro.txt
-ToDo.txt
+lazyloading.dat
 
 resources/*
 debug/*
 sav/*
-WIP/*
-readme_kr/*
 
 
 
