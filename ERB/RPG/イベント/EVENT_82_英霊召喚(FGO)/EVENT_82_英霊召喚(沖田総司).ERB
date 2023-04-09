@@ -24,27 +24,27 @@
 LOCAL = GETCHARA(4402)
 IF 이벤트플래그:82:1 > 3
 	IF GETCHARA([[キャラ:오키타소지]]) > 0
-		RESULTS = 病弱女剣士(沖田総司)
-		RESULTS:1 = 要触媒：LV50以上の男ではない造魔　加入済
+		RESULTS = 병약 여검객(오키타 소지)
+		RESULTS:1 = 필요 촉매：LV50이상의 남자가 아닌 조마　가입완료
 		RETURN 0
 	ELSEIF GETCHARA(4402) > 0
 		IF IS_MALE(LOCAL) == 0 && BASE:LOCAL:LV > 49 && ITEM:카슈・키요미츠 > 0
-			RESULTS = 病弱女剣士(沖田総司)
-			RESULTS:1 = 要触媒：LV50以上の男ではない造魔+加州清光　沖田総司未加入
+			RESULTS = 병약 여검객(오키타 소지)
+			RESULTS:1 = 필요 촉매：LV50이상의 남자가 아닌 조마+카슈・키요미츠　오키타 소지 미가입
 			RETURN 1
 		ELSE
-			RESULTS = 病弱女剣士(沖田総司)
-			RESULTS:1 = 要触媒：LV50以上の男ではない造魔+加州清光　条件未達成
+			RESULTS = 병약 여검객(오키타 소지)
+			RESULTS:1 = 필요 촉매：LV50이상의 남자가 아닌 조마+카슈・키요미츠　조건 미달성
 			RETURN 0
 		ENDIF
 	ELSE
-		RESULTS = 病弱女剣士(沖田総司)
-		RESULTS:1 = 要触媒：LV50以上の男ではない造魔+加州清光　未所持
+		RESULTS = 병약 여검객(오키타 소지)
+		RESULTS:1 = 필요 촉매：LV50이상의 남자가 아닌 조마+카슈・키요미츠　미소지
 		RETURN 0
 	ENDIF
 ELSE
 	;そもこれが出ることはないはずだけど、確認用に一応記載
-	RESULTS = 初回召喚イベント未消化
+	RESULTS = 최초 소환 이벤트 미소화
 	RETURN 0
 ENDIF
 
@@ -62,12 +62,12 @@ ENDIF
 	対象 = [[キャラ:오키타소지]]
 	;バトルイベント識別のために이벤트플래그を特定値に設定
 	이벤트플래그:82:5 = 50
-	PRINTFORML  「さて、召喚術は次のステージへっ
-	PRINTFORMW  　――我が輩達の研究成果をご覧に入れるとしよう」
+	PRINTFORML  「자、소환술은 다음 스테이지로
+	PRINTFORMW  　――우리들의 연구 성과를 보시죠」
 	PRINTFORML  
-	PRINT  「さあ、構えたまえよ
-	PRINTFORM \@ TALENT:MASTER:서머너 > 0 ? サマナー # 戦士 \@%CALLNAME:MASTER%。
-	PRINTFORMW  　これが新たな召喚技術、その発展である――――ｯｯｯ」
+	PRINT  「자、준비해라
+	PRINTFORM \@ TALENT:MASTER:서머너 > 0 ? 서머너 # 전사 \@ %CALLNAME:MASTER%。
+	PRINTFORMW  　이것이 새로운 소환기술、그 발전이다――――아앗」
 	;キャラリストの下から順にキャラ検索
 	;該当するキャラを発見した場合、それを削除する
 	FOR L_COUNT,CHARANUM,-1,-1
@@ -86,59 +86,59 @@ ENDIF
 	PRINTFORML  
 	PRINTFORML  
 	;■以下、召喚イベント本文をどうぞ■
-	PRINTFORMW  ＞魔法陣が虹色の輝きを放ち光が渦を巻く、溢れ出ていた魔力が徐々に収まり始める
-	PRINTFORML  　光が収まるとそこには桜色の和服に身を包み、刀を下げた少女がいた。
-	PRINTFORML  　色が抜けたような淡い桃色の髪と白い肌を持つ少女は、軽く周囲を確認してから名乗りを上げた。
+	PRINTFORMW  ＞소환진이 무지개빛으로 빛나고 빛이 소용돌이치며、쏟아져 나오던 마력이 서서히 가라앉기 시작한다
+	PRINTFORML  　빛이 잦아들자 그곳에는 벚꽃색 기모노를 입고、칼을 내린 소녀가 있었다。
+	PRINTFORML  　색이 바랜 듯한 옅은 복숭아색 머리와 흰 피부를 가진 소녀는、가볍게 주위를 살필 뒤에야 나섰다。
 	PRINTFORML 
-	PRINTFORML  「――新選組一番隊隊長　沖田総司推参！　あなたが私の召喚者ですか？」
+	PRINTFORML  「――신센구미 1번대 대장　오키타 소지 등장！　당신이 나의 소환자입니까？」
 	PRINTFORML 
-	PRINTFORMW  ＞沖田総司……。　それならば恐らくセイバークラスのサーヴァントだろう。
-	PRINTFORML  　しかし……
+	PRINTFORMW  ＞오키타 소지……。　그렇다면 아마도 세이버 클래스의 서번트 일것이다。
+	PRINTFORML  　하지만……
 	PRINTFORML 
 
 	$INPUT_LOOP1
-	PRINTFORML [0] ダンダラ羽織は？
-	PRINTFORML [1] そうだ。
+	PRINTFORML [0] 단다라 하오리는？
+	PRINTFORML [1] 그래。
 	INPUT
 	SELECTCASE RESULT
 		CASE 0
-			PRINTFORML  言った途端、少女の表情はふにゃっと崩れた。
-			PRINTFORML  「うぅ……それがどこかに行ってしまいまして……。　その辺に紛れていませんか」
-			PRINTFORML  ＞そんなものが紛れているわけがない。　そういうと少女は諦めたように首を振った。
-			PRINTFORML  「やっぱりそうですか……。　まぁそのうち出てくることもあるでしょう」
+			PRINTFORML  말하는 순간、소녀의 표정은 흐물흐물 무너졌다。
+			PRINTFORML  「으……그게 어디론가 가버려서……。　그 주변에 없나요」
+			PRINTFORML  ＞그런 것이 섞여 있을 리가 없다。　그러자 소녀는 포기한 듯 고개를 저었다。
+			PRINTFORML  「역시 그렇습니까……。　뭐 언젠가는 나올 수도 있겠지요」
 		CASE 1
 			PRINTFORML  
 		CASEELSE
 			GOTO INPUT_LOOP1
 	ENDSELECT
-	PRINTFORMW 　＞少女はこちらを確認するように目を細めると
-	PRINTFORML 「……とりあえず堅気ではなさそうですね。　何をしている方なのかは存じませんが……」
-	PRINTFORML 「私の希望は一つです。　私に最後まで戦わせること。　それさえ約束されるなら」
-	PRINTFORMW 　＞契約者の善悪は問わない、と。
-	PRINTFORML 　大変話が早い、というか物分かりが良すぎるくらいだが、それで良いというなら文句はない。
-	PRINTFORML 　元より、その為に召喚したのだから。
-	PRINTFORML 「……結構です。　ここに契約は果たされました。　それではよろしくお願いします」
-	PRINTFORMW 　＞さて、早速だが彼女には何ができるのだろう？
-	PRINTFORML 「私にできる事ですか？　斬れと言われれば斬る。ただそれだけです」
-	PRINTFORML 「まぁ、敵と分かり切っているのであれば、指示を待ったりはしませんが」
-	PRINTFORMW 　＞穏やかな表情のまま物騒な事を言って、少女は軽く咳き込んだ。
-	PRINTFORML 　どうも、伝承の一環として彼女の病弱さは、セイバー沖田総司にも引き継がれているらしい。
-	PRINTFORML 「……剣に関して曇りはありません。　疑うのであれば、試してみますか？」
+	PRINTFORMW 　＞소녀는 이쪽을 확인하듯 눈을 가늘게 뜨더니
+	PRINTFORML 「……일단 딱딱하지는 않은 것 같네요。　뭐 하시는 분인지는 모르겠지만……」
+	PRINTFORML 「제 희망은 하나입니다。　저를 끝까지 싸우게 하는 것。　그것만 약속하신다면」
+	PRINTFORMW 　＞계약자의 선악은 짜지지 않는다、라。
+	PRINTFORML 　매우 말이 빠르다고 할까、이해심이 너무 좋을 정도이지만、그것으로 좋다고 한다면 불평은 없다。
+	PRINTFORML 　원래、그 때문에 소환한 거니까。
+	PRINTFORML 「……됐습니다。　여기 계약은 끝났습니다。　그럼 잘 부탁드립니다」
+	PRINTFORMW 　＞자、당장 그녀는 무엇을 할 수 있을까？
+	PRINTFORML 「제가 할 수 있는 일인가요？　베라고 하면 베는거죠。그뿐입니다」
+	PRINTFORML 「뭐、적이라는 것을 알고 있다면、지시를 기다리지는 않겠습니다만」
+	PRINTFORMW 　＞온화한 표정 그대로 험악한 말을 하고、소녀는 가볍게 기침을 했다。
+	PRINTFORML 　아무래도、전승의 일환으로 그녀의 병약함은、세이버 오키타 쇼지에게도 계속되고 있는 것 같다。
+	PRINTFORML 「……검에 대해선 의심의 여지가 없습니다。　의심스럽다면、시도해보시겠습니까？」
 	PRINTFORML 
-	PRINTFORMW  ＞さて、どうしようか……
+	PRINTFORMW  ＞이제、어떻게 할까……
 	PRINTFORML  
 	$INPUT_LOOP2
-	PRINTFORML [0] 戦闘テストを行う
-	PRINTFORML [1] やっぱりやめておく
+	PRINTFORML [0] 전투 테스트를 수행한다
+	PRINTFORML [1] 역시 그만둔다
 	INPUT
 	SELECTCASE RESULT
 		CASE 0
 			PRINTFORML  
-			PRINTFORML  「ええ、我が刃の冴えを試したいというのであれば
-			PRINTFORMW  　お目に掛けるまでの事」
+			PRINTFORML  「네、제 칼날의 날카로움을 시험해보고 싶으시면
+			PRINTFORMW  　뵙기까지의 일입니다」
 			PRINTFORML
 			PRINTFORML 
-			PRINTFORMW  ＞英霊　沖田総司は、口元の赤い物をぬぐって刀を構えた。 
+			PRINTFORMW  ＞영령　오키타 소지는、입가에 묻은 붉은 것을 닦고 칼을 들었다。 
 			PRINTFORML 
 
 			FLAG:도주불가플래그 = 1
@@ -163,48 +163,48 @@ ENDIF
 			CALL BATTLE_START
 
 			PRINTFORML  
-			PRINTFORML  「この程度……」
+			PRINTFORML  「이 정도면……」
 			PRINTFORML  
-			PRINTFORMW  ＞刀を杖の代わりにして立ち上がろうとする沖田を止める。
-			PRINTFORML  　これはあくまでテストだ。　そこまでする必要はない。
+			PRINTFORMW  ＞칼을 지팡이 대신 들고 일어서려는 오키타를 막는다。
+			PRINTFORML  　이건 어디까지나 테스트다。　그렇게까지 할 필요는 없다。
 			PRINTFORML 
-			PRINTFORML  「承知しました。　優れたマスターに呼ばれたと思えば、私も心強い。
-			PRINTFORML  　改めて名乗ります。セイバーのサーヴァント、沖田総司。
-			PRINTFORML  　これより、あなたの刃となりましょう」
+			PRINTFORML  「알겠습니다。　뛰어난 마스터에게 불려졌다고 생각하니、나도 든든합니다。
+			PRINTFORML  　다시 한번 이름을 밝히겠습니다。세이버인 서번트、오키타 소지
+			PRINTFORML  　이제부터、당신의 검이 되겠습니다」
 			PRINTFORML 
-			PRINTFORML  「それで、マスターは具体的にどんな仕事をされてるんですか？
-			PRINTFORML  　悪魔退治、暗殺、成程。　そういう事なら沖田さんはお役に立ちますよ～。
-			PRINTFORML  　…………えっ、飯処？　いや、沖田さん料理とかはちょっと……。
-			PRINTFORML  　娼館経営？　娼館というと土方さんが良く通っていた……？
-			PRINTFORML  　ちょ、ちょ～っとそういう事では沖田さんはお役に立てそうになく……。
-			PRINTFORML  　あの、聞いてます？　マスター？　マスター！？」
+			PRINTFORML  「그래서、마스터는 구체적으로 어떤 일을 하시나요？
+			PRINTFORML  　악마 퇴치、암살、정도。　그런 일이라면 오키타씨가 도움이 될 거예요～。
+			PRINTFORML  　…………에、식당？　아니、오키타씨 요리같은건 좀……。
+			PRINTFORML  　창관경영？　창관이라고 하면 히지카타씨가 자주 다니던……？
+			PRINTFORML  　잠깐、잠깐～그런 건 오키타씨는 도움이 될 것 같지 않고……。
+			PRINTFORML  　저、듣고 있어요？　마스터？　마스터！？」
 
 			PRINTFORML 
 			PRINTFORML 
-			PRINTFORMW  ＞ 英霊 沖田総司 が仲魔になった！
+			PRINTFORMW  ＞ 영령 오키타 소지 가 중마가 되었다！
 			PRINTFORML  
 			CALL ADD_NEW_COMPANION, [[キャラ:오키타소지]], 1000
 			;バトルイベント識別に使った이벤트플래그を片付け
 			이벤트플래그:82:5 = 0
 		CASE 1
 			PRINTFORML  
-			PRINTFORML  「そうですか？　まぁ、私の刃の切れ味が知りたければ、戦場に出していただければ存分に」
+			PRINTFORML  「그렇습니까？　뭐、제 칼날의 날카로움을 알고 싶다면、전쟁터에 내놓으시면 마음껏」
 			PRINTFORML  　
-			PRINTFORMW  ＞沖田は、口元の赤い物を拭って刀から手を放した。
+			PRINTFORMW  ＞오키타는、입가에 묻은 붉은 물체를 닦고 칼에서 손을 뗐다。
 			PRINTFORML 
-			PRINTFORML  「では、改めて名乗ります。セイバーのサーヴァント、沖田総司。
-			PRINTFORML  　これより、あなたの刃となりましょう」
+			PRINTFORML  「그럼、다시 한번 이름을 밝히겠습니다。세이버인 서번트、오키타 소지。
+			PRINTFORML  　이제부터、당신의 검이 되겠습니다」
 			PRINTFORML 
-			PRINTFORML  「それで、マスターは具体的にどんな仕事をされてるんですか？
-			PRINTFORML  　悪魔退治、暗殺、成程。　そういう事なら沖田さんはお役に立ちますよ～。
-			PRINTFORML  　…………えっ、飯処？　いや、沖田さん料理とかはちょっと……。
-			PRINTFORML  　娼館経営？　娼館というと土方さんが良く通っていた……？
-			PRINTFORML  　ちょ、ちょ～っとそういう事では沖田さんはお役に立てそうになく……。
-			PRINTFORML  　あの、聞いてます？　マスター？　マスター！？」
+			PRINTFORML  「그래서、마스터는 구체적으로 어떤 일을 하시나요？
+			PRINTFORML  　악마 퇴치、암살、정도。　그런 일이라면 오키타씨가 도움이 될 거예요～。
+			PRINTFORML  　…………에、식당？　아니、오키타씨 요리같은건 좀……。
+			PRINTFORML  　창관경영？　창관이라고 하면 히지카타씨가 자주 다니던……？
+			PRINTFORML  　잠깐、잠깐～그런 건 오키타씨는 도움이 될 것 같지 않고……。
+			PRINTFORML  　저、듣고 있어요？　마스터？　마스터！？」
 
 			PRINTFORML 
 			PRINTFORML 
-			PRINTFORMW  ＞ 英霊 沖田総司 が仲魔になった！
+			PRINTFORMW  ＞ 영령 오키타 소지 가 중마가 되었다！
 			PRINTFORML  
 			PRINTFORML  
 			CALL ADD_NEW_COMPANION, [[キャラ:오키타소지]], 1000
@@ -230,16 +230,16 @@ IF 이벤트플래그:82:5 == 50
 	CUSTOMDRAWLINE =
 	PRINTFORML  
 	SETCOLOR COLOR("YELLOW")
-	PRINTFORMW  ＞  役割を終えたはずの魔法陣からマグネタイトが溢れ出し、英霊へ供給されてゆく！
+	PRINTFORMW  ＞  역할을 다한 마법진에서 마그네타이트가 쏟아져、영령에게 공급되어 간다！
 	RESETCOLOR
 	PRINTFORML  
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃おや？　なんですか、これは……　　　　　　　　　　　　　　┃
+	PRINTL ┃어？　뭐예요、이건……　　　　　　　　　　　　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTW
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃不思議なくらい体が軽い。　　　　　　　　　　　　　　　　　┃
-	PRINTL ┃何だか分かりませんが、今のうちにカタを付けます！　　　　　┃
+	PRINTL ┃신기할 정도로 몸이 가볍다。　　　　　　　　　　　　　　　　　┃
+	PRINTL ┃뭔지 모르겠지만、지금 당장 카타를 칠게요！　　　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTW
 	;魔力放出状態に強制移行
@@ -267,18 +267,18 @@ IF 이벤트플래그:82:5 == 52 && 현HP비율(CHARANUM-1) < 50
 	CUSTOMDRAWLINE =
 	PRINTL 
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃――――こふっ……！？　　　　　　　　　　　　　　　　　　┃
-	PRINTL ┃こほっ、こほっ……　　　　　　　　　　　　　　　　　　　　┃
+	PRINTL ┃――――쿨럭……！？　　　　　　　　　　　　　　　　　　┃
+	PRINTL ┃쿨럭、쿨럭……　　　　　　　　　　　　　　　　　　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTW
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃ふぅ……。　まだです、まだ体は動く。　動くうちに……　　　┃
+	PRINTL ┃후……。　아직입니다、아직 몸은 움직입니다。　움직이는 동안에……　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTL
-	PRINTW ＞ 沖田は手にした刀を構え直した。
+	PRINTW ＞ 오키타는 손에 든 칼을 다시 잡았다。
 	PRINTL 
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃我が秘剣の煌きをお見せしましょう！　　　　　　　　　　　　┃
+	PRINTL ┃제 비검의 반짝임을 보여드리겠습니다！　　　　　　　　　　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTW
 	ABL:(CHARANUM-1):스킬3 = 3906
@@ -291,8 +291,8 @@ ELSEIF 이벤트플래그:82:5 == 51 && 현HP비율(CHARANUM-1) < 80
 	CUSTOMDRAWLINE =
 	PRINTL 
 	PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTL ┃こふっ……！？　　　　　　　　　　　　　　　　　　　　　　┃
-	PRINTL ┃……長引かせるとやはり厳しい、か。　　　　　　　　　　　　┃
+	PRINTL ┃쿨럭……！？　　　　　　　　　　　　　　　　　　　　　　┃
+	PRINTL ┃……오래 끌면 역시 힘든、가。　　　　　　　　　　　　┃
 	PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTW
 	CFLAG:(CHARANUM-1):행동횟수 = 2
