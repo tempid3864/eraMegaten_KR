@@ -51,10 +51,10 @@ ENDIF
 PRINTFORM %CALLNAME:TARGET%의 
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態の
+	PRINTFORMW 요도에 카테터가 삽입된 상태의 
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態の
+	PRINTFORMW 요도에 플러그가 삽입된 상태의 
 ;유아체형
 SIF TALENT:유아체형
 	PRINT 발달이 덜된 
@@ -158,7 +158,7 @@ IF TEQUIP:주도권
 		PRINT 애액투성이인
 	ELSEIF GET_STAIN("손", "정액", TARGET)
 		PRINT 정액으로 질퍽질퍽해진 
-	;섹스系を直前にしていないなら乱数分岐
+	;섹스계를 직전에 두지 않았다면 난수 분기
 	ELSEIF RAND:3 == 0
 		PRINT 격분한 
 	ELSEIF RAND:2 == 0 && TEQUIP:카테터 == 0
@@ -246,7 +246,7 @@ ENDIF
 ;---- EDIT 010 触手系コマンドを修正 MOD START ----
 ;촉수
 IF TEQUIP:촉수
-	PRINTFORMW を粘液に塗れた触手が弄んでいる……
+	PRINTFORMW 을 점액에 칠해진 촉수가 만지작거리고 있다……
 ;바이브の有無で分岐
 ELSEIF TEQUIP:바이브
 ;IF TEQUIP:바이브
@@ -699,10 +699,10 @@ SIF (ABL:노출증 >= 6 && !TALENT:부끄럼쟁이)
 	PRINT 과시하듯이 행동해、
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道プラグが挿入された状態のまま、
+	PRINTFORMW 요도 플러그가 삽입된 상태로、
 ;바이브＋애널바이브
 IF TEQUIP:바이브 && TEQUIP:애널바이브
 	IF TEQUIP:의상내장애무패턴Ｖ == 1
@@ -881,10 +881,10 @@ IF TEQUIP:Ｖ섹스 > 0
 ENDIF
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態のまま、
+	PRINTFORMW 요도에 플러그가 삽입된 상태로、
 PRINTFORM %CALLNAME:TARGET%의 
 ;하의または전신복を着ている
 IF TEQUIP:하의 || TEQUIP:전신복
@@ -948,31 +948,31 @@ PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %조사처리(CALLNAME:TARGET,"
 @MESSAGE_COM23
 PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:TARGET%에게 
 IF TFLAG:17 == 0
-	PRINTFORM 상쾌한 웃는 얼굴
+	PRINTFORM 상쾌한 웃는 얼굴을
 ELSEIF TFLAG:17 == 1
-	PRINTFORM 맛있는술
+	PRINTFORM 맛있는술을
 ELSEIF TFLAG:17 == 2
-	PRINTFORM 가볍고 친근한 일용품
+	PRINTFORM 가볍고 친근한 일용품을
 ELSEIF TFLAG:17 == 3
-	PRINTFORM 아름다운 악세서리
+	PRINTFORM 아름다운 악세서리를
 ELSEIF TFLAG:17 == 4
 	IF RAND:4 == 0
-		PRINTFORM 사랑스러운 의복
+		PRINTFORM 사랑스러운 의복을
 	ELSEIF RAND:3 == 0
-		PRINTFORM 화려한 의복
+		PRINTFORM 화려한 의복을
 	ELSEIF RAND:2 == 0
-		PRINTFORM 근사한 의복
+		PRINTFORM 근사한 의복을
 	ELSE
-		PRINTFORM 착용감이 좋은 의복
+		PRINTFORM 착용감이 좋은 의복을
 	ENDIF
 ELSEIF TFLAG:17 == 5
-	PRINTFORM 이계의 귀중한 술
+	PRINTFORM 이계의 귀중한 술을
 ELSEIF TFLAG:17 == 6
-	PRINTFORM 、欲しがっていたもの
+	PRINTFORM 、갖고 싶어했던 것을
 ELSEIF TFLAG:17 == 7
-	PRINTFORM 、欲しがっていたもの
+	PRINTFORM 、갖고 싶어했던 것을
 ENDIF
-PRINTFORMW 을(를) 선물했다……
+PRINTFORMW  선물했다……
 ;-------------------------------------------------
 ;24,스킨쉽
 ;-------------------------------------------------
@@ -1076,10 +1076,10 @@ IF TEQUIP:의상내장애무패턴Ｃ == 2
 ENDIF
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態のまま、
+	PRINTFORMW 요도에 플러그가 삽입된 상태로、
 ;남자＋욕정のPALAMLV3이상
 IF IS_MALE(TARGET) && (PALAM:6 >= PALAMLV:3)
 	PRINT 딱딱하게 솟아오른 페니스에 
@@ -1111,10 +1111,10 @@ PRINTW 꾹 눌렀다……
 @MESSAGE_COM41
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態のまま、
+	PRINTFORMW 요도에 플러그가 삽입된 상태로、
 PRINTFORM %CALLNAME:TARGET%의 비소에 진동하고 있는 전기안마기를 
 SIF TEQUIP:음순노출 > -1
 	PRINTFORM %CLOTHESNAMEF(TARGET,TEQUIP:음순노출)%의 위로 
@@ -1152,10 +1152,10 @@ PRINTW 다……
 @MESSAGE_COM42
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態のまま、
+	PRINTFORMW 요도에 플러그가 삽입된 상태로、
 ;해제時
 IF TEQUIP:클리캡
 	PRINTFORMW %CALLNAME:TARGET%에게 전동 클리캡을 달았다
@@ -1168,10 +1168,10 @@ ENDIF
 @MESSAGE_COM43
 ;카테터
 SIF TEQUIP:카테터
-	PRINTFORMW 尿道カテーテルが挿入された状態のまま、
+	PRINTFORMW 요도 카테터가 삽입된 상태로、
 ;요도플러그
 SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道にプラグが挿入された状態のまま、
+	PRINTFORMW 요도에 플러그가 삽입된 상태로、
 ;装着時
 IF TEQUIP:오나홀
 	PRINTFORMW %CALLNAME:TARGET%의 페니스를 오나홀에 삽입했다
@@ -2099,30 +2099,30 @@ ENDIF
 ;挿入継続時の分岐
 IF TEQUIP:Ｖ섹스 > 3
 	SIF TEQUIP:야외플레이 == 1
-	PRINTFORM 立ったまま
+	PRINTFORM 선 채로 
 	IF TEQUIP:속옷（하）
 		CALL CLOTHES_NAME,6,TARGET
 	ELSE
 		CALL CLOTHES_NAME,7,TARGET
 	ENDIF
-	PRINTFORM \@ TEQUIP:속옷（하） == [[衣装:라비아피어스]] ? を弄られながら # をずらした状態で\@
-	PRINT 挿入されている
+	PRINTFORM \@ TEQUIP:속옷（하） == [[衣装:라비아피어스]] ? 에 장난치면서 # 을 옆으로 비껴\@
+	PRINT  삽입되어 있다
 ;	IF HAVE_PENIS(PLAYER)
 ;		PRINT ペニスを
 ;	ELSE
 ;		PRINT ディルドを
 ;	ENDIF
-	PRINTFORM %CALLNAME:TARGET%の身体を掴みながら、再び腰を動かし
+	PRINTFORM %CALLNAME:TARGET%의 몸을 잡으면서、다시 허리를 움직여 
 		;함락済み
 		IF (TALENT:연모 || TALENT:음란 || TALENT:복종 || TALENT:친애 || TALENT:창부 || TALENT:예속)
-			PRINTL 始めた
+			PRINTL 시작한 
 			IF TEQUIP:야외플레이 == 1
-				PRINTFORMW %CALLNAME:TARGET%は%CALLNAME:PLAYER%に積極的に腰を押し付けている……
+				PRINTFORMW %CALLNAME:TARGET%는 %CALLNAME:PLAYER%에게 적극적으로 허리를 꽉 눌러왔다……
 			ELSE
-				PRINTFORMW %CALLNAME:TARGET%は%CALLNAME:PLAYER%に足を絡め腰を押し付けている……
+				PRINTFORMW %CALLNAME:TARGET%는 %CALLNAME:PLAYER%에게 다리를 감아 허리를 꽉 눌러왔다……
 			ENDIF
 		ELSE
-			PRINTW 始めた……
+			PRINTW 시작했다……
 		ENDIF
 ELSE
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 
@@ -2586,21 +2586,21 @@ ENDIF
 @MESSAGE_COM90
 ;카테터
 	SIF TEQUIP:카테터
-	PRINTFORMW 尿道にカテーテルが挿入された状態のまま、
+	PRINTFORMW 요도에 카테터가 삽입된 상태로、
 ;요도플러그
 	SIF TEQUIP:요도플러그
-	PRINTFORMW 尿道プラグが挿入された状態のまま、
+	PRINTFORMW 요도 플러그가 삽입된 상태로、
 ;촉수
 IF TEQUIP:촉수
-	PRINTFORMW %CALLNAME:TARGET%のペニスを咥えこんだ触手がゆっくりと脈動している…
+	PRINTFORMW %CALLNAME:TARGET%의 페니스를 물고 있는 촉수가 천천히 맥동하고 있다…
 ;오나홀
 ELSEIF TEQUIP:오나홀
-	PRINTFORMW %CALLNAME:PLAYER%はオナホールごと%CALLNAME:TARGET%のペニスを扱いている…
+	PRINTFORMW %CALLNAME:PLAYER%는 오나홀마다 %CALLNAME:TARGET%의 페니스를 취급하고 있다…
 ELSE
 	IF TEQUIP:주도권
-		PRINTFORMW %CALLNAME:TARGET%は%CALLNAME:PLAYER%の手を掴むと、自らのペニスを扱かせた…
+		PRINTFORMW %CALLNAME:TARGET%는 %CALLNAME:PLAYER%의 손을 잡고、자신의 페니스를 다루게 했다…
 	ELSE
-		PRINTFORMW %CALLNAME:PLAYER%は%CALLNAME:TARGET%のペニスを手で扱いている…
+		PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 페니스를 손으로 다루고 있다…
 	ENDIF
 ENDIF
 ;---- EDIT 010 触手系コマンドを修正 ADD END   ----
@@ -3072,9 +3072,9 @@ IF (TALENT:복종 || TALENT:예속) && RAND:5 == 0
 		PRINTFORM 흠칫흠칫 
 	ENDIF
 	SIF TEQUIP:카테터
-		PRINTFORMW カテーテルが挿入された状態のまま、
+		PRINTFORMW 카테터가 삽입된 상태로、
 	IF IS_MALE(TARGET)
-		PRINTFORMW 片足を上げて、ペニスを震わせて犬のようなポーズで放尿した…………
+		PRINTFORMW 한쪽 다리를 들어、페니스를 떨며 개 같은 포즈로 방뇨했다…………
 	ELSE
 		PRINTFORMW 한쪽 다리를 올려서、개와 같은 자세로 오줌을 쌌다……
 	ENDIF
@@ -3089,9 +3089,9 @@ ELSEIF TEQUIP:야외플레이 && RAND:5 == 1
 		PRINTFORM 수치와 굴욕감에 눈물을 흘리면서、
 	ENDIF
 	SIF TEQUIP:카테터
-		PRINTFORMW カテーテルが挿入された状態のまま、
+		PRINTFORMW 카테터가 삽입된 상태로、
 	IF IS_MALE(TARGET)
-		PRINTFORMW 立ったままペニスに手を添えて放尿し始めた……
+		PRINTFORMW 선 채로 페니스에 손을 얹고 방뇨하기 시작했다……
 	ELSE
 		PRINTFORMW 수풀의 안에서 오줌을 쌌다……
 	ENDIF
@@ -3106,9 +3106,9 @@ ELSEIF TEQUIP:수치플레이 && RAND:5 == 2
 		PRINTFORM 을 보지않게 하면서、
 	ENDIF
 	SIF TEQUIP:카테터
-		PRINTFORMW カテーテルが挿入された状態のまま、
+		PRINTFORMW 카테터가 삽입된 상태로、
 	IF IS_MALE(TARGET)
-		PRINTFORMW 立ったままペニスに手を添えて放尿し始めた……
+		PRINTFORMW 선 채로 페니스에 손을 얹고 방뇨하기 시작했다……
 	ELSE
 		PRINTFORMW 주저앉아 오줌을 싸기 시작했다……
 	ENDIF
@@ -3123,9 +3123,9 @@ ELSEIF TALENT:유아체형 && RAND:5 == 3
 		PRINTFORM 얼굴을 새빨갛게 붉히면서、흠칫흠칫 
 	ENDIF
 	SIF TEQUIP:카테터
-		PRINTFORMW カテーテルが挿入された状態のまま、
+		PRINTFORMW 카테터가 삽입된 상태로、
 	IF IS_MALE(TARGET)
-		PRINTFORMW 立ったままペニスに手を添えて放尿し始めた……
+		PRINTFORMW 선 채로 페니스에 손을 얹고 방뇨하기 시작했다……
 	ELSE
 		PRINTFORMW 쭈그리고 앉아 수풀 속에서 방뇨하기 시작했다…… 
 	ENDIF
@@ -3139,9 +3139,9 @@ ELSE
 		PRINTFORM 수치에 얼굴을 붉히면서、
 	ENDIF
 	SIF TEQUIP:카테터
-		PRINTFORMW カテーテルが挿入された状態のまま、
+		PRINTFORMW 카테터가 삽입된 상태로、
 	IF IS_MALE(TARGET)
-		PRINTFORMW 立ったままペニスに手を添えて放尿し始めた……
+		PRINTFORMW 선 채로 페니스에 손을 얹고 방뇨하기 시작했다……
 	ELSE
 		PRINTFORMW 그 자리에 주저앉아 오줌을 누기 시작했다……
 	ENDIF
@@ -3329,10 +3329,10 @@ PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 자신의 가랑이에 %CALLNAM
 @MESSAGE_COM158
 ;装着時
 IF TEQUIP:카테터
-	PRINTFORMW %CALLNAME:PLAYER%は%CALLNAME:TARGET%の尿道へと尿道カテーテルを挿入した……
+	PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 요도에 요도 카테터를 삽입했다……
 ;解除時
 ELSE
-	PRINTFORMW %CALLNAME:TARGET%の尿道からずるずるとカテーテルを引きずり出した
+	PRINTFORMW %CALLNAME:TARGET%의 요도에서 질질 끌며 카테터를 빼냈다
 ENDIF
 ;-------------------------------------------------
 ;159,요도플러그
@@ -3340,10 +3340,10 @@ ENDIF
 @MESSAGE_COM159
 ;装着時
 IF TEQUIP:요도플러그
-	PRINTFORMW %CALLNAME:PLAYER%は%CALLNAME:TARGET%の尿道へと銀色に輝く尿道プラグを挿入した……
+	PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 요도에 은빛으로 빛나는 요도 플러그를 삽입했다……
 ;解除時
 ELSE
-	PRINTFORMW %CALLNAME:TARGET%の尿道からてらてらと濡れて光るプラグをを引きずり出した
+	PRINTFORMW %CALLNAME:TARGET%의 요도에서 번들거리며 젖어 빛나는 플러그를 빼냈다
 ENDIF
 ;-------------------------------------------------
 ;160,촉수소환
@@ -3689,56 +3689,56 @@ ENDIF
 
 ;---- EDIT 010 触手系コマンドを修正 ADD START ----
 ;-------------------------------------------------
-;176,アナル極太触手
+;176,애널 극태촉수
 ;-------------------------------------------------
 @MESSAGE_COM176
 ;装着時
 IF TEQUIP:확장벌룬
-	PRINTFORM 極太な触手が%CALLNAME:TARGET%の
+	PRINTFORM 극강의 촉수가 %CALLNAME:TARGET%의 
 	;潤滑LV4以上
 	SIF PALAM:윤활 >= PALAMLV:4
-		PRINTFORM 粘液にまみれた
-	PRINTFORML アナルに突き刺さると更にその太さを増していった
-	PRINTFORM 徐々に強まる圧迫感に%CALLNAME:TARGET%は
+		PRINTFORM 점액에 범벅이된 
+	PRINTFORML 애널에 박히자 더욱 굵어지며 
+	PRINTFORM 서서히 강해지는 압박감에 %CALLNAME:TARGET%는 
 	;Ａ経験180以上＋淫乱か娼婦
 	IF EXP:Ａ경험 > 180 && (TALENT:음란 || TALENT:창부)
-		PRINTFORM とろけきった表情で、肛悦を受け入れ
+		PRINTFORM 녹아버린 표정으로、항열을 받아들이고 
 	;Ａ経験140以上＋淫乱か娼婦
 	ELSEIF EXP:Ａ경험 > 140 && (TALENT:음란 || TALENT:창부)
-		PRINTFORM 強い肛悦に腰をくねらせ
+		PRINTFORM 강한 항열에 허리를 굽히고  
 	;Ａ経験100以上＋淫乱か娼婦
 	ELSEIF EXP:Ａ경험 > 100 && (TALENT:음란 || TALENT:창부)
-		PRINTFORM 頬を染めながらも、ゆらゆらとお尻を揺らめかせ
+		PRINTFORM 뺨을 물들이면서도、엉덩이를 흔들거리고 
 	;Ａ経験70以上＋淫乱か娼婦
 	ELSEIF EXP:Ａ경험 > 70 && (TALENT:음란 || TALENT:창부)
-		PRINTFORM すぼまりに与えられる刺激に、身体を震わせ
+		PRINTFORM 오므라지며 주어지는 자극에、몸을 떨고 
 	;Ａ経験40以上
 	ELSEIF EXP:Ａ경험 > 40
-		PRINTFORM 期待と否定の入り混じった、複雑な表情をし
+		PRINTFORM 기대와 부정이 뒤섞인、복잡한 표정을 짓고 
 	;Ａ経験20以上
 	ELSEIF EXP:Ａ경험 > 20
-		PRINTFORM 恥じらいに染まった顔を伏せ、肛虐に耐え
+		PRINTFORM 부끄러움에 물든 얼굴을 숙이고、항문의 학대를 견디고 
 	;それ以外
 	ELSE
-		PRINTFORM 不浄の穴を犯される恥辱と屈辱感にまみれた表情をし
+		PRINTFORM 부정한 구멍이 범해지는 치욕과 굴욕감에 젖은 표정을 짓고
 	ENDIF
-	PRINTFORMW ている……
+	PRINTFORMW 있다……
 ;解除時
 ELSE
-	PRINTFORML %CALLNAME:TARGET%の広がりきったアヌスから触手が引き抜かれた
+	PRINTFORML %CALLNAME:TARGET%의 벌려진 애널에서 촉수가 뽑혔다
 	;Ａ감각
 	IF ABL:Ａ감각 == 0
-		PRINTFORMW %CALLNAME:TARGET%の肛門はゆっくりと閉じていった
+		PRINTFORMW %CALLNAME:TARGET%의 항문은 천천히 닫혀갔다
 	ELSEIF ABL:Ａ감각 == 1
-		PRINTFORMW %CALLNAME:TARGET%の肛門はひくつきながらゆるゆると閉じていった
+		PRINTFORMW %CALLNAME:TARGET%의 항문은 씰룩거리며 천천히 닫혀 갔다
 	ELSEIF ABL:Ａ감각 == 2
-		PRINTFORMW %CALLNAME:TARGET%の肛門はぽっかり口を開いている
+		PRINTFORMW %CALLNAME:TARGET%의 항문은 입을 딱 벌리고 있다
 	ELSEIF ABL:Ａ감각 == 3
-		PRINTFORMW %CALLNAME:TARGET%の肛門は拡がったままなかなか戻らないようだ
+		PRINTFORMW %CALLNAME:TARGET%의 항문은 넓어진 채 좀처럼 돌아오지 않는 것 같다
 	ELSEIF ABL:Ａ감각 == 4
-		PRINTFORMW %CALLNAME:TARGET%の肛門から腸の中が丸見えになっている
+		PRINTFORMW %CALLNAME:TARGET%의 항문으로 장 속이 훤히 드러나 있다
 	ELSEIF ABL:Ａ감각 >= 5
-		PRINTFORMW %CALLNAME:TARGET%は、自分の肛門を指で拡げ、恍惚としている
+		PRINTFORMW %CALLNAME:TARGET%는、자신의 항문을 손가락으로 벌려、황홀해하고 있다
 	ENDIF
 ENDIF
 ;---- EDIT 010 触手系コマンドを修正 ADD END   ----
@@ -4286,7 +4286,7 @@ IF PREVCOM == 66
 		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 주어진 쾌감을 쫓아서 허리를 비비 꼬고 있다…
 		PRINTFORMW
 	ELSEIF EXP:Ｖ경험 <= 80
-		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 엉덩이를 움츠리면서、조금씩 허리를 떨고\@(TEQUIP:볼재갈) ? # 교성을 올리고\@있다…
+		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 엉덩이를 움츠리면서、조금씩 허리를 떨고 \@(TEQUIP:볼재갈) ? # 교성을 올리고\@있다…
 		PRINTFORMW
 	ELSEIF EXP:Ｖ경험 <= 120
 		PRINTFORML %조사처리(CALLNAME:TARGET,"는")% 손으로 뒤를 받치고、허리를 부들부들 떨면서 쾌감을 탐내고 있다…
@@ -4485,46 +4485,46 @@ PRINTFORMW %타겟과% %CALLNAME:ASSI%의 성기의 사이에 페니스를 끼�
 PRINTFORMW %CALLNAME:TARGET%에게 %마스터와% %CALLNAME:ASSI%의 페니스를 동시에 봉사하도록 했다……
 
 ;-------------------------------------------------
-;516,前立腺刺激
+;516,전립선 자극
 ;-------------------------------------------------
 @MESSAGE_COM516
 ;前回が前立腺刺激
 IF PREVCOM == 516
 	;Ａ経験が120より多い
-	IF EXP:Ｖ경험 > 120
-		PRINTFORMW %CALLNAME:TARGET%はだらしなく口を開け、指の刺激を強請るように小刻みに腰を動かしている……
+	IF EXP:Ａ경험 > 120
+		PRINTFORMW %CALLNAME:TARGET%는 칠칠치 못하게 입을 벌리고、손가락의 자극을 강요하듯 조금씩 허리를 움직이고 있다……
 	;Ａ経験が80より多い
-	ELSEIF EXP:Ｖ경험 > 80
-		PRINTFORMW %CALLNAME:TARGET%は指が天井をなぞる感覚に熱い吐息を吐いて悶えている……
+	ELSEIF EXP:Ａ경험 > 80
+		PRINTFORMW %CALLNAME:TARGET%는 손가락이 천장을 더듬는 느낌에 뜨거운 한숨을 내쉬며 괴로워하고 있다……
 	;Ａ経験が50より多い
-	ELSEIF EXP:Ｖ경험 > 50
-		PRINTFORMW %CALLNAME:TARGET%は指のうごめく感触にうっとりとしている……
+	ELSEIF EXP:Ａ경험 > 50
+		PRINTFORMW %CALLNAME:TARGET%는 손가락의 꿈틀거리는 감촉에 황홀해하고 있다……
 	;Ａ経験が30より多い
-	ELSEIF EXP:Ｖ경험 > 30
-		PRINTFORMW %CALLNAME:TARGET%は指の感触を楽しんでいるようだ……
+	ELSEIF EXP:Ａ경험 > 30
+		PRINTFORMW %CALLNAME:TARGET%는 손가락의 감촉을 즐기는 것 같다……
 	;Ａ経験が0より多い
-	ELSEIF EXP:Ｖ경험 > 0
-		PRINTFORMW %CALLNAME:TARGET%は指の感触に吐息を吐いて耐えている……
+	ELSEIF EXP:Ａ경험 > 0
+		PRINTFORMW %CALLNAME:TARGET%는 손가락의 감촉에 한숨을 내쉬며 버티고 있다……
 	ELSE
-		PRINTFORMW %CALLNAME:TARGET%は異物が肛門を押し広げる感触に怯えている……
+		PRINTFORMW %CALLNAME:TARGET%는 이물질이 항문을 밀어내는 느낌에 겁에 질려 있다……
 	ENDIF
 ;アナルバイブ挿入中＋欲情のPALAMLV3以上＋Ａ感覚LV3以上
 ELSEIF TEQUIP:바이브 && PALAM:6 >= PALAMLV:3 && ABL:Ａ감각 >= 3
-	PRINTFORMW %CALLNAME:TARGET%の肛門はアナルバイブをくわえこんで放さない……
+	PRINTFORMW %CALLNAME:TARGET%의 항문은 애널바이브를 물고 놓지 않는다……
 ;アナルバイブ挿入中＋欲情のPALAMLV3未満＋Ａ感覚LV3以上
 ELSEIF TEQUIP:바이브 && PALAM:6 < PALAMLV:3 && ABL:Ａ감각 >= 3
-	PRINTFORMW %CALLNAME:TARGET%はアナルバイブの刺激に悶えている……
+	PRINTFORMW %CALLNAME:TARGET%는 애널 바이브의 자극에 번민하고 있다……
 ;アナルバイブ挿入中＋欲情のPALAMLV3以上＋Ａ感覚LV3未満
 ELSEIF TEQUIP:바이브 && PALAM:6 >= PALAMLV:3 && ABL:Ａ감각 < 3
-	PRINTFORMW %CALLNAME:TARGET%は頬を染めて時折声を上げている……
+	PRINTFORMW %CALLNAME:TARGET%는 뺨을 물들이고 때때로 소리를 지른다……
 ;アナルバイブ挿入中＋欲情のPALAMLV3未満＋Ａ感覚LV3未満
 ELSEIF TEQUIP:바이브 && PALAM:6 < PALAMLV:3 && ABL:Ａ감각 < 3
-	PRINTFORMW %CALLNAME:TARGET%は異物を受け入れ苦しそうな表情をしている……
+	PRINTFORMW %CALLNAME:TARGET%는 이물질을 받아 들이고 괴로운 표정을 짓고 있다……
 ;アナルバイブ挿入中
 ELSEIF TEQUIP:바이브
-	PRINTFORMW %CALLNAME:PLAYER%は巧みにアナルバイブを操り、前立腺をなぶった……
+	PRINTFORMW %CALLNAME:PLAYER%는 능숙하게 애널르바이브를 조종하여、전립선을 희롱했다……
 ELSE
-	PRINTFORMW %CALLNAME:PLAYER%は%CALLNAME:TARGET%の直腸まで挿し入れた指を曲げ、ザラついた天井を刺激した……
+	PRINTFORMW %CALLNAME:PLAYER%는 %CALLNAME:TARGET%의 직장까지 꽂은 손가락을 구부려、거칠어진 천장을 자극했다……
 ENDIF
 
 ;-------------------------------------------------
@@ -4534,22 +4534,22 @@ ENDIF
 IF PREVCOM == 67
 	PRINTFORML 騎乗前立腺責め
 	PRINTFORMW 
-	PRINTFORML %CALLNAME:TARGET%は上体を逸らし腰を浮かせ、脈打つペニスで自らの腸壁を擦っている…
+	PRINTFORML %CALLNAME:TARGET%는 上体を逸らし腰を浮かせ、脈打つペニスで自らの腸壁を擦っている…
 	IF EXP:Ａ경험 <= 30
-		PRINTFORML %CALLNAME:TARGET%は戸惑いながらもその行為を続けている…
+		PRINTFORML %CALLNAME:TARGET%는 戸惑いながらもその行為を続けている…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 50
-		PRINTFORML %CALLNAME:TARGET%は掴んだ快感を追って腰をくねらせ、半勃ちのペニスを揺らしている…
+		PRINTFORML %CALLNAME:TARGET%는 掴んだ快感を追って腰をくねらせ、半勃ちのペニスを揺らしている…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 80
-		PRINTFORML %CALLNAME:TARGET%は尻をすぼめ、小刻みに腰をしゃくって\@(TEQUIP:볼재갈) ? # 嬌声を上げて\@いる…
+		PRINTFORML %CALLNAME:TARGET%는 尻をすぼめ、小刻みに腰をしゃくって\@(TEQUIP:볼재갈) ? # 嬌声を上げて\@いる…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 120
-		PRINTFORML %CALLNAME:TARGET%は後ろに手をついて、腰をガクガク揺らして快楽を貪っている…
+		PRINTFORML %CALLNAME:TARGET%는 後ろに手をついて、腰をガクガク揺らして快楽を貪っている…
 		PRINTFORML 反り返ったペニスの先端が、鋭角に前立腺を抉っている…
 		PRINTFORMW
 	ELSE
-		PRINTFORML %CALLNAME:TARGET%は漢の急所を、自らの腰の痙攣で思う存分刺激している…
+		PRINTFORML %CALLNAME:TARGET%는 漢の急所を、自らの腰の痙攣で思う存分刺激している…
 		PRINTFORML 結合部の震えが全身に広がるたび、鼻に抜けただらしのない声が漏れる…
 		PRINTFORMW
 	ENDIF
@@ -4577,23 +4577,23 @@ ELSE
 	ENDIF
 	
 	IF EXP:Ａ경험 <= 30
-		PRINTFORML %CALLNAME:TARGET%はむずがるように腰を揺すっている…
+		PRINTFORML %CALLNAME:TARGET%는 むずがるように腰を揺すっている…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 50
-		PRINTFORML %CALLNAME:TARGET%は\@(TEQUIP:볼재갈) ? 身体を揺らされながらも、# 口を結んで\@不慣れな快楽を堪えている…
+		PRINTFORML %CALLNAME:TARGET%는 \@(TEQUIP:볼재갈) ? 身体を揺らされながらも、# 口を結んで\@不慣れな快楽を堪えている…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 80
-		PRINTFORML %CALLNAME:TARGET%は弱点を責められ、あまりの快感に目をぱちぱちさせている…
+		PRINTFORML %CALLNAME:TARGET%는 弱点を責められ、あまりの快感に目をぱちぱちさせている…
 		PRINTFORMW
 	ELSEIF EXP:Ａ경험 <= 120
 		PRINTFORML %CALLNAME:PLAYER%は腰に力を入れ、前立腺を突いてやった…
-		PRINTFORML %CALLNAME:TARGET%は腰の奥から広がる感覚に\@(TEQUIP:볼재갈) ? 身体を熱く震わせ # 熱い吐息を漏らし\@ている…
+		PRINTFORML %CALLNAME:TARGET%는 腰の奥から広がる感覚に\@(TEQUIP:볼재갈) ? 身体を熱く震わせ # 熱い吐息を漏らし\@ている…
 		PRINTFORMW
 	ELSEIF TEQUIP:볼재갈
-		PRINTFORML %CALLNAME:TARGET%は前立腺からの刺激に激しく頭を振って悶えている…
+		PRINTFORML %CALLNAME:TARGET%는 前立腺からの刺激に激しく頭を振って悶えている…
 		PRINTFORMW
 	ELSE
-		PRINTFORML %CALLNAME:TARGET%は喉を鳴らして涎を飲み、足指を丸めて頭を振って悶えている…
+		PRINTFORML %CALLNAME:TARGET%는 喉を鳴らして涎を飲み、足指を丸めて頭を振って悶えている…
 		PRINTFORML まともに呼吸もできず、口をぱくつかせて声にならない喘ぎを繰り返す…
 		PRINTFORMW
 	ENDIF
@@ -4720,11 +4720,11 @@ PRINTFORMW %조사처리(CALLNAME:TARGET,"를")% 이능자로 만들겠습니까
 CALL INPUT_YN,"Yes","No"
 IF RESULT == 0
 	;DRAWLINE
-	;PRINTL 이능자へ仕上るにあたって、以下からもう一つ素質を得られます。
+	;PRINTL 이능자로 완성함에 있어서、아래에서 하나 더 소질을 얻을 수 있습니다。
 	;PRINTL [0]서머너
 	;PRINTL [1]석세서
 	;PRINTL [2]도구지식
-	;PRINTL [3]いらない
+	;PRINTL [3]필요없다
 	;CALL INPUTINT,0,1,2,3
 	;SELECTCASE RESULT
 		;CASE 0
@@ -4735,7 +4735,7 @@ IF RESULT == 0
 			;TALENT:TARGET:도구지식 = 3
 		;CASE 3
 			;PRINTL
-			;PRINTL では、特に追加しません
+			;PRINTL 그럼、따로 추가하지 않겠습니다
 			;PRINTW	
 		;ENDSELECT
 	TALENT:TARGET:비전투원 = 0
@@ -5495,11 +5495,11 @@ IF TFLAG:29 > 0
 	SIF TFLAG:11 > 0
 		PRINT 가슴의 끝에서 모유를 늘어뜨리며
 	SIF TFLAG:29 >= 5 && TALENT:후타나리 == 0 && !IS_MALE(TARGET)
-		PRINT 음순에서 투명한 조수를 뿜어내며
+		PRINT  음순에서 투명한 조수를 뿜어내며
 	SIF TFLAG:10 > 0
-		PRINT 페니스에서 정액을 분출하며
+		PRINT  페니스에서 정액을 분출하며
 	SIF (TFLAG:29 < 5 || TALENT:후타나리 || IS_MALE(TARGET)) && TFLAG:10 == 0 && TFLAG:11 == 0
-		PRINT 등을 뒤로 크게 젖히며
+		PRINT  등을 뒤로 크게 젖히며
 	PRINTL 、전신을 떨며 절정에 달했다
 ENDIF
 
@@ -7690,9 +7690,9 @@ IF (TALENT:연모 || TALENT:친애) && CFLAG:임신확정후의부친판정 == N
 	;ふたごまでなら標準的な腕やおパイが足りるけども、ということで三つ子以上だとちょっと困る描写に
 	IF FLAG:쌍둥이플래그 > 0 && CFLAG:TARGET:이번수태인수 > 2
 		IF RAND:2 == 0
-			PRINTFORMW 多胎児出産によってひどく消耗した%CALLNAME:TARGET%は、ベビーベッドに並べられる我が子を見て、優しく微笑んだ……
+			PRINTFORMW 다태아 출산으로 심하게 소모한 %조사처리(CALLNAME:TARGET,"는")%、아기 침대에 늘어서있는 우리의 아이를 보며、상냥하게 미소지었다……
 		ELSE
-			PRINTFORMW %CALLNAME:TARGET%は産まれたばかりの赤ん坊を受け取ろうとして、抱えきれない、と笑いながら言った……
+			PRINTFORMW %조사처리(CALLNAME:TARGET,"는")% 갓 태어난 아기를 받으려다가、안을 수 없다고、웃으며 말했다……
 		ENDIF
 	ELSE
 		PRINTFORMW %타겟은% 막 태어난 갓난아기를 받고는 상냥하게 안아들어 모유를 먹이기 시작했다……
@@ -8060,11 +8060,11 @@ IF TEQUIP:가슴앞열림
 	IF TEQUIP:주도권 == 0
 		IF (LOCAL == 5 && CFLAG:속옷（상） == [[衣装:촉수브라]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
 			IF RAND:2 == 0
-				PRINTFORM %CALLNAME%の胸部で蠢く
+				PRINTFORM %CALLNAME%의 흉부에서 꿈틀거리는 
 			ELSE
-				PRINTFORM %CALLNAME%の胸を捏ね回す
+				PRINTFORM %CALLNAME%의 가슴을 쥐어쨔내 
 			ENDIF
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%を開かせると、
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%을(를) 열게 하자、
 		ELSEIF TEQUIP:가슴구조 & 1
 			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 
 			SIF TALENT:폭유 || TALENT:마유
@@ -8097,11 +8097,11 @@ IF TEQUIP:가슴앞열림
 	ELSE
 		IF (LOCAL == 5 && CFLAG:속옷（상） == [[衣装:촉수브라]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
 			IF RAND:2 == 0
-				PRINTFORM %CALLNAME%の胸部で蠢く
+				PRINTFORM %CALLNAME%의 흉부에서 꿈틀거리는 
 			ELSE
-				PRINTFORM %CALLNAME%の胸を捏ね回す
+				PRINTFORM %CALLNAME%의 가슴을 쥐어쨔내 
 			ENDIF
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%を開いてみると、
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%을(를) 열어보자、
 		ELSEIF TEQUIP:가슴구조 & 1
 			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 
 			SIF TALENT:폭유 || TALENT:마유
@@ -8182,7 +8182,7 @@ IF TEQUIP:가슴앞열림
 ELSE
 	LOCAL = TEQUIP:가슴해방전의상
 	IF (LOCAL == 5 && CFLAG:속옷（상） == [[衣装:촉수브라]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
-		PRINTFORMW %CALLNAME%を待ち構えて蠢く触手に閉じる指示を出すと、一斉に乳房に群がった
+		PRINTFORMW %CALLNAME%를 기다리며 꿈틀거리는 촉수에게 닫으라고 지시를 내리자、일제히 유방으로 몰려들었다
 	ELSEIF TEQUIP:가슴구조 & 1
 		SIF TALENT:폭유 || TALENT:마유
 			PRINT 지나치게 커다란 가슴을 억지로 누르듯이、
@@ -8249,34 +8249,34 @@ IF TEQUIP:고간앞열림 && TEQUIP:Ｖ비켜놓기가능
 	IF TEQUIP:주도권 == 0
 		IF (LOCAL == 6 && CFLAG:속옷（하） == [[衣装:촉수팬츠]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
 			IF RAND:2 == 0
-				PRINTFORM %CALLNAME%の秘部でくちゃくちゃ音を鳴らす
+				PRINTFORM %CALLNAME%의 비부에서 질척질척한 소리를 내는 
 			ELSE
-				PRINTFORM %CALLNAME%の股間を捏ね回す
+				PRINTFORM %CALLNAME%의 고간을 주무르며 
 			ENDIF
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%を開かせると、
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%을(를) 열게 하자、
 		ELSEIF (TEQUIP:고간구조 & 1) && (TEQUIP:고간구조 & 0)
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%の
-			PRINTFORM 股間のボタンを外すと、%CALLNAME%の
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 
+			PRINTFORM 고간의 단추룰 풀자、%CALLNAME%의 
 ;		ELSEIF TEQUIP:고간구조 & 3
-;			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%の
-;			PRINTFORM 股間元のチャックを下ろすと、%CALLNAME%の
+;			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 
+;			PRINTFORM 사타구니의 지퍼를 내리자、%CALLNAME%의 
 		ELSEIF TEQUIP:고간구조 & 4
 			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%
-			PRINTFORM をずり下げると、%CALLNAME%の
+			PRINTFORM 을(를) 끌어내리자、%CALLNAME%의 
 		ELSEIF TEQUIP:고간구조 & 8
-			PRINTFORM %CALLNAME%の%CLOTHESNAMEF(TARGET,LOCAL)%を
-			PRINTFORM 横にずらすと、%CALLNAME%の
+			PRINTFORM %CALLNAME%의 %CLOTHESNAMEF(TARGET,LOCAL)%を
+			PRINTFORM 옆으로 밀어내자、%CALLNAME%의 
 		ELSEIF (TEQUIP:고간구조 & 10)
 			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%
 			IF  RAND:2 == 0
-				PRINTFORM をずり下げると、%CALLNAME%の
+				PRINTFORM 을(를) 끌어내리자、%CALLNAME%의 
 				CFLAG:의상비켜놓기방향 = 1
 			ELSE
-				PRINTFORM を横にずらすと、%CALLNAME%の
+				PRINTFORM 을(를) 옆으로 밀어내자、%CALLNAME%의 
 				CFLAG:의상비켜놓기방향 = 2
 			ENDIF
 		ELSE
-			PRINTFORM %CALLNAME%の
+			PRINTFORM %CALLNAME%의 
 		ENDIF
 		TEQUIP:V비켜놓기중 = 0
 		TEQUIP:음순노출 = 0
@@ -8284,34 +8284,34 @@ IF TEQUIP:고간앞열림 && TEQUIP:Ｖ비켜놓기가능
 	ELSE
 		IF (LOCAL == 6 && CFLAG:속옷（하） == [[衣装:촉수팬츠]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
 			IF RAND:2 == 0
-				PRINTFORM %CALLNAME%の秘部でくちゃくちゃ音を鳴らす
+				PRINTFORM %CALLNAME%의 비부에서 질척질척한 소리를 내는 
 			ELSE
-				PRINTFORM %CALLNAME%の股間を捏ね回す
+				PRINTFORM %CALLNAME%의 고간을 쪄내자 
 			ENDIF
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%を開くと、
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%를 열자、
 		ELSEIF (TEQUIP:고간구조 & 1) || (TEQUIP:고간구조 & 0)
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%の
-			PRINTFORM 股間のボタンを
-			PRINTFORM 外すと、%CALLNAME%の
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 
+			PRINTFORM 고간의 단추를
+			PRINTFORM 떼어내자、%CALLNAME%의 
 		ELSEIF (TEQUIP:고간구조 & 4) || (TEQUIP:고간구조 & 10)
-			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%の%TEXTR("股部分/股布/クロッチ/秘部を覆う生地")%を
+			PRINTFORM %CLOTHESNAMEF(TARGET,LOCAL)%의 %TEXTR("사타구니/가랑이/크로치/비부를 덮는 옷감")%을(를)
 			IF TALENT:음란 || TALENT:창부 || (ABL:노출증 >= 3 && !TALENT:부끄럼쟁이)
-				PRINT 見せ付けるように
+				PRINT 보여주듯이 
 			ELSEIF TALENT:부끄럼쟁이
-				PRINT 恥ずかしそうに
+				PRINT 부끄러운 듯이 
 			ENDIF
 			IF  RAND:2 == 0
-				PRINTFORM ずり下げると、%CALLNAME%の
+				PRINTFORM 끌어내리자、%CALLNAME%의 
 				CFLAG:의상비켜놓기방향 = 1
 			ELSE
-				PRINTFORM 横にずらすと、%CALLNAME%の
+				PRINTFORM 옆으로 밀어내자、%CALLNAME%의 
 				CFLAG:의상비켜놓기방향 = 2
 			ENDIF
 		ELSE
-			PRINTFORM %CALLNAME%の
+			PRINTFORM %CALLNAME%의 
 		ENDIF
 	ENDIF
-	PRINTFORMW %TEXTR("秘部/陰部/性器")%が露わとなった
+	PRINTFORMW %TEXTR("비부/음부/성기")%이(가) 드러났다
 	TEQUIP:V비켜놓기중 = -1
 	TEQUIP:음순노출 = -1
 	TEQUIP:음순보임 = -1
@@ -8319,22 +8319,22 @@ IF TEQUIP:고간앞열림 && TEQUIP:Ｖ비켜놓기가능
 ELSE
 	;ずらしを戻す
 		IF (LOCAL == 6 && CFLAG:속옷（하） == [[衣装:촉수팬츠]]) || (LOCAL == 7 && CFLAG:전신속옷 == [[衣装:촉수수트]])
-		PRINTFORMW %CALLNAME%を待ち構えて蠢く触手に閉じる指示を出すと、一斉に秘部に群がった
+		PRINTFORMW %CALLNAME%를 기다리며 꿈틀거리는 촉수에게 닫으라는 지시를 내리자、일제히 비부로 몰려들었다
 	ELSEIF TEQUIP:고간구조 & 1
 	ELSEIF TEQUIP:고간구조 & 2
 ;	ELSEIF (TEQUIP:고간구조 & 4) || (TEQUIP:고간구조 & 10)
 		IF CFLAG:의상비켜놓기방향 == 1
-			PRINTFORM ずり下げられていた
+			PRINTFORM 흘러내리고 있는 
 		ELSE
-			PRINTFORM 横にずらされていた
+			PRINTFORM 옆으로 밀려 있는 
 		ENDIF
 		CFLAG:의상비켜놓기방향 = 0
 		PRINTFORMW %CLOTHESNAMEF(TARGET,LOCAL)%を正した
 	ELSEIF TEQUIP:고간구조 & 4 || TEQUIP:고간구조 & 10
 		IF TEQUIP:고간구조 & 4
-			PRINTFORM ずり下げられていた
+			PRINTFORM 흘러내리고 있는 
 		ELSEIF TEQUIP:고간구조 & 10
-			PRINTFORM 横にずらされていた
+			PRINTFORM 옆으로 밀려 있는 
 		ENDIF
 		PRINTFORMW %CLOTHESNAMEF(TARGET,LOCAL)%を正した
 	ENDIF
@@ -8925,60 +8925,60 @@ ENDIF
 @EVENT_MESSAGE_99
 SELECTCASE RAND:12
 	CASE 0
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%はまだ冷めやらぬ昂奮を抑えきれず、ベッドの上でまぐわっていた……
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 아직 식지 않은 흥분을 억제하지 못하고、대 위에 엎드려 있었다……
 	CASE 1
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%は調教を終えた後も抑えきれずに、長い間交わりあっていた…
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 조교를 마친 후에도 참지 못하고、오랫동안 성교하고 있었다…
 	CASE 2
-		PRINTFORML 調教を終えた後も%CALLNAME:MASTER%と%CALLNAME:TARGET%はベッドから離れずに、時間の許す限り肌を重ねていた…
+		PRINTFORML 조교를 마친 후에도 %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 침대에서 떨어지지 않고、시간이 허락하는 한 피부를 맞대고 있었다…
 	CASE 3
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%は高まった感情のままに、野生の獣のような激しい交尾を始めた…
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 고조된 감정대로、야생 짐승과 같은 격렬한 짝짓기를 시작했다…
 	CASE 4
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%は火照った身体を抑えきれないまま、夢中でお互いの身体を貪り合った……
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 달아오른 몸을 억제하지 못한 채、정신없이 서로의 몸을 탐했다……
 	CASE 5
-		PRINTFORML 調教を終えた後も、%CALLNAME:MASTER%と%CALLNAME:TARGET%は本能のままにお互いを求め合った…
+		PRINTFORML 조교를 마친 후에도、%CALLNAME:MASTER%와 %CALLNAME:TARGET%는 본능대로 서로를 요구해왔다…
 	CASE 6
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%は高まった興奮に身を任せて、主人と奴隷の関係も忘れ夢中でまぐわった…
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 고조된 흥분에 몸을 맡기고、주인과 노예의 관계도 잊고 정신없이 빠져들었다…
 	CASE 7
-		PRINTFORML %CALLNAME:MASTER%と%CALLNAME:TARGET%は熱く火照った体を寄せ、抑えきれない衝動のままに長い間繋がっていた…
+		PRINTFORML %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 뜨겁게 달아오른 몸을 맞대고、참을 수 없는 충동으로 오랫동안 연결되어 있었다…
 	CASE 8
-		PRINTFORML 高まった興奮を抑えきれずに、%CALLNAME:MASTER%と%CALLNAME:TARGET%はその後も長い間お互いを夢中で求め合っていた…
+		PRINTFORML 고조된 흥분을 억제하지 못하고、%CALLNAME:MASTER%와 %CALLNAME:TARGET%는 는 그 후에도 오랫동안 서로를 정신없이 요구하고 있었다…
 	CASE 9
-		PRINTFORML すっかり興奮に呑まれた%CALLNAME:MASTER%と%CALLNAME:TARGET%は、その後の長い時間お互いの身体で肉欲を貪り続けた……
+		PRINTFORML 완전히 흥분에 휩싸인 %CALLNAME:MASTER%와 %CALLNAME:TARGET%는、그 후 오랜 시간 서로의 몸으로 육욕을 계속 탐했다……
 	CASE 10
-		PRINTFORML その後の長い間、%CALLNAME:MASTER%と%CALLNAME:TARGET%は欲情に流されるままにお互いの肉体を求め合った……
+		PRINTFORML 그 후 오랫동안、%CALLNAME:MASTER%와 %CALLNAME:TARGET%는 욕정에 휩쓸리는 대로 서로의 육체를 요구했다……
 	CASE 11
-		PRINTFORML 調教の後も、昂ぶる興奮に流されて%CALLNAME:MASTER%と%CALLNAME:TARGET%は種付けセックスに没頭していった…
+		PRINTFORML 조교 후에도、커다란 흥분에 휩쓸려 %CALLNAME:MASTER%와 %CALLNAME:TARGET%는 씨뿌리기 섹스에 몰두해 갔다…
 ENDSELECT
 IF ABL:순종 + ABL:Ｃ감각 + ABL:봉사정신 >= 13
 	PRINTL
 	SELECTCASE RAND:9
 		CASE 0
-			PRINTFORML %CALLNAME:TARGET%は名残惜しげに袖を引っ張る
-			PRINTFORMW しかしその手を振り解き、%CALLNAME:MASTER%は部屋を後にした……
+			PRINTFORML %CALLNAME:TARGET%는 아쉬운 듯 소매를 잡아당기다
+			PRINTFORMW 그러나 그 손을 뿌리치고、%CALLNAME:MASTER%는 방을 떠났다……
 		CASE 1
-			PRINTFORML 激しい行為の余韻が残る中、%CALLNAME:TARGET%は%CALLNAME:MASTER%に寄り添って離れようとしない。
-			PRINTFORMW 素肌の身体を押し付けて、側に居るようねだっていた…
+			PRINTFORML 격렬한 행위의 여운이 남는 가운데、%CALLNAME:TARGET%는 %CALLNAME:MASTER%에 기대어 떨어지지 않으려 한다。
+			PRINTFORMW 알몸을 꽉 누르며、옆에 있으라며 조르고 있었다…
 		CASE 2
-			PRINTFORML 行為を終えた後も、二人は裸のままで密着し寄り添っていた。
-			PRINTFORMW 気だるい雰囲気の中で%CALLNAME:TARGET%は%CALLNAME:MASTER%に抱き付いて離れようとしない…
+			PRINTFORML 행위를 마친 후에도、두 사람은 벌거벗은 채 밀착해 붙어 있었다。
+			PRINTFORMW 나른한 분위기 속에서 %CALLNAME:TARGET%는 %CALLNAME:MASTER%에게 안겨 떨어지지 않으려고 한다…
 		CASE 3
-			PRINTFORML しばらくした後、ベッドの上で%CALLNAME:TARGET%は甘えるように%CALLNAME:MASTER%に抱き付いていた。
-			PRINTFORMW 激しく交わった余韻に包まれて、%CALLNAME:TARGET%は充実した様子で微笑んでいる。
+			PRINTFORML 잠시 후、침대 위에서 %CALLNAME:TARGET%는 어리광을 부리듯 %CALLNAME:MASTER%를 껴안고 있었다。
+			PRINTFORMW 격렬한 성교의 여운에 싸여、%CALLNAME:TARGET%는 충실한 모습으로 미소 짓고 있다。
 		CASE 4
-			PRINTFORML 激しく抱き合った後、二人はベッドで余韻に浸っていた。
-			PRINTFORMW 素肌を重ねて寄り添いながら、%CALLNAME:TARGET%は充実した様子で%CALLNAME:MASTER%の身体を優しく撫でている……
+			PRINTFORML 강하게 포옹한 후、두 사람은 침대에서 여운에 잠겨 있었다。
+			PRINTFORMW 맨살을 포개 붙이면서、%CALLNAME:TARGET%는 충실한 모습으로 %CALLNAME:MASTER%의 몸을 부드럽게 어루만져준다……
 		CASE 5
-			PRINTFORML 痴態を演じた後、身支度をして%CALLNAME:MASTER%は部屋を後にした。
-			PRINTFORMW 残された%CALLNAME:TARGET%はベッドに横たわったまま、%CALLNAME:MASTER%の肌の温もりを思い返している…
+			PRINTFORML 치태를 부린뒤、몸단장을 하고 %CALLNAME:MASTER%는 방을 떠났다。
+			PRINTFORMW 남겨진 %CALLNAME:TARGET%는 침대에 누운 채、%CALLNAME:MASTER%의 피부의 온기를 회상하고 있다…
 		CASE 6
-			PRINTFORML 長いセックスをようやく終えて、二人は上気した顔を寄せ合い口付けをした……
-			PRINTFORMW そのまましばらく、ベッドの上で触れ合いながら心地良い時間を過ごしていた……
+			PRINTFORML 긴 섹스를 끝내자、두 사람은 상기된 얼굴을 맞대고 입을 맞추었다……
+			PRINTFORMW 그대로 잠시、침대 위에서 서로를 만지며 기분 좋은 시간을 보내고 있었다……
 		CASE 7
-			PRINTFORML 激しいセックスを終え、二人は絡み合ったままベッドに横になっていた
-			PRINTFORMW 軽いキスを交わしながらお互いの身体に手を這わせ、行為の余韻を楽しんでいる……
+			PRINTFORML 격렬한 섹스를 마치고、그들은 뒤엉킨 채 침대에 누워 있었다
+			PRINTFORMW 가벼운 키스를 나누며 서로의 몸을 손으로 쓰다듬고、행위의 여운을 즐기고 있다……
 		CASE 8
-			PRINTFORML 最後に激しい口付けを交わしてようやく長く続いた行為を終えたが、
-			PRINTFORMW 触れ合った肌を離す事が出来ずに、絡み合ったままで二人はしばらく過ごしていた……
+			PRINTFORML 마지막으로 격렬한 입맞춤을 주고받고서야 길게 이어진 행위를 마쳤지만、
+			PRINTFORMW 맞닿은 피부를 떼지 못하고、얽히고설킨 채로 두 사람은 한동안 지내고 있었다……
 	ENDSELECT
 ELSE
 	WAIT
@@ -9650,7 +9650,7 @@ IF TEQUIP:애널바이브
 	SIF PALAM:윤활 >= PALAMLV:4
 		PRINTFORM 熱く潤んだ粘液にまみれた
 	PRINTFORML 腸内を、グネグネと長いストロークで前後に掘削した...
-	PRINTFORM %CALLNAME:TARGET%は
+	PRINTFORM %CALLNAME:TARGET%는 
 	;Ａ経験180以上＋淫乱か娼婦
 	IF EXP:Ａ경험 > 180
 		PRINTFORM とろけきった表情で、肛悦を受け入れ
