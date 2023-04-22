@@ -37,7 +37,7 @@
 @KOJO_TALK_PUB331,ARG,ARG:1
 SELECTCASE ARG:1
 	CASE 1
-		;1:레이디・킬러즈
+		;1:レディ・キラーズ
 		PRINTFORMW 「……」
 	CASE 2
 		; 2:おねだり前の逡巡時(あいさつor問答で目的が決まっている場合)
@@ -58,22 +58,22 @@ SELECTCASE ARG:1
 	CASE 84
 		PRINT 「…」
 	CASE 4
-		; 4-6:교섭목적：やらせてくれと言った時の反応
+		; 4-6:交渉目的：やらせてくれと言った時の反応
 		; 4:取り付く島もなし
-		PRINTFORMW 激しく拒否された
+		PRINTFORMW 격렬하게 거부당했다
 	CASE 5
 		; 5:交渉次第
-		PRINTFORMW 条件次第でヤらせてくれるようだ
+		PRINTFORMW 조건 나름으로 해주는 것 같다
 	CASE 6
 		; 6:一発おｋ
 		PRINTFORMW 「……」
 	CASE 7
-		; 7-9:교섭목적：やらせてくれと言った時の反応
+		; 7-9:交渉目的：やらせてくれと言った時の反応
 		; 7:取り付く島もなし
-		PRINTFORMW 激しく拒否された
+		PRINTFORMW 격렬하게 거부당했다
 	CASE 8
 		; 8:交渉次第
-		PRINTFORMW 条件次第で犯してくれるようだ
+		PRINTFORMW 조건 나름으로 범해져 주는 것 같다
 	CASE 9
 		; 9:一発おｋ
 		CALL MESSAGE_TALK
@@ -134,16 +134,16 @@ SELECTCASE ARG:1
 	CASE 11
 		;11-13:￥を払おうとしてお金が足りない
 		;11:別のものを要求する
-		PRINTFORMW しかし所持金が足りなかった
+		PRINTFORMW 그러나 소지금이 부족했다
 	CASE 85
 		;85 恵まれる
-		PRINTFORMW しかし所持金が足りなかった
+		PRINTFORMW 그러나 소지금이 부족했다
 	CASE 12
 		;12:交渉失敗。立ち去る
-		PRINTFORMW しかし所持金が足りなかった
+		PRINTFORMW 그러나 소지금이 부족했다
 	CASE 13
 		;13:交渉失敗。敵対する
-		PRINTFORMW しかし所持金が足りなかった
+		PRINTFORMW 그러나 소지금이 부족했다
 	CASE 14
 		;14-16:￥を支払った
 		;14:払ったのに逃げられる
@@ -173,7 +173,7 @@ SELECTCASE ARG:1
 		PRINTFORMW 「……」
 	CASE 86
 		;86 恵まれる
-		PRINTFORMW ＭＡＧが足りません
+		PRINTFORMW ＭＡＧ가 부족합니다
 		PRINTFORMW 「……」
 	CASE 22
 		;22:交渉失敗。立ち去る
@@ -202,15 +202,15 @@ SELECTCASE ARG:1
 		;29:他のものを要求する
 		PRINTFORMW 「……」
 	CASE 30
-		;30:마석を要求
-		PRINTFORML 「魔石」
+		;30:魔石を要求
+		PRINTFORML 「마석」
 	CASE 31
-		;31-33:마석を渡そうとしたが持っていない
+		;31-33:魔石を渡そうとしたが持っていない
 		;31:別のものを要求する
 		PRINTFORMW 「……」
 	CASE 87
 		;87 恵まれる
-		PRINTFORMW 魔石を持っていません
+		PRINTFORMW 마석을 갖고 있지 않습니다
 		PRINTFORMW 「……」
 	CASE 32
 		;32:交渉失敗。立ち去る
@@ -219,7 +219,7 @@ SELECTCASE ARG:1
 		;33:交渉失敗。敵対する
 		PRINTFORMW 「……」
 	CASE 34
-		;34-36:마석を渡した
+		;34-36:魔石を渡した
 		;34:払ったのに逃げられる
 		PRINTFORMW 「……」
 	CASE 35
@@ -229,7 +229,7 @@ SELECTCASE ARG:1
 		;36:交渉成功
 		PRINTFORMW 「……」
 	CASE 37
-		;37-39:마석を渡すのを断った
+		;37-39:魔石を渡すのを断った
 		;37:交渉失敗。奇襲する
 		PRINTFORMW 「……」
 	CASE 38
@@ -240,7 +240,7 @@ SELECTCASE ARG:1
 		PRINTFORMW 「……」
 	CASE 40
 		;40:異性との性交渉を要求
-		PRINTFORML \@TALENT:ARG:남자 ?女#男\@を要求されました
+		PRINTFORML \@TALENT:ARG:남자 ?여자#남자\@를 요구받았다
 		CALL MESSAGE_TALK
 	CASE 41
 		;41:異性を宛がってもらった時の反応
@@ -283,7 +283,7 @@ SELECTCASE ARG:1
 			ELSE
 				PRINTFORMW 「……」
 			ENDIF
-			PRINTFORMW %CALLNAME:ARG%は満足したようだ
+			PRINTFORMW %ARG는% 만족한 것 같다
 	CASE 47
 		;47-49:性交渉を断った
 		;47:交渉失敗。奇襲する
@@ -342,7 +342,7 @@ SELECTCASE ARG:1
 		;62:仲魔になる
 			;犯してもらう、ヤラせてもらう
 			IF FLAG:교섭목적 > 3
-				PRINTFORMW %CALLNAME:PLAYER%の体に大変満足し、%CALLNAME:ARG%が仲魔になってくれました
+				PRINTFORMW %CALLNAME:PLAYER%의 몸에 무척 만족해, %ARG가% 동료마가 되어주었습니다
 			;その他
 			ELSE
 				;異性を捧げた場合
@@ -377,7 +377,7 @@ SELECTCASE ARG:1
 	CASE 67
 		;67:ＭＡＧをくれる
 		IF FLAG:교섭목적 > 3
-			PRINTFORMW %CALLNAME:PLAYER%の体に大変満足し、ＭＡＧを恵んでもらいました
+			PRINTFORMW %CALLNAME:PLAYER%의 몸에 무척 만족해, ＭＡＧ를 건네받았습니다
 		ELSE
 			PRINTFORMW 「……」
 		ENDIF
@@ -386,25 +386,25 @@ SELECTCASE ARG:1
 		PRINTFORMW 「……」
 	CASE 69
 		;69-75:アイテムをくれるor回復してくれる
-		;69:소마を使ってくれる
+		;69:ソーマを使ってくれる
 		PRINTFORMW 「……」
 	CASE 70
-		;70:보옥륜を使ってくれる
+		;70:宝玉輪を使ってくれる
 		PRINTFORMW 「……」
 	CASE 71
 		;71:ITEMor魔石をくれる
 		PRINTFORMW 「……」
 	CASE 72
-		;72:마석をくれる
+		;72:魔石をくれる
 		PRINTFORMW 「……」
 	CASE 73
-		;73:마석を使ってくれる
+		;73:魔石を使ってくれる
 		PRINTFORMW 「……」
 	CASE 74
-		;74:보옥を使ってくれる
+		;74:宝玉を使ってくれる
 		PRINTFORMW 「……」
 	CASE 75
-		;75:보옥をくれる
+		;75:宝玉をくれる
 		PRINTFORMW 「……」
 	CASE 76
 		;76-78:気まずくなった
@@ -414,7 +414,7 @@ SELECTCASE ARG:1
 		;77:회화失敗。敵対する
 		PRINTFORMW 「……」
 	CASE 78
-		;78:회화継続
+		;78:会話継続
 		PRINTFORMW 「……」
 		;79-83:立ち去る
 		;79:同じ仲魔がいる場合
@@ -433,11 +433,11 @@ SELECTCASE ARG:1
 		PRINTFORMW 「……」
 	CASE 88
 		;ヤらせてもらう・交渉が成功した場合
-		PRINTFORMW 交渉に成功し、犯させてもらえることになった
+		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
 		;犯してもらう・交渉が成功した場合
-		PRINTFORMW 交渉に成功し、犯してもらえることになった
+		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 		$犯してもらう・交渉が成功した場合行為中
 		;魅了になっている場合

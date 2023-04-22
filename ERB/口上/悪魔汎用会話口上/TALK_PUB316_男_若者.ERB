@@ -12,13 +12,13 @@
 ;	002		2011/01/10		Ｎ鳥					기본処理をTALK_COMMONに一元化し、메시지を구상호출用関数に移植
 ;	003		2012/02/09		ネトリス				魅了時の구상추가
 ;	004		2012/02/11		ネトリス				『犯してもらう』を整理してCALLで呼び出すように변경
-;	005		2012/11/04		ネトリス				CASE 41:異性を宛がってもらった時の反応六ヶ所、46:満발一ヶ所、59:満발し、仲魔になる一ヶ所、62:仲魔になる３ヶ所、64:ＣＯＭＰの空きが無い場合二ヶ所に加筆
+;	005		2012/11/04		ネトリス				CASE 41:異性を宛がってもらった時の反応六ヶ所、46:満足一ヶ所、59:満足し、仲魔になる一ヶ所、62:仲魔になる３ヶ所、64:ＣＯＭＰの空きが無い場合二ヶ所に加筆
 ;	006		2012/11/05		ネトリス				회화時問答:CASE 2『欲求不満でオンナ指名』を추가
 ;	007		2012/11/15		ネトリス				회화時挨拶に満月を추가
 ;	008		2012/11/27		ネトリス				회화時問答:欲求不満でオンナ指名を修正、그외細々と修正
-;													CASE41:異性を宛がってもらった時の反応２ヵ所、46:満발５ヶ所、62:仲魔になる３ヵ所に加筆
-;	009		2013/01/23		ネトリス				CASE9:一発おｋ、41:異性を宛がってもらった時の反応、43:話しかけたキャラが倒れている、46:満발、59:満발し、仲魔になる、62:仲魔になるに加筆
-;	010		2013/03/12		ネトリス				CASE 41:異性を宛がってもらった時の反応、46:満발、62:仲魔になる、命乞いCASE91〜101、회화時挨拶CASE 1、회화時問答CASE 1ニ加筆
+;													CASE41:異性を宛がってもらった時の反応２ヵ所、46:満足５ヶ所、62:仲魔になる３ヵ所に加筆
+;	009		2013/01/23		ネトリス				CASE9:一発おｋ、41:異性を宛がってもらった時の反応、43:話しかけたキャラが倒れている、46:満足、59:満足し、仲魔になる、62:仲魔になるに加筆
+;	010		2013/03/12		ネトリス				CASE 41:異性を宛がってもらった時の反応、46:満足、62:仲魔になる、命乞いCASE91〜101、회화時挨拶CASE 1、회화時問答CASE 1ニ加筆
 ;													CFLAG:ARG:800 = 『옷を脱ぐ』を選んだかの판정を추가
 ;	011		2014/04/18		豚の娘の豚				会話悪魔の素質に応じた展開を追加
 ;													一部会話をムフフ展開専用化
@@ -56,24 +56,24 @@
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:레이디・킬러즈
+		;1:レディ・キラーズ
 	PRINTFORMW 「……!?」
 	PRINTFORMW 「%CSTR:ARG:일인칭%、%CSTR:ARG:이인칭%에게 한눈에 반했을지도 몰라……」
 	PRINTFORMW 「좋지……같이 가줄게」
 	CASE 2
-		; 2:おねだり前の逡巡時(아이さつor問答で목적が決まっている場合)
+		; 2:おねだり前の逡巡時(あいさつor問答で目的が決まっている場合)
 	PRINTFORML 「어쩔까나아」
 	CASE 3
-		; 3:交渉の목적を尋ねる
+		; 3:交渉の目的を尋ねる
 		SELECTCASE CFLAG:ARG:우호도
 			CASE IS < 25
-				;우호도低い
+				;友好度低い
 				PRINTFORMW 「그래서、%CSTR:ARG:11%한테 무슨 용건이야?」
 			CASE IS < 50
-				;우호도普通
+				;友好度普通
 				PRINTFORMW 「%CSTR:ARG:11%한테 뭔가 용건이 있어?」
 			CASEELSE
-				;우호도高い
+				;友好度高い
 				PRINTFORML 「%CSTR:ARG:11%에게 부탁이 있는거지?」
 				PRINTFORMW 「들어줄테니까、말해봐」
 		ENDSELECT
@@ -81,7 +81,7 @@ SELECTCASE ARG:1
 		;84:要求前の1文
 		PRINT 「일단은…」
 	CASE 4
-		; 4-6:교섭목적：やらせてくれと言った時の反応
+		; 4-6:交渉目的：やらせてくれと言った時の反応
 		; 4:取り付く島もなし
 			PRINTFORMW 호되게 거부당했다
 	CASE 5
@@ -92,7 +92,7 @@ SELECTCASE ARG:1
   PRINTFORMW 「%조사처리(CSTR:ARG:11,"를")% 권하는거야?」
   PRINTFORMW 「그러면、사양 않고｣
 	CASE 7
-		; 7-9:교섭목적：犯してほしいと言った時の反応
+		; 7-9:交渉目的：犯してほしいと言った時の反応
 		; 7:取り付く島もなし
 			PRINTFORMW 호되게 거부당했다
 	CASE 8
@@ -271,7 +271,7 @@ SELECTCASE ARG:1
 		;10:要求額を提示：￥
 		PRINTFORML 「￥{TFLAG:TALK용요구치}이다」
 	CASE 11
-		;11-13:￥を払おうとしてお金が발りない
+		;11-13:￥を払おうとしてお金が足りない
 		;11:別のものを要求する
 			PRINTFORMW 「가난하구나」
 				PRINTFORMW 「별 수 없구만、다른 걸로 참아줄게」
@@ -280,12 +280,12 @@ SELECTCASE ARG:1
 		PRINTFORMW 「가난하구나」
 		PRINTFORMW 「별 수 없지、이거 받아둬」
 	CASE 12
-		;12:交渉실패。立ち去る
+		;12:交渉失敗。立ち去る
 			PRINTFORMW 「가난하구나」
 				PRINTFORMW 「시시ー해」
 				PRINTFORMW 「질렸으니까 돌아갈래」
 	CASE 13
-		;13:交渉실패。敵対する
+		;13:交渉失敗。敵対する
 		PRINTFORMW 「가난하구나」
 		PRINTFORMW 「켁、돈도 없는 주제에 말걸지 말라구ー」
 	CASE 14
@@ -297,16 +297,16 @@ SELECTCASE ARG:1
 		;15:さらに要求される
 				PRINTFORML 「이 정도로는 부족한데」
 	CASE 16
-		;16:交渉성공
+		;16:交渉成功
 				PRINTFORMW 「고마워」
 	CASE 17
 		;17-19:￥を支払うのを断った::
-		;17:交渉실패。奇襲する
+		;17:交渉失敗。奇襲する
 				PRINTFORML 「아아!?」
 				PRINTFORMW 「악마를 얕보고 있는건가、네놈은!!」
 				PRINTFORMW 「금방 지옥으로 보내주마ー!!」
 	CASE 18
-		;18:交渉실패。敵対する
+		;18:交渉失敗。敵対する
 				PRINTFORML 「아아!?」
 				PRINTFORML 「어쩔 생각이지?」
 				PRINTFORMW 「웃기지마」
@@ -318,7 +318,7 @@ SELECTCASE ARG:1
 		;20:要求額を提示：ＭＡＧ
 		PRINTFORML 「{TFLAG:TALK용요구치}MAG를 내놔라」
 	CASE 21
-		;21-23:ＭＡＧを支払おうとしたが발りない
+		;21-23:ＭＡＧを支払おうとしたが足りない
 		;21:別のものを要求する
 			PRINTFORML 「ＭＡＧ도 없는건가」
 				PRINTFORMW 「별 수 없구만、다른 거라도 괜찮으니까 내놔」
@@ -327,12 +327,12 @@ SELECTCASE ARG:1
 			PRINTFORML 「ＭＡＧ도 없는건가」
 			PRINTFORMW 「쳇 별 수 없군、이번뿐이다?」
 	CASE 22
-		;22:交渉실패。立ち去る
+		;22:交渉失敗。立ち去る
 			PRINTFORML 「ＭＡＧ도 없는건가」
 				PRINTFORML 「하아～」
 				PRINTFORMW 「%조사처리(CSTR:ARG:12,"랑")% 얘기해도 시간낭비일 뿐이군」
 	CASE 23
-		;23:交渉실패。敵対する
+		;23:交渉失敗。敵対する
 			PRINTFORML 「ＭＡＧ도 없는건가」
 				PRINTFORMW 「별 수 없구만%CSTR:ARG:12%의 몸에서 직접 빼앗아주마!!」
 	CASE 24
@@ -344,16 +344,16 @@ SELECTCASE ARG:1
 		PRINTFORML 「부족한걸」
 		PRINTFORMW 「좀 더 성의를 보이지 않는건가?」
 	CASE 26
-		;26:交渉성공
+		;26:交渉成功
 		PRINTFORMW 「%CSTR:ARG:12%의 기분은 전해졌다구」
 	CASE 27
 		;27-29:ＭＡＧを支払うのを断った
-		;27:交渉실패。奇襲する
+		;27:交渉失敗。奇襲する
 				PRINTFORML 「아아!?」
 				PRINTFORMW 「악마를 얕보고 있는건가、네놈은!!」
 				PRINTFORMW 「금방 지옥으로 보내주마ー!!」
 	CASE 28
-		;28:交渉실패。敵対する
+		;28:交渉失敗。敵対する
 				PRINTFORML 「아아!?」
 				PRINTFORML 「어쩔 생각이지?」
 				PRINTFORMW 「웃기지마」
@@ -362,10 +362,10 @@ SELECTCASE ARG:1
 				PRINTFORML 「별 수 없구만」
 				PRINTFORMW 「다른 걸로 봐주지」
 	CASE 30
-		;30:마석を要求
+		;30:魔石を要求
 		PRINTFORML 「마석 내놔」
 	CASE 31
-		;31-33:마석を渡そうとしたが持っていない
+		;31-33:魔石を渡そうとしたが持っていない
 		;31:別のものを要求する
 			PRINTFORMW 「어이어이、마석도 안 갖고 있는건가」
 				PRINTFORML 「별 수 없구만」
@@ -375,18 +375,18 @@ SELECTCASE ARG:1
 			PRINTFORMW 「어이어이、마석도 안 갖고 있는건가」
 			PRINTFORMW 「별 수 없구만、이거 받아」
 	CASE 32
-		;32:交渉실패。立ち去る
+		;32:交渉失敗。立ち去る
 			PRINTFORMW 「어이어이、마석도 안 갖고 있는건가」
 				PRINTFORML 「마석도 없는 녀석에게 용건는 없어」
 				PRINTFORMW 「그럼」
 	CASE 33
-		;33:交渉실패。敵対する
+		;33:交渉失敗。敵対する
 			PRINTFORMW 「어이어이、마석도 안 갖고 있는건가」
 				PRINTFORML 「마석은 말야、악마가 좋아하는 물건이라고」
 				PRINTFORML 「제대로 공부가 안되어있구만」
 				PRINTFORMW 「그럼、죽어!!」
 	CASE 34
-		;34-36:마석を渡した
+		;34-36:魔石を渡した
 		;34:払ったのに逃げられる
 				PRINTFORML 「그럭저럭이군」
 				PRINTFORMW 「그럼、잘 있어」
@@ -395,16 +395,16 @@ SELECTCASE ARG:1
 				PRINTFORML 「부족하다고」
 				PRINTFORML 「좀 더 %CSTR:ARG:12%의 성의를 보여줘」
 	CASE 36
-		;36:交渉성공
+		;36:交渉成功
 				PRINTFORMW 「고마워」
 	CASE 37
-		;37-39:마석を渡すのを断った
-		;37:交渉실패。奇襲する
+		;37-39:魔石を渡すのを断った
+		;37:交渉失敗。奇襲する
 				PRINTFORML 「아아!?」
 				PRINTFORMW 「악마를 얕보고 있는건가、네놈은!!」
 				PRINTFORMW 「금방 지옥으로 보내주마ー!!」
 	CASE 38
-		;38:交渉실패。敵対する
+		;38:交渉失敗。敵対する
 			;気分を害される
 				PRINTFORML 「아아!?」
 				PRINTFORML 「어쩔 생각이지?」
@@ -414,7 +414,7 @@ SELECTCASE ARG:1
 				PRINTFORML 「별 수 없구만」
 				PRINTFORMW 「다른 걸로 봐주지」
 	CASE 40
-		;40:異性との성교渉を要求
+		;40:異性との性交渉を要求
 		PRINTFORML 「여자를 범하게 해라｣
 	CASE 41
 		;41:異性を宛がってもらった時の反応
@@ -539,7 +539,7 @@ SELECTCASE ARG:1
 									PRINTFORML 
 							ENDSELECT
 					ENDSELECT
-				;통상
+				;通常
 				ELSE
 					SELECTCASE RAND:3
 						;거유・폭유
@@ -714,7 +714,7 @@ SELECTCASE ARG:1
 				ENDSELECT
 			ENDIF
 	CASE 42
-		;42-46:성교渉が終わった後
+		;42-46:性交渉が終わった後
 		;42:敗北してる場合ここでゲームオーバー
 				PRINTFORMW 「어잇、벌써 한계야!?」
 				PRINTFORMW 「이쪽은 아직 충분히 범하지 못했다고!!」
@@ -784,7 +784,7 @@ SELECTCASE ARG:1
 				;PRINTFORML 「%CSTR:ARG:일인칭%、또 한 발 내게 해……」
 	CASE 46
 		;46:満足
-			$성교渉が終わった後満발_LOOP
+			$性交渉が終わった後満足_LOOP
 			;바친캐릭터が매료になっている場合
 			IF GET_STATE(CFLAG:(바친캐릭터()):상태이상) == "CHARM"
 				IF TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애
@@ -866,7 +866,7 @@ SELECTCASE ARG:1
 					PRINTFORMW 「좀 진지하게 해버렸구만. 캬하하핫」
 					PRINTFORML 
 				ENDIF
-			;통상
+			;通常
 			ELSE
 				;연모・친애
 				IF TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애
@@ -876,7 +876,7 @@ SELECTCASE ARG:1
 							;얌전함
 							CASE 0
 								SIF !TALENT:(바친캐릭터()):얌전함
-									GOTO 성교渉が終わった後満발_LOOP
+									GOTO 性交渉が終わった後満足_LOOP
 								PRINTFORML 
 								PRINTFORMW 「이런 얌전해보이는 얼굴 하고 있으면서 말야…」
 								PRINTFORMW 「\@TALENT:(바친캐릭터()):아내 ? 남편 # 남자친구\@ 앞에서 다른 남자한테 『청소 펠라』 하는건가、크큭」
@@ -907,7 +907,7 @@ SELECTCASE ARG:1
 										PRINTFORML 
 								ENDSELECT
 						ENDSELECT
-					;통상
+					;通常
 					ELSE
 						SELECTCASE RAND:7
 							CASE 0
@@ -971,13 +971,13 @@ SELECTCASE ARG:1
 			ENDIF
 			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 만족한 것 같다
 	CASE 47
-		;47-49:성교渉を断った
-		;47:交渉실패。奇襲する
+		;47-49:性交渉を断った
+		;47:交渉失敗。奇襲する
 				PRINTFORML 「아아!?」
 				PRINTFORMW 「악마를 얕보고 있는건가、네놈은!!」
 				PRINTFORMW 「금방 지옥으로 보내주마ー!!」
 	CASE 48
-		;48:交渉실패。敵対する
+		;48:交渉失敗。敵対する
 				PRINTFORML 「아아!?」
 				PRINTFORML 「어쩔 생각이지?」
 				PRINTFORMW 「웃기지마」
@@ -1003,11 +1003,11 @@ SELECTCASE ARG:1
 		;53:満足し、仲魔になる
 				PRINTFORMW 「헤헷、제법 좋았다고!」
 	CASE 54
-		;54:満발し、아이템をくれる
+		;54:満足し、アイテムをくれる
 				PRINTFORMW 「헤헷、제법 좋았다고!」
 				PRINTFORMW 「이거 줄테니까, 또 하게 해줘」
 	CASE 53
-		;53:満발し、見逃してくれる
+		;53:満足し、見逃してくれる
 		;現状、死に処理
 	CASE 56
 		;56-61:犯してもらった後
@@ -1067,7 +1067,7 @@ SELECTCASE ARG:1
 				PRINTFORMW 「미안미안、네 녀석、위험일이었는데 말야?」
 				PRINTFORMW 
 				PRINTFORMW 「그 대신、이라기엔 뭐하지만 같이 가줄게」
-			;통상
+			;通常
 			ELSE
 				PRINTFORML 
 				PRINTFORMW 「후우～、좋았다고」
@@ -1080,11 +1080,11 @@ SELECTCASE ARG:1
 			PRINTFORMW 「헤헷、제법 좋았다고!」
 		ENDIF
 	CASE 60
-		;60:満발し、아이템をくれる
+		;60:満足し、アイテムをくれる
 				PRINTFORMW 「헤헷、제법 좋았다고!」
 				PRINTFORMW 「이거 줄테니까, 또 하게 해줘」
 	CASE 61
-		;61:満발し、見逃してくれる
+		;61:満足し、見逃してくれる
 		;現状、死に処理
 	CASE 62
 		;62:仲魔になる
@@ -1168,7 +1168,7 @@ SELECTCASE ARG:1
 					PRINTFORML 
 					PRINTFORMW 「개인적으론 그 여자랑도 또 즐기고 싶은데 말야」
 					PRINTFORML 
-				;통상
+				;通常
 				ELSE
 					SELECTCASE RAND:2
 						;빈유
@@ -1238,7 +1238,7 @@ SELECTCASE ARG:1
 		;フラグ리셋
 		CFLAG:ARG:800 = -1
 	CASE 63
-		;63:マスターの레벨より高い場合
+		;63:マスターのレベルより高い場合
 		IF RAND:2 == 0
 			PRINTFORML 「%CSTR:ARG:12%、미안하지만 아직 Lv이 부족하군」
 			PRINTFORML 「좀 더 강해진후에 얘기해 줘」
@@ -1292,17 +1292,17 @@ SELECTCASE ARG:1
 			PRINTFORML 「소중히 사용해」
 		ENDIF
 	CASE 68
-		;68:데미지をくれる
+		;68:ダメージをくれる
 			PRINTFORML 「이런、손이 미끄러졌네」
 	CASE 69
-		;69-75:아이템をくれるor회복してくれる
-		;69:소마を使ってくれる
+		;69-75:アイテムをくれるor回復してくれる
+		;69:ソーマを使ってくれる
 		PRINTFORMW 「좋은 녀석을 사용해줄게!」
 	CASE 70
-		;70:보옥륜を使ってくれる
+		;70:宝玉輪を使ってくれる
 		PRINTFORMW 「회복해줄게」
 	CASE 71
-		;71:ITEMor마석をくれる
+		;71:ITEMor魔石をくれる
 		IF RAND:2 == 0
 			PRINTFORMW 「좋은 녀석을 사용해주겠다구」
 		ELSE
@@ -1310,28 +1310,28 @@ SELECTCASE ARG:1
 			PRINTFORMW 「%CSTR:ARG:12%에게 주려고 생각했어」
 		ENDIF
 	CASE 72
-		;72:마석をくれる
+		;72:魔石をくれる
 		IF RAND:2 == 0
 			PRINTFORMW 「이 녀석을 가져가」
 		ELSE
 			PRINTFORMW 「이거라도 가져가」
 		ENDIF
 	CASE 73
-		;73:마석を使ってくれる
+		;73:魔石を使ってくれる
 		IF RAND:2 == 0
 			PRINTFORMW 「회복해줄게」
 		ELSE
 			PRINTFORMW 「상처투성이잖아」
 		ENDIF
 	CASE 74
-		;74:보옥を使ってくれる
+		;74:宝玉を使ってくれる
 		IF RAND:2 == 0
 			PRINTFORMW 「회복해줄게」
 		ELSE
 			PRINTFORMW 「봐 줄 수가 없구만」
 		ENDIF
 	CASE 75
-		;75:보옥をくれる
+		;75:宝玉をくれる
 		IF RAND:2 == 0
 			PRINTFORMW 「이걸 줄게」
 		ELSE
@@ -1339,15 +1339,15 @@ SELECTCASE ARG:1
 		ENDIF
 	CASE 76
 		;76-78:気まずくなった
-		;76:회화실패。奇襲する
+		;76:会話失敗。奇襲する
 		PRINTFORML 「역시 얘기가 안되는구만-!!」
 		PRINTFORMW 「뒈져버려!!」
 	CASE 77
-		;77:회화실패。敵対する
+		;77:会話失敗。敵対する
 		PRINTFORML 「%CSTR:ARG:12%의 시선이 신경쓰이나」
 		PRINTFORMW 「역시 이 얘기는 쓸데없었군」
 	CASE 78
-		;78:회화継続
+		;78:会話継続
 		PRINTFORMW 「너랑 얘기하고 있으면 이상해진다구…」
 		PRINTFORMW 「별 수 없군、다른 얘기를 하자」
 	CASE 79
@@ -1359,20 +1359,20 @@ SELECTCASE ARG:1
 	PRINTFORML 「다음에 만나면 어떻게 될까」
 	PRINTFORML 「알 수 없다고」
 	CASE 81
-		;우호도が低い
+		;友好度が低い
 	PRINTFORML 「그럼」
 	CASE 82
-		;우호도が普通
+		;友好度が普通
 	PRINTFORML 「안녕」
 	CASE 83
-		;우호도が高い
+		;友好度が高い
 	PRINTFORML 「또 만나자구」
 	CASE 88
-		;ヤらせてもらう・交渉が성공した場合
+		;ヤらせてもらう・交渉が成功した場合
 		PRINTFORMW 교섭에 성공해、하게 해 주었다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が성공した場合
+		;犯してもらう・交渉が成功した場合
 		PRINTFORMW 교섭에 성공해、범해주게 되었다
 		CALL MESSAGE_TALK
 		PRINTFORML 
@@ -1485,10 +1485,10 @@ SELECTCASE ARG:1
 		ENDIF
 		PRINTFORML 
 	CASE 91
-		;적が命乞いCASE91～93
+		;敵が命乞いCASE91～93
 		;91:命乞い
 		PRINTFORML 
-		PRINTFORMW 「어、어이、이 쯤에서 그만 봐주지 않을래?」
+		PRINTFORMW 「어、어이、이쯤에서 그만 봐주지 않을래?」
 		PRINTFORMW 「부탁이야！ 응？ 응?」
 		PRINTFORML 
 	CASE 92
@@ -1506,7 +1506,7 @@ SELECTCASE ARG:1
 			CASE 25 TO 49
 				PRINTFORML 
 				PRINTFORMW 「고、고맙다고……」
-				PRINTFORMW 「감사 인사라기엔 뭐하지만、네 힘이 되어주지」
+				PRINTFORMW 「답례라기엔 뭐하지만、네 힘이 되어주지」
 				PRINTFORML 
 				RETURN 0, 1
 			;何か貰う
@@ -1531,8 +1531,8 @@ SELECTCASE ARG:1
 		PRINTFORMW 「이렇게 된 이상 해주겠어！ 해주겠다고오!!」
 		PRINTFORML 
 	CASE 94
-		;적から助ける代わりに取引を持ちかけられるCASE94～101
-		;94:取引内容（RETURN 0, X = 1.￥　2.마카　3.異性）
+		;敵から助ける代わりに取引を持ちかけられるCASE94～101
+		;94:取引内容（RETURN 0, X = 1.￥　2.魔貨　3.異性）
 		;とりあえず랜덤にしてみる
 		PRINTFORML 
 		PRINTFORML 「헤헤헷、남은 건 그 쪽 뿐인가아?」
@@ -1590,7 +1590,7 @@ SELECTCASE ARG:1
 		PRINTFORMW 「이걸로 『욕탕』에 갈 돈이 생겼다구」
 		PRINTFORML 
 	CASE 96
-		;96:要求をのむ（마카）
+		;96:要求をのむ（魔貨）
 		PRINTFORML 
 		PRINTFORMW 「옷、오오～、미안하구만～」
 		PRINTFORMW 「이걸로 『욕탕』에 갈 돈이 생겼다구」
@@ -1605,7 +1605,7 @@ SELECTCASE ARG:1
 		CALL MESSAGE_TALK
 		PRINTFORML 
 	CASE 98
-		;98:約束を守るかどうか구상内で決める（RETURN 0, X = 1.去っていく　2.전투続行）
+		;98:約束を守るかどうか口上内で決める（RETURN 0, X = 1.去っていく　2.戦闘続行）
 		PRINTFORML 
 		PRINTFORMW 「만족、만족… 읏챠
 		PRINTFORML 
@@ -1614,7 +1614,7 @@ SELECTCASE ARG:1
 			;去っていく
 			CASE 0 TO 70
 				RETURN 0, 1
-			;전투続行
+			;戦闘続行
 			CASEELSE
 				RETURN 0, 2
 		ENDSELECT
@@ -1625,7 +1625,7 @@ SELECTCASE ARG:1
 		PRINTFORML 「힘내라고～」
 		PRINTFORML 
 	CASE 100
-		;100:約束を守らず전투続行
+		;100:約束を守らず戦闘続行
 		PRINTFORML 
 		PRINTFORMW 「그·러·면…」
 		PRINTFORMW 「슬슬 해치울까」
@@ -1643,7 +1643,7 @@ ENDSELECT
 
 
 ;===========================================================================
-;회화時挨拶
+;会話時挨拶
 ;===========================================================================
 @GREET_PUB316,ARG
 ;最初の挨拶
@@ -1736,7 +1736,7 @@ IF FLAG:월령 == 8
 						PRINTFORML 
 						RETURN 5
 					ELSEIF TFLAG:TALK용성공판정치 < 80
-					;満발し、아이템をくれる
+					;満足し、アイテムをくれる
 						;구상호출
 						PRINTFORML 
 						PRINTFORMW 「이걸로 지불할게ー」
@@ -1744,7 +1744,7 @@ IF FLAG:월령 == 8
 						PRINTFORML 
 						RETURN 2
 					ELSE
-					;満발
+					;満足
 						;구상호출
 						PRINTFORML 
 						PRINTFORMW 「돈 돈… 없잖아…」
@@ -2204,18 +2204,18 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 		;구상호출
 		CALL KOJO_TALK,ARG,44
 		RETURN 5
-	;満발し、아이템をくれる
+	;満足し、アイテムをくれる
 	ELSEIF TFLAG:TALK용성공판정치 < 80
 		;구상호출
 		CALL KOJO_TALK,ARG,54
 		RETURN 2
-	;満발
+	;満足
 	ELSE
 		;구상호출
 		CALL KOJO_TALK,ARG,46
 		RETURN 1
 	ENDIF
-;통상
+;通常
 ELSE
 	SELECTCASE CFLAG:ARG:우호도
 		CASE IS > 25
@@ -2239,7 +2239,7 @@ PRINTFORML
 
 ;質問を増やした場合、RAND:XのXを増やす
 ;RETURNの値により回答後の雰囲気が変わる。
-;0.회화継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる
+;0.会話継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる
 SELECTCASE RAND:2
 	CASE 0
 		IF IS_EROEQUIP_F(PLAYER)
@@ -2257,14 +2257,14 @@ SELECTCASE RAND:2
 			IF RESULT == 1
 				;１．強い防具
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
-	;			소질によって판정値が랜덤に上下することもある
+	;			素質によって判定値がランダムに上下することもある
 				SIF TALENT:ARG:영맹
 					LOCAL += RAND:15
 				SIF TALENT:ARG:우둔
 					LOCAL += RAND:15
 				IF LOCAL < 50
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:영맹
 						PRINTFORML 「호오～ 어느 정도 강한지」
 						PRINTFORMW 「시험해주마!!」
@@ -2305,7 +2305,7 @@ SELECTCASE RAND:2
 				SIF TALENT:ARG:도착적
 					LOCAL += RAND:15
 				IF LOCAL < 30
-					;실패
+					;失敗
 					IF TALENT:ARG:영맹 || TALENT:ARG:잔학
 						CFLAG:ARG:우호도 += RAND:50
 						PRINTFORML 「좋은 취미잖냐, 어이」
@@ -2338,7 +2338,7 @@ SELECTCASE RAND:2
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 50
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 						PRINTFORML 「혹시, 아니 혹시가 아니라도」
 						PRINTFORMW 「%조사처리(CSTR:ARG:11,"를")% 바보 취급하는 거야?」
 						RETURN 4
@@ -2366,7 +2366,7 @@ SELECTCASE RAND:2
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2) - RAND:20
 				IF LOCAL < 150
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					PRINTFORML 「태도가 되어있지 않잖아」
 					PRINTFORMW 「그딴 모습을 해서, 입다물고 있으면 봐줄거라고 생각하기라도 했나!?」
 					RETURN 3
@@ -2389,7 +2389,7 @@ SELECTCASE RAND:2
 			INPUT
 			PRINTFORML
 			IF RESULT == 1
-				;１．악마退治
+				;１．悪魔退治
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				SIF TALENT:ARG:겁쟁이
 					LOCAL += RAND:15
@@ -2405,7 +2405,7 @@ SELECTCASE RAND:2
 					LOCAL -= RAND:30
 				IF LOCAL < 50
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:영맹
 						PRINTFORML 「흥 뜻밖의 만남이군」
 						PRINTFORMW 「%조사처리(CSTR:ARG:11,"는")% 인간을 사냥하러 왔다구!!」
@@ -2456,7 +2456,7 @@ SELECTCASE RAND:2
 					LOCAL -= RAND:30
 				IF LOCAL < 40
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:잔학 || TALENT:ARG:영맹
 						PRINTFORML 「악마를 얕보는거군, 네놈」
 						PRINTFORMW 「그런 소리를 지껄이는 입은, 다시 열 수 없게 해주마!!」
@@ -2495,7 +2495,7 @@ SELECTCASE RAND:2
 					LOCAL -= RAND:30
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					PRINTFORML 「하아?」
 					PRINTFORMW 「잠꼬대는 자면서나 해」
 					RETURN 6
@@ -2537,7 +2537,7 @@ SELECTCASE RAND:2
 				SIF TALENT:ARG:반항적
 					LOCAL -= RAND:50
 				IF LOCAL < 50
-					;실패
+					;失敗
 					CFLAG:ARG:우호도 -= RAND:50
 					IF STR:(ABL:ARG:종족) == "천사"
 						PRINTFORML 「%조사처리(CSTR:ARG:11,"를")% 노예로 하겠다니」
@@ -2607,7 +2607,7 @@ SELECTCASE RAND:2
 		SELECTCASE RESULT
 			;[1]仕事
 			CASE 1
-				;성공率기본치
+				;成功率기본치
 				LOCAL = 100
 				;레벨が低い
 				SIF  BASE:ARG:LV > BASE:PLAYER:LV
@@ -2615,7 +2615,7 @@ SELECTCASE RAND:2
 				;지혜판정
 				SIF BASE:ARG:지혜 != BASE:PLAYER:지혜
 					LOCAL += 10 * LIMIT(BASE:ARG:지혜 - BASE:PLAYER:지혜, -2, 1)
-				;실패
+				;失敗
 				IF  LOCAL< RAND:100
 					PRINTFORMW 「하아？　헛소리 말라고」
 					PRINTFORMW 「너、척 봐도 아니라는 얼굴 하고 있다고!」
@@ -2630,7 +2630,7 @@ SELECTCASE RAND:2
 				ENDIF
 			;[2]暇つぶし
 			CASE 2
-				;성공率기본치
+				;成功率기본치
 				LOCAL = 80
 				;레벨が低い
 				SIF  BASE:ARG:LV > BASE:PLAYER:LV
@@ -2638,7 +2638,7 @@ SELECTCASE RAND:2
 				;지혜판정
 				SIF BASE:ARG:지혜 != BASE:PLAYER:지혜
 					LOCAL = 10 * LIMIT(BASE:ARG:지혜 - BASE:PLAYER:지혜, -3, 1)
-				;우호도판정
+				;友好度판정
 				LOCAL += LIMIT(CFLAG:ARG:우호도, -30, 30)
 				;회화側が女性なら下心を出してくる
 				SIF !IS_LOOKSLIKE_MALE(PLAYER)
@@ -2654,7 +2654,7 @@ SELECTCASE RAND:2
 					ENDIF
 					CFLAG:ARG:우호도 += RAND:10
 					RETURN 0
-				;실패
+				;失敗
 				ELSE
 					PRINTFORMW 「아앙！？　깔보고 있는 거냐？ 뭔 말도 안되는 소릴 하고 있어!」
 					CFLAG:ARG:우호도 -= RAND:15
@@ -2662,7 +2662,7 @@ SELECTCASE RAND:2
 				ENDIF
 			;[3]聞き飽きた質問だな
 			CASE 3
-				;성공率기본치
+				;成功率기본치
 				LOCAL = 60
 				;레벨が低い
 				SIF  BASE:ARG:LV > BASE:PLAYER:LV
@@ -2670,7 +2670,7 @@ SELECTCASE RAND:2
 				;힘판정
 				SIF BASE:ARG:힘 != BASE:PLAYER:힘
 					LOCAL = 10 * LIMIT(BASE:ARG:힘 - BASE:PLAYER:힘, -5, 5)
-				;우호도판정
+				;友好度판정
 				LOCAL += LIMIT(CFLAG:ARG:우호도, -30, 30)
 				;성공
 				IF RAND:100 < LOCAL
@@ -2678,7 +2678,7 @@ SELECTCASE RAND:2
 					PRINTFORMW 「꼭 영화 대사 같구만 그거、히히힛」
 					CFLAG:ARG:우호도 += RAND:10
 					RETURN 0
-				;실패
+				;失敗
 				ELSE
 					PRINTFORMW 「아 그러냐」
 					PRINTFORMW 「그럼、두 번 다시 들을 수 없게 해주지!」
@@ -2687,7 +2687,7 @@ SELECTCASE RAND:2
 				ENDIF
 			;[4]オンナ狩り
 			CASE 4
-				;성공率기본치
+				;成功率기본치
 				LOCAL = 80
 				;레벨が低い
 				SIF  BASE:ARG:LV > BASE:PLAYER:LV
@@ -2695,7 +2695,7 @@ SELECTCASE RAND:2
 				;운판정
 				SIF BASE:ARG:운 != BASE:PLAYER:운
 					LOCAL = 10 * LIMIT(BASE:ARG:운 - BASE:PLAYER:운, -1, 1)
-				;우호도판정
+				;友好度판정
 				LOCAL += LIMIT(CFLAG:ARG:우호도, -10, 10)
 				;성공
 				IF RAND:100 < LOCAL
@@ -2717,7 +2717,7 @@ SELECTCASE RAND:2
 						PRINTFORMW 「그러니 좋은 언니들끼리 투닥거리면서 싸우는거나 보라고」
 					ENDIF
 					RETURN 0
-				;실패
+				;失敗
 				ELSE
 					IF TALENT:ARG:겁쟁이
 						PRINTFORMW 「서、설마 %조사처리(CSTR:ARG:12,"는")%、요즘 소문으로만 들었던 악마 퇴치중!?」
@@ -2739,7 +2739,7 @@ SELECTCASE RAND:2
 ENDSELECT
 
 ;===========================================================================
-;회화時問答
+;会話時問答
 ;===========================================================================
 @QUESTION_PUB316,ARG,ARG:1
 #DIM LCOUNT
@@ -2754,7 +2754,7 @@ DO
 
 
 	;RETURNの値により回答後の雰囲気が変わる。
-	;0.회화継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる 7.交渉開始
+	;0.会話継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる 7.交渉開始
 	SELECTCASE RESULT:1
 		CASE ARG:1
 			CONTINUE
@@ -2773,7 +2773,7 @@ DO
 					LOCAL += RAND:50
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 					PRINTFORML 「동료마를 방패로 삼고, 자기는 살금살금 뒤에 숨어있을 뿐이면서」
 					PRINTFORMW 「그런 건 비겁하지 않아?」
 					RETURN 6
@@ -2797,7 +2797,7 @@ DO
 					LOCAL += RAND:30
 				IF LOCAL < 100
 					CFLAG:ARG:우호도 -= RAND:60
-					;실패
+					;失敗
 					PRINTFORML 「수족 말이지…」
 					PRINTFORMW 「서머너는, 악마의 힘을 빌리지 않으면 아무것도 못하는 주제에」
 					RETURN 6
@@ -2820,7 +2820,7 @@ DO
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 140
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					PRINTFORMW 「네 놈을 갈갈히 찢어서 합체 재료로 해주마!」
 					RETURN 3
 				ELSE
@@ -2850,7 +2850,7 @@ DO
 					LOCAL += RAND:20
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 					PRINTFORML 「시시해……」
 					PRINTFORMW 「좀 더 의욕을 보여봐」
 					RETURN 6
@@ -2872,7 +2872,7 @@ DO
 					LOCAL -= RAND:80
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:우애
 						PRINTFORMW 「아ー、그게」
 						PRINTFORMW 「여기선 웃어주는게 좋은걸려나…」
@@ -2910,7 +2910,7 @@ DO
 					LOCAL += RAND:15
 				IF LOCAL < 100
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:겁쟁이
 						PRINTFORML 「잠깐、도、도」
 						PRINTFORMW 「도와줘ー어!」
@@ -2948,7 +2948,7 @@ DO
 					CFLAG:ARG:우호도 += RAND:50
 				IF LOCAL < 50
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 					IF TALENT:ARG:감정결핍
 						PRINTFORML 「아아、옷을 벗었구나」
 						PRINTFORMW 「…그래서?」
@@ -3065,12 +3065,12 @@ DO
 							CALL KOJO_TALK,ARG,44
 							RETURN 5
 						ELSEIF TFLAG:TALK용성공판정치 < 80
-						;満발し、아이템をくれる
+						;満足し、アイテムをくれる
 						;구상호출
 								CALL KOJO_TALK,ARG,54
 							RETURN 2
 						ELSE
-						;満발
+						;満足
 							;구상호출
 							CALL KOJO_TALK,ARG,46
 							RETURN 1
@@ -3097,7 +3097,7 @@ DO
 						RETURN 0
 					ELSE
 						CFLAG:ARG:우호도 -= RAND:50
-						;실패
+						;失敗
 						;LOCALが40以下だと奇襲、そうでない場合は敵対
 						IF LOCAL < 40
 							PRINTFORML 
@@ -3135,7 +3135,7 @@ DO
 					SIF TALENT:ARG:건방짐
 						LOCAL -= RAND:15
 					IF (CFLAG:ARG:우호도 + LOCAL) < 50
-					;실패
+					;失敗
 						IF TALENT:ARG:눈에띄고싶어함
 							CFLAG:ARG:우호도 -= RAND:10
 							PRINTFORMW 「어이어이、거기서는 모른다고 해야 하는 부분이잖아?」
@@ -3176,7 +3176,7 @@ DO
 					SIF TALENT:ARG:츤데레
 						LOCAL += RAND:15
 					IF (CFLAG:ARG:우호도 + LOCAL) < 50
-					;실패
+					;失敗
 						IF TALENT:ARG:프라이드높음
 							CFLAG:ARG:우호도 -= RAND:10
 							PRINTFORMW 「어이어이、그런 것도 모르는거야?」
@@ -3228,7 +3228,7 @@ DO
 						LOCAL -= 40
 					IF LOCAL < 60
 						CFLAG:ARG:우호도 -= RAND:10
-						;실패
+						;失敗
 						IF BASE:ARG:LV > BASE:PLAYER:LV
 							CFLAG:ARG:우호도 -= RAND:50
 							PRINTFORMW 「하아？　뭐라고 하는거야 %CSTR:ARG:12%」
@@ -3288,7 +3288,7 @@ DO
 LOOP 1
 
 @FUSION_MESSAGE_PUB316,ARG
-;合体時구상
+;合体時口上
 PRINTFORMW 
 
 
@@ -3300,12 +3300,12 @@ PRINTFORMW
 ;	ARG    = 相手악마
 ;	PLAYER = 회화担当キャラ
 ;<戻り値>
-;	0以上.회화の성공率　-1.구상がない場合に使う、例えば女相手の구상しかない場合は『RETURN -1』を置く事で簡易式に飛ばす事が出来る
+;	0以上.회화の成功率　-1.구상がない場合に使う、例えば女相手の구상しかない場合は『RETURN -1』を置く事で簡易式に飛ばす事が出来る
 ;==========================================================
 @AUTO_PUB316,ARG
-#DIM 회화성공率
+#DIM 회화成功率
 
-회화성공率 = 50
+회화成功率 = 50
 FOR LOCAL, 0, 2
 	;회화担当が남자
 	IF TALENT:PLAYER:남자
@@ -3336,7 +3336,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「하아？인색하게 굴지 말라고、글러먹은 여자가」
 					PRINTFORML 
 					PRINTFORMW 인상이 나빠진 것 같다
-					회화성공率 -= 10
+					회화成功率 -= 10
 
 				;부끄럼쟁이
 				ELSEIF TALENT:PLAYER:부끄럼쟁이
@@ -3345,7 +3345,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「후힛！뭐야？부끄러운거야? 좋아좋아～」
 					PRINTFORML 
 					PRINTFORMW 인상이 꽤 좋아진것 같다
-					회화성공率 += 30
+					회화成功率 += 30
 				
 				
 				;それ以外
@@ -3355,7 +3355,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「흐～응、그렇구나。히힛」
 					PRINTFORML 
 					PRINTFORMW 인상이 좋아진 것 같다
-					회화성공率 += 10
+					회화成功率 += 10
 				
 				ENDIF
 				
@@ -3374,7 +3374,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「히힛、그렇게 기쁜듯한 얼굴로 삼킨다던가, 처음부터 그럴 작정이었던게 아냐?」
 					PRINTFORML 
 					PRINTFORMW 인상이 꽤 좋아진것 같다
-					회화성공率 += 40
+					회화成功率 += 40
 
 				;바람癖の場合は３０％
 				ELSEIF TALENT:PLAYER:바람기 && RAND:100 < 30
@@ -3385,7 +3385,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「상당히 느낌이 좋은데」
 					PRINTFORML 
 					PRINTFORMW 인상이 꽤 좋아진것 같다
-					회화성공率 += 40
+					회화成功率 += 40
 				
 				;겁쟁이だと低확률로無理矢理咥えさせられる
 				ELSEIF TALENT:PLAYER:겁쟁이 && RAND:100 < 1
@@ -3396,7 +3396,7 @@ FOR LOCAL, 0, 2
 					PRINTFORMW 「빨리 물어서 비위를 맞추라고」
 					PRINTFORML 
 					PRINTFORMW 인상이 꽤 좋아진 것 같다
-					회화성공率 += 30
+					회화成功率 += 30
 				
 				
 				;それ以外は断る
@@ -3408,7 +3408,7 @@ FOR LOCAL, 0, 2
 						PRINTFORMW 「하아？그런가、기분 나쁘네ー」
 						PRINTFORML 
 						PRINTFORMW 인상이 나빠진 것 같다
-						회화성공率 -= 10
+						회화成功率 -= 10
 					ELSE
 						PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 거부했다
 						PRINTFORML 
@@ -3429,6 +3429,6 @@ FOR LOCAL, 0, 2
 
 NEXT
 
-RETURN 회화성공率
+RETURN 회화成功率
 
 

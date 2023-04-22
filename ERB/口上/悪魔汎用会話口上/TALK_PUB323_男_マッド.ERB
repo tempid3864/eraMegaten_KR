@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB323.ERB
-;	Facility	:회화타입：男・マッドの회화用메시지＋挨拶・問答処理
+;	Facility	:회화타입：男・マッドの会話用メッセージ＋挨拶・問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -9,59 +9,60 @@
 ;
 ;	Edit	Date			Author					Reason
 ;	001		2011/07/19		じょばんに				新規作成
-;	001		2011/07/20		Ｎ鳥					合体時메시지を改変＆FUSION_MESSAGEへ移動
-;
+;	001		2011/07/20		Ｎ鳥					合体時メッセージを改変＆FUSION_MESSAGEへ移動
+;	002		2022/07/10		しめじ					命乞い分岐関係を追記（CASE 68～CASE 75、CASE 91～CASE 93）。
+;													大体は口上内に元々あった文章を流用させていただいています。
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
-; 권장일인칭：うぉれ
-; 권장이인칭：うぉまえ
+; 推奨一人称：うぉれ
+; 推奨二人称：うぉまえ
 ; 理性が戻ってるところじゃなくて、普通にマッドなときにCSTR使ってます。
 ;
-; 一応、それっぽい회화にしたつもりですが…。
-; ぉぉぉとかぁぁぁとかうるさかったり、たまに입調かわったりするのは仕様です。
+; 一応、それっぽい会話にしたつもりですが…。
+; ぉぉぉとかぁぁぁとかうるさかったり、たまに口調かわったりするのは仕様です。
 ; もうちょっと充実はさせたいけど…。
 ;
-; 汎用회화구상は구상側でなく本体に入っているものなので、
-; ライセンスについてどういう扱いなのが現時点では불명ですが、
+; 汎用会話口上は口上側でなく本体に入っているものなので、
+; ライセンスについてどういう扱いなのが現時点では不明ですが、
 ; じょばんに個人は完全にライセンスを放棄しています。
 ;
 ;=====================================================================
-;입調타입：○○の汎用구상＋회화用ファイルです
+;口調タイプ：○○の汎用口上＋会話用ファイルです
 ;=====================================================================
 
 ;=====================================================================
 ;知ってると便利そうな表記
 ;　%CSTR:ARG:X%　X = 11:일인칭 12:이인칭 20:종족
 ;　\@ CSTR:ARG:종족명 != "" ? %CSTR:ARG:종족명% # %STR:(ABL:ARG:종족)%
-;　┗CSTRに종족명が記載されていればそれを、されていなければABLから종족명を割り出して표시する
+;　┗CSTRに種族名が記載されていればそれを、されていなければABLから種族名を割り出して表示する
 ;=====================================================================
 
 @KOJO_TALK_PUB323,ARG,ARG:1
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:레이디・킬러즈
+		;1:レディ・キラーズ
 		PRINTFORMW 「우오오오, %CSTR:ARG:이인칭%、괴, 굉장한데에」
 		PRINTFORMW 「다, 달님처럼 아름다운 얼굴이잖아」
 		PRINTFORMW 「우아, 오오오, 아」
 		PRINTFORML
 		PRINTFORML 「…우리들의 만남은 달님의 인도로 이루어진거군요」
 	CASE 2
-		; 2:おねだり前の逡巡時(아이さつor問答で목적が決まっている場合)
-	PRINTFORML 「우옷, 자, 잠깐 기다려어」
+		; 2:おねだり前の逡巡時(あいさつor問答で目的が決まっている場合)
+	PRINTFORML 「우옷、자、잠깐 기다려어」
 	PRINTFORML 「%CSTR:ARG:일인칭%에게 생각할 시간을 줘어어」
 	CASE 3
-		; 3:交渉の목적を尋ねる
+		; 3:交渉の目的を尋ねる
 		SELECTCASE CFLAG:ARG:우호도
 			CASE IS < 25
-				;우호도低い
+				;友好度低い
 				PRINTFORML 「%CSTR:ARG:일인칭%에게 무슨 용무지이이」
 				PRINTFORML 「빨리 용건을 말해라아아」
 			CASE IS < 50
-				;우호도普通
+				;友好度普通
 				PRINTFORML 「그, 그래서, %CSTR:ARG:일인칭%에게 무슨 용무냐아아」
 			CASEELSE
-				;우호도高い
+				;友好度高い
 				PRINTFORML 「우오 달님이 말씀하신다아아」
 				PRINTFORML 「%CSTR:ARG:이인칭%의 부탁을 들어주라고 하신다아아」
 		ENDSELECT
@@ -69,9 +70,9 @@ SELECTCASE ARG:1
 		;84:要求前の1文
 		PRINTFORML 「줘 줘 줘 줘、뭔가 줫」
 	CASE 4
-		; 4-6:교섭목적：やらせてくれと言った時の反応
+		; 4-6:交渉目的：やらせてくれと言った時の反応
 		; 4:取り付く島もなし
-			PRINTFORMW 호되게 거부당했다
+			PRINTFORMW 격렬하게 거부당했다
 	CASE 5
 		; 5:交渉次第
 		PRINTFORMW 조건 나름으로 해주는 것 같다
@@ -112,12 +113,12 @@ SELECTCASE ARG:1
 		ENDIF
 
 	CASE 7
-		; 7-9:교섭목적：やらせてくれと言った時の反応
+		; 7-9:交渉目的：やらせてくれと言った時の反応
 		; 7:取り付く島もなし
-			PRINTFORMW 호되게 거부당했다
+			PRINTFORMW 격렬하게 거부당했다
 	CASE 8
 		; 8:交渉次第
-		PRINTFORMW 조건 나름으로 범해줄 것 같다
+		PRINTFORMW 조건 나름으로 범해져 주는 것 같다
 	CASE 9
 		; 9:一発おｋ
 				PRINTFORMW 흔쾌히 승낙해주었다
@@ -126,7 +127,7 @@ SELECTCASE ARG:1
 		PRINTFORML 「￥{TFLAG:TALK용요구치} 줘!」
 
 	CASE 11
-		;11-13:￥を払おうとしてお金が발りない
+		;11-13:￥を払おうとしてお金が足りない
 		;11:別のものを要求する
 		PRINTFORMW 「돈이 부족하잖아아아」
 		PRINTFORMW 「%CSTR:ARG:이인칭%、이런 계산조차 못한다니, 머리가 어떻게 됐다구우우」
@@ -136,33 +137,33 @@ SELECTCASE ARG:1
 		PRINTFORMW 「돈이 부족하잖아아아」
 		PRINTFORMW 「그런 %CSTR:ARG:이인칭%에게、선물, 선물을!」
 	CASE 12
-		;12:交渉실패。立ち去る
+		;12:交渉失敗。立ち去る
 		PRINTFORMW 「돈이 부족하잖아아아」
 		PRINTFORMW 「이제 됐어, 돌아갈래, 이제, %조사처리(CSTR:ARG:일인칭,"는")% 돌아갈거야아…」
 	CASE 13
-		;13:交渉실패。敵対する
+		;13:交渉失敗。敵対する
 		PRINTFORMW 「돈이 부족하잖아아아」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")% 바보 취급하는 거였나아아」
 	CASE 14
 		;14-16:￥を支払った
 		;14:払ったのに逃げられる
-		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아 
+		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아」 
 		PRINTFORMW 「%CSTR:ARG:이인칭%에 대해서, 잊지 않을테니까아아」 
 	CASE 15
 		;15:さらに要求される
 		PRINTFORML 「좀 더, 좀 더 갖고 싶어어어!」 
 	CASE 16
-		;16:交渉성공
+		;16:交渉成功
 		PRINTFORMW 「만족、만조오오오옥!!」
 		PRINTFORMW 「%CSTR:ARG:일인칭%의 마음잇、%CSTR:ARG:이인칭%의 사랑으로 채워졌다아아아」
 	CASE 17
 		;17-19:￥を支払うのを断った::
-		;17:交渉실패。奇襲する
+		;17:交渉失敗。奇襲する
 		PRINTFORMW 「왜, 왜앳, 안 주는거야아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 싫어하는건가앗」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 급식의 튀김빵이 정말 싫다고오옷!」
 	CASE 18
-		;18:交渉실패。敵対する
+		;18:交渉失敗。敵対する
 		PRINTFORMW 「왜, 왜앳, 안 주는거야아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 싫어하는건가앗」
 		PRINTFORMW 「%CSTR:ARG:일인칭%도 %CSTR:ARG:이인칭% 따윈, 싫어어어」
@@ -173,7 +174,7 @@ SELECTCASE ARG:1
 		;20:要求額を提示：ＭＡＧ
 		PRINTFORML 「{TFLAG:TALK용요구치}MAG 줘엇!」
 	CASE 21
-		;21-23:ＭＡＧを支払おうとしたが발りない
+		;21-23:ＭＡＧを支払おうとしたが足りない
 		;21:別のものを要求する
 		PRINTFORMW 「MAG가 없다니, 그런 게 용서받을 수 있는 건 초등학생까지라고오오」
 		PRINTFORMW 「벼, 별 수 없으니까, 다른 거어」
@@ -182,32 +183,32 @@ SELECTCASE ARG:1
 		PRINTFORMW 「MAG가 없다니, 그런 게 용서받을 수 있는 건 초등학생까지라고오오」
 		PRINTFORMW 「부, 불쌍하니까아, 이거 줄게에」
 	CASE 22
-		;22:交渉실패。立ち去る
+		;22:交渉失敗。立ち去る
 		PRINTFORMW 「MAG가 없다니, 그런 게 용서받을 수 있는 건 초등학생까지라고오오」
 		PRINTFORMW 「이제 됐엇、돌아가、이제、%조사처리(CSTR:ARG:일인칭,"는")% 돌아갈거야아아…」
 	CASE 23
-		;23:交渉실패。敵対する
+		;23:交渉失敗。敵対する
 		PRINTFORMW 「MAG가 없다니, 그런 게 용서받을 수 있는 건 초등학생까지라고오오」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、%조사처리(CSTR:ARG:이인칭,"를")% 용서 못해애애」
 	CASE 24
 		;24-26:ＭＡＧを支払った
 		;24:払ったのに逃げられる
-		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아 
+		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아」 
 		PRINTFORMW 「%CSTR:ARG:이인칭%에 대해서, 잊지 않을테니까아아」 
 	CASE 25
 		;25:さらに要求される
 		PRINTFORML 「부족해애애、부족하다구우우우!」 
 	CASE 26
-		;26:交渉성공
+		;26:交渉成功
 		PRINTFORMW 「만족、만조오오오옥!!」
 		PRINTFORMW 「%CSTR:ARG:일인칭%의 마음잇、%CSTR:ARG:이인칭%의 사랑으로 채워졌다아아아」
 	CASE 27
 		;27-29:ＭＡＧを支払うのを断った
-		;27:交渉실패。奇襲する
-		PRINTFORMW 「뭐、뭐라고오오、구두쇠는 쳐죽일거야아아!」
+		;27:交渉失敗。奇襲する
+		PRINTFORMW 「뭐、뭐라고오오、구두쇠는 쳐 죽인다아아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:이인칭,"가")% 죽을때까지, 계속 때릴거야아앗」
 	CASE 28
-		;28:交渉실패。敵対する
+		;28:交渉失敗。敵対する
 		PRINTFORMW 「왜, 왜앳, 안 주는거야아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 싫어하는건가앗」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 급식의 튀김빵이 정말 싫다고오옷!」
@@ -215,10 +216,10 @@ SELECTCASE ARG:1
 		;29:他のものを要求する
 		PRINTFORMW 「그럼、그럼 다른 거, 다른 거 줘어」
 	CASE 30
-		;30:마석を要求
+		;30:魔石を要求
 		PRINTFORML 「마석 줘엇」
 	CASE 31
-		;31-33:마석を渡そうとしたが持っていない
+		;31-33:魔石を渡そうとしたが持っていない
 		;31:別のものを要求する
 		PRINTFORMW 「마석 없는건가아、마、마석이란 건 뭐지」
 		PRINTFORMW 「어、어쨌든、다른 거얼」
@@ -227,33 +228,33 @@ SELECTCASE ARG:1
 		PRINTFORMW 「마석 없는건가아、마、마석이란 건 뭐지」
 		PRINTFORMW 「모, 모르겠으니까 %CSTR:ARG:이인칭%에게 줄게에에」
 	CASE 32
-		;32:交渉실패。立ち去る
+		;32:交渉失敗。立ち去る
 		PRINTFORMW 「마석 없는건가아、마、마석이란 건 뭐지」
 		PRINTFORMW 「…머、머리가 아팟, 나, 나, 이제 돌아갑니다아…」
 	CASE 33
-		;33:交渉실패。敵対する
+		;33:交渉失敗。敵対する
 		PRINTFORMW 「마석 없는건가아、마、마석이란 건 뭐지」
 		PRINTFORMW 「%CSTR:ARG:이인칭%、%CSTR:ARG:이인칭%、누구냐앗、죽이겠어어어!」
 	CASE 34
-		;34-36:마석を渡した
+		;34-36:魔石を渡した
 		;34:払ったのに逃げられる
-		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아 
+		PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아」 
 		PRINTFORMW 「%CSTR:ARG:이인칭%에 대해서, 잊지 않을테니까아아」 
 	CASE 35
 		;35:さらに要求される
 		PRINTFORML 「아직、아직도 갖고 싶어엇！　%조사처리(CSTR:ARG:일인칭,"는")% 욕심쟁이잇!」 
 	CASE 36
-		;36:交渉성공
+		;36:交渉成功
 		PRINTFORMW 「만족、만조오오오옥!!」
 		PRINTFORMW 「%CSTR:ARG:일인칭%의 마음잇、%CSTR:ARG:이인칭%의 사랑으로 채워졌다아아아」
 	CASE 37
-		;37-39:마석を渡すのを断った
-		;37:交渉실패。奇襲する
+		;37-39:魔石を渡すのを断った
+		;37:交渉失敗。奇襲する
 		PRINTFORMW 「왜, 왜앳, 안 주는거야아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 싫어하는건가앗」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 급식의 튀김빵이 정말 싫다고오옷!」
 	CASE 38
-		;38:交渉실패。敵対する
+		;38:交渉失敗。敵対する
 		;気分を害される
 		PRINTFORMW 「왜, 왜앳, 안 주는거야아아!」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 싫어하는건가앗」
@@ -262,7 +263,7 @@ SELECTCASE ARG:1
 		;39:他のものを要求する
 		PRINTFORMW 「그럼、그럼 다른 거, 다른 거 줘어」
 	CASE 40
-		;40:異性との성교渉を要求
+		;40:異性との性交渉を要求
 		PRINTFORML 「%CSTR:ARG:일인칭%、여、여자 원해、하게 해 줘엇」
 	CASE 41
 		;18:異性を宛がってもらった時の反応
@@ -270,7 +271,7 @@ SELECTCASE ARG:1
 		PRINTFORMW 「%CSTR:ARG:일인칭%、%CSTR:ARG:일인칭%、엣취이!」
 		CALL MESSAGE_TALK
 	CASE 42
-		;42-46:성교渉が終わった後
+		;42-46:性交渉が終わった後
 		;42:敗北してる場合ここでゲームオーバー
 		PRINTFORMW 「우오잇、우오잇、아직 %CSTR:ARG:일인칭% 불끈」
 		PRINTFORMW 「벼、별 수 없으니까앗、%조사처리(CSTR:ARG:일인칭,"는")% %CSTR:ARG:이인칭% 가지고 돌아갈래!」
@@ -285,21 +286,21 @@ SELECTCASE ARG:1
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 		PRINTFORMW 「치、친구한테엣、자랑하러 갈거야아아!」 
 	CASE 45
-		;45:満발してない
+		;45:満足してない
 		PRINTFORMW 「우오잇、우오잇、아직 %CSTR:ARG:일인칭% 불끈」
 		PRINTFORMW 「부족해애앳、%CSTR:ARG:일인칭%의 자지님께서 그렇게 말씀하신다아아아」
 		PRINTFORMW 「다음、다으음」
 	CASE 46
-		;46:満발
+		;46:満足
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 	CASE 47
-		;47-49:성교渉を断った
-		;47:交渉실패。奇襲する
+		;47-49:性交渉を断った
+		;47:交渉失敗。奇襲する
 		PRINTFORMW 「우오잇、우오잇、어째서야아」
 		PRINTFORMW 「%CSTR:ARG:일인칭% 같은 잘생긴 남자한테、어째서 여자가 없는거야아앗」
 		PRINTFORMW 「모、몰라아、죽일거야아아아!」
 	CASE 48
-		;48:交渉실패。敵対する
+		;48:交渉失敗。敵対する
 		PRINTFORMW 「우오잇、우오잇、어째서야아」
 		PRINTFORMW 「%CSTR:ARG:일인칭% 같은 잘생긴 남자한테、어째서 여자가 없는거야아앗」
 		PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 동정인건가, 아, 아냐앗, 동정이 아니라구우우!」
@@ -322,13 +323,13 @@ SELECTCASE ARG:1
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 		PRINTFORMW 「치、친구한테엣、자랑하러 갈거야아아!」 
 	CASE 53
-		;53:満발し、仲魔になる
+		;53:満足し、仲魔になる
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 	CASE 54
-		;54:満발し、아이템をくれる
+		;54:満足し、アイテムをくれる
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」
 	CASE 53
-		;53:満발し、見逃してくれる
+		;53:満足し、見逃してくれる
 		;現状、死に処理
 	CASE 56
 		;56-61:犯してもらった後
@@ -346,24 +347,24 @@ SELECTCASE ARG:1
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 		PRINTFORMW 「치、친구한테엣、자랑하러 갈거야아아!」 
 	CASE 59
-		;59:満발し、仲魔になる
+		;59:満足し、仲魔になる
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 	CASE 60
-		;60:満발し、아이템をくれる
+		;60:満足し、アイテムをくれる
 		PRINTFORMW 「%CSTR:ARG:일인칭%、만조오옥!」 
 	CASE 61
-		;61:満발し、見逃してくれる
+		;61:満足し、見逃してくれる
 		;現状、死に処理
 	CASE 62
 		;62:仲魔になる
 		IF FLAG:교섭목적 > 3
-			PRINTFORMW %CALLNAME:PLAYER%의 몸에 대단히 만족해、%조사처리(CALLNAME:ARG,"가")% 동료마가 되어 주었습니다
+			PRINTFORMW %CALLNAME:PLAYER%의 몸에 매우 만족해, %ARG가% 동료마가 되어주었습니다
 		ELSE
 			PRINTFORML 「%CSTR:ARG:일인칭%、%CSTR:ARG:일인칭%、%STR:(ABL:ARG:종족)% %CALLNAME:ARG%」
 			PRINTFORMW 「%CALLNAME:ARG%…그、그런 이름이었던 것 같아」
 		ENDIF
 	CASE 63
-		;63:マスターの레벨より高い場合
+		;63:マスターのレベルより高い場合
 		PRINTFORML 
 		PRINTFORMW 「%CSTR:ARG:이인칭%、약하잖아아아아!」 
 		PRINTFORMW 「우、운동 부족인 것 같아아. 좀 더 몸을 움직여어어」 
@@ -378,41 +379,54 @@ SELECTCASE ARG:1
 	CASE 66 TO 75
 		;66:お金をくれる
 		IF FLAG:교섭목적 > 3 && ARG:1 == 66
-			PRINTFORMW %CALLNAME:PLAYER%의 몸에 대단히 만족해、돈을 베풀어 주었습니다
+			PRINTFORMW %CALLNAME:PLAYER%의 몸에 매우 만족해, 돈을 건네받았습니다
 		ELSEIF FLAG:교섭목적 > 3 && ARG:1 == 67
-				PRINTFORMW %CALLNAME:PLAYER%의 몸에 대단히 만족해、ＭＡＧ를 베풀어 주었습니다
+				PRINTFORMW %CALLNAME:PLAYER%의 몸에 매우 만족해, ＭＡＧ를 건네받았습니다
 		ELSE
-			PRINTFORMW 「줄게에에에 이거 줄게에에에엣!」
+			PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
 		ENDIF
-;	CASE 67
-;		;67:ＭＡＧをくれる
-;	CASE 68
-;		;68:데미지をくれる
-;	CASE 69
-;		;69-75:아이템をくれるor회복してくれる
-;		;69:소마を使ってくれる
-;	CASE 70
-;		;70:보옥륜を使ってくれる
-;	CASE 71
-;		;71:ITEMor마석をくれる
-;	CASE 72
-;		;72:마석をくれる
-;	CASE 73
-;		;73:마석を使ってくれる
-;	CASE 74
-;		;74:보옥を使ってくれる
-;	CASE 75
-;		;75:보옥をくれる
+	CASE 67
+		;67:ＭＡＧをくれる
+		IF FLAG:교섭목적 > 3
+			PRINTFORMW %CALLNAME:PLAYER%의 몸에 매우 만족해, ＭＡＧ를 건네받았습니다
+		ELSE
+			PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
+		ENDIF
+	CASE 68
+		;68:ダメージをくれる
+		PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
+	CASE 69
+		;69-75:アイテムをくれるor回復してくれる
+		;69:ソーマを使ってくれる
+		PRINTFORMW 「사、상처투성이네에에에에에！　회、회복시켜줄게에에！」
+	CASE 70
+		;70:宝玉輪を使ってくれる
+		PRINTFORMW 「이거라도받아아아아아！」
+	CASE 71
+		;71:ITEMor魔石をくれる
+		PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
+	CASE 72
+		;72:魔石をくれる
+		PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
+	CASE 73
+		;73:魔石を使ってくれる
+		PRINTFORMW 「회、회복시켜줄게에에！」
+	CASE 74
+		;74:宝玉を使ってくれる
+		PRINTFORMW 「회、회복시켜줄게에에！」
+	CASE 75
+		;75:宝玉をくれる
+		PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
 	CASE 76
 		;76-78:気まずくなった
-		;76:회화실패。奇襲する
+		;76:会話失敗。奇襲する
 		PRINTFORMW 「뭇 무리이이、이제 무릿. 얘기하는 거 무리이이」
 		PRINTFORMW 「피、피가 부족햇. 피가 갖고 싶다아아아!」
 	CASE 77
-		;77:회화실패。敵対する
+		;77:会話失敗。敵対する
 		PRINTFORMW 「시、시시하다아아、도덕 수업 같아서 시시하다아앗」
 	CASE 78
-		;78:회화継続
+		;78:会話継続
 		PRINTFORMW 「좀 더、좀 더 얘기햇」
 	CASE 79
 		;79-83:立ち去る
@@ -423,57 +437,92 @@ SELECTCASE ARG:1
 		;険悪な雰囲気
 		PRINTFORML 「다、다음에 만나면、쳐 죽인다아아아!」
 	CASE 81
-		;우호도が低い
+		;友好度が低い
 		PRINTFORMW 「%CSTR:ARG:일인칭% 돌아갈래、%CSTR:ARG:이인칭% 따위랑 얘기하고 있을 때가 아니었엇」
 		PRINTFORML 「노、녹화 예약 하는 걸 잊어버렸어어어!」
 	CASE 82
-		;우호도が普通
+		;友好度が普通
 		PRINTFORML 「그러엄、그럼、돌아갑니다아아!」
 	CASE 83
-		;우호도が高い
+		;友好度が高い
 		PRINTFORML 「또、또 만나면 말을 걸어줘어어어」
 	CASE 88
-		;ヤらせてもらう・交渉が성공した場合
-		PRINTFORMW 교섭에 성공해、하게 해 주었다
+		;ヤらせてもらう・交渉が成功した場合
+		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が성공した場合
-		PRINTFORMW 교섭에 성공해、범해주게 되었다
+		;犯してもらう・交渉が成功した場合
+		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90
 		;던전내 성욕처리：윤간이벤트
 	CASE 91
-		;적が命乞いCASE91～93
+		;敵が命乞いCASE91～93
 		;91:命乞い
+		PRINTFORML 
+		PRINTFORMW 「우옷、자、잠깐 기다려어」
+		PRINTFORMW 「%일인칭은% 죽고 싶지 않아아아아아！」
+		PRINTFORML 
 	CASE 92
 		;92:助けた場合（RETURN 0, X = 0.逃げる　1.仲魔になる　2.何か貰う　3.奇襲）
 		;『@KOJO_TALK』をはさむ為、RESULT:0が上書きされてしまうのでRESULT:1を使う
-		;とりあえず랜덤にしてみる
+		;とりあえずランダムにしてみる
+		SELECTCASE RAND:100
+			;逃げる
+			CASE 0 TO 24
+				PRINTFORML 
+				PRINTFORMW 「그러엄、그럼、돌아갑니다아아！」
+				PRINTFORML 
+				RETURN 0, 0
+			;仲魔になる
+			CASE 25 TO 49
+				PRINTFORML 
+				PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아」 
+				PRINTFORMW 「%CSTR:ARG:일인칭%의 마음잇、%CSTR:ARG:이인칭%의 사랑으로 채워졌다아아아」
+				PRINTFORML 
+				RETURN 0, 1
+			;何か貰う
+			CASE 50 TO 74
+				PRINTFORML 
+				PRINTFORMW 「%CSTR:ARG:이인칭%、좋은 녀석이야아아」 
+				PRINTFORMW 「줄게에에에 이거 줄게에에에엣！」
+				PRINTFORML 
+				RETURN 0, 2
+			;奇襲
+			CASEELSE
+				PRINTFORML 
+				PRINTFORMW 「%CSTR:ARG:이인칭%っ、바보네에에에」
+				PRINTFORML 
+				RETURN 0, 3
+		ENDSELECT
 	CASE 93
 		;93:断った場合
+		PRINTFORML 
+		PRINTFORMW 「뭐、뭐라고오오、구두쇠는 쳐 죽인다아아아！」
+		PRINTFORML 
 	CASE 94
-		;적から助ける代わりに取引を持ちかけられるCASE94～101
-		;94:取引内容（RETURN 0, X = 1.￥　2.마카　3.異性）
+		;敵から助ける代わりに取引を持ちかけられるCASE94～101
+		;94:取引内容（RETURN 0, X = 1.￥　2.魔貨　3.異性）
 		PRINTFORML %조사처리(CALLNAME:ARG,"가")% %CALLNAME:PLAYER%에게 거래를 걸어왔다
 	CASE 95
 		;95:要求をのむ（￥）
 	CASE 96
-		;96:要求をのむ（마카）
+		;96:要求をのむ（魔貨）
 	CASE 97
 		;97:要求をのむ（異性）
 		CALL MESSAGE_TALK
 	CASE 98
-		;98:約束を守るかどうか구상内で決める（RETURN 0, X = 1.去っていく　2.전투続行）
+		;98:約束を守るかどうか口上内で決める（RETURN 0, X = 1.去っていく　2.戦闘続行）
 	CASE 99
 		;99:約束を守って去っていく
 	CASE 100
-		;100:約束を守らず전투続行
+		;100:約束を守らず戦闘続行
 	CASE 101
 		;101:要求を断る
 ENDSELECT
 
 ;===========================================================================
-;회화時挨拶
+;会話時挨拶
 ;===========================================================================
 @GREET_PUB323,ARG
 ;最初の挨拶
@@ -504,7 +553,7 @@ PRINTFORML
 
 ;質問を増やした場合、RAND:XのXを増やす
 ;RETURNの値により回答後の雰囲気が変わる。
-;0.회화継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる
+;0.会話継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる
 
 SELECTCASE RAND:3
 	CASE 0
@@ -525,7 +574,7 @@ SELECTCASE RAND:3
 				
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:30
-				;실패
+				;失敗
 					PRINTFORMW 「우윽、윽、%CSTR:ARG:일인칭%의 접객이 잘못됐다는 건가아아아」
 					PRINTFORMW 「조롱은、거、거절합니다아아～」
 					RETURN 6
@@ -548,7 +597,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:30
-				;실패
+				;失敗
 					PRINTFORMW 「%조사처리(CSTR:ARG:이인칭,"는")% %조사처리(CSTR:ARG:일인칭,"가")%、거、겁쟁이라고 말하는건가아아」
 					PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 치킨 같은 게 아냐아아!」
 					RETURN 4
@@ -569,7 +618,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:20
-				;실패
+				;失敗
 					PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、급식의 카레 스튜를 좋아했다아아」
 					A:2 = RAND:6
 					PRINTFORM 「
@@ -617,7 +666,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:50
-				;실패
+				;失敗
 					PRINTFORMW 「다、당연히 그런 건 안되잖아아아. 이런 장소에서어어」
 					PRINTFORMW 「C、ＣＰＤ를 생각하라구우우」
 					PRINTFORMW 「야한 녀석에겐 달을 대신해서、버、벌을 줄거야아아～!」
@@ -654,7 +703,7 @@ SELECTCASE RAND:3
 				
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:20
-				;실패
+				;失敗
 					PRINTFORMW 「먹고 싶지 않다아、그런가아」
 					PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、얼마전에 생일이었어엇」
 					PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、버、벌써 태어난건가아아」
@@ -680,7 +729,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:30
-				;실패
+				;失敗
 					PRINTFORMW 「머、먹는건가아、저걸 먹는건가아아～앗」
 					PRINTFORMW 「노、놀라서어어、심장이 멈춰버렸잖아아앗!」
 					PRINTFORMW 「어、어라아、사、살아있네. 어째서어어」
@@ -705,7 +754,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:40
-				;실패
+				;失敗
 					PRINTFORMW 「거、거짓말 하지마아아아. 그런 게 맛있을리가 없잖아아아」
 					PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、그、급식의 튀김빵이 너무 싫어어어엇!」
 					RETURN 4
@@ -729,7 +778,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:50
-				;실패
+				;失敗
 					PRINTFORMW 「저、정말인가아、친구가 먹으러 가버렸어어」
 					PRINTFORM 「우아앗、%CSTR:ARG:일인칭%、
 					A:2 = RAND:6
@@ -779,7 +828,7 @@ SELECTCASE RAND:3
 				
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:30
-				;실패
+				;失敗
 					PRINTFORMW 「들은 적 없는 이름이야아、자、자그마한 존재다앗」
 					PRINTFORMW 「우、아、%CSTR:ARG:일인칭%들 따윈、결국 작은 존재다아앗」
 					PRINTFORMW 「오늘도、별님은、아、아름다운가아앗」
@@ -804,7 +853,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:50
-				;실패
+				;失敗
 					PRINTFORMW 「인사조차 할 수 없는건가아아, 머, 머리가 나쁜거 아닌가아아아앗」
 					PRINTFORMW 「이 킨타로 사무라이가、성패해주겠어어～!」
 					RETURN 3
@@ -831,7 +880,7 @@ SELECTCASE RAND:3
 			
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:20
-				;실패
+				;失敗
 					PRINTFORMW 「%조사처리(CSTR:ARG:이인칭,"는")% 킨타로 사무라이였나아아」
 					PRINTFORMW 「%CSTR:ARG:일인칭%도 킨타로 사무라이다아아아」
 					PRINTFORMW 「아、아냐、아니다앗. 키、킨타로 사무라이가 아냐아앗. %조사처리(CSTR:ARG:일인칭,"는")% 누구얏」
@@ -858,7 +907,7 @@ SELECTCASE RAND:3
 				
 			IF LOCAL < 30
 				CFLAG:ARG:우호도 -= RAND:20
-				;실패
+				;失敗
 					PRINTFORMW 「%CSTR:ARG:이인칭%도、%CSTR:ARG:일인칭% 인건가아아」
 					PRINTFORMW 「자、자기 자신과 만난다니、이상한 기분. 어떡하지이이이」
 					RETURN 6
@@ -877,7 +926,7 @@ SELECTCASE RAND:3
 ENDSELECT
 
 ;===========================================================================
-;회화時問答
+;会話時問答
 ;===========================================================================
 @QUESTION_PUB323,ARG,ARG:1
 
@@ -891,7 +940,7 @@ DO
 	RESULT:1 = RAND:3
 
 	;RETURNの値により回答後の雰囲気が変わる。
-	;0.회화継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる 7.交渉開始
+	;0.会話継続 1.直接仲魔になる 2.何かくれる 3.奇襲される 4.敵対する 5.逃げる 6.気まずくなる 7.交渉開始
 	SELECTCASE RESULT:1
 		CASE ARG:1
 			CONTINUE
@@ -908,7 +957,7 @@ DO
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「뭐、뭐냐니 보고도 모르는거냐아아」
 						PRINTFORMW 「문어、무、문어닷」
 						PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、나、낙지 실격인걸까아…」
@@ -926,7 +975,7 @@ DO
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 						PRINTFORMW 「우、웃기지 마아앗!」
 						PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")%、무、문어닷、문어씨란 말이다아앗」
 						RETURN 6
@@ -943,7 +992,7 @@ DO
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:20
-					;실패
+					;失敗
 						PRINTFORMW 「슈르ー…슈우ー…슈르르…슈팟…」
 						PRINTFORMW 「아앗、왕께서、무、문어의 왕께서 부르신다앗」
 						PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"는")% 가야만한닷…슈르슈르…슈우…」
@@ -967,7 +1016,7 @@ DO
 					
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:50
-					;실패
+					;失敗
 						PRINTFORMW 「아팟、가、갑자기 뭘 하는거얏」
 						PRINTFORMW 「그、그렇다는 건 %조사처리(CSTR:ARG:이인칭,"는")%、오징어 편을 들 생각인갓」
 						PRINTFORMW 「바、방심해버렸다아아앗!!」
@@ -1003,7 +1052,7 @@ DO
 					
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「그、그럴리가 없어」
 						PRINTFORMW 「집에 잊어버리고 온건가아. 이 %조사처리(CSTR:ARG:일인칭,"가")%아아」
 						PRINTFORMW 「가스 밸브는 잠그고 왔던가、같은 생각이 떠올라 버렸잖아아아」
@@ -1028,7 +1077,7 @@ DO
 					
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「그、그런 말에 %조사처리(CSTR:ARG:이인칭,"가")% 속아넘어갈거라고 생각한건가아」
 						PRINTFORMW 「마음 속에 있는 것은、마、마음 속에 있는 건…」
 						PRINTFORMW 「…뭐、뭐지이이이」
@@ -1047,7 +1096,7 @@ DO
 				LOCAL = RAND:100 + RAND:(MAXBASE:PLAYER:지혜+MAXBASE:PLAYER:운/2)
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:20
-					;실패
+					;失敗
 						PRINTFORMW 「머리 속、머、머리 속이라고오옷」
 						PRINTFORMW 「어、어떻게 꺼내야하는거야아아. 권외가 되어버린거 아닌가아아」
 						RETURN 6
@@ -1071,7 +1120,7 @@ DO
 					
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「%CSTR:ARG:일인칭%의 가랑이에 안테나가 있다고오오오」
 						PRINTFORMW 「아、아냐. 이건 중요한 거야. 안테나 같은게 아냐아아」
 						PRINTFORMW 「%CSTR:ARG:이인칭%、%조사처리(CSTR:ARG:일인칭,"를")% 바보 취급하고 있는건가아아」
@@ -1109,7 +1158,7 @@ DO
 					
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「진정하라고해도…응?」
 						PRINTFORMW 「시、싫다아、%조사처리(CSTR:ARG:일인칭,"는")% 역시 남자인걸까…」
 						PRINTFORMW 「대체、%조사처리(CSTR:ARG:일인칭,"는")% 뭐인거지…」
@@ -1131,7 +1180,7 @@ DO
 					
 				IF LOCAL < 30
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「우오오오오、보、보지마…%조사처리(CSTR:ARG:일인칭,"를")% 보지마아아」
 						PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")% 보지 말아줘어어」
 						PRINTFORMW 「좀 더 봐줘어어」
@@ -1153,7 +1202,7 @@ DO
 					
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:20
-					;실패
+					;失敗
 						PRINTFORMW 「어、어째서、%조사처리(CSTR:ARG:일인칭,"를")% 봐주지 않는거얏」
 						PRINTFORMW 「이야기할때는 사람의 눈을 보는 게 예의잖아아아아」
 						PRINTFORMW 「시、싫어어、하지만、빤히 보는 것도、시、실례인걸까아아…」
@@ -1177,7 +1226,7 @@ DO
 					
 				IF LOCAL < 0
 					CFLAG:ARG:우호도 -= RAND:30
-					;실패
+					;失敗
 						PRINTFORMW 「어머나、그런 상스러운 말을!」
 						PRINTFORMW 「소녀에게 보인 무례한 언동、후회하는 게 좋아요!」
 						RETURN 3
