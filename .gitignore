@@ -7,7 +7,17 @@ resources/*
 debug/*
 sav/*
 
-
-
 *.lnk
+
+ERB/.git/*
+ERB/口上/悪魔個人口上/*
+ERB/口上/悪魔個人会話口上/*
+ERB/口上/悪魔汎用口上/*
+ERB/口上/悪魔汎用会話口上/*
+ERB/口上/人間口上/*
+ERB/口上/特殊口上/*
+ERB/口上_KR/*
+ERB/README.md
+
+
 
