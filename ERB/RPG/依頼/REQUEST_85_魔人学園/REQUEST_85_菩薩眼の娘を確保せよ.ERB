@@ -26,52 +26,52 @@ RETURN 0
 ;====================
 @EXPLAIN_REQUEST_85
 IF 의뢰플래그:85:0 == 0
-	PRINTFORML 組織からの依頼が入った。内容はある少女の確保。
-	PRINTFORML ターゲットは新宿にある都立真神学園高校に通う『美里葵(みさと　あおい)』。
-	PRINTFORML 必ず生きたまま確保すること。
+	PRINTFORML 조직으로부터의 의뢰가 들어왔다.내용은 어떤 소녀의 확보.
+	PRINTFORML 타깃은 신주쿠에 있는 도립 마진학원 고등학교에 다니는 『미사토 아오이』。
+	PRINTFORML 반드시 산 채로 확보할 것.
 	PRINTFORML
-	PRINTFORML 報酬：￥150,000
-	PRINTFORMW (※敵最高レベル25)
+	PRINTFORML 보수：￥150,000
+	PRINTFORMW (※적최고레벨 : 25)
 	PRINTFORML
 	PRINTFORML 
-	PRINTFORML マヨーネから依頼の補足がされた。
-	PRINTFORML 「菩薩眼、と言うのはご存知かしら？」
-	CALL INPUT_YN_M , "知っている" , "知らない"
+	PRINTFORML 마요네로부터 의뢰를 보충받았다.
+	PRINTFORML 「보살안、이란 말 들어봤습니까？」
+	CALL INPUT_YN_M , "알고있다" , "모른다"
 			IF RESULT == 0
-			PRINTFORML 「流石ですわね。そう、あの菩薩眼ですわ」
+			PRINTFORML 「역시 대단하네요。맞아요 제가 보살안이에요」
 			ELSE
-			PRINTFORML 「そう、まあ知らないのも無理はないのかしら」
+			PRINTFORML 「그래요, 뭐 모르는 것도 무리는 아니겠지요」
 			ENDIF
 	PRINTFORML 
-	PRINTFORML 「改めて説明するならば、菩薩眼とは龍脈の流れを見極める力を持つ者のことです」
-	PRINTFORML 「この日本は大陸から続く龍脈の終着点にして、その力の吹き溜まり。この国においての龍脈の重要性はお分かりですわね？」
-	PRINTFORMW 「代々の菩薩眼の所持者は権力者や裏社会の者に狙われ、囲われ、時に殺され……まあ幸福な人生を歩むのは稀」
+	PRINTFORML 「다시 설명하자면 보살안이란 용맥의 흐름을 가늠할 수 있는 힘을 가진 자입니다.」
+	PRINTFORML 「이 일본은 대륙에서 계속되는 용맥의 종착점으로써 그 힘이 불어나고 있습니다. 이 나라에서 용맥의 중요성은 아시죠?」
+	PRINTFORMW 「대대로 보살안의 소지자는 권력자나 뒷사회 사람들에게 표적이 되고 둘러싸이고 때로는 살해당하고……뭐 행복한 삶을 사는 것은 드물지요.」
 	PRINTFORML 
-	PRINTFORML 「そんな菩薩眼の所有者の存在が確認されましたわ」
-	PRINTFORML 「かつて江戸幕府と敵対し、執拗に菩薩眼の所持者を狙っていた鬼道衆とかいう輩がいるそうですが。ヤタガラスや、あとはたしか飛水流……とか言ったかしら」
-	PRINTFORML 「ともかく連中は、そういった霊的国防組織や公儀隠密の末裔などとの戦いで既に半壊しているそうですわね」
-	PRINTFORML 「これがターゲットとなる美里葵の写真と資料」
-	PRINTFORML 「捕まえたらあなたの手元に置いておいてかまいませんわ」
-	PRINTFORMW 「あくまで他の組織に菩薩眼の身柄を奪われないことが重要ですのよ」
+	PRINTFORML 「그런 보살안 소유자의 존재가 확인되었어요.」
+	PRINTFORML 「일찍이 에도 막부와 적대하며 집요하게 보살안 소지자를 노리던 귀도중이라든가 하는 무리가 있다는데요. 야타가라스나, 나머지는 분명히 비수류……라고 불렸을지도 모르겠네요.」
+	PRINTFORML 「어쨌든 패거리들은 그런 영적 국방조직이나 공의 은밀한 후예 등과의 싸움에서 이미 반파되었다고 하더군요.」
+	PRINTFORML 「이것이 타겟이 되는 미사토 아오이의 사진과 자료」
+	PRINTFORML 「잡으면 당신 수중에 두어도 상관없어요」
+	PRINTFORMW 「어디까지나 다른 조직에 보살안의 신병을 빼앗기지 않는 것이 중요합니다.」
 	ELSEIF 의뢰플래그:85:0 == 1
-	PRINTFORML 組織からの依頼が入った。内容はある少女の確保。
-	PRINTFORML ターゲットは新宿にある都立真神学園高校に通う『美里葵(みさと　あおい)』。
-	PRINTFORML 必ず生きたまま確保すること。
+	PRINTFORML 조직으로부터의 의뢰가 들어왔다.내용은 어떤 소녀의 확보.
+	PRINTFORML 타깃은 신주쿠에 있는 도립 마진학원 고등학교에 다니는 『미사토 아오이』。
+	PRINTFORML 반드시 산 채로 확보할 것.
 	PRINTFORML
-	PRINTFORML 報酬：￥150,000
-	PRINTFORMW (※敵最高レベル：30)
+	PRINTFORML 보수：￥150,000
+	PRINTFORMW (※적최고레벨：30)
 	PRINTFORML
 	PRINTFORML
-	PRINTFORML あなたが前回受けた、菩薩眼の娘を確保する依頼は今も継続中だ。
-	PRINTFORML 今回は前回異能者やデビルシフターと判明した、ターゲットの友人達を下級エージェントに調査させた。
-	PRINTFORML それによると今、新宿では異能の力に目覚める者が、時たま発見されているとのことだ。
-	PRINTFORML まあ今の東京は悪魔が顕現するほどMAGにあふれているので、あくまで「以前に比べれば」だが。
-	PRINTFORMW ターゲットの友人たちもそれにあてはまるのだろう。
+	PRINTFORML 당신이 지난번에 받은 보살안의 소녀를 확보하는 의뢰는 지금도 계속 진행중이다.
+	PRINTFORML 이번에는 전회에 이능자나 데빌시프터로 판명된 타겟의 친구들을 하급 에이전트로써 조사시켰다.
+	PRINTFORML 그에 의하면 지금 신주쿠에서는 이능의 힘에 눈을 뜨는 사람이 간혹 발견되고 있다고 한다.
+	PRINTFORML 뭐 지금의 도쿄는 악마가 현현할 정도로 MAG에 넘치고 있으므로 어디까지나 「이전에 비하면」이지만.
+	PRINTFORMW 타깃 친구들도 그렇게 된 것일 것이다.
 	PRINTFORML 
-	PRINTFORML そして前回あなたの邪魔をした白衣の男は犬神杜人(いぬかみ　もりひと)、都立真神学園高校の生物教師だということが判明している。
-	PRINTFORML あの戦闘能力を考えるに、ただの生物教師などではなく、彼もまた異能に関わる存在なのは間違いない。
-	PRINTFORML 彼のテリトリーである学園内だとまた邪魔が入る可能性がある。
-	PRINTFORMW 今回は下校途中を狙うことにしようか……。
+	PRINTFORML 그리고 지난 번 당신을 방해했던 하쿠이의 남자는 犬神杜人(이누가미　모리히토), 도립 마진 학원 고등학교의 생물 교사라는 것이 판명되었다.
+	PRINTFORML 그 전투 능력을 생각하면, 단순한 생물 교사가 아니라, 그 또한 이능에 관련된 존재임이 틀림없다.
+	PRINTFORML 그의 영역인 학교 안에서는 또 방해가 될 수도 있다
+	PRINTFORMW 이번에는 하교 도중을 노리기로 할까…….
 	PRINTFORML 
 ENDIF
 
@@ -84,66 +84,66 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
-	PRINTFORML ―新宿、都立真神学園高校―
-	PRINTFORML 一見、普通の共学校にしか見えないここにあなたはやって来た。
+	PRINTFORML ―신주쿠, 도립 마진학원 고교―
+	PRINTFORML 언뜻 보기에 평범한 학교로만 보이는 이곳에 당신은 도착했다.
 	PRINTFORML 
-	PRINTFORML 写真と資料で見た今回のターゲットはこの高校の生徒会長を務めているらしく、まさに才色兼備な美少女だった。
-	PRINTFORML 今回の依頼に関して、マヨーネはファントムに引き渡せ、とは言っていなかった。
-	PRINTFORML つまり、ターゲットの身柄はそのままあなたの手元で奴隷にしてしまってもいい。
-	PRINTFORML もちろん依頼の内容からして、調教をするのはともかく、勝手に売り飛ばしたり処分をしたりすればあなたのクビが物理的に飛ぶだろうが。
-	PRINTFORMW 極めて特殊な素養を持つとは言えど、所詮は一人の女子高生。時間をかけずに早めに仕事を終わらせてしまおう。
+	PRINTFORML 사진과 자료로 본 이번 타깃은 이 고교 학생회장을 맡고 있는 듯한 그야말로 재색 겸비의 미소녀였다.
+	PRINTFORML 이번 의뢰에 관해 마요네는 팬텀에게 인도하라고 말하지 않았다.
+	PRINTFORML 즉, 타겟의 신병은 그대로 당신 수중에서 노예로 만들어 버려도 좋다는 것이다.
+	PRINTFORML 물론 의뢰 내용으로 보아 조교를 하는 것은 고사하고 마음대로 팔아먹거나 처분을 한다면 당신의 모가지가 물리적으로 날아가겠지만.
+	PRINTFORMW 지극히 특수한 소양을 지녔다고는 하지만 결국은 한 여고생.시간 들이지 말고 빨리 일을 끝내버리자.
 
 	PRINTFORML 
 	PRINTFORML ………
 	PRINTFORML ……
 	PRINTFORML …
 
-	PRINTFORML あらかじめ調べていた、日頃ターゲットの下校する時間にあなたは正門近くで身を潜めていた。
-	PRINTFORML 既に数多くの生徒達が正門を通り各々家路へとついていった。
-	PRINTFORML ターゲットはいつも友人たち四人と行動をともにすることが多いようだが、気にしなくてもいいだろう。
-	PRINTFORML 残りも昏倒させてその場に放置するか、連れ帰るかでもしてしまえばいい。
-	PRINTFORMW むやみやたらと無関係な生徒を巻き込むつもりもあまりないが、ターゲットの身近な人間であれば話は別だ。
+	PRINTFORML 미리 알아봐둔 타깃의 평소 하교 시간에 당신은 정문 근처에서 잠적해 있었다.
+	PRINTFORML 이미 수많은 학생들이 정문을 지나 각자 집으로 향해갔다.
+	PRINTFORML 타겟은 항상 친구들 네 명과 행동을 같이 하는 경우가 많은 것 같은데 신경쓰지 않아도 될 것이다.
+	PRINTFORML 나머지는 졸도시키고 그 자리에 방치하거나 데리고 돌아가거나 하면 된다.
+	PRINTFORMW 무작정 무관한 학생을 끌어들일 생각은 별로 없지만 타깃에 가까운 사람이라면 얘기는 별개다.
 	PRINTFORML 
-	PRINTFORML あなたが待機して30分ほど過ぎた頃、ターゲットがやはり五人で歩いて来るのが見えた。
-	PRINTFORML まずは今も一緒にいるターゲット以外の四人を観察する。
-	PRINTFORML 歩き方から何かの武道を会得しているだろう黒髪の少年、おそらく竹刀か木刀でも入った袋を手に持つ茶髪の少年。
-	PRINTFORML こちらも格闘技をやっていそうな大柄な黒髪の少年、そして和弓の袋を持った茶髪の少女。
-	PRINTFORMW 人数は多く、武道や格闘技を嗜む者が多いようだが問題はないだろう。
+	PRINTFORML 당신이 대기한 지 30분쯤 지났을 무렵. 타깃을 포함해 다섯 명이서 걸어오는 게 보였다.
+	PRINTFORML 우선은 지금 함께 있는 타깃 이외의 4명을 관찰한다.
+	PRINTFORML 걸음걸이에서 무슨 무도를 터득하고 있을 것 같은 검은머리 소년, 아마 죽도나 목검이라도 든 자루를 손에 든 갈색머리 소년.
+	PRINTFORML 이쪽은 격투기를 할 것 같은 몸집이 큰 검은 머리 소년, 그리고 화궁(일본 전통 활) 가방을 든 갈색 머리 소녀.
+	PRINTFORMW 인원이 많고 무도나 격투기를 즐기는 사람이 많은 것 같지만 문제는 없을 것이다.
 	PRINTFORML 
 
 IF FINDCHARA_B([[キャラ:마요네]]) >= 1
-	PRINTFORML その時、離れた場所から観察していたあなたの端末に通信が入った。マヨーネからだ。
-	PRINTFORML 既に現場でターゲットを発見したことを伝えると追加の情報を教えてくれた。
-	PRINTFORML 「流石、お早いこと」
-	PRINTFORML 「別のエージェントによる事前の調査報告では、菩薩眼の娘の友人たちもどうやら異能者のようですわね」
-	PRINTFORML 「あなたのことですから大丈夫だとは思いますが、お気をつけて」
-	PRINTFORMW マヨーネに了解、と短く答えて通信を切った。
+	PRINTFORML 그때 떨어진 곳에서 관찰하던 당신의 단말기로 통신이 들어왔다.마요네부터다.
+	PRINTFORML 이미 현장에서 타깃을 발견했다고 전하자 추가 정보를 알려줬다.
+	PRINTFORML 「과연 빠르네요.」
+	PRINTFORML 「다른 요원의 사전 조사 보고에 따르면 보살안 딸의 친구들도 아무래도 이능자인 것 같네요」
+	PRINTFORML 「당신의 일이니까 괜찮을거라고 생각합니다만, 조심하세요.」
+	PRINTFORMW 마요네에게 "알겠다" 라고 짧게 대답하고 통신을 끊었다.
 ELSE
 ENDIF
 	PRINTFORML 
-	PRINTFORML 周囲に人気も少なく、そろそろ頃合だろうと判断したあなたは小規模な閃光弾を少年少女らの足元に放つ。
+	PRINTFORML 주위에 인기척도 적어질 무렵, 슬슬 때가 되었다고 판단한 당신은 소규모 섬광탄을 소년소녀들의 발밑에 쏘아댄다.
 	PRINTFORML 
-	PRINTFORMW カッと光った隙にあなたが距離を詰めて構えると、思いの外に早く五人は復帰していた。
+	PRINTFORMW 번쩍 빛나는 틈에 당신이 거리를 좁혀 자세를 취하자. 생각보다 빨리 다섯 명은 복귀하고 있었다.
 	PRINTFORML 
-	PRINTFORML 「おい！　どうせ、てめぇも美里を狙ってる連中の仲間だろ！」
-	PRINTFORML 茶髪の少年が木刀を抜いて、怒りを浮かべた顔をこちらへと向けて来る。
-	PRINTFORML はて？彼らは別の裏組織と既に接触済みなのだろうか。
-	PRINTFORML 「またやるぜ、ひーちゃん！　醍醐に小蒔もだ！」
-	PRINTFORMW ひーちゃん、と呼ばれた黒髪の少年も無手だが構えを取り、戦闘の態勢に入った。
+	PRINTFORML 「어이! 어차피 네녀석도 미사토를 노리는 패거리지!」
+	PRINTFORML 갈색 머리의 소년이 목검을 뽑아들고 분노에 찬 얼굴을 이쪽으로 향한다.
+	PRINTFORML 그들은 이미 다른 뒷조직과 접촉했던 것일까?
+	PRINTFORML 「또 해버리자, 히짱! 다이고, 코마키도!」
+	PRINTFORMW 히짱, 이라고 불린 검은 머리의 소년도 맨손이지만 자세를 잡고 전투 태세에 들어갔다.
 	PRINTFORML 
-	PRINTFORML 「うおおおおおおおおおおッ！！」
-	PRINTFORML 醍醐と呼ばれた大柄な少年も二人に負けじと雄叫びをあげる。
-	PRINTFORML 周囲が光ったと思えば次の瞬間には、彼は白い虎のような特徴を持つ姿に変化していた。
-	PRINTFORMW 彼はデビルシフターだったのか、とあなたは納得した。
+	PRINTFORML 「우오오오오오옷！！」
+	PRINTFORML 다이고라고 불린 덩치 큰 소년도 두 사람에게 지지 않고 소리지른다.
+	PRINTFORML 주위가 빛나는가 싶더니 다음 순간에 그는 흰 호랑이와 같은 모습으로 변화하고 있었다.
+	PRINTFORMW 그는 데빌 시프터였나, 라고 당신은 납득했다.
 	PRINTFORML 
-	PRINTFORML 「葵は離れてて！　大丈夫、ボクたちでなんとかするから！」
-	PRINTFORML ショートの茶髪の女子生徒も袋から出した弓をかまえる。
-	PRINTFORML 「小蒔！　皆！　無茶はしないで…………お願い！」
-	PRINTFORMW なんとかする、などとは随分と舐められたものだ。
+	PRINTFORML 「아오이는 떨어져 있어! 괜찮아, 우리끼리 어떻게든 할 거야！」
+	PRINTFORML 단발머리 여학생도 가방에서 꺼낸 활을 겨눈다.
+	PRINTFORML 「오마키! 얘들아! 무리하지마... 제발!」
+	PRINTFORMW 어떻게든 한다니.. 꽤나 무시당한 것이다.
 	PRINTFORML 
-	PRINTFORML 苦笑いをするあなた。
+	PRINTFORML 쓴웃음을 짓는 당신.
 	PRINTFORML 
-	PRINTFORML ＞四人の高校生 が立ちはだかった！ 
+	PRINTFORML ＞네 명의 고등학생이 가로막았다!
 
 	
 	CALL SET_ENEMY,8,5702,25,0,1
@@ -224,26 +224,26 @@ ENDIF
 
 	CALL BATTLE_START
 	PRINTFORML 
-	PRINTFORMW 「ちっ！　一回、アイツんとこまで逃げんぞ！」
+	PRINTFORMW 「쳇! 일단 튀자!」
 	PRINTFORML 
-	PRINTFORML 木刀で戦っていた茶髪の少年がそう言うと、劣勢になった高校生達はターゲットをかばうようにしながら校舎へと駆け出していった。
-	PRINTFORML 校舎内へ逃げ込めばあなたが諦めるとでも思ったのだろうか？
-	PRINTFORMW まあいい、街中に逃げて散り散りになられるよりは楽だろう。
+	PRINTFORML 목검으로 싸우던 갈색머리 소년이 그렇게 말하자 열세에 빠진 고교생들은 목표물을 감싸듯 학교 건물로 달려갔다.
+	PRINTFORML 학교 건물 안으로 도망치면 당신이 포기할 거라고 생각했을까?
+	PRINTFORMW 뭐 좋다, 거리로 도망쳐 흩어지는 것보다는 편할 것이다.
 	PRINTFORML 
-	PRINTFORML 「おっと待った。部外者にのこのこと奥まで立ち入られちゃ困るんだがね」
-	PRINTFORML 「アレでも、うちの生徒に手ぇ出されちゃ黙っていられない」
-	PRINTFORML 気がつけば、白衣を着た眼鏡の男がターゲット達が逃亡したルートを遮っている。
-	PRINTFORMW 一見覇気が感じられない男だが、少し観察するとその立ち姿は一般人のソレではないことが分かる。
+	PRINTFORML 「죄송합니다. 외부인에게의 이쪽 안쪽까지 들어가면 곤란합니다요」
+	PRINTFORML 「그래도, 우리 학생들에게 손을 내놓으면 조용히 있을 수 없습니다」
+	PRINTFORML 정신을 차리고 보니 흰옷을 입은 안경 쓴 남자가 타깃들이 도망간 루트를 막고 있다.
+	PRINTFORMW 얼핏 패기가 느껴지지 않는 남자지만 조금만 관찰해보면 그 선 모습은 일반인의 것이 아님을 알 수 있다.
 	PRINTFORML 
-	PRINTFORML どちらからともなく戦闘が、静かに始まる。
+	PRINTFORML 어느 쪽이든 전투가 조용히 시작된다.
 	PRINTFORML 
-	PRINTFORML ＞白衣の男 が立ちはだかった！
+	PRINTFORML ＞흰옷을 입은 남자가 가로막았다!
 
 
 	CALL SET_ENEMY,9,5490,25,0,1;犬神
 	CALL SYNC_STATUS,(CHARANUM-1)
-	NAME:(CHARANUM-1) = 白衣の男
-	CALLNAME:(CHARANUM-1) = 白衣の男
+	NAME:(CHARANUM-1) = 백의의남자
+	CALLNAME:(CHARANUM-1) = 백의의남자
 	ABL:(CHARANUM-1):스킬1 = [[스킬:전용기1]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:강절단]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:전용기2]]
@@ -262,29 +262,29 @@ ENDIF
 	FLAG:선제기습취소 = 0
 
 	PRINTFORML 
-	PRINTFORML 「……まぁ、時間稼ぎにはなったか」
+	PRINTFORML 「…뭐, 시간을 벌기는 했나」
 	PRINTFORML 
-	PRINTFORML その言葉を最後に白衣の男はいつのまにか姿を消していた。
-	PRINTFORMW 何者だったのだろうか。……何はあれど依頼は失敗だ。
+	PRINTFORML 그 말을 끝으로 백의의남자는 어느새 자취를 감추고 있었다.
+	PRINTFORMW 뭐하는 녀석이었을까.……여하튼 의뢰는 실패다.
 	PRINTFORML 
 	PRINTFORML ………
 	PRINTFORML ……
 	PRINTFORML …
 PRINTFORML 
-PRINTFORML 「かまいませんわ。最終的に他の組織に出し抜かれなければいいのですから」
-PRINTFORML 逃がしてしまったことを咎められるかと思ったあなたは拍子抜けをした。
-PRINTFORML 「あなたに依頼した時に、特に期限を区切ってはいませんでしたもの」
-PRINTFORML たしかにそうだ。いつまでに捕まえろ、とは言われていなかった。
-PRINTFORML 「でも……異能の力を持つ高校生達に、あなたの邪魔をした謎の男」
-PRINTFORMW 「依頼達成は引き続きお願いするにしても、他の要素にも興味は尽きませんわね」
+PRINTFORML 「상관없어요.최종적으로 다른 조직에게 빼앗기지만 않으면 되니까요.」
+PRINTFORML 놓쳐버린 것을 나무랄 줄 알았던 당신은 맥이 빠졌다.
+PRINTFORML 「당신에게 의뢰했을 때 특별히 기한을 정하지는 않았습니다.」
+PRINTFORML 하긴 그렇다.언제까지 잡으라는 말을 듣지 못했다.
+PRINTFORML 「"하지만...이능의 힘을 가진 고등학생들, 당신을 방해한 수수께끼의 남자"」
+PRINTFORMW 「의뢰 달성은 계속 부탁한다고 해도、다른 요소도 흥미가 가네요」
 PRINTFORML 
-PRINTFORML 「――――そう言えば、高校生で思い出したのですけれど」
-PRINTFORML 「先日、練馬区内でおバカなヒーローごっこをしていた高校生の三人組を組織の人間が捕まえたのでしたわ」
-PRINTFORML 「なんでもファントム傘下の下部組織の事務所に殴りこんだそうだとか」
-PRINTFORML 「まとめてあなたに差し上げるので、躾けて飼うなり売るなりしてはいかがかしら？」
-PRINTFORMW 「彼らも、身の丈以上の件に手を出さなければ…………愚かなことね」
+PRINTFORML 「――――그러고 보니 고교생 때가 생각났는데요.」
+PRINTFORML 「얼마 전 네리마 구내에서 바보 같은 영웅 놀이를 하던 고등학생 3인조를 조직원이 붙잡았어요」
+PRINTFORML 「뭐든지 팬텀 산하 하부조직 사무실에 때려넣었다고 한다던가.」
+PRINTFORML 「정리해서 당신에게 드릴 테니 훈육을 시키거나 팔거나 하는 것은 어떨까?」
+PRINTFORMW 「그들도 신변 이상의 일에 손을 대지 않았더라면…… 어리석은 짓이군요.」
 
-PRINTFORML ＞紅井猛、黒崎隼人、本郷桃香を手に入れた。
+PRINTFORML ＞타케시、하야토、모모카를 손에 넣었다.
 CALL ADD_NEW_COMPANION,5705,500
 	SIF RESULT
 		CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -297,12 +297,12 @@ CALL ADD_NEW_COMPANION,5707,500
 	SIF RESULT
 		CFLAG:(RESULT:1):전투참가불가능 = -1
 PRINTFORML 
-PRINTFORMW (※この三人組は初期スキル以外覚えない異能者です。あなた色にどうぞ)
+PRINTFORMW (※이 3인조는 초기 스킬 이외에는 기억할 수 없는 이능자입니다.당신 색깔로 하세요)
 PRINTFORML 
 PRINTFORML 
-PRINTFORML マヨーネと三人の受け取りの手続きをしながら、
-PRINTFORMW 今度は学園以外の場所で狙ってみるか……とあなたは思案するのだった。
-RESULTS = 依頼【菩薩眼の娘を確保せよ２】が出現！
+PRINTFORML 마요네와 세 사람의 수령 절차를 밟으면서,
+PRINTFORMW 이번에는 학원 이외의 장소에서 노려볼까…라고 당신은 궁리하는 것이었다.
+RESULTS = 의뢰【菩薩眼の娘を確保せよ２】가 출현！
 CALL MESSAGE_B(1, RESULTS)
 
 
@@ -314,87 +314,87 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
-	PRINTFORML ―新宿、新宿産中央病院―
-	PRINTFORML 前回の白衣の男の件もあるため、学校を避けターゲット達を尾行してたどり着いたのはとある病院だった。
-	PRINTFORMW なお大仰な名前に反して産婦人科専門病院である。
+	PRINTFORML ―신주쿠,신주쿠산 중앙병원―
+	PRINTFORML 저번에는 백의의 남자 건도 있었기 때문에 학교를 피해 타겟들을 미행하여 도착한 곳은 어느 병원이었다.
+	PRINTFORMW 거창한 이름과는 달리 산부인과 전문병원이다.
 	PRINTFORML 
-	PRINTFORML ただし、表向きは。
-	PRINTFORML 実際の立地はいわゆるレイライン上に存在するパワースポット。小規模な霊地と言ってもいい。
-	PRINTFORML さらに建物自体に微弱ではあるが結界が張られているように思える。
-	PRINTFORMW 中に入られると仲魔達は微かにではあるが弱体化する可能性がある。出来れば建物の外で戦いたいが……。
+	PRINTFORML 하지만 이것은 겉부분일 뿐이고,
+	PRINTFORML 실제 입지는 이른바 레이라인 상에 존재하는 파워 스폿.소규모 영지라 해도 좋다.
+	PRINTFORML 더욱이 건물 자체에 미약하나 결계가 깔려 있는 것으로 보인다.
+	PRINTFORMW 안으로 들어가면 동료 악마들은 미미하지만 약화될 가능성이 있다.가능하다면 건물 밖에서 싸우고 싶지만……。
 	PRINTFORML 
 	PRINTFORML ………
 	PRINTFORML ……
 	PRINTFORML …
 	PRINTFORML 
-	PRINTFORMW あなたが襲撃のタイミングを計るために観察していると状況が動いた。
+	PRINTFORMW 당신이 습격 타이밍을 재기 위해 관찰하고 있자 상황이 변했다.
 	PRINTFORML 
-	PRINTFORML 「またてめぇらか！　何度来ようが美里は渡さねえ！」
-	PRINTFORML 最初に声を挙げたのは、前回の後に調べさせた資料によると剣術を使う少年、蓬莱寺京一(ほうらいじ　きょういち)。
-	PRINTFORML ちなみに武道を会得している黒髪の少年が緋勇龍麻(ひゆう　たつま)、大柄な少年が醍醐雄矢(だいご　ゆうや)。
-	PRINTFORML 茶髪の弓使いの少女が桜井小蒔(さくらい　こまき)、という名前であると判明している。
-	PRINTFORML 蓬莱寺が叫んだ理由は一つ。
-	PRINTFORML 地面にぽっかり空いた暗闇からせり上がるように、異形の面をつけた者達が姿を現したからだ。
-	PRINTFORMW その面は簡潔に言えば鬼の面。服装は古めかしい忍び装束。
+	PRINTFORML 「또 네녀석들이냐! 몇번을 오든 미사토는 건네주지 않을꺼니까!」
+	PRINTFORML 처음 목소리를 낸 것은 지난 번 후에 조사하게 한 자료에 의하면 검술을 쓰는 소년 蓬莱寺京一(호라이지 쿄이치)。
+	PRINTFORML 덧붙여서 무도를 터득하고 있는 검은 머리의 소년이 緋勇龍麻(히유우 타츠마)、덩치가 큰 소년이 醍醐雄矢(다이고 유우야)。
+	PRINTFORML 갈색 머리의 활쏘기 소녀가 .桜井小蒔(사쿠라이 코마키)、라는 이름으로 판명되었다.
+	PRINTFORML 쿄이치가 외친 이유는 하나.
+	PRINTFORML 땅바닥에 텅 빈 어둠에서 솟아오르듯 이형 면을 단 자들이 모습을 드러냈기 때문이다.
+	PRINTFORMW 그 면은 간결하게 말하면 귀신의 얼굴.복장은 고풍스러운 은밀한 옷차림.
 	PRINTFORML 
-	PRINTFORML 「なんでそんなに私を狙うの……！　もう皆が傷つくのは嫌なの！」
-	PRINTFORML ターゲットが悲鳴のように悲しみを乗せて叫ぶ。
-	PRINTFORML 相手がどこの組織にしろ、理由は「菩薩眼だから」という単純な物なのだが。
-	PRINTFORMW まあ、そんな素養を持って生まれた自分を呪って欲しい。
+	PRINTFORML 「왜 그렇게 나를 노리는거야...! 이제 모두가 상처받는건 싫어!」
+	PRINTFORML 타겟이 비명처럼 슬픔을 싣고 외친다.
+	PRINTFORML 상대방이 어느 조직이든 이유는 「보살안이기 때문」이라는 단순한 이유인데.
+	PRINTFORMW 글쎄, 그런 소양을 가지고 태어난 자신을 저주했으면 좋겠어.
 	PRINTFORML 
-	PRINTFORML いきなりの三つ巴は避けたい。鬼の面の忍者たちはまだあなたの存在に気がついていない。
-	PRINTFORML 双方には出来るだけ消耗してもらい、ターゲットが危うくなったら割って入ればいいだろう。
-	PRINTFORMW それまではあなたは静観することを決めた。
+	PRINTFORML 갑작스런 3파전은 피하고 싶다.귀신 얼굴의 닌자들은 아직 당신의 존재를 깨닫지 못하고 있다.
+	PRINTFORML 쌍방은 가능한 한 소모해 주고, 타깃이 위태로워지면 비집고 들어가면 될 것이다.
+	PRINTFORMW 그때까지는 당신은 정관하기로 결정했다. (정관 : 실천적 관여의 입장을 떠나 현실적 관심을 버리고 순 객관적으로 바라보는 것)
 	PRINTFORML 
-	PRINTFORML 「お願い！　皆を守って！　『力天使の緑』！！」
-	PRINTFORML ターゲット、美里葵の祈りによって空中に天使が現れ、彼女ら全員を淡い光で照らす。
-	PRINTFORML おそらくあの天使はメシア教が崇める天使そのものではなく、力の具現。ペルソナに近い存在だろう。
-	PRINTFORML それを合図のように病院前は、斬撃に打撃、弓の射撃、そして炎・水・雷なども飛び交う戦場と化した。
-	PRINTFORMW いつの間にか病院の敷地には認識阻害の結界が張られていて、病院前の道路の通行人は戦闘に気づきもしない。
+	PRINTFORML 「제발! 모두를 지켜줘! 『력천사의 초록』！！」
+	PRINTFORML 타깃, 미리아의 기도에 따라 공중에 천사가 나타나 이들 모두를 옅은 빛으로 밝힌다.
+	PRINTFORML 아마 저 천사는 메시아교가 숭상하는 천사 그 자체가 아니라 힘의 구현. 페르소나에 가까운 존재일 것이다.
+	PRINTFORML 이를 신호처럼 병원 앞은 참격 타격, 활 사격, 불꽃 물 천둥 등도 난무하는 전쟁터로 변했다.
+	PRINTFORMW 어느새 병원 부지에는 인식 저해 결계가 깔려 있고, 병원 앞 도로의 행인들은 전투를 눈치채지도 못한다.
 	PRINTFORML 
 	PRINTFORML 「………！」
-	PRINTFORML 「龍麻ッ！！」
-	PRINTFORML そんな戦いの末に美里をかばって緋勇が倒れた。醍醐がそちらを振り向き悲壮な叫びをあげる。
-	PRINTFORML そこからはもう総崩れになり、高校生組は一人また二人と傷ついていく。
-	PRINTFORML 「皆、大丈夫！？　葵、治してあげて！」
-	PRINTFORML 「ええ、小蒔。あなたも……『癒しの風』」
-	PRINTFORMW あの五人の中ではターゲットは支援と回復役をしているようだ。だが、忍者達の猛攻はなおも続く。
+	PRINTFORML 「타츠마！！」
+	PRINTFORML 그런 싸움 끝에 미사토를 감싸고 히유우가 쓰러졌다.다이고가 그쪽을 돌아보며 비장한 외침을 지른다.
+	PRINTFORML 거기서부터는 이제 붕괴하기 시작되어 고등학생 조는 하나둘 상처를 입는다
+	PRINTFORML 「얘들아 괜찮아? 아오이 낫게 해줘!」
+	PRINTFORML 「네, 코마키. 당신도…『치유의바람』」
+	PRINTFORMW 저 다섯 명 중에서는 타깃은 지원과 회복역을 하고 있는 것 같다.하지만 닌자들의 맹공은 계속된다.
 	PRINTFORML 
-	PRINTFORML 美里が回復術をかけても徐々にジリ貧になり、膝をついていく。そろそろ頃合か。
+	PRINTFORML 미사토가 회복술을 걸어도 서서히 악화되어가고 무릎을 꿇어간다.슬슬 때가 됐나?
 	PRINTFORML 
-	PRINTFORML その娘は自分の獲物だ、と建物の影から身を現すあなた。
-	PRINTFORMW 忍者達はあまり損耗していないのが想定外だが、五人組が最早敵になり得ないほど傷ついている分だけマシだろう。
+	PRINTFORML 그녀는 자신의 사냥감이라며 건물 그림자에서 몸을 드러내는 당신.
+	PRINTFORMW 닌자들은 그다지 소모되지 않은 것이 예상 밖이지만, 5인조가 더이상 상대할 수 없을 정도로 상처받은 만큼은 나을 것이다.
 	PRINTFORML 
-	PRINTFORML 「何奴！！」
+	PRINTFORML 「누구냐！！」
 
-PRINTL [0]「菩薩眼の娘をこちらに寄越して貰おう」
-PRINTL [1]「通りすがりのダークサマナーだ」
-PRINTL [2]「通りすがりの大道芸人だ」
+PRINTL [0]「보살안의 소녀를 이리로 보내 달라고 하자.」
+PRINTL [1]「지나가던 다크 서머너다」
+PRINTL [2]「지나가는 광대다」
 $INPUT_LOOP1
 INPUT
 IF RESULT == 0
-	PRINTFORML 「我らは鬼道衆！　貴様もそいつらの仲間か」
-	PRINTFORMW 笑わせないで欲しい。自分は女子高生の誘拐を目論む存在だ。
+	PRINTFORML 「우리는 귀도중! 네놈도 그놈들의 패거리냐」
+	PRINTFORMW 웃기지 않았으면 좋겠어.자신은 여고생 유괴를 노리는 존재다.
 ELSEIF RESULT == 1
-	PRINTFORML 「ただの外道風情が邪魔するか！　我らは鬼道衆！　愚かな犬は死すべし！」
-	PRINTFORMW 裏家業に身を置くとは言え、酷い言い草もあったものだ。
+	PRINTFORML 「엑스트라 녀석 방해하지 마라! 우리는 귀도중! 어리석은 개는 죽으리라!」
+	PRINTFORMW 뒷세계에 몸담는다지만 심한 말도 할줄 아는군.
 ELSEIF RESULT == 2
-	PRINTFORML 「ふざけよって！　我らは鬼道衆！　邪魔者は排除する！！」
-	PRINTFORMW 怒ったようだ。ふざけ過ぎたか。
+	PRINTFORML 「까불지 말라고! 우리는 귀도중! 방해자는 배제한다!!」
+	PRINTFORMW 화가 났나봐 장난을 너무 많이 쳤나?
 
 ELSE
 	GOTO INPUT_LOOP1
 ENDIF
 	PRINTFORML 
-	PRINTFORMW しかし鬼道衆？たしかマヨーネの情報では崩壊していたはずだが……？
+	PRINTFORMW 그나저나 귀도중? 분명히 마요네의 정보로는 붕괴되어 있었을 텐데……?
 	PRINTFORML 
-	PRINTFORML 「貴様も我らの邪魔立てをするか！　覚悟！」
+	PRINTFORML 「네놈도 우리를 방해하는거냐! 각오」
 	PRINTFORML 
-	PRINTFORML ＞三人の忍者　が立ちはだかった！ 
+	PRINTFORML ＞세 명의 닌자가 가로막았다!
 	
 	CALL SET_ENEMY,8,4214,25,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・아쿠아]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:석화침]]
@@ -408,8 +408,8 @@ ENDIF
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
 	CALL SET_ENEMY,9,4214,25,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・라기]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:독침]]
@@ -423,8 +423,8 @@ ENDIF
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
 	CALL SET_ENEMY,10,4214,25,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・지오]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:마비침]]
@@ -440,14 +440,14 @@ ENDIF
 	CALL BATTLE_START
 
 	PRINTFORML 
-	PRINTFORML 三人の忍びを倒したかと思ったが、三つの影はいまだ健在だった。
-	PRINTFORML 「馬鹿め！　そやつらは幻術よ！！」
+	PRINTFORML 세 사람의 닌자를 쓰러뜨린 줄 알았지만 세 그림자는 아직 건재했다.
+	PRINTFORML 「바보 같은 놈! 그것들은 환술이다!」
 	PRINTFORML 
-	PRINTFORML ＞再び　三人の忍者　が立ちはだかった！ 
+	PRINTFORML ＞다시 세 명의 닌자가 가로막았다!
 
 	CALL SET_ENEMY,8,4214,30,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・아쿠에스]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:석화침]]
@@ -461,8 +461,8 @@ ENDIF
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
 	CALL SET_ENEMY,9,4214,30,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・라기온]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:독침]]
@@ -476,8 +476,8 @@ ENDIF
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
 	CALL SET_ENEMY,10,4214,30,0,1;中身は忍者
-	NAME:(CHARANUM-1) = 鬼道衆残党
-	CALLNAME:(CHARANUM-1) = 鬼道衆残党
+	NAME:(CHARANUM-1) = 귀도중잔당
+	CALLNAME:(CHARANUM-1) = 귀도중잔당
 	ABL:(CHARANUM-1):스킬1 = [[스킬:베놈재퍼]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・지온가]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:마비침]]
@@ -496,102 +496,102 @@ ENDIF
 	FLAG:선제기습취소 = 0
 
 	PRINTFORML 
-	PRINTFORMW 「くっ……我らの悲願が……炎角様申し訳あり……」
+	PRINTFORMW 「큿...우리들의 비원이......화각님 죄송합니다.」
 
 PRINTFORML 
-PRINTFORML 三人の忍びの者を今度こそ打ち倒すと、彼らは煙のように消滅していった。悪魔に近い存在だったのだろうか。
-PRINTFORML 最後に何者かの名前を呼んでいたように思えるが……。奴らの頭目か。
+PRINTFORML 세 명의 닌자를 이번에야말로 무찌르자 그들은 연기처럼 소멸되어 갔다.악마에 가까운 존재였을까?
+PRINTFORML 마지막으로 누군가의 이름을 부르고 있었던 것 같은데…….놈들의 우두머리인가?
 PRINTFORML 
-PRINTFORML さて、ここで一度現状を把握しよう。
-PRINTFORML あなたの近くに倒れた黒髪の少年が一人、距離を置いて残りの四人がいる形だ。
-PRINTFORMW あなたは少年の頭に銃を向けると、顎で「そのままさらに距離を取れ」と四人に示してやる。
+PRINTFORML 자, 여기서 현상을 한번 파악하자.
+PRINTFORML 당신 근처에 쓰러진 검은 머리 소년이 한 명, 거리를 두고 나머지 네 명이 있는 형태다.
+PRINTFORMW 당신은 소년의 머리에 총을 겨누면서 "그대로 더 거리를 두라"고 네 사람에게 보여준다.
 PRINTFORML 
-PRINTFORMW 「ひーちゃん！」
+PRINTFORMW 「히쨩！」
 PRINTFORML 
-PRINTFORML よく見ればそれなりに見目のいい少年であるし、『菩薩眼』に対する人質にもなるだろう。
-PRINTFORMW 今すぐ人質交換を強いてもいいが、こちらも連戦で消耗している。ここは一度少年だけを連れて退くべきだろう。
+PRINTFORML 자세히 보면 나름대로 보기 좋은 소년이고 『보살안』에 대한 인질도 될 것이다.
+PRINTFORMW 당장 인질 교환을 강요해도 되지만 이쪽도 연전으로 소모되고 있다.여기서는 한 번 소년을 데리고 물러나야 할 것이다.
 PRINTFORML 
-PRINTFORML 「京一、待って！　今の状態で追いかけるのは無茶だよ！！」
-PRINTFORML 「落ち着け京一、俺だってみすみすあいつを引き渡すのはごめんだ。だが今は、くっ」
-PRINTFORML 「小蒔……醍醐……。あんな悪党に連れてかれたら、ひーちゃん何されっかわかんねーぞ！」
-PRINTFORMW 「いやッ、待って、お願い……！　龍麻くんッ……！！」
+PRINTFORML 「쿄이치(京一), 기다려! 지금 상태로 쫓아가는 것은 터무니없어!!」
+PRINTFORML 「진정해 케이이치(京一), 나도 그 녀석을 건네주는 것은 미안하다.하지만 지금은、큿」
+PRINTFORML 「코마키…다이고…….저런 악당에게 끌려가면, 히짱 뭔짓거리를 당할지 모르겠어!！」
+PRINTFORMW 「아니, 잠깐만, 부탁이야...! 타츠마군...!!」
 PRINTFORML 
-PRINTFORML 菩薩眼の使う回復も追いつかず、未だ膝を突いたままの学生達の言葉を聞き流す。
-PRINTFORMW あなたは意識を失ったままの、龍麻だのひーちゃんだのと呼ばれていた少年を運び、自分の拠点へと戻った。
+PRINTFORML 보살안이 쓰는 회복이 따라가지 못하여 아직도 무릎을 꿇은 학생들의 말을 흘려듣는다.
+PRINTFORMW 당신은 의식을 잃은 채로, 타츠마나 히짱이라고 불리던 소년을 운반해, 자신의 거점으로 돌아왔다.
 PRINTFORML 
 PRINTFORML ………
 PRINTFORML ……
 PRINTFORML …
 PRINTFORML 
-PRINTFORML 持ち帰った少年について報告をすると、驚くべきことが分かった。
-PRINTFORML 報告と同時に彼は組織がまず一度詳細に調べ、とりあえず今はあなたの手元に戻って来ている。
-PRINTFORML 分かったのはこの緋勇龍麻(ひゆう たつま)という少年が『陽の黄龍の器』と呼ばれる存在であること。
-PRINTFORML どこまで信憑性があるかは分からない情報だが、『黄龍の器』は世界を制するほどの力を持つとまで言われているらしい。
-PRINTFORML とある悪魔に見せたところ、まるで存在そのものが神話世界の世界樹のようだ、とまで言ったとのこと。
-PRINTFORML 世界を制する力を持つ世界樹にまで例えられる存在。……本当ならばたいした存在だ。
-PRINTFORMW 黄龍とはたしか五行説で中央の方角に位置する神獣だったはず。司る属性は土。
+PRINTFORML 가져온 소년에 대해 보고를 하자 놀라운 사실을 알게 되었다.
+PRINTFORML 보고와 동시에 그는 조직이 먼저 한 번 자세히 살펴보고, 일단 지금은 당신 수중에 돌아와 있다.
+PRINTFORML 알게 된 것은 이 緋勇龍麻(히유우 타츠마)라는 소년이 『양의황룡그릇』이라고 불리는 존재라는 것이다.
+PRINTFORML 어디까지 신빙성이 있는지는 알 수 없는 정보지만 『황룡의그릇』은 세계를 제압할 만한 힘을 지녔다고까지 한다.
+PRINTFORML 어떤 악마에게 보여줬더니, 마치 존재 자체가 신화세계의 세계수 같다고까지 했다고 한다.
+PRINTFORML 세계를 지배하는 힘을 가진 세계수에까지 비유되는 존재.... 사실이라면 대단한 존재다.
+PRINTFORMW 황룡이란 분명 오행설에서 중앙쪽에 위치한 신수였을 것이다.관장하는 속성은 흙.
 PRINTFORML 
-PRINTFORML 組織の研究員が張り切り過ぎたレポートは理解出来ない部分も多いが、かいつまめばこうだ。
-PRINTFORML 『黄龍の器は龍脈を司る黄龍の力を宿す存在であり、長じれば森羅万象を統べることすら可能な能力者である』
-PRINTFORMW …………この少年がいれば世界征服が簡単に出来るということだろうか？いや、よく分からない。
+PRINTFORML 조직의 연구원들이 빡빡한 리포트는 이해하지 못하는 부분도 많지만, 대충 정리하면 이렇다.
+PRINTFORML 『황룡의 그릇은 용맥을 관장하는 황룡의 힘을 담고 있는 존재이며, 길면 삼라만상을 통할 수도 있는 능력자이다.』
+PRINTFORMW …………이 소년이 있으면 세계 정복을 쉽게 할 수 있다는 것일까?아니, 잘 모르겠어.
 PRINTFORML 
 PRINTFORML ………
 PRINTFORML ……
 PRINTFORML …
 PRINTFORML 
-PRINTFORML 「さて、そういうわけでして。その『黄龍の器』、￥200,000で組織に引き渡していただけないかしら」
-PRINTFORML 「これを報酬としてこの件から、とりあえず手を引いてもかまいませんわ」
-PRINTFORMW 「あなたにもそこまで悪い条件ではないのではなくて？」
+PRINTFORML 「자, 그래서.그 『황룡의그릇』 ￥200,000에 조직에 넘겨주실 수 없을까요?」
+PRINTFORML 「이것을 보수로 해서 이 건에서 일단 손을 떼도 상관없어요」
+PRINTFORMW 「너에게도 그렇게까지 나쁜 조건은 아닌게 아닌지?」
 PRINTFORML 
-PRINTFORML あなたがレポートを机に置いたところでマヨーネが直々に交渉にやって来た。
-PRINTFORML これだけの能力者であれば組織の力で無理やり奪われても仕方ないところだが、一応はあなたも組織に評価されているということだろうか。
-PRINTFORMW さて、どうしたものか……。
+PRINTFORML 당신이 리포트를 책상에 올려놓았을 때, 마요네가 직접 협상하러 왔다.
+PRINTFORML 이만한 능력자라면 조직의 힘으로 억지로 빼앗겨도 어쩔 수 없는 일이지만, 일단은 당신도 조직에 그만큼 평가받고 있다는 말인가.
+PRINTFORMW 그래서, 어떻게 할 것인가..
 PRINTFORML 
 
-PRINTL [0]断る(奴隷として入手)
-PRINTL [1]￥200,000で引き渡す(シナリオ打ち切り)
-PRINTL [2]魔貨の方がいい(シナリオ打ち切り)
+PRINTL [0]거절하다(노예로 입수)
+PRINTL [1]￥200,000에 인도하다(시나리오 중단)
+PRINTL [2]마카 쪽이 좋다(시나리오 중단)
 $INPUT_LOOP2
 INPUT
 IF RESULT == 0
-PRINTFORML 「あら……そのような少年がお好みでして？」
-PRINTFORML 「それとも、躾けて戦力にでもするおつもりかしら？」
-PRINTFORML 「その少年は貴重な『黄龍の器』。手元に置くのならば、ある程度は手荒に扱ってもかまいませんが」
-PRINTFORMW 「決して失うことだけはなさらないよう」
+PRINTFORML 「어머…그런 소년이 취향이세요?」
+PRINTFORML 「아니면 훈육을 해서 전력이라도 할 생각일까?」
+PRINTFORML 「그 소년은 귀중한 『황룡의그릇』.수중에 둔다면 어느 정도 거칠게 다루어도 상관없습니다만」
+PRINTFORMW 「결코 잃지 않도록 조심하시길」
 PRINTFORML 
-PRINTW ＞緋勇龍麻を手に入れた。
+PRINTW ＞히유우타츠마를 손에 넣었다.
 CALL ADD_NEW_COMPANION,5700,500
 
 PRINTFORML 
-PRINTFORML さて……どう扱ってやろうか、あなたは少年の利用方法を考える。
+PRINTFORML 그런데…어떻게 다뤄줄까, 당신은 소년의 이용방법을 생각한다.
 ELSEIF RESULT == 1
-PRINTFORML 「では、そのように」
-PRINTFORMW 「素敵な取引でしたわ」
+PRINTFORML 「그럼, 그렇게하죠」
+PRINTFORMW 「멋진 거래였어요.」
 PRINTFORML 
-PRINTFORML ＞少年を引き渡し、￥200,000を手に入れた
+PRINTFORML ＞소년을 인도하고 ￥200,000를 손에 넣었다
 PRINTFORML 
-PRINTFORML 組織内での名声も上がったようだ。
-PRINTFORMW ＞名声100を得た。
+PRINTFORML 조직 내 명성도 높아진 듯하다.
+PRINTFORMW ＞명성 100을 얻었다.
 MONEY += 200000
 FLAG:명성 += 100
 PRINTFORML 
-PRINTFORMW その後の少年の行方と扱いは、あなたの知るべきことではない。
+PRINTFORMW 그 후 소년의 행방과 취급은 당신이 알 일이 아니다.
 FLAG:마인학원의뢰진행도 = 0
 의뢰플래그:85:0 = 1
 
 ELSEIF RESULT == 2
-PRINTFORML 「あら、そちらの方がよろしくて？」
-PRINTFORML 「では……レートを考えると4000魔貨ですわね」
-PRINTFORMW 「素敵な取引でしたわ」
+PRINTFORML 「어머, 그게 더 좋아요?」
+PRINTFORML 「그럼 환율을 생각하면 4000마카군요.」
+PRINTFORMW 「멋진 거래였어요」
 PRINTFORML 
-PRINTFORML ＞少年を引き渡し、4000魔貨を手に入れた
+PRINTFORML ＞소년을 인도하고 4000마카를 손에 넣었다.
 PRINTFORML 
-PRINTFORML 組織内での名声も上がったようだ。
-PRINTFORMW ＞名声100を得た。
+PRINTFORML 조직 내 명성도 높아진 듯하다.
+PRINTFORMW ＞명성 100을 얻었다.
 MONEY:1 += 4000
 FLAG:명성 += 100
 PRINTFORML 
-PRINTFORMW その後の少年の行方と扱いは、あなたの知るべきことではない。
+PRINTFORMW 그 후 소년의 행방과 취급은 당신이 알 일이 아니다.
 FLAG:마인학원의뢰진행도 = 0
 의뢰플래그:85:0 = 1
 
