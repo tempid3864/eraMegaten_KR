@@ -1,77 +1,77 @@
-﻿;롯폰기 대환락가
-;창관 관련
+﻿;六本木大歓楽街
+;娼館関連
 
-;파일이 비대해지고 있다고 생각되었기 때문에 분할
-;또한 공통화할 수 있는 부분을 단일화
-;전원 취급해 버리면 조금 외로워지기 때문에, 내일 이후에는 대리 캐릭터가 일하도록 대응
-;뒷창관에 랜덤캐릭터 포획 창구 추가
-;20/05/08 피상캐릭터의 능력을 향상.즉창관에 침투해 즉전력으로 사용할 수 있는 수준으로
-;21/03/07 창녀 캐릭터 추가 샘플 작성.및 캐릭터 추가 절차 등을 기재
-;21/06/24 마유에 대응
-;21/10/29 창녀 추가를 더 손쉽게 할 수 있도록 소스 개수.창녀를 캐릭터별로 파일 분할.던전래그가 아닌 ERH 플래그로 이전
-;22/06/04 호객꾼 확장
-;22/08/16 놀때도 계약할때도 이쪽에서 마이너스 하도록(창부파일쪽에서 마카의 주고받는것은 기본하지 않도록)
+;ファイルが肥大化してきていると思われたため, 分割
+;また, 共通化できそうな部分を一本化
+;全員身受けしちゃうとちょっと寂しくなるため, 明日以降は代理キャラが働くように対応
+;裏娼館にランダムキャラ捕獲の窓口を追加
+;20/05/08　身受けキャラの能力を底上げ.即娼館に突っ込んで即戦力として使えるレベルに
+;21/03/07　娼婦キャラの追加サンプルを作成.及びキャラ追加の手順等を記載
+;21/06/24　魔乳に対応
+;21/10/29　娼婦追加をもっとお手軽にできるようにソース改修.娼婦をキャラ別にファイル分割.던전플래그ではなくERHのフラグに移設
+;22/06/04　客引きを拡張
+;22/08/16　遊ぶときも身請けの時もこっちでマイナスするように（娼婦ファイル側でマッカのやり取りは基本しないように）
 
-;플래그 관리 메모
-;59 랜덤 캐릭터 포획 창구용 0: 이용하지 않음 1: 이용 경험 있음 2: 오늘 이용한
+;フラグ管理メモ
+;59　ランダムキャラ捕獲窓口用　0:利用してない　1:利用経験あり　2:今日利用した
 
-;(21/10/29 ERH화하여 사용하지 않게 되는 플래그) (참고용으로 남기되 삭제하셔도 됩니다.)
-;10 창관(여)이용경험 플래그 0: 이용하지 않음 1: 이용함 2: 쿠폰 있음
-;10번대 창관(여)용 플래그 0:그 애를 지명한 적 없음 1:지명한 적 있음 2:지명 경험 있음 당신의 기술이 충분하여 계약 가능하게 3:당신에게 계약된 4:대리 캐릭터 출근 5:대리 캐릭터 지명 경험 있음
-;50 뒷골목창관이용플래그 0:이용안함 1:이용했다 2:쿠폰있음
-;50번대 창관(여)용 플래그 0: 그 아이를 지명한 적 없음 1: 지명한 적 있음 2: 지명 경험 있음, 당신의 기술이 충분하여 계약 가능하게 3: 당신에게 계약된
-;80번대 창관용 플래그 2
+;(21/10/29　ERH化して使用しなくなるフラグ)(参考用に残すけど, 削除してもおｋ)
+;10　娼館(女)利用経験フラグ　0:利用してない　1:利用した　2:クーポンあり
+;10番台　娼館(女)用フラグ　0:その子を指名したことない　1:指名したことある　2:指名経験あり, あなたの技術が十分で身請け可能に　3:あなたに身請けされた　4:代理キャラ出勤　5:代理キャラ指名経験あり
+;50　裏路地娼館利用フラグ　0:利用してない　1:利用した　2:クーポンあり
+;50番台　娼館(女)用フラグ　0:その子を指名したことない　1:指名したことある　2:指名経験あり, あなたの技術が十分で身請け可能に　3:あなたに身請けされた
+;80番台　娼館用フラグ2　
 
 ;=======================================================================
-;창녀 캐릭터 추가 절차(신판)
+;娼婦キャラの追加の手順(新版)
 ;=======================================================================
-;1,SORP_PLAY_XXX_(템플릿용).ERB 를 복사하여 신규 캐릭터용 파일을 준비
-;2,SORP31.ERH등에서 사용하지 않는 창녀 플래그의 번호를 채번하고, 1.파일의 XX을 창녀 플래그 번호로 치환
-;(가능하다면, 사용할 창녀 플래그 번호와 이름을 ERH에 추가해 두면, 나중에 사람이 만들기 쉬울지도?)
-;파일의 코멘트 아웃등을 삭제하고, 각 항목을 채워 창녀 캐릭터를 작성
-;4, 완성된 3의 파일을 창녀 폴더로 이동
-;5,캐릭터 추가완료!
+;1,SORP_PLAY_XXX_(テンプレート用).ERB をコピーして, 新規キャラ用のファイルを用意
+;2,SORP31.ERHなどから, 使用していない娼婦フラグの番号を採番し, 1.のファイルのXXを娼婦フラグ番号で置換
+;(出来たら, 使用する娼婦フラグ番号と名前をERHに追記しておくと, 後の人が作りやすいかも?)
+;3,ファイルのコメントアウト等を削除し, 各項目を埋めて娼婦キャラを作成
+;4,完成した3のファイルを娼婦フォルダに移動
+;5,キャラ追加完了!
 ;
-;(창부캐릭터작성메모)
-;베이스가 되는 악마에게 유니크한 커스터마이징을 하여 캐릭터를 부풀리는 시스템입니다.잘 써주세요
-;창관용이므로 기본적으로 비처녀계의 캐릭터라고 생각해 둔다.
-;또 출현 조건이나 피신 조건은 각자가 잘 생각할 것.최소한 첫날에 몸담지 못할 정도는 필수!
-;플레이금액은 200~2000정도, 선수금액은 2000~5000정도, 의 필링으로
-;체력이나 능력은 자택의 창관이나 변기에 그대로 투입할 수 있을 정도로는 담아도 좋다고 개인적으로는 생각한다.
-;하지만 5이상의 값은 가급적 자중할 것
+;(娼婦キャラ作成メモ)
+;ベースとなる悪魔にユニークなカスタマイズを施してキャラを水増しするシステムです.上手い事使ってください
+;娼館用なので, 基本的に非処女系のキャラと考えておく
+;また, 出現条件や身受け条件は各自でよく考えること.最低限, 初日で身受けできない程度は必須!
+;プレイ金額は200～2000ぐらい, 身受け金額は2000～5000ぐらい, のフィーリングで
+;体力気力や能力は, 自宅の娼館や便器にそのまま投入できる程度には盛って良い(と個人的には思っている)
+;でも5以上の値はなるべく自重すること
 
 ;=======================================================================
 ;창관(基本部分は一本化)
 ;=======================================================================
 @SORP_BASE_31, ARG
 
-CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"어서 오십시오"
+CALL MESSAGE_WINDOW_D, "남성 접수원", "어서 오십시오"
 IF (롯폰기앞창관플래그:0 == 0 && ARG == 10) || (롯폰기뒷창관플래그:0 == 0 && ARG == 50)
 	$SORP_INFO
 	IF (롯폰기앞창관플래그:0 == 0 && ARG == 10) || (롯폰기뒷창관플래그:0 == 0 && ARG == 50)
 		;初回時
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"이런、고객님은 당 점포의 이용은 처음이시군요/그렇가면, 당 점포의 룰을 설명하겠습니다"
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"고객님은 다행히 악마에 대해 알고 계신 듯하군요/감출 것 없이 말씀드리겠습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "이런, 고객님은 당 점포의 이용은 처음이시군요/그렇가면, 당 점포의 룰을 설명하겠습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "고객님은 다행히 악마에 대해 알고 계신 듯하군요/감출 것 없이 말씀드리겠습니다"
 	ELSE
 		;설명時
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"알겠습니다、그럼 설명하겠습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "알겠습니다, 그럼 설명하겠습니다"
 	ENDIF
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"당 점포는 악마 계집들과 하룻밤의 꿈을 지내기 위한 가게입니다/그리고 모두、인간으로는 맛보기 힘든 다양한 경험을 쌓고 있습니다/그러기에、고객님도 귀중한 경험을 얻을 수 있겠지요"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "당 점포는 악마 계집들과 하룻밤의 꿈을 지내기 위한 가게입니다/그리고 모두, 인간으로는 맛보기 힘든 다양한 경험을 쌓고 있습니다/그러기에, 고객님도 귀중한 경험을 얻을 수 있겠지요"
 	IF ARG == 50
 		;창관(裏)の場合
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"또한 당점의 아가씨들은 모두 아주 특수합니다/그 일을 아무쪼록 잘 부탁드립니다."
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "또한 당점의 아가씨들은 모두 아주 특수합니다/그 일을 아무쪼록 잘 부탁드립니다."
 	ENDIF
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"물론、그걸 위해서는 마카가 필요합니다/일본 돈은 받지 않고 있기에/아무쪼록 잘 부탁드립니다"
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"또한 덧붙여 당 점포에는、일부의 계집에 대해 「낙적」도 허가하고 있습니다/이 경우、그 계집은 당신의 것이 됩니다/말할 것도 없습니다만、그 계집이랑은 당 점포에선 더 놀 수 없게 되므로 주의해주십시오"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "물론, 그걸 위해서는 마카가 필요합니다/일본 돈은 받지 않고 있기에/아무쪼록 잘 부탁드립니다"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "또한 덧붙여 당 점포에는, 일부의 계집에 대해 「낙적」도 허가하고 있습니다/이 경우, 그 계집은 당신의 것이 됩니다/말할 것도 없습니다만, 그 계집이랑은 당 점포에선 더 놀 수 없게 되므로 주의해주십시오"
 	;Ｎｏ.１なら現状が一番でしょ…という技術힘的問題の隠蔽
 	IF ARG == 50
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"또한、본 서비스는 고객님과 계집이 동의한 경우에만 가능합니다/따라서、낙적을 거부한 계집은 낙적할 수 없습니다/당 점포에선、현 Ｎｏ.１인 피아는 낙적을 거부하고 있습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "또한, 본 서비스는 고객님과 계집이 동의한 경우에만 가능합니다/따라서, 낙적을 거부한 계집은 낙적할 수 없습니다/당 점포에선, 현 No.1인 피아는 낙적을 거부하고 있습니다"
 	ELSE
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"또한、본 서비스는 고객님과 계집이 동의한 경우에만 가능합니다/따라서、낙적을 거부한 계집은 낙적할 수 없습니다/당 점포에선、현 Ｎｏ.１인 조세피느는 낙적을 거부하고 있습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "또한, 본 서비스는 고객님과 계집이 동의한 경우에만 가능합니다/따라서, 낙적을 거부한 계집은 낙적할 수 없습니다/당 점포에선, 현 No.1인 조세피느는 낙적을 거부하고 있습니다"
 	ENDIF
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그럼 마지막으로、당 점포의 룰을 정리해드리겠습니다"
-	CALL MESSAGE_WINDOW_D, "", @"１：여기선 마카를 지불해서 당신의 구슬과 경험을 얻는 게 가능합니다/２：계집에 따라 얻을 수 있는 구슬과 경험은 다릅니다/３：고액의 마카를 지불하면 낙적할 수도 있습니다/４：당연히、낙적한 게집은 여기서는 더는 놀 수 없습니다"
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"이와 같습니다"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "그럼 마지막으로, 당 점포의 룰을 정리해드리겠습니다"
+	CALL MESSAGE_WINDOW_D, "", "１:여기선 마카를 지불해서 당신의 구슬과 경험을 얻는 게 가능합니다/２:계집에 따라 얻을 수 있는 구슬과 경험은 다릅니다/３:고액의 마카를 지불하면 낙적할 수도 있습니다/４:당연히, 낙적한 게집은 여기서는 더는 놀 수 없습니다"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "이와 같습니다"
 	SIF 롯폰기앞창관플래그:0 == 0 && ARG == 10
 		롯폰기앞창관플래그:0 = 1
 	SIF 롯폰기뒷창관플래그:0 == 0 && ARG == 50
@@ -79,11 +79,11 @@ IF (롯폰기앞창관플래그:0 == 0 && ARG == 10) || (롯폰기뒷창관플�
 ENDIF
 
 $BRO_LOOP_W
-CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그럼、오늘은 어쩌시겠습니까？"
+CALL MESSAGE_WINDOW_D, "남성 접수원", "그럼, 오늘은 어쩌시겠습니까?"
 IF ARG == 50 && 이벤트플래그:88:0 > 2
 	CALL INPUT_SELECT_D, "[1]계집과 논다/[2]계집을 낙적한다/[3]설명을 듣는다/[4]암구호를 댄다///[0]그만둔다" , , , 2
 ELSE
-	CALL INPUT_SELECT_D, "[1]계집과 논다/[2]계집을 낙적한다/[3]설명을 듣는다く////[0]그만둔다" , , , 2
+	CALL INPUT_SELECT_D, "[1]계집과 논다/[2]계집을 낙적한다/[3]설명을 듣는다////[0]그만둔다" , , , 2
 ENDIF
 
 IF RESULT == 3
@@ -91,7 +91,7 @@ IF RESULT == 3
 	GOTO SORP_INFO
 ELSEIF RESULT == 1
 	;プレイ
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그러면、이쪽 계집들 중에서 골라 주십시오…"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "그러면, 이쪽 계집들 중에서 골라 주십시오…"
 	$BRO_LOOP_W_1
 	IF ARG == 10
 		CALLFORM SORP_LIST_NEW, 1, 1
@@ -108,23 +108,23 @@ ELSEIF RESULT == 1
 	CALLFORM SORP_PLAY_{LOCAL}, "紹介文"
 	CALLFORM SORP_PLAY_{LOCAL}, "確認"
 	IF ARG == 10 && 롯폰기앞창관플래그:0 == 2 && LOCAL != 1001
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"어라、손님。쿠폰을 가지고 계셨습니까/그럼 ２００마카로 놀 수 있습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "어라, 손님. 쿠폰을 가지고 계셨습니까/그럼 200 마카로 놀 수 있습니다"
 		RESULT = 200
 	ELSEIF ARG == 50 && 롯폰기뒷창관플래그:0 == 2 && LOCAL != 1008
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"어라、손님。쿠폰을 가지고 계셨습니까/그럼 ２００마카로 놀 수 있습니다."
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "어라, 손님. 쿠폰을 가지고 계셨습니까/그럼 200 마카로 놀 수 있습니다."
 		RESULT = 200
 	ELSE
 		CALLFORM SORP_PLAY_{LOCAL}, "価格"
 	ENDIF
 	IF MONEY:1 < RESULT
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"…손님, 아무래도 마카가 모자라는 모양이군요/아무래도 안되겠습니다/다른 계집을 선택해주십시오…"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "…손님, 아무래도 마카가 모자라는 모양이군요/아무래도 안되겠습니다/다른 계집을 선택해주십시오…"
 		GOTO BRO_LOOP_W_1
 	ENDIF
 	CALLFORM SORP_PLAY_{LOCAL}, "キャラ名"
-	CALL MESSAGE_WINDOW_D, "", @"%조사처리(RESULTS,"과")% 노시겠습니까？"
+	CALL MESSAGE_WINDOW_D, "", @"%조사처리(RESULTS,"과")% 노시겠습니까?"
 	CALL INPUT_YN_D , "논다" , "다른 계집으로 한다"
 	IF RESULT == 0
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그럼 저쪽 방에서 잠시 기다려주십시오…"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "그럼 저쪽 방에서 잠시 기다려주십시오…"
 		IF ARG == 10 && 롯폰기앞창관플래그:0 == 2 && LOCAL != 3111
 			RESULT = 200
 			롯폰기앞창관플래그:0 = 1
@@ -143,12 +143,12 @@ ELSEIF RESULT == 1
 			CALL DUNGEON_WORP,2,6,14
 		ENDIF
 	ELSE
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그렇습니까/그럼 다른 계집을 선택하세요/물론 다른 계집의 이야기를 듣고나서 %RESULTS% 양을 선택하셔도 괜찮습니다."
+		CALL MESSAGE_WINDOW_D, "남성 접수원", @"그렇습니까/그럼 다른 계집을 선택하세요/물론 다른 계집의 이야기를 듣고나서 %RESULTS% 양을 선택하셔도 괜찮습니다."
 		GOTO BRO_LOOP_W_1
 	ENDIF
 ELSEIF RESULT == 2
 	;身受け
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"호오、계집을 낙적하시는 겁니까/손님、계집에게 반하셨나봐요"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "호오, 계집을 낙적하시는 겁니까/손님, 계집에게 반하셨나봐요"
 	LOCAL = 0
 	IF ARG == 10
 		CALLFORM SORP_CAN_BUY_COUNT_NEW, 1
@@ -158,11 +158,11 @@ ELSEIF RESULT == 2
 		LOCAL = RESULT
 	ENDIF
 	IF LOCAL == 0
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"하지만 지금 현재, 손님에게 낙적해도 좋다는 계집이 없습니다/저희 가게에서 잠시 친분을 쌓는 편이 좋을것 같습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "하지만 지금 현재, 손님에게 낙적해도 좋다는 계집이 없습니다/저희 가게에서 잠시 친분을 쌓는 편이 좋을것 같습니다"
 		GOTO BRO_LOOP_W
 	ENDIF
 	$BRO_LOOP_W_2
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"현재 손님에게 낙적해도 좋다고 말하는 계집은 이쪽입니다/아무쪼록 납득이 갈 때까지 선택해 주십시오"
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "현재 손님에게 낙적해도 좋다고 말하는 계집은 이쪽입니다/아무쪼록 납득이 갈 때까지 선택해 주십시오"
 	IF ARG == 10
 		CALLFORM SORP_LIST_NEW, 2, 1
 	ELSE
@@ -179,7 +179,7 @@ ELSEIF RESULT == 2
 	CALLFORM SORP_PLAY_{LOCAL}, "身受け価格"
 	IF MONEY:1 < RESULT
 		CALLFORM SORP_PLAY_{LOCAL}, "キャラ名"
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"…고객님、마카가 부족합니다/그렇다면 %조사처리(RESULTS,"를")% 낙적하실 수는 없습니다"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", @"…고객님, 마카가 부족합니다/그렇다면 %조사처리(RESULTS,"를")% 낙적하실 수는 없습니다"
 		GOTO BRO_LOOP_W_2
 	ENDIF
 	CALL INPUT_YN_D , "身受けする" , "他の娘にする"
@@ -189,10 +189,10 @@ ELSEIF RESULT == 2
 		MONEY:1 -= RESULT
 
 		CALLFORM SORP_PLAY_{LOCAL}, "キャラ名"
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"알겠습니다/그러면 조금만 기다려 주십시오/%RESULTS% 본인을 불러 이야기를 전해야 하기에…"
-		CALL MESSAGE_WINDOW_D, "", @"………………/…………/……"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", @"알겠습니다/그러면 조금만 기다려 주십시오/%RESULTS% 본인을 불러 이야기를 전해야 하기에…"
+		CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 		CALLFORM SORP_PLAY_{LOCAL}, "身受け口上"
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그러면…/차후 우리들은 일절 관여하지 않겠습니다/부디 행복하시길…"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "그러면…/차후 우리들은 일절 관여하지 않겠습니다/부디 행복하시길…"
 		IF ARG == 10
 			CALL DUNGEON_WORP,1,15,6
 		ELSE
@@ -204,18 +204,18 @@ ELSEIF RESULT == 2
 ELSEIF RESULT == 4 && ARG == 50
 	;ここから追加ランダムキャラ
 	IF 던전플래그:31:59 == 0
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"…손님, 어디서 그것을？"
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"아니, 꼬치꼬치 캐묻는 것은 실례지요/이 업계는 입단속이 단단해야 오래 살 수 있으니까요."
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"이쪽으로 오십시오…"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "…손님, 어디서 그것을?"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "아니, 꼬치꼬치 캐묻는 것은 실례지요/이 업계는 입단속이 단단해야 오래 살 수 있으니까요."
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "이쪽으로 오십시오…"
 	ELSE
-		CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"알겠습니다. 이쪽으로 오십시오…"
+		CALL MESSAGE_WINDOW_D, "남성 접수원", "알겠습니다. 이쪽으로 오십시오…"
 	ENDIF
 	CALL SHOW_PICTURE, "EMPTY"
 	CALLFORM PRISON_BASE_31
 	CALL SHOW_PICTURE, "EMPTY"
 	CALL DUNGEON_WORP,2,6,14
 ELSE
-	CALL MESSAGE_WINDOW_D, "접수 보는 남자", @"그럼 다음 번 이용하실 것을 기다리고 있겠습니다."
+	CALL MESSAGE_WINDOW_D, "남성 접수원", "그럼 다음 번 이용하실 것을 기다리고 있겠습니다."
 	IF ARG == 10
 		CALL DUNGEON_WORP,1,15,6
 	ELSE
@@ -230,26 +230,26 @@ ENDIF
 #DIM CHARA, 1
 
 IF 던전플래그:31:59 == 0
-	CALL MESSAGE_WINDOW_D, "", @"＞창관은 지하 감옥과 연결된 것 같다！"
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"어서와 동업자/가능하면 만나고 싶지 않았지만…"
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"그러나 룰은 룰이다. 이 곳에 대해서 설명하겠다"
+	CALL MESSAGE_WINDOW_D, "", "＞창관은 지하 감옥과 연결된 것 같다!"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "어서와 동업자/가능하면 만나고 싶지 않았지만…"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "그러나 룰은 룰이다. 이 곳에 대해서 설명하겠다"
 	$RANCHAR_INFO
 	;설명も兼ねる
 	IF 던전플래그:31:59 == 1
-		CALL MESSAGE_WINDOW_D, "남자 간수", @"오케이 더 자세히 설명하겠다"
+		CALL MESSAGE_WINDOW_D, "남자 간수", "오케이 더 자세히 설명하겠다"
 	ENDIF
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"이곳은 빚을 갚을 수 없는 자나 권력자의 노여움을 사는 등/겉으로 드러낼 수 없게 된 말썽쟁이들의 감옥이다."
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"하지만 말썽쟁이라도 가끔 소중한 물건이 있기도 해/그러니까 우리끼리 유효활용하자!/라는 노예조합이란 뜻이야.…"
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"입장료만 내면 게스트는 1일 1명까지 데리고 나오는 것이 허용된다/이런, 얕은 생각은 하지마/그러면 네가 다음 놈이 될 뿐이야"
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"입장료는 1만 마카다/덧붙여서 일정기간 팔리지 않고 남은 놈이나 희망이 없는 놈은/…뭐 동업이고 알고 있지？"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "이곳은 빚을 갚을 수 없는 자나 권력자의 노여움을 사는 등/겉으로 드러낼 수 없게 된 말썽쟁이들의 감옥이다."
+	CALL MESSAGE_WINDOW_D, "남자 간수", "하지만 말썽쟁이라도 가끔 소중한 물건이 있기도 해/그러니까 우리끼리 유효활용하자!/라는 노예조합이란 뜻이야…"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "입장료만 내면 게스트는 1일 1명까지 데리고 나오는 것이 허용된다/이런, 얕은 생각은 하지마/그러면 네가 다음 놈이 될 뿐이야"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "입장료는 1만 마카다/덧붙여서 일정기간 팔리지 않고 남은 놈이나 희망이 없는 놈은/…뭐 동업이고 알고 있지?"
 	SIF 던전플래그:31:59 == 0 
 		던전플래그:31:59 = 1
 ELSE
-	CALL MESSAGE_WINDOW_D, "", @"＞창관의 지하 감옥에 왔다"
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"어서와 동업자"
+	CALL MESSAGE_WINDOW_D, "", "＞창관의 지하 감옥에 왔다"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "어서와 동업자"
 ENDIF
 IF 던전플래그:31:59 == 2
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"입장할 수 있는 것은 1일 1회까지다/얌전히 있다 가라고！"
+	CALL MESSAGE_WINDOW_D, "남자 간수", "입장할 수 있는 것은 1일 1회까지다/얌전히 있다 가라고!"
 	RETURN
 ENDIF
 
@@ -262,33 +262,33 @@ ELSEIF RESULT == 3
 	;雑談
 	SELECTCASE RAND:3
 		CASE 0
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"오 뇌물 상담이야?/…뭐지, 아닌가"
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"참고로 여기는 게스트 전문입장이고/여기서는 매입은 안한다구/가끔씩은 있어, 쓰레기를 데려와서 돈주고 지나가려고 하는 녀석이"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "오 뇌물 상담이야?/…뭐지, 아닌가"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "참고로 여기는 게스트 전문입장이고/여기서는 매입은 안 한다구/가끔씩은 있어, 쓰레기를 데려와서 돈주고 지나가려고 하는 녀석이"
 		CASE 1
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"큰길에 쁘띠 데몬SHOP이 있지?/이 거리의 여자들 사이에서는 거기서 악마놀이 하는 것이 유행이라고 해"
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"사실 우리 조직에서도 저기랑 같은 장치가 있어서 말이야/저거 인간의 악마화에도 쓸 수 있다더라？ 알고있어？"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "큰길에 쁘띠SHOP이 있지?/이 거리의 여자들 사이에서는 거기서 악마놀이 하는 게 유행이라고 하더라고"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "사실 우리 조직에도 저기랑 같은 장치가 있어서/그거로 인간의 악마화에도 쓸 수 있다고? 알고 있었나?"
 			IF BASE:MASTER:LV >= 60
-				CALL MESSAGE_WINDOW_D, "남자 간수", @"얼마 전、처분품 쓰레기에 데빌소스 여러개를 쑤셔넣고 놀았는데/저거 꽤 재밌던데? 동업자도 신경쓰이면 점주와 얘기해보는게 어때？"
+				CALL MESSAGE_WINDOW_D, "남자 간수", "그 전에, 쓰레기 처분품에 여러 악마 소스를 넣고 놀았는데/저거 꽤 유쾌하다고?/동업도 궁금하다면 점주와 상의해 보는 건 어때?"
 			ENDIF
 		CASE 2
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"이런데서 혼자 힘들지 않냐고？/평소에는 안쪽 대기실에서 빈둥빈둥 하고있으니까 그렇지도 않아"
-			CALL MESSAGE_WINDOW_D, "남자 간수", @"여기에 누가 올 때는 겉으로 연락이 오니까/그 때에만 나온다는 거야/덧붙여서 말하면 나는 야간 담당이고 다른 인원은 있으니까"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "이런 곳에서 혼자는 힘들지 않냐고?/평소에는 안방에서 빈둥대니까 딱히 그렇지는 않지"
+			CALL MESSAGE_WINDOW_D, "남자 간수", "여기에 누가 올 때엔 겉으로 연락이 오니까/그때만 나와도 딱이지/참고로 난 야간 담당이고 다른 인원도 있으니까."
 	ENDSELECT
 	GOTO RANCHAR_LOOP_W
 ELSEIF RESULT == 1
 	IF MONEY:1 < 10000
-		CALL MESSAGE_WINDOW_D, "남자 간수", @"…돈 없으면 여길 못 지나가/가난한 사람은 가라！"
-		CALL MESSAGE_WINDOW_D, "", @"＞강제적으로 쫓겨났다"
+		CALL MESSAGE_WINDOW_D, "남자 간수", "…돈 없으면 여길 못 지나가/가난한 사람은 가라!"
+		CALL MESSAGE_WINDOW_D, "", "＞강제적으로 쫓겨났다"
 		RETURN
 	ENDIF
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"헤헤! 매번/그리고 가능하면 팔다 남은 쓰레기 같은 녀석을 가지고 돌아가줘/처분의 수고가 줄어들어 편해지니까"
+	CALL MESSAGE_WINDOW_D, "남자 간수", @"헤헷! 매번 감사/그리고 된다면 미분양품 쓰레기 같은 놈 좀 가져가 줘/처분의 수고를 덜 수 있어서 편해진다고"
 	CALLFORM SELECT_RANDOM_CHARA
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"그 쓰레기를 가지고 가는건가/말해두지만 반품은 일절받지 않으니까 생각도 하지말라고"
+	CALL MESSAGE_WINDOW_D, "남자 간수", @"그 쓰레기를 가져가나/말해두는데, 반품은 일절 받지 않으니까 그럴 생각은 말라고"
 	MONEY:1 -= 10000
 	던전플래그:31:59 = 2
 	RETURN
 ELSE
-	CALL MESSAGE_WINDOW_D, "남자 간수", @"그래/다신 오지말라고 동업자"
+	CALL MESSAGE_WINDOW_D, "남자 간수", @"그러냐/그럼 오지 말라고 동업자"
 	RETURN
 ENDIF
 
@@ -301,9 +301,9 @@ ENDIF
 
 $BRO_LOOP_S
 IF ARG:0 == 2
-	VALUES = ＞누구로 할까？/
+	VALUES = ＞누구로 할까?/
 ELSE
-	VALUES = [0]やめる/
+	VALUES = [0]그만둔다/
 ENDIF
 LOCAL = 0
 FOR LOCAL,1001, (1000 + MAX_DUNGEON_31_FLAGS)
@@ -315,7 +315,7 @@ FOR LOCAL,1001, (1000 + MAX_DUNGEON_31_FLAGS)
 	TRYCALLFORM SORP_PLAY_{LOCAL}, "判定"
 	SIF RESULT == 1
 		CONTINUE
-	;身受けの場合、身請け可能フラグがあるもののみ
+	;身受けの場合, 身請け可能フラグがあるもののみ
 	SIF ARG:0 == 2 && 롯폰기창관플래그:(LOCAL-1000) != 2
 		CONTINUE
 	
@@ -325,7 +325,7 @@ FOR LOCAL,1001, (1000 + MAX_DUNGEON_31_FLAGS)
 	VALUES += @"%RESULTS%"
 NEXT
 IF ARG:0 == 2
-	VALUES += "/[0]やめる"
+	VALUES += "/[0]그만둔다"
 ENDIF
 CALL INPUT_SELECT_D , VALUES , , , 2
 
@@ -343,7 +343,7 @@ SELECTCASE RESULT
 		TRYCALLFORM SORP_PLAY_{LOCAL}, "判定"
 		SIF RESULT == 1
 			GOTO BRO_LOOP_S
-		;身受けの場合、身請け可能フラグがあるもののみ
+		;身受けの場合, 身請け可能フラグがあるもののみ
 		SIF ARG:0 == 2 && 롯폰기창관플래그:(LOCAL-1000) != 2
 			GOTO BRO_LOOP_S
 		RETURN LOCAL
@@ -363,7 +363,7 @@ FOR LOCAL,1001, (1000 + MAX_DUNGEON_31_FLAGS)
 	TRYCALLFORM SORP_PLAY_{LOCAL}, "判定"
 	SIF RESULT == 1
 		CONTINUE
-	;身受けの場合、身請け可能フラグがあるもののみ
+	;身受けの場合, 身請け可能フラグがあるもののみ
 	SIF 롯폰기창관플래그:(LOCAL-1000) != 2
 		CONTINUE
 	LCOUNT++
@@ -381,9 +381,9 @@ RETURN LCOUNT
 LOCAL   = 0
 VARSET 客引きテーブル
 
-;ナヴィ身請け済み状態なら終了、
+;ナヴィ身請け済み状態なら終了, 
 IF 롯폰기창관플래그:3 == 3
-	CALL MESSAGE_WINDOW_D, "", @"＞남자가 호객꾼을 맡고 있다 /> 나뷔를 데려갔기 때문에 호객꾼 요원이 없는 것 같다…"
+	CALL MESSAGE_WINDOW_D, "", @"＞남자가 호객행위를 하고 있다/＞나뷔를 맡은 탓에, 호객꾼이 없는 것 같다…"
 	RETURN
 ENDIF
 
@@ -398,82 +398,82 @@ IF 롯폰기창관플래그:3 < 3
 		LOCALS = 나뷔
 	ENDIF
 
-	;나뷔 지명 경험 없음、호객 경험 없음
+	;ナヴィ指名経験なし, 客引き経験なし
 	IF 롯폰기창관플래그:3 == 0 && 던전플래그:31:4 != 2
-		;처음
+		;初見時
 		IF 던전플래그:31:4 == 0
-			CALL MESSAGE_WINDOW_D, "", @"＞가시나무를 몸에 두른 여자…/＞아니、알라우네다！/＞알라우네가 호객을 하고있다"
+			CALL MESSAGE_WINDOW_D, "", "＞가시덩굴을 두른 여자…/＞아니, 알라우네다!/＞알라우네가 호객행위를 하고 있다"
 			
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/이렇게 귀여운 낭자애는 처음봐…　먹어버리고 싶을 정도야%ハート()%/저기、언니들이랑 놀고 가지 않을래？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/이렇게 귀여운 오토코노코는 처음 봐…　먹어버리고 싶을 정도야%ハート()%/있지, 누나들이랑 놀지 않을래?"
 			ELSEIF TALENT:MASTER:남자
 				IF EXP:MASTER:사정경험 >= 100
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있잖아、거기 경험 풍부해 보이는 오빠%ハート()%/우리들이랑 놀다 가지 않을래？/분명 당신도 만족할 수 있을 거야…"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있지, 거기 경험 풍부한 오빠%ハート()%/우리들이랑 놀지 않을래?/꼭 당신도 만족시켜 볼테니까…"
 				ELSEIF EXP:MASTER:사정경험 == 0
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있잖아、거기 초보 오빠%ハート()%/우리들이랑 첫・경・험 안 해볼래？"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있지, 거기 아다 오빠%ハート()%/우리들이랑 첫·경·험, 어때?"
 				ELSE
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있잖아、거기 오빠%ハート()%/우리들이랑 놀다 가지 않을래？/당신에게 밤을 가르쳐줄게…"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"있지, 거기 있는 오빠%ハート()%/우리들이랑 놀지 않을래?/당신에게 밤을 가르쳐줄게…"
 				ENDIF
 			ELSEIF TALENT:MASTER:후타나리
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、아가씨 설마…/후후후、인간계에도 꽤나 특이한 아이가 있네/나、살짝 흥분됐어%ハート()%"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 당신 혹시…/후후후, 인간계에도 꽤 별난 애가 있네/나, 꽤 흥분돼%ハート()%"
 				IF EXP:MASTER:사정경험 >= 100
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그렇다고 해도 말이지、그렇게 귀여운 얼굴과 몸을 하곤 꽤나 흉악해 보이네%ハート()%/저기、우리랑 놀다 가지 않을래？"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그건 그렇고, 귀여운 얼굴에 몸은 꽤 흉악하네%ハート()%/있지, 우리랑 놀다 갈래?"
 				ELSEIF EXP:MASTER:사정경험 == 0
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그런 모습이어서야 주체를 못하는 거겠지？/당신이 주체 못하는 그거의 사용법、잔뜩 가르쳐줄게/물론、우리들을 사용해서%ハート()%"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그런 상태라면 분명 주체할 수 없었겠네?/당신이 주체할 수 없는 그거의 사용법, 잔뜩 가르쳐줄게/물론, 우리들을 써서%ハート()%"
 				ELSE
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"상당히 휘둘러온 모양이네/그렇다면、우리들이랑 같이 놀다 가지 않을래？"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", "제법 익숙해져 있는 거 같네/그럼, 우리랑 같이 놀지 않을래?"
 				ENDIF
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어라…/여성이 이런곳에 오는 것이 아니야/그렇지 않으면, 혹시 우리들과 놀러 왔어？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", "어머…/여자가 이런 데 오는 건 아니야/아니면, 혹시 우리랑 놀러온거야?"
 			ENDIF
-		;초견에 거절했다
+		;初見で断った
 		ELSE
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/전에도 왔었지%ハート()%/저기 아가야、오늘밤이야말로 누나들이랑 놀다 가지 않을래？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/전에도 왔었지%ハート()%/있지 얘야, 오늘밤이야말로 누나들이랑 놀다 가지 않을래?"
 			ELSEIF TALENT:MASTER:남자
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/전에도 와줬지%ハート()%/저기 오빠、오늘 밤이야 말로 우리랑 놀다 가지 않을래？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/전에도 왔었지%ハート()%/있지 오빠, 오늘밤이야말로 누나들이랑 놀다 가지 않을래?"
 			ELSEIF TALENT:MASTER:후타나리
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、그때의 특이한 여자애네/저기 아가씨、오늘은 어때？/우리랑 놀아 볼 생각이 들었어？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 그때 별난 애네/있지 부인, 오늘은 어때?/우리랑 놀아볼 생각은 들었어?"
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/아가씨、또 왔구나/길을 헷갈린 걸까？　그게 아니면、우리들이 목적？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/부인, 또 왔네/길은 잃은거려나?　아니면, 우리들이 목적?"
 			ENDIF
 		ENDIF
-	;2회째 이후 낙적이 불가하다
+	;2回目以降で身請け可でない
 	ELSEIF 롯폰기창관플래그:3 != 2
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머 아가야、또 온 거니？/그렇게나 우리들을 잊을 수 없던 거네…%ハート()%/저기、오늘도 누나들이랑 놀고 싶니？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머 얘야, 또 와줬네?/그렇게나 우리를 잊을 수 없었구나…%ハート()%/있지, 오늘밤도 누나들이랑 놀다 가지 않을래?"
 		ELSEIF TALENT:MASTER:남자
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/전에도 왔었지%ハート()%/저기 오빠、오늘도 우리랑 놀다 가지 않을래？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/전에도 왔었지%ハート()%/있지 오빠, 오늘밤도 우리랑 놀다 가지 않을래?"
 		ELSEIF TALENT:MASTER:후타나리
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、그 때의 특이한 여자애네/저기 당신、오늘은 어때？/또 우리랑 놀다 갈래？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 그때 별난 애네/있지 부인, 오늘은 어때?/또 우리랑 놀다 가지 않을래?"
 		ELSE
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…/아가씨、또 왔네/또 우리들이랑 놀고 싶은 거야？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머…/부인, 또 왔네/또 우리랑 놀다 가지 않을래?"
 		ENDIF
-	;나뷔 낙적 가능
+	;ナヴィ身請け可
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", @"＞오늘도 나뷔가 호객을 하고 있다/＞다른 아가씨들은호객을 하지 않는걸까…"
+		CALL MESSAGE_WINDOW_D, "", "＞오늘도 나뷔가 호객행위를 하고 있다/＞다른 아가씨들은 호객행위를 하지 않는 걸까…"
 		IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、오늘도 내가 있는 곳에 와 줬네…%ハート()%/저기 달링、오늘밤도 놀다 가지 않을래？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 오늘도 나한테 와줬구나…%ハート()%/있지 달링, 오늘밤도 놀고 갈거지?"
 		ELSEIF TALENT:MASTER:남자
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、오늘도 내가 있는 곳에 와 줬네…%ハート()%/저기 당시인、오늘밤도 놀다 가주는 거지"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 오늘도 나한테 와줬구나…%ハート()%/있지 당신, 오늘밤도 놀고 갈거지?"
 		ELSEIF TALENT:MASTER:후타나리
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、언니%ハート()%/오늘도 또、가랑이 사이의 그걸로 나를 귀여워해주는 거지？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 언니%ハート()%/오늘도 또, 고간에 있는 그거로 날 예뻐해줄거야?"
 		ELSE
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머、언니%ハート()%/오늘도 또、나를 귀여워 해주는 거지？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머, 언니%ハート()%/오늘도 또, 날 예뻐해줄거야?"
 		ENDIF
 	ENDIF
 
-	;놀까말까 선택
-	;通常選択(男、男の娘、ふたなりの場合、または身請け条件達成済みの場合)
+	;遊ぶか選択
+	;通常選択(男, 男の娘, ふたなりの場合, または身請け条件達成済みの場合)
 	IF TALENT:MASTER:남자 || TALENT:MASTER:오토코노코 || TALENT:MASTER:후타나리 || 롯폰기창관플래그:3 == 2
-		CALL INPUT_YN_D , "놀다 간다" , "그만둔다"
-	;女性の場合、指名なしで初回と2回目、指名した場合でそれぞれ違う選択
+		CALL INPUT_YN_D , "놀러 간다" , "그만둔다"
+	;女性の場合, 指名なしで初回と2回目, 指名した場合でそれぞれ違う選択
 	ELSEIF 롯폰기창관플래그:3 == 0 && 던전플래그:31:4 == 0
-		CALL INPUT_YN_D , "물론이다" , "그렇지 않다"
+		CALL INPUT_YN_D , "좋지" , "그럴 기분 아냐"
 	ELSEIF 롯폰기창관플래그:3 == 0 && 던전플래그:31:4 == 1
-		CALL INPUT_YN_D , "당신들이 목적" , "길을 잃었다"
+		CALL INPUT_YN_D , "아씨들이 목적" , "길을 잃었어"
 	ELSE
-		CALL INPUT_YN_D , "꼭 놀고싶어" , "길을 잃었다"
+		CALL INPUT_YN_D , "꼭 놀고싶다" , "길을 잃었어"
 	ENDIF
 
 	;YES
@@ -481,31 +481,31 @@ IF 롯폰기창관플래그:3 < 3
 		IF 롯폰기창관플래그:3 == 0 && (던전플래그:31:4 == 0 || 던전플래그:31:4 == 1)
 			;初めて
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"으～응、귀여워도 남자아이네%ハート()%/그럼、누나를 따라오도록 해？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"으~응, 귀여워도 오토코노코네%ハート()%/그럼, 누나를 따라와줘?"
 			ELSEIF TALENT:MASTER:남자 || TALENT:MASTER:후타나리
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄、최고의 밤을 만들어 줄게…%ハート()%/날 따라와？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄, 최고의 밤을 만들어줄게…%ハート()%/날 따라와줘?"
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"헤에、신기한 사람도 다 있네…/뭐어 좋아、그거라면 따라오도록 해"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", "헤에, 신기한 사람도 있네…/뭐 좋아, 그럼 따라와줘"
 			ENDIF
 		ELSEIF 롯폰기창관플래그:3 != 2
 			;2回目以降で身請け可でない
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"우～웅、얼굴은 귀여운데、마치 짐승 같네%ハート()%/그럼、또 누나들을 따라올래？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"으~응, 얼굴은 귀여운데, 그야말로 짐승이네%ハート()%/그럼, 또 누나를 따라와줘?"
 			ELSEIF TALENT:MASTER:남자 
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄、최고의 밤을 만들어 줄게…%ハート()%/그럼、또 날 따라오도록 해？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄, 최고의 밤을 만들어줄게…%ハート()%/그럼, 또 날 따라와줘?"
 			ELSEIF TALENT:MASTER:후타나리
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄、최고의 밤으로 만들어 줄게…%ハート()%/제대로 날 따라오도록 해？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그러엄, 최고의 밤을 만들어줄게…%ハート()%/날 제대로 따라와줘?"
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"아가씨、여자로 태어나서 손해일 지도 모르겠네…/자 그럼、알고 있겠지만 이쪽이야"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", "당신, 여자로 태어나서 손해보고 있을지도 모르겠어…/그럼, 알고 있겠지만 이쪽이야"
 			ENDIF
 		ELSE
 			;身請け可
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"자 그럼、오늘도 나를 골라줘%ハート()%/바람 피우면 싫다구、달링？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그럼, 오늘도 날 지명해줘%ハート()%/바람은 안 됀다구, 달링?"
 			ELSEIF TALENT:MASTER:남자
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"자 그럼、오늘도 나를 골라줘%ハート()%/바람 피우면 싫다구、다・앙・신？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그럼, 오늘도 날 지명해줘%ハート()%/바람은 안 됀다구, 여·보·야?"
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"자 그럼、꼭 나를 골라줘%ハート()%/다른 아이를 고르면 싫다구？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그럼, 꼭 날 지명해줘%ハート()%/다른 애들을 상대하면 안 된다구?"
 			ENDIF
 		ENDIF
 		;誘いに乗ったフラグを立てる
@@ -514,37 +514,37 @@ IF 롯폰기창관플래그:3 < 3
 		CALL DUNGEON_WORP,1,12,4
 	;NO
 	ELSE
-		;평상시
+		;通常時
 		IF 롯폰기창관플래그:3 != 2
 			IF TALENT:MASTER:남자 || TALENT:MASTER:오토코노코 || TALENT:MASTER:후타나리
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그래…　유감이네/마음이 변하면 또 와도 돼？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", "그래…　아쉽네/마음이 바뀌면 언제든지 와도 된다구?"
 			ELSE
-				;여성 거절시、첫회와 두번째 조언증정
+				;女性で断った場合, 初回と2回目でアドバイス付き
 				IF 롯폰기창관플래그:3 == 0 && 던전플래그:31:4 == 0
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"뭐、그렇겠지…/만약 당신이 이 거리에서 놀고 싶은 거라면、동쪽 가게를 추천할게/거기라면 좋은 남자들이 줄을 설거야"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", "뭐, 그렇겠지…/만약 당신이 이 도시에서 놀고 싶다면, 동쪽에 있는 가게를 추천할게/거기라면 좋은 남자가 잘 주선해줄거야"
 				ELSEIF 롯폰기창관플래그:3 == 0 && 던전플래그:31:4 == 1
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"뭐、그렇겠지…/만약 동쪽 가게에 가는 거라면、뒷골목을 지나치지는 않도록 해/꽤 위험한 꼴을 당하는 일이 많으니까、거기"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", "뭐, 그렇겠지…/만약 동쪽 가게에 가겠다면, 뒷골목으로 들어가지 않도록 해/꽤 위험한 일을 당하는 상황도 많으니까, 거기"
 				ELSE
-					CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그래、그럼 어쩔 수 없지/또 만나"
+					CALL MESSAGE_WINDOW_D, @"%LOCALS%", "그래, 그럼 별 수 없지/또 만나자"
 				ENDIF
 			ENDIF
-			;初見の場合、断ったフラグを立てる
+			;初見の場合, 断ったフラグを立てる
 			SIF 던전플래그:31:4 == 0
 				던전플래그:31:4 = 1
-		;낙적가능
+		;身請け可
 		ELSE
 			IF TALENT:MASTER:남자 && TALENT:MASTER:오토코노코
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"우～응、안돼나/뭐、그렇게 부끄러워 하는것도 귀엽네/침대 위에서랑은 다른사람 같아%ハート()%"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"으~응, 가지마아/그래도, 그렇게 부끄러워 하는 것도 귀여운거지/침대 위랑은 다른 사람 같아%ハート()%"
 			ELSE
-				CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어머나…오늘은 어딘가에 용무가 있는걸까/그럼、그것이 끝나면 나에게 와줘？"
+				CALL MESSAGE_WINDOW_D, @"%LOCALS%", "어머…오늘은 어딘가에 볼일이 있는걸까/그럼, 그 일 끝나면 나한테 와줘?"
 			ENDIF
 		ENDIF
 	ENDIF
-;ナヴィ身請け済みの場合、代理の客引き
+;ナヴィ身請け済みの場合, 代理の客引き
 ELSEIF 롯폰기창관플래그:3 > 3
 	IF 롯폰기창관플래그:2 > 3 || 롯폰기창관플래그:4 > 3  || 롯폰기창관플래그:5 > 3 || 롯폰기창관플래그:6 > 3 
-		;나뷔 이외에도 낙적이 완료된 경우, 복수로 호객꾼
-		CALL MESSAGE_WINDOW_D, "", @"＞낙적한 나비를 대신하여, 신인의 아가씨들이 호객하고 있다."
+		;ナヴィ以外も身請け済みの場合, 複数で客引き
+		CALL MESSAGE_WINDOW_D, "", "＞낙적한 나뷔를 대신해, 신인 아가씨들이 호객행위를 하고 있다"
 		
 		;ここで相手を抽選
 		FOR LCOUNT, 12, 17
@@ -556,112 +556,112 @@ ELSEIF 롯폰기창관플래그:3 > 3
 		NEXT
 		客引き = 客引きテーブル:(RAND:LOCAL)
 	ELSE
-		;나머지는 실리가
-		CALL MESSAGE_WINDOW_D, "", @"＞낙적한 나뷔를 대신하여 드라이어드가 호객행위를 하고 있다."
+		;それ以外はシリー単体で客引き
+		CALL MESSAGE_WINDOW_D, "", "＞낙적한 나뷔를 대신해, 드리아드가 호객행위를 하고 있다"
 		客引き = 13
 	ENDIF
 
 	IF 客引き == 12
-		;세실리아 호객
-		;지명한 적 없음
+		;セシリア客引き
+		;指名した事ない
 		IF 롯폰기창관플래그:12 == 0 
 			LOCALS = 엘프
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"미안하다。조금 시간 괜찮을까…？/거기의 창관의 사람인데、일손이 부족해서 움직이면서 호객중이야…"
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"만약、시간과 주머니 사정에 여유가 있다면/도와준다고 생각하고 놀고가지 않을래？"
-		;지명한 적 있다
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "미안해. 조금 시간이 될까…?/저쪽 창관 사람인데, 사람이 부족해서 주변을 돌면서 호객하고 있어…"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "만약 시간이랑 주머니 사정에 여유가 있다면/돕는 셈 치고 놀다 가지 않겠어?"
+		;指名した事あり
 		ELSE
 			LOCALS = 세실리아
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"…오오！또 만났구나！/아니ーこ이런 일에는 익숙하지 않으니까、아는 사람을 만나면 조금 안심이 돼"
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"손님을 데려가면 당분간 매장으로 돌아갈 수 있으니、/나를 도와준다고 생각하고 같이 가주면 안될까？"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "…오오! 또 만났네!/이야ー이런 일에 익숙치 않아서, 아는 사람을 만나니 조금 안심이 되는걸"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "손님을 안내하면 당분간은 가게 안으로 돌아갈 수 있으니까,/날 돕는 셈 치고 같이 와주면 안될까?"
 		ENDIF
 	ELSEIF 客引き == 13
-		;실리 호객중
-		;지명한 적 없음
+		;シリー客引き
+		;指名した事ない
 		IF 롯폰기창관플래그:13 == 0 
-			LOCALS = 드라이어드
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"아！거기 맛있어 보이는 너/우리랑 조금 놀지 않을까나☆"
-		;지명한 적 있음
+			LOCALS = 드리아드
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "아! 거기 맛있어보이는 당신/우리랑 좀 놀지 않을래☆"
+		;指名した事あり
 		ELSE
-			LOCALS = 실리
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"아아ー！저번의 맛있는 인가안/또 우리랑 놀아보지 않을까나☆"
+			LOCALS = 시리
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "아아ー! 요전의 맛있는 사라암/또 우리랑 놀다 가지 않을래☆"
 		ENDIF
 	ELSEIF 客引き == 14
-		;코트니 호객중
-		;지명한 적 없음
+		;コートニー客引き
+		;指名した事ない
 		IF 롯폰기창관플래그:14 == 0 
 			LOCALS = 네코마타
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"잠깐 거기 지나가는 형씨！/애니멀 세라피라고 하던가？지금이라면 충분히 네코를 즐길 수 있어요ー"
-		;지명한 적 있음
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "잠깐 거기 길 가는 서방님!/애니멀 세라피 필ー요하지 않아? 지금이라면 충분히 고양이 볼 수 있다구ー"
+		;指名した事あり
 		ELSE
-			LOCALS = 코트니
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"잠깐 거기 지나가는 형씨！/나와 플라이・어웨이에 로망히코 하지 않을래？"
+			LOCALS = 코토니
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "잠깐 거기 길 가는 서방님!/내랑 FLY·AWAY한 로망 맛보러 가지 않ー을래?"
 		ENDIF
 	ELSEIF 客引き == 15
-		;카스밍 호객중
-		;지명한 적 없음
+		;カスミン客引き
+		;指名した事ない
 		IF 롯폰기창관플래그:15 == 0 
 			LOCALS = 마유 가이아교도
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"아아아！！이놈도 저놈도 전부 위기감이 부족해ー！/나는 인솔선생이 아니야！"
-			CALL MESSAGE_WINDOW_D, "", @"＞아무래도 귀찮은 손님을 내쫒고 있었던 것 같다/옆에 있는 다른 아가씨가 걱정스럽게 보고 있다"
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"이제 귀찮으니까 적당히 가게로 데려가！/거기 너면 돼。너 안내해주마"
-		;지명한 적 있음
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "으아아악!! 이놈이고 저놈이고 위기감이 겁나 부족하네ー!/난 인솔 담당 선생 아니라고!"
+			CALL MESSAGE_WINDOW_D, "", "＞아무래도 귀찮은 손님을 쫒아내고 있었던 것 같다/옆에 있는 다른 아씨가 걱정스레 보고 있다"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "이제 짜증나니까 적당히 가게에 보내줘!/거기 저녀석이라도 좋아. 이녀석 안내해"
+		;指名した事あり
 		ELSE
 			LOCALS = 카스밍
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"적재적소란 말을 모르는거냐！オ나 한테 선전따윌 시키는거 아니야！！/……응？켁！또 만났나…"
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"좋아 이제 당신이면 돼。일단 가게에 데려가면 속일 수 있잖아！"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "적재적소란 말 모르냐고!! 나한테 선전 맡기지 말라고오!!/……응? 켁! 또 만났네…"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "뭐 당신으로 좋겠다. 일단 가게에 데려가면 속일 수 있겠네!"
 		ENDIF
 	ELSEIF 客引き == 16
-		;에이프릴 호객중
-		;지명한 적 없음
+		;エイプリル客引き
+		;指名した事ない
 		IF 롯폰기창관플래그:16 == 0 
 			LOCALS = 알프
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"오늘 밤 파티 예정은 어떨까요ー？/밤의 꽃이나 나비가 춤추는 무도회、지금이라면 초대장도 드려요ー"
-		;지명한 적 있음
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "오늘밤 파티 예정은 어때요?/밤의 꽃과 나비가 춤추는 무도회, 지금이라면 초대장도 달아드린답니다ー"
+		;指名した事あり
 		ELSE
 			LOCALS = 에이프릴
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"안녕하세요。오늘밤도 무도회의 권유가 왔어요ー/너와 함께라면、또 즐거운 스텝을 밟을 수 있을 것 같아！"
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "안녕하세요. 오늘밤도 무도회 권유로 왔어요ー/당신이라면, 또 즐거운 스텝을 밟을 수 있을 것 같아!"
 		ENDIF
 	ENDIF
 	
 	;遊ぶか選択
-	;シリー客引きで指名した事ある場合、オマケ選択あり
+	;シリー客引きで指名した事ある場合, オマケ選択あり
 	IF 客引き == 13 && 롯폰기창관플래그:13 != 0 
-		CALL INPUT_SELECT_D, "[0] 놀고간다/[9] 거기의 골목에서…/[1] 그만둔다/",,, 2
+		CALL INPUT_SELECT_D, "[0] 놀러간다/[9] 저기 골목에서…/[1] 그만둔다/",,, 2
 	ELSE
-		CALL INPUT_YN_D , "놀다간다" , "그만둔다"
+		CALL INPUT_YN_D , "놀러간다" , "그만둔다"
 	ENDIF
 	;YES
 	IF RESULT == 0
 		IF 客引き == 12
-			;세실리아 호객중
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그、그런가！！매우 도움이 된다！/……그、그런데 너는 여기사를 좋아하나？지금이라면 엘프의 기사를 지명할 수 있다고"
+			;セシリア客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "그, 그런가!! 진심으로 살았어!/……그, 그런데 너는 여기사를 좋아해? 지금은 엘프 기사를 지명할 수 있어"
 		ELSEIF 客引き == 13
-			;실리 호객중
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"네ー에☆한분 들어갑니다ー！/괜찮으시다면 저를 지명해주실래요？"
+			;シリー客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "네ー에☆ 한 분 안내ー!/괜찮으시다면 절 골라줘야 해?"
 		ELSEIF 客引き == 14
-			;코트니 호객중
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"하잇! 어서옵셔ー！아、이자카야가 아니었지 미안！/사과로 지명해주면 서비스할게！"
+			;コートニー客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "네 부디ー! 아, 주점은 아니라서 미안해!/사과로 내를 골라주면 서비스해줄게!"
 		ELSEIF 客引き == 15
-			;카스밍 호객중
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"오우、그거면 된다고/그럼、여기 이 녀석한테 안내시킬 테니까 가게로 가라고？"
-			CALL MESSAGE_WINDOW_D, "", @"＞같이 있던 다른 아가씨의 안내로 가게에 들어가게 되었다"
+			;カスミン客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "오, 그걸로 됐어/그럼, 저녀석한테 안내시켜 줄 테니까 가게에 들어가 있어라?"
+			CALL MESSAGE_WINDOW_D, "", "＞같이 왔던 다른 아가씨의 안내로 가게에 들어가게 되었다"
 		ELSEIF 客引き == 16
-			;에이프릴 호객중
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"그럼 꿈속(댄스 플로어)로 어서오세요！/파트너가 필요하면 나를 선택해줘？잘 리드해줄게"
+			;エイプリル客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "그럼 꿈속(탠스 플로어)으로 안ー내!/파트너를 잃으면 날 지명해줘? 잘 리드해 줄테니까"
 		ENDIF
 		CALL DUNGEON_WORP,1,12,4
 	ELSEIF RESULT == 9 && 롯폰기창관플래그:13 != 0
-		;골목에서 일발
-		CALL MESSAGE_WINDOW_D, "", @"＞안타깝게도 가게에 들릴만큼 시간에 여유가 없다/하지만、잠깐이라면 상대할 수 있는데、어때？/라고、반대로 권유해 보았다…"
-		CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"후후、따먹으려는 거네요☆저도 좋아해요 그런거"
+		;路地裏で一発
+		CALL MESSAGE_WINDOW_D, "", "＞유감스럽게도 가게에 들를 만큼 시간이 여유롭지 않다/하지만 조금이라면 상대할 수 있는데, 어때?/하고, 역으로 유혹해 보았다…"
+		CALL MESSAGE_WINDOW_D, @"%LOCALS%", "후후, 따먹히겠네요☆ 저도 좋아해요 그런거"
 		CALL SHOW_PICTURE, "EMPTY"
 		CALL DUNGEON_WORP,1,22,4
-		CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"여기라면 겉으로는 보이지 않으니까、바로 합시다☆"
-		CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"몰래 독차지 해버리는 죄의 맛☆ 잘 먹겠습니다"
-		CALL MESSAGE_WINDOW_D, "", @"………………/…………/……"
+		CALL MESSAGE_WINDOW_D, @"%LOCALS%", "여기라면 겉으로 보이지도 않고, 빨리 하죠☆"
+		CALL MESSAGE_WINDOW_D, @"%LOCALS%", "몰래 독차지하는 배덕의 맛☆ 잘먹겠습니다아"
+		CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 		CALL SHOW_PICTURE, "EMPTY"
-		CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"…음☆ 이 맛은 역시……대박이네요！/버릇이 될 것 같아…"
-		CALL MESSAGE_WINDOW_D, "", @"＞즐겁게 놀았다…"
+		CALL MESSAGE_WINDOW_D, @"%LOCALS%", "…으응☆ 이 맛은 역시……개쩌네요!/버릇이 될 것 같아…"
+		CALL MESSAGE_WINDOW_D, "", "＞재미있게 놀았다…"
 		
 		EXP:MASTER:성교경험 += 1
 		EXP:MASTER:절정경험 += 2
@@ -680,20 +680,20 @@ ELSEIF 롯폰기창관플래그:3 > 3
 	;NO
 	ELSE
 		IF 客引き == 12
-			;세실리아 客引き
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"……역시 안돼는건가。다른 곳을 알아보지/만약 마음이 바뀌면 언제든지 와줘"
+			;セシリア客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "……역시 안 되는가. 딴 데 알아볼게/만약 마음이 바뀐다면 언제든지 와줘"
 		ELSEIF 客引き == 13
-			;실리 客引き
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"안됐넹。그럼 다음에 또 봐요☆"
+			;シリー客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "유ー감. 다음에 또 와줘☆"
 		ELSEIF 客引き == 14
-			;코트니 客引き
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"뭐 그럴 때도 있는거지。마음 내키면 또 와ー！"
+			;コートニー客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "뭐 그럴 때도 있는거지ー. 내키면 또 와줘ー!"
 		ELSEIF 客引き == 15
-			;키스밍 客引き
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"아앙？귀찮게…/볼일 없으면 얼른 꺼져！"
+			;カスミン客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "아앙? 귀찮게 구네ー…/볼일 없으면 다른데로 빨리 꺼져!"
 		ELSEIF 客引き == 16
-			;에이프릴 客引き
-			CALL MESSAGE_WINDOW_D, @"%LOCALS%", @"어라라…선약이 있었구나/다음 시즌에 또 만나자ー！"
+			;エイプリル客引き
+			CALL MESSAGE_WINDOW_D, @"%LOCALS%", "어라라…선약이 있었나봐요/다음 시즌에 다시 만나죠ー!"
 		ENDIF
 	ENDIF
 ENDIF
