@@ -7,9 +7,9 @@ SELECTCASE ARGS
 	CASE "娼婦番号"
 		RESULTS = [1021]
 	CASE "キャラ名"
-		RESULTS = 傷アリ女子中学生
+		RESULTS = 상처 있는 여중생
 	CASE "指名名"
-		RESULTS = 傷アリ女子中学生
+		RESULTS = 상처 있는 여중생
 	CASE "所属"
 		;表なら1、裏なら2、援助なら3
 		RETURN 3
@@ -26,48 +26,48 @@ SELECTCASE ARGS
 		RETURN 50
 	CASE "紹介文"
 		IF 롯폰기창관플래그:21 == 0
-			CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"彼女はー/お口えっちで援助して欲しいみたいですー"
-			CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"お顔に傷が入ってるからー/避ける人も多いんですけどー/えっち結構上手ですよー"
-			CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"なんだか訳アリのようでー/どこかから逃げてきたとか―/お金がいっぱいいるんだとかー"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "그녀는―/구강 섹스로 원조해주었으면 하는 것 같습니다―"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "얼굴에 상처가 있어서―/기피하는 사람도 많지만―/결국 섹스 하난 잘 하거든요―"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "왜인지 이유 있는 것 같아서―/어디선가 도망쳐 왔다든가―/돈이 많이 있다던가―"
 		ELSE
-			CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"あの子のお口―/クセになっちゃいましたー？"
-			CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"壊れたCOMPを直してー/仲魔を集めなおすためにー/まだまだお金がいるんだとかー"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "그 애의 입―/버릇이 되어버리셨나요―?"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "망가진 COMP를 고쳐서―/동료마를 다시 모으기 위해―/아직 돈이 있다던가―"
 		ENDIF
 	CASE "確認"
-		CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"５０マッカでの援助を希望しておりますがー/どうしますかー？"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "50 마카로 원조를 희망하고 있는데―/어떠십니까―?"
 	CASE "プレイ口上"
 		IF 롯폰기창관플래그:21 == 0
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………"
-			CALL MESSAGE_WINDOW_D, "", @"＞現れたのは顔に傷がついた、ローティーンぐらいの不愛想な女の子だ/＞傷こそついているが美麗な顔と程よく発育した体が期待できる/＞……どこかで見たことがある気がした"
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………え？/……なんで、ここに"
-			CALL MESSAGE_WINDOW_D, "", @"＞どこかで会ったんだったか。少女に尋ねてみるが、少女は不快そうに首を振った"
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……なんでもない/……早く、しましょ"
-			CALL MESSAGE_WINDOW_D, "", @"………………/…………/……"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………"
+			CALL MESSAGE_WINDOW_D, "", "＞나타난 것은 얼굴에 상처가 난 13∼15세 정도의 무뚝뚝한 여자애다/＞상처가 있지만 예쁜 얼굴에 알맞게 발육한 몸을 기대할 수 있다/＞……어디선가 본 적이 있는 것 같았다"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………어?/……어째서, 여기에"
+			CALL MESSAGE_WINDOW_D, "", "＞어디서 만났나? 소녀에게 물어봤지만, 소녀는 불쾌한 듯이 고개를 내저었다"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……아무것도/……빨리, 하자"
+			CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 			CALL SHOW_PICTURE, "EMPTY"
 					IF TALENT:MASTER:남자 || TALENT:MASTER:후타나리
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……んっ、ちゅぷ、んむ……ちゅぱ……/……っ、んっ、く……ごきゅ……っ/けほっ、うえ……っ"
-						CALL MESSAGE_WINDOW_D, "", @"＞傷アリ女子中学生は" + CALLNAME:MASTER + "が口内に吐き出した精液を吐き出した/＞その表情は苦しそうで慣れているようには見えなかった…"
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………満足した？/……じゃあ、早く、マッカちょうだい/うぇ、まだ味残ってる……"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……으음, 츄븝, 우음……츄릅……/……읏, 으응, 크……쥬릇……/케흡, 으에……엑"
+						CALL MESSAGE_WINDOW_D, "", @"＞상처 있는 여중생은 %마스터가% 입안에 뱉은 정액을 토해냈다/＞그 표정은 괴로워 보여서 익숙지 않은 것 같았다…"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………만족했어?/……그럼, 빨리, 마카 줄래/으에, 아직도 입에 남았어……"
 					ELSE
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……んっ、れろ、んむ……ちゅむ……/……っ、んっ、く……う……っ/む、ぐ……っ"
-						CALL MESSAGE_WINDOW_D, "", @"＞傷アリ女子中学生は" + CALLNAME:MASTER + "の愛液で汚れた唇を袖で拭った/＞その表情は苦しそうで慣れているようには見えなかった…"
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………満足した？/……じゃあ、早く、マッカちょうだい/なんで、こんなとこ舐めさせたがるんだか……"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……으음, 핥짝, 우음……츄븝……/……윽, 으응, 크……으……읏/므으, 그……윽"
+						CALL MESSAGE_WINDOW_D, "", @"＞상처 있는 여중생은 %CALLNAME:MASTER%의 애액으로 더러워진 입술을 소매로 닦았다/＞그 표정은 괴로워 보여서 익숙지 않은 것 같았다…"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………만족했어?/……그럼, 빨리, 마카 줄래/왜, 이런 데 핥게 하는 걸까……"
 					ENDIF
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……ちゃんとマッカくれるなら、また来ていいよ/だいたい毎晩ここにいるから……"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……마카만 잘 준다면, 또 와도 돼/어지간해선 매일 밤 여기에 있으니까……"
 			;経験フラグを設定
 			롯폰기창관플래그:21 = 1
 		ELSE
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……また来たの？/……別にいいけど/ちゃんと、マッカあるなら"
-			CALL MESSAGE_WINDOW_D, "", @"………………/…………/……"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……또 온 거야?/……뭐 좋지만/마카만, 제대로 준다면"
+			CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 			CALL SHOW_PICTURE, "EMPTY"
 					IF TALENT:MASTER:남자 || TALENT:MASTER:후타나리
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……んっ、ちゅぷ、んむ……ちゅぱ……/……っ、んっ、く……ごきゅ……っ/ぷは……っ"
-						CALL MESSAGE_WINDOW_D, "", @"＞傷アリ女子中学生は" + CALLNAME:MASTER + "が口内に吐き出した精液を飲み込んだ/＞態度は不愛想だが、吸い取るような丁寧な奉仕だった…"
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………満足した？/……じゃあ、早く、マッカちょうだい/なんで、こんなもの飲ませたがるんだか……"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……음, 츄븝, 우음……츄릅……/……읏, 으응, 크……쮸웁……/푸하……아"
+						CALL MESSAGE_WINDOW_D, "", @"＞상처 있는 여중생은 %마스터가% 입안에 뱉은 정액을 삼켰다/＞태도는 딱딱하지만, 빨아들이는 듯한 정중한 봉사였다…"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………만족했어?/……그럼, 빨리, 마카 줄래/왜, 이런 거 삼키게 하는 걸까……"
 					ELSE
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……んっ、れろ、んむ……ちゅむ……/……っ、んっ、く……う……っ/ぷは……っ"
-						CALL MESSAGE_WINDOW_D, "", @"＞傷アリ女子中学生は" + CALLNAME:MASTER + "の愛液で汚れた唇を舌で舐めとった/＞態度は不愛想だが、手慣れた丁寧な奉仕だった…"
-						CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………満足した？/……じゃあ、早く、マッカちょうだい/気持ちよかったなら、いいけど……"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……으음, 핥짝, 우음……츄븝……/……윽, 으응, 크……으……읏/푸하……아"
+						CALL MESSAGE_WINDOW_D, "", @"＞상처 있는 여중생은 %CALLNAME:MASTER%의 애액으로 더러워진 입술을 혀로 핥았다/＞태도는 딱딱하지만, 숙달된 정중한 봉사였다…"
+						CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………만족했어?/……그럼, 빨리, 마카 줄래/기분 좋았다면, 다행이고……"
 					ENDIF
 			;見受け可能フラグを設定
 			롯폰기창관플래그:21 = 2
@@ -87,45 +87,45 @@ SELECTCASE ARGS
 	CASE "身受け価格"
 		RETURN 200
 	CASE "身受け確認"
-		CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"あの子のおまんこ、興味あります―？/お金がもっと必要みたいで―/ちょっと前から本番始めたんですよー"
-		CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"固定客も何人かいるみたいでー/締まりがいいって結構評判ですよー？"
-		CALL MESSAGE_WINDOW_D, "露出したウェイトレス", @"２００マッカ出せば本番をしても良いとのことですがー/いかがいたしますかー？"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "저 애의 보지, 흥미있나요―?/돈이 더 필요할 거 같아서―/얼마 전부터 본방 시작했거든요―"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "고정 손님도 몇 명 있는 것 같아서―/조임이 좋다고 소문이 자자하다구요―?"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "200 마카를 내면 본방에 들어가도 좋다고 하는데―/어떠신가요―?"
 	CASE "身受け口上"
 	;キャラ加入はしません。遊べるだけです。
 		IF TALENT:MASTER:남자 || TALENT:MASTER:후타나리
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……そう、あなたなの/……別に/……誰でも変わらないよ"
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……えっち、するんでしょ？/……はやく、行きましょ"
-			CALL MESSAGE_WINDOW_D, "", @"………………/…………/……"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……그래, 당신이구나/……딱히/……누구라도 다른 건 없어"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……섹스, 할 거잖아?/……빨리, 하러 가자"
+			CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 			CALL SHOW_PICTURE, "EMPTY"
 			SELECTCASE RAND:3
 				CASE 0
 					;路地裏エッチ
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"うぁ……っ、ダメ、だめぇ……っ、こんな、とこで……っ！？"
-					CALL MESSAGE_WINDOW_D, "", @"＞" + CALLNAME:MASTER + "はホテルに行く間も惜しがって傷アリ女子中学生を路地裏で犯した/＞言葉とは裏腹に、その膣は具合よく肉棒を咥えこんでいた…"
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"っ！？　やっ、見られて、……る、から……あっ……！？"
-					CALL MESSAGE_WINDOW_D, "", @"＞ニヤニヤと見物するギャラリーたちに見せつけるように" + CALLNAME:MASTER + "は傷アリ女子中学生の膣内を精液で汚した…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "으아……앗, 안돼, 안됏……, 이런, 곳에서……!?"
+					CALL MESSAGE_WINDOW_D, "", @"＞%마스터는% 호텔 가는 시간도 아까워서 상처 있는 여중생을 골목에서 범했다/＞말과는 달리, 그 질은 상태 좋게 육봉을 물고 있었다…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "읏!?　싫엇, 보여지고……있으, 니까……앗……!?"
+					CALL MESSAGE_WINDOW_D, "", @"＞히죽거리며 구경하는 관중들에게 보여주듯 %마스터는% 상처 있는 여중생의 질내를 정액으로 더럽혔다…"
 				CASE 1
 					;ラブホエッチ
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"あ……っ、く……っ、はぁ……っ……んぅ……っ"
-					CALL MESSAGE_WINDOW_D, "", @"＞" + CALLNAME:MASTER + "はラブホテルの部屋に傷アリ女子中学生を連れ込むなりその場で押し倒した/＞少女の膣内は年齢に見合わない熟れた具合の良さで肉棒を受け入れた…"
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"……もう、出るの……っ、最後は、口に……っ……"
-					CALL MESSAGE_WINDOW_D, "", @"＞その言葉に従って" + CALLNAME:MASTER + "は傷アリ女子中学生の膣内から肉棒を抜くと、少女の顔を引き寄せ口内で射精した…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "아……, 큿……, 하아……앗……응흣……"
+					CALL MESSAGE_WINDOW_D, "", @"＞%마스터는% 러브호텔의 어느 방에 상처 있는 여중생을 데려오자마자 그 자리에서 밀어 넘어뜨렸다/＞소녀의 질내는 나이에 걸맞지 않게 잘 익은 상태로 육봉을 받아들였다…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "……이제, 빼줘……, 마지막은, 입으로……읏……"
+					CALL MESSAGE_WINDOW_D, "", @"＞그 말에 따라 %마스터는% 상처 있는 여중생의 질내에서 육봉을 빼고, 소녀의 얼굴을 가까이 당겨 입안에 사정했다…"
 				CASE 2
 					;トイレエッチ
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"や……っ、いや、いやぁ……っ、こんな、きたない……っ！？"
-					CALL MESSAGE_WINDOW_D, "", @"＞" + CALLNAME:MASTER + "はホテルに行く間も惜しがって傷アリ女子中学生を男子トイレで犯した/＞言葉とは裏腹に、その膣は具合よく肉棒を咥えこんでいた…"
-					CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"っ！？　あ、くぅ……なか、だめ……っ……！？"
-					CALL MESSAGE_WINDOW_D, "", @"＞その言葉を無視して" + CALLNAME:MASTER + "は傷アリ女子中学生の膣内を精液で汚した…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "꺅……, 싫어, 싫어엇……, 이런, 불결한……읏!?"
+					CALL MESSAGE_WINDOW_D, "", @"＞%마스터는% 호텔 가는 시간도 아까워서 상처 있는 여중생을 남자 화장실에서 범했다/＞말과는 달리, 그 질은 상태 좋게 육봉을 물고 있었다…"
+					CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "읏!?　아, 끄으……안은, 안돼……엣……!?"
+					CALL MESSAGE_WINDOW_D, "", @"＞그 말을 무시하고 %마스터는% 상처 있는 여중생의 질내를 정액으로 더럽혔다…"
 				ENDSELECT
 		ELSE
 			;レズエッチ
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"こ、これで、いい……？　気持ちいいの……？"
-			CALL MESSAGE_WINDOW_D, "", @"＞" + CALLNAME:MASTER + "はラブホテルの一室で傷アリ女子中学生にペニスバンドを装着させて腰を振らせた/＞戸惑うような言葉とは裏腹にどこか興奮しているようだ…"
-			CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"っ、も、もうイくの……？　こんなので、イっちゃうの……っ？"
-			CALL MESSAGE_WINDOW_D, "", @"＞初々しい傷アリ女子中学生の腰振りがいじらしく感じられて" + CALLNAME:MASTER + "は小さく絶頂した…"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "이, 이걸로, 좋아……?　기분 좋아……?"
+			CALL MESSAGE_WINDOW_D, "", @"＞%마스터는% 러브호텔의 어느 방에서 상처 있는 여중생에게 페니스 밴드를 장착시키고 허리를 흔들게 했다/＞당황한 듯한 말과는 달리 어딘가 흥분하고 있는 것 같다…"
+			CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "읏, 이, 이제 가버리는거야……?　이런 거로, 가는거야……아?"
+			CALL MESSAGE_WINDOW_D, "", @"＞풋풋한 상처 있는 여중생의 허리놀림이 귀엽게 느껴져서 %마스터는% 살짝 절정했다…"
 		ENDIF
-		CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"…………/……べつに、怒ってない/……いいから、早くマッカちょうだい"
-		CALL MESSAGE_WINDOW_D, "傷アリ女子中学生", @"ん、マッカ、ありがと……/……またマッカくれるなら、来てもいいよ/……でも、あんまり変なの、嫌だから"
+		CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "…………/……별로, 화난 건 아니야/……됐으니까, 빨리 마카나 줘"
+		CALL MESSAGE_WINDOW_D, "상처 있는 여중생", "응, 마카, 고마워……/……또 마카 준다면, 또 와도 좋아/……그래도, 너무 이상한 건, 싫으니까"
 		EXP:MASTER:성교경험 += ABL:MASTER:기교 * ABL:MASTER:욕망 * 2 + 1
 		EXP:MASTER:절정경험 += ABL:MASTER:기교 * ABL:MASTER:욕망
 		JUEL:MASTER:쾌Ｃ += ABL:MASTER:기교 * ABL:MASTER:욕망 * 300 + 500

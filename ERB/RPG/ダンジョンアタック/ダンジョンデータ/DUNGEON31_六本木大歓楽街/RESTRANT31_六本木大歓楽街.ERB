@@ -79,22 +79,22 @@ SELECTCASE RESULT
 		CALL MESSAGE_WINDOW_D, "", @"%조사처리(RESULTS,"를")% 원조하시겠습니까?"
 		CALL INPUT_YN_D , "원조한다" , "다른 계집으로 한다"
 		IF RESULT == 0
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"그러며연/저쪽 개인실에서 기다려 주세요―"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "그러며연/저쪽 개인실에서 기다려 주세요―"
 			CALLFORM SORP_PLAY_{LOCAL}, "価格"
 			MONEY:1 -= RESULT
 			CALLFORM SORP_PLAY_{LOCAL}, "プレイ口上"
 			CALL DUNGEON_WORP,2,14,1
 		ELSE
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"따로 희망하는 소녀는―/있으신가요―?"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "따로 희망하는 소녀는―/있으신가요―?"
 			GOTO REST_LOOP_2
 		ENDIF
 	CASE 4
 		;お持ち帰り
-		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"여자아이를―/데려가시나요―?"
+		CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "여자아이를―/데려가시나요―?"
 		CALLFORM SORP_CAN_BUY_COUNT_NEW, 3
 		LOCAL = RESULT
 		IF LOCAL == 0
-			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", @"유감스럽게도 데려가기를 바라는 여자아이가 없어요―/본점은 어디까지나 중개라서―/여자아이의 동의가 없다면 데려가실 수 없어요―"
+			CALL MESSAGE_WINDOW_D, "노출한 웨이트리스", "유감스럽게도 데려가기를 바라는 여자아이가 없어요―/본점은 어디까지나 중개라서―/여자아이의 동의가 없다면 데려가실 수 없어요―"
 			GOTO REST_LOOP
 		ENDIF
 		$REST_LOOP_3
