@@ -287,7 +287,7 @@ IF 던전플래그:70:96 == 1
 ENDIF
 IF FLAG:DEBUG == 1
 	SETCOLOR 0x00ffff
-	PRINTFORMW 디버그 중이므로 바로가기 계단이 발생합니다
+	PRINTW 디버그 중이므로 바로가기 계단이 발생합니다
 	RESETCOLOR
 ENDIF
 ;階層리셋
@@ -325,12 +325,12 @@ IF 던전플래그:70:0 == 0
 	PRINTL 그것은 하루와 하루의 틈에 존재하는 수수께끼의 시간.
 	PRINTL 그리고 나타나는 거대한 탑, 그 이름은 타르타로스.
 	PRINTFORML %조사처리(CALLNAME:MASTER,"는")% 그곳에 발을 디뎠다.
-	PRINTFORMW ………
-	PRINTFORMW ……
-	PRINTFORMW …
+	PRINTW ………
+	PRINTW ……
+	PRINTW …
 	PRINTFORMW 엔트런스에 들어서자 %CALLNAME:MASTER%의 눈에 몆 명의 소년소녀들이 보였다.
 	PRINTW 이쪽을 눈치챘는지 그들 중에서도 유달리 매력적인 여성이 인사를 보냈다.
-	PRINTFORMW 「%CALLNAME:MASTER%씨군요？」
+	PRINTFORMW 「%CALLNAME:MASTER% 씨군요?」
 	PRINTW 「이쿠츠키 이사장에게서 이야기는 들었습니다」
 	PRINTW 「키리조 미츠루라고 합니다」
 	PRINTW 「저희는 월광관 학원의 특별 과외 활동부」
@@ -827,7 +827,7 @@ CASE 4
 						RETURN 0
 					ELSEIF 던전플래그:70:(1) == 0
 						PRINTW 「그 뭐냐, 악마사역자?」
-						PRINTW 「괴물 끌도 다니며 무섭지 않나―라는 생각도 하는데」
+						PRINTW 「괴물 끌고 다니며 무섭지 않나―라는 생각도 하는데」
 					ELSEIF 던전플래그:70:(1) == 1
 						PRINTW 「6층 정도부터 비너스 이글이란 새가 나오는데요」
 						PRINTW 「빠르지 강하지 바람으로 토막을 치지, 애먹으니까 조심하는 편이 좋심다」
@@ -860,10 +860,10 @@ CASE 4
 					PRINTW 아키히코가 있다.
 					IF 던전플래그:70:(1) == 0
 						;PRINTW 「少し前にシャドウの襲撃に遭い怪我を負ってな」
-						PRINTW 「じっくり調査していたら変なシャドウの襲撃に遭い怪我を負ってな」
-						PRINTW 「怪我を治せと美鶴に止められてベンチ入りの状態だ」
+						PRINTW 「빡세게 조사하고 있다가 이상한 쉐도의 습격에 부상을 입었어」
+						PRINTW 「부상을 치료하라고 미츠루한테 저지돼서 벤치에 들어선 상태고」
 						SETCOLOR 0xff0000				;赤文字にする
-						PRINTW 「同じ階層に長時間いると出てくるらしい。気を付けてくれ」
+						PRINTW 「같은 계층에 장시간 있으면 나오는 것 같아. 조심해라」
 						RESETCOLOR						;文字色を元に戻す
 					ELSEIF 던전플래그:70:(1) == 1
 						PRINTW 「부상도 아물어 겨우 나도 탐색에 참가할 수 있군」
@@ -921,7 +921,7 @@ CASE 4
 						ENDIF
 					ELSE
 						IF 던전플래그:70:(1) < 2
-							PRINTW 「그들은 아직 가입하고서 경험도 일천하지만, 보는 바로는 높은 포텐션을 숨기고 있습니다」
+							PRINTW 「그들은 아직 가입하고서 경험도 일천하지만, 보는 바로는 높은 포텐셜을 숨기고 있습니다」
 							PRINTW 「그걸 잘 뽑아낼 수 있으면 좋겠습니다만……」
 						ELSE
 							PRINTW 「저도 탐색에 참가하고 싶습니다만」
@@ -940,7 +940,7 @@ CASE 4
 					ELSEIF 던전플래그:70:(22)>=2
 						SELECTCASE RAND:2
 							CASE IS == 0
-								PRINTW 「적의 애널라이즈는 싸움을 계속하거나 ＣＯＯＰ로 알아낼 수 있어요…」
+								PRINTW 「적의 애널라이즈는 싸움을 계속하거나 ＣＯ―ＯＰ로 알아낼 수 있어요…」
 								PRINTW 「마카로 교환할 수 있는 Ｈｉ－ＤＡＳ가 있으면 저랑 똑같이 적에 대해 조사할 수 있고요…」
 							CASE IS == 1
 								PRINTW 「파마나 주살이 무효인 적도 있지만 효과가 있는 적도 많이 있으니 아이템이나 스킬을 준비해두면 좋을 거예요…」
@@ -1591,7 +1591,7 @@ CASE 4
 				PRINTW ……
 				PRINTW …
 				PRINTL 
-				PRINTW 의뢰 달성의 보수로 \500000 받았다.
+				PRINTW 의뢰 달성의 보수로 ￥500000을 받았다.
 				PRINTL 
 				MONEY+=500000
 				;여왕의가면입수
@@ -1782,7 +1782,7 @@ CASE 4
 					던전플래그:70:90 = 0
 					던전플래그:70:91 = 0
 					IF ITEM:무색의가면 == 0
-						PRINTW ＞마테리얼 카드【무색의가면】을 손에 넣었다
+						PRINTW ＞마테리얼 카드 【무색의가면】을 손에 넣었다
 						PRINTL  
 						ITEM:무색의가면 = 1
 					ENDIF
@@ -4376,21 +4376,21 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		IF CFLAG:CHARA:600 == 0
 			;광대→마술사
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃지혜의 열매를 먹은 인간은　　　　　　　　　　　　┃
-			PRINTFORML ┃그 순간부터 방랑자가 되었다… 　　　　　　　　　　┃
+			PRINTFORML ┃지혜의 열매를 먹은 인간은 　　　　　　　　　┃
+			PRINTFORML ┃그 순간부터 방랑자가 되었다… 　　　　　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃카드가 가리키는 여로를 따라 　　　　　　　　　　　┃
-			PRINTFORML ┃미래에 아련한 희망을 걸고.　　　   　　　　　　　┃
+			PRINTFORML ┃카드가 가리키는 여로를 따라 　　　　　　　　┃
+			PRINTFORML ┃미래에 아련한 희망을 걸고.　　　　　　　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그래… 어느 아르카나가 이렇게 가리켰다…　　　　　　┃
-			PRINTFORML ┃강한 의지와 노력이야말로 　　　　　　　　　　　　┃
-			PRINTFORML ┃유일하게 꿈을 거머쥘 가능성이라고…　　　　　　　　┃
+			PRINTFORML ┃그래… 어느 아르카나가 이렇게 가리켰다…　　┃
+			PRINTFORML ┃강한 의지와 노력이야말로　　　　　　　　　　┃
+			PRINTFORML ┃유일하게 꿈을 거머쥘 가능성이라고… 　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:화염 = 0
 			BASE:CHARA:빙결 = 150
@@ -4398,9 +4398,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 1
 			;→여교황
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃마음속에 울리는 소리 없는 소리… 　　　　　　　　 ┃
-			PRINTFORML ┃그것에 귀를 기울이는 의의를…　　　　　　　　　　 ┃
+			PRINTFORML ┃그 아르카나는 가리켰다… 　　　　　　　　 　┃
+			PRINTFORML ┃마음속에 울리는 소리 없는 소리…　　　　　　┃
+			PRINTFORML ┃그것에 귀를 기울이는 의의를… 　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:화염 = 150
 			BASE:CHARA:빙결 = 0
@@ -4408,8 +4408,8 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 2
 			;→女帝
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃삶이 가지는 빛… 그 훌륭함과 존엄함을…　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃삶이 가지는 빛… 그 훌륭함과 존엄함을… 　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:전격 = 150
@@ -4418,9 +4418,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 3
 			;→皇帝
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃모든 것에 의연히 맞서며 　　　　　　　　　　     ┃
-			PRINTFORML ┃답을 정하는, 그 용기를…　　　　　　　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다… 　　　　　　　　 　┃
+			PRINTFORML ┃모든 것에 의연히 맞서며 　　　　　　　　　　┃
+			PRINTFORML ┃답을 정하는, 그 용기를…　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:전격 = 0
 			BASE:CHARA:질풍 = 150
@@ -4428,9 +4428,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 4
 			;→法王
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃자신을 이끄는 존재,　　 　                    　┃
-			PRINTFORML ┃그것을 아는 것이 얼마나 중요한지를…　　　　 　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃자신을 이끄는 존재, 　　　　　　　　　　　　┃
+			PRINTFORML ┃그것을 아는 것이 얼마나 중요한지를…　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:검격 = 0
 			BASE:CHARA:타격 = 0
@@ -4440,8 +4440,8 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 5
 			;→恋愛
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃타인과 마음이 통하는… 그 기쁨과 훌륭함을… 　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃타인과 마음이 통하는… 그 기쁨과 훌륭함을… ┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:충격 = 0
@@ -4452,9 +4452,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 6
 			;→戦車
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃목표를 향해 도약하는 그 힘이야말로 　　　　　　　　┃
-			PRINTFORML ┃인간이 생명에서 얻은 가능성임을…　　　　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃목표를 향해 도약하는 그 힘이야말로　　　　　┃
+			PRINTFORML ┃인간이 생명에서 얻은 가능성임을…　 　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:비구 = 0
 			BASE:CHARA:전술 = 0
@@ -4464,9 +4464,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 7
 			;→正義
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃모든 것이 불확실하므로, 　　　　　　　　　　　 　┃
-			PRINTFORML ┃올바른 답을 찾아내야만 한다는 것을… 　　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃모든 것이 불확실하므로, 　　　　　　　　　　┃
+			PRINTFORML ┃올바른 답을 찾아내야만 한다는 것을…　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:파마 = 0
 			BASE:CHARA:주살 = 150
@@ -4474,9 +4474,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 8
 			;→隠者
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃때로 자신을 돌아보고,　　　　　　　　　　 　　　┃
-			PRINTFORML ┃스스로의 의지로 길을 결정할 용기를… 　　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃때로 자신을 돌아보고, 　　　　　　　　　　　┃
+			PRINTFORML ┃스스로의 의지로 길을 결정할 용기를…　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:신경 = 0
 			BASE:CHARA:검격 = 150
@@ -4484,9 +4484,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 9
 			;→운명
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃영겁, 시간과 함께 돌아가는 　　　　　　　　　　　┃
-			PRINTFORML ┃잔혹한 운명의 존재를…　　　　　　　　　　　　　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃영겁, 시간과 함께 돌아가는　　　　　　　　　┃
+			PRINTFORML ┃잔혹한 운명의 존재를…　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:수격 = 0
 			BASE:CHARA:중력 = 0
@@ -4496,9 +4496,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 10
 			;→剛毅
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃어떤 고난이 닥쳐오더라도, 　　　　　　　　　　 　┃
-			PRINTFORML ┃그것을 견뎌낼 힘이 필요하다는 것을… 　　　　　　  ┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃어떤 고난이 닥쳐오더라도, 　　　　　　　　　┃
+			PRINTFORML ┃그것을 견뎌낼 힘이 필요하다는 것을…　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:지변 = 0
 			BASE:CHARA:핵열 = 0
@@ -4508,9 +4508,9 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSEIF CFLAG:CHARA:600 == 11
 			;→刑死者
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　　 　┃
-			PRINTFORML ┃피할 데 없는 곤경에 처했을 때야말로, 　　　　　　　┃
-			PRINTFORML ┃새로운 길을 찾을 찬스가 있음을… 　　　　　　　 　┃
+			PRINTFORML ┃그 아르카나는 가리켰다…　　　　　　　　　　┃
+			PRINTFORML ┃피할 데 없는 곤경에 처했을 때야말로,　　　　┃
+			PRINTFORML ┃새로운 길을 찾을 찬스가 있음을…　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			BASE:CHARA:주살 = 0
 			BASE:CHARA:파마 = 150
@@ -4518,30 +4518,30 @@ IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
 		ELSE
 			;→사신死神
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃지혜의 열매를 먹은 인간은　　　　　　　　　　　　┃
-			PRINTFORML ┃그 순간부터 방랑자가 되었다… 　　　　　　　　　　┃
+			PRINTFORML ┃지혜의 열매를 먹은 인간은 　　　　　　　　　┃
+			PRINTFORML ┃그 순간부터 방랑자가 되었다… 　　　　　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃아르카나가 가리키는 여로를 따라　　　　　　　　　　┃
-			PRINTFORML ┃미래에 아련한 희망을 품는다…　　   　　　　　　　┃
+			PRINTFORML ┃아르카나가 가리키는 여로를 따라 　　　　　　┃
+			PRINTFORML ┃미래에 아련한 희망을 품는다… 　　　　　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃그러나 아르카나는 가리키는 것이다…　　　　　　　　┃
-			PRINTFORML ┃그 여로 끝에 기다리는 것이 　　　　　　　　　　　┃
-			PRINTFORML ┃“절대적인 종말”이라는 것을.　　　　　　　　　　┃
+			PRINTFORML ┃그러나 아르카나는 가리키는 것이다… 　　　　┃
+			PRINTFORML ┃그 여로 끝에 기다리는 것이　　　　　　　　　┃
+			PRINTFORML ┃“절대적인 종말”이라는 것을. 　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃어떤 존재던 그 끝에 기다리고 있는 것은…　　　　　　┃
-			PRINTFORM ┃　　 
+			PRINTFORML ┃어떤 존재던 그 끝에 기다리고 있는 것은…　　┃
+			PRINTFORM ┃　
 				SETCOLOR 0xffff33
-			PRINTFORM 절 대 적“죽음”이 라 는 것 을！
+			PRINTFORM 절　대　적 『죽음』 이　라　는　것　을!
 				SETCOLOR 0xff0033
-			PRINTFORML 　　┃
+			PRINTFORML 　 ┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			FOR LOCAL,0,17
@@ -4585,8 +4585,8 @@ ENDIF
 IF CFLAG:ARG:600 == 13 && MAXBASE:ARG:ＨＰ <= BASE:ARG:ＨＰ*2 && CFLAG:ARG:행동한횟수 == 0 && CFLAG:ARG:１more플래그 <= 1
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃죽음에 저항하는 건 불가능하다. 　　　　　　 　　　┃
-	PRINTFORML ┃사는 것과 죽는 것은 동일하다…　　　　　　　　　　┃
+	PRINTFORML ┃죽음에 저항하는 건 불가능하다. 　　　　　　 ┃
+	PRINTFORML ┃사는 것과 죽는 것은 동일하다…　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
@@ -5144,8 +5144,8 @@ IF CFLAG:ARG:600 < 1
 	SETCOLOR 0xff0033
 	PRINTL 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃나는 그들과 달라…… 　　　　　　　　　　　　　┃
-	PRINTFORML ┃내가 있을 곳은 어디에도 없어……　　　　　　　　　┃
+	PRINTFORML ┃나는 그들과 달라……　　　　　　　　　　　　┃
+	PRINTFORML ┃내가 있을 곳은 어디에도 없어……　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTL 
@@ -5156,8 +5156,8 @@ IF CFLAG:ARG:600 < 1
 ELSEIF CFLAG:ARG:600 < 2 && BASE:ARG:ＨＰ <= (MAXBASE:ARG:ＨＰ*3)/4
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃타카야 말이 맞구나……　　　　　　　　　　　　　┃
-	PRINTFORML ┃모두 다, 방해돼…… 사라져버리도록 해……!!　　　　┃
+	PRINTFORML ┃타카야 말이 맞구나……　　　　　　　　　　　┃
+	PRINTFORML ┃모두 다, 방해돼…… 사라져버리도록 해……!! ┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTL 
@@ -5173,7 +5173,7 @@ ELSEIF CFLAG:ARG:600 < 3 && BASE:ARG:ＨＰ <= (MAXBASE:ARG:ＨＰ)/2
 	SETCOLOR 0xff0033
 	PRINTL 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃사라져… 사라지라고……!! 　　　　　　　　　　　┃
+	PRINTFORML ┃사라져… 사라지라고……!! 　　　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
@@ -5295,13 +5295,13 @@ IF FLAG:경과턴수>=50
 	IF CFLAG:ARG:601 != (-9999)
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃고객님, 대단히 죄송합니다만 　　    　　　　　　　┃
-		PRINTFORML ┃폐점할 시간이 되었습니다.　　　　　　　　　　　　┃
+		PRINTFORML ┃고객님, 대단히 죄송합니다만 　　　　　　　　┃
+		PRINTFORML ┃폐점할 시간이 되었습니다. 　　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 		PRINTL 
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃다음 방문을 기다리겠습니다. 　　　　　　　　　　　┃
+		PRINTFORML ┃다음 방문을 기다리겠습니다. 　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
@@ -5400,20 +5400,20 @@ ELSE
 	IF CFLAG:ARG:600 == 0
 		SETCOLOR 0xff0033
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃전, 엘리베이터 걸을 　　　　　　　　    　　　　┃
-		PRINTFORML ┃맡고 있는 몸입니다만… 　　　　　　　     　　　┃
+		PRINTFORML ┃전, 엘리베이터 걸을 　　　　　　　　　　　　┃
+		PRINTFORML ┃맡고 있는 몸입니다만…　　　　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 		PRINTL 
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃다소, 거친 일의 소양도 있습니다.　　　　　　　　　┃
+		PRINTFORML ┃다소, 거친 일의 소양도 있습니다.　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 		PRINTL 
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃모쪼록 사양하지 마시고　　　　　　　　　　 　　　┃
-		PRINTFORML ┃죽일 작정으로, 나서주십시오. 　　　　　　　     　┃
+		PRINTFORML ┃모쪼록 사양하지 마시고　　　　　　　　　　　┃
+		PRINTFORML ┃죽일 작정으로, 나서주십시오.　　　　　　　　┃
 		PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 		RESETCOLOR
@@ -5839,12 +5839,12 @@ RETURN 0
 		$INPUT_LOOP_TARMEET1
 		CUSTOMDRAWLINE =
 		IF 던전플래그:70:93 == 11 && 던전플래그:70:(21) == 1
-			PRINTW 모르는 소녀형의 검은 로봇
+			PRINTW 처음 보는 소녀형의 검은 로봇
 		ELSE
 			PRINTL
 			CALL TARTAR_NAMECALL
 		ENDIF
-		PRINTW 이 쉐도에게 습격당하고 있다!
+		PRINTW 이(가) 쉐도에게 습격당하고 있다!
 		PRINTW 구하겠습니까?
 		PRINTL [0]구한다
 		PRINTL [1]구하지 않는다
@@ -5873,7 +5873,7 @@ RETURN 0
 			ELSE
 				CALL TARTAR_NAMECALL
 			ENDIF
-			PRINTW 은 열심히 싸우고 있다!』
+			PRINTW 은(는) 열심히 싸우고 있다!』
 			PRINTW ………
 			PRINTW ……
 			PRINTW …
@@ -5883,12 +5883,12 @@ RETURN 0
 				ELSE
 					CALL TARTAR_NAMECALL
 				ENDIF
-				PRINTW 은 열심히 싸웠으나 쓰러졌다.
+				PRINTW 은(는) 열심히 싸웠으나 쓰러졌다.
 				PRINTW 습격하던 쉐도는 떠나갔다.
 				GOTO INPUT_LOOP_TARMEETDEAD
 			ELSE
 				CALL TARTAR_NAMECALL
-				PRINTW 는 어떻게든 이겨낸 모야이다.
+				PRINTW 은(는) 어떻게든 이겨낸 모야이다.
 				IF 던전플래그:70:93 == 11 && 던전플래그:70:(21) == 1
 					PRINTW 당신을 눈치챈 소녀형의 검은 로봇은 메티스라고 이름을 밝혔다.
 					던전플래그:70:(21) = 2
@@ -5910,7 +5910,7 @@ RETURN 0
 		PRINTL
 		CALL TARTAR_NAMECALL
 	ENDIF
-	PRINTW 이 있다.
+	PRINTW 이(가) 있다.
 	PRINTL [0]적당히 대화한다
 	PRINTL [1]덮친다
 	PRINTL [2]잘 가
@@ -5925,7 +5925,7 @@ RETURN 0
 			PRINTL
 			CALL TARTAR_NAMECALL
 		ENDIF
-		PRINT 과 가볍게 이야기를 나누었다……
+		PRINT 와(과) 가볍게 이야기를 나누었다……
 		CALL 전투참가가능포인트
 		PRINTL
 		IF 던전플래그:70:93 == 11 && 던전플래그:70:(21) == 1
@@ -5945,7 +5945,7 @@ RETURN 0
 			PRINTL
 			CALL TARTAR_NAMECALL
 		ENDIF
-		PRINT 을 덮쳤다!!
+		PRINT 을(를) 덮쳤다!!
 		PRINTL
 	CUSTOMDRAWLINE =
 		;ここでLvを決める15+到達階層分
@@ -6421,7 +6421,7 @@ RETURN 0
 		PRINTW ・・・
 		PRINTL
 		CALL TARTAR_NAMECALL
-		PRINTW 를 손에 넣었다.
+		PRINTW 을(를) 손에 넣었다.
 			GOTO TARGETSLAVE
 	ELSEIF RESULT == 2
 		GOTO INPUT_LOOP_TARMEETBYE
@@ -6449,7 +6449,7 @@ RETURN 0
 		PRINTL
 		CALL TARTAR_NAMECALL
 	ENDIF
-	PRINTW 이 쓰러져있다.
+	PRINTW 이(가) 쓰러져있다.
 	PRINTW 어떡할까?
 	PRINTL [0]방치
 	PRINTL [1]보쌈해간다
@@ -6460,7 +6460,7 @@ RETURN 0
 	ELSEIF RESULT == 1
 		PRINTL
 		CALL TARTAR_NAMECALL
-		PRINTW 를 손에 넣었다
+		PRINTW 을(를) 손에 넣었다
 	$TARGETSLAVE
 		IF 던전플래그:70:93 == 1
 			CALL ADD_NEW_COMPANION,[[キャラ:P3남주인공]],200
@@ -6531,14 +6531,14 @@ RETURN 0
 	ENDIF
 	IF 던전플래그:70:LOCAL >= 8
 		CALL TARTAR_NAMECALL
-		PRINTW 는 당신의 동료가 되고 싶다고 말했다.
+		PRINTW 은(는) 당신의 동료가 되고 싶다고 말했다.
 		PRINTW 아무래도 당신을 신뢰하고 있는 모양이다.
 		CALL TARTAR_NAMECALL
-		PRINTW 가 동료가 되었다.
+		PRINTW 이(가) 동료가 되었다.
 		GOTO TARGETSLAVE
 	ELSE
 		CALL TARTAR_NAMECALL
-		PRINTW 는 타르타로스 안쪽으로 떠나갔다…….
+		PRINTW 은(는) 타르타로스 안쪽으로 떠나갔다…….
 	ENDIF
 
 	$INPUT_LOOP_TARMEETEND
@@ -6683,20 +6683,20 @@ IF CD_TIME_AND_TURN:3 < (1000 * 60 * 10)
 
 ELSEIF (1000 * 60 * 10) <= CD_TIME_AND_TURN:3 && CD_TIME_AND_TURN:3 < (1000 * 60 * 13) && 던전플래그:70:(67) == 0
 	;10分経過：警告(1回目)
-	CALL MESSAGE_WINDOW, "" , "＞どこかで鎖が鳴る音がした"
+	CALL MESSAGE_WINDOW, "" , "＞어디선가 쇠사슬 끄는 소리가 났다"
 	던전플래그:70:(67) = 1	;警告フラグを「1:1回目の警告済」にする
 
 ELSEIF (1000 * 60 * 13) <= CD_TIME_AND_TURN:3 && CD_TIME_AND_TURN:3 < (1000 * 60 * 15) && 던전플래그:70:(67) <= 1
 	;13分経過：警告(2回目)
-	CALL MESSAGE_WINDOW, "" , "＞少しずつ　不吉な気配が強くなっていく"
-	CALL MESSAGE_WINDOW, "" , "＞この階層に長居しない方がいいかもしれない"
+	CALL MESSAGE_WINDOW, "" , "＞조금씩 불길한 기운이 강해져 간다"
+	CALL MESSAGE_WINDOW, "" , "＞이 계층에 오래 머물지 않는 편이 좋을 것 같다"
 	던전플래그:70:(67) = 2	;警告フラグを「2:2回目の警告済」にする
 
 ELSEIF (1000 * 60 * 15) <= CD_TIME_AND_TURN:3 && 던전플래그:70:(67) <= 2
 	;15分経過：F.O.E.『刈り取るもの』出現！
 	SETBGCOLOR 0xff0000				;バックグラウンドカラーを赤色にする
 	SETCOLOR 0x000000				;黒文字にする
-	CALL MESSAGE_WINDOW, "" , "＞どこかに死神タイプが出現した！　あなたを追いかけてくる！"
+	CALL MESSAGE_WINDOW, "" , @"＞어디선가 사신 타입이 출현했다! %마스터를% 쫒아온다!"
 	RESETBGCOLOR					;バックグラウンドカラーを元に戻す
 	RESETCOLOR						;文字色を元に戻す
 
@@ -6722,7 +6722,7 @@ RETURN 1
 ;戦闘前にちょっぴり導入
 SETBGCOLOR 0xff0000				;バックグラウンドカラーを赤色にする
 SETCOLOR 0x000000				;黒文字にする
-CALL MESSAGE_WINDOW, "" , "＞刈り取る者 が現れた！！"
+CALL MESSAGE_WINDOW, "" , "＞거둬들이는 자가 나타났다!!"
 RESETBGCOLOR					;バックグラウンドカラーを元に戻す
 RESETCOLOR						;文字色を元に戻す
 
