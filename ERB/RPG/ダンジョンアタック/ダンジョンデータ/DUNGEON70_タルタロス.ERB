@@ -105,7 +105,7 @@ RESULTS = 타르타로스
 @FLOORNAME_70
 PRINT 타르타로스
 IF FLAG:현M == 0
-	PRINTFORML    1F　エントランス
+	PRINTFORML    1F　엔트런스
 ELSEIF 던전플래그:70:(50) >= 0
 	PRINTFORML    {(던전플래그:70:50)+1}F
 ELSE
@@ -113,7 +113,7 @@ ELSE
 ENDIF
 
 ;던전名の下に経過時間を表示する
-PRINTFORML 経過時間(現在フロア：%CHANGE_MS_TO_HHMISS(CD_TIME_AND_TURN:3)% / 全フロア：%CHANGE_MS_TO_HHMISS(CD_TIME_AND_TURN:2)%)
+PRINTFORML 경과 시간(현재 F：%CHANGE_MS_TO_HHMISS(CD_TIME_AND_TURN:3)% / 총 F：%CHANGE_MS_TO_HHMISS(CD_TIME_AND_TURN:2)%)
 
 ;=======================================================================
 ;特殊タイル표시
@@ -782,7 +782,7 @@ CASE 4
 				ELSEIF 던전플래그:70:(12) >= 2
 					PRINTW 유카리가 있다.
 					IF 던전플래그:70:(89) == 0 && 던전플래그:70:(1) == 1
-						PRINTFORMW 「아, %CALLNAME:MASTER%씨」
+						PRINTFORMW 「아, %CALLNAME:MASTER% 씨」
 						PRINTW 「드릴 말씀이 있는데요, 저」
 						PRINTW 「최근에 우리 학교 학생이 타르타로스에 들어가버린 모양이라……」
 						PRINTW 「그, 그래서!」
@@ -793,7 +793,7 @@ CASE 4
 						RETURN 0
 					ELSEIF 던전플래그:70:(1) == 0
 						PRINTW 「곤충 모습의 되게 딱딱한 쉐도가 보일 텐데요」
-						PRINTW 「그 녀석『사갑충』이라 해서, 잔 같은 충격 속성이 잘 먹히는데」
+						PRINTW 「그 녀석 『사갑충』이라 해서, 잔 같은 충격 속성이 잘 먹히는데」
 						PRINTW 「맞으면 아프니까 상대하지 않는 편이 나아요」
 					ELSEIF 던전플래그:70:(1) == 1
 						PRINTW 「던전 안에서 이따금 저희를 발견할지도 모르겠는데요」
@@ -810,14 +810,14 @@ CASE 4
 				CASE 24
 				;テレッテ
 				IF 던전플래그:70:(13) == 1
-					PRINTFORMW 「당신이 %CALLNAME:MASTER%씨?」
+					PRINTFORMW 「당신이 %CALLNAME:MASTER% 씨?」
 					PRINTW 「난 이오리 준페이라고 하우. 잘 부탁드림다!」
 					PRINTFORMW 준페이라고 이름을 밝힌 소년은 %CALLNAME:MASTER%에게 허물없이 인사해왔다…….
 					던전플래그:70:(13) = 2
 				ELSEIF 던전플래그:70:(13) >= 2
 					PRINTW 준페이가 있다.
 					IF 던전플래그:70:(89) == 0 && 던전플래그:70:(1) == 1
-						PRINTFORMW 「아、%CALLNAME:MASTER%씨」
+						PRINTFORMW 「아、%CALLNAME:MASTER% 씨」
 						PRINTW 「그나저나 이런 이야기가 있는데요」
 						PRINTW 「우리 학생이 이 타르타로스에서 행방불명돼버렸다네요―」
 						PRINTW 「만약 찾으면 구출해주시도록 부탁해도 되겠슴까?」
@@ -839,7 +839,7 @@ CASE 4
 						PRINTW 「타르타로스에 떨어져 있는 보물상자 말인데요」
 						PRINTW 「가∼끔 비싸게 팔리는 물건이 들어있어서 돈벌이가 되기도 합죠」
 					ELSEIF 던전플래그:70:(1) == 4
-						PRINTW 「기계라든가, 물건 같은 적은 전격 말고도 수격(水擊)이 잘 먹히기도 합죠」
+						PRINTW 「기계라든가, 물건 같은 적은 전격 말고도 수격이 잘 먹히기도 합죠」
 						PRINTW 「그밖에는 날고 있는 적에게 총이나 중력이라든가, 마음을 흔들어대는 적에게 신경도 제법 효과 있고요」
 					ELSEIF 던전플래그:70:(1) == 5
 						PRINTW 「저번에 쉐도를 가비얍∼게 쓸어주려고 했더니 반사당했지 뭐유!」
@@ -1003,7 +1003,7 @@ CASE 4
 				PRINTL 
 				PRINTW 이 계층을 지키는 쉐도인 모양이다.
 				PRINTL 
-				PRINTL 프리스티스 가 나타났다!
+				PRINTL 프리스티스가 나타났다!
 				PRINTW 
 				WAIT
 				FLAG:도주불가플래그 = 1
@@ -1043,14 +1043,14 @@ CASE 4
 				IF 던전플래그:70:89 == 1 || FLAG:DEBUG == 1
 					CUSTOMDRAWLINE =
 					PRINTL 
-					PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 유달리 탁 트인 곳에 도착했다.
+					PRINTFORMW %마스터는% 유달리 탁 트인 곳에 도착했다.
 					PRINTW 그러자 그곳에는 두 개체의 쉐도에게 습격당해 목숨이 경각에 달한 소녀가 있지 않은가!
-					PRINTFORMW 불현듯 %조사처리(CALLNAME:MASTER,"는")% 특별 과외 활동부의 멤버에게 들은 이야기를 기억해냈다.
-					PRINTW 어쩌면 그녀가 예의 「행방불명된 소녀」인 걸까.
+					PRINTFORMW 불현듯 %마스터는% 특별 과외 활동부의 멤버에게 들은 이야기를 기억해냈다.
+					PRINTW 어쩌면 그녀가 그 「행방불명된 소녀」인 걸까.
 					PRINTFORMW 그렇게 생각에 잠긴 %마스터를% 두 쉐도가 노려보았다.
 					PRINTW 아무래도 찍힌 모양이다.
 					PRINTL 
-					PRINTL 엠프레스 와 엠페러 가 나타났다!
+					PRINTL 엠프레스와 엠페러가 나타났다!
 					PRINTW 
 					WAIT
 					FLAG:도주불가플래그 = 1
@@ -1084,7 +1084,7 @@ CASE 4
 					FLAG:회화불능플래그 = 0
 					FLAG:선제기습취소 = 0
 					PRINTL 
-					PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 쉐도를 쓰러트려 소녀를 구했다.
+					PRINTFORMW %마스터는% 쉐도를 쓰러트리고 소녀를 구했다.
 					PRINTW 자, 이 소녀를 어떻게 할까…….
 					PRINTL [0]특별 과외 활동부에 맡긴다
 					PRINTL [1]보쌈해간다
@@ -1096,7 +1096,7 @@ CASE 4
 						MONEY += 50000
 						던전플래그:70:(89)=2
 					ELSEIF RESULT == 1
-						PRINTW 후카 를 손에 넣었다.
+						PRINTW 후카를 손에 넣었다.
 						CALL ADD_NEW_COMPANION,4550,200
 						CALL SYNC_STATUS,(GETCHARA(4550))
 						CALL HEALTH_CHARA,(GETCHARA(4550))
@@ -1121,7 +1121,7 @@ CASE 4
 				PRINTL 이 계층의 지킴이인 쉐도 같다.
 				PRINTW 다른 층과 달리 아무래도 1개체뿐인 모양인데, 자신이 있는 걸까……?
 				PRINTL 
-				PRINTL 하이에로펀트 가 나타났다!
+				PRINTL 하이에로펀트가 나타났다!
 				PRINTW 
 				WAIT
 				FLAG:도주불가플래그 = 1
@@ -1139,7 +1139,7 @@ CASE 4
 				PRINTFORML 법황을 쓰러트린 %CALLNAME:MASTER%.
 				PRINTL 하지만 한숨을 돌린 참에 갑자기 머리 위에 새로운 적의 기척이 나타났다!
 				PRINTL 
-				PRINTL 러버즈 가 나타났다!
+				PRINTL 러버즈가 나타났다!
 				PRINTW 
 				FLAG:기습플래그 = 1
 				CALL SET_ENEMY,9,[[キャラ:러버즈]],25,0,1
@@ -1168,7 +1168,7 @@ CASE 4
 					PRINTL 그런데 그녀의 팔다리 관절은 마치 인형 같은 인공의족으로 이루어져 있다.
 					PRINTL 아마 그녀가 이쿠츠키가 의뢰 중에 말했던 「아이기스」일 것이다.
 					PRINTL 
-					PRINTL 아이기스 가 나타났다!
+					PRINTL 아이기스가 나타났다!
 					PRINTW 
 					WAIT
 					FLAG:도주불가플래그 = 1
@@ -1208,7 +1208,7 @@ CASE 4
 						MONEY += 100000
 					ELSEIF RESULT == 1
 						던전플래그:70:70 = 2
-						PRINTW 아이기스 를 손에 넣었다.
+						PRINTW 아이기스를 손에 넣었다.
 						CALL ADD_NEW_COMPANION,[[キャラ:아이기스]],200
 						PRINTW 보수로 ￥50000을 얻었다.
 						MONEY += 50000
@@ -1237,7 +1237,7 @@ CASE 4
 				PRINTL 
 				PRINTL 이 계층의 지킴이인 쉐도 같다.
 				PRINTL 
-				PRINTL 채리옷 과 저스티스 가 나타났다!
+				PRINTL 채리옷과 저스티스가 나타났다!
 				PRINTW 
 				WAIT
 				FLAG:도주불가플래그 = 1
@@ -1266,7 +1266,7 @@ CASE 4
 				PRINTL 
 				PRINTW 이 계층의 지킴이인 악마 같다.
 				PRINTL 
-				PRINTL 허밋 이 나타났다!
+				PRINTL 허밋이 나타났다!
 				PRINTW 
 				WAIT
 				FLAG:도주불가플래그 = 1
@@ -1304,7 +1304,7 @@ CASE 4
 				PRINTL 
 				PRINTW 이 계층의 지킴이인 악마 같다.
 				PRINTL 
-				PRINTL 포츈 과 스트렝스 가 나타났다!
+				PRINTL 포츈과 스트렝스가 나타났다!
 				PRINTW 
 				WAIT
 				FLAG:도주불가플래그 = 1
@@ -1378,7 +1378,7 @@ CASE 4
 					PRINTL 소녀는 피 묻은 도끼를 들고 페르소나 소환기를 잡았다―――
 					PRINTW 
 					PRINTL 
-					PRINTL 치도리 가 나타났다!
+					PRINTL 치도리가 나타났다!
 					PRINTW 
 					WAIT
 					던전플래그:70:90 = 0
@@ -1439,7 +1439,7 @@ CASE 4
 						MONEY += 100000
 					ELSEIF RESULT == 1
 						던전플래그:70:71 = 2
-						PRINTW 치도리 를 손에 넣었다.
+						PRINTW 치도리를 손에 넣었다.
 						CALL ADD_NEW_COMPANION,[[キャラ:치도리]],200
 					ELSE
 						GOTO INPUT_LOOP_CHIDORI
@@ -1459,7 +1459,7 @@ CASE 4
 						MONEY += 100000
 					ELSEIF RESULT == 1
 						던전플래그:70:72 = 2
-						PRINTW 아라가키 신지로 를 손에 넣었다.
+						PRINTW 아라가키 신지로를 손에 넣었다.
 						CALL ADD_NEW_COMPANION,4553,200
 						CALL SYNC_STATUS,(GETCHARA(4553))
 						CALL HEALTH_CHARA,(GETCHARA(4553))
@@ -1476,7 +1476,7 @@ CASE 4
 				CUSTOMDRAWLINE =
 				PRINTL 
 				PRINTL 
-				PRINTL 행드맨 이 나타났다!
+				PRINTL 행드맨이 나타났다!
 				PRINTW 
 				WAIT
 				던전플래그:70:90 = 0
@@ -1534,7 +1534,7 @@ CASE 4
 				PRINTL 
 				PRINTL 
 				PRINTL 
-				PRINTL 　화신　뉵스 아바타 가 나타났다!
+				PRINTL 　화신　뉵스 아바타가 나타났다!
 				PRINTW 
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
@@ -1582,7 +1582,7 @@ CASE 4
 				PRINTW 　사실은 분명 아직 더 있다는 거였을 거야」
 				PRINTL 「그건 그렇고 그 보스 같은 녀석을 쓰러뜨려도
 				PRINTW 　쉐도 타임은 끝나지 않는단 말은, 원인은 따로 있을 듯한 느낌도 드는걸」
-				PRINTL 「당분간은 아직 연구·조사를 계속할 필요도 있단 거려나」
+				PRINTL 「당분간은 아직 연구 / 조사를 계속할 필요도 있단 거려나」
 				PRINTL 「어쨌든 당면한 목표는 달성했으니
 				PRINTW 　보수는 지불해야겠군」
 				PRINTW 「어디 보자, 잠시 기다리게. 지금 준비해 올 테니……」
@@ -1607,7 +1607,7 @@ CASE 4
 				CUSTOMDRAWLINE =
 				PRINTL 
 				PRINTL 
-				PRINTL 　에레보스 가 나타났다!
+				PRINTL 　에레보스가 나타났다!
 				PRINTW 
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
@@ -1641,7 +1641,7 @@ CASE 4
 				PRINTL 
 				PRINTW 이 계층의 지킴이인 악마 같다.
 				PRINTL 
-				PRINTL 거둬들이는 자 가 나타났다!
+				PRINTL 거둬들이는 자가 나타났다!
 				PRINTW 
 				;Lv77
 				WAIT
@@ -1679,7 +1679,7 @@ CASE 4
 				IF 던전플래그:70:96 == 2
 					PRINTW 1명의 엘리베이터 걸이 있다….
 					PRINTL 
-					PRINTFORMW 「기다리고 있었습니다, %CALLNAME:MASTER%님」
+					PRINTFORMW 「기다리고 있었습니다, %CALLNAME:MASTER% 님」
 					PRINTW 「엘리자베스라고 합니다」
 					PRINTW 「저는 이곳에서 자신이 누구인지를 쭉 찾고 있습니다」
 					PRINTW 「그것은 아마 당신도 마찬가지」
@@ -1710,7 +1710,7 @@ CASE 4
 					PRINTW 「갑니다!」
 					PRINTL 
 					PRINTL 
-					PRINTL 엘리자베스 가 나타났다!
+					PRINTL 엘리자베스가 나타났다!
 					PRINTW 
 					WAIT
 					던전플래그:70:90 = 0
@@ -1787,7 +1787,7 @@ CASE 4
 						ITEM:무색의가면 = 1
 					ENDIF
 					PRINTL 
-					PRINTW 엘리자베스 를 손에 넣었다.
+					PRINTW 엘리자베스를 손에 넣었다.
 					CALL ADD_NEW_COMPANION,4555,200
 					IF RESULT == 1 
 						LOCAL = (GETCHARA([[キャラ:엘리자베스]]))
@@ -2323,7 +2323,7 @@ ELSEIF 던전플래그:70:(50) > 34 &&던전플래그:70:(50) < 39
 			;15%で데스트윈즈
 			RETURN 3222, 43
 		CASE IS < 65
-			;10%で타천사？데카라비아
+			;10%で타천사?데카라비아
 			RETURN 1705, 48
 		CASE IS < 88
 			;13%で요마서큐버스
