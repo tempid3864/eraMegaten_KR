@@ -862,13 +862,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					SELECTCASE RESULT
 						CASE 0
 							CALL SHOW_PICTURE, "NONFLOORD", ""
-							CALL MESSAGE_WINDOW, "호시가미", "그것으로 좋은가？"
-							CALL MESSAGE_WINDOW, "", "＞세계에 빛이 퍼져나간다"
-							CALL MESSAGE_WINDOW, "", "………/……/…"
-							CALL MESSAGE_WINDOW, "", "＞당신은 꿈을 꾸고 있던 것 같다"
-							CALL MESSAGE_WINDOW, "", "＞뭔가 커다란 일에 휘말려 있던 꿈을 꾸고 있던 것 같지만 기억이 나지 않는다…"
-							CALL MESSAGE_WINDOW, "", "＞일어나서 평소의 나날을 보내기로 하자…"
-							CALL MESSAGE_WINDOW, "", "―― Ending No.060 (데빌칠드런　새로운 세계 End)" , , , , , , , , , "CENTER"
+							CALL MESSAGE_WINDOW_D, "호시가미", "그것으로 좋은가？"
+							CALL MESSAGE_WINDOW_D, "", "＞세계에 빛이 퍼져나간다"
+							CALL MESSAGE_WINDOW_D, "", "………/……/…"
+							CALL MESSAGE_WINDOW_D, "", "＞당신은 꿈을 꾸고 있던 것 같다"
+							CALL MESSAGE_WINDOW_D, "", "＞뭔가 커다란 일에 휘말려 있던 꿈을 꾸고 있던 것 같지만 기억이 나지 않는다…"
+							CALL MESSAGE_WINDOW_D, "", "＞일어나서 평소의 나날을 보내기로 하자…"
+							CALL MESSAGE_WINDOW_D, "", "―― Ending No.060 (데빌칠드런　새로운 세계 End)" , , , , , , , , , "CENTER"
 							;ＥＤボーナス：노른의열쇠
 							ITEM:노른의열쇠 = 1
 							FLAG:5 = 9
@@ -881,10 +881,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL MESSAGE_WINDOW_D, "호시가미", "신이 되기를 바라는가 / 그러면 나를 쓰러뜨려 다음 대 호시가미가 되면 좋을 것이다…"
 							CALL BATTLE_hoshigami
 							CALL SHOW_PICTURE, "NONFLOORD", ""
-							CALL MESSAGE_WINDOW, "", "＞당신을 중심으로 빛이 퍼져나간다"
-							CALL MESSAGE_WINDOW, "", "＞이 세계에서 당신이 있었다는 기억、흔적、모든 것이 사라졌다"
-							CALL MESSAGE_WINDOW, "", "＞그리고… 새로운 호시가미가 태어났다"
-							CALL MESSAGE_WINDOW, "", "―― Ending No.061 (데빌칠드런　호시가미 End)" , , , , , , , , , "CENTER"
+							CALL MESSAGE_WINDOW_D, "", "＞당신을 중심으로 빛이 퍼져나간다"
+							CALL MESSAGE_WINDOW_D, "", "＞이 세계에서 당신이 있었다는 기억、흔적、모든 것이 사라졌다"
+							CALL MESSAGE_WINDOW_D, "", "＞그리고… 새로운 호시가미가 태어났다"
+							CALL MESSAGE_WINDOW_D, "", "―― Ending No.061 (데빌칠드런　호시가미 End)" , , , , , , , , , "CENTER"
 							;ＥＤボーナス：아젤解禁
 							CALL LIFTING_A_BAN([[キャラ:아젤]])
 							;FLAG:10280 = 1
@@ -931,28 +931,28 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				던전플래그:64:1 = 2
 
 			CASE 2
-				CALL MESSAGE_WINDOW_D, "ホシガミ", "そうか……"
+				CALL MESSAGE_WINDOW_D, "호시가미", "알겠다……"
 			ENDSELECT
 		ELSEIF 던전플래그:64:1 == 2
-			;味方にホシガミがいようが、既に売り払っていようが、まあ……
-			CALL MESSAGE_WINDOW_D, "", "＞ノルンの像がある……"
-			CALL MESSAGE_WINDOW_D, "", "＞……『ここは　オルゴールルーム　おとのしらべが　ながれるところ』と書いてある"
-			CALL MESSAGE_WINDOW_D, "ホシガミ", "……私を望むのか？"
+			;아군에 호시가미가 있든, 이미 팔아치웠든, 뭐……
+			CALL MESSAGE_WINDOW_D, "", "＞노른의 상이 있다……"
+			CALL MESSAGE_WINDOW_D, "", "＞……『여기는 오르골룸 소리가 흐르는곳』이라고 쓰여 있다"
+			CALL MESSAGE_WINDOW_D, "호시가미", "……나를 원하는건가？"
 			CALL MESSAGE_WINDOW_D, "", "＞！"
-			CALL MESSAGE_WINDOW_D, "", "＞……いや、考えてみれば、彼女は創造主にも等しい存在だ"
-			CALL MESSAGE_WINDOW_D, "", "＞マカイが滅びていない以上、彼女はどこにでも存在できる/＞どこぞの好事家に売り払おうが、剣にしてしまおうが、/＞合体素材にしてしまおうが、それは彼女の『端末』のひとつ……"
-			CALL MESSAGE_WINDOW_D, "", "＞結局のところ、彼女の『本体』は、こうしてここにも存在できる余地を残している。"
-			CALL MESSAGE_WINDOW_D, "ホシガミ", "……私をまことの意味で望むのか？"
-			CALL MESSAGE_WINDOW_D, "", "＞……球体の中の童女――否、幼女が、あなたを見上げて問う"
-			CALL MESSAGE_WINDOW_D, "", "＞……どうしたものか……"
-			CALL INPUT_SELECT_D, @"[1] 真の意味でホシガミが欲しい/[2] なんでもない"
+			CALL MESSAGE_WINDOW_D, "", "＞……아니、생각해보면、그녀는 창조주와 동등한 존재다"
+			CALL MESSAGE_WINDOW_D, "", "＞마계가 멸망하지 않은 이상、그녀는 어디에나 존재할 수 있다/＞어느 호사가에게 팔아버리든、검으로 만들어 버리든、/＞합체 소재로 해버리든、그것은 그녀의『단말』중 하나……"
+			CALL MESSAGE_WINDOW_D, "", "＞결국、그녀의『본체』는、이렇게 여기에도 존재할 수 있는 여지를 남겨놓고 있다。"
+			CALL MESSAGE_WINDOW_D, "호시가미", "……진정한 나를 원하는건가？"
+			CALL MESSAGE_WINDOW_D, "", "＞……구체 속의 동녀 아니、어린 소녀가、당신을 올려다보며 묻는다"
+			CALL MESSAGE_WINDOW_D, "", "＞……무슨일인가……"
+			CALL INPUT_SELECT_D, @"[1] 진정한 의미로 호시가미를 원한다/[2] 아무것도 아니다"
 			SELECTCASE RESULT
 			CASE 1
-				CALL MESSAGE_WINDOW_D, "ホシガミ", "……まことの意味で私を望むのならば"
-				CALL MESSAGE_WINDOW_D, "ホシガミ", "その力、相応しきものか、試させてもらう"
+				CALL MESSAGE_WINDOW_D, "호시가미", "……진정한 의미에서 나를 원한다면"
+				CALL MESSAGE_WINDOW_D, "호시가미", "그 힘、그만한 가치가 있는지、시험해보겠다"
 				CALL BATTLE_hoshigami_URA
-				CALL MESSAGE_WINDOW_D, "ホシガミ", "……ああ、お前の力を認めよう……"
-				CALL MESSAGE_WINDOW_D, "ホシガミ", "私はホシガミ　今後とも　よろしく頼む……"
+				CALL MESSAGE_WINDOW_D, "호시가미", "……아아、네 힘을 인정해주마……"
+				CALL MESSAGE_WINDOW_D, "호시가미", "나는 호시가미 앞으로도 잘 부탁해……"
 				던전플래그:64:1 = 3
 				CALL LIFTING_A_BAN([[キャラ:호시가미]])
 
@@ -962,8 +962,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 
 
 		ELSEIF 던전플래그:64:1 == 3
-			CALL MESSAGE_WINDOW_D, "", "＞ノルンの像がある……"
-			CALL MESSAGE_WINDOW_D, "", "＞……『ここは　オルゴールルーム　おとのしらべが　ながれるところ』と書いてある"
+			CALL MESSAGE_WINDOW_D, "", "＞노른의 상이 있다……"
+			CALL MESSAGE_WINDOW_D, "", "＞……『여기는 오르골룸 소리가 흐르는곳』이라고 쓰여 있다"
 		ENDIF
 	ENDSELECT
 	RETURN 0
@@ -1009,7 +1009,7 @@ RETURN 1
 	;PS版では幼女が口パクするんだけども……
 	;ともあれ、ホシガミの分体、をモデルにしたカスタムホシガミを取り巻きにする
 
-	CALL MESSAGE_WINDOW_D, "", "＞ホシガミが１体と分霊が３体　出た！" , , , , , , , , , "CENTER"
+	CALL MESSAGE_WINDOW_D, "", "＞호시가미 １체와 분령 ３체가 나타났다！" , , , , , , , , , "CENTER"
 
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
@@ -1435,7 +1435,7 @@ ENDIF
 IF ホシガミ舞い降りたメシア判定 == 1
 	IF CFLAG:ARG:행동한횟수 == 0
 		PRINTFORML ┏> ホシガミ　━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃お前はきっと、メシアではないのだろう　　　　　┃
+		PRINTFORML ┃너는 분명、메시아가 아닐것이다　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 		;なにもしない/全回復
 		CSTR:ARG:전용기1 = ＷＡＩＴ
@@ -1443,14 +1443,14 @@ IF ホシガミ舞い降りたメシア判定 == 1
 		CALL HEALTH_CHARA,(ARG)
 	ELSEIF CFLAG:ARG:행동한횟수 == 1
 		PRINTFORML ┏> ホシガミ　━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃だが、私を欲するならば――　　　　　　　　　　┃
+		PRINTFORML ┃하지만、나를 원한다면――　　　　　　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 		;なにもしない
 		CSTR:ARG:전용기1 = ＷＡＩＴ
 		CFLAG:ARG:입력행동 = 3904
 	ELSEIF CFLAG:ARG:행동한횟수 == 2
 		PRINTFORML ┏> ホシガミ　━━━━━━━━━━━━━━━━━┓
-		PRINTFORML ┃――受けきって見せるがいい。人の子よ　　　　　┃
+		PRINTFORML ┃――받아보여주거라。사람의 자식이여　　　　　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━┛
 		;捏造スキル『舞い降りたメシアへ』
 		;原作の必要パスワードから捏造
