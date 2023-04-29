@@ -8,6 +8,7 @@ debug/*
 sav/*
 
 *.lnk
+*.bak
 
 ERB/.git/*
 ERB/口上/悪魔個人口上/*
