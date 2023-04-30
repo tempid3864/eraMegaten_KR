@@ -123,7 +123,7 @@ IF 이벤트플래그:99:0 == 2
 			CUSTOMDRAWLINE =
 			WAIT
 			;- SET:美樹 사야카
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			SIF FLAG:(20000+4396) == 0
 				FLAG:(20000+4396) = 10
 			CALL SET_ENEMY,9,4396,25,0,0
@@ -133,11 +133,11 @@ IF 이벤트플래그:99:0 == 2
 			CFLAG:(CHARANUM-1):화염무효화횟수 += 1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			ABL:(CHARANUM-1):스킬1 = 2996;스쿠왈타토레
 
 			;- SET:사쿠라 교코
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			SIF FLAG:(20000+4395) == 0
 				FLAG:(20000+4395) = 10
 			CALL SET_ENEMY,10,4395,25,0,0
@@ -147,8 +147,8 @@ IF 이벤트플래그:99:0 == 2
 			CFLAG:(CHARANUM-1):주살무효화횟수 += 1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			;優先・数値を[[]]に변경すべし
-			ABL:(CHARANUM-1):스킬1 = 2995;롯소・판타즈마
+			;優先ㆍ数値を[[]]に변경すべし
+			ABL:(CHARANUM-1):스킬1 = 2995;롯소ㆍ판타즈마
 
 			;- 전투前処理
 			FLAG:도주불가플래그 = 1
@@ -218,7 +218,7 @@ IF 이벤트플래그:99:0 == 2
 			CUSTOMDRAWLINE =
 			WAIT
 			;- SET:美樹 사야카
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			SIF FLAG:(20000+4396) == 0
 				FLAG:(20000+4396) = 10
 			CALL SET_ENEMY,9,4396,25,0,0
@@ -228,11 +228,11 @@ IF 이벤트플래그:99:0 == 2
 			CFLAG:(CHARANUM-1):화염무효화횟수 += 1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			ABL:(CHARANUM-1):스킬1 = 2996;스쿠왈타토레
 
 			;- SET:토모에 마미
-			;優先・数値を[[]]に변경すべし
+			;優先ㆍ数値を[[]]に변경すべし
 			SIF FLAG:(20000+4397) == 0
 				FLAG:(20000+4397) = 10
 			CALL SET_ENEMY,14,4397,25,0,0
@@ -242,8 +242,8 @@ IF 이벤트플래그:99:0 == 2
 			CFLAG:(CHARANUM-1):전술무효화횟수 += 1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			;優先・数値を[[]]に변경すべし
-			ABL:(CHARANUM-1):스킬1 = 2997;티로・피날레
+			;優先ㆍ数値を[[]]に변경すべし
+			ABL:(CHARANUM-1):스킬1 = 2997;티로ㆍ피날레
 
 			;- 전투前処理
 			FLAG:도주불가플래그 = 1
@@ -336,14 +336,14 @@ PRINTW 마녀 Oktavia Von Seckendorff와 그 사역마가 나타났다!
 PRINTL 
 
 ;- SET:オクタヴィア
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,9,3399,30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 CFLAG:(CHARANUM-1):행동횟수 = 2
 ABL:(CHARANUM-1):최저공격횟수 = 2
 ABL:(CHARANUM-1):최대공격횟수 = 2
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 ABL:(CHARANUM-1):스킬8 = 2996;스쿠왈타토레
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -351,19 +351,19 @@ ABL:(CHARANUM-1):아이템1 = 5498
 ABL:(CHARANUM-1):입수확률1 = 100
 
 ;- SET:クラリッサ1
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,8,3391,25,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 
 ;- SET:クラリッサ2
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,10,3391,25,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 
 ;- SET:ホルゲル
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,14,3390,25,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
@@ -408,22 +408,22 @@ PRINTL
 PRINTW 마녀 Ophelia 가 2체 나타났다!
 
 ;- SET:オフィーリア
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,8,3393,30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 CFLAG:(CHARANUM-1):행동횟수 = 2
 ABL:(CHARANUM-1):최저공격횟수 = 2
 ABL:(CHARANUM-1):최대공격횟수 = 2
-;優先・数値を[[]]に변경すべし
-ABL:(CHARANUM-1):스킬8 = 2995;롯소・판타즈마
+;優先ㆍ数値を[[]]に변경すべし
+ABL:(CHARANUM-1):스킬8 = 2995;롯소ㆍ판타즈마
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
 ABL:(CHARANUM-1):아이템1 = 5498
 ABL:(CHARANUM-1):입수확률1 = 100
 
 ;- SET:オフィーリア（幻影）
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,10,3393,30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 130
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
@@ -470,28 +470,28 @@ PRINTL
 PRINTW 마녀 Candeloro 와 그 사역마가 나타났다!
 
 ;- SET:キャンデロロ
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,9,3394,30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 CFLAG:(CHARANUM-1):행동횟수 = 2
 ABL:(CHARANUM-1):최저공격횟수 = 2
 ABL:(CHARANUM-1):최대공격횟수 = 2
-;優先・数値を[[]]に변경すべし
-ABL:(CHARANUM-1):스킬8 = 2997;티로・피날레
+;優先ㆍ数値を[[]]に변경すべし
+ABL:(CHARANUM-1):스킬8 = 2997;티로ㆍ피날레
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
 ABL:(CHARANUM-1):아이템1 = 5498
 ABL:(CHARANUM-1):입수확률1 = 100
 
 ;- SET:빨강-씨
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,8,3389,25,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 
 ;- SET:분홍-씨
-;優先・数値を[[]]に변경すべし
+;優先ㆍ数値を[[]]に변경すべし
 CALL SET_ENEMY,10,3388,25,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 CFLAG:(CHARANUM-1):ＭＰ보정 += 1000

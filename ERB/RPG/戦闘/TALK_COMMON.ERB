@@ -27,7 +27,7 @@
 ;	018		2019/08/28		空気					デビルチェンバー使用時の挙動を修正。また、DDMがONなら容量いっぱいでも仲魔になって自動的にストレージに送られるように
 ;	019		2020/02/21		なんとなくの人			インストールソフト：アミティプロテクタの処理を追加
 ;	020		2020/03/27		ネトリス				インストールソフト：カッコーラバーの処理を追加
-;	021		2020/04/22		JK好き					犯してもらう際に地の文が途切れるパターンがあったのを修正・改行が必要な部分を改行
+;	021		2020/04/22		JK好き					犯してもらう際に地の文が途切れるパターンがあったのを修正ㆍ改行が必要な部分を改行
 ;	022		2021/05/17		JK好き					女を宛がった場合の文章パターンを調整
 ;	023		2021/06/24		JK好き					女を宛がった場合の主人が男の娘の場合にV描写に行かないように修正
 ;	024		2022/06/07		NEO						NTR防御/誘発服飾追加の関数対応
@@ -245,10 +245,10 @@ FOR LOCAL,0,CHARANUM
 	ENDIF
 NEXT
 RESULT = 0
-;레이디・킬러즈
+;레이디ㆍ킬러즈
 SIF !(CFLAG:(FINDCHARA(NO,NO:ARG)):PT플래그 > 0) && (TALENT:ARG:남자 == 0 || TALENT:ARG:오토코노코)
 	CALL LADY_KILLERS,ARG
-;그린・글라스
+;그린ㆍ글라스
 SIF !(CFLAG:(FINDCHARA(NO,NO:ARG)):PT플래그 > 0) && (TALENT:ARG:남자 && TALENT:ARG:오토코노코 == 0)
 	CALL GREEN_GRASS,ARG
 ;커코러버
@@ -657,7 +657,7 @@ SELECTCASE RAND:(3+仮_異性を要求するか？(ARG)*(1+(FLAG:월령 == 8)))
 	CASE 1
 	;ＭＡＧを要求
 		TFLAG:TALK용요구치 = CSVBASE(NO:ARG,GETNUM(BASE,"LV"),0) * (300 + RAND:1000)/100
-		IF EQUIP:MASTER:더블・밸류 == 1 && NUM_SUMMONER()
+		IF EQUIP:MASTER:더블ㆍ밸류 == 1 && NUM_SUMMONER()
 			TFLAG:TALK용요구치 = TFLAG:TALK용요구치 / 2
 		ENDIF
 		CALL KOJO_TALK,ARG,20
@@ -974,7 +974,7 @@ $OKASHITE
 	;主人が倒れてたら会話終わり
 	CALL INPUTABLE_CHARA,PLAYER
 	;悪魔満足度が0でも会話終わり
-	;魅了・睡眠でもINPUTABLE_CHARAは0を返してくるのでこの処理は不要
+	;魅了ㆍ睡眠でもINPUTABLE_CHARAは0を返してくるのでこの処理は不要
 	;SIF FLAG:악마만족도 == 0
 	;	RESULT = 0
 	IF RESULT == 0 || MAXBASE:PLAYER:체력 == 0
@@ -1406,7 +1406,7 @@ ENDIF
 RETURNF -1
 
 ;============================================================
-;コード短縮用・TALK用구상호출関数
+;コード短縮用ㆍTALK用구상호출関数
 ;============================================================
 @KOJO_TALK,ARG,ARG:1
 TFLAG:TALK구상호출용 = ARG:1
@@ -1416,7 +1416,7 @@ CATCH
 	CATCH
 		SELECTCASE ARG:1
 			CASE 1
-				;1:レディ・キラーズ
+				;1:レディㆍキラーズ
 				PRINTFORML %조사처리(CALLNAME:ARG,"는")% %CALLNAME:PLAYER%에게 헤롱거리는 듯하다
 				
 			CASE 2
@@ -1660,11 +1660,11 @@ CATCH
 			CASE 83
 				;友好度が高い
 			CASE 88
-				;ヤらせてもらう・交渉が成功した場合
+				;ヤらせてもらうㆍ交渉が成功した場合
 				PRINTW 교섭에 성공해, 범해져 주기로 했다
 				CALL MESSAGE_TALK
 			CASE 89
-				;犯してもらう・交渉が成功した場合
+				;犯してもらうㆍ交渉が成功した場合
 				PRINTW 교섭에 성공해, 범해주기로 했다
 				CALL MESSAGE_TALK
 			CASE 90
@@ -1705,12 +1705,12 @@ ENDCATCH
 SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 
 	;------------------------------------------
-	;ヤらせてもらう・一発ＯＫの場合
+	;ヤらせてもらうㆍ一発ＯＫの場合
 	;------------------------------------------
 			CASE 6
 				
 	;------------------------------------------
-	;犯してもらう・一発ＯＫの場合
+	;犯してもらうㆍ一発ＯＫの場合
 	;------------------------------------------
 			CASE 9
 				TFLAG:메시지패턴 = 0
@@ -1739,7 +1739,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 						ENDIF
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && RAND:2 == 0
 							TFLAG:메시지패턴 = 5
-							;스커트걷어올림・パンツずらし
+							;스커트걷어올림ㆍパンツずらし
 							SELECTCASE TEQUIP:PLAYER:스커트걷어올림
 								CASE 1
 									PRINT 스커트 끝을 들어올리고, 
@@ -1783,7 +1783,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							ENDSELECT
 							
 							IF TEQUIP:PLAYER:음순노출 == -1
-								;스커트걷어올림・ノーパン
+								;스커트걷어올림ㆍノーパン
 								IF STAIN:PLAYER:3 & 4
 									SIF PALAM:PLAYER:윤활 >= PALAMLV:2
 										PRINT 애액과 
@@ -1801,7 +1801,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 									PRINTFORMW 예쁜 그대로의\@ TALENT:PLAYER:소인체형 ? 균열이 # 비소가\@ 바깥 공기에 노출되었다…
 								ENDIF
 							ELSE
-								;스커트걷어올림・下着見せ
+								;스커트걷어올림ㆍ下着見せ
 								IF TALENT:PLAYER:오토코노코 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
 									PRINTFORMW %CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출)%의 아래에서 귀여운 페니스가 딱딱하게 솟아오른 모습이 훤히 들여다보인다…
 								ELSEIF TALENT:PLAYER:오토코노코
@@ -1819,7 +1819,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 						ENDIF
 					ELSEIF !(TEQUIP:PLAYER:고간구조 & 1) && RAND:3 == 0
 						TFLAG:메시지패턴 = 2
-					;Ｍ字開다리・ノーパン+開帳
+					;Ｍ字開다리ㆍノーパン+開帳
 						PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 조용히 자리에 앉아 
 						;바지履いてる場合は摺り下ろす
 						SIF TEQUIP:PLAYER:고간구조 & 1
@@ -1836,7 +1836,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							PRINT 도발적인 미소를 띄우면서 
 						ENDIF
 							PRINT 다리를 크게 M자로 벌리고
-					;Ｍ字開다리・パンツずらし
+					;Ｍ字開다리ㆍパンツずらし
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 선정적인 손가락 끝으로 
@@ -1872,7 +1872,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINTFORML \@ TALENT:PLAYER:소인체형 ? 균열을 # 비소를\@ 손가락으로 벌려 보이면서, 
 							ENDIF
 						ELSE
-							;四つんばい・ボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
+							;四つんばいㆍボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
 							PRINT 숨김없이 
 							IF TALENT:PLAYER:오토코노코
 								PRINTL 오므라진 항문을 손가락으로 벌려보이며 
@@ -1883,8 +1883,8 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINT 스스로를 위로하면서 
 						ENDIF
 						PRINTFORMW %CALLNAME:교섭대상()%에게 범해줬으면 한다고 애원했다……
-					;Ｍ字開다리・ノーパン
-					;Ｍ字開다리・パンツなぞり
+					;Ｍ字開다리ㆍノーパン
+					;Ｍ字開다리ㆍパンツなぞり
 					;Ｍ字開다리
 
 					ELSEIF !(TALENT:PLAYER:절벽 && TALENT:PLAYER:남자) && RAND:2 == 0
@@ -1950,7 +1950,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							PRINTFORM %조사처리(CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출),"를")% 내려 
 						PRINTFORM %CALLNAME:교섭대상()%에게 
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
-							;四つんばい・パンツずらし
+							;四つんばいㆍパンツずらし
 							PRINT 엉덩이를 
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 높게 쓱 내밀듯이 
@@ -1961,13 +1961,13 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINTFORML \@ TALENT:PLAYER:소인체형 ? 균열을 # 비소를\@ 손가락으로 벌려 보이면서, 
 							ENDIF
 						ELSEIF TEQUIP:PLAYER:고간구조 & 2
-							;四つんばい・ビキニ구조
+							;四つんばいㆍビキニ구조
 							PRINTFORM %조사처리(CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출),"로")% 감싼 엉덩이를 
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 높게 쓱 내밀듯이 
 							PRINTL 향하게 하면서, 
 						ELSE
-							;四つんばい・ボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
+							;四つんばいㆍボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
 							PRINT 숨김없이 
 							IF TALENT:PLAYER:오토코노코
 								PRINTL 오므라진 항문을 
@@ -2244,7 +2244,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 		ENDIF
 
 	;------------------------------------------
-	;犯してもらう・交渉が성공した場合
+	;犯してもらうㆍ交渉が성공した場合
 	;------------------------------------------
 			CASE 89
 				TFLAG:메시지패턴 = 0
@@ -2269,7 +2269,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 						ENDIF
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && RAND:2 == 0
 							TFLAG:메시지패턴 = 5
-							;스커트걷어올림・パンツずらし
+							;스커트걷어올림ㆍパンツずらし
 							SELECTCASE TEQUIP:PLAYER:스커트걷어올림
 								CASE 1
 									PRINT 스커트 끝을 걷어올리고, 
@@ -2313,7 +2313,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							ENDSELECT
 							
 							IF TEQUIP:PLAYER:음순노출 == -1
-								;스커트걷어올림・ノーパン
+								;스커트걷어올림ㆍノーパン
 								IF STAIN:PLAYER:3 & 4
 									SIF PALAM:PLAYER:윤활 >= PALAMLV:2
 										PRINT 애액과 
@@ -2331,7 +2331,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 									PRINTFORMW 예쁜 그대로의\@ TALENT:PLAYER:소인체형 ? 균열이 # 비소가\@ 바깥 공기에 노출되었다…
 								ENDIF
 							ELSE
-								;스커트걷어올림・下着見せ
+								;스커트걷어올림ㆍ下着見せ
 								IF TALENT:PLAYER:오토코노코 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
 									PRINTFORMW %CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출)% 아래에서 귀여운 페니스가 딱딱하게 발기한 모습이 훤히 들여다보이게 되었다…
 								ELSEIF TALENT:PLAYER:오토코노코
@@ -2349,7 +2349,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 						ENDIF
 					ELSEIF !(TEQUIP:PLAYER:고간구조 & 1) && RAND:3 == 0
 						TFLAG:메시지패턴 = 2
-					;Ｍ字開다리・ノーパン+開帳
+					;Ｍ字開다리ㆍノーパン+開帳
 						PRINTFORM %조사처리(CALLNAME:PLAYER,"는")% 조용히 자리에 앉아 
 						;바지履いてる場合は摺り下ろす
 						SIF TEQUIP:PLAYER:고간구조 & 1
@@ -2366,7 +2366,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							PRINT 도발적인 미소를 띄우면서 
 						ENDIF
 							PRINT 다리를 크게 M자로 벌리고 
-					;Ｍ字開다리・パンツずらし
+					;Ｍ字開다리ㆍパンツずらし
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 선정적인 손가락 끝으로 
@@ -2402,7 +2402,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINTFORML \@ TALENT:PLAYER:소인체형 ? 균열을 # 비소를\@ 손가락으로 벌려 보이면서, 
 							ENDIF
 						ELSE
-							;四つんばい・ボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
+							;四つんばいㆍボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
 							PRINT 숨김 없이 
 							IF TALENT:PLAYER:오토코노코
 								PRINTL 애널을 손가락으로 벌려보이며 
@@ -2413,8 +2413,8 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINT 스스로를 위로하면서 
 						ENDIF
 						PRINTFORMW %CALLNAME:교섭대상()%에게 범해줬으면 한다고 애원했다……
-					;Ｍ字開다리・ノーパン
-					;Ｍ字開다리・パンツなぞり
+					;Ｍ字開다리ㆍノーパン
+					;Ｍ字開다리ㆍパンツなぞり
 					;Ｍ字開다리
 
 					ELSEIF !(TALENT:PLAYER:절벽 && TALENT:PLAYER:남자) && RAND:2 == 0
@@ -2481,7 +2481,7 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 							PRINTFORM %조사처리(CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출),"를")% 내려 
 						PRINTFORM %CALLNAME:교섭대상()%에게 
 						IF TEQUIP:PLAYER:Ｖ비켜놓기가능 && CFLAG:PLAYER:던전내발정용욕정치 >= 6000
-							;四つんばい・パンツずらし
+							;四つんばいㆍパンツずらし
 							PRINT 엉덩이를 
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 높게 쓱 내밀듯이 
@@ -2492,13 +2492,13 @@ SELECTCASE (ARG > -1 ? ARG # TFLAG:TALK구상호출용)
 								PRINTFORML \@ TALENT:PLAYER:소인체형 ? 균열을 # 비소를\@ 손가락으로 벌려 보이면서, 
 							ENDIF
 						ELSEIF TEQUIP:PLAYER:고간구조 & 2
-							;四つんばい・ビキニ구조
+							;四つんばいㆍビキニ구조
 							PRINTFORM %조사처리(CLOTHESNAMEF(PLAYER,TEQUIP:PLAYER:음순노출),"로")% 감싼 엉덩이를 
 							SIF ((TALENT:PLAYER:음란 || TALENT:PLAYER:창부) && TALENT:PLAYER:ＮＴＲ == 0 )
 								PRINT 높게 쓱 내밀듯이 
 							PRINTL 향하게 하면서, 
 						ELSE
-							;四つんばい・ボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
+							;四つんばいㆍボトムレスorノーパンor바지はいてる(摺り下ろしずみ)
 							PRINT 숨김없이 
 							IF TALENT:PLAYER:오토코노코
 								PRINTL 애널을 
@@ -2560,7 +2560,7 @@ PRINTL
 
 ;결과
 ;성공
-;성공の場合は마카・아이템・仲魔が手に入る
+;성공の場合は마카ㆍ아이템ㆍ仲魔が手に入る
 ;회화担当が『바람기』『淫ＮＴＲ』또는発情している場合は성교渉を望む事もある
 IF RAND:100 < 会話成功率
 
@@ -2615,7 +2615,7 @@ IF RAND:100 < 会話成功率
 				
 		ENDSELECT
 
-	;ムフフがオフ、若しくは上の조건に当てはまらない場合は마카・아이템・仲魔のみ
+	;ムフフがオフ、若しくは上の조건に当てはまらない場合は마카ㆍ아이템ㆍ仲魔のみ
 	;仲魔は少しだけ확률を落とす
 	ELSE
 		SELECTCASE RAND:4
@@ -2751,14 +2751,14 @@ IF TALENT:ARG:츤데레
 ENDIF
 
 
-;交渉の종류：通常・키스要求・입봉사要求（生えてるのならフェラ・ないなら커닐링구스）・성교渉要求
+;交渉の종류：通常ㆍ키스要求ㆍ입봉사要求（生えてるのならフェラㆍないなら커닐링구스）ㆍ성교渉要求
 ;通常以外の확률は低くし、ムフフがオフの場合は発生しない
 
 ;성교渉発生の확률計算と相手がこちらを性的대상としてみるかどうかの판정
 IF 性交渉発生フラグ == 1
 	性交渉発生率 = 仮_異性を要求するか？(ARG)
 
-	;유방・둔부が노출していると확률上昇
+	;유방ㆍ둔부が노출していると확률上昇
 	SIF TEQUIP:PLAYER:유방노출 == -1 || TEQUIP:PLAYER:둔부노출 == -1
 		性交渉発生率 += 1
 
@@ -2829,15 +2829,15 @@ FOR LOCAL, 0, 2
 				PRINTL 
 				
 				;要求に応じてキスをする
-				;特に対応した経験もないのでレズ・ＢＬ経験だけ判定する
-				;淫ＮＴＲ・発情中・背徳の指輪装備中の場合は無条件で応じる
+				;特に対応した経験もないのでレズㆍＢＬ経験だけ判定する
+				;淫ＮＴＲㆍ発情中ㆍ背徳の指輪装備中の場合は無条件で応じる
 				;→22/06/07：同効果の服を増やして関数にしたので修正
 				IF TALENT:PLAYER:ＮＴＲ == 2 || CFLAG:PLAYER:던전내발정용욕정치 > 5000 || 위험일(PLAYER) == 2 || IS_ANTI_NTR_CLOTHES(PLAYER) == -1
 					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 요구에 응해 %조사처리(CALLNAME:PLAYER,"와")% 키스를 나누고 있다……
 					会話成功率計算用 += 20
 					性行為の回数 = 1 + RAND:2
 					TCVAR:PLAYER:획득키스경험 = 会話成功率計算用
-					;레즈・ＢＬ경험計算
+					;레즈ㆍＢＬ경험計算
 					IF IS_LESBIAN(ARG,PLAYER)
 						CALL ADDS_EXP("레즈경험", 性行為の回数, ARG)
 						CALL ADDS_EXP("레즈경험", 性行為の回数, PLAYER)
@@ -2863,7 +2863,7 @@ FOR LOCAL, 0, 2
 						会話成功率計算用 += 20
 						性行為の回数 = 会話成功率計算用
 						TCVAR:PLAYER:획득키스경험 = 1 + RAND:2
-						;레즈・ＢＬ경험計算
+						;레즈ㆍＢＬ경험計算
 						IF IS_LESBIAN(ARG,PLAYER)
 							CALL ADDS_EXP("레즈경험", 性行為の回数, ARG)
 							CALL ADDS_EXP("레즈경험", 性行為の回数, PLAYER)
@@ -2912,7 +2912,7 @@ FOR LOCAL, 0, 2
 				PRINTL 
 				
 				;要求に応じて口奉仕をする
-				;淫ＮＴＲ・発情中・背徳の指輪装備中の場合は無条件で応じる
+				;淫ＮＴＲㆍ発情中ㆍ背徳の指輪装備中の場合は無条件で応じる
 				;→22/06/07：同効果の服を増やして関数にしたので修正
 				IF TALENT:PLAYER:ＮＴＲ == 2 || CFLAG:PLAYER:던전내발정용욕정치 > 5000 || 위험일(PLAYER) == 2 || IS_ANTI_NTR_CLOTHES(PLAYER) == -1
 					;페니스がある場合はフェラ
@@ -2927,7 +2927,7 @@ FOR LOCAL, 0, 2
 					
 					ENDIF
 					会話成功率計算用 += 30
-					;레즈・ＢＬ경험計算
+					;레즈ㆍＢＬ경험計算
 					IF IS_LESBIAN(ARG,PLAYER)
 						CALL ADDS_EXP("레즈경험", 性行為の回数, ARG)
 						CALL ADDS_EXP("레즈경험", 性行為の回数, PLAYER)
@@ -2963,7 +2963,7 @@ FOR LOCAL, 0, 2
 						ENDIF
 						会話成功率計算用 += 20
 						性行為の回数 = 1 + RAND:2
-						;레즈・ＢＬ경험計算
+						;레즈ㆍＢＬ경험計算
 						IF IS_LESBIAN(ARG,PLAYER)
 							CALL ADDS_EXP("레즈경험", 性行為の回数, ARG)
 							CALL ADDS_EXP("레즈경험", 性行為の回数, PLAYER)
@@ -3005,15 +3005,15 @@ FOR LOCAL, 0, 2
 			CASE IS > 7
 				PRINTFORMW %조사처리(CALLNAME:ARG,"가")% %CALLNAME:PLAYER%에게 성교섭을 요구해왔다
 				PRINTL 
-				PRINTW ・・・
+				PRINTW ㆍㆍㆍ
 				PRINTL 
-				PRINTW ・・
+				PRINTW ㆍㆍ
 				PRINTL 
-				PRINTW ・
+				PRINTW ㆍ
 				PRINTL 
 				
 				;要求に応じて性交渉をする
-				;淫ＮＴＲ・発情中・背徳の指輪装備中の場合は無条件で応じる
+				;淫ＮＴＲㆍ発情中ㆍ背徳の指輪装備中の場合は無条件で応じる
 				;→22/06/07：同効果の服を増やして関数にしたので修正
 				IF TALENT:PLAYER:ＮＴＲ == 2 || CFLAG:PLAYER:던전내발정용욕정치 > 5000 || 위험일(PLAYER) == 2 || IS_ANTI_NTR_CLOTHES(PLAYER) == -1
 					PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% 요구에 응해 %CALLNAME:ARG%에게 안기고 있다……

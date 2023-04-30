@@ -48,7 +48,7 @@ SIF 이벤트플래그:98:0 < 2
 	RETURN 0
 
 IF 이벤트플래그:82:1 == 4
-	RESULTS = 속・영령소환(FGO)
+	RESULTS = 속ㆍ영령소환(FGO)
 	RETURN 1
 ELSE
 	RESULTS = 영령소환(FGO)
@@ -96,7 +96,7 @@ IF 이벤트플래그:82:1 > 3
 	;---- EDIT 006 ADD END -----------------------------
 ELSE
 	FOR LCOUNT,0,CHARANUM
-		SIF LCOUNT == GETCHARA([[キャラ:쿠・훌린]])
+		SIF LCOUNT == GETCHARA([[キャラ:쿠ㆍ훌린]])
 			生贄 += LCOUNT
 	NEXT
 	;PRINTFORMW  生贄番号{生贄}
@@ -343,9 +343,9 @@ ELSE
 				PRINTFORMW  결정했으면 이제 행동만 남았다.
 				PRINTFORMW  만일의 영령(디코이)을 데리고 %CALLNAME:MASTER%는 곧바로 업마전(業魔殿)으로 발걸음을 옮겼다.
 				PRINTFORML  
-				PRINTFORML  ・
-				PRINTFORML  ・　・　
-				PRINTFORML  ・　・　・
+				PRINTFORML  ㆍ
+				PRINTFORML  ㆍ　ㆍ　
+				PRINTFORML  ㆍ　ㆍ　ㆍ
 				PRINTFORML  
 				PRINTFORMW  ＞ 지하실에 맞춤 제작된 그곳은 익숙한 업마전과는 다른 분위기의 공간이었다.
 				PRINTFORMW  　 방의 중앙에는 희생자、즉 피검체를 담는 격자를 사이에 두고、왠지 모르게 수술대가 놓여져 있었다.
@@ -399,9 +399,9 @@ ELSE
 				PRINTFORML  
 				PRINTFORMW  자부심과、약간의 두려움을 안고 %CALLNAME:MASTER%는 곧바로 업마전으로 발걸음을 옮겼다.
 				PRINTFORML  
-				PRINTFORML  ・
-				PRINTFORML  ・　・　
-				PRINTFORML  ・　・　・
+				PRINTFORML  ㆍ
+				PRINTFORML  ㆍ　ㆍ　
+				PRINTFORML  ㆍ　ㆍ　ㆍ
 				PRINTFORML  
 				CALL YO_SORO
 				PRINTFORMW  ＞ 안되겠다、실패했다
@@ -493,23 +493,23 @@ ELSE
 				PRINTFORMW  그런 부분은 귀찮을 거라고 확신하고、%CALLNAME:MASTER%는 해야 할 일에만 집중하기로 했다.
 				PRINTFORMW  자、우선은 아직 수다를 떨고 있는 미친놈들을 정신 차리게 하는 것부터 시작하자……
 				PRINTFORML  
-				PRINTFORML  ・
-				PRINTFORML  ・　・　
-				PRINTFORML  ・　・　・
+				PRINTFORML  ㆍ
+				PRINTFORML  ㆍ　ㆍ　
+				PRINTFORML  ㆍ　ㆍ　ㆍ
 				PRINTFORML  
 				PRINTFORML  
 				CUSTOMDRAWLINE =
-				PRINTFORML  ■■영령 쿠・훌린 소환개요■■
-				PRINTFORML  조건：이미 쓰러진 영웅 쿠・훌린을 소지하고 있어야 한다.
+				PRINTFORML  ■■영령 쿠ㆍ훌린 소환개요■■
+				PRINTFORML  조건：이미 쓰러진 영웅 쿠ㆍ훌린을 소지하고 있어야 한다.
 				PRINTFORML  
-				PRINTFORML  영웅 쿠・훌린을 촉매로 간주하여、영령 소환을 진행합니다.
-				PRINTFORML  촉매가 된 악마는 사라지고、새로운 영령 쿠・훌린이 등장합니다.
+				PRINTFORML  영웅 쿠ㆍ훌린을 촉매로 간주하여、영령 소환을 진행합니다.
+				PRINTFORML  촉매가 된 악마는 사라지고、새로운 영령 쿠ㆍ훌린이 등장합니다.
 				PRINTFORML  단、그 성격상 팬텀 소사이어티라는 어두운 조직에 소속되어있는 
 				PRINTFORML  %CALLNAME:MASTER%에게 순순히 따라는 것은 생각하기 어렵다.
 				PRINTFORML  실력테스트、혹은 최악의 경우 죽여버릴 가능성이 높으니 열심히 쓰러뜨려서 힘을 보여주자！
 				PRINTFORML  
 				SETCOLOR COLOR("YELLOW")
-				PRINTFORML  ※영웅 쿠・훌린은 소환 시 사라집니다.
+				PRINTFORML  ※영웅 쿠ㆍ훌린은 소환 시 사라집니다.
 				RESETCOLOR
 				PRINTFORML  
 				CUSTOMDRAWLINE =
@@ -519,7 +519,7 @@ ELSE
 				PRINTFORML  
 				PRINTFORMW  「어떤가？　너조차도、세계의 수호기구를 아무런 위험 없이 손에 넣으려는 생각은 하지 않겠지」
 				PRINTFORML  
-				PRINTFORML  「더군다나 이번 소환 대상은 켈트 신화의 대영웅 쿠・훌린이다
+				PRINTFORML  「더군다나 이번 소환 대상은 켈트 신화의 대영웅 쿠ㆍ훌린이다
 				PRINTFORMW  　맑은 물과 탁한 물을 함께 마신다는 의미에서는 문제가 없겠지만、팔팔함은 확실히 시험대에 오를 것이다」
 				PRINTFORML  
 				PRINTFORMW  소리도 나지 않는다는 것은 이런 뜻이다.
@@ -537,7 +537,7 @@ ELSE
 					$NO_SUMMON_1
 				;---- EDIT 004 ADD END -----------------------------
 					PRINTFORML  
-					PRINTFORMW  「아무튼、우선 소환의 촉매가 되는 악마 『영웅 쿠・훌린』을 함락시켜 데려오자」
+					PRINTFORMW  「아무튼、우선 소환의 촉매가 되는 악마 『영웅 쿠ㆍ훌린』을 함락시켜 데려오자」
 					PRINTFORML  
 					PRINTFORMW  「뭐、그 노력에 걸맞는 전력을 손에 …… 음、쓰러뜨리면 얻을 수 있겠지.　…… 아니겠어！」
 					PRINTFORML  
@@ -546,9 +546,9 @@ ELSE
 					PRINTFORMW  성공했을 때의 이득을 저울질하며 %CALLNAME:MASTER%는 일단 그 자리를 떠났다 ……
 					PRINTFORML  
 					PRINTFORML  
-					PRINTFORML  ・
-					PRINTFORML  ・　・　
-					PRINTFORML  ・　・　・
+					PRINTFORML  ㆍ
+					PRINTFORML  ㆍ　ㆍ　
+					PRINTFORML  ㆍ　ㆍ　ㆍ
 					PRINTFORML  
 					PRINTFORMW  후일、조금은 안정된 듯 한 어느 주인으로부터、조마의 추천이라는 팜플렛이 도착했다.
 					PRINTFORMW  아마 다른 곳에서는 나눠주지 않았을 자세한 내용까지 실려 있고 …… 그 책자 사이에 전단지가 끼워져 있다.
@@ -620,9 +620,9 @@ ELSE
 				PRINTFORML  
 				PRINTFORMW  ＞ %CALLNAME:MASTER%는 팬텀에게 요청 포기의 응답을 보냈습니다.
 				PRINTFORML  
-				PRINTFORML  ・
-				PRINTFORML  ・　・　
-				PRINTFORML  ・　・　・
+				PRINTFORML  ㆍ
+				PRINTFORML  ㆍ　ㆍ　
+				PRINTFORML  ㆍ　ㆍ　ㆍ
 				PRINTFORML  
 				PRINTFORMW  후일、조금은 안정된 듯 한 어느 주인으로부터、조마의 추천이라는 팜플렛이 도착했다.
 				PRINTFORMW  아마 다른 곳에서는 나눠주지 않았을 자세한 내용까지 실려 있고 …… 그 책자 사이에 전단지가 끼워져 있다.

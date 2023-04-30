@@ -65,7 +65,7 @@ TFLAG:28 = 2
 DOWNBASE:TARGET:체력 += 200
 DOWNBASE:TARGET:기력 += 500
 
-;強힘な아픔・공포・굴종・일탈・반감ソース、若干の쾌C
+;強힘な아픔ㆍ공포ㆍ굴종ㆍ일탈ㆍ반감ソース、若干の쾌C
 SOURCE:TARGET:아픔 = 4500
 SOURCE:TARGET:무서움 = 3000
 SOURCE:TARGET:굴종 = 1300
@@ -90,7 +90,7 @@ ELSEIF PALAM:10 >= PALAMLV:4
 	TIMES SOURCE:TARGET:아픔 , 3.00
 ENDIF
 
-;마조ッ気が強いと쾌Ｃ・굴복が증가
+;마조ッ気が強いと쾌Ｃㆍ굴복が증가
 IF ABL:마조끼 == 0
 	TIMES SOURCE:TARGET:쾌Ｃ , 1.00
 	TIMES SOURCE:TARGET:굴종 , 1.00

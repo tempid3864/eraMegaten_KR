@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB318.ERB
-;	Facility	:회화타입：男・紳士の会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：男ㆍ紳士の会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -12,7 +12,7 @@
 ;	002		2011/01/10		Ｎ鳥					基本処理をTALK_COMMONに一元化し、メッセージを口上呼び出し用関数に移植
 ;	003		2012/11/04		ネトリス				CASE 41:異性を宛がってもらった時の反応一ヶ所に加筆
 ;	004		2012/11/15		ネトリス				CASE 41:異性を宛がってもらった時の反応一ヶ所、46:満足１ヶ所、57:話かけたキャラが倒れている一ヶ所、62:仲魔になる１ヶ所に加筆
-;	005		2013/01/24		ネトリス				CASE 41:異性を宛がってもらった時の反応、46:満足、57:話かけたキャラが倒れている、59:満足し、仲魔になる、62:仲魔になる、89:犯してもらう・交渉が成功した場合に加筆
+;	005		2013/01/24		ネトリス				CASE 41:異性を宛がってもらった時の反応、46:満足、57:話かけたキャラが倒れている、59:満足し、仲魔になる、62:仲魔になる、89:犯してもらうㆍ交渉が成功した場合に加筆
 ;	006		2013/03/12		ネトリス				CASE 41:異性を宛がってもらった時の反応、46:満足、62:仲魔になるに加筆
 ;	006		2015/07/10		ネトリス				発情キャラの躾け会話を追加
 ;	007		2020/01/26		JK好き					スケベ防具装備中の条件をIS_EROEQUIP_Fにまとめ
@@ -44,7 +44,7 @@
 @KOJO_TALK_PUB318,ARG,ARG:1
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORMW 「……!?」
 		PRINTFORMW 「이 얼마나 가련한 인간인지…아아、보고 있는 것만으로도 %CSTR:ARG:일인칭%의 가슴이 조여오는 것 같아」
 		PRINTFORMW 「사람의 아이여…이 %조사처리(CSTR:ARG:일인칭,"가")% 힘이 되어 드리도록 하죠」
@@ -98,7 +98,7 @@ SELECTCASE ARG:1
 					;既に精液が…
 					PRINTFORMW 「흠、다른 사람의 씨앗이 남아 있네요」
 					SIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
-						PRINTFORMW 「연인이 있는데도・・ 대단히 사타구니가 느슨한 것 같군요」
+						PRINTFORMW 「연인이 있는데도ㆍㆍ 대단히 사타구니가 느슨한 것 같군요」
 					PRINTFORMW 「%CSTR:ARG:11%의 물건으로 긁어내 드리지요」
 					PRINTFORMW 「그 후에 %CSTR:ARG:11%의 씨앗으로 채워드립시다」
 					IF TALENT:ARG:천사
@@ -136,7 +136,7 @@ SELECTCASE ARG:1
 			;Ｍ字開脚
 			IF RAND:2 == 0
 				IF TALENT:ARG:천사
-					PRINTFORMW 「이 얼마나 음란한 모습・・ 부끄럽지 않은 것입니까?」
+					PRINTFORMW 「이 얼마나 음란한 모습ㆍㆍ 부끄럽지 않은 것입니까?」
 					PRINTFORMW 「%조사처리(CSTR:ARG:11,"가")% 바로잡아 드립시다」
 				ELSEIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
 					PRINTFORMW 「상당히 욕구 불만인 것 같네요」
@@ -154,7 +154,7 @@ SELECTCASE ARG:1
 				ELSEIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
 					PRINTFORMW 「이런이런、\@TALENT:MASTER:남자 == 0 ? 그녀 # 그\@의 앞인데도 불구하고、후후후후」
 					PRINTFORMW 「그렇게나 이것을 갖고 싶습니까?」
-					PRINTFORMW 「좋습니다、충분히 범해 드리도록 하지요・・그리고」
+					PRINTFORMW 「좋습니다、충분히 범해 드리도록 하지요ㆍㆍ그리고」
 					PRINTFORMW 「\@TALENT:MASTER:남자 == 0 ? 그녀 # 그\@에게 %CSTR:ARG:11%에게 범해지며 좋아하는 모습을 한껏 보여드리도록 하세요」
 				ELSE
 					PRINTFORMW 「누구 앞이라도 그런식으로 다리를 벌리는겁니까?」
@@ -196,7 +196,7 @@ SELECTCASE ARG:1
 					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"를")% 껴안고、키스하면서 가슴을 주물렀다
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;스커트걷어올림・パンツずらし
+			;스커트걷어올림ㆍパンツずらし
 			PRINTFORMW 「의복을 입은채로 교제한다는 것이군요」
 			PRINTFORMW 「좋습니다、나체로 얽히는 것은 짐승이나 마찬가지니까요」
 			
@@ -207,7 +207,7 @@ SELECTCASE ARG:1
 					PRINTFORMW 「상당히 색욕에 물들어 있는 것 같네요」
 					PRINTFORMW 「%조사처리(CSTR:ARG:11,"가")% 바로잡아 드리도록 하지요」
 				ELSEIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
-					PRINTFORMW 「사랑하는 사람 앞에서 이러첨 흐트러진다고는・・・후후、불쌍한 사람도 있는 것이군요」
+					PRINTFORMW 「사랑하는 사람 앞에서 이러첨 흐트러진다고는ㆍㆍㆍ후후、불쌍한 사람도 있는 것이군요」
 					PRINTFORMW 「쿠쿠쿠、사랑하는 사람이 다른 사람의 씨앗으로 더럽혀지는 모습을 눈에 새기세요」
 				ELSE
 					PRINTFORMW 「마치 한창 때가 된 암캐로군요」
@@ -221,8 +221,8 @@ SELECTCASE ARG:1
 				ELSEIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
 					PRINTFORMW 「정욕 앞에서는 「사랑」같은 것 등은 무의미한 것 같네요」
 					PRINTFORMW 「후후、마음에 들었습니다」
-					PRINTFORMW 「기분이 내킬때까지 한껏 범해드립시다・・그리고」
-					PRINTFORMW 「끝난 후에、또 다시 「사랑」이란 말을 할 수 있을까・・후후후、기대되는군요」
+					PRINTFORMW 「기분이 내킬때까지 한껏 범해드립시다ㆍㆍ그리고」
+					PRINTFORMW 「끝난 후에、또 다시 「사랑」이란 말을 할 수 있을까ㆍㆍ후후후、기대되는군요」
 				ELSE
 					PRINTFORMW 「그렇게나 %CSTR:ARG:11%에게 안기고 싶습니까?」
 					PRINTFORMW 「좋겠지요、%CSTR:ARG:11%의 씨로 채워드리겠습니다」
@@ -268,14 +268,14 @@ SELECTCASE ARG:1
 				PRINTFORML 「%CSTR:ARG:11%에게 안기고 싶습니까?」
 				PRINTFORMW 「좋겠지요｣
 			ELSEIF TALENT:PLAYER:연모 || TALENT:PLAYER:친애 
-				PRINTFORMW 「연모의 정을 품은 사람의 앞에서 범해지고 싶다니・・・」
+				PRINTFORMW 「연모의 정을 품은 사람의 앞에서 범해지고 싶다니ㆍㆍㆍ」
 				PRINTFORMW 「사모하는 마음을 잊을 정도의 쾌락을 그 신체에 새겨드리도록 하지요」
 			ELSE
 				PRINTFORML 「%CSTR:ARG:11%에게 안기고 싶습니까?」
 				PRINTFORMW 「좋겠지요｣
 			ENDIF
 			PRINTFORMW %조사처리(CALLNAME:PLAYER,"는")% %CALLNAME:ARG%에게 마음껏 범해졌다
-			GOTO 犯してもらう・交渉が成功した場合行為中
+			GOTO 犯してもらうㆍ交渉が成功した場合行為中
 		ENDIF
 	CASE 10
 		;10:要求額を提示：￥
@@ -732,7 +732,7 @@ SELECTCASE ARG:1
 				ENDIF
 			;通常
 			ELSE
-				;연모・친애
+				;연모ㆍ친애
 				IF TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애
 					;発情
 ;					IF 위험일(바친캐릭터()) > 1
@@ -865,7 +865,7 @@ SELECTCASE ARG:1
 				PRINTFORML 
 				PRINTFORML 
 			ELSE
-				;연모・친애
+				;연모ㆍ친애
 				IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 					IF RAND:2 == 0
 						PRINTFORML 
@@ -908,7 +908,7 @@ SELECTCASE ARG:1
 			;その他
 			ELSE
 				;異性を捧げた場合
-				;연모・친애
+				;연모ㆍ친애
 				IF TFLAG:바친캐릭터 > -1 && (TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애)
 					;위험일
 					IF 위험일((바친캐릭터())) == 1
@@ -1147,25 +1147,25 @@ SELECTCASE ARG:1
 		PRINTFORML 「%조사처리(CSTR:ARG:12,"와")% 만날 수 있어 영광이었습니다」
 		PRINTFORML 「그러면、%조사처리(CSTR:ARG:11,"는")% 이것으로 실례하겠습니다」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
-		$犯してもらう・交渉が成功した場合行為中
+		$犯してもらうㆍ交渉が成功した場合行為中
 		;魅了になっている場合
 		IF GET_STATE(CFLAG:PLAYER:상태이상) == "CHARM"
 			IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 ;				IF TALENT:ARG:천사
 ;					PRINTFORML 
-;					PRINTFORML 89:犯してもらう・交渉が成功した場合天使CHARM
+;					PRINTFORML 89:犯してもらうㆍ交渉が成功した場合天使CHARM
 ;				ELSE
 ;					SELECTCASE RAND:2
 ;						CASE 0
 ;							PRINTFORML 
-;							PRINTFORML 89:犯してもらう・交渉が成功した場合CHARM
+;							PRINTFORML 89:犯してもらうㆍ交渉が成功した場合CHARM
 ;							PRINTFORML 
 ;						CASEELSE
 							PRINTFORML 
@@ -1179,13 +1179,13 @@ SELECTCASE ARG:1
 			ENDIF
 		;通常
 		ELSE
-			;연모・친애
+			;연모ㆍ친애
 			IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 				IF TALENT:ARG:천사
 ;					SELECTCASE RAND:2
 ;						CASE 0
 ;							PRINTFORML 
-;							PRINTFORML 89:犯してもらう・交渉が成功した場合天使
+;							PRINTFORML 89:犯してもらうㆍ交渉が成功した場合天使
 ;							PRINTFORML 
 ;						CASEELSE
 							PRINTFORML 
@@ -1200,7 +1200,7 @@ SELECTCASE ARG:1
 ;					SELECTCASE RAND:2
 ;						CASE 0
 ;							PRINTFORML 
-;							PRINTFORML 89:犯してもらう・交渉が成功した場合
+;							PRINTFORML 89:犯してもらうㆍ交渉が成功した場合
 ;							PRINTFORML 
 ;						CASEELSE
 							PRINTFORML 
@@ -1402,11 +1402,11 @@ IF RAND:10 == 0
 			PRINTFORML 
 			PRINTFORMW 「알겠습니다、제대로 훈육해 드리겠습니다」
 			PRINTFORML 
-			PRINTFORMW ・・・
+			PRINTFORMW ㆍㆍㆍ
 			PRINTFORML 
-			PRINTFORMW ・・
+			PRINTFORMW ㆍㆍ
 			PRINTFORML 
-			PRINTFORMW ・
+			PRINTFORMW ㆍ
 			PRINTFORML 
 			PRINTFORMW 
 

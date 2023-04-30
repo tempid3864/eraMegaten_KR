@@ -47,7 +47,7 @@ IF LOCAL:6 == 5
 		ENDIF
 	ENDIF
 ENDIF
-;罪進行度7(하늘의과학관突入가능)이상・罰進度7(우라라と전투가능)이상
+;罪進行度7(하늘의과학관突入가능)이상ㆍ罰進度7(우라라と전투가능)이상
 IF (LOCAL:6 >= 7 || LOCAL:7 >= 7) && STRFLAG_NUM_EV("영국 전통의 방어구의 소문") < 2
 	LOCALS:LOCAL = 마법의 재단사의 소문
 	IF !STRFLAG_NUM_EV(LOCALS:LOCAL)

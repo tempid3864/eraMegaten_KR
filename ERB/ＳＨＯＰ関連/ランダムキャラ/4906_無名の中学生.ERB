@@ -71,7 +71,7 @@ SELECTCASE ARGS
 			RETURN 1, 1
 		ENDIF
 		;それ이외は서머너か이능자か페르소나
-		;서머너が多くてもアレなので、少し이능자・페르소나を出やすくする
+		;서머너が多くてもアレなので、少し이능자ㆍ페르소나を出やすくする
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;純サマ
@@ -129,9 +129,9 @@ SELECTCASE ARGS
 				RESULT:1 = [[스킬:기합]]
 				RESULT:2 = [[스킬:양팔찍기]]
 				RESULT:3 = [[스킬:이악물기]]
-				RESULT:4 = [[스킬:라쿤・다]]
+				RESULT:4 = [[스킬:라쿤ㆍ다]]
 				RESULT:5 = [[스킬:간파]]
-				RESULT:6 = [[스킬:타루・카쟈]]
+				RESULT:6 = [[스킬:타루ㆍ카쟈]]
 				RESULT:7 = [[스킬:기공(대)]]
 				RESULT:8 = [[스킬:불굴의투지]]
 				RESULT:9 = [[스킬:삼할의활천]]
@@ -206,15 +206,15 @@ SELECTCASE ARGS
 					CASE 0
 						RESULT:4 = [[스킬:침식하는검은날개]]
 					CASE 1
-						RESULT:4 = [[스킬:티로・피날레]]
+						RESULT:4 = [[스킬:티로ㆍ피날레]]
 					CASE 2
 						RESULT:4 = [[스킬:나의세계]]
 					CASE 3
-						RESULT:4 = [[스킬:피니투라・프레차]]
+						RESULT:4 = [[스킬:피니투라ㆍ프레차]]
 					CASE 4
 						RESULT:4 = [[스킬:스쿠왈타토레]]
 					CASE 5
-						RESULT:4 = [[스킬:롯소・판타즈마]]
+						RESULT:4 = [[스킬:롯소ㆍ판타즈마]]
 				ENDSELECT
 			ENDIF
 			RETURN RESULT
@@ -268,16 +268,16 @@ SELECTCASE ARGS
 		;カジャ系
 		SELECTCASE RAND:4
 			CASE 0
-				RESULT:4 = [[스킬:타루・카쟈]]
+				RESULT:4 = [[스킬:타루ㆍ카쟈]]
 				RESULT:5 = [[스킬:다크브레스]]
 			CASE 1
-				RESULT:4 = [[스킬:스쿠・카쟈]]
+				RESULT:4 = [[스킬:스쿠ㆍ카쟈]]
 				RESULT:5 = [[스킬:도발]]
 			CASE 2
-				RESULT:4 = [[스킬:라쿠・카쟈]]
+				RESULT:4 = [[스킬:라쿠ㆍ카쟈]]
 				RESULT:5 = [[스킬:파워브레스]]
 			CASE 3
-				RESULT:4 = [[스킬:사마・카쟈]]
+				RESULT:4 = [[스킬:사마ㆍ카쟈]]
 				RESULT:5 = [[스킬:위협]]
 		ENDSELECT
 		;魔脈/コンセ
@@ -292,7 +292,7 @@ SELECTCASE ARGS
 		
 		;강화
 		IF 이벤트플래그:88:0 > 3
-			RESULT:9 = [[스킬:데・카쟈]]
+			RESULT:9 = [[스킬:데ㆍ카쟈]]
 			RESULT:10 = [[스킬:리캄도라]]
 			IF TALENT:ARG:서머너 == 0
 				;純이능자なら気功

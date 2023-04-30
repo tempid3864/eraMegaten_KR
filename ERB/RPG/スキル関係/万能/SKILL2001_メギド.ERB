@@ -3,13 +3,13 @@
 
 ;스킬명
 @SKILL_NAME_2001,ARG
-;アーベントが使用する場合P・ランチャーEに
+;アーベントが使用する場合PㆍランチャーEに
 IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
-	RESULTS = P・런처E
+	RESULTS = Pㆍ런처E
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:야타가라스]]) && 던전플래그:25:14 == 1
 	RESULTS = 기의 응집덩어리
 ELSEIF SKILL_CHANGE(ARG, 5313) && 의뢰플래그:2:1 ==63
-	RESULTS = 매지컬・빔
+	RESULTS = 매지컬ㆍ빔
 ELSE
 	RESULTS = 메기도
 ENDIF
@@ -138,8 +138,8 @@ IF SKILL_CHANGE(ARG, 5313) && 의뢰플래그:2:1 == 63
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	SETCOLORBYNAME Pink
-	PRINTFORML ┏>매지컬・핑크 ━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃매지컬・빔！　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┏>매지컬ㆍ핑크 ━━━━━━━━━━━━━━━┓
+	PRINTFORML ┃매지컬ㆍ빔！　　　　　　　　　　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
@@ -160,7 +160,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,2001
 @SKILL_EXPLAIN_2001
 IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아벤트]]
 	PRINTL 적 전체에 빔으로 베어넘기는 공격을 행한다。
-	PRINTL 정식명칭「파르티잔・런처 E 모드」。하단의 총신에서 빔을 발사한다。
+	PRINTL 정식명칭「파르티잔ㆍ런처 E 모드」。하단의 총신에서 빔을 발사한다。
 ELSE
 	PRINTL 적 전체에 중 데미지
 ENDIF

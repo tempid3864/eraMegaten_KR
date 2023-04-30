@@ -50,7 +50,7 @@ SETCOLOR COLOR("BROWN")
 PRINTL
 PRINTW 이름이 불려졌다。
 IF 아미야 == "아미야"
-	PRINTW 자신의 오리지널의 이름이며、그러나 동시에 친부모인 프로페서・빅토르로부터 주어진 그 이름을。
+	PRINTW 자신의 오리지널의 이름이며、그러나 동시에 친부모인 프로페서ㆍ빅토르로부터 주어진 그 이름을。
 ELSE
 	PRINTFORMW 자신의 오리지널의 이름이며、그러나 새로운 이름인 %아미야%가 정의됨과 동시에、과거에 묻혀버린 그 이름을。
 ENDIF
@@ -184,10 +184,10 @@ ABL:(CHARANUM-1):스킬2  = [[스킬:전용기2]]
 ABL:(CHARANUM-1):스킬3  = [[스킬:브레이브재퍼]]
 ABL:(CHARANUM-1):스킬4  = [[스킬:데들리번]]
 ABL:(CHARANUM-1):스킬5  = [[스킬:히트라이저]]
-ABL:(CHARANUM-1):스킬6  = [[스킬:데・쿤다]]
+ABL:(CHARANUM-1):스킬6  = [[스킬:데ㆍ쿤다]]
 ABL:(CHARANUM-1):스킬7  = [[스킬:컨센트레이트]]
 ABL:(CHARANUM-1):스킬8  = [[스킬:테트라코와스]]
-ABL:(CHARANUM-1):스킬9  = [[스킬:데・카쟈]]
+ABL:(CHARANUM-1):스킬9  = [[스킬:데ㆍ카쟈]]
 ABL:(CHARANUM-1):스킬10  = [[스킬:화염가드브레이크]]
 ABL:(CHARANUM-1):스킬11  = [[스킬:주살가드브레이크]]
 ABL:(CHARANUM-1):스킬12  = [[스킬:검격가드브레이크]]
@@ -231,7 +231,7 @@ BASE:(CHARANUM-1):HAPPY = -100
 BASE:(CHARANUM-1):PANIC = -100
 BASE:(CHARANUM-1):CHARM = -100
 ABL:(CHARANUM-1):스킬1  = [[스킬:전용기1]]
-ABL:(CHARANUM-1):스킬2  = [[스킬:스쿤・다]]
+ABL:(CHARANUM-1):스킬2  = [[스킬:스쿤ㆍ다]]
 ABL:(CHARANUM-1):스킬3  = 0
 ABL:(CHARANUM-1):스킬4  = 0
 ABL:(CHARANUM-1):스킬5  = 0
@@ -286,11 +286,11 @@ FOR LCOUNT,7,17
 	ABL:(CHARANUM-1):스킬1  = [[스킬:그랜드턱]]
 	ABL:(CHARANUM-1):스킬2  = [[스킬:낭아천주참]]
 	ABL:(CHARANUM-1):스킬3  = [[스킬:삼단쏘기]]
-	ABL:(CHARANUM-1):스킬4  = [[스킬:타루・카쟈]]
-	ABL:(CHARANUM-1):스킬5  = [[스킬:마카・카쟈]]
-	ABL:(CHARANUM-1):스킬6  = [[스킬:스쿠・카쟈]]
+	ABL:(CHARANUM-1):스킬4  = [[스킬:타루ㆍ카쟈]]
+	ABL:(CHARANUM-1):스킬5  = [[스킬:마카ㆍ카쟈]]
+	ABL:(CHARANUM-1):스킬6  = [[스킬:스쿠ㆍ카쟈]]
 	ABL:(CHARANUM-1):스킬7  = [[스킬:마의도눔]]
-	ABL:(CHARANUM-1):스킬8  = [[스킬:메・디아라마]]
+	ABL:(CHARANUM-1):스킬8  = [[스킬:메ㆍ디아라마]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 NEXT
@@ -577,9 +577,9 @@ IF CFLAG:ARG:１more플래그 > 0
 				CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:주살가드브레이크]]
 		ENDSELECT
 	ELSEIF 強化解除チェック == 1
-		CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:데・카쟈]]
+		CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:데ㆍ카쟈]]
 	ELSEIF 弱体解除チェック == 1
-		CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:데・쿤다]]
+		CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:데ㆍ쿤다]]
 	ELSE
 		CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:컨센트레이트]]
 	ENDIF
@@ -646,8 +646,8 @@ ENDIF
 @SET_ACTION_帝国砲撃誘導機,ARG
 
 IF CFLAG:ARG:１more플래그 > 0
-	;ワンモア時はスク・ンダを唱えるだけ
-	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿤・다]]
+	;ワンモア時はスクㆍンダを唱えるだけ
+	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿤ㆍ다]]
 ELSE
 	IF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"爆撃（ＡＮ）")) > 0
 		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:전용기1]]
@@ -682,15 +682,15 @@ IF CFLAG:ARG:１more플래그 > 0
 					;COUNTER:1に該当するカジャのスキル番号を代入
 					SELECTCASE LCOUNT:1
 						CASE 1
-							COUNTER:1 = [[스킬:타루・카쟈]]
+							COUNTER:1 = [[스킬:타루ㆍ카쟈]]
 						CASE 2,4
-							COUNTER:1 = [[스킬:스쿠・카쟈]]
+							COUNTER:1 = [[스킬:스쿠ㆍ카쟈]]
 						CASE 3
-							COUNTER:1 = [[스킬:라쿠・카쟈]]
+							COUNTER:1 = [[스킬:라쿠ㆍ카쟈]]
 						CASE 5
-							COUNTER:1 = [[스킬:마카・카쟈]]
+							COUNTER:1 = [[스킬:마카ㆍ카쟈]]
 						CASE 6
-							COUNTER:1 = [[스킬:사마・카쟈]]
+							COUNTER:1 = [[스킬:사마ㆍ카쟈]]
 					ENDSELECT
 					;既にそのカジャがいずれかの配列に代入されてたら跳ばす
 					SIF MATCH(能力強化可能フラグ,COUNTER:1)
@@ -705,7 +705,7 @@ IF CFLAG:ARG:１more플래그 > 0
 	NEXT
 	;回復対象が二人以上の場合は回復する
 	IF COUNTER:0 >= 2
-		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:메・디아라마]]
+		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:메ㆍ디아라마]]
 	ENDIF
 	;が、能力強化可能フラグが立ってたら能力強化を優先する
 	IF 能力強化可能フラグ:0 > 0
@@ -738,11 +738,11 @@ ELSE
 					CASE 0
 						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:그랜드턱]]
 					CASE 1
-						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:타루・카쟈]]
+						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:타루ㆍ카쟈]]
 					CASE 2
-						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:마카・카쟈]]
+						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:마카ㆍ카쟈]]
 					CASE 3
-						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿠・카쟈]]
+						CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿠ㆍ카쟈]]
 				ENDSELECT
 			ENDIF
 		CASE IS < 12

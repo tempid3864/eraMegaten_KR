@@ -6,9 +6,9 @@
 
 ;CVERSET　で登録キャラ全部に影響させることができるらしいぞ。知見を得た。
 FOR LCOUNT:0,0,3
-	;物理被ダメージ補正を起点とする３CFLAG＝物理・魔法・COOP被ダメージ補正のリセット
+	;物理被ダメージ補正を起点とする３CFLAG＝物理ㆍ魔法ㆍCOOP被ダメージ補正のリセット
 	CVARSET CFLAG,GETNUM(CFLAG,"물리피데미지보정") + LCOUNT:0,0
-	;物理与ダメージ補正を起点とする３CFLAG＝物理与・魔法与・割合ダメージ補正のリセット
+	;物理与ダメージ補正を起点とする３CFLAG＝物理与ㆍ魔法与ㆍ割合ダメージ補正のリセット
 	CVARSET CFLAG,GETNUM(CFLAG,"물리여데미지보정") + LCOUNT:0,0
 	SIF LCOUNT == 2
 		BREAK
@@ -18,7 +18,7 @@ FOR LCOUNT:0,0,3
 	NEXT
 NEXT
 
-;HP・MP補正が載っているキャラは増強した補正分解除してシンクロしなきゃいけないので別枠で全員サーチへ。ついでに速度も
+;HPㆍMP補正が載っているキャラは増強した補正分解除してシンクロしなきゃいけないので別枠で全員サーチへ。ついでに速度も
 FOR LOCAL,0,CHARANUM
 	CFLAG:LOCAL:ＨＰ보정 = 0
 	CFLAG:LOCAL:ＭＰ보정 = 0

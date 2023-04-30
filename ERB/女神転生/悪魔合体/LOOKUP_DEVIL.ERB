@@ -64,8 +64,8 @@ SKILLNAME = %RESULTS%
 ;入力されたスキル名が存在するものかどうかを確かめつつ、スキル番号を取得する
 FOR LOCAL, 0, 2500
 	TRYCCALLFORM SKILL_NAME_{LOCAL}
-		;ややこしいので、「・」は省略した場合も通るようにする
-		RESULTS:1 = %REPLACE(RESULTS, "・", "")%
+		;ややこしいので、「ㆍ」は省略した場合も通るようにする
+		RESULTS:1 = %REPLACE(RESULTS, "ㆍ", "")%
 		SIF RESULTS != SKILLNAME && RESULTS:1 != SKILLNAME
 			CONTINUE
 		SKILL = LOCAL

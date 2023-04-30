@@ -126,7 +126,7 @@ CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "바애니메이션중의우클릭", GETB
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "오프닝데모", GETBIT(GLOBAL:오프닝데모건너뛰기, 0), "본다", "보지 않는다")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "타이틀화상", LIMIT(GLOBAL:타이틀화상설정, 0, 2), "AA표시", "화상표시", "AA+화상표시")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "이지선다입력", LIMIT(FLAG:이지선다입력설정, 0, 2), "디폴트（0과 1만）", "네／아니요만、Ｙ나 Ｎ 키로 반응", "모든 이지선다에서、Ｙ나 Ｎ키로 반응")
-CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "외모・스리사이즈기능", SETTING_IS_3SIZE(), "이용하지 않는다", "이용한다")
+CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "외모ㆍ스리사이즈기능", SETTING_IS_3SIZE(), "이용하지 않는다", "이용한다")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "장비화면생략", LIMIT(FLAG:장비화면생략스위치, 0, 2), "장비해설을 표시", "장비등록을 표시", "양쪽 모두 생략")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "（글로벌）RPG아이템구입화면", LIMIT(MouseUIStore_Enable, 0, 1), "디폴트", "마우스 전용 추가UI")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "휴식확인", LIMIT(FLAG:휴식확인플래그, 0, 2), "확인한다", "확인하지 않는다", "확인하지 않는다 + 아침까지 휴식")
@@ -135,7 +135,7 @@ CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "커맨드수설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "리스트표시수설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "화상표시설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "화상에디트설정", LIMIT(FLAG:화상에디트설정, 0, 1), "사용한다", "사용안한다")
-CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "구상・정경텍스트표시설정")
+CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "구상ㆍ정경텍스트표시설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "스테이터스화면타입설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "메시지윈도우설정")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "합체용소프트퀵설정")
@@ -144,7 +144,7 @@ CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "레벨업시인터페이스설정", LIMI
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "페르소나스테이터스상승시확인", LIMIT(FLAG:페르소나스테이터스상승확인설정, 0, 1), "확인하지 않는다", "확인한다")
 ;---- EDIT 044 ADD END   -------------------------
 ;---- EDIT 034 ADD START -------------------------
-CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "V・ROOM에서스테이터스업화면설정", GETBIT(FLAG:그외설정스위치, 2), "디폴트I/F", "신형I/F")
+CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "VㆍROOM에서스테이터스업화면설정", GETBIT(FLAG:그외설정스위치, 2), "디폴트I/F", "신형I/F")
 ;---- EDIT 034 ADD END   -------------------------
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "SHOP커맨드리네임", LIMIT(항목명설정, 0, 1), "하지 않는다", "한다")
 CALLF OPTION_SET_ITEM(ARG_COM, L_TYPE, "장부소거")
@@ -208,14 +208,14 @@ CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "전투시인간의스테이터스계산
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "전투시소질영향설정", BATTLE_SETTING_IS_TALENT(), "통상(바닐라 설정)", "소질 영향")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "전투시배드스텟필중설정", BATTLE_SETTING_IS_BAD_STATUS(), "통상(바닐라 설정)", "배드스텟 필중")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "전투시1more동작설정", BATTLE_SETTING_IS_1MORE(), "통상(바닐라 설정)", "변경")
-CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "장비내성・효과변경설정", BATTLE_SETTING_IS_EQUIP_EFFECT(), "변경하지 않는다(바닐라 설정)", "변경")
+CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "장비내성ㆍ효과변경설정", BATTLE_SETTING_IS_EQUIP_EFFECT(), "변경하지 않는다(바닐라 설정)", "변경")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "마카환율변동기능", SETTING_IS_MAKKA_RATE(), "이용하지 않는다", "이용한다")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "소셜게임풍가챠", LIMIT(FLAG:악마가챠모드, 0, 2), "없음", "가챠 기동", "가챠 악마 전용")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "데빌시프터스텟설정", LIMIT(FLAG:데빌시프터스탯설정, 0, 1), "변경하지 않는다(바닐라설정)", "변경한다")
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "장비효과설정", BATTLE_SETTING_IS_EQUIPTHEORY(), "변경하지 않는다", "변경한다")
 ;---- EDIT 038 ADD START -------------------------
 ; LIMIT(FLAG:～～, 0, 3)なので"デメリットを完全に無くす"を選んでも表示されないのを修正
-CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "페르소나구사자사양설정", LIMIT(FLAG:페르소나구사자사양설정, 0, 2), "디폴트", "페르소나１・２의 사양 따름", "페르소나３ 이후의 사양 따름")
+CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "페르소나구사자사양설정", LIMIT(FLAG:페르소나구사자사양설정, 0, 2), "디폴트", "페르소나１ㆍ２의 사양 따름", "페르소나３ 이후의 사양 따름")
 ;2020/08/20
 ;---- EDIT 035 ADD START -------------------------
 CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "페르소나구사자추가스탯설정", LIMIT(FLAG:페르소나구사자추가스텟설정, 0, 1), "변경안한다(바닐라설정)", "변경한다")
@@ -231,7 +231,7 @@ CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "소지페르소나EXP증가설정", LIM
 ;		なのでEDIT番号を37から変更
 ; CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "상성소질체크적용범위변경설정", LIMIT(FLAG:상성소질체크적용범위변경설정, 0, 1), "変更しない(バニラ設定)", "変更する")
 ;---- EDIT 037' ADD END ---------------------------
-CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "공격아이템의계산식설정", BATTLE_SETTING_IS_ITEM_DAMAGE()+BATTLE_SETTING_IS_ITEM_HITRATE()*2, "디폴트", "위력계산만 변경한다", "ERROR", "위력・명중계산 모두 변경한다")
+CALLF OPTION_SET_ITEM(ARG_COM, "DEBUG", "공격아이템의계산식설정", BATTLE_SETTING_IS_ITEM_DAMAGE()+BATTLE_SETTING_IS_ITEM_HITRATE()*2, "디폴트", "위력계산만 변경한다", "ERROR", "위력ㆍ명중계산 모두 변경한다")
 ;---- EDIT 038 ADD END -------------------------
 
 ;----------------------------------------------------------
@@ -353,7 +353,7 @@ RESTART
 #DIMS REF ARG_COM, 0, 0
 DRAWLINE
 SELECTCASE ARG_COM:RESULT:1
-	CASE "구상・정경텍스트표시설정"
+	CASE "구상ㆍ정경텍스트표시설정"
 		CALL TEXT_SETTING
 	CASE "오프닝데모"
 		INVERTBIT GLOBAL:오프닝데모건너뛰기, 0
@@ -375,7 +375,7 @@ SELECTCASE ARG_COM:RESULT:1
 		CALL MESSAGE_WINDOW_CONFIG
 	CASE "합체용소프트퀵설정"
 		CALL 합체용소프트퀵설정
-	CASE "외모・스리사이즈기능"
+	CASE "외모ㆍ스리사이즈기능"
 		CALL SETTING_INVERT_3SIZE
 	CASE "장비화면생략"
 		FLAG:장비화면생략스위치 = OPTION_SWITCH(FLAG:장비화면생략스위치, 0, 2)
@@ -442,7 +442,7 @@ SELECTCASE ARG_COM:RESULT:1
 		FLAG:페르소나스테이터스상승확인설정 = OPTION_SWITCH(FLAG:페르소나스테이터스상승확인설정, 0, 1)
 	;---- EDIT 044 ADD END   -------------------------
 	;---- EDIT 034 ADD START -------------------------
-	CASE "V・ROOM에서스테이터스업화면설정"
+	CASE "VㆍROOM에서스테이터스업화면설정"
 		CALL SETTING_INVERT_VELVET_STATUS_UP
 	;---- EDIT 034 ADD END   -------------------------
 	;---- EDIT 041 ADD START   -------------------------
@@ -1043,7 +1043,7 @@ PRINTL [1] 명중률 개선
 PRINTL 설명　：명중률에 관련된 스테이터스의 계산법을 악마의 것에 근접한 설정
 PRINTL 　　　　일반 모드에서 공격이 맞지 않아 좌절하는 당신에게.
 PRINTL [2] 전체적으로 끌어 올림
-PRINTL 설명　：ＨＰ・ＭＰ이외의 모든 스테이터스의 계산법을 악마의 것에 근접한 설정
+PRINTL 설명　：ＨＰㆍＭＰ이외의 모든 스테이터스의 계산법을 악마의 것에 근접한 설정
 PRINTL 　　　　그래도 악마보다 1 ~ 2 걸음 약하기 때문에 방심은 금물.
 PRINTL [3] 장비품의 보정을（LV/2）\% 만큼 강화
 PRINTL 설명　：인간과 이능자와 달인의 장비 능력치에 레벨의 절반 퍼센트를 더한다
@@ -1111,7 +1111,7 @@ SELECTCASE BATTLE_SETTING_IS_1MORE()
 ENDSELECT
 
 ;----------------------------------------------------------
-@OPTION_장비내성・효과변경설정
+@OPTION_장비내성ㆍ효과변경설정
 CALL BATTLE_SETTING_INVERT_EQUIP_EFFECT
 PRINTW 설정을 변경했습니다
 
@@ -1187,7 +1187,7 @@ PRINTFORML [%L_TEXT:BATTLE_SETTING_IS_EQUIPTHEORY()%]로 되었습니다
 
 ;----------------------------------------------------------
 @OPTION_페르소나구사자사양설정
-#DIMS L_TEXT, 3 = "디폴트", "페르소나１・２ 캐릭터의 사양으로 통일", "페르소나３이후 캐릭터의 사양으로 통일"
+#DIMS L_TEXT, 3 = "디폴트", "페르소나１ㆍ２ 캐릭터의 사양으로 통일", "페르소나３이후 캐릭터의 사양으로 통일"
 ;---- EDIT 038 ADD START -------------------------
 ;		LIMITが0～1だったため呼び出すたびに数値が変更されるのを修正
 FLAG:페르소나구사자사양설정 = LIMIT(FLAG:페르소나구사자사양설정, 0, 4)
@@ -1195,8 +1195,8 @@ DRAWLINE
 PRINTFORML 현재의 설정은 [%L_TEXT:(FLAG:페르소나구사자사양설정)%] 로 되어있습니다
 DRAWLINE
 PRINTFORML 설정을 선택해주세요
-PRINTL [0] 페르소나１・２ 캐릭터는 즉시 체인지 가능、３이후 캐릭터는 체인지에 １턴 걸리지만 페르소나성장이 빠르고 배드스텟 내성장비가 유효（디폴트）
-PRINTL [1] 모든 페르소나구사자를 페르소나１・２ 캐릭터의 사양으로 통일
+PRINTL [0] 페르소나１ㆍ２ 캐릭터는 즉시 체인지 가능、３이후 캐릭터는 체인지에 １턴 걸리지만 페르소나성장이 빠르고 배드스텟 내성장비가 유효（디폴트）
+PRINTL [1] 모든 페르소나구사자를 페르소나１ㆍ２ 캐릭터의 사양으로 통일
 PRINTL [2] 모든 페르소나구사자를 페르소나３이후의 캐릭터의 사양으로 통일
 PRINTL [3] 단점을 없앤다. (전 페르소나 사용을 즉시 체인지 가능, 페르소나의 성장이 빠르고 배드스텟 내성 장비가 유효하게 한다)
 ;全部廃止しても데빌시프터相当になるだけ
@@ -1253,7 +1253,7 @@ ENDIF
 
 
 @OPTION_공격아이템의계산식설정
-#DIMS L_TEXT = "디폴트", "위력 계산만 변경한다", "ERROR", "위력・명중 계산 모두 변경한다"
+#DIMS L_TEXT = "디폴트", "위력 계산만 변경한다", "ERROR", "위력ㆍ명중 계산 모두 변경한다"
 DRAWLINE
 PRINTFORML 공격아이템 사용 시 능력치의 영향을 선택해 주세요。
 PRINTFORML 현재의 설정은 [%L_TEXT:(BATTLE_SETTING_IS_ITEM_DAMAGE()+BATTLE_SETTING_IS_ITEM_HITRATE()*2)%]로 되어있습니다
@@ -1266,11 +1266,11 @@ PRINTL 　　　　기본값은 낮지만, 장비품으로 보정할 수 있습�
 PRINTL 　　　　도구 지식을 갖춘 서머너보다 마법형 능자쪽이 효과적으로 아이템을 사용할 수 있게 될 것입니다。
 PRINTL [1] 위력 계산만 변경한다
 PRINTL 설명　：명중판정에 마법효과를 사용하는 상태로, 데미지 계산식을 변경합니다。
-PRINTL 　　　　레벨・지혜가 큰 영향을 주고, 운이 조금 영향을 줍니다。개인간의 능력차는 좁혀집니다。
+PRINTL 　　　　레벨ㆍ지혜가 큰 영향을 주고, 운이 조금 영향을 줍니다。개인간의 능력차는 좁혀집니다。
 PRINTL 　　　　기본값은 높아지지만, 장비품으로 보정할 수 없게 됩니다。
-PRINTL [2] 위력・명중 계산을 모두 변경한다
+PRINTL [2] 위력ㆍ명중 계산을 모두 변경한다
 PRINTL 설명　：위력 계산뿐만 아니라 명중 판정의 계산식도 함께 변경합니다。
-PRINTL 　　　　명중 판정에는 레벨・속도가 큰 영향을 주고、마력이 조금 영향을 줍니다。개인간의 능력차는 더욱 좁혀집니다。
+PRINTL 　　　　명중 판정에는 레벨ㆍ속도가 큰 영향을 주고、마력이 조금 영향을 줍니다。개인간의 능력차는 더욱 좁혀집니다。
 PRINTL 　　　　이쪽도 기본값이 높아지지만, 장비품으로 보정할 수 없게 됩니다。
 CALL INPUTINT(0, 1, 2)
 SELECTCASE RESULT

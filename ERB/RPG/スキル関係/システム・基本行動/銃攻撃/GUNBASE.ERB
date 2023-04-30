@@ -134,15 +134,15 @@ LOCAL = RESULT
 ;	IF (HAVE_SKILL(ARG,[[스킬:관통]]) || HAVE_SKILL(ARG,[[스킬:영세라이도우]])) && MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) >= 0
 ;		;貫通持ちは耐性と無効を無視
 ;		LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
-;		;ベル・デルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨・데르]]
+;		;ベルㆍデルは貫通でも0ダメージに
+;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSEIF CFLAG:(ARG:1):(GET_TYPE(ARG:3) + "가드킬") && (MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) < 100 || MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) == 999)
 ;		;ガードキル効果：耐性以上を完全に無視
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
-;		;ベル・デルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨・데르]]
+;		;ベルㆍデルは貫通でも0ダメージに
+;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -214,7 +214,7 @@ LOCAL = RESULT
 ;				LOCAL:1 += 2
 ;		ENDSELECT
 ;	ENDIF
-;	IF LOCAL >= BASE:(ARG:1):ＨＰ && (HAVE_SKILL(ARG:1,2407) || (EQUIP:(ARG:1):바・벨 && FLAG:벨신격파 & 8)) && CFLAG:(ARG:1):이악물기플래그 == 0
+;	IF LOCAL >= BASE:(ARG:1):ＨＰ && (HAVE_SKILL(ARG:1,2407) || (EQUIP:(ARG:1):바ㆍ벨 && FLAG:벨신격파 & 8)) && CFLAG:(ARG:1):이악물기플래그 == 0
 ;		PRINTFORM {LOCAL}ダメージ
 ;		CALL VAR_HP,ARG:1,-LOCAL,2
 ;		CFLAG:(ARG:1):이악물기플래그 = 1
@@ -404,7 +404,7 @@ SIF num > 0
 SWAP STOCK,CFLAG:ARG:타겟
 
 ;=========================================
-;전체・列공격스킬기본
+;전체ㆍ列공격스킬기본
 ;=========================================
 @GUN_FIELD,ARG,ARG:1,ARG:2
 #DIM num

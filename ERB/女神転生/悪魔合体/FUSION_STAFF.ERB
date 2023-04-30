@@ -35,7 +35,7 @@ FLAG:합체예정악마1 = -1
 MATERIAL = -1
 MATERIAL:1 = -1
 
-;キャラリストを表示・選択
+;キャラリストを表示ㆍ選択
 CALL INPUT_CHARA_LIST("소체로 쓸 악마를 선택해주십시오", "CASTING_MASHO")
 SIF RESULT == 1000
 	RETURN 0
@@ -59,8 +59,8 @@ DO
 	DRAWLINE
 	PRINTL 작성할 마정 지팡이의 형태를 선택해주세요
 	DRAWLINE
-	PRINTL [0] 마법사      （소체의 지혜・마력이 증가、다른 능력이 감소합니다）
-	PRINTL [1] 상태이상공격（소체의 지혜・속도가 증가、다른 능력이 감소합니다）
+	PRINTL [0] 마법사      （소체의 지혜ㆍ마력이 증가、다른 능력이 감소합니다）
+	PRINTL [1] 상태이상공격（소체의 지혜ㆍ속도가 증가、다른 능력이 감소합니다）
 	PRINTL [2] 형태없음    （소체의 기본능력 그대로 작성합니다）
 	DRAWLINE
 	PRINTL [99]  캔슬
@@ -168,7 +168,7 @@ ATTRIBUTE:2 = 1
 ATTRIBUTE:3 = -1
 
 
-;神経・精神は特殊
+;神経ㆍ精神は特殊
 ;そのスキルで発生する状態異常を取得する。攻撃相性は打撃のまま
 ATTRIBUTE:8 = -1
 ATTRIBUTE:9 = -1

@@ -27,7 +27,7 @@ RETURN 0
 
 @방어상성_4449,ARG,ARG:1 = -1
 SELECTCASE GET_TYPE(ARG)
-;ベンベン琵琶と同時装備で破魔強抵抗・呪殺無効
+;ベンベン琵琶と同時装備で破魔強抵抗ㆍ呪殺無効
 	CASE "파마"
 			SIF ARG:1 == -1
 			RETURN 100

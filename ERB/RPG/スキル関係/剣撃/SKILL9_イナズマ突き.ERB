@@ -3,14 +3,14 @@
 
 ;스킬명
 @SKILL_NAME_9, ARG
-;ファントムが使用する場合ジェット・マグナムに
+;ファントムが使用する場合ジェットㆍマグナムに
 IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	RESULTS = 제트・매그넘
+	RESULTS = 제트ㆍ매그넘
 ;桐条美鶴Lv50以上。アルテミシア限定
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
-	RESULTS = 꾸・드르와
+	RESULTS = 꾸ㆍ드르와
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
-	RESULTS = 번개찌르기・벽뢰
+	RESULTS = 번개찌르기ㆍ벽뢰
 ELSE
 	RESULTS = 번개찌르기
 ENDIF
@@ -226,7 +226,7 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:미츠루]]
 	;PRINTL またB版と同じように空中ヒットさせると相手をスライドダウンさせるため、硬直の短さによって容易に追撃を行うことができる。単発ダメージはB版より低い。
 	;PRINTL スーパーキャンセル対応。
 ELSEIF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	PRINTL 좌완 플라즈마・스테이크 3개를 대전시켜 후려갈겨 적 1체를 공격하고、감전시킨다。
+	PRINTL 좌완 플라즈마ㆍ스테이크 3개를 대전시켜 후려갈겨 적 1체를 공격하고、감전시킨다。
 	PRINTL 덧붙여 게슈펜스트 계열기 중에는 업어치기를 후 이를 때려박는 컴뱃 패턴을 가진 기종도 존재한다。
 ELSE
 	PRINTL 손에 쥔 무기로 적 1체를 공격해、감전시킨다。후열 사용 가능。

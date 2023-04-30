@@ -1,9 +1,9 @@
 ﻿
 ;스킬명
 @SKILL_NAME_113,ARG
-;ナハトが使用する場合 S・クレイモアに
+;ナハトが使用する場合 Sㆍクレイモアに
 IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
-	RESULTS =  S・클레이모어
+	RESULTS =  Sㆍ클레이모어
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
 	RESULTS = 토오시야
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
@@ -158,7 +158,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,113
 @SKILL_EXPLAIN_113
 IF U > 0 && U < CHARANUM && NO:U == [[キャラ:나하트]]
 	PRINTL 적 전열에 왼팔의 실드에서 티타늄 베어링 탄을 기습적으로 퍼붓는다。
-	PRINTL 정식명칭「실드・클레이모어」
+	PRINTL 정식명칭「실드ㆍ클레이모어」
 ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
 	PRINTL 장거리를 쏘는 궁술의 비법。
 	PRINTL 적 1열에 비구 물리데미지를 준다。

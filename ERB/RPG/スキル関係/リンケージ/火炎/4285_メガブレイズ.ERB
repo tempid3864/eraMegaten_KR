@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 지변계 마법
 	CASE 3
-		PRINTFORM 마하・라기온
+		PRINTFORM 마하ㆍ라기온
 ENDSELECT
 
 @발동자조건_4285 , ARG
-;マハ・ラギオンを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・라기온]]) == 0
+;マハㆍラギオンを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ라기온]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・라기온]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ라기온]]
 SIF RESULT
 	RETURN 1
 RETURN 0

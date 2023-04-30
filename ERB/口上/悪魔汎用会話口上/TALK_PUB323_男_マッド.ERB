@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB323.ERB
-;	Facility	:회화타입：男・マッドの会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：男ㆍマッドの会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -41,7 +41,7 @@
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORMW 「우오오오, %CSTR:ARG:이인칭%、괴, 굉장한데에」
 		PRINTFORMW 「다, 달님처럼 아름다운 얼굴이잖아」
 		PRINTFORMW 「우아, 오오오, 아」
@@ -103,7 +103,7 @@ SELECTCASE ARG:1
 				PRINTFORMW 「여기가, 여기가, 내가 돌아갈 장소인건가아앗｣
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;스커트걷어올림・パンツずらし
+			;스커트걷어올림ㆍパンツずらし
 			PRINTFORMW 「%조사처리(CSTR:ARG:일인칭,"를")%, 야한 기분으로 만들어서 어쩔 셈이야아아」
 			PRINTFORMW 「자, 자지 아파졌잖아아아」
 		ELSE
@@ -447,11 +447,11 @@ SELECTCASE ARG:1
 		;友好度が高い
 		PRINTFORML 「또、또 만나면 말을 걸어줘어어어」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90

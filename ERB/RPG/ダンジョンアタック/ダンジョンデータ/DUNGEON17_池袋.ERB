@@ -37,13 +37,13 @@ SELECTCASE FLAG:현M
 	CASE 2
 		PRINTL 큰길
 	CASE 4
-		PRINTL 가이아교・이케부쿠로 지부 1F
+		PRINTL 가이아교ㆍ이케부쿠로 지부 1F
 	CASE 5
-		PRINTL 가이아교・이케부쿠로 지부 2F
+		PRINTL 가이아교ㆍ이케부쿠로 지부 2F
 	CASE 6
-		PRINTL 가이아교・이케부쿠로 지부 3F
+		PRINTL 가이아교ㆍ이케부쿠로 지부 3F
 	CASE 7
-		PRINTL 가이아교・이케부쿠로 지부 4F
+		PRINTL 가이아교ㆍ이케부쿠로 지부 4F
 	CASE 9
 		PRINTL 만트라군 사령부 B1F
 	CASE 10
@@ -155,7 +155,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,19,"    8               "
 
 	CASE 4
-		;ガイア教・이케부쿠로支部1F
+		;ガイア教ㆍ이케부쿠로支部1F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -179,7 +179,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,16,"                 "
 
 	CASE 5
-		;ガイア教・이케부쿠로支部2F
+		;ガイア教ㆍ이케부쿠로支部2F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -203,7 +203,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,16,"                 "
 
 	CASE 6
-		;ガイア教・이케부쿠로支部3F
+		;ガイア教ㆍ이케부쿠로支部3F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -227,7 +227,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,16,"                 "
 
 	CASE 7
-		;ガイア教・이케부쿠로支部4F
+		;ガイア教ㆍ이케부쿠로支部4F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -784,12 +784,12 @@ ENDIF
 @WORP_17
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y)
 	CASE 2006
-		CALL MESSAGE_WINDOW_D, "", "＞가이아 교단・이케부쿠로 지부의 입구다"
+		CALL MESSAGE_WINDOW_D, "", "＞가이아 교단ㆍ이케부쿠로 지부의 입구다"
 		CALL INPUT_YN_D, "들어간다", "들어가지 않는다"
 		SIF !RESULT
 			CALL DUNGEON_WORP_ID, 4, 4007, 1
 	CASE 4007
-		CALL MESSAGE_WINDOW_D, "", "＞가이아 교단・이케부쿠로 지부의 입구다"
+		CALL MESSAGE_WINDOW_D, "", "＞가이아 교단ㆍ이케부쿠로 지부의 입구다"
 		CALL INPUT_YN_D, "들어간다", "들어가지 않는다"
 		SIF !RESULT
 			CALL DUNGEON_WORP_ID, 2, 2006, 1
@@ -1278,7 +1278,7 @@ IF CFLAG:ARG:입력행동 == 527
 		PRINTFORMW ┗━━━━━━━━━━━━━━━┛
 	ELSE
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━┓
-		PRINTFORML ┃흉조모・쇼보야　　　　　┃
+		PRINTFORML ┃흉조모ㆍ쇼보야　　　　　┃
 		PRINTFORML ┃작다구 바보 취급하지 말라구　┃
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━┛
 	ENDIF

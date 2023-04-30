@@ -1,6 +1,6 @@
 ﻿;=======================================================================
-;ＶＲ호러・하우스
-;ボス・원령에리카
+;ＶＲ호러ㆍ하우스
+;ボスㆍ원령에리카
 ;던전ナンバー92　ＭＡＰ0~9
 ;登場악마레벨29~34　ボス레벨43
 ;フラグ
@@ -26,14 +26,14 @@ RETURN 0
 ;던전名
 ;=======================================================================
 @GET_DUNGEON_NAME_92
-RESULTS = ＶＲ호러・하우스
+RESULTS = ＶＲ호러ㆍ하우스
 
 
 ;=======================================================================
 ;플로어名표시
 ;=======================================================================
 @FLOORNAME_92
-PRINT ＶＲ호러・하우스
+PRINT ＶＲ호러ㆍ하우스
 SELECTCASE FLAG:현M
 	CASE 0
 		PRINTL Ｂ１Ｆ
@@ -1255,10 +1255,10 @@ ELSE
 ENDIF
 
 ;루게이에の行動패턴
-;1ターン目orワンモアor20%で스쿤・다、それ以外は랜덤행동
+;1ターン目orワンモアor20%で스쿤ㆍ다、それ以外は랜덤행동
 @SET_ACTION_D92_465,ARG
 IF FLAG:경과턴수 == 0 || CFLAG:ARG:１more플래그 > 0 || !RAND:5
-	CALL CHECK_ACTIONABLE_AND_SET(ARG,[[스킬:스쿤・다]])
+	CALL CHECK_ACTIONABLE_AND_SET(ARG,[[스킬:스쿤ㆍ다]])
 ELSE
 	CALL 랜덤행동,ARG
 ENDIF
@@ -1332,7 +1332,7 @@ ELSEIF POS(8) >= 0 || POS(10) >= 0 || POS(14) >= 0
 			CFLAG:ARG:입력행동 = 1211
 			CALL RANDOM_TARGET,ARG,1211
 			RETURN 1
-		;20％　하테나・박스
+		;20％　하테나ㆍ박스
 		CASE IS < 90
 			CALL CHECK_ACTIONABLE,ARG,2050
 			SIF RESULT == 0
@@ -1340,7 +1340,7 @@ ELSEIF POS(8) >= 0 || POS(10) >= 0 || POS(14) >= 0
 			CFLAG:ARG:입력행동 = 2050
 			CALL RANDOM_TARGET,ARG,2050
 			RETURN 1
-		;10％　전열：ポカポカ叩く　후열：하테나・박스
+		;10％　전열：ポカポカ叩く　후열：하테나ㆍ박스
 		CASE IS < 100
 			IF CPOS(ARG) == 9
 				CALL CHECK_ACTIONABLE,ARG,0
@@ -1394,7 +1394,7 @@ ELSEIF POS(8) == -1 && POS(10)== -1 && POS(14) == -1
 			CFLAG:ARG:입력행동 = 1211
 			CALL RANDOM_TARGET,ARG,1211
 			RETURN 1
-		;15％　하테나・박스
+		;15％　하테나ㆍ박스
 		CASE IS < 90
 			CALL CHECK_ACTIONABLE,ARG,2050
 			SIF RESULT == 0

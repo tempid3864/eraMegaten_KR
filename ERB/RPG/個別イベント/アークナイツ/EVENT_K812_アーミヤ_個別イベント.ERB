@@ -236,8 +236,8 @@ SELECTCASE CSTR:ARG:101
 			PRINTFORML [2] 키메라를 확인한다
 		ENDIF
 	CASE "아미야（전위）"
-		PRINTFORML [0] 영소・분야를 확인한다
-		PRINTFORML [1] 영소・절영을 확인한다
+		PRINTFORML [0] 영소ㆍ분야를 확인한다
+		PRINTFORML [1] 영소ㆍ절영을 확인한다
 ENDSELECT
 PRINTFORML [99] 돌아간다
 $EVENT_PU_SKILL_CHECK_K812_GOTO2
@@ -248,7 +248,7 @@ SELECTCASE RESULT
 			確認するスキル = 전술영창γ
 			計算用変数 = TOINT(CSTR:ARG:102)
 		ELSEIF CSTR:ARG:101 == "아미야（전위）"
-			確認するスキル = 영소・분야
+			確認するスキル = 영소ㆍ분야
 			計算用変数 = TOINT(CSTR:ARG:105)
 		ELSE
 			GOTO EVENT_PU_SKILL_CHECK_K812_GOTO2
@@ -258,7 +258,7 @@ SELECTCASE RESULT
 			確認するスキル = 감정 흡수
 			計算用変数 = TOINT(CSTR:ARG:103)
 		ELSEIF CSTR:ARG:101 == "아미야（전위）"
-			確認するスキル = 영소・절영
+			確認するスキル = 영소ㆍ절영
 			計算用変数 = TOINT(CSTR:ARG:106)
 		ELSE
 			GOTO EVENT_PU_SKILL_CHECK_K812_GOTO2
@@ -278,12 +278,12 @@ $EVENT_PU_SKILL_CHECK_K812_GOTO3
 ;計算用変数:1 = 初期ＳＰ
 ;計算用変数:2 = 必要ＳＰ
 ;計算用変数:3 = ダメージ倍率
-;計算用変数:4 = 戦術詠唱γは魔法命中・回避上昇の段階、ソウルブーストは攻撃回数、キメラは最大ＨＰ増加倍率
+;計算用変数:4 = 戦術詠唱γは魔法命中ㆍ回避上昇の段階、ソウルブーストは攻撃回数、キメラは最大ＨＰ増加倍率
 FOR COUNT,1,5
 	SELECTCASE COUNT
 		CASE 1
 			SELECTCASE 確認するスキル
-				CASE "감정 흡수","키메라","영소・절영"
+				CASE "감정 흡수","키메라","영소ㆍ절영"
 					LOCAL = 0
 				CASE "전술영창γ"
 					SELECTCASE 計算用変数
@@ -296,7 +296,7 @@ FOR COUNT,1,5
 						CASE 4
 							LOCAL = 15
 					ENDSELECT
-				CASE "영소・분야"
+				CASE "영소ㆍ분야"
 					LOCAL = 10
 			ENDSELECT
 		CASE 2
@@ -316,7 +316,7 @@ FOR COUNT,1,5
 					LOCAL = 100
 				CASE "키메라"
 					LOCAL = 120
-				CASE "영소・분야"
+				CASE "영소ㆍ분야"
 					SELECTCASE 計算用変数
 						CASE 1
 							LOCAL = 45
@@ -327,7 +327,7 @@ FOR COUNT,1,5
 						CASE 4
 							LOCAL = 35
 					ENDSELECT
-				CASE "영소・절영"
+				CASE "영소ㆍ절영"
 					LOCAL = 20
 			ENDSELECT
 		CASE 3
@@ -361,7 +361,7 @@ FOR COUNT,1,5
 						CASE 4
 							LOCAL = 115
 					ENDSELECT
-				CASE "영소・분야"
+				CASE "영소ㆍ분야"
 					SELECTCASE 計算用変数
 						CASE 1
 							LOCAL = 10
@@ -372,7 +372,7 @@ FOR COUNT,1,5
 						CASE 4
 							LOCAL = 40
 					ENDSELECT
-				CASE "영소・절영"
+				CASE "영소ㆍ절영"
 					;絶影はスキル威力
 					SELECTCASE 計算用変数
 						CASE 1
@@ -414,7 +414,7 @@ FOR COUNT,1,5
 						CASE 4
 							LOCAL = 100
 					ENDSELECT
-				CASE "영소・절영"
+				CASE "영소ㆍ절영"
 					;ダメージ上昇
 					SELECTCASE 計算用変数
 						CASE IS < 3
@@ -437,7 +437,7 @@ SELECTCASE 確認するスキル
 		PRINTL 턴 경과에 따라 ＳＰ 5 상승。
 		PRINTL 필요 ＳＰ를 충족했을 때、명령어를 선택하면 기동할 수 있다。
 		PRINTFORML 스킬 사용중、공격의 피해가 {計算用変数:3}％ 증가하여、
-		PRINTFORML 마법 공격의 명중・회피가 {計算用変数:4}단계 상승、물리 공격 회피가 1단계 상승한다。
+		PRINTFORML 마법 공격의 명중ㆍ회피가 {計算用変数:4}단계 상승、물리 공격 회피가 1단계 상승한다。
 		SIF 計算用変数 > 3
 			PRINTL 또한 스킬 사용중인 동안、임의의 마법 공격을 추가로 발동하는『ＥＸ－ＣＡＳＴ』명령어가 선택 가능해진다。
 	CASE "감정 흡수"
@@ -460,12 +460,12 @@ SELECTCASE 確認するスキル
 		SETCOLOR COLOR("RED")
 		PRINTL 효과 종료、혹은 게이지 리셋이 발생할 경우、사용자는 강제로 DYING이 된다。
 		RESETCOLOR
-	CASE "영소・분야"
+	CASE "영소ㆍ분야"
 		PRINTL 턴 경과에 따라 ＳＰ 5 상승。
 		PRINTL 필요 ＳＰ를 충족했을 때、명령어를 선택하면 기동할 수 있다。
 		PRINTFORML 스킬 사용중、자신의 여대미지가 {計算用変数:3}％ 증가하여、마법 공격에 대한 회피율이 ２단계 상승한다。
 		PRINTL 또한 스킬 사용중、임의의 물리공격을 추가로 발동하는『ＥＸ－ＭＯＶＥ』명령어가 선택 가능해진다。
-	CASE "영소・절영"
+	CASE "영소ㆍ절영"
 		PRINTL 턴 경과에 따라 ＳＰ 5 상승。
 		PRINTL 필요 ＳＰ를 충족했을 때、명령어를 선택함으로써 통상 행동 대신 발동할 수 있다。
 		PRINTFORML 적 전체 중 가장 ＨＰ가 낮은 적에게 {計算用変数:3}정도 위력의 물리 검격 상성의 공격을 10회 실시한다。
@@ -536,9 +536,9 @@ SELECTCASE RESULT
 				CSTR:ARG:103 = %TOSTR(計算用変数)%
 			CASE "키메라"
 				CSTR:ARG:104 = %TOSTR(計算用変数)%
-			CASE "영소・분야"
+			CASE "영소ㆍ분야"
 				CSTR:ARG:105 = %TOSTR(計算用変数)%
-			CASE "영소・절영"
+			CASE "영소ㆍ절영"
 				CSTR:ARG:106 = %TOSTR(計算用変数)%
 		ENDSELECT
 		GOTO EVENT_PU_SKILL_CHECK_K812_GOTO
@@ -578,7 +578,7 @@ SELECTCASE ARGS
 			CASE 2
 				必要アイテム = [[아이템:잊혀진연금매체]]
 			CASE 3
-				必要アイテム = [[아이템:블랙배럴・레플리카]]
+				必要アイテム = [[아이템:블랙배럴ㆍ레플리카]]
 		ENDSELECT
 	CASE "감정 흡수"
 		SELECTCASE ARG:1
@@ -594,11 +594,11 @@ SELECTCASE ARGS
 			CASE 1
 				必要アイテム = [[아이템:스킬카드【포미러버】]]
 			CASE 2
-				必要アイテム = [[아이템:스킬카드【암흑마하・아쿠에스】]]
+				必要アイテム = [[아이템:스킬카드【암흑마하ㆍ아쿠에스】]]
 			CASE 3
 				必要アイテム = [[아이템:스킬카드【브류나크】]]
 		ENDSELECT
-	CASE "영소・분야"
+	CASE "영소ㆍ분야"
 		SELECTCASE ARG:1
 			CASE 1
 				必要アイテム = [[아이템:히트나이프]]
@@ -607,7 +607,7 @@ SELECTCASE ARGS
 			CASE 3
 				必要アイテム = [[아이템:화룡검]]
 		ENDSELECT
-	CASE "영소・절영"
+	CASE "영소ㆍ절영"
 		SELECTCASE ARG:1
 			CASE 1
 				必要アイテム = [[아이템:극화괴]]
@@ -854,7 +854,7 @@ SELECTCASE 아미야개인이벤트버전
 		SELECTCASE ARG:1
 			CASE 3
 				SIF ARG == 102
-					ITEM:[[아이템:블랙배럴・레플리카]] += 1
+					ITEM:[[아이템:블랙배럴ㆍ레플리카]] += 1
 				SIF ARG == 103
 					;よくよく考えれば合成武器は常に引き継がれる代物だった
 					ITEM:[[아이템:흑신의돌]] += 1
@@ -870,7 +870,7 @@ SELECTCASE 아미야개인이벤트버전
 				SIF ARG == 103
 					ITEM:[[아이템:정적의반지]] += 1
 				SIF ARG == 104
-					ITEM:[[아이템:스킬카드【암흑마하・아쿠에스】]] += 1
+					ITEM:[[아이템:스킬카드【암흑마하ㆍ아쿠에스】]] += 1
 				SIF ARG == 105
 					ITEM:[[아이템:정령대장장이의검]] += 1
 				SIF ARG == 106
@@ -891,7 +891,7 @@ SELECTCASE 아미야개인이벤트버전
 		SELECTCASE ARG:1
 			CASE 4
 				SIF ARG == 102
-					ITEM:[[아이템:블랙배럴・레플리카]] += 1
+					ITEM:[[아이템:블랙배럴ㆍ레플리카]] += 1
 				SIF ARG == 103
 					ITEM:[[아이템:흑신의돌]] += 1
 				SIF ARG == 104
@@ -906,7 +906,7 @@ SELECTCASE 아미야개인이벤트버전
 				SIF ARG == 103
 					ITEM:[[아이템:정적의반지]] += 1
 				SIF ARG == 104
-					ITEM:[[아이템:스킬카드【암흑마하・아쿠에스】]] += 1
+					ITEM:[[아이템:스킬카드【암흑마하ㆍ아쿠에스】]] += 1
 				SIF ARG == 105
 					ITEM:[[아이템:정령대장장이의검]] += 1
 				SIF ARG == 106
@@ -1263,7 +1263,7 @@ SELECTCASE LCOUNT:1
 		CSTR:LOCAL:49 = 그 성질상、 저위력의 연속 공격계나 범위공격계의 마법보다는 고위력의 단독개체 마법기술을 장기로 삼는다.
 	CASE 1
 		CSTR:ARG:101 = 아미야（전위）
-		CSTR:ARG:전용기1 = 影霄・奔夜
+		CSTR:ARG:전용기1 = 影霄ㆍ奔夜
 		CSTR:ARG:전용기2 = 蒼き怒火
 		TALENT:ARG:검격 = 1
 		TALENT:ARG:화염 = 1
@@ -1276,7 +1276,7 @@ SELECTCASE LCOUNT:1
 		CSTR:ARG:48 = 전용기는 자기 강화를 하는 것과는 별개로 패널티를 받는 대신、큰 기술을 발휘하면서 강력한 지원 효과를 부여하는 물건이 존재한다。
 		CSTR:ARG:49 = 술사와는 달리、물리공격이면 단발위력을 중시하지 않아도 되기 때문에、구성에 비교적 자유로운 성능을 보이고 있다。
 ENDSELECT
-;影霄・奔夜が習得されてない = 初クラスチェンジなので影霄・奔夜と影霄・絶影のスキルレベルを1に設定
+;影霄ㆍ奔夜が習得されてない = 初クラスチェンジなので影霄ㆍ奔夜と影霄ㆍ絶影のスキルレベルを1に設定
 IF CSTR:ARG:105 == ""
 	CSTR:ARG:105 = 1
 	CSTR:ARG:106 = 1
@@ -1385,7 +1385,7 @@ FOR LCOUNT,1,20
 		;				;一分の魔脈
 		;			CASE 2
 		;				LCOUNT:1 = 2011
-		;				;ネクロ・ドグマ
+		;				;ネクロㆍドグマ
 		;			CASE 3
 		;				LCOUNT:1 = 1237
 		;				;プリンパダイン

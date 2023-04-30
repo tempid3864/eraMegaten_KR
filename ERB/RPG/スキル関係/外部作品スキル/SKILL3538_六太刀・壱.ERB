@@ -3,21 +3,21 @@
 
 ;스킬명
 @SKILL_NAME_3538,ARG
-RESULTS = 6태도・일
+RESULTS = 6태도ㆍ일
 IF ARG > -1
 	SELECTCASE SKILLGAGE_H_GET(ARG,3538)
 	CASE 0,1
-		RESULTS = 1의태도・나데시코
+		RESULTS = 1의태도ㆍ나데시코
 	CASE 2
-		RESULTS = 2의태도・시라유리
+		RESULTS = 2의태도ㆍ시라유리
 	CASE 3
-		RESULTS = 3의태도・보탄
+		RESULTS = 3의태도ㆍ보탄
 	CASE 4
-		RESULTS = 4의태도・츠바키
+		RESULTS = 4의태도ㆍ츠바키
 	CASE 5
-		RESULTS = 5의태도・아사가오
+		RESULTS = 5의태도ㆍ아사가오
 	CASE 6
-		RESULTS = 6의태도・유우가오
+		RESULTS = 6의태도ㆍ유우가오
 	ENDSELECT
 ENDIF
 ;　명중
@@ -260,10 +260,10 @@ FLAG:확산플래그 = 0
 @SKILL_EXPLAIN_3538
 IF TFLAG:전투중 == 0 || U < 0 || U >= CHARANUM
 	PRINTL 【수라】
-	PRINTL 1의태도・나데시코　　적 1체에 검격 상성의 대 데미지。발동이 빠르다
-	PRINTL 2의태도・시라유리　　1체 공격 스킬을 헛치면 발동。검격 상성의 대 데미지。명중률이 높다
+	PRINTL 1의태도ㆍ나데시코　　적 1체에 검격 상성의 대 데미지。발동이 빠르다
+	PRINTL 2의태도ㆍ시라유리　　1체 공격 스킬을 헛치면 발동。검격 상성의 대 데미지。명중률이 높다
 	PRINTL 【나찰】
-	PRINTL 최초는 1의태도・나데시코지만、특정 스킬을 사용하면 1～6의태도로 랜덤으로 바뀐다
+	PRINTL 최초는 1의태도ㆍ나데시코지만、특정 스킬을 사용하면 1～6의태도로 랜덤으로 바뀐다
 ELSE
 	SELECTCASE SKILLGAGE_H_GET(U,3538)
 	CASE 0,1

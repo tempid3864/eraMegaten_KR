@@ -1174,7 +1174,7 @@ SELECTCASE FLAG:현M
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			;라이도우
-			IF (FINDCHARA_B(4542,1) == 2 || FINDCHARA_B(4542,0) == 2) && GETCHARA([[キャラ:모・쇼보]]) == -1
+			IF (FINDCHARA_B(4542,1) == 2 || FINDCHARA_B(4542,0) == 2) && GETCHARA([[キャラ:모ㆍ쇼보]]) == -1
 				CALL MESSAGE_WINDOW_D, "", "＞통로에 대량의 머신이 있다！"
 				FLAG:RESULT스킵 = 1
 				IF 던전플래그:34:14 == 0
@@ -1191,9 +1191,9 @@ SELECTCASE FLAG:현M
 					CALL MESSAGE_WINDOW_D, "고우토", "그것은 샷건이다./일렬의 적을 한번에 공격하는 것이 가능하다"
 					CALL MESSAGE_WINDOW_D, "고우토", "거기에 코로나샷을 넣으면,/일렬의 적에게 코로나샷을 쏜다/하지만, 이 경우는 그거로는 부족하다。라이도우！"
 				ENDIF
-				CALL MESSAGE_WINDOW_D, "", "＞라이도우는 흉조 모・쇼보를 소환했다/＞모・쇼보가 일시적으로 파티에 가입했다"
-				CALL ADD_GUEST_COMPANION, [[キャラ:모・쇼보]], 200, 1
-				ABL:GETCHARA([[キャラ:모・쇼보]]):스킬2 = [[스킬:마하・갈]]
+				CALL MESSAGE_WINDOW_D, "", "＞라이도우는 흉조 모ㆍ쇼보를 소환했다/＞모ㆍ쇼보가 일시적으로 파티에 가입했다"
+				CALL ADD_GUEST_COMPANION, [[キャラ:모ㆍ쇼보]], 200, 1
+				ABL:GETCHARA([[キャラ:모ㆍ쇼보]]):스킬2 = [[스킬:마하ㆍ갈]]
 				SIF ITEM:코로나샷 == 0
 					CALL GET_ITEMS,"코로나샷",3
 				CALL MESSAGE_WINDOW_D, "고우토", "코로나샷과 갈이나 마하 갈을/조합하는 것으로 뇌령마법탄이라는 기술을 사용한다/두 사람이 함께 공격하는 것으로, /보통으로 공격하는 것보다 강하다는 것이다"
@@ -1229,19 +1229,19 @@ SELECTCASE FLAG:현M
 			FLAG:선제기습취소 = 0
 			FLAG:RESULT스킵 = 0
 			IF 던전플래그:34:32
-				CALL 캐릭터삭제(GETCHARA([[キャラ:모・쇼보]]))
+				CALL 캐릭터삭제(GETCHARA([[キャラ:모ㆍ쇼보]]))
 				IF 던전플래그:34:18 == 2
 					FLAG:현Y -= 2
 					CALL SHOW_PICTURE, "D"
-					CALL MESSAGE_WINDOW_D, "고우토", "후, 과연 식은 땀이 났다고/신입이여, 과연 여기서 미스하는 것은 농담도 되지 않는다/계속、모・쇼보를 불러둘테니까 다음은 잘 부탁한다"
+					CALL MESSAGE_WINDOW_D, "고우토", "후, 과연 식은 땀이 났다고/신입이여, 과연 여기서 미스하는 것은 농담도 되지 않는다/계속、모ㆍ쇼보를 불러둘테니까 다음은 잘 부탁한다"
 					던전플래그:34:18 = 0
 					던전플래그:34:14 = -1
 					RETURN 0
 				ENDIF
 				던전플래그:34:18 = 0
 				CALL SHOW_PICTURE, "D"
-				CALL MESSAGE_WINDOW_D, "흉조 모・쇼보", "힘들어~/저기~, 이제 걍 가도 좋아?"
-				CALL MESSAGE_WINDOW_D, "", "＞라이도우가 고개를 끄덕이며 모・쇼보를 귀환시켰다/＞모・쇼보가 파티에서 나갔다"
+				CALL MESSAGE_WINDOW_D, "흉조 모ㆍ쇼보", "힘들어~/저기~, 이제 걍 가도 좋아?"
+				CALL MESSAGE_WINDOW_D, "", "＞라이도우가 고개를 끄덕이며 모ㆍ쇼보를 귀환시켰다/＞모ㆍ쇼보가 파티에서 나갔다"
 				CALL MESSAGE_WINDOW_D, "고우토", "어떤가?/링케이지의 강력함. 알아차렸나?/자네와 동료마뿐만 아니라, 동료마와 동료마라도 링케이지는 가능하다"
 				CALL MESSAGE_WINDOW_D, "고우토", "이렇게 힘을 모을 수 있도록/동료마를 모아가는 것도 한 방법이다/하긴 이것을 위해서는 스킬의 조합법을 알지 않으면 안되겠지만…"
 				CALL MESSAGE_WINDOW_D, "고우토", "일단、이 ＣＯＭＰ에도/어느정도 레시피가 등록되어있지?/전투중에 링케이지를 선택해、/거기에서 애널라이즈해서 확인하는 것이다"

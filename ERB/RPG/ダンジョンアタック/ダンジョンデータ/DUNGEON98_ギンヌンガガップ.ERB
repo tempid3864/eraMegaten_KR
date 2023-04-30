@@ -26,23 +26,23 @@ RESULTS = ギンヌンガガップ
 @FLOORNAME_98
 SELECTCASE FLAG:현M
 	CASE 0
-	PRINTL 炎と氷の境界・１F
+	PRINTL 炎と氷の境界ㆍ１F
 	CASE 1
-	PRINTL 炎と氷の境界・２F
+	PRINTL 炎と氷の境界ㆍ２F
 	CASE 2
-	PRINTL 炎と氷の境界・３F
+	PRINTL 炎と氷の境界ㆍ３F
 	CASE 3
-	PRINTL 炎と氷の境界・４F
+	PRINTL 炎と氷の境界ㆍ４F
 	CASE 4
-	PRINTL 炎と氷の境界・神のほこら
+	PRINTL 炎と氷の境界ㆍ神のほこら
 	CASE 5
-	PRINTL ユミルの泉・１F
+	PRINTL ユミルの泉ㆍ１F
 	CASE 6
-	PRINTL ユミルの泉・２F
+	PRINTL ユミルの泉ㆍ２F
 	CASE 7
-	PRINTL ユミルの泉・３F
+	PRINTL ユミルの泉ㆍ３F
 	CASE 8
-	PRINTL ユミルの泉・４F
+	PRINTL ユミルの泉ㆍ４F
 	CASE 9
 	PRINTL 暗黒の空間
 ENDSELECT
@@ -634,7 +634,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "アズラエル", "アミの決断を邪魔させるわけにはいかない！"
 
 				CALL MESSAGE_WINDOW_D, "", "＞この先にアミがいる。それは確からしい"
-				CALL MESSAGE_WINDOW_D, "ブル・ガイ", "ヴァルハラの未来を、取り戻すために！"
+				CALL MESSAGE_WINDOW_D, "ブルㆍガイ", "ヴァルハラの未来を、取り戻すために！"
 				CALL MESSAGE_WINDOW_D, "", "＞ミノタウロス兄弟と天使アズラエルが勝負を仕掛けてきた！" , , , , , , , , , "CENTER"
 
 				FLAG:도주불가플래그 = 1
@@ -650,7 +650,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 
 				CALL SET_ENEMY,8,[[キャラ:아스테리오스]],71,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
-				ABL:(CHARANUM-1):스킬1 = [[스킬:마하・마그다인]]
+				ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ마그다인]]
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -702,7 +702,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "守護神", "小賢しいことを…"
 				CALL MESSAGE_WINDOW_D, "", "＞守護神は獣の姿を現し、こちらを睥睨する"
 				CALL MESSAGE_WINDOW_D, "守護神", "裏切りと絶望、そして破滅こそが私を造ったのだ！"
-				CALL MESSAGE_WINDOW_D, "", "＞守護神　ゾズマ・セクンドゥスが１体出た！" , , , , , , , , , "CENTER"
+				CALL MESSAGE_WINDOW_D, "", "＞守護神　ゾズマㆍセクンドゥスが１体出た！" , , , , , , , , , "CENTER"
 
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
@@ -723,7 +723,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):종족명 = 天使
 				CFLAG:(CHARANUM-1):행동횟수 = 2
-				ABL:(CHARANUM-1):스킬1 = [[스킬:마하・부흐다인]]
+				ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ부흐다인]]
 				
 				NAME:(CHARANUM-1) = セクンドゥス
 				CALLNAME:(CHARANUM-1) = セクンドゥス
@@ -818,10 +818,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 							CSTR:(CHARANUM-1):종족명 = 인간
 							CFLAG:(CHARANUM-1):행동횟수 = 2
-							ABL:(CHARANUM-1):스킬5 = [[스킬:마하・잔다인]]
-							ABL:(CHARANUM-1):스킬6 = [[스킬:마하・아쿠다인]]
+							ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ잔다인]]
+							ABL:(CHARANUM-1):스킬6 = [[스킬:마하ㆍ아쿠다인]]
 							ABL:(CHARANUM-1):스킬7 = [[스킬:시나이의신화]]
-							ABL:(CHARANUM-1):스킬8 = [[스킬:마하・그라다인]]
+							ABL:(CHARANUM-1):스킬8 = [[스킬:마하ㆍ그라다인]]
 							CALL SYNC_STATUS,(CHARANUM-1)
 							CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -922,8 +922,8 @@ RETURN 1
 	BASE:(CHARANUM-1):인내력 += 5
 	BASE:(CHARANUM-1):속도 += 5
 	BASE:(CHARANUM-1):운 += 5
-	ABL:(CHARANUM-1):스킬1 = [[스킬:마하・그라다인]]
-	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・마그다인]]
+	ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ그라다인]]
+	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ마그다인]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:기간트마키아]]
 	ABL:(CHARANUM-1):스킬4 = [[스킬:심판의천둥]]
 	ABL:(CHARANUM-1):스킬5 = [[스킬:기어오는혼돈]]
@@ -1138,7 +1138,7 @@ SELECTCASE RAND:100
 	CASE IS < 95
 		RETURN [[キャラ:고모리]], 68
 	CASE IS < 100
-		RETURN [[キャラ:보후・마나흐]], 68
+		RETURN [[キャラ:보후ㆍ마나흐]], 68
 ENDSELECT
 
 ENDSELECT

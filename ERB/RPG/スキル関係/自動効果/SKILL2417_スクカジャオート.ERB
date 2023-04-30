@@ -44,7 +44,7 @@ RETURN 1
 IF CFLAG:ARG:상태이상 != GET_STATE_NUM("DYING") && ACT_FLAG_2417() == 0
 	CALL VAR_KAJA,ARG,1
 	CALL VAR_KAJA,ARG,3
-	PRINTFORML [스쿠카쟈오토] %CALLNAME:ARG% >>>>> \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중・회피율이 높아졌다！
+	PRINTFORML [스쿠카쟈오토] %CALLNAME:ARG% >>>>> \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중ㆍ회피율이 높아졌다！
 	CALLF ACT_FLAG_2417(1)
 ENDIF
 

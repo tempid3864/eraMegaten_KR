@@ -180,7 +180,7 @@ IF LOCAL:1 > 0
 	CFLAG:LOCAL:방어강화 = LOCAL:1
 ENDIF
 
-CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),0
+CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),0
 
 ;====================================================
 ;실행내용 여기까지
@@ -258,7 +258,7 @@ PRINTL 방어강화를 무시한다。
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_無明三段突き,ARG
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) == 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) == 0
 	RETURN 0
 RETURN 1
 

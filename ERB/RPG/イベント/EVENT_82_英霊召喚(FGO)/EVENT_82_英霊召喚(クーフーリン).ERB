@@ -24,21 +24,21 @@
 IF 이벤트플래그:82:1 > 3
 	IF GETCHARA([[キャラ:쿠훌린(창)]]) > 0
 		RESULTS = 빛의 아들 재림(쿠훌린)
-		RESULTS:1 = 필요 촉매：영웅 쿠・훌린(함락)　쿠훌린(창) 가입 완료
+		RESULTS:1 = 필요 촉매：영웅 쿠ㆍ훌린(함락)　쿠훌린(창) 가입 완료
 		RETURN 0
-	ELSEIF GETCHARA([[キャラ:쿠・훌린]]) > 0
-		IF !함락(GETCHARA([[キャラ:쿠・훌린]]))
+	ELSEIF GETCHARA([[キャラ:쿠ㆍ훌린]]) > 0
+		IF !함락(GETCHARA([[キャラ:쿠ㆍ훌린]]))
 			RESULTS = 빛의 아들 재림(쿠훌린)
-			RESULTS:1 = 필요 촉매：영웅 쿠・훌린(함락)　미함락
+			RESULTS:1 = 필요 촉매：영웅 쿠ㆍ훌린(함락)　미함락
 			RETURN 0
 		ELSE
 			RESULTS = 빛의 아들 재림(쿠훌린)
-			RESULTS:1 = 필요 촉매：영웅 쿠・훌린(함락)　쿠훌린(창) 미가입
+			RESULTS:1 = 필요 촉매：영웅 쿠ㆍ훌린(함락)　쿠훌린(창) 미가입
 			RETURN 1
 		ENDIF
 	ELSE
 		RESULTS = 빛의 아들 재림(쿠훌린)
-		RESULTS:1 = 필요 촉매：영웅 쿠・훌린(함락)　미함락
+		RESULTS:1 = 필요 촉매：영웅 쿠ㆍ훌린(함락)　미함락
 		RETURN 0
 	ENDIF
 ELSE
@@ -261,7 +261,7 @@ ENDIF
 ;---- EDIT 003 ADD END ---------------------------
 #DIM SKILL_NUM
 
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 0
 	PRINTFORML  
@@ -294,11 +294,11 @@ IF 이벤트플래그:82:5 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
 	PRINTFORM ┃[{CPOS((CHARANUM-1)),2}] %CALLNAME:(CHARANUM-1),21,LEFT%┃　┃
-	CALLFORM SKILL_NAME_ノウブル・ファンタズム,(CHARANUM-1)
+	CALLFORM SKILL_NAME_ノウブルㆍファンタズム,(CHARANUM-1)
 	PRINTFORML %RESULTS,40,LEFT%┃
 	PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-	CALL ACTION_ノウブル・ファンタズム,(CHARANUM-1)
+	CALL ACTION_ノウブルㆍファンタズム,(CHARANUM-1)
 	CFLAG:(CHARANUM-1):기합플래그 = 1
 	이벤트플래그:82:5 = 1
 ENDIF
@@ -307,7 +307,7 @@ ENDIF
 ;@EVENT_BATTLE_TURNTOP_EVENT82
 ;#DIM SKILL_NUM
 
-;SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+;SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 
 
@@ -316,7 +316,7 @@ ENDIF
 ;---- EDIT 003 ADD END ---------------------------
 #DIM SKILL_NUM
 
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 2 && 현HP비율(CHARANUM-1) < 50
 	CUSTOMDRAWLINE =
@@ -369,11 +369,11 @@ IF SKILLGAGE_D_GET((CHARANUM-1),SKILL_NUM) == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
 	PRINTFORM ┃[{CPOS((CHARANUM-1)),2}] %CALLNAME:(CHARANUM-1),21,LEFT%┃　┃
-	CALLFORM SKILL_NAME_ノウブル・ファンタズム,(CHARANUM-1)
+	CALLFORM SKILL_NAME_ノウブルㆍファンタズム,(CHARANUM-1)
 	PRINTFORML %RESULTS,40,LEFT%┃
 	PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-	CALL ACTION_ノウブル・ファンタズム,(CHARANUM-1)
+	CALL ACTION_ノウブルㆍファンタズム,(CHARANUM-1)
 ENDIF
 
 ;--------------------
@@ -384,7 +384,7 @@ ENDIF
 #DIM SKILL_NUM2
 #DIM SKILL_NUM3
 
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 SKILL_NUM2 = PU_SKILLNUM_GET((CHARANUM-1),"刺し穿つ刺棘の槍")
 SKILL_NUM3 = PU_SKILLNUM_GET((CHARANUM-1),"突き穿つ死翔の槍")
 

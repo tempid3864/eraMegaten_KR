@@ -8,7 +8,7 @@
 
 ;스킬명
 @SKILL_NAME_ﾊﾞﾝｼｰ･S,ARG
-RESULTS = 밴시・S
+RESULTS = 밴시ㆍS
 
 ;　명중
 @SKILL_HITRATE_ﾊﾞﾝｼｰ･S, ARG
@@ -171,7 +171,7 @@ RETURN 70
 #DIM SKILL_NUM
 #DIM スキル番号
 #DIM DI残りターン
-スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄ・いんすとーる")
+スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄㆍいんすとーる")
 DI残りターン = SKILLGAGE_D_GET(ARG,スキル番号)
 ;他の貫通スキルからコピペ
 IF DI残りターン > 0
@@ -290,9 +290,9 @@ ENDIF
 @SKILL_EXPLAIN_ﾊﾞﾝｼｰ･S,ARG
 #DIM DI残りターン
 #DIM スキル番号
-スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄ・いんすとーる")
+スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄㆍいんすとーる")
 DI残りターン = SKILLGAGE_D_GET(ARG,スキル番号)
-PRINTL 기술명：밴시・스트라이크
+PRINTL 기술명：밴시ㆍ스트라이크
 PRINTL 공중으로 높이 뛰어올라 급강하하여 강렬한 발길질을 날려 적을 꿰뚫는다
 PRINTL 적 전열 1체에 전술 상성의 특대 물리데미지＋BIND
 PRINTL 용희 쿠도라의 전용기

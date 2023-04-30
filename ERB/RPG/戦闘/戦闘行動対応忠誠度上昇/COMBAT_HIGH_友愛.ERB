@@ -4,7 +4,7 @@
 ;ARG:1    입력행동
 ;RESULT   충성도上昇量
 ;===============================
-;[우애]は회복・상태회복行動で충성도が上昇
+;[우애]は회복ㆍ상태회복行動で충성도が上昇
 @COMBAT_HIGH_우애(ARG,ARG:1)
 CALLFORM SKILL_EFECT_{ARG:1}
 SIF RESULT != 2 && RESULT != 5

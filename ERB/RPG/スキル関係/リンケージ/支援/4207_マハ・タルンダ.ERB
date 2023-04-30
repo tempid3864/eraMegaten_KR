@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4207,ARG
-RESULTS = 마하・타룬다
+RESULTS = 마하ㆍ타룬다
 
 ;　명중
 @SKILL_HITRATE_4207, ARG
@@ -163,7 +163,7 @@ RETURN 1
 @참가조건표시_4207,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 타룬・다
+		PRINTFORM 타룬ㆍ다
 	CASE 2
 		PRINTFORM 마계의조사
 ENDSELECT
@@ -186,9 +186,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;타룬・다を使えること
-		IF HAVE_SKILL(ARG, [[스킬:타룬・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬・다]]
+		;타룬ㆍ다を使えること
+		IF HAVE_SKILL(ARG, [[스킬:타룬ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

@@ -32,7 +32,7 @@ ELSE
 	$NORMAL
 	IF ARG:2 == -1
 		;---- EDIT 002 ADD START -------------------------
-		;ジェンダーフリー用の措置。とりあえず、鬼神・魔神は地母神・女神として扱う
+		;ジェンダーフリー用の措置。とりあえず、鬼神ㆍ魔神は地母神ㆍ女神として扱う
 		;特殊種族の同族判定の調整
 		SELECTCASE ABL:ARG:종족
 			CASE 15,16
@@ -363,7 +363,7 @@ SIF ARG > ARG:1
 	SWAP ARG,ARG:1
 SIF ARG == ARG:1
 	RETURN 13
-	;精霊・御魂合体につき취소
+	;精霊ㆍ御魂合体につき취소
 
 SELECTCASE ARG
 	CASE 1
@@ -492,7 +492,7 @@ FOR カウント , 0 , 10
 	;一部の種族を除外
 	SIF GROUPMATCH(LOCAL:1 , 12 , 14)
 		GOTO LOOP_RACE
-	;神族・鬼神族の調整
+	;神族ㆍ鬼神族の調整
 	SIF GROUPMATCH(LOCAL:1 , 15 , 16) && TALENT:ARG:남자 == 0
 		LOCAL:1 -= 14
 	SIF GROUPMATCH(LOCAL:1 , 1 , 2) && TALENT:ARG:남자

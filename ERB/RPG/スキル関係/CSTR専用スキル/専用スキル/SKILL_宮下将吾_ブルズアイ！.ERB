@@ -160,7 +160,7 @@ CALL ATTACK_SINGLE,ARG,POS(ARG:1),SKILL_NUM
 #DIM ブルズアイ！残弾
 ブルズアイ！残弾 = PU_SKILLNUM_GET(ARG, "ブルズアイ！")
 PRINTL 갈고 닦은 감각과 행운으로、필중의 탄환을 상대에 급소에 쳐박는、미야시타 쇼고의 필살기
-PRINTL 적 １체에 １턴 가드킬＋특대 데미지　필중・매우 높은 크리티컬률
+PRINTL 적 １체에 １턴 가드킬＋특대 데미지　필중ㆍ매우 높은 크리티컬률
 IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
 	PRINTL 1회 출격 당 3회까지 사용 가능
 ELSE

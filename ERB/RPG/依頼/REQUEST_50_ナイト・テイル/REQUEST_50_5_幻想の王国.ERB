@@ -8,7 +8,7 @@
 ;====================
 ;関連フラグリスト
 ;====================
-;FLAG:나이트・테일진행도
+;FLAG:나이트ㆍ테일진행도
 ;
 ;====================
 ;説明
@@ -28,7 +28,7 @@ PRINTFORML
 ;内容
 ;====================
 @REQUEST_50_5
-FLAG:나이트・테일진행도 = 5
+FLAG:나이트ㆍ테일진행도 = 5
 
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
@@ -87,7 +87,7 @@ PRINTFORML
 PRINTFORMW 같은 시각、같은 공원 안。
 PRINTFORMW ――의、『뒤편』。
 PRINTFORML 
-PRINTFORMW 「【마하・잔】」
+PRINTFORMW 「【마하ㆍ잔】」
 PRINTFORML 
 PRINTFORMW 충격파를 정통으로 받아、날려간 잡다한 악마떼가、이끼 낀 벽돌벽에 충돌해 산산조각으로 흩어졌다。
 PRINTFORML 
@@ -272,7 +272,7 @@ PRINTFORML
 PRINTFORMW 『히ー호ー！　무슨 일이냐호？
 PRINTFORMW 　탐지？　보물찾기라도 하고있냐호？
 PRINTFORMW 　……여자！？　
-PRINTFORMW 　여・어・자！？
+PRINTFORMW 　여ㆍ어ㆍ자！？
 PRINTFORMW 　히이이이이이이이이이이ー호오오오오오오오오오오오오오오오오오오오오오오ー！！』
 PRINTFORML 
 PRINTFORMW 이녀석들은 소란스러운 것이 단점이다。
@@ -297,7 +297,7 @@ PRINTFORML
 PRINTFORML 
 
 ;例外処理
-;ナイト・テイルルートを作ったころはたけしなんていなかったのだ！！！
+;ナイトㆍテイルルートを作ったころはたけしなんていなかったのだ！！！
 IF CFLAG:MASTER:당신의전공분야 == 9
 
 	CUSTOMDRAWLINE =
@@ -347,7 +347,7 @@ ELSE
 
 ENDIF
 
-FLAG:나이트・테일진행도 = 15
+FLAG:나이트ㆍ테일진행도 = 15
 
 PRINTFORML 
 PRINTFORMW 망보고 있는 악마를 만나 뒤에서 머리를 때려 쓰러트린 %CALLNAME:MASTER%였지만、
@@ -429,7 +429,7 @@ PRINTFORMW 「문제가 있으면、그 때 해결하면 되겠죠。서로」
 PRINTFORMW 『그것도 그렇다』며、%마스터는% 웃는 얼굴로 악수를 했다。
 PRINTFORML 
 PRINTFORMW ＞마가미　유우키	가 일시적으로 동료가 되어、후위에 끼어들었습니다。
-PRINTFORMW ＞유리아・페테아스카 	가 일시적으로 동료가 되어、전위에 끼어들었습니다。
+PRINTFORMW ＞유리아ㆍ페테아스카 	가 일시적으로 동료가 되어、전위에 끼어들었습니다。
 PRINTFORML 
 
 			LOCAL = GETCHARA([[キャラ:유우키]])
@@ -546,7 +546,7 @@ PRINTFORML
 PRINTFORML 
 CUSTOMDRAWLINE =
 
-FLAG:나이트・테일진행도 = 25
+FLAG:나이트ㆍ테일진행도 = 25
 
 PRINTFORML 
 PRINTFORMW %CALLNAME:MASTER%일행이 악마를 해치우며 나아가고 있자니、갑자기 으스스한 광장이 나왔다。
@@ -597,7 +597,7 @@ PRINTFORMW 남자는 바보취급하듯 코웃음치며、망토를 휘날려 �
 PRINTFORML 
 PRINTFORMW 「일으키는 거야、불행한 결과를」
 PRINTFORMW 「뭐라고요！？」
-PRINTFORMW 「유리아、이 땅은 양의 기를 가지고 있어。맞은 편에 있는 데스티니・씨인지는、음의 기를 가지고 있다。
+PRINTFORMW 「유리아、이 땅은 양의 기를 가지고 있어。맞은 편에 있는 데스티니ㆍ씨인지는、음의 기를 가지고 있다。
 PRINTFORMW 　두 개가 서로 마주보는 모습은、뭔가와 비슷하다고 생각하지 않니？」
 PRINTFORML 
 PRINTFORMW 아리송한 얼굴을 한 유리아와、
@@ -764,7 +764,7 @@ IF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 > 0
 	FLAG:도주불가플래그 = 0
 	FLAG:회화불능플래그 = 0
 	FLAG:선제기습취소 = 0
-	FLAG:나이트・테일진행도 = 5
+	FLAG:나이트ㆍ테일진행도 = 5
 	CALL REQUEST_50_DAY_END
 
 	RETURN
@@ -864,9 +864,9 @@ IF RESULT == 100
 	ENDIF
 	IF GETBIT(의뢰플래그:50:3,1) 
 		PRINTFORMW 
-		PRINTFORMW ・
-		PRINTFORMW ・・
-		PRINTFORMW ・・・
+		PRINTFORMW ㆍ
+		PRINTFORMW ㆍㆍ
+		PRINTFORMW ㆍㆍㆍ
 		PRINTFORMW …뭐、실은 무력한 인간을 곁에 두지 않는다고도 할 수 없지만。그건 잠자코 두기로 하자。
 		PRINTFORML 
 	ENDIF
@@ -1035,7 +1035,7 @@ ELSEIF RESULT == 200
 	
 	PRINTFORML 
 	PRINTFORML [100]　조금 전에 눈에 띈　　야마　　서큐버스　　
-	PRINTFORML [200]　머리모양이 닮은　　  흉조　　모・쇼보
+	PRINTFORML [200]　머리모양이 닮은　　  흉조　　모ㆍ쇼보
 	PRINTFORML [300]　쫓겨나 있었던          지령　　노커
 	PRINTFORML [400]　예전에 주운             머신　  골렘　　　
 	PRINTFORML [999]　역시 다시 생각한다
@@ -1187,13 +1187,13 @@ ELSEIF RESULT == 200
 			MAXBASE:LOCAL:만능 = 100
 			MAXBASE:LOCAL:사이코 = 100
 			
-			;타룬・다／섹시댄스／파라라아이／마하・지온가
+			;타룬ㆍ다／섹시댄스／파라라아이／마하ㆍ지온가
 			ABL:LOCAL:스킬1 = 506
 			ABL:LOCAL:스킬2 = 1212
 			ABL:LOCAL:스킬3 = 1121
 			ABL:LOCAL:스킬4 = 905
 			
-			;데・쿤다／지오다인／초메기도／유혹
+			;데ㆍ쿤다／지오다인／초메기도／유혹
 			ABL:LOCAL:습득스킬1 = 505
 			ABL:LOCAL:습득LV1 = 47
 			ABL:LOCAL:습득스킬2 = 903
@@ -1230,7 +1230,7 @@ ELSEIF RESULT == 200
 		ELSEIF LOCAL:1 == 200
 			;2019/01/29　　　能力と내성をちょっと調整。まえより使いやすくなったかも
 		
-			PRINTFORMW 악마전서에서 강림시킨 모・쇼보가、동류를 보는 시선으로 히죽히죽 카야를 바라보고 있다。
+			PRINTFORMW 악마전서에서 강림시킨 모ㆍ쇼보가、동류를 보는 시선으로 히죽히죽 카야를 바라보고 있다。
 			CALL REQUEST50_5_KAYA_GATTAI
 			PRINTFORMW 거기에는、긴 머리를、날개처럼 파닥이는 동녀가、눈을 감고 떠있었다。
 			PRINTFORMW 속눈썹은 길고、색은 하얗다。
@@ -1250,7 +1250,7 @@ ELSEIF RESULT == 200
 			PRINTFORMW 흉조、이시미네 카야가 동료마가 되었다。
 			PRINTFORML 
 			
-			;ショボー化/利点はいちばんかわいいことだ（きっぱり）。라이도우さんのショボーに倣い、데・카쟈を付けてます
+			;ショボー化/利点はいちばんかわいいことだ（きっぱり）。라이도우さんのショボーに倣い、데ㆍ카쟈を付けてます
 			BASE:LOCAL:LV = 45
 			BASE:LOCAL:ＥＸＰ = 5*(44)*(46)*(45)/3*5/4
 			BASE:LOCAL:힘 = 21
@@ -1324,13 +1324,13 @@ ELSEIF RESULT == 200
 			MAXBASE:LOCAL:사이코 = 100
 			
 			;자폭技ばっかりじゃアレなので、ちょこちょこと변경
-			;디아／자폭／쪼기／데・카쟈
+			;디아／자폭／쪼기／데ㆍ카쟈
 			ABL:LOCAL:스킬1 = 401
 			ABL:LOCAL:스킬2 = 2005
 			ABL:LOCAL:스킬3 = 329
 			ABL:LOCAL:스킬4 = 509
 			
-			;마하・잔／마인드슬라이스／테트라쟈／마음의외침
+			;마하ㆍ잔／마인드슬라이스／테트라쟈／마음의외침
 			ABL:LOCAL:습득스킬1 = 1004
 			ABL:LOCAL:습득LV1 = 46
 			ABL:LOCAL:습득스킬2 = 307
@@ -1356,7 +1356,7 @@ ELSEIF RESULT == 200
 			
 			CSTR:LOCAL:타이틀 = 흉조소녀
 			CSTR:LOCAL:37 = ……지만、이 시간축에선、그녀는 사람으로서의 영혼을 바쳐버린 것 같다。
-			CSTR:LOCAL:38 = 악마가 된 그녀는 윤리관이 바뀌어 버렸다。모・쇼보의 측면이 강하게 나와 있다。
+			CSTR:LOCAL:38 = 악마가 된 그녀는 윤리관이 바뀌어 버렸다。모ㆍ쇼보의 측면이 강하게 나와 있다。
 			CSTR:LOCAL:39 = 예전의 그녀에게서는 상상도 못할 정도로 잔학해진 그녀는、특히、가지고 놀다 죽인 인간의 뇌를 즐겨 먹게 되어버렸다。
 			
 			CSTR:LOCAL:41 = 입의 끝에서 피를 머금으며 웃는 소녀지만、
@@ -1454,13 +1454,13 @@ ELSEIF RESULT == 200
 			MAXBASE:LOCAL:사이코 = 75
 			
 			;회복と지원特化
-			;포즈무디／마그나스／메・디아라마／리캄
+			;포즈무디／마그나스／메ㆍ디아라마／리캄
 			ABL:LOCAL:스킬1 = 410
 			ABL:LOCAL:스킬2 = 1505
 			ABL:LOCAL:스킬3 = 405
 			ABL:LOCAL:스킬4 = 417
 			
-			;해피스텝／숏잽／히트라이저／메・디아라한
+			;해피스텝／숏잽／히트라이저／메ㆍ디아라한
 			ABL:LOCAL:습득스킬1 = 1202
 			ABL:LOCAL:습득LV1 = 46
 			ABL:LOCAL:습득스킬2 = 202
@@ -1596,15 +1596,15 @@ ELSEIF RESULT == 200
 			MAXBASE:LOCAL:만능 = 100
 			MAXBASE:LOCAL:사이코 = 100
 			
-			;스킬は머신・ゴーレムのものを参考に、暴徒鎮圧的な장비で
+			;스킬は머신ㆍゴーレムのものを参考に、暴徒鎮圧的な장비で
 			
-			;하이・애널라이즈/연속사격/산탄사격/할퀴기
+			;하이ㆍ애널라이즈/연속사격/산탄사격/할퀴기
 			ABL:LOCAL:스킬1 = 531
 			ABL:LOCAL:스킬2 = 112
 			ABL:LOCAL:스킬3 = 113
 			ABL:LOCAL:스킬4 = 301
 			
-			;컨센트레이트/전격/독가스브레스、파라라・웨이브/방전/텐타라후/おっぱ……뉴클리어미사일
+			;컨센트레이트/전격/독가스브레스、파라라ㆍ웨이브/방전/텐타라후/おっぱ……뉴클리어미사일
 			ABL:LOCAL:습득스킬1 = 512
 			ABL:LOCAL:습득LV1 = 46
 			ABL:LOCAL:습득스킬2 = 913
@@ -1666,18 +1666,18 @@ FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0
 
-FLAG:나이트・테일진행도 = 5
+FLAG:나이트ㆍ테일진행도 = 5
 
 CALL REQUEST_50_DAY_END
 
 @EVENT_BATTLE_START_REQUEST50_5
-IF FLAG:나이트・테일진행도 == 5
+IF FLAG:나이트ㆍ테일진행도 == 5
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃엣！？　이、인간！　대체 어디로 들어온거야  ┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORMW 야마가 나타났다！
 	
-ELSEIF FLAG:나이트・테일진행도 == 15
+ELSEIF FLAG:나이트ㆍ테일진행도 == 15
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃훗훗후、좀 전엔 방심했었지만、　　　　　    ┃
 	PRINTFORML ┃이번에는 동료를 데려왔어。이걸로 너따윈     ┃
@@ -1685,7 +1685,7 @@ ELSEIF FLAG:나이트・테일진행도 == 15
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 	PRINTFORMW 야마가 나타났다！
 	
-ELSEIF FLAG:나이트・테일진행도 == 25
+ELSEIF FLAG:나이트ㆍ테일진행도 == 25
 	PRINTFORMW 「읏、저것도、악마군요……
 	PRINTFORMW 　흡혈귀도……
 	PRINTFORMW 　같이 계시는、매우 강해보이는 여자분도……」
@@ -1694,7 +1694,7 @@ ELSEIF FLAG:나이트・테일진행도 == 25
 	PRINTFORML 
 	PRINTFORML 
 	PRINTFORML 
-	PRINTFORMW 흡혈귀　라두・셀・후루모스가 나타났다！
+	PRINTFORMW 흡혈귀　라두ㆍ셀ㆍ후루모스가 나타났다！
 ENDIF
 
 
@@ -1765,7 +1765,7 @@ ENDIF
 			PRINTFORMW 그것도 곧、소용돌이치며、소멸한다。
 			PRINTFORML 
 			PRINTFORMW 관의 주인이、커다란 레버를 철컥 내렸다。
-			PRINTFORMW 한 명의 소녀의 육신과 혼을 삼킨 마그네타이트・슬라임이、캡슐 상부의 호스다발에、한조각도 남김없이 빨려올라간다。
+			PRINTFORMW 한 명의 소녀의 육신과 혼을 삼킨 마그네타이트ㆍ슬라임이、캡슐 상부의 호스다발에、한조각도 남김없이 빨려올라간다。
 			PRINTFORMW 옆의 캡슐도 동일하게 작동했다。
 			PRINTFORMW 둘은、안쪽의 더 큰 캡슐에、섞이면서 떨어져간다。
 			PRINTFORML 

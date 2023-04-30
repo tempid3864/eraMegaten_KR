@@ -4,7 +4,7 @@ SIF RESULT == 1000
 	RETURN 0
 CALL CHARA_SELL, RESULT
 
-;ARGは売るキャラ・ARG:1は가격試算で표시なし
+;ARGは売るキャラㆍARG:1は가격試算で표시なし
 @CHARA_SELL, ARG, ARG:1
 #DIM PRICE
 #DIM PRICE_T
@@ -21,12 +21,12 @@ ENDIF
 ;기본가격の決定
 ;LOCALSは표시名
 ;-------------------------------------------------------------------
-;娘・息子
+;娘ㆍ息子
 IF NO:ARG == 3501 || NO:ARG == 3502
 	PRICE = BASE:ARG:LV * (3+BASE:ARG:LV/10) * 1
 	LOCALS = 아이
 ;まどマギＭＯＤ추가
-;마법소녀・魔女の매각가격は조마より上。
+;마법소녀ㆍ魔女の매각가격は조마より上。
 ELSEIF NO:ARG == 4391 || NO:ARG == 4392 || NO:ARG == 4393 || NO:ARG == 4394 || NO:ARG == 4395 || NO:ARG == 4396 || NO:ARG == 4397 || NO:ARG == 4398 || NO:ARG == 4399
 	PRICE = 450 + BASE:ARG:LV * (5+BASE:ARG:LV/4) * 3
 	LOCALS = 마법소녀

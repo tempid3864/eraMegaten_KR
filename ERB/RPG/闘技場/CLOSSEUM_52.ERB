@@ -52,7 +52,7 @@ PRINTL 「그러면 무운을」
 PRINTW 		
 PRINTFORMW 눈앞에 한 아름다운 여성이 서 있다
 PRINTFORMW 「후후, 당신이 %CALLNAME:MASTER%? 듣던 것보다 훨씬 좋은 남자야%UNICODE(0x2661)%」
-PRINTFORMW 「그・리・고, 당신이 이번에 판돈으로 걸린 애구나… 흐―응」
+PRINTFORMW 「그ㆍ리ㆍ고, 당신이 이번에 판돈으로 걸린 애구나… 흐―응」
 IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 	PRINTFORMW 「꽤나 당신을 사랑하고 있나 봐, 복 받았잖니 %CALLNAME:MASTER%%UNICODE(0x2661)%」
 ELSEIF TALENT:PLAYER:음란 || TALENT:PLAYER:창부
@@ -62,7 +62,7 @@ ELSEIF TALENT:PLAYER:복종 || TALENT:PLAYER:예속
 ELSE
 	PRINTFORMW 「귀여운 애잖니, 역시 색남%UNICODE(0x2661)%」
 ENDIF
-PRINTFORMW 「…하・지・만 시합이 끝난 뒤, 그녀는 당신 옆에 있을지 모르겠네?」
+PRINTFORMW 「…하ㆍ지ㆍ만 시합이 끝난 뒤, 그녀는 당신 옆에 있을지 모르겠네?」
 PRINTFORML 여성이 신호하자 악마들이 뛰어들어왔다
 PRINTFORML 「우선은 이 아이들이 상대야」
 PRINTL 요정　고블린이 1체 나왔다！
@@ -495,7 +495,7 @@ IF RESULT == 0
 ELSE
 	PRINTFORML 뱀파이어를 방치하고 떠나려는 순간, 뒤통수에 습격을 받고 %조사처리(CALLNAME:MASTER,"는")% 바닥에 쓰러졌다
 	PRINTFORML 「후후、무르네♪ 방심한 당신이 나쁜거야」
-	PRINTFORMW 「그・러・면%UNICODE(0x2661)% 이 아가씨를 기분 좋게 만들어볼까요♪」
+	PRINTFORMW 「그ㆍ러ㆍ면%UNICODE(0x2661)% 이 아가씨를 기분 좋게 만들어볼까요♪」
 	PRINTFORMW 「당신 같은 건 까맣게 잊어버릴 정도로 말이야%UNICODE(0x2661)%」
 	CALL SET_ENEMY,16,[[キャラ:바포멧트]],40,1,1
 	CALL SET_ENEMY,15,[[キャラ:바포멧트]],40,1,1

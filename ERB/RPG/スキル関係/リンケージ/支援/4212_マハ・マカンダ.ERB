@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4212,ARG
-RESULTS = 마하・마칸다
+RESULTS = 마하ㆍ마칸다
 
 ;　명중
 @SKILL_HITRATE_4212, ARG
@@ -163,7 +163,7 @@ RETURN 1
 @참가조건표시_4212,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 마칸・다
+		PRINTFORM 마칸ㆍ다
 	CASE 2
 		PRINTFORM 마계의조사
 ENDSELECT
@@ -186,9 +186,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;マカ・ンダを使えること
-		IF HAVE_SKILL(ARG, [[스킬:마칸・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸・다]]
+		;マカㆍンダを使えること
+		IF HAVE_SKILL(ARG, [[스킬:마칸ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

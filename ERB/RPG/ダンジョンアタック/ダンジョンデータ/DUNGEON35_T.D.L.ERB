@@ -8,7 +8,7 @@
 ;1 = 에키드나이벤트플래그	 -1,에키드나撃破, 1,하니엘의뢰保留		2,하니엘의뢰受諾		3,카테드랄侵攻保留		4,카테드랄侵攻受諾
 ;2 = 에키드나友好フラグ		真の時、エンカウントがなくなる。どちらかの의뢰を受けたときに立てて、殺したときに折る
 ;3 = 初탐색フラグ
-;3 = 쾌락　유리아・페테아스카
+;3 = 쾌락　유리아ㆍ페테아스카
 ;4 = 
 ;5 = 
 ;6 = 
@@ -725,8 +725,8 @@ RETURN 1
 #LOCALSSIZE 1
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 	CASE 0
-		;ナイト・テイルルートが一定以上進行していると無人に
-		IF 던전플래그:(FLAG:현던전):8++ || FLAG:나이트・테일진행도 > 5
+		;ナイトㆍテイルルートが一定以上進行していると無人に
+		IF 던전플래그:(FLAG:현던전):8++ || FLAG:나이트ㆍ테일진행도 > 5
 			CALL MESSAGE_WINDOW_D, "", "＞아무것도 없다"
 			CALL MESSAGE_WINDOW_D, "", "………………/…………/……"
 		ELSE
@@ -736,7 +736,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 			CALL FLOOR_ANALYZE
 			CALL SHOW_PICTURE, "D"
 			
-			IF FLAG:나이트・테일진행도 == 5
+			IF FLAG:나이트ㆍ테일진행도 == 5
 				CALL MESSAGE_WINDOW_D, "", "＞문 앞은 무너져내린 성이였다。"
 				CALL MESSAGE_WINDOW_D, "유리아", "어머……。지금쯤 오셨군요"
 				CALL MESSAGE_WINDOW_D, "", "＞석조건물을 완전히 그 형태를 잃었고、/깃발도、집물도、카펫도、/모든 것이 검게 태워져 있었다。＞"
@@ -748,7 +748,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 						CALL MESSAGE_WINDOW_D, "코시로", "……유리아씨、여기를 봐주지 않아요"
 					ENDIF
 				ENDIF
-				CALL MESSAGE_WINDOW_D, "유리아", "꿈의 왕국、에이닌・미힌은 이미 사라지고、/포말의 기사는 무로 돌아갔다……"
+				CALL MESSAGE_WINDOW_D, "유리아", "꿈의 왕국、에이닌ㆍ미힌은 이미 사라지고、/포말의 기사는 무로 돌아갔다……"
 				CALL MESSAGE_WINDOW_D, "유리아", "여기는 잔해、그들이 살았던、그 잔해"
 				CALL MESSAGE_WINDOW_D, "유리아", "――저는 지킵니다。/비록 이 군기를 든 자가、남김없이 죽어가고 있다고 하더라도"
 				IF FINDCHARA_B([[キャラ:코시로]],1)== 2
@@ -766,7 +766,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 					CALL MESSAGE_WINDOW_D, "유리아", "저 역시 분쟁을 바라지는 않아요/하지만、인간의 현실을 무너뜨려、신들의 시대를 부르지 않으면/핀(フィン)과 이 나라는 영원히 꿈 속"
 					CALL MESSAGE_WINDOW_D, "유리아", "라그나로크의 성취야말로…/꿈을 뒤흔드는 환상을 현실로 만들 수 있는 유일한 방법/그것을 위해서라면 저는 모든 것을 희생해도 상관없어요"
 					CALL MESSAGE_WINDOW_D, "코시로", "좀 더、다른 방법도 있을 거예요/싸우는 것만이 해결책은 아닐거라구요"
-					CALL MESSAGE_WINDOW_D, "유리아", "그렇게 할 수만 있다면 좋았을 텐데요……/하지만 그것은 이루어지지 못할 꿈같은 이야기/야화（나이트・테일）의 막을 열죠"
+					CALL MESSAGE_WINDOW_D, "유리아", "그렇게 할 수만 있다면 좋았을 텐데요……/하지만 그것은 이루어지지 못할 꿈같은 이야기/야화（나이트ㆍ테일）의 막을 열죠"
 					CALL MESSAGE_WINDOW_D, "", "＞눈 앞의 소녀는 망설임을 떨쳐내는듯이 덤벼왔다！"
 				ELSE
 				CALL MESSAGE_WINDOW_D, "유리아", "준비하세요/저는 무저항인 자를 괴롭히는 취미는 없어요/천사가 승리해도、악마가 승리해도/신화세계의 도래는 이미 눈 앞"
@@ -803,12 +803,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 			FLAG:선제기습취소 = 0
 			CALL SHOW_PICTURE, "D"
 			CALL MESSAGE_WINDOW_D, "유리아", "죄송해요…핀…"
-			CALL MESSAGE_WINDOW_D, "", "＞용왕 유리아・페테아스카가 쓰러졌다…/＞은열쇠를 손에 넣었다"
+			CALL MESSAGE_WINDOW_D, "", "＞용왕 유리아ㆍ페테아스카가 쓰러졌다…/＞은열쇠를 손에 넣었다"
 			ITEM:은열쇠 += 1
 			CALL MESSAGE_WINDOW_D, "", "＞쓰러져있는 소녀를 데리고 돌아갑니까？"
 			CALL INPUT_YN_D
 			IF RESULT == 0
-				CALL MESSAGE_WINDOW_D, "", "＞유리아・페테아스카가 노예가 되었다"
+				CALL MESSAGE_WINDOW_D, "", "＞유리아ㆍ페테아스카가 노예가 되었다"
 				CALL ADD_NEW_COMPANION,[[キャラ:유리아]],500
 			ELSEIF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "", @"＞%조사처리(CALLNAME:MASTER,"는")% 떠나기로 했다…"
@@ -1146,7 +1146,7 @@ RETURN 1
 @TREASURE_35, ARG
 #LOCALSIZE 1
 #LOCALSSIZE 3
-;個数,-1のとき、마카・0の時、\となる
+;個数,-1のとき、마카ㆍ0の時、\となる
 LOCAL = 1
 ;IDは현M*100＋X個눈の宝箱の法則でふられている
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
@@ -1458,9 +1458,9 @@ SELECTCASE NO:ARG
 		SIF 던전플래그:(FLAG:현던전):0 >= 2
 			ABL:ARG:스킬2 = [[스킬:잔다인]]
 		SIF 던전플래그:(FLAG:현던전):0 == 3
-			ABL:ARG:스킬3 = [[스킬:마하・잔마]]
+			ABL:ARG:스킬3 = [[스킬:마하ㆍ잔마]]
 		SIF 던전플래그:(FLAG:현던전):0 == 4
-			ABL:ARG:스킬3 = [[스킬:마하・잔다인]]
+			ABL:ARG:스킬3 = [[스킬:마하ㆍ잔다인]]
 	CASE [[キャラ:뱀파이어]]
 		;무드온
 		ABL:ARG:스킬1 = [[스킬:무드온]]
@@ -1489,7 +1489,7 @@ ENDSELECT
 ;도발で공격력を補い、포그브레스で회피対策＋방어を補う
 ;
 ;기본행동횟수が2回だが、물어뜯기は추가で최대5回までの행동횟수を得る
-;HPが減ると메가톤프레스・베어먹기の頻度が増えていく
+;HPが減ると메가톤프레스ㆍ베어먹기の頻度が増えていく
 ;전술무효以下の相手にダメ取る손段が弱すぎるくらいなので란다やらなんやらが出てくる
 ;この레벨오비だと相当厳しい気はする
 ;--------------------------------------------------
@@ -1514,7 +1514,7 @@ ELSEIF CFLAG:ARG:１more플래그 > 0
 			CASE IS < 45
 				CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 			CASE IS < 60
-				CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+				CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 			CASEELSE
 				IF !RAND:4
 					CFLAG:ARG:입력행동 = [[스킬:석화물어뜯기]]
@@ -1542,7 +1542,7 @@ ELSE
 					CASE IS < 70
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASEELSE
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 				ENDSELECT
 			CASE IS > 50
 				SELECTCASE RAND:100
@@ -1553,7 +1553,7 @@ ELSE
 					CASE IS < 60
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASE IS < 80
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 					CASE IS < 90
 						CFLAG:ARG:입력행동 = [[스킬:베어먹기]]
 					CASEELSE
@@ -1568,7 +1568,7 @@ ELSE
 					CASE IS < 50
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASE IS < 60
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 					CASE IS < 80
 						CFLAG:ARG:입력행동 = [[스킬:베어먹기]]
 					CASEELSE
@@ -1601,7 +1601,7 @@ ELSE
 					CASE IS < 50
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASE IS < 60
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 					CASEELSE
 						IF !RAND:4
 							CFLAG:ARG:입력행동 = [[스킬:석화물어뜯기]]
@@ -1622,7 +1622,7 @@ ELSE
 					CASE IS < 45
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASE IS < 60
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 					CASEELSE
 						IF !RAND:4
 							CFLAG:ARG:입력행동 = [[스킬:석화물어뜯기]]
@@ -1643,7 +1643,7 @@ ELSE
 					CASE IS < 30
 						CFLAG:ARG:입력행동 = [[스킬:독가스브레스]]
 					CASE IS < 40
-						CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+						CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 					CASE IS < 50
 						CFLAG:ARG:입력행동 = [[스킬:베어먹기]]
 					CASE IS < 60
@@ -1803,7 +1803,7 @@ ENDIF
 @SET_ECHIDNA
 CALL SET_ENEMY,9,[[キャラ:에키드나]],62,0,1
 CSTR:(CHARANUM -1):사고패턴 = 에키드나
-ABL:(CHARANUM -1):스킬1 = [[스킬:마하・부흐다인]]
+ABL:(CHARANUM -1):스킬1 = [[스킬:마하ㆍ부흐다인]]
 ABL:(CHARANUM -1):스킬2 = [[스킬:메가톤프레스]]
 ABL:(CHARANUM -1):스킬3 = [[스킬:독가스브레스]]
 ABL:(CHARANUM -1):스킬4 = [[스킬:베어먹기]]
@@ -1811,7 +1811,7 @@ ABL:(CHARANUM -1):스킬5 = [[스킬:석화물어뜯기]]
 ABL:(CHARANUM -1):스킬6 = [[스킬:마비물어뜯기]]
 ABL:(CHARANUM -1):스킬7 = [[스킬:도발]]
 ABL:(CHARANUM -1):스킬8 = [[스킬:어드바이스]]
-;포그브레스・매혹물어뜯기・살신
+;포그브레스ㆍ매혹물어뜯기ㆍ살신
 CFLAG:(CHARANUM -1):행동횟수 = 2
 CFLAG:(CHARANUM -1):속도보정 = 10
 BASE:(CHARANUM -1):힘 += 15
@@ -1909,7 +1909,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;						ABL:(CHARANUM-1):스킬2 = 326
 ;						;라쿤다
 ;						ABL:(CHARANUM-1):스킬3 = 507
-;						;마하・부흐다인
+;						;마하ㆍ부흐다인
 ;						ABL:(CHARANUM-1):스킬4 = 806
 ;						;オート三종류
 ;						ABL:(CHARANUM-1):스킬5 = 2414
@@ -1975,13 +1975,13 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;			던전플래그:35:0 = 1
 ;		ENDIF
 ;	CASE 6
-;		;異界エイニーン・ミヒン
+;		;異界エイニーンㆍミヒン
 ;		IF FLAG:현X == 3 && FLAG:현Y == 3 && 던전플래그:35:3 == 0
 ;			PRINTFORMW ＞문 앞에는 온통 꽃밭이 펼쳐져 있다…
 ;			PRINTFORMW ＞그리고, 꽃밭에는 홀연히 순백의 드레스를 몸에 두른 금발의 소녀가 기다리고 있었다
 ;			PRINTFORML
 ;			PRINTFORMW 「저의 이름은 왈라키아 공녀 유리아 페테아스카 그 용공의 딸로서 다난의 기사」
-;			PRINTFORMW 「여기는 꿈과 현실의 틈새 에이닌・미힌 그리고 당신의 묘지가 되는 장소예요」
+;			PRINTFORMW 「여기는 꿈과 현실의 틈새 에이닌ㆍ미힌 그리고 당신의 묘지가 되는 장소예요」
 ;			PRINTFORML
 ;			IF FINDCHARA_B(4559,1)== 2
 ;				PRINTFORMW 『기다려주세요, 유리아씨』
@@ -1993,7 +1993,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;				PRINTFORMW 「그걸 위해서라면 저는 모든 걸 희생해도 개의치 않아요」
 ;				PRINTFORMW 『좀더, 다른 방법이라도 있었을 겁니다. 싸움만이 해결책은 아닐 거에요』
 ;				PRINTFORMW 「그리 할 수 있다면 좋았을 테죠……하지만 그건 실현되지 않는 꿈의 이야기」
-;				PRINTFORMW 「야화（나이트・테일）의 막을 엽시다」
+;				PRINTFORMW 「야화（나이트ㆍ테일）의 막을 엽시다」
 ;				PRINTFORML
 ;				PRINTFORMW ＞눈 앞의 소녀는 망설임을 베듯이 덤벼 들었다！
 ;			ELSE
@@ -2034,7 +2034,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;		FLAG:선제기습취소 = 0
 ;		PRINTL
 ;		PRINTL 「죄송합니다…핀…」 
-;		PRINTW 용왕 유리아・페테아스카는 쓰러졌다…
+;		PRINTW 용왕 유리아ㆍ페테아스카는 쓰러졌다…
 ;		PRINTL
 ;		PRINTW ＞은열쇠를 손에 넣었다
 ;		ITEM:은열쇠 += 1
@@ -2044,7 +2044,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;		CALL INPUT_YN
 ;		IF RESULT == 0
 ;			PRINTL
-;			PRINTW 유리아・페테아스카가 노예가 되었다。
+;			PRINTW 유리아ㆍ페테아스카가 노예가 되었다。
 ;			CALL ADD_NEW_COMPANION,4570,500
 ;		ELSEIF RESULT == 1
 ;			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")% 떠나기로 했다…。

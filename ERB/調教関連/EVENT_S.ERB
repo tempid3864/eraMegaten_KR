@@ -218,7 +218,7 @@ SIF FLAG:임신기능
 ;배란유발제と자궁내피임결계と그외薬効果終了処理
 FOR LCOUNT, 0, CHARANUM
 	IF (CFLAG:LCOUNT:그외 == [[衣装:피임의반지]] || CFLAG:LCOUNT:그외2 == [[衣装:피임의반지]] || CFLAG:LCOUNT:그외3 == [[衣装:피임의반지]]) && MONEY > 2000
-		;임신중・육아중・オトコは発動しない
+		;임신중ㆍ육아중ㆍオトコは発動しない
 		IF !TALENT:LCOUNT:임신 && !TALENT:LCOUNT:육아중 && !IS_LOOKSLIKE_MALE(LCOUNT)
 			IF CFLAG:LCOUNT:자궁내피임결계 == 1
 				CFLAG:LCOUNT:자궁내피임결계++

@@ -166,7 +166,7 @@ PRINTL
 PRINTFORMW ＞%CALLNAME:ARG%の攻撃が大きく下がった！
 CFLAG:ARG:공격강화 = MIN(32, CFLAG:ARG:공격강화 - 16)
 
-CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),0
+CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),0
 
 ;====================================================
 ;실행내용 여기까지
@@ -234,7 +234,7 @@ CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"
 
 ;　説明文の表示
 @SKILL_EXPLAIN_不帯剣の誓い,ARG
-PRINTL 宝具『不帯剣の誓い（セルマン・デ・デュランダル）』
+PRINTL 宝具『不帯剣の誓い（セルマンㆍデㆍデュランダル）』
 PRINTL 
 PRINTL 自身の攻撃を大きく上昇させてから、敵単体に剣撃物理特大ダメージを与える。
 PRINTL 攻撃後に自身の攻撃が攻撃前より下がる。
@@ -245,7 +245,7 @@ PRINTL
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_不帯剣の誓い,ARG
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) == 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) == 0
 	RETURN 0
 SIF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"絶世の儚剣")) != 0
 	RETURN 0

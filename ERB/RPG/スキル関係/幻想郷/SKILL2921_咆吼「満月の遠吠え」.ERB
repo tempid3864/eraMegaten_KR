@@ -132,8 +132,8 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		CFLAG:POS(LOCAL):명중강화 = MAX(-16, CFLAG:POS(LOCAL):명중강화 - 4)
 		CFLAG:POS(LOCAL):회피강화 = MAX(-16, CFLAG:POS(LOCAL):회피강화 - 4)
 	NEXT
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 물리・마법공격력을 대폭 낮췄다！
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 명중・회피력을 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 물리ㆍ마법공격력을 대폭 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 명중ㆍ회피력을 낮췄다！
 ELSEIF FLAG:월령 == 0
 FOR LOCAL,LOCAL:1,LOCAL:2
 	SIF POS(LOCAL) < 0
@@ -167,7 +167,7 @@ ENDIF
 ;　 설명문 표시
 @SKILL_EXPLAIN_2921
 IF FLAG:월령 == 8
-	PRINTL 적 전체의 물리・마법공격을 2단계、명중・회피를 1단계 낮춘다。
+	PRINTL 적 전체의 물리ㆍ마법공격을 2단계、명중ㆍ회피를 1단계 낮춘다。
 	PRINTL 기묘하게 울부짖으며 적을 위압한다。
 	PRINTL 만월이기 때문에、최대한의 위력을 발휘한다。
 	PRINTL 마수　이마이즈미 카게로의 스펠카드。（전용）
@@ -178,7 +178,7 @@ ELSEIF FLAG:월령 == 0
 	PRINTL 마수　이마이즈미 카게로의 스펠카드。（전용）
 ELSE
 	PRINTL 적 전체의 물리공격력을 2단계 낮춘다。
-	PRINTL 조건：만월시 추가효과・신월시 소비 증다。
+	PRINTL 조건：만월시 추가효과ㆍ신월시 소비 증다。
 	PRINTL 기묘하게 울부짖으며 적을 위압한다。
 	PRINTL 마수　이마이즈미 카게로의 스펠카드。（전용）
 ENDIF

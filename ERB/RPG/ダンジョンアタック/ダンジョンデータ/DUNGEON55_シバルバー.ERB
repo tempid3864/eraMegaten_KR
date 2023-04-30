@@ -556,7 +556,7 @@ ENDSELECT
 @TREASURE_55, ARG
 #LOCALSIZE 1
 #LOCALSSIZE 3
-;個数,-1のとき、마카・0の時、\となる
+;個数,-1のとき、마카ㆍ0の時、\となる
 LOCAL = 1
 ;IDは현M*100＋X個눈の宝箱の法則でふられている
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
@@ -624,7 +624,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		LOCALS = 보옥
 		LOCAL = 3
 	CASE 601
-		LOCALS = 스킬카드【마카・카쟈】
+		LOCALS = 스킬카드【마카ㆍ카쟈】
 	CASE 602
 		LOCALS = 디스가이즈굿즈
 		LOCAL = 1
@@ -643,7 +643,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		LOCALS = ＭＰ
 		LOCAL = 20
 	CASE 703
-		LOCALS = 스킬카드【메・디아라마】
+		LOCALS = 스킬카드【메ㆍ디아라마】
 	CASE 800
 		LOCALS = 히히이로카네투구
 	CASE 801
@@ -833,7 +833,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 							ABL:(RESULT:1):스킬4 = 0
 							ABL:(RESULT:1):스킬5 = 0
 							ABL:(RESULT:1):스킬1 = 705;마하라기온
-							ABL:(RESULT:1):스킬2 = 905;마하・지온가
+							ABL:(RESULT:1):스킬2 = 905;마하ㆍ지온가
 							ABL:(RESULT:1):스킬3 = 62;롱기누스카피（弱）
 							ABL:(RESULT:1):습득스킬1 = 1232;정신가드브레이크
 							ABL:(RESULT:1):습득LV1 = 42
@@ -994,8 +994,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 							ABL:(RESULT:1):스킬2 = 0
 							ABL:(RESULT:1):스킬3 = 0
 							ABL:(RESULT:1):스킬4 = 0
-							ABL:(RESULT:1):스킬1 = 805;마하・부흐라
-							ABL:(RESULT:1):스킬2 = 905;마하・지온가
+							ABL:(RESULT:1):스킬1 = 805;마하ㆍ부흐라
+							ABL:(RESULT:1):스킬2 = 905;마하ㆍ지온가
 							ABL:(RESULT:1):스킬3 = 62;롱기누스카피（弱）
 							ABL:(RESULT:1):습득스킬1 = 832;빙결가드브레이크
 							ABL:(RESULT:1):습득LV1 = 42
@@ -1133,7 +1133,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 							ABL:(RESULT:1):스킬4 = 0
 							ABL:(RESULT:1):스킬5 = 0
 							ABL:(RESULT:1):스킬1 = 705;마하라기온
-							ABL:(RESULT:1):스킬2 = 905;마하・지온가
+							ABL:(RESULT:1):스킬2 = 905;마하ㆍ지온가
 							ABL:(RESULT:1):스킬3 = 62;롱기누스카피（弱）
 							ABL:(RESULT:1):습득스킬1 = 933;전격가드브레이크
 							ABL:(RESULT:1):습득LV1 = 42
@@ -1484,7 +1484,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 							ABL:(RESULT:1):스킬4 = 0
 							ABL:(RESULT:1):스킬5 = 0
 							ABL:(RESULT:1):스킬1 = 705;마하라기온
-							ABL:(RESULT:1):스킬2 = 905;마하・지온가
+							ABL:(RESULT:1):스킬2 = 905;마하ㆍ지온가
 							ABL:(RESULT:1):스킬3 = 62;롱기누스카피（弱）
 							ABL:(RESULT:1):습득스킬1 = 1932;핵열가드브레이크
 							ABL:(RESULT:1):습득LV1 = 42
@@ -1646,7 +1646,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 							;ABL:(RESULT:1):습득스킬7 = 130;Breikonzert←적전용の為사용불가
 							ABL:(RESULT:1):습득스킬7 = 511;기합
 							ABL:(RESULT:1):습득LV7 = 72
-							ABL:(RESULT:1):습득스킬8 = 137;Make・My・Day
+							ABL:(RESULT:1):습득스킬8 = 137;MakeㆍMyㆍDay
 							ABL:(RESULT:1):습득LV8 = 80
 							TALENT:(RESULT:1):무관심 = 0
 							TALENT:(RESULT:1):감정결핍 = 0
@@ -2138,7 +2138,7 @@ ELSE
 			CASE IS < 80
 				RETURN [[キャラ:친위대]], 63
 			CASEELSE
-				RETURN [[キャラ:메탈・드랏헤]], 64
+				RETURN [[キャラ:메탈ㆍ드랏헤]], 64
 		ENDSELECT
 	ELSE
 		SELECTCASE RAND:100
@@ -2168,7 +2168,7 @@ ENDIF
 ;스킬3 1:메갈로파이어 2:절대영도 3:헬데저트 4:멜스트롬 5:스톰나이트메어
 ;
 ;２は스킬３が절대영도なので純粋に4種공격
-;それ以外は即死스킬を低확률・전체스킬をやや低確率で撃ってくる
+;それ以外は即死스킬を低확률ㆍ전체스킬をやや低確率で撃ってくる
 ;
 ;四天王同様の連戦仕様
 ;それぞれの사용相性の幅は狭いので対策してるキャラなら一人撃破も容易
@@ -2335,7 +2335,7 @@ IF 던전플래그:(FLAG:현던전):1 == 1 && FLAG:현M >= 5
 		CASE 2
 			RETURN [[キャラ:친위대]] , 3 + RAND:10 , CSVBASE([[キャラ:친위대]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 3
-			RETURN [[キャラ:메탈・드랏헤]] , 3 + RAND:10 , CSVBASE([[キャラ:메탈・드랏헤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[キャラ:메탈ㆍ드랏헤]] , 3 + RAND:10 , CSVBASE([[キャラ:메탈ㆍ드랏헤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDSELECT
 ELSEIF 던전플래그:(FLAG:현던전):1 == 0 && FLAG:현M >= 5
 	SELECTCASE RAND:4

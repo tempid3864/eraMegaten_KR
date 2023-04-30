@@ -9,7 +9,7 @@
 ;던전플래그:69:12 第2ボス（ブーシャヤンスタ）撃破
 ;던전플래그:69:13 第3ボス（ドゥルジ）撃破
 ;던전플래그:69:14 第4ボス（알렉스）撃破
-;던전플래그:69:15 第5ボス（アンリ・マンユ）撃破
+;던전플래그:69:15 第5ボス（アンリㆍマンユ）撃破
 ;던전플래그:69:16 第6ボス（ズルワーン）撃破
 ;던전플래그:69:17 ラスボス（シェキナー）撃破
 ;던전플래그:69:2  地のノモス扉の鍵
@@ -26,10 +26,10 @@
 ;던전플래그:69:22  ゴーストＱちゃん登場
 ;던전플래그:69:30 サルワ撃破
 ;던전플래그:69:31 ジャヒー撃破
-;던전플래그:69:32 アジ・ダハーカ撃破
+;던전플래그:69:32 アジㆍダハーカ撃破
 ;던전플래그:69:40 シェキナー進行
 ;던전플래그:69:41 シェキナー再生
-;던전플래그:69:42 アンリ・マンユ本気出す
+;던전플래그:69:42 アンリㆍマンユ本気出す
 ;던전플래그:69:43 デメテル焦る
 ;던전플래그:(FLAG:현던전):19 Sターミナル
 ;=======================================================================
@@ -1947,7 +1947,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL MESSAGE_WINDOW_D, "조지", "<<데모니카의 자폭 시퀀스를 기동…!＞＞"
 				CALL MESSAGE_WINDOW_D, "", "＞당신은 황급히 거리를 뒀다!"
 				CALL MESSAGE_WINDOW_D, "", "＞알렉스의 시체를 중심으로 엄청난 대폭발이 일어났다!"
-				CALL MESSAGE_WINDOW_D, "", "＞・・・・・・・・・・・・・"
+				CALL MESSAGE_WINDOW_D, "", "＞ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ"
 				CALL MESSAGE_WINDOW_D, "", "＞폭발이 일어난 장소에는 아무것도 남아 있지 않다……"
 				던전플래그:69:9 = 2
 			ELSEIF RESULT == 2
@@ -2038,10 +2038,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CFLAG:(CHARANUM-1):명중보정 = 100
 				CFLAG:(CHARANUM-1):회피보정 += 50
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마그나스]]
-				ABL:(CHARANUM-1):스킬2 = [[스킬:마하・마그나스]]
+				ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ마그나스]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마카쟈마]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:오절절우]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:스쿤・다]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:스쿤ㆍ다]]
 				ABL:(CHARANUM-1):스킬6 = [[스킬:다크브레스]]
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -2087,26 +2087,26 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 			
 		CASE 3000
-			CALL MESSAGE_WINDOW_D, "아지・다하카", "히죽히죽 쳐 웃었겠다!/ 우리들의 주인님께 적따위 없다!/주제를 알아라 쓰래기가!"
+			CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "히죽히죽 쳐 웃었겠다!/ 우리들의 주인님께 적따위 없다!/주제를 알아라 쓰래기가!"
 			CALL MESSAGE_WINDOW_D, "", "＞당신을 기다리고 있던 것은 세 개의 머리를 가진 올려다볼 정도의 거대한 사룡이다.！"
-			CALL MESSAGE_WINDOW_D, "아지・다하카", "이미 늦었다!/빼았아간 보물을 돌려주고、위대하신 마왕님께 복종해라！"
+			CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "이미 늦었다!/빼았아간 보물을 돌려주고、위대하신 마왕님께 복종해라！"
 			CALL INPUT_SELECT_D , "＞복종해라！//[1]싫다/[2]그쪽이 복종해라/[3]시범을 보여달라" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "아지・다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
+				CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
 			ELSEIF RESULT == 2
-				CALL MESSAGE_WINDOW_D, "아지・다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
+				CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "캬아！！　결국 천한 인간에게 자비를 배풀어도 소용없나！"
 			ELSEIF RESULT == 3
-				CALL MESSAGE_WINDOW_D, "아지・다하카", "시범？/엎드리는 것도 모르는 거냐, 천한것"
-				CALL MESSAGE_WINDOW_D, "아지・다하카", "엎드린다는 건 이렇게 머리를 땅에 붙여서…"
+				CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "시범？/엎드리는 것도 모르는 거냐, 천한것"
+				CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "엎드린다는 건 이렇게 머리를 땅에 붙여서…"
 				CALL MESSAGE_WINDOW_D, "", "＞당신은 아지 다하카가 엎드리고있는 것을 스마트폰으로 촬영했다."
-				CALL MESSAGE_WINDOW_D, "아지・다하카", "…무슨짓냐 네놈！！！"
+				CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "…무슨짓냐 네놈！！！"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "아지・다하카", "각오해라아! 걸맞는 재해를 이몸이 선사해주마！"
+			CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "각오해라아! 걸맞는 재해를 이몸이 선사해주마！"
 			CALL MESSAGE_WINDOW_D, "", "/＞사룡 아지 다하카가 1체 나타났다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:아지・다하카]],65,0,1
+			CALL SET_ENEMY,9,[[キャラ:아지ㆍ다하카]],65,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 9000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -2117,7 +2117,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "아지・다하카", "네…네이놈 천한놈 주제에…/마왕님 이 자들에게 재앙을…"
+			CALL MESSAGE_WINDOW_D, "아지ㆍ다하카", "네…네이놈 천한놈 주제에…/마왕님 이 자들에게 재앙을…"
 			CALL MESSAGE_WINDOW_D, "", "/＞사룡 아지 다하카를 쓰러뜨렸다./" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
@@ -2134,24 +2134,24 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "？？？？？？", "죽음으로써 가르치면 사라지지 않고 오히려 늘어간다 / 땅을 메우고 바다에 쏟아질 듯이 늘어나려 한다"
 			CALL MESSAGE_WINDOW_D, "？？？？？？", "아무리 나와 내 부하들이 죽음을 선사해도/ 인간들은 계속 증식한다."
 			CALL MESSAGE_WINDOW_D, "", "＞당신은 어둠 속에 있는 두 빛의 정체가 안광이라는 것을 깨달았다."
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "이 마왕 앙리마유에게 승리할 수는 없는데도…"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "이 마왕 앙리마유에게 승리할 수는 없는데도…"
 			CALL MESSAGE_WINDOW_D, "", "＞……당신의 눈앞에 있는 것은 아지 다하카를 능가하는 거대한 마왕이다.！"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "인간, 너의 소망은 이 보물일 것이다"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "인간, 너의 소망은 이 보물일 것이다"
 			CALL MESSAGE_WINDOW_D, "", "＞앙리 마유는 당신에게 열매의 조각을 보여주었다"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "엘레우시스의 계집애가 이것을 갖고 싶어하는 것은 짐도 알고 있다…/하지만 너에게 이 보물을 넘겨 줄 생각은 없다"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "그러나 보물이 목적이라고는 하지만 기묘한 일이다...... / 저 타락한 명성이 아니라 짐에게 인간의 자객을 보내다니 / 그것도 꺼림칙한 아프라 마즈다가 아닌 번개 여신이…"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "이대로 너에게 죽음을 줘도 좋겠지만…/한번만 기회를 주마 / 짐의 부하가 되지 않겠는가?"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "엘레우시스의 계집애가 이것을 갖고 싶어하는 것은 짐도 알고 있다…/하지만 너에게 이 보물을 넘겨 줄 생각은 없다"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "그러나 보물이 목적이라고는 하지만 기묘한 일이다...... / 저 타락한 명성이 아니라 짐에게 인간의 자객을 보내다니 / 그것도 꺼림칙한 아프라 마즈다가 아닌 번개 여신이…"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "이대로 너에게 죽음을 줘도 좋겠지만…/한번만 기회를 주마 / 짐의 부하가 되지 않겠는가?"
 			CALL INPUT_SELECT_D , "＞짐의 부하가 되지 않겠는가?//[1]거절한다/" , , , , 3
 			IF RESULT == 1
-				CALL MESSAGE_WINDOW_D, "앙리・마유", "…망설임도 없는가, 어쩔 수 없군"
-				CALL MESSAGE_WINDOW_D, "앙리・마유", "무의미하고 쓸데없는 인간... / 분수를 모르는 너에겐 합당한 죽음을 주마"
+				CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "…망설임도 없는가, 어쩔 수 없군"
+				CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "무의미하고 쓸데없는 인간... / 분수를 모르는 너에겐 합당한 죽음을 주마"
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "미혹자여 / 마왕 앙리마유의 악을 아는 것이 좋다……！"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "미혹자여 / 마왕 앙리마유의 악을 아는 것이 좋다……！"
 			CALL MESSAGE_WINDOW_D, "", "/＞마왕 앙리 만유가 덤벼들었다.！/" , , , , , , , , , "CENTER"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:앙리・만유]],70,0,3
+			CALL SET_ENEMY,9,[[キャラ:앙리ㆍ만유]],70,0,3
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 12000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 90000
@@ -2164,8 +2164,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "오오 ……인간에게 짐이 패했다는 말인가…/그러나 이걸로 끝은 아니다…"
-			CALL MESSAGE_WINDOW_D, "앙리・마유", "악은 멸망하지 않는다…/이 세상에 정적을 가져오는 이치를 개척하는 것이 나타날 때/짐은 그에게 힘을 줄 것이다……"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "오오 ……인간에게 짐이 패했다는 말인가…/그러나 이걸로 끝은 아니다…"
+			CALL MESSAGE_WINDOW_D, "앙리ㆍ마유", "악은 멸망하지 않는다…/이 세상에 정적을 가져오는 이치를 개척하는 것이 나타날 때/짐은 그에게 힘을 줄 것이다……"
 			CALL MESSAGE_WINDOW_D, "", "/＞마왕 앙리 망유는 죽었다/" , , , , , , , , , "CENTER"
 			CALL MESSAGE_WINDOW_D, "", "＞앙리 마유의 시체에서 뭔가 굴러 떨어졌다.……"
 			CALL MESSAGE_WINDOW_D, "", "＞마지막『열매』의 조각을 입수했다."
@@ -2382,20 +2382,20 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", "＞우주란을 손에 넣었다"
 			CALL MESSAGE_WINDOW_D, "？？？？？", "후후… 신을 자칭하는 자가 인간에게 쓰러지다니/정말 통쾌한 결말이군"
 			CALL MESSAGE_WINDOW_D, "", "＞당신 앞에 루이 사이퍼가 나타났다."
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "성공을 거두기 위해서는 바보인 척 현명하게 행동해야 하지... / 하지만 중요한 때에 영리한 척하는 얼빠짐은 모든 것을 망쳐버린다."
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "결국, 넌 또다시 너무 간과한거다/인간을"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "성공을 거두기 위해서는 바보인 척 현명하게 행동해야 하지... / 하지만 중요한 때에 영리한 척하는 얼빠짐은 모든 것을 망쳐버린다."
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "결국, 넌 또다시 너무 간과한거다/인간을"
 			CALL MESSAGE_WINDOW_D, "", "＞루이사이퍼는 웃는 얼굴로 당신을 찬양하고 있다/>…그 속내는 짐작할 수 없다."
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그렇게 경계할 필요는 없어, 난 놈들과는 달라 / 여기서 너와 싸우는 것 같은 바보짓은 하지 않을 거야"
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그 우주란은 그때와는 달리 힘의 대부분을 잃어버린 것 같군... / 하지만 언젠가 힘을 되찾을 수도 있겠지"
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "열심히 한 너를 위한 보상이다/우주란은 너에게 맡겨둘게"
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "언젠가 다시 힘을 되찾았을 때, 그 우주란을 손에 쥐고 있는 사람은 누구인가…/악마인가, 신인가, 인간인가,/아니면…"
-			CALL MESSAGE_WINDOW_D, "루이・사이퍼", "그때를 기대하며 기다리도록 하지.……"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "그렇게 경계할 필요는 없어, 난 놈들과는 달라 / 여기서 너와 싸우는 것 같은 바보짓은 하지 않을 거야"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "그 우주란은 그때와는 달리 힘의 대부분을 잃어버린 것 같군... / 하지만 언젠가 힘을 되찾을 수도 있겠지"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "열심히 한 너를 위한 보상이다/우주란은 너에게 맡겨둘게"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "언젠가 다시 힘을 되찾았을 때, 그 우주란을 손에 쥐고 있는 사람은 누구인가…/악마인가, 신인가, 인간인가,/아니면…"
+			CALL MESSAGE_WINDOW_D, "루이ㆍ사이퍼", "그때를 기대하며 기다리도록 하지.……"
 			CALL MESSAGE_WINDOW_D, "", "＞루이 사이퍼는 사라졌다.…"
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
 			던전플래그:69:17 = 1
-			CALL MESSAGE_WINDOW_D, "", "・・・/・・・・・・/・・・・・・・・・"
+			CALL MESSAGE_WINDOW_D, "", "ㆍㆍㆍ/ㆍㆍㆍㆍㆍㆍ/ㆍㆍㆍㆍㆍㆍㆍㆍㆍ"
 			IF 던전플래그:69:41 == 1
 				CALL MESSAGE_WINDOW_D, "", "＞여신 데메테르의 특수 합체가 해금되었습니다"
 				FLAG:(10000+[[キャラ:데메테르（여신）]]) = 1
@@ -2480,9 +2480,9 @@ SELECTCASE FLAG:현M
 	CASE 3 TO 4
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:잭・더・리퍼]],12
+				RETURN [[キャラ:잭ㆍ더ㆍ리퍼]],12
 			CASE IS < 35
-				RETURN [[キャラ:잭・더・리퍼]],13
+				RETURN [[キャラ:잭ㆍ더ㆍ리퍼]],13
 			CASE IS < 65
 				RETURN [[キャラ:오바리욘]],11
 			CASE IS < 70
@@ -2701,7 +2701,7 @@ SELECTCASE FLAG:현M
 	CASE 0 TO 2
 		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3 TO 4
-		RETURN [[キャラ:잭・더・리퍼]] , 3 + RAND:10 , CSVBASE([[キャラ:잭・더・리퍼]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[キャラ:잭ㆍ더ㆍ리퍼]] , 3 + RAND:10 , CSVBASE([[キャラ:잭ㆍ더ㆍ리퍼]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 5 TO 6
 		RETURN [[キャラ:야마치치]] , 3 + RAND:10 , CSVBASE([[キャラ:야마치치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 7 TO 8
@@ -3589,7 +3589,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8 && RAND:3
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 					SIF RESULT == 0
 			GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -3707,7 +3707,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8 && RAND:3
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -3717,7 +3717,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8 && RAND:3
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -3912,7 +3912,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8 && RAND:3
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 					SIF RESULT == 0
 			GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -3922,7 +3922,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8 && RAND:3
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 					SIF RESULT == 0
 			GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4047,7 +4047,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8 && RAND:3
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4057,7 +4057,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8 && RAND:3
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4143,7 +4143,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8 && RAND:3
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4153,7 +4153,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8 && RAND:3
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4450,7 +4450,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4460,7 +4460,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4606,7 +4606,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4616,7 +4616,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4782,7 +4782,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4792,7 +4792,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4948,7 +4948,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -4958,7 +4958,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -5090,7 +5090,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -5100,7 +5100,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -5197,7 +5197,7 @@ ELSE
 			GOTO DECIDE_ACTION
 		CFLAG:ARG:입력행동 = LOCAL:1
 ENDIF
-;アンリ・マンユ
+;アンリㆍマンユ
 @SET_ACTION_D3350F,ARG
 IF CFLAG:ARG:１more플래그 > 0
 	IF RAND:3 == 0
@@ -5232,7 +5232,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 			CONTINUE
 		IF MAXARRAY(CFLAG:LOCAL:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) > 8
 			;デカジャ
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -5242,7 +5242,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF MINARRAY(CFLAG:ARG:0, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1) < -8
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			SIF RESULT == 0
 				GOTO DECIDE_ACTION
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
@@ -5357,7 +5357,7 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]]
 	PRINTFORML ┃신령 셰키나다！　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리・만유]]
+ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리ㆍ만유]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃짐의 악은 질서도 혼돈도 가리지 않는 미혹자에게는┃
@@ -5372,7 +5372,7 @@ ENDIF
 IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 던전플래그:69:41 == 0
 	CALL シェキナー実り変化(CHARANUM-1,FLAG:경과턴수)
 ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 던전플래그:69:41 == 1
-	CALL シェキナー実り変化・２(CHARANUM-1,FLAG:경과턴수)
+	CALL シェキナー実り変化ㆍ２(CHARANUM-1,FLAG:경과턴수)
 ENDIF
 IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 80 && 던전플래그:69:40 == 0
 	SETCOLOR 0xff0033
@@ -5627,7 +5627,7 @@ IF FLAG:경과턴수 % 3 == 0
 	ENDIF
 ENDIF
 
-@シェキナー実り変化・２(ARG,ARG:1)
+@シェキナー実り変化ㆍ２(ARG,ARG:1)
 IF FLAG:경과턴수 % 3 == 0
 	IF RAND:6 == 0
 		SETCOLOR 0xff0033
@@ -5931,7 +5931,7 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 &&
 	BASE:(CHARANUM-1):ＭＰ = (MAXBASE:(CHARANUM-1):ＭＰ)
 	던전플래그:69:41 = 1
 
-ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리・만유]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:42 == 0
+ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리ㆍ만유]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:42 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃꽤 하는군 인간… 하지만 장난은 여기까지다　　┃

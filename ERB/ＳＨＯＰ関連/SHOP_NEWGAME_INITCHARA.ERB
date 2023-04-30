@@ -6,7 +6,7 @@
 ;=================================================================
 ;2021/04/10	NEO			受胎アイテム取得状況をリセットできるよう変更
 ;2021/04/26 軽木		「周回で喰奴を引き継いだ場合、無条件で習得状況が引き継がれる」ように
-;2021/09/05 JK好き		引き継いだキャラの体力回復・ストレス回復・気絶解除処理を追加
+;2021/09/05 JK好き		引き継いだキャラの体力回復ㆍストレス回復ㆍ気絶解除処理を追加
 ;2022/01/03 JK好き		引き継いだキャラの専用技の覚えなおし処理を追加
 ;2022/05/26 Collared	陥落合体の処理追加
 ;2022/03/02 しゃけ		アーミヤの引継ぎ処理を追加、スルトの引継ぎ処理に誤りがあったのを修正
@@ -149,7 +149,7 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("운")   = 5
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬1") = [[스킬:디아]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬2") = [[스킬:몽견침]]
-				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:마카・카쟈]]
+				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:마카ㆍ카쟈]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬4") = [[스킬:사바트마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:자애의기도]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV1")      = 16
@@ -161,13 +161,13 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 22
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:중력의벽]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:메・디아라마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:메ㆍ디아라마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 26
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:데・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:데ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 32
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬8")  = [[스킬:디아라한]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 38
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:메・디아라한]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:메ㆍ디아라한]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV9")      = 42
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:사마리캄]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV10")     = 50
@@ -179,7 +179,7 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("인내력") = 10
 				DITEMTYPE:(LOCAL:1):페르소나("속도") = 6
 				DITEMTYPE:(LOCAL:1):페르소나("운")   = 3
-				;	DITEMTYPE:(LOCAL:1):페르소나("스킬1") = [[스킬:라쿤・다]]
+				;	DITEMTYPE:(LOCAL:1):페르소나("스킬1") = [[스킬:라쿤ㆍ다]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬2") = [[스킬:잔]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:클로즈디]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬4") = [[스킬:사바트마]]
@@ -191,11 +191,11 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 18
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:어드바이스]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:마하・잔마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:마하ㆍ잔마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 30
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:황천의회심]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 36
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:메・디아라마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:메ㆍ디아라마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 38
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬8")  = [[스킬:포효]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 44
@@ -221,11 +221,11 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV2")      = 18
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬3")  = [[스킬:마하무드]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 20
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:마하・부흐]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:마하ㆍ부흐]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 22
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:섹시댄스]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:메・디아라마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:메ㆍ디아라마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 30
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:무드온]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 34
@@ -247,7 +247,7 @@ IF NO:LOCAL == 4998
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬2") = [[스킬:한마]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:갈]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬4") = [[스킬:사바트마]]
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:메・디아]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:메ㆍ디아]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV1")      = 16
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬2")  = [[스킬:갈라]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV2")      = 18
@@ -259,7 +259,7 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 30
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:엔젤애로]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 17
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:메・디아라마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:메ㆍ디아라마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 35
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬8")  = [[스킬:하마온]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 36
@@ -287,17 +287,17 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 22
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:고양의노래]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:아토믹・부흐라]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:아토믹ㆍ부흐라]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:스쿠・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:스쿠ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 30
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:부흐다인]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 32
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬8")  = [[스킬:디아라한]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 40
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:타루・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:타루ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV9")      = 48
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:마하・부흐다인]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:마하ㆍ부흐다인]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV10")     = 50
 			CASE [[キャラ:모코이]]
 				DITEMTYPE:(LOCAL:1):페르소나("LV")   = 15
@@ -311,11 +311,11 @@ IF NO:LOCAL == 4998
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬2") = [[스킬:포즈무디]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:숏잽]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬4") = [[스킬:사바트마]]
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:데・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:데ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV1")      = 16
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬2")  = [[스킬:마린카린]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV2")      = 17
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬3")  = [[스킬:스쿠・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬3")  = [[스킬:스쿠ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 18
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:지온가]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 20
@@ -327,11 +327,11 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 34
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬8")  = [[스킬:모코이부메랑]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 38
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:마카・카쟈]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:마카ㆍ카쟈]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV9")      = 42
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:트라프리]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV10")     = 50
-			CASE [[キャラ:모・쇼보]]
+			CASE [[キャラ:모ㆍ쇼보]]
 				DITEMTYPE:(LOCAL:1):페르소나("LV")   = 15
 				DITEMTYPE:(LOCAL:1):페르소나("힘")   = 5
 				DITEMTYPE:(LOCAL:1):페르소나("지혜") = 5
@@ -351,9 +351,9 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 18
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:날개짓]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 20
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:마하・잔]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:마하ㆍ잔]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 21
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:마하・잔마]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:마하ㆍ잔마]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 26
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:디아라한]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 34
@@ -361,7 +361,7 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV8")      = 38
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬9")  = [[스킬:충격의벽]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV9")      = 46
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:마하・잔다인]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬10") = [[스킬:마하ㆍ잔다인]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV10")     = 50
 			CASE [[キャラ:좀비쨩]]
 				DITEMTYPE:(LOCAL:1):페르소나("LV")   = 15
@@ -403,21 +403,21 @@ IF NO:LOCAL == 4998
 				DITEMTYPE:(LOCAL:1):페르소나("인내력") = 5
 				DITEMTYPE:(LOCAL:1):페르소나("속도") = 8
 				DITEMTYPE:(LOCAL:1):페르소나("운")   = 8
-				;	DITEMTYPE:(LOCAL:1):페르소나("스킬1") = [[스킬:라쿤・다]]
+				;	DITEMTYPE:(LOCAL:1):페르소나("스킬1") = [[스킬:라쿤ㆍ다]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬2") = [[스킬:마린카린]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬3") = [[스킬:지오]]
 				;	DITEMTYPE:(LOCAL:1):페르소나("스킬4") = [[스킬:사바트마]]
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:타룬・다]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬1")  = [[스킬:타룬ㆍ다]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV1")      = 16
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬2")  = [[스킬:마하・지오]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬2")  = [[스킬:마하ㆍ지오]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV2")      = 17
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬3")  = [[스킬:스쿤・다]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬3")  = [[스킬:스쿤ㆍ다]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV3")      = 20
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬4")  = [[스킬:지온가]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV4")      = 22
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬5")  = [[스킬:섹시댄스]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV5")      = 24
-				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:마하・지온가]]
+				DITEMTYPE:(LOCAL:1):페르소나("습득스킬6")  = [[스킬:마하ㆍ지온가]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV6")      = 28
 				DITEMTYPE:(LOCAL:1):페르소나("습득스킬7")  = [[스킬:텐타라후]]
 				DITEMTYPE:(LOCAL:1):페르소나("습득LV7")      = 30
@@ -455,7 +455,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV1     = 14
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:바이코우하]]
 				ABL:LOCAL:초기변신악마습득LV2     = 28
-				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:마하・지오다인]]
+				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:마하ㆍ지오다인]]
 				ABL:LOCAL:초기변신악마습득LV3     = 42
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:메기도라온]]
 				ABL:LOCAL:초기변신악마습득LV4     = 56
@@ -467,7 +467,7 @@ IF NO:LOCAL == 4998
 				TALENT:LOCAL:지원 = 1
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:기공(소)]]
 				ABL:LOCAL:초기변신악마습득LV1     = 14
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:데・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:데ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV2     = 28
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:디아라한]]
 				ABL:LOCAL:초기변신악마습득LV3     = 42
@@ -495,7 +495,7 @@ IF NO:LOCAL == 4998
 				TALENT:LOCAL:정신 = 1
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:자애의기도]]
 				ABL:LOCAL:초기변신악마습득LV1     = 14
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:데・쿤다]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:데ㆍ쿤다]]
 				ABL:LOCAL:초기변신악마습득LV2     = 28
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:사마리캄]]
 				ABL:LOCAL:초기변신악마습득LV3     = 42
@@ -650,8 +650,8 @@ IF NO:LOCAL == 4998
 				TALENT:LOCAL:충격 = 1
 				ABL:LOCAL:초기변신악마스킬1 = [[스킬:사바트마]]
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:일문자베기]]
-				ABL:LOCAL:초기변신악마스킬3 = [[스킬:마하・라기]]
-				ABL:LOCAL:초기변신악마스킬4 = [[스킬:마하・잔]]
+				ABL:LOCAL:초기변신악마스킬3 = [[스킬:마하ㆍ라기]]
+				ABL:LOCAL:초기변신악마스킬4 = [[스킬:마하ㆍ잔]]
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:하마온]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:아기라오]]
@@ -664,9 +664,9 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV5 = 27
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데스바운드]]
 				ABL:LOCAL:초기변신악마습득LV6 = 33
-				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:마하・라기다인]]
+				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:마하ㆍ라기다인]]
 				ABL:LOCAL:초기변신악마습득LV7 = 37
-				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하・잔다인]]
+				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하ㆍ잔다인]]
 				ABL:LOCAL:초기변신악마습득LV8 = 45
 				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:낭아천주참]]
 				ABL:LOCAL:초기변신악마습득LV9 = 50
@@ -684,7 +684,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:마한마]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:백발침]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:날개짓]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타루・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타루ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:소닉붐]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -715,7 +715,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:유혹]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:지옥찌르기]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:시바브]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타룬・다]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타룬ㆍ다]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:잔마]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -745,7 +745,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:도루미나]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:아기]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:프레이]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:마하・라기]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:마하ㆍ라기]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:아기라오]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -753,13 +753,13 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV3 = 17
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:프레이라]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
-				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:다이나믹・아기라오]]
+				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:다이나믹ㆍ아기라오]]
 				ABL:LOCAL:초기변신악마습득LV5 = 27
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:암흑광염난무]]
 				ABL:LOCAL:초기변신악마습득LV6 = 33
 				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:불꽃의난무]]
 				ABL:LOCAL:초기변신악마습득LV7 = 37
-				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하・라기다인]]
+				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하ㆍ라기다인]]
 				ABL:LOCAL:초기변신악마습득LV8 = 45
 				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:프레이다인]]
 				ABL:LOCAL:초기변신악마습득LV9 = 50
@@ -778,8 +778,8 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬1 = [[스킬:사바트마]]
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:싱글샷]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:잔]]
-				ABL:LOCAL:초기변신악마스킬4 = [[스킬:스쿠・카쟈]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타루・카쟈]]
+				ABL:LOCAL:초기변신악마스킬4 = [[스킬:스쿠ㆍ카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타루ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:디아라마]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -787,13 +787,13 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV3 = 17
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:포효]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
-				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:마하・잔마]]
+				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:마하ㆍ잔마]]
 				ABL:LOCAL:초기변신악마습득LV5 = 25
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:도화일섬]]
 				ABL:LOCAL:초기변신악마습득LV6 = 27
 				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:용해브레스]]
 				ABL:LOCAL:초기변신악마습득LV7 = 33
-				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하・잔다인]]
+				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하ㆍ잔다인]]
 				ABL:LOCAL:초기변신악마습득LV8 = 37
 				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:그랜드턱]]
 				ABL:LOCAL:초기변신악마습득LV9 = 45
@@ -841,7 +841,7 @@ IF NO:LOCAL == 4998
 				TALENT:LOCAL:핵열 = 1
 				ABL:LOCAL:초기변신악마스킬1 = [[스킬:사바트마]]
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:불의벽]]
-				ABL:LOCAL:초기변신악마스킬3 = [[스킬:메・디아]]
+				ABL:LOCAL:초기변신악마스킬3 = [[스킬:메ㆍ디아]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:아기]]
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:프레이]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
@@ -853,13 +853,13 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV4 = 23
 				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:리캄]]
 				ABL:LOCAL:초기변신악마습득LV5 = 25
-				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV6 = 27
-				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:메・디아라마]]
+				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:메ㆍ디아라마]]
 				ABL:LOCAL:초기변신악마습득LV7 = 33
 				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:사마리캄]]
 				ABL:LOCAL:초기변신악마습득LV8 = 35
-				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:마하・라기다인]]
+				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:마하ㆍ라기다인]]
 				ABL:LOCAL:초기변신악마습득LV9 = 37
 				ABL:LOCAL:초기변신악마습득스킬10 = [[스킬:삼할의마맥]]
 				ABL:LOCAL:초기변신악마습득LV10 = 45
@@ -877,7 +877,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:아기]]
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:테트라쟈]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:라쿠・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:라쿠ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:자애의기도]]
 				ABL:LOCAL:초기변신악마습득LV3 = 17
@@ -891,7 +891,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV7 = 33
 				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:용분의춤]]
 				ABL:LOCAL:초기변신악마습득LV8 = 37
-				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:메・디아라한]]
+				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:메ㆍ디아라한]]
 				ABL:LOCAL:초기변신악마습득LV9 = 40
 				ABL:LOCAL:초기변신악마습득스킬10 = [[스킬:사마리캄]]
 				ABL:LOCAL:초기변신악마습득LV10 = 42
@@ -907,11 +907,11 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:디아]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:잔]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:갈]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:마하・갈]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:마하ㆍ갈]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:마하・잔]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:마하ㆍ잔]]
 				ABL:LOCAL:초기변신악마습득LV2 = 10
-				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:메・디아]]
+				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:메ㆍ디아]]
 				ABL:LOCAL:초기변신악마습득LV3 = 13
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:갈라]]
 				ABL:LOCAL:초기변신악마습득LV4 = 17
@@ -921,11 +921,11 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV6 = 23
 				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:리캄]]
 				ABL:LOCAL:초기변신악마습득LV7 = 27
-				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:메・디아라마]]
+				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:메ㆍ디아라마]]
 				ABL:LOCAL:초기변신악마습득LV8 = 33
-				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:마하・갈다인]]
+				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:마하ㆍ갈다인]]
 				ABL:LOCAL:초기변신악마습득LV9 = 35
-				ABL:LOCAL:초기변신악마습득스킬10 = [[스킬:마하・잔다인]]
+				ABL:LOCAL:초기변신악마습득스킬10 = [[스킬:마하ㆍ잔다인]]
 				ABL:LOCAL:초기변신악마습득LV10 = 37
 				ABL:LOCAL:초기변신악마습득스킬11 = [[스킬:림도라]]
 				ABL:LOCAL:초기변신악마습득LV11 = 45
@@ -939,15 +939,15 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:산바람]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:안개베기]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:마한마]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:메・디아]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:메ㆍ디아]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:스쿠・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:스쿠ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:히트웨이브]]
 				ABL:LOCAL:초기변신악마습득LV3 = 17
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:이단찌르기]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
-				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:타루・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:타루ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV5 = 27
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데스바운드]]
 				ABL:LOCAL:초기변신악마습득LV6 = 33
@@ -1000,7 +1000,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:유혹]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:마린카린]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:지오]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타룬・다]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:타룬ㆍ다]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:다무도]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -1008,7 +1008,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV3 = 15
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:마하무드]]
 				ABL:LOCAL:초기변신악마습득LV4 = 17
-				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:데・쿤다]]
+				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:데ㆍ쿤다]]
 				ABL:LOCAL:초기변신악마습득LV5 = 23
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:음마의난무]]
 				ABL:LOCAL:초기변신악마습득LV6 = 25
@@ -1040,15 +1040,15 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV2 = 13
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:캔디보이스]]
 				ABL:LOCAL:초기변신악마습득LV3 = 17
-				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:마하・아쿠에스]]
+				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:마하ㆍ아쿠에스]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
-				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:마하・그라이바]]
+				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:마하ㆍ그라이바]]
 				ABL:LOCAL:초기변신악마습득LV5 = 27
 				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:마계의조사]]
 				ABL:LOCAL:초기변신악마습득LV6 = 33
 				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:영면의유혹]]
 				ABL:LOCAL:초기변신악마습득LV7 = 37
-				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하・아쿠다인]]
+				ABL:LOCAL:초기변신악마습득스킬8 = [[스킬:마하ㆍ아쿠다인]]
 				ABL:LOCAL:초기변신악마습득LV8 = 45
 				ABL:LOCAL:초기변신악마습득스킬9 = [[스킬:다무도라온]]
 				ABL:LOCAL:초기변신악마습득LV9 = 56
@@ -1074,13 +1074,13 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:부흐]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:무드]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:마카쟈마]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:라쿤・다]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:라쿤ㆍ다]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:자장가]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:부흐라]]
 				ABL:LOCAL:초기변신악마습득LV3 = 17
-				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:마하・부흐라]]
+				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:마하ㆍ부흐라]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
 				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:마하무드온]]
 				ABL:LOCAL:초기변신악마습득LV5 = 27
@@ -1104,7 +1104,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:독할퀴기]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:마비침]]
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:시바브]]
-				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:라쿠・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:라쿠ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:잔마]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
@@ -1114,7 +1114,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마습득LV4 = 23
 				ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:휘감기]]
 				ABL:LOCAL:초기변신악마습득LV5 = 25
-				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:파라라・웨이브]]
+				ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:파라라ㆍ웨이브]]
 				ABL:LOCAL:초기변신악마습득LV6 = 27
 				ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:마음의외침]]
 				ABL:LOCAL:초기변신악마습득LV7 = 33
@@ -1138,7 +1138,7 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬4 = [[스킬:마그나]]
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:대나무베기]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
-				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:라쿤・다]]
+				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:라쿤ㆍ다]]
 				ABL:LOCAL:초기변신악마습득LV2 = 10
 				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:마구날뛰기]]
 				ABL:LOCAL:초기변신악마습득LV3 = 13
@@ -1170,12 +1170,12 @@ IF NO:LOCAL == 4998
 				ABL:LOCAL:초기변신악마스킬1 = [[스킬:사바트마]]
 				ABL:LOCAL:초기변신악마스킬2 = [[스킬:일문자베기]]
 				ABL:LOCAL:초기변신악마스킬3 = [[스킬:돌격]]
-				ABL:LOCAL:초기변신악마스킬4 = [[스킬:스쿤・다]]
+				ABL:LOCAL:초기변신악마스킬4 = [[스킬:스쿤ㆍ다]]
 				ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:암야검]]
 				ABL:LOCAL:초기변신악마습득LV1 = 7
 				ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:마구날뛰기]]
 				ABL:LOCAL:초기변신악마습득LV2 = 13
-				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:타루・카쟈]]
+				ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:타루ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV3 = 17
 				ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:무사차]]
 				ABL:LOCAL:초기변신악마습득LV4 = 23
@@ -1253,7 +1253,7 @@ ELSE
 	ENDIF
 ENDIF
 
-	;外見・スリーサイズパッチ対応　周回時に肌の色設定をTALENTからCFLAGに移す
+	;外見ㆍスリーサイズパッチ対応　周回時に肌の色設定をTALENTからCFLAGに移す
 IF TALENT:LOCAL:하얀피부
 	CFLAG:LOCAL:피부색깔 = 1
 	TALENT:LOCAL:하얀피부 = 0
@@ -1333,7 +1333,7 @@ IF CFLAG:LOCAL:인계플래그 > 1
 	CFLAG:LOCAL:AV아이돌 = 0
 	CFLAG:LOCAL:방문판매플래그 = 0
 
-		;好感度・함락초기化
+		;好感度ㆍ함락초기化
 	FOR LOCAL:1,-MAX_NTR_CHARA,MAX_PLAYER_CHARA
 		CDFLAG:LOCAL:캐릭터간호감도:(100+LOCAL:1) = 0
 		CDFLAG:LOCAL:캐릭터간호감도:(400+LOCAL:1) = 0
@@ -1561,7 +1561,7 @@ ELSE
 		ABL:ARG:("습득LV" + TOSTR(LOCAL)) = CSVABL(ARG:1,GETNUM(ABL,("습득LV" + TOSTR(LOCAL))),0)
 	NEXT
 
-	;타이틀・종족명更新
+	;타이틀ㆍ종족명更新
 	CSTR:ARG:타이틀 '= CSVCSTR(ARG:1, GETNUM(CSTR, "타이틀"))
 	CSTR:ARG:종족명   '= CSVCSTR(ARG:1, GETNUM(CSTR, "종족명"))
 

@@ -36,8 +36,8 @@
 ;
 ;
 ; 【メモ】
-; ・두베は最初全部무효、10ターン経過で통상내성に戻る。
-; ・이오加入はイキ顔有り。
+; ㆍ두베は最初全部무효、10ターン経過で통상내성に戻る。
+; ㆍ이오加入はイキ顔有り。
 ;
 ;
 ;-------------------------------------------------------------------------------
@@ -47,14 +47,14 @@
 ;
 ;		Module Name						Explanation
 ;
-;	・ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
-;	・ EVENT_BATTLE_TURNEND_REQUESTxxx_yyy
+;	ㆍ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
+;	ㆍ EVENT_BATTLE_TURNEND_REQUESTxxx_yyy
 ;										의뢰:전투중処理(ターン종료시)(yyy)
 ;
 ; *- 独自関数
 ;
-;	・ REQUEST30_1_FIND_ROOM			의뢰:部屋探し
-;	・ REQUEST_30_1_FIND_ROOM_BTL		의뢰:部屋探し(전투)
+;	ㆍ REQUEST30_1_FIND_ROOM			의뢰:部屋探し
+;	ㆍ REQUEST_30_1_FIND_ROOM_BTL		의뢰:部屋探し(전투)
 ;
 ;===============================================================================
 
@@ -107,8 +107,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			FLAG:데빌서바２가는얼굴영상진행도 = 0
 
 			PRINTFORMW ＞도쿄 ― 국회의사당。
-			PRINTFORMW ＞정면 현관에서 대기하고 있던 직원과 이야기하자 안으로 안내되었다・・・。
-			PRINTFORMW ＞지하로 가는 엘리베이터・・・。
+			PRINTFORMW ＞정면 현관에서 대기하고 있던 직원과 이야기하자 안으로 안내되었다ㆍㆍㆍ。
+			PRINTFORMW ＞지하로 가는 엘리베이터ㆍㆍㆍ。
 			PRINTFORMW ＞자꾸자꾸 지하로 들어간다。
 			PRINTFORMW ＞엘리베이터 조작판에는「JP's」라고 로고가 써 있었다。
 			;'집스설명
@@ -130,7 +130,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINT 선택을 조심하는 것이 좋을
 			RESETCOLOR
 			PRINTFORMW 것이다。
-			PRINTFORMW ＞엘리베이터가 멈춘 것 같다・・・。
+			PRINTFORMW ＞엘리베이터가 멈춘 것 같다ㆍㆍㆍ。
 			PRINTFORML
 			PRINTFORML
 			PRINTFORML
@@ -167,9 +167,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW 「숫자도 나름대로 있다。현재망으로부터 빠져나와 낙하해 온"적"을 집스의 국원이 대응하고 있다」
 			PRINTFORMW …악마 소란때마다 매번 나타나는 노란 교복의 집스 국원。그들의 전력은 대단하며、강력한 악마사용자들이다。
 			PRINTFORMW 그들은 아무래도「극비의 적」의 처리를 하고 있다는 것 같다。
-			PRINTFORMW 무엇보다、그밖에 용건은 있겠지만・・・。
+			PRINTFORMW 무엇보다、그밖에 용건은 있겠지만ㆍㆍㆍ。
 			PRINTFORMW 일본 고래로부터 계속 이어진 영적 수호기관。
-			PRINTFORMW 아마 팬텀조차 능가하는、강력한 조직일 것이다・・・。
+			PRINTFORMW 아마 팬텀조차 능가하는、강력한 조직일 것이다ㆍㆍㆍ。
 
 		;- ２回目以降
 		ELSE
@@ -179,7 +179,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 
 		PRINTFORML
 		PRINTFORML
-		PRINTFORMW 「・・・그러면 의뢰를 재확인하고 싶다」
+		PRINTFORMW 「ㆍㆍㆍ그러면 의뢰를 재확인하고 싶다」
 		PRINTFORMW 「너는 우리가 "내방"을 막고 있는、인류의 위협을 배제해 줬으면 한다」
 		PRINTFORMW 「하늘에 펼쳐 놓은 그물을 제외하고、예정대로 모든 대상을 지상전에서 섬멸한다」
 		PRINTFORMW 「유감이지만 적에게 화기는 통용되지 않는다。너 같은 서머너와 악마사용이 가능한 국원만이 가능하다」
@@ -211,11 +211,11 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「서포트에는、그녀를 데리고 가게」
 		PRINTFORMW 「네 주위의 선도를 맡겼다」
 		PRINTFORMW 「전투에는 더 이상 추가되지 않는다。서머너 자신의 악마쪽이、쉬울 것이다」
-		PRINTFORMW ＞소개된 여성이 이쪽으로 나온다・・・。
+		PRINTFORMW ＞소개된 여성이 이쪽으로 나온다ㆍㆍㆍ。
 		PRINTFORML
 		PRINTFORMW 『사코 마코토입니다。잘 부탁합니다』
 		PRINTFORMW 『주위의 악마는 내가 처리하겠으니、본명의 격파를 부탁합니다』
-		PRINTFORMW ＞고지식해 보이는 여성이다・・・。
+		PRINTFORMW ＞고지식해 보이는 여성이다ㆍㆍㆍ。
 		PRINTFORMW ＞하지만、용모는 퍼펙트라 할 수 있다。어른의 매력이랄까。
 		PRINTFORML
 		PRINTFORMW ＞집스에서、특수한 휴대용 단말기가 지급되었다。
@@ -250,10 +250,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW ＞버섯같은 모습를 한 악마가 아닌 그 "무언가"。 인류의 천적。
 		PRINTFORMW ＞두베라 불리는 악마는、그 포자같은 머리부위를 부풀려 갔다。
 		PRINTFORMW ＞소년들의 비명이 들린다。
-		PRINTFORMW 「두베・・・커지고 있어요」
+		PRINTFORMW 「두베ㆍㆍㆍ커지고 있어요」
 		PRINTFORMW ＞두베는 2체 존재했는데、그 중 １체가 소년들 주변에서 폭발했다。
 		PRINTFORML 
-		PRINTFORML 퍼어어엉・・・
+		PRINTFORML 퍼어어엉ㆍㆍㆍ
 		PRINTFORMW 
 		PRINTFORMW ＞날아가는 소년들。 넝마처럼 되서 지면에 쓰러진다。
 		PRINTFORMW ＞아무래도 그 『두베』는 자신을 폭발시켜 대상을 살상하는 것 같다。
@@ -261,7 +261,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW ＞다행히 소년들은 어느 정도 떨어져 있었던 것 같다。
 		PRINTFORML
 		PRINTFORMW ＞멀리서지만、소년들은 희미하게 움직이고 있었다。 빈사상태의 중상이지만、살아있는 것 같다。
-		PRINTFORMW ＞・・・보니까、소녀는 꽤 얼굴 모양새가 좋다。
+		PRINTFORMW ＞ㆍㆍㆍ보니까、소녀는 꽤 얼굴 모양새가 좋다。
 		PRINTFORMW ＞피투성이지만 스커트가 말려 올라가、건강해 보이는 매끈한 허벅지와 속옷이 그대로 보이고 있었다。
 		PRINTFORMW ＞가슴도 크게 부풀어 있어 남자를 즐겁게 하기에 충분할 것 같다。 멀리서 봐도、선정적인 모습이다。
 		PRINTFORML
@@ -272,7 +272,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 『――알겠습니다』
 		PRINTFORMW ＞마코토는 그들에게 회복 마법을 걸고 소년들의 몸을 질질 끌면서 후퇴했다く。
 		PRINTFORML
-		PRINTFORMW ＞이것으로 이제 서포트는 일절 기대할 수 없겠지・・・。
+		PRINTFORMW ＞이것으로 이제 서포트는 일절 기대할 수 없겠지ㆍㆍㆍ。
 		PRINTFORMW ＞눈앞의 이질적인 "뭔가"를 갹파해야 한다。
 		PRINTFORMW ＞휴대용 단말기에는 상대의 정보가 표시되고 있다。
 		PRINTFORML
@@ -335,7 +335,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW ＞하지만 두베는 그 포자 같은 원형부를 크게 만들며 폭발하려는 자세를 취하고 있다。
 		ENDIF
 		PRINTFORMW ＞이 거리라면 치명상을 면할 수 없을 것이다。
-		PRINTFORMW ＞어딘가로부터 차 엔진 소리가 난다・・・。
+		PRINTFORMW ＞어딘가로부터 차 엔진 소리가 난다ㆍㆍㆍ。
 		PRINTFORML 
 		PRINTFORML 브로로로로！！！
 		PRINTFORMW 
@@ -344,12 +344,12 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW ＞그 트럭은 두베를 노리고 있는 것 같다。
 		PRINTFORMW ＞트럭은 힘차게 두베에 돌진해 간다。
 		PRINTFORML 
-		PRINTFORML 도오오옹・・・
+		PRINTFORML 도오오옹ㆍㆍㆍ
 		PRINTFORMW 
 		PRINTFORMW ＞트럭의 충돌과 동시에 두베가 나가떨어졌다。
 		PRINTFORMW ＞다행히 지금의 트럭 덕분에 대폭발은 일어나지 않은 것 같다。
 		PRINTFORMW ＞불완전한 폭발 때문인지、두베는 원형부가 파열되는 손상을 입었다。
-		PRINTFORMW ＞휴대용 단말기를 보니 두베의 일부 내성이 달라졌다・・・。
+		PRINTFORMW ＞휴대용 단말기를 보니 두베의 일부 내성이 달라졌다ㆍㆍㆍ。
 		PRINTFORML 
 		PRINTFORMW ＞찬스는 지금 밖에 없다――――
 		PRINTFORML 
@@ -445,7 +445,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「너는 나중에 인수해 가주길 바란다」
 		PRINTFORMW 야마토는 그대로 따라온 국원에게 지시해、소년들을 차에 태웠다。
 		PRINTFORMW 차는 자위대의 차량인 것 같다。
-		PRINTFORMW 집스는 자위대까지 사용 가능한 것일까・・・。
+		PRINTFORMW 집스는 자위대까지 사용 가능한 것일까ㆍㆍㆍ。
 		PRINTFORML
 		PRINTFORMW 조금 전의 트럭 부근에는 집스 국원이 회수 작업을 하고 있었다。
 		PRINTFORMW 아무래도 운전했던 인물이 아직 살아있는 것 같다。
@@ -517,7 +517,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 『전달은 당신에게만이니까、당신이 어떻게든 하지 않으면 괴로워져 버려요～』
 		PRINTFORMW 『동영상 업 되면 공지할 테니가 절대로 봐 주셔야 해요～★』
 		PRINTFORML 『그러면！
-		PRINTFORMW   해브・어・나이스다～★』
+		PRINTFORMW   해브ㆍ어ㆍ나이스다～★』
 		PRINTFORML
 		PRINTFORMW …어플리케이션은 꺼졌다。
 		PRINTFORMW 좋은진 모르겠지만、아무래도 사전에 습격 당하는 상대가 누군지 알 수 있는 것 같다…。

@@ -1,7 +1,7 @@
 ﻿;-----------------------------------
 ;キングレオ(罪ルートボス)
 ;-----------------------------------
-@SET_ACTION_킹・레오, ARG
+@SET_ACTION_킹ㆍ레오, ARG
 ;HP減少による확률보정を作成
 LOCAL = (100 - 현HP비율(ARG)) / 5
 ;입력행동を-1と타겟を-1にしておく
@@ -18,7 +18,7 @@ IF CFLAG:ARG:１more플래그 > 0
 ELSEIF CFLAG:ARG:행동한횟수 == 0
 		IF MAX(100 - CFLAG:ARG:공격강화 * 3, 80) > RAND:100
 			IF CFLAG:ARG:공격강화 < 16
-				CFLAG:ARG:입력행동 = [[스킬:타루・카쟈]]
+				CFLAG:ARG:입력행동 = [[스킬:타루ㆍ카쟈]]
 			ELSE
 				CFLAG:ARG:입력행동 = [[스킬:히트라이저]]
 			ENDIF
@@ -53,7 +53,7 @@ ELSE
 		CASE 0 TO 19 +LOCAL
 			CFLAG:ARG:입력행동 = [[스킬:프레이라]]
 		CASE 20 TO 49 +LOCAL
-			CFLAG:ARG:입력행동 = [[스킬:마하・라기온]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기온]]
 		CASE 50 TO 54 +LOCAL * 2
 			CFLAG:ARG:입력행동 = [[스킬:열화의곡옥]]
 	ENDSELECT
@@ -139,7 +139,7 @@ ELSE
 			ELSE
 				LOCALS = 죽어라！ 죽어라！ 죽어버려어어！！
 			ENDIF
-		CASE [[스킬:마하・라기온]], [[스킬:아기다인]]
+		CASE [[스킬:마하ㆍ라기온]], [[스킬:아기다인]]
 			IF !RAND:3
 				LOCALS = 바짝 익혀주마！！
 			ELSEIF RAND:2
@@ -159,7 +159,7 @@ ELSE
 			ENDIF
 		CASE [[스킬:명왕신부]], [[스킬:액화질소봄베]]
 			LOCALS = 이히…히히…히야아！ 이런 것도 있다！！
-		CASE [[스킬:타루・카쟈]], [[스킬:히트라이저]]
+		CASE [[스킬:타루ㆍ카쟈]], [[스킬:히트라이저]]
 			IF RAND:2
 				LOCALS = 전파전파전파！！ 전파가 몸에 가득 찼다！
 			ELSE
@@ -177,7 +177,7 @@ SIF LOCALS != "EMPTY"
 	CALL MESSAGE_B(LOCAL:1, LOCALS, LOCALS:1, LOCALS:2, LOCALS:3, LOCALS:4)
 
 @EVENT_BATTLE_TURNEND_DUNGEON14
-SIF !FINDCHARA_ENEMY([[キャラ:킹・레오]])
+SIF !FINDCHARA_ENEMY([[キャラ:킹ㆍ레오]])
 	RETURN 0
 LOCAL= RESULT:1
 SIF STRFLAG_NUM_EV("니알라진행", , , ,  [[이벤트:페르소나２]]) != 3
@@ -199,9 +199,9 @@ IF EQUIP:LOCAL:특수탄1 == 0
 	ENDSELECT
 	SETCOLOR 0x990000
 	PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃[9] 킹・레오　　　　　　　┃　┃%LOCALS%의 수정해골　　　　　　　　　　 ┃
+	PRINTFORML ┃[9] 킹ㆍ레오　　　　　　　┃　┃%LOCALS%의 수정해골　　　　　　　　　　 ┃
 	PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
-	PRINTFORMW 킹・레오는 %LOCALS%의 수정해골을 얻었다！
+	PRINTFORMW 킹ㆍ레오는 %LOCALS%의 수정해골을 얻었다！
 	RESETCOLOR
 	WAIT
 ENDIF
@@ -226,7 +226,7 @@ SELECTCASE RAND:100
 	CASE IS < 60
 		CFLAG:ARG:입력행동 = [[스킬:돌격]]
 	CASE IS < 80
-		CFLAG:ARG:입력행동 = [[스킬:라쿤・다]]
+		CFLAG:ARG:입력행동 = [[스킬:라쿤ㆍ다]]
 	CASEELSE
 		CFLAG:ARG:입력행동 = 0
 ENDSELECT
@@ -261,7 +261,7 @@ IF CFLAG:ARG:１more플래그 > 0
 		CASE 0 TO LOCAL * 2
 			CFLAG:ARG:입력행동 = [[스킬:프레이라]]
 		CASE LOCAL * 2 TO LOCAL * 4
-			CFLAG:ARG:입력행동 = [[스킬:마하・라기온]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기온]]
 	ENDSELECT
 ELSEIF CFLAG:ARG:행동한횟수 == 0
 	CALL OLDMADE, ARG
@@ -284,7 +284,7 @@ ELSE
 		CASE 0 TO 19 +LOCAL
 			CFLAG:ARG:입력행동 = [[스킬:프레이라]]
 		CASE 20 TO 49 +LOCAL
-			CFLAG:ARG:입력행동 = [[스킬:마하・라기온]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기온]]
 	ENDSELECT
 ENDIF
 ;ここまで입력행동が決まってなかったら、汎用3種に行く
@@ -334,7 +334,7 @@ SELECTCASE LOCAL
 		ELSE
 			LOCALS = 죽어라！ 죽어라！ 죽어버려어어！！
 		ENDIF
-	CASE [[스킬:마하・라기온]], [[스킬:아기라오]]
+	CASE [[스킬:마하ㆍ라기온]], [[스킬:아기라오]]
 		IF !RAND:3
 			LOCALS = 바짝 익혀주마！！
 		ELSEIF RAND:2
@@ -395,7 +395,7 @@ ELSE
 		CFLAG:LOCAL:화염무효화횟수 -= 1
 	ELSE
 		LOCAL:1 = LOCAL:1 * MAXBASE:LOCAL:화염 / 100
-		SIF NO:LOCAL == [[キャラ:킹・레오]] || NO:LOCAL == [[キャラ:스도타츠야]]
+		SIF NO:LOCAL == [[キャラ:킹ㆍ레오]] || NO:LOCAL == [[キャラ:스도타츠야]]
 			LOCAL:1 *= 4
 	ENDIF
 ENDIF
@@ -620,25 +620,25 @@ SELECTCASE LOCAL:1
 			ABL:LOCAL:스킬4 = [[스킬:파이어브레스]]
 		ENDIF
 	CASE [[キャラ:카라스텐구]]
-		ABL:LOCAL:스킬4 = [[스킬:마하・라기온]]
+		ABL:LOCAL:스킬4 = [[스킬:마하ㆍ라기온]]
 		ABL:LOCAL:스킬5 = [[스킬:천구신부]]
 	CASE [[キャラ:하우르바타트]]
 		MAXBASE:LOCAL:충격 = 150
 		BASE:LOCAL:충격 = 150
 	CASE [[キャラ:켈라이노]]
-		ABL:LOCAL:스킬2 = [[스킬:마하・라기]]
+		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ라기]]
 		ABL:LOCAL:스킬4 = [[스킬:아기라오]]
 	CASE [[キャラ:황소가면]]
-		ABL:LOCAL:스킬2 = [[스킬:마하・마그나스]]
+		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ마그나스]]
 		ABL:LOCAL:스킬3 = [[스킬:섬머솔트]]
 	CASE [[キャラ:사자가면]]
-		ABL:LOCAL:스킬2 = [[스킬:마하・라기온]]
+		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ라기온]]
 		ABL:LOCAL:스킬3 = [[스킬:회전베기]]
 	CASE [[キャラ:전갈가면]]
-		ABL:LOCAL:스킬2 = [[스킬:마하・아쿠에스]]
-		ABL:LOCAL:스킬3 = [[스킬:메・디아라마]]
+		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ아쿠에스]]
+		ABL:LOCAL:스킬3 = [[스킬:메ㆍ디아라마]]
 	CASE [[キャラ:물병가면]]
-		ABL:LOCAL:스킬2 = [[스킬:마하・갈라]]
+		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ갈라]]
 ENDSELECT
 
 ;罰ルート用

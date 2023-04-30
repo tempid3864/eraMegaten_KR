@@ -5,10 +5,10 @@
 @SKILL_NAME_3551,ARG
 ;修羅
 ;SIF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
-	RESULTS = 루푸시・테크・눔・치우
+	RESULTS = 루푸시ㆍ테크ㆍ눔ㆍ치우
 ;羅刹
 SIF ARG > -1 && SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 1
-	RESULTS = 루푸시・테크・눔・야크
+	RESULTS = 루푸시ㆍ테크ㆍ눔ㆍ야크
 
 ;　명중
 @SKILL_HITRATE_3551, ARG
@@ -237,7 +237,7 @@ IF TFLAG:전투중 == 0 && U > -1 && HAVE_SKILL(U, [[스킬:분노폭발]])
 ELSEIF U < 0 || SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 0
 	PRINTL 얼리는 손바닥 찌르기　상대를 얼려 들리받는다
 	PRINTL 적 1체에 빙결 속성으로 대상의 현재 HP의 20％ 데미지(상한400)를 준다。명중률이 낮다
-	PRINTL 추가효과：BIND、마법위력・마법효과 저하
+	PRINTL 추가효과：BIND、마법위력ㆍ마법효과 저하
 ELSEIF SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 1
 	PRINTL 얼리는 손바닥 부수기　상대를 얼려 추격한다
 	PRINTL 적 1체에 빙결 속성으로 대상의 현재 HP의 20％ 데미지(상한300)를 주고、FREEZE 상태로 만든다。명중률이 낮다

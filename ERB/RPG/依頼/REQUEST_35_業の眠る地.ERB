@@ -16,7 +16,7 @@ RETURN 0
 @EXPLAIN_REQUEST_35
 IF 의뢰플래그:35:0 == 0 && 던전플래그:93:1 >= 4 && 던전플래그:93:6 == 0
 	PRINTL
-	PRINTFORML 팬텀・소사이어티의 마니투 계획에 필요한 장소 「니카미몬지하」를 프리ー이능자、나오미와 함께 확보하라。
+	PRINTFORML 팬텀ㆍ소사이어티의 마니투 계획에 필요한 장소 「니카미몬지하」를 프리ー이능자、나오미와 함께 확보하라。
 	PRINTFORML 
 	PRINTL
 ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
@@ -33,8 +33,8 @@ ENDIF
 #LOCALSIZE 1
 #LOCALSSIZE 1
 IF 의뢰플래그:35:0 == 0 && 던전플래그:93:1 >= 4 && 던전플래그:93:6 == 0
-	CALL MESSAGE_WINDOW, "", "＞실력을 인정받은 당신에게、팬텀・소사이어티의 간부로부터 의뢰가 왔다。"
-	CALL MESSAGE_WINDOW, "", "＞팬텀・소사이어티의 중요한 계획을 위해 필요한 영지 니카미몬지하를 프리ー이능자와 함께 확보하라는 임무다。"
+	CALL MESSAGE_WINDOW, "", "＞실력을 인정받은 당신에게、팬텀ㆍ소사이어티의 간부로부터 의뢰가 왔다。"
+	CALL MESSAGE_WINDOW, "", "＞팬텀ㆍ소사이어티의 중요한 계획을 위해 필요한 영지 니카미몬지하를 프리ー이능자와 함께 확보하라는 임무다。"
 	CALL MESSAGE_WINDOW, "", "………/……/…"
 	CALL MESSAGE_WINDOW, "", "＞약속한 고급 중화 요리점에 가자、긴 검은 머리카락의 여자가 먼저 요리에 손을 대고 있었다。"
 	CALL MESSAGE_WINDOW, "", "＞그녀가 이번 임무에서 함께 하게 될 프리ー서머너、나오미다。"
@@ -56,7 +56,7 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 	CALL SET_GUEST_REQ35
 	CALL MESSAGE_WINDOW, "", "＞나오미와 함께 유인 장소로 향했다"
 	CALL MESSAGE_WINDOW, "나오미", "…레이를 쓰러뜨리면 어떻게 할까……"
-	CALL MESSAGE_WINDOW, "", "＞간 곳에는 천해공항에서 유다와 싸우던 여자、레이・레이호우가 있었다"
+	CALL MESSAGE_WINDOW, "", "＞간 곳에는 천해공항에서 유다와 싸우던 여자、레이ㆍ레이호우가 있었다"
 	CALL MESSAGE_WINDOW, "레이", "…！　나오미…"
 	CALL MESSAGE_WINDOW, "나오미", "레이！　오늘이야말로 노사와 모두의 원수를 받아가겠다！"
 	CALL MESSAGE_WINDOW, "", "/＞인간 레이･레이호우가 1체 나타났다！/"
@@ -70,7 +70,7 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 	ABL:(CHARANUM-1):스킬1 = [[스킬:마한마온]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:불굴의투지]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:메기도]]
-	ABL:(CHARANUM-1):스킬4 = [[스킬:마하・라기온]]
+	ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ라기온]]
 	ABL:(CHARANUM-1):스킬5 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
@@ -94,7 +94,7 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 	CALL MESSAGE_WINDOW, "나오미", "그럼、잘 부탁해요"
 	LOCAL = GETCHARA([[キャラ:나오미]])
 	SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
-		CALL DEL_GUEST, LOCAL, "큰곰자리별의활", "알즈・록", "백칠겁팔식철귀", "맥시밀리언", "라우린의반지", "미라주부츠", "도사뱃지"
+		CALL DEL_GUEST, LOCAL, "큰곰자리별의활", "알즈ㆍ록", "백칠겁팔식철귀", "맥시밀리언", "라우린의반지", "미라주부츠", "도사뱃지"
 	CALL MESSAGE_WINDOW, "", "＞나오미가 동료가 되었다！"
 	CALL ADD_NEW_COMPANION,[[キャラ:나오미]],500
 	IF RESULT == 1

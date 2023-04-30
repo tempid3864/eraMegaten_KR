@@ -12,7 +12,7 @@
 ;	002		2019/02/17		JK好き					バグ修正
 ;	003		2020/05/19		がめら					NTR好感度処理をCDFLAGに変更
 ;	004		2020/05/30		JK好き					労役画面から武器素質取得画面に飛べるように
-;	005		2021/02/22		JK好き					整理・軽量化・覚書の追加
+;	005		2021/02/22		JK好き					整理ㆍ軽量化ㆍ覚書の追加
 ;	006		2021/03/12		JK好き					半魔が道場の対象外となってしまっていた問題を修正　誰か指摘して！
 ;	007		2022/06/22		JK好き					@END_DOJO 修練実行時に体力不足だった場合に実行しないように修正
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
@@ -96,7 +96,7 @@ SIF CFLAG:ARG:전투참가불가능 == 1
 	RETURN 0
 SIF BASE:ARG:체력 < 500
 	RETURN 0
-SIF (CFLAG:ARG:도검숙련도 + CFLAG:ARG:레이피어숙련도 + CFLAG:ARG:활숙련도 + CFLAG:ARG:검숙련도 + CFLAG:ARG:창숙련도 + CFLAG:ARG:도끼、둔기숙련도 + CFLAG:ARG:투척숙련도 + CFLAG:ARG:지팡이・제구숙련도 + CFLAG:ARG:곤봉숙련도 + CFLAG:ARG:권투구숙련도) >= 10000
+SIF (CFLAG:ARG:도검숙련도 + CFLAG:ARG:레이피어숙련도 + CFLAG:ARG:활숙련도 + CFLAG:ARG:검숙련도 + CFLAG:ARG:창숙련도 + CFLAG:ARG:도끼、둔기숙련도 + CFLAG:ARG:투척숙련도 + CFLAG:ARG:지팡이ㆍ제구숙련도 + CFLAG:ARG:곤봉숙련도 + CFLAG:ARG:권투구숙련도) >= 10000
 	RETURN 0
 RETURN 1
 

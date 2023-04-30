@@ -108,7 +108,7 @@ SELECTCASE ARGS
 				;페르소나구사자
 				RESULTS = 페르소나구사자
 				RESULTS:1 = 기계의처녀
-				;1/2でP1・2仕様かP3以降仕様に別れる
+				;1/2でP1ㆍ2仕様かP3以降仕様に別れる
 				SIF RAND:2 == 0
 					RETURN 2, 1
 				RETURN 1, 1
@@ -165,12 +165,12 @@ SELECTCASE ARGS
 			RESULT:3 = [[스킬:아이템숙련]]
 			RESULT:4 = [[스킬:불굴의투지]]
 			RESULT:5 = [[스킬:저격]]
-			RESULT:6 = [[스킬:결계부・치유]]
+			RESULT:6 = [[스킬:결계부ㆍ치유]]
 			RESULT:7 = [[스킬:다크브레스]]
-			RESULT:8 = [[스킬:결계부・물리]]
+			RESULT:8 = [[스킬:결계부ㆍ물리]]
 			RESULT:9 = [[스킬:파워브레스]]
 			RESULT:10 = [[스킬:기공(중)]]
-			RESULT:11 = [[스킬:결계부・마법]]
+			RESULT:11 = [[스킬:결계부ㆍ마법]]
 			RESULT:12 = [[스킬:천열찌르기]]
 			RESULT:13 = [[스킬:정의의방패]]
 			RETURN RESULT
@@ -217,16 +217,16 @@ SELECTCASE ARGS
 		;カジャ系
 		SELECTCASE RAND:4
 			CASE 0
-				RESULT:4 = [[스킬:타루・카쟈]]
+				RESULT:4 = [[스킬:타루ㆍ카쟈]]
 				RESULT:5 = [[스킬:다크브레스]]
 			CASE 1
-				RESULT:4 = [[스킬:스쿠・카쟈]]
+				RESULT:4 = [[스킬:스쿠ㆍ카쟈]]
 				RESULT:5 = [[스킬:도발]]
 			CASE 2
-				RESULT:4 = [[스킬:라쿠・카쟈]]
+				RESULT:4 = [[스킬:라쿠ㆍ카쟈]]
 				RESULT:5 = [[스킬:파워브레스]]
 			CASE 3
-				RESULT:4 = [[스킬:사마・카쟈]]
+				RESULT:4 = [[스킬:사마ㆍ카쟈]]
 				RESULT:5 = [[스킬:위협]]
 		ENDSELECT
 		;魔脈/コンセ
@@ -242,7 +242,7 @@ SELECTCASE ARGS
 		;강화
 		IF 이벤트플래그:88:0 > 3
 		RESULT:9 = [[스킬:일할의활천]]
-		RESULT:10 = [[스킬:데・카쟈]]
+		RESULT:10 = [[스킬:데ㆍ카쟈]]
 		RESULT:11 = [[스킬:리캄도라]]
 		RESULT:12 = [[스킬:아이템숙련]]
 		ENDIF

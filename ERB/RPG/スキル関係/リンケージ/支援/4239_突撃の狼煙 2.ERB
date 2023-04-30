@@ -157,20 +157,20 @@ RETURN 3
 @참가조건표시_4239,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 마카・카쟈、스쿠・카쟈
+		PRINTFORM 마카ㆍ카쟈、스쿠ㆍ카쟈
 	CASE 2
-		PRINTFORM 사마・카쟈
+		PRINTFORM 사마ㆍ카쟈
 	CASE 3
-		PRINTFORM 라쿠・카쟈
+		PRINTFORM 라쿠ㆍ카쟈
 	CASE 4
-		PRINTFORM 타루・카쟈
+		PRINTFORM 타루ㆍ카쟈
 ENDSELECT
 
 @발동자조건_4239 , ARG
-;タル・カジャを使えること
-SIF HAVE_SKILL(ARG, [[스킬:타루・카쟈]]) == 0
+;タルㆍカジャを使えること
+SIF HAVE_SKILL(ARG, [[스킬:타루ㆍ카쟈]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:타루・카쟈]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:타루ㆍ카쟈]]
 SIF RESULT
 	RETURN 1
 RETURN 0
@@ -184,31 +184,31 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;マカ・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:마카・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마카・카쟈]]
+		;マカㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:마카ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마카ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;スク・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:스쿠・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠・카쟈]]
+		;スクㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:스쿠ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
 		RETURN 0
 	CASE 2
-		;サマ・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:사마・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:사마・카쟈]]
+		;サマㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:사마ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:사마ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
 		RETURN 0
 	CASE 3
-		;ラク・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:라쿠・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠・카쟈]]
+		;ラクㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:라쿠ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

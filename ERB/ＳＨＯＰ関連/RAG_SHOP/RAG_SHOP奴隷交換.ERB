@@ -30,14 +30,14 @@ IF LCOUNT == 1
 			CALL RAG_DOREI_EXCHANGE_표시(3,[[キャラ:치키（＃FE）]], "아메지스트", 1, "터키석", 1, "진주", 1)
 		ELSE
 			SETCOLOR 0x999999
-			PRINTL ※입하작업중（필요・가창기능８이상）
+			PRINTL ※입하작업중（필요ㆍ가창기능８이상）
 			RESETCOLOR
 		ENDIF
 		IF BASE:MASTER:LV >= 50
 			CALL RAG_DOREI_EXCHANGE_표시(4,[[キャラ:질（LT）]], "사파이어", 3, "아메지스트", 3, "다이아몬드", 3)
 		ELSE
 			SETCOLOR 0x999999
-			PRINTL ※입하작업（필요・전투Lv50이상）
+			PRINTL ※입하작업（필요ㆍ전투Lv50이상）
 			RESETCOLOR
 		ENDIF
 	;聖검３とティファを전투者にしたいMODより
@@ -48,7 +48,7 @@ IF LCOUNT == 1
 		CALL RAG_DOREI_EXCHANGE_표시(8,[[キャラ:티파]], "오팔", 3, "오닉스", 3, "사파이어", 3)
 	ELSE
 		SETCOLOR 0x999999
-			PRINTL ※고급 상납자를 위한、이계 노예 판매 페어、개최중（필요・납금 150만 이상）
+			PRINTL ※고급 상납자를 위한、이계 노예 판매 페어、개최중（필요ㆍ납금 150만 이상）
 		RESETCOLOR
 	ENDIF
 	;九龍キャラ枠

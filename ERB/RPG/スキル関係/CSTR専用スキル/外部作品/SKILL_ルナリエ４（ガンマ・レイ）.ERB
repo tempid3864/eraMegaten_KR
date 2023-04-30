@@ -1,5 +1,5 @@
 ﻿;専用スキル用のテンプレート
-;「ガンマ・レイ」を別の名前に置き換えてください
+;「ガンマㆍレイ」を別の名前に置き換えてください
 
 ;アクティブスキルに必須なものはそのままにしており
 ;なくてもいいものはコメントアウトしております
@@ -7,34 +7,34 @@
 ;スキルのテンプレートになっています
 
 ;스킬명
-@SKILL_NAME_ガンマ・レイ,ARG
+@SKILL_NAME_ガンマㆍレイ,ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 ;追撃中は名前チェンジ
 	IF ARG > -1
 		SIF SKILLGAGE_H_GET(ARG,ガンマ履歴) == 1
-			RESULTS = 레이・펜타그마　반격
+			RESULTS = 레이ㆍ펜타그마　반격
 		SIF SKILLGAGE_H_GET(ARG,ガンマ履歴) == 2
-			RESULTS = 레이・펜타그마　추격
+			RESULTS = 레이ㆍ펜타그마　추격
 		SIF SKILLGAGE_H_GET(ARG,ガンマ履歴) == 3
-			RESULTS = 레이・펜타그마　추격
+			RESULTS = 레이ㆍ펜타그마　추격
 	ENDIF
 ;１戦闘中、ガンマレイ一度使用後は追撃のペンタグマへ
 IF SKILLGAGE_F_GET(ARG,ガンマ履歴) >= 1
-	RESULTS = 레이・펜타그마
+	RESULTS = 레이ㆍ펜타그마
 ELSE
-	RESULTS = 감마・레이
+	RESULTS = 감마ㆍ레이
 ENDIF
 
 ;　명중
-@SKILL_HITRATE_ガンマ・レイ, ARG
+@SKILL_HITRATE_ガンマㆍレイ, ARG
 RETURN 200
 
 ;　위력
-@SKILL_POWER_ガンマ・レイ, ARG
+@SKILL_POWER_ガンマㆍレイ, ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
-;追・反撃中の威力は落ちる
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
+;追ㆍ反撃中の威力は落ちる
 	IF ARG > -1
 		SIF SKILLGAGE_H_GET(ARG,ガンマ履歴) == 1
 			RETURN 60
@@ -50,15 +50,15 @@ RETURN 360
 
 
 ;;クリティカル率
-;@SKILL_CRITICAL_RATE_ガンマ・レイ, ARG
+;@SKILL_CRITICAL_RATE_ガンマㆍレイ, ARG
 ;RETURN 5
 
 ;;　吸収率
-;@SKILL_HP_ABSORBER_ガンマ・レイ, ARG
+;@SKILL_HP_ABSORBER_ガンマㆍレイ, ARG
 ;RETURN 0
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_ガンマ・レイ,ARG
+@SKILL_MINATTACKNUMBER_ガンマㆍレイ,ARG
 ;追撃中2-3、通常1
 IF ARG > -1
 	RETURN 2
@@ -67,7 +67,7 @@ ELSE
 ENDIF
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_ガンマ・レイ,ARG
+@SKILL_MAXATTACKNUMBER_ガンマㆍレイ,ARG
 IF ARG > -1
 	RETURN 3
 ELSE
@@ -76,24 +76,24 @@ ENDIF
 
 ;;一体辺りの最大ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MAXATK_PER_ガンマ・レイ,ARG
+;@SKILL_MAXATK_PER_ガンマㆍレイ,ARG
 ;RETURN 1
 
 ;;一体辺りの最低ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MINATK_PER_ガンマ・レイ,ARG
+;@SKILL_MINATK_PER_ガンマㆍレイ,ARG
 ;RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_ガンマ・レイ, ARG
+@SKILL_COSTTYPE_ガンマㆍレイ, ARG
 RETURN 3
 ;소비없음＝1
 
 ;　코스트량
-@SKILL_COST_ガンマ・レイ,ARG
+@SKILL_COST_ガンマㆍレイ,ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
-;ガンマ・レイのみ高い
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
+;ガンマㆍレイのみ高い
 IF SKILLGAGE_F_GET(ARG,ガンマ履歴) >= 1
 		RETURN 40
 ELSE
@@ -101,29 +101,29 @@ ELSE
 ENDIF
 
 ;　상성
-@SKILL_TYPE_ガンマ・レイ,ARG
+@SKILL_TYPE_ガンマㆍレイ,ARG
 RETURN GET_TYPE_NUM("만능")
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_ガンマ・レイ, ARG
+@SKILL_DECIDE_TYPE_ガンマㆍレイ, ARG
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_ガンマ・レイ,ARG
+@SKILL_DAMAGETYPE_ガンマㆍレイ,ARG
 RETURN 2
 
 ;　대상　1 적　2 아군　3 양쪽전체　4 특수
-@SKILL_TARGET_ガンマ・レイ,ARG
+@SKILL_TARGET_ガンマㆍレイ,ARG
 RETURN 1
 
 ;　사거리
-@SKILL_RANGE_ガンマ・レイ,ARG
+@SKILL_RANGE_ガンマㆍレイ,ARG
 RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
-@SKILL_SPHERE_ガンマ・レイ,ARG
+@SKILL_SPHERE_ガンマㆍレイ,ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 IF ARG > -1
 	SIF SKILLGAGE_H_GET(ARG,ガンマ履歴) == 1
 		RETURN 1
@@ -138,66 +138,66 @@ SIF SKILLGAGE_F_GET(ARG,ガンマ履歴) >= 1
 RETURN 3
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_ガンマ・レイ,ARG
+@SKILL_EFECT_ガンマㆍレイ,ARG
 RETURN 1
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_ガンマ・レイ,ARG
+;@SKILL_SPECIALEFECT_ガンマㆍレイ,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_ガンマ・レイ,ARG
+;@SKILL_SUCCESSION_TYPE_ガンマㆍレイ,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_ガンマ・レイ, ARG = -1
+@SKILL_SPEED_ガンマㆍレイ, ARG = -1
 RETURN -20
 
 ;;　구상의 표시와 그 타입
-;@SKILL_MESSAGE_ガンマ・レイ,ARG
+;@SKILL_MESSAGE_ガンマㆍレイ,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_ガンマ・レイ, ARG = -1
+@SKILL_ACTIONABLE_FIELD_ガンマㆍレイ, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_ガンマ・レイ
-;@SKILL_RANKUP_ガンマ・レイ
-;@계승불능_ガンマ・レイ
+;@SKILL_RANK_ガンマㆍレイ
+;@SKILL_RANKUP_ガンマㆍレイ
+;@계승불능_ガンマㆍレイ
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_ガンマ・レイ,ARG
+@SKILL_ADDTIONAL_STATE_ガンマㆍレイ,ARG
 RETURN 0
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_ガンマ・レイ,ARG
+@SKILL_ADDTIONAL_TYPE_ガンマㆍレイ,ARG
 RETURN 0
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_ガンマ・レイ,ARG
+@SKILL_ADDTIONAL_BASE_RATE_ガンマㆍレイ,ARG
 RETURN 0
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_ガンマ・レイ,ARG
+@SKILL_ADDTIONAL_MAX_RATE_ガンマㆍレイ,ARG
 RETURN 0
 
 ;;拡散攻撃用追加処理
 ;;ブレスなどの拡散攻撃に使う
-;@SKILL_SPREAD_ガンマ・レイ,ARG
+;@SKILL_SPREAD_ガンマㆍレイ,ARG
 ;RETURN 0
 
 ;====================================================
 ;トリガー発動条件
 ;====================================================
-@SKILL_TRIGGER_ACTIONABLE_ガンマ・レイ,ARG,ARG:1
+@SKILL_TRIGGER_ACTIONABLE_ガンマㆍレイ,ARG,ARG:1
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 ;効果時間中
 SIF SKILLGAGE_D_GET(ARG,ガンマ履歴) < 1
 	RETURN 0
@@ -222,9 +222,9 @@ RETURN 1
 ;====================================================
 ;カウンター発動条件
 ;====================================================
-@SKILL_COUNTER_ACTIONABLE_ガンマ・レイ,ARG,ARG:1
+@SKILL_COUNTER_ACTIONABLE_ガンマㆍレイ,ARG,ARG:1
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 ;スキル効果時間中
 SIF SKILLGAGE_D_GET(ARG,ガンマ履歴) < 1
 	RETURN 0
@@ -242,28 +242,28 @@ RETURN 1
 ;====================================================
 ;ヒット時ダメージ前処理
 ;====================================================
-;@SKILL_HIT_EFFECT_ガンマ・レイ,ARG,ARG:1
+;@SKILL_HIT_EFFECT_ガンマㆍレイ,ARG,ARG:1
 
 ;====================================================
 ;ダメージ発動時
 ;====================================================
-;@SKILL_DAMAGE_EFFECT_ガンマ・レイ,ARG,ARG:1
+;@SKILL_DAMAGE_EFFECT_ガンマㆍレイ,ARG,ARG:1
 
 ;====================================================
 ;行動によるスキルゲージ操作
 ;====================================================
-;@SKILLGAGE_CHARGE_ガンマ・レイ,ARG,ARG:1
+;@SKILLGAGE_CHARGE_ガンマㆍレイ,ARG,ARG:1
 
 
 
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_ガンマ・レイ,ARG,ARG:1,SKILL_NUM
+@ACTION_ガンマㆍレイ,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 #LOCALSIZE 4
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 
 LOCAL:0 = MAXBASE:ARG:마법위력
 LOCAL:1 = CFLAG:ARG:마법위력강화
@@ -288,11 +288,11 @@ ELSE
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 		CALL SKILLGAGE_F_SET,ARG,ガンマ履歴,1
 		PRINTL 
-		PRINTL 감마・레이의 가호가 끊겨、레이・펜타그마로 되었다。
+		PRINTL 감마ㆍ레이의 가호가 끊겨、레이ㆍ펜타그마로 되었다。
 	ELSE
 	;ガンマレイ使用後の場合レイペンタグマセット
 		CALL SKILLGAGE_D_SET,ARG,ガンマ履歴,6
-		PRINTL 레이・펜타그마、셋트！
+		PRINTL 레이ㆍ펜타그마、셋트！
 	ENDIF
 ENDIF
 
@@ -313,7 +313,7 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;전투중 이외에서의 실행
 ;====================================================
-;@ACTION_FIELD_ガンマ・レイ,ARG,ARG:1,SKILL_NUM
+;@ACTION_FIELD_ガンマㆍレイ,ARG,ARG:1,SKILL_NUM
 ;#DIM SKILL_NUM
 
 ;CALL HEAL_SINGLE,ARG,POS(ARG:1),SKILL_NUM	;単体回復
@@ -327,7 +327,7 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;追加コマンド(EXTRAの下)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_EXTRA_ガンマ・レイ,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_EXTRA_ガンマㆍレイ,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -337,7 +337,7 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;追加コマンド(MAGICの下、魔封だと消える)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_MAGIC_ガンマ・レイ,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_MAGIC_ガンマㆍレイ,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -347,7 +347,7 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;追加コマンド(一番下)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_ガンマ・レイ,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_ガンマㆍレイ,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -357,7 +357,7 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;コマンド実行
 ;====================================================
-;@INPUT_COM_ガンマ・レイ,ARG
+;@INPUT_COM_ガンマㆍレイ,ARG
 ;RETURN -1
 ;-1 再びコマンド選択へ
 ; 1 キャラ選択へ
@@ -365,31 +365,31 @@ CFLAG:ARG:마법위력강화 = LOCAL:1
 ;====================================================
 ;戦闘中スキルゲージの可視化
 ;====================================================
-@SKILLGAGE_DISPLAY_ガンマ・レイ,ARG
+@SKILLGAGE_DISPLAY_ガンマㆍレイ,ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 ;効果時間中のみ表示
 SETCOLOR 0x999999
 SIF SKILLGAGE_D_GET(ARG,ガンマ履歴) < 1
-	PRINTFORML 레이・펜타그마 효과시간：앞으로 {SKILLGAGE_D_GET(ARG,ガンマ履歴)}턴
+	PRINTFORML 레이ㆍ펜타그마 효과시간：앞으로 {SKILLGAGE_D_GET(ARG,ガンマ履歴)}턴
 RESETCOLOR
 
 
 ;　説明文の表示
-@SKILL_EXPLAIN_ガンマ・レイ,ARG
+@SKILL_EXPLAIN_ガンマㆍレイ,ARG
 #DIM ガンマ履歴
-ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマ・レイ")
+ガンマ履歴 = PU_SKILLNUM_GET(ARG,"ガンマㆍレイ")
 IF SKILLGAGE_F_GET(U,ガンマ履歴) > 1
-	PRINTL 『레이・펜타그마』
+	PRINTL 『레이ㆍ펜타그마』
 	PRINTL 발동 후 ５턴、자신의 공격에 따라 추격을 행한다。발동이 느리다。
 	PRINTL 또한、적으로부터 공격을 받았을 때 확률로 반격하게 된다。
 	PRINTL 데미지 계산은『공격』의존이며、마카카쟈와 동시에 타루카쟈의 영향을 합산한다。
 	PRINTL 
-	PRINTL 마법진을 구성해、추격・반격을 행하는 화살을 발생시킨다。
+	PRINTL 마법진을 구성해、추격ㆍ반격을 행하는 화살을 발생시킨다。
 ELSE
-	PRINTL 『감마・레이』
+	PRINTL 『감마ㆍ레이』
 	PRINTL 적 전체에 만능 속성으로 대위력의 마법공격을 １회 행한다。발동이 느리다。
-	PRINTL １출격 １회까지。이후는 추격・반격을 세트하는『레이・펜타그마』가 된다。
+	PRINTL １출격 １회까지。이후는 추격ㆍ반격을 세트하는『레이ㆍ펜타그마』가 된다。
 	PRINTL 데미지 계산은『공격』의존이며、마카카쟈와 동시에 타루카쟈의 영향을 합산한다。
 	PRINTL 
 	PRINTL １출격에 단 １번만、마력이 넘치는 마법진을 전개하고、작렬시킴으로써 대위력의 마법공격을 행한다。
@@ -397,24 +397,24 @@ ENDIF
 PRINTL 창기사 루나리에의 마법의 힘。（CSTR전용）
 
 ;没
-;@계승부위_ガンマ・レイ,ARG
+;@계승부위_ガンマㆍレイ,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_ガンマ・レイ,ARG
+@SKILL_SPECIAL_ACTIONABLE_ガンマㆍレイ,ARG
 RETURN 1
 
 ;타겟조건
 ;↓のSKILL_T_RESERVEがRETURN 1 の時に使用する
-;@SKILL_SPECIAL_TARGET_ガンマ・レイ,USE_CHARA,ARG
+;@SKILL_SPECIAL_TARGET_ガンマㆍレイ,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;RETURN 0
 
 ;控えに使えるか
-;@SKILL_T_RESERVE_ガンマ・レイ,ARG
+;@SKILL_T_RESERVE_ガンマㆍレイ,ARG
 ;RETURN 0
 
 ;어떤 배드스테이터스를 고칠수 있는가
-;@SKILL_CURE_STATE_ガンマ・レイ,USE_CHARA,ARG
+;@SKILL_CURE_STATE_ガンマㆍレイ,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;SELECTCASE GET_STATE(ARG)
 ;	CASE "HAPPY","CLOSE"
@@ -423,12 +423,12 @@ RETURN 1
 ;RETURN 0
 
 ;この技を複数持てるか
-;@중복습득수_ガンマ・レイ,ARG
+;@중복습득수_ガンマㆍレイ,ARG
 ;RETURN 1
 
 ;スキル重複で役に立つ関数
-;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"ガンマ・レイ"))
+;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"ガンマㆍレイ"))
 
 ;スキルゲージで役に立つ関数
-;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"ガンマ・レイ"))
-;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"ガンマ・レイ"),0
+;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"ガンマㆍレイ"))
+;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"ガンマㆍレイ"),0

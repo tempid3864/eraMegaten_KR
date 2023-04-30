@@ -3,123 +3,123 @@
 ;002	20XX/XX/XX		kamedakeisuke(ﾟдﾟ)			抜本的に作り変えた
 
 ;スキル名
-@SKILL_NAME_大太刀・輪,ARG
-RESULTS = 대태도・윤
+@SKILL_NAME_大太刀ㆍ輪,ARG
+RESULTS = 대태도ㆍ윤
 
 ;　명중
-@SKILL_HITRATE_大太刀・輪, ARG
+@SKILL_HITRATE_大太刀ㆍ輪, ARG
 RETURN 90
 
 ;　위력
-@SKILL_POWER_大太刀・輪, ARG
+@SKILL_POWER_大太刀ㆍ輪, ARG
 RETURN 340
 
 ;クリティカル率
-;@SKILL_CRITICAL_RATE_大太刀・輪, ARG
+;@SKILL_CRITICAL_RATE_大太刀ㆍ輪, ARG
 ;RETURN 0
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_大太刀・輪,ARG
+@SKILL_MINATTACKNUMBER_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_大太刀・輪,ARG
+@SKILL_MAXATTACKNUMBER_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_大太刀・輪, ARG
+@SKILL_COSTTYPE_大太刀ㆍ輪, ARG
 RETURN 3
 ;消費なし＝1
 
 ;　코스트량
-@SKILL_COST_大太刀・輪,ARG
+@SKILL_COST_大太刀ㆍ輪,ARG
 RETURN 30
 
 ;　상성
-@SKILL_TYPE_大太刀・輪,ARG
+@SKILL_TYPE_大太刀ㆍ輪,ARG
 RETURN 0
 ;검격
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_大太刀・輪,ARG
+@SKILL_DECIDE_TYPE_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_大太刀・輪,ARG
+@SKILL_DAMAGETYPE_大太刀ㆍ輪,ARG
 RETURN 1
 
 
 ;　対象が1敵か2味方か3場全体か4特殊か
-@SKILL_TARGET_大太刀・輪,ARG
+@SKILL_TARGET_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　사거리
-@SKILL_RANGE_大太刀・輪,ARG
+@SKILL_RANGE_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　範囲　1単体　2列　3全体　4　敵味方全体
-@SKILL_SPHERE_大太刀・輪,ARG
+@SKILL_SPHERE_大太刀ㆍ輪,ARG
 RETURN 3
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_大太刀・輪,ARG
+@SKILL_EFECT_大太刀ㆍ輪,ARG
 RETURN 1
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_大太刀・輪,ARG
+;@SKILL_SPECIALEFECT_大太刀ㆍ輪,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_大太刀・輪,ARG
+;@SKILL_SUCCESSION_TYPE_大太刀ㆍ輪,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_大太刀・輪, ARG = -1
+@SKILL_SPEED_大太刀ㆍ輪, ARG = -1
 RETURN 0
 
 ;;　口上の表示とそのタイプ
-;@SKILL_MESSAGE_大太刀・輪,ARG
+;@SKILL_MESSAGE_大太刀ㆍ輪,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_大太刀・輪, ARG = -1
+@SKILL_ACTIONABLE_FIELD_大太刀ㆍ輪, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_大太刀・輪
-;@SKILL_RANKUP_大太刀・輪
-;@계승불능_大太刀・輪
+;@SKILL_RANK_大太刀ㆍ輪
+;@SKILL_RANKUP_大太刀ㆍ輪
+;@계승불능_大太刀ㆍ輪
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_大太刀・輪,ARG
+@SKILL_ADDTIONAL_STATE_大太刀ㆍ輪,ARG
 RETURN GET_STATE_NUM("BIND")
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_大太刀・輪,ARG
+@SKILL_ADDTIONAL_TYPE_大太刀ㆍ輪,ARG
 RETURN GET_TYPE_NUM("신경")
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_大太刀・輪,ARG
+@SKILL_ADDTIONAL_BASE_RATE_大太刀ㆍ輪,ARG
 RETURN 50
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_大太刀・輪,ARG
+@SKILL_ADDTIONAL_MAX_RATE_大太刀ㆍ輪,ARG
 RETURN 75
 
 ;;拡散攻撃用追加処理
 ;;ブレスなどの拡散攻撃に使う
-;@SKILL_SPREAD_大太刀・輪,ARG
+;@SKILL_SPREAD_大太刀ㆍ輪,ARG
 ;RETURN 0
 
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_大太刀・輪,ARG,ARG:1,SKILL_NUM
+@ACTION_大太刀ㆍ輪,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 
@@ -128,13 +128,13 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 
 ;　説明文の表示
-@SKILL_EXPLAIN_大太刀・輪,ARG
+@SKILL_EXPLAIN_大太刀ㆍ輪,ARG
 PRINTL 소녀의 반짝임으로 주조된 일본도。
 PRINTL 타고난 체구에서 나오는 혼신의 일섬으로 적 전체에 대 데미지＋고확률 BIND。
 
 ;没
-;@계승부위_大太刀・輪,ARG
+;@계승부위_大太刀ㆍ輪,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_大太刀・輪,ARG
+@SKILL_SPECIAL_ACTIONABLE_大太刀ㆍ輪,ARG
 RETURN 1

@@ -10,7 +10,7 @@
 ;	005		2011/02/15		黒天					仲魔にいる悪魔が敵にいる場合名前の色が変わるように
 ;	006		2011/02/16		Ｎ鳥					悪魔ストレージ機能に対応
 ;	007		2011/03/18		P						ストレージ機能に合わせて、若干処理を追加
-;	008		2011/03/23		UNP						セットアップ画面での誤爆クリックを予防・ポジションチェンジのキャンセルを実装
+;	008		2011/03/23		UNP						セットアップ画面での誤爆クリックを予防ㆍポジションチェンジのキャンセルを実装
 ;	009		2012/12/02		ネトリス				ムフフ展開のＧＯＯＤの色の変化を『CFLAG:ダンジョン内発情用欲情値』を参照にするように変更
 ;	010		2012/12/02								招来の舞踏用に死者だけリスト化するのを追加(サバトマの逆)
 ;	011		2013/03/05		銃Ｐ					召喚/編入のリストでＣＯＭＰにいるか表示、最初のページと最後のページを行き来できるように加筆
@@ -305,7 +305,7 @@ FLAG:LOCALS = -1
 ;아군パーティの描画
 ;==================================
 ;ARG:2 相性等表示してもよい状況か
-;1:色リスト表示 2:相性等表示枠 4:強化・弱体化表示（戦闘中）　してもよい
+;1:色リスト表示 2:相性等表示枠 4:強化ㆍ弱体化表示（戦闘中）　してもよい
 ;ARG:2がOK　かつ　FLAG:相性等表示ONがOK　の時表示する
 ;ARG:3 通常は0か省略
 ;セットアップのメイン画面 1を指定
@@ -1373,11 +1373,11 @@ FOR LCOUNT:1,ARG:1-1,ARG-1,-1
 	PRINTL
 	;相性표시
 	;---- EDIT 004 ADD START -------------------------
-	IF (ARG:2 >= -1 && ARG:2 < FLAG:상성수 && FLAG:상성등표시ON != 0) || (ARG:2 >= 0 && ARG:2 < FLAG:상성수 && EQUIP:MASTER:호프・아이즈 == 1 && (NUM_SUMMONER() || NUM_HAVESKILL([[스킬:하이・애널라이즈]])))
+	IF (ARG:2 >= -1 && ARG:2 < FLAG:상성수 && FLAG:상성등표시ON != 0) || (ARG:2 >= 0 && ARG:2 < FLAG:상성수 && EQUIP:MASTER:호프ㆍ아이즈 == 1 && (NUM_SUMMONER() || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])))
 	;---- EDIT 004 ADD END ---------------------------
 	;何か표시するときに実行。具体的には↓
-	;全部or特定の표시してよいタイミング　もしくは　特定の표시してよいタイミング＆호프・아이즈ONなら実行
-;	IF GETBIT(FLAG:상성등표시ON, 0) == 1 || ((ARG:2 >= 0 && ARG:2 < FLAG:상성수) && EQUIP:MASTER:호프・아이즈 == 1 && NUM_SUMMONER())
+	;全部or特定の표시してよいタイミング　もしくは　特定の표시してよいタイミング＆호프ㆍ아이즈ONなら実行
+;	IF GETBIT(FLAG:상성등표시ON, 0) == 1 || ((ARG:2 >= 0 && ARG:2 < FLAG:상성수) && EQUIP:MASTER:호프ㆍ아이즈 == 1 && NUM_SUMMONER())
 ;	コンフィグON　もしくは　ギボアイズ持ちで特定の相性표시　なら実行
 		FOR LCOUNT:3, 0, 2
 			FOR LCOUNT, 0, 5
@@ -1397,14 +1397,14 @@ FOR LCOUNT:1,ARG:1-1,ARG-1,-1
 							;---- EDIT 004 ADD START -------------------------
 							;---- EDIT 016 MOD START -------------------------
 							;---- EDIT 018 DEL START -------------------------
-							;IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER() != 0) || NUM_HAVESKILL([[스킬:하이・애널라이즈]])) && !EQUIP:MASTER:마인드시커
-								;解析度十分でCOMP持ちかつ、もしくは하이・애널라이즈持ち健在で마인드시커장비中でない
+							;IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER() != 0) || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])) && !EQUIP:MASTER:마인드시커
+								;解析度十分でCOMP持ちかつ、もしくは하이ㆍ애널라이즈持ち健在で마인드시커장비中でない
 							;---- EDIT 018 DEL END ---------------------------
 							;---- EDIT 016 MOD END ---------------------------
 							;---- EDIT 004 ADD END ---------------------------
 							;---- EDIT 018 ADD START -------------------------                                                                                                           EDIT 021 ADD  !CFLAG:LOCAL:애널라이즈불가
-							IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0) || NUM_HAVESKILL([[스킬:하이・애널라이즈]])) && !EQUIP:MASTER:마인드시커 && !CFLAG:LOCAL:1291
-								;解析度十分でCOMP持ち、もしくは하이・애널라이즈持ち健在で마인드시커장비中でない
+							IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0) || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])) && !EQUIP:MASTER:마인드시커 && !CFLAG:LOCAL:1291
+								;解析度十分でCOMP持ち、もしくは하이ㆍ애널라이즈持ち健在で마인드시커장비中でない
 							;---- EDIT 018 ADD END ---------------------------
 								;全ての相性を표시
 								PRINT 　
@@ -1440,7 +1440,7 @@ FOR LCOUNT:1,ARG:1-1,ARG-1,-1
 								PRINTFORM BS부\@CFLAG:LOCAL:BS부착률강화 < 0 ?  # + \@{CFLAG:LOCAL:BS부착률강화}
 							ENDIF
 						CASE 3
-							IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0) || NUM_HAVESKILL([[스킬:하이・애널라이즈]])) && !EQUIP:MASTER:마인드시커 && !CFLAG:LOCAL:1291
+							IF (FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0) || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])) && !EQUIP:MASTER:마인드시커 && !CFLAG:LOCAL:1291
 								;PRINT 　
 								;SIF LCOUNT:3 == 1
 								;	PRINT 　
@@ -1482,13 +1482,13 @@ FOR LCOUNT:1,ARG:1-1,ARG-1,-1
 					;特定の相性を표시タイミング
 					;---- EDIT 004 ADD START -------------------------
 					;---- EDIT 018 DEL START -------------------------
-					;IF FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER() != 0 || NUM_HAVESKILL([[스킬:하이・애널라이즈]])) && FLAG:상성등표시ON != 0
-						;解析度十分でCOMP持ち、もしくは하이・애널라이즈持ち健在でコンフィグOFFではない
+					;IF FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER() != 0 || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])) && FLAG:상성등표시ON != 0
+						;解析度十分でCOMP持ち、もしくは하이ㆍ애널라이즈持ち健在でコンフィグOFFではない
 					;---- EDIT 018 DEL END ---------------------------
 					;---- EDIT 004 ADD END ---------------------------
 					;---- EDIT 018 ADD START -------------------------                                                                                         EDIT 021 ADD  !CFLAG:LOCAL:애널라이즈불가
-					IF FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0 || NUM_HAVESKILL([[스킬:하이・애널라이즈]])) && FLAG:상성등표시ON != 0 && !CFLAG:LOCAL:1291
-						;解析度十分でCOMP持ち、もしくは하이・애널라이즈持ち健在でコンフィグOFFではない
+					IF FLAG:(20000+NO:LOCAL) >= 100 && (NUM_SUMMONER(1) != 0 || NUM_HAVESKILL([[스킬:하이ㆍ애널라이즈]])) && FLAG:상성등표시ON != 0 && !CFLAG:LOCAL:1291
+						;解析度十分でCOMP持ち、もしくは하이ㆍ애널라이즈持ち健在でコンフィグOFFではない
 						;---- EDIT 018 ADD END ---------------------------
 						LOCAL:1 = MAXBASE:LOCAL:(GET_TYPE(ARG:2))
 						CALL SET_AISYOU_COLOR, LOCAL:1
@@ -1496,10 +1496,10 @@ FOR LCOUNT:1,ARG:1-1,ARG-1,-1
 						PRINTFORM \@ LOCAL:1 < 0 ? 흡 # 　\@
 						PRINTFORM \@ LOCAL:1 != 999 ? {ABS(LOCAL:1), 4}％ # 　반사\@
 					;---- EDIT 004 ADD START -------------------------
-					ELSEIF EQUIP:MASTER:호프・아이즈 == 1 && (NUM_SUMMONER() || NUM_HAVESKILL([[스킬:서드아이]]))
-						;解析度が低い or 誰もＣＯＭＰを使えない（ANALYZEで스테이터스표시できない）상태で호프・아이즈持っている
+					ELSEIF EQUIP:MASTER:호프ㆍ아이즈 == 1 && (NUM_SUMMONER() || NUM_HAVESKILL([[스킬:서드아이]]))
+						;解析度が低い or 誰もＣＯＭＰを使えない（ANALYZEで스테이터스표시できない）상태で호프ㆍ아이즈持っている
 					;---- EDIT 004 ADD END ---------------------------
-						;호프・아이즈効果표시
+						;호프ㆍ아이즈効果표시
 						IF MAXBASE:LOCAL:(GET_TYPE(ARG:2)) == 999 || MAXBASE:LOCAL:(GET_TYPE(ARG:2)) <= 0
 							SETCOLOR 0xFF0000
 							PRINT 　 --- ALART !! --- 

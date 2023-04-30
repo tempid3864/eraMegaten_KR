@@ -440,9 +440,9 @@ ENDSELECT
 @NTR_JOUSHI_1(ARG)
 #LOCALSIZE 4
 DRAWLINE
-PRINTFORML ・
-PRINTFORML ・・
-PRINTFORML ・・・
+PRINTFORML ㆍ
+PRINTFORML ㆍㆍ
+PRINTFORML ㆍㆍㆍ
 ;初回처녀
 IF TALENT:ARG:처녀
 	PRINTFORML %조사처리(CALLNAME:ARG,"는")% 간부남의 방에 따라갔다
@@ -1004,9 +1004,9 @@ ELSEIF CFLAG:ARG:상사이벤트진행도 == 9 && CFLAG:ARG:상사내습 == 2
 ;最終段階
 ELSEIF CFLAG:ARG:상사이벤트진행도 == 10 && CFLAG:ARG:상사내습 == 1
 	PRINTFORML 간부남은 수상쩍은 약을 써서 %CALLNAME:ARG%의 연정을 깨부수려고 한다
-	PRINTFORML ・
-	PRINTFORML ・
-	PRINTFORML ・
+	PRINTFORML ㆍ
+	PRINTFORML ㆍ
+	PRINTFORML ㆍ
 	;耐え切る：愛は奇跡だから低확률
 	IF RAND:100 < 5
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:MASTER,"를")% 생각하는 마음만을 의지해, 끈질긴 조교에도 버티어냈다
@@ -1505,9 +1505,9 @@ IF CFLAG:ARG:상사이벤트진행도 >= 13 && CFLAG:ARG:상사내습 == 2
 		PRINTFORML 밀착한 채로 두 사람은 다시 차로 들어가서,
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 보고 있던 것을 모르는 듯이, 그대로 어디론가 가버렸다……
 		PRINTFORML 
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORMW ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORMW ㆍㆍㆍ
 		PRINTFORML 듬뿍 3시간 이상을 보낸 다음, 다시 차가 멈추고 %조사처리(CALLNAME:ARG,"가")% 내려 돌아왔다
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% 아무 일도 없었단 듯이 %CALLNAME:MASTER%에게 인사를 하고는,
 		PRINTFORMW 평소와 다름없는 발걸음으로 떠나갔다
@@ -1582,9 +1582,9 @@ IF CFLAG:ARG:상사이벤트진행도 >= 13 && CFLAG:ARG:상사내습 == 2
 		PRINTFORMW 그 여성의 목소리는 %조사처리(CALLNAME:ARG,"와")% 매우 비슷했다…
 		RESETCOLOR
 		PRINTFORML
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORML ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORML ㆍㆍㆍ
 		PRINTFORML 늦게나마 돌아온 %조사처리(CALLNAME:ARG,"는")% 『급료』라고 쓰여진 봉투를 건네주고는 방에서 나갔다
 		PRINTFORMW 안에는 ￥{LOCAL:2}이 들어있었다…
 		PRINTFORML
@@ -1608,9 +1608,9 @@ IF CFLAG:ARG:상사이벤트진행도 >= 13 && CFLAG:ARG:상사내습 == 2
 		PRINTFORMW 전화가 끊기기 직전, %조사처리(CALLNAME:ARG,"가")% 질내사정을 재촉하는 목소리가 들려온 듯한 기분이다…
 		RESETCOLOR
 		PRINTFORML
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORML ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORML ㆍㆍㆍ
 		PRINTFORML 늦게나마 돌아온 %조사처리(CALLNAME:ARG,"는")% 『급료』라고 쓰여진 봉투를 건네주고는 방에서 나갔다
 		PRINTFORMW 안에는 ￥{LOCAL:2}이 들어있었다…
 		PRINTFORML

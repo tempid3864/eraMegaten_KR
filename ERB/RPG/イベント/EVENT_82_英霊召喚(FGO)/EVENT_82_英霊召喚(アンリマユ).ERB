@@ -35,21 +35,21 @@
 IF 이벤트플래그:82:1 > 3
 	IF GETCHARA([[キャラ:앙리마유]]) > 0
 		RESULTS = この世全ての悪……？(アンリマユ)
-		RESULTS:1 = 要触媒：魔王アンリ・マンユ(陥落済)　アンリマユ加入済
+		RESULTS:1 = 要触媒：魔王アンリㆍマンユ(陥落済)　アンリマユ加入済
 		RETURN 0
-	ELSEIF GETCHARA([[キャラ:앙리・만유]]) > 0
-		IF !함락(GETCHARA([[キャラ:앙리・만유]]))
+	ELSEIF GETCHARA([[キャラ:앙리ㆍ만유]]) > 0
+		IF !함락(GETCHARA([[キャラ:앙리ㆍ만유]]))
 			RESULTS = この世全ての悪……？(アンリマユ)
-			RESULTS:1 = 要触媒：魔王アンリ・マンユ(陥落済)　未陥落
+			RESULTS:1 = 要触媒：魔王アンリㆍマンユ(陥落済)　未陥落
 			RETURN 0
 		ELSE
 			RESULTS = この世全ての悪……？(アンリマユ)
-			RESULTS:1 = 要触媒：魔王アンリ・マンユ(陥落済)　アンリマユ未加入
+			RESULTS:1 = 要触媒：魔王アンリㆍマンユ(陥落済)　アンリマユ未加入
 			RETURN 1
 		ENDIF
 	ELSE
 		RESULTS = この世全ての悪……？(アンリマンユ)
-		RESULTS:1 = 要触媒：魔王アンリ・マンユ(陥落済)　未所持
+		RESULTS:1 = 要触媒：魔王アンリㆍマンユ(陥落済)　未所持
 		RETURN 0
 	ENDIF
 ELSE
@@ -80,7 +80,7 @@ ENDIF
 	;キャラリストの下から順にキャラ検索
 	;該当するキャラを発見した場合、それを削除する
 	FOR L_COUNT,CHARANUM,-1,-1
-		IF L_COUNT == GETCHARA([[キャラ:앙리・만유]])
+		IF L_COUNT == GETCHARA([[キャラ:앙리ㆍ만유]])
 			SIF !함락(L_COUNT)
 				CONTINUE
 			CALL 캐릭터삭제, L_COUNT
@@ -106,11 +106,11 @@ ENDIF
 	PRINTFORMW  　というアレな姿は気になる
 	PRINTFORML 
 	PRINTFORML  「いやいやいや！　問題も、問題だらけだってーの！
-	PRINTFORMW  　アンタ、もしかしなくてもアンリ・マンユを生贄にしちゃった感じっしょコレ？」
+	PRINTFORMW  　アンタ、もしかしなくてもアンリㆍマンユを生贄にしちゃった感じっしょコレ？」
 	PRINTFORML 
-	PRINTFORML  ＞生贄となって既に消滅しているアンリ・マンユの残滓でも感じ取ったか
+	PRINTFORML  ＞生贄となって既に消滅しているアンリㆍマンユの残滓でも感じ取ったか
 	PRINTFORML  　そう言う少年に肯定の言葉を返してやると、ますます困惑したような表情を浮かべる
-	PRINTFORML  　もしかしてこの少年はアンリ・マンユとは関係のない存在なのだろうか？
+	PRINTFORML  　もしかしてこの少年はアンリㆍマンユとは関係のない存在なのだろうか？
 	PRINTFORMW  　召喚失敗、の文字が頭に浮かんだあなただったが、目の前の少年は否定の言葉を口にした
 	PRINTFORML 
 	PRINTFORML  「成功だけど失敗、失敗だけど成功っつーかー？
@@ -118,18 +118,18 @@ ENDIF
 	PRINTFORMW  　最弱英霊の名を欲しいままにするサーヴァントってなわけよ！」
 	PRINTFORML 
 	PRINTFORML  ＞にしし、と笑みを浮かべて自虐的な自己紹介をするアンリマユ
-	PRINTFORML  　しかし生贄にしたのは正真正銘のアンリ・マンユだったはずだ
+	PRINTFORML  　しかし生贄にしたのは正真正銘のアンリㆍマンユだったはずだ
 	PRINTFORMW  　それで何故、ニセモノと自称する彼が現れたのだろうか
 	PRINTFORML 
 	PRINTFORML  「んー、これはオレのテキトーな推測なワケですが。
-	PRINTFORML  　座に登録されててアンリ・マンユに縁があるヤツがオレしかいなかったか、
+	PRINTFORML  　座に登録されててアンリㆍマンユに縁があるヤツがオレしかいなかったか、
 	PRINTFORMW  　この召喚システムにホンモノの悪神をサーヴァントとして制御出来る性能がなかったんじゃね？」
 	PRINTFORML 
 	PRINTFORML  ＞なるほど
-	PRINTFORML  　たしかにゾロアスター教における悪神の頂点、魔王アンリ・マンユは高レベルの悪魔だ
+	PRINTFORML  　たしかにゾロアスター教における悪神の頂点、魔王アンリㆍマンユは高レベルの悪魔だ
 	PRINTFORMW  　彼の言う通りにこの召喚儀式では制御不可能だった可能性は高い
 	PRINTFORML  
-	PRINTFORML  「にしても、ホンモノの悪神アンリ・マンユの無駄遣い。
+	PRINTFORML  「にしても、ホンモノの悪神アンリㆍマンユの無駄遣い。
 	PRINTFORMW  　アインツベルンが泣いちゃうね、コレ！」
 	PRINTFORML 
 	PRINTFORML  ＞アインツベルン……たしか西欧にある錬金術の名門の家だったか？
@@ -245,10 +245,10 @@ ENDIF
 ;バトル設定
 ;--------------------
 ;戦闘開始時のイベント発生
-;サンプル：初手ノウブル・ファンタズムゲージMAX、気合フラグオン
+;サンプル：初手ノウブルㆍファンタズムゲージMAX、気合フラグオン
 @EVENT_BATTLE_START_EVENT82_3
 #DIM SKILL_NUM
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 30
 	PRINTFORML  
@@ -280,11 +280,11 @@ IF 이벤트플래그:82:5 == 30
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
 	PRINTFORM ┃[{CPOS((CHARANUM-1)),2}] %CALLNAME:(CHARANUM-1),21,LEFT%┃　┃
-	CALLFORM SKILL_NAME_ノウブル・ファンタズム,(CHARANUM-1)
+	CALLFORM SKILL_NAME_ノウブルㆍファンタズム,(CHARANUM-1)
 	PRINTFORML %RESULTS,40,LEFT%┃
 	PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-	CALL ACTION_ノウブル・ファンタズム,(CHARANUM-1)
+	CALL ACTION_ノウブルㆍファンタズム,(CHARANUM-1)
 	CFLAG:(CHARANUM-1):기합플래그 = 1
 	이벤트플래그:82:5 = 31
 ENDIF
@@ -294,7 +294,7 @@ ENDIF
 ;---------------------------------------------------
 #DIM SKILL_NUM
 
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 32 && 현HP비율(CHARANUM-1) < 50
 	CUSTOMDRAWLINE =
@@ -340,7 +340,7 @@ ENDIF
 @SET_ACTION_この世全ての悪, ARG
 #DIM SKILL_NUM,2
 
-SKILL_NUM:0 = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM:0 = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 SKILL_NUM:1 = PU_SKILLNUM_GET((CHARANUM-1),"偽り写し記す万象")
 
 SELECTCASE 이벤트플래그:82:5

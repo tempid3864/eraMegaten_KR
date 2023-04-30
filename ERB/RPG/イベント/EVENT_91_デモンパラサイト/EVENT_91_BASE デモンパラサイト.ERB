@@ -14,16 +14,16 @@ IF 이벤트플래그:91:0 == 0
 	RETURN 1
 ;당신の레벨10이상
 ELSEIF 이벤트플래그:91:0 == 1 && BASE:MASTER:30 >= 10
-	RESULTS = 연분홍색의소녀・내방
+	RESULTS = 연분홍색의소녀ㆍ내방
 	RETURN 1
 ELSEIF 이벤트플래그:91:0 == 2
-	RESULTS = （EX:DP）연분홍색의소녀・재방
+	RESULTS = （EX:DP）연분홍색의소녀ㆍ재방
 	RETURN 1
 ELSEIF 이벤트플래그:91:0 == 3 && BASE:MASTER:30 >= 15
 	RESULTS = （EX:DP）야마토 나데시코
 	RETURN 1
 ELSEIF 이벤트플래그:91:0 == 4 && 이벤트플래그:91:9 == 0
-	RESULTS = 데몬 파라패치・디버그 처리
+	RESULTS = 데몬 파라패치ㆍ디버그 처리
 	RETURN 1
 ENDIF
 RETURN 0

@@ -10,10 +10,10 @@
 ;	005		2011/07/17		----					クリ愛撫追加
 ;	006		2012/06/07		----					騎乗位、騎乗位アナル、下着ずらし挿入、下着ずらし挿入アナル、縦パイズリの誤記修正
 ;	007		2019/10/30		ypa 					盟友取得追加
-;	008		2020/03/17		(ﾟдﾟ)					コンサートにおけるライブハウス・大劇場のパターンを整備
+;	008		2020/03/17		(ﾟдﾟ)					コンサートにおけるライブハウスㆍ大劇場のパターンを整備
 ;	009		2020/06/01		(ﾟдﾟ)					後天性の純デビシフにも道具知識LV3が付くように追加
 ;	010		2020/09/06		MkjX					触手系コマンドを修正
-;	011		2020/09/21		U-U						改造手術で異能者・メカっぽい素質がつくように
+;	011		2020/09/21		U-U						改造手術で異能者ㆍメカっぽい素質がつくように
 ;	012		2021/01/28		eMさ者					愛撫、胸愛撫系、クリ愛撫、キス、会話、V挿入系コマンドにV挿入継続時の分岐を追加
 ;	013		2021/02/10		純水100%				オトコだと矛盾する表記の書き換え
 ;	014		2021/02/19		J>s!UL@1				A系派生コマンド追加
@@ -22,7 +22,7 @@
 ;	017		2021/09/26		JK好き					@EVENT_MESSAGE_96 パンティ等をずらした時のメッセージを修正
 ;	018		2021/11/04		JK好き					@EVENT_MESSAGE_44及び@EVENT_MESSAGE_96に触手ブラ触手パンツ触手スーツ時の分岐を追加
 ;	019		2021/12/07		JK好き					頑張れる範囲でマジックナンバーを整理
-;	020		2021/03/06		JK好き					マジックナンバーを整理、死に分岐を調整、朝Vレイプ・調教後セックス(逆転)追加
+;	020		2021/03/06		JK好き					マジックナンバーを整理、死に分岐を調整、朝Vレイプㆍ調教後セックス(逆転)追加
 ;	021		2021/03/12		JK好き					コンサート実行時にエラー落ちする可能性があった問題を修正
 ;	022		2022/06/28		JK好き					@EVENT_MESSAGE_11 父親が触手の場合の地の文分岐が上手くいっていなかった問題を修正
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
@@ -363,7 +363,7 @@ ELSEIF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 손에서 흘러넘칠 정도의 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 손으로 다 들 수 없을만큼 큰
 ENDIF
@@ -441,7 +441,7 @@ ELSEIF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 손에서 흘러넘칠 정도의 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 손으로 다 들 수 없을만큼 큰
 ENDIF
@@ -498,7 +498,7 @@ ELSEIF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 손에서 흘러넘칠 정도의 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 손으로 다 들 수 없을만큼 큰 
 ENDIF
@@ -655,7 +655,7 @@ ELSEIF TALENT:절벽
 ;거유
 ELSEIF TALENT:거유
 	PRINTFORM 커다란 유방
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINTFORM 풍만한 가슴
 ELSE
@@ -1567,7 +1567,7 @@ IF TEQUIP:수치플레이
 		;거유
 		ELSEIF TALENT:거유
 			PRINTFORM 풍만한 
-		;폭유・마유
+		;폭유ㆍ마유
 		ELSEIF TALENT:폭유 || TALENT:마유
 			PRINTFORM 거대한 
 		ENDIF
@@ -1777,7 +1777,7 @@ ELSEIF TALENT:절벽
 ;거유
 ELSEIF TALENT:거유
 	PRINT 풍만한 가슴에、파묻히게 찌르듯이 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 지나치게 풍만한 가슴에、파묻히게 찔러 박듯이
 ELSE
@@ -1818,7 +1818,7 @@ IF (TALENT:연모 || TALENT:음란 || TALENT:복종 || TALENT:친애 || TALENT:�
 	;거유
 	SIF TALENT:거유
 		PRINT 커다란 가슴을 흔들면서 
-	;폭유・마유
+	;폭유ㆍ마유
 	SIF TALENT:폭유 || TALENT:마유
 		PRINT 튀어오르는 가슴을 몸째로 흔들면서 
 	PRINTW 스스로 허리를 움직이고 있다……
@@ -1854,7 +1854,7 @@ IF (TALENT:연모 || TALENT:음란 || TALENT:복종 || TALENT:친애 || TALENT:�
 	;거유
 	SIF TALENT:거유
 		PRINT 커다란 가슴을 흔들면서
-	;폭유・마유
+	;폭유ㆍ마유
 	SIF TALENT:폭유 || TALENT:마유
 		PRINT 튀어오르는 가슴을 몸째로 흔들면서
 	PRINTW 스스로 허리를 움직이고 있다……
@@ -1942,7 +1942,7 @@ ELSEIF TALENT:절벽
 ;빈유
 ELSEIF TALENT:빈유
 	PRINT 빈약한 가슴을 주무르면서、
-;거유・폭유・마유
+;거유ㆍ폭유ㆍ마유
 ELSEIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 	PRINT 풍만한 가슴을 주무르면서、
 ENDIF
@@ -2041,7 +2041,7 @@ ELSEIF TALENT:절벽
 ;빈유
 ELSEIF TALENT:빈유
 	PRINT 빈약한 가슴을 쓰다듬으면서、
-;거유・폭유・마유
+;거유ㆍ폭유ㆍ마유
 ELSEIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 	PRINT 풍만한 가슴을 주무르면서、
 ENDIF
@@ -2273,7 +2273,7 @@ IF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 풍만한 가슴으로 페니스를 감싸서 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 지나치게 풍만한 가슴으로 페니스를 파묻듯이 감싸서 
 ELSE
@@ -2337,7 +2337,7 @@ SIF (TALENT:연모 || TALENT:친애)
 ;유아체형
 IF TALENT:유아체형
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"를")% 아담한 몸으로 힘껏 문지르면서 
-;거유・폭유・마유＋유아체형でない
+;거유ㆍ폭유ㆍ마유＋유아체형でない
 ELSEIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 	PRINTFORM %조사처리(CALLNAME:PLAYER,"를")% 풍만한 가슴과 폭신한 피부로 비벼서 
 ELSE
@@ -2462,7 +2462,7 @@ IF TEQUIP:밧줄 == 0
 			;거유
 			IF TALENT:거유
 				PRINT 풍만한 가슴을 흔들듯이 페니스를 
-			;폭유・마유
+			;폭유ㆍ마유
 			ELSEIF TALENT:폭유 || TALENT:마유
 				PRINT 지나치게 풍만한 가슴으로 끼워넣어진 페니스를 
 			ENDIF
@@ -2472,7 +2472,7 @@ IF TEQUIP:밧줄 == 0
 		;거유
 		IF TALENT:거유
 			PRINT 풍한한 가슴으로 페니스를 감싸、가슴을 흔들면서 
-		;폭유・마유
+		;폭유ㆍ마유
 		ELSEIF TALENT:폭유 || TALENT:마유
 			PRINT 지나칠정도로 큰 가슴으로 페니스를 감싸、가슴을 비벼서 
 		ENDIF
@@ -2484,7 +2484,7 @@ ELSE
 	;거유
 	IF TALENT:거유
 		PRINT 풍만한 유방
-	;폭유・마유
+	;폭유ㆍ마유
 	ELSEIF TALENT:폭유 || TALENT:마유
 		PRINT 지나칠 정도로 큰 유방
 	ENDIF
@@ -2533,7 +2533,7 @@ IF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINTW 풍만한 가슴에 페니스를 감싸서、바깥으로 나온 귀두를 핥아서 자극하고 있다……
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINTW 지나칠정도로 큰 가슴에 페니스를 파묻어서、때때로 혀를 넣으며 열심히 페니스를 핥고 있다……
 ELSE
@@ -2563,7 +2563,7 @@ ELSEIF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 손에서 흘러넘칠 정도의
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 손으로 다 들수 없을 정도로 큰 
 ENDIF
@@ -2667,7 +2667,7 @@ ELSE
 	;거유
 	IF TALENT:거유
 		PRINT 풍만한 유방을 흔들어、
-	;폭유・마유
+	;폭유ㆍ마유
 	ELSEIF TALENT:폭유 || TALENT:마유
 		PRINT 지나칠 정도로 큰 유방을 퉁겨올리며 
 	ELSE
@@ -3483,7 +3483,7 @@ IF TEQUIP:유두캡
 	;거유
 	ELSEIF TALENT:거유
 		PRINT 손에서 흘러내릴 정도의 
-	;폭유・마유
+	;폭유ㆍ마유
 	ELSEIF TALENT:폭유 || TALENT:마유
 		PRINT 손에 다 들 수 없을 정도로 큰 
 	ENDIF
@@ -3513,7 +3513,7 @@ IF TEQUIP:착유기
 	;거유
 	ELSEIF TALENT:거유
 		PRINT 손에서 흘러내릴 정도의 
-	;폭유・마유
+	;폭유ㆍ마유
 	ELSEIF TALENT:폭유 || TALENT:마유
 		PRINT 손으로 채 들지 못할 정도의 
 	ENDIF
@@ -4257,7 +4257,7 @@ SIF TALENT:빈유
 ;거유
 SIF TALENT:거유
 	PRINT 그 커다란 
-;폭유・마유
+;폭유ㆍ마유
 SIF TALENT:폭유 || TALENT:마유
 	PRINT 그 거대한 
 ;모유체질
@@ -4430,7 +4430,7 @@ IF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINTL 풍만한 가슴으로 페니스를 감싸
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINTL 지나칠정도로 큰 가슴으로 페니스를 파묻어버릴 듯이 해서 
 ELSE
@@ -4454,7 +4454,7 @@ ELSEIF TALENT:빈유
 ;거유
 ELSEIF TALENT:거유
 	PRINT 손에서 흘러내릴 정도의 
-;폭유・마유
+;폭유ㆍ마유
 ELSEIF TALENT:폭유 || TALENT:마유
 	PRINT 손으로 다 들지 못할 정도로 큰 
 ENDIF
@@ -4907,7 +4907,7 @@ IF CFLAG:붓카케장소판별플래그
 				IF ABL:순종 >= 4 || TALENT:연모 || TALENT:친애 || TALENT:음란 || TALENT:창부 || TALENT:복종 || TALENT:예속
 					PRINTFORML %타겟은% 기쁜 표정으로 정액을 손가락으로 건져、딱딱하게 선 유두에 펴바르고 있다……
 				ENDIF
-			;거유・폭유・마유
+			;거유ㆍ폭유ㆍ마유
 			ELSEIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 				PRINTFORML 푹신한 가슴의 골짜기에 백탁액을 모았다
 				IF ABL:순종 >= 4 || TALENT:연모 || TALENT:친애 || TALENT:음란 || TALENT:창부 || TALENT:복종 || TALENT:예속
@@ -5236,7 +5236,7 @@ ENDIF
 IF TFLAG:34 == 1
 	IF TRAINNAME:SELECTCOM == "세로파이즈리"
 		;大量射精と共通で、乳房露出が0以上の場合、胸構造がボタンになっていないと縦ズリ不可なのでボタン式前提
-		;恋慕・親愛…何時も思うけどこれ淫乱・娼婦の間違いだよね？
+		;恋慕ㆍ親愛…何時も思うけどこれ淫乱ㆍ娼婦の間違いだよね？
 		IF 함락() || PALAM:6 >= PALAMLV:5
 			PRINTFORM 부드러운 가슴 사이에서 %CALLNAME:PLAYER%의 페니스가 맥박치고、
 			IF TEQUIP:유방노출 > -1 && TEQUIP:가슴앞열림 == 0
@@ -5250,7 +5250,7 @@ IF TFLAG:34 == 1
 					TFLAG:메시지패턴 = 2
 				ELSE
 					PRINTFORM %조사처리(CALLNAME:PLAYER,"가")% 페니스를 뽑자
-					;거유・폭유・마유
+					;거유ㆍ폭유ㆍ마유
 					SIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 						PRINTFORM 풍만한 
 					PRINTFORML 가슴과 가슴 사이에서 뜨거운 정액이 새어나오는 것이、%CLOTHESNAMEF(,TEQUIP:유방노출)%의 틈새에서 보이는、
@@ -5258,7 +5258,7 @@ IF TFLAG:34 == 1
 				ENDIF
 			ELSE
 				PRINTFORM %조사처리(CALLNAME:PLAYER,"가")% 페니스를 뽑자
-				;거유・폭유・마유
+				;거유ㆍ폭유ㆍ마유
 				SIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 					PRINTFORM 풍만한 
 				PRINTFORM 가슴계곡을 뜨거운 정액이 쏟아져、
@@ -5272,7 +5272,7 @@ IF TFLAG:34 == 1
 		ELSE
 			PRINTFORML 부드러운 젖가슴 사이에 있는、%CALLNAME:PLAYER%의 페니스에서 정액이 뿜어져나온다……
 		ENDIF
-		;연모・친애（ｒｙ
+		;연모ㆍ친애（ｒｙ
 		IF ABL:정액중독 >= 3
 			PRINTFORM 하얗고 탁한 정액을 %타겟은% 
 			SIF (TALENT:연모 || TALENT:친애)
@@ -5311,7 +5311,7 @@ IF TFLAG:34 == 1
 ;가슴で大量사정
 ELSEIF TFLAG:34 >= 2
 	IF TRAINNAME:SELECTCOM == "세로파이즈리"
-		;연모・친애…何時も思うけどこれ음란・창부の間違いだよね？
+		;연모ㆍ친애…何時も思うけどこれ음란ㆍ창부の間違いだよね？
 		IF 함락() || PALAM:6 >= PALAMLV:5
 			PRINTFORM 부드러운 가슴 사이에서 %CALLNAME:PLAYER%의 페니스가 맥박치고、
 			IF TEQUIP:유방노출 > -1 && TEQUIP:가슴앞열림 == 0
@@ -5321,13 +5321,13 @@ ELSEIF TFLAG:34 >= 2
 			ENDIF
 			IF TEQUIP:밧줄 == 0
 				PRINTFORM 양손으로 
-				;거유・폭유・마유
+				;거유ㆍ폭유ㆍ마유
 				SIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 					PRINTFORM 커다란 
 				PRINTFORM 가슴을 받치고、페니스 전체를 감싸는 
 			ELSE
 				PRINTFORM 구속된 채인 
-				;거유・폭유・마유
+				;거유ㆍ폭유ㆍ마유
 				SIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 					PRINTFORM 커다란 
 				PRINTFORM 가슴 계곡에 페니스를 끼워넣어 농락한 
@@ -5342,7 +5342,7 @@ ELSEIF TFLAG:34 >= 2
 					PRINTFORM %조사처리(CLOTHESNAMEF(,TEQUIP:유방노출),"와")% 속이 정액으로 질척질척해지는 것을 
 					TFLAG:메시지패턴 = 2
 				ELSE
-					;거유・폭유・마유
+					;거유ㆍ폭유ㆍ마유
 					SIF TALENT:거유 || TALENT:폭유 || TALENT:마유
 					PRINTFORM 풍만한 
 					PRINTFORM 열려진 %CLOTHESNAMEF(,TEQUIP:유방노출)%의 앞가슴 에서 뜨거운 정액이 흘러나오는 것을 
@@ -6000,7 +6000,7 @@ PRINTFORML 하루의 준비를 하고 있으니 %조사처리(CALLNAME:B,"가")%
 PRINTFORMW %조사처리(CALLNAME:B,"는")% 짜낸 모유를 컵에 담아 전해 주었다
 
 ;잠자다 실례
-;「洗濯機」に違和感を覚えるのはeratohoの影響なのか・・・
+;「洗濯機」に違和感を覚えるのはeratohoの影響なのかㆍㆍㆍ
 @EVENT_MESSAGE_30
 PRINTFORM 아침、세면장으로 향하자 우울한 얼굴로 시트를 
 IF TALENT:B:짐승 || TALENT:B:새 || TALENT:B:파충류 || TALENT:B:부정형 || TALENT:B:물고기
@@ -6751,7 +6751,7 @@ SELECTCASE RAND:12
 					CASE 7
 						PRINTL 몸을 바싹 대면、
 				ENDSELECT
-				;三・四行
+				;三ㆍ四行
 				SELECTCASE RAND:2
 					CASE 0
 						;三行目A
@@ -7116,7 +7116,7 @@ SELECTCASE RAND:10
 		ENDSELECT
 ENDSELECT
 
-;요바이（양쪽C（스마타）・양쪽C（조개맞대기）・両者C（투구合わせ））
+;요바이（양쪽C（스마타）ㆍ양쪽C（조개맞대기）ㆍ両者C（투구合わせ））
 @EVENT_MESSAGE_34
 SELECTCASE RAND:5
 	CASE 0
@@ -8554,7 +8554,7 @@ ELSE
 		PRINTFORMW %타겟은% 【례ＮＴＲ】 상태가 되었습니다
 ENDIF
 
-;ＮＴＲ요바이・난교파티
+;ＮＴＲ요바이ㆍ난교파티
 @EVENT_MESSAGE_51
 PRINTFORML %조사처리(CALLNAME,"는")% 은근한 욱신거림에 저항하지 못하고 밤중에 몰래 방을 빠져나갔다.
 SELECTCASE RAND:3
@@ -8566,7 +8566,7 @@ SELECTCASE RAND:3
 		PRINTFORMW 아무래도 난교 파티에 참가해 즐기고 온 모양이다……
 ENDSELECT
 
-;ＮＴＲ요바이・공원
+;ＮＴＲ요바이ㆍ공원
 @EVENT_MESSAGE_52
 PRINTFORML %조사처리(CALLNAME,"는")% 달아오른 몸을 주체 못해 밤중에 몰래 방을 빠져나갔다
 IF TALENT:남자 == 1
@@ -8596,12 +8596,12 @@ ELSE
 	ENDSELECT
 ENDIF
 
-;ＮＴＲ요바이・변기
+;ＮＴＲ요바이ㆍ변기
 @EVENT_MESSAGE_53
 PRINTFORML %조사처리(CALLNAME,"는")% 열에 녹은 것 같은 표정으로 밤중에 몰래 방을 빠져나가 공중변소로 향했다
 PRINTFORMW 아무래도 공짜로 변소로서 사용되었던 모양이다……
 
-;ＮＴＲ요바이・밤의 거리
+;ＮＴＲ요바이ㆍ밤의 거리
 @EVENT_MESSAGE_54
 PRINTFORML %조사처리(CALLNAME,"는")% 달아오른 몸을 주체 못해 밤중에 몰래 방을 빠져나갔다
 IF TALENT:남자 == 1
@@ -8641,7 +8641,7 @@ ELSE
 	ENDSELECT
 ENDIF
 
-;ＮＴＲ요바이・ＮＴＲ前の逢引
+;ＮＴＲ요바이ㆍＮＴＲ前の逢引
 @EVENT_MESSAGE_55
 SELECTCASE RAND:8
 	CASE 7
@@ -8667,7 +8667,7 @@ SELECTCASE RAND:8
 		PRINTFORMW 둘은 손가락을 마주 얽고 오랫동안 이야기를 나눈 모양이다……
 ENDSELECT
 
-;ＮＴＲ요바이・ＮＴＲ후 첫 밀회
+;ＮＴＲ요바이ㆍＮＴＲ후 첫 밀회
 @EVENT_MESSAGE_56
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8685,7 +8685,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDIF
 ENDIF
 
-;ＮＴＲ요바이・데이트
+;ＮＴＲ요바이ㆍ데이트
 @EVENT_MESSAGE_57
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8742,7 +8742,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDSELECT
 ENDIF
 
-;ＮＴＲ요바이・본방
+;ＮＴＲ요바이ㆍ본방
 @EVENT_MESSAGE_58
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8771,7 +8771,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDIF
 ENDIF
 
-;ＮＴＲ요바이・자위서로과시
+;ＮＴＲ요바이ㆍ자위서로과시
 @EVENT_MESSAGE_59
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8823,7 +8823,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDSELECT
 ENDIF
 
-;ＮＴＲ요바이・애널
+;ＮＴＲ요바이ㆍ애널
 @EVENT_MESSAGE_60
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8856,7 +8856,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDIF
 ENDIF
 
-;ＮＴＲ요바이・야외플레이
+;ＮＴＲ요바이ㆍ야외플레이
 @EVENT_MESSAGE_61
 IF TALENT:ＮＴＲ == 1 || TALENT:ＮＴＲ == 4
 	;연모系
@@ -8897,7 +8897,7 @@ ELSEIF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	ENDSELECT
 ENDIF
 
-;ＮＴＲ요바이・야외조교
+;ＮＴＲ요바이ㆍ야외조교
 @EVENT_MESSAGE_62
 IF TALENT:ＮＴＲ == 3 || TALENT:ＮＴＲ == 6
 	;예속系（しか来ないはず）
@@ -9100,7 +9100,7 @@ TRYCALLFORM EVENT_MESSAGE_{TFLAG:13}
 ;;요바이（주인A 상대C）
 ;SIF TFLAG:13 == 33
 ;	CALL EVENT_MESSAGE_33
-;;요바이 （両者C（素）・両者C（貝））
+;;요바이 （両者C（素）ㆍ両者C（貝））
 ;SIF TFLAG:13 == 34
 ;	CALL EVENT_MESSAGE_34
 ;;밤 자위
@@ -9131,10 +9131,10 @@ TRYCALLFORM EVENT_MESSAGE_{TFLAG:13}
 ;スト劇場
 ;SIF TFLAG:13 == 43
 ;	CALL EVENT_MESSAGE_43
-;着替え・胸を出す
+;着替えㆍ胸を出す
 ;SIF TFLAG:13 == 44
 ;	CALL EVENT_MESSAGE_44
-;着替え・股間を出す
+;着替えㆍ股間を出す
 ;SIF TFLAG:13 == 96
 ;	CALL EVENT_MESSAGE_96
 
@@ -9156,7 +9156,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORM 모습은
 		ENDIF
 		PRINTFORML 、실로 매력적이다。
-		;속옷（하）・전신속옷なし
+		;속옷（하）ㆍ전신속옷なし
 		SIF CFLAG:속옷（하） == 0 && CFLAG:전신속옷 == 0
 			PRINTFORM 맨살 위에 입은 
 		PRINTFORM 블루머에서 쭉 뻗어나온 
@@ -9236,7 +9236,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORMW 들어올려졌다.
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;上下ピアス＆옷・하의なし
+	;上下ピアス＆옷ㆍ하의なし
 	;--------------------------------------------------------------------------------------
 	ELSEIF CFLAG:속옷（상） == [[衣装:니플피어스]] && CFLAG:속옷（하） == [[衣装:라비아피어스]] && CFLAG:옷 == 0 && CFLAG:하의 == 0
 		PRINTFORM 피어스로 장식된 나신을、%조사처리(CALLNAME,"는")% 
@@ -9258,7 +9258,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORMW 몸을 배배 꼬고 있다.
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;네글리제＆옷・하의・전신복なし
+	;네글리제＆옷ㆍ하의ㆍ전신복なし
 	;--------------------------------------------------------------------------------------
 	ELSEIF CFLAG:속옷（상） == 506 && CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0
 		PRINTFORM 얇은 천 너머로 비쳐보이는 
@@ -9301,17 +9301,17 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORMW …오늘의 조교는、기대할 만하다.
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;세일러복＋스커트（ロング・ミニ含む）
+	;세일러복＋스커트（ロングㆍミニ含む）
 	;--------------------------------------------------------------------------------------
 	;ELSEIF CFLAG:옷 == 102 && (CFLAG:하의 == 201 || CFLAG:하의 == 205 || CFLAG:하의 == 207)
 	;
 	;--------------------------------------------------------------------------------------
-	;블라우스＋스커트（ロング・ミニ含む）＋블레이저교복
+	;블라우스＋스커트（ロングㆍミニ含む）＋블레이저교복
 	;--------------------------------------------------------------------------------------
 	;ELSEIF CFLAG:옷 == 107 && (CFLAG:하의 == 201 || CFLAG:하의 == 205 || CFLAG:하의 == 207) && CFLAG:겉옷 == 3
 	;
 	;--------------------------------------------------------------------------------------
-	;옷・하의・전신복なし＋水着系
+	;옷ㆍ하의ㆍ전신복なし＋水着系
 	;--------------------------------------------------------------------------------------
 	ELSEIF CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0 && (CFLAG:전신속옷 == 703 || CFLAG:전신속옷 == 710 || CFLAG:전신속옷 == 713)
 		;슬링샷
@@ -9338,7 +9338,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			ENDIF
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;옷・하의・전신복なし＋레오타드
+	;옷ㆍ하의ㆍ전신복なし＋레오타드
 	;--------------------------------------------------------------------------------------
 	ELSEIF CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0 && CFLAG:전신속옷 == 704
 		IF TALENT:유아체형
@@ -9363,7 +9363,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORMW 가슴이 살짝 부푼 것이 보였다.
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;옷・하의・전신복なし＋穴開き水着系or穴開き레오타드
+	;옷ㆍ하의ㆍ전신복なし＋穴開き水着系or穴開き레오타드
 	;--------------------------------------------------------------------------------------
 	ELSEIF CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0 && (CFLAG:전신속옷 == 705 || CFLAG:전신속옷 == 711 || CFLAG:전신속옷 == 714)
 		IF TALENT:유아체형
@@ -9410,7 +9410,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 			PRINTFORMW 필사적으로 가리려 하고 있다.
 		ENDIF
 	;--------------------------------------------------------------------------------------
-	;옷・하의・전신복なし＋새끼줄
+	;옷ㆍ하의ㆍ전신복なし＋새끼줄
 	;--------------------------------------------------------------------------------------
 	;ELSEIF CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0 && CFLAG:전신속옷 == 712
 	;
@@ -9514,7 +9514,7 @@ IF TALENT:남자 == 0 || TALENT:오토코노코
 		ELSEIF CFLAG:속옷（상） == 0 && CFLAG:속옷（하）
 			CALL CLOTHES_NAME,6,TARGET
 			PRINTFORM 을 입었을 뿐인 반라 상태의 
-		;그외（上半身・下半身に衣옷なし）
+		;그외（上半身ㆍ下半身に衣옷なし）
 		ELSE
 		;IF CFLAG:옷 == 0 && CFLAG:하의 == 0 && CFLAG:전신복 == 0 && CFLAG:속옷（상） == 0 && CFLAG:속옷（하） == 0 && CFLAG:전신속옷 == 0
 			PRINTFORM 의복을 몸에 걸치지 않은 

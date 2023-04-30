@@ -142,9 +142,9 @@ ELSEIF ARG:2 == 3
 	CFLAG:ARG:클리자극횟수 = 1 + RAND:(MAX(1 , TCVAR:ARG:획득자위경험 - 1))
 	CFLAG:ARG:가슴자극횟수 = TCVAR:ARG:획득자위경험 - CFLAG:ARG:클리자극횟수
 ELSEIF ARG:2 == 4
-	PRINTFORML ・
-	PRINTFORML ・・
-	PRINTFORML ・・・
+	PRINTFORML ㆍ
+	PRINTFORML ㆍㆍ
+	PRINTFORML ㆍㆍㆍ
 	PRINTL 
 	;윤간확률
 	IF 위험일(ARG) >= 2
@@ -417,7 +417,7 @@ FOR LOCAL , 0 ,1 + (ARG:1 > -1 && !LOCAL:3)
 			DOWNBASE:(ARG:LOCAL):기력 += 100
 		ENDIF
 	ENDIF
-;체력・기력소비
+;체력ㆍ기력소비
 	;던전내발정용욕정치は절정分減り、윤간された場合は増える、자위は少量減る
 	SIF ARG:2 < 3
 		CFLAG:(ARG:LOCAL):던전내발정용욕정치 -= LIMIT(SUMARRAY(NOWEX:(ARG:LOCAL):0, 0, 6) * 800, 0, 6000+(250*(RAND:8+1)))
@@ -576,9 +576,9 @@ CALL EVENT_MESSAGE_COMMON_DUNGEONSEX
 PRINTFORMW %타겟은% 악마와 마주치고 말았다
 PRINTFORMW %CALLNAME:PLAYER% 무리가 벌이는 능욕의 연회가 시작되었다…
 PRINTL 
-PRINTFORML ・・・
-PRINTFORML ・・
-PRINTFORML ・
+PRINTFORML ㆍㆍㆍ
+PRINTFORML ㆍㆍ
+PRINTFORML ㆍ
 PRINTL 
 PRINTFORMW %타겟이% {RESULT:1}명의 %CALLNAME:PLAYER% 무리에게 범해졌다…
 

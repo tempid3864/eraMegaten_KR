@@ -827,7 +827,7 @@ RETURN 1
 @TREASURE_47
 #LOCALSIZE 1
 #LOCALSSIZE 3
-;個数,-1のとき、마카・0の時、\となる
+;個数,-1のとき、마카ㆍ0の時、\となる
 LOCAL = 1
 ;IDは현M*100＋X個눈の宝箱の法則でふられている
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
@@ -1004,7 +1004,7 @@ ENDSELECT
 @SET_ENEMY_STATUS_47, ARG
 SELECTCASE NO:ARG
 	CASE [[キャラ:템플나이트]]
-		;デフォは잔마・마카쟈마・연속사격・돌려차기
+		;デフォは잔마ㆍ마카쟈마ㆍ연속사격ㆍ돌려차기
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 2
 				ABL:ARG:스킬1 = [[스킬:잔다인]]
@@ -1017,20 +1017,20 @@ SELECTCASE NO:ARG
 				ABL:ARG:스킬4 = [[스킬:데스바운드]]
 		ENDSELECT
 	CASE [[キャラ:광신자]]
-		;デフォは메디아・숏잽
+		;デフォは메디아ㆍ숏잽
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 2
-				ABL:ARG:스킬1 = [[스킬:메・디아라마]]
+				ABL:ARG:스킬1 = [[스킬:메ㆍ디아라마]]
 				ABL:ARG:스킬3 = [[스킬:마구날뛰기]]
 			CASE 3
-				ABL:ARG:스킬1 = [[스킬:메・디아라마]]
+				ABL:ARG:스킬1 = [[스킬:메ㆍ디아라마]]
 				ABL:ARG:스킬3 = [[스킬:자폭]]
 			CASE 4
-				ABL:ARG:스킬1 = [[스킬:메・디아라마]]
+				ABL:ARG:스킬1 = [[스킬:메ㆍ디아라마]]
 				ABL:ARG:스킬3 = [[스킬:옥쇄파]]
 		ENDSELECT
 	CASE [[キャラ:라비]]
-		;デフォは지온가・한마・연속사격・마린카린・텐타라후
+		;デフォは지온가ㆍ한마ㆍ연속사격ㆍ마린카린ㆍ텐타라후
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 3
 				ABL:ARG:스킬1 = [[스킬:지오다인]]
@@ -1040,7 +1040,7 @@ SELECTCASE NO:ARG
 				ABL:ARG:스킬2 = [[스킬:하마온]]
 		ENDSELECT
 	CASE 3128
-		;テンプル♀　デフォは잔마・시바브・연속사격・돌려차기
+		;テンプル♀　デフォは잔마ㆍ시바브ㆍ연속사격ㆍ돌려차기
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 2
 				ABL:ARG:스킬1 = [[스킬:잔다인]]

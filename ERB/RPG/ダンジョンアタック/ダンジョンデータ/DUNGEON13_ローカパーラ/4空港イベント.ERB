@@ -308,9 +308,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,9,[[キャラ:쿠・훌린]],40,0,1
+			CALL SET_ENEMY,9,[[キャラ:쿠ㆍ훌린]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
-				ABL:(CHARANUM-1):스킬4 = [[스킬:라쿤・다]]
+				ABL:(CHARANUM-1):스킬4 = [[스킬:라쿤ㆍ다]]
 				BASE:(CHARANUM-1):61 -= 100
 				BASE:(CHARANUM-1):62 -= 100
 				BASE:(CHARANUM-1):63 -= 100
@@ -336,7 +336,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마하코우하]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:무거운공기]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:마칸・다]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:마칸ㆍ다]]
 				BASE:(CHARANUM-1):61 -= 100
 				BASE:(CHARANUM-1):62 -= 100
 				BASE:(CHARANUM-1):63 -= 100
@@ -362,7 +362,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마하코우하]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:파마가드브레이크]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:마칸・다]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:마칸ㆍ다]]
 				BASE:(CHARANUM-1):61 -= 100
 				BASE:(CHARANUM-1):62 -= 100
 				BASE:(CHARANUM-1):63 -= 100
@@ -574,8 +574,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SET_ENEMY,7,[[キャラ:그르르]],43,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
-				ABL:(CHARANUM-1):스킬1 = [[스킬:타루・카쟈]]
-				ABL:(CHARANUM-1):스킬2 = [[스킬:마카・카쟈]]
+				ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬2 = [[스킬:마카ㆍ카쟈]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:물어-뜯기]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:사이코배리어]]
 				ABL:(CHARANUM-1):스킬5 = [[스킬:어둠의벽]]
@@ -656,8 +656,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SET_ENEMY,11,[[キャラ:그르르]],40,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
-				ABL:(CHARANUM-1):스킬1 = [[스킬:타루・카쟈]]
-				ABL:(CHARANUM-1):스킬2 = [[스킬:마카・카쟈]]
+				ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬2 = [[스킬:마카ㆍ카쟈]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:머리깨기]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:극채의질풍]]
 				ABL:(CHARANUM-1):스킬5 = [[스킬:불의벽]]
@@ -784,7 +784,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 						DITEMTYPE:LOCAL:페르소나("인내력") = 5
 						DITEMTYPE:LOCAL:페르소나("속도") = 5
 						DITEMTYPE:LOCAL:페르소나("운") = 7
-						DITEMTYPE:LOCAL:페르소나("스킬4") = 1804;마하・그라이
+						DITEMTYPE:LOCAL:페르소나("스킬4") = 1804;마하ㆍ그라이
 						DITEMTYPE:LOCAL:페르소나("스킬5") = 606;사이코배리어
 						DITEMTYPE:LOCAL:페르소나("스킬6") = 113;산탄사격
 						DITEMTYPE:LOCAL:페르소나("스킬7") = 1802;그라이바
@@ -1139,7 +1139,7 @@ SELECTCASE FLAG:현M
 			ELSEIF RAND:11 == 0
 				RETURN [[キャラ:네반]]
 			ELSEIF RAND:10== 0
-				RETURN [[キャラ:나가・칸냐]]
+				RETURN [[キャラ:나가ㆍ칸냐]]
 			ELSEIF RAND:9 == 0
 				RETURN [[キャラ:스튐팔리데스]]
 			ELSEIF RAND:8 == 0

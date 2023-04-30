@@ -259,7 +259,7 @@ IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	IF !FLAG:카운터중
 		CFLAG:ARG:공격강화 = MIN(32, CFLAG:ARG:공격강화 + 4)
 		CFLAG:ARG:마법위력강화 = MIN(32, CFLAG:ARG:마법위력강화 + 4)
-		PRINT 공격・마법위력이 높아지고、
+		PRINT 공격ㆍ마법위력이 높아지고、
 	ENDIF
 	PRINTL 재염이 하나 늘었다。
 	SIF SKILLGAGE_H_GET(ARG,3554) >= 3

@@ -49,7 +49,7 @@ RETURN 1
 @EQUIPMENT , ARG = -1 , ARG:1 = -1
 #DIM LINE
 #DIM LCOUNT
-;キャラリストを표시・選択
+;キャラリストを표시ㆍ選択
 IF ARG == -1
 	CALL INPUT_CHARA_LIST("장비를 변경시키고 싶은 캐릭터를 선택하십시오", "CASTING_EQUIPMENT")
 	SIF RESULT == 1000
@@ -139,13 +139,13 @@ IF FLAG:장비화면생략스위치 == 0
 						CASE 5
 							PRINTL 창
 						CASE 6
-							PRINTL 도끼・둔기
+							PRINTL 도끼ㆍ둔기
 						CASE 7
 							PRINTL 채찍
 						CASE 8
 							PRINTL 투척
 						CASE 9
-							PRINTL 지팡이・제구
+							PRINTL 지팡이ㆍ제구
 						CASE 10
 							PRINTL 곤봉
 						CASE 11
@@ -187,13 +187,13 @@ IF FLAG:장비화면생략스위치 == 0
 						CASE 5
 							PRINTL 창
 						CASE 6
-							PRINTL 도끼・둔기
+							PRINTL 도끼ㆍ둔기
 						CASE 7
 							PRINTL 채찍
 						CASE 8
 							PRINTL 투척
 						CASE 9
-							PRINTL 지팡이・제구
+							PRINTL 지팡이ㆍ제구
 						CASE 10
 							PRINTL 곤봉
 						CASE 11
@@ -605,7 +605,7 @@ RETURN 0
 
 @PRINT_EQUIPLIST,ARG
 #DIM LCOUNT
-;1行눈に레벨・속성を표시
+;1行눈に레벨ㆍ속성を표시
 CALL PRINT_BASE_STATUS,ARG
 
 IF FLAG:커스텀게임화면
@@ -625,7 +625,7 @@ IF FLAG:커스텀게임화면
 	SIF ABL:ARG:추가효과 > 0
 		PRINTFORML 　　　　추가효과:%GET_STATE(ABL:ARG:추가효과), 6, LEFT%　추가효과상성:%GET_TYPE(ABL:ARG:추가효과상성)%
 	
-	;인간ならばここに총공격の性能と총공격힘・총명중を2行つかって표시
+	;인간ならばここに총공격の性能と총공격힘ㆍ총명중を2行つかって표시
 	IF EQUIP:ARG:총 > 0
 		DRAWLINE
 		PRINTFORML 　총：공격력 {MAXBASE:ARG:총공격}　명중 {MAXBASE:ARG:총명중}
@@ -736,7 +736,7 @@ ELSE
 		PRINT Ｌ
 	ENDIF
 	PRINTFORML  %GET_SPHERE(ABL:ARG:공격범위),4,LEFT%
-	;인간ならばここに총공격の性能と총공격힘・총명중を2行つかって표시
+	;인간ならばここに총공격の性能と총공격힘ㆍ총명중を2行つかって표시
 	IF EQUIP:ARG:총 > 0
 		DRAWLINE
 		PRINTFORML 총：공격 {MAXBASE:ARG:총공격,4} 명중 {MAXBASE:ARG:총명중}
@@ -1693,13 +1693,13 @@ ELSE
 				CASE 5
 					PRINTL 창
 				CASE 6
-					PRINTL 도끼・둔기
+					PRINTL 도끼ㆍ둔기
 				CASE 7
 					PRINTL 채찍
 				CASE 8
 					PRINTL 투척
 				CASE 9
-					PRINTL 지팡이・제구
+					PRINTL 지팡이ㆍ제구
 				CASE 10
 					PRINTL 곤봉
 				CASE 11

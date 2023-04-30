@@ -1,5 +1,5 @@
 ﻿;=======================================================================
-;아마라심계(진・여신전생３　ノクターンマニアクス)
+;아마라심계(진ㆍ여신전생３　ノクターンマニアクス)
 ;던전ナンバー68
 ;	002		2017/09/19		kuma					第三カルパのY軸第0段に進入した際の엘라ーを修正
 ;	003		2017/09/25		kuma					スレで指摘されたズレを修正　ワープのズレを修正
@@ -1236,14 +1236,14 @@
 				CALL SET_ENEMY,9,[[キャラ:마더해롯]],74,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:여신의리비도]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:사신의만성]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・지오다인]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ지오다인]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:마계의조사]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:데・쿤다]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:데ㆍ쿤다]]
 				ABL:(CHARANUM-1):스킬6 = [[스킬:파계의번개]]
 				ABL:(CHARANUM-1):스킬7 = [[스킬:마하무드온]]
 				ABL:(CHARANUM-1):스킬8 = [[스킬:기합]]
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
-				;ナイト・テイルのボスであることも考慮して、ちょっとだけ弱体化
+				;ナイトㆍテイルのボスであることも考慮して、ちょっとだけ弱体化
 				BASE:(CHARANUM-1):화염 = 125
 				BASE:(CHARANUM-1):빙결 = 125
 				BASE:(CHARANUM-1):충격 = 125
@@ -1314,12 +1314,12 @@
 				CALL SET_ENEMY,9,[[キャラ:트럼페터]],82,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:신은의나팔]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마연의나팔]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・라기다인]]
-				ABL:(CHARANUM-1):스킬4 = [[스킬:마하・부흐다인]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:마하・지오다인]]
-				ABL:(CHARANUM-1):스킬6 = [[스킬:마하・잔다인]]
-				ABL:(CHARANUM-1):스킬7 = [[스킬:데・카쟈]]
-				ABL:(CHARANUM-1):스킬8 = [[스킬:마카・카쟈]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ라기다인]]
+				ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ부흐다인]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ지오다인]]
+				ABL:(CHARANUM-1):스킬6 = [[스킬:마하ㆍ잔다인]]
+				ABL:(CHARANUM-1):스킬7 = [[스킬:데ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬8 = [[스킬:마카ㆍ카쟈]]
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 				;神恩に泣くがよい
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1397,11 +1397,11 @@
 			FLAG:기습플래그 = 0
 				CALL SET_ENEMY,9,[[キャラ:벨제붑]],90,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:죽은파리의장례]]
-				ABL:(CHARANUM-1):스킬2 = [[스킬:마하・지오다인]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・잔다인]]
+				ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ지오다인]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ잔다인]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:메기도라온]]
-				ABL:(CHARANUM-1):스킬5 = [[스킬:데・카쟈]]
-				ABL:(CHARANUM-1):스킬6 = [[스킬:데・쿤다]]
+				ABL:(CHARANUM-1):스킬5 = [[스킬:데ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬6 = [[스킬:데ㆍ쿤다]]
 				ABL:(CHARANUM-1):스킬7 = [[스킬:기합]]
 				ABL:(CHARANUM-1):스킬8 = [[스킬:컨센트레이트]]
 				BASE:(CHARANUM-1):힘 += 5
@@ -1550,15 +1550,15 @@
 					PRINTFORMW ………
 					PRINTFORMW ……
 					PRINTFORMW …
-					;습득스킬に메기도라온、마하지오다인、메・디아라한、사마리캄、이악물기추가
+					;습득스킬に메기도라온、마하지오다인、메ㆍ디아라한、사마리캄、이악물기추가
 					FOR LOCAL,1,15
 						SIF ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL)) > 0
 							CONTINUE
 						BREAK
 					NEXT
-					ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL+1))=[[스킬:마하・지오다인]]
+					ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL+1))=[[스킬:마하ㆍ지오다인]]
 					ABL:(LOCAL:1):("습득LV"+TOSTR(LOCAL+1))=(BASE:(LOCAL:1):LV)
-					ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL+2))=[[스킬:메・디아라한]]
+					ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL+2))=[[스킬:메ㆍ디아라한]]
 					ABL:(LOCAL:1):("습득LV"+TOSTR(LOCAL+2))=(BASE:(LOCAL:1):LV)
 					ABL:(LOCAL:1):("습득스킬"+TOSTR(LOCAL+3))=[[스킬:사마리캄]]
 					ABL:(LOCAL:1):("습득LV"+TOSTR(LOCAL+3))=(BASE:(LOCAL:1):LV)
@@ -1825,12 +1825,12 @@
 				CALL SET_ENEMY,9,[[キャラ:메타트론]],95,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마한마온]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:메기도라온]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:타루・카쟈]]
-				ABL:(CHARANUM-1):스킬4 = [[스킬:마카・카쟈]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:타루ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬4 = [[스킬:마카ㆍ카쟈]]
 				ABL:(CHARANUM-1):스킬5 = [[스킬:랜더마이저]]
 				ABL:(CHARANUM-1):스킬6 = [[스킬:시나이의신화]]
-				ABL:(CHARANUM-1):스킬7 = [[스킬:데・카쟈]]
-				ABL:(CHARANUM-1):스킬8 = [[스킬:데・쿤다]]
+				ABL:(CHARANUM-1):스킬7 = [[스킬:데ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬8 = [[스킬:데ㆍ쿤다]]
 				BASE:(CHARANUM-1):힘 += 3
 				BASE:(CHARANUM-1):지혜 += 3
 				BASE:(CHARANUM-1):마력 += 3
@@ -1975,8 +1975,8 @@
 				CALL SET_ENEMY,9,[[キャラ:루시퍼]],LOCAL:1+10,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:왕중의왕]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:태초에숨은악]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・라기다인]]
-				ABL:(CHARANUM-1):스킬4 = [[스킬:마하・부흐다인]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ라기다인]]
+				ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ부흐다인]]
 				ABL:(CHARANUM-1):스킬5 = [[스킬:메기도라온]]
 
 				IF 던전플래그:68:51 == 2
@@ -1987,8 +1987,8 @@
 					ABL:(CHARANUM-1):스킬6 = [[스킬:디아라마]]
 				ENDIF
 
-				ABL:(CHARANUM-1):스킬7 = [[스킬:데・카쟈]]
-				ABL:(CHARANUM-1):스킬8 = [[스킬:데・쿤다]]
+				ABL:(CHARANUM-1):스킬7 = [[스킬:데ㆍ카쟈]]
+				ABL:(CHARANUM-1):스킬8 = [[스킬:데ㆍ쿤다]]
 				BASE:(CHARANUM-1):힘 += 5
 				BASE:(CHARANUM-1):지혜 += 5
 				BASE:(CHARANUM-1):마력 += 5
@@ -2261,7 +2261,7 @@ ELSE
 	;통상공격
 	IF LOCAL <= 1
 		CFLAG:ARG:입력행동 = 0
-	;Make・My・Day
+	;MakeㆍMyㆍDay
 	ELSEIF 2 <= LOCAL && LOCAL <= 4
 		CFLAG:ARG:입력행동 = 137
 	;바이코우하
@@ -2336,7 +2336,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 	FOR LOCAL:1,0,6
 		IF CFLAG:ARG:(GET_BATTLESTATUS(LOCAL:1) + "강화") < 0
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 			RETURN 1
 		ENDIF
@@ -2348,7 +2348,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 		CFLAG:ARG:입력행동 = 0
 	;마하지오다인
 	ELSEIF 2 <= LOCAL && LOCAL <= 4
-		CFLAG:ARG:입력행동 = [[스킬:마하・지오다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ지오다인]]
 	;마하무드온
 	ELSEIF 5 <= LOCAL && LOCAL <= 6
 		CFLAG:ARG:입력행동 = [[스킬:마하무드온]]
@@ -2384,7 +2384,7 @@ ELSE
 		CFLAG:ARG:입력행동 = 0
 	;마하지오다인
 	ELSEIF 4 <= LOCAL && LOCAL <= 7
-		CFLAG:ARG:입력행동 = [[스킬:마하・지오다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ지오다인]]
 	;마계의조사
 	ELSE
 		CFLAG:ARG:입력행동 = [[스킬:마계의조사]]
@@ -2475,7 +2475,7 @@ ELSE
 		FOR LOCAL:1,0,6
 			IF CFLAG:(FLAG:LOCALS):(GET_BATTLESTATUS(LOCAL:1) + "강화") > 0
 				;デカジャ
-				CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 				CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 				RETURN 0
 			ENDIF
@@ -2487,16 +2487,16 @@ ELSE
 		CFLAG:ARG:입력행동 = 0
 	;마하라기다인
 	ELSEIF 2 <= LOCAL && LOCAL <= 3
-		CFLAG:ARG:입력행동 = [[스킬:마하・라기다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기다인]]
 	;마하부흐다인
 	ELSEIF 4 <= LOCAL && LOCAL <= 5
-		CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 	;마하지오다인
 	ELSEIF 6 <= LOCAL && LOCAL <= 7
-		CFLAG:ARG:입력행동 = [[스킬:마하・지오다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ지오다인]]
 	;마하잔다인
 	ELSEIF 8 <= LOCAL && LOCAL <= 9
-		CFLAG:ARG:입력행동 = [[스킬:마하・잔다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ잔다인]]
 	;マカカジャ、既に４단계이상なら半分で메기도라온、최대なら絶対메기도라온
 	ELSEIF 10 <= LOCAL && LOCAL <= 12
 		IF CFLAG:ARG:마법위력강화 >= 32
@@ -2504,7 +2504,7 @@ ELSE
 		ELSEIF CFLAG:ARG:마법위력강화 >= 16 && RAND:2 == 1
 			CFLAG:ARG:입력행동 = [[스킬:메기도라온]]
 		ELSE
-			CFLAG:ARG:입력행동 = [[스킬:마카・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:마카ㆍ카쟈]]
 		ENDIF
 	;메기도라온
 	ELSE
@@ -2563,7 +2563,7 @@ ELSE
 		FOR LOCAL:1,0,6
 			IF CFLAG:ARG:(GET_BATTLESTATUS(LOCAL:1) + "강화") < 0 && RAND:3 == 1
 				;デクンダ
-				CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 				CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 				RETURN 0
 			ENDIF
@@ -2578,7 +2578,7 @@ ELSE
 			FOR LOCAL:1,0,6
 				IF CFLAG:(FLAG:LOCALS):(GET_BATTLESTATUS(LOCAL:1) + "강화") > 0 && RAND:3 == 1
 					;デカジャ
-					CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+					CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 					CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 					RETURN 0
 				ENDIF
@@ -2599,10 +2599,10 @@ ELSE
 		ENDIF
 	;마하지오다인
 	ELSEIF 2 <= LOCAL && LOCAL <= 4
-		CFLAG:ARG:입력행동 = [[스킬:마하・지오다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ지오다인]]
 	;마하잔다인
 	ELSEIF 5 <= LOCAL && LOCAL <= 6
-		CFLAG:ARG:입력행동 = [[스킬:마하・잔다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ잔다인]]
 	;コンセント、すでにやってるなら메기도라온
 	ELSEIF LOCAL == 7
 		IF CFLAG:ARG:집중플래그 == 1
@@ -2612,9 +2612,9 @@ ELSE
 		ENDIF
 	;기합い、コンセント中ならドラオン
 	ELSEIF LOCAL == 8
-		CFLAG:ARG:입력행동 = [[스킬:마하・잔다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ잔다인]]
 	ELSEIF LOCAL == 9
-		CFLAG:ARG:입력행동 = [[스킬:마하・잔다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ잔다인]]
 	;메기도라온
 	ELSEIF 10 <= LOCAL && LOCAL <= 11
 		CFLAG:ARG:입력행동 = [[스킬:메기도라온]]
@@ -2640,7 +2640,7 @@ RETURN 0
 @SET_ACTION_3686800,ARG
 #LOCALSIZE 2
 
-;HPが５０％切っても행동횟수は増えたりしないが・・・
+;HPが５０％切っても행동횟수は増えたりしないがㆍㆍㆍ
 
 IF CFLAG:ARG:600 == 0
 	CUSTOMDRAWLINE =
@@ -2686,7 +2686,7 @@ ELSE
 		FOR LOCAL:1,0,6
 			IF CFLAG:ARG:(GET_BATTLESTATUS(LOCAL:1) + "강화") < 0 && RAND:3 == 1
 				;デクンダ
-				CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 				CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 				RETURN 0
 			ENDIF
@@ -2701,7 +2701,7 @@ ELSE
 			FOR LOCAL:1,0,6
 				IF CFLAG:(FLAG:LOCALS):(GET_BATTLESTATUS(LOCAL:1) + "강화") > 0 && RAND:3 == 1
 					;デカジャ
-					CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+					CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 					CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 					RETURN 0
 				ENDIF
@@ -2718,14 +2718,14 @@ ELSE
 		IF CFLAG:ARG:마법위력강화 > 16
 			CFLAG:ARG:입력행동 = 0
 		ELSE
-			CFLAG:ARG:입력행동 = [[스킬:타루・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:타루ㆍ카쟈]]
 		ENDIF
 	;マカカジャ、４단계あるならドラオン
 	ELSEIF 5 <= LOCAL && LOCAL <= 6
 		IF CFLAG:ARG:마법위력강화 > 16
 			CFLAG:ARG:입력행동 = [[스킬:메기도라온]]
 		ELSE
-			CFLAG:ARG:입력행동 = [[스킬:마카・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:마카ㆍ카쟈]]
 		ENDIF
 	;랜더마이저
 	ELSEIF LOCAL == 7
@@ -2757,7 +2757,7 @@ RETURN 0
 @SET_ACTION_17996800,ARG
 #LOCALSIZE 2
 
-;HPが５０％切っても행동횟수は増えたりしないが・・・
+;HPが５０％切っても행동횟수は増えたりしないがㆍㆍㆍ
 
 $DECIDE_ACTION
 IF CFLAG:ARG:행동한횟수 == 0 || RAND:4 == 1
@@ -2765,7 +2765,7 @@ IF CFLAG:ARG:행동한횟수 == 0 || RAND:4 == 1
 	FOR LOCAL:1,0,6
 		IF CFLAG:ARG:(GET_BATTLESTATUS(LOCAL:1) + "강화") < 0 && RAND:3 == 1
 			;デクンダ
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 			RETURN 0
 		ENDIF
@@ -2780,7 +2780,7 @@ IF CFLAG:ARG:행동한횟수 == 0 || RAND:4 == 1
 		FOR LOCAL:1,0,6
 			IF CFLAG:(FLAG:LOCALS):(GET_BATTLESTATUS(LOCAL:1) + "강화") > 0 && RAND:3 == 1
 				;デカジャ
-				CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 				CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 				RETURN 0
 			ENDIF
@@ -2800,10 +2800,10 @@ LOCAL = RAND:15
 		CFLAG:ARG:입력행동 = [[스킬:왕중의왕]]
 	;마하라기다인
 	ELSEIF 7 <= LOCAL && LOCAL <= 8
-		CFLAG:ARG:입력행동 = [[스킬:마하・라기다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기다인]]
 	;마하부흐다인
 	ELSEIF 9 <= LOCAL && LOCAL <= 10
-		CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+		CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 	;메기도라온
 	ELSEIF 11 <= LOCAL && LOCAL <= 12
 		CFLAG:ARG:입력행동 = [[스킬:메기도라온]]
@@ -2812,7 +2812,7 @@ LOCAL = RAND:15
 		IF 던전플래그:68:51 == 2
 			CFLAG:ARG:입력행동 = [[스킬:메기도라온]]
 		;통상공격、HP50%以下なら디아라마、MANIACS이상だと디아라한
-		;HARDはまだぎりぎり통상레벨だし・・・
+		;HARDはまだぎりぎり통상레벨だしㆍㆍㆍ
 		ELSEIF RAND:4 < 1 && FLAG:전투난이도 > 4
 			CFLAG:ARG:입력행동 = [[스킬:디아라한]]
 		ELSEIF RAND:2 < 1 && FLAG:전투난이도 <= 4
@@ -2879,7 +2879,7 @@ PRINTFORML
 	PRINTFORML 
 	PRINTFORML 
 	SETCOLOR 0xcc0000
-	PRINTFORMW 　　　　　　　　―― Ending No.055 (真・女神転生 III Nocturne Maniacs END　“혼돈왕”)
+	PRINTFORMW 　　　　　　　　―― Ending No.055 (真ㆍ女神転生 III Nocturne Maniacs END　“혼돈왕”)
 	RESETCOLOR
 	PRINTFORML 
 
@@ -2928,7 +2928,7 @@ PRINTFORML
 ;	PRINTFORML 
 ;	PRINTFORML 
 ;	SETCOLOR 0xcc0000
-;	PRINTFORMW 　　　　　　　　―― Ending No.056 (真・女神転生 III Nocturne Maniacs END(Light)　“「빛이 있으라」”)
+;	PRINTFORMW 　　　　　　　　―― Ending No.056 (真ㆍ女神転生 III Nocturne Maniacs END(Light)　“「빛이 있으라」”)
 ;	RESETCOLOR
 ;	PRINTFORML 
 ;

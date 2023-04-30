@@ -20,7 +20,7 @@ IF 던전플래그:4:0 == 1
 	IF FLAG:백합의꽃루트
 		CALL MESSAGE_WINDOW_D, "레미엘", "아마네의 마음은 제가 지키고 있습니다/그러나 언제까지 버틸 수 있을지는 모르겠습니다/서둘러 이자벨을 토벌해, 아마네를 구해주세요"
 	ELSE
-		CALL MESSAGE_WINDOW_D, "이자・벨", "왔군요/역시 아직 레미엘에게 이 몸을 빼앗기지는 않았지만/지루하기 그지 없네요/어서, 레미엘을 쓰러뜨리고 오세요"
+		CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "왔군요/역시 아직 레미엘에게 이 몸을 빼앗기지는 않았지만/지루하기 그지 없네요/어서, 레미엘을 쓰러뜨리고 오세요"
 	ENDIF
 ELSE
 	CALL SHOW_FLOOR
@@ -98,12 +98,12 @@ SELECTCASE FLAG:현M
 					EQUIP:LOCAL:팔 = [[아이템:가드엔젤]]
 					EQUIP:LOCAL:발 = [[아이템:세이프티부츠]]
 					;---- EDIT 007 MOD END   -------------------------
-					ABL:LOCAL:스킬3 = [[스킬:데・카쟈]]
+					ABL:LOCAL:스킬3 = [[스킬:데ㆍ카쟈]]
 					ABL:LOCAL:스킬4 = [[스킬:한마]]
 					ABL:LOCAL:스킬5 = [[스킬:펨파트라]]
-					ABL:LOCAL:스킬6 = [[스킬:마하・잔마]]
+					ABL:LOCAL:스킬6 = [[스킬:마하ㆍ잔마]]
 					ABL:LOCAL:스킬7 = [[스킬:리캄]]
-					ABL:LOCAL:스킬8 = [[스킬:메・디아라마]]
+					ABL:LOCAL:스킬8 = [[스킬:메ㆍ디아라마]]
 					;隠し補正をつけておく
 					CFLAG:LOCAL:마법피데미지보정 = -70
 					CALL SYNC_STATUS,(LOCAL)
@@ -137,7 +137,7 @@ SELECTCASE FLAG:현M
 				CALL SET_ENEMY,10,[[キャラ:마인드아마네]],28,1,1
 				CSTR:(CHARANUM-1):사고패턴 = 3334
 			ENDIF
-			CALL MESSAGE_WINDOW_D, "", "＞마왕 이자・벨이 나타났다！"
+			CALL MESSAGE_WINDOW_D, "", "＞마왕 이자ㆍ벨이 나타났다！"
 			CALL SET_ENEMY,13,207,48 - 던전플래그:(FLAG:현던전):4 * 5, 1, 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
@@ -427,8 +427,8 @@ SELECTCASE FLAG:현M
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
 			;---- EDIT 005 ADD END   -------------------------
-			CALL LIFTING_A_BAN([[キャラ:이자・벨]])
-			;FLAG:(10000+[[キャラ:이자・벨]]) = 1
+			CALL LIFTING_A_BAN([[キャラ:이자ㆍ벨]])
+			;FLAG:(10000+[[キャラ:이자ㆍ벨]]) = 1
 			LOCAL = GETCHARA([[キャラ:아마네]])
 			;補正を消す
 			SIF LOCAL >= 0
@@ -459,8 +459,8 @@ SELECTCASE FLAG:현M
 				CALL MESSAGE_WINDOW_D, "", "＞마왕 이자·벨이 동료마가 되었다"
 				;SIF FLAG:20207 < 100
 				;	FLAG:20207 = 100
-				CALL LIFTING_A_BAN([[キャラ:이자・벨]])
-				CALL ADD_NEW_COMPANION, [[キャラ:이자・벨]], 500, 1
+				CALL LIFTING_A_BAN([[キャラ:이자ㆍ벨]])
+				CALL ADD_NEW_COMPANION, [[キャラ:이자ㆍ벨]], 500, 1
 				IF RESULT
 					CFLAG:(RESULT:1):이벤트가입 = 1
 					BASE:(RESULT:1):LV = 35
@@ -619,21 +619,21 @@ SELECTCASE FLAG:현M
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
-				CALL MESSAGE_WINDOW_D, "", "＞이자・벨의 목소리가 들려온다"
-				CALL MESSAGE_WINDOW_D, "이자・벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠깐만 기다려봐…"
+				CALL MESSAGE_WINDOW_D, "", "＞이자ㆍ벨의 목소리가 들려온다"
+				CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠깐만 기다려봐…"
 				CALL MESSAGE_WINDOW_D, "", "＞잠시 후 눈 앞에 아마네가 나타났다…"
 				CALL RAPE, 1
 				SIF FLAG:던전내조교 == 1
 					RETURN 1
 				IF 던전플래그:(FLAG:현던전):4 == 1
-					CALL MESSAGE_WINDOW_D, "이자・벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 					PRINTW 
 				ELSEIF 던전플래그:(FLAG:현던전):4 == 2
-					CALL MESSAGE_WINDOW_D, "이자・벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 				ELSE
-					CALL MESSAGE_WINDOW_D, "이자・벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
 				ENDIF
 			ELSEIF 던전플래그:(FLAG:현던전):1 == -1
 				CALL AMANE_TRAIN
@@ -699,21 +699,21 @@ SELECTCASE FLAG:현M
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
-				CALL MESSAGE_WINDOW_D, "", "＞이자・벨의 목소리가 들려온다"
-				CALL MESSAGE_WINDOW_D, "이자・벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠시만 기다려봐…"
+				CALL MESSAGE_WINDOW_D, "", "＞이자ㆍ벨의 목소리가 들려온다"
+				CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠시만 기다려봐…"
 				CALL MESSAGE_WINDOW_D, "", "＞잠시후 눈 앞에 아마네가 나타났다…"
 				CALL RAPE, 2
 				SIF FLAG:던전내조교 == 1
 					RETURN 1
 				IF 던전플래그:(FLAG:현던전):4 == 1
-					CALL MESSAGE_WINDOW_D, "이자・벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 					PRINTW 
 				ELSEIF 던전플래그:(FLAG:현던전):4 == 2
-					CALL MESSAGE_WINDOW_D, "이자・벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 				ELSE
-					CALL MESSAGE_WINDOW_D, "이자・벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
 				ENDIF
 			ELSEIF 던전플래그:(FLAG:현던전):2 == -1
 				CALL AMANE_TRAIN
@@ -780,21 +780,21 @@ SELECTCASE FLAG:현M
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
-				CALL MESSAGE_WINDOW_D, "", "＞이자・벨의 목소리가 들려온다"
-				CALL MESSAGE_WINDOW_D, "이자・벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠시만 기다려봐…"
+				CALL MESSAGE_WINDOW_D, "", "＞이자ㆍ벨의 목소리가 들려온다"
+				CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "잘 해줬어/아마네를 지키는 녀석을 마저 없애버리면…/잠시만 기다려봐…"
 				CALL MESSAGE_WINDOW_D, "", "＞잠시후 눈 앞에 아마네가 나타났다…"
 				CALL RAPE, 3
 				SIF FLAG:던전내조교 == 1
 					RETURN 1
 				IF 던전플래그:(FLAG:현던전):4 == 1
-					CALL MESSAGE_WINDOW_D, "이자・벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "지금 행동으로 아마네에 대한 지배력이 강해졌어/덕분에, 너를 도울 수 있게 된 거야/자아、이런건 어때？"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 					PRINTW 
 				ELSEIF 던전플래그:(FLAG:현던전):4 == 2
-					CALL MESSAGE_WINDOW_D, "이자・벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "아마네를 완전하게 지배할 때까지 나머지 한 걸음/도와줄테니까, 최선을 다해줘"
 					CALL MESSAGE_WINDOW_D, "", "＞터미널이 나타났다"
 				ELSE
-					CALL MESSAGE_WINDOW_D, "이자・벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
+					CALL MESSAGE_WINDOW_D, "이자ㆍ벨", "이제、아마네는 거의 완전하게 지배하게 되었어 그럼、정신세계의 가장 깊숙한 곳에 가서、레미엘을 죽여버려"
 				ENDIF
 			ELSEIF 던전플래그:(FLAG:현던전):3 == -1
 				CALL AMANE_TRAIN
@@ -822,7 +822,7 @@ IF 던전플래그:(FLAG:현던전):4 == 0
 	CALL MESSAGE_WINDOW_D, "이자·벨", "오래간만이네。아마네"
 	CALL MESSAGE_WINDOW_D, "아마네", "그 목소리는 이자·벨/대체 어디에서!？"
 	CALL MESSAGE_WINDOW_D, "이자·벨", "지금은 조금 여러가지 일이 있어서/네 앞에 얼굴을 내밀 수가 없어/아무튼 그 대신, 거기의 인간이 상대 해 줄테니까, 참아줬으면 해"
-	CALL MESSAGE_WINDOW_D, "아마네", "이자・벨…！"
+	CALL MESSAGE_WINDOW_D, "아마네", "이자ㆍ벨…！"
 	CALL MESSAGE_WINDOW_D, "이자·벨", "인간、조금 전 이야기한 대로야/레미엘을 쓰러뜨리기 위해서는 아마네의 마음을 공격하지 않으면 안되니까/빠른 길은, 여기서 이 아마네를 죽이는 거야/분명히 아마네의 마음을 죽여 나가면, 레미엘을 만날 쯤에는 폐인 직전일 테니까"
 	CALL MESSAGE_WINDOW_D, "이자·벨", "부숴 버리는 것이 싫으면, 범해 주어도 괜찮아/들은 적이 있어. 네 본직은 조교사라며?/아마네가 부숴지는 것과 타락하는 것, 어느 쪽이든 즐거운 일이니까/어떻게 할지는 너에게 맡기겠어"
 	CALL INPUT_YN_D("죽인다", "범한다")
@@ -885,12 +885,12 @@ IF 던전플래그:(FLAG:현던전):4 == 0
 		NEXT
 		ABL:LOCAL:스킬1 = [[스킬:잔마]]
 		ABL:LOCAL:스킬2 = [[스킬:디아라마]]
-		ABL:LOCAL:스킬3 = [[스킬:데・카쟈]]
+		ABL:LOCAL:스킬3 = [[스킬:데ㆍ카쟈]]
 		ABL:LOCAL:스킬4 = [[스킬:한마]]
 		ABL:LOCAL:스킬5 = [[스킬:펨파트라]]
-		ABL:LOCAL:스킬6 = [[스킬:마하・잔마]]
+		ABL:LOCAL:스킬6 = [[스킬:마하ㆍ잔마]]
 		ABL:LOCAL:스킬7 = [[스킬:리캄]]
-		ABL:LOCAL:스킬8 = [[스킬:메・디아라마]]
+		ABL:LOCAL:스킬8 = [[스킬:메ㆍ디아라마]]
 		CFLAG:LOCAL:선악치 = 128
 		CFLAG:LOCAL:질혼치 = 255
 		ABL:LOCAL:회화타입 = 0
@@ -1754,7 +1754,7 @@ SELECTCASE FLAG:현M
 			CALL MESSAGE_WINDOW_D, "캐롤",		 "「이 도시에서의 저희들의 미션은 이미 종료되었습니다/　당신들이 무엇을 하든, 저희들이 알 필요도 없습니다」"
 			CALL MESSAGE_WINDOW_D, "캐롤",		 "「하지만, 그 서머너의 일만은 별도의 이야기」"
 			CALL MESSAGE_WINDOW_D, "캐롤",		 "「그 서머너만은, 소거해야만 합니다/　저희들 스스로의, 존재를 걸고서」"
-			CALL MESSAGE_WINDOW_D, "아마네",		 "「당신들은・・・당신들은 대체 뭡니까!?」"
+			CALL MESSAGE_WINDOW_D, "아마네",		 "「당신들은ㆍㆍㆍ당신들은 대체 뭡니까!?」"
 			CALL MESSAGE_WINDOW_D, "캐롤",		 "「죄송하지만, 당신에게는 그 질문을 할 권한이 없습니다, 그럼」"
 			IF FLAG:트리슈조교 <= -1
 				CALL MESSAGE_WINDOW_D, "아마네",	 "「아마도 강력한 적이 기다리고 있을 거라고 생각해요, 조심해서 나아갑시다」"

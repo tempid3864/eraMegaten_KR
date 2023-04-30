@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4211,ARG
-RESULTS = Ｌ데・쿤다
+RESULTS = Ｌ데ㆍ쿤다
 
 ;　명중
 @SKILL_HITRATE_4211, ARG
@@ -154,28 +154,28 @@ ENDSELECT
 
 @발동자조건_4211 , ARG
 ;カジャ系魔法スキルを使えること
-IF HAVE_SKILL(ARG, [[스킬:타루・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:타루・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:타루ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:타루ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:라쿠・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:라쿠ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:마카・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:마카・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:마카ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:마카ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:스쿠・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:스쿠ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:사마・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:사마・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:사마ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:사마ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
@@ -189,28 +189,28 @@ CALL CHECK_COST_LINCAGE, ARG, 4211, ARG:1
 SIF RESULT == 0
 	RETURN 0
 ;カジャ系魔法スキルを使えること
-IF HAVE_SKILL(ARG, [[스킬:타루・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:타루・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:타루ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:타루ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:라쿠・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:라쿠ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿠ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:마카・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:마카・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:마카ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:마카ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:스쿠・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:스쿠ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:사마・카쟈]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:사마・카쟈]]
+IF HAVE_SKILL(ARG, [[스킬:사마ㆍ카쟈]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:사마ㆍ카쟈]]
 	SIF RESULT
 		RETURN 1
 ENDIF

@@ -12,14 +12,14 @@ IF TALENT:ARG:이능자 == 0
 	PRINTFORML 異能者素質のない、初期型の状態の『%CALLNAME:ARG%』のアップデート処理を行います。
 	PRINTFORML 
 	PRINTFORML ＞アップデートで変更される内容
-	PRINTFORML 　調教後天素質・陥落・契約・陥落履歴以外の全素質（戦闘素質を含む）
+	PRINTFORML 　調教後天素質ㆍ陥落ㆍ契約ㆍ陥落履歴以外の全素質（戦闘素質を含む）
 	PRINTFORML 　CSTR：悪魔解説
 	PRINTFORML 　習得スキル（人間の異能者用戦闘素質に合わせた習得ラインナップ）
 	PRINTFORML 　種族（人間にリセット）
 	PRINTFORML 　戦闘参加不能状態である場合、調教するまで戦闘参加可能化
 	PRINTFORML 
 	PRINTFORML ＞上書きされない内容
-	PRINTFORML 　ABL・EXP（調教ステータス・経験・体力等）
+	PRINTFORML 　ABLㆍEXP（調教ステータスㆍ経験ㆍ体力等）
 
 		SIF CFLAG:(ARG):전투참가불가능 == 1
 			CFLAG:(ARG):전투참가불가능 = -1
@@ -73,7 +73,7 @@ CASE 0
 	;タイトル
 		IF GETBIT(CFLAG:ARG:개별이벤트개방,ARG:2)
 			;タイトル
-			RESULTS = 『ティファ・ロックハート』
+			RESULTS = 『ティファㆍロックハート』
 		ELSE
 			;未開放時のタイトル（解放条件を入れておく）
 			RESULTS = ※%CALLNAME:ARG%の陥落と、戦闘Lv30以上が必要。
@@ -91,7 +91,7 @@ CASE 0
 		PRINTFORML 体の組成、マグネタイト貯蔵能力、戦闘能力……
 		PRINTFORMW それらを調べているうちに、変わったデータがはじき出された。
 		PRINTFORML 
-		PRINTFORMW ……純粋な人間と言うよりは、合体・吸収能力をなくした造魔に近い結果が出たのだ。
+		PRINTFORMW ……純粋な人間と言うよりは、合体ㆍ吸収能力をなくした造魔に近い結果が出たのだ。
 		PRINTFORML 
 		PRINTFORML 純度１００％の異世界の者、とするにはこちらの世界のロジックに近い技能もあるし、
 		PRINTFORMW こちらで１から作り出された、とするには未知の能力も混じっている。

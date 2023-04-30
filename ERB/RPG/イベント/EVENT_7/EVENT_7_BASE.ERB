@@ -55,7 +55,7 @@ ENDIF
 ;	PRINTFORMW 확실히 함정일 가능성이 높지만, 그래도 직접 대결할 수 있을 것도 같다.
 ;	PRINTFORMW 잘하면, 가면당에 결정적인 데미지를 줄 것이다…
 ;ENDIF
-;ニャルルート突入조건が揃っている場合、이벤트が起きる(時間城出現・쥰以外の罪組勢揃い・博物館突入前
+;ニャルルート突入조건が揃っている場合、이벤트が起きる(時間城出現ㆍ쥰以外の罪組勢揃いㆍ博物館突入前
 IF STRFLAG_NUM_EV("카리스마、잡지 데뷔 소문") == 2 && STRFLAG_NUM_EV("니알라진행", , , , [[이벤트:페르소나２]]) == 1 && STRFLAG_EV("시간성초회") && !STRFLAG_NUM_EV("수정 두개골의 소문") && STRFLAG_NUM_EV("죄루트진행", , , , [[이벤트:페르소나２]]) == 7
 	PRINTL 목소리:
 	PRINTL 「여어, 오랜만이구나」
@@ -139,7 +139,7 @@ ELSE
 	SETBIT LOCAL:10, 4
 ENDIF
 ;IF (STRFLAG_NUM_EV("귀환병 갸르송의 소문") == 2 || STRFLAG_NUM_EV("살인귀 갸르송의 소문") == 2) && !GETBIT(LOCAL:10, 4)
-;	PRINTL [14] 쿠레이르・드・룰누에 간다
+;	PRINTL [14] 쿠레이르ㆍ드ㆍ룰누에 간다
 ;ELSE
 ;	SETBIT LOCAL:10, 4
 ;ENDIF

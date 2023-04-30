@@ -182,7 +182,7 @@ SIF CFLAG:ARG:노역플래그 > 0
 	RETURN 0
 SIF ARG != MASTER && (ABL:ARG:순종 + ABL:ARG:봉사정신 + ABL:ARG:요리기능 + TALENT:ARG:연모*3 + TALENT:ARG:친애*6) < 6 && !TALENT:ARG:비전투원
 	RETURN 0
-;비전투원は未조교に限り、포장마차・식당でなら노역できる
+;비전투원は未조교に限り、포장마차ㆍ식당でなら노역できる
 SIF ARG != MASTER && TALENT:ARG:비전투원 && (ABL:ARG:순종 + ABL:ARG:봉사정신 + ABL:ARG:요리기능 + TALENT:ARG:연모*3 + TALENT:ARG:친애*6) < 6 && (CFLAG:ARG:피조교횟수 || !(ITEM:포장마차 || ITEM:식당))
 	RETURN 0
 SIF BASE:ARG:0 <= 500
@@ -1448,9 +1448,9 @@ IF RAND:100 < LOCAL:1 || TALENT:ARG:ＮＴＲ > 0 && RAND:100 < 50 || IS_ANTI_NT
 		ELSE
 			PRINTFORML %조사처리(CALLNAME:ARG,"가")% 네토라레 취향의 손님에게 유혹당해 가게 밖으로 나갔다……
 		ENDIF
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORML ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORML ㆍㆍㆍ
 		;本番판정
 		;기본치50％+방치일수*2（上限なし）さらに즉각함락持ちは+50
 		;これに함락度*50のマイナス보정を入れる
@@ -1763,9 +1763,9 @@ ENDIF
 IF RAND:100 > ARG:2 || IS_ANTI_NTR_CLOTHES(ARG) == -1
 	PRINTFORML 
 	PRINTFORML %CALLNAME:ARG%에게 인상 나쁜 남자가 클레임을 걸어왔다……
-	PRINTFORML ・
-	PRINTFORML ・・
-	PRINTFORMW ・・・
+	PRINTFORML ㆍ
+	PRINTFORML ㆍㆍ
+	PRINTFORMW ㆍㆍㆍ
 	;クレーム対応可否판정
 	;淫ＮＴＲの場合は納める気なし
 	IF RAND:100 > ARG:2 + RAND:(11 + ABL:ARG:기교 + ABL:ARG:봉사정신) || TALENT:ARG:ＮＴＲ == 2 || IS_ANTI_NTR_CLOTHES(ARG) == -1

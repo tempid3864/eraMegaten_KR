@@ -240,7 +240,7 @@ CALL SKILLGAGE_H_SET,ARG,SKILL_NUM,1
 
 ;　説明文の表示
 @SKILL_EXPLAIN_絶世の儚剣,ARG
-PRINTL 第二宝具『絶世の儚剣（レーヴ・デ・デュランダル）』
+PRINTL 第二宝具『絶世の儚剣（レーヴㆍデㆍデュランダル）』
 PRINTL 
 PRINTL 不帯剣の誓いを破棄することによって使用できる第二宝具を開放し、
 PRINTL 自身の死をも厭わぬ間際の一撃を叩きこむ。
@@ -261,7 +261,7 @@ PRINTL １戦闘１回のみ使用可能。使用後、その戦闘中は『不�
 @SKILL_SPECIAL_ACTIONABLE_絶世の儚剣,ARG
 #DIM SKILL_NUM
 SKILL_NUM = PU_SKILLNUM_GET(ARG,"絶世の儚剣")
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) == 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) == 0
 	RETURN 0
 SIF SKILLGAGE_H_GET(ARG,SKILL_NUM) != 0 
 	RETURN 0

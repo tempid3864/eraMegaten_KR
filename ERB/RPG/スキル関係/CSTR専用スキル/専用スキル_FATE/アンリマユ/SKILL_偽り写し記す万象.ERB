@@ -174,8 +174,8 @@ RETURN 1
 ;====================================================
 @SKILL_BATTLE_START_偽り写し記す万象,ARG,ARG:1
 ;常に100の状態を維持する
-SIF SKILLGAGE_F_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) < 100
-	CALL SKILLGAGE_F_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),100
+SIF SKILLGAGE_F_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) < 100
+	CALL SKILLGAGE_F_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),100
 
 ;====================================================
 ;行動によるスキルゲージ操作
@@ -214,8 +214,8 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 CALL SKILLGAGE_H_SET,ARG,SKILL_NUM,0
 
 ;スキルゲージが100以上だと100にする
-SIF SKILLGAGE_F_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) > 100
-	CALL SKILLGAGE_F_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),100
+SIF SKILLGAGE_F_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) > 100
+	CALL SKILLGAGE_F_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),100
 
 ;====================================================
 ;실행내용 여기까지
@@ -283,7 +283,7 @@ SIF SKILLGAGE_F_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")
 
 ;　説明文の表示
 @SKILL_EXPLAIN_偽り写し記す万象,ARG
-PRINTL 『偽り写し記す万象（ヴェルグ・アヴェスター）』
+PRINTL 『偽り写し記す万象（ヴェルグㆍアヴェスター）』
 PRINTFORML 自分が受けた傷を相手に与え返す、%CALLNAME:ARG%が使用する『原初の呪い』。
 PRINTL 
 PRINTL 敵全体に万能属性の物理小ダメージを与える。

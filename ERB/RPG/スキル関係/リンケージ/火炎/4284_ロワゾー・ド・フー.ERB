@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4284,ARG
-RESULTS = 로와조・도・프
+RESULTS = 로와조ㆍ도ㆍ프
 ;　명중
 @SKILL_HITRATE_4284, ARG
 RETURN 100
@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 지변계 마법
 	CASE 3
-		PRINTFORM 마하・라기
+		PRINTFORM 마하ㆍ라기
 ENDSELECT
 
 @발동자조건_4284 , ARG
-;マハ・ラギを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・라기]]) == 0
+;マハㆍラギを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ라기]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・라기]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ라기]]
 SIF RESULT
 	RETURN 1
 RETURN 0

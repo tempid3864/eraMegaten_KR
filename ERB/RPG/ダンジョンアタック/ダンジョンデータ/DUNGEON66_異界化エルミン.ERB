@@ -542,7 +542,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			IF 이벤트플래그:1:0 == 3
 				CALL MESSAGE_WINDOW_D, "간부", "보고는 읽어보았다。//……실로 훌륭한 일을 해주었다。"
 				CALL MESSAGE_WINDOW_D, "간부", "자네가 확보해준 DEVA 시스템은、/새로이 전용 부서를 설립하여 연구하도록 결정됐다。/그리고、자네가 구출해낸 주민들 중에서/이쪽에 이런저런 형태로 협력을 해줄만한 사람도 생겨날 듯하다。"
-				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 보고서를 받아들인 팬텀・소사이어티의 간부는、/＞만족스럽다는듯 말하고 전화를 끊었다。"
+				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 보고서를 받아들인 팬텀ㆍ소사이어티의 간부는、/＞만족스럽다는듯 말하고 전화를 끊었다。"
 			ELSE
 				CALL MESSAGE_WINDOW_D, "마요네", "DEVA시스템은 귀중한 샘플로써、이쪽에서 확보하게 되었습니다。//……대단한 성과를 거두셨군요。"
 				CALL MESSAGE_WINDOW_D, "마요네", "이미 윗쪽에서는 전용 부서를 설립하는 쪽으로 이야기가 진행되고 있다는 듯하네요。/다수의 주민들을 구출해낸 것도 높이 평가받을만 하네요。/그 중에는 재산이나 권력을 가진 사람도 있고。"
@@ -829,7 +829,7 @@ ELSEIF LOCAL == 2 && CFLAG:ARG:행동한횟수 == 0
 ENDIF
 IF CFLAG:ARG:행동한횟수 == 0
 	IF CFLAG:ARG:공격강화 < -4 || CFLAG:ARG:명중강화 < -4 || CFLAG:ARG:회피강화 < -4 || CFLAG:ARG:마법위력강화 < -4
-		CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+		CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 	ELSEIF RAND:2 == 0
 		CFLAG:ARG:입력행동 = [[스킬:랜더마이저]]
 	ELSE

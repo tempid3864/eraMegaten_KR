@@ -48,7 +48,7 @@ RETURN 0
 ;17,万能
 ;18,サイコ
 SELECTCASE ARG
-	;打撃・戦技、破魔
+	;打撃ㆍ戦技、破魔
 	CASE 2,3,10
 		RETURN 0
 	;파마
@@ -57,7 +57,7 @@ SELECTCASE ARG
 	;火炎、氷結、電撃、衝撃
 	CASE 4,5,6,7
 		RETURN 75
-	;地変・水撃・重力・核熱
+	;地変ㆍ水撃ㆍ重力ㆍ核熱
 	CASE 12,13,15,16
 		RETURN 200
 ENDSELECT

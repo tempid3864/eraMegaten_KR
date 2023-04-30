@@ -209,7 +209,7 @@ SOURCE:PLAYER:쾌Ｃ += 80
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 3
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷の指⇔조교자のＰ의 불결が移動
 CALL MOVE_STAIN("손", TARGET, "페니스", PLAYER)
@@ -268,7 +268,7 @@ SOURCE:PLAYER:쾌Ｃ += 120
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 4
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷の입⇔조교자のＰ의 불결が移動
 CALL MOVE_STAIN("입", TARGET, "페니스", PLAYER)
@@ -349,7 +349,7 @@ SOURCE:PLAYER:쾌Ｃ = 200
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷のＶ⇔조교자のＰ의 불결が移動
 IF HAVE_PENIS(PLAYER)
@@ -413,7 +413,7 @@ SOURCE:PLAYER:쾌Ｃ += 150
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 5
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷のＢ⇔조교자のＰ의 불결が移動
 CALL MOVE_STAIN("가슴", TARGET, "페니스", PLAYER)
@@ -481,7 +481,7 @@ SOURCE:PLAYER:쾌Ｃ += 80
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 IF CFLAG:PLAYER:ＭＡＧ비피흡수 == 0
 	LOCAL = (RAND:6+1) * BASE:LV
@@ -533,7 +533,7 @@ SOURCE:PLAYER:쾌Ａ += 100
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 3
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷の指⇔조교자のＰ의 불결が移動
 CALL MOVE_STAIN("손", TARGET, "애널", PLAYER)
@@ -595,7 +595,7 @@ SOURCE:PLAYER:쾌Ａ += 50
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;奴隷の입⇔조교자のＡ의 불결が移動
 CALL MOVE_STAIN("입", TARGET, "애널", PLAYER)
@@ -1074,7 +1074,7 @@ ENDIF
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 0
 ;질내に파과혈의 불결を付加
 SIF TALENT:PLAYER:처녀 == 1 || TALENT:PLAYER:재생처녀 == 1
@@ -1168,7 +1168,7 @@ SOURCE:PLAYER:쾌Ａ += 400
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 0
 ;조교자のＡ⇔奴隷のＰ의 불결が移動
 CALL MOVE_STAIN("애널", PLAYER, "페니스", TARGET)
@@ -1255,7 +1255,7 @@ SOURCE:PLAYER:쾌Ａ += 350
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 0
 ;조교자のＡ⇔奴隷のＰ의 불결が移動
 CALL MOVE_STAIN("애널", PLAYER, "페니스", TARGET)
@@ -1341,7 +1341,7 @@ SOURCE:PLAYER:쾌Ａ += 400
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 0
 ;조교자のＡ⇔奴隷のＰ의 불결が移動
 CALL MOVE_STAIN("애널", PLAYER, "페니스", TARGET)
@@ -1443,7 +1443,7 @@ ENDIF
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 1
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 ;질내に파과혈의 불결を付加
 SIF TALENT:처녀 == 1 || TALENT:재생처녀 == 1
@@ -1578,7 +1578,7 @@ CALL EVENT_COUNTER_MESSAGE502
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 3
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 IF CFLAG:PLAYER:ＭＡＧ비피흡수 == 0
 	LOCAL = (RAND:7+1) * BASE:LV
@@ -1623,7 +1623,7 @@ CALL EVENT_COUNTER_MESSAGE503_1
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 4
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 IF CFLAG:PLAYER:ＭＡＧ비피흡수 == 0
 	LOCAL = (RAND:8+1) * BASE:LV
@@ -1694,7 +1694,7 @@ CALL EVENT_COUNTER_MESSAGE504_1
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 5
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 IF CFLAG:PLAYER:ＭＡＧ비피흡수 == 0
 	LOCAL = (RAND:7+1) * BASE:LV
@@ -1774,7 +1774,7 @@ CALL EVENT_COUNTER_MESSAGE505_1
 ;사정先타입の설정
 TCVAR:PLAYER:페니스사용대상 = TARGET
 TCVAR:PLAYER:사정개소 = 14
-;사정전선택の可・불가
+;사정전선택の可ㆍ불가
 TFLAG:704 = 1
 IF CFLAG:PLAYER:ＭＡＧ비피흡수 == 0
 	LOCAL = (RAND:8+1) * BASE:LV

@@ -75,7 +75,7 @@ ENDIF
 	CALL STATUS_BONUS(ARG,ボーナスポイント)
 
 	;元々비전투원なので장비できないはずなのでコメントアウト
-	;インストールソフト・악세서리等の特殊ボーナス
+	;インストールソフトㆍ악세서리等の特殊ボーナス
 	CALL LVUP_BOOSTER(ARG,ボーナスポイント)
 
 	CALLFORM EVENT_LEVELUP,ARG,LOCAL:1
@@ -127,7 +127,7 @@ ENDIF
 
 	;無いわけない
 	IF ボーナスポイント
-		;現在の최대ＨＰ・ＭＰを記憶
+		;現在の최대ＨＰㆍＭＰを記憶
 		事前最大ＨＰ = MAXBASE:ARG:ＨＰ
 		事前最大ＭＰ = MAXBASE:ARG:ＭＰ
 
@@ -375,7 +375,7 @@ ENDIF
 		REND
 			PRINTW 
 	;新インターフェース側と同じ処理に변경
-	;インストールソフト・악세서리等の特殊ボーナス
+	;インストールソフトㆍ악세서리等の特殊ボーナス
 	CALL LVUP_BOOSTER(ARG,ボーナスポイント)
 	
 ;一応残す;LVUP_BOOSTERと中身がだいぶ違うような…

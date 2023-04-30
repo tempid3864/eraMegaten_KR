@@ -16,12 +16,12 @@
 
 
 ;오토리커버
-;配置中の동료마의ＨＰを마법・아이템を사용して自動회복する
+;配置中の동료마의ＨＰを마법ㆍ아이템を사용して自動회복する
 ;原作の挙動は知らない
 
 ;未完成部分
-;・ソースきたない
-;・ＣＯＭＰ内の동료마의마법をどうするか
+;ㆍソースきたない
+;ㆍＣＯＭＰ内の동료마의마법をどうするか
 ;
 
 @AUTO_RECOVER
@@ -31,7 +31,7 @@ IF GETBIT(FLAG:오토리커버설정1, 3) == 1
 	SIF RESULT == 1
 		RETURN 1
 ENDIF
-;バステ・死亡회복
+;バステㆍ死亡회복
 IF GETBIT(FLAG:오토리커버설정1, 1) == 1 || GETBIT(FLAG:오토리커버설정1, 2) == 1
 	;LOCAL 마법と아이템のうち、どちらか片方を試したか
 	LOCAL = 0
@@ -529,7 +529,7 @@ FOR LCOUNT, 0, 6
 					CASE "디아라한"
 						LOCAL:3 = LOCAL:8
 						LOCAL:10 = LOCAL:1
-					CASE "메・디아", "메・디아라마"
+					CASE "메ㆍ디아", "메ㆍ디아라마"
 						LOCAL:3 = LOCAL:3 * (BASE:(LOCAL):16/4+(BASE:(LOCAL):15 / 8+10)) /50
 						LOCAL:9 = 0
 						FOR LCOUNT:2, 1, 6
@@ -549,7 +549,7 @@ FOR LCOUNT, 0, 6
 						;회복량の합계
 						LOCAL:3 = LOCAL:9
 						LOCAL:10 = 19
-					CASE "메・디아라한"
+					CASE "메ㆍ디아라한"
 						LOCAL:9 = 0
 						FOR LCOUNT:2, 1, 6
 							LOCALS:1 = 포지션{LCOUNT:2}

@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4210,ARG
-RESULTS = Ｌ데・카쟈
+RESULTS = Ｌ데ㆍ카쟈
 
 ;　명중
 @SKILL_HITRATE_4210, ARG
@@ -154,28 +154,28 @@ ENDSELECT
 
 @발동자조건_4210 , ARG
 ;ンダ系魔法スキルを使えること
-IF HAVE_SKILL(ARG, [[스킬:타룬・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬・다]]
+IF HAVE_SKILL(ARG, [[스킬:타룬ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:라쿤・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤・다]]
+IF HAVE_SKILL(ARG, [[스킬:라쿤ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:스쿤・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤・다]]
+IF HAVE_SKILL(ARG, [[스킬:스쿤ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:사만・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:사만・다]]
+IF HAVE_SKILL(ARG, [[스킬:사만ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:사만ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:마칸・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸・다]]
+IF HAVE_SKILL(ARG, [[스킬:마칸ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
@@ -189,28 +189,28 @@ CALL CHECK_COST_LINCAGE, ARG, 4210, ARG:1
 SIF RESULT == 0
 	RETURN 0
 ;ンダ系魔法スキルを使えること
-IF HAVE_SKILL(ARG, [[스킬:타룬・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬・다]]
+IF HAVE_SKILL(ARG, [[스킬:타룬ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:라쿤・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤・다]]
+IF HAVE_SKILL(ARG, [[스킬:라쿤ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:스쿤・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤・다]]
+IF HAVE_SKILL(ARG, [[스킬:스쿤ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:사만・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:사만・다]]
+IF HAVE_SKILL(ARG, [[스킬:사만ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:사만ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF HAVE_SKILL(ARG, [[스킬:마칸・다]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸・다]]
+IF HAVE_SKILL(ARG, [[스킬:마칸ㆍ다]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸ㆍ다]]
 	SIF RESULT
 		RETURN 1
 ENDIF

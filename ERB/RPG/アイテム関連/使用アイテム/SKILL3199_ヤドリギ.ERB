@@ -94,7 +94,7 @@ RETURN 0
 ;====================================================
 @ACTION_3199,ARG,ARG:1
 LOCAL = POS(ARG:1)
-IF NO:LOCAL != [[キャラ:벨・데르]]
+IF NO:LOCAL != [[キャラ:벨ㆍ데르]]
 	PRINTW 효과가 없다！
 	RETURN 0
 ENDIF
@@ -116,7 +116,7 @@ CALL VAR_HP, LOCAL, -LOCAL:1, 0
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3199
-PRINTL 벨 신(神) 벨・데르에게 데미지를 준다
+PRINTL 벨 신(神) 벨ㆍ데르에게 데미지를 준다
 
 @최대소지수_3199
 RETURN 1

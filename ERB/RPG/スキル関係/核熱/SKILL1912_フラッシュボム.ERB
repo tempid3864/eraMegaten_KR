@@ -3,7 +3,7 @@
 ;스킬명
 @SKILL_NAME_1912,ARG
 IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	RESULTS = N・블래스터
+	RESULTS = Nㆍ블래스터
 ELSE
 	RESULTS = 플래시봄
 ENDIF
@@ -118,7 +118,7 @@ RETURN 0
 @SKILL_DAMAGE_EFFECT_1912,ARG,ARG:1
 SIF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
 	RETURN
-PRINT  & 명중・회피 저하
+PRINT  & 명중ㆍ회피 저하
 CFLAG:(ARG:1):명중강화 = MAX(-16, CFLAG:(ARG:1):명중강화 - 4)
 CFLAG:(ARG:1):회피강화 = MAX(-16, CFLAG:(ARG:1):회피강화 - 4)
 
@@ -138,9 +138,9 @@ CALL ATTACK_FIELD,ARG,ARG:1,1912
 @SKILL_EXPLAIN_1912
 IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
 	PRINTL 흉부 중앙의 에너지 캐논에서 중성자 빔을 발사해 적 1열에 핵열 상성의 물리데미지를 준다
-	PRINTL 정식명칭은「뉴트론・블래스터」。
+	PRINTL 정식명칭은「뉴트론ㆍ블래스터」。
 ELSE
-	PRINTL 적 1열에 핵열 상성 물리데미지＋명중・회피 저하。후열 사용 가능。크리티컬이 발생하지 않는다。
+	PRINTL 적 1열에 핵열 상성 물리데미지＋명중ㆍ회피 저하。후열 사용 가능。크리티컬이 발생하지 않는다。
 ENDIF
 
 ;계승에 필요한 부위

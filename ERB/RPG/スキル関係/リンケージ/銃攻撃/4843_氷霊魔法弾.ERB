@@ -215,7 +215,7 @@ RETURN 1
 @참가조건표시_4843,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 부흐、마하・부흐、아쿠아、또는 마하・아쿠아 중、하나
+		PRINTFORM 부흐、마하ㆍ부흐、아쿠아、또는 마하ㆍ아쿠아 중、하나
 	CASE 2
 		PRINTFORM 프로스트샷
 ENDSELECT
@@ -242,25 +242,25 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ブフかマハ・ブフを使えること
+		;ブフかマハㆍブフを使えること
 		IF HAVE_SKILL(ARG, [[스킬:부흐]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:부흐]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・부흐]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・부흐]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ부흐]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ부흐]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;アクアかマハ・アクアを使えること
+		;アクアかマハㆍアクアを使えること
 		IF HAVE_SKILL(ARG, [[스킬:아쿠아]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:아쿠아]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・아쿠아]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・아쿠아]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ아쿠아]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ아쿠아]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

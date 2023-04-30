@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_3545,ARG
-RESULTS = 리본・부스트
+RESULTS = 리본ㆍ부스트
 IF ARG > -1
 	SIF SKILLGAGE_H_GET(ARG,3545) == 1
 		RESULTS = B･서니 빔
@@ -248,9 +248,9 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 	CFLAG:POS(LOCAL):명중강화 = MIN(32, CFLAG:POS(LOCAL):명중강화 + 4)
 	CFLAG:POS(LOCAL):회피강화 = MIN(32, CFLAG:POS(LOCAL):회피강화 + 4)
 NEXT
-		PRINTFORML \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 속도（명중・회피）업！
+		PRINTFORML \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 속도（명중ㆍ회피）업！
 	IF SKILLGAGE_H_GET(ARG,3545) == 1
-		;1サニービーム　　　　　　　　（火炎追撃　速度・攻撃強化）
+		;1サニービーム　　　　　　　　（火炎追撃　速度ㆍ攻撃強化）
 		FOR LOCAL,LOCAL:1,LOCAL:2
 			SIF POS(LOCAL) < 0
 			CONTINUE
@@ -258,7 +258,7 @@ NEXT
 		NEXT
 			PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력 업！
 	ELSEIF SKILLGAGE_H_GET(ARG,3545) == 2
-		;2ブルースター　　　　　　　　（飛具追撃　速度・防御強化）
+		;2ブルースター　　　　　　　　（飛具追撃　速度ㆍ防御強化）
 		FOR LOCAL,LOCAL:1,LOCAL:2
 			SIF POS(LOCAL) < 0
 			CONTINUE
@@ -275,7 +275,7 @@ NEXT
 	CFLAG:POS(LOCAL):회피강화 = MIN(32, CFLAG:POS(LOCAL):회피강화 + 4)
 		NEXT
 	ELSEIF SKILLGAGE_H_GET(ARG,3545) == 4
-		;4キャロットシューター　　　　（核熱追撃　速度・魔法威力強化）
+		;4キャロットシューター　　　　（核熱追撃　速度ㆍ魔法威力強化）
 		FOR LOCAL,LOCAL:1,LOCAL:2
 			SIF POS(LOCAL) < 0
 			CONTINUE
@@ -303,7 +303,7 @@ WAIT
 @SKILL_SPECIAL_COMMAND_3545,ARG,LOCAL
 #LOCALSIZE 1
 IF SKILLGAGE_D_GET(ARG,3545) == 0 && SKILLGAGE_F_GET(ARG,3545) > 49
-	PRINTFORML [{LOCAL}] 『리본・부스트』
+	PRINTFORML [{LOCAL}] 『리본ㆍ부스트』
 	C:LOCAL = 13545
 	LOCAL += 1
 ENDIF
@@ -314,10 +314,10 @@ RETURN LOCAL
 @INPUT_COM_13545,ARG
 #LOCALSIZE 1
 CALL TRUE_SKILL_COST,ARG,3545
-PRINTL [1] 부스트・서니 빔　　　　　（화염추격　속도・공격 강화）
-PRINTL [2] 부스트・블루 스타　　　　（비구추격　속도・방어 강화）
-PRINTL [3] 부스트・힐링 스태프　　　（충격추격　속도 2단계 강화）
-PRINTL [4] 부스트・캐롯 슈터　　　　（핵열추격　속도・마법위력 강화）
+PRINTL [1] 부스트ㆍ서니 빔　　　　　（화염추격　속도ㆍ공격 강화）
+PRINTL [2] 부스트ㆍ블루 스타　　　　（비구추격　속도ㆍ방어 강화）
+PRINTL [3] 부스트ㆍ힐링 스태프　　　（충격추격　속도 2단계 강화）
+PRINTL [4] 부스트ㆍ캐롯 슈터　　　　（핵열추격　속도ㆍ마법위력 강화）
 DRAWLINE
 PRINTL [0] ＣＡＮＣＥＬ
 CALL INPUTINT(0,1,2,3,4)
@@ -345,7 +345,7 @@ PRINTL 마법으로 에리나를 서포트할 때 필요한、리본의 부스�
 PRINTL 게이지 50％ 이상에서 커맨드가 사용 가능하게 된다。발동 후、선택에 따른 버프를 아군 전체에 부여하고、
 PRINTL 일정 턴 에리나가 공격한 대상에 대해、『만능 속성과 대응 속성의 복합』으로 소위력의 물리 추격을 행한다。
 PRINTL 효과 시간은 3턴。게이지 100％에서 발동했을 경우 6턴。발동시 종료될 때까지 해제 불가。
-PRINTL 게이지는 평상시 행동으로 데미지양에 따른 양、기합・포효・도발・컨센트레이트로 25% 상승한다。
+PRINTL 게이지는 평상시 행동으로 데미지양에 따른 양、기합ㆍ포효ㆍ도발ㆍ컨센트레이트로 25% 상승한다。
 PRINTL 
 PRINTL 에리나와 함께 모험을 하면서 모은 지팡이를 이용한、리본의 기술。（에리나 전용）
 
@@ -363,22 +363,22 @@ SETCOLOR 0x999999
 IF SKILLGAGE_D_GET(ARG,3545) > 0
 	;サニービーム　火炎
 	SIF SKILLGAGE_H_GET(ARG,3545) == 1
-		PRINTFORML ※부스트・서니 빔！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
+		PRINTFORML ※부스트ㆍ서니 빔！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
 	;ブルースター　飛具
 	SIF SKILLGAGE_H_GET(ARG,3545) == 2
-		PRINTFORML ※부스트・블루 스타！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
+		PRINTFORML ※부스트ㆍ블루 스타！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
 	;ヒーリングスタッフ
 	SIF SKILLGAGE_H_GET(ARG,3545) == 3
-		PRINTFORML ※부스트・힐링 스태프！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
+		PRINTFORML ※부스트ㆍ힐링 스태프！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
 	;キャロットシューター
 	SIF SKILLGAGE_H_GET(ARG,3545) == 4
-		PRINTFORML ※부스트・캐롯 슈터！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
+		PRINTFORML ※부스트ㆍ캐롯 슈터！　나머지 {SKILLGAGE_D_GET(ARG,3545)}턴
 ELSEIF SKILLGAGE_F_GET(ARG,3545) == 100
-		PRINTFORML ※리본・부스트　마력축적량　MAX！！
+		PRINTFORML ※리본ㆍ부스트　마력축적량　MAX！！
 ELSEIF SKILLGAGE_F_GET(ARG,3545) < 50
-		PRINTFORML ※리본・부스트　마력축적량　{SKILLGAGE_F_GET(ARG,3545),3}％
+		PRINTFORML ※리본ㆍ부스트　마력축적량　{SKILLGAGE_F_GET(ARG,3545),3}％
 ELSEIF SKILLGAGE_F_GET(ARG,3545) < 100
-		PRINTFORML ※리본・부스트　마력축적량　{SKILLGAGE_F_GET(ARG,3545),3}％ Boost OK！
+		PRINTFORML ※리본ㆍ부스트　마력축적량　{SKILLGAGE_F_GET(ARG,3545),3}％ Boost OK！
 ENDIF
 RESETCOLOR
 

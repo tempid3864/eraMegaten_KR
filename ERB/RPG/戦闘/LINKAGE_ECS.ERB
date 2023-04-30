@@ -11,7 +11,7 @@
 ;	Edit	Date			Author					Reason
 ;	001		20XX/XX/XX		----					新規作成
 ;	002		2021/04/22		Rsp暇人 				WAIT表示が誰のリンケージ参加中かわかるようにするための変更に対応
-;	003		2021/11/23		kamedakeisuke(ﾟдﾟ)		他人気合フラグ・他人集中フラグに対応
+;	003		2021/11/23		kamedakeisuke(ﾟдﾟ)		他人気合フラグㆍ他人集中フラグに対応
 ;	004		2022/06/24		JK好き					エラー落ち対策にFLAG:행동순1にARGを入れる処理を追加
 
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
@@ -286,7 +286,7 @@ ELSEIF RESULT == 0
 		CALLFORM SKILL_EFECT_{CFLAG:(ARG):입력행동}
 	SIF RESULT == 1
 		CALL BATTLE_EVENT_ATTACK
-	;気合・集中フラグの終了
+	;気合ㆍ集中フラグの終了
 	IF CFLAG:(ARG):입력행동 > -1
 		RESULT = 0
 		TRYCALLFORM SKILL_DAMAGETYPE_{CFLAG:(ARG):입력행동}, ARG

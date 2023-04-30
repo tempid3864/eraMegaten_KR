@@ -345,45 +345,45 @@ CALL ATTACK_FIELD, ARG, ARG:1, 4940
 IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카렌（무대소녀）]])
 	SETCOLOR 0xff0033
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・핵열・만능 복합
+		PRINT 검격ㆍ핵열ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・핵열 복합
+		PRINT 검격ㆍ핵열 복합
 	ELSE
 		PRINT 검격
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:히카리]])
 	SETCOLOR 0x5687e6
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・정신・만능 복합
+		PRINT 검격ㆍ정신ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・정신 복합
+		PRINT 검격ㆍ정신 복합
 	ELSE
 		PRINT 검격
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마히루]])
 	SETCOLOR 0x56b78e
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 타격・지변・만능
+		PRINT 타격ㆍ지변ㆍ만능
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 타격・지변 복합
+		PRINT 타격ㆍ지변 복합
 	ELSE
 		PRINT 타격
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:쥰나]])
 	SETCOLOR 0x8ac4ec
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 비구・빙결・만능 복합상성
+		PRINT 비구ㆍ빙결ㆍ만능 복합상성
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 비구・빙결 복합
+		PRINT 비구ㆍ빙결 복합
 	ELSE
 		PRINT 비구
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:후타바（무대소녀）]])
 	SETCOLOR 0x815ca1
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・중력・만능 복합
+		PRINT 검격ㆍ중력ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・중력 복합
+		PRINT 검격ㆍ중력 복합
 	ELSE
 		PRINT 검격
 	ENDIF
@@ -399,41 +399,41 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카오루코]])
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:나나]])
 	SETCOLOR 0xfdca57
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 전술・주살・만능 복합
+		PRINT 전술ㆍ주살ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 전술・주살 복합
+		PRINT 전술ㆍ주살 복합
 	ELSE
 		PRINT 전술
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마야（무대소녀）]])
 	SETCOLOR 0xffffff
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・파마・만능 복합
+		PRINT 검격ㆍ파마ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・파마 복합상성
+		PRINT 검격ㆍ파마 복합상성
 	ELSE
 		PRINT 검격
 	ENDIF
 ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:클로딘]])
 	SETCOLOR 0xff8e48
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・전격・만능 복합
+		PRINT 검격ㆍ전격ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・전격 복합
+		PRINT 검격ㆍ전격 복합
 	ELSE
 		PRINT 검격
 	ENDIF
 ELSE
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
-		PRINT 검격・신경・만능 복합
+		PRINT 검격ㆍ신경ㆍ만능 복합
 	ELSEIF CFLAG:(LOCAL:1):아이돌인기 > 99
-		PRINT 검격・신경 복합
+		PRINT 검격ㆍ신경 복합
 	ELSE
 		PRINT 검격
 	ENDIF
 ENDIF
 RESETCOLOR
-PRINTL ２회 공격、고속・고명중。성능은 가창기능 라이브경험 아이돌인기에 의존
+PRINTL ２회 공격、고속ㆍ고명중。성능은 가창기능 라이브경험 아이돌인기에 의존
 PRINTL 최대위력 300×２。추가효과：양측의 아이돌인기가 300 이상일 경우、추가로 최대위력 상승（400）
 
 ;リンケージくんの仕様上数行にわたると表示枠を圧迫するので申し訳ないが説明文変更

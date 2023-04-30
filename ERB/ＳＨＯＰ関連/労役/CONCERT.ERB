@@ -820,23 +820,23 @@ ENDIF
 ;---MOD 004 END---
 
 ;スタッフバフ
-;보컬リスト・세이렌（라이브하우스）
-IF 보컬리스트・세이렌진행 > 1
+;보컬リストㆍ세이렌（라이브하우스）
+IF 보컬리스트ㆍ세이렌진행 > 1
 	FOR LOCAL, 0, CHARANUM
 		;劇場憑きの세이렌はここで판정
 		IF NO:LOCAL == [[キャラ:세이렌]] && CFLAG:LOCAL:998 == 1
-			PRINTL 　보컬리스트・세이렌의 가호 ×110％
+			PRINTL 　보컬리스트ㆍ세이렌의 가호 ×110％
 			TIMES S , 1.10
 			BREAK
 		ENDIF
 	NEXT
 ENDIF
-;시나리오라이터・지크프리트（무도관）
-IF 시나리오라이터・지크프리트진행 > 1
+;시나리오라이터ㆍ지크프리트（무도관）
+IF 시나리오라이터ㆍ지크프리트진행 > 1
 	FOR LOCAL, 0, CHARANUM
 		;劇場憑きの지크프리트はここで판정
 		IF NO:LOCAL == [[キャラ:지크프리트]] && CFLAG:LOCAL:998 == 1
-			PRINTL 　시나리오라이터・지크프리트의 가호 ×110％
+			PRINTL 　시나리오라이터ㆍ지크프리트의 가호 ×110％
 			TIMES S , 1.10
 			BREAK
 		ENDIF
@@ -1154,9 +1154,9 @@ IF RESULT == 0
 
 		PRINTL
 		PRINTW 팬으로부터 선물을 받았다
-		PRINTL ・
-		PRINTL ・・
-		PRINTL ・・・
+		PRINTL ㆍ
+		PRINTL ㆍㆍ
+		PRINTL ㆍㆍㆍ
 		;MAX＝13％、でおよそ8回に1回程度
 		IF RAND:100 < E / 2
 			;30/1000＝3%
@@ -1394,9 +1394,9 @@ IF RESULT == 0
 				ELSE
 					PRINTFORML %조사처리(CALLNAME:대상, "는")% 스카우터의 이야기를 듣기 위해 사무소에 따라갔다……
 				ENDIF
-				PRINTL ・
-				PRINTL ・・
-				PRINTL ・・・
+				PRINTL ㆍ
+				PRINTL ㆍㆍ
+				PRINTL ㆍㆍㆍ
 				IF CDFLAG:대상:캐릭터간호감도:(86) < 0 || IS_ANTI_NTR_CLOTHES(대상) == -1
 					CDFLAG:대상:캐릭터간호감도:(86) -= CDFLAG:대상:캐릭터간호감도:(100+FAVORITE_1_ID(대상)) / 10
 					CFLAG:대상:음란도+= 30
@@ -1532,9 +1532,9 @@ IF RESULT == 0
 				ELSE
 					PRINTL 갑자기、등 뒤에 멈춰 있던 차에 밀어 넣어졌다……
 				ENDIF
-				PRINTL ・
-				PRINTL ・・
-				PRINTL ・・・
+				PRINTL ㆍ
+				PRINTL ㆍㆍ
+				PRINTL ㆍㆍㆍ
 				IF CDFLAG:대상:캐릭터간호감도:(85) < 0 || IS_ANTI_NTR_CLOTHES(대상) == -1
 					CDFLAG:대상:캐릭터간호감도:(85) -= 10
 					CFLAG:대상:음란도+= 200 + (ABL:대상:마조끼 + 5)*10

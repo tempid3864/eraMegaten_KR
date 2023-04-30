@@ -1,7 +1,7 @@
 ﻿
 ;=======================================================================
 ;ボクのおちんちんらんど　하자마의정신세계
-;ボス・마신황하자마・마코토(페르소나5)
+;ボスㆍ마신황하자마ㆍ마코토(페르소나5)
 ;던전ナンバー44　ＭＡＰ0~4
 ;카루코자카상층に連結するのが筋とも思ったが、長丁場になりすぎる＆作者が違うので断念
 ;デバックする時間がないんでそのままリリース
@@ -994,7 +994,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						PRINTFORML ……
 						PRINTFORML …
 						CALL 캐릭터삭제(GETCHARA(4508))
-						PRINTW ―――진・여신전생 if 진상해명END 조건달성―――
+						PRINTW ―――진ㆍ여신전생 if 진상해명END 조건달성―――
 						PRINTW ………………
 						PRINTW …………
 						PRINTW ……
@@ -1015,7 +1015,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						PRINTFORML ………
 						PRINTFORML ……
 						PRINTFORML …
-						PRINTW ―――진・여신전생 if 레이코루트 Another END 조건달성―――
+						PRINTW ―――진ㆍ여신전생 if 레이코루트 Another END 조건달성―――
 						PRINTW ………………
 						PRINTW …………
 						PRINTW ……
@@ -1030,7 +1030,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					PRINTW 당신은 하자마의 정신세계를 탈출했다…
 				ENDIF
 				IF DAY < 51
-					CALL MESSAGE_WINDOW_D, "", "/Ending No.054 (진・여신전생 if...エンド)"
+					CALL MESSAGE_WINDOW_D, "", "/Ending No.054 (진ㆍ여신전생 if...エンド)"
 					FLAG:5 = 9
 					SETBIT FLAG:취소된ED,54
 					SETBIT FLAG:발견ED,54
@@ -1301,7 +1301,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					PRINTFORMW 학교도 학생도 무사히 현세로 돌아올 수가 있었다…
 					PRINTFORML 
 					PRINTFORML 
-					PRINTW ―――진・여신전생 if Another END 조건달성―――
+					PRINTW ―――진ㆍ여신전생 if Another END 조건달성―――
 					PRINTW ………………
 					PRINTW …………
 					PRINTW ……
@@ -1357,7 +1357,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					IF RESULT == 0
 					ELSE
 						PRINTL 하자마는 여러 마계를 창조한 인간이다。
-						PRINTL 게다가、팬텀・소사이어티의 조사에 의하면、혼자서 COMP를 만들고、
+						PRINTL 게다가、팬텀ㆍ소사이어티의 조사에 의하면、혼자서 COMP를 만들고、
 						PRINTW 마계의 알루타워에 도전하여 “죽음”과 “시간”을 이기고、왕이 된 것 같다。
 						PRINTL 이런 인재를 방치할 순 없다。조교하면 비싸게 팔리는 것이며、전력으로 해도 좋을 것이다。
 						PRINTW 당신은 하자마를 노예로 부리기로 했다。
@@ -1375,7 +1375,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				PRINTW ……이걸로、카루코자카 고교 마계화 사건은、정말로 해결했다。
 
 				IF DAY < 51
-					CALL MESSAGE_WINDOW_D, "", "/Ending No.054 (진・여신전생 if...エンド)"
+					CALL MESSAGE_WINDOW_D, "", "/Ending No.054 (진ㆍ여신전생 if...エンド)"
 					FLAG:5 = 9
 					SETBIT FLAG:취소된ED,54
 					SETBIT FLAG:발견ED,54

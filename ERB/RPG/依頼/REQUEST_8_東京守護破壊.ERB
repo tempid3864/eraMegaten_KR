@@ -51,7 +51,7 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "신의 천년왕국은/머지 않아/현실이 될 것입니다"
 		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "이번에 부른 이유는/아직 동경에는/신에게 방해되는 자가 있기 때문입니다"
 		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "사천왕이라 불리는/동경의 사방을 관장하는/４인의 오니입니다"
-		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "사천왕을 퇴치시켜주십시오/꼭/부탁입니다・・・"
+		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "사천왕을 퇴치시켜주십시오/꼭/부탁입니다ㆍㆍㆍ"
 	SIF !투기장플래그:1:0
 		CALL MESSAGE_WINDOW, SAVESTR:로우히어로CALLNAME, "우선 비사문천을 공격해/그의 힘을 시험해 보는 것이 좋을 겁니다"
 
@@ -144,7 +144,7 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 		
 		CALL BATTLE_START
 		
-		CALL MESSAGE_WINDOW, "비사문천", "・・・将門公이여/우리 사천왕들은/이제 패했다"
+		CALL MESSAGE_WINDOW, "비사문천", "ㆍㆍㆍ将門公이여/우리 사천왕들은/이제 패했다"
 	ELSE
 		CALL MESSAGE_WINDOW, , @"＞%CALLNAME:MASTER%は%SAVESTR:로우히어로CALLNAME%의 충고에 따라/비사문천를 공격하기로 했다"
 		CALL MESSAGE_WINDOW, , "＞비사문천의 거처…/　"
@@ -162,7 +162,7 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		CALL BATTLE_START
-		CALL MESSAGE_WINDOW, "비사문천", "・・・将門公이여/귀신：비사문천/이제 패했다"
+		CALL MESSAGE_WINDOW, "비사문천", "ㆍㆍㆍ将門公이여/귀신：비사문천/이제 패했다"
 		CALL MESSAGE_WINDOW, , "＞비사문천을 쓰러뜨렸다/　"
 		CALL MESSAGE_WINDOW, , "＞무언가가 떨어졌다/　"
 		CALL MESSAGE_WINDOW, , "＞비사문의 부적을 손에 넣었다/　"

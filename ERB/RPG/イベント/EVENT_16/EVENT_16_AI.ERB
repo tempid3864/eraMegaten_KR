@@ -118,26 +118,26 @@ ENDIF
 
 ; 마가렛の사고패턴
 ; 
-; ・全단계で常時2回行動
-; ・全단계で1moreを含む行動50回毎に9999固定메기도라온
-; ・全단계で一定조건において메기도라온모드(行動が全て9999固定데미지메기도라온化)
+; ㆍ全단계で常時2回行動
+; ㆍ全단계で1moreを含む行動50回毎に9999固定메기도라온
+; ㆍ全단계で一定조건において메기도라온모드(行動が全て9999固定데미지메기도라온化)
 ;     불굴의투지が発動した場合、메기도라온모드on
 ;     パーティーに레벨に対して능력が高すぎる(18+Lv*1.5+5の2倍이상)キャラが存在する場合、메기도라온모드on
 ;     パーティーに당신 이외의 마하애널라이즈を持っているキャラが存在する場合、메기도라온모드on
 ; 
-; ・第一단계 HP90%まで
+; ㆍ第一단계 HP90%まで
 ;   アタック*2
-; ・第二단계 HP50%まで
+; ㆍ第二단계 HP50%まで
 ;   화염->빙결->전격->질풍->コンセ->메기도라온のローテーションで공격
-; ・第三단계 初めてHP50%미만
+; ㆍ第三단계 初めてHP50%미만
 ;   새벽의명성
-; ・第四단계 새벽의명성後
+; ㆍ第四단계 새벽의명성後
 ;   디아라한
-; ・第五단계 第三단계以降HP90%まで
+; ㆍ第五단계 第三단계以降HP90%まで
 ;   アタック*2
-; ・第六단계 第三단계以降HP50%まで
+; ㆍ第六단계 第三단계以降HP50%まで
 ;   화염->빙결->전격->질풍->コンセ->메기도라온のローテーションで공격。공격상성が무효と흡수のみの場合は次の공격상성のガードブレイ호우ク
-; ・第七단계 第三단계以降HP50%미만
+; ㆍ第七단계 第三단계以降HP50%미만
 ;   화염->빙결->전격->질풍->기합->팔척뛰기のローテーションで공격
 ;   この時点で스킬から불굴의투지が삭제される
 @SET_ACTION_마가렛, ARG
@@ -227,7 +227,7 @@ ELSE
 				FOR LOCAL, 0, 6
 					IF CFLAG:ARG:(GET_BATTLESTATUS(LOCAL) + "강화") < 0
 						; デクンダ
-						CALL EVENT_16_SET_ACTION, ARG, [[스킬:데・쿤다]]
+						CALL EVENT_16_SET_ACTION, ARG, [[스킬:데ㆍ쿤다]]
 						DEBUGPRINTFORML 행동 {CFLAG:ARG:600, 4}회째:1more_デクンダ
 						BREAK
 					ELSE
@@ -304,7 +304,7 @@ ELSE
 				; 弱点持ちがいないか반사持ちが混ざっている
 				ELSE
 					; 전격전체
-					CALL EVENT_16_SET_ACTION, ARG, [[스킬:엘・지하드]]
+					CALL EVENT_16_SET_ACTION, ARG, [[스킬:엘ㆍ지하드]]
 					DEBUGPRINTFORML 행동 {CFLAG:ARG:600, 4}회째:ローテーション{CFLAG:ARG:602}_전격전체
 				ENDIF
 			ENDIF
@@ -312,7 +312,7 @@ ELSE
 			; 전격で1more
 			IF CFLAG:ARG:１more플래그 > 0
 				; 전격전체
-				CALL EVENT_16_SET_ACTION, ARG, [[스킬:엘・지하드]]
+				CALL EVENT_16_SET_ACTION, ARG, [[스킬:엘ㆍ지하드]]
 				DEBUGPRINTFORML 행동 {CFLAG:ARG:600, 4}회째:1more_전격전체
 			ELSE
 				RESULT = EVENT_16_SEARCH_REGISTANCE(2, "질풍", 1, 1)
@@ -387,7 +387,7 @@ SELECTCASE CHANGE_P
 	CASE 0
 		; 페르소나無し
 		; 第一단계のみ
-		LOCALS = P・체인지
+		LOCALS = Pㆍ체인지
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -410,7 +410,7 @@ SELECTCASE CHANGE_P
 		CALL SYNC_STATUS, ARG
 	CASE 1
 		; 剛毅 ジークフリード (화염)
-		LOCALS = P・체인지(용기 지크프리드)
+		LOCALS = Pㆍ체인지(용기 지크프리드)
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -433,7 +433,7 @@ SELECTCASE CHANGE_P
 		CALL SYNC_STATUS, ARG
 	CASE 2
 		; 광대 로키 (빙결)
-		LOCALS = P・체인지(광대 로키)
+		LOCALS = Pㆍ체인지(광대 로키)
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -456,7 +456,7 @@ SELECTCASE CHANGE_P
 		CALL SYNC_STATUS, ARG
 	CASE 3
 		; 皇帝 오오쿠니누시 (전격)
-		LOCALS = P・체인지(황제 오오쿠니누시)
+		LOCALS = Pㆍ체인지(황제 오오쿠니누시)
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -478,8 +478,8 @@ SELECTCASE CHANGE_P
 		BASE:ARG:사이코 = 100
 		CALL SYNC_STATUS, ARG
 	CASE 4
-		; 塔 クー・フーリン (질풍)
-		LOCALS = P・체인지(탑 쿠・훌린)
+		; 塔 クーㆍフーリン (질풍)
+		LOCALS = Pㆍ체인지(탑 쿠ㆍ훌린)
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -505,7 +505,7 @@ SELECTCASE CHANGE_P
 		; 만능이외무효。만능1/4
 		; 이악물기플래그が立っている場合は全무효
 		; 가드킬で殴ることもできるが……
-		LOCALS = P・체인지(황제 오베론)
+		LOCALS = Pㆍ체인지(황제 오베론)
 		BASE:ARG:검격 = 0
 		BASE:ARG:비구 = 0
 		BASE:ARG:타격 = 0
@@ -531,7 +531,7 @@ SELECTCASE CHANGE_P
 	CASE 6
 		; 審判 아르다 (디아라한, 메기도라온)
 		; 全내성。
-		LOCALS = P・체인지(심판 아르다)
+		LOCALS = Pㆍ체인지(심판 아르다)
 		BASE:ARG:검격 = 25
 		BASE:ARG:비구 = 25
 		BASE:ARG:타격 = 25
@@ -556,7 +556,7 @@ SELECTCASE CHANGE_P
 		; 쇼우 ルシフェル (새벽의명성)
 		; 물리と만능、파마주살이외を흡수
 		; ただし行動패턴の関係上、これで공격を受けることはほぼない
-		LOCALS = P・체인지(별 루시펠)
+		LOCALS = Pㆍ체인지(별 루시펠)
 		BASE:ARG:검격 = 100
 		BASE:ARG:비구 = 100
 		BASE:ARG:타격 = 100
@@ -580,7 +580,7 @@ SELECTCASE CHANGE_P
 	CASE 8
 		; 塔 요시츠네 (팔척뛰기)
 		; 물리흡수
-		LOCALS = P・체인지(탑 요시츠네)
+		LOCALS = Pㆍ체인지(탑 요시츠네)
 		BASE:ARG:검격 = -200
 		BASE:ARG:비구 = -100
 		BASE:ARG:타격 = -100

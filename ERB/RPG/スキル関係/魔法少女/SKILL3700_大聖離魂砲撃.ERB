@@ -142,7 +142,7 @@ IF ARG == ARG:1
 		SIF GETBIT(CFLAG:LOCAL:받음플래그,22)
 			CALL SKILLGAGE_F_ADD,ARG,3700,1
 	NEXT
-	;ティロ・フィナーレ使用時にボーナス
+	;ティロㆍフィナーレ使用時にボーナス
 	SIF CFLAG:ARG:입력행동 == 2997
 		CALL SKILLGAGE_F_ADD,ARG,3700,5
 ENDIF
@@ -185,7 +185,7 @@ RESETCOLOR
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3700
-PRINTL 티로・세인트도펠리온
+PRINTL 티로ㆍ세인트도펠리온
 PRINTL 『예배의 도펠』을 발현。도펠은 꽃잎에서 거대한 포탄을 쏘아올려、
 PRINTL 적 1체와 그 주위에 비구 상성 특대 데미지를 주고、확률로 염상시킨다。
 PRINTL 전용 마기아 게이지가 추가되고、여 데미지、피 데미지로 상승。

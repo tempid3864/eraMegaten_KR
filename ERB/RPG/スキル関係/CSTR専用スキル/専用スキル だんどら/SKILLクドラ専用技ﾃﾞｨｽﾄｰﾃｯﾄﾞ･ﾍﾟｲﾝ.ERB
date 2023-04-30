@@ -8,7 +8,7 @@
 
 ;스킬명
 @SKILL_NAME_D･ﾍﾟｲﾝ,ARG
-RESULTS = D・페인
+RESULTS = Dㆍ페인
 
 ;　명중
 @SKILL_HITRATE_D･ﾍﾟｲﾝ, ARG
@@ -53,7 +53,7 @@ RETURN 3
 @SKILL_COST_D･ﾍﾟｲﾝ,ARG
 #DIM スキル番号
 #DIM DI残りターン
-スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄ・いんすとーる")
+スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄㆍいんすとーる")
 DI残りターン = SKILLGAGE_D_GET(ARG,スキル番号)
 SIF DI残りターン > 0
 	RETURN 50
@@ -206,7 +206,7 @@ RETURN 0
 #DIM DI残りターン
 #DIM スキル番号
 #LOCALSIZE 4
-スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄ・いんすとーる")
+スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄㆍいんすとーる")
 DI残りターン = SKILLGAGE_D_GET(ARG,スキル番号)
 ;他の貫通、複合スキルからほぼコピペ
 IF CFLAG:ARG:포지션 < 7
@@ -329,9 +329,9 @@ ENDIF
 @SKILL_EXPLAIN_D･ﾍﾟｲﾝ,ARG
 #DIM DI残りターン
 #DIM スキル番号
-スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄ・いんすとーる")
+スキル番号 = PU_SKILLNUM_GET(ARG,"Ｄㆍいんすとーる")
 DI残りターン = SKILLGAGE_D_GET(ARG,スキル番号)
-PRINTL 기술명：디스트로이드・페인
+PRINTL 기술명：디스트로이드ㆍ페인
 PRINTL 주위 전체를 용의 발톱으로 베어가르고 번개로 구워버린다
 PRINTL 적 전체에 전술과 전격의 복합 특대 물리데미지
 PRINTL 용희 쿠도라의 전용기

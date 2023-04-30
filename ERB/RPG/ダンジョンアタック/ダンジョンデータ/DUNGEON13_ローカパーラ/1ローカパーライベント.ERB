@@ -317,9 +317,9 @@ SIF !GETBIT(던전플래그:13:22,2) && 던전플래그:13:1 > 14 && 던전플�
 ;SIF!GETBIT(던전플래그:13:22,3) && 던전플래그:13:1 > 14
 ;	RESULTS += "[11]이세계의 여의사 타케미 타에/"
 SIF !GETBIT(던전플래그:13:22,4) && 던전플래그:13:1 > 14
-	RESULTS += "[12]제나・엔젤/"
+	RESULTS += "[12]제나ㆍ엔젤/"
 ;SIF!GETBIT(던전플래그:13:22,5) && 던전플래그:13:1 > 14
-;	RESULTS += "[12]제나・엔젤/"
+;	RESULTS += "[12]제나ㆍ엔젤/"
 ;SIF 던전플래그:13:1 > 4
 	RESULTS += "[70]수수께끼의 노예 상인/"
 RESULTS += "[0]그만두다"
@@ -388,10 +388,10 @@ SELECTCASE RESULT
 		CALL MESSAGE_WINDOW_D, "유스케", "아니、그렇지도 않아/고에몬은 나쁜 녀석의 보물을 빼앗아서 가난한 사람들에게 돈을 주는/의적이라는 이야기도 있어 "
 		CALL MESSAGE_WINDOW_D, "유스케", "의적이라는 이야기는 일본의 연극인 가부키에서 나온 이미지로/고에몬이 주인공인 가부키가 있는데… "
 		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다 "
-		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다・ "
-		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다・・ "
-		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다・・・ "
-		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다・・・・ "
+		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다ㆍ "
+		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다ㆍㆍ "
+		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다ㆍㆍㆍ "
+		CALL MESSAGE_WINDOW_D, "", "유스케의 긴 이야기가 이어진다ㆍㆍㆍㆍ "
 		CALL MESSAGE_WINDOW_D, "유스케", "…그렇게 프란시스코 자비에르의 저서에도 실려있고… "
 		CALL MESSAGE_WINDOW_D, "프레드", "이…이제 됐어/고마워、유스케 "
 		던전플래그:13:9 *= 11
@@ -646,7 +646,7 @@ SELECTCASE RESULT
 							ABL:(RESULT:1):초기변신악마스킬8 = [[스킬:씹어흩뿌리기]]
 						ENDIF
 						ENDIF
-						PRINTFORML 제나・엔젤이 동료가 되었다
+						PRINTFORML 제나ㆍ엔젤이 동료가 되었다
 					ENDIF
 				ELSE
 					CALL MESSAGE_WINDOW_D, "제나", "그녀석 이야기는 하지 마라！ "
@@ -680,7 +680,7 @@ IF 던전플래그:13:1 == 0
 			IF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "로알드", "그런가、생각이 바뀌면/언제라도 말을 걸어 줘 "
 			ELSEIF RESULT == 0
-				CALL MESSAGE_WINDOW_D, "로알드", "알았다、놈들이 있는 장소로 안내하지・・・ "
+				CALL MESSAGE_WINDOW_D, "로알드", "알았다、놈들이 있는 장소로 안내하지ㆍㆍㆍ "
 				CALL DUNGEON_WORP,1,1,3
 				CALL MESSAGE_WINDOW_D, "", "" + CALLNAME:MASTER + "은 점령된 지하가에 갔다 "
 				CALL MESSAGE_WINDOW_D, "", "카르마병을 차례차례 쓰러뜨렸지만 예상 이상으로 수가 많았다 "
@@ -692,7 +692,7 @@ IF 던전플래그:13:1 == 0
 				CALL MESSAGE_WINDOW_D, "복숭아색 머리의 여성", "뭐야、잡동사니 투성이인 여기가/니르바나라는 거야？ "
 				CALL MESSAGE_WINDOW_D, "후드의 남성", "상황으로 보아 그렇게 생각하는 것이 타당하다 "
 				CALL MESSAGE_WINDOW_D, "은발의 남성", "우리들은 모두 뿔뿔이 흩어져 날려온 것 같아 "
-				CALL MESSAGE_WINDOW_D, "복숭아색 머리의 여성", "나도 여기 도달할 때까지/만난 것은 이 아이들뿐이고・・・ "
+				CALL MESSAGE_WINDOW_D, "복숭아색 머리의 여성", "나도 여기 도달할 때까지/만난 것은 이 아이들뿐이고ㆍㆍㆍ "
 				CALL MESSAGE_WINDOW_D, "복숭아색 머리의 여성", "시에로나 히트도 분명 무사할 거야 "
 				CALL MESSAGE_WINDOW_D, "", "그들에게는 시에로와 히트라는 동료가 있는 것 같다 "
 				CALL MESSAGE_WINDOW_D, "은발의 남성", "일단은 세라를 찾자 "
@@ -760,7 +760,7 @@ IF 던전플래그:13:1 == 0
 					ABL:(RESULT:1):초기변신악마스킬1 = [[스킬:일문자베기]]
 					ABL:(RESULT:1):초기변신악마스킬2 = [[스킬:물어뜯기]]
 					ABL:(RESULT:1):초기변신악마스킬3 = [[스킬:부흐라]]
-					ABL:(RESULT:1):초기변신악마스킬4 = [[스킬:마하・부흐]]
+					ABL:(RESULT:1):초기변신악마스킬4 = [[스킬:마하ㆍ부흐]]
 					ABL:(RESULT:1):초기변신악마스킬5 = [[스킬:아쿠에스]]
 					ABL:(RESULT:1):초기변신악마스킬6 = [[스킬:빙결브레이크]]
 					ABL:(RESULT:1):초기변신악마스킬7 = [[스킬:물고늘어지기]]
@@ -792,7 +792,7 @@ IF 던전플래그:13:1 == 0
 					ABL:(RESULT:1):초기변신악마스킬2 = [[스킬:돌려차기]]
 					ABL:(RESULT:1):초기변신악마스킬3 = [[스킬:섬머솔트]]
 					ABL:(RESULT:1):초기변신악마스킬4 = [[스킬:잔마]]
-					ABL:(RESULT:1):초기변신악마스킬5 = [[스킬:마하・갈]]
+					ABL:(RESULT:1):초기변신악마스킬5 = [[스킬:마하ㆍ갈]]
 					ABL:(RESULT:1):초기변신악마스킬6 = [[스킬:씹어흩뿌리기]]
 					ABL:(RESULT:1):초기변신악마스킬7 = [[스킬:충격브레이크]]
 					ABL:(RESULT:1):초기변신악마스킬8 = [[스킬:주살브레이크]]
@@ -820,11 +820,11 @@ IF 던전플래그:13:1 == 0
 					CALL SYNC_STATUS,(RESULT:1)
 					CALL HEALTH_CHARA,(RESULT:1)
 					ABL:(RESULT:1):초기변신악마스킬1 = [[스킬:마그나스]]
-					ABL:(RESULT:1):초기변신악마스킬2 = [[스킬:마하・마그나]]
+					ABL:(RESULT:1):초기변신악마스킬2 = [[스킬:마하ㆍ마그나]]
 					ABL:(RESULT:1):초기변신악마스킬3 = [[스킬:그라이바]]
 					ABL:(RESULT:1):초기변신악마스킬4 = [[스킬:지변브레이크]]
 					ABL:(RESULT:1):초기변신악마스킬5 = [[스킬:디아라마]]
-					ABL:(RESULT:1):초기변신악마스킬6 = [[스킬:메・디아]]
+					ABL:(RESULT:1):초기변신악마스킬6 = [[스킬:메ㆍ디아]]
 					ABL:(RESULT:1):초기변신악마스킬7 = [[스킬:파트라]]
 					ABL:(RESULT:1):초기변신악마스킬8 = [[스킬:포즈무디]]
 					;CALL CHECK_LEVEL_UP, (RESULT:1)
@@ -832,13 +832,13 @@ IF 던전플래그:13:1 == 0
 				CALL MESSAGE_WINDOW_D, "", "※세 사람은 파티에 들어오지 않았습니다。/　그들을 파티에 넣으려면 서프에게 말을 걸거나 터미널에서 동료를 교체（서머너만）합시다 "
 			ENDIF
 		CASE 1
-			CALL MESSAGE_WINDOW_D, "로카파라 조직원", "제길、녀석들이 들이닥치고 있어・・・ "
-			CALL MESSAGE_WINDOW_D, "로카파라 조직원", "돌파되는 것도 시간 문제야・・・ "
+			CALL MESSAGE_WINDOW_D, "로카파라 조직원", "제길、녀석들이 들이닥치고 있어ㆍㆍㆍ "
+			CALL MESSAGE_WINDOW_D, "로카파라 조직원", "돌파되는 것도 시간 문제야ㆍㆍㆍ "
 		CASE 2
 			CALL MESSAGE_WINDOW_D, "아딜", "네가 카르마 협회와 싸워줄 조력자인가? "
 			CALL MESSAGE_WINDOW_D, "아딜", "자세한 것은 이 방에 있는 로알드에게 들어 줘 "
 		CASE 3
-			CALL MESSAGE_WINDOW_D, "붉은 모자의 여자 아이", "프레드 녀석들、동료를 구하러 지하가에 가버렸어・・・"
+			CALL MESSAGE_WINDOW_D, "붉은 모자의 여자 아이", "프레드 녀석들、동료를 구하러 지하가에 가버렸어ㆍㆍㆍ"
 	ENDSELECT
 ELSEIF 던전플래그:13:1 == 1
 	SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
@@ -872,7 +872,7 @@ ELSEIF 던전플래그:13:1 == 1
 		;서프
 		CASE 5
 			CALL MESSAGE_WINDOW_D, "서프", "시에로는 아무래도 여기 있는 것 같군"
-			CALL MESSAGE_WINDOW_D, "서프", "히트는 어디 있는 걸까・・・"
+			CALL MESSAGE_WINDOW_D, "서프", "히트는 어디 있는 걸까ㆍㆍㆍ"
 			CALL MESSAGE_WINDOW_D, "서프", "마코토 일행의 동료도 있으면 좋겠다만"
 		;알지라
 		CASE 6
@@ -942,7 +942,7 @@ ELSEIF 던전플래그:13:1 == 1
 		CASE 9
 			CALL MESSAGE_WINDOW_D, "타카마키 안", "어、어쩐지 엄청 분위기가 무거운 기분이 드는데… "
 			CALL MESSAGE_WINDOW_D, "타카마키 안", "경계당한다고 해야 할지、감시당한다고 해야 할지… "
-			CALL MESSAGE_WINDOW_D, "타카마키 안", "게일 씨 말대로 쉽게/쉬게 해주지 않을 것 같네・・・ "
+			CALL MESSAGE_WINDOW_D, "타카마키 안", "게일 씨 말대로 쉽게/쉬게 해주지 않을 것 같네ㆍㆍㆍ "
 		;新島　真
 		CASE 10
 			CALL MESSAGE_WINDOW_D, "니지마 마코토", "음ー 역시 메멘토스나 팰리스 때 같은/힘이 나오지 않아 "

@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB302.ERB
-;	Facility	:회화타입：男・若者の회화用메시지＋挨拶・問答処理
+;	Facility	:회화타입：男ㆍ若者の회화用메시지＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -56,7 +56,7 @@
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 	PRINTFORMW 「……!?」
 	PRINTFORMW 「%CSTR:ARG:일인칭%、%CSTR:ARG:이인칭%에게 한눈에 반했을지도 몰라……」
 	PRINTFORMW 「좋지……같이 가줄게」
@@ -197,7 +197,7 @@ SELECTCASE ARG:1
 					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:PLAYER%의 가슴을 난폭하게 잡으면서、입안에 혀를 넣었다
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;스커트걷어올림・パンツずらし
+			;스커트걷어올림ㆍパンツずらし
 			PRINTFORMW 「옷…하하、좋아 좋아」
 			PRINTFORMW 「스스로 \@TALENT:PLAYER:남자 == 0 ? 구멍 # 보지\@를 열어젖히는 음란\@TALENT:PLAYER:남자 == 0 ? 녀 # 한 녀석\@에게는 %조사처리(CSTR:ARG:일인칭,"가")% 이 녀석을 줄게」
 			
@@ -485,7 +485,7 @@ SELECTCASE ARG:1
 									PRINTFORMW 「굉장히 흥분하잖아？ 다른 인간의 여자라면 더더욱 말야!」
 									PRINTFORML 
 							ENDSELECT
-						;거유・폭유
+						;거유ㆍ폭유
 						CASE 1
 							SIF !TALENT:(바친캐릭터()):거유 || !TALENT:(바친캐릭터()):폭유
 								GOTO 異性を宛がってもらった時の反応_LOOP
@@ -542,7 +542,7 @@ SELECTCASE ARG:1
 				;通常
 				ELSE
 					SELECTCASE RAND:3
-						;거유・폭유
+						;거유ㆍ폭유
 						CASE 0
 							SIF !TALENT:(바친캐릭터()):거유 || !TALENT:(바친캐릭터()):폭유
 								GOTO 異性を宛がってもらった時の反応_LOOP
@@ -632,7 +632,7 @@ SELECTCASE ARG:1
 				ENDIF
 			ELSEIF TALENT:(바친캐릭터()):음란 || TALENT:(바친캐릭터()):창부
 				SELECTCASE RAND:2
-					;거유・폭유
+					;거유ㆍ폭유
 					CASE 0
 						SIF !TALENT:(바친캐릭터()):거유 || !TALENT:(바친캐릭터()):폭유
 							GOTO 異性を宛がってもらった時の反応_LOOP
@@ -659,7 +659,7 @@ SELECTCASE ARG:1
 				ENDSELECT
 			ELSEIF TALENT:(바친캐릭터()):복종 || TALENT:(바친캐릭터()):예속
 				SELECTCASE RAND:2
-					;거유・폭유
+					;거유ㆍ폭유
 					CASE 0
 						SIF !TALENT:(바친캐릭터()):거유 || !TALENT:(바친캐릭터()):폭유
 							GOTO 異性を宛がってもらった時の反応_LOOP
@@ -687,7 +687,7 @@ SELECTCASE ARG:1
 				ENDSELECT
 			ELSE
 				SELECTCASE RAND:2
-					;거유・폭유
+					;거유ㆍ폭유
 					CASE 0
 						SIF !TALENT:(바친캐릭터()):거유 || !TALENT:(바친캐릭터()):폭유
 							GOTO 異性を宛がってもらった時の反応_LOOP
@@ -868,7 +868,7 @@ SELECTCASE ARG:1
 				ENDIF
 			;通常
 			ELSE
-				;연모・친애
+				;연모ㆍ친애
 				IF TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애
 					;発情
 					IF 위험일(바친캐릭터()) > 1
@@ -1020,7 +1020,7 @@ SELECTCASE ARG:1
 			IF FLAG:악마만족도 == 0 && !CFLAG:PLAYER:상태이상 == GET_STATE_NUM("CHARM")
 				PRINTFORMW 「어이! 뭐야 이거!!」
 				PRINTFORMW 「석녀 이하의 썩을 보지잖아!」
-				PRINTFORMW 「빠구리해서 손해 봤다구! 빠・구・리・손・해!! 퉤!!」
+				PRINTFORMW 「빠구리해서 손해 봤다구! 빠ㆍ구ㆍ리ㆍ손ㆍ해!! 퉤!!」
 			ELSEIF 위험일(PLAYER)
 				IF TALENT:PLAYER:발정가능
 					PRINTFORMW 「헤헤, 얌전해져버렸군」
@@ -1058,7 +1058,7 @@ SELECTCASE ARG:1
 				PRINTFORMW 「그럼」
 	CASE 59
 		;59:満足し、仲魔になる
-		;연모・친애
+		;연모ㆍ친애
 		IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 			;위험일
 			IF 위험일(PLAYER)
@@ -1095,7 +1095,7 @@ SELECTCASE ARG:1
 		;그외
 		ELSE
 			;異性を捧げた場合
-			;연모・친애
+			;연모ㆍ친애
 			IF TFLAG:바친캐릭터 > -1 && (TALENT:(바친캐릭터()):연모 || TALENT:(바친캐릭터()):친애)
 				;위험일
 				IF 위험일((바친캐릭터())) == 1
@@ -1368,11 +1368,11 @@ SELECTCASE ARG:1
 		;友好度が高い
 	PRINTFORML 「또 만나자구」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해、하게 해 주었다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해、범해주게 되었다
 		CALL MESSAGE_TALK
 		PRINTFORML 
@@ -1427,7 +1427,7 @@ SELECTCASE ARG:1
 					PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %조사처리(CALLNAME:PLAYER,"와")% 몸을 겹쳤다
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;스커트걷어올림・パンツずらし
+			;스커트걷어올림ㆍパンツずらし
 			PRINTFORMW 「옷…하하、좋아 좋아」
 			PRINTFORMW 「스스로 \@TALENT:PLAYER:남자 == 0 ? 구멍 # 보지\@를 열어젖히는 음란\@TALENT:PLAYER:남자 == 0 ? 녀 # 한 녀석\@에게는 %조사처리(CSTR:ARG:일인칭,"가")% 이 녀석을 줄게」
 			
@@ -1455,7 +1455,7 @@ SELECTCASE ARG:1
 			IF RAND:2 == 0
 				IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 					PRINTFORMW 「후우、좋은 느낌이다…읏챠、제대로 마셔」
-					PRINTFORMW 「그・러・면…응？이걸로 마지막일리가 없잖아」
+					PRINTFORMW 「그ㆍ러ㆍ면…응？이걸로 마지막일리가 없잖아」
 					PRINTFORMW 「끝나는 건 말야…%CSTR:ARG:이인칭%의 안이 정액으로 빵빵해지고나서다」
 					PRINTFORMW 「햐하하、임신시켜주겠어!」
 				ELSE
@@ -1476,7 +1476,7 @@ SELECTCASE ARG:1
 			ENDIF
 		ELSE
 			IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
-				PRINTFORMW 「가로채주지！가・로・채・기!!」
+				PRINTFORMW 「가로채주지！가ㆍ로ㆍ채ㆍ기!!」
 				PRINTFORMW 「역시 범한다면 \@TALENT:MASTER:남자 == 0 ? 여친 # 남친\@을 갖고 있는 녀석이지！현격히 흥분된다구」
 			ELSE
   		PRINTFORMW 「%조사처리(CSTR:ARG:11,"를")% 권하는거야?」
@@ -1679,9 +1679,9 @@ IF FLAG:월령 == 8
 			CASE 2
 				PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 있는 힘껏 %조사처리(CALLNAME:ARG,"를")% 걷어찼다
 				PRINTFORML 
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORML 
 				IF RAND:2 == 0
 					PRINTFORMW 들어올린 발이 %CALLNAME:ARG%의 사타구니를 직격으로 강타했다！
@@ -1823,9 +1823,9 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 			PRINTFORMW %CALLNAME:ARG%의 교묘한 애무에%조사처리(CALLNAME:PLAYER,"는")% 완전히 얼이 빠졌다。
 			PRINTFORMW 상기한 피부에는 땀이 배여, 허벅지는 흘러넘친 애액으로 젖어 질척거린다…
 			PRINTFORMW 
-			PRINTFORMW ・
-			PRINTFORMW ・
-			PRINTFORMW ・
+			PRINTFORMW ㆍ
+			PRINTFORMW ㆍ
+			PRINTFORMW ㆍ
 			PRINTFORMW 
 			PRINTFORMW 
 			PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 한바탕%CALLNAME:PLAYER%의 반응을 즐겼다
@@ -1904,9 +1904,9 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 			PRINTFORMW 
 	ENDSELECT
 
-	PRINTFORMW 　・
-	PRINTFORMW 　・
-	PRINTFORMW 　・
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
 	PRINTFORMW 
 	PRINTFORMW 
 	PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 발기한 페니스를%CALLNAME:PLAYER%의 얼굴에 밀어 붙였다
@@ -1951,9 +1951,9 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 			PRINTFORMW 
 			EXP:PLAYER:펠라경험 += 1
 	ENDSELECT
-	PRINTFORMW 　・
-	PRINTFORMW 　・
-	PRINTFORMW 　・
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
 	PRINTFORMW 
 	PRINTFORMW 
 	PRINTFORMW %조사처리(CALLNAME:ARG,"는")% %CALLNAME:PLAYER%를 밀어 넘어뜨리고 한계까지 발기한 페니스를 비부에 꽉눌렀다
@@ -2030,9 +2030,9 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 	ENDSELECT
 	EXP:PLAYER:성교경험 += 1
 
-	PRINTFORMW 　・
-	PRINTFORMW 　・
-	PRINTFORMW 　・
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
 	PRINTFORMW 
 	PRINTFORMW 
 	PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 질 안쪽을 파낼듯이 허리를 흔들기 시작했다
@@ -2116,9 +2116,9 @@ ELSEIF FLAG:무후후전개 && TALENT:PLAYER:남자 == 0 && RAND:100 < 15 && TAL
 			PRINTFORMW 
 	ENDSELECT
 	
-	PRINTFORMW 　・
-	PRINTFORMW 　・
-	PRINTFORMW 　・
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
+	PRINTFORMW 　ㆍ
 	PRINTFORMW 
 	PRINTFORMW 
 	PRINTFORMW %CALLNAME:ARG%의 페니스가 질내에서 수상하게 꿈틀댄다
@@ -3329,7 +3329,7 @@ FOR LOCAL, 0, 2
 				PRINTFORML 
 				;きつめの性格だと答えない、それ以外は答える
 				;부끄럼쟁이があるとさらにアップ
-				;프라이드높음・건방짐・반항적・츤데레
+				;프라이드높음ㆍ건방짐ㆍ반항적ㆍ츤데레
 				IF TALENT:PLAYER:프라이드높음 || TALENT:PLAYER:건방짐 || TALENT:PLAYER:반항적 || TALENT:PLAYER:츤데레
 					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 완강히 거부했다
 					PRINTFORML 
@@ -3367,7 +3367,7 @@ FOR LOCAL, 0, 2
 				PRINTFORML 
 				PRINTFORMW 「뭐얼, 조금 빠는걸로 좋으니까?」
 				PRINTFORML 
-				;淫ＮＴＲ・발정중の場合は無조건で咥える
+				;淫ＮＴＲㆍ발정중の場合は無조건で咥える
 				IF TALENT:PLAYER:ＮＴＲ == 2 || CFLAG:PLAYER:던전내발정용욕정치 > 5000 || 위험일(PLAYER) == 2 
 					PRINTFORML %조사처리(CALLNAME:PLAYER,"는")% 주저하지 않고、쑥 내밀어진%CALLNAME:ARG%의 페니스를 입으로 삼켰다……
 					PRINTFORML 

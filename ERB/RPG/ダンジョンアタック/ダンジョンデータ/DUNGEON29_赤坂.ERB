@@ -4,8 +4,8 @@
 ;変数 던전플래그:[[던전:아카사카]]:X
 ;0 아카사카地下の情報（侵入조건)
 ;1 ヒルコ
-;2 ショート・ターミナル
-;他던전・의뢰で関係する変数
+;2 ショートㆍターミナル
+;他던전ㆍ의뢰で関係する変数
 ;40- メッセンジャーのフラグ
 ;80- 宝箱
 ;=======================================================================
@@ -41,19 +41,19 @@ RESULTS = 아카사카
 PRINT 아카사카
 SELECTCASE FLAG:현M
 	CASE 0
-		PRINTL ・Ｂ７Ｆ
+		PRINTL ㆍＢ７Ｆ
 	CASE 1
-		PRINTL ・Ｂ６Ｆ
+		PRINTL ㆍＢ６Ｆ
 	CASE 2
-		PRINTL ・Ｂ５Ｆ
+		PRINTL ㆍＢ５Ｆ
 	CASE 3
-		PRINTL ・Ｂ４Ｆ
+		PRINTL ㆍＢ４Ｆ
 	CASE 4
-		PRINTL ・Ｂ３Ｆ
+		PRINTL ㆍＢ３Ｆ
 	CASE 5
-		PRINTL ・Ｂ２Ｆ
+		PRINTL ㆍＢ２Ｆ
 	CASE 6
-		PRINTL ・Ｂ１Ｆ
+		PRINTL ㆍＢ１Ｆ
 ENDSELECT
 
 
@@ -475,7 +475,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 600
 				;대장간
 				CALL MESSAGE_WINDOW_D , "" , "＞2인조 드워프가 대장장이 일을 하고 있다……"
-				  IF ITEM:진・드라우프니르 >= 1
+				  IF ITEM:진ㆍ드라우프니르 >= 1
 				     CALL MESSAGE_WINDOW_D , "대장장이" , "여어、대장。살 만은 한가？"
 				  ELSEIF ITEM:드라우프니르 >= 1
 				     CALL MESSAGE_WINDOW_D , "" , "＞당신은 드워프들의 흥미를 끌 법한/낡은 보물을 가지고 있는 것을 떠올렸다"
@@ -493,8 +493,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				     CALL MESSAGE_WINDOW_D , "" , "＞드워프들 중에는 감동한 나머지 우는 자도 있다/길은 다를지라도---너무 다르긴 하나---당신도 또한 일종의 장인이다/그들에게 공감하는 면도 있었다"
 				     CALL MESSAGE_WINDOW_D , "대장장이" , "허나…　아무래도 이녀석은「죽어」있는건지/본래의 힘을 잃고 있다。비견할 데 없는 그 마력을"
 				     CALL MESSAGE_WINDOW_D , "" , "＞당신은 드라우프니르를 입수한 경위를 설명했다"
-				     CALL MESSAGE_WINDOW_D , "우두머리" , "벨・데르에게서 입수했다면、납득이 가는군/오딘이 아들의 죽음을 애도하며 같이 묻었다고 들었으니까 말이다"
-				     CALL MESSAGE_WINDOW_D , "우두머리" , "부장품으로서 명부로 건너갔기때문에、드라우프닐도「죽어」있다는거군/되살아난 벨・데르는 다시 죽었지만、이녀석은 운 좋게 현세에 남았다、고"
+				     CALL MESSAGE_WINDOW_D , "우두머리" , "벨ㆍ데르에게서 입수했다면、납득이 가는군/오딘이 아들의 죽음을 애도하며 같이 묻었다고 들었으니까 말이다"
+				     CALL MESSAGE_WINDOW_D , "우두머리" , "부장품으로서 명부로 건너갔기때문에、드라우프닐도「죽어」있다는거군/되살아난 벨ㆍ데르는 다시 죽었지만、이녀석은 운 좋게 현세에 남았다、고"
 				     CALL MESSAGE_WINDOW_D , "" , "＞대장장이 형제가 뭔가 말하고 있다。하지만 우두머리는 고개를 끄덕이면서도 제지했다/우두머리는 당신을 향해 서서 이렇게 말했다"
 				     CALL MESSAGE_WINDOW_D , "우두머리" , "이보게 여행자여/특별히 귀하에게 부탁하고 싶은게 있네만"
 				     CALL MESSAGE_WINDOW_D , "" , "＞우두머리는 심호흡을하고、말했다"
@@ -512,9 +512,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				     CALL MESSAGE_WINDOW_D , "" , "＞대장장이 형제는 고개를 끄덕이고、넓은 판에 팔찌를 올려 우두머리에게 건냈다/우두머리는 그걸 받아들고선 당신에게 다가가、공손하게 헌상했다"
 				     CALL MESSAGE_WINDOW_D , "우두머리" , "새로운 신화의 탄생이구먼/받아주게나。이것은 귀하를 위해 만들어진 것이다"
 				     CALL MESSAGE_WINDOW_D , "" , "＞공방은 환성에 둘러싸였다。식지 않는 열광 속에서、당신은 다시 여행길에 올랐다"
-				     CALL MESSAGE_WINDOW_D , "" , "＞진・드라우프니르를 얻었다"
+				     CALL MESSAGE_WINDOW_D , "" , "＞진ㆍ드라우프니르를 얻었다"
 				          ITEM:드라우프니르 -= 1
-				            ITEM:진・드라우프니르 += 1
+				            ITEM:진ㆍ드라우프니르 += 1
 				                FLAG:명성 += 1000
 				  ELSE
 				     CALL MESSAGE_WINDOW_D , "대장장이" , "봐서 알겠지만 바쁘다/놀러 왔다면 돌아가 줘"
@@ -797,7 +797,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				
 			CASE 1
 				;壁の落書き
-				CALL MESSAGE_WINDOW_D , "문자" , "＞“뮤턴트・커뮤니티”/　지상의 인간은 들어오지 말 것"
+				CALL MESSAGE_WINDOW_D , "문자" , "＞“뮤턴트ㆍ커뮤니티”/　지상의 인간은 들어오지 말 것"
 				CALL MESSAGE_WINDOW_D , "" , "＞……라고 벽에 써 있다"
 				SETBIT 던전플래그:(FLAG:현던전):(40+FLAG:현M) , LOCAL
 			CASE 2
@@ -873,7 +873,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 ;========================
 	CASE 9
 		SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
-			;ショート・ターミナル
+			;ショートㆍターミナル
 			CASE 1
 				CALLFORM S_TERMINAL_{FLAG:현던전}
 			;エレベーター
@@ -1073,7 +1073,7 @@ SELECTCASE FLAG:현M
 	;지령街
 	CASE 3 TO 6
 		RETURN CLASS_NUM_COMMON("初級")
-	;뮤턴트・コミュニティー
+	;뮤턴트ㆍコミュニティー
 	CASEELSE
 		RETURN CLASS_NUM_COMMON("中級")
 ENDSELECT
@@ -1086,7 +1086,7 @@ SELECTCASE FLAG:현M
 	;지령街
 	CASE 3 TO 6
 		RETURN ENEMY_NUM_COMMON("中級", ARG)
-	;뮤턴트・コミュニティー
+	;뮤턴트ㆍコミュニティー
 	CASEELSE
 		RETURN ENEMY_NUM_COMMON("上級", ARG)
 ENDSELECT
@@ -1120,7 +1120,7 @@ SELECTCASE FLAG:현M
 					RETURN [[キャラ:티탄]], 45
 				ENDIF
 		ENDSELECT
-	;뮤턴트・コミュニティー
+	;뮤턴트ㆍコミュニティー
 	CASE 0 TO 2
 		SELECTCASE RAND:100
 			CASE IS < 15
@@ -1149,10 +1149,10 @@ SELECTCASE NO:ARG
 		ABL:ARG:스킬3 = [[스킬:디아라마]]
 		ABL:ARG:스킬5 = [[스킬:소닉펀치]]
 		ABL:ARG:스킬2 = [[스킬:마그나스]]
-		ABL:ARG:스킬7 = [[스킬:마하・마그나]]
+		ABL:ARG:스킬7 = [[스킬:마하ㆍ마그나]]
 	CASE [[キャラ:브라우니]]
 		ABL:ARG:스킬2 = [[스킬:그라이바]]
-		ABL:ARG:스킬5 = [[스킬:마하・그라이]]
+		ABL:ARG:스킬5 = [[스킬:마하ㆍ그라이]]
 	CASE [[キャラ:화백]]
 		ABL:ARG:스킬1 = [[스킬:아기라오]]
 		ABL:ARG:스킬4 = [[스킬:펨파트라]]

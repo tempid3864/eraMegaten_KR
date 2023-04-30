@@ -64,7 +64,7 @@ WHILE 1
 	DRAWLINE
 	
 	; 画像設定
-	PRINTSL "【画像の設定・読込】"
+	PRINTSL "【画像の設定ㆍ読込】"
 	SPLIT 画像エディット_設定画面リスト, ",", LOCALS
 	FOR _CNT, 0, RESULT
 		設定画面名 '= LOCALS:_CNT
@@ -123,7 +123,7 @@ WHILE 1
 				画像エディット_全装飾装飾指定率 -= 125
 	ENDSELECT
 
-	; パーツ固定・解除
+	; パーツ固定ㆍ解除
 	IF (-1 < STRFINDU(_KEY, "固定_"))
 		選択項目 '= SUBSTRINGU(_KEY, 3, -1)
 		画像エディット_パーツ固定設定 '= DIC_SET(画像エディット_パーツ固定設定, 選択項目, (DIC_GET(画像エディット_パーツ固定設定, 選択項目) == "固定" ? "なし" # "固定"))

@@ -62,7 +62,7 @@ ELSE
 ENDIF
 
 ;-------------------------
-;체력・기력
+;체력ㆍ기력
 ;-------------------------
 CALLFORM RANDOMCHARA_{ARG}, "체력", CHARA
 BASE:CHARA:체력 = RESULT / 100 * 100
@@ -129,7 +129,7 @@ IF TALENT:CHARA:페르소나구사자 >= 1
 	ELSE
 		ABL:CHARA:초기페르소나 = RESULT
 	ENDIF
-	ABL:CHARA:스킬9 = [[스킬:P・체인지]]
+	ABL:CHARA:스킬9 = [[스킬:Pㆍ체인지]]
 	
 	;1/2でP3以降の페르소나구사자に
 	IF RAND:2 == 0
@@ -183,7 +183,7 @@ IF !TALENT:CHARA:페르소나구사자
 		LOCAL++
 		LOCAL:1++
 	WEND
-	;식노・シフターは초기악마の스킬をいれていく
+	;식노ㆍシフターは초기악마の스킬をいれていく
 	IF TALENT:CHARA:식노 || TALENT:CHARA:데빌시프터
 		FOR LOCAL, 1, FLAG:스킬수 + 1
 			LOCAL:2 = CSVABL(CFLAG:CHARA:초기링크악마, GETNUM(ABL, @"스킬{LOCAL}"), 0)
@@ -356,7 +356,7 @@ NEXT
 ;両立不能な소질を削っていく
 CALLFORM RANDOMTALENT_COMPE_DELETE, CHARA
 
-;(優先소질の関係で바이・남성혐오・여성혐오は別途処理)
+;(優先소질の関係で바이ㆍ남성혐오ㆍ여성혐오は別途処理)
 IF TALENT:CHARA:바이 && (TALENT:CHARA:남성혐오 || TALENT:CHARA:여성혐오)
 	IF GROUPMATCH(TALENT:CHARA:바이, LOCAL:3, LOCAL:4, LOCAL:5)
 		TALENT:CHARA:남성혐오 = 0
@@ -399,7 +399,7 @@ ELSE
 	TALENT:CHARA:처녀 = RESULT == 1 ? 1 # 0
 ENDIF
 ;-------------------
-;体型・가슴・形質
+;体型ㆍ가슴ㆍ形質
 ;-------------------
 CALLFORM RANDOMCHARA_{ARG}, "가슴사이즈", CHARA
 CALLFORM RANDOMTALENT_BODY_B, CHARA, RESULT
@@ -482,7 +482,7 @@ CALLFORM RANDOMCHARA_{ARG}, "회화타입", CHARA
 CALLFORM RANDOM_KOJO_TYPE, CHARA, RESULT
 
 ;-------------------------
-;이름・呼び方
+;이름ㆍ呼び方
 ;-------------------------
 CALLFORM RANDOMCHARA_{ARG}, "이름", CHARA
 NAME:CHARA = %RESULTS%
@@ -513,7 +513,7 @@ RETURN 1, CHARA, ARG
 
 ;--------------------------------------
 ;両立不能な소질を削っていく
-;(優先소질の関係で바이・남성혐오・여성혐오は別途処理)
+;(優先소질の関係で바이ㆍ남성혐오ㆍ여성혐오は別途処理)
 ;--------------------------------------
 @RANDOMTALENT_COMPE_DELETE, ARG
 

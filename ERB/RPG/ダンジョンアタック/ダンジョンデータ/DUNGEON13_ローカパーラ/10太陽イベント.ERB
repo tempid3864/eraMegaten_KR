@@ -49,15 +49,15 @@ ENDSELECT
 LOCAL = DA:(FLAG:현X):(FLAG:현Y) / 10
 SELECTCASE LOCAL
 	CASE 6400
-		CALL MESSAGE_WINDOW_D, "마담・마르고의 정보", "모든 정보는 신으로부터 가져와/신에게 돌아간다/이것이 윤회의 비밀이었군요… "
-		CALL MESSAGE_WINDOW_D, "마담・마르고의 정보", "내가 길을 잘못 들었나 봐요… "
-		CALL MESSAGE_WINDOW_D, "마담・마르고의 정보", "신의 노여움을 진정시켜 주소서/모든 사람에게 목숨이 갈 곳을 보여 주소서… "
+		CALL MESSAGE_WINDOW_D, "마담ㆍ마르고의 정보", "모든 정보는 신으로부터 가져와/신에게 돌아간다/이것이 윤회의 비밀이었군요… "
+		CALL MESSAGE_WINDOW_D, "마담ㆍ마르고의 정보", "내가 길을 잘못 들었나 봐요… "
+		CALL MESSAGE_WINDOW_D, "마담ㆍ마르고의 정보", "신의 노여움을 진정시켜 주소서/모든 사람에게 목숨이 갈 곳을 보여 주소서… "
 	
 	CASE 7000
-		CALL MESSAGE_WINDOW_D, "리얼・알지라의 정보", "어쩔 수 없었어… "
-		CALL MESSAGE_WINDOW_D, "리얼・알지라의 정보", "그가 서프를 죽이려고 하니까…/그러니까 나… "
-		CALL MESSAGE_WINDOW_D, "리얼・알지라의 정보", "사실은 그 여자애도/징그러워서 싫었어… "
-		CALL MESSAGE_WINDOW_D, "리얼・알지라의 정보", "하지만 서프를 위해서 나…/아아…나…어째서 이런… "
+		CALL MESSAGE_WINDOW_D, "리얼ㆍ알지라의 정보", "어쩔 수 없었어… "
+		CALL MESSAGE_WINDOW_D, "리얼ㆍ알지라의 정보", "그가 서프를 죽이려고 하니까…/그러니까 나… "
+		CALL MESSAGE_WINDOW_D, "리얼ㆍ알지라의 정보", "사실은 그 여자애도/징그러워서 싫었어… "
+		CALL MESSAGE_WINDOW_D, "리얼ㆍ알지라의 정보", "하지만 서프를 위해서 나…/아아…나…어째서 이런… "
 	
 	CASE 7400
 		CALL MESSAGE_WINDOW_D, "쾌활한 2인조의 정보A", "HO　me〜n♪ "
@@ -109,10 +109,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			ELSEIF RESULT == 0
 				CALL DUNGEON_WORP,(FLAG:현M),(FLAG:현X),(FLAG:현Y)-2
 			
-				CALL MESSAGE_WINDOW_D, "서프・셰필드의 정보", "거짓말이다/나는 아직 죽지않았어/ "
-				CALL MESSAGE_WINDOW_D, "서프・셰필드의 정보", "신의/신의 힘을 손에 넣었어！？ "
-				CALL MESSAGE_WINDOW_D, "서프・셰필드의 정보", "나는 힘을 얻었다…/지식도！ 힘도 전부다아아아아아아아아！ "
-				CALL MESSAGE_WINDOW_D, "", "서프・셰필드의 정보는 악마로 변신했다！ "
+				CALL MESSAGE_WINDOW_D, "서프ㆍ셰필드의 정보", "거짓말이다/나는 아직 죽지않았어/ "
+				CALL MESSAGE_WINDOW_D, "서프ㆍ셰필드의 정보", "신의/신의 힘을 손에 넣었어！？ "
+				CALL MESSAGE_WINDOW_D, "서프ㆍ셰필드의 정보", "나는 힘을 얻었다…/지식도！ 힘도 전부다아아아아아아아아！ "
+				CALL MESSAGE_WINDOW_D, "", "서프ㆍ셰필드의 정보는 악마로 변신했다！ "
 					
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
@@ -1388,7 +1388,7 @@ ELSEIF FINDCHARA_ENEMY(1513) && CFLAG:(RESULT:1):보스플래그 > 0
 			SETCOLOR 0xff0033
 			;　　　　　　　　　　　　　　　　　　　　　　火炎ガードブレイク　　　　　　　　　　　
 			PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃[ 9] ブラフマン           ┃　┃%GET_TYPE(LOCAL:3 + 4)%ガードブレイク・改　　　　　　　　　┃
+			PRINTFORML ┃[ 9] ブラフマン           ┃　┃%GET_TYPE(LOCAL:3 + 4)%ガードブレイクㆍ改　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 			RESETCOLOR
 		FOR LOCAL:5, 1, 7

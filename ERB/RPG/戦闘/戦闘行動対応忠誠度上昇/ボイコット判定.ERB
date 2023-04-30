@@ -1,7 +1,7 @@
 ﻿@보이콧판정, ARG
 CFLAG:ARG:보이콧플래그 = 0
 
-;인간・머신・반마인はボイコットしない
+;인간ㆍ머신ㆍ반마인はボイコットしない
 SELECTCASE ABL:ARG:종족
 	CASE GET_RACE_NUM("인간"),GET_RACE_NUM("머신"),GET_RACE_NUM("반마인")
 		RETURN
@@ -17,7 +17,7 @@ LOCAL += (EQUIP:MASTER:블랙컴퍼니 * 10000)
 IF LOCAL != 0
 	;조교보정
 	LOCAL += (함락(ARG) + MARK:ARG:굴복각인 - POWER(MARK:ARG:반발각인,2) ) * 1000
-	;相性・스트레스보정
+	;相性ㆍ스트레스보정
 	LOCAL = LOCAL * (GET_RELATION(ARG, MASTER)-CFLAG:ARG:스트레스치) / 100
 ENDIF
 

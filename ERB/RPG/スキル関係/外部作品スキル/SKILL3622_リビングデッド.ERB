@@ -244,7 +244,7 @@ FOR LOCAL,7,17
 					LOCAL:10 += LOCAL:4
 				ENDIF
 			ELSE
-				;対象が後列・死霊カウンター付与されていてかつ死んでる場合
+				;対象が後列ㆍ死霊カウンター付与されていてかつ死んでる場合
 				;前列への繰り上がり時の処理は前述済なので一律で除去。
 				CALL SKILLGAGE_D_ADD,ARG,3622,-LOCAL:4 * POWER(10,(LOCAL-6))
 					LOCAL:10 += LOCAL:4

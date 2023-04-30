@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4202,ARG
-RESULTS = 마하・스쿠카쟈
+RESULTS = 마하ㆍ스쿠카쟈
 
 ;　명중
 @SKILL_HITRATE_4202, ARG
@@ -124,7 +124,7 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 	CFLAG:POS(LOCAL):회피강화 = MIN(32, CFLAG:POS(LOCAL):회피강화 + 8)
 NEXT
 
-PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중・회피율이 대폭 높아졌다！
+PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중ㆍ회피율이 대폭 높아졌다！
 
 
 
@@ -137,7 +137,7 @@ PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중・회피율
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_4202
-PRINTL 아군의 명중・회피를 대폭 상승시킨다。
+PRINTL 아군의 명중ㆍ회피를 대폭 상승시킨다。
 
 ;계승에 필요한 부위
 @계승부위_4202,ARG
@@ -164,7 +164,7 @@ RETURN 1
 @참가조건표시_4202,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 스쿠・카쟈
+		PRINTFORM 스쿠ㆍ카쟈
 	CASE 2
 		PRINTFORM 자애의기도
 ENDSELECT
@@ -187,9 +187,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;スク・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:스쿠・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠・카쟈]]
+		;スクㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:스쿠ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿠ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

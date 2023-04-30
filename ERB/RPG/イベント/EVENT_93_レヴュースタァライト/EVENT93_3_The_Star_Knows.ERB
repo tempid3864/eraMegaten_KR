@@ -83,8 +83,8 @@ CUSTOMDRAWLINE =
 			ABL:(CHARANUM-1):사거리 = 3
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			CALL SYNC_STATUS,(CHARANUM-1)
-			ABL:(CHARANUM-1):스킬1 = [[스킬:타루・카쟈]]
-			ABL:(CHARANUM-1):스킬2 = [[스킬:스쿠・카쟈]]
+			ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
+			ABL:(CHARANUM-1):스킬2 = [[스킬:스쿠ㆍ카쟈]]
 			ABL:(CHARANUM-1):스킬3 = [[스킬:리벨리온]]
 			ABL:(CHARANUM-1):스킬4 = [[스킬:패닉보이스]]
 			ABL:(CHARANUM-1):스킬5 = 0
@@ -212,7 +212,7 @@ CUSTOMDRAWLINE =
 			;바인드보이스⇒시바브
 			ABL:(CHARANUM-3):스킬4 = [[스킬:시바브]]
 		
-			;행동횟수1・연속사격削除
+			;행동횟수1ㆍ연속사격削除
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 			ABL:(CHARANUM-2):스킬4 = 0
 
@@ -220,17 +220,17 @@ CUSTOMDRAWLINE =
 			ABL:(CHARANUM-1):스킬3 = 0
 		;1戦눈　★☆☆☆☆
 		ELSEIF LOCAL:99 > 0
-			;カジャ削除・패닉보이스⇒시바브に
+			;カジャ削除ㆍ패닉보이스⇒시바브に
 			ABL:(CHARANUM-3):스킬1 = 0
 			ABL:(CHARANUM-3):스킬2 = 0
 			ABL:(CHARANUM-3):스킬4 = [[스킬:시바브]]
 
-			;행동횟수1・마비침・연속사격削除
+			;행동횟수1ㆍ마비침ㆍ연속사격削除
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 			ABL:(CHARANUM-2):스킬3 = 0
 			ABL:(CHARANUM-2):스킬4 = 0
 			
-			;패닉보이스・프린파削除
+			;패닉보이스ㆍ프린파削除
 			ABL:(CHARANUM-1):스킬3 = 0
 			ABL:(CHARANUM-1):스킬4 = 0
 		ENDIF

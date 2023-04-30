@@ -11,7 +11,7 @@
 ;이벤트플래그:99:3 リスト
 ;0:エンディング無し　1:キュウべえＥＮＤ
 
-;이벤트플래그:99:4　마법소녀・魔女がラスボスと面会したか　　　1:一般クラスが面会　2:ラスボスクラスが面会
+;이벤트플래그:99:4　마법소녀ㆍ魔女がラスボスと面会したか　　　1:一般クラスが面会　2:ラスボスクラスが面会
 
 @EVENT_99_5
 
@@ -27,7 +27,7 @@ IF RESULT == 0
 	;VS원환의이치　想定레벨70
 	IF 이벤트플래그:99:1 == 1
 		;天海市ですね
-		PRINTFORML ―모종의・신흥도시―
+		PRINTFORML ―모종의ㆍ신흥도시―
 		PRINTFORMW 팬텀이 암약 중인 신흥도시。
 		PRINTFORMW 정보 네트워크의 모델 도시로 개발 진행되고、동시에 거대한 영지이기도 하다。
 		PRINTFORMW 그 신흥도시를 내려다 볼 수 있는 정보 집적 빌딩의 옥상에、%CALLNAME:MASTER%의 모습이 있었다。
@@ -63,7 +63,7 @@ IF RESULT == 0
 		CUSTOMDRAWLINE =
 		WAIT
 		;- SET:아케미호무라
-		;優先・数値を[[]]に변경すべし
+		;優先ㆍ数値を[[]]に변경すべし
 		CALL SET_ENEMY,14,4398,65,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
@@ -83,8 +83,8 @@ IF RESULT == 0
 		ABL:(CHARANUM-1):스킬4 = [[스킬:격뢰의곡옥]]
 		ABL:(CHARANUM-1):스킬5 = [[스킬:뉴클리어밤]]
 		ABL:(CHARANUM-1):스킬6 = [[스킬:스턴그레네이드]]
-		ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐・더스트]]
-		ABL:(CHARANUM-1):스킬8 = [[스킬:데・쿤다]]
+		ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐ㆍ더스트]]
+		ABL:(CHARANUM-1):스킬8 = [[스킬:데ㆍ쿤다]]
 	BASE:(CHARANUM-1):힘 += 4
 	BASE:(CHARANUM-1):지혜 += 5
 	BASE:(CHARANUM-1):마력 += 4
@@ -97,7 +97,7 @@ IF RESULT == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;- SET:佐倉杏子
-	;優先・数値を[[]]に변경すべし
+	;優先ㆍ数値を[[]]に변경すべし
 	SIF FLAG:(20000+4395) == 0
 		FLAG:(20000+4395) = 10
 	CALL SET_ENEMY,9,4395,65,0,0
@@ -106,7 +106,7 @@ IF RESULT == 0
 	;ソウルジェム効果により주살一回방어
 	CFLAG:(CHARANUM-1):주살무효화횟수 += 1
 		ABL:(CHARANUM-1):스킬1 = 230;천열찌르기
-		ABL:(CHARANUM-1):스킬2 = 2995;롯소・판타즈마
+		ABL:(CHARANUM-1):스킬2 = 2995;롯소ㆍ판타즈마
 		ABL:(CHARANUM-1):스킬3 = 515;도발
 		ABL:(CHARANUM-1):스킬4 = 10;데스바운드
 		ABL:(CHARANUM-1):스킬5 = 0
@@ -123,7 +123,7 @@ IF RESULT == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;- SET:千歳ゆま
-	;優先・数値を[[]]に변경すべし
+	;優先ㆍ数値を[[]]に변경すべし
 	SIF FLAG:(20000+4394) == 0
 		FLAG:(20000+4394) = 10
 	CALL SET_ENEMY,8,4394,65,0,0
@@ -131,7 +131,7 @@ IF RESULT == 0
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	;ソウルジェム効果により빙결一回방어
 	CFLAG:(CHARANUM-1):빙결무효화횟수 += 1
-		ABL:(CHARANUM-1):스킬1 = 405;메・디아라마
+		ABL:(CHARANUM-1):스킬1 = 405;메ㆍ디아라마
 		ABL:(CHARANUM-1):스킬2 = [[스킬:태풍의난무]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:디아라한]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:림도라]]
@@ -149,7 +149,7 @@ IF RESULT == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;- SET:美国織莉子
-	;優先・数値を[[]]に변경すべし
+	;優先ㆍ数値を[[]]に변경すべし
 	SIF FLAG:(20000+4393) == 0
 		FLAG:(20000+4393) = 10
 	CALL SET_ENEMY,15,4393,65,0,0
@@ -175,7 +175,7 @@ IF RESULT == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;- SET:呉キ리카
-	;優先・数値を[[]]に변경すべし
+	;優先ㆍ数値を[[]]に변경すべし
 	SIF FLAG:(20000+4392) == 0
 		FLAG:(20000+4392) = 10
 	CALL SET_ENEMY,10,4392,65,0,0
@@ -273,7 +273,7 @@ IF RESULT == 0
 		SIF FINDCHARA_B(3397)== 2
 			이벤트플래그:99:4 = 2
 		;- SET:원환의이치
-		;優先・数値を[[]]に변경すべし
+		;優先ㆍ数値を[[]]に변경すべし
 		CALL SET_ENEMY,14,4391,75,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
@@ -282,12 +282,12 @@ IF RESULT == 0
 		CFLAG:(CHARANUM-1):행동횟수 = 3
 		CFLAG:(CHARANUM-1):속도보정 += 10
 		ABL:(CHARANUM-1):스킬1 = [[스킬:고천열풍탄]]
-		ABL:(CHARANUM-1):스킬2 = 2999;피니투라・프레차
+		ABL:(CHARANUM-1):스킬2 = 2999;피니투라ㆍ프레차
 		ABL:(CHARANUM-1):스킬3 = [[스킬:메기도라]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:마카카쟈오토]]
 		ABL:(CHARANUM-1):스킬5 = 2991;구제의손
 		ABL:(CHARANUM-1):스킬6 = [[스킬:만마의난무]]
-		ABL:(CHARANUM-1):스킬7 = [[스킬:데・쿤다]]
+		ABL:(CHARANUM-1):스킬7 = [[스킬:데ㆍ쿤다]]
 		ABL:(CHARANUM-1):스킬8 = [[스킬:관통]]
 		BASE:(CHARANUM-1):힘 += 6
 		BASE:(CHARANUM-1):지혜 += 6
@@ -432,7 +432,7 @@ IF RESULT == 0
 		ENDIF
 		IF FLAG:(13397) == 0
 			FLAG:(13397) = 1
-			RESULTS = 마녀 Kriemhild・Gretchen 의 합체제한이 해제되었습니다。
+			RESULTS = 마녀 KriemhildㆍGretchen 의 합체제한이 해제되었습니다。
 			CALL MESSAGE_B(1, RESULTS)
 		ENDIF
 		PRINTL
@@ -443,7 +443,7 @@ IF RESULT == 0
 	;VS발푸르기스의밤　想定레벨60
 	ELSE
 		;天海市ですね
-		PRINTFORML ―모종의・신흥도시―
+		PRINTFORML ―모종의ㆍ신흥도시―
 		PRINTFORMW 팬텀이 암약 중인 신흥도시。
 		PRINTFORMW 정보 네트워크의 모델 도시로 개발 진행되고、동시에 거대한 영지이기도 하다。
 		PRINTL
@@ -516,7 +516,7 @@ IF RESULT == 0
 
 		
 		;- SET:발푸르기스의밤
-		;優先・数値を[[]]に변경すべし
+		;優先ㆍ数値を[[]]に변경すべし
 		
 		CALL SET_ENEMY,14,3396,70,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
@@ -528,9 +528,9 @@ IF RESULT == 0
 		ABL:(CHARANUM-1):스킬2 = [[스킬:불꽃의난무]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:림도라]]
 		ABL:(CHARANUM-1):스킬4 = 2990;마녀의입맞춤
-		ABL:(CHARANUM-1):스킬5 = 2997;티로・피날레
+		ABL:(CHARANUM-1):스킬5 = 2997;티로ㆍ피날레
 		ABL:(CHARANUM-1):스킬6 = 2996;스쿠왈타토레
-		ABL:(CHARANUM-1):스킬7 = 2995;롯소・판타즈마
+		ABL:(CHARANUM-1):스킬7 = 2995;롯소ㆍ판타즈마
 		ABL:(CHARANUM-1):스킬8 = 2998;침식하는검은날개
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		BASE:(CHARANUM-1):힘 += 5
@@ -748,7 +748,7 @@ IF RESULT == 0
 		ENDIF
 		IF FLAG:(13397) == 0
 			FLAG:(13397) = 1
-			RESULTS = 마녀 Kriemhild・Gretchen 의 합체제한이 해제되었습니다。
+			RESULTS = 마녀 KriemhildㆍGretchen 의 합체제한이 해제되었습니다。
 			CALL MESSAGE_B(1, RESULTS)
 		ENDIF
 		
@@ -828,12 +828,12 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 		CASE 30 TO 65
 			CFLAG:ARG:입력행동 = [[스킬:스턴그레네이드]]
 		CASEELSE
-			CFLAG:ARG:입력행동 = [[스킬:바이쳐・더스트]]
+			CFLAG:ARG:입력행동 = [[스킬:바이쳐ㆍ더스트]]
 		ENDSELECT
 ELSE
 	FOR LOCAL, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1
 		IF CFLAG:ARG:LOCAL < -8
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			CFLAG:ARG:타겟 = 22
 			RETURN 1
 		ENDIF
@@ -873,7 +873,7 @@ ELSEIF 현HP비율(ARG) < 50
 	IF CFLAG:ARG:행동한횟수 == 0
 		FOR LOCAL, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1
 			IF CFLAG:ARG:LOCAL < -8
-				CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 				CFLAG:ARG:타겟 = 22
 				RETURN 1
 			ENDIF
@@ -902,7 +902,7 @@ ELSE
 	IF CFLAG:ARG:행동한횟수 == 0
 		FOR LOCAL, GETNUM(CFLAG, "공격강화"), GETNUM(CFLAG, "BS부착률강화") + 1
 			IF CFLAG:ARG:LOCAL < -8
-				CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 				CFLAG:ARG:타겟 = 22
 				RETURN 1
 			ENDIF
@@ -913,12 +913,12 @@ ELSE
 		CASE 34 TO 67
 			CFLAG:ARG:입력행동 = 2991;구제의손
 		CASEELSE
-			CFLAG:ARG:입력행동 = 2999;피니투라・프레차
+			CFLAG:ARG:입력행동 = 2999;피니투라ㆍ프레차
 		ENDSELECT
 	ELSE
 		SELECTCASE RAND:100
 		CASE 0 TO 24
-			CFLAG:ARG:입력행동 = 2999;피니투라・프레차
+			CFLAG:ARG:입력행동 = 2999;피니투라ㆍ프레차
 		CASE 25 TO 49
 			CFLAG:ARG:입력행동 = [[스킬:고천열풍탄]]
 		CASE 50 TO 75
@@ -957,9 +957,9 @@ IF CFLAG:ARG:600 == 0 && 현HP비율(ARG) < 50
 	ABL:ARG:스킬2 = [[스킬:얼음의난무]]
 	ABL:ARG:스킬3 = [[스킬:태풍의난무]]
 	ABL:ARG:스킬4 = 2990;마녀의입맞춤
-	ABL:ARG:스킬5 = 2997;티로・피날레
+	ABL:ARG:스킬5 = 2997;티로ㆍ피날레
 	ABL:ARG:스킬6 = 2996;스쿠왈타토레
-	ABL:ARG:스킬7 = 2995;롯소・판타즈마
+	ABL:ARG:스킬7 = 2995;롯소ㆍ판타즈마
 	ABL:ARG:스킬8 = 2998;침식하는검은날개
 	CFLAG:ARG:행동횟수 = 3
 	CFLAG:ARG:600 = 1
@@ -995,11 +995,11 @@ ELSEIF CFLAG:ARG:600 == 1
 	ELSE
 		SELECTCASE RAND:100
 		CASE 0 TO 24
-			CFLAG:ARG:입력행동 = 2997;티로・피날레
+			CFLAG:ARG:입력행동 = 2997;티로ㆍ피날레
 		CASE 25 TO 49
 			CFLAG:ARG:입력행동 = 2996;스쿠왈타토레
 		CASE 50 TO 75
-			CFLAG:ARG:입력행동 = 2995;롯소・판타즈마
+			CFLAG:ARG:입력행동 = 2995;롯소ㆍ판타즈마
 		CASEELSE
 			CFLAG:ARG:입력행동 = 2998;침식하는검은날개
 		ENDSELECT

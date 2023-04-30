@@ -7,11 +7,11 @@
 ;SIF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	RESULTS = 초열혼
 	SIF SKILLGAGE_H_GET(ARG,3556) == 1
-		RESULTS += "・재염1"
+		RESULTS += "ㆍ재염1"
 	SIF SKILLGAGE_H_GET(ARG,3556) == 2
-		RESULTS += "・재염2"
+		RESULTS += "ㆍ재염2"
 	SIF SKILLGAGE_H_GET(ARG,3556) == 3
-		RESULTS += "・재염3"
+		RESULTS += "ㆍ재염3"
 ;羅刹
 SIF ARG > -1 && SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 1
 	RESULTS = 不動撃

@@ -1,7 +1,7 @@
 ﻿
 ;스킬명
 @SKILL_NAME_4216,ARG
-RESULTS = 올드・원
+RESULTS = 올드ㆍ원
 
 ;　명중
 @SKILL_HITRATE_4216, ARG
@@ -157,20 +157,20 @@ RETURN 3
 @참가조건표시_4216,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 라쿤・다、사만・다
+		PRINTFORM 라쿤ㆍ다、사만ㆍ다
 	CASE 2
-		PRINTFORM 마칸・다
+		PRINTFORM 마칸ㆍ다
 	CASE 3
-		PRINTFORM 스쿤・다
+		PRINTFORM 스쿤ㆍ다
 	CASE 4
-		PRINTFORM 타룬・다
+		PRINTFORM 타룬ㆍ다
 ENDSELECT
 
 @발동자조건_4216 , ARG
-;タル・ンダを使えること
-SIF HAVE_SKILL(ARG, [[스킬:타룬・다]]) == 0
+;タルㆍンダを使えること
+SIF HAVE_SKILL(ARG, [[스킬:타룬ㆍ다]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬・다]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:타룬ㆍ다]]
 SIF RESULT
 	RETURN 1
 RETURN 0
@@ -184,30 +184,30 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ラク・ンダ、サマ・ンダを使えること
-		IF HAVE_SKILL(ARG, [[스킬:라쿤・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤・다]]
+		;ラクㆍンダ、サマㆍンダを使えること
+		IF HAVE_SKILL(ARG, [[스킬:라쿤ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:사만・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:사만・다]]
+		IF HAVE_SKILL(ARG, [[스킬:사만ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:사만ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
 		RETURN 0
 	CASE 2
-		;マカ・ンダを使えること
-		IF HAVE_SKILL(ARG, [[스킬:마칸・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸・다]]
+		;マカㆍンダを使えること
+		IF HAVE_SKILL(ARG, [[스킬:마칸ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마칸ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
 		RETURN 0
 	CASE 3
-		;スク・ンダを使えること
-		IF HAVE_SKILL(ARG, [[스킬:스쿤・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤・다]]
+		;スクㆍンダを使えること
+		IF HAVE_SKILL(ARG, [[스킬:스쿤ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:스쿤ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

@@ -743,7 +743,7 @@ SELECTCASE RESULT
 						CFLAG:(LOCAL:3):매각불가능 = 1
 					ENDIF
 					;ニャルの体質は生贄に準じる。정신面はニャルニャルだけど
-					;ほかはともかく모유체질・후타나리を引き継いでるときつすぎる…と思ったけど、消せるからまぁいいか
+					;ほかはともかく모유체질ㆍ후타나리を引き継いでるときつすぎる…と思ったけど、消せるからまぁいいか
 					TALENT:(LOCAL:3):처녀 = TALENT:LOCAL:처녀
 					TALENT:(LOCAL:3):재생처녀 = TALENT:LOCAL:재생처녀
 					TALENT:(LOCAL:3):젖기쉬움 = TALENT:LOCAL:젖기쉬움
@@ -1144,7 +1144,7 @@ IF !STRFLAG_EV("갸르송초회", 1)
 	PRINTW ＞그리고 가게 안에 서 있는 범상치 않은 남자, 그것이 소문의 가르송 소에지마다
 	PRINTL 
 	PRINTL 갸르송:
-	PRINTFORMW 「봉주르・\@TALENT:MASTER:남자?무슈#마드모아젤\@」
+	PRINTFORMW 「봉주르ㆍ\@TALENT:MASTER:남자?무슈#마드모아젤\@」
 	PRINTW 「오늘은 이쪽의 코스가 어떻습니까?」
 	PRINTW 「아아, 무기……입니까……」
 	PRINTW 「당점의 무드를 지키는 것도, 가르송인 나의 역할입니다」
@@ -1156,7 +1156,7 @@ IF !STRFLAG_EV("갸르송초회", 1)
 	PRINTFORMW 「\@TALENT:MASTER:남자?무슈#마드모아젤이\@라면, 나의 무기를 가지기 합당한 자격이 있습니다!」
 ELSE
 	PRINTL 갸르송:
-	PRINTFORMW 「봉주르・\@TALENT:MASTER:남자?무슈#마드모아젤\@」
+	PRINTFORMW 「봉주르ㆍ\@TALENT:MASTER:남자?무슈#마드모아젤\@」
 	PRINTW 「오늘은 이쪽의 코스가 어떻습니까?
 ENDIF
 $START_GARCON

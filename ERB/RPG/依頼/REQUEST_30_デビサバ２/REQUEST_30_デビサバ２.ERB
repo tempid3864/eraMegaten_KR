@@ -34,17 +34,17 @@
 ; デビルサバイバー２のイベントでは、"FLAG:デビサバ２進行度"を使用している。
 ; ３桁の数値が以下の仕様で設定される。
 ;
-; ・３桁目…日付区分。０～７
-; ・２桁目…イベント区分。０～９
-; ・１桁目…イベント詳細区分。０～９
+; ㆍ３桁目…日付区分。０～７
+; ㆍ２桁目…イベント区分。０～９
+; ㆍ１桁目…イベント詳細区分。０～９
 ;
 ; ◆例
 ; 例えば一日目の場合は、000～099を使用出来る。
 ; この内イベントごとに、0～9の詳細区分を使用可能。
 ; その為、例えば[ドゥベ戦]と[イオ加入]の二つのイベントを一日目に入れたい場合、
 ;
-;	・[ドゥベ戦] … 000～009
-;	・[イオ加入] … 010～019
+;	ㆍ[ドゥベ戦] … 000～009
+;	ㆍ[イオ加入] … 010～019
 ;
 ; といった形でフラグを使用出来る。
 ; 具体的なフラグの割り振り方は、
@@ -57,19 +57,19 @@
 ;
 ;		Module Name						Explanation
 ;
-;	・ PLAYABLE_REQUEST_xxx				依頼:条件
-;	・ EXPLAIN_REQUEST_xxx				依頼:説明
-;	・ REQUEST_xxx						依頼:メイン処理
-;	・ EVENT_BATTLE_TURNTOP_REQUESTxxx	依頼:戦闘中処理(ターン開始時)
-;	・ EVENT_BATTLE_TURNEND_REQUESTxxx	依頼:戦闘中処理(ターン終了時)
+;	ㆍ PLAYABLE_REQUEST_xxx				依頼:条件
+;	ㆍ EXPLAIN_REQUEST_xxx				依頼:説明
+;	ㆍ REQUEST_xxx						依頼:メイン処理
+;	ㆍ EVENT_BATTLE_TURNTOP_REQUESTxxx	依頼:戦闘中処理(ターン開始時)
+;	ㆍ EVENT_BATTLE_TURNEND_REQUESTxxx	依頼:戦闘中処理(ターン終了時)
 ;
 ; *- 独自関数
 ;
-;	・ REQUEST_30_FLAG_RESET			依頼:フラグリセット
-;	・ REQUEST_30_DAY_TITLE				依頼:一日のタイトル
-;	・ REQUEST_30_DAY_END				依頼:一日の終了
-;	・ REQUEST_30_TURN_END				依頼:ターンの終了
-;	・ REQUEST_30_BASE_LV				依頼:基礎レベル
+;	ㆍ REQUEST_30_FLAG_RESET			依頼:フラグリセット
+;	ㆍ REQUEST_30_DAY_TITLE				依頼:一日のタイトル
+;	ㆍ REQUEST_30_DAY_END				依頼:一日の終了
+;	ㆍ REQUEST_30_TURN_END				依頼:ターンの終了
+;	ㆍ REQUEST_30_BASE_LV				依頼:基礎レベル
 ;
 ;===============================================================================
 
@@ -658,7 +658,7 @@ SELECTCASE L_FLAG_REQ
 	CASE 400 TO 409
 		PRINTL -메일이 도착했습니다-
 		PRINTL 
-		PRINTL ････팬텀・소사이어티로부터의 연락이다。
+		PRINTL ････팬텀ㆍ소사이어티로부터의 연락이다。
 		PRINTL 
 		PRINTL 이전의 보고에 관해, 전달할 일이 있는 모양이다。
 		PRINTL 

@@ -124,7 +124,7 @@ IF CFLAG:(ARG):PT플래그 == 0
 		CFLAG:(FLAG:LOCALS):회피강화 -= 4
 		SIF CFLAG:(FLAG:LOCALS):회피강화 < -16
 			CFLAG:(FLAG:LOCALS):회피강화 = -16
-	PRINTFORMW %CALLNAME:(FLAG:LOCALS)%의 명중・회피력이 낮아졌다！
+	PRINTFORMW %CALLNAME:(FLAG:LOCALS)%의 명중ㆍ회피력이 낮아졌다！
 	NEXT
 ELSE
 	FOR LOCAL,7,17
@@ -137,7 +137,7 @@ ELSE
 		CFLAG:(FLAG:LOCALS):회피강화 -= 4
 		SIF CFLAG:(FLAG:LOCALS):회피강화 < -16
 			CFLAG:(FLAG:LOCALS):회피강화 = -16
-		PRINTW 적의 명중・회피를 낮췄다！
+		PRINTW 적의 명중ㆍ회피를 낮췄다！
 	NEXT
 ENDIF
 

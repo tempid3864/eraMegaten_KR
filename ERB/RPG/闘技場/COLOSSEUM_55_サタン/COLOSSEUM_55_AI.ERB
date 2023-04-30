@@ -13,7 +13,7 @@ FOR LOCAL,1,7
 	SIF GROUPMATCH(GET_STATE(CFLAG:POS(LOCAL):상태이상),"STONE","DYING")
 		CONTINUE	
 	;아군の입력행동に마법반사があった場合発狂(행동횟수증가、랜덤행동が必ず신의심판)
-	IF GROUPMATCH(CFLAG:POS(LOCAL):입력행동,[[스킬:마반경]],[[스킬:마카라칸]],[[스킬:결계부・마법]])
+	IF GROUPMATCH(CFLAG:POS(LOCAL):입력행동,[[스킬:마반경]],[[스킬:마카라칸]],[[스킬:결계부ㆍ마법]])
 		발광모드 = 1
 		CFLAG:ARG:행동횟수 = 6
 	ENDIF
@@ -37,8 +37,8 @@ ELSEIF FLAG:경과턴수 % 4 == 3
 		CFLAG:ARG:입력행동 = -1
 		RETURN
 	ENDIF
-	;PRINTW 神の息吹or데・카쟈
-	;神の息吹or데・카쟈
+	;PRINTW 神の息吹or데ㆍ카쟈
+	;神の息吹or데ㆍ카쟈
 	FOR LOCAL,1,7
 		CHARA = POS(LOCAL)
 		SIF CHARA < 0
@@ -50,7 +50,7 @@ ELSEIF FLAG:경과턴수 % 4 == 3
 			RETURN
 		ENDIF
 	NEXT
-	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:데・카쟈]]
+	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:데ㆍ카쟈]]
 
 ;4n+4ターン目orHPが반감した時に유혹의과실を사용
 ELSEIF CFLAG:ARG:행동한횟수 == 0 && BASE:ARG:ＨＰ < 15000 && ( !유혹의과실  || GROUPMATCH(FLAG:경과턴수%4,0) )
@@ -58,11 +58,11 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0 && BASE:ARG:ＨＰ < 15000 && ( !유혹의
 	CALL CHECK_ACTIONABLE_AND_SET,ARG,DEF_SKILL_유혹의과실
 	유혹의과실 = 1
 
-;いずれかの능력が최저まで下がっている時랜덤に데・쿤다
+;いずれかの능력が최저まで下がっている時랜덤に데ㆍ쿤다
 ;신의심판より優先度が高い
 ELSEIF GROUPMATCH(-16,CFLAG:ARG:공격강화,CFLAG:ARG:방어강화,CFLAG:ARG:마법위력강화,CFLAG:ARG:마법효과강화,CFLAG:ARG:명중강화,CFLAG:ARG:회피강화) && !RAND:4
-	;PRINTW 데・쿤다
-	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:데・쿤다]]
+	;PRINTW 데ㆍ쿤다
+	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:데ㆍ쿤다]]
 
 ;반사感知での発狂orHP1/4以下かつ4n+2,4n+3ターン目に신의심판
 ELSEIF 발광모드 || ( BASE:ARG:ＨＰ < 7500 && GROUPMATCH(FLAG:경과턴수%4,1,2) && CFLAG:ARG:행동한횟수 == 0 )
@@ -86,9 +86,9 @@ ENDIF
 仮입력행동 = -1
 ;HP15000이상의 行動
 ;메기도라온(5％)
-;마한마온・마하무드온(10％)
+;마한마온ㆍ마하무드온(10％)
 ;○○ダイン(45％)
-;それ以外の行動(스쿠・카쟈、라쿠・카쟈、마카・카쟈、랜더마이저、색즉시공、各8%)
+;それ以外の行動(스쿠ㆍ카쟈、라쿠ㆍ카쟈、마카ㆍ카쟈、랜더마이저、색즉시공、各8%)
 SELECTCASE RAND:100
 CASE IS < 5
 	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:메기도라온]]
@@ -121,14 +121,14 @@ CASE IS < 60
 CASEELSE
 	SELECTCASE RAND:5
 	CASE 0
-		;PRINTW 스쿠・카쟈
-		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿠・카쟈]]
+		;PRINTW 스쿠ㆍ카쟈
+		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:스쿠ㆍ카쟈]]
 	CASE 1
-		;PRINTW 마카・카쟈
-		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:마카・카쟈]]
+		;PRINTW 마카ㆍ카쟈
+		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:마카ㆍ카쟈]]
 	CASE 2
-		;PRINTW 라쿠・카쟈
-		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:라쿠・카쟈]]
+		;PRINTW 라쿠ㆍ카쟈
+		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:라쿠ㆍ카쟈]]
 	CASE 3
 		;PRINTW 랜더마이저
 		CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:랜더마이저]]
@@ -158,19 +158,19 @@ CASE IS < 15
 	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:메기도라온]]
 CASE IS < 80
 	;대상(랜덤に1人選択)に一番有効なダイン系に변경
-	CALL RANDOM_TARGET, ARG, [[스킬:마하・라기다인]]
+	CALL RANDOM_TARGET, ARG, [[스킬:마하ㆍ라기다인]]
 	CALL SATAN_GET_WEAK(ARG,CFLAG:ARG:타겟)
 	SELECTCASE GET_TYPE(RESULT:2)
 	CASE "화염"
-		仮입력행동 = [[스킬:마하・라기다인]]
+		仮입력행동 = [[스킬:마하ㆍ라기다인]]
 	CASE "빙결"
-		仮입력행동 = [[스킬:마하・부흐다인]]
+		仮입력행동 = [[스킬:마하ㆍ부흐다인]]
 	CASE "전격"
-		仮입력행동 = [[스킬:마하・지오다인]]
+		仮입력행동 = [[스킬:마하ㆍ지오다인]]
 	CASE "충격"
-		仮입력행동 = [[스킬:마하・잔다인]]
+		仮입력행동 = [[스킬:마하ㆍ잔다인]]
 	CASE "지변"
-		仮입력행동 = [[스킬:마하・마그다인]]
+		仮입력행동 = [[스킬:마하ㆍ마그다인]]
 	ENDSELECT
 CASEELSE
 	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:색즉시공]]
@@ -188,7 +188,7 @@ CFLAG:ARG:입력행동 = 仮입력행동
 ;HP7500미만の行動
 ;메기도라온(25％)
 ;전체○○ダイン(65％)
-;마하무드온・마한마온(10%)
+;마하무드온ㆍ마한마온(10%)
 SELECTCASE RAND:100
 CASE IS < 25
 	CALL CHECK_ACTIONABLE_AND_SET,ARG,[[스킬:메기도라온]]

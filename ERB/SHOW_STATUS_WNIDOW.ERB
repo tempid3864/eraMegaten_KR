@@ -65,7 +65,7 @@ ENDIF
 
 ;=======================================
 ;@STATUS_WINDOW_EQUIPDEVIL
-;페르소나・변신악마ウィンドウ표시処理
+;페르소나ㆍ변신악마ウィンドウ표시処理
 ; ■引数
 ;　　ARG   = 대상キャラ固定No
 ;　　ARG:1 = 横の位置
@@ -477,7 +477,7 @@ CALL SET_PICTURE , @"_┗%"━" * (横幅 / 2)%┛_" , ARG:1+8 , , ARG:2
 	FOR LOCAL, 1, FLAG:이능자스킬수 + 1
 		LOCAL:1 = ABL:ARG:@"스킬{LOCAL}"
 		IF LOCAL:1
-			;적専用/システム・기본行動・총공격/사용아이템/링케이지はグレーで표시(전투중＆全書閲覧用)
+			;적専用/システムㆍ기본行動ㆍ총공격/사용아이템/링케이지はグレーで표시(전투중＆全書閲覧用)
 			RESULT = 0
 			TRYCALLFORM 적전용_{LOCAL:1}
 			RESULT |= INRANGE(LOCAL:1, 1, 2099) !| INRANGE(LOCAL:1, 2400, 2999)
@@ -602,7 +602,7 @@ CALL SET_PICTURE , @"_┗%"━" * (横幅 / 2)%┛_" , ARG:1+6 , , ARG:2
 	FOR LOCAL, 1, FLAG:스킬수 + 1
 		LOCAL:1 = ABL:ARG:@"스킬{LOCAL}"
 		IF LOCAL:1
-			;적専用/システム・기본行動・총공격/사용아이템/링케이지はグレーで표시(전투중＆全書閲覧用)
+			;적専用/システムㆍ기본行動ㆍ총공격/사용아이템/링케이지はグレーで표시(전투중＆全書閲覧用)
 			RESULT = 0
 			TRYCALLFORM 적전용_{LOCAL:1}
 			RESULT |= INRANGE(LOCAL:1, 1, 2099) !| INRANGE(LOCAL:1, 2400, 2999)
@@ -857,7 +857,7 @@ IF 표시情報 == 0
 		
 	NEXT
 	
-	;검か총なら공격횟수・相性・사거리・공격범위표시
+	;검か총なら공격횟수ㆍ相性ㆍ사거리ㆍ공격범위표시
 	IF RANGE(ARG:3 , 2000 , 2999)
 		IF RANGE(ARG:3 , 2500 , 2999)
 			CALLFORM EQUIP_PROPERTY , ARG:3 , "총공격" , , ARG

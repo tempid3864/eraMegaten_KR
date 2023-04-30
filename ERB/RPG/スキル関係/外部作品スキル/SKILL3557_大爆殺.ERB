@@ -8,11 +8,11 @@
 	;こちらがCCOが元ネタの技となっております
 	RESULTS = 대폭살
 	SIF SKILLGAGE_H_GET(ARG,3557) == 1
-		RESULTS += "・재염1"
+		RESULTS += "ㆍ재염1"
 	SIF SKILLGAGE_H_GET(ARG,3557) == 2
-		RESULTS += "・재염2"
+		RESULTS += "ㆍ재염2"
 	SIF SKILLGAGE_H_GET(ARG,3557) == 3
-		RESULTS += "・재염3"
+		RESULTS += "ㆍ재염3"
 ;羅刹
 SIF ARG > -1 && SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 1
 	RESULTS = 맹염각
@@ -287,7 +287,7 @@ ELSEIF SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 0 || TFLAG:전투중 == 0
 		PRINTL 적 1체에 화염 속성의 물리공격을 행한다。
 		PRINTL 【재염･0】소위력의 공격을 행한다
 		PRINTL 【재염･1】중위력의 공격을 행한다
-		PRINTL 【재염･2】특대위력의 공격을 행하고、화염무효・화염내성을 관통한다
+		PRINTL 【재염･2】특대위력의 공격을 행하고、화염무효ㆍ화염내성을 관통한다
 		PRINTL 【재염･3】극대위력의 공격을 행하고、모든 화염내성을 관통한다
 	ELSE
 		PRINTL 적 1체에 화염 속성의 소위력의 물리공격을 행한다。코스트소비 없음

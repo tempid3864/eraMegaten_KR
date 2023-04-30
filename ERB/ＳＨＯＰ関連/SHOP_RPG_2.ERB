@@ -38,25 +38,25 @@
 ; *- SHOP関連(RPG)
 ;
 ;	# 화면モード関連
-;	・ RPG_SHOP_SCREENMODE_DEFAULT
-;	・ RPG_SHOP_SCREENMODE_PRINT
-;	・ RPG_SHOP_SCREENMODE_CHANGE
+;	ㆍ RPG_SHOP_SCREENMODE_DEFAULT
+;	ㆍ RPG_SHOP_SCREENMODE_PRINT
+;	ㆍ RPG_SHOP_SCREENMODE_CHANGE
 ;
 ;	# 購買화면
-;	・ RPG_SHOP_NOMAL
-;	・ RPG_SHOP_DUNGEON
+;	ㆍ RPG_SHOP_NOMAL
+;	ㆍ RPG_SHOP_DUNGEON
 ;
 ;	# 購買화면:前処理
-;	・ _RPG_SHOP_SET_CONSTANT
-;	・ _RPG_ITEMLIST_MAKE_NOMAL
-;	・ _RPG_ITEMLIST_MAKE_EXCHANGE
+;	ㆍ _RPG_SHOP_SET_CONSTANT
+;	ㆍ _RPG_ITEMLIST_MAKE_NOMAL
+;	ㆍ _RPG_ITEMLIST_MAKE_EXCHANGE
 ;
 ;	# 購買화면:主処理
-;	・ RPG_SHOP_COUNTER
-;	・ _RPG_ITEMLIST_PRINT
-;	・ _GET_RPG_ITEM_NUM_MAX
-;	・ _GET_RPG_ITEM_EXP
-;	・ _EXE_RPG_ITEM_BUY
+;	ㆍ RPG_SHOP_COUNTER
+;	ㆍ _RPG_ITEMLIST_PRINT
+;	ㆍ _GET_RPG_ITEM_NUM_MAX
+;	ㆍ _GET_RPG_ITEM_EXP
+;	ㆍ _EXE_RPG_ITEM_BUY
 ;
 ;=================================================
 
@@ -331,7 +331,7 @@ RETURN 0
 
 ;set:C100番台(定数Constant)
 ;C:100;ページ単位の表示数
-;C:101;MAX:装備・弾丸購入可能数
+;C:101;MAX:装備ㆍ弾丸購入可能数
 ;C:102;MIN:アイテム番号
 ;C:103;MAX:アイテム番号
 ;C:104;コマンド:購入
@@ -378,7 +378,7 @@ VARSET 아이템리스트,-1
 VARSET ITEMSALES,0
 LOCAL:1 = 0
 
-;8未満は장비品・弾薬
+;8未満は장비品ㆍ弾薬
 IF ARG < 8
 	FOR LOCAL,C:103,VARSIZE("ITEM")
 		SIF ITEMPRICE:LOCAL == 0
@@ -441,7 +441,7 @@ VARSET 아이템리스트,-1
 VARSET ITEMSALES,0
 LOCAL:1 = 0
 
-;8未満は장비品・弾薬
+;8未満は장비品ㆍ弾薬
 IF ARG < 8
 	FOR LOCAL,C:103,VARSIZE("ITEM")
 		SIF ITEMPRICE:LOCAL == 0
@@ -757,7 +757,7 @@ PRINTFORMLC \@(P >= (ARG-1) / C:100) ? %" " * 13% # [9]다음페이지\@
 
 LOCAL:3 = 0
 
-;CHK:장비品・탄환
+;CHK:장비品ㆍ탄환
 TRYCCALLFORM 장비부위_{ARG}
 
 	;7:탄환
@@ -787,7 +787,7 @@ RETURN LOCAL:3
 ;-------------------------------------------------
 @_GET_RPG_ITEM_EXP,ARG
 
-;CHK:장비品・탄환
+;CHK:장비品ㆍ탄환
 TRYCCALLFORM 장비부위_{ARG}
 
 	;7:탄환

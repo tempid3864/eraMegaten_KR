@@ -36,15 +36,15 @@
 ; *- 전투(RPG)
 ;
 ;	# 스테이터스調整
-;	・ SYNC_STATUS_P
+;	ㆍ SYNC_STATUS_P
 ;	# ペルソナの経験値獲得及びランクアップ関連
-;	・ PRANK_COLLECTION_VALUE
-;	・ INCREASE_PERSONA_EXP
-;	・ CHECK_PRANK_UP
-;	・ GET_P_FITNESS
+;	ㆍ PRANK_COLLECTION_VALUE
+;	ㆍ INCREASE_PERSONA_EXP
+;	ㆍ CHECK_PRANK_UP
+;	ㆍ GET_P_FITNESS
 ;	# 잠재능력
-;	・ SENZAI_HO_KA_KO
-;	・ SENZAI_BOUGYO
+;	ㆍ SENZAI_HO_KA_KO
+;	ㆍ SENZAI_BOUGYO
 ;
 ;=================================================
 ;===============================
@@ -219,7 +219,7 @@
 	FOR LOCAL:2, 0, 8
 		ABL:ARG:(GETNUM(ABL, "스킬1") + LOCAL:2) = DITEMTYPE:LOCAL:(페르소나("스킬1")+LOCAL:2)
 	NEXT
-	ABL:ARG:스킬9 = [[스킬:P・체인지]]
+	ABL:ARG:스킬9 = [[스킬:Pㆍ체인지]]
 
 	;잠재능력
 	ABL:ARG:잠재능력 = DITEMTYPE:LOCAL:페르소나("잠재능력")
@@ -514,7 +514,7 @@
 		ENDIF
 	ENDIF
 
-	;ARGはペルソナ使い・ARG:1はペルソナ番号、ARG:1が0の場合、装備ペルソナを見る
+	;ARGはペルソナ使いㆍARG:1はペルソナ番号、ARG:1が0の場合、装備ペルソナを見る
 	@GET_P_FITNESS(ARG, ARG:1 = 0)
 	#FUNCTION
 	LOCAL = ARG:1 ? ARG:1 # EQUIP:ARG:장비페르소나
@@ -685,7 +685,7 @@
 	NEXT
 
 ;潜在能力------------------------------------------------------------------
-;補助・回復・攻撃・反撃
+;補助ㆍ回復ㆍ攻撃ㆍ反撃
 @SENZAI_HO_KA_KO,ARG,ARG:1
 	;ARG:0 攻撃側
 	;ARG:1 防御側

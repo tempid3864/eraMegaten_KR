@@ -62,11 +62,11 @@ IF ARG == 1
 					PRINTFORMW ＞ 어지간히도 악취미라고 여겨진 걸일까…
 					PRINTFORML 「좌우간 그는 당신 정도로는 손에 부칠 거예요」
 					PRINTFORML 「대신에 이 아이에게라도 끔찍한 악취미를 발신하도록 해」
-					PRINTFORML ＞ 조마의 소체,  도리・카드몬을 받아들이겠습니까?
+					PRINTFORML ＞ 조마의 소체,  도리ㆍ카드몬을 받아들이겠습니까?
 					CALL INPUT_YN,"Yes","No"
 					IF RESULT == 0
-						PRINTFORMW ＞ 조마의 소체, 도리・카드몬을 받았다
-						ITEM:도리・카드몬 += 1
+						PRINTFORMW ＞ 조마의 소체, 도리ㆍ카드몬을 받았다
+						ITEM:도리ㆍ카드몬 += 1
 						이벤트플래그:1:0 = 1
 						CFLAG:MASTER:10 = 1
 					ELSE
@@ -134,8 +134,8 @@ IF ARG == 1
 							PRINTFORMW 「만약 나나 피네건보다 강한 서머너가 되면 생각해보도록 하죠」
 							PRINTFORMW 「그때까지, 나 대신 이 아이에게나 정욕을 발산해요」
 						ENDIF
-						PRINTFORMW ＞ 조마의 소체, 도리・카드몬을 받았다.
-						ITEM:도리・카드몬 += 1
+						PRINTFORMW ＞ 조마의 소체, 도리ㆍ카드몬을 받았다.
+						ITEM:도리ㆍ카드몬 += 1
 						이벤트플래그:1:0 = 1
 						CFLAG:MASTER:10 = 1
 					ELSE
@@ -200,8 +200,8 @@ ELSE
 					LOCAL:1 = 1
 					PRINTFORMW 우에스기 히데히코 를 손에 넣었다.
 				CASE 2
-					PRINTFORMW 피네건 대신 조마의 소체, 도리・카드몬을 받았다.
-					ITEM:도리・카드몬 += 1
+					PRINTFORMW 피네건 대신 조마의 소체, 도리ㆍ카드몬을 받았다.
+					ITEM:도리ㆍ카드몬 += 1
 					이벤트플래그:1:0 = 1
 				CASE 3
 					GOTO SELECT_FIRSTCOMPANION2
@@ -226,8 +226,8 @@ ELSE
 					LOCAL:1 = 2
 					PRINTFORMW 모치즈키 마리 를 손에 넣었다.
 				CASE 2
-					PRINTFORMW 상사 대신 조마의 소체, 도리・카드몬을 받았다.
-					ITEM:도리・카드몬 += 1
+					PRINTFORMW 상사 대신 조마의 소체, 도리ㆍ카드몬을 받았다.
+					ITEM:도리ㆍ카드몬 += 1
 					이벤트플래그:1:0 = 1
 				CASE 3
 					GOTO SELECT_FIRSTCOMPANION2

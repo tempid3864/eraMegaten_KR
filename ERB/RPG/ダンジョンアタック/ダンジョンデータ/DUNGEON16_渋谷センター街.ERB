@@ -37,13 +37,13 @@ SELECTCASE FLAG:현M
 	CASE 2
 		PRINTL 큰 길
 	CASE 3
-		PRINTL 가이아교・시부야 지부1F
+		PRINTL 가이아교ㆍ시부야 지부1F
 	CASE 4
-		PRINTL 가이아교・시부야 지부2F
+		PRINTL 가이아교ㆍ시부야 지부2F
 	CASE 5
-		PRINTL 가이아교・시부야 지부3F
+		PRINTL 가이아교ㆍ시부야 지부3F
 	CASE 6
-		PRINTL 가이아교・시부야 지부4F
+		PRINTL 가이아교ㆍ시부야 지부4F
 	CASEELSE
 		PRINTL
 ENDSELECT
@@ -135,7 +135,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,11,"00000000000000"
 
 	CASE 3
-		;ガイア教・渋谷支部1F
+		;ガイア教ㆍ渋谷支部1F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -158,7 +158,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,15,"011111 1 7 111110"
 		CALL MAKE_FLOOR_LINE,16,"00000000000000000"
 	CASE 4
-		;ガイア教・渋谷支部2F
+		;ガイア教ㆍ渋谷支部2F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -182,7 +182,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,16,"00000000000000000"
 		;UDLR 一方通行タイル
 	CASE 5
-		;ガイア教・渋谷支部3F
+		;ガイア教ㆍ渋谷支部3F
 		FLAG:최대X = 17
 		FLAG:최대Y = 17
 		;						 00000000001111111
@@ -205,7 +205,7 @@ SELECTCASE FLAG:현M
 		CALL MAKE_FLOOR_LINE,15,"011111 T 1 721 10"
 		CALL MAKE_FLOOR_LINE,16,"00000000000000000"
 	CASE 6
-		;ガイア教・渋谷支部4F
+		;ガイア教ㆍ渋谷支部4F
 		FLAG:최대X = 11
 		FLAG:최대Y = 11
 		CALL MAKE_FLOOR_LINE, 0,"00000000000"
@@ -609,7 +609,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D,  "베스", "정말로…감사합니다…"
 				CALL MESSAGE_WINDOW_D,  "", "＞베스는 눈물을 뚝뚝 흘리기 시작했다"
 				CALL MESSAGE_WINDOW_D,  "베스", "미안 해요 ... / 정말 ... 기뻐서 ... ... / 왜냐하면 ... 나는 당신과 ... ... ... ..."
-				CALL MESSAGE_WINDOW_D,  "", "＞원래 템플나이트였던 소녀・베스가 동료가 되었다"
+				CALL MESSAGE_WINDOW_D,  "", "＞원래 템플나이트였던 소녀ㆍ베스가 동료가 되었다"
 				CALL ADD_NEW_COMPANION,4501, 500, 1
 				SIF RESULT
 					CFLAG:(RESULT:1):전투참가불가능 = -1

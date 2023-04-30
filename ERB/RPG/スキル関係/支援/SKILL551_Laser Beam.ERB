@@ -154,23 +154,23 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		CFLAG:POS(LOCAL):명중강화 = MAX(-16, CFLAG:POS(LOCAL):명중강화 - 8)
 		CFLAG:POS(LOCAL):마법위력강화 = MAX(-16, CFLAG:POS(LOCAL):마법위력강화 - 8)
 	ELSEIF ABL:ARG:가창기능 > 5
-		;攻撃・魔法威力2段階低下/命中1段階低下
+		;攻撃ㆍ魔法威力2段階低下/命中1段階低下
 		CFLAG:POS(LOCAL):공격강화 = MAX(-16, CFLAG:POS(LOCAL):공격강화 - 8)
 		CFLAG:POS(LOCAL):명중강화 = MAX(-16, CFLAG:POS(LOCAL):명중강화 - 4)
 		CFLAG:POS(LOCAL):마법위력강화 = MAX(-16, CFLAG:POS(LOCAL):마법위력강화 - 8)
 	ELSE
-		;攻撃・魔法威力1段階低下
+		;攻撃ㆍ魔法威力1段階低下
 		CFLAG:POS(LOCAL):공격강화 = MAX(-16, CFLAG:POS(LOCAL):공격강화 - 4)
 		CFLAG:POS(LOCAL):마법위력강화 = MAX(-16, CFLAG:POS(LOCAL):마법위력강화 - 4)
 	ENDIF
 NEXT
 IF ABL:ARG:가창기능 == 10
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력・명중률・마법위력을 대폭 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력ㆍ명중률ㆍ마법위력을 대폭 낮췄다！
 ELSEIF ABL:ARG:가창기능 > 5
-	PRINTFORML \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력・마법위력을 대폭 낮췄다！
+	PRINTFORML \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력ㆍ마법위력을 대폭 낮췄다！
 	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 명중률을 낮췄다！
 ELSE
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력・마법위력을 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 공격력ㆍ마법위력을 낮췄다！
 ENDIF
 
 ;====================================================
@@ -189,23 +189,23 @@ ENDIF
 @SKILL_EXPLAIN_551
 ;ステータス画面からはこっち表示
 IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
-	PRINTL 스스로 사지로 뛰어들어、동료마와 함께 적을 파고드는 노래。적의 공격력・마법위력을 낮춘다。
+	PRINTL 스스로 사지로 뛰어들어、동료마와 함께 적을 파고드는 노래。적의 공격력ㆍ마법위력을 낮춘다。
 	PRINTL 가창기능에 따라 코스트가 저하되고、효과가 강화되며、명중률 저하가 추가된다。
 	PRINTL 　
-	PRINTL 가창기능Lv10　 ：적의 공격력・명중률・마법위력　２단계 저하
-	PRINTL 가창기능Lv6이상：적의 공격력・마법위력　　　　　２단계 저하
+	PRINTL 가창기능Lv10　 ：적의 공격력ㆍ명중률ㆍ마법위력　２단계 저하
+	PRINTL 가창기능Lv6이상：적의 공격력ㆍ마법위력　　　　　２단계 저하
 	PRINTL 　　　　　　　　 적의 명중률　　　　　　　　　　１단계 저하
-	PRINTL 그　이외　　　 ：적의 공격력・마법위력　　　　　１단계 저하
+	PRINTL 그　이외　　　 ：적의 공격력ㆍ마법위력　　　　　１단계 저하
 ;戦闘中はこっち表示
 ELSE
 	PRINTL 스스로 사지로 뛰어들어、동료마와 함께 적을 파고드는 노래。
 	IF ABL:U:가창기능 == 10
-		PRINTL 적의 공격력・명중률・마법위력을 ２단계 저하。
+		PRINTL 적의 공격력ㆍ명중률ㆍ마법위력을 ２단계 저하。
 	ELSEIF ABL:U:가창기능 > 5
-		PRINTL 적의 공격력・마법위력을 ２단계 저하。
+		PRINTL 적의 공격력ㆍ마법위력을 ２단계 저하。
 		PRINTL 적의 명중률　　　　　을１단계 저하。
 	ELSE
-		PRINTL 적의 공격력・마법위력을 １단계 저하。
+		PRINTL 적의 공격력ㆍ마법위력을 １단계 저하。
 	ENDIF
 ENDIF
 

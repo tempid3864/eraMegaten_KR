@@ -446,10 +446,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTFORML 「이 빚은 언젠가 돌려줄끼여」
 			PRINTFORMW 「오늘은 마, 이쯤 해두긋다. 두고 바라!!」
 		ENDIF
-		IF ITEM:도리・카드몬 == 0
+		IF ITEM:도리ㆍ카드몬 == 0
 			PRINTFORMW ＞쓰러뜨린 조마 안에서 뭔가 나왔다.
 			PRINTFORMW 수수께끼의 인형을 손에 넣었다.
-			ITEM:도리・카드몬 += 1
+			ITEM:도리ㆍ카드몬 += 1
 		ENDIF
 		던전플래그:49:5 = 1
 	CASE 200
@@ -633,7 +633,7 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 			CASE IS < 60
 				RETURN [[キャラ:야마치치]], 17
 			CASE IS < 70
-				RETURN [[キャラ:모・쇼보]], 17
+				RETURN [[キャラ:모ㆍ쇼보]], 17
 			CASE IS < 85
 				RETURN [[キャラ:잭프로스트]], 17
 			CASE IS < 100

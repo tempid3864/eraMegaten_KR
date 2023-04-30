@@ -44,7 +44,7 @@
 ;	033		2020/09/06		Jガン 					新しい페르소나の型の処理추가
 ;	034		2020/10/28		Jガン 					SHOW_SKILL_LISTに스킬が重複して二つ스킬が出ないように
 ;	035		2021/02/11		Rsp暇人 				링케이지스킬選択時に참가者が自動で選ばれたり候補一覧がでたりするように。참가者は발りているのに何らかの理由で사용できない링케이지스킬は灰色で표시されるように
-;													링케이지스킬一覧で사거리・範囲を明記（사거리不발で사용できない場合がわかりやすく）
+;													링케이지스킬一覧で사거리ㆍ範囲を明記（사거리不발で사용できない場合がわかりやすく）
 ;													링케이지발동者を他の링케이지の참가者に選択することで元の링케이지참가자がWAIT상태のまま行動選択できなくなるバグを修正
 ;	036		2020/02/20		Jガン 					스킬参照のフラグなどを추가して、스킬の詳細が正しくなるように
 ;	037		2021/04/12		Jガン 					毎ターン自動で웨이트기능と아군전체に웨이트스킬を부여できるように、일시조작불능処理추가
@@ -57,7 +57,7 @@
 ;	042		2021/08/16		Musue 					ＣＨＡＮＧＥ대상플래그と피소환플래그の修正
 ;	043		2021/09/19		JK好き					@INPUT_COM_2,ARG TRYCALLFORM 특수탄창に引数が付いてなかった問題を修正
 ;	044		2021/10/02		JK好き					@INPUT_COMMAND 選択스킬名が長すぎる際に표시스킬名が생략されるように修正
-;	045		2021/11/23		kamedakeisuke(ﾟдﾟ)		타인기합플래그・타인집중플래그に対応
+;	045		2021/11/23		kamedakeisuke(ﾟдﾟ)		타인기합플래그ㆍ타인집중플래그に対応
 ;	046		2021/12/07		JK好き					@HAVE_EXTRA @HAVE_MAGICを新規作成し、@SHOW_COMMAND_LIST及び@INPUT_COM_SKILLにEXTRA/MAGICを持っていない場合に選択出来ないようにする処理を추가
 ;	020		2022/06/07		Collared				UI 정리 프로젝트에 따라 일부 번호 변경
 ;	021		2022/09/17		kamedakeisuke(ﾟдﾟ)		Aion식 소환술 쪽 사양을 추가
@@ -155,7 +155,7 @@ FOR LOCAL,1,7
 			ELSEIF CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:스리스티]]
 				TARGETS =  >>> [--] 아군전체
 			;---- EDIT 025 ADD END
-			;1체蘇生 도반옥・반혼향・리캄・사마리캄・トンリン芳香
+			;1체蘇生 도반옥ㆍ반혼향ㆍ리캄ㆍ사마리캄ㆍトンリン芳香
 			ELSEIF CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:사마리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:도반옥]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:반혼향]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:통령「통령요시카」]]
 				;現타겟が蘇生대상か見る
 				CALL CHECK_TARGET_RESUSCITATION, FLAG:LOCALS
@@ -668,7 +668,7 @@ SELECTCASE C:(LOCAL:1)
 		ELSE
 			CFLAG:LOCAL:타겟 = 23
 			CFLAG:LOCAL:방어플래그 = 0
-			CFLAG:LOCAL:입력행동 = [[스킬:P・체인지]]
+			CFLAG:LOCAL:입력행동 = [[스킬:Pㆍ체인지]]
 		ENDIF
 	CASE 9
 		;ＲＥＴＵＲＮ
@@ -942,12 +942,12 @@ IF TALENT:ARG:식노 && CFLAG:ARG:악마변신
 ENDIF
 
 
-;ＤＯＵＢＬＥ・ＴＡＰ
+;ＤＯＵＢＬＥㆍＴＡＰ
 IF EQUIP:ARG:총 && CFLAG:ARG:악마변신 == 0 && TALENT:ARG:건슬링거 && TALENT:ARG:달인
 	CALL CHECK_ACTIONABLE,ARG,138
 	SIF RESULT == 0
 		SETCOLOR 0x404040
-	PRINTFORML [{LOCAL}] ＤＯＵＢＬＥ・ＴＡＰ
+	PRINTFORML [{LOCAL}] ＤＯＵＢＬＥㆍＴＡＰ
 	C:LOCAL = 15
 	LOCAL += 1
 ENDIF
@@ -1470,7 +1470,7 @@ FOR LOCAL,4000,5000
 		ENDIF
 		;스킬사용者を一文字関数Uに入れておく
 		U = ARG
-		;説明文に書かれてないことがあるので사거리・範囲を明記
+		;説明文に書かれてないことがあるので사거리ㆍ範囲を明記
 		CALLFORM SKILL_RANGE_{LOCAL}
 		PRINTFORM 사거리:%AUTO_SPLIT(" /Ｓ/Ｍ/Ｌ/ＬＬ", "/", RESULT)%　
 		CALLFORM SKILL_SPHERE_{LOCAL},ARG
@@ -1604,7 +1604,7 @@ FOR CNT, 1, LOCAL:8 + 1
 		CONTINUE
 	IF LINK_LOCAL:(LOCAL:7-4000):1:CNT
 		LOCAL:10 = POS(LINK_LOCAL:(LOCAL:7-4000):1:CNT)
-		;입력できないキャラ・ＣＨＡＮＧＥ대상・他링케이지참가자・本人は弾く
+		;입력できないキャラㆍＣＨＡＮＧＥ대상ㆍ他링케이지참가자ㆍ本人は弾く
 		SIF LINKAGE_SUB_CHECK(LOCAL:10, ARG, LOCAL)
 			LOCAL:CNT = LOCAL:10
 	ENDIF
@@ -1626,7 +1626,7 @@ FOR LOCAL,1,LOCAL:8+1
 	FOR CNT, 1, 7
 		IF GETBIT(LINK_LOCAL:(LOCAL:7-4000):0:LOCAL, CNT)
 			LOCAL:10 = POS(CNT)
-			;입력できないキャラ・ＣＨＡＮＧＥ대상・他링케이지참가자・本人・他の枠に入ってるキャラはボタンではなく平文に
+			;입력できないキャラㆍＣＨＡＮＧＥ대상ㆍ他링케이지참가자ㆍ本人ㆍ他の枠に入ってるキャラはボタンではなく平文に
 			IF LINKAGE_SUB_CHECK(LOCAL:10, ARG, LOCAL)
 				PRINTFORM 　[{LOCAL*10+CNT}] %CALLNAME:(LOCAL:10)%
 			ELSE
@@ -1719,7 +1719,7 @@ ELSEIF RESULT == 0
 ELSEIF INRANGE(RESULT%10, 1, 6) && INRANGE(RESULT/10, 1, LOCAL:8)
 	LOCAL:10 = POS(RESULT%10)
 	CNT = RESULT/10
-	;입력できないキャラ・ＣＨＡＮＧＥ대상・링케이지참가자・本人は弾く
+	;입력できないキャラㆍＣＨＡＮＧＥ대상ㆍ링케이지참가자ㆍ本人は弾く
 	IF LINKAGE_SUB_CHECK(LOCAL:10, ARG, LOCAL)
 		LOCAL:CNT = LOCAL:10
 		GOTO PRINT_MEN
@@ -2225,7 +2225,7 @@ ENDIF
 
 ;---- EDIT 037 ADD END   -------------------------
 ;=========================================================
-;입력結果 ; ＤＯＵＢＬＥ・ＴＡＰ
+;입력結果 ; ＤＯＵＢＬＥㆍＴＡＰ
 ;=========================================================
 @INPUT_COM_15,ARG
 CALL CHECK_ACTIONABLE,ARG,138
@@ -2976,7 +2976,7 @@ IF CSTR:ARG:사고패턴 == "1"
 				CFLAG:ARG:타겟 = 23
 			ENDIF
 		;------------------------------------------------------
-		;회복・지원스킬の타겟決定
+		;회복ㆍ지원스킬の타겟決定
 		;------------------------------------------------------
 		ELSEIF RESULT == 2
 			CALLFORM SKILL_SPHERE_{LOCAL:1},ARG

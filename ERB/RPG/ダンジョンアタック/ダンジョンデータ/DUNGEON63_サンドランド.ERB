@@ -19,15 +19,15 @@ RESULTS = 샌드랜드
 @FLOORNAME_63
 SELECTCASE FLAG:현M
 	CASE 0
-		PRINTL ・피라미드　Ｂ２F
+		PRINTL ㆍ피라미드　Ｂ２F
 	CASE 1
-		PRINTL ・피라미드　Ｂ１F
+		PRINTL ㆍ피라미드　Ｂ１F
 	CASE 2
-		PRINTL ・피라미드　１Ｆ
+		PRINTL ㆍ피라미드　１Ｆ
 	CASE 3
-		PRINTL ・피라미드　２Ｆ
+		PRINTL ㆍ피라미드　２Ｆ
 	CASE 4
-		PRINTL ・이시스의 방
+		PRINTL ㆍ이시스의 방
 ENDSELECT
 
 ;=======================================================================
@@ -646,8 +646,8 @@ CASE  150
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 800
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		CFLAG:(CHARANUM-1):행동횟수 = 2
-		ABL:(CHARANUM-1):스킬1 = [[스킬:마하・지온가]]
-		ABL:(CHARANUM-1):스킬2 = [[스킬:마하・라기온]]
+		ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ지온가]]
+		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ라기온]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:데스바운드]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -658,7 +658,7 @@ CASE  150
 		ABL:(CHARANUM-1):스킬1 = [[스킬:아기라오]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:절묘타]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마린카린]]
-		ABL:(CHARANUM-1):스킬4 = [[스킬:마하・라기온]]
+		ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ라기온]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -741,7 +741,7 @@ CASE 200
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		ABL:(CHARANUM-1):스킬1 = [[스킬:프레이라]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:무드온]]
-		ABL:(CHARANUM-1):스킬3 = [[스킬:데・카쟈]]
+		ABL:(CHARANUM-1):스킬3 = [[스킬:데ㆍ카쟈]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		CALL BATTLE_START
@@ -947,7 +947,7 @@ SELECTCASE RAND:100
 	CASE IS < 65
 		RETURN [[キャラ:피샤차]], 33
 	CASE IS < 75
-		RETURN [[キャラ:탐・린]], 35
+		RETURN [[キャラ:탐ㆍ린]], 35
 	CASE IS < 83
 		RETURN [[キャラ:잔트만]], 35
 	CASE IS < 90
@@ -972,7 +972,7 @@ SELECTCASE RAND:100
 	CASE IS < 50
 		RETURN [[キャラ:아조트]],35
 	CASE IS < 60
-		RETURN [[キャラ:탐・린]], 36
+		RETURN [[キャラ:탐ㆍ린]], 36
 	CASE IS < 70
 		RETURN [[キャラ:스코그스라]], 36
 	CASE IS < 80
@@ -995,6 +995,6 @@ SELECTCASE RAND:3
 	CASE 1
 		RETURN [[キャラ:바질리스크]] , 3 + RAND:10 , CSVBASE([[キャラ:바질리스크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:탐・린]] , 3 + RAND:10 , CSVBASE([[キャラ:탐・린]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[キャラ:탐ㆍ린]] , 3 + RAND:10 , CSVBASE([[キャラ:탐ㆍ린]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

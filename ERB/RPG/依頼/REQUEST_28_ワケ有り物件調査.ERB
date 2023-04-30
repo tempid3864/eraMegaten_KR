@@ -48,7 +48,7 @@ CALL MESSAGE_WINDOW, "", "＞그 맨션은 새 역에 가까운 편으로, 모�
 CALL MESSAGE_WINDOW, "", "＞지금까지 입주했던 인원은 5명/＞맨션의 관리자에 따르면 /피해자 4명은 하나같이 『심야에 귀신을 봤다』고 말했다는 것 같다", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞나머지 한명…의뢰의 계기가 된 주민은/＞급성심근경색으로 쓰러져 있는 것을 발견해 증언을 하지 못한 것 같다/＞하지만, 생명에는 지장이 없고 지병이 있었다는 소문이 있다", , , , , 4
 CALL MESSAGE_WINDOW, "", @"＞건물 자체도 이계화가 된 것도 아니고 별다른 기색은 없어, %CALLNAME:MASTER%는 『심야에 귀신을 보았다』는 말에 걸어보기로 했다", , , , , 4
-CALL MESSAGE_WINDOW, "", "＞・・/＞・・・/＞・・・・/", , , , , 4
+CALL MESSAGE_WINDOW, "", "＞ㆍㆍ/＞ㆍㆍㆍ/＞ㆍㆍㆍㆍ/", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞새벽", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞아무일도 없이 시계바늘이 1시를 가리킬 때…", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞뚜르르르르르르르/＞전화다. /＞관리인인가？", , , , , 4
@@ -67,7 +67,7 @@ CALL MESSAGE_WINDOW, "", "뚜르르르르르르르", , , , , 4
 CALL MESSAGE_WINDOW, "메리씨？", "「여보세요오…、나 메리 씨.」/「지금, 당신이 있는 맨션 앞에 있어…」", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞확실히 이런 도시전설이 있었다/＞이사한 소녀가 버린 인형이 자신의 위치를 전화로 알리면서 다가오는 괴담…", , , , , 4
 CALL MESSAGE_WINDOW, "", "뚜르르르르르르르", , , , , 4
-CALL MESSAGE_WINDOW, "메리씨？", "「여보세요오…、나 메리 씨.」/「지금,  엘리베이터 타고 있어…」/「・・・・・」/「곧 도착이야…」", , , , , 4
+CALL MESSAGE_WINDOW, "메리씨？", "「여보세요오…、나 메리 씨.」/「지금,  엘리베이터 타고 있어…」/「ㆍㆍㆍㆍㆍ」/「곧 도착이야…」", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞유명한 이야기였지/＞마지막은 어땠더라/＞대책이 있었던가…", , , , , 4
 CALL MESSAGE_WINDOW, "", "뚜르르르르르르르", , , , , 4
 CALL MESSAGE_WINDOW, "메리씨？", "「여보세요오…、나 메리 씨.」/「지금, 당신의 방 앞에 있어…쿡쿡」", , , , , 4
@@ -80,7 +80,7 @@ FLAG:선제기습취소 = 1
 IF RESULT == 0
 	CALL MESSAGE_WINDOW, "", "뚜르르르르르르르", , , , , 4
 	CALL MESSAGE_WINDOW, "", @"%CALLNAME:MASTER%가 천천히 수화기를 들자…", , , , , 4
-	CALL MESSAGE_WINDOW, "메리씨", " 「나 메리 씨.」/「지금…」/「・・・・・」", , , , , 4
+	CALL MESSAGE_WINDOW, "메리씨", " 「나 메리 씨.」/「지금…」/「ㆍㆍㆍㆍㆍ」", , , , , 4
 	CALL MESSAGE_WINDOW, "메리씨", "「당신의 뒤에 있는걸ー！！」", , , , , 4
 	CALL MESSAGE_WINDOW, "", "＞괴이 메리씨가 나타났다！", , , , , 4
 	CLEARLINE LINECOUNT
@@ -132,8 +132,8 @@ IF RESULT == 0
 	ENDIF
 ELSE
 	CALL MESSAGE_WINDOW, "", @"＞%CALLNAME:MASTER%는 벽을 등지고 기다렸다 /＞확실히 『메리씨』는 벽이 방해해서 못나온다는 이야기가 있지", , , , , 4
-	CALL MESSAGE_WINDOW, "", "＞・・/＞・・・/＞・・・・", , , , , 4
-	CALL MESSAGE_WINDOW, "", "＞근처는 물을 끼얹은 듯이 조용하다…/＞・・・・・", , , , , 4
+	CALL MESSAGE_WINDOW, "", "＞ㆍㆍ/＞ㆍㆍㆍ/＞ㆍㆍㆍㆍ", , , , , 4
+	CALL MESSAGE_WINDOW, "", "＞근처는 물을 끼얹은 듯이 조용하다…/＞ㆍㆍㆍㆍㆍ", , , , , 4
 	CALL MESSAGE_WINDOW, "？？？", "…당신이었네", , , , , 4
 	CALL MESSAGE_WINDOW, "", "＞！？/＞방 안에 여자의 목소리가 울려퍼진다", , , , , 4
 	CALL MESSAGE_WINDOW, "？？？", "당신이 범인이었던 거네…이런、시시한 헛소문", , , , , 4
@@ -168,7 +168,7 @@ ELSE
 	IF RESULT == 0
 		CALL MESSAGE_WINDOW, "메리씨", "…읏！…너같은 건 저주나 받아버려！！", , , , , 4
 		CALL MESSAGE_WINDOW, "", @"＞%CALLNAME:MASTER%가 최후의 일격을 가하자、/＞메리씨는 저주의 말을 외치며 바스라졌다", , , , , 4
-		CALL MESSAGE_WINDOW, "", "＞・・・・・・・・・・・/＞근처에는 아무 기척도 없다", , , , , 4
+		CALL MESSAGE_WINDOW, "", "＞ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ/＞근처에는 아무 기척도 없다", , , , , 4
 	ELSE
 		CALL MESSAGE_WINDOW, "", @"＞%CALLNAME:MASTER%는 무기를 거두고 덮쳐온 이유를 메리씨에게 물었다 ", , , , , 4
 		CALL MESSAGE_WINDOW, "메리씨", "…읏！……당신이…/당신이 퍼트렸지！떠들고 다녔지！그 소문을～", , , , , 4
@@ -185,7 +185,7 @@ ELSE
 		CALL MESSAGE_WINDOW, "", @"＞아무래도 %CALLNAME:MASTER%가 벽을 등지고 기다린 일로、/＞소문을 그대로 받아들인 인간이라고 착각된 것 같다…", , , , , 4
 		CALL MESSAGE_WINDOW, "메리씨", "…우읏、히끅…훌쩍、……～……책임…", , , , , 4
 		CALL MESSAGE_WINDOW, "메리씨", "책임져어～～～～엇！우와아～～～～앙！！", , , , , 4
-		CALL MESSAGE_WINDOW, "", "＞위로중・・・・・・・・・・・・・・・・・・/＞・・・・・・・・・・・・・・・", , , , , 4
+		CALL MESSAGE_WINDOW, "", "＞위로중ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ/＞ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ", , , , , 4
 		CALL MESSAGE_WINDOW, "", "＞결국、이대로는 여러 가지로 견딜 수 없어질 것 같아서 동료마로 하기로 했다", , , , , 4
 		CALL MESSAGE_WINDOW, "메리씨", "나、『괴이 메리씨』.　어쩔 수 없으니까 동료마가 되어 줄게", , , , , 4
 		CALL MESSAGE_WINDOW, "", @"＞기분을 푼 메리씨는 빙글 하고 춤추듯 돌고는 %CALLNAME:MASTER%에게 자기소개를 했다.", , , , , 4

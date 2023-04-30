@@ -186,7 +186,7 @@ CFLAG:ARG:타겟 = -1
 IF CFLAG:ARG:１more플래그 > 0
 	SELECTCASE RAND:100
 		CASE 0 TO LOCAL * 2
-			CFLAG:ARG:입력행동 = [[스킬:마하・갈라]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ갈라]]
 		CASE LOCAL * 2 TO LOCAL * 4
 			CFLAG:ARG:입력행동 = [[스킬:회오리]]
 		CASE LOCAL * 4 TO LOCAL * 6
@@ -208,7 +208,7 @@ ELSE
 	ELSE
 		SELECTCASE RAND:100
 			CASE IS < 20
-				CFLAG:ARG:입력행동 = [[스킬:마하・갈라]]
+				CFLAG:ARG:입력행동 = [[스킬:마하ㆍ갈라]]
 			CASE IS < 35
 				CFLAG:ARG:입력행동 = [[스킬:회오리]]
 			CASE IS < 50

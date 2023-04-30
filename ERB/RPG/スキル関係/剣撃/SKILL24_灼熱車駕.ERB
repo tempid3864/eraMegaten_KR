@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_24,ARG
 IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	RESULTS = Ｆ・쇼다운
+	RESULTS = Ｆㆍ쇼다운
 ELSE
 	RESULTS = 작열거가
 ENDIF
@@ -132,8 +132,8 @@ CALL ATTACK_SPREAD,ARG,ARG:1,24
 ;　 설명문 표시
 @SKILL_EXPLAIN_24
 IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	PRINTL 정식명칭「피닉스・쇼다운」
-	PRINTL 그랑・플라즈마 커터 → 궁극！게슈펜스트킥 → 뉴트론・블래스터와 연결하는 연속 공격
+	PRINTL 정식명칭「피닉스ㆍ쇼다운」
+	PRINTL 그랑ㆍ플라즈마 커터 → 궁극！게슈펜스트킥 → 뉴트론ㆍ블래스터와 연결하는 연속 공격
 	PRINTL 대상을 중심으로 한 광범위에 검격 상성으로 ２회 중 데미지를 준다。후열 사용 가능。
 ELSE
 	PRINTL 대상을 중심으로 한 광범위에 검격 상성으로 ２회 중 데미지를 준다。후열 사용 가능。

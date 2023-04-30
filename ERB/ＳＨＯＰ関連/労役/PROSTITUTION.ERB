@@ -576,7 +576,7 @@ SIF ABL:ARG:마조끼 > ABL:ARG:새드끼 && LOCAL:13
 	PRINTFORML 고통의 구슬＋{LOCAL:13*50}
 SIF ((LOCAL:23+LOCAL:11+LOCAL:12+LOCAL:13+LOCAL:14)*100/MAX(1,ABL:ARG:순종)) > 0 && ARG != MASTER
 	PRINTFORML 부정의 구슬＋{(LOCAL:23+LOCAL:11+LOCAL:12+LOCAL:13+LOCAL:14)*100/MAX(1,ABL:ARG:순종)}
-;フェラ・中田氏などの횟수×LV分ＭＡＧを흡수してくる
+;フェラㆍ中田氏などの횟수×LV分ＭＡＧを흡수してくる
 IF Ｖプレイ回数 + Ａプレイ回数 + LOCAL:12 > 0
 	PRINTFORML ＭＡＧ+{((Ｖプレイ回数*2+Ａプレイ回数*2+LOCAL:12*1)*MAXBASE:ARG:LV)*(1+(ARG == MASTER)*4+MAX(TALENT:ARG:영매체질*9 - !TALENT:ARG:비전투원 * 5, 0))/2/5}
 	CALL CONTROL_MAG,ARG,((Ｖプレイ回数*2+Ａプレイ回数*2+LOCAL:12*1)*MAXBASE:ARG:LV)*(1+(ARG == MASTER)*4+MAX(TALENT:ARG:영매체질*9 - !TALENT:ARG:비전투원 * 5, 0))/2/5
@@ -1790,9 +1790,9 @@ IF RAND:100 < LOCAL:2 || TALENT:ARG:ＮＴＲ > 0 && RAND:100 < 50 || IS_ANTI_NT
 	IF RAND:100 > 100 + 함락(ARG) * 10 - LOCAL:3 || TALENT:ARG:ＮＴＲ > 0 || IS_ANTI_NTR_CLOTHES(ARG) == -1
 		PRINTFORML 
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% 손님과 약속 장소로 향했다……
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORMW ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORMW ㆍㆍㆍ
 		;本番판정
 		;기본치50％+방치일수*2（上限なし）さらに즉각함락持ちは+50
 		;これに함락度*50のマイナス보정を入れる

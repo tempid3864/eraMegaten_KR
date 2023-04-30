@@ -602,7 +602,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					;IF RESULT
 						TARGET = RESULT:1
 						FLAG:던전내조교 = 1
-						;회화타입を女・청소년に
+						;회화타입を女ㆍ청소년に
 						ABL:회화타입 = 304
 						CSTR:일인칭 = あたし
 						CSTR:이인칭 = 당신
@@ -1434,7 +1434,7 @@ ENDSELECT
 #LOCALSIZE 3
 #LOCALSSIZE 3
 LOCAL:2 = (DA:(FLAG:현X):(FLAG:현Y) / 10) % 100
-;個数,-1のとき、마카・0の時、\となる
+;個数,-1のとき、마카ㆍ0の時、\となる
 LOCAL = 1
 ;IDは현M*100＋X個눈の宝箱の法則でふられている
 SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
@@ -1484,7 +1484,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 706
 		LOCALS = 힘의향
 	CASE 707
-		LOCALS = 스킬카드【마하・지온가】
+		LOCALS = 스킬카드【마하ㆍ지온가】
 	CASE 708
 		LOCALS = 스킬카드【지온가】
 	CASE 709
@@ -1496,7 +1496,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 900
 		LOCALS = 스킬카드【절대영도】
 	CASE 901
-		LOCALS = 스킬카드【마하・부흐다인】
+		LOCALS = 스킬카드【마하ㆍ부흐다인】
 	CASE 902
 		LOCALS = 마카
 		LOCAL = 2000

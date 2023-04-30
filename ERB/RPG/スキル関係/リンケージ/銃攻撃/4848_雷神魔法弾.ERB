@@ -215,7 +215,7 @@ RETURN 1
 @참가조건표시_4848,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 지오다인、마하・지오다인、갈다인、또는 마하・갈다인 중、하나
+		PRINTFORM 지오다인、마하ㆍ지오다인、갈다인、또는 마하ㆍ갈다인 중、하나
 	CASE 2
 		PRINTFORM 코로나샷 * 4
 ENDSELECT
@@ -242,25 +242,25 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ジオダインかマハ・ジオダインを使えること
+		;ジオダインかマハㆍジオダインを使えること
 		IF HAVE_SKILL(ARG, [[스킬:지오다인]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:지오다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・지오다인]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・지오다인]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ지오다인]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ지오다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;ガルダインかマハ・ガルダインを使えること
+		;ガルダインかマハㆍガルダインを使えること
 		IF HAVE_SKILL(ARG, [[스킬:갈다인]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:갈다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・갈다인]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・갈다인]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ갈다인]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ갈다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

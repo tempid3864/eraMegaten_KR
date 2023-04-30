@@ -9,7 +9,7 @@
 SELECTCASE ARG:2
 CASE 0
 	;解放条件
-	;イズンのレベルが５０以上、歌唱・料理技能合計１５以上
+	;イズンのレベルが５０以上、歌唱ㆍ料理技能合計１５以上
 	IF ARG:1 == 1
 		SIF MAXBASE:ARG:LV < 50
 			RETURN 0
@@ -23,7 +23,7 @@ CASE 0
 			RESULTS = ねらわれた%CALLNAME:ARG%（戦闘有り）
 		ELSE
 			;未開放時のタイトル（解放条件を入れておく）
-			RESULTS = ※%CALLNAME:ARG%のLv50以上、歌唱・料理技能合計15以上
+			RESULTS = ※%CALLNAME:ARG%のLv50以上、歌唱ㆍ料理技能合計15以上
 		ENDIF
 	;イベント
 	ELSEIF ARG:1 == 3
@@ -81,7 +81,7 @@ CASE 0
 		ABL:(CHARANUM-1):스킬2  = [[스킬:지오다인]]
 		ABL:(CHARANUM-1):스킬3  = [[스킬:코칭]]
 		ABL:(CHARANUM-1):스킬4  = [[스킬:도발]]
-		ABL:(CHARANUM-1):스킬5  = [[스킬:딜레이・디아]]
+		ABL:(CHARANUM-1):스킬5  = [[스킬:딜레이ㆍ디아]]
 		ABL:(CHARANUM-1):스킬6  = [[스킬:마카카쟈오토]]
 		ABL:(CHARANUM-1):스킬7  = [[스킬:스쿠카쟈오토]]
 		ABL:(CHARANUM-1):스킬8  = [[스킬:라쿠카쟈오토]]

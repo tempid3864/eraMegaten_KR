@@ -12,7 +12,7 @@
 ;	002		2011/01/28		P						젠더프리の処理を추가
 ;	003		2011/02/03		名無し					손紙システムで汎用だけでなく個人구상にも対応
 ;	004		2011/02/05		Rsp暇人					重複습득可能스킬は複数스킬継承するように변경
-;	005		2011/02/16		Ｎ鳥					ストレージ기능に対応・継承方式변경
+;	005		2011/02/16		Ｎ鳥					ストレージ기능に対応ㆍ継承方式변경
 ;	006		2011/02/22		Rsp暇人					特殊合体時用処理を呼び出すタイミングを추가
 ;	007		2011/03/08		P						조마강화合体が実行不能なときでも표시されていた場合があったのを修正。また판정を변경
 ;	008		2011/05/19		P						코딩処理を추가。코딩のためにCHARANUMを全部回す処理が出来たので、シフターイケニエの판정を統合
@@ -55,7 +55,7 @@ VARSET LOCAL
 CUSTOMDRAWLINE =
 PRINTL [ 1] ２신 합체
 PRINTL [ 2] ３신 합체
-SIF ITEM:도리・카드몬 > 0
+SIF ITEM:도리ㆍ카드몬 > 0
 	PRINTL [ 3] 조마 작성
 SIF NUM_ZOUMA() > 0 && NUM_FUSIONABLE() > 0
 	PRINTL [ 4] 조마 강화 합체
@@ -145,7 +145,7 @@ IF RESULT == 1
 	CALL FUSION_DOUBLE
 ELSEIF RESULT == 2
 	CALL FUSION_DOUBLE,3
-ELSEIF RESULT == 3 && ITEM:도리・카드몬 > 0
+ELSEIF RESULT == 3 && ITEM:도리ㆍ카드몬 > 0
 	CALL MAKE_ZOUMA
 ELSEIF RESULT == 4 && NUM_ZOUMA() > 0 && NUM_FUSIONABLE() > 0
 	CALL FUSION_ZOUMA
@@ -1193,7 +1193,7 @@ FOR 카운트 , 1 , (ARG:3 > -1 ? 4 # 3)
 			;계승타입読み込み、ARGが継承できる타입でなければ次へ
 			CALLFORM SKILL_SUCCESSION_TYPE_{SKILL}
 			;SIF TALENT:ARG:(320+RESULT) == 0 || RESULT == 22
-			;一般の範囲外の스킬を弾く・사교의관でないときは자동효과と계승타입を持っている스킬のみを引き継ぐ
+			;一般の範囲外の스킬を弾くㆍ사교의관でないときは자동효과と계승타입を持っている스킬のみを引き継ぐ
 			SIF !RANGE(RESULT, 0, 22) || (TALENT:ARG:GET_SUCCESSION(RESULT) == 0 && RESULT != 22 && ARG:4 == 0)
 				CONTINUE
 		ENDCATCH
@@ -1304,7 +1304,7 @@ ENDIF
 ;NEXT
 
 ;========================================
-;데빌시프터用・Aion식소환술、사교의관内링크악마변경
+;데빌시프터用ㆍAion식소환술、사교의관内링크악마변경
 ;========================================
 @CHANGE_LINK
 CALL INPUT_CHARA_LIST("누구를 변경합니까？", "CASTING_CHANGE_LINK")
@@ -1314,7 +1314,7 @@ ENDIF
 CALL ACTION_2311,RESULT
 
 @CASTING_CHANGE_LINK(ARG)
-;인간・造間・半魔は無理
+;인간ㆍ造間ㆍ半魔は無理
 SIF TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:Aion식소환술 == 0
 	RETURN 0
 SIF CFLAG:ARG:이자리에없는플래그 == 1
@@ -1329,7 +1329,7 @@ RETURN 1
 ;IF文にそのまま入れたかったので新規に作成
 @CASTING_CHANGE_LINK_F(ARG)
 #FUNCTION
-;인간・造間・半魔は無理
+;인간ㆍ造間ㆍ半魔は無理
 SIF TALENT:ARG:데빌시프터 == 0 && TALENT:ARG:Aion식소환술 == 0
 	RETURNF 0
 SIF CFLAG:ARG:이자리에없는플래그 == 1
@@ -1430,7 +1430,7 @@ CALL SUCCESS_TALENT_CHECK, "Ａ민감", "Ａ둔감" ,ARG,ARG:1,ARG:2,ARG:3
 CALL SUCCESS_TALENT_CHECK, "Ｂ민감", "Ｂ둔감" ,ARG,ARG:1,ARG:2,ARG:3
 CALL SUCCESS_TALENT_CHECK, "매력", ,ARG,ARG:1,ARG:2,ARG:3
 CALL SUCCESS_TALENT_CHECK, "매혹", ,ARG,ARG:1,ARG:2,ARG:3
-;가슴・체격・性別・후타나리はお薬で弄くれるのでとりあえず無し
+;가슴ㆍ체격ㆍ性別ㆍ후타나리はお薬で弄くれるのでとりあえず無し
 
 
 

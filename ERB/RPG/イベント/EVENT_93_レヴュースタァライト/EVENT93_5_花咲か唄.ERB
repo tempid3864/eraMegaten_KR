@@ -54,9 +54,9 @@ RESETCOLOR
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	
-	;※方바늘　타격・충격、ちょっと질풍・주살
+	;※方바늘　타격ㆍ충격、ちょっと질풍ㆍ주살
 	;最初：双葉はんを魔法でシメとけばＯＫ。即死だけ注意
-	;中盤：데・카쟈持参して충격対策でＦＡ
+	;中盤：데ㆍ카쟈持参して충격対策でＦＡ
 	;最後：하이퍼카운터対策＆ぶぶ漬けが息切れしない
 	;ぶぶ漬けは레벨の影響が大きいのでゲーム後半まで放っておくと苦労する
 	
@@ -134,10 +134,10 @@ RESETCOLOR
 		ABL:(CHARANUM-1):사거리 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		ABL:(CHARANUM-1):스킬1 = [[스킬:용분의춤]]
-		ABL:(CHARANUM-1):스킬2 = [[스킬:타루・카쟈]]
+		ABL:(CHARANUM-1):스킬2 = [[스킬:타루ㆍ카쟈]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:갈라]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:저주의언령]]
-		ABL:(CHARANUM-1):스킬5 = [[스킬:마하・갈라]]
+		ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ갈라]]
 		ABL:(CHARANUM-1):스킬6 = [[스킬:기공(대)]]
 		ABL:(CHARANUM-1):스킬7 = 0
 		ABL:(CHARANUM-1):스킬8 = 0
@@ -155,8 +155,8 @@ RESETCOLOR
 			;素
 		;4戦눈　★★★★☆
 		ELSEIF 이벤트플래그:93:0 > 4
-			ABL:(CHARANUM-1):스킬1 = [[스킬:타루・카쟈]]
-			ABL:(CHARANUM-1):스킬2 = [[스킬:라쿠・카쟈]]
+			ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
+			ABL:(CHARANUM-1):스킬2 = [[스킬:라쿠ㆍ카쟈]]
 			;행동횟수1
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 			;행동횟수2
@@ -166,20 +166,20 @@ RESETCOLOR
 			;행동횟수1
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 		
-			;행동횟수１・뒈져아이가・타루카쟈以外削除。ひたすら매도する京都人
+			;행동횟수１ㆍ뒈져아이가ㆍ타루카쟈以外削除。ひたすら매도する京都人
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			ABL:(CHARANUM-1):스킬1 = [[스킬:저주의언령]]
-			ABL:(CHARANUM-1):스킬2 = [[스킬:타루・카쟈]]
+			ABL:(CHARANUM-1):스킬2 = [[스킬:타루ㆍ카쟈]]
 			ABL:(CHARANUM-1):스킬3 = 0
 			ABL:(CHARANUM-1):스킬4 = 0
 			ABL:(CHARANUM-1):스킬5 = 0
 		;2戦눈　★★☆☆☆
 		ELSEIF 이벤트플래그:93:0 > 2
-			;행동횟수1・반격削除
+			;행동횟수1ㆍ반격削除
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 			ABL:(CHARANUM-2):스킬4 = 0
 		
-			;행동횟수１・死ねどす以外削除。ひたすら매도する京都人
+			;행동횟수１ㆍ死ねどす以外削除。ひたすら매도する京都人
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			ABL:(CHARANUM-1):스킬1 = [[스킬:저주의언령]]
 			ABL:(CHARANUM-1):스킬2 = 0
@@ -189,13 +189,13 @@ RESETCOLOR
 			
 		;1戦눈　★☆☆☆☆
 		ELSEIF 이벤트플래그:93:0 > 1
-			;행동횟수1・소닉펀치、물어-뜯기以外削除
+			;행동횟수1ㆍ소닉펀치、물어-뜯기以外削除
 			CFLAG:(CHARANUM-2):행동횟수 = 1
 			ABL:(CHARANUM-2):스킬3 = 0
 			ABL:(CHARANUM-2):스킬4 = 0
 			ABL:(CHARANUM-2):스킬5 = 0
 			
-			;행동횟수１・스킬全消し。頑張って素殴りするぶぶ漬け
+			;행동횟수１ㆍ스킬全消し。頑張って素殴りするぶぶ漬け
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			ABL:(CHARANUM-1):스킬1 = 0
 			ABL:(CHARANUM-1):스킬2 = 0
@@ -310,7 +310,7 @@ RESETCOLOR
 	ABL:(CHARANUM-1):스킬2 = [[스킬:저주의언령]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:갈라]]
 	ABL:(CHARANUM-1):스킬4 = [[스킬:저주의언령]]
-	ABL:(CHARANUM-1):스킬5 = [[스킬:마하・갈라]]
+	ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ갈라]]
 	ABL:(CHARANUM-1):스킬6 = [[스킬:기공(대)]]
 	
 	CSTR:(CHARANUM-1):사고패턴 = ぶぶ漬けでもお食べやす
@@ -400,7 +400,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 ELSE
 	不健康カウント = 0
 	FOR ループ用, 1, 7
-		;상태이상（死亡・魅了以外）をカウント
+		;상태이상（死亡ㆍ魅了以外）をカウント
 		IF POS(ループ用) >= 0 && GET_STATE(CFLAG:POS(ループ用):상태이상) != "DYING" && GET_STATE(CFLAG:POS(ループ用):상태이상) != "GOOD"
 			不健康カウント ++
 		ENDIF

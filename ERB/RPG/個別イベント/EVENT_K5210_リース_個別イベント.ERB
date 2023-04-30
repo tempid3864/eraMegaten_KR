@@ -12,14 +12,14 @@ IF TALENT:ARG:이능자 == 0
 	PRINTFORML 異能者素質のない、初期型の状態の『%CALLNAME:ARG%』のアップデート処理を行います。
 	PRINTFORML 
 	PRINTFORML ＞アップデートで変更される内容
-	PRINTFORML 　調教後天素質・陥落・契約・陥落履歴以外の全素質（戦闘素質を含む）
+	PRINTFORML 　調教後天素質ㆍ陥落ㆍ契約ㆍ陥落履歴以外の全素質（戦闘素質を含む）
 	PRINTFORML 　CSTR：悪魔解説
 	PRINTFORML 　習得スキル（人間の異能者用戦闘素質に合わせた習得ラインナップ）
 	PRINTFORML 　種族（人間にリセット）
 	PRINTFORML 　戦闘参加不能状態である場合、調教するまで戦闘参加可能化
 	PRINTFORML 
 	PRINTFORML ＞上書きされない内容
-	PRINTFORML 　ABL・EXP（調教ステータス・経験・体力等）
+	PRINTFORML 　ABLㆍEXP（調教ステータスㆍ経験ㆍ体力等）
 
 		SIF CFLAG:(ARG):전투참가불가능 == 1
 			CFLAG:(ARG):전투참가불가능 = -1
@@ -73,7 +73,7 @@ CASE 0
 	;タイトル
 		IF GETBIT(CFLAG:ARG:개별이벤트개방,ARG:2)
 			;タイトル
-			RESULTS = 『ローラントの王女・リース』
+			RESULTS = 『ローラントの王女ㆍリース』
 		ELSE
 			;未開放時のタイトル（解放条件を入れておく）
 			RESULTS = ※%CALLNAME:ARG%の陥落と、戦闘Lv30以上が必要。
@@ -161,7 +161,7 @@ CASE 0
 				PRINTFORML 
 				PRINTFORMW 異世界奴隷商といったらラグである。
 				PRINTFORML 
-				PRINTFORMW 『はいはい、こちらGINZAじゅわいおくちゅーる・ラグ……ってアンタかい？』
+				PRINTFORMW 『はいはい、こちらGINZAじゅわいおくちゅーるㆍラグ……ってアンタかい？』
 				PRINTFORML 
 				PRINTFORMW 目を見開いて立体映像通信に手をかざしたりつかもうとしている
 				PRINTFORMW %CALLNAME:ARG%をよそに問い合わせを行うことにした。
@@ -259,7 +259,7 @@ CASE 0
 				PRINTFORML 
 				PRINTFORMW 「く、ぅ……っ」
 				PRINTFORML 
-				PRINTFORML 代わる代わる、仲魔の交代・回復をはさみ、
+				PRINTFORML 代わる代わる、仲魔の交代ㆍ回復をはさみ、
 				PRINTFORMW %CALLNAME:ARG%１００本掛かり稽古を執り行った。
 				IF BASE:ARG:LV >= 99
 					PRINTFORMW 全員分終わる頃には、%CALLNAME:ARG%は肩で息をしていた。
@@ -463,7 +463,7 @@ CASE 0
 			PRINTFORMW そのようなことをのたまうマーラの舌に耳を舐め回されて身震いする%CALLNAME:ARG%。
 			PRINTFORML 
 			PRINTFORML 『そろそろ前戯終了でいい』とハンドサインを飛ばす。
-			;淫乱・服従で尻も前もやってないってありうるんだろうか？
+			;淫乱ㆍ服従で尻も前もやってないってありうるんだろうか？
 			IF TALENT:ARG:처녀 && ABL:ARG:Ａ감각 == 0
 				PRINTFORMW 『そうじゃのぉ、お口と、強制素股ぐらいかのぉ』と＊ンコサインが胴体の後ろから返ってきた。器用である。
 				PRINTFORML 
@@ -765,8 +765,8 @@ CASE 1
 					PRINTFORML 
 					PRINTFORML 光、闇の２種からクラスを選択出来、選択は個別イベントよりいつでも変更可能です。
 					PRINTFORML 
-					PRINTFORML [0] 光・ワルキューレ
-					PRINTFORML [1] 闇・ルーンメイデン
+					PRINTFORML [0] 光ㆍワルキューレ
+					PRINTFORML [1] 闇ㆍルーンメイデン
 					CALL INPUTINT, 0 , 1
 					IF RESULT == 0
 						PRINTFORML 
@@ -789,14 +789,14 @@ CASE 1
 				;何れの分岐もこちらに戻る。同時にクラス２スキル削除時は再習得する為に分岐統合後のここへ置く。
 				CALL LEARN_PU_SKILL(ARG,"クラス２スキル（聖剣３）")
 			ELSEIF RESULT == 1
-				;光・３未覚醒
+				;光ㆍ３未覚醒
 				IF CFLAG:ARG:900 == 1 && CFLAG:ARG:901 == 0
 					PRINTFORMW 『クラス３』を覚醒させます。
 					PRINTFORML 
 					PRINTFORML 光を基準にした更に２分岐を選択出来、選択は個別イベントよりいつでも変更可能です。
 					PRINTFORML 
-					PRINTFORML [0] 光光・ヴァナディース
-					PRINTFORML [1] 光闇・スターランサー
+					PRINTFORML [0] 光光ㆍヴァナディース
+					PRINTFORML [1] 光闇ㆍスターランサー
 					CALL INPUTINT, 0 , 1
 					IF RESULT == 0
 						PRINTFORML 
@@ -809,14 +809,14 @@ CASE 1
 					ENDIF
 					;クラス３スキルの定義。
 					CSTR:ARG:전용기2 = クラス３スキル（聖剣３）
-				;闇・３未覚醒
+				;闇ㆍ３未覚醒
 				ELSEIF CFLAG:ARG:900 == 2 && CFLAG:ARG:901 == 0
 					PRINTFORMW 『クラス３』を覚醒させます。
 					PRINTFORML 
 					PRINTFORML 闇を基準にした更に２分岐を選択出来、選択は個別イベントよりいつでも変更可能です。
 					PRINTFORML 
-					PRINTFORML [0] 闇光・ドラゴンマスター
-					PRINTFORML [1] 闇闇・フェンリルナイト
+					PRINTFORML [0] 闇光ㆍドラゴンマスター
+					PRINTFORML [1] 闇闇ㆍフェンリルナイト
 					CALL INPUTINT, 0 , 1
 					IF RESULT == 0
 						PRINTFORML 
@@ -852,8 +852,8 @@ CASE 1
 					PRINTFORML 
 					PRINTFORML クラス２、３とは独立した２分岐を選択出来、選択は個別イベントよりいつでも変更可能です。
 					PRINTFORML 
-					PRINTFORML [0] 光４・ミーティア
-					PRINTFORML [1] 闇４・フレースヴェルグ
+					PRINTFORML [0] 光４ㆍミーティア
+					PRINTFORML [1] 闇４ㆍフレースヴェルグ
 					CALL INPUTINT, 0 , 1
 					IF RESULT == 0
 						PRINTFORML 

@@ -25,12 +25,12 @@ SIF !USE_VAGINA(PLAYER)
 SIF TALENT:PLAYER:소인체형 && PLAYER != MASTER && TALENT:MASTER:144 == 0
 	RETURN 0
 
-;처녀で、순종4以下・레즈끼4以下のASSIの場合바이브はできない（마조ならＯＫ）
+;처녀で、순종4以下ㆍ레즈끼4以下のASSIの場合바이브はできない（마조ならＯＫ）
 IF TALENT:PLAYER:처녀 && ASSIPLAY
 	SIF (ABL:ASSI:0 <= 4 || ABL:ASSI:11 <= 4) && TALENT:ASSI:마조 == 0
 		RETURN 0
 ENDIF
-;윤활부족で、순종3以下・레즈끼3以下のASSIの場合바이브はできない（마조ならＯＫ）
+;윤활부족で、순종3以下ㆍ레즈끼3以下のASSIの場合바이브はできない（마조ならＯＫ）
 IF PALAM:PLAYER:윤활 < PALAMLV:2 && ASSIPLAY
 	SIF (ABL:ASSI:0 <= 3 || ABL:ASSI:11 <= 3) && TALENT:ASSI:마조 == 0
 		RETURN 0

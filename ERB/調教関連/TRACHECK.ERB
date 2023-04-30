@@ -3126,13 +3126,13 @@ IF CUP:TARGET:10 >= 2000 && CUP:TARGET:10 < 4000 && MARK:0 <= 0
 	TFLAG:22 = 1
 ELSEIF CUP:TARGET:10 >= 4000 && CUP:TARGET:10 < 8000 && MARK:0 <= 1
 	TFLAG:22 = 2
-	;꿋꿋함・감정결핍の場合は고통각인による순종アップはなし
+	;꿋꿋함ㆍ감정결핍の場合は고통각인による순종アップはなし
 	IF ABL:순종 == 0 && TALENT:12 == 0 && TALENT:22 == 0
 		TFLAG:25 = 1
 	ENDIF
 ELSEIF CUP:TARGET:10 >= 8000 && MARK:0 <= 2
 	TFLAG:22 = 3
-	;꿋꿋함・감정결핍の場合は고통각인による순종アップはなし
+	;꿋꿋함ㆍ감정결핍の場合は고통각인による순종アップはなし
 	IF ABL:순종 == 0 && TALENT:12 == 0 && TALENT:22 == 0
 		TFLAG:25 = 1
 	ENDIF
@@ -3148,7 +3148,7 @@ ELSEIF TFLAG:200 == 2 && MARK:쾌락각인 <= 1
 	TFLAG:23 = 2
 ELSEIF TFLAG:200 == 3 && MARK:쾌락각인 <= 2
 	TFLAG:23 = 3
-	;자제심・감정결핍の場合は쾌락각인による순종アップはなし
+	;자제심ㆍ감정결핍の場合は쾌락각인による순종アップはなし
 	IF ABL:순종 == 0 && TALENT:20 == 0 && TALENT:22 == 0
 		TFLAG:25 = 1
 	ENDIF

@@ -3,10 +3,10 @@
 ;아마미공항
 ;던전ナンバー93　ＭＡＰ0~3
 ;フラグ
-;던전플래그:(FLAG:현던전):1 （1～3）이벤트・（4・5）クリアフラグ
+;던전플래그:(FLAG:현던전):1 （1～3）이벤트ㆍ（4ㆍ5）クリアフラグ
 ;던전플래그:(FLAG:현던전):2~4 扉フラグ
 ;던전플래그:(FLAG:현던전):5 メッセンジャーフラグ
-;던전플래그:(FLAG:현던전):6 레이전투・組織譲渡フラグ
+;던전플래그:(FLAG:현던전):6 레이전투ㆍ組織譲渡フラグ
 ;던전플래그:(FLAG:현던전):7 ウィルペ전투フラグ
 ;던전플래그:(FLAG:현던전):8 유다幽霊フラグ
 ;=======================================================================
@@ -26,13 +26,13 @@ RESULTS = 아마미공항
 @FLOORNAME_93
 SELECTCASE FLAG:현M
 	CASE 0
-		PRINTL ・１Ｆ
+		PRINTL ㆍ１Ｆ
 	CASE 1
-		PRINTL ・２Ｆ
+		PRINTL ㆍ２Ｆ
 	CASE 2
-		PRINTL ・Ｂ１Ｆ
+		PRINTL ㆍＢ１Ｆ
 	CASE 3
-		PRINTL ・３Ｆ
+		PRINTL ㆍ３Ｆ
 ENDSELECT
 
 
@@ -444,7 +444,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "남자의 목소리", "……이제야…죽은 자로서…연주하는…것…/소원이…안에…중마가 있으면/…깨워주게…"
 				CALL MESSAGE_WINDOW_D, "남자의 목소리", "여기……의 안쪽이다……"
 				CALL MESSAGE_WINDOW_D, "", "＞쓰레기 속에서 색소폰 형태를 한 ＣＯＭＰ의 잔해를 발견했다"
-				CALL MESSAGE_WINDOW_D, "", "＞ＣＯＭＰ에 들어있던「파워・메모리」에서 악마를 손에 넣었다"
+				CALL MESSAGE_WINDOW_D, "", "＞ＣＯＭＰ에 들어있던「파워ㆍ메모리」에서 악마를 손에 넣었다"
 				CALL ADD_NEW_COMPANION,[[キャラ:인큐버스]],500
 				CALL ADD_NEW_COMPANION,[[キャラ:밴시]],500
 				CALL ADD_NEW_COMPANION,[[キャラ:모무노후]],500
@@ -500,7 +500,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마한마온]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:불굴의투지]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:메기도]]
-				ABL:(CHARANUM-1):스킬4 = [[스킬:마하・라기온]]
+				ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ라기온]]
 				ABL:(CHARANUM-1):스킬5 = 0
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -705,7 +705,7 @@ SELECTCASE FLAG:현M
 	CASE 0 , 1
 		SELECTCASE RAND:100
 			CASE IS < 10
-				RETURN [[キャラ:모・쇼보]],20
+				RETURN [[キャラ:모ㆍ쇼보]],20
 			CASE IS < 20
 				RETURN [[キャラ:잇폰다타라]],20
 			CASE IS < 30
@@ -729,7 +729,7 @@ SELECTCASE FLAG:현M
 		CASE 2
 		SELECTCASE RAND:100
 			CASE IS < 10
-				RETURN [[キャラ:모・쇼보]],23
+				RETURN [[キャラ:모ㆍ쇼보]],23
 			CASE IS < 20
 				RETURN [[キャラ:잇폰다타라]],23
 			CASE IS < 30

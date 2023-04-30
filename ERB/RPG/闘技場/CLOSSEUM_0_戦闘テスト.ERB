@@ -69,7 +69,7 @@ LOCAL:11 = 0
 $START
 U = ARG
 PRINTFORML %NAME:U%　　%GET_ALI1(ABL:U:속성LD),7,LEFT%/%GET_ALI2(ABL:U:속성LC),7,LEFT%　　충성도:{BASE:U:충성도,6}　　ＭＡＧ:{BASE:U:ＭＡＧ,6}　　ＥＸＰ：{BASE:U:ＥＸＰ,8}/{MAXBASE:U:ＥＸＰ,8}
-;1行目に레벨・속성を표시
+;1行目に레벨ㆍ속성を표시
 PRINTFORM LV{MAXBASE:U:LV,3}({BASE:U:LV,3})　　　 
 PRINTBUTTON "[↑]",30
 PRINTBUTTON "[↓]",40
@@ -79,7 +79,7 @@ PRINTFORM 　　　
 SIF ABL:U:종족 > 0 && ABL:U:종족 < 14
 	PRINTFORM 　　ANALYZE: \@FLAG:(20000+NO:U) >= 1000 ? COMPLETE! # {FLAG:(20000+NO:U)/10}％ \@
 PRINTL
-;2行目にHP・충성도を표시
+;2行目にHPㆍ충성도を표시
 PRINTFORM ＨＰ[{BASE:U:ＨＰ,4}/{MAXBASE:U:ＨＰ,4}]　
 PRINTBUTTON "[↑]",88
 PRINTBUTTON "[↓]",89
@@ -88,7 +88,7 @@ PRINTBUTTON "[↓↓]",91
 PRINTBUTTON "[↑↑↑]",92
 PRINTBUTTON "[↓↓↓]",93
 PRINTL 
-;3行目にＭＰ・ＥＸＰを표시
+;3行目にＭＰㆍＥＸＰを표시
 PRINTFORM ＭＰ[{BASE:U:ＭＰ,4}/
 PRINTFORM {MAXBASE:U:ＭＰ,4}]　
 PRINTBUTTON "[↑]",94
@@ -116,7 +116,7 @@ IF ABL:U:추가효과 > 0
 	PRINTFORML 　　　　추가효과：%GET_STATE(ABL:U:추가효과),6,LEFT%　추가효과상성：%GET_TYPE(ABL:U:추가효과상성)%
 ENDIF
 
-;인간ならばここに총공격の性能と총공격력・총명중を2行つかって표시
+;인간ならばここに총공격の性能と총공격력ㆍ총명중を2行つかって표시
 IF EQUIP:U:총 > 0
 	DRAWLINE
 	PRINTFORML 총：공격력 {MAXBASE:U:총공격,4} 명중 {MAXBASE:U:총명중}

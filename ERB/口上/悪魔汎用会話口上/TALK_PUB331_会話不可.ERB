@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB331.ERB
-;	Facility	:회화타입：会話不可の会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：会話不可の会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -37,7 +37,7 @@
 @KOJO_TALK_PUB331,ARG,ARG:1
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORMW 「……」
 	CASE 2
 		; 2:おねだり前の逡巡時(あいさつor問答で目的が決まっている場合)
@@ -107,7 +107,7 @@ SELECTCASE ARG:1
 				PRINTFORMW 「……」
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;スカートたくし上げ・パンツずらし
+			;スカートたくし上げㆍパンツずらし
 			PRINTFORMW 「……」
 		ELSEIF TFLAG:메시지패턴 == 4
 			;四つん這い誘い
@@ -126,7 +126,7 @@ SELECTCASE ARG:1
 		;その他（魅了状態でふらふら出て行ったときもこちらに入る）
 		ELSE
 			PRINTFORMW %CALLNAME:PLAYER%は%CALLNAME:ARG%の思うがままに犯された
-			GOTO 犯してもらう・交渉が成功した場合行為中
+			GOTO 犯してもらうㆍ交渉が成功した場合行為中
 		ENDIF
 	CASE 10
 		;10:要求額を提示：￥
@@ -346,7 +346,7 @@ SELECTCASE ARG:1
 			;その他
 			ELSE
 				;異性を捧げた場合
-				;恋慕・親愛
+				;恋慕ㆍ親愛
 				IF TFLAG:바친캐릭터 > -1
 					;危険日
 					IF 위험일((바친캐릭터())) == 1
@@ -432,14 +432,14 @@ SELECTCASE ARG:1
 		;友好度が高い
 		PRINTFORMW 「……」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
-		$犯してもらう・交渉が成功した場合行為中
+		$犯してもらうㆍ交渉が成功した場合行為中
 		;魅了になっている場合
 		IF GET_STATE(CFLAG:PLAYER:상태이상) == "CHARM"
 			IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
@@ -447,7 +447,7 @@ SELECTCASE ARG:1
 			ENDIF
 		;通常
 		ELSE
-			;恋慕・親愛
+			;恋慕ㆍ親愛
 			IF TALENT:PLAYER:연모 || TALENT:PLAYER:친애
 				PRINTFORMW 「……」
 			;その他
@@ -523,7 +523,7 @@ SELECTCASE ARG:1
 				SIF !GETBIT(FLAG:목숨구걸플래그, 5)
 					GOTO 取引内容_LOOP
 				PRINTFORML 
-				PRINTFORML 「そ・う・だ・なぁ～……」
+				PRINTFORML 「そㆍうㆍだㆍなぁ～……」
 				PRINTFORMW %CALLNAME:ARG%が%CALLNAME:PLAYER%の身体を舐めるように眺める
 				PRINTFORML 
 				PRINTFORMW 「この展開なら、な」

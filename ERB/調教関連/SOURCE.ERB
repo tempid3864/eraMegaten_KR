@@ -891,11 +891,11 @@ CHARA = TARGET
 CHARA:1 = PLAYER
 
 ;-------------------------------------------------
-;조교대상の사정체크（후타나리・남자）
+;조교대상の사정체크（후타나리ㆍ남자）
 ;-------------------------------------------------
 CALL TARGET_EJAC_CHECK
 ;-------------------------------------------------
-;主人・조수の사정체크（후타나리・남자）
+;主人ㆍ조수の사정체크（후타나리ㆍ남자）
 ;-------------------------------------------------
 CALL EJAC_CHECK , MASTER
 SIF ASSI > -1
@@ -2118,7 +2118,7 @@ CALL CHECK_EXP(CHARA)
 CALL CHECK_EXP(CHARA:1)
 
 ;-------------------------------------------------
-;확장・수간첫경험の場合이상경험부여
+;확장ㆍ수간첫경험の場合이상경험부여
 ;-------------------------------------------------
 SIF TCVAR:(CHARA):획득Ｖ확장경험 || TCVAR:(CHARA):획득Ａ확장경험
 	CALL ADDS_ABNORMAL_EXP, "확장첫경험" , CHARA
@@ -2130,7 +2130,7 @@ SIF TCVAR:(CHARA:1):획득수간경험
 	CALL ADDS_ABNORMAL_EXP, "수간" , CHARA:1
 
 ;-------------------------------------------------
-;고통からくる체력・기력の減少
+;고통からくる체력ㆍ기력の減少
 ;-------------------------------------------------
 LOCAL:3 = CUP:CHARA:고통/20
 ;ABL:마조끼をみる
@@ -2159,7 +2159,7 @@ DOWNBASE:CHARA:체력 += LOCAL:3
 DOWNBASE:CHARA:기력 += LOCAL:3
 
 ;-------------------------------------------------
-;체력・기력の減少
+;체력ㆍ기력の減少
 ;-------------------------------------------------
 BASE:CHARA:체력 -= DOWNBASE:CHARA:체력
 IF BASE:CHARA:체력 < 0
@@ -2511,7 +2511,7 @@ IF ASSI > 0
 	DOWNBASE:ASSI:체력 = 0
 	DOWNBASE:ASSI:기력 = 0
 ENDIF
-;체력・기력の減少
+;체력ㆍ기력の減少
 PRINT 체력-
 PRINTV DOWNBASE:CHARA:체력
 PRINT  기력-
@@ -2598,7 +2598,7 @@ ENDIF
 CALL UPCHECK_A, CHARA
 CALL UPCHECK_A, CHARA:1
 ;-------------------------------------------------
-;EXP・MAG等の표시
+;EXPㆍMAG等の표시
 ;-------------------------------------------------
 ;CALL SHOW_ADD_EXP, TARGET
 ;CALL SHOW_ADD_EXP, MASTER
@@ -2868,7 +2868,7 @@ SIF TCVAR:ARG:획득충성도
 	PRINTFORML %"충성도",12,LEFT% {BASE:ARG:충성도-TCVAR:ARG:획득충성도,16,RIGHT}      \@TCVAR:ARG:획득충성도>0?+#-\@{TCVAR:ARG:획득충성도,16,RIGHT} = {BASE:ARG:충성도,16,RIGHT}
 TCVAR:ARG:획득충성도 = 0
 ;-------------------------------------------------
-;획득ＥＸＰの표시・加算
+;획득ＥＸＰの표시ㆍ加算
 ;-------------------------------------------------
 @SHOW_ADD_EXP, ARG , ARGS = "표시"
 #LOCALSIZE 2
@@ -2900,7 +2900,7 @@ IF LOCAL:1
 		;수간첫경험の場合ここで이상경험부여
 		SIF EXPNAME:LOCAL == "수간경험"
 			CALL ADDS_ABNORMAL_EXP, "수간" , ARG
-		;후타나리・TSして男になったキャラの사정の場合ここで이상경험부여
+		;후타나리ㆍTSして男になったキャラの사정の場合ここで이상경험부여
 		SIF EXPNAME:LOCAL == "사정경험" && (!IS_MALE(ARG) || EXP:ARG:ＴＳ경험 % 2 == 1)
 			CALL ADDS_ABNORMAL_EXP, "사정" , ARG
 		EXP:ARG:LOCAL += TCVAR:ARG:LOCAL

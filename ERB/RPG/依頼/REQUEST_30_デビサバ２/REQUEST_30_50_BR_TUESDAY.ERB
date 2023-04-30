@@ -19,7 +19,7 @@
 ; 【フラグついて】
 ; フラグは下記のみ사용。
 ;
-; ・데빌서바２진행도
+; ㆍ데빌서바２진행도
 ;
 ; [10-19] 獅子の怒り
 ; FLAG:데빌서바２진행도 = 5010;初回
@@ -28,7 +28,7 @@
 ;
 ;------------------------------------------------------------------------------
 ; 【メモ】
-; ・MIYAKOchang!
+; ㆍMIYAKOchang!
 ;
 ;-------------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@
 ;
 ;		Module Name						Explanation
 ;
-;	・ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
+;	ㆍ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
 ;
 ;===============================================================================
 
@@ -293,7 +293,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;怪獅子の堅甲(테트라칸で代用。原作より強い気がするけど気のせい)、パララ레이、반격
 			ABL:(CHARANUM-1):스킬1 = [[스킬:테트라칸]]
 			ABL:(CHARANUM-1):스킬2 = [[스킬:파라다인]]
-			ABL:(CHARANUM-1):스킬3 = [[스킬:스쿤・다]]
+			ABL:(CHARANUM-1):스킬3 = [[스킬:스쿤ㆍ다]]
 			ABL:(CHARANUM-1):스킬4 = [[스킬:하이퍼카운터]]
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -319,9 +319,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			NEXT
 			
 			;마하라기、魔性の乱舞、명중UP
-			ABL:(CHARANUM-1):스킬1 = [[스킬:마하・라기온]]
+			ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ라기온]]
 			ABL:(CHARANUM-1):스킬2 = [[스킬:중재의뇌화]]
-			ABL:(CHARANUM-1):스킬3 = [[스킬:스쿠・카쟈]]
+			ABL:(CHARANUM-1):스킬3 = [[스킬:스쿠ㆍ카쟈]]
 			ABL:(CHARANUM-1):스킬4 = 0
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)

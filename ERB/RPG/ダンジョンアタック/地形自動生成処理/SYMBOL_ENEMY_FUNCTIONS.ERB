@@ -11,7 +11,7 @@
 ;---------------------------------------------------------------------------------------------------------------------------------
 
 ;-------------------------------------------------
-;種族・レベルを絞って出現する悪魔を設定する関数
+;種族ㆍレベルを絞って出現する悪魔を設定する関数
 ;	※この関数を使わず、던전のERBファイル側で直接指定しても良いと思います。
 ;-------------------------------------------------
 @SEF_DESIDE_DEVIL_VARIETY, LEVEL_BOTTOM, LEVEL_TOP
@@ -59,7 +59,7 @@ WHILE 1
 			CONTINUE
 		ENDIF
 
-		;レベル上限・下限チェック
+		;レベル上限ㆍ下限チェック
 		IF !(LEVEL_BOTTOM <= CSVBASE(LOCAL, (GETNUM(BASE, "LV")), 0) && CSVBASE(LOCAL, (GETNUM(BASE, "LV")), 0) <= LEVEL_TOP)
 			;レベルが指定の範囲内ではない場合、除外する
 			CONTINUE
@@ -401,7 +401,7 @@ CALL SEF_SYMBOL_EVENT
 ;モンスターハウス侵入チェック	※モンスターハウスに侵入した場合、このタイミングでメッセージが流れて、部屋内のモンスターが目を覚ます
 CALL SEF_ENTER_MONSTER_HOUSE
 
-;経過時間・経過ターン数カウント
+;経過時間ㆍ経過ターン数カウント
 CALL CD_COUNT_TIME_AND_TURN
 
 RETURN 1
@@ -480,7 +480,7 @@ ENDSELECT
 ;キャラクタの主観方向とテンキーの対応を取得する
 CALL SEF_SYUKAN_DIRECTION, ARRAY_DIRECTION_SYUKAN, PRE_DIRECTION
 
-;周囲8マスの壁・マップ端の有無を確認する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
+;周囲8マスの壁ㆍマップ端の有無を確認する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
 CALL SEF_CHECK_LANDFORM, POINT_X , POINT_Y, ARRAY_WALL_FLG
 
 ;左側に進める、かつ左下に壁がある場合は左折する
@@ -488,7 +488,7 @@ IF ARRAY_WALL_FLG:(ARRAY_DIRECTION_SYUKAN:6) == 0 && ARRAY_WALL_FLG:(ARRAY_DIREC
 	RETURN ARRAY_DIRECTION_SYUKAN:6
 ENDIF
 
-;周囲8マスの壁・マップ端を無視するかどうか設定する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
+;周囲8マスの壁ㆍマップ端を無視するかどうか設定する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
 CALL SEF_DISREGARD_WALL, NO_WALL_FLG, NO_EDGE_FLG, ARRAY_WALL_FLG
 
 ;斜め方向の可否を設定する
@@ -585,10 +585,10 @@ IF ESCAPE_FLG == 1
 	DISTANCE:1 = DISTANCE:1 * -1	;Y軸方向の距離
 ENDIF
 
-;周囲8マスの壁・マップ端の有無を確認する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
+;周囲8マスの壁ㆍマップ端の有無を確認する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
 CALL SEF_CHECK_LANDFORM, POINT_X , POINT_Y, ARRAY_WALL_FLG
 
-;周囲8マスの壁・マップ端を無視するかどうか設定する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
+;周囲8マスの壁ㆍマップ端を無視するかどうか設定する	※参照引き渡しで配列「ARRAY_WALL_FLG」に格納される
 CALL SEF_DISREGARD_WALL, NO_WALL_FLG, NO_EDGE_FLG, ARRAY_WALL_FLG
 
 ;斜め方向の可否を設定する
@@ -760,10 +760,10 @@ DIRECTION_CNT = 0
 ;---------------------------------------
 ;周囲8マスの地形を確認する
 ;---------------------------------------
-;周囲8マスの壁・マップ端の有無を確認する(参照引き渡しで配列「ARRAY_WALL_FLG」に格納される)
+;周囲8マスの壁ㆍマップ端の有無を確認する(参照引き渡しで配列「ARRAY_WALL_FLG」に格納される)
 CALL SEF_CHECK_LANDFORM, POINT_X , POINT_Y, ARRAY_WALL_FLG
 
-;周囲8マスの壁・マップ端を無視するかどうか設定する
+;周囲8マスの壁ㆍマップ端を無視するかどうか設定する
 CALL SEF_DISREGARD_WALL, NO_WALL_FLG, NO_EDGE_FLG, ARRAY_WALL_FLG
 
 ;斜め方向の可否を設定する
@@ -808,7 +808,7 @@ ENDIF
 
 
 ;----------------------------------------------------
-;周囲8マスの壁・マップ端を無視するかどうかを設定する
+;周囲8マスの壁ㆍマップ端を無視するかどうかを設定する
 ;----------------------------------------------------
 ;引数
 ;	NO_WALL_FLG:周囲の壁を無視するフラグ(0:壁のある方向は返さない / 1:壁を無視して8方向すべてを返す)
@@ -855,7 +855,7 @@ FOR LOOP_CNT_i, 0, 10
 	;タイルの種類を取得する(0:壁がない / 1:壁がある / 2:マップ端である)
 	TILE_TYPE = ARRAY_WALL_FLG:LOOP_CNT_i
 
-	;壁・マップ端を無視する場合の処理
+	;壁ㆍマップ端を無視する場合の処理
 	IF NO_WALL_FLG == 1 && TILE_TYPE == 1
 		;壁を無視する、かつ該当のタイルが壁の場合
 		TILE_TYPE = 0	;壁を無視する
@@ -872,7 +872,7 @@ NEXT
 RETURN 1
 
 ;------------------------------------------------------------
-;ある座標の周囲8マスの状況(壁・マップ端の有無)を調査する関数
+;ある座標の周囲8マスの状況(壁ㆍマップ端の有無)を調査する関数
 ;------------------------------------------------------------
 ;引数
 ;	POINT_X:X座標
@@ -925,7 +925,7 @@ FOR LOOP_CNT_i, 1, 10
 		CONTINUE
 	ENDIF
 
-	;該当の方向に壁・マップ端があるかどうかを取得する
+	;該当の方向に壁ㆍマップ端があるかどうかを取得する
 	TILE_TYPE = SEF_WALL_CHECK(POINT_X, POINT_Y, DIRECTION)
 
 	;確認結果を配列に格納する
@@ -1010,7 +1010,7 @@ ENDSELECT
 ;----------------------------------
 ;マップ端であるかを確認
 ;----------------------------------
-;マップ右端・左端チェック
+;マップ右端ㆍ左端チェック
 IF POINT_X == 0
 	;マップ左端の場合
 	IF DIRECTION_X == -1
@@ -1024,7 +1024,7 @@ ELSEIF POINT_X == (FLAG:최대X - 1)
 	ENDIF
 ENDIF
 
-;マップの上端・下端チェック
+;マップの上端ㆍ下端チェック
 IF POINT_Y == 0
 	;マップ上端の場合
 	IF DIRECTION_Y == -1
@@ -1148,7 +1148,7 @@ FOR LOOP_CNT_i, 0, 20
 NEXT
 
 ;--------------------
-;敵の配置・設定処理
+;敵の配置ㆍ設定処理
 ;--------------------
 ;キャラクターの数だけループを回して処理を行う
 FOR LOOP_CNT_i, 0, OBJECT_CNT
@@ -1435,7 +1435,7 @@ ENDIF
 DISTANCE:0 = CHARA2_X - CHARA1_X
 DISTANCE:1 = CHARA2_Y - CHARA1_Y
 
-;キャラクター間の距離が[周囲8マス]の場合、視認している	※タテ・ヨコ・ナナメ1マス分
+;キャラクター間の距離が[周囲8マス]の場合、視認している	※タテㆍヨコㆍナナメ1マス分
 IF (-1 <= DISTANCE:0) && (DISTANCE:0 <= 1)
 	IF (-1 <= DISTANCE:1) && (DISTANCE:1 <= 1)
 		RETURNF 1
@@ -1664,7 +1664,7 @@ RETURNF 0
 #DIM BLOCK_NO						;部屋の番号
 #DIM ACREAGE						;部屋内の平地面積
 #DIM BLOCK_CNT						;条件を満たす部屋の数	※床の数が16マス以上存在する場合のみモンスターハウスになりうる、等の条件を設定するため。
-#DIM BLOCK_LIST, 10, 2				;条件を満たす部屋のリスト(第1添え字：最大10この部屋候補 / 第2添え字：該当する部屋の詳細(部屋番号・床面積))	
+#DIM BLOCK_LIST, 10, 2				;条件を満たす部屋のリスト(第1添え字：最大10この部屋候補 / 第2添え字：該当する部屋の詳細(部屋番号ㆍ床面積))	
 #DIM LOOP_CNT_i						;ループ用カウンタ変数i
 #DIM LOOP_CNT_j						;ループ用カウンタ変数j
 #DIM RANDOM_NO						;乱数(どの部屋をモンスターハウスなどに設定するか考える際に使用する)

@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB302.ERB
-;	Facility	:회화타입：男・ヒーホーの会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：男ㆍヒーホーの会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -18,13 +18,13 @@
 
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;=====================================================================
-;口調タイプ：男・ヒーホータイプの汎用口上＋会話用ファイルです
+;口調タイプ：男ㆍヒーホータイプの汎用口上＋会話用ファイルです
 ;=====================================================================
 
 @KOJO_TALK_PUB315,ARG,ARG:1
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORMW 「……!?」
 		PRINTFORMW 「히, 히호!?　%CSTR:ARG:일인칭%, 굉장히 두근두근해버렸어호……」
 		PRINTFORMW 「혹시, 이게 사랑……?♡」
@@ -393,11 +393,11 @@ SELECTCASE ARG:1
 		PRINTFORMW 「ニンゲンにしては　面白いヤツだったホ～」
 		PRINTFORML 「また遊んでやってもいいホ！　ばいばいホ～！」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90
@@ -574,7 +574,7 @@ SELECTCASE RAND:25
 					PRINTFORML 
 					PRINTFORMW 「アンタ　うわさの悪魔殺しだホ！？」
 					PRINTFORMW 「キーホー！ここであったが100年目だホー！」
-					PRINTFORMW 「%CSTR:ARG:일인칭%と　ホー・とぅー・へるぅぅぅぅ!!」
+					PRINTFORMW 「%CSTR:ARG:일인칭%と　ホーㆍとぅーㆍへるぅぅぅぅ!!」
 					RETURN 3
 			ELSE
 				CFLAG:ARG:우호도 += RAND:30
@@ -1058,9 +1058,9 @@ SELECTCASE RAND:12
 				;成功
 					PRINTFORMW 「%CSTR:ARG:일인칭%にまかせろホー！」
 					PRINTFORMW %CALLNAME:ARG%は%CALLNAME:PLAYER%の手を取って踊りはじめた……
-					PRINTFORMW ・・・
-					PRINTFORMW ・・
-					PRINTFORMW ・
+					PRINTFORMW ㆍㆍㆍ
+					PRINTFORMW ㆍㆍ
+					PRINTFORMW ㆍ
 					PRINTFORMW 「…ヒホ！なかなかいいグルーヴだったホ！」
 					PRINTFORMW 「アンタ気に入ったホ！トクベツに%CSTR:ARG:일인칭%のコブンにしてやるホー！」
 					PRINTFORML
@@ -2234,7 +2234,7 @@ RESULT = 2
 				CFLAG:ARG:우호도 -= RAND:30
 				;失敗
 					PRINTFORMW 「ヒホ!?　ムシだなんて　いい度胸だホー!!」
-					PRINTFORMW 「%CSTR:ARG:일인칭%の言うこと聞かないやつは　ホー・とぅー・へるぅぅぅ!!」
+					PRINTFORMW 「%CSTR:ARG:일인칭%の言うこと聞かないやつは　ホーㆍとぅーㆍへるぅぅぅ!!」
 					RETURN 3
 			ELSE
 				CFLAG:ARG:우호도 += RAND:20

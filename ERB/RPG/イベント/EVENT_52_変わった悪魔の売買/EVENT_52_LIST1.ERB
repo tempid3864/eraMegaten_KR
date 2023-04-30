@@ -49,7 +49,7 @@
 	PRINTFORML 　
 	PRINTFORML 　[2] 표표히 지내는 하피
 	PRINTFORML 　
-	PRINTFORML 　[3] 복종시키고 싶어지는 모・쇼보
+	PRINTFORML 　[3] 복종시키고 싶어지는 모ㆍ쇼보
 	PRINTFORML 　
 	PRINTFORML 　[4] 쌀쌀맞은 유키죠로
 	PRINTFORML
@@ -192,7 +192,7 @@ PRINTL
 PRINTL
 				CALL WRITE_IMG, 902, 1, 6
 			ENDIF
-		PRINTFORML 「모・쇼보를 사는건가」
+		PRINTFORML 「모ㆍ쇼보를 사는건가」
 		PRINTFORML 「이 녀석은 어째 마구 괴롭히고 싶어져」
 		PRINTFORML 「특이한 구석도 전혀 없는데 말이지、정말이지 이상한 악마야」
 		PRINTFORML 「가격은 500 마카다」
@@ -208,8 +208,8 @@ PRINTL
 			IF RESULT == 0
 				MONEY:1 -= 500
 				PRINTFORML 「매번 감사」
-				PRINTFORMW 모・쇼보「싫어 싫어、이런 사람한테 팔지 마、구해줘……」
-				PRINTFORMW 요조　모・쇼보가 동료마가 되었다。
+				PRINTFORMW 모ㆍ쇼보「싫어 싫어、이런 사람한테 팔지 마、구해줘……」
+				PRINTFORMW 요조　모ㆍ쇼보가 동료마가 되었다。
 				CALL ADD_NEW_COMPANION,902,500,1
 				GOTO INPUT_LOOP_KOJOSYOUKAI
 			ELSE

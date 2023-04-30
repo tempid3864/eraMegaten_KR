@@ -1,9 +1,9 @@
 ﻿;스킬명
-@SKILL_NAME_バイ・バイ・ライジング,ARG
-RESULTS = 바이・바이・라이징
+@SKILL_NAME_バイㆍバイㆍライジング,ARG
+RESULTS = 바이ㆍ바이ㆍ라이징
 
 ;　명중
-@SKILL_HITRATE_バイ・バイ・ライジング, ARG
+@SKILL_HITRATE_バイㆍバイㆍライジング, ARG
 #DIM ACC
 ACC = 90
 SIF ARG < 0
@@ -17,7 +17,7 @@ ENDSELECT
 RETURN ACC
 
 ;　위력
-@SKILL_POWER_バイ・バイ・ライジング, ARG
+@SKILL_POWER_バイㆍバイㆍライジング, ARG
 #DIM L_POW
 L_POW = 65
 ;195
@@ -34,38 +34,38 @@ ENDSELECT
 RETURN L_POW
 
 ;クリティカル率
-@SKILL_CRITICAL_RATE_バイ・バイ・ライジング, ARG
+@SKILL_CRITICAL_RATE_バイㆍバイㆍライジング, ARG
 RETURN 10
 
 ;;　吸収率
-;@SKILL_HP_ABSORBER_バイ・バイ・ライジング, ARG
+;@SKILL_HP_ABSORBER_バイㆍバイㆍライジング, ARG
 ;RETURN 0
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_バイ・バイ・ライジング,ARG
+@SKILL_MINATTACKNUMBER_バイㆍバイㆍライジング,ARG
 RETURN 3
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_バイ・バイ・ライジング,ARG
+@SKILL_MAXATTACKNUMBER_バイㆍバイㆍライジング,ARG
 RETURN 3
 
 ;;一体辺りの最大ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MAXATK_PER_バイ・バイ・ライジング,ARG
+;@SKILL_MAXATK_PER_バイㆍバイㆍライジング,ARG
 ;RETURN 1
 
 ;;一体辺りの最低ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MINATK_PER_バイ・バイ・ライジング,ARG
+;@SKILL_MINATK_PER_バイㆍバイㆍライジング,ARG
 ;RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_バイ・バイ・ライジング, ARG
+@SKILL_COSTTYPE_バイㆍバイㆍライジング, ARG
 RETURN 3
 ;소비없음＝1
 
 ;　코스트량
-@SKILL_COST_バイ・バイ・ライジング,ARG
+@SKILL_COST_バイㆍバイㆍライジング,ARG
 #DIM L_COST
 L_COST = 17
 SIF ARG == -1
@@ -79,118 +79,118 @@ ENDSELECT
 RETURN L_COST
 
 ;　상성
-@SKILL_TYPE_バイ・バイ・ライジング,ARG
+@SKILL_TYPE_バイㆍバイㆍライジング,ARG
 RETURN 6
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_バイ・バイ・ライジング,ARG
+@SKILL_DECIDE_TYPE_バイㆍバイㆍライジング,ARG
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_バイ・バイ・ライジング,ARG
+@SKILL_DAMAGETYPE_バイㆍバイㆍライジング,ARG
 RETURN 1
 
 
 ;　대상　1 적　2 아군　3 양쪽전체　4 특수
-@SKILL_TARGET_バイ・バイ・ライジング,ARG
+@SKILL_TARGET_バイㆍバイㆍライジング,ARG
 RETURN 1
 
 ;　사거리
-@SKILL_RANGE_バイ・バイ・ライジング,ARG
+@SKILL_RANGE_バイㆍバイㆍライジング,ARG
 RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
-@SKILL_SPHERE_バイ・バイ・ライジング,ARG
+@SKILL_SPHERE_バイㆍバイㆍライジング,ARG
 RETURN 3
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_バイ・バイ・ライジング,ARG
+@SKILL_EFECT_バイㆍバイㆍライジング,ARG
 RETURN 1
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_バイ・バイ・ライジング,ARG
+;@SKILL_SPECIALEFECT_バイㆍバイㆍライジング,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_バイ・バイ・ライジング,ARG
+;@SKILL_SUCCESSION_TYPE_バイㆍバイㆍライジング,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_バイ・バイ・ライジング, ARG = -1
+@SKILL_SPEED_バイㆍバイㆍライジング, ARG = -1
 RETURN 5
 
 ;;　구상의 표시와 그 타입
-;@SKILL_MESSAGE_バイ・バイ・ライジング,ARG
+;@SKILL_MESSAGE_バイㆍバイㆍライジング,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_バイ・バイ・ライジング, ARG = -1
+@SKILL_ACTIONABLE_FIELD_バイㆍバイㆍライジング, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_バイ・バイ・ライジング
-;@SKILL_RANKUP_バイ・バイ・ライジング
-;@계승불능_バイ・バイ・ライジング
+;@SKILL_RANK_バイㆍバイㆍライジング
+;@SKILL_RANKUP_バイㆍバイㆍライジング
+;@계승불능_バイㆍバイㆍライジング
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_バイ・バイ・ライジング,ARG
+@SKILL_ADDTIONAL_STATE_バイㆍバイㆍライジング,ARG
 RETURN 0
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_バイ・バイ・ライジング,ARG
+@SKILL_ADDTIONAL_TYPE_バイㆍバイㆍライジング,ARG
 RETURN 0
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_バイ・バイ・ライジング,ARG
+@SKILL_ADDTIONAL_BASE_RATE_バイㆍバイㆍライジング,ARG
 RETURN 0
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_バイ・バイ・ライジング,ARG
+@SKILL_ADDTIONAL_MAX_RATE_バイㆍバイㆍライジング,ARG
 RETURN 0
 
 ;;拡散攻撃用追加処理
 ;;ブレスなどの拡散攻撃に使う
-;@SKILL_SPREAD_バイ・バイ・ライジング,ARG
+;@SKILL_SPREAD_バイㆍバイㆍライジング,ARG
 ;RETURN 0
 
 ;====================================================
 ;トリガー発動条件
 ;====================================================
-;@SKILL_TRIGGER_ACTIONABLE_バイ・バイ・ライジング,ARG,ARG:1
+;@SKILL_TRIGGER_ACTIONABLE_バイㆍバイㆍライジング,ARG,ARG:1
 ;RETURN 0
 
 ;====================================================
 ;カウンター発動条件
 ;====================================================
-;@SKILL_COUNTER_ACTIONABLE_バイ・バイ・ライジング,ARG,ARG:1
+;@SKILL_COUNTER_ACTIONABLE_バイㆍバイㆍライジング,ARG,ARG:1
 ;RETURN RESULT
 
 ;====================================================
 ;ヒット時ダメージ前処理
 ;====================================================
-;@SKILL_HIT_EFFECT_バイ・バイ・ライジング,ARG,ARG:1
+;@SKILL_HIT_EFFECT_バイㆍバイㆍライジング,ARG,ARG:1
 
 ;====================================================
 ;ダメージ発動時
 ;====================================================
-;@SKILL_DAMAGE_EFFECT_バイ・バイ・ライジング,ARG,ARG:1
+;@SKILL_DAMAGE_EFFECT_バイㆍバイㆍライジング,ARG,ARG:1
 
 ;====================================================
 ;行動によるスキルゲージ操作
 ;====================================================
-;@SKILLGAGE_CHARGE_バイ・バイ・ライジング,ARG,ARG:1
+;@SKILLGAGE_CHARGE_バイㆍバイㆍライジング,ARG,ARG:1
 
 
 
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_バイ・バイ・ライジング,ARG,ARG:1,SKILL_NUM
+@ACTION_バイㆍバイㆍライジング,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 
 CALL SKILLGAGE_D_SET,ARG,SKILL_NUM,1
@@ -209,7 +209,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;전투중 이외에서의 실행
 ;====================================================
-;@ACTION_FIELD_バイ・バイ・ライジング,ARG,ARG:1,SKILL_NUM
+;@ACTION_FIELD_バイㆍバイㆍライジング,ARG,ARG:1,SKILL_NUM
 ;#DIM SKILL_NUM
 
 ;CALL HEAL_SINGLE,ARG,POS(ARG:1),SKILL_NUM	;単体回復
@@ -223,7 +223,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;追加コマンド(EXTRAの下)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_EXTRA_バイ・バイ・ライジング,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_EXTRA_バイㆍバイㆍライジング,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -233,7 +233,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;追加コマンド(MAGICの下、魔封だと消える)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_MAGIC_バイ・バイ・ライジング,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_MAGIC_バイㆍバイㆍライジング,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -243,7 +243,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;追加コマンド(一番下)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_バイ・バイ・ライジング,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_バイㆍバイㆍライジング,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -253,7 +253,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;コマンド実行
 ;====================================================
-;@INPUT_COM_バイ・バイ・ライジング,ARG
+;@INPUT_COM_バイㆍバイㆍライジング,ARG
 ;RETURN -1
 ;-1 再びコマンド選択へ
 ; 1 キャラ選択へ
@@ -261,15 +261,15 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 ;戦闘中スキルゲージの可視化
 ;====================================================
-;@SKILLGAGE_DISPLAY_バイ・バイ・ライジング,ARG
-;SKILL_NUM = PU_SKILLNUM_GET(ARG,"バイ・バイ・ライジング")
+;@SKILLGAGE_DISPLAY_バイㆍバイㆍライジング,ARG
+;SKILL_NUM = PU_SKILLNUM_GET(ARG,"バイㆍバイㆍライジング")
 ;SKILLGAGE_D_GET(ARG,SKILL_NUM)
 
 
 ;　説明文の表示
-@SKILL_EXPLAIN_バイ・バイ・ライジング,ARG
+@SKILL_EXPLAIN_バイㆍバイㆍライジング,ARG
 PRINTL 적 전체에 소 데미지의 전격 물리공격을 ３회 행한다。발동이 빠르고、크리티컬률이 다소 높다。
-PRINTL 사용 후、그 턴 만 물리・마법회피율이 상당히 높아진다。
+PRINTL 사용 후、그 턴 만 물리ㆍ마법회피율이 상당히 높아진다。
 PRINTL 사용자의 레벨이 높아질수록、성능이 강화되고、소비 코스트가 증가한다。
 PRINTL
 PRINTL 좀 더 높이 스피드를 UP하고 싶다는 생각을 해방한다。
@@ -277,24 +277,24 @@ PRINTL 좀 더 높이 스피드를 UP하고 싶다는 생각을 해방한다。
 PRINTL
 
 ;没
-;@계승부위_バイ・バイ・ライジング,ARG
+;@계승부위_バイㆍバイㆍライジング,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_バイ・バイ・ライジング,ARG
+@SKILL_SPECIAL_ACTIONABLE_バイㆍバイㆍライジング,ARG
 RETURN 1
 
 ;타겟조건
 ;↓のSKILL_T_RESERVEがRETURN 1 の時に使用する
-;@SKILL_SPECIAL_TARGET_バイ・バイ・ライジング,USE_CHARA,ARG
+;@SKILL_SPECIAL_TARGET_バイㆍバイㆍライジング,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;RETURN 0
 
 ;控えに使えるか
-;@SKILL_T_RESERVE_バイ・バイ・ライジング,ARG
+;@SKILL_T_RESERVE_バイㆍバイㆍライジング,ARG
 ;RETURN 0
 
 ;어떤 배드스테이터스를 고칠수 있는가
-;@SKILL_CURE_STATE_バイ・バイ・ライジング,USE_CHARA,ARG
+;@SKILL_CURE_STATE_バイㆍバイㆍライジング,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;SELECTCASE GET_STATE(ARG)
 ;	CASE "HAPPY","CLOSE"
@@ -303,21 +303,21 @@ RETURN 1
 ;RETURN 0
 
 ;この技を複数持てるか
-;@중복습득수_バイ・バイ・ライジング,ARG
+;@중복습득수_バイㆍバイㆍライジング,ARG
 ;RETURN 1
 
 ;スキル重複で役に立つ関数
-;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"バイ・バイ・ライジング"))
+;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"バイㆍバイㆍライジング"))
 
 ;スキルゲージで役に立つ関数
-;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"バイ・バイ・ライジング"))
-;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"バイ・バイ・ライジング"),0
+;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"バイㆍバイㆍライジング"))
+;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"バイㆍバイㆍライジング"),0
 
 ;====================================================
 ;独自処理
 ;====================================================
 ;（予定）と付けられている方は仮置きの物。実際に採用されるかどうかはわからない。
-@AUTO_PU_SKILL_バイ・バイ・ライジング,ARG,ARGS,ARG:1,ARG:2
+@AUTO_PU_SKILL_バイㆍバイㆍライジング,ARG,ARGS,ARG:1,ARG:2
 #DIM SKILL_NUM
 #DIM L_USER
 ;ARG = 攻撃者
@@ -332,7 +332,7 @@ SIF (ARGS == "物理回避判定↑" || ARGS == "魔法回避判定↑") && CSTR
 	L_USER = ARG:1
 SIF L_USER == -1
 	RETURN 0
-SKILL_NUM = PU_SKILLNUM_GET(L_USER,"バイ・バイ・ライジング")
+SKILL_NUM = PU_SKILLNUM_GET(L_USER,"バイㆍバイㆍライジング")
 IF SKILLGAGE_D_GET(L_USER,SKILL_NUM) > 0
 	SELECTCASE ARGS
 		CASE "物理回避判定↑","魔法回避判定↑"

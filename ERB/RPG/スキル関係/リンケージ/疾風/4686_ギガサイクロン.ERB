@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 수격계 마법
 	CASE 3
-		PRINTFORM 마하・갈다인
+		PRINTFORM 마하ㆍ갈다인
 ENDSELECT
 
 @발동자조건_4686 , ARG
-;マハ・ガルダインを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・갈다인]]) == 0
+;マハㆍガルダインを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ갈다인]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・갈다인]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ갈다인]]
 SIF RESULT
 	RETURN 1
 RETURN 0

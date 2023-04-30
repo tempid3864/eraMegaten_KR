@@ -215,7 +215,7 @@ RETURN 1
 @참가조건표시_4840,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 아기、마하・라기、프레이、기가、또는 마하기가 중、하나
+		PRINTFORM 아기、마하ㆍ라기、프레이、기가、또는 마하기가 중、하나
 	CASE 2
 		PRINTFORM 랜턴샷
 ENDSELECT
@@ -250,9 +250,9 @@ SELECTCASE ARG:1
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;マハ・ラギを使えること
-		IF HAVE_SKILL(ARG, [[스킬:마하・라기]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・라기]]
+		;マハㆍラギを使えること
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ라기]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ라기]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

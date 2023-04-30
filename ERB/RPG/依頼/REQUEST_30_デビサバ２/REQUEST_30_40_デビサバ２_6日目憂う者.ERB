@@ -22,8 +22,8 @@
 ; 【フラグついて】
 ; フラグは下記のみ사용。
 ;
-; ・데빌서바２진행도
-; ・이벤트플래그:85
+; ㆍ데빌서바２진행도
+; ㆍ이벤트플래그:85
 ;
 ; [00-09] 東京との対話
 ; FLAG:데빌서바２진행도 = 4000;初回
@@ -64,7 +64,7 @@
 ;
 ;------------------------------------------------------------------------------
 ; 【メモ】
-; ・余りにホモ臭かったんで女体化選べるようになっています
+; ㆍ余りにホモ臭かったんで女体化選べるようになっています
 ;
 ;-------------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@
 ;
 ;		Module Name						Explanation
 ;
-;	・ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
+;	ㆍ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
 ;
 ;===============================================================================
 
@@ -147,7 +147,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「사는 목적은, 폴라리스에 의해 관리되어야만 하는가, 아니면 자유로워야만 하는가…」
 		PRINTFORMW 「…그 의문에 다시금 빛을 비춰준것이, 다름아닌 너다…%CALLNAME:MASTER%」
 		PRINTL
-		PRINTFORMW 천만에요, 하고 대답해야 할 텐데, 실제로, %조사처리(CALLNAME:MASTER, "는")% 팬텀・소사이어티의 심부름꾼에 불과하다。
+		PRINTFORMW 천만에요, 하고 대답해야 할 텐데, 실제로, %조사처리(CALLNAME:MASTER, "는")% 팬텀ㆍ소사이어티의 심부름꾼에 불과하다。
 		PRINTFORMW 그와 협력한것도, 인간의 가능성에 강하게 좌우되는 세계를 만들어내는 것으로 조직의 주박에서 벗어나고 싶었다, 고 하는 면도 있다。
 		PRINTFORMW 그런 %CALLNAME:MASTER%가 거기까지 그를 도왔다고는 생각되지 않지만…。
 		PRINTL
@@ -179,7 +179,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL
 		PRINTFORMW 「그리고, 또…」
 		PRINTFORMW 소년은 뭔가를 사고하는 듯이 움직임을 멈추고 있다…。
-		;- キャラ추가(알・사다크)
+		;- キャラ추가(알ㆍ사다크)
 		CALL ADD_NEW_COMPANION,[[キャラ:사다크]],1500
 		
 		;추가した場合
@@ -229,7 +229,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW …확실히 그렇다。듣고보니, 그의 이름을 모른다…。
 		PRINTL
 		PRINTFORMW 「기쁘구나, 역시 그런건가。나는 너를『빛나는 자』라고 부른다。하지만 너는 나를 부를 이름을 가지고 있지 않아」
-		PRINTFORMW 「…내 이름은『사다크』。『알・사다크』다, 친구여」
+		PRINTFORMW 「…내 이름은『사다크』。『알ㆍ사다크』다, 친구여」
 		PRINTFORMW 「항상 너를 지켜보고 있으니까, 필요할 때는 곧 나타날거야。…그럼」
 		PRINTFORMW ＞한줄기 바람이 불고, 사다크의 모습이 사라졌다…。
 		PRINTW ………
@@ -1310,8 +1310,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTL
 			PRINTL 마요네：
 			PRINTFORMW 「가버린 모양이군요, %CSTR:(LOCAL):이인칭%」
-			PRINTFORMW 「팬텀・소사이어티의 결정을 전해두겠어요」
-			PRINTFORMW 「『지금까지 쌓아올린 인류의 역사를 전무 무로 돌리려고 하는 어리석은 자 따위는, 팬텀・소사이어티엔 필요없다』」
+			PRINTFORMW 「팬텀ㆍ소사이어티의 결정을 전해두겠어요」
+			PRINTFORMW 「『지금까지 쌓아올린 인류의 역사를 전무 무로 돌리려고 하는 어리석은 자 따위는, 팬텀ㆍ소사이어티엔 필요없다』」
 			PRINTFORMW 「『해고해 버려라』라는 거에요」
 			PRINTFORMW 「…사실은 %CSTR:(LOCAL):이인칭%를 말살하도록 지령이 나와 있습니다만…」
 			PRINTFORMW 「……」
@@ -1362,8 +1362,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「솔직히, 너에겐 기대하고있었다。…설마, 네가 나에게 붙지않고, 그자와 짤 줄이야」
 		PRINTFORMW 「그럼, 이야기할 시간도 없다。너희들은 여기서 죽을 뿐이다。그리고 내가 모든걸을 얻어가겠다！」
 		PRINTFORMW ＞방안에 남자들이 들어온다…。
-		PRINTFORMW ＞남자들 중에는 본 적이 있는 자들도 섞여있는 걸로 봐서, 아무래도 그들은 팬텀・소사이어티의 서머너인 것 같다…。
-		PRINTFORMW ＞%조사처리(CALLNAME:MASTER, "과")%는 다른 루트로, 팬텀・소사이어티와 접촉해, 협력체제를 취한 듯 하다…。
+		PRINTFORMW ＞남자들 중에는 본 적이 있는 자들도 섞여있는 걸로 봐서, 아무래도 그들은 팬텀ㆍ소사이어티의 서머너인 것 같다…。
+		PRINTFORMW ＞%조사처리(CALLNAME:MASTER, "과")%는 다른 루트로, 팬텀ㆍ소사이어티와 접촉해, 협력체제를 취한 듯 하다…。
 		PRINTL
 		PRINTL 다이치：
 		PRINTFORMW 「뭐…！머머머, 멋대로 지껄이는게 아냐！그런거…절~대로 용서못한다！」
@@ -1427,7 +1427,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「……！뭐…라고…」
 		PRINTL
 		PRINTFORMW 믿고있다。%CALLNAME:MASTER%는 그렇게 말했다。
-		PRINTFORMW 사다크는 적인『알코르』가 아니다, 동료인『알・사다크』라고。
+		PRINTFORMW 사다크는 적인『알코르』가 아니다, 동료인『알ㆍ사다크』라고。
 		PRINTFORMW %CALLNAME:MASTER%의 최고의 벗이라고。
 		PRINTL
 		PRINTL 사다크：

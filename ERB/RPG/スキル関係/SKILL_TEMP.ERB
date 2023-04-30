@@ -123,7 +123,7 @@ SWAP STOCK,CFLAG:ARG:타겟
 
 
 ;=========================================
-;전체・列공격스킬기본
+;전체ㆍ列공격스킬기본
 ;=========================================
 @ATTACK_FIELD, ARG, ARG:1, ARG:2, ARG:3
 #LOCALSIZE 17
@@ -707,7 +707,7 @@ ELSE
 	ELSE
 		PRINTL
 	ENDIF
-	;潜在補助・회복・공격
+	;潜在補助ㆍ회복ㆍ공격
 	IF ARG:1 > -1 && BASE:(ARG:1):ＨＰ > 0  && TALENT:(ARG:1):페르소나구사자 >= 1 && (ABL:(ARG:1):잠재능력 == 6 || ABL:(ARG:1):잠재능력 == 1 || ABL:(ARG:1):잠재능력 == 5)
 		CALL SENZAI_HO_KA_KO, ARG, ARG:1
 	ENDIF
@@ -1194,7 +1194,7 @@ FOR LOCAL:10, 0, LOCAL:1
 				TRYCALLFORM SKILL_DAMAGE_EFFECT_{ARG:2}, ARG, ARG:1
 			ENDIF
 			PRINTL
-			;;潜在補助・회복・공격
+			;;潜在補助ㆍ회복ㆍ공격
 			;IF ARG:1 > -1 && BASE:(ARG:1):ＨＰ > 0  && TALENT:(ARG:1):페르소나구사자 >= 1 && (ABL:(ARG:1):잠재능력 == 6 || ABL:(ARG:1):잠재능력 == 1 || ABL:(ARG:1):잠재능력 == 5 || ABL:(ARG:1):잠재능력 == 0)
 			;	CALL SENZAI_HO_KA_KO, ARG, ARG:1
 			;ENDIF
@@ -1227,7 +1227,7 @@ SIF num > 0
 SWAP STOCK,CFLAG:ARG:타겟
 
 ;=========================================
-;全体・列割合攻撃スキル基本
+;全体ㆍ列割合攻撃スキル基本
 ;ARG:0 使用者
 ;ARG:1 対象キャラNo.
 ;ARG:2 使用スキル番号
@@ -1746,7 +1746,7 @@ SIF !ARG:3
 	
 SWAP STOCK,CFLAG:ARG:타겟
 ;=========================================
-;全体・列バッドステータス付与基本
+;全体ㆍ列バッドステータス付与基本
 ;ARG:0 使用者
 ;ARG:1 対象
 ;ARG:2 使用スキル

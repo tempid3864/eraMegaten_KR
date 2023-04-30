@@ -26,7 +26,7 @@
 ;	007		2020/05/19		がめら					NTR好感度処理をCDFLAGに変更
 ;	008		2020/07/29		Jガン					便器を選んだ時のエラーを修正（140行あたり）
 ;	009		2021/04/27		JK好き					公衆便所で多胎OP時でも妊娠するように修正
-;	010		2021/11/07		JK好き					『同性客』『獣姦』時にレズ経験・獣姦経験が表示されなかったのを修正　異常経験の加算処理を整理
+;	010		2021/11/07		JK好き					『同性客』『獣姦』時にレズ経験ㆍ獣姦経験が表示されなかったのを修正　異常経験の加算処理を整理
 ;	011		2022/06/07		NEO						NTR防御服飾追加の関数対応
 
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
@@ -896,7 +896,7 @@ ELSEIF PALAM:ARG:욕정 >= PALAMLV:4
 	TIMES L_쾌Ｖ , 2.00
 ENDIF
 
-;ソース加算・쾌感・욕정・액체
+;ソース加算ㆍ쾌感ㆍ욕정ㆍ액체
 ;아픔ソースを他のPALAM加算のため放り込んでおく
 SOURCE:ARG:아픔 += L_아픔SOURCE
 L_아픔SOURCE = L_아픔SOURCE * B / 400
@@ -992,7 +992,7 @@ ENDIF
 ;가격による보정()
 L_만족도 += 300 * L_만족도 / (CFLAG:ARG:본방가격 + 1)  / 400 - 10
 
-;처녀・재생처녀を買ってもらった場合、만족도+
+;처녀ㆍ재생처녀を買ってもらった場合、만족도+
 L_만족도 += CFLAG:ARG:재생처녀상실플래그 + CFLAG:ARG:처녀상실플래그 * 2
 
 ;순종が3LVないと、著しく微妙になります
@@ -1172,7 +1172,7 @@ ELSEIF PALAM:ARG:욕정 >= PALAMLV:4
 	TIMES L_쾌Ａ , 1.60
 ENDIF
 
-;ソース加算・쾌感・욕정・액체
+;ソース加算ㆍ쾌感ㆍ욕정ㆍ액체
 ;아픔ソースを他のPALAM加算のため放り込んでおく
 SOURCE:ARG:아픔 += L_아픔SOURCE
 L_아픔SOURCE = L_아픔SOURCE * B / 800
@@ -1318,21 +1318,21 @@ L_유혹도 += ABL:CHARA:정액중독 * 5
 ;発情で추가
 SIF 위험일(CHARA) > 1
 	L_유혹도 += 10
-;PALAM・굴복で추가
+;PALAMㆍ굴복で추가
 L_유혹도 += PALAMLV_F(CHARA, "굴복")*3
-;PALAM・욕망で추가
+;PALAMㆍ욕망で추가
 L_유혹도 += PALAMLV_F(CHARA, "욕정")*1
-;PALAM・윤활で추가
+;PALAMㆍ윤활で추가
 L_유혹도 += PALAMLV_F(CHARA, "윤활")*1
 
 
-;음란・창부で추가
+;음란ㆍ창부で추가
 SIF TALENT:CHARA:음란
 	TIMES L_유혹도 , 1.30
 SIF TALENT:CHARA:창부
 	TIMES L_유혹도 , 1.60
 
-;복종・예속で추가
+;복종ㆍ예속で추가
 SIF TALENT:CHARA:복종
 	TIMES L_유혹도 , 2.00
 SIF TALENT:CHARA:예속
@@ -1612,7 +1612,7 @@ ELSE
 	CDFLAG:ARG:캐릭터간호감도:(93) -= LOCAL:1
 ENDIF
 
-;ＮＴＲ好きの客（연모・친애限定）
+;ＮＴＲ好きの客（연모ㆍ친애限定）
 ;방치일수*2（上限30％）の확률로声をかけられる（인기持ちはさらに+10％）
 ;애ＮＴＲ상태の場合は50％
 IF (TALENT:ARG:연모 || TALENT:ARG:친애) && RAND:100 < LOCAL:2 || (TALENT:ARG:ＮＴＲ == 1 || TALENT:ARG:ＮＴＲ == 4) && RAND:100 < 50 || IS_ANTI_NTR_CLOTHES(ARG) == -1
@@ -1625,9 +1625,9 @@ IF (TALENT:ARG:연모 || TALENT:ARG:친애) && RAND:100 < LOCAL:2 || (TALENT:ARG
 	IF RAND:100 > 100 + 함락(ARG) * 10 - LOCAL:3 || TALENT:ARG:ＮＴＲ > 0 || IS_ANTI_NTR_CLOTHES(ARG) == -1
 		PRINTFORML 
 		PRINTFORML 네토리 취미의 손님이 %CALLNAME:ARG%의 귓가에 무언가를 속삭이고 있다……
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORMW ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORMW ㆍㆍㆍ
 		;本番판정
 		;기본치50％+방치일수*2（上限なし）さらに즉각함락持ちは+50
 		;これに함락度*50のマイナス보정を入れる
@@ -1707,9 +1707,9 @@ ELSEIF RAND:100 < LOCAL:2 || (TALENT:ARG:ＮＴＲ == 2 || TALENT:ARG:ＮＴＲ 
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% 손님에게 수상한 약을 투여되어버렸다……
 		LOCAL:4 = 7
 	ENDIF
-	PRINTFORML ・
-	PRINTFORML ・・
-	PRINTFORML ・・・
+	PRINTFORML ㆍ
+	PRINTFORML ㆍㆍ
+	PRINTFORML ㆍㆍㆍ
 	;耐えられるか판정
 	;기본치50％+방치일수*2（上限なし）さらに즉각함락持ちは+50
 	;これに함락度*50のマイナス보정を入れる

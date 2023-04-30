@@ -3,21 +3,21 @@
 ;002	20XX/XX/XX		kamedakeisuke(ﾟдﾟ)			どっかで性能を引き上げた覚えがある
 
 ;スキル名
-@SKILL_NAME_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_NAME_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 LOADGLOBAL
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RESULTS = 반짝임이 있는 곳
 ELSE
-	RESULTS = 사랑의 마구・하이라이트
+	RESULTS = 사랑의 마구ㆍ하이라이트
 ENDIF
 
 ;　명중
-@SKILL_HITRATE_恋の魔球・ﾊｲﾗｲﾄ, ARG
+@SKILL_HITRATE_恋の魔球ㆍﾊｲﾗｲﾄ, ARG
 RETURN 90
 
 ;　위력
-@SKILL_POWER_恋の魔球・ﾊｲﾗｲﾄ, ARG
+@SKILL_POWER_恋の魔球ㆍﾊｲﾗｲﾄ, ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 420
@@ -28,7 +28,7 @@ ELSE
 ENDIF
 
 ;クリティカル率
-@SKILL_CRITICAL_RATE_恋の魔球・ﾊｲﾗｲﾄ, ARG
+@SKILL_CRITICAL_RATE_恋の魔球ㆍﾊｲﾗｲﾄ, ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 30
@@ -37,20 +37,20 @@ ELSE
 ENDIF
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_MINATTACKNUMBER_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_MAXATTACKNUMBER_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_恋の魔球・ﾊｲﾗｲﾄ, ARG
+@SKILL_COSTTYPE_恋の魔球ㆍﾊｲﾗｲﾄ, ARG
 RETURN 3
 ;消費なし＝1
 
 ;　코스트량
-@SKILL_COST_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_COST_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 42
@@ -59,7 +59,7 @@ ELSE
 ENDIF
 
 ;　상성
-@SKILL_TYPE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_TYPE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;大場の記憶を呼び起こす
 LOADGLOBAL
 ;トップスタァイベントを経由し、星のティアラを装備している場合、複合属性
@@ -105,24 +105,24 @@ ELSE
 ENDIF
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_DECIDE_TYPE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_DAMAGETYPE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 
 ;　対象が1敵か2味方か3場全体か4特殊か
-@SKILL_TARGET_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_TARGET_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 ;　사거리
-@SKILL_RANGE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_RANGE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 2
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
-@SKILL_SPHERE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_SPHERE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 3
@@ -131,49 +131,49 @@ ELSE
 ENDIF
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_EFECT_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_恋の魔球・ﾊｲﾗｲﾄ,ARG
+;@SKILL_SPECIALEFECT_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+;@SKILL_SUCCESSION_TYPE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_恋の魔球・ﾊｲﾗｲﾄ, ARG = -1
+@SKILL_SPEED_恋の魔球ㆍﾊｲﾗｲﾄ, ARG = -1
 RETURN 0
 
 ;;　口上の表示とそのタイプ
-;@SKILL_MESSAGE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+;@SKILL_MESSAGE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_恋の魔球・ﾊｲﾗｲﾄ, ARG = -1
+@SKILL_ACTIONABLE_FIELD_恋の魔球ㆍﾊｲﾗｲﾄ, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_恋の魔球・ﾊｲﾗｲﾄ
-;@SKILL_RANKUP_恋の魔球・ﾊｲﾗｲﾄ
-;@계승불능_恋の魔球・ﾊｲﾗｲﾄ
+;@SKILL_RANK_恋の魔球ㆍﾊｲﾗｲﾄ
+;@SKILL_RANKUP_恋の魔球ㆍﾊｲﾗｲﾄ
+;@계승불능_恋の魔球ㆍﾊｲﾗｲﾄ
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_ADDTIONAL_STATE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 19
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_ADDTIONAL_TYPE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN GET_TYPE_NUM("충격")
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_ADDTIONAL_BASE_RATE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 50
@@ -182,7 +182,7 @@ ELSE
 ENDIF
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_ADDTIONAL_MAX_RATE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 80
@@ -192,7 +192,7 @@ ENDIF
 
 ;拡散攻撃用追加処理
 ;ブレスなどの拡散攻撃に使う
-@SKILL_SPREAD_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_SPREAD_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	RETURN 0
@@ -202,7 +202,7 @@ ENDIF
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_恋の魔球・ﾊｲﾗｲﾄ,ARG,ARG:1,SKILL_NUM
+@ACTION_恋の魔球ㆍﾊｲﾗｲﾄ,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
@@ -218,12 +218,12 @@ ENDIF
 ;====================================================
 
 ;　説明文の表示
-@SKILL_EXPLAIN_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_EXPLAIN_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 ;トップスタァイベント経験済みかつ、星のティアラを装備している
 IF EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:4 > 0
 	PRINTL 자신의 반짝임을 짜내、가능성의 칼날로 보이는 전부를 날려버리는、츠유자키 마히루의 필살기
 	PRINTL 구체적으로는 거대한 에메랄드의 검을 생성해 적을 모아 홈런을 날린다
-	PRINTL 적 전체에 타격・전술 복합상성의 특대 데미지＋중확률 SLIP。높은 크리티컬률、후열 사용 가능
+	PRINTL 적 전체에 타격ㆍ전술 복합상성의 특대 데미지＋중확률 SLIP。높은 크리티컬률、후열 사용 가능
 ELSE
 	PRINTL 소녀의 반짝임이、무대장치를 작동시켜、언젠가의 레뷰를 재현한다
 	PRINTL 구체적으로는 닥치는 대로 메이스로 홈런을 날린다
@@ -232,8 +232,8 @@ ENDIF
 
 
 ;没
-;@계승부위_恋の魔球・ﾊｲﾗｲﾄ,ARG
+;@계승부위_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_恋の魔球・ﾊｲﾗｲﾄ,ARG
+@SKILL_SPECIAL_ACTIONABLE_恋の魔球ㆍﾊｲﾗｲﾄ,ARG
 RETURN 1

@@ -5,10 +5,10 @@
 @SKILL_NAME_3550,ARG
 ;修羅
 ;SIF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
-	RESULTS = 콘루・멤
+	RESULTS = 콘루ㆍ멤
 ;羅刹
 SIF ARG > -1 && SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 1
-	RESULTS = 콘루・라쿠르
+	RESULTS = 콘루ㆍ라쿠르
 
 ;　명중
 @SKILL_HITRATE_3550, ARG
@@ -256,7 +256,7 @@ IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		CFLAG:POS(LOCAL):명중강화 = MAX(-16, CFLAG:POS(LOCAL):명중강화 - 4)
 		CFLAG:POS(LOCAL):회피강화 = MAX(-16, CFLAG:POS(LOCAL):회피강화 - 4)
 	NEXT
-	PRINTFORMW \@ ARG:1 > 19 ? 적 # 아군 \@의 명중・회피를 낮췄다！
+	PRINTFORMW \@ ARG:1 > 19 ? 적 # 아군 \@의 명중ㆍ회피를 낮췄다！
 ;羅刹
 ELSE
 	CALL ATTACK_RAND,ARG,ARG:1,3550
@@ -278,7 +278,7 @@ IF TFLAG:전투중 == 0 && U > -1 && HAVE_SKILL(U, [[스킬:분노폭발]])
 	PRINTL 적 전체 랜덤하게 빙결 데미지+FREEZE
 ELSEIF U < 0 || SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 0
 	PRINTL 얼음의 상대의 발밑에 얼음을 만들어 자세를 무너뜨린다
-	PRINTL 적 1열에 빙결 속성의 SLIP으로 하고、명중・회피를 저하시킨다
+	PRINTL 적 1열에 빙결 속성의 SLIP으로 하고、명중ㆍ회피를 저하시킨다
 ELSEIF SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 1
 	PRINTL 얼음의 안개　얼음덩어리를 방출하고、적에게 접촉하기 전에 얼음을 부수어 공격한다
 	PRINTL 적 전체 랜덤하게 빙결 속성으로 소위력의 마법공격을 7회 행한다(1체 5회까지)

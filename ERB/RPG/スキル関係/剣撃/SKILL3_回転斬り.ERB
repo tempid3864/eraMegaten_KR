@@ -3,9 +3,9 @@
 
 ;스킬명
 @SKILL_NAME_3,ARG
-;ファントムが使用する場合G・スラッシュリッパーに
+;ファントムが使用する場合Gㆍスラッシュリッパーに
 IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	RESULTS = G・슬래시리퍼
+	RESULTS = Gㆍ슬래시리퍼
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:백베어드]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 촉수커터
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:슬레이브]]) && 이벤트플래그:86:2 == 1

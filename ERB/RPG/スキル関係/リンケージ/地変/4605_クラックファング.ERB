@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 화염계 마법
 	CASE 3
-		PRINTFORM 마하・마그나스
+		PRINTFORM 마하ㆍ마그나스
 ENDSELECT
 
 @발동자조건_4605 , ARG
-;マハ・マグナスを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・마그나스]]) == 0
+;マハㆍマグナスを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ마그나스]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・마그나스]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ마그나스]]
 SIF RESULT
 	RETURN 1
 RETURN 0

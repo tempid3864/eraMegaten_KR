@@ -14,7 +14,7 @@ FOR LOCAL , 0 , 2
 		;상대가 친족관계에 맞는 존재인지 판정
 		IF AUTO_SPLIT(CSTR:(CHARA):@"근친판정_%LOCALS:LOCAL%" , "_" , 0 , CSVNAME(NO:(CHARA:1) , 0) ) != ""
 			;성별과 친족관계가 맞이 않는 경우 여기서 변경
-			;부・모는 종자였는지・낳았는지만으로 판정한다
+			;부ㆍ모는 종자였는지ㆍ낳았는지만으로 판정한다
 			IF GROUPMATCH(LOCALS:LOCAL , "형제" , "아들") && !IS_MALE(CHARA:1)
 				;형제or아들인데 성별이 여자라면 자매or딸
 				LOCALS:LOCAL = \@ LOCALS:LOCAL == "형제" ? 자매 # 딸 \@
@@ -44,7 +44,7 @@ FOR LOCAL , 0 , 2
 				親ＩＤ:2 = (CFLAG:CHARA:딸의친부모고유번호딸 == -1 ? 9997 # CFLAG:CHARA:딸의친부모고유번호딸 )
 				親ＩＤ:3 = (CFLAG:(CHARA:1):딸의친부모고유번호딸 == -1 ? 9996 # CFLAG:(CHARA:1):딸의친부모고유번호딸 )
 				IF GROUPMATCH(親ＩＤ:0 , 親ＩＤ:1 , 親ＩＤ:3) || GROUPMATCH(親ＩＤ:2 , 親ＩＤ:1 , 親ＩＤ:3)
-					;두명의 부・모 중 하나가 일치한다면 형제자매 취급
+					;두명의 부ㆍ모 중 하나가 일치한다면 형제자매 취급
 					LOCALS:LOCAL = \@ IS_MALE(CHARA:1) ? 형제 # 자매 \@
 					LOCALS:(!LOCAL) = \@ IS_MALE(CHARA) ? 형제 # 자매 \@
 				ELSE

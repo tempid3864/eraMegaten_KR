@@ -97,8 +97,8 @@ CASE 0
 			TALENT:ARG:연모 = 1
 		[ENDIF]
 		VARSET L_PARTY_SLOT,-1
-		IF HAVE_SKILL(ARG,[[스킬:전용기5]]) && PUEQ_NAME_GETS(ARG,"ＰＵ・ポリタン") == ""
-			;ＰＵ・ポリタン持ってないのに専用技5習得している場合、とりあえず消しておく
+		IF HAVE_SKILL(ARG,[[스킬:전용기5]]) && PUEQ_NAME_GETS(ARG,"ＰＵㆍポリタン") == ""
+			;ＰＵㆍポリタン持ってないのに専用技5習得している場合、とりあえず消しておく
 			LOCALS = 스킬{HAVE_SKILL(ARG,[[스킬:전용기5]],1)}
 			ABL:ARG:LOCALS = 0
 			VARSET LOCALS
@@ -517,19 +517,19 @@ CASE 0
 		;PRINTFORMW 後日、しっかり養生した%CALLNAME:ARG%が再びプロセッサユニットを試着した結果、無事正常に動作した事が確認されたようだ。
 		;PRINTFORMW そして%CALLNAME:BLADE%と%CALLNAME:GV%との地獄の特訓により、長年封印されていた必殺技を扱えるようになった（？）らしい。
 		;PRINTL
-		;PRINTFORMW %CALLNAME:ARG%は『変身・覚醒！』及び『スタービーナスビリビリーム』を覚えた！
+		;PRINTFORMW %CALLNAME:ARG%は『変身ㆍ覚醒！』及び『スタービーナスビリビリーム』を覚えた！
 		;PRINTW ※このスキルは一つのスキルとして扱われます、ご注意ください。
 		;CALL LEARN_SKILL(ARG,[[스킬:전용기5]])
 		IF CSTR:ARG:専用装備 == "" || !GETBIT(CFLAG:ARG:801,1)
 			;面倒だからビット立てて管理しとく
 			SETBIT CFLAG:ARG:801,1
-			;CSTR:ARG:専用装備 = ＰＵ・ポリタン_アクセサリ
-			CALL PUEQ_ADD, ARG, "ＰＵ・ポリタン", [[아이템:전용장비악세서리]], 0
+			;CSTR:ARG:専用装備 = ＰＵㆍポリタン_アクセサリ
+			CALL PUEQ_ADD, ARG, "ＰＵㆍポリタン", [[아이템:전용장비악세서리]], 0
 			CALL PUEQ_SET, ARG
-			;PRINTFORMW %CALLNAME:ARG%는 전용 액세서리『ＰＵ・폴리탄』를 장착할 수 있게 되었다！
-			PRINTFORMW %CALLNAME:ARG%는『변신・각성！』및『스타 비너스 찌릿찌릿 빔』을 사용할 수 있게 되었다！
+			;PRINTFORMW %CALLNAME:ARG%는 전용 액세서리『ＰＵㆍ폴리탄』를 장착할 수 있게 되었다！
+			PRINTFORMW %CALLNAME:ARG%는『변신ㆍ각성！』및『스타 비너스 찌릿찌릿 빔』을 사용할 수 있게 되었다！
 			SETCOLOR COLOR("YELLOW")
-			PRINTW ※본 스킬은『ＰＵ・폴리탄』장착 시에만 사용할 수 있는 스킬이며、하나의 스킬로 취급되므로 주의해 주시기 바랍니다。
+			PRINTW ※본 스킬은『ＰＵㆍ폴리탄』장착 시에만 사용할 수 있는 스킬이며、하나의 스킬로 취급되므로 주의해 주시기 바랍니다。
 			RESETCOLOR
 		ENDIF
 		RETURN 1
@@ -626,7 +626,7 @@ ELSE
 		生存カウント += 1
 		SIF CFLAG:(FLAG:LOCALS):전격가드킬 > 0
 			CONTINUE
-		;電撃無効・反射・吸収の数を確認
+		;電撃無効ㆍ反射ㆍ吸収の数を確認
 		SIF MAXBASE:(FLAG:LOCALS):전격 <= 0 || MAXBASE:(FLAG:LOCALS):전격 == 999
 			絶縁カウント += 1
 	NEXT

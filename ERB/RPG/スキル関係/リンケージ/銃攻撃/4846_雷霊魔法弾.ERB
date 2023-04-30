@@ -215,7 +215,7 @@ RETURN 1
 @참가조건표시_4846,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 지오、마하・지오、갈、또는 마하・갈 중、하나
+		PRINTFORM 지오、마하ㆍ지오、갈、또는 마하ㆍ갈 중、하나
 	CASE 2
 		PRINTFORM 코로나샷
 ENDSELECT
@@ -242,25 +242,25 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ジオかマハ・ジオを使えること
+		;ジオかマハㆍジオを使えること
 		IF HAVE_SKILL(ARG, [[스킬:지오]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:지오]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・지오]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・지오]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ지오]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ지오]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;ガルかマハ・ガルを使えること
+		;ガルかマハㆍガルを使えること
 		IF HAVE_SKILL(ARG, [[스킬:갈]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:갈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・갈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・갈]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ갈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ갈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

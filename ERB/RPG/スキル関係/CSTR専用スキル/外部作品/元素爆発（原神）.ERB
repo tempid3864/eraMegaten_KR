@@ -6,7 +6,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 	RESULTS = 천성
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
-	RESULTS = 오의・몽상진설
+	RESULTS = 오의ㆍ몽상진설
 ELSE
 	RESULTS = 원소해방（원신）
 ENDIF
@@ -403,7 +403,7 @@ RESETCOLOR
 IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
 	PRINTL 元素爆発『風神の詩』
 	PRINTL 적 전체에 衝撃と万能の複合属性で小威力の物理攻撃を４回行う。
-	PRINT 追加効果：命中の度に防御・魔法効果を微量ダウンし、高確率で転倒。
+	PRINT 追加効果：命中の度に防御ㆍ魔法効果を微量ダウンし、高確率で転倒。
 	SETCOLOR 0x33ffcc
 		PRINTL クールタイム：４ターン。
 	RESETCOLOR
@@ -421,7 +421,7 @@ ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
 	PRINTL 巨大な星岩を落下させ、眼前の全ての敵を石にする。
 	PRINTL 岩神　奇妙なモラクスの元素爆発技（CSTR専用）
 ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바알]]
-	PRINTL 元素爆発『奥義・夢想真説』
+	PRINTL 元素爆発『奥義ㆍ夢想真説』
 	PRINTL 적 1열에 電撃と万能の複合属性で特大威力の物理攻撃を１回行う。
 	PRINT 追加効果：高確率の感電を付与する。
 	SETCOLOR 0x33ffcc
@@ -492,31 +492,31 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 90
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,90
-	;元素爆発リキャスト中はリキャストターン・効果時間表示
+	;元素爆発リキャスト中はリキャストターンㆍ効果時間表示
 	IF SKILLGAGE_D_GET(ARG,元素爆発制御変数) == 5
 		SETCOLOR 0x782069
 		PRINTFORML 夢想の一心効果時間：3ターン
 		SETCOLOR 0x999999
-		PRINTFORML 奥義・夢想真説　クールタイム：2ターン
+		PRINTFORML 奥義ㆍ夢想真説　クールタイム：2ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) == 4
 		SETCOLOR 0x782069
 		PRINTFORML 夢想の一心効果時間：2ターン
 		SETCOLOR 0x999999
-		PRINTFORML 奥義・夢想真説　クールタイム：4ターン
+		PRINTFORML 奥義ㆍ夢想真説　クールタイム：4ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) == 3
 		SETCOLOR 0x782069
 		PRINTFORML 夢想の一心効果時間：1ターン
 		SETCOLOR 0x999999
-		PRINTFORML 奥義・夢想真説　クールタイム：3ターン
+		PRINTFORML 奥義ㆍ夢想真説　クールタイム：3ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) == 2
-		PRINTFORML 奥義・夢想真説　クールタイム：2ターン
+		PRINTFORML 奥義ㆍ夢想真説　クールタイム：2ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) == 1
-		PRINTFORML 奥義・夢想真説　クールタイム：1ターン
+		PRINTFORML 奥義ㆍ夢想真説　クールタイム：1ターン
 	ENDIF
 		;元素エネルギー量を表示。チャージ完了時カラーで強調
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) == 90
 		SETCOLOR 0x782069
-	PRINTFORML 奥義・夢想真説　元素エネルギー：{SKILLGAGE_F_GET(ARG,元素爆発制御変数)}／90
+	PRINTFORML 奥義ㆍ夢想真説　元素エネルギー：{SKILLGAGE_F_GET(ARG,元素爆発制御変数)}／90
 ENDIF
 RESETCOLOR
 

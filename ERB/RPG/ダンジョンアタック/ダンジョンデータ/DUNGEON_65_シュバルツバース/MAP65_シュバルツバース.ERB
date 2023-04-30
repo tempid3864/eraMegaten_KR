@@ -26,27 +26,27 @@ SELECTCASE FLAG:현M
 			CASE 0
 				PRINT 지상
 			CASE 1
-				PRINT 섹터・안트리아
+				PRINT 섹터ㆍ안트리아
 			CASE 2
-				PRINT 섹터・보티즈
+				PRINT 섹터ㆍ보티즈
 			CASE 3
-				PRINT 섹터・카리나
+				PRINT 섹터ㆍ카리나
 			CASE 4
-				PRINT 섹터・델파이너스
+				PRINT 섹터ㆍ델파이너스
 			CASE 5
-				PRINT 섹터・에리다누스
+				PRINT 섹터ㆍ에리다누스
 		ENDSELECT
 		PRINTL ）
 	CASE IS < 4
-		PRINTL 섹터・안트리아
+		PRINTL 섹터ㆍ안트리아
 	CASE IS < 12
-		PRINTL 섹터・보티즈
+		PRINTL 섹터ㆍ보티즈
 	CASE 12
-		PRINTL 섹터・카리나 Ｂ１Ｆ
+		PRINTL 섹터ㆍ카리나 Ｂ１Ｆ
 	CASE 13
-		PRINTL 섹터・카리나 １Ｆ
+		PRINTL 섹터ㆍ카리나 １Ｆ
 	CASE 14
-		PRINT 섹터・카리나 ２Ｆ
+		PRINT 섹터ㆍ카리나 ２Ｆ
 		SELECTCASE STRFLAG_NUM_D("카리나숨겨진장소")
 			CASE 0
 				PRINTL 
@@ -56,7 +56,7 @@ SELECTCASE FLAG:현M
 				PRINTL （숨겨진 장소Ｂ）
 		ENDSELECT
 	CASE 15
-		PRINT 섹터・카리나 ３Ｆ
+		PRINT 섹터ㆍ카리나 ３Ｆ
 		SELECTCASE STRFLAG_NUM_D("카리나숨겨진장소")
 			CASE 0
 				PRINTL 
@@ -66,9 +66,9 @@ SELECTCASE FLAG:현M
 				PRINTL （숨겨진 장소Ｂ）
 		ENDSELECT
 	CASE 16
-		PRINTL 섹터・카리나 ４Ｆ
+		PRINTL 섹터ㆍ카리나 ４Ｆ
 	CASE IS < 32
-		PRINTL 섹터・델파이너스
+		PRINTL 섹터ㆍ델파이너스
 ENDSELECT
 
 
@@ -153,13 +153,13 @@ SELECTCASE FLAG:현M
 	CASE 0
 		RESULTS = 조사선
 	CASE IS < 4
-		RESULTS = 섹터・안트리아
+		RESULTS = 섹터ㆍ안트리아
 	CASE IS < 12
-		RESULTS = 섹터・보티즈
+		RESULTS = 섹터ㆍ보티즈
 	CASE IS < 17
-		RESULTS = 섹터・카리나
+		RESULTS = 섹터ㆍ카리나
 	CASE IS < 32
-		RESULTS = 섹터・델파이너스
+		RESULTS = 섹터ㆍ델파이너스
 
 ENDSELECT
 

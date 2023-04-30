@@ -183,18 +183,18 @@ SELECTCASE ARG
 ENDSELECT
 
 @발동자조건_4164 , ARG
-IF CHECK_SKILL(ARG, [[스킬:메・디아]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아]]
+IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF CHECK_SKILL(ARG, [[스킬:메・디아라마]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라마]]
+IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라마]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라마]]
 	SIF RESULT
 		RETURN 1
 ENDIF
-IF CHECK_SKILL(ARG, [[스킬:메・디아라한]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라한]]
+IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라한]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라한]]
 	SIF RESULT
 		RETURN 1
 ENDIF
@@ -209,18 +209,18 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1, 2
-		IF CHECK_SKILL(ARG, [[스킬:메・디아]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아]]
+		IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF CHECK_SKILL(ARG, [[스킬:메・디아라마]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라마]]
+		IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라마]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라마]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF CHECK_SKILL(ARG, [[스킬:메・디아라한]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라한]]
+		IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라한]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라한]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

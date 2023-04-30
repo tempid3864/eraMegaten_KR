@@ -435,7 +435,7 @@ RETURN 0
 ;とくにHP600미만からは、마하아쿠에스はあんまり連打しないように調整されてる마하아쿠에스が행동횟수に関わらず出てくるので注意
 ;
 ;デバッグの感触だと、火약점は割と致命的というか、COOP連打しやすい部類にはいるんで、脆さが눈立つ
-;Lv20強から、엘프・유키죠로・운디네が作れるんでそこまでいけば割と楽勝感
+;Lv20強から、엘프ㆍ유키죠로ㆍ운디네が作れるんでそこまでいけば割と楽勝感
 @SET_ACTION_레이디, ARG
 #DIM LCOUNT
 #LOCALSIZE 300
@@ -471,8 +471,8 @@ ELSEIF CFLAG:ARG:행동한횟수 == 2
 		CALL CHECK_ACTIONABLE, ARG,
 		SIF RESULT == 0
 			GOTO DECIDE_ACTION
-		CFLAG:ARG:입력행동 = [[스킬:암흑마하・아쿠에스]]
-		CALL RANDOM_TARGET,ARG, [[스킬:암흑마하・아쿠에스]]
+		CFLAG:ARG:입력행동 = [[스킬:암흑마하ㆍ아쿠에스]]
+		CALL RANDOM_TARGET,ARG, [[스킬:암흑마하ㆍ아쿠에스]]
 		RETURN 0
 	ENDIF
 ENDIF

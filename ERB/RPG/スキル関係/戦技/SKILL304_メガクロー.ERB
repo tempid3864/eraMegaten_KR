@@ -3,9 +3,9 @@
 
 ;스킬명
 @SKILL_NAME_304,ARG
-;ファントムが使用する場合G・プラズマカッターに
+;ファントムが使用する場合Gㆍプラズマカッターに
 IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
-	RESULTS = G・플라즈마커터
+	RESULTS = Gㆍ플라즈마커터
 ELSE
 	RESULTS = 메가클로
 ENDIF
@@ -165,7 +165,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,304
 @SKILL_EXPLAIN_304
 IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
 	PRINTL 거대한 에너지 날을 발생시키는 플라즈마 커터를 회전시키면서 적 1체를 1～3회 공격
-	PRINTL 정식명칭「그랑・플라즈마 커터」。좌완 프라즈마・스테이크 3개 중 바깥쪽 스테이크를 뽑아 사용한다。
+	PRINTL 정식명칭「그랑ㆍ플라즈마 커터」。좌완 프라즈마ㆍ스테이크 3개 중 바깥쪽 스테이크를 뽑아 사용한다。
 ELSE
 	PRINTL 할퀴어 적 1체에 중 데미지。
 ENDIF

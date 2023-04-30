@@ -169,9 +169,9 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 	ENDIF
 NEXT
 IF ABL:ARG:가창기능 > 3
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중・회피율이 대폭 높아졌다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중ㆍ회피율이 대폭 높아졌다！
 ELSE
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중・회피율이 높아졌다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 명중ㆍ회피율이 높아졌다！
 ENDIF
 
 ;====================================================
@@ -190,24 +190,24 @@ ENDIF
 @SKILL_EXPLAIN_547
 ;ステータス画面からはこっち表示
 IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
-	PRINTL 미래를 붙잡는 아이들의 노래。아군의 명중・회피율을 상승시킨다。
+	PRINTL 미래를 붙잡는 아이들의 노래。아군의 명중ㆍ회피율을 상승시킨다。
 	PRINTL 가창기능에 따라 코스트가 저하되고、효과가 강화된다。
 	PRINTL 　
-	PRINTL 가창기능Lv10　 ：아군의 명중・회피율　４단계 상승
-	PRINTL 가창기능Lv7이상：아군의 명중・회피율　３단계 상승
-	PRINTL 가창기능Lv4이상：아군의 명중・회피율　２단계 상승
-	PRINTL 그　이외　　　 ：아군의 명중・회피율　１단계 상승
+	PRINTL 가창기능Lv10　 ：아군의 명중ㆍ회피율　４단계 상승
+	PRINTL 가창기능Lv7이상：아군의 명중ㆍ회피율　３단계 상승
+	PRINTL 가창기능Lv4이상：아군의 명중ㆍ회피율　２단계 상승
+	PRINTL 그　이외　　　 ：아군의 명중ㆍ회피율　１단계 상승
 ;戦闘中はこっち表示
 ELSE
 	PRINTL 미래를 붙잡는 아이들의 노래。
 	IF ABL:U:가창기능 == 10
-		PRINTL 아군의 명중・회피율을 ４단계 상승。
+		PRINTL 아군의 명중ㆍ회피율을 ４단계 상승。
 	ELSEIF ABL:U:가창기능 > 6
-		PRINTL 아군의 명중・회피율을 ３단계 상승。
+		PRINTL 아군의 명중ㆍ회피율을 ３단계 상승。
 	ELSEIF ABL:U:가창기능 > 3
-		PRINTL 아군의 명중・회피율을 ２단계 상승。
+		PRINTL 아군의 명중ㆍ회피율을 ２단계 상승。
 	ELSE
-		PRINTL 아군의 명중・회피율을 １단계 상승。
+		PRINTL 아군의 명중ㆍ회피율을 １단계 상승。
 	ENDIF
 ENDIF
 

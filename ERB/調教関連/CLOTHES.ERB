@@ -41,7 +41,7 @@ SIF ARG == -99
 ; IF ARG:1 < 0 || ARG:1 > 16
 IF ARG:1 < 0 || ARG:1 > 13
 	PRINTFORM %CALLNAME:ARG%번의 의상명을 참조할 때에 부정한 번호 {ARG:1}이 의상의 부위로서 지정되었습니다
-	PRINTFORM 의도하지 않은 동작・오류일 가능성이 높으므로 보고를 부탁드립니다
+	PRINTFORM 의도하지 않은 동작ㆍ오류일 가능성이 높으므로 보고를 부탁드립니다
 	RETURNF "잘못된 옷이름"
 ENDIF
 RETURNF ITEMNAME:(6000 + CFLAG:ARG:(GET_CLOTHESNAME(ARG:1)))
@@ -701,7 +701,7 @@ NEXT
 ;NEXT
 DRAWLINE
 PRINTL [999] 돌아간다
-;CUSTOMDRAWLINE ・
+;CUSTOMDRAWLINE ㆍ
 
 ;-------------------------------------------------
 ;착의の설정
@@ -902,7 +902,7 @@ GOTO START
 @EQUIP_CLOTHES
 ;착의상태によるソースを付加（손以外の１箇所ごとに노출+5、未함락時반감+5）
 ;EQUIPによる制御に변경するまで封印
-;予定・가슴と바기나が노출するような組み合わせだとさらに＋5
+;予定ㆍ가슴と바기나が노출するような組み合わせだとさらに＋5
 IF TEQUIP:다리노출 == -1		;다리노출
 	SOURCE:노출 += 3
 	SOURCE:반감 += 3 * !함락()	;함락時は반감を加算しない。以下同様
@@ -1100,7 +1100,7 @@ ELSE
 ENDIF
 
 @CLOTHES_SETTING_USUALLY
-;キャラリストを표시・選択
+;キャラリストを표시ㆍ選択
 CALL INPUT_CHARA_LIST("착의 설정을 할 캐릭터를 선택해 주세요","CASTING_CLOTHES_SETTING_USUALLY")
 SIF RESULT == 1000
 	RETURN 0

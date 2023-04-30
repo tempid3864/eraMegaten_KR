@@ -73,10 +73,10 @@ SELECTCASE FLAG:현M
 	;ダイダロス
 	CASE IS < 8
 		RETURN CLASS_NUM_COMMON("中級")
-	;ヴァルハラ・ビエン・マズルカ
+	;ヴァルハラㆍビエンㆍマズルカ
 	CASE IS < 31
 		RETURN CLASS_NUM_COMMON("上級")
-	;腐海・アンフィニ
+	;腐海ㆍアンフィニ
 	CASE IS < 54
 		RETURN CLASS_NUM_COMMON("最上級")
 ENDSELECT
@@ -89,10 +89,10 @@ SELECTCASE FLAG:현M
 	;ダイダロス
 	CASE IS < 8
 		RETURN ENEMY_NUM_COMMON("中級", ARG)
-	;ヴァルハラ・ビエン・マズルカ
+	;ヴァルハラㆍビエンㆍマズルカ
 	CASE IS < 31
 		RETURN ENEMY_NUM_COMMON("上級", ARG)
-	;腐海・アンフィニ
+	;腐海ㆍアンフィニ
 	CASE IS < 54
 		RETURN ENEMY_NUM_COMMON("最上級", ARG)
 ENDSELECT
@@ -249,7 +249,7 @@ SELECTCASE FLAG:현M
 			CASE IS < 75
 				RETURN [[キャラ:레기온]], 40+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가・라쟈]], 42+RAND:2*3
+				RETURN [[キャラ:나가ㆍ라쟈]], 42+RAND:2*3
 			CASE IS < 100
 				RETURN [[キャラ:카마조츠]], 40+RAND:2*3
 		ENDSELECT
@@ -267,7 +267,7 @@ SELECTCASE FLAG:현M
 			CASE IS < 75
 				RETURN [[キャラ:레기온]], 42+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가・라쟈]], 42+RAND:2*3
+				RETURN [[キャラ:나가ㆍ라쟈]], 42+RAND:2*3
 			CASE IS < 100
 				RETURN [[キャラ:카마조츠]], 42+RAND:2*3
 		ENDSELECT
@@ -285,7 +285,7 @@ SELECTCASE FLAG:현M
 			CASE IS < 75
 				RETURN [[キャラ:레기온]], 44+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가・라쟈]], 44+RAND:2*3
+				RETURN [[キャラ:나가ㆍ라쟈]], 44+RAND:2*3
 			CASE IS < 100
 				RETURN [[キャラ:베르세르크]], 45+RAND:2*3
 		ENDSELECT
@@ -364,8 +364,8 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬2 = [[스킬:지오다인]]
 			ABL:ARG:스킬3 = [[스킬:해피스텝]]
 			ABL:ARG:스킬4 = [[스킬:포즈무디]]
-			ABL:ARG:스킬5 = [[스킬:메・디아라한]]
-			ABL:ARG:스킬6 = [[스킬:메・디아라한]]
+			ABL:ARG:스킬5 = [[스킬:메ㆍ디아라한]]
+			ABL:ARG:스킬6 = [[스킬:메ㆍ디아라한]]
 			ABL:ARG:스킬7 = [[스킬:메기도라온]]
 			ABL:ARG:스킬8 = [[스킬:메기도라온]]
 		CASE [[キャラ:좀비쨩]]
@@ -378,8 +378,8 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬7 = [[스킬:삼할의활천]]
 			ABL:ARG:스킬8 = [[스킬:이악물기]]
 		CASE [[キャラ:하피]]
-			ABL:ARG:스킬1 = [[스킬:마하・잔다인]]
-			ABL:ARG:스킬2 = [[스킬:마하・잔다인]]
+			ABL:ARG:스킬1 = [[스킬:마하ㆍ잔다인]]
+			ABL:ARG:스킬2 = [[스킬:마하ㆍ잔다인]]
 			ABL:ARG:스킬3 = [[스킬:선풍진]]
 			ABL:ARG:스킬4 = [[스킬:선풍진]]
 			ABL:ARG:스킬5 = [[스킬:악셀클로]]
@@ -387,8 +387,8 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬7 = [[스킬:천우의춤]]
 			ABL:ARG:스킬8 = [[스킬:천우의춤]]
 		CASE [[キャラ:아프사라스]]
-			ABL:ARG:스킬1 = [[스킬:마하・지오다인]]
-			ABL:ARG:스킬2 = [[스킬:마하・지오다인]]
+			ABL:ARG:스킬1 = [[스킬:마하ㆍ지오다인]]
+			ABL:ARG:스킬2 = [[스킬:마하ㆍ지오다인]]
 			ABL:ARG:스킬3 = [[스킬:아쿠아리타이드]]
 			ABL:ARG:스킬4 = [[스킬:아쿠아리타이드]]
 			ABL:ARG:스킬5 = [[스킬:텐타라후]]
@@ -448,7 +448,7 @@ ABL:LOCAL:스킬4 = [[스킬:포효]]
 ABL:LOCAL:스킬5 = [[스킬:기간피스트]]
 ABL:LOCAL:스킬6 = [[스킬:도발]]
 ABL:LOCAL:스킬7 = [[스킬:메가톤프레스]]
-ABL:LOCAL:스킬8 = [[스킬:마하・지온가]]
+ABL:LOCAL:스킬8 = [[스킬:마하ㆍ지온가]]
 
 CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
@@ -473,7 +473,7 @@ BASE:LOCAL:중력 = 50
 BASE:LOCAL:핵열 = 50
 ABL:LOCAL:스킬4 = [[스킬:마하에이하]]
 ABL:LOCAL:스킬5 = [[스킬:자장가]]
-ABL:LOCAL:스킬6 = [[스킬:마하・라기다인]]
+ABL:LOCAL:스킬6 = [[스킬:마하ㆍ라기다인]]
 ABL:LOCAL:스킬7 = [[스킬:마구날뛰기]]
 ABL:LOCAL:스킬7 = [[스킬:ＳＴＯＮＥ]]
 ABL:LOCAL:추가효과명중률 = 30
@@ -495,7 +495,7 @@ IF CFLAG:ARG:１more플래그 > 0
 		CASE IS < 40
 			CFLAG:ARG:입력행동 = [[스킬:마하에이하]]
 		CASE IS < 80
-			CFLAG:ARG:입력행동 = [[스킬:마하・라기다인]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기다인]]
 		CASEELSE
 			CFLAG:ARG:입력행동 = [[스킬:ＳＴＯＮＥ]]
 	ENDSELECT
@@ -508,7 +508,7 @@ ELSEIF CFLAG:ARG:행동한횟수 < 2
 		CASE IS < 45
 			CFLAG:ARG:입력행동 = [[스킬:마하에이하]]
 		CASE IS < 60
-			CFLAG:ARG:입력행동 = [[스킬:마하・라기다인]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기다인]]
 		CASEELSE
 			CFLAG:ARG:입력행동 = [[스킬:ＳＴＯＮＥ]]
 	ENDSELECT
@@ -574,7 +574,7 @@ BASE:LOCAL:BIND = -80
 BASE:LOCAL:CLOSE = -100
 BASE:LOCAL:핵열 = 150
 ABL:LOCAL:스킬4 = [[스킬:마하에이하]]
-ABL:LOCAL:스킬5 = [[스킬:데・카쟈]]
+ABL:LOCAL:스킬5 = [[스킬:데ㆍ카쟈]]
 ABL:LOCAL:스킬6 = [[스킬:아카샤아츠]]
 ABL:LOCAL:스킬7 = [[스킬:부흐다인]]
 ABL:LOCAL:스킬8 = [[스킬:마린카린]]
@@ -585,7 +585,7 @@ CALL HEALTH_CHARA, LOCAL
 ;로키の사고패턴
 ;1.PTメンバーの빙결相性によって니플헤임を메기도라온にうちかえてくる
 ;2.만능공격にたいして메기도라온カウンター
-;3.火속성・핵열속성を食らった場合、一時的に만능が弱点に
+;3.火속성ㆍ핵열속성を食らった場合、一時的に만능が弱点に
 ;4.3の상태の時はカウンターをしてこない
 ;------------------------------
 @SET_ACTION_LOKI, ARG
@@ -644,7 +644,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 			CFLAG:ARG:입력행동 = [[스킬:마하에이하]]
 		CASE IS < 80
 			IF CFLAG:ARG:공격강화 + CFLAG:ARG:방어강화 + CFLAG:ARG:명중강화 < -16
-				CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+				CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			ELSE
 				CFLAG:ARG:입력행동 = [[스킬:마린카린]]
 			ENDIF
@@ -730,13 +730,13 @@ CALL HEALTH_CHARA, LOCAL
 
 ;------------------------------
 ;헤카테の사고패턴
-;만월의여왕・마하무드온・マハ그라다인・그라다인
-;부흐다인・마그다인・마카라칸・마린카린・시바브
-;マハ마카카쟈・デカジャ・デクンダ
+;만월의여왕ㆍ마하무드온ㆍマハ그라다인ㆍ그라다인
+;부흐다인ㆍ마그다인ㆍ마카라칸ㆍ마린카린ㆍ시바브
+;マハ마카카쟈ㆍデカジャㆍデクンダ
 
-;1.相性学習型で、그라다인・부흐다인・마그다인・마린카린・시바브・마하무드온は
+;1.相性学習型で、그라다인ㆍ부흐다인ㆍ마그다인ㆍ마린카린ㆍ시바브ㆍ마하무드온は
 ;  無効以下だと把握した場合は避け、弱点だと優先して撃ってくる
-;　また、無効以下で판정しなおす際に만월의여왕・マハ마카카쟈のいずれかを使ってくる可能性が生まれる
+;　また、無効以下で판정しなおす際に만월의여왕ㆍマハ마카카쟈のいずれかを使ってくる可能性が生まれる
 ;
 ;2.HP30%未満で행동횟수3回に
 ;3.カジャンダは3回を超えると剥がしてくる
@@ -745,7 +745,7 @@ CALL HEALTH_CHARA, LOCAL
 ;
 ;TIPS
 ;新月なら만월의여왕の위력がかなり控えめになるので、範囲공격が弱まり、공격がかなりぬるくなるはず
-;마하・마카카쟈に対してデカジャあるいはンダで上回ってれば、공격を凌ぐのはそこまで大変じゃない…はず
+;마하ㆍ마카카쟈に対してデカジャあるいはンダで上回ってれば、공격を凌ぐのはそこまで大変じゃない…はず
 ;ラトス像を使ってれば、わりと低耐久な感じになるので、一気に押しきれるはずたぶん
 ;
 ;포효＋타룬다1回でデクンダ誘発で、행동횟수を1回潰すことも可能
@@ -767,7 +767,7 @@ IF CFLAG:ARG:１more플래그 > 0
 		CASE IS < 50
 			CFLAG:ARG:입력행동 = 9999
 		CASE IS < 80
-			CFLAG:ARG:입력행동 = [[스킬:마하・마카카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ마카카쟈]]
 			SIF CFLAG:ARG:마법위력강화 == 32
 				CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 		CASEELSE
@@ -780,7 +780,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 0
 		CASE IS < 80
 			CFLAG:ARG:입력행동 = [[스킬:마카라칸]]
 		CASEELSE
-			CFLAG:ARG:입력행동 = [[스킬:마하・마카카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ마카카쟈]]
 			SIF CFLAG:ARG:마법위력강화 == 32
 				CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 	ENDSELECT
@@ -792,7 +792,7 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 			CASE IS < 15
 				CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 			CASE IS < 40
-				CFLAG:ARG:입력행동 = [[스킬:마하・그라다인]]
+				CFLAG:ARG:입력행동 = [[스킬:마하ㆍ그라다인]]
 			CASEELSE
 				CFLAG:ARG:입력행동 = 9999
 		ENDSELECT
@@ -802,7 +802,7 @@ ELSE
 		CASE IS < 30
 			CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 		CASE IS < 60
-			CFLAG:ARG:입력행동 = [[스킬:마하・그라다인]]
+			CFLAG:ARG:입력행동 = [[스킬:마하ㆍ그라다인]]
 		CASEELSE
 			CFLAG:ARG:입력행동 = 9999
 	ENDSELECT
@@ -829,7 +829,7 @@ WHILE CFLAG:ARG:입력행동 == 9999
 	IF GROUPMATCH(CHECK_WEAKNESS(MEMORIZE_WEAKNESS(ARG, LOCAL, AUTO_SPLIT("0/1/중력/빙결/지변/정신/신경/주살", "/", LOCAL:1))), 1000, 0, -1, 1)
 		SELECTCASE AUTO_SPLIT("0/1/중력/빙결/지변/정신/신경/주살", "/", LOCAL:8 == -1 ? LOCAL:1 # LOCAL:8)
 			CASE "중력"
-				CFLAG:ARG:입력행동 = [[스킬:마하・그라다인]]
+				CFLAG:ARG:입력행동 = [[스킬:마하ㆍ그라다인]]
 				CFLAG:ARG:타겟 = LOCAL < 4 ? 17 # 18
 			CASE "빙결"
 				CFLAG:ARG:입력행동 = [[스킬:부흐다인]]
@@ -852,7 +852,7 @@ WHILE CFLAG:ARG:입력행동 == 9999
 			IF RAND:100 < 20
 				CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 			ELSEIF RAND:100 < 50
-				CFLAG:ARG:입력행동 = [[스킬:마하・마카카쟈]]
+				CFLAG:ARG:입력행동 = [[스킬:마하ㆍ마카카쟈]]
 				SIF CFLAG:ARG:마법위력강화 == 32
 					CFLAG:ARG:입력행동 = [[스킬:만월의여왕]]
 			ENDIF
@@ -864,12 +864,12 @@ WEND
 FOR LOCAL:1, 0, 5
 	FOR LOCAL, 1, 7
 		IF POS(LOCAL) > 0 && CFLAG:POS(LOCAL):AUTO_SPLIT("명중강화/회피강화/마법위력강화/공격강화/방어강화", "/", LOCAL:1) > 8
-			CFLAG:ARG:입력행동 = [[스킬:데・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ카쟈]]
 			CFLAG:ARG:타겟 = -1
 		ENDIF
 	NEXT
 	IF CFLAG:ARG:AUTO_SPLIT("명중강화/회피강화/마법위력강화/공격강화/방어강화", "/", LOCAL:1) < -8
-		CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+		CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 		CFLAG:ARG:타겟 = -1
 	ENDIF
 NEXT
@@ -908,9 +908,9 @@ CALL HEALTH_CHARA, LOCAL
 
 ;------------------------------
 ;세트の사고패턴
-;질투의폭압・어게인스트페인・사막의바람・색즉시공
-;라스타캔디・랜더마이저・기합
-;(マハ)부흐・아기・マグ・지오・잔다인(9999)
+;질투의폭압ㆍ어게인스트페인ㆍ사막의바람ㆍ색즉시공
+;라스타캔디ㆍ랜더마이저ㆍ기합
+;(マハ)부흐ㆍ아기ㆍマグㆍ지오ㆍ잔다인(9999)
 ;
 ;元にしたのはアバチュ2版
 ;とはいえ、再現しきると隠しボスだけあってひどいことになるので
@@ -920,22 +920,22 @@ CALL HEALTH_CHARA, LOCAL
 ;専用스킬
 ;질투의폭압				위력が200～1000まで変動する만능전체 타룬다の効果が2重に掛かるので、ンダMAXで위력1/4になる
 ;						행동횟수の합계が12回を越えてるとき、1回目の行動がこれになる(カウントは撃ったらリセット)
-;어게인스트페인		위력500・クリティカル率보정60 스쿤다の効果が二重にかかるので、ンダMAXで명중률1/4になる
+;어게인스트페인		위력500ㆍクリティカル率보정60 스쿤다の効果が二重にかかるので、ンダMAXで명중률1/4になる
 ;사막의바람				데미지を与えつつ아군をＣＯＭＰに引っ込める。引っ込まない場合はCOOP
 ;
 ;主힘공격となる만능のうち上記２種は弱体をかけることで飛躍的に弱まるので기본的にはンダを維持して戦うことに
 ;また、デカジャも持ってないのでカジャも有効
-;ただし、ラスタ・란다で相殺を狙ってくるので更新も필요
+;ただし、ラスタㆍ란다で相殺を狙ってくるので更新も필요
 ;
 ;あとは原作通り５種ダイン＋색즉시공
 ;
 ;有効なのは
 ;行動なしで아군を復帰させられるＤＤＳ
-;壁系(1체魔法が多いのもあってかなり場持ちする)・札(부흐・지오・아기が弱点の악마は貼っておくとかなり違う)・마카라칸(ただし20%割るまで)
+;壁系(1체魔法が多いのもあってかなり場持ちする)ㆍ札(부흐ㆍ지오ㆍ아기が弱点の악마は貼っておくとかなり違う)ㆍ마카라칸(ただし20%割るまで)
 ;クリ対策に코칭
-;돌격의봉화・L랜더마이저・포효・포그브레스
+;돌격의봉화ㆍL랜더마이저ㆍ포효ㆍ포그브레스
 ;強힘な비구스킬(비구でCOOP取れるので)
-;암리타・Ｌ메시아라이저・메디아라한
+;암리타ㆍＬ메시아라이저ㆍ메디아라한
 ;------------------------------
 @SET_ACTION_SET, ARG
 #LOCALSIZE 5
@@ -988,7 +988,7 @@ ELSE
 	ENDSELECT
 ENDIF
 IF CFLAG:ARG:입력행동 == 9999
-	;랜더마이저・라스타캔디の추가판정
+	;랜더마이저ㆍ라스타캔디の추가판정
 	LOCAL:2 = 0
 	LOCAL:3 = 0
 	;반사フラグの取得
@@ -1013,15 +1013,15 @@ IF CFLAG:ARG:입력행동 == 9999
 		IF 현HP비율(ARG) < 50 && !RAND:5
 			SELECTCASE RAND:100
 				CASE IS < 20
-					CFLAG:ARG:입력행동 = [[스킬:마하・라기다인]]
+					CFLAG:ARG:입력행동 = [[스킬:마하ㆍ라기다인]]
 				CASE IS < 40
-					CFLAG:ARG:입력행동 = [[스킬:마하・부흐다인]]
+					CFLAG:ARG:입력행동 = [[스킬:마하ㆍ부흐다인]]
 				CASE IS < 60
-					CFLAG:ARG:입력행동 = [[스킬:마하・지오다인]]
+					CFLAG:ARG:입력행동 = [[스킬:마하ㆍ지오다인]]
 				CASE IS < 80
-					CFLAG:ARG:입력행동 = [[스킬:마하・잔다인]]
+					CFLAG:ARG:입력행동 = [[스킬:마하ㆍ잔다인]]
 				CASEELSE
-					CFLAG:ARG:입력행동 = [[스킬:마하・마그다인]]
+					CFLAG:ARG:입력행동 = [[스킬:마하ㆍ마그다인]]
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
@@ -1129,7 +1129,7 @@ SELECTCASE FLAG:현M
 	CASE 17 TO 25
 		RETURN [[キャラ:레기온]] , 6 + RAND:10 , CSVBASE([[キャラ:레기온]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 25 , 26
-		RETURN [[キャラ:나가・라쟈]] , 3 + RAND:10 , CSVBASE([[キャラ:나가・라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[キャラ:나가ㆍ라쟈]] , 3 + RAND:10 , CSVBASE([[キャラ:나가ㆍ라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 27 TO 31
 		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 32 TO 36

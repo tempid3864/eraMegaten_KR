@@ -81,7 +81,7 @@ ENDIF
 #LOCALSSIZE 5
 #LOCALSIZE 4
 ;真名解放時、複合属性
-;電撃・精神・水撃のうち、最も効果のある相性で攻撃
+;電撃ㆍ精神ㆍ水撃のうち、最も効果のある相性で攻撃
 IF SKILLGAGE_H_GET(ARG,3904)
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("전격")
@@ -238,7 +238,7 @@ IF SKILLGAGE_H_GET(ARG,3904)
 
 ;それ以外
 ELSE
-	;メ・ディアラハンと同じ処理
+	;メㆍディアラハンと同じ処理
 	IF ARG:1 == 19
 		LOCAL:1 = 1
 		LOCAL:2 = 7
@@ -266,18 +266,18 @@ ENDIF
 #LOCALSIZE 1
 IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
 	PRINTL 【통상시】
-	PRINTL 아군 전윈의 HP와、FLY・DYING・ORGY・HEAT이외의 상태이상을 회복한다。초저속 발동
+	PRINTL 아군 전윈의 HP와、FLYㆍDYINGㆍORGYㆍHEAT이외의 상태이상을 회복한다。초저속 발동
 	PRINTL 
 	PRINTL 【진명해방시】
-	PRINTL 적 전체에、『전격・정신・수격』복합、높은 크리티컬률 ３HIT 특대 데미지。초저속 발동
+	PRINTL 적 전체에、『전격ㆍ정신ㆍ수격』복합、높은 크리티컬률 ３HIT 특대 데미지。초저속 발동
 ELSE
 	;真名解放時
 	IF SKILLGAGE_H_GET(U,3904)
 		PRINTL 해방된 요정 여왕이 자신의 군세와 함께 적 전체를 유린한다
-		PRINTL 적 전체에、『전격・정신・수격』복합、높은 크리티컬률 ３HIT 특대 데미지。초저속 발동
+		PRINTL 적 전체에、『전격ㆍ정신ㆍ수격』복합、높은 크리티컬률 ３HIT 특대 데미지。초저속 발동
 	ELSE
 		PRINTL 소환된 요정이 아군 전원을 회복한다
-		PRINTL 아군 전윈의 HP와、FLY・DYING・ORGY・HEAT이외의 상태이상을 회복한다。초저속 발동
+		PRINTL 아군 전윈의 HP와、FLYㆍDYINGㆍORGYㆍHEAT이외의 상태이상을 회복한다。초저속 발동
 		PRINTL 진명해방 후에는 공격스킬이 된다
 	ENDIF
 ENDIF

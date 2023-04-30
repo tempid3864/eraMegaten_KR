@@ -804,12 +804,12 @@ IF FLAG:커스텀게임화면
 ELSE
 	PRINTFORML 명성：{FLAG:명성}　조교사명성：{FLAG:조교사명성}　조직공헌도：{FLAG:조직공헌도}　투기장명성：{FLAG:투기장명성}
 ENDIF
-;칭호・エン디무ング到達표시
+;칭호ㆍエン디무ング到達표시
 ;STRLENS NICKNAME:MASTER
 ;SIF FLAG:9 || RESULT > 0
 ;	CALL PRINT_MASTER_MEDAL
 ;-------------------------------------------------
-;能力確認の処理(1ページ눈・総合)
+;能力確認の処理(1ページ눈ㆍ総合)
 ;-------------------------------------------------
 ;옵션によって표시타입변경
 ;조교中での能力표시はこのページが표시される
@@ -1048,9 +1048,9 @@ IF !GETBIT(FLAG:스테이터스화면타입, LOCAL)
 ENDIF
 
 
-;1行눈に레벨・속성・페르소나相性(페르소나구사자限定)・解析度(악마限定)を표시
-;2行눈にHP・충성도を표시
-;3行눈にMP・ＥＸＰを표시
+;1行눈に레벨ㆍ속성ㆍ페르소나相性(페르소나구사자限定)ㆍ解析度(악마限定)を표시
+;2行눈にHPㆍ충성도を표시
+;3行눈にMPㆍＥＸＰを표시
 ;4行눈に通常공격の性能を표시
 CALL PRINT_BASE_STATUS, U
 IF FLAG:커스텀게임화면
@@ -1069,7 +1069,7 @@ ENDIF
 SIF ABL:U:추가효과 > 0
 	PRINTFORML 　　　　추가효과:%GET_STATE(ABL:U:추가효과), 6, LEFT%　추가효과상성:%GET_TYPE(ABL:U:추가효과상성)%
 
-;인간ならばここに총공격の性能と총공격력・총명중を2行つかって표시
+;인간ならばここに총공격の性能と총공격력ㆍ총명중を2行つかって표시
 IF EQUIP:U:총 > 0
 	DRAWLINE
 	SIF FLAG:커스텀게임화면
@@ -1293,7 +1293,7 @@ RETURN RESULT
 ;-------------------------------------------------
 ;主人かそれ以外かで표시타입변경
 ;@SHOW_INFO_PAGE_3
-;;1行눈に레벨・속성・페르소나相性(페르소나구사자限定)・解析度(악마限定)を표시
+;;1行눈に레벨ㆍ속성ㆍ페르소나相性(페르소나구사자限定)ㆍ解析度(악마限定)を표시
 ;CALL PRINT_BASE_STATUS, U
 ;DRAWLINE
 ;;2行눈以降に해설文표시
@@ -1308,7 +1308,7 @@ RETURN RESULT
 ;DRAWLINE
 @SHOW_INFO_PAGE_3
 #DIM IMG_TYPE = 1
-CALL PRINT_BASE_STATUS(U)	;1行눈に레벨・속성・페르소나相性(페르소나구사자限定)・解析度(악마限定)を표시
+CALL PRINT_BASE_STATUS(U)	;1行눈に레벨ㆍ속성ㆍ페르소나相性(페르소나구사자限定)ㆍ解析度(악마限定)を표시
 DRAWLINE
 
 ;화상표시
@@ -1374,9 +1374,9 @@ FOR LOCAL, 0, 20	;기본的にはCSTRの情報を표시。情報が入ってな�
 NEXT
 PRINTL 
 
-;外見・쓰리사이즈설정が有効
+;外見ㆍ쓰리사이즈설정が有効
 IF SETTING_IS_3SIZE()
-	;外見설정　설정していれば머리카락형태・머리카락색깔・눈동자색깔・피부색깔を표시
+	;外見설정　설정していれば머리카락형태ㆍ머리카락색깔ㆍ눈동자색깔ㆍ피부색깔を표시
 	CALL SHOW_APPEARANCE(U)
 	;신장と쓰리사이즈の표시。신장が설정されてれば표시あり
 	SIF BASE:U:신장 > 0
@@ -1432,7 +1432,7 @@ RETURN RESULT
 #DIM トップ , 10
 #LOCALSIZE 5
 
-;1行눈に레벨・속성・페르소나相性(페르소나구사자限定)・解析度(악마限定)を표시
+;1行눈に레벨ㆍ속성ㆍ페르소나相性(페르소나구사자限定)ㆍ解析度(악마限定)を표시
 CALL PRINT_BASE_STATUS, U
 IF FLAG:ＮＴＲ기능
 	IF 함락(U) || TALENT:U:ＮＴＲ
@@ -1536,7 +1536,7 @@ IF U == MASTER
 			CASE 21
 			CASE 22
 			CASE 23
-				PRINTL Ending No.023 (진・여신전생　데빌 서머너 엔딩 "The Devil Summoner")
+				PRINTL Ending No.023 (진ㆍ여신전생　데빌 서머너 엔딩 "The Devil Summoner")
 			CASE 24
 					;소울해커스 용으로 비워둠
 			CASE 25
@@ -1554,22 +1554,22 @@ IF U == MASTER
 			CASE 31
 				PRINTL Ending No.031 (페르소나 2 죄　성창기사단 하렘 엔딩 "Ehemann von Longinus")
 			CASE 32
-				PRINTL Ending No.032 (진・여신전생　NEUTRAL-END)
+				PRINTL Ending No.032 (진ㆍ여신전생　NEUTRAL-END)
 			CASE 33
-				PRINTL Ending No.033 (진・여신전생　LAW-END)
+				PRINTL Ending No.033 (진ㆍ여신전생　LAW-END)
 			CASE 34
-				PRINTL Ending No.034 (진・여신전생　CHAOS-END)
+				PRINTL Ending No.034 (진ㆍ여신전생　CHAOS-END)
 			CASE 35
-				PRINTL Ending No.035 (진・여신전생20XX　로우엔드　"Patentibus portis regnum Dei semper")
+				PRINTL Ending No.035 (진ㆍ여신전생20XX　로우엔드　"Patentibus portis regnum Dei semper")
 			CASE 36
-				PRINTL Ending No.036 (진・여신전생20XX　뉴트럴엔드　"Meipsum iudico")
+				PRINTL Ending No.036 (진ㆍ여신전생20XX　뉴트럴엔드　"Meipsum iudico")
 			CASE 37
-				PRINTL Ending No.037 (진・여신전생20XX　카오스엔드　"Iuro potentis diabolus Lucifer")
+				PRINTL Ending No.037 (진ㆍ여신전생20XX　카오스엔드　"Iuro potentis diabolus Lucifer")
 			CASE 38
-				PRINTL Ending No.038 (위전・여신전생　"신・성왕전설")
+				PRINTL Ending No.038 (위전ㆍ여신전생　"신ㆍ성왕전설")
 			CASE 39
 			CASE 40
-				PRINTL Ending No.040 (진・여신전생 데빌 콜로세움 20XX　True end　"The night before Armageddon")
+				PRINTL Ending No.040 (진ㆍ여신전생 데빌 콜로세움 20XX　True end　"The night before Armageddon")
 			CASE 41
 				PRINTL Ending No.041 (데빌 서바이버 ２　"Strength.")
 			CASE 42
@@ -1597,13 +1597,13 @@ IF U == MASTER
 			CASE 53
 				PRINTL Ending No.053 (유폐의 탑 편　엔딩 "Life goes on")
 			CASE 54
-				PRINTL Ending No.054 (진・여신전생 if...END)
+				PRINTL Ending No.054 (진ㆍ여신전생 if...END)
 			CASE 55
-				PRINTL Ending No.055 (진・여신전생 III Nocturne Maniacs Dark-END "혼돈왕")
+				PRINTL Ending No.055 (진ㆍ여신전생 III Nocturne Maniacs Dark-END "혼돈왕")
 			CASE 56
-				;마코토(페르소나5)・여신転生 IIIのMハゲルート枠
+				;마코토(페르소나5)ㆍ여신転生 IIIのMハゲルート枠
 			CASE 57
-				PRINTL Ending No.057 (메시아・프로젝트 TRUE-END“구세주여, 영원하라”)
+				PRINTL Ending No.057 (메시아ㆍ프로젝트 TRUE-END“구세주여, 영원하라”)
 			CASE 58
 				PRINTL Ending No.058 (히메미야 키쿠에　END　“Moo Moo Moo”)
 			CASE 59
@@ -2309,7 +2309,7 @@ RETURN RESULT
 PRINTL □ 경험
 LOCAL:1 = 0
 FOR LOCAL:0, 0, VARSIZE("EXP")
-	;CSVで定義してない物・표시したくない物・後に回したいものを除外
+	;CSVで定義してない物ㆍ표시したくない物ㆍ後に回したいものを除外
 	IF FLAG:커스텀게임화면
 		SIF EXP:U:(LOCAL:0) && !INRANGE(LOCAL:0, 71, 75) && EXPNAME:(LOCAL:0) != ""
 			PRINTFORM 　　[%EXPNAME:(LOCAL:0),14,LEFT%:{EXP:U:(LOCAL:0), 8}]\@ (LOCAL:1++ & 3) == 3 ? \n # \@
@@ -2381,7 +2381,7 @@ RETURN RESULT
 LOCAL:1 = 0
 PRINTL □ 구슬
 FOR LOCAL , 0 , VARSIZE("PALAM")
-	;CSVで定義してない物・표시したくない物・後に回したいものを除外
+	;CSVで定義してない物ㆍ표시したくない物ㆍ後に回したいものを除外
 	SIF PALAMNAME:LOCAL != ""
 		PRINTFORM 　%PALAMNAME:LOCAL%의 구슬:{JUEL:U:LOCAL , 7}\@ (LOCAL:1++ & 3) == 3 ? \n # \@
 NEXT
@@ -2472,7 +2472,7 @@ RETURN RESULT
 ;============================================================================
 @PRINT_ALIGNMENT, ARG, ARG:1=0, ARG:2=0
 #LOCALSIZE 1
-;대상キャラのLD・LC속성を표시する。
+;대상キャラのLDㆍLC속성を표시する。
 LOCAL = GETCOLOR()	;현재의色を退避しておく
 IF ARG:2 != 2
 	SETCOLOR ALICOLOR(ABL:ARG:속성LD)

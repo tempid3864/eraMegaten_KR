@@ -25,7 +25,7 @@ RETURN 200
 
 ;　위력
 @SKILL_POWER_刺し穿つ刺棘の槍, ARG
-SELECTCASE SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"))
+SELECTCASE SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"))
 	CASE IS > 3
 		RETURN 640
 	CASE IS > 1
@@ -172,7 +172,7 @@ ENDIF
 #DIM SKILL_NUM
 
 CALL ATTACK_SINGLE,ARG,POS(ARG:1),SKILL_NUM;	単体攻撃
-CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),0
+CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),0
 
 ;====================================================
 ;실행내용 여기까지
@@ -194,7 +194,7 @@ PRINTL 　추가로 찔린 자의 체내를 사방팔방 가시투성이로 만�
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_刺し穿つ刺棘の槍,ARG
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) > 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) > 0
 	RETURN 1
 RETURN 0
 

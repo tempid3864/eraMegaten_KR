@@ -153,23 +153,23 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		CFLAG:POS(LOCAL):회피강화 = MAX(-16, CFLAG:POS(LOCAL):회피강화 - 8)
 		CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 8)
 	ELSEIF ABL:ARG:가창기능 > 5
-		;防御・魔法効果2段階低下/回避1段階低下
+		;防御ㆍ魔法効果2段階低下/回避1段階低下
 		CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 8)
 		CFLAG:POS(LOCAL):회피강화 = MAX(-16, CFLAG:POS(LOCAL):회피강화 - 4)
 		CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 8)
 	ELSE
-		;防御・魔法効果1段階低下
+		;防御ㆍ魔法効果1段階低下
 		CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 4)
 		CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 4)
 	ENDIF
 NEXT
 IF ABL:ARG:가창기능 == 10
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력・명중률・마법효과를 대폭 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력ㆍ명중률ㆍ마법효과를 대폭 낮췄다！
 ELSEIF ABL:ARG:가창기능 > 5
-	PRINTFORML \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력・마법효과를 대폭 낮췄다！
+	PRINTFORML \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력ㆍ마법효과를 대폭 낮췄다！
 	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 회피율을 낮췄다！
 ELSE
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력・마법효과를 낮췄다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력ㆍ마법효과를 낮췄다！
 ENDIF
 
 ;====================================================
@@ -188,23 +188,23 @@ ENDIF
 @SKILL_EXPLAIN_548
 ;ステータス画面からはこっち表示
 IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
-	PRINTL 감정을 해방해、어둠을 때려눕히는 싸움의 노래。적의 방어력・마법효과를 낮춘다。
+	PRINTL 감정을 해방해、어둠을 때려눕히는 싸움의 노래。적의 방어력ㆍ마법효과를 낮춘다。
 	PRINTL 가창기능에 따라 코스트가 저하되고、효과가 강화되며、회피율 저하가 추가된다。
 	PRINTL 　
-	PRINTL 가창기능Lv10　 ：적의 방어력・회피율・마법효과　２단계 저하
-	PRINTL 가창기능Lv6이상：적의 방어력・마법효과　　　　　２단계 저하
+	PRINTL 가창기능Lv10　 ：적의 방어력ㆍ회피율ㆍ마법효과　２단계 저하
+	PRINTL 가창기능Lv6이상：적의 방어력ㆍ마법효과　　　　　２단계 저하
 	PRINTL 　　　　　　　　 적의 회피율　　　　　　　　　　１단계 저하
-	PRINTL 그　이외　　　 ：적의 방어력・마법효과　　　　　１단계 저하
+	PRINTL 그　이외　　　 ：적의 방어력ㆍ마법효과　　　　　１단계 저하
 ;戦闘中はこっち表示
 ELSE
 	PRINTL 감정을 해방해、어둠을 때려눕히는 싸움의 노래。
 	IF ABL:U:가창기능 == 10
-		PRINTL 적의 방어력・회피율・마법효과를 ２단계 저하。
+		PRINTL 적의 방어력ㆍ회피율ㆍ마법효과를 ２단계 저하。
 	ELSEIF ABL:U:가창기능 > 5
-		PRINTL 적의 방어력・마법효과를 ２단계 저하。
+		PRINTL 적의 방어력ㆍ마법효과를 ２단계 저하。
 		PRINTL 적의 회피율　　　　　을１단계 저하。
 	ELSE
-		PRINTL 적의 방어력・마법효과를 １단계 저하。
+		PRINTL 적의 방어력ㆍ마법효과를 １단계 저하。
 	ENDIF
 ENDIF
 

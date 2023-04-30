@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB302.ERB
-;	Facility	:회화타입：女・若者の会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：女ㆍ若者の会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -10,27 +10,27 @@
 ;	Edit	Date			Author					Reason
 ;	001		20XX/XX/XX		----					新規作成
 ;	002		2011/01/10		Ｎ鳥					基本処理をTALK_COMMONに一元化し、メッセージを口上呼び出し用関数に移植
-;	003		2011/06/11		元248					ムフフ展開の実装、文章の整理・増補
+;	003		2011/06/11		元248					ムフフ展開の実装、文章の整理ㆍ増補
 ;	004		2012/11/04		ネトリス				CASE 4:取り付く島もなし一ヶ所、5:交渉次第二ヶ所、6:一発おｋ二ヶ所、16:交渉成功一ヶ所、26:交渉成功一ヶ所、36:交渉成功一ヶ所
 ;														40:異性との性交渉を要求一ヶ所、41:異性を宛がってもらった時の反応二ヶ所、46:満足一ヶ所、62:仲魔になる一ヶ所、66～75:ＯＯをくれる二ヶ所
-;														79:同じ仲魔がいる場合二ヶ所、88:ヤらせてもらう・交渉が成功した場合二ヶ所に加筆
+;														79:同じ仲魔がいる場合二ヶ所、88:ヤらせてもらうㆍ交渉が成功した場合二ヶ所に加筆
 ;	005		2012/11/15		ネトリス				CASE 41:異性を宛がってもらった時の反応１ヶ所、62:仲魔になる１ヶ所に加筆
 ;													会話時挨拶:CASE 1の選択肢に『ヤリたいから』を追加
 ;	006		2013/01/24		ネトリス				CASE 5:交渉次第、6:一発おｋ、41:異性を宛がってもらった時の反応、46:満足、53:満足し、仲魔になる、54:満足し、アイテムをくれる、62:仲魔になる、
-;														64:ＣＯＭＰの空きが無い場合、66:お金をくれる、79:同じ仲魔がいる場合、88:ヤらせてもらう・交渉が成功した場合に加筆
-;	007		2013/03/12		ネトリス				CASE 5:交渉次第、46:満足、53:満足し、仲魔になる、62:仲魔になる、88:ヤらせてもらう・交渉が成功した場合に加筆
+;														64:ＣＯＭＰの空きが無い場合、66:お金をくれる、79:同じ仲魔がいる場合、88:ヤらせてもらうㆍ交渉が成功した場合に加筆
+;	007		2013/03/12		ネトリス				CASE 5:交渉次第、46:満足、53:満足し、仲魔になる、62:仲魔になる、88:ヤらせてもらうㆍ交渉が成功した場合に加筆
 ;	008		2019/08/28		空気					デビルチェンバー使用中の挙動を修正。また、DDM使用時は容量いっぱいでも仲魔になって自宅ストレージに送るように。運がいいほど会話失敗しやすくなっていたのを修正
 ;	009		2022/07/10		しめじ					命乞い分岐関係を追記（CASE 68～CASE 75、CASE 91～CASE 93）。
 ;													大体は口上内に元々あった文章を流用させていただいています。
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;=====================================================================
-;口調タイプ：女・若者の汎用口上＋会話用ファイルです
+;口調タイプ：女ㆍ若者の汎用口上＋会話用ファイルです
 ;=====================================================================
 @KOJO_TALK_PUB304,ARG,ARG:1
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 	IF RAND:2 == 0
 		PRINTFORMW 「……!」
 		PRINTFORMW 「거기 너, 운명이라는 걸 믿어?」
@@ -161,7 +161,7 @@ SELECTCASE ARG:1
 			SIF TALENT:PLAYER:크고아름다움
 				PRINTFORML 「그래도 당신이라면…%조사처리(CSTR:ARG:일인칭,"를")% 채워 줄 수 있을까나?」
 		ENDIF
-		GOTO ヤらせてもらう・交渉が成功した場合行為中
+		GOTO ヤらせてもらうㆍ交渉が成功した場合行為中
 	CASE 7
 		; 7-9:交渉目的：やらせてくれと言った時の反応
 		; 7:取り付く島もなし
@@ -667,7 +667,7 @@ SELECTCASE ARG:1
 								PRINTFORML 「%CSTR:ARG:11%、%STR:(ABL:ARG:종족)% %CALLNAME:ARG%」
 								PRINTFORMW 「앞으로 잘 부탁해」
 								PRINTFORML 
-								PRINTFORMW 「그・리・고、아까의 일…못잊겠으면、다시 생각 해줄수도 있어%ハート()%」
+								PRINTFORMW 「그ㆍ리ㆍ고、아까의 일…못잊겠으면、다시 생각 해줄수도 있어%ハート()%」
 								PRINTFORMW 「랄～까♪　꺄하하핫」
 								PRINTFORML 
 						ENDSELECT
@@ -801,7 +801,7 @@ SELECTCASE ARG:1
 		;友好度が高い
 		PRINTFORML 「섭섭하지만……또 봐」
 	CASE 88
-		;88:ヤらせてもらう・交渉が成功した場合
+		;88:ヤらせてもらうㆍ交渉が成功した場合
 		IF FLAG:교섭목적 > 3
 			IF TALENT:ARG:처녀
 				PRINTFORML 
@@ -829,7 +829,7 @@ SELECTCASE ARG:1
 						PRINTFORML 
 					CASE 1
 						PRINTFORML 
-						PRINTFORMW 「후후～훗、고・마・워・요♪」
+						PRINTFORMW 「후후～훗、고ㆍ마ㆍ워ㆍ요♪」
 						PRINTFORMW 「그렇다면……」
 						PRINTFORML 
 						PRINTFORMW 「즐겨볼까%ハート()%」
@@ -845,7 +845,7 @@ SELECTCASE ARG:1
 		ENDIF
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
-		$ヤらせてもらう・交渉が成功した場合行為中
+		$ヤらせてもらうㆍ交渉が成功した場合行為中
 		;처녀
 		IF TALENT:ARG:처녀
 			SELECTCASE RAND:3
@@ -905,7 +905,7 @@ SELECTCASE ARG:1
 			ENDSELECT
 		ENDIF
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90
@@ -938,7 +938,7 @@ SELECTCASE ARG:1
 			;何か貰う
 			CASE 50 TO 74
 				PRINTFORML 
-				PRINTFORMW 「고・마・워♪」
+				PRINTFORMW 「고ㆍ마ㆍ워♪」
 				PRINTFORMW 「괜찮다면 이거 줄께。」
 				PRINTFORML 
 				RETURN 0, 2
@@ -2361,7 +2361,7 @@ IF LOCAL < 5
 	IF TALENT:PLAYER:남자 == 1 && TALENT:PLAYER:오토코노코 == 0
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW 「후아……앙……아아, 좋아……네 악마, 너무 딱딱해서 갈것 같아……」
 		PRINTFORML 쾌락지옥에 신음하는 %CALLNAME:PLAYER%의 괴로운 얼굴을%조사처리(CALLNAME:ARG,"는")% 여유 가득한 미소로 바라보며
 		PRINTFORMW 엉덩이를 움직일 때마다 달콤한 신음소리를 내뱉는다
@@ -2375,7 +2375,7 @@ IF LOCAL < 5
 	ELSEIF TALENT:PLAYER:후타나리 == 1
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW %CALLNAME:PLAYER%의 유두를 농락하며, %조사처리(CALLNAME:ARG,"는")% 즐겁게 웃었다.
 		PRINTFORMW 「좋아……네 악마, 너무 딱딱해서 갈것 같아……」
 		PRINTFORMW 「보지도 흠뻑 젖어있고, 흥분했나봐?」
@@ -2383,7 +2383,7 @@ IF LOCAL < 5
 	ELSEIF TALENT:PLAYER:오토코노코 == 1
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW %CALLNAME:PLAYER%의 얼빠진 얼굴을 %조사처리(CALLNAME:ARG,"는")% 내려보며, 얼어붙을 것 같은 미소를 띄었다.
 		PRINTFORMW 「남자 주제에, 꽤 별난 취미를 가졌네, 당신」
 		PRINTFORMW 「쓸데없이 여자같은 소릴내고……조금 의외인걸」

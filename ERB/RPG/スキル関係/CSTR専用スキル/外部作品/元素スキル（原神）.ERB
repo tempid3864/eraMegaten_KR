@@ -12,7 +12,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]]) && SKILLGAGE_H_GET(ARG,元素スキル継続時間) > 0
 		RESULTS = 뇌벌 악요의 눈　연계공격
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
-	RESULTS = 초월・악요개안
+	RESULTS = 초월ㆍ악요개안
 ELSE
 	RESULTS = 원소스킬（원신）
 ENDIF
@@ -348,7 +348,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 	CALL SKILLGAGE_D_SET,ARG,元素スキル継続時間,4
 	CFLAG:ARG:명중강화 = MIN(32, CFLAG:ARG:명중강화 + 8)
 	CFLAG:ARG:회피강화 = MIN(32, CFLAG:ARG:회피강화 + 8)
-	PRINTFORML %CALLNAME:ARG% の命中・回避が大幅にアップ！
+	PRINTFORML %CALLNAME:ARG% の命中ㆍ回避が大幅にアップ！
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 	;反撃行動中は反撃するだけ。
 	IF FLAG:카운터중 == 1
@@ -360,7 +360,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 		CALL SKILLGAGE_D_SET,ARG,元素スキル継続時間,5
 		CFLAG:ARG:방어강화 = MIN(32, CFLAG:ARG:방어강화 + 8)
 		CFLAG:ARG:마법효과강화 = MIN(32, CFLAG:ARG:마법효과강화 + 8)
-		PRINTFORML %CALLNAME:ARG% の防御力・魔法効果が大幅にアップ！
+		PRINTFORML %CALLNAME:ARG% の防御力ㆍ魔法効果が大幅にアップ！
 	ENDIF
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
 	;トリガー追撃中は攻撃するだけ
@@ -389,7 +389,7 @@ ENDIF
 @SKILL_EXPLAIN_元素スキル（原神）,ARG
 IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
 	PRINTL 元素スキル『高天の歌』
-	PRINTL 적 1체에 衝撃・疾風の複合属性で中威力の物理攻撃を１回行い、自分の命中力・回避力を２段階上げる。
+	PRINTL 적 1체에 衝撃ㆍ疾風の複合属性で中威力の物理攻撃を１回行い、自分の命中力ㆍ回避力を２段階上げる。
 	PRINT 追加効果：中確率で転倒　
 	SETCOLOR 0x33ffcc
 		PRINTL クールタイム：３ターン。
@@ -399,8 +399,8 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
 	PRINTL 風神　奇妙なバルバトスの元素スキル（CSTR専用）
 ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
 	PRINTL 元素スキル『地心』
-	PRINTL 적 1체에 地変・万能の複合属性で中威力の物理攻撃を１回い、自分の防御力・魔法効果を２段階上げる。
-	PRINTL また、４ターン、味方の誰かが攻撃を受けた際に、地変・万能の複合極小威力物理で反撃する『玉璋シールド』を得る。
+	PRINTL 적 1체에 地変ㆍ万能の複合属性で中威力の物理攻撃を１回い、自分の防御力ㆍ魔法効果を２段階上げる。
+	PRINTL また、４ターン、味方の誰かが攻撃を受けた際に、地変ㆍ万能の複合極小威力物理で反撃する『玉璋シールド』を得る。
 	SETCOLOR 0x33ffcc
 		PRINTL クールタイム：４ターン。
 	RESETCOLOR
@@ -408,14 +408,14 @@ ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
 	PRINTL 大地の至るところにある岩元素を積み上げ、岩柱を生成する。
 	PRINTL 岩神　奇妙なモラクスの元素スキル（CSTR専用）
 ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바알]]
-	PRINTL 元素スキル『神変・悪曜開眼』
-	PRINTL 적 1체에 電撃・万能の複合属性で中威力の物理攻撃を１回行い、感電を与え、『雷罰悪曜の眼』状態に入る。
+	PRINTL 元素スキル『神変ㆍ悪曜開眼』
+	PRINTL 적 1체에 電撃ㆍ万能の複合属性で中威力の物理攻撃を１回行い、感電を与え、『雷罰悪曜の眼』状態に入る。
 	SETCOLOR 0x33ffcc
 		PRINTL クールタイム：２ターン。
 	RESETCOLOR
 	PRINTL 
 	PRINTL 『雷罰悪曜の眼』
-	PRINTL ４ターン、自分・仲間の攻撃に対し、電撃・万能の複合属性で小威力の物理追撃を行う。
+	PRINTL ４ターン、自分ㆍ仲間の攻撃に対し、電撃ㆍ万能の複合属性で小威力の物理追撃を行う。
 	PRINTL この状態にある間、自分を含む全ての『元素爆発』の威力が増大する。
 	PRINTL 
 	PRINTL 浄土の一角を展開し、凶星の手眼を操り、眷属に加護を与え、敵に雷罰を下す。
@@ -453,16 +453,16 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 		PRINTFORML 高天の歌　クールタイム：{SKILLGAGE_D_GET(ARG,元素スキル継続時間)}턴
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 	SIF SKILLGAGE_D_GET(ARG,元素スキル継続時間) > 0
-		PRINTFORML 地心　クールタイム・効果時間：{SKILLGAGE_D_GET(ARG,元素スキル継続時間)}턴
+		PRINTFORML 地心　クールタイムㆍ効果時間：{SKILLGAGE_D_GET(ARG,元素スキル継続時間)}턴
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
 	IF SKILLGAGE_D_GET(ARG,元素スキル継続時間) == 4
-		PRINTFORML 神変・悪曜開眼　クールタイム：2ターン　効果時間：4ターン
+		PRINTFORML 神変ㆍ悪曜開眼　クールタイム：2ターン　効果時間：4ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素スキル継続時間) == 3
-		PRINTFORML 神変・悪曜開眼　クールタイム：1ターン　効果時間：3ターン
+		PRINTFORML 神変ㆍ悪曜開眼　クールタイム：1ターン　効果時間：3ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素スキル継続時間) == 2
-		PRINTFORML 神変・悪曜開眼　効果時間：2ターン
+		PRINTFORML 神変ㆍ悪曜開眼　効果時間：2ターン
 	ELSEIF SKILLGAGE_D_GET(ARG,元素スキル継続時間) == 1
-		PRINTFORML 神変・悪曜開眼　効果時間：1ターン
+		PRINTFORML 神変ㆍ悪曜開眼　効果時間：1ターン
 	ENDIF
 ENDIF
 RESETCOLOR

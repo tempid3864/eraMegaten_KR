@@ -560,7 +560,7 @@ FOR LOCAL,0,2
 	CFLAG:(ARG:LOCAL):가슴자극횟수 = 0
 NEXT
 
-;대상が페니스付きならフェラ・Ｖ・Ａ増加
+;대상が페니스付きならフェラㆍＶㆍＡ増加
 IF HAVE_PENIS(DEMON)
 	IF HAVE_VAGINA(CHARA)
 		CFLAG:DEMON:삽입횟수 = 1+(3+ABL:CHARA:Ｖ감각)/2
@@ -578,7 +578,7 @@ ELSE
 	횟수計算 = (6+ ABL:DEMON:기교)/2
 	CFLAG:DEMON:클리자극횟수 += LIMIT(RAND:(횟수計算+1), 0, 횟수計算)
 ENDIF
-;仲魔が페니스つきならフェラ・Ｖ・Ａ増加
+;仲魔が페니스つきならフェラㆍＶㆍＡ増加
 IF HAVE_PENIS(CHARA)
 	IF HAVE_VAGINA(DEMON)
 		CFLAG:CHARA:삽입횟수 = 1+(3+ ABL:DEMON:기교)/2
@@ -669,7 +669,7 @@ IF (TALENT:CHARA:짐승 || TALENT:CHARA:새) && !(TALENT:DEMON:짐승 || TALENT:
 		CALL ADDS_ABNORMAL_EXP, "수간", DEMON
 	TCVAR:DEMON:획득수간경험 = TCVAR:DEMON:획득성교경험
 ENDIF
-;함락している場合にヤラせてもらう・犯してもらうだと바람경험が付く
+;함락している場合にヤラせてもらうㆍ犯してもらうだと바람경험が付く
 IF 함락(CHARA) && (ARG:2 == 1 || ARG:2 == 2)
 	TCVAR:CHARA:획득바람경험 = 1
 ENDIF
@@ -1161,7 +1161,7 @@ FOR LOCAL,1,7
 		CFLAG:POS(LOCAL):던전내발정용욕정치 += 5 + 5*ABL:POS(LOCAL):욕망
 NEXT
 
-;체력・기력소비計算
+;체력ㆍ기력소비計算
 LOCAL:2 = TCVAR:(ARG:1):획득질사경험 * (20 - ABL:(ARG:1):정액중독) + TCVAR:(ARG:1):획득절정경험 * (50 - ABL:(ARG:1):섹스중독 * 3) + TCVAR:(ARG:1):획득수간경험 * (50 - ABL:(ARG:1):수간중독 * 5)
 
 ;윤간중독Lvで최대25%ぐらい軽減
@@ -1172,7 +1172,7 @@ IF BASE:(ARG:1):기력 < LOCAL:2
 ELSE
 	LOCAL:1 = TCVAR:(ARG:1):획득성교경험 * 10
 ENDIF
-;@SEXIAL_ヤらせてもらうの場合は체력・기력の소비が半分に
+;@SEXIAL_ヤらせてもらうの場合は체력ㆍ기력の소비が半分に
 IF ARG:2 == 1
 	LOCAL:1 /= 2
 	LOCAL:2/= 2
@@ -1205,7 +1205,7 @@ SIF CFLAG:(ARG:1):애널횟수
 LOCAL = (CFLAG:(ARG:1):본방횟수*4+CFLAG:(ARG:1):애널횟수*4+CFLAG:(ARG:1):펠라횟수*2)*MAXBASE:(ARG:1):LV
 PRINTFORML %"ＭＡＧ",12, LEFT% {BASE:(ARG:1):ＭＡＧ,16,RIGHT}      +{LOCAL,16,RIGHT} = {BASE:(ARG:1):ＭＡＧ + LOCAL,16,RIGHT}
 CALL CONTROL_MAG,ARG:1,LOCAL
-;ＨＰ・ＭＰを소비
+;ＨＰㆍＭＰを소비
 LOCAL = (CFLAG:(ARG:1):본방횟수 * 2 + CFLAG:(ARG:1):애널횟수 * 2 + CFLAG:(ARG:1):펠라횟수 * 1 + NOWEX:(ARG:1):0 + NOWEX:(ARG:1):1 + NOWEX:(ARG:1):2 + NOWEX:(ARG:1):3)/2
 IF BASE:(ARG:1):ＭＰ > 0
 	PRINTFORML %"ＨＰ",12, LEFT% {BASE:(ARG:1):ＨＰ,16,RIGHT}      -{MAX(1,MAXBASE:(ARG:1):ＨＰ * LOCAL/100) * (11 - ABL:(ARG:1):섹스중독)/10,16,RIGHT} = {BASE:(ARG:1):ＨＰ - MAX(1,MAXBASE:(ARG:1):ＨＰ * LOCAL/100) * (11 - ABL:(ARG:1):섹스중독)/10,16,RIGHT}
@@ -1217,7 +1217,7 @@ ELSE
 	PRINTFORML %"ＨＰ",12, LEFT% {BASE:(ARG:1):ＨＰ,16,RIGHT}      -{MAX(1,MAXBASE:(ARG:1):ＨＰ * LOCAL*2/100) * (11 - ABL:(ARG:1):섹스중독)/10,16,RIGHT} = {BASE:(ARG:1):ＨＰ - MAX(1,MAXBASE:(ARG:1):ＨＰ * LOCAL*2/100) * (11 - ABL:(ARG:1):섹스중독)/10,16,RIGHT}
 	CALL VAR_HP,ARG:1,-MAX(1,MAXBASE:(ARG:1):ＨＰ * LOCAL*2/100) * (11 - ABL:(ARG:1):섹스중독)/10
 ENDIF
-;체력・기력소비
+;체력ㆍ기력소비
 ;기력が残っている場合の체력の소비は『성교횟수*10』、残っていない場合は『성교횟수*30』
 ;기력の소비はそれぞれの중독を上げることで軽減できる『획득질사경험*(20-정액중독LV)』『획득절정경험*(50-섹스중독LV*3)』『획득수간경험*(50-수간중독LV*5)』
 ;０になっている場合は체력はＨＰ、기력はＭＰに、それぞれの최대値の１０％分の데미지を受ける
@@ -1278,7 +1278,7 @@ ELSE
 	ENDIF
 ENDIF
 
-;체력０・기력０のHPMPペナルティ
+;체력０ㆍ기력０のHPMPペナルティ
 IF BASE:(ARG:1):체력 == 0 || (BASE:(ARG:1):기력 == 0 && MAXBASE:(ARG:1):ＭＰ > 0)
 	PRINTFORM 극도의 피로 때문에
 	SIF BASE:(ARG:1):체력 == 0
@@ -1362,7 +1362,7 @@ ENDIF
 ;ＮＴＲ하드모드の場合、一定の확률で『チ○ポには勝てなかったよ』になる
 ;초기値は５、CFLAG:(ARG:1):던전내발정용욕정치が３１００以上になると보정がかかるようになる
 ;３１００から１００ごとに１％づつ上がっていく（최대７０％）
-;음란・창부は초기値に+１０、淫ＮＴＲは+２０される
+;음란ㆍ창부は초기値に+１０、淫ＮＴＲは+２０される
 ;기력を５００소비する事で理性を保つ（チ○ポには勝つ）事が出来る
 ;チ○ポには勝てなかった場合はCFLAG:던전내발정용욕정치が１０００上昇して『魅了상태』になる
 IF FLAG:ＮＴＲ하드모드
@@ -1377,9 +1377,9 @@ IF FLAG:ＮＴＲ하드모드
 	IF RAND:100 < LOCAL && !(CFLAG:(ARG:1):상태이상 == GET_STATE_NUM("CHARM")) && !(CFLAG:(ARG:1):상태이상 == GET_STATE_NUM("PANIC"))
 		PRINTFORMW %CALLNAME:(ARG:1)%의 신체를 견디기 어려운 쾌락이 지배해간다…
 		PRINTFORML 
-		PRINTFORML ・
-		PRINTFORML ・・
-		PRINTFORML ・・・
+		PRINTFORML ㆍ
+		PRINTFORML ㆍㆍ
+		PRINTFORML ㆍㆍㆍ
 		PRINTFORMW 
 		;기력を５００소비して理性を保つ
 		IF BASE:(ARG:1):기력 > 500

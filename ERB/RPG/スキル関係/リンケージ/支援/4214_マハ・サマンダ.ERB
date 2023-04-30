@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4214,ARG
-RESULTS = 마하・사만다
+RESULTS = 마하ㆍ사만다
 
 ;　명중
 @SKILL_HITRATE_4214, ARG
@@ -163,7 +163,7 @@ RETURN 1
 @참가조건표시_4214,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 사만・다
+		PRINTFORM 사만ㆍ다
 	CASE 2
 		PRINTFORM 마계의조사
 ENDSELECT
@@ -186,9 +186,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;사마・운다を使えること
-		IF HAVE_SKILL(ARG, [[스킬:사만・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:사만・다]]
+		;사마ㆍ운다を使えること
+		IF HAVE_SKILL(ARG, [[스킬:사만ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:사만ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

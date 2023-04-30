@@ -213,7 +213,7 @@ RETURN 1
 @참가조건표시_4847,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 지온가、마하・지온가、갈라、또는 마하・갈라 중、하나
+		PRINTFORM 지온가、마하ㆍ지온가、갈라、또는 마하ㆍ갈라 중、하나
 	CASE 2
 		PRINTFORM 코로나샷 * 2
 ENDSELECT
@@ -240,25 +240,25 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ジオンガかマハ・ジオンガを使えること
+		;ジオンガかマハㆍジオンガを使えること
 		IF HAVE_SKILL(ARG, [[스킬:지온가]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:지온가]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・지온가]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・지온가]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ지온가]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ지온가]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;ガルーラかマハ・ガルーラを使えること
+		;ガルーラかマハㆍガルーラを使えること
 		IF HAVE_SKILL(ARG, [[스킬:갈라]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:갈라]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・갈라]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・갈라]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ갈라]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ갈라]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

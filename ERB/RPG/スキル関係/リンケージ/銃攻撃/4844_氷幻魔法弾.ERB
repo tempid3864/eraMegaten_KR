@@ -213,7 +213,7 @@ RETURN 1
 @참가조건표시_4844,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 부흐라、마하・부흐라、아쿠에스、또는 마하・아쿠에스 중、하나
+		PRINTFORM 부흐라、마하ㆍ부흐라、아쿠에스、또는 마하ㆍ아쿠에스 중、하나
 	CASE 2
 		PRINTFORM 프로스트샷 * 2
 ENDSELECT
@@ -240,14 +240,14 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ブフーラかマハ・ブフーラを使えること
+		;ブフーラかマハㆍブフーラを使えること
 		IF HAVE_SKILL(ARG, [[스킬:부흐라]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:부흐라]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・부흐라]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・부흐라]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ부흐라]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ부흐라]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
@@ -257,8 +257,8 @@ SELECTCASE ARG:1
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・아쿠에스]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・아쿠에스]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ아쿠에스]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ아쿠에스]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

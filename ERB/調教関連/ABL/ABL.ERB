@@ -5,7 +5,7 @@
 ;	Edit	Date			Author					Reason
 ;	001		20XX/XX/XX		----					新規作成
 ;	002		2011/02/25		黒天					能力上昇画面で対象キャラを切り替えられるように変更
-;	003		2011/03/25		UNP						SHOW_ABLUP_SELECTに売却・陥落条件表示を追加（呼び出しのみ）
+;	003		2011/03/25		UNP						SHOW_ABLUP_SELECTに売却ㆍ陥落条件表示を追加（呼び出しのみ）
 ;	004		2011/03/25								能力一覧に屈服刻印を追加（参照のみ）
 ;	005		2013/01/25		ネトリス				『全能力値オートアップ』『オート能力値アップ』を追加
 ;	006		2022/06/07		Collared				UI整理プロジェクトにより配置変更＆名前変更
@@ -44,7 +44,7 @@ VARSET LOCAL
 LOCAL:3 = TARGET
 
 $INPUT_LIST
-;キャラリストを표시・選択
+;キャラリストを표시ㆍ選択
 CALL INPUT_CHARA_LIST("누구의 능력을 상승시킵니까？", "CASTING_ABL_MANUAL")
 IF RESULT == 1000
 	SWAP LOCAL:3 , TARGET
@@ -167,7 +167,7 @@ DRAWLINE
 
 @SHOW_ABLUP_SELECT
 #DIM LCOUNT
-;매각・조수조건
+;매각ㆍ조수조건
 CALL SPOILER_PRINT_SELL
 ;함락조건
 CALL SPOILER_PRINT_FALLTALENT

@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 중력계 마법
 	CASE 3
-		PRINTFORM 마하・잔마
+		PRINTFORM 마하ㆍ잔마
 ENDSELECT
 
 @발동자조건_4404 , ARG
-;マハ・ザンマを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・잔마]]) == 0
+;マハㆍザンマを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ잔마]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・잔마]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ잔마]]
 SIF RESULT
 	RETURN 1
 RETURN 0

@@ -215,7 +215,7 @@ RETURN 1
 @참가조건표시_4845,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 부흐다인、마하・부흐다인、아쿠아다인、또는 마하・아쿠아다인 중、하나
+		PRINTFORM 부흐다인、마하ㆍ부흐다인、아쿠아다인、또는 마하ㆍ아쿠아다인 중、하나
 	CASE 2
 		PRINTFORM 프로스트샷 * 4
 ENDSELECT
@@ -242,25 +242,25 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ブフダインかマハ・ブフダインを使えること
+		;ブフダインかマハㆍブフダインを使えること
 		IF HAVE_SKILL(ARG, [[스킬:부흐다인]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:부흐다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・부흐다인]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・부흐다인]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ부흐다인]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ부흐다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;アクアダインかマハ・アクダインを使えること
+		;アクアダインかマハㆍアクダインを使えること
 		IF HAVE_SKILL(ARG, [[스킬:아쿠아다인]])
 			CALL CHECK_ACTIONABLE , ARG , [[스킬:아쿠아다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		IF HAVE_SKILL(ARG, [[스킬:마하・아쿠다인]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・아쿠다인]]
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ아쿠다인]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ아쿠다인]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

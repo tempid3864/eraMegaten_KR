@@ -203,7 +203,7 @@ IF POS(ARG:1) > 0 && LOCAL:1 > BASE:POS(ARG:1):ＨＰ && GET_STATE(CFLAG:POS(ARG
 		CFLAG:POS(ARG:1):방어강화 = MAX(-16, CFLAG:POS(ARG:1):방어강화 - 4)
 		CFLAG:POS(ARG:1):마법효과강화 = MAX(-16, CFLAG:POS(ARG:1):마법효과강화 - 4)
 		CFLAG:POS(ARG:1):회피강화 = MAX(-16, CFLAG:POS(ARG:1):회피강화 - 4)
-	PRINTFORML 적의 방어・마법효과・회피가 DOWN！
+	PRINTFORML 적의 방어ㆍ마법효과ㆍ회피가 DOWN！
 ENDIF
 
 
@@ -278,8 +278,8 @@ ENDIF
 
 ;　説明文の表示
 @SKILL_EXPLAIN_大蜈蚣「スネークイーター」,ARG
-PRINTL 적 1체에、전술・만능의 복합 속성으로 대위력의 마법공격을 １회 행한다。
-PRINTL 추가효과：신경 속성 독、HP흡수、방어・마법효과・회피를 1단계 낮춘다。
+PRINTL 적 1체에、전술ㆍ만능의 복합 속성으로 대위력의 마법공격을 １회 행한다。
+PRINTL 추가효과：신경 속성 독、HP흡수、방어ㆍ마법효과ㆍ회피를 1단계 낮춘다。
 PRINTL 
 PRINTL 체격이 더 큰 뱀이든 용이든 물고 늘어지는、지네의 흉포함과 공격성을 구현한 스킬。
 PRINTL 덤벼든 적으로부터 체력을 빨아올리고、동시에 수비능력을 파괴한다。

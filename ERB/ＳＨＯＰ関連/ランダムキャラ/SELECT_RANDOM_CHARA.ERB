@@ -15,7 +15,7 @@ ELSE
 	SETCOLOR COLOR("PINK")
 	;3人눈ボーナス
 	SIF 이벤트플래그:88:0 > 1
-		PRINTFORML ☆체력・기력 보너스(하한치+500/상한치+1000)
+		PRINTFORML ☆체력ㆍ기력 보너스(하한치+500/상한치+1000)
 	;4人눈ボーナス
 	SIF 이벤트플래그:88:0 > 2
 		PRINTFORML ☆소질 발현율 UP
@@ -78,12 +78,12 @@ FOR LOCAL:5, 0, LOCAL:6
 			LINE2 = LINECOUNT
 			CALL CHECK_RANDOM_CHARA,CHARA,LOCAL:9
 		IF RESULT == 0
-			PRINTFORML 　　다른 노예를 찾습니다・・・
+			PRINTFORML 　　다른 노예를 찾습니다ㆍㆍㆍ
 			TWAIT 1000,0
 			CLEARLINE LINECOUNT - LINE
 			GOTO ROUYA_LOOP2
 		ELSEIF RESULT == 9
-			PRINTFORML 　　다른 노예를 찾습니다・・・
+			PRINTFORML 　　다른 노예를 찾습니다ㆍㆍㆍ
 			TWAIT 1000,0
 			CLEARLINE LINECOUNT - LINE2
 			GOTO ROUYA_LOOP3

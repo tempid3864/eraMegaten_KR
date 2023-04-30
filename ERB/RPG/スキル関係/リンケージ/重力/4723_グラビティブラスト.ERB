@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 핵열계 마법
 	CASE 3
-		PRINTFORM 마하・그라이
+		PRINTFORM 마하ㆍ그라이
 ENDSELECT
 
 @발동자조건_4723 , ARG
-;マハ・グライを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・그라이]]) == 0
+;マハㆍグライを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ그라이]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・그라이]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ그라이]]
 SIF RESULT
 	RETURN 1
 RETURN 0

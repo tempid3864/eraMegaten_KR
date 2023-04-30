@@ -22,7 +22,7 @@ RETURN 0
 		CASE 2
 			SIF ARG:1 == -1
 				RETURN 0
-			RETURN 20 + CFLAG:(ARG:1):도검숙련도 / 20 + CFLAG:(ARG:1):레이피어숙련도 / 20 + CFLAG:(ARG:1):활숙련도 / 20 + CFLAG:(ARG:1):검숙련도 / 20 + CFLAG:(ARG:1):창숙련도 / 20 + CFLAG:(ARG:1):도끼、둔기숙련도 / 20 + CFLAG:(ARG:1):채찍숙련도 / 20 + CFLAG:(ARG:1):투척숙련도 / 20 + CFLAG:(ARG:1):지팡이・제구숙련도 / 20 + CFLAG:(ARG:1):곤봉숙련도 / 20 + CFLAG:(ARG:1):권투구숙련도 / 20
+			RETURN 20 + CFLAG:(ARG:1):도검숙련도 / 20 + CFLAG:(ARG:1):레이피어숙련도 / 20 + CFLAG:(ARG:1):활숙련도 / 20 + CFLAG:(ARG:1):검숙련도 / 20 + CFLAG:(ARG:1):창숙련도 / 20 + CFLAG:(ARG:1):도끼、둔기숙련도 / 20 + CFLAG:(ARG:1):채찍숙련도 / 20 + CFLAG:(ARG:1):투척숙련도 / 20 + CFLAG:(ARG:1):지팡이ㆍ제구숙련도 / 20 + CFLAG:(ARG:1):곤봉숙련도 / 20 + CFLAG:(ARG:1):권투구숙련도 / 20
 	ENDSELECT
 RETURN 0
 
@@ -38,11 +38,11 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 				RETURN 100
 		RETURN 90 - MIN( CFLAG:(ARG:1):활숙련도 + CFLAG:(ARG:1):투척숙련도,1400) / 20
-	;打撃（斧、鈍器熟練度、杖・祭具熟練度、棍熟練度に応じて性能向上、最初90、最低20）
+	;打撃（斧、鈍器熟練度、杖ㆍ祭具熟練度、棍熟練度に応じて性能向上、最初90、最低20）
 	CASE 2
 		SIF ARG:1 == -1
 				RETURN 100
-		RETURN 90 - MIN( CFLAG:(ARG:1):도끼、둔기숙련도 + CFLAG:(ARG:1):지팡이・제구숙련도 + CFLAG:(ARG:1):곤봉숙련도,1400) / 20
+		RETURN 90 - MIN( CFLAG:(ARG:1):도끼、둔기숙련도 + CFLAG:(ARG:1):지팡이ㆍ제구숙련도 + CFLAG:(ARG:1):곤봉숙련도,1400) / 20
 	;戦技（槍熟練度、拳闘具熟練度に応じて性能向上、最初90、最低20）
 	CASE 3
 		SIF ARG:1 == -1

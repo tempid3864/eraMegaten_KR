@@ -128,7 +128,7 @@
 #DIM CD_RESCUE_TARGET_FLG		;要救助者(緑色●)
 #DIM CD_MONSTER_HOUSE_FLG		;モンスターハウス発生フラグ
 
-;던전内の経過時間・経過ターンのカウント
+;던전内の経過時間ㆍ経過ターンのカウント
 #DIM SAVEDATA CD_TIME_AND_TURN, 6
 ;	第1添字：カウントしている内容
 ;		0:前回カウント時の時刻

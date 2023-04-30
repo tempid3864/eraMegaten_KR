@@ -1,13 +1,13 @@
 ﻿;스킬명
-@SKILL_NAME_変身・覚醒！／スタービーナスビリビリーム,ARG
-IF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")) < 1
-	RESULTS = 변신・각성！
+@SKILL_NAME_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
+IF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")) < 1
+	RESULTS = 변신ㆍ각성！
 ELSE
 	RESULTS = 스타 비너스 찌릿찌릿 빔
 ENDIF
 
 ;　명중
-@SKILL_HITRATE_変身・覚醒！／スタービーナスビリビリーム, ARG
+@SKILL_HITRATE_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG
 #DIM ACC
 ACC = 100
 SIF ARG < 0
@@ -16,7 +16,7 @@ ACC -= MAX(MEASURE_FRONT(CPOS(ARG),CFLAG:ARG:타겟)*20,0)
 RETURN MAX(ACC,5)
 
 ;　위력
-@SKILL_POWER_変身・覚醒！／スタービーナスビリビリーム, ARG
+@SKILL_POWER_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG
 #DIM L_POW
 L_POW = 20
 ;620
@@ -24,42 +24,42 @@ L_POW -= MAX(MEASURE_FRONT(CPOS(ARG),CFLAG:ARG:타겟)*2,0)
 RETURN MAX(L_POW,6)
 
 ;クリティカル率
-@SKILL_CRITICAL_RATE_変身・覚醒！／スタービーナスビリビリーム, ARG
+@SKILL_CRITICAL_RATE_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG
 RETURN 3
 
 ;;　吸収率
-;@SKILL_HP_ABSORBER_変身・覚醒！／スタービーナスビリビリーム, ARG
+;@SKILL_HP_ABSORBER_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG
 ;RETURN 0
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_MINATTACKNUMBER_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_MAXATTACKNUMBER_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;;一体辺りの最大ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MAXATK_PER_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_MAXATK_PER_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 1
 
 ;;一体辺りの最低ＨＩＴ数
 ;;※ランダム攻撃系に使う
-;@SKILL_MINATK_PER_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_MINATK_PER_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_変身・覚醒！／スタービーナスビリビリーム, ARG
+@SKILL_COSTTYPE_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG
 RETURN 3
 ;소비없음＝1
 
 ;　코스트량
-@SKILL_COST_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_COST_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 60
 
 ;　상성
-@SKILL_TYPE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_TYPE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 #LOCALSSIZE 4
 #LOCALSIZE 4
 
@@ -96,113 +96,113 @@ RETURN GET_TYPE_NUM(LOCALS)
 ;검격
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_変身・覚醒！／スタービーナスビリビリーム,ARG
-IF ARG < 0 || SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")) < 1
+@SKILL_DECIDE_TYPE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
+IF ARG < 0 || SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")) < 1
 	RETURN 0
 ELSE
 	RETURN 1
 ENDIF
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_DAMAGETYPE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 
 ;　대상　1 적　2 아군　3 양쪽전체　4 특수
-@SKILL_TARGET_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_TARGET_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;　사거리
-@SKILL_RANGE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_RANGE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
-@SKILL_SPHERE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_SPHERE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_EFECT_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 1
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_SPECIALEFECT_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_SUCCESSION_TYPE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_変身・覚醒！／スタービーナスビリビリーム, ARG = -1
+@SKILL_SPEED_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG = -1
 RETURN -10
 
 ;;　구상의 표시와 그 타입
-;@SKILL_MESSAGE_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_MESSAGE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_変身・覚醒！／スタービーナスビリビリーム, ARG = -1
+@SKILL_ACTIONABLE_FIELD_変身ㆍ覚醒！／スタービーナスビリビリーム, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_変身・覚醒！／スタービーナスビリビリーム
-;@SKILL_RANKUP_変身・覚醒！／スタービーナスビリビリーム
-;@계승불능_変身・覚醒！／スタービーナスビリビリーム
+;@SKILL_RANK_変身ㆍ覚醒！／スタービーナスビリビリーム
+;@SKILL_RANKUP_変身ㆍ覚醒！／スタービーナスビリビリーム
+;@계승불능_変身ㆍ覚醒！／スタービーナスビリビリーム
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_ADDTIONAL_STATE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 0
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_ADDTIONAL_TYPE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 0
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_ADDTIONAL_BASE_RATE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 0
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_ADDTIONAL_MAX_RATE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 RETURN 0
 
 ;;拡散攻撃用追加処理
 ;;ブレスなどの拡散攻撃に使う
-;@SKILL_SPREAD_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_SPREAD_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 0
 
 ;====================================================
 ;トリガー発動条件
 ;====================================================
-;@SKILL_TRIGGER_ACTIONABLE_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1
+;@SKILL_TRIGGER_ACTIONABLE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1
 ;RETURN 0
 
 ;====================================================
 ;カウンター発動条件
 ;====================================================
-;@SKILL_COUNTER_ACTIONABLE_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1
+;@SKILL_COUNTER_ACTIONABLE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1
 ;RETURN RESULT
 
 ;====================================================
 ;ヒット時ダメージ前処理
 ;====================================================
-;@SKILL_HIT_EFFECT_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1
+;@SKILL_HIT_EFFECT_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1
 
 ;====================================================
 ;ダメージ発動時
 ;====================================================
-;@SKILL_DAMAGE_EFFECT_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1
+;@SKILL_DAMAGE_EFFECT_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1
 
 ;====================================================
 ;行動によるスキルゲージ操作
 ;====================================================
-@SKILLGAGE_CHARGE_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1
+@SKILLGAGE_CHARGE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1
 #DIM SKILL_NUM
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 
 IF SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1 && SKILLGAGE_F_GET(ARG,SKILL_NUM) < 100
 	;自分の行動の場合
@@ -216,7 +216,7 @@ IF SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1 && SKILLGAGE_F_GET(ARG,SKILL_NUM) < 100
 				IF CFLAG:LOCAL:피탄횟수 > 1
 					;PRINTFORMW  被弾回数：{CFLAG:LOCAL:피탄횟수}
 					SELECTCASE CFLAG:ARG:입력행동
-						CASE PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+						CASE PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 							;スタービーナスビリビリームの場合はゲージが増加しない
 						CASEELSE
 							CALL SKILLGAGE_F_ADD,ARG,SKILL_NUM,(3*CFLAG:LOCAL:피탄횟수)
@@ -243,10 +243,10 @@ IF SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1 && SKILLGAGE_F_GET(ARG,SKILL_NUM) < 100
 	SIF SKILLGAGE_F_GET(ARG,SKILL_NUM) > 100
 		CALL SKILLGAGE_F_SET,ARG,SKILL_NUM,100
 ELSE
-	CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
+	CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
 	IF RESULT > 0 && (CFLAG:ARG:입력행동 != SKILL_NUM || (CFLAG:ARG:현데미지 > 0 || GETBIT(CFLAG:ARG:받음플래그,18) || GETBIT(CFLAG:ARG:받음플래그,19)) && CFLAG:ARG:회피실패)
 		;溜め攻撃を開始している最中に別の行動を取ったor被弾した場合はリセット
-		CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
+		CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
 		PRINTL EXE DRIVE 차지에 실패했다！
 		PRINTFORMW %CALLNAME:ARG%의 행동이 중단되었다！
 		CALL SKILLGAGE_H_SET,ARG,SKILL_NUM,104
@@ -263,19 +263,19 @@ RETURN 0
 ;====================================================
 ;戦闘終了時の処理
 ;====================================================
-@SKILL_BATTLE_END_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_BATTLE_END_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 
-CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
+CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
 
 ;====================================================
 ;ターン終了時の処理
 ;====================================================
-@SKILL_TURNEND_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILL_TURNEND_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 #DIM SKILL_NUM
 
 SIF ARG < 0 || GET_STATE(CFLAG:ARG:상태이상) == "DYING"
 	RETURN
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 ;PRINTW デンビリキャッチしました
 ;変身中の場合、Fゲージを減らす
 IF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0
@@ -296,7 +296,7 @@ ENDIF
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1,SKILL_NUM
+@ACTION_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 #DIM トドメまでお前を殴るのを止めないフラグ
 #DIM HIT_COUNT
@@ -306,20 +306,20 @@ ENDIF
 ;状況に応じて口上側で喋るセリフを選択するので、口上関数を呼ぶ直前にHゲージを状況に応じて特定値に変更させる。 ex:1 → 101 or 102 or 103,etc. → 1
 ;口上関数が終わって戻ったらHゲージを0にするか、元々の値に戻しておく。
 
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 IF SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1
 	CALL SKILLGAGE_H_SET,ARG,SKILL_NUM,1
 	PRINTFORML %ARG는% 프로세서 유닛을 장착했다！
 ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) == 100
 	PRINTFORML %ARG는% 변신을 패제했다！
 ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0 && SKILLGAGE_H_GET(ARG,SKILL_NUM) < 100
-	CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
+	CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
 	LCOUNT:0 = RESULT
 	IF LCOUNT:0 < 7
 		PRINTL 차지함으로써 공격을 중단하는 대신、공격 발동시에 차지수에 따라 공격강화 이외의 버프가 적용되게 됩니다
 		PRINTL 차지했을 경우、사용한 ＭＰ는 반환됩니다
 		PRINT 차지합니까？　현재 차지 단계：공격
-		CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
+		CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,2
 		FOR LCOUNT:1,1,8
 			PRINT  + 
 			SELECTCASE LCOUNT:1
@@ -350,7 +350,7 @@ ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0 && SKILLGAGE_H_GET(ARG,SKILL_NUM) < 10
 		PRINTL
 		CALL INPUT_YN
 		IF RESULT == 0
-			CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,1
+			CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,1
 			PRINTL
 			PRINTFORML %ARG는% 공격을 축적했다！
 			CALL TRUE_SKILL_COST,ARG,SKILL_NUM
@@ -436,7 +436,7 @@ ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0 && SKILLGAGE_H_GET(ARG,SKILL_NUM) < 10
 		SIF HIT_COUNT == 31
 			CALL SKILLGAGE_D_SET,ARG,SKILL_NUM,0
 	NEXT
-	CALL AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
+	CALL AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,"溜め攻撃処理",,0
 	CFLAG:ARG:공격강화 = L_攻撃強化
 	L_攻撃強化 = 0
 	CALL SKILLGAGE_F_SET,ARG,SKILL_NUM,0
@@ -460,7 +460,7 @@ ENDIF
 ;====================================================
 ;전투중 이외에서의 실행
 ;====================================================
-;@ACTION_FIELD_変身・覚醒！／スタービーナスビリビリーム,ARG,ARG:1,SKILL_NUM
+;@ACTION_FIELD_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARG:1,SKILL_NUM
 ;#DIM SKILL_NUM
 
 ;CALL HEAL_SINGLE,ARG,POS(ARG:1),SKILL_NUM	;単体回復
@@ -474,7 +474,7 @@ ENDIF
 ;====================================================
 ;追加コマンド(EXTRAの下)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_EXTRA_変身・覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_EXTRA_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -484,7 +484,7 @@ ENDIF
 ;====================================================
 ;追加コマンド(MAGICの下、魔封だと消える)
 ;====================================================
-;@SKILL_SPECIAL_COMMAND_MAGIC_変身・覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
+;@SKILL_SPECIAL_COMMAND_MAGIC_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
 ;#DIM SKILL_NUM
 ;#LOCALSIZE 1
 ;PRINTFORML [{LOCAL}] 剣質変化
@@ -494,13 +494,13 @@ ENDIF
 ;====================================================
 ;追加コマンド(一番下)
 ;====================================================
-@SKILL_SPECIAL_COMMAND_変身・覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
+@SKILL_SPECIAL_COMMAND_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,LOCAL,SKILL_NUM
 #DIM SKILL_NUM
 #LOCALSIZE 1
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 IF SKILLGAGE_F_GET(ARG,SKILL_NUM) > 49 && SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1
 	SETCOLOR 0x7fffd4
-	PRINTFORML [{LOCAL}] 변신・각성！
+	PRINTFORML [{LOCAL}] 변신ㆍ각성！
 	RESETCOLOR
 	C:(LOCAL++) = 10000 + SKILL_NUM;←必須
 ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0
@@ -514,19 +514,19 @@ RETURN LOCAL;←必須
 ;====================================================
 ;コマンド実行
 ;====================================================
-@INPUT_COM_変身・覚醒！／スタービーナスビリビリーム,ARG
+@INPUT_COM_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 #LOCALSIZE 1
 #DIM SKILL_NUM
 
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 
 LOCAL = CFLAG:ARG:입력행동
-CFLAG:ARG:입력행동 = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+CFLAG:ARG:입력행동 = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 SETCOLOR 0x33ffcc
 PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
 PRINTFORM ┃[{CPOS(ARG),2}] %CALLNAME:ARG,21,LEFT%┃　┃
 IF SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1
-	CALLFORM SKILL_NAME_変身・覚醒！／スタービーナスビリビリーム,ARG
+	CALLFORM SKILL_NAME_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 	PRINTFORML %RESULTS,40,LEFT%┃
 ELSEIF SKILLGAGE_H_GET(ARG,SKILL_NUM) > 0
 	;変身解除用の口上に備えて100にしとく
@@ -536,7 +536,7 @@ ENDIF
 PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 RESETCOLOR
 SWAP TARGET,ARG
-CALL ACTION_変身・覚醒！／スタービーナスビリビリーム,TARGET
+CALL ACTION_変身ㆍ覚醒！／スタービーナスビリビリーム,TARGET
 SETCOLOR CFLAG:ARG:PT플래그 == 0 ? 0xff0033 # 0x33ffcc
 ;変身用の口上に備えて99にしとく
 SIF SKILLGAGE_H_GET(TARGET,SKILL_NUM) != 100
@@ -559,10 +559,10 @@ RETURN -1
 ;====================================================
 ;戦闘中スキルゲージの可視化
 ;====================================================
-@SKILLGAGE_DISPLAY_変身・覚醒！／スタービーナスビリビリーム,ARG
+@SKILLGAGE_DISPLAY_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 #DIM SKILL_NUM
 #DIM F_GAGE
-SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 F_GAGE = SKILLGAGE_F_GET(ARG,SKILL_NUM)
 PRINTFORM \@SKILLGAGE_H_GET(ARG,SKILL_NUM) < 1 ? ＥＸＥ ＤＲＩＶＥ # ＨＤＤ ＧＵＡＧＥ \@|
 CALL PRINT_COLORBAR, F_GAGE, 100, 25, UNICODE(0x2585), UNICODE(0x2585), 0xe5001e, 0x696969
@@ -572,8 +572,8 @@ PRINTFORML 　{F_GAGE}％
 
 
 ;　説明文の表示
-@SKILL_EXPLAIN_変身・覚醒！／スタービーナスビリビリーム,ARG
-IF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")) < 1
+@SKILL_EXPLAIN_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
+IF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")) < 1
 	PRINTL ＥＸＥ ＤＲＩＶＥ 게이지 추가。게이지 값이 50% 이상의 타이밍에 사용 가능。
 	PRINTL 덴게키코용으로 조정된 프로세서 유닛을 장착해、4여신들의 여신화에 필적할 정도의 상태가 된다。
 	PRINTL 여데미지율과 피데미지 경감률이 상승하고、『스타 비너스 찌릿찌릿 빔』이 해금된다。
@@ -592,26 +592,26 @@ ENDIF
 PRINTL
 
 ;没
-;@계승부위_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@계승부위_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_変身・覚醒！／スタービーナスビリビリーム,ARG
-SIF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム")) < 1
+@SKILL_SPECIAL_ACTIONABLE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
+SIF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム")) < 1
 	RETURN 0
 RETURN 1
 
 ;타겟조건
 ;↓のSKILL_T_RESERVEがRETURN 1 の時に使用する
-;@SKILL_SPECIAL_TARGET_変身・覚醒！／スタービーナスビリビリーム,USE_CHARA,ARG
+;@SKILL_SPECIAL_TARGET_変身ㆍ覚醒！／スタービーナスビリビリーム,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;RETURN 0
 
 ;控えに使えるか
-;@SKILL_T_RESERVE_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@SKILL_T_RESERVE_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 0
 
 ;어떤 배드스테이터스를 고칠수 있는가
-;@SKILL_CURE_STATE_変身・覚醒！／スタービーナスビリビリーム,USE_CHARA,ARG
+;@SKILL_CURE_STATE_変身ㆍ覚醒！／スタービーナスビリビリーム,USE_CHARA,ARG
 ;#DIM USE_CHARA
 ;SELECTCASE GET_STATE(ARG)
 ;	CASE "HAPPY","CLOSE"
@@ -620,21 +620,21 @@ RETURN 1
 ;RETURN 0
 
 ;この技を複数持てるか
-;@중복습득수_変身・覚醒！／スタービーナスビリビリーム,ARG
+;@중복습득수_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG
 ;RETURN 1
 
 ;スキル重複で役に立つ関数
-;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム"))
+;HAVE_SKILL_OVERLAP(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム"))
 
 ;スキルゲージで役に立つ関数
-;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム"))
-;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"変身・覚醒！／スタービーナスビリビリーム"),0
+;SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム"))
+;CALL SKILLGAGE_H_SET,ARG,PU_SKILLNUM_GET(ARG,"変身ㆍ覚醒！／スタービーナスビリビリーム"),0
 
 ;====================================================
 ;独自処理
 ;====================================================
 ;（予定）と付けられている方は仮置きの物。実際に採用されるかどうかはわからない。
-@AUTO_PU_SKILL_変身・覚醒！／スタービーナスビリビリーム,ARG,ARGS,ARG:1,ARG:2
+@AUTO_PU_SKILL_変身ㆍ覚醒！／スタービーナスビリビリーム,ARG,ARGS,ARG:1,ARG:2
 #DIM SKILL_NUM
 #DIM L_USER
 #DIM S_CHARGE
@@ -658,7 +658,7 @@ ENDSELECT
 ;代入できず さらに ARGS が戦闘終了時処理でなければ終了
 SIF L_USER == -1
 	RETURN 0
-SKILL_NUM = PU_SKILLNUM_GET(L_USER,"変身・覚醒！／スタービーナスビリビリーム")
+SKILL_NUM = PU_SKILLNUM_GET(L_USER,"変身ㆍ覚醒！／スタービーナスビリビリーム")
 SELECTCASE ARGS
 	CASE "ダメージ↑","被ダメージ↓"
 		;変身中でなければ適用はされない

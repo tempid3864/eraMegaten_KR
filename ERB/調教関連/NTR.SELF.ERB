@@ -157,7 +157,7 @@ RETURN 1
 
 ;NTRペナルティONの場合
 IF FLAG:ＮＴＲ하드모드
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;기교人
 	CFLAG:ARG:유혹인수 = ABL:ARG:기교 + RAND:(ABL:ARG:기교 + 1) + TALENT:ARG:매력 + TALENT:ARG:수수께끼의매력
 	;各횟수の算出
@@ -221,7 +221,7 @@ IF FLAG:ＮＴＲ하드모드
 	ENDIF
 
 ELSE
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;3〜5人
 	;횟수설정
 	횟수 = 3+RAND:3
@@ -341,7 +341,7 @@ ENDIF
 ;NTRペナルティONの場合
 IF FLAG:ＮＴＲ하드모드
 
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;기교人
 	CFLAG:ARG:유혹인수 = ABL:ARG:기교/2 + TALENT:ARG:매력 + TALENT:ARG:수수께끼의매력
 	;各횟수の算出
@@ -404,7 +404,7 @@ IF FLAG:ＮＴＲ하드모드
 	ENDIF
 	
 ELSE
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;4〜6人
 	;횟수설정
 	횟수 = 4+RAND:3
@@ -519,7 +519,7 @@ ENDIF
 
 ;NTRペナルティONの場合
 IF FLAG:ＮＴＲ하드모드
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;기교人
 	CFLAG:ARG:유혹인수 = ABL:ARG:기교 + RAND:(ABL:ARG:기교 + 1) + RAND:(ABL:ARG:기교 + 1) + TALENT:ARG:매력 + TALENT:ARG:수수께끼의매력
 	;各횟수の算出
@@ -581,7 +581,7 @@ IF FLAG:ＮＴＲ하드모드
 	ENDIF
 
 ELSE
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;5〜10人
 	;횟수설정
 	횟수 = 5+RAND:6
@@ -700,7 +700,7 @@ ENDIF
 
 ;NTRペナルティONの場合
 IF FLAG:ＮＴＲ하드모드
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;기교人
 	CFLAG:ARG:유혹인수 = 1 + (RAND:15 + TALENT:ARG:매력 + TALENT:ARG:수수께끼의매력 + ABL:ARG:기교/2 > 10) * (RAND:2 + 1)
 	;各횟수の算出
@@ -768,7 +768,7 @@ IF FLAG:ＮＴＲ하드모드
 	ENDIF
 	
 ELSE
-	;횟수・人数の算出
+	;횟수ㆍ人数の算出
 	;1人
 	;횟수설정
 	횟수 = 1
@@ -1299,9 +1299,9 @@ SIF CFLAG:LOCAL:함락캐릭터 == -16
 	LOCAL:1 += 20
 DRAWLINE
 PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 뚱뚱한 방문 판매원 응대를 하고 있다
-PRINTFORML ・
-PRINTFORML ・・
-PRINTFORML ・・・
+PRINTFORML ㆍ
+PRINTFORML ㆍㆍ
+PRINTFORML ㆍㆍㆍ
 IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 	SIF CFLAG:LOCAL:함락캐릭터 == -16
 		GOTO HOUMONNHANNBAI_NTR
@@ -1409,9 +1409,9 @@ IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 				PRINTFORMW 뚱뚱한 방문판매원은 끊잆없이 이어지는 절정으로 몽롱해진 %CALLNAME:LOCAL%의 허리를 바짝 끌어당겼다……
 				PRINTFORML 그 순간、자궁구에 갖다댄 자지에서 욕망의 덩어리가 대량으로 뿜어져 나왔다……
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 자신이 정복당하는 감각에 휩쌓인채、뚱뚱한 방문판매원에게 입맞춤을 했다……
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORML 몇번의 사정을 마치고、뚱뚱한 방문판매원이 페니스를 빼내자 질내에 고여있던 정액이 일시에 쏟아져 나왔다.
 				PRINTFORML 숨을 헐떡이던 %CALLNAME:LOCAL%의 보지는 뻐끔히 입을 벌린 채 씰룩이고 있다……
 			ELSEIF TALENT:LOCAL:ＮＴＲ == 2
@@ -1424,9 +1424,9 @@ IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 				PRINTFORML 
 				PRINTFORML 갑자기 뚱뚱한 방문판매원이 몇차례、격하게 찔러올리더니 %CALLNAME:LOCAL%의 허리를 잡고 억눌렀다
 				PRINTFORMW 다음 순간、엄청난 양의 사정이 시작되어、%조사처리(CALLNAME:LOCAL,"는")% 결합부에서 정액을 역류 시키면서 뚱뚱한 방문판매원의 위로 무너저 내렸다……
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORML 뚱뚱한 방문판매원은 의식을 잃은 %CALLNAME:LOCAL%의 질구에서 정액이 새지않도록 、페트병을 꽂아 막아두고 방을 나왔다……
 			ELSEIF TALENT:LOCAL:연모 || TALENT:LOCAL:친애
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 뺨을 붉히면서 뚱뚱한 방문판매원에게 슬쩍 몸을 기대어、뜨겁게 키스를 나누었다……
@@ -1439,9 +1439,9 @@ IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 				CALL NTR_HOUMONNHANNBAI_SEX,LOCAL
 				PRINTFORML 
 				PRINTFORMW 거대한 페니스가 질내에 맥박치는 정자를 토해낼 때마다、방 안에서는 환희에 찬 비명이 울려 퍼진다……
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORML 뚱뚱한 방문판매원은 녹은 표정으로 누워있는 %CALLNAME:LOCAL%의 보지에 자신의 정액이 흘러나오는 모습을 보면서、
 				PRINTFORMW 히죽이듯 입가를 끌어올렸다……
 			ELSEIF TALENT:LOCAL:음란 || TALENT:LOCAL:창부
@@ -1454,9 +1454,9 @@ IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 				PRINTFORML 
 				PRINTFORMW 거대한 페니스가 팽창한 순간、뚱뚱한 방문판매원의 정액이 질내로 세차게 쏟아지자、
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 머리를 흔들어대며 짐승같은 헐떡임을 소리 높이며 절정에 달했다……
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORMW 완전히 뚱뚱한 방문판매원의 자지에 친숙해진 %CALLNAME:LOCAL%의 보지는 크게 입을 벌린채、걸쭉한 정자를 흘리고 있다……
 			ELSEIF TALENT:LOCAL:복종 || TALENT:LOCAL:예속
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 미소를 지으며 뚱뚱한 방문판매원의 앞에서 옷을 벗고선 벽에 손을 댄체 엉덩이를 내밀었다……
@@ -1467,9 +1467,9 @@ IF RAND:10 < LOCAL:2 + LOCAL:1 || IS_ANTI_NTR_CLOTHES(LOCAL) == -1
 				CALL NTR_HOUMONNHANNBAI_SEX,LOCAL
 				PRINTFORML 
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 질내에 흘러들어올 때마다、노예에 지나지 않는 자신이 『사랑받고 있다』고 생각해、행복한 미소를 띄운다……
-				PRINTFORML ・
-				PRINTFORML ・・
-				PRINTFORML ・・・
+				PRINTFORML ㆍ
+				PRINTFORML ㆍㆍ
+				PRINTFORML ㆍㆍㆍ
 				PRINTFORMW %조사처리(CALLNAME:LOCAL,"는")% 여러차례 자신을 『사랑해준』 뚱뚱한 방문판매원의 페니스에 감사의 말을 하면서 혀로 깨끗히 하고 있따.……
 				PRINTFORMW 뚱뚱한 방문판매원はその様子を眺めながら満발げな笑みを浮かべている……
 			ENDIF

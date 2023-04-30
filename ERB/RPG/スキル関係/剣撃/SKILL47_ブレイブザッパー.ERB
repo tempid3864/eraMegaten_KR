@@ -3,9 +3,9 @@
 IF SKILL_CHANGE(ARG, 5071)
 	RESULTS = 갈채는 우레와 같이
 ELSEIF SKILL_CHANGE(ARG, 5050)
-	RESULTS = 에테라이트・에어
+	RESULTS = 에테라이트ㆍ에어
 ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
-	RESULTS = 브레이브재퍼・벽뢰
+	RESULTS = 브레이브재퍼ㆍ벽뢰
 ELSE
 	RESULTS = 브레이브재퍼
 ENDIF
@@ -191,7 +191,7 @@ CALL ATTACK_SINGLE, ARG, LOCAL, 47
 ;　 설명문 표시
 @SKILL_EXPLAIN_47
 IF U > 0 && U < CHARANUM && NO:U == 5071
-	PRINTL 바리티누・브라우셀룬。
+	PRINTL 바리티누ㆍ브라우셀룬。
 	PRINTL 대상을 몰아세워 위력을 더해 베어내리고、베어올리고、베어내리는 삼연격。
 ELSE
 	PRINTL 적 전열 1체에 검격 상성의 특대 데미지。

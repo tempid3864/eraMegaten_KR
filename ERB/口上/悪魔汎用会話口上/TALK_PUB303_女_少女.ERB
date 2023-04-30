@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB302.ERB
-;	Facility	:회화타입：女・少女の会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：女ㆍ少女の会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -10,7 +10,7 @@
 ;	Edit	Date			Author					Reason
 ;	001		20XX/XX/XX		----					新規作成
 ;	002		2011/01/10		Ｎ鳥					基本処理をTALK_COMMONに一元化し、メッセージを口上呼び出し用関数に移植
-;	003		2011/06/11		元248 ◆9KQKGfbV0.		ムフフ展開の実装、文章の整理・増補
+;	003		2011/06/11		元248 ◆9KQKGfbV0.		ムフフ展開の実装、文章の整理ㆍ増補
 ;	004		2011/07/20		元248 ◆9KQKGfbV0.		会話時問答CASE3の踊ってみる失敗時の台詞の増補、文章の整理
 ;	005		2019/08/28		空気					デビルチェンバー使用中の挙動を修正。また、DDM使用時は容量いっぱいでも仲魔になって自宅ストレージに送るように
 ;	006		2020/01/26		JK好き					スケベ防具装備中の条件をIS_EROEQUIP_Fにまとめ
@@ -19,13 +19,13 @@
 ;
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;=====================================================================
-;口調タイプ：女・少女の汎用口上＋会話用ファイルです
+;口調タイプ：女ㆍ少女の汎用口上＋会話用ファイルです
 ;=====================================================================
 @KOJO_TALK_PUB303,ARG,ARG:1
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORMW 「……!?」
 		PRINTFORMW 「뭐, 뭐지. %CSTR:ARG:일인칭%, 굉장히 두근두근거려……」
 		PRINTFORMW 「혹시, 이것이 사랑……？ 꺄악, 꺅%UNICODE(0x2661)%」
@@ -342,11 +342,11 @@ SELECTCASE ARG:1
 		PRINTFORML 「또 보자♪」
 		PRINTFORMW %조사처리(CALLNAME:ARG,"는")% 윙크했다.
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90
@@ -1407,7 +1407,7 @@ IF LOCAL < 5
 	IF TALENT:PLAYER:남자 == 1 && TALENT:PLAYER:오토코노코 == 0
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW 「아앙, 아……에해해, 무지 기분 좋지？　꺄하%UNICODE(0x2661)%」
 		PRINTFORML 쾌락지옥에 신음하는 %CALLNAME:PLAYER%의 괴로운 얼굴을%조사처리(CALLNAME:ARG,"는")% 여유 가득한 미소로 바라보며 
 		PRINTFORMW 엉덩이를 움직일 때마다 달콤한 신음소리를 내뱉는다
@@ -1421,7 +1421,7 @@ IF LOCAL < 5
 	ELSEIF TALENT:PLAYER:후타나리 == 1
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW %CALLNAME:PLAYER%의 유두를 농락하며, %조사처리(CALLNAME:ARG,"는")% 즐겁게 웃었다.
 		PRINTFORMW 「응ー어때？　여기도 %CSTR:ARG:일인칭%의 안에서 또 커졌는데, 보지는 어떨까?」
 		PRINTFORMW 「흥분하고 있어？　보지에서 꿀이 넘쳐나고 있어. 정말 음란하네」
@@ -1429,7 +1429,7 @@ IF LOCAL < 5
 	ELSEIF TALENT:PLAYER:오토코노코 == 1
 		PRINTFORMW %CALLNAME:PLAYER%의 배 위에서 %조사처리(CALLNAME:ARG,"가")% 격렬하게 허리를 움직이고 있다.
 		PRINTFORMW 육봉이 %CALLNAME:ARG%의 안에서 몇 번이고 조이고, 짜여져, 정기를 발하고 있다.
-		PRINTFORMW 인간과 악마 사이의 분명한 성욕・육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
+		PRINTFORMW 인간과 악마 사이의 분명한 성욕ㆍ육욕의 차이가, %조사처리(CALLNAME:PLAYER,"를")% 무겁게 짓눌렀다.
 		PRINTFORMW %CALLNAME:PLAYER%의 얼빠진 얼굴을 %조사처리(CALLNAME:ARG,"는")% 내려보며, 얼어붙을 것 같은 미소를 띄었다.
 		PRINTFORMW 「별난 취미네, 오빠. 이런 걸 여장이라고 하지?」
 		PRINTFORML 그렇게 말하며, %조사처리(CALLNAME:ARG,"는")% %CALLNAME:PLAYER%의 유두를 잡고,

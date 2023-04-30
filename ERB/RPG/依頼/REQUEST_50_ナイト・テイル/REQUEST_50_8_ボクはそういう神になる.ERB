@@ -11,7 +11,7 @@
 ;====================
 ;関連フラグリスト
 ;====================
-;FLAG:나이트・테일진행도
+;FLAG:나이트ㆍ테일진행도
 ;
 ;====================
 ;説明
@@ -33,7 +33,7 @@ PRINTFORML （이것이 마지막 싸움입니다。승리할 수 있다면、�
 ;内容
 ;====================
 @REQUEST_50_8_L
-;FLAG:나이트・테일진행도 = 800000
+;FLAG:나이트ㆍ테일진행도 = 800000
 ;めんどくさいので最初に各キャラが전투可能か判断して保存。
 #DIMS 참가캐릭터 = "_"
 FOR LOCAL, 0, CHARANUM
@@ -176,7 +176,7 @@ ENDIF
 	;모두 있음（TRUE조건 중 하나를 채우고 있음）
 	IF STRCOUNT(참가캐릭터, "마야NT") && STRCOUNT(참가캐릭터, "쇼고") && STRCOUNT(참가캐릭터, "코우린") && STRCOUNT(참가캐릭터, "유우키") && STRCOUNT(참가캐릭터, "유리아")
 		PRINTFORML 
-		PRINTFORMW 「목적지인 마스・올림푸스산을 가리키듯이、고레벨의 마그네타이트 반응이 나오고 있다。
+		PRINTFORMW 「목적지인 마스ㆍ올림푸스산을 가리키듯이、고레벨의 마그네타이트 반응이 나오고 있다。
 		PRINTFORMW 　어쩌면 강하와 동시에 그대로 전투가 될 지도 모른다。
 		PRINTFORMW 　잔챙이는 어느정도、나의 부하가 상대할 수 있지만、거물은 이쪽에서 할 수 밖에 없다」
 		PRINTFORML 
@@ -199,7 +199,7 @@ ENDIF
 	ELSE
 		PRINTFORMW 코시로가 화면을 들여다보며 말한다。
 		PRINTFORML 
-		PRINTFORMW 「목적지인 마스・올림푸스의 주변、굉장하네요。
+		PRINTFORMW 「목적지인 마스ㆍ올림푸스의 주변、굉장하네요。
 		PRINTFORMW 　너무 강한 마그네타이트 반응때문에、지도가 지도가 아니게 되버렸어요。
 		PRINTFORMW 　일점집중、강행돌파해서、단번에 정상을 노리지 않으면 위험하겠어요」
 		PRINTFORML 
@@ -241,7 +241,7 @@ ENDIF
 	;宮下、코우린が揃っている
 	IF STRCOUNT(참가캐릭터, "쇼고") && STRCOUNT(참가캐릭터, "코우린")
 		PRINTFORML 
-		PRINTFORMW 「우리들에 먼저 가서 잔챙이들을 막습니다！　여러분은 강하정으로 마스・올림푸스에！」
+		PRINTFORMW 「우리들에 먼저 가서 잔챙이들을 막습니다！　여러분은 강하정으로 마스ㆍ올림푸스에！」
 		PRINTFORML 
 		PRINTFORMW 미야시타의 부하、타카하시가、장갑우주복에 내장된 통신기 너머로 소리질렀다。
 		PRINTFORMW 삼합회 마피아의 필두인 챤도、부적에 의한 기밀결계를 치면서 선글라스를 빛냈다。
@@ -251,7 +251,7 @@ ENDIF
 		PRINTFORMW 코우린은 수긍해、고속으로 달리는 적색의 지면을 가르키면서、흔들림과 굉음에 지지 않을 정도로 크게 소리질렀다。
 		PRINTFORML 
 		PRINTFORMW 「오우！　우리들은 의용의 편이다！　전인미답의 붉은 대지에、정의의 영혼을 새기자！」
-		PRINTFORMW 「네・누님《시ー　다이ー져》！！」
+		PRINTFORMW 「네ㆍ누님《시ー　다이ー져》！！」
 		PRINTFORML 
 		PRINTFORMW 그들 양대 세력을 실은 복수의 강하정은 격납고로부터 미끄러지듯이 떨어져、순식간에 보이지 않게 되었다。
 		PRINTFORML 
@@ -259,7 +259,7 @@ ENDIF
 	;宮下は居る
 	ELSEIF STRCOUNT(참가캐릭터, "쇼고")
 		PRINTFORML 
-		PRINTFORMW 「우리들에 먼저 가서 잔챙이들을 막습니다！　여러분은 강하정으로 마스・올림푸스에！」
+		PRINTFORMW 「우리들에 먼저 가서 잔챙이들을 막습니다！　여러분은 강하정으로 마스ㆍ올림푸스에！」
 		PRINTFORML 
 		PRINTFORMW 미야시타의 부하、타카하시가、장갑우주복에 내장된 통신기 너머로 소리질렀다。
 		PRINTFORML 
@@ -273,7 +273,7 @@ ENDIF
 		PRINTFORMW 코우린은 수긍해、고속으로 달리는 적색의 지면을 가르키면서、흔들림과 굉음에 지지 않을 정도로 크게 소리질렀다。
 		PRINTFORML 
 		PRINTFORMW 「오우！　우리들은 의용의 편이다！　전인미답의 붉은 대지에、정의의 영혼을 새기자！」
-		PRINTFORMW 「네・누님《시ー　다이ー져》！！」
+		PRINTFORMW 「네ㆍ누님《시ー　다이ー져》！！」
 		
 	;どちらもいない
 	ELSE
@@ -296,7 +296,7 @@ ENDIF
 		PRINTFORML 
 		PRINTFORMW 「가라아아아아아아앗！！」
 		PRINTFORML 
-		PRINTFORMW %CALLNAME:MASTER%들은、태양계 최대의 고도를 자랑하는 영봉、마스・올림푸스에 달려들었다――
+		PRINTFORMW %CALLNAME:MASTER%들은、태양계 최대의 고도를 자랑하는 영봉、마스ㆍ올림푸스에 달려들었다――
 
 PRINTFORML 
 CUSTOMDRAWLINE =
@@ -320,8 +320,8 @@ PRINTFORML
 
 ;重量過多はアカン→중력弱点
 CALL SET_ENEMY,7, [[キャラ:아레스]],LOCAL:1, 0,0
-	NAME:(CHARANUM-1) = 기병・전차군단
-	CALLNAME:(CHARANUM-1) = 기병・전차군단
+	NAME:(CHARANUM-1) = 기병ㆍ전차군단
+	CALLNAME:(CHARANUM-1) = 기병ㆍ전차군단
 	MAXBASE:(CHARANUM-1):타격 = 50
 	BASE:(CHARANUM-1):타격 = 50
 	MAXBASE:(CHARANUM-1):전술 = 50
@@ -443,8 +443,8 @@ CALL SET_ENEMY,10, [[キャラ:아레스]],LOCAL:1, 0,0
 
 ;重量過多はアカン→중력弱点
 CALL SET_ENEMY,11, [[キャラ:아레스]],LOCAL:1, 0,0
-	NAME:(CHARANUM-1) = 기병・전차군단
-	CALLNAME:(CHARANUM-1) = 기병・전차군단
+	NAME:(CHARANUM-1) = 기병ㆍ전차군단
+	CALLNAME:(CHARANUM-1) = 기병ㆍ전차군단
 	MAXBASE:(CHARANUM-1):타격 = 50
 	BASE:(CHARANUM-1):타격 = 50
 	MAXBASE:(CHARANUM-1):전술 = 50
@@ -639,7 +639,7 @@ PRINTFORML
 CUSTOMDRAWLINE =
 PRINTFORML 
 
-FLAG:나이트・테일진행도 = 810000
+FLAG:나이트ㆍ테일진행도 = 810000
 
 PRINTFORMW 영원히 계속될 것 같던 완만한 경사면도、마침내 정점을 보이고 있다。
 PRINTFORMW 새빨간 적동(赤銅)색의 대지의 끝에、하얀、하얀、대리석의 기둥이、하늘에서부터 박히는 뇌격과 같이 몇개고 우뚝 서있는 것이 보였다。
@@ -711,7 +711,7 @@ FOR LOCAL, 0, CHARANUM
 	CALL HEALTH_CHARA, LOCAL
 NEXT
 
-IF FLAG:나이트・테일진행도 == 811000
+IF FLAG:나이트ㆍ테일진행도 == 811000
 	PRINTFORMW 「뭐、뭐라고오！　이 몸이、이 몸이이ー잇！！」
 	PRINTFORMW 「지옥에 떨어져라、전투광！」
 	PRINTFORMW 「누오ー옷！？」
@@ -785,7 +785,7 @@ ENDIF
 	PRINTFORML 
 	PRINTFORMW 검은 안경은、슥 하고 산의 정점을 가리켰다。
 	PRINTFORML 
-	PRINTFORMW 「당신이 가지고 있는 유고는、원래는 레오나르도・다・빈치의 것이었습니다。
+	PRINTFORMW 「당신이 가지고 있는 유고는、원래는 레오나르도ㆍ다ㆍ빈치의 것이었습니다。
 	PRINTFORMW 　라퓨타인인 그는、그 기술을 사용해、올림푸스라고 이름 붙인 태양계 최고봉의 산을 목성과 연결했습니다。
 	PRINTFORMW 　그 원고는 전송장치의 기동 열쇠ー。
 	PRINTFORMW 　중앙에 타서、의식을 집중하는 것 만으로、그 세계로 건널 수 있을 겁니다」
@@ -819,7 +819,7 @@ ENDIF
 	PRINTFORMW 하늘에는 갈색의 줄무늬가、대지는 모두 얼음에 덮여 있다。
 	PRINTFORML 
 	PRINTFORMW 가스 혹성인 목성에 육지같은 건 없을 것이다。
-	PRINTFORMW 아니、있긴 있지만、장대한 대기의 층에 깊숙히 존재하기 위해 고압・고온。
+	PRINTFORMW 아니、있긴 있지만、장대한 대기의 층에 깊숙히 존재하기 위해 고압ㆍ고온。
 	PRINTFORMW 얼음같은 건 있을 수 없다。
 	PRINTFORML 
 	PRINTFORMW 몸을 가리는 내압장비를 해제하면서、일행은 의아한듯이 주위를 둘러보았다。
@@ -1000,7 +1000,7 @@ CALL SET_ENEMY,9, [[キャラ:제우스]],LOCAL:1, 1,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-FLAG:나이트・테일진행도 = 820000
+FLAG:나이트ㆍ테일진행도 = 820000
  
 PRINTFORML 
 CUSTOMDRAWLINE =
@@ -1175,7 +1175,7 @@ CALL SET_ENEMY,9, [[キャラ:티타니아]],51, 0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-FLAG:나이트・테일진행도 = 830000
+FLAG:나이트ㆍ테일진행도 = 830000
 
 PRINTFORML 
 CALL BATTLE_START
@@ -1196,7 +1196,7 @@ PRINTFORML
 PRINTFORMW 티타니아는、고개를 들었다。
 
 ;코시로가 전투멤버에 있다  코시로가 연모 or 신회 루트이고 당신의 속성이 선이다
-;이에 더해、나이트・테일 멤버＋마야가 모여 있다
+;이에 더해、나이트ㆍ테일 멤버＋마야가 모여 있다
 IF FINDCHARA_B([[キャラ:코시로]]) == 2 && (친애(RESULT:1) != 0 || 연모(RESULT:1) != 0 || TALENT:(RESULT:1):신뢰 || TALENT:(RESULT:1):동료) && CFLAG:MASTER:선악치 > 170 && (STRCOUNT(참가캐릭터, "마야NT") && STRCOUNT(참가캐릭터, "쇼고") && STRCOUNT(참가캐릭터, "코우린") && STRCOUNT(참가캐릭터, "유우키") && STRCOUNT(참가캐릭터, "유리아"))
 	PRINTFORML 
 	PRINTFORML [100]　당신은、불길한 예감에 습격당했다
@@ -1260,7 +1260,7 @@ IF RESULT == 200
 	PRINTFORMW 　추워ー、추워ー、코시로ー」
 	PRINTFORML 
 	
-	FLAG:나이트・테일진행도 = 900000
+	FLAG:나이트ㆍ테일진행도 = 900000
 	;エンディング呼び出し
 	CALL ENDING_NO51
 	RETURN
@@ -1588,7 +1588,7 @@ CALL SET_ENEMY,14, [[キャラ:마더해롯]],LOCAL:1, 0,1
 	CFLAG:(CHARANUM-1):불사신플래그 = 1
 
 
-FLAG:나이트・테일진행도 = 840000
+FLAG:나이트ㆍ테일진행도 = 840000
 
 PRINTFORML 
 CUSTOMDRAWLINE =
@@ -1724,7 +1724,7 @@ FLAG:선제기습취소 = 0
 ;マザハー開放。
 FLAG:(10000 + [[キャラ:마더해롯]]) = 1
 
-FLAG:나이트・테일진행도 = 999999
+FLAG:나이트ㆍ테일진행도 = 999999
 
 ;エンディング呼び出し
 CALL ENDING_NO50
@@ -1732,7 +1732,7 @@ CALL ENDING_NO50
 
 @EVENT_BATTLE_START_REQUEST50_8_L
 ;火星軍団
-IF FLAG:나이트・테일진행도 == 800000
+IF FLAG:나이트ㆍ테일진행도 == 800000
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃쿠카카카카카！인간주제에、잘난 척 하는구나！        ┃
@@ -1744,7 +1744,7 @@ IF FLAG:나이트・테일진행도 == 800000
 	PRINTFORML 
 
 ;エニュオと아레스
-ELSEIF FLAG:나이트・테일진행도 == 810000
+ELSEIF FLAG:나이트ㆍ테일진행도 == 810000
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃에뉴오ー！　말을 몰아라ー！ 　　　　　　　　┃
@@ -1757,7 +1757,7 @@ ELSEIF FLAG:나이트・테일진행도 == 810000
 	PRINTFORML 
 
 ;제우스
-ELSEIF FLAG:나이트・테일진행도 == 820000
+ELSEIF FLAG:나이트ㆍ테일진행도 == 820000
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃용서하지 않겠다、하늘의 벌을、가르쳐주지　                           　┃
@@ -1767,7 +1767,7 @@ ELSEIF FLAG:나이트・테일진행도 == 820000
 	PRINTFORML 
 
 ;티타니아
-ELSEIF FLAG:나이트・테일진행도 == 830000
+ELSEIF FLAG:나이트ㆍ테일진행도 == 830000
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃소첩은 여신이다！　여신 아르테미스다！  　                                             　┃
@@ -1783,7 +1783,7 @@ ELSEIF FLAG:나이트・테일진행도 == 830000
 
 
 ;마더해롯
-ELSEIF FLAG:나이트・테일진행도 == 840000
+ELSEIF FLAG:나이트ㆍ테일진행도 == 840000
 
 	PRINTFORML 
 	SETCOLOR 0xff0033
@@ -1808,7 +1808,7 @@ ENDIF
 
 @EVENT_BATTLE_TURNEND_REQUEST50_8_L
 ;ゼウスバリアー
-IF FLAG:나이트・테일진행도 >= 820000 && FLAG:나이트・테일진행도 < 830000
+IF FLAG:나이트ㆍ테일진행도 >= 820000 && FLAG:나이트ㆍ테일진행도 < 830000
 	IF CFLAG:(CHARANUM-1):지변무효화횟수 < 1
 		PRINTFORMW ＞圧倒的な神気が대기의벽を生成する
 		CFLAG:(CHARANUM-1):지변무효화횟수 = 1
@@ -1817,20 +1817,20 @@ ENDIF
 
 @EVENT_BATTLE_ACTEND_REQUEST50_8_L
 ;エニュオが先に死んだ
-IF FLAG:나이트・테일진행도 == 810000 && BASE:(CHARANUM-1):ＨＰ < 1
+IF FLAG:나이트ㆍ테일진행도 == 810000 && BASE:(CHARANUM-1):ＨＰ < 1
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃이놈、에뉴오가 하데스에게 삼켜져 버렸나！　                          ┃
 	PRINTFORML ┃그렇다면 이 몸이 원수를 갚아 주지！ 　　　                          　┃
 	PRINTFORML ┃산산조각으로、만들어 주마！ 　　　　　　　　                          ┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━┛
-	FLAG:나이트・테일진행도 = 811000
+	FLAG:나이트ㆍ테일진행도 = 811000
 	ABL:(CHARANUM-2):스킬1 = 7
 	ABL:(CHARANUM-2):스킬2 = 717
 	ABL:(CHARANUM-2):스킬3 = 327
 	CFLAG:(CHARANUM-2):행동횟수 = 3
 ;아레스が先に死んだ
-ELSEIF FLAG:나이트・테일진행도 == 810000 && BASE:(CHARANUM-2):ＨＰ < 1
+ELSEIF FLAG:나이트ㆍ테일진행도 == 810000 && BASE:(CHARANUM-2):ＨＰ < 1
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃정말이지、도움이 되지 않는 남편이군。 　　                           　┃
@@ -1840,12 +1840,12 @@ ELSEIF FLAG:나이트・테일진행도 == 810000 && BASE:(CHARANUM-2):ＨＰ < 
 	ABL:(CHARANUM-1):스킬1 = 326
 	ABL:(CHARANUM-1):스킬2 = 106
 	ABL:(CHARANUM-1):스킬3 = 1411
-	FLAG:나이트・테일진행도 = 812000
+	FLAG:나이트ㆍ테일진행도 = 812000
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	
 	
 ;제우스(残り85％　파마＋검격
-ELSEIF FLAG:나이트・테일진행도 == 820000 && 현HP비율(CHARANUM-1) < 85
+ELSEIF FLAG:나이트ㆍ테일진행도 == 820000 && 현HP비율(CHARANUM-1) < 85
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃빛은 우리 하늘에 있다。그림자는 모두 사라질 것이다                                 ┃
@@ -1854,13 +1854,13 @@ ELSEIF FLAG:나이트・테일진행도 == 820000 && 현HP비율(CHARANUM-1) < 8
 	ABL:(CHARANUM-1):스킬1 = 1304
 	ABL:(CHARANUM-1):스킬2 = 16
 	ABL:(CHARANUM-1):스킬3 = 0
-	FLAG:나이트・테일진행도 = 821000
+	FLAG:나이트ㆍ테일진행도 = 821000
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.85
 
 ;제우스(残り70％　수격＋질풍
-ELSEIF FLAG:나이트・테일진행도 == 821000 && 현HP비율(CHARANUM-1) < 70
+ELSEIF FLAG:나이트ㆍ테일진행도 == 821000 && 현HP비율(CHARANUM-1) < 70
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃청동의 시대는 우리의 해일에 의해 멸망했다                              ┃
@@ -1869,13 +1869,13 @@ ELSEIF FLAG:나이트・테일진행도 == 821000 && 현HP비율(CHARANUM-1) < 7
 	ABL:(CHARANUM-1):스킬1 = 1608
 	ABL:(CHARANUM-1):스킬2 = 1711
 	ABL:(CHARANUM-1):스킬3 = 0
-	FLAG:나이트・테일진행도 = 822000
+	FLAG:나이트ㆍ테일진행도 = 822000
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.70
 
 ;제우스(残り50％　저지먼트と핵열
-ELSEIF FLAG:나이트・테일진행도 == 822000 && 현HP비율(CHARANUM-1) < 50
+ELSEIF FLAG:나이트ㆍ테일진행도 == 822000 && 현HP비율(CHARANUM-1) < 50
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃죄는 한 사람 한 사람씩 덮쳐 온다　　　　　　                            ┃
@@ -1885,13 +1885,13 @@ ELSEIF FLAG:나이트・테일진행도 == 822000 && 현HP비율(CHARANUM-1) < 5
 	ABL:(CHARANUM-1):스킬2 = 1905
 	ABL:(CHARANUM-1):스킬3 = 0
 	CFLAG:(CHARANUM-1):행동횟수 = 4
-	FLAG:나이트・테일진행도 = 823000
+	FLAG:나이트ㆍ테일진행도 = 823000
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.50
 
 ;제우스(残り30％　스펙트라포스
-ELSEIF FLAG:나이트・테일진행도 == 823000 && 현HP비율(CHARANUM-1) < 30
+ELSEIF FLAG:나이트ㆍ테일진행도 == 823000 && 현HP비율(CHARANUM-1) < 30
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃일찍이、카오스를 태운、케라우노스 　　　　　                           ┃
@@ -1903,13 +1903,13 @@ ELSEIF FLAG:나이트・테일진행도 == 823000 && 현HP비율(CHARANUM-1) < 3
 	ABL:(CHARANUM-1):스킬3 = 0
 	ABL:(CHARANUM-1):스킬8 = 0
 	CFLAG:(CHARANUM-1):행동횟수 = 3
-	FLAG:나이트・테일진행도 = 824000
+	FLAG:나이트ㆍ테일진행도 = 824000
 	
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.30
 	
 ;마더해롯(残り99％　이벤트
-ELSEIF FLAG:나이트・테일진행도 == 840000 && 현HP비율(CHARANUM-1) < 99
+ELSEIF FLAG:나이트ㆍ테일진행도 == 840000 && 현HP비율(CHARANUM-1) < 99
 	PRINTFORML 
 	PRINTFORMW 제우스가 벼락을 날리며 외친다。
 	PRINTFORML 
@@ -1917,14 +1917,14 @@ ELSEIF FLAG:나이트・테일진행도 == 840000 && 현HP비율(CHARANUM-1) < 9
 	PRINTFORMW 「마음은 감사합니다만、엄마아빠를 내버려 둘 수도 없고
 	PRINTFORMW 　거기에、티타니아님을 이대로 죽게 하면、다시는 요정으로 돌아갈 수 없게 되버립니다」
 	
-	FLAG:나이트・테일진행도 = 841000
+	FLAG:나이트ㆍ테일진행도 = 841000
 	
 	;ここは飛んでもいいかな……
 	;BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	;TIMES BASE:(CHARANUM-1):ＨＰ, 0.99
 	
 ;마더해롯(残り80％　어둠의심판、마계의조사
-ELSEIF FLAG:나이트・테일진행도 == 841000 && 현HP비율(CHARANUM-1) < 80
+ELSEIF FLAG:나이트ㆍ테일진행도 == 841000 && 현HP비율(CHARANUM-1) < 80
 	PRINTFORML 
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -1935,13 +1935,13 @@ ELSEIF FLAG:나이트・테일진행도 == 841000 && 현HP비율(CHARANUM-1) < 8
 	ABL:(CHARANUM-1):스킬2 = 1132
 	ABL:(CHARANUM-1):스킬3 = 0
 
-	FLAG:나이트・테일진행도 = 842000
+	FLAG:나이트ㆍ테일진행도 = 842000
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.80
 	
-;마더해롯(残り60％　정령마법4種／정령・물리마법반사
-ELSEIF FLAG:나이트・테일진행도 == 842000 && 현HP비율(CHARANUM-1) < 60
+;마더해롯(残り60％　정령마법4種／정령ㆍ물리마법반사
+ELSEIF FLAG:나이트ㆍ테일진행도 == 842000 && 현HP비율(CHARANUM-1) < 60
 	PRINTFORML 
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -1981,14 +1981,14 @@ ELSEIF FLAG:나이트・테일진행도 == 842000 && 현HP비율(CHARANUM-1) < 6
 	BASE:(CHARANUM-1):핵열 = 999
 	MAXBASE:(CHARANUM-1):만능 = 999
 	BASE:(CHARANUM-1):만능 = 999
-	FLAG:나이트・테일진행도 = 843000
+	FLAG:나이트ㆍ테일진행도 = 843000
 	
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.60
 
 ;마더해롯(残り40％　불결이가득찬황금의잔、묵시록、랜더마이저
-ELSEIF FLAG:나이트・테일진행도 == 843000 && 현HP비율(CHARANUM-1) < 40
+ELSEIF FLAG:나이트ㆍ테일진행도 == 843000 && 현HP비율(CHARANUM-1) < 40
 	PRINTFORML 
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -2025,7 +2025,7 @@ ELSEIF FLAG:나이트・테일진행도 == 843000 && 현HP비율(CHARANUM-1) < 4
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	PRINTFORML 
-	PRINTFORMW 야마 라두・셀・후루모스가 토르의 어깨에 큰 웃음을 지으며 아득한 천공에서 나타났다！
+	PRINTFORMW 야마 라두ㆍ셀ㆍ후루모스가 토르의 어깨에 큰 웃음을 지으며 아득한 천공에서 나타났다！
 	PRINTFORMW 「아핫、쟤들、자기들 좋을대로 말해버리네……」
 	PRINTFORML 
 	SETCOLOR 0x33ffcc
@@ -2047,13 +2047,13 @@ ELSEIF FLAG:나이트・테일진행도 == 843000 && 현HP비율(CHARANUM-1) < 4
 	
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	
-	FLAG:나이트・테일진행도 = 844000
+	FLAG:나이트ㆍ테일진행도 = 844000
 
 	BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 	TIMES BASE:(CHARANUM-1):ＨＰ, 0.40
 	
 ;마더해롯(残り20％　불결이가득찬황금의잔、묵시록
-ELSEIF FLAG:나이트・테일진행도 == 844000 && 현HP비율(CHARANUM-1) < 20
+ELSEIF FLAG:나이트ㆍ테일진행도 == 844000 && 현HP비율(CHARANUM-1) < 20
 	;姫宮키쿠에が居て、전투メンバーではない＆宮下が居る
 	IF FINDCHARA_B([[キャラ:쇼고]]) > 0 && FINDCHARA_B([[キャラ:키쿠에]]) > 0 && FINDCHARA_B([[キャラ:키쿠에]]) != 2
 		PRINTFORML 
@@ -2240,12 +2240,12 @@ ELSEIF FLAG:나이트・테일진행도 == 844000 && 현HP비율(CHARANUM-1) < 2
 		;段階吹っ飛ばされないようにする追加：不死身フラグをオフ
 		CFLAG:(CHARANUM-1):불사신플래그 = 0
 
-		FLAG:나이트・테일진행도 = 845000
+		FLAG:나이트ㆍ테일진행도 = 845000
 		
 		BASE:(CHARANUM-1):ＨＰ = (MAXBASE:(CHARANUM-1):ＨＰ)
 		TIMES BASE:(CHARANUM-1):ＨＰ, 0.20
 
-ELSEIF FLAG:나이트・테일진행도 < 846000 && FLAG:나이트・테일진행도 > 839999 && BASE:(CHARANUM-1):ＨＰ < 1
+ELSEIF FLAG:나이트ㆍ테일진행도 < 846000 && FLAG:나이트ㆍ테일진행도 > 839999 && BASE:(CHARANUM-1):ＨＰ < 1
 	PRINTFORML 
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -2260,7 +2260,7 @@ ELSEIF FLAG:나이트・테일진행도 < 846000 && FLAG:나이트・테일진�
 	PRINTFORML 
 	PRINTFORMW 최후의 일격을 받아、대음부(大淫婦)는、부드러운 빛에 쌓여 하늘의 저편으로 사라져 갔다。
 	PRINTFORML 
-	FLAG:나이트・테일진행도 = 846000
+	FLAG:나이트ㆍ테일진행도 = 846000
 	
 	;짐승の머리が生きてる場合、弱体化（自己재생消滅）
 	LOCAL:1 = 7
@@ -2373,7 +2373,7 @@ PRINTFORMW 싱글벙글、농담처럼 말하는 것은、자신과 비슷한 �
 PRINTFORMW 두 갈래로 묶은 머리카락을 흔들면서、신고 있는 스니커를、지면에 톡톡하고 두드리고 있다。
 PRINTFORML 
 PRINTFORMW 「다、당신은……？」
-PRINTFORMW 「진노・코시로에요」
+PRINTFORMW 「진노ㆍ코시로에요」
 PRINTFORML 
 PRINTFORMW 덤벼 온 악령을、뭔가 충격파같은 것으로 날려버리면서、그녀는 말했다。
 PRINTFORML 
@@ -2397,7 +2397,7 @@ PRINTFORMW DEMON을 사역해、
 PRINTFORMW 신도 악마도 상관없이 무찌르는、
 PRINTFORMW 사람이면서도、『초인』。
 PRINTFORMW 인류가 인류인채로 모든것을 초월한 힘을 얻은、『초인』。
-PRINTFORMW 그것은 카오스인가、혹은 로우인가。선악의 정도는 있어도、틀림없는、『더・히어로』。
+PRINTFORMW 그것은 카오스인가、혹은 로우인가。선악의 정도는 있어도、틀림없는、『더ㆍ히어로』。
 PRINTFORML 
 PRINTFORMW 「데빌、서머너」
 PRINTFORML 
@@ -2412,7 +2412,7 @@ PRINTFORMW 올바른 분노가 되어、모든 사악한 것을 타도하자。
 PRINTFORML 
 PRINTFORMW 어떤 고난이 있어도、둘이서 맹세한 그 밤의、카레의 맛을 기억하고 있으니까。
 PRINTFORML 
-PRINTFORMW 　　　　　　　　―― Ending No.051 (나이트・테일　진노 코시로 END　“to the HERO.”)
+PRINTFORMW 　　　　　　　　―― Ending No.051 (나이트ㆍ테일　진노 코시로 END　“to the HERO.”)
 PRINTFORML 
 
 	FLAG:5 = 9
@@ -2443,7 +2443,7 @@ PRINTFORML
 PRINTFORML 
 PRINTFORML 
 PRINTFORMW 「네 녀석、60년의 세월을 뛰어넘어、부활한 슈브＝니구라스！
-PRINTFORMW 　미야시타 씨의 손자는、이 유리아・페테아스카가 반드시 지켜보이겠어요！
+PRINTFORMW 　미야시타 씨의 손자는、이 유리아ㆍ페테아스카가 반드시 지켜보이겠어요！
 PRINTFORMW 　목숨과 바꾸어서라도、목숨과、맞바꾸어서라도오오오오오！！
 PRINTFORMW 　……앗、거기 있는 건 코시로쨩。몇 년이 지나도 작은 그대로」
 PRINTFORMW 「여보세요、어째서 나 성장하지 않은 겁니까、조금 정도 꿈꾸어도 상관없잖습니까」
@@ -2609,13 +2609,13 @@ PRINTFORMW 그럼에도 분명히、빛을 알고、내일을 꿈꾸며、지평
 PRINTFORML 
 PRINTFORMW 「있지、코시로쨩、유리아씨、이 연극의 제목은 이미 정해져 있는거죠？」
 PRINTFORMW 마야의 물음에、그녀들은 얼굴을 마주 보며 생긋 웃었다。
-PRINTFORMW 「「나이트・테일！」」
+PRINTFORMW 「「나이트ㆍ테일！」」
 PRINTFORML 
 PRINTFORMW 그것은 야화。
 PRINTFORMW 조촐하게 구전되어 가는 사랑과 희망의 이야기。
 PRINTFORML 
 SETCOLOR 0x33ffcc
-PRINTFORMW 　　　　　　　　―― Ending No.050 (나이트・테일　진노 코시로　TRUE-END　“La Maternite.”)
+PRINTFORMW 　　　　　　　　―― Ending No.050 (나이트ㆍ테일　진노 코시로　TRUE-END　“La Maternite.”)
 RESETCOLOR
 PRINTFORML 
 

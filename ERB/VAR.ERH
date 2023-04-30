@@ -30,7 +30,7 @@
 #DIM SAVEDATA 중고캐릭터BASE,		        2000,100		;	　〃　　 BASE保存用
 #DIM SAVEDATA 중고캐릭터CFLAG,		        2000,400		;	　〃　　 CFLAG保存用
 #DIM SAVEDATA 중고캐릭터CFLAG2,		        2000,400		;	　〃　　 CFLAG保存用2
-#DIM SAVEDATA 중고캐릭터CFLAG3,		        2000,22		;	　〃　　 CFLAG保存用3、子供・出産関係
+#DIM SAVEDATA 중고캐릭터CFLAG3,		        2000,22		;	　〃　　 CFLAG保存用3、子供ㆍ出産関係
 #DIM SAVEDATA 중고캐릭터CFLAG이상경험기록,	 2000,1			;	　〃　　 CFLAG異常経験記録保存用
 #DIM SAVEDATA 중고캐릭터EXP,		        2000,84			;	　〃　　 EXP保存用
 #DIM SAVEDATA 중고캐릭터TALENT,		        2000,160		;	　〃　　 TALENT保存用

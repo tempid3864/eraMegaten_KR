@@ -89,7 +89,7 @@ ENDIF
 	ENDIF
 	SIF TALENT:(LOCAL:2):기계의처녀 == 1 || ABL:(LOCAL:2):종족 == 12
 		TALENT:完成品:기계의처녀 = 1
-		;実質クリス・ザ・カーとの合体時専用？一応종족:머신との合体時にも기계의처녀に변화するように設計したつもり…
+		;実質クリスㆍザㆍカーとの合体時専用？一応종족:머신との合体時にも기계의처녀に변화するように設計したつもり…
 	SIF TALENT:(LOCAL:2):부정형 == 1
 		TALENT:完成品:부정형 = 1
 	CALL SUCCESS_TALENT, 完成品, 完成品, LOCAL:2, LOCAL:10
@@ -407,13 +407,13 @@ IF TALENT:(ARG):3 || TALENT:(ARG):6
 			CASE 6
 				PRINTFORMW 「고마워」
 			CASE 7
-				PRINTFORMW 눈물로 번져서 읽을 수가 없다・・・
+				PRINTFORMW 눈물로 번져서 읽을 수가 없다ㆍㆍㆍ
 			CASE 8
 				PRINTFORMW 당신과의 추억이 적혀 있다.
 			CASE 9
-				PRINTFORMW 편지에서 좋은 냄새가 난다・・・
+				PRINTFORMW 편지에서 좋은 냄새가 난다ㆍㆍㆍ
 			CASE 10
-				PRINTFORMW 당신과 하나가 된 것에 대한 기쁨이 기재되어 있다・・・
+				PRINTFORMW 당신과 하나가 된 것에 대한 기쁨이 기재되어 있다ㆍㆍㆍ
 			CASE 11
 				PRINTFORMW 설령 죽더라도 함께 있을 수 있다고 흥문한 느낌의 문장이 장황하게 적혀 있다.
 			CASEELSE

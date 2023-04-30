@@ -233,10 +233,10 @@ ENDIF
 ;バトル設定
 ;--------------------
 ;戦闘開始時のイベント発生
-;サンプル：初手ノウブル・ファンタズムゲージMAX、気合フラグオン
+;サンプル：初手ノウブルㆍファンタズムゲージMAX、気合フラグオン
 @EVENT_BATTLE_START_EVENT82_6
 #DIM SKILL_NUM
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 60
 	PRINTFORML  
@@ -264,11 +264,11 @@ IF 이벤트플래그:82:5 == 60
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
 	PRINTFORM ┃[{CPOS((CHARANUM-1)),2}] %CALLNAME:(CHARANUM-1),21,LEFT%┃　┃
-	CALLFORM SKILL_NAME_ノウブル・ファンタズム,(CHARANUM-1)
+	CALLFORM SKILL_NAME_ノウブルㆍファンタズム,(CHARANUM-1)
 	PRINTFORML %RESULTS,40,LEFT%┃
 	PRINTFORMW ┗━━━━━━━━━━━━━┛　┗━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-	CALL ACTION_ノウブル・ファンタズム,(CHARANUM-1)
+	CALL ACTION_ノウブルㆍファンタズム,(CHARANUM-1)
 	CFLAG:(CHARANUM-1):기합플래그 = 1
 	이벤트플래그:82:5 = 61
 ENDIF
@@ -278,7 +278,7 @@ ENDIF
 ;---------------------------------------------------
 #DIM SKILL_NUM
 
-SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 
 IF 이벤트플래그:82:5 == 62 && 현HP비율(CHARANUM-1) < 50
 	CUSTOMDRAWLINE =
@@ -329,7 +329,7 @@ ENDIF
 @SET_ACTION_呪いの厄災, ARG
 #DIM SKILL_NUM,2
 
-SKILL_NUM:0 = PU_SKILLNUM_GET((CHARANUM-1),"ノウブル・ファンタズム")
+SKILL_NUM:0 = PU_SKILLNUM_GET((CHARANUM-1),"ノウブルㆍファンタズム")
 SKILL_NUM:1 = PU_SKILLNUM_GET((CHARANUM-1),"痛幻の哭奏")
 
 SELECTCASE 이벤트플래그:82:5

@@ -190,7 +190,7 @@ SIF GET_STATE(CFLAG:(LOCAL:1):상태이상) == "DYING"
 	CALL INCREASE_LD,-7
 CALL 캐릭터삭제, LOCAL:1
 
-ITEM:도리・카드몬 -= 1
+ITEM:도리ㆍ카드몬 -= 1
 
 RETURN 0
 
@@ -212,17 +212,17 @@ RETURN 1
 
 
 ;==========================================================================
-;조마を도리・카드몬に戻す
+;조마を도리ㆍ카드몬に戻す
 ;==========================================================================
 @DEL_ZOUMA
 
-CALL INPUT_CHARA_LIST("어떤 조마를 도리・카드몬으로 되돌리시겠습니까？", "CASTING_DEL_ZOUMA")
+CALL INPUT_CHARA_LIST("어떤 조마를 도리ㆍ카드몬으로 되돌리시겠습니까？", "CASTING_DEL_ZOUMA")
 IF RESULT == 1000
 		RETURN 0
 ENDIF
 
 LOCAL:1 = RESULT
-PRINTFORMW %NAME:(LOCAL:1)%은(는) 도리・카드몬으로 되돌아갔다
+PRINTFORMW %NAME:(LOCAL:1)%은(는) 도리ㆍ카드몬으로 되돌아갔다
 
 CALL FUSION_LETTER, LOCAL:1,5
 
@@ -247,7 +247,7 @@ CALL 캐릭터삭제, LOCAL:1
 ;포지션に齟齬が発生するので、FLAG側を초기化＋CFLAG側から読み込み
 ;CALL REFRESH_POS
 
-ITEM:도리・카드몬 += 1
+ITEM:도리ㆍ카드몬 += 1
 
 @CASTING_DEL_ZOUMA(ARG)
 SIF ABL:ARG:종족 != 45

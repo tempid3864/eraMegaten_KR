@@ -54,7 +54,7 @@ RESETCOLOR
 
 SIF GETBIT(FLAG:발견ED, 54)
 	SETCOLORBYNAME Gold
-PRINTLC [ 5]진・여신전생 if
+PRINTLC [ 5]진ㆍ여신전생 if
 RESETCOLOR
 
 SIF GETBIT(FLAG:발견ED, 28)
@@ -84,12 +84,12 @@ PRINTLC [11]Ｐ４
 
 SIF GETBIT(FLAG:발견ED, 60) && GETBIT(FLAG:발견ED, 61)
 	SETCOLORBYNAME Gold
-PRINTLC [15]데빌칠드런(흑・적)
+PRINTLC [15]데빌칠드런(흑ㆍ적)
 RESETCOLOR
 
 SIF GETBIT(FLAG:발견ED, 46) && GETBIT(FLAG:발견ED, 47)
 	SETCOLORBYNAME Gold
-PRINTLC [16]데빌칠드런(염・빙)
+PRINTLC [16]데빌칠드런(염ㆍ빙)
 RESETCOLOR
 
 SIF GETBIT(FLAG:발견ED, 35) && GETBIT(FLAG:발견ED, 36) && GETBIT(FLAG:발견ED, 37)
@@ -115,17 +115,17 @@ RESETCOLOR
 
 SIF GETBIT(FLAG:발견ED, 32) && GETBIT(FLAG:발견ED, 33) && GETBIT(FLAG:발견ED, 34)
 	SETCOLORBYNAME Gold
-PRINTLC [25]카테드랄(진・Ⅰ)
+PRINTLC [25]카테드랄(진ㆍⅠ)
 RESETCOLOR
 
-PRINTLC [26]야마토신족해방(진・Ⅱ)
+PRINTLC [26]야마토신족해방(진ㆍⅡ)
 
 SIF GETBIT(FLAG:발견ED, 55)
 	SETCOLORBYNAME Gold
-PRINTLC [27]아마라심계(진・Ⅲ)
+PRINTLC [27]아마라심계(진ㆍⅢ)
 RESETCOLOR
 
-PRINTLC [28]사무라이들(진・Ⅳ)
+PRINTLC [28]사무라이들(진ㆍⅣ)
 
 ;PRINTLC [29]
 ;PRINTLC [30]
@@ -499,7 +499,7 @@ IF 던전플래그:92:0 == 2
 	PRINTL ＞ＶＲ호러 하우스에서 에리카를 격파했다.
 ELSE
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：ＶＲ호러・하우스를 공략한다.
+	PRINTL ＞Next　탐색：ＶＲ호러ㆍ하우스를 공략한다.
 	RESETCOLOR
 ENDIF
 PRINTL 
@@ -919,7 +919,7 @@ RESETCOLOR
 
 @DAIRY_EVENT_MEGATEN_IF
 PRINTL ============================
-PRINTL 　진・여신전생 if 편
+PRINTL 　진ㆍ여신전생 if 편
 PRINTL ============================
 PRINTL 
 IF 의뢰플래그:2:0 == 1 || 의뢰플래그:3:0 == 1
@@ -1054,7 +1054,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 던전플래그:11:7 >= 1
-	PRINTL ＞돌연 미카케쵸에 나타난 거대한 성 데바・유가 내에서 이계화 사건의 주모자 칸도리를 격파했다.
+	PRINTL ＞돌연 미카케쵸에 나타난 거대한 성 데바ㆍ유가 내에서 이계화 사건의 주모자 칸도리를 격파했다.
 	IF 던전플래그:11:7 == 1 && 던전플래그:60:1 != 1
 		PRINTL 　미카케쵸의 이계화를 일으킨 SEBEC이 개발한 DEVA 시스템을 팬텀에 보고함으로써 본 건은 종료되었다.
 		GOTO DAIRY_EVENT_P1_SEBEC_SKIP
@@ -1065,7 +1065,7 @@ IF 던전플래그:11:7 >= 1
 	ENDIF
 ELSE 
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：데바・유가를 공략한다.
+	PRINTL ＞Next　탐색：데바ㆍ유가를 공략한다.
 	GOTO DAIRY_EVENT_P1_SEBEC_SKIP
 ENDIF
 PRINTL 
@@ -1192,7 +1192,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 던전플래그:11:7 >= 1
-	PRINTL ＞돌연 미카케쵸에 나타난 거대한 성 데바・유가 내에서 이계화 사건의 주모자 칸도리를 격파했다.
+	PRINTL ＞돌연 미카케쵸에 나타난 거대한 성 데바ㆍ유가 내에서 이계화 사건의 주모자 칸도리를 격파했다.
 	IF 던전플래그:11:7 == 1 && 던전플래그:66:1 != 1
 		PRINTL 　미카케쵸의 이계화를 일으킨 SEBEC이 개발한 DEVA 시스템을 팬텀에 보고함으로써 본 건은 종료되었다.
 		GOTO DAIRY_EVENT_P1_QUEEN_OF_SNOW_SKIP
@@ -1203,7 +1203,7 @@ IF 던전플래그:11:7 >= 1
 	ENDIF
 ELSE 
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：데바・유가를 공략한다.
+	PRINTL ＞Next　탐색：데바ㆍ유가를 공략한다.
 	GOTO DAIRY_EVENT_P1_QUEEN_OF_SNOW_SKIP
 ENDIF
 PRINTL 
@@ -1366,7 +1366,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 던전플래그:70:1 >= 10
-	PRINTL ＞타르타로스 최상층에서 뉵스・아바타를 쓰러뜨림으로써 이쿠츠키 슈지의 의뢰를 달성했다.
+	PRINTL ＞타르타로스 최상층에서 뉵스ㆍ아바타를 쓰러뜨림으로써 이쿠츠키 슈지의 의뢰를 달성했다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：타르타로스를 49층까지 공략한다. (밤 한정)
@@ -1521,7 +1521,7 @@ RESETCOLOR
 
 @DAIRY_EVENT_DEVICHIL_BLACK_AND_RED
 PRINTL ================================
-PRINTL 　데빌칠드런(흑・적) 편
+PRINTL 　데빌칠드런(흑ㆍ적) 편
 PRINTL ================================
 PRINTL 
 IF 던전플래그:61:0 == 5
@@ -1644,13 +1644,13 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_デビチル（炎・氷）ルート
+;各イベントの詳細_デビチル（炎ㆍ氷）ルート
 
 ;==========================================
 
 @DAIRY_EVENT_DEVICHIL_FIRE_AND_ICE
 PRINTL ================================
-PRINTL 　데빌칠드런(염・빙) 편
+PRINTL 　데빌칠드런(염ㆍ빙) 편
 PRINTL ================================
 PRINTL 
 IF 이벤트플래그:101:0 >= 1
@@ -1736,7 +1736,7 @@ PRINTL
 
 @DAIRY_EVENT_PSEUDEPIGRAPHA
 PRINTL ================================
-PRINTL 　위전・여신전생　편
+PRINTL 　위전ㆍ여신전생　편
 PRINTL ================================
 PRINTL 
 IF 이벤트플래그:70:0 == 99
@@ -1807,7 +1807,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 이벤트플래그:70:0 >= 8
-	PRINTL ＞황천에서 타천사 오세와 마왕 벨・데르를 쓰러뜨렸다.
+	PRINTL ＞황천에서 타천사 오세와 마왕 벨ㆍ데르를 쓰러뜨렸다.
 	PRINTL 　또 습격해 온 타천사 데카라비아를 쓰러뜨리고 유우카(이슈타르)의 왼다리를 회수했다.
 ELSE
 	SETCOLORBYNAME Gray
@@ -1820,7 +1820,7 @@ IF 이벤트플래그:70:0 >= 9
 	PRINTL 　아셰라트를 쓰러뜨리고 유우카(이슈타르)의 몸통도 회수했지만 어머니 금성과의 인연이 끊겼다.
 ELSE
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　이벤트：침입・바알 성을 실시한다.
+	PRINTL ＞Next　이벤트：침입ㆍ바알 성을 실시한다.
 	GOTO DAIRY_EVENT_PSEUDEPIGRAPHA_SKIP
 ENDIF
 PRINTL 
@@ -1839,7 +1839,7 @@ PRINTL
 IF 이벤트플래그:70:0 == 12
 	PRINTL ＞바알 성에서 바알을 쓰러뜨림으로써 카츠라기와 이슈타르를 방해할 것은 없어졌다.
 ELSEIF 이벤트플래그:70:0 == 13
-	PRINTFORML ＞바알 성에서 바알을 쓰러뜨림으로써 아야토와 %CALLNAME:MASTER% 마도 도쿄(魔都・東京)의 새로운 지배자가 되었다.
+	PRINTFORML ＞바알 성에서 바알을 쓰러뜨림으로써 아야토와 %CALLNAME:MASTER% 마도 도쿄(魔都ㆍ東京)의 새로운 지배자가 되었다.
 ELSE
 	SETCOLORBYNAME Gray
 	IF 이벤트플래그:70:0 == 11
@@ -1874,7 +1874,7 @@ ENDIF
 
 @DAIRY_EVENT_REVELATION
 PRINTL =================================
-PRINTL 　진・여신전생　도쿄묵시록　편
+PRINTL 　진ㆍ여신전생　도쿄묵시록　편
 PRINTL =================================
 PRINTL 
 IF 의뢰플래그:17:0 >= 1
@@ -1911,13 +1911,13 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_真・女神転生 20XXルート
+;各イベントの詳細_真ㆍ女神転生 20XXルート
 
 ;==========================================
 
 @DAIRY_EVENT_20XX
 PRINTL =================================
-PRINTL 　진・여신전생 20XX 편
+PRINTL 　진ㆍ여신전생 20XX 편
 PRINTL =================================
 PRINTL 
 IF 의뢰플래그:70:0 >= 1
@@ -2014,13 +2014,13 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_真・女神転生 20XXルート
+;各イベントの詳細_真ㆍ女神転生 20XXルート
 
 ;==========================================
 
 @DAIRY_EVENT_20XX_CLOSSEUM
 PRINTL =================================
-PRINTL 　진・여신전생 20XX 데빌콜로세움 편
+PRINTL 　진ㆍ여신전생 20XX 데빌콜로세움 편
 PRINTL =================================
 PRINTL 
 IF 투기장플래그:10:0 >= 1
@@ -2107,7 +2107,7 @@ PRINTL 　백합의 꽃 편
 PRINTL ================================
 PRINTL 
 IF FLAG:백합의꽃루트 >= 1
-	PRINTL ＞신주쿠에서 메시아 교의 설법을 전하던 소녀를 벨・데르로부터 구했다.
+	PRINTL ＞신주쿠에서 메시아 교의 설법을 전하던 소녀를 벨ㆍ데르로부터 구했다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：신주쿠 북쪽에서 소녀의 설법을 듣는다.
@@ -2164,7 +2164,7 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 3
-	PRINTL ＞백합 공동모금에서 벨・데르를 타도해 달라는 요청이 왔다.
+	PRINTL ＞백합 공동모금에서 벨ㆍ데르를 타도해 달라는 요청이 왔다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　의뢰：불사의 존재를 해결한다.
@@ -2172,15 +2172,15 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 4
-	PRINTL ＞벨・데르를 쓰러뜨렸다.
+	PRINTL ＞벨ㆍ데르를 쓰러뜨렸다.
 ELSE
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：신주쿠에서 벨・데르를 쓰러뜨린다.
+	PRINTL ＞Next　탐색：신주쿠에서 벨ㆍ데르를 쓰러뜨린다.
 	GOTO DAIRY_EVENT_LILY_SKIP
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 5
-	PRINTL ＞아마네에게 빙의한 레미엘로부터 아마네 안에 자리잡은 이자・벨의 토벌을 의뢰받았다.
+	PRINTL ＞아마네에게 빙의한 레미엘로부터 아마네 안에 자리잡은 이자ㆍ벨의 토벌을 의뢰받았다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　의뢰：작열의 꽃을 해결한다.
@@ -2188,7 +2188,7 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 6
-	PRINTL ＞아마네의 정신세계에 자리잡은 이자・벨을 토벌했다.
+	PRINTL ＞아마네의 정신세계에 자리잡은 이자ㆍ벨을 토벌했다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：정신세계를 공략한다.
@@ -2222,7 +2222,7 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 7
-	PRINTL ＞아마네로부터 벨・베리트 토벌을 의뢰받았다.
+	PRINTL ＞아마네로부터 벨ㆍ베리트 토벌을 의뢰받았다.
 ELSEIF FLAG:백합의꽃루트 == 6
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　의뢰：상문회를 해결한다. (EX 필터 해제 필요)
@@ -2232,7 +2232,7 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:백합의꽃루트 >= 8
-	PRINTL ＞상문회 본부의 롯폰기 힐즈에서 벨・베리트를 쓰러뜨렸지만 메시아교의 습격으로 아마네의 부친 쿠즈류는 사망,
+	PRINTL ＞상문회 본부의 롯폰기 힐즈에서 벨ㆍ베리트를 쓰러뜨렸지만 메시아교의 습격으로 아마네의 부친 쿠즈류는 사망,
 	PRINTL 　상문회 신자들은 메시아교로 끌려갔다.
 ELSE
 	SETCOLORBYNAME Gray
@@ -2353,10 +2353,10 @@ ELSE
 ENDIF
 PRINTL 
 IF 던전플래그:18:22 == 1
-	PRINTL ＞우에노・가이아교 본부에서 사룡 라돈을 쓰러뜨리고 목성의 필러를 입수했다.
+	PRINTL ＞우에노ㆍ가이아교 본부에서 사룡 라돈을 쓰러뜨리고 목성의 필러를 입수했다.
 ELSE
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：우에노・가이아교 본부를 공략한다.
+	PRINTL ＞Next　탐색：우에노ㆍ가이아교 본부를 공략한다.
 	GOTO DAIRY_EVENT_PILLAR_SKIP
 ENDIF
 PRINTL 
@@ -2458,7 +2458,7 @@ IF 이벤트플래그:6:0 == 2
 	GOTO DAIRY_EVENT_NAOYA_SKIP
 ENDIF
 IF FLAG:나오야루트 >= 1
-	PRINTL ＞신주쿠에서 하루를 습격한 악마 벨・데르를 격퇴하자 니트모를 쓴 소년이 가이아 교회로 오라고 부탁했다.
+	PRINTL ＞신주쿠에서 하루를 습격한 악마 벨ㆍ데르를 격퇴하자 니트모를 쓴 소년이 가이아 교회로 오라고 부탁했다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：신주쿠 남쪽에서 하루의 라이브를 본다.
@@ -2482,14 +2482,14 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:나오야루트 >= 2
-	PRINTL ＞메시아교의 의식을 방해하고 기모노 차림의 남자 나오야로부터 인스톨 소프트 【바・벨】을 입수했다.
+	PRINTL ＞메시아교의 의식을 방해하고 기모노 차림의 남자 나오야로부터 인스톨 소프트 【바ㆍ벨】을 입수했다.
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：신주쿠 남쪽, 교회에서 메시아교의 의식을 방해한다. (밤 한정)
 	GOTO DAIRY_EVENT_NAOYA_SKIP
 ENDIF
 PRINTL 
 IF FLAG:나오야루트 >= 3
-	PRINTL ＞나오야에게 벨・데르를 쓰러뜨릴 준비가 되었다는 연락이 왔다.
+	PRINTL ＞나오야에게 벨ㆍ데르를 쓰러뜨릴 준비가 되었다는 연락이 왔다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　의뢰：불사의 존재를 해결한다.
@@ -2497,10 +2497,10 @@ ELSE
 ENDIF
 PRINTL 
 IF 던전플래그:42:신주쿠플래그("이벤트클리어플래그") >= 4
-	PRINTL ＞벨・데르를 쓰러뜨리고 벨 왕위쟁탈전에 참가하게 되었다.
+	PRINTL ＞벨ㆍ데르를 쓰러뜨리고 벨 왕위쟁탈전에 참가하게 되었다.
 ELSE
 	SETCOLORBYNAME Gray
-	PRINTL ＞Next　탐색：신주쿠에서 벨・데르를 쓰러뜨린다.
+	PRINTL ＞Next　탐색：신주쿠에서 벨ㆍ데르를 쓰러뜨린다.
 	GOTO DAIRY_EVENT_NAOYA_SKIP
 ENDIF
 PRINTL 
@@ -2513,7 +2513,7 @@ ELSE
 ENDIF
 PRINTL 
 IF FLAG:나오야루트 >= 5
-	PRINTL ＞아마네에게 자리 잡은 이자・벨로부터 아마네에게 빙의한 레미엘 토벌을 의뢰받았다.
+	PRINTL ＞아마네에게 자리 잡은 이자ㆍ벨로부터 아마네에게 빙의한 레미엘 토벌을 의뢰받았다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　의뢰：작열의 꽃을 해결한다.
@@ -2579,7 +2579,7 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_カテドラル攻略(真・I)ルート
+;各イベントの詳細_カテドラル攻略(真ㆍI)ルート
 
 ;==========================================
 
@@ -2608,13 +2608,13 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_カテドラル攻略(真・I)ルート
+;各イベントの詳細_カテドラル攻略(真ㆍI)ルート
 
 ;==========================================
 
 @DAIRY_EVENT_I
 PRINTL ============================
-PRINTL 　카테드랄(진・Ⅰ) 편
+PRINTL 　카테드랄(진ㆍⅠ) 편
 PRINTL ============================
 PRINTL 
 IF 이벤트플래그:17:0 >= 2
@@ -2739,7 +2739,7 @@ ENDIF
 
 ;==========================================
 
-;各イベントの詳細_大和神族解放(真・II)ルート
+;各イベントの詳細_大和神族解放(真ㆍII)ルート
 
 ;==========================================
 
@@ -2820,7 +2820,7 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_アマラ深界(真・III)ルート
+;各イベントの詳細_アマラ深界(真ㆍIII)ルート
 
 ;==========================================
 
@@ -2903,7 +2903,7 @@ PRINTL
 
 ;==========================================
 
-;各イベントの詳細_アマラ深界(真・III)ルート
+;各イベントの詳細_アマラ深界(真ㆍIII)ルート
 
 ;==========================================
 
@@ -2920,7 +2920,7 @@ PRINTL
 IF FLAG:진IV진행도 >= 100
 	PRINT ＞도쿄 스카이트리에서 메두사를 쓰러뜨리고, 
 	IF FLAG:진IV진행도 % 100 == 1
-		PRINTL 「동쪽 미카도국」이라는 곳에서 온 「사무라이」를 자처하는 소년・소녀들과 만났다.
+		PRINTL 「동쪽 미카도국」이라는 곳에서 온 「사무라이」를 자처하는 소년ㆍ소녀들과 만났다.
 	ELSE
 		PRINTL 엘레베이터 앞에서 「동쪽 미카도국」이라는 장소를 발견했다.
 	ENDIF
@@ -2959,7 +2959,7 @@ ELSE
 ENDIF
 PRINTL 
 IF STRFLAG_NUM_D("슈바르츠바스진행도") >= 5
-	PRINTL ＞슈바르츠바스 섹터・카리나에서 오르커스를 쓰러뜨리고, 양자 터널의 길을 열었다.
+	PRINTL ＞슈바르츠바스 섹터ㆍ카리나에서 오르커스를 쓰러뜨리고, 양자 터널의 길을 열었다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：슈바르츠바스를 공략한다. (인스톨소프트: 데모니카 필요)
@@ -2967,7 +2967,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 이벤트플래그:11:0 >= 2
-	PRINTL ＞슈바르츠바스 섹터・델파이너스의 조사 및 로제타 다양체 회수를 명령받았다.
+	PRINTL ＞슈바르츠바스 섹터ㆍ델파이너스의 조사 및 로제타 다양체 회수를 명령받았다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　이벤트：슈바르츠바스 조사2를 실시한다.
@@ -2975,7 +2975,7 @@ ELSE
 ENDIF
 PRINTL 
 IF STRFLAG_NUM_D("슈바르츠바스진행도") >= 10
-	PRINTL ＞슈바르츠바스 섹터・델파이너스에서 로제타:Del를 입수했다.
+	PRINTL ＞슈바르츠바스 섹터ㆍ델파이너스에서 로제타:Del를 입수했다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　탐색：슈바르츠바스를 공략한다. (인스톨소프트: 데모니카 필요)
@@ -3464,7 +3464,7 @@ FOR LOCAL ,0, 64
 		CASE 21
 		CASE 22
 		CASE 23
-			PRINTL Ending No.023 진・여신전생　데빌 서머너 엔딩"The Devil Summoner")
+			PRINTL Ending No.023 진ㆍ여신전생　데빌 서머너 엔딩"The Devil Summoner")
 		CASE 24
 				;소울해커스 용으로 비워둠
 		CASE 25
@@ -3482,22 +3482,22 @@ FOR LOCAL ,0, 64
 		CASE 31
 			PRINTL Ending No.031 (페르소나 2 죄　성창기사단 하렘 엔딩"Ehemann von Longinus")
 		CASE 32
-			PRINTL Ending No.032 (진・여신전생　NEUTRAL-END)
+			PRINTL Ending No.032 (진ㆍ여신전생　NEUTRAL-END)
 		CASE 33
-			PRINTL Ending No.033 (진・여신전생　LAW-END)
+			PRINTL Ending No.033 (진ㆍ여신전생　LAW-END)
 		CASE 34
-			PRINTL Ending No.034 (진・여신전생　CHAOS-END)
+			PRINTL Ending No.034 (진ㆍ여신전생　CHAOS-END)
 		CASE 35
-			PRINTL Ending No.035 (진・여신전생20XX　로우엔드　"Patentibus portis regnum Dei semper")
+			PRINTL Ending No.035 (진ㆍ여신전생20XX　로우엔드　"Patentibus portis regnum Dei semper")
 		CASE 36
-			PRINTL Ending No.036 (진・여신전생20XX　뉴트럴엔드　"Meipsum iudico")
+			PRINTL Ending No.036 (진ㆍ여신전생20XX　뉴트럴엔드　"Meipsum iudico")
 		CASE 37
-			PRINTL Ending No.037 (진・여신전생20XX　카오스엔드　"Iuro potentis diabolus Lucifer")
+			PRINTL Ending No.037 (진ㆍ여신전생20XX　카오스엔드　"Iuro potentis diabolus Lucifer")
 		CASE 38
-			PRINTL Ending No.038 (위전・여신전생　"신・성왕전설")
+			PRINTL Ending No.038 (위전ㆍ여신전생　"신ㆍ성왕전설")
 		CASE 39
 		CASE 40
-			PRINTL Ending No.040 (진・여신전생 데빌 콜로세움 20XX　True end　"The night before Armageddon")
+			PRINTL Ending No.040 (진ㆍ여신전생 데빌 콜로세움 20XX　True end　"The night before Armageddon")
 		CASE 41
 			PRINTL Ending No.041 (데빌 서바이버 ２　"Strength.")
 		CASE 42
@@ -3525,13 +3525,13 @@ FOR LOCAL ,0, 64
 		CASE 53
 			PRINTL Ending No.053 (유폐의 탑 편　엔딩"Life goes on")
 		CASE 54
-			PRINTL Ending No.054 (진・여신전생 if...END)
+			PRINTL Ending No.054 (진ㆍ여신전생 if...END)
 		CASE 55
-			PRINTL Ending No.055 (진・여신전생 III Nocturne Maniacs Dark-END　"혼돈왕")
+			PRINTL Ending No.055 (진ㆍ여신전생 III Nocturne Maniacs Dark-END　"혼돈왕")
 		CASE 56
-			;真・女神転生 IIIのMハゲルート枠
+			;真ㆍ女神転生 IIIのMハゲルート枠
 		CASE 57
-			PRINTL Ending No.057 (메시아・프로젝트 TRUE-END“구세주여, 영원하라”)
+			PRINTL Ending No.057 (메시아ㆍ프로젝트 TRUE-END“구세주여, 영원하라”)
 		CASE 58
 			PRINTL Ending No.058 (히메미야 키쿠에　END　“Moo Moo Moo”)
 		CASE 59

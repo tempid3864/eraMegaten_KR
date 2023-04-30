@@ -20,14 +20,14 @@
 ; *- SHOP関連(RPG)
 ;
 ;	# 메뉴関連
-;	・SHOPCOMABLE_402
-;	・SHOP_COM_402
-;	・GACHA_MASCHINE_SHOP
+;	ㆍSHOPCOMABLE_402
+;	ㆍSHOP_COM_402
+;	ㆍGACHA_MASCHINE_SHOP
 ;
 ;	# ガチャ！
-;	・GACHA_ONCE
-;	・GACHA_SEARCH_DEVIL
-;	・GACHA_SEARCH_ITEM
+;	ㆍGACHA_ONCE
+;	ㆍGACHA_SEARCH_DEVIL
+;	ㆍGACHA_SEARCH_ITEM
 ;
 ;=================================================
 @SHOPCOMABLE_402
@@ -251,16 +251,16 @@ SELECTCASE RESULT
 		PRINTFORML 　　１％　……ＳＲ……　{FLAG:가챠레벨설정+1}～{FLAG:가챠레벨설정+10}LV의 「악마」
 		PRINTFORML 　　４％　……　Ｒ……　{MAX(FLAG:가챠레벨설정/2,5)}～{FLAG:가챠레벨설정+5}LV이하의 「악마」
 		PRINTFORML 　１５％　……　Ｎ……　{MAX(FLAG:가챠레벨설정/2,5)}LV이하의 「악마」
-		PRINTFORML 　　２％　……ＳＲ……　{LOCAL*10}마카 이내에서 현재 교환 가능한 장비품・아이템
-		PRINTFORML 　　８％　……　Ｒ……　{LOCAL*4}마카 이내에서 현재 교환 가능한 장비품・아이템
-		PRINTFORML 　２０％　……　Ｎ……　{LOCAL}마카 이내에서 현재 교환 가능한 장비품・아이템
-		PRINTFORML 　　５％　……ＳＲ……　{LOCAL*500}￥이내에서 현재 구입 가능한 장비품・아이템
-		PRINTFORML 　１０％　……　Ｒ……　{LOCAL*200}￥이내에서 현재 구입 가능한 장비품・아이템
-		PRINTFORML 　３５％　……　Ｎ……　{LOCAL*50}￥이내에서 현재 구입 가능한 장비품・아이템
+		PRINTFORML 　　２％　……ＳＲ……　{LOCAL*10}마카 이내에서 현재 교환 가능한 장비품ㆍ아이템
+		PRINTFORML 　　８％　……　Ｒ……　{LOCAL*4}마카 이내에서 현재 교환 가능한 장비품ㆍ아이템
+		PRINTFORML 　２０％　……　Ｎ……　{LOCAL}마카 이내에서 현재 교환 가능한 장비품ㆍ아이템
+		PRINTFORML 　　５％　……ＳＲ……　{LOCAL*500}￥이내에서 현재 구입 가능한 장비품ㆍ아이템
+		PRINTFORML 　１０％　……　Ｒ……　{LOCAL*200}￥이내에서 현재 구입 가능한 장비품ㆍ아이템
+		PRINTFORML 　３５％　……　Ｎ……　{LOCAL*50}￥이내에서 현재 구입 가능한 장비품ㆍ아이템
 		PRINTFORML 　
-		PRINTFORML 　　・１０연 가챠는 반드시 악마가 하나, 또한 R 이상이 하나 선출됩니다.
+		PRINTFORML 　　ㆍ１０연 가챠는 반드시 악마가 하나, 또한 R 이상이 하나 선출됩니다.
 		PRINTFORML 　　　그러나 R 아이템으로 N 아이템이 나와도 울지마시기 바랍니다.
-		PRINTFORML 　　・선출 후, 악마는 ４분의１의 확률로 픽업 대상에서 선정합니다.
+		PRINTFORML 　　ㆍ선출 후, 악마는 ４분의１의 확률로 픽업 대상에서 선정합니다.
 		PRINTFORML 　　　그러나 픽업 대상이 없는 경우에는 비 픽업 대상에서 선정합니다.
 		PRINTFORML 　　　그래도 없는 경우에는 한 단계 아래 조건으로 다시 선정합니다.
 		PRINTFORMW 

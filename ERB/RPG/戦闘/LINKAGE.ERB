@@ -286,7 +286,7 @@ ELSEIF RESULT >= 4000 && RESULT <= 5000
 		TRYCCALLFORM SKILL_NAME_{LOCAL}
 			;---- EDIT 004 MOD START ---------------------------
 			PRINTFORM [{LOCAL}] %RESULTS,20,LEFT%　
-			;説明文に書かれてないことがあるので射程・範囲を明記
+			;説明文に書かれてないことがあるので射程ㆍ範囲を明記
 			CALLFORM SKILL_RANGE_{LOCAL}
 			PRINTFORM 사거리:%AUTO_SPLIT(" /Ｓ/Ｍ/Ｌ/ＬＬ", "/", RESULT)%　
 			CALLFORM SKILL_SPHERE_{LOCAL}

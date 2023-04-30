@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4201,ARG
-RESULTS = 마하・타루카쟈
+RESULTS = 마하ㆍ타루카쟈
 
 ;　명중
 @SKILL_HITRATE_4201, ARG
@@ -163,7 +163,7 @@ RETURN 1
 @참가조건표시_4201,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 타루・카쟈
+		PRINTFORM 타루ㆍ카쟈
 	CASE 2
 		PRINTFORM 자애의기도
 ENDSELECT
@@ -186,9 +186,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;タル・カジャを使えること
-		IF HAVE_SKILL(ARG, [[스킬:타루・카쟈]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:타루・카쟈]]
+		;タルㆍカジャを使えること
+		IF HAVE_SKILL(ARG, [[스킬:타루ㆍ카쟈]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:타루ㆍ카쟈]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

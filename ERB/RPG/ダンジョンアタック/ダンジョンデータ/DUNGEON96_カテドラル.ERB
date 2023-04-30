@@ -65,7 +65,7 @@
 ;던전플래그:96:27 巡回템플나이트とB1Fで会った
 ;던전플래그:96:28 巡回템플나이트と2Fで会った
 
-;던전플래그:96:30 루이・サイファー회화フラグ
+;던전플래그:96:30 루이ㆍサイファー회화フラグ
 
 ;던전플래그:96:31 ラーマ이벤트플래그　　　1.扉개방　2.의뢰受け　3.殺害
 ;던전플래그:96:32 라바나이벤트플래그　
@@ -73,7 +73,7 @@
 ;던전플래그:96:33 마사카도이벤트플래그　
 ;両者殺害か의뢰完了報告で던전플래그:96:23が立って中心部に行けるように
 
-;던전플래그:96:40 ザ・ヒーロー戦
+;던전플래그:96:40 ザㆍヒーロー戦
 ;0:未戦闘、1:戦闘済み
 
 ;던전플래그:96:71 Ｂ７Ｆの宝箱管理用変数（ビット演算）
@@ -100,7 +100,7 @@
 ;;긴자대지하도の扉を開けている＆50日以内
 SIF FLAG:DEBUG
 	RETURN 1
-;50日でザ・ヒーローによる카테드랄争奪戦の終結이벤트発生
+;50日でザㆍヒーローによる카테드랄争奪戦の終結이벤트発生
 IF DAY > 50
 	FOR LOCAL,11,21
 		던전플래그:96:LOCAL = 3
@@ -247,7 +247,7 @@ ENDIF
 ;また、同時にターミナルに立ち寄った事にしておきます
 ;IF !던전플래그:(FLAG:현던전):1 && 던전플래그:(FLAG:현던전):11
 ;	CALL SHOW_PICTURE, "D"
-;	CALL MESSAGE_WINDOW_D, "", @"＞賞金首・초인 도우만を討伐したことにより、입座に￥25000が支払われ、名声20を得た%\@던전플래그:(FLAG:현던전):12?#/＞ターミナルが개방され、封鎖された신주쿠위생병원に行けるようになった\@%"
+;	CALL MESSAGE_WINDOW_D, "", @"＞賞金首ㆍ초인 도우만を討伐したことにより、입座に￥25000が支払われ、名声20を得た%\@던전플래그:(FLAG:현던전):12?#/＞ターミナルが개방され、封鎖された신주쿠위생병원に行けるようになった\@%"
 ;	MONEY += 25000
 ;	FLAG:명성 += 20
 ;	던전플래그:(FLAG:현던전):1 = 1
@@ -1693,7 +1693,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 2
 ;이벤트
 ;========================
 ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
-;ザ・ヒーロー戦処理(2020/12/23)===============================================================================================
+;ザㆍヒーロー戦処理(2020/12/23)===============================================================================================
 	IF FLAG:현M == 16 && (FLAG:현X == 29 && FLAG:현Y == 45)
 		IF 던전플래그:96:40 == 0
 			CALL MESSAGE_WINDOW_D, ""		, "＞암 터미널을 장착한 소년이 서있다.。"
@@ -1764,8 +1764,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				;→実装しました。
 				;装備を付与したが耐性はフラットなので実はFLEEZEとか効く
 				CALL SET_ENEMY, 14 ,4998,99,1,0
-				NAME:(CHARANUM-1) = ザ・ヒーロー
-				CALLNAME:(CHARANUM-1) = ザ・ヒーロー
+				NAME:(CHARANUM-1) = ザㆍヒーロー
+				CALLNAME:(CHARANUM-1) = ザㆍヒーロー
 				TALENT:(CHARANUM-1):남자 = 1
 				;本来MPはないが、スキルを使用させるため
 				TALENT:(CHARANUM-1):달인 = 1
@@ -1824,7 +1824,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", "아무도 없다。"
 		ENDIF
 	ENDIF
-;ザ・ヒーロー戦処理ここまで========================================================================================
+;ザㆍヒーロー戦処理ここまで========================================================================================
 
 ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 	SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
@@ -1893,19 +1893,19 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:미조우걸음수 = 0
 					
 					
-				CALL MESSAGE_WINDOW_D, "아수라왕", "・・・조금만 더・・・한발자국만 더 내딛었다면/천년왕국을 박살낼 수 있었던 것을"
-				CALL MESSAGE_WINDOW_D, "아수라왕", "카테드랄을 이몸의 손에 넣어・・・/대마왕 루시퍼님에게/바칠 수 있었을 것을・・・"
+				CALL MESSAGE_WINDOW_D, "아수라왕", "ㆍㆍㆍ조금만 더ㆍㆍㆍ한발자국만 더 내딛었다면/천년왕국을 박살낼 수 있었던 것을"
+				CALL MESSAGE_WINDOW_D, "아수라왕", "카테드랄을 이몸의 손에 넣어ㆍㆍㆍ/대마왕 루시퍼님에게/바칠 수 있었을 것을ㆍㆍㆍ"
 				
 				던전플래그:96:11 = 3
 				IF 던전플래그:96:10 == 1
-					CALL MESSAGE_WINDOW_D, "하늘의 소리", "잘했구나/그럼 와라 내 곁으로・・・"
+					CALL MESSAGE_WINDOW_D, "하늘의 소리", "잘했구나/그럼 와라 내 곁으로ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, "", "그 소리가 들리자 다른 곳으로 날아가 버렸다"
 					CALL MESSAGE_WINDOW_D, "", "눈앞에는 신의 심부름꾼이 있다"
-					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", @"%CALLNAME:MASTER%・・・　잘 해주었다"
+					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", @"%CALLNAME:MASTER%ㆍㆍㆍ　잘 해주었다"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", @"%ヨシオ%의 일은 염려할 바가 아니다/그는 지금 신의 곁에서/아주 행복한 시간을 보내고 있다"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "지상에 남은 사람들은/아직껏 괴로워하며 헤매고 있다"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "네가 모두를 구하지/않으면 안된다/구세주로서"
-					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "그때야말로 시작될 것이다/미래 영겁 끝날 수 없는/지복과 기쁨으로 가득찬 세상・・・"
+					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "그때야말로 시작될 것이다/미래 영겁 끝날 수 없는/지복과 기쁨으로 가득찬 세상ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "신의 통치에 의한 영원한 낙원/천년왕국이!!"
 					CALL LIFTING_A_BAN([[キャラ:미카엘]])
 					CALL ENDING_NO33
@@ -2018,8 +2018,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:인카운트율 = 0
 					FLAG:미조우걸음수 = 0
 					
-					CALL MESSAGE_WINDOW_D, ワルオ, "・・・내게도 마지막이 왔구나・・・/나는 신도 능가하는 힘을 얻었을 텐데"
-					CALL MESSAGE_WINDOW_D, ワルオ, "・・・이건 꿈・・・이었구나・・・/나쁜 꿈・・・아니・・・/좋은 꿈・・・이었어・・・"
+					CALL MESSAGE_WINDOW_D, ワルオ, "ㆍㆍㆍ내게도 마지막이 왔구나ㆍㆍㆍ/나는 신도 능가하는 힘을 얻었을 텐데"
+					CALL MESSAGE_WINDOW_D, ワルオ, "ㆍㆍㆍ이건 꿈ㆍㆍㆍ이었구나ㆍㆍㆍ/나쁜 꿈ㆍㆍㆍ아니ㆍㆍㆍ/좋은 꿈ㆍㆍㆍ이었어ㆍㆍㆍ"
 					
 				IF 던전플래그:96:10 == 1
 					;エンゼルリングで開く
@@ -2031,7 +2031,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				ENDIF
 				던전플래그:96:12 = 3
 			ENDIF
-		;루이・サイファーとの회화이벤트　仮置き（）多分無い
+		;루이ㆍサイファーとの회화이벤트　仮置き（）多分無い
 		CASE 200
 			
 		;아리오크이벤트　仮置き
@@ -2071,7 +2071,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:미조우걸음수 = 0
 				
 				CALL MESSAGE_WINDOW_D, "아리오크", "고작 인간따위의 힘이/나의 송곳니의 날카로움을/상회한다는 말인가"
-				CALL MESSAGE_WINDOW_D, "아리오크", "이런 바보같은・・・"
+				CALL MESSAGE_WINDOW_D, "아리오크", "이런 바보같은ㆍㆍㆍ"
 				
 				던전플래그:96:13 = 3
 			ELSEIF 던전플래그:96:13 < 2 && 던전플래그:96:11 == 1
@@ -2132,7 +2132,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:인카운트율 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "아스타로트", "・・・조금만 있으면　이슈타르의 모습을/되찾을 수 있었을 것을・・・/무 무념・・・"
+				CALL MESSAGE_WINDOW_D, "아스타로트", "ㆍㆍㆍ조금만 있으면　이슈타르의 모습을/되찾을 수 있었을 것을ㆍㆍㆍ/무 무념ㆍㆍㆍ"
 				
 				
 				던전플래그:96:14 = 3
@@ -2196,7 +2196,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:인카운트율 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "수르트", "크윽　반쪽짜리 신의 인형에게/역으로 인도를 받다니・・・/나도 떨어질대로 떨어졌구나・・・"
+				CALL MESSAGE_WINDOW_D, "수르트", "크윽　반쪽짜리 신의 인형에게/역으로 인도를 받다니ㆍㆍㆍ/나도 떨어질대로 떨어졌구나ㆍㆍㆍ"
 				
 				
 				
@@ -2263,7 +2263,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:인카운트율 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "우리엘", "・・・법의 신과・・・/신의 천년왕국에/영광 있으라・・・"
+				CALL MESSAGE_WINDOW_D, "우리엘", "ㆍㆍㆍ법의 신과ㆍㆍㆍ/신의 천년왕국에/영광 있으라ㆍㆍㆍ"
 				
 				던전플래그:96:16 = 3
 			ELSEIF 던전플래그:96:16 < 2 && 던전플래그:96:20 == 1
@@ -2325,7 +2325,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:미조우걸음수 = 0
 				
 				
-				CALL MESSAGE_WINDOW_D, "가브리엘", "그 그대들에게는/대천사 미카엘님이/천벌을 줄 것입니다・・・"
+				CALL MESSAGE_WINDOW_D, "가브리엘", "그 그대들에게는/대천사 미카엘님이/천벌을 줄 것입니다ㆍㆍㆍ"
 				던전플래그:96:17 = 3
 			ELSEIF 던전플래그:96:17 < 2 && 던전플래그:96:20 == 1
 				;지저스레그、가브리엘仲魔化＆合体解禁
@@ -2387,7 +2387,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:인카운트율 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "라파엘", "・・・나　여기서 쓰러지더라도/천년왕국은/곧 지상에 나타난다・・・"
+				CALL MESSAGE_WINDOW_D, "라파엘", "ㆍㆍㆍ나　여기서 쓰러지더라도/천년왕국은/곧 지상에 나타난다ㆍㆍㆍ"
 				
 				던전플래그:96:18 = 3
 			ELSEIF 던전플래그:96:18 < 2 && 던전플래그:96:20 == 1
@@ -2425,11 +2425,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 			IF 던전플래그:96:19 != 3
 				IF 던전플래그:96:10 == 2
 					;カオス限定이벤트
-					CALL MESSAGE_WINDOW_D, ワルオ, "빌어먹을! 문이 열리지 않아!/어떻게 하면 되는 거야・・・/내가 열수 있을만한 힘이 없단 말인가?!"
+					CALL MESSAGE_WINDOW_D, ワルオ, "빌어먹을! 문이 열리지 않아!/어떻게 하면 되는 거야ㆍㆍㆍ/내가 열수 있을만한 힘이 없단 말인가?!"
 					CALL MESSAGE_WINDOW_D, ワルオ, @"%CALLNAME:MASTER%과(와) 여기까지 왔는데/보다시피 난처하게 됐군"
-					CALL MESSAGE_WINDOW_D, ワルオ, "이 문이 열리기만 하면/미카엘이 있는 곳에 갈 수 있는데・・・"
+					CALL MESSAGE_WINDOW_D, ワルオ, "이 문이 열리기만 하면/미카엘이 있는 곳에 갈 수 있는데ㆍㆍㆍ"
 					SIF 던전플래그:96:11 < 2
-						CALL MESSAGE_WINDOW_D, ワルオ, "데빌링만 있다면・・・"
+						CALL MESSAGE_WINDOW_D, ワルオ, "데빌링만 있다면ㆍㆍㆍ"
 				ELSEIF 던전플래그:96:10 == 1 && 던전플래그:96:19 < 1
 					;ロウ限定이벤트
 					CALL MESSAGE_WINDOW_D, @"%ヨシオ%の声", "자　문을 열고/안으로 들어오세요"
@@ -2442,24 +2442,24 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 						CALL MESSAGE_WINDOW_D, ワルオ, "오오!　데빌링을 가지고 있는거야!?/그걸 나한테 빌려줘!"
 						
 						CALL MESSAGE_WINDOW_D, "", @"%ワルオ%는 악마링을 집어들고/그걸 장착했다"
-						CALL MESSAGE_WINDOW_D, ワルオ, "・・・오오옷　히　힘이 넘쳐흐르고 있어・・・/우오오옷!"
+						CALL MESSAGE_WINDOW_D, ワルオ, "ㆍㆍㆍ오오옷　히　힘이 넘쳐흐르고 있어ㆍㆍㆍ/우오오옷!"
 						CALL MESSAGE_WINDOW_D, "", @"%ワルオ%는 가볍게 문을 비집어 열었다"
 						CALL MESSAGE_WINDOW_D, ワルオ, "왓핫하!　한손으로 열어버렸다/굉장하군!　얼마든지 힘이 솟는다/왓핫핫하!"
 						CALL MESSAGE_WINDOW_D, ワルオ, "핫하하　난 이제　핫하하　누구에게도 지지 않는다/핫하하　신마저도　핫하하  능가하는 힘을 손에 넣었단말이다!/왓핫핫하"
 						CALL MESSAGE_WINDOW_D, ワルオ, "응?　뭐  뭐야?　모　몸이"
 						
 						CALL MESSAGE_WINDOW_D, "", @"%ワルオ%의 몸이 부풀어 올라 터져버렸고! 그 파편이 사방팔방으로 흩어졌다!"
-						CALL MESSAGE_WINDOW_D, ヨシオ, "・・・힘만을 추구했던 자가/불쌍한 최후를 맞은 것 같군요・・・"
-						CALL MESSAGE_WINDOW_D, ヨシオ, "불쌍하지만 당연한 응보겠죠/신의 뜻에/거역했으니까 말이죠・・・"
+						CALL MESSAGE_WINDOW_D, ヨシオ, "ㆍㆍㆍ힘만을 추구했던 자가/불쌍한 최후를 맞은 것 같군요ㆍㆍㆍ"
+						CALL MESSAGE_WINDOW_D, ヨシオ, "불쌍하지만 당연한 응보겠죠/신의 뜻에/거역했으니까 말이죠ㆍㆍㆍ"
 						CALL MESSAGE_WINDOW_D, ヨシオ, "그리고 다음은 당신의 차례입니다/당신도 여기서 신을 거스른 자로서/마지막을 맞이하는 것입니다"
-						CALL MESSAGE_WINDOW_D, ヨシオ, "일이 이렇게 되어 버려서/정말 유감입니다・・・"
+						CALL MESSAGE_WINDOW_D, ヨシオ, "일이 이렇게 되어 버려서/정말 유감입니다ㆍㆍㆍ"
 						CALL MESSAGE_WINDOW_D, ヨシオ, "이것으로 영원히 이별입니다/그럼 안녕히!"
 						
 					ELSE
 						CALL MESSAGE_WINDOW_D, ヨシオ, "아직 악마의 꼬드김에 현혹되어/눈이 떠지지 않습니까?"
-						CALL MESSAGE_WINDOW_D, ヨシオ, "인간은 약한 법입니다/망설이고 상처입으며 그리고 죽어가죠・・・"
+						CALL MESSAGE_WINDOW_D, ヨシオ, "인간은 약한 법입니다/망설이고 상처입으며 그리고 죽어가죠ㆍㆍㆍ"
 						CALL MESSAGE_WINDOW_D, ヨシオ, "지금의 그대는 그저 망설이고 있을 뿐이에요/로우도 카오스도 아닌 길을 찾는 것은/환상을 쫓고 있는 거나 마찬가지에요"
-						CALL MESSAGE_WINDOW_D, ヨシオ, "당신이 마음을 열어준다면/당장이라도 눈을 뜨게 해줄 수 있었는데・・・/하지만 당신이 정신차리는 걸 기다려줄 수는 없습니다"
+						CALL MESSAGE_WINDOW_D, ヨシオ, "당신이 마음을 열어준다면/당장이라도 눈을 뜨게 해줄 수 있었는데ㆍㆍㆍ/하지만 당신이 정신차리는 걸 기다려줄 수는 없습니다"
 						CALL MESSAGE_WINDOW_D, ヨシオ, "신이 없는 힘은/힘있는 악마를 만들어 냅니다/그게 지금의 당신이에요"
 						CALL MESSAGE_WINDOW_D, ヨシオ, "힘있는 악마를 살려둘 수는 없습니다"
 					ENDIF
@@ -2494,8 +2494,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:인카운트율 = 0
 					FLAG:미조우걸음수 = 0
 					
-					CALL MESSAGE_WINDOW_D, ヨシオ, "・・・이　이것이　신의 뜻/・・・입니까・・・/나는 다시 죽는 건가・・・"
-					CALL MESSAGE_WINDOW_D, ヨシオ, "나는 신에게 선택받은 자가・・・아　아니었단 말인가・・・/신에게 바쳐지는・・・그런가・・・/나는 희생양에 지나지 않았던 것인가・・・"
+					CALL MESSAGE_WINDOW_D, ヨシオ, "ㆍㆍㆍ이　이것이　신의 뜻/ㆍㆍㆍ입니까ㆍㆍㆍ/나는 다시 죽는 건가ㆍㆍㆍ"
+					CALL MESSAGE_WINDOW_D, ヨシオ, "나는 신에게 선택받은 자가ㆍㆍㆍ아　아니었단 말인가ㆍㆍㆍ/신에게 바쳐지는ㆍㆍㆍ그런가ㆍㆍㆍ/나는 희생양에 지나지 않았던 것인가ㆍㆍㆍ"
 					
 					
 					던전플래그:96:19 = 3
@@ -2509,7 +2509,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 			ELSEIF 던전플래그:96:10 == 2 || 던전플래그:96:10 == 3
 				;それ이외、バトル、合体解禁（カオスルート限定（아수라왕））
 				CALL MESSAGE_WINDOW_D, "미카엘", "드디어 여기까지 왔는가/이 내가 직접 나서야 되는 것인가"
-				CALL MESSAGE_WINDOW_D, "미카엘", "악마에 영혼을 팔아넘기고/평화를 위해 내민 신의 손길을 거부하고/천년 왕국의 앞을 가로막았다・・・/이 가짜 구세주놈!"
+				CALL MESSAGE_WINDOW_D, "미카엘", "악마에 영혼을 팔아넘기고/평화를 위해 내민 신의 손길을 거부하고/천년 왕국의 앞을 가로막았다ㆍㆍㆍ/이 가짜 구세주놈!"
 				CALL MESSAGE_WINDOW_D, "미카엘", "살려둘 수는 없다!/지옥의 겁화에 불타는 게 좋을 것이다!/"
 				
 					FLAG:도주불가플래그 = 1
@@ -2548,19 +2548,19 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:미조우걸음수 = 0
 					
 					
-				CALL MESSAGE_WINDOW_D, "미카엘", "・・・신이여・・・//"
-				CALL MESSAGE_WINDOW_D, "미카엘", "이 미카엘　애석하게도 힘이 부족한 탓에・・・/하느님 아버지  당신님을 영접하는 게 불가능해졌습니다・・・부디 용서를/・・・・・・・・・・・"
+				CALL MESSAGE_WINDOW_D, "미카엘", "ㆍㆍㆍ신이여ㆍㆍㆍ//"
+				CALL MESSAGE_WINDOW_D, "미카엘", "이 미카엘　애석하게도 힘이 부족한 탓에ㆍㆍㆍ/하느님 아버지  당신님을 영접하는 게 불가능해졌습니다ㆍㆍㆍ부디 용서를/ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ"
 				
 				던전플래그:96:20 = 3
 				
 				IF 던전플래그:96:10 == 2
 					CALL MESSAGE_WINDOW_D, "", "미카엘을 쓰러뜨리자 검은 옷의 사나이가 나타났다"
-					CALL MESSAGE_WINDOW_D, "검은 옷의 사나이", @"수고했다/%CALLNAME:MASTER%・・・"
+					CALL MESSAGE_WINDOW_D, "검은 옷의 사나이", @"수고했다/%CALLNAME:MASTER%ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, "", "검은 옷의 사나이는 루시퍼로 모습을 바꾸었다"
-					CALL MESSAGE_WINDOW_D, "루시퍼", "법의 신・・・　그의 계획은 저지되었다/마계에 떨어진 신들은 부활하고/지상에 다시 황금시대가 온다"
+					CALL MESSAGE_WINDOW_D, "루시퍼", "법의 신ㆍㆍㆍ　그의 계획은 저지되었다/마계에 떨어진 신들은 부활하고/지상에 다시 황금시대가 온다"
 					CALL MESSAGE_WINDOW_D, "루시퍼", "혼돈이야말로 세계의 모습이다!　좀 더 강한/보다 아름다운 자들이 속속 생겨나는/파괴와 재생은 영원히 계속된다!"
-					CALL MESSAGE_WINDOW_D, "루시퍼", "그러나 법의 신은 멸망하지 않았다/그 사람이야말로 진정한 파괴자이자/세계에 침묵을 가져오는 것이다・・・"
-					CALL MESSAGE_WINDOW_D, "루시퍼", "나도 그의 일부일 뿐이다/이게 뭘 뜻하는지/사람의 아이여 잘 생각하라・・・"
+					CALL MESSAGE_WINDOW_D, "루시퍼", "그러나 법의 신은 멸망하지 않았다/그 사람이야말로 진정한 파괴자이자/세계에 침묵을 가져오는 것이다ㆍㆍㆍ"
+					CALL MESSAGE_WINDOW_D, "루시퍼", "나도 그의 일부일 뿐이다/이게 뭘 뜻하는지/사람의 아이여 잘 생각하라ㆍㆍㆍ"
 					CALL LIFTING_A_BAN([[キャラ:아수라왕]])
 					CALL ENDING_NO34
 					;カオスエンド
@@ -2687,7 +2687,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				IF 던전플래그:96:10 == 3
 					CALL MESSAGE_WINDOW_D, "", @"방을 나가면 거기에는 %ヨシオ%가 있다//"
 					CALL MESSAGE_WINDOW_D, ヨシオ, "라마님을 쓰러뜨린 것 같네요"
-					CALL MESSAGE_WINDOW_D, ヨシオ, "라마님을 쓰러뜨린 것 같네요/이제 당신에게 전할 말은/아무 것도 없습니다・・・"
+					CALL MESSAGE_WINDOW_D, ヨシオ, "라마님을 쓰러뜨린 것 같네요/이제 당신에게 전할 말은/아무 것도 없습니다ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, ヨシオ, "다음에 만날 때 전 당신을/신의 적으로 간주하고 쓰러트리겠습니다/정말 유감입니다"
 					CALL MESSAGE_WINDOW_D, "", @"%ヨシオ%는 그 자리를 떠났다//"
 				ENDIF
@@ -2752,7 +2752,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "", "＞아무도 없다"
 			ELSEIF 던전플래그:96:10 == 1 || 던전플래그:96:10 == 3
 				;전투
-				CALL MESSAGE_WINDOW_D, "라바나", "인간인가・・・//"
+				CALL MESSAGE_WINDOW_D, "라바나", "인간인가ㆍㆍㆍ//"
 				CALL MESSAGE_WINDOW_D, "라바나", "들어라!/나는 지금 라마와/마지막 결판을 내려던 참이다"
 				CALL MESSAGE_WINDOW_D, "라바나", "내가 여기에서 쓰러지면/천공으로부터 카테드랄까지/가로막는 것이 없어진다"
 				CALL MESSAGE_WINDOW_D, "라바나", "감히 나에게 맞서다니/라마의 힘을 얻은 것인가/재미있군 잠시 놀아주마"
@@ -2800,11 +2800,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:인카운트율 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "인드라지트", "무  무념・・・//"
+				CALL MESSAGE_WINDOW_D, "인드라지트", "무  무념ㆍㆍㆍ//"
 				던전플래그:96:32 = 3
 				IF 던전플래그:96:10 == 3
 					CALL MESSAGE_WINDOW_D, "", @"방을 나가면 거기에는 %ワルオ%가 있다//"
-					CALL MESSAGE_WINDOW_D, ワルオ, "뭐야 이거　라바나를 쓰러트리다니・・・/"
+					CALL MESSAGE_WINDOW_D, ワルオ, "뭐야 이거　라바나를 쓰러트리다니ㆍㆍㆍ/"
 					CALL MESSAGE_WINDOW_D, ワルオ, "다음에 만날 때는 원수지간이다! 목을 씻고 각오하고 있어라!"
 					CALL MESSAGE_WINDOW_D, "", @"%ワルオ%는 그 자리를 떠났다//"
 				ENDIF
@@ -2819,7 +2819,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					;CALL MESSAGE_WINDOW_D, "라바나", "단 데빌링이 없으면 녀석은 쓰러트릴 수 없다/일단 지하에 있는 아수라왕을 만나러 가라/"
 					CALL MESSAGE_WINDOW_D, "라바나", "부탁한다//"
 				ELSE
-					CALL MESSAGE_WINDOW_D, "라바나", "호오・・・/라마를 쓰러뜨렸는가・・・/"
+					CALL MESSAGE_WINDOW_D, "라바나", "호오ㆍㆍㆍ/라마를 쓰러뜨렸는가ㆍㆍㆍ/"
 					CALL MESSAGE_WINDOW_D, "라바나", "카테드랄의 중심문인 결계를 지나갈 수 있는 가호를 내려주마/카테드랄의 정상에 있는 미카엘을 쓰러트리러 가는 거다/"
 					;CALL MESSAGE_WINDOW_D, "라바나", "단 데빌링이 없으면 녀석은 쓰러트릴 수 없다/일단 지하에 있는 아수라왕을 만나러 가라/"
 					CALL MESSAGE_WINDOW_D, "라바나", "부탁한다//"
@@ -2840,7 +2840,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 			ELSE
 				;라바나からラーマ討伐의뢰(CAOSEルートなのでNOでも裏切らない)
 				;ついでにここから動けない理由も言っとく
-				CALL MESSAGE_WINDOW_D, "라바나", @"인간인가・・・/아니、%CALLNAME:MASTER%인가/"
+				CALL MESSAGE_WINDOW_D, "라바나", @"인간인가ㆍㆍㆍ/아니、%CALLNAME:MASTER%인가/"
 				CALL MESSAGE_WINDOW_D, "라바나", "이야기는 들었다/너는　가이아를 위해 하니엘을 쓰러뜨렸다면서?/"
 				CALL MESSAGE_WINDOW_D, "라바나", "들어라/서쪽 탑에 있는 라마가 신을 부르려 하고 있다/"
 				CALL MESSAGE_WINDOW_D, "라바나", "우리는 지금 여기서 신의 강림을 막고 있다/서쪽 탑에 있는 라마를 쓰러뜨렸으면 한다/"
@@ -3085,7 +3085,7 @@ SELECTCASE FLAG:현M
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:트롤]],46
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠・훌린]],46
+				RETURN [[キャラ:쿠ㆍ훌린]],46
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:뱀파이어]],48
 		SIF !RAND:(LOCAL--)
@@ -3120,7 +3120,7 @@ SELECTCASE FLAG:현M
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:케찰코아틀]],59
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠・훌린]],60
+				RETURN [[キャラ:쿠ㆍ훌린]],60
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:가네샤]],61
 		SIF !RAND:(LOCAL--)
@@ -3130,7 +3130,7 @@ SELECTCASE FLAG:현M
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:터미네이터]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠・훌린]],60
+				RETURN [[キャラ:쿠ㆍ훌린]],60
 		SIF !RAND:(LOCAL--)
 				RETURN [[キャラ:가네샤]],63
 		SIF !RAND:(LOCAL--)
@@ -3200,7 +3200,7 @@ PRINTFORMW 이 카테드랄을 팬텀을 위해 썼는지
 PRINTFORMW 아니면 자기를 위해서 썼는지는
 PRINTFORMW 그것은 또 다른 이야기
 PRINTFORML
-PRINTFORMW 　　　　　　　　―― Ending No.032 (진・여신전생　NEUTRAL-END)
+PRINTFORMW 　　　　　　　　―― Ending No.032 (진ㆍ여신전생　NEUTRAL-END)
 FLAG:속성고정LC = 0
 FLAG:게임모드 = 9
 던전플래그:96:1 = 1
@@ -3223,7 +3223,7 @@ ENDIF
 	PRINTFORMW 메시아교를 이용해 팬텀에 공헌했는지
 	PRINTFORMW 그것은 또 다른 이야기
 	PRINTFORML
-	PRINTFORMW 　　　　　　　　―― Ending No.033 (진・여신전생　LAW-END)
+	PRINTFORMW 　　　　　　　　―― Ending No.033 (진ㆍ여신전생　LAW-END)
 FLAG:속성고정LC = 0
 FLAG:게임모드 = 9
 던전플래그:96:1 = 1
@@ -3244,7 +3244,7 @@ ENDIF
 	PRINTFORMW 타락한 옛 신들이 강림하여
 	PRINTFORMW 이 세상은 더욱 악마가 만연할 것이다
 	PRINTFORML
-	PRINTFORMW 　　　　　　　　―― Ending No.034 (진・여신전생　CHAOS-END)
+	PRINTFORMW 　　　　　　　　―― Ending No.034 (진ㆍ여신전생　CHAOS-END)
 FLAG:속성고정LC = 0
 FLAG:게임모드 = 9
 던전플래그:96:1 = 1
@@ -4274,8 +4274,8 @@ CALL RANDOM_TARGET,ARG,CFLAG:ARG:입력행동
 ;他のメンバーと毛色が違うのは許せ
 ;基本的には「サマナーLv5の銃撃達人」をイメージする
 ;万能小威力0-8回攻撃「ストラディバリ」、
-;万能100％SLEEP「真・神経弾」、
-;万能100％SLEEP3回攻撃「真・神経弾乱射」、
+;万能100％SLEEP「真ㆍ神経弾」、
+;万能100％SLEEP3回攻撃「真ㆍ神経弾乱射」、
 ;三種のオリジナルスキルを持つ
 ;=======================================================================
 #DIM フツオ行動判定
@@ -4314,13 +4314,13 @@ ELSE
 	IF 0
 		;ランダムで銃撃を使用する
 	ELSEIF RAND:9 == 0
-		CSTR:ARG:전용기1 = 真・神経弾乱射
+		CSTR:ARG:전용기1 = 真ㆍ神経弾乱射
 		CFLAG:ARG:입력행동 = 3904
 	ELSEIF RAND:8 == 0
-		CSTR:ARG:전용기1 = 真・神経弾
+		CSTR:ARG:전용기1 = 真ㆍ神経弾
 		CFLAG:ARG:입력행동 = 3904
 	ELSEIF RAND:7 == 0
-		CSTR:ARG:전용기1 = 真・神経弾
+		CSTR:ARG:전용기1 = 真ㆍ神経弾
 		CFLAG:ARG:입력행동 = 3904
 	ELSEIF RAND:6 == 0
 		CSTR:ARG:전용기1 = ストラディバリ

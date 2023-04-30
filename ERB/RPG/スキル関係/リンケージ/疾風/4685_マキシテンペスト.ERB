@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 수격계 마법
 	CASE 3
-		PRINTFORM 마하・갈라
+		PRINTFORM 마하ㆍ갈라
 ENDSELECT
 
 @발동자조건_4685 , ARG
-;マハ・ガルーラを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・갈라]]) == 0
+;マハㆍガルーラを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ갈라]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・갈라]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ갈라]]
 SIF RESULT
 	RETURN 1
 RETURN 0

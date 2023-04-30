@@ -14,7 +14,7 @@
 ;던전플래그:13:8　占い効果
 ;던전플래그:13:9　ローカパーラサブ이벤트
 
-;던전플래그:13:11　協会・空港이벤트進行度
+;던전플래그:13:11　協会ㆍ空港이벤트進行度
 ;던전플래그:13:12　協会그외이벤트
 ;던전플래그:13:13　空港그외이벤트
 ;던전플래그:13:14　空港윤간進行度
@@ -197,7 +197,7 @@ SELECTCASE FLAG:현M
 	CASE 30
 		PRINTL 공항 2F
 	CASE 31
-		PRINTL EGG시설 1F・입구
+		PRINTL EGG시설 1Fㆍ입구
 	CASE 33
 		PRINTL EGG시설 B5F
 	CASE 32
@@ -558,14 +558,14 @@ ELSEIF 던전플래그:13:1 == 9
 						DITEMTYPE:LOCAL:페르소나("인내력") = 7
 						DITEMTYPE:LOCAL:페르소나("속도") = 16
 						DITEMTYPE:LOCAL:페르소나("운") = 15
-						DITEMTYPE:LOCAL:페르소나("스킬1") = 508;스쿤・다
+						DITEMTYPE:LOCAL:페르소나("스킬1") = 508;스쿤ㆍ다
 						DITEMTYPE:LOCAL:페르소나("스킬2") = 1702;갈라
 						DITEMTYPE:LOCAL:페르소나("스킬3") = 403;디아라한
 						DITEMTYPE:LOCAL:페르소나("스킬4") = 420;자애의기도
-						DITEMTYPE:LOCAL:페르소나("스킬5") = 1705;마하・갈라
+						DITEMTYPE:LOCAL:페르소나("스킬5") = 1705;마하ㆍ갈라
 						DITEMTYPE:LOCAL:페르소나("스킬6") = 261;럭키펀치
-						DITEMTYPE:LOCAL:페르소나("스킬7") = 405;메・디아라마
-						DITEMTYPE:LOCAL:페르소나("스킬8") = 531;하이・애널라이즈
+						DITEMTYPE:LOCAL:페르소나("스킬7") = 405;메ㆍ디아라마
+						DITEMTYPE:LOCAL:페르소나("스킬8") = 531;하이ㆍ애널라이즈
 					ENDIF
 					CFLAG:(RESULT:1):전투참가불가능 = -1
 					CALL SYNC_STATUS,(RESULT:1)
@@ -1793,7 +1793,7 @@ ENDIF
 ;RETURN X でXが종류の数になります
 ;あまりいろんなのが混ざっているとCOOPがとりにくくなったり
 ;적の공격속성が多くなる傾向にあるので、
-;종류の数は1・2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
+;종류の数は1ㆍ2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
 ;=======================================================================
 @CLASS_NUM_13
 SELECTCASE FLAG:현M

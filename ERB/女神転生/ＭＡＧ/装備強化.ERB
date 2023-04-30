@@ -606,7 +606,7 @@ SELECTCASE 지정
 					PRINTL   魔装術によって施された強化を解除します。
 					PRINTL   魔装術で強化された装備を選ぶと、その装備の"概念強化を含む"すべての強化が解除されます。
 					PRINTL
-					PRINTL   【能力強化・耐性強化のみ解除】
+					PRINTL   【能力強化ㆍ耐性強化のみ解除】
 					PRINTL   能力強化、並びに耐性強化で施された強化を解除します。
 					PRINTL   これを行っても、概念強化や攻撃相性強化、追加効果付与で施された強化はなくなりません。
 					PRINTL
@@ -634,13 +634,13 @@ SELECTCASE 지정
 					PRINTL   공격상성강화：가능
 					PRINTL   추가효과부여：가능
 				CASE 8
-					PRINTL   ・"강화가능수"는 강화의 종류에서 셉니다。
+					PRINTL   ㆍ"강화가능수"는 강화의 종류에서 셉니다。
 					PRINTL     예를 들어 "강화가능수"가 50일 때 하나의 방어구의 방어과 회피를 강화한 경우、"강화가능수"는 48이 됩니다。
 					PRINTL
-					PRINTL   ・『공격상성강화』와 『추가효과부여』는 장비의 레벨의 영향을 거의 받지 않습니다。
+					PRINTL   ㆍ『공격상성강화』와 『추가효과부여』는 장비의 레벨의 영향을 거의 받지 않습니다。
 					PRINTL     이 강화만을 사용하는 것이라면 、장비의 레벨은 1 올리는 것만으로 충분합니다。
 					PRINTL
-					PRINTL   ・어떠한 이유로 장비의 원래 레벨이 사용자 레벨보다 높을 수 있습니다。
+					PRINTL   ㆍ어떠한 이유로 장비의 원래 레벨이 사용자 레벨보다 높을 수 있습니다。
 					PRINTL     그 경우는 장비의 레벨이 사용자의 레벨과 동등한 수치까치 내려갑니다。
 					PRINTL     그러나 사용자의 레벨이 올라갈때마다 장비의 레벨도 원래 레벨까지 자동으로 올라가니 안심하시기 바랍니다。
 			;	CASE 9
@@ -1531,7 +1531,7 @@ DRAWLINE
 SECOND_LINE = LINECOUNT
 $START_2
 
-;キャラリストを표시・선택
+;キャラリストを표시ㆍ선택
 CALL SHOW_CHARA_LIST_장비강화,"공격상성",대상
 SIF RESULT == -1
 	RETURN -1
@@ -1688,7 +1688,7 @@ $START_1
 SECOND_LINE = LINECOUNT
 $START_2
 
-	;キャラリストを표시・선택
+	;キャラリストを표시ㆍ선택
 	CALL SHOW_CHARA_LIST_장비강화,"추가효과",대상
 	SIF RESULT == -1
 		RETURN -1
@@ -1849,7 +1849,7 @@ DRAWLINE
 LOCALS = 
 FIRST_LINE = LINECOUNT
 PRINTL [ 1] 全解除
-PRINTL [ 2] 能力強化・내성강화のみ解除
+PRINTL [ 2] 能力強化ㆍ내성강화のみ解除
 PRINTL [99] やめる
 DO
 	INPUT

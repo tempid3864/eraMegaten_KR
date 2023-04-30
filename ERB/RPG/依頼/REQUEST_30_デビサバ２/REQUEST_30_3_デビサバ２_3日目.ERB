@@ -50,10 +50,10 @@
 ;-------------------------------------------------------------------------------
 ;
 ; 【メモ】
-; ・後半は２連戦。
+; ㆍ後半は２連戦。
 ;-------------------------------------------------------------------------------
-; ・前半後半両方で二連戦となりました
-; ・イキ顔動画のフラグは後の아이리加入時の能力値計算に사용
+; ㆍ前半後半両方で二連戦となりました
+; ㆍイキ顔動画のフラグは後の아이리加入時の能力値計算に사용
 ;-------------------------------------------------------------------------------
 ;
 ;-------------------------------------------------------------------------------
@@ -63,8 +63,8 @@
 ;
 ;		Module Name						Explanation
 ;
-;	・ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
-;	・ EVENT_BATTLE_TURNEND_REQUESTxxx_yyy
+;	ㆍ REQUEST_xxx_yyy					의뢰:メイン処理(yyy)
+;	ㆍ EVENT_BATTLE_TURNEND_REQUESTxxx_yyy
 ;										의뢰:전투중処理(ターン종료시)(yyy)
 ;
 ;===============================================================================
@@ -162,7 +162,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 
 		PRINTFORML
 		PRINTFORML
-		PRINTFORMW 「・・・그러면 의뢰를 재확인하고 싶다」
+		PRINTFORMW 「ㆍㆍㆍ그러면 의뢰를 재확인하고 싶다」
 		PRINTFORMW 「자네를 나고야로 보내려 한다」
 		PRINTFORMW 「현지에서 실시할 일은 아마 인원의 수색을 것이다」
 		PRINTFORMW 「큰 위험은 없겠지만、전혀 없는 것은 아니다…」
@@ -315,8 +315,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			BASE:(CHARANUM-1):타격 = 50
 			BASE:(CHARANUM-1):전술 = 50
 			ABL:(CHARANUM-1):스킬1 = 3;回転切り
-			ABL:(CHARANUM-1):스킬2 = 405;메・디아라마
-			ABL:(CHARANUM-1):스킬3 = 906;마하・지오다인
+			ABL:(CHARANUM-1):스킬2 = 405;메ㆍ디아라마
+			ABL:(CHARANUM-1):스킬3 = 906;마하ㆍ지오다인
 			ABL:(CHARANUM-1):스킬4 = 610;수호의방패
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -499,7 +499,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				PRINTFORMW 「준고도 지쳤어…」
 				PRINTFORML 아이리：
 				PRINTFORMW 「～！」
-				PRINTFORMW 「있・을・수・없・어！」
+				PRINTFORMW 「있ㆍ을ㆍ수ㆍ없ㆍ어！」
 				PRINTFORMW 「바보 준고가 떨어진 탓에 내가 지친거겠지！」
 				PRINTFORMW ＞준고는 아이리한테 얻어맞고 있다…。
 				PRINTFORMW ＞첫 대면에는 얌전한 인상이었지만, 아이리는 감정이 풍부한 모양이다…。
@@ -521,7 +521,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				PRINTFORMW 「준고도 지쳤어…」
 				PRINTFORML 아이리：
 				PRINTFORMW 「～！」
-				PRINTFORMW 「있・을・수・없・어！」
+				PRINTFORMW 「있ㆍ을ㆍ수ㆍ없ㆍ어！」
 				PRINTFORMW 「바보 준고가 떨어진 탓에 내가 그런 꼴을…」
 				PRINTFORMW 「아아, 정말 이 바봇！덕분에 생각해내 버렸잖아！엄청 아팠으니까 말야！」
 				PRINTFORMW ＞준고는 아이리한테 얻어맞고 있다…。
@@ -1087,7 +1087,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「그 분은 서머너야 바로 옆에 있을거라 생각해요★」
 		PRINTFORMW ＞바로 옆…。
 		PRINTFORMW ＞그러고 보니、첫 날 만난 그 소년도 바로 옆이라고 말했다。
-		PRINTFORMW 「그러면！해브・어・나이스다～★」
+		PRINTFORMW 「그러면！해브ㆍ어ㆍ나이스다～★」
 		PRINTFORMW ＞…어플리케이션은 꺼졌다。
 		PRINTFORMW ＞…그 소년을 만났을 때、찾아보자。
 		PRINTFORML
@@ -1216,9 +1216,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				CFLAG:(CHARANUM-1):속도보정 = 15
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				;스킬
-				ABL:(CHARANUM-1):스킬1 = [[스킬:마하・지온가]]
-				ABL:(CHARANUM-1):스킬2 = [[스킬:마하・부흐라]]
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・잔마]]
+				ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ지온가]]
+				ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ부흐라]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ잔마]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:암흑의뇌광]]
 				ABL:(CHARANUM-1):스킬5 = 0
 				ABL:(CHARANUM-1):스킬6 = 0

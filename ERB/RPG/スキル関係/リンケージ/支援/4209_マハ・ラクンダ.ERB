@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_4209,ARG
-RESULTS = 마하・라쿤다
+RESULTS = 마하ㆍ라쿤다
 
 ;　명중
 @SKILL_HITRATE_4209, ARG
@@ -164,7 +164,7 @@ RETURN 1
 @참가조건표시_4209,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 라쿤・다
+		PRINTFORM 라쿤ㆍ다
 	CASE 2
 		PRINTFORM 마계의조사
 ENDSELECT
@@ -187,9 +187,9 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1
-		;ラク・ンダを使えること
-		IF HAVE_SKILL(ARG, [[스킬:라쿤・다]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤・다]]
+		;ラクㆍンダを使えること
+		IF HAVE_SKILL(ARG, [[스킬:라쿤ㆍ다]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:라쿤ㆍ다]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

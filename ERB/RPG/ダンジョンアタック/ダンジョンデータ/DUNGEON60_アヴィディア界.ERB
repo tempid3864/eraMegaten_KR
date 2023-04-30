@@ -576,11 +576,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		;마요네ＧＥＴ済み
 		IF 이벤트플래그:1:0 == 3
 			CALL MESSAGE_WINDOW_D, "에이전트", "보고는 읽어보았다。/잘했다……라고 말하고 싶긴 하지만"
-			CALL MESSAGE_WINDOW_D, "에이전트", "……시간이 너무 걸렸군、/데바・유가 소멸 직후에 보고를 올리는게 어떠했을지/그랬다면、가동중인 DEVA시스템도 이 손에 들어왔을텐데"
-			CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 보고서를 읽은 팬텀・소사이어티의 에이전트는、/＞불평을 말하며 전화를 끊었다"
+			CALL MESSAGE_WINDOW_D, "에이전트", "……시간이 너무 걸렸군、/데바ㆍ유가 소멸 직후에 보고를 올리는게 어떠했을지/그랬다면、가동중인 DEVA시스템도 이 손에 들어왔을텐데"
+			CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 보고서를 읽은 팬텀ㆍ소사이어티의 에이전트는、/＞불평을 말하며 전화를 끊었다"
 		ELSE
 			CALL MESSAGE_WINDOW_D, "마요네", "보고는 잘 봤어요。/잘했다……라고 말해 주고 싶긴 하지만……"
-			CALL MESSAGE_WINDOW_D, "마요네", "……시간이 너무 걸렸어요、/왜 데바・유가 소멸 직후에 보고를 올릴 수 없었나요?/그랬다면、가동중인 DEVA시스템도 이 손에 들어왔을텐데"
+			CALL MESSAGE_WINDOW_D, "마요네", "……시간이 너무 걸렸어요、/왜 데바ㆍ유가 소멸 직후에 보고를 올릴 수 없었나요?/그랬다면、가동중인 DEVA시스템도 이 손에 들어왔을텐데"
 			CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 보고서를 읽은 마요네는、/＞불만스럽게 말한 후 전화를 끊었다"
 		ENDIF
 		CALL MESSAGE_WINDOW_D, "", "＞DEVA시스템은 기능을 정지해 버린 것 같다。/＞어쨌든 이로서、이 건은 끝났다고 말할 수 있겠다。/＞이 것의 보수로、￥50000이 지급되었다。"
@@ -697,7 +697,7 @@ IF CFLAG:ARG:행동한횟수 == 0
 		LOCAL = 0
 	ENDIF
 
-	;奇数・偶数ターンで行動が変化する
+	;奇数ㆍ偶数ターンで行動が変化する
 	;1の時奇数ターン行動を行う
 	IF LOCAL == 0
 		LOCAL = 1
@@ -754,10 +754,10 @@ ELSEIF CFLAG:ARG:행동한횟수 == 1
 		CALL RANDOM_TARGET, ARG, CFLAG:ARG:입력행동
 	ELSE
 		IF CFLAG:ARG:공격강화 < -8 || CFLAG:ARG:명중강화 < -8 || CFLAG:ARG:회피강화 < -8 || CFLAG:ARG:마법위력강화 < -8
-			CFLAG:ARG:입력행동 = [[스킬:데・쿤다]]
+			CFLAG:ARG:입력행동 = [[스킬:데ㆍ쿤다]]
 			CALL RANDOM_TARGET, ARG, CFLAG:ARG:입력행동
 		ELSEIF CFLAG:ARG:마법위력강화 < 16
-			CFLAG:ARG:입력행동 = [[스킬:마카・카쟈]]
+			CFLAG:ARG:입력행동 = [[스킬:마카ㆍ카쟈]]
 			CALL RANDOM_TARGET, ARG, CFLAG:ARG:입력행동
 		ELSE
 			CFLAG:ARG:입력행동 = [[스킬:우뢰의세례]]

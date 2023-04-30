@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 질풍계 마법
 	CASE 3
-		PRINTFORM 마하・아쿠에스
+		PRINTFORM 마하ㆍ아쿠에스
 ENDSELECT
 
 @발동자조건_4645 , ARG
-;마하・아쿠에스を使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・아쿠에스]]) == 0
+;마하ㆍ아쿠에스を使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ아쿠에스]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・아쿠에스]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ아쿠에스]]
 SIF RESULT
 	RETURN 1
 RETURN 0

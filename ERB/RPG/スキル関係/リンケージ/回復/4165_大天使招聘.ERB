@@ -183,12 +183,12 @@ RETURN 1
 @참가조건표시_4165,ARG
 SELECTCASE ARG
 	CASE 1, 2
-		PRINTFORM 메・디아라한
+		PRINTFORM 메ㆍ디아라한
 ENDSELECT
 
 @발동자조건_4165 , ARG
-IF CHECK_SKILL(ARG, [[스킬:메・디아라한]])
-	CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라한]]
+IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라한]])
+	CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라한]]
 	SIF RESULT
 		RETURN 1
 ENDIF
@@ -203,8 +203,8 @@ SIF RESULT == 0
 	RETURN 0
 SELECTCASE ARG:1
 	CASE 1, 2
-		IF CHECK_SKILL(ARG, [[스킬:메・디아라한]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:메・디아라한]]
+		IF CHECK_SKILL(ARG, [[스킬:메ㆍ디아라한]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:메ㆍ디아라한]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

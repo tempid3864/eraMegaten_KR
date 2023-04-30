@@ -1,122 +1,122 @@
 ﻿;スキル名
-@SKILL_NAME_D・キャロットS,ARG
-RESULTS = D・캐롯S
+@SKILL_NAME_DㆍキャロットS,ARG
+RESULTS = Dㆍ캐롯S
 
 
 ;　명중
-@SKILL_HITRATE_D・キャロットS, ARG
+@SKILL_HITRATE_DㆍキャロットS, ARG
 RETURN 120
 
 ;　위력
-@SKILL_POWER_D・キャロットS, ARG
+@SKILL_POWER_DㆍキャロットS, ARG
 RETURN 120
 
 ;クリティカル率
-@SKILL_CRITICAL_RATE_D・キャロットS, ARG
+@SKILL_CRITICAL_RATE_DㆍキャロットS, ARG
 RETURN 0
 
 ;　최저공격횟수
-@SKILL_MINATTACKNUMBER_D・キャロットS,ARG
+@SKILL_MINATTACKNUMBER_DㆍキャロットS,ARG
 RETURN 1
 
 ;　최대공격횟수
-@SKILL_MAXATTACKNUMBER_D・キャロットS,ARG
+@SKILL_MAXATTACKNUMBER_DㆍキャロットS,ARG
 RETURN 1
 
 ;　2 ＨＰ지불　3 ＭＰ지불
-@SKILL_COSTTYPE_D・キャロットS, ARG
+@SKILL_COSTTYPE_DㆍキャロットS, ARG
 RETURN 1
 ;消費なし＝1
 
 ;　코스트량　HPだと％になるんだ。しらそん
-@SKILL_COST_D・キャロットS,ARG
+@SKILL_COST_DㆍキャロットS,ARG
 RETURN 0
 
 ;　상성
-@SKILL_TYPE_D・キャロットS,ARG
+@SKILL_TYPE_DㆍキャロットS,ARG
 RETURN GET_TYPE_NUM("만능")
 
 
 ;　1 EXTRA　2 MAGIC
-@SKILL_DECIDE_TYPE_D・キャロットS,ARG
+@SKILL_DECIDE_TYPE_DㆍキャロットS,ARG
 RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
-@SKILL_DAMAGETYPE_D・キャロットS,ARG
+@SKILL_DAMAGETYPE_DㆍキャロットS,ARG
 RETURN 2
 
 
 ;　対象が1敵か2味方か3場全体か4特殊か
-@SKILL_TARGET_D・キャロットS,ARG
+@SKILL_TARGET_DㆍキャロットS,ARG
 RETURN 2
 
 ;　사거리
-@SKILL_RANGE_D・キャロットS,ARG
+@SKILL_RANGE_DㆍキャロットS,ARG
 RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
-@SKILL_SPHERE_D・キャロットS,ARG
+@SKILL_SPHERE_DㆍキャロットS,ARG
 RETURN 3
 
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
-@SKILL_EFECT_D・キャロットS,ARG
+@SKILL_EFECT_DㆍキャロットS,ARG
 RETURN 2
 
 ;　 특수처리 여부 및 처리내용
-;@SKILL_SPECIALEFECT_D・キャロットS,ARG
+;@SKILL_SPECIALEFECT_DㆍキャロットS,ARG
 ;ARG = 1인 경우는 처리 여부를 반환합니다
 ;SIF ARG == 1
 ;	RETURN 0
 ;아래쪽에 특수처리를 기술합니다
 
 ;계승타입
-;@SKILL_SUCCESSION_TYPE_D・キャロットS,ARG
+;@SKILL_SUCCESSION_TYPE_DㆍキャロットS,ARG
 ;RETURN 23
 ;검격
 
 ;속도보정
-@SKILL_SPEED_D・キャロットS, ARG = -1
+@SKILL_SPEED_DㆍキャロットS, ARG = -1
 RETURN 0
 
 ;;　口上の表示とそのタイプ
-;@SKILL_MESSAGE_D・キャロットS,ARG
+;@SKILL_MESSAGE_DㆍキャロットS,ARG
 
 
 ;전투시 이외에 사용 가능한가
-@SKILL_ACTIONABLE_FIELD_D・キャロットS, ARG = -1
+@SKILL_ACTIONABLE_FIELD_DㆍキャロットS, ARG = -1
 RETURN 0
 
 ;没
-;@SKILL_RANK_D・キャロットS
-;@SKILL_RANKUP_D・キャロットS
-;@계승불능_D・キャロットS
+;@SKILL_RANK_DㆍキャロットS
+;@SKILL_RANKUP_DㆍキャロットS
+;@계승불능_DㆍキャロットS
 
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
-@SKILL_ADDTIONAL_STATE_D・キャロットS,ARG
+@SKILL_ADDTIONAL_STATE_DㆍキャロットS,ARG
 RETURN 0
 
 ;추가효과 상성
-@SKILL_ADDTIONAL_TYPE_D・キャロットS,ARG
+@SKILL_ADDTIONAL_TYPE_DㆍキャロットS,ARG
 RETURN 0
 
 ;추가효과 기본부여확률
-@SKILL_ADDTIONAL_BASE_RATE_D・キャロットS,ARG
+@SKILL_ADDTIONAL_BASE_RATE_DㆍキャロットS,ARG
 RETURN 0
 
 ;추가효과 부여확률상한
-@SKILL_ADDTIONAL_MAX_RATE_D・キャロットS,ARG
+@SKILL_ADDTIONAL_MAX_RATE_DㆍキャロットS,ARG
 RETURN 0
 
 ;;拡散攻撃用追加処理
 ;;ブレスなどの拡散攻撃に使う
-;@SKILL_SPREAD_D・キャロットS,ARG
+;@SKILL_SPREAD_DㆍキャロットS,ARG
 ;RETURN 0
 
 ;====================================================
 ;스킬 및 행동의 실행
 ;====================================================
-@ACTION_D・キャロットS,ARG,ARG:1,SKILL_NUM
+@ACTION_DㆍキャロットS,ARG,ARG:1,SKILL_NUM
 #DIM SKILL_NUM
 #DIM ボムストック
 ボムストック = PU_SKILLNUM_GET(ARG,"ボムリロード")
@@ -155,9 +155,9 @@ PRINTFORMW TARGET:\@ ARG:1 == 19  ? PARTY # ENEMY \@ >>>>>> 근성（즉사방�
 ;====================================================
 
 ;　説明文の表示
-@SKILL_EXPLAIN_D・キャロットS,ARG
+@SKILL_EXPLAIN_DㆍキャロットS,ARG
 PRINTL 아군 전체를 소위력으로 회복하고、즉사방어 효과를 부여한다。　조건：봄 스톡 １소비。
-PRINTL 회복량은 마법위력・마법효과가 아닌 공격과 방어로 산출된다。
+PRINTL 회복량은 마법위력ㆍ마법효과가 아닌 공격과 방어로 산출된다。
 PRINTL 
 PRINTL 코코아가 조합해 들고 다니는 봄에、리본의 마법을 조합한 드론 폭탄。
 PRINTL 캐롯 슈터를 조합하면、회복과 즉사를 막는 능력을 지닌다。
@@ -166,10 +166,10 @@ PRINTL 단、사용하려면 봄 리로드 스킬의 소지가 필요。고양�
 
 
 ;没
-;@계승부위_D・キャロットS,ARG
+;@계승부위_DㆍキャロットS,ARG
 
 ;사용조건
-@SKILL_SPECIAL_ACTIONABLE_D・キャロットS,ARG
+@SKILL_SPECIAL_ACTIONABLE_DㆍキャロットS,ARG
 #DIM ボムストック
 ボムストック = PU_SKILLNUM_GET(ARG,"ボムリロード")
 IF SKILLGAGE_F_GET(ARG,ボムストック) > 3

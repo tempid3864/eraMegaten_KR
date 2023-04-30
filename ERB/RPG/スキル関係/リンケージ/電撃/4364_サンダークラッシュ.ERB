@@ -156,14 +156,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 빙결계 마법
 	CASE 3
-		PRINTFORM 마하・지온가
+		PRINTFORM 마하ㆍ지온가
 ENDSELECT
 
 @발동자조건_4364 , ARG
-;マハ・ジオンガを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・지온가]]) == 0
+;マハㆍジオンガを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ지온가]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・지온가]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ지온가]]
 SIF RESULT
 	RETURN 1
 RETURN 0

@@ -604,7 +604,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			던전플래그:97:19 = 1
 			;レミエル
 			CALL SET_ENEMY,8,[[キャラ:레미엘]],60,0,1
-			;マハ・マグナス
+			;マハㆍマグナス
 			ABL:(CHARANUM-1):스킬5 = 1505
 			;タルカジャ
 			ABL:(CHARANUM-1):스킬6 = 501
@@ -616,7 +616,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			;レミエル
 			CALL SET_ENEMY,10,[[キャラ:레미엘]],60,0,1
-			;マハ・マグナス
+			;マハㆍマグナス
 			ABL:(CHARANUM-1):스킬5 = 1505
 			;タルカジャ
 			ABL:(CHARANUM-1):스킬6 = 501
@@ -889,7 +889,7 @@ IF CFLAG:ARG:１more플래그 > 0
 	IF 현HP비율(ARG) >= 50
 		IF 던전플래그:97:19 == 1
 			IF RAND:2 == 0
-				;マハラギ・オン
+				;マハラギㆍオン
 				CALL CHECK_ACTIONABLE,ARG,705
 				SIF RESULT == 0
 					GOTO DECIDE_ACTION
@@ -956,7 +956,7 @@ ELSEIF CFLAG:MASTER:공격강화 > 4 || CFLAG:MASTER:명중강화 > 4 || CFLAG:M
 	ELSE
 		IF RAND:2 == 0
 			IF 던전플래그:97:19 == 1
-				;マハラギ・オン
+				;マハラギㆍオン
 				CALL CHECK_ACTIONABLE,ARG,705
 					SIF RESULT == 0
 						GOTO DECIDE_ACTION
@@ -1077,7 +1077,7 @@ ELSEIF 현HP비율(ARG) < 50
 			CALL RANDOM_TARGET,ARG,1223
 			RETURN 1
 		CASE IS < 85
-			;10％でマハラギ・オン
+			;10％でマハラギㆍオン
 			IF 던전플래그:97:19 == 1
 				CALL CHECK_ACTIONABLE,ARG,705
 				SIF RESULT == 0

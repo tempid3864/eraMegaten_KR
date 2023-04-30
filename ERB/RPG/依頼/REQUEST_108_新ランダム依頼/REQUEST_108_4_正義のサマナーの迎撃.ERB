@@ -21,14 +21,14 @@ PRINTFORML 自称正義のサマナー
 PRINTFORML 「やややや、これはこれはぁ……悪の組織の工場を守るつもりですかアナタ？」
 PRINTFORML 「まったく、正義を執行せねばいけませんねぇ……Go！ショボーたん！」
 PRINTFORML 
-PRINTFORMW ＞モー・ショボーの群れが襲ってきた！
+PRINTFORMW ＞モーㆍショボーの群れが襲ってきた！
 WAIT
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
 FOR LOCAL:2, 7, 17
-	CALL SET_ENEMY, LOCAL:2 ,[[キャラ:모・쇼보]],15+RAND:5,0,0
+	CALL SET_ENEMY, LOCAL:2 ,[[キャラ:모ㆍ쇼보]],15+RAND:5,0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 NEXT

@@ -28,7 +28,7 @@ CALLFORM PRINT_TALENT_{LOCAL:1},ARG
 PRINTL
 DRAWLINE
 
-PRINTFORMLC [1007] \@ LOCAL:1 == 0 ? 육체・기술・버릇계소질 # 정신계소질 \@
+PRINTFORMLC [1007] \@ LOCAL:1 == 0 ? 육체ㆍ기술ㆍ버릇계소질 # 정신계소질 \@
 PRINTLC [1000] 종료
 PRINTLC [1009] 리셋
 $INPUT_LOOP
@@ -337,10 +337,10 @@ ENDIF
 
 
 ;===========================
-;肉体・技術・性癖系素質表示
+;肉体ㆍ技術ㆍ性癖系素質表示
 ;===========================
 @PRINT_TALENT_1,ARG
-PRINTL □육체・기술・버릇소질
+PRINTL □육체ㆍ기술ㆍ버릇소질
 
 IF TALENT:ARG:남자 == 0
 	IF TALENT:ARG:처녀

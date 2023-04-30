@@ -105,7 +105,7 @@ SIF FLAG:최대Y == -1
 	FLAG:최대Y = 1
 
 
-;PALAMLV・EXPLVを定義
+;PALAMLVㆍEXPLVを定義
 PALAMLV:10 = 1000000
 PALAMLV:11 = 5000000
 PALAMLV:12 = 30000000
@@ -265,15 +265,15 @@ IF LASTLOAD_VERSION < 0261
 			CASE 1510
 				ABL:LOCAL:초기페르소나 = [[キャラ:프레이아(페르소나)]]
 			CASE 4051
-				ABL:LOCAL:초기페르소나 = [[キャラ:불카누스・개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[キャラ:불카누스ㆍ개(페르소나)]]
 			CASE 4052
 				ABL:LOCAL:초기페르소나 = [[キャラ:아폴로(페르소나)]]
 			CASE 4053
-				ABL:LOCAL:초기페르소나 = [[キャラ:에로스・개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[キャラ:에로스ㆍ개(페르소나)]]
 			CASE 4054
 				ABL:LOCAL:초기페르소나 = [[キャラ:비너스(페르소나)]]
 			CASE 4055
-				ABL:LOCAL:초기페르소나 = [[キャラ:마이아・개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[キャラ:마이아ㆍ개(페르소나)]]
 			CASE 4056
 				ABL:LOCAL:초기페르소나 = [[キャラ:아르테미스(페르소나)]]
 			CASE 4057
@@ -282,11 +282,11 @@ IF LASTLOAD_VERSION < 0261
 	NEXT
 	FOR LOCAL, 1, 11
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4051
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:불카누스・개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:불카누스ㆍ개(페르소나)]]
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4053
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:에로스・개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:에로스ㆍ개(페르소나)]]
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4055
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:마이아・개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:마이아ㆍ개(페르소나)]]
 	NEXT
 ENDIF
 
@@ -483,7 +483,7 @@ IF LASTLOAD_VERSION < 0276
 				DITEMTYPE:LOCAL:페르소나("페르소나소지자") = -1
 		ENDIF
 	NEXT
-	SIF ITEM:바・벨
+	SIF ITEM:바ㆍ벨
 		FLAG:벨신격파 |= 32
 	SIF FLAG:나오야루트 >= 4
 		FLAG:벨신격파 |= 8
@@ -1577,7 +1577,7 @@ IF LASTLOAD_VERSION < 00309135
 		NEXT
 		;CSTRで専用技定義
 		CSTR:LOCAL:전용기1 = L．judgement
-		CSTR:LOCAL:전용기2 = 恋の魔球・ﾊｲﾗｲﾄ
+		CSTR:LOCAL:전용기2 = 恋の魔球ㆍﾊｲﾗｲﾄ
 	ENDIF
 	
 	;星見純那
@@ -1670,8 +1670,8 @@ IF LASTLOAD_VERSION < 00309135
 			
 		NEXT
 		;CSTRで専用技定義
-		CSTR:LOCAL:전용기1 = 大太刀・輪
-		CSTR:LOCAL:전용기2 = 小太刀・舞
+		CSTR:LOCAL:전용기1 = 大太刀ㆍ輪
+		CSTR:LOCAL:전용기2 = 小太刀ㆍ舞
 		CSTR:LOCAL:전용기3 = 輪＆舞
 		CSTR:LOCAL:전용기4 = 第99回聖翔祭（再演）
 	ENDIF
@@ -2050,7 +2050,7 @@ IF LASTLOAD_VERSION < 0282
 	;CALL CONVERT_CHARA_NO,変換前,変換後
 ENDIF
 
-;キャラNO・ARGをARG:1変更する
+;キャラNOㆍARGをARG:1変更する
 @CONVERT_CHARA_NO,ARG,ARG:1
 FOR LOCAL,0,CHARANUM
 	;NO

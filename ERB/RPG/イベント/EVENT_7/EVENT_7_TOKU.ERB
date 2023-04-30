@@ -45,7 +45,7 @@ IF LOCAL:6 == 7
 		LOCALS:LOCAL = 
 	ENDIF
 ENDIF
-;罪進行度7(하늘의과학관突入가능)이상・罰進度7(우라라と전투가능)이상
+;罪進行度7(하늘의과학관突入가능)이상ㆍ罰進度7(우라라と전투가능)이상
 IF (LOCAL:6 >= 7 || LOCAL:7 >= 7) && STRFLAG_NUM_EV("마법의 재단사의 소문") < 2
 	LOCALS:LOCAL = 영국 전통의 방어구의 소문
 	IF !STRFLAG_NUM_EV(LOCALS:LOCAL)
@@ -423,7 +423,7 @@ IF RESULT == 0
 		ELSEIF LOCALS == "나치스의 히든카드는 기계화 미녀 군단의 소문"
 			PRINTL 토쿠 씨:
 			PRINTW 「그럼 소문을 들려주지」
-			PRINTW 「라스트・바탈리온의 소문은 알고 있나？」
+			PRINTW 「라스트ㆍ바탈리온의 소문은 알고 있나？」
 			PRINTW 「그래、지금 화제의 책에 기록된 옛 독일 엘리트 부대라던가」
 			PRINTL 「독일 제3제국 총수가 도망쳤다던가、많은 첨단 무기를 갖고 있더던가、하는 이야기는
 			PRINTW 　상당히 오래 전부터 소문으로 돌던 것이지만」
@@ -504,7 +504,7 @@ ELSEIF RESULT == 2
 	IF RAND:2 == 0
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 트크씨와의 이야기가 빨리 끝나자, 혼마루 공원에서 조금 휴식을 하기로 했다…
 		PRINTL 
-		PRINTL 『체력・기력을 회복했습니다』
+		PRINTL 『체력ㆍ기력을 회복했습니다』
 		PRINTW 
 	ELSE
 		PRINTL 「응?　아, 쉬어 가겠나?　뭐, 확실히 여기는 초록도 많아서 릴렉스 할 수 있는 장소이고
@@ -569,7 +569,7 @@ ELSEIF RESULT == 2
 				ENDIF
 				PRINTW 어쩐지, 단번에 지치게 되었다…
 				PRINTL 
-				PRINTW 『체력・기력은 그다지 회복되지 않았습니다』
+				PRINTW 『체력ㆍ기력은 그다지 회복되지 않았습니다』
 				PRINTL 
 				BASE:MASTER:체력 -= 500
 				BASE:MASTER:기력 -= 400
@@ -593,13 +593,13 @@ ELSEIF RESULT == 2
 			PRINTL 
 			PRINTW 피로가 많이 가신 것 같다…
 			PRINTL 
-			PRINTW 『체력・기력을 많이 회복했습니다』
+			PRINTW 『체력ㆍ기력을 많이 회복했습니다』
 			PRINTL 
 			BASE:MASTER:체력 += 300
 			BASE:MASTER:기력 += 200
 		ELSE
 			PRINTL 
-			PRINTW 『체력・기력을 회복했습니다』
+			PRINTW 『체력ㆍ기력을 회복했습니다』
 			PRINTL 
 		ENDIF
 	ENDIF

@@ -751,7 +751,7 @@ ENDIF
 ;RETURN X でXが종류の数になります
 ;あまりいろんなのが混ざっているとCOOPがとりにくくなったり
 ;적の공격속성が多くなる傾向にあるので、
-;종류の数は1・2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
+;종류の数は1ㆍ2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
 ;=======================================================================
 @CLASS_NUM_94
 SELECTCASE FLAG:현M
@@ -855,7 +855,7 @@ ENDCATCH
 
 LOCAL   = 0
 LOCAL:1 = 0 ;레어악마数카운트
-LOCAL:2 = 0 ;캡스・락
+LOCAL:2 = 0 ;캡스ㆍ락
 ;플로어に対応した出現悪魔の最高레벨と최저레벨を설정
 SELECTCASE FLAG:현M
 	;２Ｆ（ＬＶ１～１０）
@@ -989,7 +989,7 @@ ENDIF
 LOCAL:2 = LOCAL
 
 ;キャプスロックで出現出来ない악마をリストから除外して再構成
-IF EQUIP:MASTER:캡스・락 && LOCAL:2 > 2
+IF EQUIP:MASTER:캡스ㆍ락 && LOCAL:2 > 2
 	LOCAL = 0
 	FOR LCOUNT, 0, LOCAL:2
 		IF CSVBASE(出現悪魔:LCOUNT, GETNUM(BASE, "LV")) > BASE:MASTER:LV - 12
@@ -1087,7 +1087,7 @@ NEXT
 VARSET 出現悪魔
 LOCAL   = 0
 LOCAL:1 = 0 ;레어악마数카운트
-LOCAL:2 = 0 ;캡스・락
+LOCAL:2 = 0 ;캡스ㆍ락
 ;플로어に対応した出現悪魔の最高레벨と최저레벨を설정
 SELECTCASE FLAG:현M
 	;２Ｆ（ＬＶ１～１０）
@@ -1222,7 +1222,7 @@ ENDIF
 LOCAL:2 = LOCAL
 
 ;キャプスロックで出現出来ない악마をリストから除外して再構成
-IF EQUIP:MASTER:캡스・락 && LOCAL:2 > 2
+IF EQUIP:MASTER:캡스ㆍ락 && LOCAL:2 > 2
 	LOCAL = 0
 	FOR LCOUNT, 0, LOCAL:2
 		IF CSVBASE(出現悪魔:LCOUNT, GETNUM(BASE, "LV")) > BASE:MASTER:LV - 12

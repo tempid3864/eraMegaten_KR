@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB333.ERB
-;	Facility	:회화타입：ゾンビの会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：ゾンビの会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -32,7 +32,7 @@
 @KOJO_TALK_PUB333,ARG,ARG:1
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 		PRINTFORML %조사처리(CALLNAME:ARG,"는")% %CALLNAME:PLAYER%에게 헤롱헤롱한 것 같다
 		
 	CASE 2
@@ -347,11 +347,11 @@ SELECTCASE ARG:1
 		;友好度が高い
 		PRINTFORML 「또 만나자」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90

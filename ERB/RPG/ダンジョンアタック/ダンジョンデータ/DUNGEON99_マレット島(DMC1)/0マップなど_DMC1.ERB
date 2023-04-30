@@ -10,10 +10,10 @@
 ;　06　獅子の像バリア해제
 ;　07　獅子の像破壊、섀도우戦
 ;　08　吹き抜け階段 地下スイッチ起動
-;　09　ネロ・アンジェロ登場
-;　10　ネロ・アンジェロ戦종료　섀도우出現（적강화）
+;　09　ネロㆍアンジェロ登場
+;　10　ネロㆍアンジェロ戦종료　섀도우出現（적강화）
 ;　11　地下水路　ベルゼバブ出現（적강화）
-;　12　シン・サイズ戦종료
+;　12　シンㆍサイズ戦종료
 ;　13　팬텀戦2종료
 ;　14　跳ね橋装置作動
 ;　15　三叉の矛を사용　1F入り口鉄格子개방
@@ -73,7 +73,7 @@
 ;■던전플래그:99:11 エネミー管理
 ;　1　マリオネットの部屋で鍵を取りエンカウント開始 30
 ;　2　シンシザーズ出現 35
-;　3　ネロ・アンジェロ戦종료 40
+;　3　ネロㆍアンジェロ戦종료 40
 ;　4　ベルゼバブ出現 45
 ;　5　ブレイド出現 50
 ;　6　フェティッシュ出現 55
@@ -178,7 +178,7 @@ SELECTCASE FLAG:현M
 	CASE 25
 		PRINTL 闘技場　下段
 	CASE 26
-		PRINTL 古城・後編
+		PRINTL 古城ㆍ後編
 	CASE 27
 		PRINTL 小部屋の絵
 	CASE 28
@@ -300,9 +300,9 @@ SELECTCASE DA:ARG:(ARG:1)
 	CASE 2
 		;■ロビー扉
 		IF FLAG:현M == 2 && ARG == 8 && ARG:1 == 34 && !GETBIT(던전플래그:99:4,1)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/45個のレッド・オーブが필요だ/レッド・オーブ소지수：{MONEY:99} "
+			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/45個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
 			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッド・オーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
 				MONEY:99 -= 45
 				SETBIT 던전플래그:99:4,1
 			ENDIF
@@ -483,22 +483,22 @@ SELECTCASE DA:ARG:(ARG:1)
 			ENDIF
 		;■山岳地
 		ELSEIF FLAG:현M == 23 && ARG == 14 && ARG:1 == 25 && !GETBIT(던전플래그:99:4,15)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/200個のレッド・オーブが필요だ/レッド・オーブ소지수：{MONEY:99} "
+			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/200個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
 			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッド・オーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
 				MONEY:99 -= 200
 				SETBIT 던전플래그:99:4,15
 			ENDIF
 			RETURN 0
 		ELSEIF FLAG:현M == 23 && ARG == 5 && ARG:1 == 27 && !GETBIT(던전플래그:99:4,16)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/100個のレッド・オーブが필요だ/レッド・オーブ소지수：{MONEY:99} "
+			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/100個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
 			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッド・オーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
 				MONEY:99 -= 100
 				SETBIT 던전플래그:99:4,16
 			ENDIF
 			RETURN 0
-		;■古城・後編　1F
+		;■古城ㆍ後編　1F
 		ELSEIF FLAG:현M == 26 && ARG == 16 && ARG:1 == 30 && !GETBIT(던전플래그:99:4,24)
 			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている "
 			RETURN 0
@@ -637,9 +637,9 @@ SELECTCASE DA:ARG:(ARG:1)
 		ENDIF
 	CASE 14049
 		IF !GETBIT(던전플래그:99:4,11)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている/　　この封印を解くには、200個のレッド・オーブが필요だ "
+			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている/　　この封印を解くには、200個のレッドㆍオーブが필요だ "
 			IF MONEY:99 >=200
-				CALL MESSAGE_WINDOW_D, "", "＞　レッド・オーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
 				MONEY:99 -= 200
 				SETBIT 던전플래그:99:4,11
 			ENDIF
@@ -803,7 +803,7 @@ SIF ARGS == "H"
 SIF ARGS == "P"
 	RETURN 191
 
-;進入禁止・隠しレッドオーブ有り
+;進入禁止ㆍ隠しレッドオーブ有り
 SIF ARGS == "R"
 	RETURN 201
 
@@ -1258,7 +1258,7 @@ SELECTCASE ARG / 10
 		ELSE
 			RESULTS = □
 		ENDIF
-;■古城・後編
+;■古城ㆍ後編
 	;헬メスの杖
 	CASE 2601
 		IF !GETBIT(던전플래그:99:4,26)
@@ -1431,7 +1431,7 @@ SELECTCASE ARG / 10
 		ELSE
 			RESULTS = 扉
 		ENDIF
-	;■ネロ・アンジェロ戦
+	;■ネロㆍアンジェロ戦
 	CASE 825
 		IF 던전플래그:99:1 == 9
 			RESULTS = ！
@@ -1441,7 +1441,7 @@ SELECTCASE ARG / 10
 	;■吹き抜け階段　最下層へ돌아간다
 	CASE 1002
 		RESULTS = ■
-	;■地下水路　シン・サイズ戦
+	;■地下水路　シンㆍサイズ戦
 	CASE 1000
 		IF 던전플래그:99:1 < 12
 			RESULTS = ！
@@ -1594,7 +1594,7 @@ SELECTCASE ARG / 10
 		RESULTS = 扉
 	CASE 2306
 		RESULTS = ↑
-	;■古城・後編
+	;■古城ㆍ後編
 	CASE 2601
 		SIF 던전플래그:99:5 < 6
 			RESULTS = ！
@@ -2320,9 +2320,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 						IF !RESULT
 							CALL MESSAGE_WINDOW_D, "", "【성배】/＞　聖なる人の死を称え、/　　生からの개방を祈り その生き血を受けた성배 "
 							CALL MESSAGE_WINDOW_D, "", "＞　성배　을 손에 넣었다と同時に、背後に気配が生まれる "
-							CALL MESSAGE_WINDOW_D, "", "＞　振り返ると、古城で戦ったネロ・アンジェロが再び現れ、こちらを見据えている "
+							CALL MESSAGE_WINDOW_D, "", "＞　振り返ると、古城で戦ったネロㆍアンジェロが再び現れ、こちらを見据えている "
 							CALL MESSAGE_WINDOW_D, "단테", @"「さあ%CALLNAME:MASTER%、ラウンド2の始まりだ！」 "
-							CALL MESSAGE_WINDOW_D, "", "＞　ネロ・アンジェロが襲いかかってきた！ "
+							CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロが襲いかかってきた！ "
 							FLAG:도주불가플래그 = 1
 							FLAG:회화불능플래그 = 1
 							FLAG:선제기습취소 = 1
@@ -2336,7 +2336,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 							FLAG:미조우걸음수 = 0
 							FORCEWAIT
 							
-							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達に敗れ、ネロ・アンジェロは再び姿を消した "
+							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達に敗れ、ネロㆍアンジェロは再び姿を消した "
 							CALL MESSAGE_WINDOW_D, "", "＞　まだ決着を付ける時では無いようだ "
 							CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
 							MONEY:99 += 500
@@ -2543,7 +2543,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				SIF !RESULT
 					CALL DUNGEON_WORP,24,10,19
 		;---------
-		;　古城・後半　1F
+		;　古城ㆍ後半　1F
 		;---------
 			CASE 2600
 				CALL MESSAGE_WINDOW_D, "", "＞　水溜りが鏡のように透き通っている/　　ここから魔の波動を感じる "
@@ -2912,7 +2912,7 @@ SELECTCASE DA:(ARG):(ARG:1) % 10
 		;성배堂の奥の扉9は高さ0
 		SIF DA:(ARG):(ARG:1) == 18009
 			RETURN 0
-		;古城・後編　ワープマス下の9は高さ0
+		;古城ㆍ後編　ワープマス下の9は高さ0
 		SIF DA:(ARG):(ARG:1) == 26009
 			RETURN 0
 		;魔界　最深部　高さ2
@@ -2929,7 +2929,7 @@ SELECTCASE DA:(ARG):(ARG:1) % 10
 		;ドリーグ用
 		IF DA:(ARG):(ARG:1) == 91
 			RETURN 0
-		;ワープ・落下処理
+		;ワープㆍ落下処理
 		ELSEIF DA:(ARG):(ARG:1) == 171
 			IF FLAG:현M == 29 && ARG == 3 && ARG:1 == 17
 				RETURN 3
@@ -3245,7 +3245,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					던전플래그:99:1 = 26
 				ENDIF
 		;---------
-		;　古城・後編
+		;　古城ㆍ後編
 		;---------
 			CASE 2600
 				IF 던전플래그:99:3 >= 18 && 던전플래그:99:5 < 8
@@ -3507,7 +3507,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■崩れた발場　跳躍
 			CASE 824
 				CALL DUNGEON_WORP,8,12,22
-			;■ネロ・アンジェロ戦
+			;■ネロㆍアンジェロ戦
 			CASE 825
 				IF 던전플래그:99:1 == 9
 					CALL MESSAGE_WINDOW_D, "", @"＞　黒騎士と%CALLNAME:MASTER%達を模した악마達は/　　堂々と%CALLNAME:MASTER%達が降りてくるのを待っていた "
@@ -3551,12 +3551,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 	;=======
 	;地下水道
 	;=======
-			;■シン・サイズ戦
+			;■シンㆍサイズ戦
 			CASE 1000
 				IF 던전플래그:99:1 < 12
 					CALL MESSAGE_WINDOW_D, "", "＞　その場に발を踏み入れると、周囲を마력が囲み閉じ込められた "
 					CALL MESSAGE_WINDOW_D, "", "＞　気配を感じ、水路の壁面を見ると/なぜか壁にかかっている骸뼈から滲み出るように死神が出現し、こちらへ迫ってくる "
-					CALL MESSAGE_WINDOW_D, "", "＞　 シン・サイズ　が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　 シンㆍサイズ　が襲いかかってきた！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -3569,7 +3569,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 					ABL:(CHARANUM-1):스킬1 = 2 ;히트フェイブ
 					ABL:(CHARANUM-1):스킬2 =304 ;메가클로
-					ABL:(CHARANUM-1):스킬3 =508 ;스쿤・다
+					ABL:(CHARANUM-1):스킬3 =508 ;스쿤ㆍ다
 					ABL:(CHARANUM-1):스킬4 =2013 ;흡혈
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
@@ -3900,15 +3900,15 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 2306
 				CALL DUNGEON_WORP,23,17,16
 	;=======
-	;古城・後編
+	;古城ㆍ後編
 	;=======
-		;霊石・エリキサ입수した帰還時　寝室の絵出現
+		;霊石ㆍエリキサ입수した帰還時　寝室の絵出現
 			CASE 2600
 				IF 던전플래그:99:3 == 18 && !GETBIT(던전플래그:99:4,32)
 					CALL MESSAGE_WINDOW_D, "", "＞　エリキサがもう一方の絵に強く反応を示している "
 					SETBIT 던전플래그:99:4,32
 				ENDIF
-		;트리슈合流・Dr.파우스트입수
+		;트리슈合流ㆍDr.파우스트입수
 			CASE 2601
 				IF 던전플래그:99:5 < 6
 					CALL MESSAGE_WINDOW_D, "", @"＞　再び古城へ戻ってきた%CALLNAME:MASTER%達を、一人の女性が「おかえりなさい」と出迎えた "
@@ -3929,7 +3929,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 	;=======
 	;闘技場の絵
 	;=======
-		;ネロ・アンジェロ(3)戦종료後、浸水牢獄の絵出現
+		;ネロㆍアンジェロ(3)戦종료後、浸水牢獄の絵出現
 			CASE 2700
 				IF 던전플래그:99:1 == 30 && !GETBIT(던전플래그:99:4,29)
 					CALL MESSAGE_WINDOW_D, "", "＞　闘技場の部屋とは反対側に、牢獄の絵が出現した "
@@ -3957,17 +3957,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL MESSAGE_WINDOW_D, "", "＞　どうやら侮れない적のようだ　탐색は一層困難を増してゆく‥‥‥ "
 					던전플래그:99:11 = 8
 				ENDIF
-		;ネロ・アンジェロ(3)
+		;ネロㆍアンジェロ(3)
 			CASE 2807
 				IF 던전플래그:99:1 < 30
 					CALL MESSAGE_WINDOW_D, "", @"＞　視線の先に、何度も見た背中が%CALLNAME:MASTER%達を待っていた "
-					CALL MESSAGE_WINDOW_D, "", "＞　ネロ・アンジェロは망토を翻し、こちらを向き直って검を抜く "
+					CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロは망토を翻し、こちらを向き直って검を抜く "
 					;PTに鬼ぃちゃんIN
 					IF FINDCHARA_B([[キャラ:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
 						CALL MESSAGE_WINDOW_D, "버질", "「‥‥皮肉のつもりか？」/＞　버질は苦虫を噛み潰したかのような表情だ "
 						CALL MESSAGE_WINDOW_D, "단테", "「まさか！/あの状況でも曲がってないってのを純粋に称賛してるのさ」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　兄弟の掛け合いを他所に、ネロ・アンジェロは地面へ검を突き刺し/　　両손を交差させて힘を개방してゆく "
+						CALL MESSAGE_WINDOW_D, "", "＞　兄弟の掛け合いを他所に、ネロㆍアンジェロは地面へ검を突き刺し/　　両손を交差させて힘を개방してゆく "
 						CALL MESSAGE_WINDOW_D, "", "＞　――そこには、버질の顔をした魔검사本当の姿があった/　　魔검사は再び검を取り、こちらへ검気を向けてくる "
 						CALL MESSAGE_WINDOW_D, "버질", "「ぬかせ。/ならば本物との差を見せてやる」 "
 					;PTにいないけど鬼ぃちゃん加入済み
@@ -3975,18 +3975,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
 						CALL MESSAGE_WINDOW_D, "", @"＞　確かにこの魔검사からは、他の악마にはない힘への執念を%CALLNAME:MASTER%も感じていた "
 						CALL MESSAGE_WINDOW_D, "단테", "「だが、ラストステージだ。/　見てりゃわかるが、今までと同じと思ってたら――」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロ・アンジェロが両손を交差させて힘を개방している "
+						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロㆍアンジェロが両손を交差させて힘を개방している "
 						CALL MESSAGE_WINDOW_D, "", "＞　暴風を伴い、本来の힘を개방させた魔검사/　　その顔は、今はいない隣の男の兄のものであった "
 						CALL MESSAGE_WINDOW_D, "단테", "「あっという間に首と몸통がさよなら、だ。/　さあて、ラストダンスも派손にいこうか！」 "
 					ELSE
 						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
 						CALL MESSAGE_WINDOW_D, "", @"＞　確かにこの魔검사からは、他の악마にはない힘への執念を%CALLNAME:MASTER%も感じていた "
 						CALL MESSAGE_WINDOW_D, "단테", "「だが、ラストステージだ。/　感じてるだろうが、今までと同じと思ってたら――」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロ・アンジェロが両손を交差させて힘を개방している "
+						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロㆍアンジェロが両손を交差させて힘を개방している "
 						CALL MESSAGE_WINDOW_D, "", "＞　暴風を伴い、本来の힘を개방させた魔검사/　　その顔は、どこか隣の男を思わせるものだ "
 						CALL MESSAGE_WINDOW_D, "단테", "「あっという間に首と몸통がさよなら、だ。/　さあて、ラストダンスも派손にいこうか！」 "
 					ENDIF
-					CALL MESSAGE_WINDOW_D, "", "＞　ネロ・アンジェロが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロが襲いかかってきた！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
@@ -4660,7 +4660,7 @@ ENDIF
 ;RETURN X でXが種類の数になります
 ;あまりいろんなのが混ざっているとCOOPがとりにくくなったり
 ;敵の攻撃属性が多くなる傾向にあるので、
-;種類の数は1・2種類を主体に時々3種類くらいを基本にするのが望ましいと思われます
+;種類の数は1ㆍ2種類を主体に時々3種類くらいを基本にするのが望ましいと思われます
 ;=======================================================================
 @CLASS_NUM_99
 SELECTCASE FLAG:현M
@@ -4954,7 +4954,7 @@ SELECTCASE NO:ARG
 		BASE:(CHARANUM-1):비구 = 120
 		ABL:(CHARANUM-1):스킬1 = 2 ;히트フェイブ
 		ABL:(CHARANUM-1):스킬2 =304 ;메가클로
-		ABL:(CHARANUM-1):스킬3 =508 ;스쿤・다
+		ABL:(CHARANUM-1):스킬3 =508 ;스쿤ㆍ다
 		ABL:(CHARANUM-1):스킬4 =2013 ;흡혈
 	
 	CASE [[キャラ:타나토스]]
@@ -5008,7 +5008,7 @@ SELECTCASE NO:ARG
 		NAME:(CHARANUM-1) = フロスト
 		CALLNAME:(CHARANUM-1) = フロスト
 		ABL:(CHARANUM-1):스킬1 = 345 ;앵화섬란
-		ABL:(CHARANUM-1):스킬2 = 805 ;마하・부흐라
+		ABL:(CHARANUM-1):스킬2 = 805 ;마하ㆍ부흐라
 		ABL:(CHARANUM-1):스킬3 = 803 ;부흐다인
 		ABL:(CHARANUM-1):스킬4 = 504;ラクカジャ
 		ABL:(CHARANUM-1):스킬5 = 1708;선풍진
@@ -5096,7 +5096,7 @@ CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 
 ABL:(CHARANUM-1):스킬1 = 328;어설트다이브
-ABL:(CHARANUM-1):스킬2 = 906 ;마하・지오다인
+ABL:(CHARANUM-1):스킬2 = 906 ;마하ㆍ지오다인
 ABL:(CHARANUM-1):스킬3 = 1038;소닉붐
 ABL:(CHARANUM-1):스킬4 = 1007;림도라
 ABL:(CHARANUM-1):스킬5 = 0
@@ -5110,7 +5110,7 @@ CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 
 ABL:(CHARANUM-1):스킬1 = 328;어설트다이브
-ABL:(CHARANUM-1):스킬2 = 906 ;마하・지오다인
+ABL:(CHARANUM-1):스킬2 = 906 ;마하ㆍ지오다인
 ABL:(CHARANUM-1):스킬3 = 1038;소닉붐
 ABL:(CHARANUM-1):스킬4 = 1007;림도라
 ABL:(CHARANUM-1):스킬5 = 0
@@ -5132,7 +5132,7 @@ IF !GETBIT(던전플래그:99:8,4)
 ENDIF
 
 ABL:(CHARANUM-1):스킬1 = 328;어설트다이브
-ABL:(CHARANUM-1):스킬2 = 906 ;마하・지오다인
+ABL:(CHARANUM-1):스킬2 = 906 ;마하ㆍ지오다인
 ABL:(CHARANUM-1):스킬3 = 1038;소닉붐
 ABL:(CHARANUM-1):스킬4 = 1007;림도라
 ABL:(CHARANUM-1):스킬5 = 0
@@ -5140,8 +5140,8 @@ ABL:(CHARANUM-1):스킬6 = 0
 
 @NERO_1
 CALL SET_ENEMY,9,[[キャラ:버질]],47,0,1
-NAME:(CHARANUM-1) = ネロ・アンジェロ
-CALLNAME:(CHARANUM-1) = ネロ・アンジェロ
+NAME:(CHARANUM-1) = ネロㆍアンジェロ
+CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5166,8 +5166,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @NERO_2
 CALL SET_ENEMY,9,[[キャラ:버질]],65,0,1
-NAME:(CHARANUM-1) = ネロ・アンジェロ
-CALLNAME:(CHARANUM-1) = ネロ・アンジェロ
+NAME:(CHARANUM-1) = ネロㆍアンジェロ
+CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5192,8 +5192,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @NERO_3
 CALL SET_ENEMY,9,[[キャラ:버질]],80,0,1
-NAME:(CHARANUM-1) = ネロ・アンジェロ
-CALLNAME:(CHARANUM-1) = ネロ・アンジェロ
+NAME:(CHARANUM-1) = ネロㆍアンジェロ
+CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5209,7 +5209,7 @@ EQUIP:(CHARANUM-1):머리 = [[아이템:야크트헬름]]
 EQUIP:(CHARANUM-1):몸통 = [[아이템:야크트아머]]
 EQUIP:(CHARANUM-1):팔 = [[아이템:야크트글러브]]
 EQUIP:(CHARANUM-1):발 = [[아이템:야크트레그]]
-CSTR:(CHARANUM-1):사고패턴 = ネロ・アンジェロ
+CSTR:(CHARANUM-1):사고패턴 = ネロㆍアンジェロ
 CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
@@ -5355,9 +5355,9 @@ CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
 ;=======================================================================
-;ネロ・アンジェロ(3)の사고패턴
+;ネロㆍアンジェロ(3)の사고패턴
 ;=======================================================================
-@SET_ACTION_ネロ・アンジェロ,ARG
+@SET_ACTION_ネロㆍアンジェロ,ARG
 #DIM LCOUNT
 IF CFLAG:ARG:１more플래그 == 0 && CFLAG:ARG:행동한횟수 == 0
 	LOCAL:1 = 0
@@ -5557,7 +5557,7 @@ ENDIF
 ;---------------------------------------------------------------
 ;ムンドゥス戦：HPが一定量減ると増援
 ;増援死亡後2ターンで増援復活
-;ARG　1:ターン開始時、コア処理・幻影復活処理 2:数を카운트
+;ARG　1:ターン開始時、コア処理ㆍ幻影復活処理 2:数を카운트
 ;---------------------------------------------------------------
 @MUNDUS_GIMMICK,ARG
 ;LOCAL:1 ターン종료시の적総数
@@ -5614,7 +5614,7 @@ ENDIF
 ;---------------------------------------------------------------
 ;나이트메어戦：幻影が倒れると、翌ターンまでコアが노출し全속성약점化
 ;翌々ターンにコア収納
-;ARG　1:ターン開始時、コア処理・幻影復活処理 2:数を카운트
+;ARG　1:ターン開始時、コア処理ㆍ幻影復活処理 2:数を카운트
 ;---------------------------------------------------------------
 @NIGHTMARE_GIMMICK,ARG
 #DIM 残存数

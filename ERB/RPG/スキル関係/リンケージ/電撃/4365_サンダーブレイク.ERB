@@ -156,14 +156,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 빙결계 마법
 	CASE 3
-		PRINTFORM 마하・지오다인
+		PRINTFORM 마하ㆍ지오다인
 ENDSELECT
 
 @발동자조건_4365 , ARG
-;마하・지오다인を使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・지오다인]]) == 0
+;마하ㆍ지오다인を使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ지오다인]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・지오다인]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ지오다인]]
 SIF RESULT
 	RETURN 1
 RETURN 0

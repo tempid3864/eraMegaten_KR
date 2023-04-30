@@ -32,7 +32,7 @@ RETURN 130
 #DIM L_DMG
 SKILL_NUM = PU_SKILLNUM_GET(ARG,"黒龍双剋勝利剣")
 ;総威力は300,450,500、強化イベント経由時は400,550,600
-SELECTCASE SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"))
+SELECTCASE SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"))
 	CASE IS > 3
 		SELECTCASE TOINT(CSTR:ARG:102)
 			CASE IS > 2
@@ -289,7 +289,7 @@ FOR HIT_COUNT,1,10
 		CALL SKILLGAGE_H_SET,ARG,SKILL_NUM,0
 	ENDIF
 NEXT
-CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),0
+CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),0
 CFLAG:ARG:공격강화 -= CFLAG:ARG:마법위력강화
 
 ;====================================================
@@ -314,7 +314,7 @@ PRINTL 이 스킬은 사용자의 마법위력강화의 영향을 받는다
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_黒龍双剋勝利剣,ARG
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) > 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) > 0
 	RETURN 1
 RETURN 0
 
@@ -381,7 +381,7 @@ ENDSELECT
 SIF PU_SKILL_CHECK(ARG:1,"セイバー")
 	RETURN 1
 SELECTCASE NO:(ARG:1)
-	CASE [[キャラ:파랑세이버]],[[キャラ:빨강세이버]],[[キャラ:라마]],[[キャラ:지크프리트]],[[キャラ:아서]],[[キャラ:수르트]],[[キャラ:사야카]],[[キャラ:요우무]],[[キャラ:모미지(동방)]],[[キャラ:텐시]],[[キャラ:요리히메]],[[キャラ:Ａ・치르노]],[[キャラ:락슈미]]
+	CASE [[キャラ:파랑세이버]],[[キャラ:빨강세이버]],[[キャラ:라마]],[[キャラ:지크프리트]],[[キャラ:아서]],[[キャラ:수르트]],[[キャラ:사야카]],[[キャラ:요우무]],[[キャラ:모미지(동방)]],[[キャラ:텐시]],[[キャラ:요리히메]],[[キャラ:Ａㆍ치르노]],[[キャラ:락슈미]]
 		RETURN 1
 ENDSELECT
 RESULT = 0

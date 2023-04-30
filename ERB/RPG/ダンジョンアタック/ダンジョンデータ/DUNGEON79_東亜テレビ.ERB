@@ -48,21 +48,21 @@ SELECTCASE FLAG:현M
 	CASE 7
 		PRINTL 8F
 	CASE 8
-		PRINTL 전파탑・1F
+		PRINTL 전파탑ㆍ1F
 	CASE 9
-		PRINTL 전파탑・4F
+		PRINTL 전파탑ㆍ4F
 	CASE 10
-		PRINTL 전파탑・8F
+		PRINTL 전파탑ㆍ8F
 	CASE 11
-		PRINTL 전파탑・13F
+		PRINTL 전파탑ㆍ13F
 	CASE 12
-		PRINTL 전파탑・15F
+		PRINTL 전파탑ㆍ15F
 	CASE 13
-		PRINTL 전파탑・17F
+		PRINTL 전파탑ㆍ17F
 	CASE 14
-		PRINTL 전파탑・19F
+		PRINTL 전파탑ㆍ19F
 	CASE 15
-		PRINTL 전파탑・20F
+		PRINTL 전파탑ㆍ20F
 	CASEELSE
 		PRINTL
 ENDSELECT
@@ -1361,7 +1361,7 @@ SELECTCASE RAND:3
 	CASE 0
 		RETURN [[キャラ:나가]] , 3 + RAND:10 , CSVBASE([[キャラ:나가]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:나가・라쟈]] , 3 + RAND:10 , CSVBASE([[キャラ:나가・라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[キャラ:나가ㆍ라쟈]] , 3 + RAND:10 , CSVBASE([[キャラ:나가ㆍ라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
 		RETURN [[キャラ:콥스]] , 3 + RAND:10 , CSVBASE([[キャラ:콥스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

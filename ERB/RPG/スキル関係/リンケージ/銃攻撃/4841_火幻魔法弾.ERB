@@ -213,7 +213,7 @@ RETURN 1
 @참가조건표시_4841,ARG
 SELECTCASE ARG
 	CASE 1
-		PRINTFORM 아기라오、마하・라기온、프레이라、기가온、또는 마하기가온 중、하나
+		PRINTFORM 아기라오、마하ㆍ라기온、프레이라、기가온、또는 마하기가온 중、하나
 	CASE 2
 		PRINTFORM 랜턴샷 * 2
 ENDSELECT
@@ -246,9 +246,9 @@ SELECTCASE ARG:1
 			SIF RESULT
 				RETURN 1
 		ENDIF
-		;マハ・ラギオンを使えること
-		IF HAVE_SKILL(ARG, [[스킬:마하・라기온]])
-			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・라기온]]
+		;マハㆍラギオンを使えること
+		IF HAVE_SKILL(ARG, [[스킬:마하ㆍ라기온]])
+			CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ라기온]]
 			SIF RESULT
 				RETURN 1
 		ENDIF

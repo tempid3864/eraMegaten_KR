@@ -167,9 +167,9 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 	ENDIF
 NEXT
 IF ABL:ARG:가창기능 > 3
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력・마법위력이 대폭 높아졌다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력ㆍ마법위력이 대폭 높아졌다！
 ELSE
-	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력・마법위력이 높아졌다！
+	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력ㆍ마법위력이 높아졌다！
 ENDIF
 
 ;====================================================
@@ -192,21 +192,21 @@ IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
 	PRINTL 승부를 가르기 위해 가는 경쾌한 노래。공격력과 마법위력이 상승한다。
 	PRINTL 가창기능에 따라 코스트가 저하되고、효과가 강화된다。
 	PRINTL 　
-	PRINTL 가창기능Lv10　 ：아군의 공격력・마법위력　４단계 상승
-	PRINTL 가창기능Lv7이상：아군의 공격력・마법위력　３단계 상승
-	PRINTL 가창기능Lv4이상：아군의 공격력・마법위력　２단계 상승
-	PRINTL 그　이외　　　 ：아군의 공격력・마법위력　１단계 상승
+	PRINTL 가창기능Lv10　 ：아군의 공격력ㆍ마법위력　４단계 상승
+	PRINTL 가창기능Lv7이상：아군의 공격력ㆍ마법위력　３단계 상승
+	PRINTL 가창기능Lv4이상：아군의 공격력ㆍ마법위력　２단계 상승
+	PRINTL 그　이외　　　 ：아군의 공격력ㆍ마법위력　１단계 상승
 ;戦闘中はこっち表示
 ELSE
 	PRINTL 승부를 가르기 위해 가는 경쾌한 노래。
 	IF ABL:U:가창기능 == 10
-		PRINTL 아군의 공격력・마법위력을 ４단계 상승。
+		PRINTL 아군의 공격력ㆍ마법위력을 ４단계 상승。
 	ELSEIF ABL:U:가창기능 > 6
-		PRINTL 아군의 공격력・마법위력을 ３단계 상승。
+		PRINTL 아군의 공격력ㆍ마법위력을 ３단계 상승。
 	ELSEIF ABL:U:가창기능 > 3
-		PRINTL 아군의 공격력・마법위력을 ２단계 상승。
+		PRINTL 아군의 공격력ㆍ마법위력을 ２단계 상승。
 	ELSE
-		PRINTL 아군의 공격력・마법위력을 １단계 상승。
+		PRINTL 아군의 공격력ㆍ마법위력을 １단계 상승。
 	ENDIF
 ENDIF
 

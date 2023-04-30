@@ -171,7 +171,7 @@ SKILL_NUM = PU_SKILLNUM_GET(ARG,"支援砲撃")
 
 ;IF SKILLGAGE_D_GET(ARG,SKILL_NUM) == 0
 CALL SKILLGAGE_D_SET,ARG,SKILL_NUM,2
-PRINTFORML %ARG는% 던・스탈리온Ⅱ에게 지원포격을 요청했다！
+PRINTFORML %ARG는% 던ㆍ스탈리온Ⅱ에게 지원포격을 요청했다！
 PRINTFORML 턴 종료시에 \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@ 전체를 BIND로 만든다！
 IF TOINT(CSTR:ARG:102) > 2
 	IF CFLAG:(ARG):PT플래그 == 0
@@ -189,7 +189,7 @@ IF TOINT(CSTR:ARG:102) > 2
 	PRINTFORMW 추가로、\@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력을 낮췄다！
 ENDIF
 ;ELSE
-;	PRINTFORML ドゥ・スタリオンⅡの支援砲撃！
+;	PRINTFORML ドゥㆍスタリオンⅡの支援砲撃！
 ;	CALL FIELD_BADSTATE,ARG,ARG:1,SKILL_NUM
 ;	CALL SKILLGAGE_D_SET,ARG,SKILL_NUM,0
 ;ENDIF
@@ -264,7 +264,7 @@ ENDIF
 
 ;　説明文の表示
 @SKILL_EXPLAIN_支援砲撃,ARG
-PRINTL 독자적인 통신장치를 이용해、우주선 던・스탈리온Ⅱ에 의한 원호공격을 행한다
+PRINTL 독자적인 통신장치를 이용해、우주선 던ㆍ스탈리온Ⅱ에 의한 원호공격을 행한다
 PRINTL 검사들끼리의 1:1(タイマン) 규칙을 어기는 어새신다운 스킬
 PRINTL 
 IF TOINT(CSTR:ARG:102) > 2

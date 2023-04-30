@@ -17,9 +17,9 @@
 	; 4  = 세뇌완료
 	; 5  = 반쯤
 	; 6  = 소
-	; 7  = 소가입・아무도없다
-	; 8  = 소도살・아무도없다
-	; 9  = 그외・아무도없다(※미사용)
+	; 7  = 소가입ㆍ아무도없다
+	; 8  = 소도살ㆍ아무도없다
+	; 9  = 그외ㆍ아무도없다(※미사용)
 ;6 수용소의 패스코드  1 , 2 , 4 로 각각의 문 해방
 ;7 중앙의 엘리베이터 문
 	; 1  = 열쇠가짐
@@ -44,7 +44,7 @@
 ;16 베텔기우스 예정지에서의 니드호그　1：격파함
 
 ;타던전이나 의뢰 등에서 관계된 변수
-;의뢰플래그:13:0 의뢰・공주무녀구출계획의 진행도  청부받은 경우, 진행도는 2。거절・실패했을 경우-1
+;의뢰플래그:13:0 의뢰ㆍ공주무녀구출계획의 진행도  청부받은 경우, 진행도는 2。거절ㆍ실패했을 경우-1
 ;의뢰플래그:38:1 감시탑클리어플래그（1이상이면 세뇌음파 해제）키쿠에의 감시탑파괴후 세뇌강도 플래그에도 이용함. 세뇌강도의 단계는 던전:팩토리:5에 준한다。
 ;↑만든다는 사람이 있어 일단 확보
 
@@ -97,27 +97,27 @@ SELECTCASE FLAG:현M
 	CASE 0
 		PRINTL 
 	CASE 1
-		PRINTL ・메시아 교회
+		PRINTL ㆍ메시아 교회
 	CASE 2
-		PRINTL ・타운
+		PRINTL ㆍ타운
 	CASE 3
-		PRINTL ・노동자 숙소
+		PRINTL ㆍ노동자 숙소
 	CASE 4
-		PRINTL ・지하발굴현장 １Ｆ
+		PRINTL ㆍ지하발굴현장 １Ｆ
 	CASE 5
-		PRINTL ・지하발굴현장 Ｂ１Ｆ
+		PRINTL ㆍ지하발굴현장 Ｂ１Ｆ
 	CASE 6
-		PRINTL ・지하발굴현장 Ｂ２Ｆ
+		PRINTL ㆍ지하발굴현장 Ｂ２Ｆ
 	CASE 7
-		PRINTL ・지하발굴현장 Ｂ３Ｆ
+		PRINTL ㆍ지하발굴현장 Ｂ３Ｆ
 	CASE 8
-		PRINTL ・강제수용소 １Ｆ
+		PRINTL ㆍ강제수용소 １Ｆ
 	CASE 9
-		PRINTL ・강제수용소 ２Ｆ
+		PRINTL ㆍ강제수용소 ２Ｆ
 	CASE 10
-		PRINTL ・지하통로 Ｂ１Ｆ
+		PRINTL ㆍ지하통로 Ｂ１Ｆ
 	CASE 11
-		PRINTL ・지하통로 Ｂ７Ｆ
+		PRINTL ㆍ지하통로 Ｂ７Ｆ
 ENDSELECT
 
 
@@ -163,10 +163,10 @@ IF 던전플래그:[[던전:팩토리]]:5 > -1 && 던전플래그:[[던전:팩�
 		;１５日までは重度の洗脳
 		CASE IS <= 15
 			던전플래그:[[던전:팩토리]]:5 = 3
-		;２５日までは洗脳完了・임신済み・未출산
+		;２５日までは洗脳完了ㆍ임신済みㆍ未출산
 		CASE IS <= 25
 			던전플래그:[[던전:팩토리]]:5 = 4
-		;３５日までは半分牛・複数임신출산済み・洗脳を解いても人格に影響
+		;３５日までは半分牛ㆍ複数임신출산済みㆍ洗脳を解いても人格に影響
 		CASE IS <= 35
 			던전플래그:[[던전:팩토리]]:5 = 5
 		;それ以後はただの牛
@@ -881,7 +881,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				
 				;팩토리해방後
 				IF 의뢰플래그:38:1 >= 1
-					;●Ｑ・데미난디・데미쿠에 씨 가입（감시탑 파괴 후）예정부분
+					;●Ｑㆍ데미난디ㆍ데미쿠에 씨 가입（감시탑 파괴 후）예정부분
 					IF 의뢰플래그:38:1 == 5
 						CALL MESSAGE_WINDOW_D, "", "＞그 목장의 한편에, 기묘한 생물이 자리잡고 있었다"
 						CALL MESSAGE_WINDOW_D, "", "＞모피에 덮인, 비틀린 수족에 소의 뿔이 달린, 기묘한 인간형의 짐승이다/갈기갈기 찢어진 무녀복과, 간신히 남은 여자로서의 윤곽을 남긴 상반신이,/히메미야 키쿠에가 전락한 모습임을 주장하고 있었다."
@@ -1139,7 +1139,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "노동자", "메시아 교회가 있는 건물에, 지하로 이어지는 엘리베이터가 있어/하지만 그 너머는 패스코드를 알지 못하면 못 지나가는 것 같아/저 안쪽에는 뭐가 있는거지?"
 			CASE 303
 				CALL MESSAGE_WINDOW_D, "", "＞성욕처리 업무중인 여성 노동자가 있다…"
-				;・성욕처리계로 살기　・성욕처리계의 일일체험
+				;ㆍ성욕처리계로 살기　ㆍ성욕처리계의 일일체험
 				;등등을 할 수 있도록 하고 싶네에
 			CASE 300
 				IF 의뢰플래그:38:1 >= 1
@@ -1623,13 +1623,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						CFLAG:(LOCAL):행동횟수 = 2
 						CFLAG:(LOCAL):ＭＰ보정 = 500
 						CFLAG:(LOCAL):속도보정 = MAXBASE:LOCAL:속도
-						ABL:LOCAL:스킬2 = [[스킬:마하・마그나스]]
-						ABL:LOCAL:스킬5 = [[스킬:마하・라기온]]
+						ABL:LOCAL:스킬2 = [[스킬:마하ㆍ마그나스]]
+						ABL:LOCAL:스킬5 = [[스킬:마하ㆍ라기온]]
 						ABL:LOCAL:스킬1 = [[스킬:마하코우하]]
 						ABL:LOCAL:스킬6 = [[스킬:마하에이하]]
 						ABL:LOCAL:스킬7 = [[스킬:마카라칸]]
 						ABL:LOCAL:스킬8 = [[스킬:테트라칸]]
-						ABL:(LOCAL):아이템1 = 10000 + [[스킬:마하・갈라]]
+						ABL:(LOCAL):아이템1 = 10000 + [[스킬:마하ㆍ갈라]]
 						ABL:(LOCAL):입수확률1 = 100
 						
 						CALL SYNC_STATUS, (LOCAL)
@@ -1909,7 +1909,7 @@ SELECTCASE FLAG:현M
 	;팩토리
 	CASE 0 
 		RETURN CLASS_NUM_COMMON("初級")
-	;発掘現場・地下通路
+	;発掘現場ㆍ地下通路
 	CASE 4 TO 11
 		RETURN CLASS_NUM_COMMON("中級")
 ENDSELECT
@@ -1922,7 +1922,7 @@ SELECTCASE FLAG:현M
 	;팩토리
 	CASE 0 
 		RETURN ENEMY_NUM_COMMON("中級", ARG)
-	;発掘現場・地下通路
+	;発掘現場ㆍ地下通路
 	CASE 4 TO 11
 		RETURN ENEMY_NUM_COMMON("上級", ARG)
 ENDSELECT
@@ -1976,7 +1976,7 @@ SELECTCASE FLAG:현M
 				CASE IS < 15
 					RETURN [[キャラ:네코마타]], 12
 				CASE IS < 30
-					RETURN [[キャラ:모・쇼보]], 15
+					RETURN [[キャラ:모ㆍ쇼보]], 15
 				CASE IS < 45
 					RETURN [[キャラ:슬레이브]], 9
 				CASE IS < 60
@@ -2078,7 +2078,7 @@ SELECTCASE NO:ARG
 		ABL:ARG:스킬1 = [[스킬:디아라마]]
 		ABL:ARG:스킬2 = [[스킬:마한마]]
 		ABL:ARG:스킬3 = [[스킬:갈라]]
-		ABL:ARG:스킬6 = [[스킬:마하・갈]]
+		ABL:ARG:스킬6 = [[스킬:마하ㆍ갈]]
 		SIF BASE:ARG:LV >= 21
 			ABL:ARG:스킬7 = [[스킬:하마온]]
 	CASEELSE
@@ -2299,7 +2299,7 @@ IF RESULT == 0
 				
 				PRINTL ――그로부터 10년 후, 당신은 지구를 정복했다.
 				FORCEWAIT
-				PRINTW 그것은 당연한 일이었다, 『그녀』의 혼충을 상회하는 번식력, 그리고 당신의 인간을 벗어난 절륜검・대업물, 
+				PRINTW 그것은 당연한 일이었다, 『그녀』의 혼충을 상회하는 번식력, 그리고 당신의 인간을 벗어난 절륜검ㆍ대업물, 
 				PRINTW 둘의 아이가, 모든 문명에, 모든 대륙에 가득 채워지는 건, 필연일 뿐이었다.
 				PRINTL
 				PRINTW 「부족해요오……」
@@ -2362,8 +2362,8 @@ IF RESULT == 0
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			
-			NAME:(CHARANUM-1) = Ｑ・데미난디
-			CALLNAME:(CHARANUM-1) = Ｑ・데미난디
+			NAME:(CHARANUM-1) = Ｑㆍ데미난디
+			CALLNAME:(CHARANUM-1) = Ｑㆍ데미난디
 
 			;아군の時とは違う能力
 			BASE:(CHARANUM-1):LV = 39
@@ -2416,7 +2416,7 @@ IF RESULT == 0
 			ABL:(CHARANUM-1):분유중독 = 2
 			ABL:(CHARANUM-1):수간중독 = 3
 
-			;女・성인
+			;女ㆍ성인
 			ABL:(CHARANUM-1):회화타입 = 305
 			
 			;마수
@@ -2590,7 +2590,7 @@ IF RESULT == 1
 	MARK:(RESULT:1):쾌락각인 = 3
 	MARK:(RESULT:1):굴복각인 = 3
 	
-	;女・성인 (TS時 男・성인)
+	;女ㆍ성인 (TS時 男ㆍ성인)
 	ABL:(RESULT:1):회화타입 = 305
 	CFLAG:(RESULT:1):ＴＳ시회화타입 = 317
 	
@@ -2618,7 +2618,7 @@ IF RESULT == 1
 	ABL:(RESULT:1):스킬7 = 0
 	ABL:(RESULT:1):스킬8 = 0
 	
-	;꼬치꿰기・베어먹기・포효・치유촉진(중)
+	;꼬치꿰기ㆍ베어먹기ㆍ포효ㆍ치유촉진(중)
 	ABL:(RESULT:1):습득스킬1 = 331
 	ABL:(RESULT:1):습득스킬2 = 326
 	ABL:(RESULT:1):습득스킬3 = 514
@@ -2806,7 +2806,7 @@ IF RESULT == 1
 	MARK:(RESULT:1):쾌락각인 = 3
 	MARK:(RESULT:1):굴복각인 = 3
 
-	;女・성인 (TS時 男・성인)
+	;女ㆍ성인 (TS時 男ㆍ성인)
 	ABL:(RESULT:1):회화타입 = 305
 	CFLAG:(RESULT:1):ＴＳ시회화타입 = 317
 	
@@ -2851,7 +2851,7 @@ IF RESULT == 1
 	;수호의방패
 	ABL:(RESULT:1):습득스킬4 = 610
 	ABL:(RESULT:1):습득LV4 = 49
-	;사마・카쟈
+	;사마ㆍ카쟈
 	ABL:(RESULT:1):습득스킬5 = 558
 	ABL:(RESULT:1):습득LV5 = 40
 	;비틀어꺾기
@@ -3145,7 +3145,7 @@ ENDIF
 	MARK:(RESULT:1):쾌락각인 = 3
 	MARK:(RESULT:1):굴복각인 = 3
 
-	;女・성인 (TS時 男・성인)
+	;女ㆍ성인 (TS時 男ㆍ성인)
 	ABL:(RESULT:1):회화타입 = 305
 	CFLAG:(RESULT:1):ＴＳ시회화타입 = 317
 	
@@ -3189,8 +3189,8 @@ ENDIF
 	;수호의방패
 	ABL:(RESULT:1):습득스킬4 = [[스킬:수호의방패]]
 	ABL:(RESULT:1):습득LV4 = 49
-	;사마・카쟈
-	ABL:(RESULT:1):습득스킬5 = [[스킬:사마・카쟈]]
+	;사마ㆍ카쟈
+	ABL:(RESULT:1):습득스킬5 = [[스킬:사마ㆍ카쟈]]
 	ABL:(RESULT:1):습득LV5 = 40
 	;비틀어꺾기
 	ABL:(RESULT:1):습득스킬6 = [[스킬:비틀어꺾기]]
@@ -3287,7 +3287,7 @@ ABL:LOCAL:스킬5 = [[스킬:그랜드턱]]
 ABL:LOCAL:스킬1 = [[스킬:베어먹기]]
 ABL:LOCAL:스킬6 = [[스킬:악마의이갈이]]
 ABL:LOCAL:스킬7 = [[스킬:어스브레이크]]
-ABL:LOCAL:스킬8 = [[스킬:마하・부흐다인]]
+ABL:LOCAL:스킬8 = [[스킬:마하ㆍ부흐다인]]
 
 CALL SYNC_STATUS, (LOCAL)
 CALL HEALTH_CHARA, (LOCAL)

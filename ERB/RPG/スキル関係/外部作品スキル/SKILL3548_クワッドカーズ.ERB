@@ -119,7 +119,7 @@ LOCAL = POS(ARG:1)
 	CFLAG:LOCAL:정신가드킬 = 2
 	CFLAG:LOCAL:파마가드킬 = 2
 	CFLAG:LOCAL:주살가드킬 = 2
-	PRINTFORML [{ARG:1}]%CALLNAME:LOCAL,20% >>>>> 신경・정신・파마・주살의 내성을 파괴！（２턴）
+	PRINTFORML [{ARG:1}]%CALLNAME:LOCAL,20% >>>>> 신경ㆍ정신ㆍ파마ㆍ주살의 내성을 파괴！（２턴）
 	;時間で減少するDゲージに4をセット。
 	CALL SKILLGAGE_D_ADD,ARG,3548,4
 	PRINTFORML 리캐스트　４턴！
@@ -133,7 +133,7 @@ LOCAL = POS(ARG:1)
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3548
-PRINTL 가드킬：２턴간、적 1체의 신경・정신・파마・주살의 내성을 파괴。
+PRINTL 가드킬：２턴간、적 1체의 신경ㆍ정신ㆍ파마ㆍ주살의 내성을 파괴。
 PRINTL 추가효과：대상 속성의 무효화횟수를 전부 무효화한다。
 PRINT 사용제한：한번 발동하면
 SETCOLOR 0xff0000

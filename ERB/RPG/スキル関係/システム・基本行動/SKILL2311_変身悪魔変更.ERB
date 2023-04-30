@@ -91,7 +91,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @CASTING_LINK_DEVIL(ARG:0)
-;인간・造間・半魔は無理
+;인간ㆍ造間ㆍ半魔は無理
 SIF (ABL:(ARG:0):종족 == 0 || ABL:(ARG:0):종족 == 45 || ABL:(ARG:0):종족 == 36)
 	RETURN 0
 SIF CFLAG:(ARG:0):피링크플래그 > -1
@@ -131,7 +131,7 @@ RETURN ARG , 1
 @ACTION_2311,ARG,ARG:1
 #LOCALSIZE 1
 SWAP Z , ARG
-;キャラリストを표시・選択
+;キャラリストを표시ㆍ選択
 IF TALENT:Z:Aion식소환술
 	CALL INPUT_CHARA_LIST("누구를 COMP에 SET합니까？", "CASTING_LINK_DEVIL" , "UP_PRINT_ACTION_2311_Aion" , , "CASTING_RESULT_ACTION_2311")
 ELSE

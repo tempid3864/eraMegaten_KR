@@ -8,7 +8,7 @@
 SIF TALENT:(ARG:1):142 && ( ( TALENT:ARG:144 == 0 || ARG != MASTER ) && (TALENT:ARG:142 == 0 && EXP:(ARG:1):Ａ확장경험 < 10))
 	RETURNF 0
 
-;潤滑不足で、従順3以下・レズっ気3以下のASSIの場合はできない（サドならＯＫ）
+;潤滑不足で、従順3以下ㆍレズっ気3以下のASSIの場合はできない（サドならＯＫ）
 IF PALAM:(ARG:1):4 < PALAMLV:2 && ARG == ASSI && !IS_MALE(ARG)
 	SIF (ABL:ARG:0 <= 3 || ABL:ARG:11 <= 3) && TALENT:ARG:83 == 0
 		RETURNF 0

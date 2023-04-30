@@ -77,7 +77,7 @@ ENDIF
 #LOCALSSIZE 5
 #LOCALSIZE 4
 ;真名解放時、複合属性
-;精神・神経のうち、最も効果のある相性で攻撃
+;精神ㆍ神経のうち、最も効果のある相性で攻撃
 IF SKILLGAGE_H_GET(ARG,3904)
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("정신")
@@ -254,12 +254,12 @@ IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
 	PRINTL 요정 마벨의 숨겨진 힘을 해방한다。그 전투중、강력한 스킬을 사용할 수 있게 된다。
 	PRINTL 
 	PRINTL 【진명해방시】
-	PRINTL 적 전체에、『정신・신경・만능』복합 대 데미지＋고확률 만능 상성 SHOCK、초고속 발동
+	PRINTL 적 전체에、『정신ㆍ신경ㆍ만능』복합 대 데미지＋고확률 만능 상성 SHOCK、초고속 발동
 ELSE
 	;真名解放時
 	IF SKILLGAGE_H_GET(U, 3904)
 		PRINTL 요정 여왕 마브의『눈』이 모든 것을 꿰맨다
-		PRINTL 적 전체에、『정신・신경・만능』복합 대 데미지＋고확률 만능 상성 SHOCK、초고속 발동
+		PRINTL 적 전체에、『정신ㆍ신경ㆍ만능』복합 대 데미지＋고확률 만능 상성 SHOCK、초고속 발동
 	ELSE
 		PRINTL 요정 마벨의 숨겨진 힘을 해방한다。
 		PRINTL 그 전투중、강력한 스킬을 사용할 수 있게 된다。

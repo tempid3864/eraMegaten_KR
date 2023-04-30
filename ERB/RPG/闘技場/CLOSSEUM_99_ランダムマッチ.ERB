@@ -5,7 +5,7 @@
 ;====================
 @PLAYABLE_COLOSSEUM_99
 ;IF 투기장플래그:3:0 == 0 && 투기장플래그:4:0 == 0
-	RESULTS = 콜로세움・랜덤매치
+	RESULTS = 콜로세움ㆍ랜덤매치
 	RETURN 1
 ;ENDIF
 ;RETURN 0
@@ -21,8 +21,8 @@ FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 FLAG:RESULT스킵 = 1
 
-SIF SUBSTRING(SAVESTR:콜로세움・랜덤매치, 0, 1) != "/"
-	SAVESTR:콜로세움・랜덤매치 = /%SAVESTR:콜로세움・랜덤매치%
+SIF SUBSTRING(SAVESTR:콜로세움ㆍ랜덤매치, 0, 1) != "/"
+	SAVESTR:콜로세움ㆍ랜덤매치 = /%SAVESTR:콜로세움ㆍ랜덤매치%
 
 ;전투相手決定…は一日の開始時に1週間先まで決める
 対戦チーム = %AUTO_SPLIT(SAVESTR:랜덤대전팀 , "_" , 0)%
@@ -47,7 +47,7 @@ LOCAL = RESULT
 ;そのチームを撃破した횟수に応じて、報酬減算
 ;一度勝利する度に報酬반감
 ;STRFLAGつかおうとしたけど使い方忘れたので面倒くさくて直接アクセス
-LOCAL /= POWER(2 , TOINT(AUTO_SPLIT(SAVESTR:콜로세움・랜덤매치 , "_" , 1 , 対戦チーム)))
+LOCAL /= POWER(2 , TOINT(AUTO_SPLIT(SAVESTR:콜로세움ㆍ랜덤매치 , "_" , 1 , 対戦チーム)))
 
 ;메시지표시
 
@@ -98,7 +98,7 @@ ELSEIF FLAG:투기장랭크 < 1 && FLAG:투기장명성 > 50
 ENDIF
 
 ;적チームを倒した횟수を加算
-SAVESTR:콜로세움・랜덤매치 = %CALC_SPLIT(SAVESTR:콜로세움・랜덤매치 , "_" , 1 , 対戦チーム , "+=" , TOSTR(1) )%
+SAVESTR:콜로세움ㆍ랜덤매치 = %CALC_SPLIT(SAVESTR:콜로세움ㆍ랜덤매치 , "_" , 1 , 対戦チーム , "+=" , TOSTR(1) )%
 
 FOR LOCAL,0,CHARANUM
 	CALL HEALTH_CHARA,LOCAL
@@ -181,8 +181,8 @@ FOR LOCAL , 7 , 13
 	SIF LOCAL == 12
 		CSTR:(CHARANUM - 1):사고패턴 = ラノワール
 	IF LOCAL == 7
-		ABL:(CHARANUM - 1):스킬1 = [[스킬:라쿤・다]]
-		ABL:(CHARANUM - 1):스킬2 = [[스킬:라쿤・다]]
+		ABL:(CHARANUM - 1):스킬1 = [[스킬:라쿤ㆍ다]]
+		ABL:(CHARANUM - 1):스킬2 = [[스킬:라쿤ㆍ다]]
 	ENDIF
 NEXT
 CALL SET_ENEMY,14,[[キャラ:웜]],21,0,1
@@ -225,13 +225,13 @@ ENDIF
 
 @COLOSSEUM_99_SET_ENEMY_スリーフェアリーズ
 CALL SET_ENEMY,8,[[キャラ:픽시]],16,0,1
-ABL:(CHARANUM-1):스킬6 = [[스킬:마하・지오]]
+ABL:(CHARANUM-1):스킬6 = [[스킬:마하ㆍ지오]]
 CFLAG:(CHARANUM-1):속도보정 = 5
 CALL SET_ENEMY,9,[[キャラ:실키]],16,0,1
-ABL:(CHARANUM-1):스킬6 = [[스킬:마하・부흐]]
+ABL:(CHARANUM-1):스킬6 = [[스킬:마하ㆍ부흐]]
 CFLAG:(CHARANUM-1):속도보정 = 6
 CALL SET_ENEMY,10,[[キャラ:픽시]],16,0,1
-ABL:(CHARANUM-1):스킬6 = [[스킬:마하・지오]]
+ABL:(CHARANUM-1):스킬6 = [[스킬:마하ㆍ지오]]
 CFLAG:(CHARANUM-1):속도보정 = 5
 CSTR:(CHARANUM-1):사고패턴 = フェアリーリーダー
 RETURN 25
@@ -296,10 +296,10 @@ RETURN 60
 
 @COLOSSEUM_99_SET_ENEMY_ジャックブラザーズ
 CALL SET_ENEMY,8,[[キャラ:잭프로스트]],28,0,1
-ABL:(CHARANUM - 1):스킬5 = [[스킬:마하・부흐라]]
+ABL:(CHARANUM - 1):스킬5 = [[스킬:마하ㆍ부흐라]]
 ABL:(CHARANUM - 1):스킬7 = [[스킬:얼음의난무]]
 CALL SET_ENEMY,10,[[キャラ:잭랜턴]],28,0,1
-ABL:(CHARANUM - 1):스킬2 = [[스킬:마하・라기온]]
+ABL:(CHARANUM - 1):스킬2 = [[스킬:마하ㆍ라기온]]
 ABL:(CHARANUM - 1):스킬6 = [[스킬:불꽃의난무]]
 RETURN 60
 
@@ -348,16 +348,16 @@ ABL:(CHARANUM - 1):스킬2 = [[스킬:하마온]]
 ABL:(CHARANUM - 1):스킬1 = [[스킬:디아라마]]
 ABL:(CHARANUM - 1):스킬3 = [[스킬:펨파트라]]
 ABL:(CHARANUM - 1):스킬4 = [[스킬:갈라]]
-ABL:(CHARANUM - 1):스킬5 = [[스킬:메・디아라마]]
+ABL:(CHARANUM - 1):스킬5 = [[스킬:메ㆍ디아라마]]
 CALL SET_ENEMY,14,[[キャラ:니케]],32,0,1
 ABL:(CHARANUM - 1):스킬2 = [[스킬:마하코우하]]
-ABL:(CHARANUM - 1):스킬3 = [[스킬:마하・잔마]]
+ABL:(CHARANUM - 1):스킬3 = [[스킬:마하ㆍ잔마]]
 CALL SET_ENEMY,15,[[キャラ:엔젤]],30,0,1
 ABL:(CHARANUM - 1):스킬2 = [[스킬:하마온]]
 ABL:(CHARANUM - 1):스킬1 = [[스킬:디아라마]]
 ABL:(CHARANUM - 1):스킬3 = [[스킬:펨파트라]]
 ABL:(CHARANUM - 1):스킬4 = [[스킬:갈라]]
-ABL:(CHARANUM - 1):스킬5 = [[스킬:메・디아라마]]
+ABL:(CHARANUM - 1):스킬5 = [[스킬:메ㆍ디아라마]]
 RETURN 120
 
 @COLOSSEUM_99_SET_ENEMY_C2
@@ -378,7 +378,7 @@ RETURN 120
 
 @COLOSSEUM_99_SET_ENEMY_C3
 CALL SET_ENEMY,7,[[キャラ:네코마타]],35,0,1
-ABL:(CHARANUM - 1):스킬3 = [[스킬:마하・잔마]]
+ABL:(CHARANUM - 1):스킬3 = [[스킬:마하ㆍ잔마]]
 ABL:(CHARANUM - 1):스킬2 = [[스킬:악셀클로]]
 ABL:(CHARANUM - 1):스킬1 = [[스킬:캔디보이스]]
 CALL SET_ENEMY,9,[[キャラ:바스테트]],38,0,1

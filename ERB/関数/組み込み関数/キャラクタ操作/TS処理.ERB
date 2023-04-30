@@ -110,7 +110,7 @@ IF TALENT:ARG:남자
 	SIF CFLAG:ARG:ＴＳ인간화시회화타입 == 0
 		CFLAG:ARG:ＴＳ인간화시회화타입 = CFLAG:ARG:인간화시회화타입
 		
-	;一人称・二人称が設定されてなかったら引継ぎ
+	;一人称ㆍ二人称が設定されてなかったら引継ぎ
 	SIF CSTR:ARG:16 == ""
 		CSTR:ARG:16 = %CSTR:ARG:11%
 	SIF CSTR:ARG:17 == ""
@@ -123,7 +123,7 @@ ELSE
 		CFLAG:ARG:인간화시회화타입 = ABL:ARG:회화타입
 	SIF CFLAG:ARG:ＴＳ인간화시회화타입 == 0
 		CFLAG:ARG:ＴＳ인간화시회화타입 = CFLAG:ARG:인간화시회화타입
-	;一人称・二人称が設定されてなかったら引継ぎ
+	;一人称ㆍ二人称が設定されてなかったら引継ぎ
 	SIF CSTR:ARG:16 == ""
 		CSTR:ARG:16 = %CSTR:ARG:11%
 	SIF CSTR:ARG:17 == ""

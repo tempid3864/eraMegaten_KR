@@ -7,7 +7,7 @@
 ;突入タイミングは仁美ナイトメア出現時辺りです
 ;なお、自軍に魔法少女がいる場合の整合性は残念ながらとれていません
 ;もし完全な整合性のあるかもしれないストーリーを目指されるのであれば、魔法少女抜きでのワルプルギス撃破を目指していただければ幸いです
-;던전플래그:80:1 「ピュエラ・マギ・ホーリークインテット」見物or殲滅フラグ
+;던전플래그:80:1 「ピュエラㆍマギㆍホーリークインテット」見物or殲滅フラグ
 ;던전플래그:80:2 イベント進行度フラグ（風見野イベントからほむマミ銃撃戦まで）
 ;던전플래그:80:3 マミとしゃるろってを殺すとこれが2になりストーリー分岐、1が通常ルート
 ;던전플래그:80:4 ホムリリィ誕生フラグ、各所で使い魔たちと魔法少女が戦闘開始
@@ -334,7 +334,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 	SELECTCASE FLAG:현M
 		CASE 0
 			IF 던전플래그:80:1 == 0 && FLAG:현X == 7 &&FLAG:현Y == 4
-;ピュエラ・マギ・ホーリークインテット登場シーン, 即ち仁美ナイトメア撃破シーン
+;ピュエラㆍマギㆍホーリークインテット登場シーン, 即ち仁美ナイトメア撃破シーン
 				CALL MESSAGE_WINDOW_D, "", "＞인큐베이터의 요구에 응해, 아케미 호무라의 소울 젬 내부에 도착했다"
 				CALL MESSAGE_WINDOW_D, "", "＞조금 발달한 과학 기술을 제외한다면 얼핏 이쪽의 세계와 아무 차이도 없어 보이지만/＞…그러나 하늘이 독살스러울 정도로 컬러풀하게 물들고 있다"
 				CALL MESSAGE_WINDOW_D, "", "＞…순간, 갑자기 빌딩으로부터 펠트의 인형같은 모습의 괴물이 뛰쳐나왔다"
@@ -383,7 +383,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						ABL:(CHARANUM-1):스킬1 = 230;천열찌르기
-						ABL:(CHARANUM-1):스킬2 = 2995;롯소・판타즈마
+						ABL:(CHARANUM-1):스킬2 = 2995;롯소ㆍ판타즈마
 						ABL:(CHARANUM-1):스킬3 = 515;도발
 						ABL:(CHARANUM-1):스킬4 = 10;데스바운드
 						ABL:(CHARANUM-1):스킬5 = 0
@@ -395,7 +395,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						MAXBASE:(CHARANUM-1):주살 = 0
 						ABL:(CHARANUM-1):스킬1 = 4;양팔찍기
 						ABL:(CHARANUM-1):스킬2 = 2996;스쿠왈타토레
-						ABL:(CHARANUM-1):스킬3 = 504;라쿠・카쟈
+						ABL:(CHARANUM-1):스킬3 = 504;라쿠ㆍ카쟈
 						ABL:(CHARANUM-1):스킬4 = 0
 						ABL:(CHARANUM-1):스킬5 = 2408;치유촉진(소)
 						ABL:(CHARANUM-1):스킬6 = 0
@@ -405,7 +405,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						ABL:(CHARANUM-1):스킬1 = 2989;마탄의무도
-						ABL:(CHARANUM-1):스킬2 = 2997;티로・피날레
+						ABL:(CHARANUM-1):스킬2 = 2997;티로ㆍ피날레
 						ABL:(CHARANUM-1):스킬3 = 1101;시바브
 						ABL:(CHARANUM-1):스킬4 = 112;연속사격
 						ABL:(CHARANUM-1):스킬5 = 0
@@ -421,15 +421,15 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						ABL:(CHARANUM-1):스킬4 = [[스킬:격뢰의곡옥]]
 						ABL:(CHARANUM-1):스킬5 = [[스킬:뉴클리어밤]]
 						ABL:(CHARANUM-1):스킬6 = [[스킬:스턴그레네이드]]
-						ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐・더스트]]
-						ABL:(CHARANUM-1):스킬8 = [[스킬:데・쿤다]]
+						ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐ㆍ더스트]]
+						ABL:(CHARANUM-1):스킬8 = [[스킬:데ㆍ쿤다]]
 						CALL SET_ENEMY,15,4399,60,0,1;まどっち
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-						ABL:(CHARANUM-1):스킬2 = 505;데・쿤다
+						ABL:(CHARANUM-1):스킬2 = 505;데ㆍ쿤다
 						ABL:(CHARANUM-1):스킬3 = 107;고천열풍탄
-						ABL:(CHARANUM-1):스킬4 = 2999;피니투라・프레차
+						ABL:(CHARANUM-1):스킬4 = 2999;피니투라ㆍ프레차
 						ABL:(CHARANUM-1):스킬5 = 2416;마카카쟈오토
 						ABL:(CHARANUM-1):스킬6 = 0
 						ABL:(CHARANUM-1):스킬7 = 0
@@ -496,8 +496,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					CFLAG:(CHARANUM-1):행동횟수 = 2
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1806;마하・그라다인
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1806;마하ㆍ그라다인
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 205;메가톤프레스
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -518,8 +518,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,10,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -529,8 +529,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,9,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -540,8 +540,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,8,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -552,7 +552,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -563,7 +563,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -574,7 +574,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -585,7 +585,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -596,7 +596,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -628,7 +628,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						CFLAG:(CHARANUM-1):행동횟수 = 3
 						ABL:(CHARANUM-1):스킬1 = 2990;마녀의입맞춤
 						ABL:(CHARANUM-1):스킬2 = 2998;침식하는검은날개
-						ABL:(CHARANUM-1):스킬3 = 1806;마하・그라다인
+						ABL:(CHARANUM-1):스킬3 = 1806;마하ㆍ그라다인
 						ABL:(CHARANUM-1):스킬4 = 237;薙ぎ払い（本来覚えないけど, 後ろの손っていかにも베어넘기기だし…）
 						ABL:(CHARANUM-1):스킬5 = 2417;스쿠카쟈오토
 						ABL:(CHARANUM-1):스킬6 = 0
@@ -913,7 +913,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -936,7 +936,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1007,15 +1007,15 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					ABL:(CHARANUM-1):스킬4 = [[스킬:격뢰의곡옥]]
 					ABL:(CHARANUM-1):스킬5 = [[스킬:뉴클리어밤]]
 					ABL:(CHARANUM-1):스킬6 = [[스킬:스턴그레네이드]]
-					ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐・더스트]]
-					ABL:(CHARANUM-1):스킬8 = [[스킬:데・쿤다]]
+					ABL:(CHARANUM-1):스킬7 = [[스킬:바이쳐ㆍ더스트]]
+					ABL:(CHARANUM-1):스킬8 = [[스킬:데ㆍ쿤다]]
 					CALL SET_ENEMY,8,4399,70,0,5;まどっち
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 113;산탄사격
-					ABL:(CHARANUM-1):스킬2 = 505;데・쿤다
+					ABL:(CHARANUM-1):스킬2 = 505;데ㆍ쿤다
 					ABL:(CHARANUM-1):스킬3 = 107;고천열풍탄
-					ABL:(CHARANUM-1):스킬4 = 2999;피니투라・프레차
+					ABL:(CHARANUM-1):스킬4 = 2999;피니투라ㆍ프레차
 					ABL:(CHARANUM-1):스킬5 = 2416;마카카쟈오토
 					ABL:(CHARANUM-1):스킬6 = 0
 					ABL:(CHARANUM-1):스킬7 = 0
@@ -1051,12 +1051,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CFLAG:(CHARANUM-1):행동횟수 = 3
 					CFLAG:(CHARANUM-1):속도보정 += 10
 					ABL:(CHARANUM-1):스킬1 = [[스킬:고천열풍탄]]
-					ABL:(CHARANUM-1):스킬2 = 2999;피니투라・프레차
+					ABL:(CHARANUM-1):스킬2 = 2999;피니투라ㆍ프레차
 					ABL:(CHARANUM-1):스킬3 = [[스킬:메기도라]]
 					ABL:(CHARANUM-1):스킬4 = [[스킬:마카카쟈오토]]
 					ABL:(CHARANUM-1):스킬5 = 2991;구제의손
 					ABL:(CHARANUM-1):스킬6 = [[스킬:만마의난무]]
-					ABL:(CHARANUM-1):스킬7 = [[스킬:데・쿤다]]
+					ABL:(CHARANUM-1):스킬7 = [[스킬:데ㆍ쿤다]]
 					ABL:(CHARANUM-1):스킬8 = [[스킬:관통]]
 					BASE:(CHARANUM-1):힘 += 6
 					BASE:(CHARANUM-1):지혜 += 6
@@ -1068,7 +1068,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 230;천열찌르기
-					ABL:(CHARANUM-1):스킬2 = 2995;롯소・판타즈마
+					ABL:(CHARANUM-1):스킬2 = 2995;롯소ㆍ판타즈마
 					ABL:(CHARANUM-1):스킬3 = 515;도발
 					ABL:(CHARANUM-1):스킬4 = 10;데스바운드
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1080,7 +1080,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 4;양팔찍기
 					ABL:(CHARANUM-1):스킬2 = 2996;스쿠왈타토레
-					ABL:(CHARANUM-1):스킬3 = 504;라쿠・카쟈
+					ABL:(CHARANUM-1):스킬3 = 504;라쿠ㆍ카쟈
 					ABL:(CHARANUM-1):스킬4 = 2406;이악물기
 					ABL:(CHARANUM-1):스킬5 = 2408;치유촉진(소)
 					ABL:(CHARANUM-1):스킬6 = 0
@@ -1129,8 +1129,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,10,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1140,8 +1140,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,9,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1151,8 +1151,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,8,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1163,7 +1163,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1174,7 +1174,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1200,8 +1200,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,10,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1211,8 +1211,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,9,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1222,8 +1222,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SET_ENEMY,8,3387,55,0,2;ボス版LOTTE
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
-					ABL:(CHARANUM-1):스킬1 = 508;스쿤・다
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬1 = 508;스쿤ㆍ다
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 1101;시바브
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1234,7 +1234,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1245,7 +1245,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
 					ABL:(CHARANUM-1):스킬1 = 3;回転切り
-					ABL:(CHARANUM-1):스킬2 = 1805;마하・그라이바
+					ABL:(CHARANUM-1):스킬2 = 1805;마하ㆍ그라이바
 					ABL:(CHARANUM-1):스킬3 = 2990;마녀의입맞춤
 					ABL:(CHARANUM-1):스킬4 = 112;연속사격
 					ABL:(CHARANUM-1):스킬5 = 0
@@ -1312,7 +1312,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
 				ABL:(CHARANUM-1):스킬1 = 2989;마탄의무도
-				ABL:(CHARANUM-1):스킬2 = 2997;티로・피날레
+				ABL:(CHARANUM-1):스킬2 = 2997;티로ㆍ피날레
 				ABL:(CHARANUM-1):스킬3 = 1101;시바브
 				ABL:(CHARANUM-1):스킬4 = 112;연속사격
 				ABL:(CHARANUM-1):스킬5 = 0
@@ -1435,7 +1435,7 @@ ENDIF
 ;RETURN X でXが종류の数になります
 ;あまりいろんなのが混ざっているとCOOPがとりにくくなったり
 ;적の공격속성が多くなる傾向にあるので、
-;종류の数は1・2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
+;종류の数は1ㆍ2종류を主体に時々3종류くらいを기본にするのが望ましいと思われます
 ;=======================================================================
 @CLASS_NUM_80
 IF 던전플래그:80:4 == 1

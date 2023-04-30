@@ -117,7 +117,7 @@ FOR LOCAL,0,6
 NEXT
 PRINTFORML 모든 능력을 {LOCAL:1}단계 낮췄다！
 ;強制モード転落
-CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム"),0
+CALL SKILLGAGE_D_SET,ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム"),0
 
 ;====================================================
 ;실행내용 여기까지
@@ -131,7 +131,7 @@ PRINTL 방대한 기밀정보가 모아져있는 파일철로、방심했거나 
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_公式かつ機密,ARG
-SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブル・ファンタズム")) > 0
+SIF SKILLGAGE_D_GET(ARG,PU_SKILLNUM_GET(ARG,"ノウブルㆍファンタズム")) > 0
 	RETURN 1
 RETURN 0
 

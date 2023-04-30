@@ -153,14 +153,14 @@ SELECTCASE ARG
 	CASE 2
 		PRINTFORM 중력계 마법
 	CASE 3
-		PRINTFORM 마하・잔다인
+		PRINTFORM 마하ㆍ잔다인
 ENDSELECT
 
 @발동자조건_4405 , ARG
-;マハ・ザンダインを使えること
-SIF HAVE_SKILL(ARG, [[스킬:마하・잔다인]]) == 0
+;マハㆍザンダインを使えること
+SIF HAVE_SKILL(ARG, [[스킬:마하ㆍ잔다인]]) == 0
 	RETURN 0
-CALL CHECK_ACTIONABLE , ARG , [[스킬:마하・잔다인]]
+CALL CHECK_ACTIONABLE , ARG , [[스킬:마하ㆍ잔다인]]
 SIF RESULT
 	RETURN 1
 RETURN 0

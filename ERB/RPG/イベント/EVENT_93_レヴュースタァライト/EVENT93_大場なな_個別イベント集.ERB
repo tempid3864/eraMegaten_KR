@@ -362,7 +362,7 @@ IF 舞台少女の人数 < 9
 		PRINTW 파삭.
 		PRINTW 의외로 가벼운 소리와 함께, 그 육체는, 무너졌다.
 		PRINTW 다이바 나나를 구성하고 있었던 고기와 피부, 액체가 섞인 것처럼, 녹색의 슬라임이 꿈틀대고 있었다.
-		PRINTW ……아아, 그저, 마그네타이트・슬라임이다.
+		PRINTW ……아아, 그저, 마그네타이트ㆍ슬라임이다.
 		PRINTW 시간이 지나면, 무언가 의사가 싹트고, 외도 슬라임이 될테지만,
 		PRINTW 그건 이미, 다이바 나나와는, 아무런 관계가 없다.
 		PRINTL 
@@ -752,7 +752,7 @@ PRINTFORMW 「아, %CSTR:LOCAL:이인칭%다. 수고하십니다♪
 		SETCOLOR 0x000000
 		PRINTW 에
 		PRINTL 
-		PRINTL 　　・・・ ・・・・ ・・ ・・
+		PRINTL 　　ㆍㆍㆍ ㆍㆍㆍㆍ ㆍㆍ ㆍㆍ
 		PRINTW ――영원히 지워지지 않는 흔적을 남길 겁니다
 		PRINTL 
 		PRINTW ――만약 마음에 들지 않으신다면
@@ -3244,7 +3244,7 @@ PRINTFORMW 「그러니까, %CSTR:(ARG:0):이인칭%, 얼굴을 보이지 않는
 		PRINTL 
 		PRINTW 갑자기 토라진 것 같은 표정이 되었네, 뭐냐 이녀석.
 		PRINTW 여덟 명이 아니라 아홉 명일텐데, 왜 자신을 계산에 넣지 않았나.
-		PRINTW 조금 화난 당신이 특유의 악마협상기술로 『왜・어째서』하고 질문공세를 퍼붓자, 나나는 순식간에 기분 상한 모습을 보였다.
+		PRINTW 조금 화난 당신이 특유의 악마협상기술로 『왜ㆍ어째서』하고 질문공세를 퍼붓자, 나나는 순식간에 기분 상한 모습을 보였다.
 	ELSEIF RESULT == 1
 		PRINTL 
 		PRINTW 「어――
@@ -3415,7 +3415,7 @@ PRINTW 「쥰나 쨩도, 빨리 돌아와.
 PRINTW 　괜찮아.
 PRINTW 　내가 전부, 지킬테니까」
 PRINTL 
-PRINTW 이곳은 세이쇼 음악학원 학생기숙사・별빛관.
+PRINTW 이곳은 세이쇼 음악학원 학생기숙사ㆍ별빛관.
 PRINTW 아직 아무것도 아닌, 새벽이 밝기 전의 무대소녀가, 한 지붕 아래 사는 장소――
 PRINTL 
 CUSTOMDRAWLINE =
@@ -3903,8 +3903,8 @@ PRINTW 　우리는 선택할 수 없었어, 별이 기다리는, 멋지고 아�
 PRINTL 
 PRINTW 그녀는 정색을 한 채, 참방참방 피의 연못을 헤치며 다가온다.
 PRINTL 
-PRINTW 오른손엔 대태도・륜《메구리》。
-PRINTW 왼손에는 소태도・무《마이》。
+PRINTW 오른손엔 대태도ㆍ륜《메구리》。
+PRINTW 왼손에는 소태도ㆍ무《마이》。
 PRINTW 둘을 합친 그 이름은――윤무《론도》。
 PRINTL 
 PRINTW 칼날을, 온몸을, 검붉은 피로 더럽히면서, 영원한 론도를 노래할 다이바 나나가 다가온다.
@@ -3953,8 +3953,8 @@ ABL:(CHARANUM-1):스킬2 = [[스킬:전용기1]]
 ABL:(CHARANUM-1):스킬3 = [[스킬:전용기2]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:전용기3]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:전용기4]]
-CSTR:(CHARANUM-1):전용기1 = 小太刀・舞
-CSTR:(CHARANUM-1):전용기2 = 大太刀・輪
+CSTR:(CHARANUM-1):전용기1 = 小太刀ㆍ舞
+CSTR:(CHARANUM-1):전용기2 = 大太刀ㆍ輪
 CSTR:(CHARANUM-1):전용기3 = 輪＆舞
 CSTR:(CHARANUM-1):전용기4 = 第99回聖翔祭（再演）
 ABL:(CHARANUM-1):스킬5 = [[스킬:독선재계]]
@@ -4054,7 +4054,7 @@ CALL SYNC_STATUS, MASTER
 ;（いれておかないとたいへんなことになる）
 
 
-PRINTW 「포지션・제로！！」
+PRINTW 「포지션ㆍ제로！！」
 PRINTL 
 PRINTW 드높은 선언이, 꿈의 세계를 무너뜨렸다.
 PRINTW 그것은, 상냥한 세계와의, 영원한 이별이었기에, 다이바 나나는 울고 있었으며,
@@ -4274,7 +4274,7 @@ IF FINDCHARA_B([[キャラ:나나]]) == 2
 	CALL VAR_HP,(LOCAL),MAXBASE:(LOCAL):ＨＰ
 	CALL VAR_MP,(LOCAL),MAXBASE:(LOCAL):ＭＰ
 	
-	PRINTL ＞다이바 나나는 쓰러지지 않는다！　ＨＰ・ＭＰ 모두 회복！
+	PRINTL ＞다이바 나나는 쓰러지지 않는다！　ＨＰㆍＭＰ 모두 회복！
 	PRINTL ＞【집중】【기합】【베어내기】 부여！
 	PRINTW ＞다이바 나나의 반짝임이 부풀어올라, 모든 능력치가 상승한다！
 
@@ -4296,7 +4296,7 @@ ELSEIF GETBIT(이벤트플래그:93:17, 6)
 	
 	PRINTL ＞쥰나의 반짝임이 당신을 비춘다！　모든 능력치가 상승한다！
 	PRINTL ＞【집중】【기합】【베어내기】 부여！
-	PRINTW ＞당신의 ＨＰ・ＭＰ 모두 회복！
+	PRINTW ＞당신의 ＨＰㆍＭＰ 모두 회복！
 
 ;それ以外は毎ターンイニシャライズ
 ELSE
@@ -4308,7 +4308,7 @@ ELSE
 		NEXT
 	NEXT
 	PRINTFORML ＞이니셜라이즈！
-	PRINTFORMW ＞나나의 살기에, 피아 모두의 카쟈계・다계 효과가 해제됐다.
+	PRINTFORMW ＞나나의 살기에, 피아 모두의 카쟈계ㆍ다계 효과가 해제됐다.
 ENDIF
 
 ;IF GETBIT(이벤트플래그:93:17, 4)
@@ -4645,7 +4645,7 @@ ELSEIF !GETBIT(이벤트플래그:93:17, 6) && 현HP비율(CHARANUM-1) < 50
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	PRINTL ＞나나의 움직임이 둔해졌다　행동횟수가 3이 되었다
 	PRINTL ＞호시미 쥰나의 반짝임이 당신을 비춘다. 당신의 모든 능력치가 상승한다！
-	PRINTL ＞ＨＰ・ＭＰ 모두 회복
+	PRINTL ＞ＨＰㆍＭＰ 모두 회복
 	PRINTL ＞【집중】【기합】【베어내기】 부여
 	FORCEWAIT
 	LOCAL = MASTER
@@ -5014,7 +5014,7 @@ PRINTFORMW 「있지, %CSTR:LOCAL:이인칭%」
 	CALL VAR_HP,(LOCAL),MAXBASE:(LOCAL):ＨＰ
 	CALL VAR_MP,(LOCAL),MAXBASE:(LOCAL):ＭＰ
 	
-	PRINTL ＞다이바 나나는 쓰러지지 않는다　ＨＰ・ＭＰ 모두 회복
+	PRINTL ＞다이바 나나는 쓰러지지 않는다　ＨＰㆍＭＰ 모두 회복
 	PRINTL ＞【집중】【기합】【베어내기】 부여
 	PRINTL ＞다이바 나나의 반짝임이 부풀어오른다, 모든 능력치가 상승한다
 	FORCEWAIT
@@ -5155,10 +5155,10 @@ ELSEIF GETBIT(이벤트플래그:93:17, 6)
 			;란다ム相性全体攻撃
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:칠색연옥파]]
 		ELSEIF RAND:2 == 0
-			;小太刀・舞（戦技相性即死）
+			;小太刀ㆍ舞（戦技相性即死）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기1]]
 		ELSE
-			;大太刀・輪（BIND）
+			;大太刀ㆍ輪（BIND）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기2]]
 		ENDIF
 	;３パターン
@@ -5167,10 +5167,10 @@ ELSEIF GETBIT(이벤트플래그:93:17, 6)
 			;輪＆舞（CLOSE）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기3]]
 		ELSEIF RAND:2 == 0
-			;小太刀・舞（戦技相性即死）
+			;小太刀ㆍ舞（戦技相性即死）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기1]]
 		ELSE
-			;大太刀・輪（BIND）
+			;大太刀ㆍ輪（BIND）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기2]]
 		ENDIF
 		
@@ -5203,10 +5203,10 @@ ELSEIF GETBIT(이벤트플래그:93:17, 5)
 	;２パターン
 	ELSEIF CFLAG:ARG:행동한횟수 == 1
 		IF RAND:2 == 0
-			;小太刀・舞（戦技相性即死）
+			;小太刀ㆍ舞（戦技相性即死）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기1]]
 		ELSE
-			;大太刀・輪（BIND）
+			;大太刀ㆍ輪（BIND）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기2]]
 		ENDIF
 	;２パターン
@@ -5247,10 +5247,10 @@ ELSEIF GETBIT(이벤트플래그:93:17, 5)
 			;輪＆舞（CLOSE）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기3]]
 		ELSEIF RAND:2 == 0
-			;小太刀・舞（戦技相性即死）
+			;小太刀ㆍ舞（戦技相性即死）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기1]]
 		ELSE
-			;大太刀・輪（BIND）
+			;大太刀ㆍ輪（BIND）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기2]]
 		ENDIF
 		
@@ -5262,10 +5262,10 @@ ELSE
 	;2パターン
 	IF CFLAG:ARG:행동한횟수 == 0
 		IF RAND:2 == 0
-			;小太刀・舞（戦技相性即死）
+			;小太刀ㆍ舞（戦技相性即死）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기1]]
 		ELSE
-			;大太刀・輪（BIND）
+			;大太刀ㆍ輪（BIND）
 			CALL CHECK_ACTIONABLE_AND_SET, ARG, [[스킬:전용기2]]
 		ENDIF
 	;２パターン
@@ -5545,7 +5545,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 				다이바나나의기억_L:2:(LOCAL:1) = -1
 				다이바나나의기억:2:(LOCAL:1) = -1
 			ENDIF
-		;恋慕・信頼は同じ判定
+		;恋慕ㆍ信頼は同じ判定
 		ELSEIF TALENT:LOCAL:연모 || TALENT:LOCAL:친애 || TALENT:LOCAL:신뢰 || TALENT:LOCAL:동료
 			다이바나나의기억_L:2:(LOCAL:1) = 1
 			다이바나나의기억:2:(LOCAL:1) = 1
@@ -5553,7 +5553,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 		ELSEIF TALENT:LOCAL:음란 || TALENT:LOCAL:창부
 			다이바나나의기억_L:2:(LOCAL:1) = 2
 			다이바나나의기억:2:(LOCAL:1) = 2
-		;服従・崩壊は同じ判定
+		;服従ㆍ崩壊は同じ判定
 		ELSEIF TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || TALENT:LOCAL:붕괴
 			다이바나나의기억_L:2:(LOCAL:1) = 3
 			다이바나나의기억:2:(LOCAL:1) = 3
@@ -5632,7 +5632,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 			다이바나나의기억_L:1:2 ++
 			다이바나나의기억:1:2 ++
 			CALL EVENT_93_大場なな_세이브데이터ID記録
-		;복종・붕괴は同じ판정
+		;복종ㆍ붕괴は同じ판정
 		ELSEIF TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || TALENT:LOCAL:붕괴
 			다이바나나의기억_L:1:0 = 3
 			다이바나나의기억:1:0 = 3
@@ -5676,7 +5676,7 @@ ENDIF
 	;붕괴に書き換え
 	다이바나나의기억_L:1:0 = 3
 	다이바나나의기억:1:0 = 3
-	;복종・붕괴횟수増やす
+	;복종ㆍ붕괴횟수増やす
 	다이바나나의기억_L:1:3 += 1
 	다이바나나의기억:1:3 += 1
 
@@ -5725,7 +5725,7 @@ IF 다이바나나의기억:0:1 > 1
 	CUSTOMDRAWLINE =
 	
 	;以下の処理は引き継いでいようが問答無用で入る
-	;信頼が3回以上かつ、淫乱より信頼の方が回数が多く、服従・崩壊9回までなら、全自動で相棒が付く
+	;信頼が3回以上かつ、淫乱より信頼の方が回数が多く、服従ㆍ崩壊9回までなら、全自動で相棒が付く
 	IF 다이바나나의기억:1:4 > 2 && (다이바나나의기억:1:4 > 다이바나나의기억:1:2) && 다이바나나의기억:1:3 < 10
 		PRINTL
 		TALENT:LOCAL:동료 = 1
@@ -5750,7 +5750,7 @@ IF 다이바나나의기억:0:1 > 1
 		TALENT:LOCAL:남편 = 0
 		TALENT:LOCAL:아내 = 0
 		
-	;恋慕が3回以上かつ、淫乱より恋慕の方が回数が多く、服従・崩壊9回までなら、全自動で親愛が付く
+	;恋慕が3回以上かつ、淫乱より恋慕の方が回数が多く、服従ㆍ崩壊9回までなら、全自動で親愛が付く
 	ELSEIF 다이바나나의기억:1:1 > 2 && (다이바나나의기억:1:1 > 다이바나나의기억:1:2) && 다이바나나의기억:1:3 < 10
 		TALENT:LOCAL:친애 = 1
 		
@@ -5767,17 +5767,17 @@ IF 다이바나나의기억:0:1 > 1
 		TALENT:LOCAL:신뢰 = 0
 		TALENT:LOCAL:동료 = 0
 		
-		;妻・夫は消さない
+		;妻ㆍ夫は消さない
 		;ほかのｹｯｺﾝｶｯｺｶﾘ系素質は消す
 		TALENT:LOCAL:음마 = 0
 		TALENT:LOCAL:노리개 = 0
 		TALENT:LOCAL:맹우 = 0
 		
-		;抵抗・一線越えないを失う
+		;抵抗ㆍ一線越えないを失う
 		TALENT:LOCAL:저항 = 0
 		TALENT:LOCAL:일선을넘지않음 = 0
 		
-	;淫乱が3回以上かつ、恋慕より淫乱の方が回数が多く、服従・崩壊9回までなら、全自動で娼婦が付く
+	;淫乱が3回以上かつ、恋慕より淫乱の方が回数が多く、服従ㆍ崩壊9回までなら、全自動で娼婦が付く
 	ELSEIF 다이바나나의기억:1:2 > 2 && (다이바나나의기억:1:2 > 다이바나나의기억:1:1) && 다이바나나의기억:1:3 < 10
 		TALENT:LOCAL:창부 = 1
 		
@@ -5800,7 +5800,7 @@ IF 다이바나나의기억:0:1 > 1
 		TALENT:LOCAL:맹우 = 0
 		TALENT:LOCAL:노리개 = 0
 		
-		;抵抗・一線越えないを失う
+		;抵抗ㆍ一線越えないを失う
 		TALENT:LOCAL:저항 = 0
 		TALENT:LOCAL:일선을넘지않음 = 0
 		
@@ -5827,7 +5827,7 @@ IF 다이바나나의기억:0:1 > 1
 		TALENT:LOCAL:맹우 = 0
 		TALENT:LOCAL:음마 = 0
 		
-		;抵抗・一線越えないを失い、鼓舞を得る
+		;抵抗ㆍ一線越えないを失い、鼓舞を得る
 		TALENT:LOCAL:저항 = 0
 		TALENT:LOCAL:일선을넘지않음 = 0
 		TALENT:LOCAL:고무 = 1
@@ -5843,7 +5843,7 @@ IF 다이바나나의기억:0:1 > 1
 	ENDIF
 	
 	;大場トップスタァイベント後はトップスタァ状態で加入
-	;ただし服従・隷属・崩壊の場合はトップスタァ状態にならない
+	;ただし服従ㆍ隷属ㆍ崩壊の場合はトップスタァ状態にならない
 	IF 다이바나나의기억:0:1 > 4 && (TALENT:LOCAL:복종 < 1 && TALENT:LOCAL:예속 < 1 && TALENT:LOCAL:붕괴 < 1)
 		;一時記録変数をリセット
 		LOCAL:1 = 0
@@ -6026,7 +6026,7 @@ IF 다이바나나의기억:0:1 > 1
 		PRINTL
 	ENDIF
 
-	;舞台少女・大場なな戦が終わったものとしてカウント
+	;舞台少女ㆍ大場なな戦が終わったものとしてカウント
 	이벤트플래그:93:0 = 3
 	;大場個別イベ2までを消化
 	SETBIT 이벤트플래그:93:7, 1

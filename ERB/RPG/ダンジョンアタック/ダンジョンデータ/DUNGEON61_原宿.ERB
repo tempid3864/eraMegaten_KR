@@ -35,13 +35,13 @@ SELECTCASE FLAG:현M
 	CASE 4
 		PRINTL 맨션
 	CASE 5
-		PRINTL 학교・바깥
+		PRINTL 학교ㆍ바깥
 	CASE 6
-		PRINTL 학교・１F
+		PRINTL 학교ㆍ１F
 	CASE 7
-		PRINTL 학교・２F
+		PRINTL 학교ㆍ２F
 	CASE 8
-		PRINTL 학교・옥상
+		PRINTL 학교ㆍ옥상
 	CASEELSE
 ENDSELECT
 
@@ -636,7 +636,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				NAME:(CHARANUM-1) = 소우타
 				CALLNAME:(CHARANUM-1) = 소우타
-				ABL:(CHARANUM-1):스킬3 = [[스킬:마하・마그나]]
+				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ마그나]]
 				TALENT:(CHARANUM-1):남자 = 1
 				ABL:(CHARANUM-1):아이템3 = 278
 				ABL:(CHARANUM-1):입수확률3 = 100
@@ -890,7 +890,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 100
 		CALL GET_TREASURE, [[아이템:메디컬파우더]] , 1 , FLAG:현던전, LOCAL , LOCAL:1
 	CASE 101
-		CALL GET_TREASURE, [[아이템:스킬카드【마하・라기】]] , 1 , FLAG:현던전, LOCAL , LOCAL:1
+		CALL GET_TREASURE, [[아이템:스킬카드【마하ㆍ라기】]] , 1 , FLAG:현던전, LOCAL , LOCAL:1
 	CASE 200
 		CALL GET_TREASURE, [[아이템:마력의향]] , 1 , FLAG:현던전, LOCAL , LOCAL:1
 	CASE 201

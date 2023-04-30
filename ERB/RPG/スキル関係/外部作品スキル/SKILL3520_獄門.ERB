@@ -9,14 +9,14 @@ IF ARG > -1
 	ELSEIF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		RESULTS = 영봉
 		SIF SKILLGAGE_H_GET(ARG,3520) == 1
-			RESULTS = 영봉・주
+			RESULTS = 영봉ㆍ주
 		SIF SKILLGAGE_H_GET(ARG,3520) == 2
-			RESULTS = 영봉・심담
+			RESULTS = 영봉ㆍ심담
 	;羅刹
 	ELSE
 		RESULTS = 우인
 		SIF SKILLGAGE_H_GET(ARG,3520) == 1
-			RESULTS = 영봉・몽탄
+			RESULTS = 영봉ㆍ몽탄
 		SIF SKILLGAGE_H_GET(ARG,3520) == 2
 			RESULTS = 영봉
 	ENDIF
@@ -499,23 +499,23 @@ IF U > -1
 		;戦闘中じゃない時のスキル説明
 		PRINTL 분노상태가 되면 오의가 생긴다。커맨드의 오의에서 사용할 수 있다。
 		PRINTL 또한 분노폭발 또는 HP 25% 이하면 비오의(秘奥義)를 사용할 수 있게 된다。오의、비오의를 사용하면 분노상태가 사라진다
-		PRINTL 수라　　통상　비구・주살 １열 공격 + BIND
-		PRINTL 　　　　오의　비구・정신・주살 전체 4회 공격 + CHARM + 여크리티컬률 다운
-		PRINTL 　　　비오의　신경・주살・만능 전체 공격 + PALYZE +방어・마법효과 저하+BS내성 저하
-		PRINTL 나찰　　통상　검격・만능 １체 공격 + DYING
-		PRINTL 　　　　오의　검격・주살 １체 6회 공격 + CURSE + 높은 크리티컬률
-		PRINTL 　　　비오의　검격・주살・만능 １체 10회 공격 + DYING + 높은 크리티컬률
+		PRINTL 수라　　통상　비구ㆍ주살 １열 공격 + BIND
+		PRINTL 　　　　오의　비구ㆍ정신ㆍ주살 전체 4회 공격 + CHARM + 여크리티컬률 다운
+		PRINTL 　　　비오의　신경ㆍ주살ㆍ만능 전체 공격 + PALYZE +방어ㆍ마법효과 저하+BS내성 저하
+		PRINTL 나찰　　통상　검격ㆍ만능 １체 공격 + DYING
+		PRINTL 　　　　오의　검격ㆍ주살 １체 6회 공격 + CURSE + 높은 크리티컬률
+		PRINTL 　　　비오의　검격ㆍ주살ㆍ만능 １체 10회 공격 + DYING + 높은 크리티컬률
 	;수라
 	ELSEIF SKILLGAGE_F_GET(U,[[스킬:분노폭발]]) == 0
 		IF SKILLGAGE_H_GET(U,3520) == 0
 			PRINTL 자신의 그림자에 무기를 박아넣고、그 무기가 공간을 넘어 공중에서 기습을 가한다。
 			PRINTL 적 1열에 비구+주살의 복합속성의 대 데미지를 주고 BIND 상태로 만든다
 		ELSEIF SKILLGAGE_H_GET(U,3520) == 1
-			PRINTL 연인의 화톳불(篝火)의 환영을 반복해 내비치면서 연속 공격한다。카게마이・무쿠이
+			PRINTL 연인의 화톳불(篝火)의 환영을 반복해 내비치면서 연속 공격한다。카게마이ㆍ무쿠이
 			PRINTL 적 전체에 비구+정신+주살의 4회 데미지를 주고 CHARM 상태로 만들어、여크리티컬률을 낮춘다
 		ELSEIF SKILLGAGE_H_GET(U,3520) == 2
 			PRINTL 간헐천처럼 그림자를 뿜어올리는 기술。접촉한 적을 어둠에 휩싼다
-			PRINTL 적 전체에 신경+주살+만능의 초특대 데미지를 주고 PALYZE 상태로 만들어、방어・마법효과・BS내성을 낮춘다
+			PRINTL 적 전체에 신경+주살+만능의 초특대 데미지를 주고 PALYZE 상태로 만들어、방어ㆍ마법효과ㆍBS내성을 낮춘다
 		ENDIF
 	;羅刹
 	ELSE
@@ -523,7 +523,7 @@ IF U > -1
 			PRINTL 잡은 상대를 자신의 그림자로 끌어들여 공격한다。
 			PRINTL 1체에 검격+만능의 대 데미지를 준다。즉사시키는 경우가 있다
 		ELSEIF SKILLGAGE_H_GET(U,3520) == 1
-			PRINTL 카게마이・유메비키
+			PRINTL 카게마이ㆍ유메비키
 			PRINTL 1체에 검격+주살의 6회 데미지를 주고 CURSE 상태로 만든다。크리티컬률이 높다
 		ELSEIF SKILLGAGE_H_GET(U,3520) == 2
 			PRINTL 상대를 자신의 그림자 속으로 끌어들여、그 속에서 상대를 무참히 벤다

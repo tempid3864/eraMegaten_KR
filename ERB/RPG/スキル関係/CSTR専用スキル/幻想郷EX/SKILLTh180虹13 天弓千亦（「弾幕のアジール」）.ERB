@@ -172,7 +172,7 @@ RETURN 0
 #DIM アジールリキャスト
 アジールリキャスト = PU_SKILLNUM_GET(ARG,"「弾幕のアジール」")
 
-	;デ・クンダ部分
+	;デㆍクンダ部分
 	IF CFLAG:(ARG):PT플래그 == 0
 		LOCAL:2 = 7
 		LOCAL:3 = 17
@@ -190,7 +190,7 @@ RETURN 0
 	NEXT
 	PRINTFORML \@ CFLAG:ARG:PT플래그 > 0 ? 아군 # 적 \@의 운다효과를 지워버렸다！
 	
-	;デ・カジャ部分
+	;デㆍカジャ部分
 	IF CFLAG:(ARG):PT플래그 == 0
 		LOCAL:2 = 1
 		LOCAL:3 = 7

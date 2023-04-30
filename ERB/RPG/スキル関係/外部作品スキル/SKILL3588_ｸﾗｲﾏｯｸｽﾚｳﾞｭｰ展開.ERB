@@ -262,7 +262,7 @@ RETURN 0
 
 CALL SKILLGAGE_H_SET,ARG,3588,0
 CALL SKILLGAGE_D_SET,ARG,3588,3
-PRINTFORML ＞클라이맥스・레뷰　전개！
+PRINTFORML ＞클라이맥스ㆍ레뷰　전개！
 PRINTFORMW 　무대장치가 가동된다！　%CALLNAME:ARG%의 모습을 스포트라이트로 물들인다！
 ;====================================================
 ;실행내용 여기까지
@@ -349,7 +349,7 @@ IF SKILLGAGE_D_GET(ARG,3588) > 0
 	ENDIF
 ENDIF
 IF SKILLGAGE_D_GET(ARG,3588) > 0
-	PRINTFORML ※클라이맥스・레뷰　나머지 {SKILLGAGE_D_GET(ARG,3588)}턴
+	PRINTFORML ※클라이맥스ㆍ레뷰　나머지 {SKILLGAGE_D_GET(ARG,3588)}턴
 ELSE
 	PRINTFORM 반짝임|
 	IF SKILLGAGE_H_GET(ARG,3588) < 100
@@ -366,10 +366,10 @@ RESETCOLOR
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3588
-PRINTL 반짝임 게이지가 붙는다。행동・여데미지・피데미지로 상승한다
-PRINTL 100％ 모으면 클라이맥스・레뷰 발동。3턴간、여데미지・피데미지에 보정
+PRINTL 반짝임 게이지가 붙는다。행동ㆍ여데미지ㆍ피데미지로 상승한다
+PRINTL 100％ 모으면 클라이맥스ㆍ레뷰 발동。3턴간、여데미지ㆍ피데미지에 보정
 PRINTL 
-PRINTL 　반짝임은、방어 이외의 행동으로 10％　기합・컨센트레이트로 40％
+PRINTL 　반짝임은、방어 이외의 행동으로 10％　기합ㆍ컨센트레이트로 40％
 PRINTL 　그 외의 지원스킬로 30%、각 전용스킬로 30％、상승한다
 
 ;계승에 필요한 부위

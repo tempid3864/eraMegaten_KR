@@ -353,7 +353,7 @@ IF FLAG:조교사명성 >= 2000 && GETBIT(FLAG:취소된ED,3) == 0 && 이벤트�
 			PRINTFORMW 이전부터 투쟁의 무대에 매력을 느끼지 못했던 %조사처리(CALLNAME:MASTER,"는")% 서머너로서의 활동을 중지하고 조교에 전념하게 되었다
 			;もし、他にキャラがいるならば
 			;ＹＭＥＤを拝借し改造
-			;남편・아내
+			;남편ㆍ아내
 			IF TARGET > 0 && (TALENT:170 == 1 || TALENT:171 == 1)
 				PRINTL 
 				PRINTFORMW %CALLNAME:MASTER%의 곁에는 언제나 %CALLNAME:TARGET%의 모습이 있었다
@@ -444,7 +444,7 @@ IF FLAG:요리인기 >= 1500 && GETBIT(FLAG:취소된ED,10) == 0 && 이벤트플
 			PRINTFORML 그 제안을 들은 %조사처리(CALLNAME:MASTER,"는")% 조건을 제시했다。
 			;もし、他にキャラがいるならば
 			;ＹＭＥＤを拝借し改造
-			;남편・아내
+			;남편ㆍ아내
 			IF TARGET > 0 && (TALENT:170 == 1 || TALENT:171 == 1)
 			;テーゲットが인간の場合 
 				IF TARGET >0 && ABL:TARGET:종족 == 0
@@ -679,7 +679,7 @@ ENDIF
 ;（ただしひとり以上は必須）（また、例えば『ショボたん100人』でもメイン判定はひとりだけ）
 ;「小柄かつ女性」キャラが助手可能で+1、上位陥落ならさらに+1
 ;さらに小悪魔であれば+1
-;およそ「メインとなるロリが4名」＋「陥落・助手ロリが4～5名」＝20ポイント越えという感じ
+;およそ「メインとなるロリが4名」＋「陥落ㆍ助手ロリが4～5名」＝20ポイント越えという感じ
 IF GETBIT(FLAG:취소된ED,6) == 0 && FLAG:조직공헌도 >= 3000000 && 이벤트플래그:1:1 < 1
 	LENDING_CONDITION_1 = 0
 	LENDING_CONDITION_2 = 0
@@ -694,7 +694,7 @@ IF GETBIT(FLAG:취소된ED,6) == 0 && FLAG:조직공헌도 >= 3000000 && 이벤�
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;ショボたん
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:모・쇼보]])  == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:모ㆍ쇼보]])  == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;나쟈
@@ -893,7 +893,7 @@ IF GETBIT(FLAG:취소된ED,30) == 0 && 던전플래그:55:99
 				PRINTL 
 				PRINTFORMW 도쿄 상공
 				PRINTL 
-				PRINTFORMW 스마루시・시바르바
+				PRINTFORMW 스마루시ㆍ시바르바
 				PRINTL 
 				PRINTFORMW 비좁은 도쿄 안에 일대세력을 이룬 %CALLNAME:MASTER%들은、예전부터 본거지로 쓰고 있던 스마루시에 틀어박혀、
 				PRINTFORML 재차 스마루시를 완전히 독점하였다
@@ -1005,7 +1005,7 @@ ENDIF
 ;	PRINTFORMW 이윽고……간신히 이성을 유지하며 촉수 침략의 진척 상황을 말한 %조사처리(CALLNAME:MASTER,"는")% 생각하는 것을 포기하고
 ;	PRINTW 쾌락을 탐닉하는 교성을 지르며 육욕에 사로잡혔다……
 ;	PRINTW 
-;	;PRINTW 루이・사이퍼「그런 침략 계획으로 괜찮아？」
+;	;PRINTW 루이ㆍ사이퍼「그런 침략 계획으로 괜찮아？」
 ;	PRINTW 
 ;	PRINTW 　　　　　　　　―― Ending No.XX2 (마라姫エンド)
 ;

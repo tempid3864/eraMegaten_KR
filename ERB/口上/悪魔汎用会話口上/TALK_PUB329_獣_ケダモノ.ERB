@@ -1,7 +1,7 @@
 ﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;
 ;	Module		:TALK_PUB302.ERB
-;	Facility	:회화타입：男・紳士の会話用メッセージ＋挨拶・問答処理
+;	Facility	:회화타입：男ㆍ紳士の会話用メッセージ＋挨拶ㆍ問答処理
 ;
 ;	Licence		:ライセンスフリー。
 ;
@@ -39,7 +39,7 @@
 
 SELECTCASE ARG:1
 	CASE 1
-		;1:レディ・キラーズ
+		;1:レディㆍキラーズ
 	CASE 2
 		; 2:おねだり前の逡巡時(あいさつor問答で目的が決まっている場合)
 	PRINTFORML 「크 르 릉… 인 간 잠 깐 기 다 려」
@@ -96,7 +96,7 @@ SELECTCASE ARG:1
 				PRINTFORMW 「크 릉！넣 는 다 범 한 다 임 신 시 킨 다!｣
 			ENDIF
 		ELSEIF TFLAG:메시지패턴 == 5
-			;스커트걷어올림・パンツずらし
+			;스커트걷어올림ㆍパンツずらし
 			PRINTFORMW 「우 우  %CSTR:ARG:11% 흥 분 되 기 시 작 했 다」
 			PRINTFORMW 「빨 리 하 게 해！빨 리！ 빨 리!」
 			
@@ -459,11 +459,11 @@ SELECTCASE ARG:1
 		;友好度が高い
 		PRINTFORML 「그 럼 또 보 자!!」
 	CASE 88
-		;ヤらせてもらう・交渉が成功した場合
+		;ヤらせてもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해져 주기로 했다
 		CALL MESSAGE_TALK
 	CASE 89
-		;犯してもらう・交渉が成功した場合
+		;犯してもらうㆍ交渉が成功した場合
 		PRINTFORMW 교섭에 성공해, 범해주기로 했다
 		CALL MESSAGE_TALK
 	CASE 90

@@ -100,7 +100,7 @@ CASE 0
 			PRINTFORML 레오타드의 소녀의 말을 막듯이, 갑자기 머리를 움켜쥐고, 신음하기 시작하는 붉은 머리카락의 소녀.
 			PRINTFORML 도대체 무슨 일인가, %CALLNAME:MASTER%가 다가가려고 했을 때, 갑자기 나타난 악마가 레오타드의 소녀를 덮쳤다.
 			PRINTFORMW 인간이 악마에게 덮쳐져 무사할 리가 없다. 하물며 그것이 등 뒤에서의 기습이라면 더욱 그러하다.
-			PRINTFORML ・・・・・・・・・・・
+			PRINTFORML ㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍㆍ
 			PRINTFORML 피를 한 방울도 흘리지 않은 채, 쓰러진 레오타드의 소녀는 먼지가 되어 사라졌다.
 			PRINTFORMW 이대로는 붉은 머리카락의 소녀까지 살해당할지도 몰라, %CALLNAME:MASTER%는 소녀에게 달려갔다.
 			PRINTFORML 
@@ -464,7 +464,7 @@ CASE 4
 			PRINTFORMW 돌과는 달리 물을 흡수하지 않는 바닥의 위를 물이 흘러, 배수구에 빨려들어가는 소리가 허공에 울린다.
 			PRINTFORMW 샤워룸에서 목욕재계를 해야 한다는 건 좀 그렇지만, 이말고 자유롭게 물을 쓸 수 있는 장소가 없으니 선택의 여지는 없었다.
 			PRINTL
-			PRINTFORMW 저 팬텀・소사이어티의 용병이라 자칭하는 자와의 행위를 떠올린다.
+			PRINTFORMW 저 팬텀ㆍ소사이어티의 용병이라 자칭하는 자와의 행위를 떠올린다.
 			PRINTL
 			PRINTFORMW 몸을 기어다니는 혀의 움직임이 떠올라, 등에 흠칫 하고 견디기 어려운 한기가 스친다.
 			PRINTL
@@ -562,14 +562,14 @@ CASE 5
 ;第一弾、세이렌
 CASE 6
 	IF ARG:1 == 0
-		RESULTS = 보컬리스트・세이렌
+		RESULTS = 보컬리스트ㆍ세이렌
 	ELSEIF ARG:1 == 1
 		;라이브하우스未소지だと出ない
 		SIF ITEM:[[아이템:라이브하우스]] < 1
 			RETURN 0
 		RETURN 1
 	ELSEIF ARG:1 == 2
-		IF 보컬리스트・세이렌진행 < 1
+		IF 보컬리스트ㆍ세이렌진행 < 1
 			PRINT 당신의
 			IF ITEM:[[아이템:무도관]]
 				PRINT 대극장
@@ -610,7 +610,7 @@ CASE 6
 				;そのまま下へ
 			;たんま
 			ELSEIF RESULT == 1
-				보컬리스트・세이렌진행 = 1
+				보컬리스트ㆍ세이렌진행 = 1
 				PRINTL
 				PRINTW 「흥, 좋아.
 				PRINTW 　나, 인간과는 달리, 수명 기니까.
@@ -620,7 +620,7 @@ CASE 6
 				RETURN 0
 			;おぱんつ
 			ELSEIF RESULT == 2
-				보컬리스트・세이렌진행 = 1
+				보컬리스트ㆍ세이렌진행 = 1
 				PRINTL
 				PRINTW 「읏, 보지 마！　바보！　색골마！　변태！
 				PRINTW 　오늘은 이 정도로 눈감아주겠어, 다음에 올 때까지 준비를 갖춰놔！」
@@ -630,7 +630,7 @@ CASE 6
 				RETURN 0
 			ENDIF
 			
-		ELSEIF 보컬리스트・세이렌진행 == 1
+		ELSEIF 보컬리스트ㆍ세이렌진행 == 1
 			PRINTL
 			PRINTW 「흥, 나를 불러냈다는 건, 승부할 각오가 정해졌다는 거네.
 			PRINTW 　나도 한가하지는 않아, 어서 끝내주도록 하겠어.
@@ -671,7 +671,7 @@ CASE 6
 			PRINTL ┃뭐야, 뭐냐고, 그 힘！　　　　　　　　		 ┃
 			PRINTL ┃……그만큼의 노랫소리를 지녔으면서, 어째서!?┃
 			PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━┛
-			PRINTW 보컬리스트・세이렌 이 나타났다！
+			PRINTW 보컬리스트ㆍ세이렌 이 나타났다！
 		
 		ELSEIF CFLAG:MASTER:당신의전공분야1 == [[キャラ:아이돌(클래스)]] || CFLAG:MASTER:당신의전공분야2 == [[キャラ:아이돌(클래스)]] 
 			PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
@@ -679,14 +679,14 @@ CASE 6
 			PRINTL ┃왜 알지 못해？　　　　　　　　　　　	   　┃
 			PRINTL ┃……너도 아이돌이었잖아！？　　　			 ┃
 			PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━┛
-			PRINTW 보컬리스트・세이렌 이 나타났다！
+			PRINTW 보컬리스트ㆍ세이렌 이 나타났다！
 			PRINTL
 		ELSE
 			PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 			PRINTL ┃빼앗아 주겠어　　　　　　　　　　　　　   　┃
 			PRINTL ┃너같은 졸부에게, 노래의 세계는 어울리지 않아┃
 			PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━┛
-			PRINTW 보컬리스트・세이렌 이 나타났다！
+			PRINTW 보컬리스트ㆍ세이렌 이 나타났다！
 			PRINTL
 		ENDIF
 		
@@ -695,7 +695,7 @@ CASE 6
 		FLAG:선제기습취소 = 1
 		
 		CALL SET_ENEMY,9, [[キャラ:세이렌]], 45, 1, 1
-		CALLNAME:(CHARANUM-1) = Vo・세이렌
+		CALLNAME:(CHARANUM-1) = Voㆍ세이렌
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
 		CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -732,13 +732,13 @@ CASE 6
 		PRINTW 　열받는 건 열받는 거야. 나, 질 생각 없었고.」
 		PRINTL
 		PRINTW 손 안의 COMP에 동료마의 스테이터스가 늘어 있었다……。
-		PRINTW ＞보컬리스트・세이렌 이 동료마가 되었다
+		PRINTW ＞보컬리스트ㆍ세이렌 이 동료마가 되었다
 		
 		CALL ADD_NEW_COMPANION, [[キャラ:세이렌]], 2000
 		IF RESULT > 0
 			;いろいろいじろう
-			NAME:(RESULT:1) = Vo・세이렌
-			CALLNAME:(RESULT:1) = Vo・세이렌
+			NAME:(RESULT:1) = Voㆍ세이렌
+			CALLNAME:(RESULT:1) = Voㆍ세이렌
 			;가창기능부여しておかないと思い込みの激しいアホの子みたいになってしまうので
 			ABL:(RESULT:1):가창기능 = 5
 			EXP:(RESULT:1):가창경험 = 200
@@ -820,7 +820,7 @@ CASE 6
 			CFLAG:(RESULT:1):998 = 1
 			
 			CSTR:(RESULT:1):41 = 이 개체는 당신의 극장에 씌인 악마이다. 존재하는 것만으로도 수입을 상승시킨다.
-			CSTR:(RESULT:1):42 = 자아가 굉장히 강하기 때문에、 매각・합체는 불가능하다.
+			CSTR:(RESULT:1):42 = 자아가 굉장히 강하기 때문에、 매각ㆍ합체는 불가능하다.
 			
 			;専用얼굴이미지설정
 			CFLAG:(RESULT:1):얼굴이미지 = 64
@@ -837,9 +837,9 @@ CASE 6
 		PRINTL
 		PRINTL
 		PRINTL
-		PRINTW ＞보컬리스트・세이렌이 콘서트 스탭에 합류했다
+		PRINTW ＞보컬리스트ㆍ세이렌이 콘서트 스탭에 합류했다
 		
-		보컬리스트・세이렌진행 = 2
+		보컬리스트ㆍ세이렌진행 = 2
 		
 		RETURN 1
 		
@@ -847,17 +847,17 @@ CASE 6
 ;第二弾、지크프리트
 CASE 7
 	IF ARG:1 == 0
-		RESULTS = 시나리오라이터・지크프리트
+		RESULTS = 시나리오라이터ㆍ지크프리트
 	ELSEIF ARG:1 == 1
 		;무도관未소지だと出ない
 		SIF ITEM:[[아이템:무도관]] < 1
 			RETURN 0
 		;세이렌の話が終わっていないと出ない
-		SIF 보컬리스트・세이렌진행 < 2
+		SIF 보컬리스트ㆍ세이렌진행 < 2
 			RETURN 0
 		RETURN 1
 	ELSEIF ARG:1 == 2
-		IF 시나리오라이터・지크프리트진행 < 1
+		IF 시나리오라이터ㆍ지크프리트진행 < 1
 			PRINTW 당신의 대극장에, 불타는 듯한 붉은 피부를 지닌 당당한 청년이 찾아왔다.
 			PRINTL
 			PRINTW 「『니벨룽의 노래』을 해라！！！」
@@ -900,7 +900,7 @@ CASE 7
 				;そのまま下へ
 			;たんま
 			ELSEIF RESULT == 1
-				시나리오라이터・지크프리트진행 = 1
+				시나리오라이터ㆍ지크프리트진행 = 1
 				PRINTL
 				PRINTW 「오오, 좋다！
 				PRINTW 　하지만, 우물거리고 있으면, 내 마음이 변해버릴지도 모른다고！
@@ -910,7 +910,7 @@ CASE 7
 				RETURN 0
 			;かけんの？
 			ELSEIF RESULT == 2
-				시나리오라이터・지크프리트진행 = 1
+				시나리오라이터ㆍ지크프리트진행 = 1
 				PRINTL
 				PRINTW 「하？　바ー보！　바ー보！
 				PRINTW 　멍청한 근육 배틀부터 달콤씁쓸 러브로망스까지！　뭐든지 할 수 있는 게 당연하잖아！
@@ -921,7 +921,7 @@ CASE 7
 				RETURN 0
 			ENDIF
 			
-		ELSEIF 시나리오라이터・지크프리트진행 == 1
+		ELSEIF 시나리오라이터ㆍ지크프리트진행 == 1
 			PRINTL
 			PRINTW 「어이！　각오는 다졌나？
 			PRINTW 　말해두겠는데, 나는 가능성이 있는 극장에밖에 말을 걸지 않는다고！
@@ -963,7 +963,7 @@ CASE 7
 		PRINTL ┃이몸의 각본, 이몸의 시나리오, 이몸의 인생！ ┃
 		PRINTL ┃연기할 수 있는지, 그 몸으로 보여라！　　　	 ┃
 		PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━┛
-		PRINTW 시나리오라이터・지크프리트 가 나타났다！
+		PRINTW 시나리오라이터ㆍ지크프리트 가 나타났다！
 		PRINTL
 		
 		FLAG:도주불가플래그 = 1
@@ -971,7 +971,7 @@ CASE 7
 		FLAG:선제기습취소 = 1
 		
 		CALL SET_ENEMY,9, [[キャラ:지크프리트]], 55, 1, 1
-		CALLNAME:(CHARANUM-1) = Sw・지크프리트
+		CALLNAME:(CHARANUM-1) = Swㆍ지크프리트
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
 		CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -985,7 +985,7 @@ CASE 7
 		ABL:(CHARANUM-1):스킬3 = [[스킬:이악물기]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:극락왕생파]]
 		ABL:(CHARANUM-1):스킬6 = [[스킬:아카샤아츠]]
-		ABL:(CHARANUM-1):스킬7 = [[스킬:러브・하트]]
+		ABL:(CHARANUM-1):스킬7 = [[스킬:러브ㆍ하트]]
 		ABL:(CHARANUM-1):스킬8 = 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1003,18 +1003,18 @@ CASE 7
 		PRINTW 　길러라！」
 		PRINTL
 		PRINTW 손 안의 COMP에 동료마의 스테이터스가 늘어간다……。
-		PRINTW ＞시나리오라이터・지크프리트 가 억지로 동료마가 되었다
+		PRINTW ＞시나리오라이터ㆍ지크프리트 가 억지로 동료마가 되었다
 		
 		CALL ADD_NEW_COMPANION, [[キャラ:지크프리트]], 2000
 		IF RESULT > 0
 			;いろいろいじろう
-			NAME:(RESULT:1) = Sw・지크프리트
-			CALLNAME:(RESULT:1) = Sw・지크프리트
+			NAME:(RESULT:1) = Swㆍ지크프리트
+			CALLNAME:(RESULT:1) = Swㆍ지크프리트
 			ABL:(RESULT:1):가창기능 = 3
 			EXP:(RESULT:1):가창경험 = 50
 			EXP:(RESULT:1):라이브경험 = 20
 
-			ABL:(RESULT:1):스킬1 = [[스킬:러브・하트]]
+			ABL:(RESULT:1):스킬1 = [[스킬:러브ㆍ하트]]
 			ABL:(RESULT:1):스킬2 = [[스킬:사랑의채찍]]
 			ABL:(RESULT:1):스킬3 = [[스킬:극락왕생파]]
 			ABL:(RESULT:1):스킬4 = [[스킬:기합]]
@@ -1072,7 +1072,7 @@ CASE 7
 			CFLAG:(RESULT:1):998 = 1
 			
 			CSTR:(RESULT:1):35 = 이 개체는 당신의 극장에 씌인 악마이다. 존재하는 것만으로도 수입을 상승시킨다.
-			CSTR:(RESULT:1):36 = 자아가 굉장히 강하기 때문에、 매각・합체는 불가능하다.
+			CSTR:(RESULT:1):36 = 자아가 굉장히 강하기 때문에、 매각ㆍ합체는 불가능하다.
 			
 			CALL SYNC_STATUS,(RESULT:1)
 			CALL HEALTH_CHARA,(RESULT:1)
@@ -1087,9 +1087,9 @@ CASE 7
 		PRINTL
 		PRINTL
 		PRINTL
-		PRINTW ＞시나리오라이터・지크프리트 가 당신의 극장에 스태프로 참가했다
+		PRINTW ＞시나리오라이터ㆍ지크프리트 가 당신의 극장에 스태프로 참가했다
 		
-		시나리오라이터・지크프리트진행 = 2
+		시나리오라이터ㆍ지크프리트진행 = 2
 		
 		RETURN 1
 		
@@ -1104,7 +1104,7 @@ CASE 8
 		SIF ITEM:[[아이템:무도관]] < 1
 			RETURN 0
 		;ジークフリート이벤트後
-		SIF 시나리오라이터・지크프리트진행 < 2
+		SIF 시나리오라이터ㆍ지크프리트진행 < 2
 			RETURN 0
 		
 		;아이돌인기100越えが5人居ないと出ない
@@ -1261,8 +1261,8 @@ CASE 8
 		
 		CSTR:(CHARANUM-1):사고패턴 = 관객디오니소스
 		
-		ABL:(CHARANUM-1):스킬1 = [[스킬:마하・라기온]]
-		ABL:(CHARANUM-1):스킬2 = [[스킬:마하・지온가]]
+		ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ라기온]]
+		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ지온가]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:브레인버스트]]
 		ABL:(CHARANUM-1):스킬4 = 0
 		ABL:(CHARANUM-1):스킬6 = 0
@@ -1300,8 +1300,8 @@ CASE 8
 			;加入が손間なのでそれなりに盛る
 			ABL:(RESULT:1):스킬1 = [[스킬:이할의마맥]]
 			ABL:(RESULT:1):스킬2 = [[스킬:절세의육체]]
-			ABL:(RESULT:1):스킬3 = [[스킬:마하・라기온]]
-			ABL:(RESULT:1):스킬4 = [[스킬:마하・지온가]]
+			ABL:(RESULT:1):스킬3 = [[스킬:마하ㆍ라기온]]
+			ABL:(RESULT:1):스킬4 = [[스킬:마하ㆍ지온가]]
 			ABL:(RESULT:1):스킬5 = [[스킬:용분의춤]]
 			ABL:(RESULT:1):스킬6 = [[스킬:브레인버스트]]
 			ABL:(RESULT:1):스킬7 = [[스킬:칠색연옥파]]
@@ -1343,7 +1343,7 @@ CASE 8
 			
 			CSTR:(RESULT:1):49 = 이 개체는 당신의 극장에 씌인 악마이다. 존재하는 것만으로도 당신의 수입을 상승시킨다.
 			;行が발りねえので생략、まあ３柱눈だしいいだろ
-			;CSTR:(RESULT:1):49 = 자아가 매우 강하기 때문에, 매각・합체는 불가능하다.
+			;CSTR:(RESULT:1):49 = 자아가 매우 강하기 때문에, 매각ㆍ합체는 불가능하다.
 			
 			CALL SYNC_STATUS,(RESULT:1)
 			CALL HEALTH_CHARA,(RESULT:1)
@@ -1408,7 +1408,7 @@ CASE 10
 		;（30階ボスをぶちのめしたかモナド中ボスを倒している）
 		ELSEIF 요리이벤트진행 == 1 && (던전플래그:70:1 >= 6 || 던전플래그:70:68 > 0)
 			RETURN 1
-		;第３段階：グ레이テスト・グ레이トテイスト・데미난디/팩토리入場済み
+		;第３段階：グ레이テストㆍグ레이トテイストㆍ데미난디/팩토리入場済み
 		;팩토리に入場するとフラグ5番は0以外になり、どのような結果でも0には戻らない（はず）のためこれで判別
 		ELSEIF 요리이벤트진행 == 2 && 던전플래그:[[던전:팩토리]]:5 != 0
 			RETURN 1
@@ -1869,7 +1869,7 @@ CASE 19
 			PRINTFORMW ＞여신　이둔　의 합체가 해금되었다.
 			SETCOLOR 0x33ffcc
 			PRINTFORML ※여신　이둔 의 합체는 특수합체로 행해집니다.
-			PRINTFORMW 　화백・아메노우즈메・파르바티 로 합체가 가능합니다.
+			PRINTFORMW 　화백ㆍ아메노우즈메ㆍ파르바티 로 합체가 가능합니다.
 				FORCEWAIT
 			RESETCOLOR
 			FLAG:(10000+[[キャラ:이둔]]) = 1
@@ -2259,7 +2259,7 @@ CASE 21
 							CFLAG:(CHARANUM-1):ＨＰ보정 += 20000
 							CFLAG:(CHARANUM-1):ＭＰ보정 += 20000
 							CFLAG:(CHARANUM-1):행동횟수 = 3
-							ABL:(CHARANUM-1):스킬1  = [[스킬:메・디아라한]]
+							ABL:(CHARANUM-1):스킬1  = [[스킬:메ㆍ디아라한]]
 							ABL:(CHARANUM-1):스킬2  = [[스킬:무거운한숨]]
 							ABL:(CHARANUM-1):스킬3  = [[스킬:절세의육체]]
 							ABL:(CHARANUM-1):스킬4  = [[스킬:색즉시공]]
@@ -2735,7 +2735,7 @@ CASE 9
 			RETURN 0
 		SELECTCASE Reconnect_Ragnarok진행
 			CASE 0
-				;ナイト・テイル：666END달성で出現
+				;ナイトㆍテイル：666END달성で出現
 				SIF GETBIT(FLAG:발견ED,52) == 1
 					RETURN 1
 			CASE 1
