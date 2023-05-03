@@ -73,7 +73,7 @@ CASE 0
 	;タイトル
 		IF GETBIT(CFLAG:ARG:개별이벤트개방,ARG:2)
 			;タイトル
-			RESULTS = 『ティファㆍロックハート』
+			RESULTS = 『티파ㆍ록하트』
 		ELSE
 			;未開放時のタイトル（解放条件を入れておく）
 			RESULTS = ※%CALLNAME:ARG%の陥落と、戦闘Lv30以上が必要。
@@ -81,122 +81,122 @@ CASE 0
 	;イベント
 	ELSEIF ARG:1 == 3
 		PRINTFORML 
-		PRINTFORMW ＞検査室
+		PRINTFORMW ＞검사실
 		PRINTFORML 
-		PRINTFORMW 検査台上の%CALLNAME:ARG%は、目を閉じた状態で横たわっている。
+		PRINTFORMW 검사실 위의 %CALLNAME:ARG%는、눈을 감은 상태로 누워 있다。
 		PRINTFORML 
-		PRINTFORML 引き取られた状態と比べると、多少は活気があるのだが、
-		PRINTFORMW それを契機に、本格的に体を検めることにしたのだ。
+		PRINTFORML 들어왔을 때의 상태와 비교하면 약간 활기가 넘치지만、
+		PRINTFORMW 그것을 계기로 본격적으로 몸을 검사하기로 한 것이다。
 		PRINTFORML 
-		PRINTFORML 体の組成、マグネタイト貯蔵能力、戦闘能力……
-		PRINTFORMW それらを調べているうちに、変わったデータがはじき出された。
+		PRINTFORML 몸의 조성、마그네타이트 저장능력、전투능력……
+		PRINTFORMW 그것들을 조사하고 있는 사이에、특이한 데이터가 튀어 나왔다。
 		PRINTFORML 
-		PRINTFORMW ……純粋な人間と言うよりは、合体ㆍ吸収能力をなくした造魔に近い結果が出たのだ。
+		PRINTFORMW ……순수한 인간이라기보다는 합체、흡수 능력을 잃어버린 조마에 가까운 결과가 나온 것이다。
 		PRINTFORML 
-		PRINTFORML 純度１００％の異世界の者、とするにはこちらの世界のロジックに近い技能もあるし、
-		PRINTFORMW こちらで１から作り出された、とするには未知の能力も混じっている。
+		PRINTFORML 순도 100％의 이세계인이라고 하기에는 이쪽 세계의 로직에 가까운 기능도 있고、
+		PRINTFORMW 이쪽에서 처음부터 만들어졌다고 하기에는 미지의 능력도 섞여 있다。
 		PRINTFORML 
-		PRINTFORML 「……なんでだろう。覚えている事はいっぱいあるのに
-		PRINTFORMW 　どうしてここにいるのか、全然わからないんだ」
+		PRINTFORML 「……왜일까? 기억나는게 많은데 
+		PRINTFORMW 　왜 여기 있는지 전혀 모르겠어。」
 		PRINTFORML 
-		PRINTFORML このとおり、当人も全く覚えておらず、
-		PRINTFORMW 気がついたら奴隷商品として店に並んでいたらしい。
+		PRINTFORML 이처럼 당사자도 전혀 기억이 나지 않아
+		PRINTFORMW 정신을 차려보니 노예상품으로 가게에 진열되어 있었던 것 같다。
 		PRINTFORML 
-		PRINTFORMW ――ラグショップに問い合わせてみたところ
+		PRINTFORMW ――러그샵에 문의해보니
 		PRINTFORML 
-		PRINTFORMW 『あ～？　あ～その子ねぇ、ワケありらしいよ？
+		PRINTFORMW 『아～？　아～걔 말이지、하자가 있다고？
 		;健在な戦闘参加メンバー(2) > 健在でない戦闘参加メンバー(12) > 健在なCOMP内悪魔OR探索不参加人間(1) > 健在でない～(11) > 自宅サーバーに保存してある悪魔(0)
 		;デモナイズしたらマジで使いようがなくなるはずだが一応。
 		SIF FINDCHARA_B([[キャラ:치키（＃FE）]]) >= 0
-			PRINTFORML 　以前買ってった竜の娘と同じ感じでさ、
-		PRINTFORML 　あらゆる情報が集まる何かから引き出された、異界の情報をもとに、
-		PRINTFORMW 　どっかの誰かが心血注いで誕生させた『英雄』なんだとさ』
+			PRINTFORML 　예전에 샀던 류의 소녀과 같은 느낌으로 말이야、
+		PRINTFORML 　온갖 정보가 모이는 무언가에서 끌어낸、이계의 정보를 바탕으로、
+		PRINTFORMW 　어딘가의 누군가가 심혈을 기울여 탄생시킨 『영웅』이래。』
 		PRINTFORML 
-		PRINTFORMW ……異界の情報から造りだされた、『英雄』ときた。
+		PRINTFORMW ……이계의 정보로 만들어진 『영웅』이란다。
 		PRINTFORML 
-		PRINTFORML 『……まぁそのどっかの誰かもくたばっちゃったらしくて、
-		PRINTFORMW 　巡り廻って、最終的にアンタのとこに行き着いたみたいだねぇ』
+		PRINTFORML 『……뭐 그 어딘사는 누군가도 지쳐버린 것 같아서, 
+		PRINTFORMW 　돌고 돌아 당신에게 도착한 것 같아。』
 		PRINTFORML 
-		PRINTFORML ――ヨタ話か箔付けの一種だと思っていたが、
-		PRINTFORML 実際に%CALLNAME:ARG%が異なる世界とこちらの世界の法則が混ざりあった
-		PRINTFORMW 奇妙な存在であると証明された以上、認めざるをえないようだ。
+		PRINTFORML ――실없는 이야기나 오래된 이야기의 일종이라 생각했는데、
+		PRINTFORML 실제로 %CALLNAME:ARG%는 다른 세계와 이쪽 세계의 법칙이 섞여 있었다
+		PRINTFORMW 기묘한 존재로 증명된 이상 인정하지 않을 수 없을 것 같다。
 		PRINTFORML 
-		;ローカパーラ収容所クリア＝太陽が情報の集合体であることを知っている
+		;ローカパーラ収容所クリア＝太陽が情報の集合体であることを知っている 로카파라 수용소 클리어 = 태양이 정보의 집합체라는 것을 알고 있다
 		SIF 던전플래그:13:1 > 2
-			PRINTFORMW 情報（コトバ）。……つまりは、あの太陽と交信した何者かが居たのだろう。
-		PRINTFORMW 産み出され、そして創造主を失い流されて今に至るというわけだ。
+			PRINTFORMW 정보（コトバ）。……즉、그 태양과 교신한 누군가가 있었을 것이다。
+		PRINTFORMW 태어나고、그리고 창조주를 잃고 떠내려와서 지금에 이르렀다는 것이다。
 		PRINTFORML 
-		PRINTFORML ……業魔殿の某主人の耳に入ったら
+		PRINTFORML ……업마전의 모 주인 귀에 들어갔다면、
 		PRINTFORML 
-		PRINTFORMW 『ゆずってくれ！　たのむ！　100万マッカ！　いや言い値で買おう！！！』
+		PRINTFORMW 『양보해줘! 부탁해! 100만 마카! 아니 부르는 값으로 살게！！！』
 		PRINTFORML 
-		PRINTFORMW などとしつこく食いつかれるのは目に見えているだろう。
+		PRINTFORMW 하고 끈질기게 달려들 것이 뻔할 것이다。
 		PRINTFORML 
-		PRINTFORMW 「……%CSTR:일인칭%は、また売られるの？」
+		PRINTFORMW 「……%CSTR:일인칭%는、 또 팔리는거야?？」
 		PRINTFORML 
-		PRINTFORMW 状況を整理しながら思案していると、か細い声が＠を現実に呼び戻した。
-		PRINTFORMW ……目を向けると、検査室のガラス越しに目があった。
+		PRINTFORMW 상황을 정리하며 궁리하고 있는데 가냘픈 목소리가 %CALLNAME:MASTER%을/를 현실로 불러들였다。
+		PRINTFORMW ……눈을 돌리자、 검사실 유리 너머로 눈이 보였다。
 		PRINTFORML 
 		;IF 함락(ARG) > 2
 		IF TALENT:ARG:신뢰 || TALENT:ARG:동료
-			PRINTFORMW 「一緒に肩を並べていられるの、嬉しいって思ってた……」
+			PRINTFORMW 「함께 어깨를 나란히 할 수 있다는 것이 기쁘다고 생각했다……」
 			PRINTFORML 
-			PRINTFORML 自分に決定権がないことを理解しているが、
-			PRINTFORMW こうして語られた一言は、おそらく本音なのだろう。
+			PRINTFORML 나는 내가 결정권이 없다는 것을 이해하고 있지만、
+			PRINTFORMW 이렇게 말한 한마디는、아마도 진심일 것이다。
 		ELSEIF TALENT:ARG:연모 || TALENT:ARG:친애
-			PRINTFORMW 「……やだ……な」
+			PRINTFORMW 「……싫구……나」
 			PRINTFORML 
-			PRINTFORMW 惚れ込ませた分、離れろと言われたとして、素直にきくとは限らない。
-			PRINTFORMW それでも、小声とは言え真っ向から異を唱えるのは初めてであった。
+			PRINTFORMW 반하게 한 만큼 떠나라는 말을 들었다고 해서 솔직하게 듣는다고는 할 수 없다。
+			PRINTFORMW 그래도 작은 소리라고는 하지만 정면으로 이의를 제기하는 것은 처음이었다。
 			PRINTFORML 
-			PRINTFORMW %CALLNAME:ARG%の、考え込み、溜め込む癖を考えればこれは割と驚異的な進歩と言える。
+			PRINTFORMW %CALLNAME:ARG%의 담아두는 성격인 것에 비해 경이로운 진보라 할 수 있었다。
 		ELSEIF TALENT:ARG:음란 || TALENT:ARG:창부
-			PRINTFORMW 「売られた先は、%CSTR:일인칭%といっぱいシてくれる所なの……？」
+			PRINTFORMW 「전에 팔렸던 곳은、%CSTR:일인칭% 많이 사주는 곳이야……？」
 			PRINTFORML 
-			PRINTFORML もっと、気持ちいい事、知りたい。と呟く%CALLNAME:ARG%の目に、色欲が見えた。
-			PRINTFORML アブノーマルなことも含め教えこんできた分、
-			PRINTFORMW 関心はそちらに有るようだった。
+			PRINTFORML 더 기분좋은 일 알고 싶어.하고 중얼거리는 %CALLNAME:ARG%의 눈에는 색욕이 보였다。
+			PRINTFORML 변태적인 것도 포함해 가르쳐 온 만큼、
+			PRINTFORMW 관심은 그쪽에 있는 것 같았다。
 		ELSEIF TALENT:ARG:복종 || TALENT:ARG:예속
-			PRINTFORMW 「ご主人がそれを望むなら、仕方ないけど……」
+			PRINTFORMW 「주인님이 그걸 원한다면 어쩔 수 없지만……」
 			PRINTFORML 
-			PRINTFORMW ちょっと、嫌だな。と目線を外した%CALLNAME:ARG%の目は、憂の色を漏らしていた。
-			PRINTFORML これまで散々いじくり倒して命令には逆らえなくしたが、
-			PRINTFORMW それでもそう感じるぐらいには、その心は根深い、あるいは本音なのだろう。
+			PRINTFORMW 조금 싫구나。하고 시선을 피하는 %CALLNAME:ARG%의 눈은 우울한 색깔을 띄고 있었다。
+			PRINTFORML 그동안 마구 만지작거려 명령을 거역할 수 없게 했지만、
+			PRINTFORMW 그래도 그렇게 느껴지는 것은、그 마음속의 진짜 소리일 것이다。
 		ENDIF
 		PRINTFORML 
 		IF 함락(ARG) > 2
 			SIF TALENT:ARG:맹우
-				PRINTFORMW 別れることはない。盟約は永遠だ。
+				PRINTFORMW 헤어지는 일은 없어。맹약은 영원하다。
 			SIF TALENT:ARG:아내 || TALENT:ARG:남편
-				PRINTFORMW そのようなことはしない。指輪に誓う。
+				PRINTFORMW 그런 짓은 하지 않는다。반지에 맹세코。
 			SIF TALENT:ARG:음마
-				PRINTFORMW 大丈夫だ、ここでいくらでも満足させてやる。
+				PRINTFORMW 괜찮아、여기서 얼마든지 만족시켜 줄게。
 			SIF TALENT:ARG:노리개
-				PRINTFORMW もちろん手放しはしない。逃さない。
+				PRINTFORMW 물론 놓아주지는 않는다。놓치지 않는다。
 			PRINTFORML 
-			PRINTFORMW そのようなことを伝えると、%CALLNAME:ARG%はか弱いながらも、安心したような笑みを返してきた。
+			PRINTFORMW 그런 말을 전하자、%CALLNAME:ARG%는 약하면서도 안심한 듯한 미소를 되찾아 왔다。
 		ENDIF
 		PRINTFORML 
-		PRINTFORMW ……手元の計測器から、新たな解析完了を伝える着信音が響いた。
-		PRINTFORMW 目を通してみると、%CALLNAME:ARG%の情報の中に、ある武器のデータが眠っていた事がわかった。
+		PRINTFORMW ……수중의 계측기에서 새로운 해석 완료를 전하는 벨소리가 울렸다。
+		PRINTFORMW 훑어보니、%CALLNAME:ARG%의 정보 속에 어떤 무기의 데이터가 잠들어 있었다는 것을 알 수 있었다。
 		PRINTFORML 
-		PRINTFORMW ……武器コードは『プレミアムハート』。
+		PRINTFORMW ……무기 코드는『프리미엄 하트』。
 		PRINTFORML 
-		PRINTFORML %CALLNAME:ARG%の得意とする格闘術を補助する為の設計がなされ、
-		PRINTFORMW 打撃、投げ技、遠当て……様々な攻撃を無駄なく相手に叩き込めるようになっている。
+		PRINTFORML %CALLNAME:ARG%가 자신있게 여기는 격투술을 보조하기 위한 설계가 이루어졌으며、
+		PRINTFORMW 타격, 던지기 기술, 멀리 맞히기…여러 공격을 군더더기 없이 상대에게 쏟을 수 있게 되어 있다。
 		PRINTFORML 
-		PRINTFORML 検査が完了した所で興味を示した%CALLNAME:ARG%と一緒に、
-		PRINTFORMW 早速、開発に取り掛かることにした。
+		PRINTFORML 검사가 완료된 곳에서 흥미를 보인 %CALLNAME:ARG%와 함께、
+		PRINTFORMW 조속히 개발에 착수하기로 했다。
 		PRINTFORML 
 		PRINTFORMW …………。
 		PRINTFORML 
 			;1 = 도검　2 =레이피어　　3 = 활　　　　　　4 = 검　  5 = 창　　　6 = 도끼、둔기
-			;7 = 채찍　8 =투척(投具)　9 = 지팡이、제구　10= 곤봉　11= 권투구
-			;専用剣の末尾XXは武器タイプらしいぞ！番号もその種類によって2378から2389まで振り分けられてるらしいぞ！
+			;7 = 채찍　8 =투척(投具)　9 = 지팡이、제구　10= 곤봉　11= 권투구     
+			;専用剣の末尾XXは武器タイプらしいぞ！番号もその種類によって2378から2389まで振り分けられてるらしいぞ！ 전용검 끝 XX는 무기타입이래!번호도 그 종류에 따라 2378부터 2389까지 나눠져 있는 것 같아 プレミアムハート
 		CALL PUEQ_ADD, ARG, "プレミアムハート", [[아이템:전용장비검11]], 0
 		SETCOLOR 0x33ffcc
-			PRINTFORML ＞%CALLNAME:ARG%専用武器『プレミアムハート』を入手しました。
-			PRINTFORML ＞装備中、自分の行動でのリミットゲージ上昇量が増加します。
+			PRINTFORML ＞%CALLNAME:ARG% 전용무기『프리미엄 하트』를 입수했다。
+			PRINTFORML ＞장비중、자신의 행동에서의 리미트 게이지 상승량이 증가합니다。
 		RESETCOLOR
 		FORCEWAIT
 		RETURN 1
