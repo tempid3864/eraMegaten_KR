@@ -119,13 +119,13 @@ IF 투기장플래그:53:0 == 0
 	투기장플래그:53:0 = 1
 	FLAG:단테격파 += 1
 ELSEIF  투기장플래그:53:0 == 1
-	CALL MESSAGE_WINDOW_D, , "＞今度の試合は相手側から指名があったようだ"
-	CALL MESSAGE_WINDOW_D, "謎の男", "来たか…"
-	CALL MESSAGE_WINDOW_D, , "＞リングには青いコートを身にまとい、左手に鞘に収まった刀を手に持った男が立っていた"
-	CALL MESSAGE_WINDOW_D, "謎の男", @"お前が%CALLNAME:MASTER%か、恨みはないがお前と戦えと指示を受けている…"
-	CALL MESSAGE_WINDOW_D, "", @"＞右手で刀の柄を持ち戦闘態勢に入った"
-	CALL MESSAGE_WINDOW_D, "謎の男", "お前の実力どんなものか…/お手並み拝見といこうか"
-	CALL MESSAGE_WINDOW_D, "", "＞魔人 バージルが一体出た！"
+	CALL MESSAGE_WINDOW_D, , "＞이번 경기는 상대편에서 지명이 있었던 것 같다."
+	CALL MESSAGE_WINDOW_D, "수수께끼의 사나이", "왔는가…"
+	CALL MESSAGE_WINDOW_D, , "＞링에는 파란색 코트를 입고、왼손에 칼집에 든 칼을 든 남자가 서 있었다"
+	CALL MESSAGE_WINDOW_D, "수수께끼의 사나이", @"네놈이 %CALLNAME:MASTER%인가、원한은 없지만 너와 싸우라는 지시를 받고 왔다…"
+	CALL MESSAGE_WINDOW_D, "", @"＞오른손으로 칼자루를 들고 전투 태세에 들어갔다"
+	CALL MESSAGE_WINDOW_D, "수수께끼의 사나이", "네 실력이 어떤 건지…/솜씨 좀 볼까!"
+	CALL MESSAGE_WINDOW_D, "", "＞마인 버질이 나타났다！"
 	CUSTOMDRAWLINE =
 	WAIT
 	;
@@ -163,29 +163,29 @@ ELSEIF  투기장플래그:53:0 == 1
 	CALL HEALTH_CHARA, (CHARANUM-1)
 	CALL BATTLE_START
 	CUSTOMDRAWLINE =
-	CALL MESSAGE_WINDOW_D, , "＞激しい攻防の末、先に引いたのは男の方だった"
-	CALL MESSAGE_WINDOW_D, "謎の男", "ふん、なるほどな　あの老紳士の言ってた通りか"
-	CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%は男に何者か尋ねた"
-	CALL MESSAGE_WINDOW_D, "謎の男", "俺はバージル/訳があって魔界にいたんだが…"
-	CALL MESSAGE_WINDOW_D, "バージル", "ある老紳士に助けられて/お前と戦うことを依頼されたんだ"
-	CALL MESSAGE_WINDOW_D, "バージル", "老紳士の一度戦えという依頼も果たした/貴様を殺せとは言わなからな"
-	CALL MESSAGE_WINDOW_D, "バージル", "もうここには用はない…"
-	CALL MESSAGE_WINDOW_D, "", @"＞バージルは刀を鞘に戻し、%CALLNAME:MASTER%に背を向けそのまま行ってしまった。/リングを後にするようだ"
-	CALL MESSAGE_WINDOW_D, , "＞引き止めますか？"
+	CALL MESSAGE_WINDOW_D, , "＞격렬한 공방 끝에 먼저 물러선 것은 남자 쪽이었다"
+	CALL MESSAGE_WINDOW_D, "수수께끼의 사나이", "흥、과연 그 노신사가 말한 대로인가"
+	CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%는 사내에게 누구인지 물었다"
+	CALL MESSAGE_WINDOW_D, "수수께끼의 사나이", "나는 버질/이유가 있어서 마계에 있었고…"
+	CALL MESSAGE_WINDOW_D, "버질", "어떤 노신사의 도움을 받았던 터라/그 보답으로 너와 싸울 것을 부탁받았다"
+	CALL MESSAGE_WINDOW_D, "버질", "영감은 한번만 싸우라는 말도 했어/네놈을 죽이라고는 말하지 않았으니까"
+	CALL MESSAGE_WINDOW_D, "버질", "이제 여기에는 볼일이 없구만…"
+	CALL MESSAGE_WINDOW_D, "", @"＞버질은 칼을 칼집에 넣고、%CALLNAME:MASTER%에게 등을 돌리고 그대로 가버렸다. /링을 뒤로 하는 것 같다"
+	CALL MESSAGE_WINDOW_D, , "＞만류합니까？"
 	CALL INPUT_YN_D
 	IF RESULT == 0
-		CALL MESSAGE_WINDOW_D, "バージル", "そうだな/あの老紳士、なぜ俺を復活させてのか/気になっていたからな"
-		CALL MESSAGE_WINDOW_D, "", @"＞バージルは%CALLNAME:MASTER%の元に戻ってきた"
-		CALL MESSAGE_WINDOW_D, "バージル", "お前と共にいればその謎が分かりそうだ/"
-		CALL MESSAGE_WINDOW_D, "バージル", "それに　お前と共に戦うのも悪くなさそうだ…/…お前の名前は？"
-		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%は名前を言った"
-		CALL MESSAGE_WINDOW_D, "バージル", @"%CALLNAME:MASTER%、あの老紳士の化けの皮を剥いでやろうか"
-		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%はバージルとともにリングを後にした"
-		CALL MESSAGE_WINDOW_D, , "＞バージルが仲魔になった"
+		CALL MESSAGE_WINDOW_D, "버질", "글쎄 / 그 영감、왜 나를 부활시켰을까 / 궁금했으니까 말야"
+		CALL MESSAGE_WINDOW_D, "", @"＞버질은 %CALLNAME:MASTER%에게로 돌아왔다"
+		CALL MESSAGE_WINDOW_D, "버질", "네 녀석과 함께 있으면 그 수수께끼를 알 수 있을지도/"
+		CALL MESSAGE_WINDOW_D, "버질", "게다가  너와 함께 싸우는 것도 나쁘지 않을 것 같고…/…네놈의 이름은？"
+		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%은 이름을 말했다"
+		CALL MESSAGE_WINDOW_D, "버질", @"%CALLNAME:MASTER%、그 영감의 가면을 벗기러 가볼까"
+		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%은 버질과 함께 링을 뒤로 했다"
+		CALL MESSAGE_WINDOW_D, , "＞버질이 동료 악마가 되었다"
 		CALL ADD_NEW_COMPANION,[[キャラ:버질]],500
 	ELSE
-		CALL MESSAGE_WINDOW_D, , "＞バージルの姿は見えなくなった"
-		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%はリングを後にした"
+		CALL MESSAGE_WINDOW_D, , "＞버질의 모습은 보이지 않게 되었다"
+		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%는 링을 뒤로 했다."
 	ENDIF
 	투기장플래그:53:0 = 2
 ENDIF
