@@ -718,51 +718,51 @@ ENDIF
 SELECTCASE FLAG:현M
 	CASE 13
 		IF ARG == 2 && ARG:1 == 13 && !GETBIT(던전플래그:99:6,40)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,40
 		ELSEIF ARG == 2 && ARG:1 == 15 && !GETBIT(던전플래그:99:6,41)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,41
 		ELSEIF ARG == 6 && ARG:1 == 15 && !GETBIT(던전플래그:99:6,42)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,42
 		ENDIF
 	CASE 16
 		IF ARG == 5 && ARG:1 == 8 && !GETBIT(던전플래그:99:6,55)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,55
 		ELSEIF ARG == 6 && ARG:1 == 17 && !GETBIT(던전플래그:99:6,56)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,56
 		ENDIF
 	CASE 18
 		IF ARG == 5 && ARG:1 == 6 && !GETBIT(던전플래그:99:7,0)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:7,0
 		ELSEIF ARG == 4 && ARG:1 == 17 && !GETBIT(던전플래그:99:7,1)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:7,1
 		ELSEIF ARG == 6 && ARG:1 == 17 && !GETBIT(던전플래그:99:7,2)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:7,2
 		ENDIF
 	CASE 23
 		IF ARG == 7 && ARG:1 == 26 && !GETBIT(던전플래그:99:7,43)
-			PRINTFORMW レッドオーブ +100
+			PRINTFORMW 레드 오브 +100
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:7,43
 		ENDIF
 	CASE 36
 		IF ARG == 5 && ARG:1 == 1 && !GETBIT(던전플래그:99:12,26)
-			PRINTFORMW レッドオーブ +200
+			PRINTFORMW 레드 오브 +200
 			MONEY:99 += 200
 			SETBIT 던전플래그:99:12,26
 		ENDIF
@@ -785,7 +785,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 2
 				IF FLAG:현X == 8 && FLAG:현Y == 27
 					IF !GETBIT(던전플래그:99:6,0)
-						PRINTFORML レッドオーブ +100
+						PRINTFORML 레드 오브 +100
 						MONEY:99 += 100
 						SETBIT 던전플래그:99:6,0
 					ENDIF
@@ -793,13 +793,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 11
 				IF FLAG:현X == 1 && FLAG:현Y == 5
 					IF !GETBIT(던전플래그:99:6,36)
-						PRINTFORML レッドオーブ +100
+						PRINTFORML 레드 오브 +100
 						MONEY:99 += 100
 						SETBIT 던전플래그:99:6,36
 					ENDIF
 				ELSEIF FLAG:현X == 1 && FLAG:현Y == 9
 					IF !GETBIT(던전플래그:99:6,37)
-						PRINTFORML レッドオーブ +100
+						PRINTFORML 레드 오브 +100
 						MONEY:99 += 100
 						SETBIT 던전플래그:99:6,37
 					ENDIF
@@ -807,61 +807,61 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 14
 				IF FLAG:현X == 22 && FLAG:현Y == 20
 					IF !GETBIT(던전플래그:99:6,43)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,43
 					ENDIF
 				ELSEIF FLAG:현X == 24 && FLAG:현Y == 7
 					IF !GETBIT(던전플래그:99:6,44)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,44
 					ENDIF
 				ELSEIF FLAG:현X == 25 && FLAG:현Y == 9
 					IF !GETBIT(던전플래그:99:6,45)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,45
 					ENDIF
 				ELSEIF FLAG:현X == 25 && FLAG:현Y == 12
 					IF !GETBIT(던전플래그:99:6,46)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,46
 					ENDIF
 				ELSEIF FLAG:현X == 25 && FLAG:현Y == 15
 					IF !GETBIT(던전플래그:99:6,47)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,47
 					ENDIF
 				ELSEIF FLAG:현X == 24 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:6,48)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,48
 					ENDIF
 				ELSEIF FLAG:현X == 19 && FLAG:현Y == 23
 					IF !GETBIT(던전플래그:99:6,49)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,49
 					ENDIF
 				ELSEIF FLAG:현X == 22 && FLAG:현Y == 23
 					IF !GETBIT(던전플래그:99:6,50)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,50
 					ENDIF
 				ELSEIF FLAG:현X == 7 && FLAG:현Y == 26
 					IF !GETBIT(던전플래그:99:6,51)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,51
 					ENDIF
 				ELSEIF FLAG:현X == 20 && FLAG:현Y == 27
 					IF !GETBIT(던전플래그:99:6,52)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:6,52
 					ENDIF
@@ -869,37 +869,37 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 18
 				IF FLAG:현X == 20 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:7,3)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,3
 					ENDIF
 				ELSEIF FLAG:현X == 16 && FLAG:현Y == 20
 					IF !GETBIT(던전플래그:99:7,4)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,4
 					ENDIF
 				ELSEIF FLAG:현X == 9 && FLAG:현Y == 21
 					IF !GETBIT(던전플래그:99:7,5)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,5
 					ENDIF
 				ELSEIF FLAG:현X == 14 && FLAG:현Y == 22
 					IF !GETBIT(던전플래그:99:7,6)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,6
 					ENDIF
 				ELSEIF FLAG:현X == 18 && FLAG:현Y == 22
 					IF !GETBIT(던전플래그:99:7,7)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,7
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 23
 					IF !GETBIT(던전플래그:99:7,8)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,8
 					ENDIF
@@ -907,7 +907,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 19
 				IF FLAG:현X == 4 && FLAG:현Y == 5
 					IF !GETBIT(던전플래그:99:7,9)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,9
 					ENDIF
@@ -915,97 +915,97 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 20
 				IF FLAG:현X == 4 && FLAG:현Y == 15
 					IF !GETBIT(던전플래그:99:7,10)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,10
 					ENDIF
 				ELSEIF FLAG:현X == 11 && FLAG:현Y == 15
 					IF !GETBIT(던전플래그:99:7,11)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,11
 					ENDIF
 				ELSEIF FLAG:현X == 19 && FLAG:현Y == 15
 					IF !GETBIT(던전플래그:99:7,12)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,12
 					ENDIF
 				ELSEIF FLAG:현X == 3 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,13)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,13
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,14)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,14
 					ENDIF
 				ELSEIF FLAG:현X == 19 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,15)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,15
 					ENDIF
 				ELSEIF FLAG:현X == 17 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:7,16)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,16
 					ENDIF
 				ELSEIF FLAG:현X == 3 && FLAG:현Y == 18
 					IF !GETBIT(던전플래그:99:7,17)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,17
 					ENDIF
 				ELSEIF FLAG:현X == 12 && FLAG:현Y == 18
 					IF !GETBIT(던전플래그:99:7,18)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,18
 					ENDIF
 				ELSEIF FLAG:현X == 20 && FLAG:현Y == 18
 					IF !GETBIT(던전플래그:99:7,19)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,19
 					ENDIF
 				ELSEIF FLAG:현X == 4 && FLAG:현Y == 19
 					IF !GETBIT(던전플래그:99:7,20)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,20
 					ENDIF
 				ELSEIF FLAG:현X == 11 && FLAG:현Y == 19
 					IF !GETBIT(던전플래그:99:7,21)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,21
 					ENDIF
 				ELSEIF FLAG:현X == 14 && FLAG:현Y == 19
 					IF !GETBIT(던전플래그:99:7,22)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,22
 					ENDIF
 				ELSEIF FLAG:현X == 19 && FLAG:현Y == 19
 					IF !GETBIT(던전플래그:99:7,23)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,23
 					ENDIF
 				ELSEIF FLAG:현X == 17 && FLAG:현Y ==21
 					IF !GETBIT(던전플래그:99:7,24)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,24
 					ENDIF
 				ELSEIF FLAG:현X == 18 && FLAG:현Y == 22
 					IF !GETBIT(던전플래그:99:7,25)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,25
 					ENDIF
@@ -1013,67 +1013,67 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 21
 				IF FLAG:현X == 6 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:7,26)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,26
 					ENDIF
 				ELSEIF FLAG:현X == 13 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:7,27)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,27
 					ENDIF
 				ELSEIF FLAG:현X == 21 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:7,28)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,28
 					ENDIF
 				ELSEIF FLAG:현X == 12 && FLAG:현Y == 5
 					IF !GETBIT(던전플래그:99:7,29)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,29
 					ENDIF
 				ELSEIF FLAG:현X == 7 && FLAG:현Y == 10
 					IF !GETBIT(던전플래그:99:7,30)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,30
 					ENDIF
 				ELSEIF FLAG:현X == 12 && FLAG:현Y == 10
 					IF !GETBIT(던전플래그:99:7,31)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,31
 					ENDIF
 				ELSEIF FLAG:현X == 22 && FLAG:현Y == 10
 					IF !GETBIT(던전플래그:99:7,32)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,32
 					ENDIF
 				ELSEIF FLAG:현X == 6 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,33)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,33
 					ENDIF
 				ELSEIF FLAG:현X == 13 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,34)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,34
 					ENDIF
 				ELSEIF FLAG:현X == 6 && FLAG:현Y == 26
 					IF !GETBIT(던전플래그:99:7,35)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,35
 					ENDIF
 				ELSEIF FLAG:현X == 21 && FLAG:현Y == 26
 					IF !GETBIT(던전플래그:99:7,36)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,36
 					ENDIF
@@ -1081,55 +1081,55 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 23
 				IF FLAG:현X == 31 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:7,37)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,37
 					ENDIF
 				ELSEIF FLAG:현X == 3 && FLAG:현Y == 20
 					IF !GETBIT(던전플래그:99:7,38)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,38
 					ENDIF
 				ELSEIF FLAG:현X == 1 && FLAG:현Y == 22
 					IF !GETBIT(던전플래그:99:7,39)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,39
 					ENDIF
 				ELSEIF FLAG:현X == 5 && FLAG:현Y == 22
 					IF !GETBIT(던전플래그:99:7,40)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,40
 					ENDIF
 				ELSEIF FLAG:현X == 2 && FLAG:현Y == 24
 					IF !GETBIT(던전플래그:99:7,41)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,41
 					ENDIF
 				ELSEIF FLAG:현X == 4 && FLAG:현Y == 24
 					IF !GETBIT(던전플래그:99:7,42)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,42
 					ENDIF
 				ELSEIF FLAG:현X == 10 && FLAG:현Y == 26
 					IF !GETBIT(던전플래그:99:7,44)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,44
 					ENDIF
 				ELSEIF FLAG:현X == 8 && FLAG:현Y == 31
 					IF !GETBIT(던전플래그:99:7,45)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,45
 					ENDIF
 				ELSEIF FLAG:현X == 24 && FLAG:현Y == 31
 					IF !GETBIT(던전플래그:99:7,46)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,46
 					ENDIF
@@ -1137,73 +1137,73 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 24
 				IF FLAG:현X == 7 && FLAG:현Y == 1
 					IF !GETBIT(던전플래그:99:7,47)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,47
 					ENDIF
 				ELSEIF FLAG:현X == 10 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:7,48)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,48
 					ENDIF
 				ELSEIF FLAG:현X == 7 && FLAG:현Y == 4
 					IF !GETBIT(던전플래그:99:7,49)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,49
 					ENDIF
 				ELSEIF FLAG:현X == 1 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,50)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,50
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 16
 					IF !GETBIT(던전플래그:99:7,51)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,51
 					ENDIF
 				ELSEIF FLAG:현X == 2 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:7,52)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,52
 					ENDIF
 				ELSEIF FLAG:현X == 14 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:7,53)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,53
 					ENDIF
 				ELSEIF FLAG:현X == 1 && FLAG:현Y == 18
 					IF !GETBIT(던전플래그:99:7,54)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,54
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 18
 					IF !GETBIT(던전플래그:99:7,55)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,55
 					ENDIF
 				ELSEIF FLAG:현X == 7 && FLAG:현Y == 30
 					IF !GETBIT(던전플래그:99:7,56)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,56
 					ENDIF
 				ELSEIF FLAG:현X == 10 && FLAG:현Y == 31
 					IF !GETBIT(던전플래그:99:7,57)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,57
 					ENDIF
 				ELSEIF FLAG:현X == 7 && FLAG:현Y == 33
 					IF !GETBIT(던전플래그:99:7,58)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:7,58
 					ENDIF
@@ -1214,73 +1214,73 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 26
 				IF FLAG:현X == 36 && FLAG:현Y == 2
 					IF !GETBIT(던전플래그:99:12,01)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,01
 					ENDIF
 				ELSEIF FLAG:현X == 34 && FLAG:현Y == 4
 					IF !GETBIT(던전플래그:99:12,02)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,02
 					ENDIF
 				ELSEIF FLAG:현X == 38 && FLAG:현Y == 5
 					IF !GETBIT(던전플래그:99:12,03)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,03
 					ENDIF
 				ELSEIF FLAG:현X == 34 && FLAG:현Y == 6
 					IF !GETBIT(던전플래그:99:12,04)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,04
 					ENDIF
 				ELSEIF FLAG:현X == 36 && FLAG:현Y == 8
 					IF !GETBIT(던전플래그:99:12,05)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,05
 					ENDIF
 				ELSEIF FLAG:현X == 24 && FLAG:현Y == 10
 					IF !GETBIT(던전플래그:99:12,06)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,06
 					ENDIF
 				ELSEIF FLAG:현X == 24 && FLAG:현Y == 12
 					IF !GETBIT(던전플래그:99:12,07)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,07
 					ENDIF
 				ELSEIF FLAG:현X == 31 && FLAG:현Y == 17
 					IF !GETBIT(던전플래그:99:12,08)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,08
 					ENDIF
 				ELSEIF FLAG:현X == 31 && FLAG:현Y == 21
 					IF !GETBIT(던전플래그:99:12,09)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,09
 					ENDIF
 				ELSEIF FLAG:현X == 17 && FLAG:현Y == 23
 					IF !GETBIT(던전플래그:99:12,10)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,10
 					ENDIF
 				ELSEIF FLAG:현X == 5 && FLAG:현Y == 35
 					IF !GETBIT(던전플래그:99:12,11)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,11
 					ENDIF
 				ELSEIF FLAG:현X == 5 && FLAG:현Y == 37
 					IF !GETBIT(던전플래그:99:12,12)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,12
 					ENDIF
@@ -1291,7 +1291,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 27
 				IF FLAG:현X == 9 && FLAG:현Y == 9
 					IF !GETBIT(던전플래그:99:12,13)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,13
 					ENDIF
@@ -1302,55 +1302,55 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 29
 				IF FLAG:현X == 17 && FLAG:현Y == 1
 					IF !GETBIT(던전플래그:99:12,14)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,14
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:12,15)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,15
 					ENDIF
 				ELSEIF FLAG:현X == 20 && FLAG:현Y == 6
 					IF !GETBIT(던전플래그:99:12,16)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,16
 					ENDIF
 				ELSEIF FLAG:현X == 11 && FLAG:현Y == 7
 					IF !GETBIT(던전플래그:99:12,17)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,17
 					ENDIF
 				ELSEIF FLAG:현X == 13 && FLAG:현Y == 7
 					IF !GETBIT(던전플래그:99:12,18)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,18
 					ENDIF
 				ELSEIF FLAG:현X == 20 && FLAG:현Y == 7
 					IF !GETBIT(던전플래그:99:12,19)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,19
 					ENDIF
 				ELSEIF FLAG:현X == 13 && FLAG:현Y == 11
 					IF !GETBIT(던전플래그:99:12,20)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,20
 					ENDIF
 				ELSEIF FLAG:현X == 15 && FLAG:현Y == 11
 					IF !GETBIT(던전플래그:99:12,21)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,21
 					ENDIF
 				ELSEIF FLAG:현X == 5 && FLAG:현Y == 15
 					IF !GETBIT(던전플래그:99:12,22)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,22
 					ENDIF
@@ -1361,19 +1361,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 31
 				IF FLAG:현X == 15 && FLAG:현Y == 1
 					IF !GETBIT(던전플래그:99:12,23)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,23
 					ENDIF
 				ELSEIF FLAG:현X == 13 && FLAG:현Y == 2
 					IF !GETBIT(던전플래그:99:12,24)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,24
 					ENDIF
 				ELSEIF FLAG:현X == 11 && FLAG:현Y == 3
 					IF !GETBIT(던전플래그:99:12,25)
-						PRINTFORML レッドオーブ +50
+						PRINTFORML 레드 오브 +50
 						MONEY:99 += 50
 						SETBIT 던전플래그:99:12,25
 					ENDIF
@@ -1390,7 +1390,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■海中通路先の塔
 			CASE 200
 				IF !GETBIT(던전플래그:99:6,4)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,4
 					CALL DUNGEON_WORP,2,36,2
@@ -1398,7 +1398,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■海中通路先の塔
 			CASE 201
 				IF !GETBIT(던전플래그:99:6,5)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,5
 					CALL DUNGEON_WORP,2,34,4
@@ -1406,7 +1406,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■聖堂から塔への橋
 			CASE 202
 				IF !GETBIT(던전플래그:99:6,6)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,6
 					CALL DUNGEON_WORP,2,28,5
@@ -1414,7 +1414,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■海中通路先の塔
 			CASE 205
 				IF !GETBIT(던전플래그:99:6,7)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,7
 					CALL DUNGEON_WORP,2,38,5
@@ -1422,7 +1422,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■海中通路先の塔
 			CASE 206
 				IF !GETBIT(던전플래그:99:6,8)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,8
 					CALL DUNGEON_WORP,2,34,6
@@ -1430,7 +1430,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■海中通路先の塔
 			CASE 207
 				IF !GETBIT(던전플래그:99:6,9)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,9
 					CALL DUNGEON_WORP,2,36,8
@@ -1438,7 +1438,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　書庫
 			CASE 211
 				IF !GETBIT(던전플래그:99:6,10)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,10
 					CALL DUNGEON_WORP,2,22,12
@@ -1446,7 +1446,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　小部屋
 			CASE 215
 				IF !GETBIT(던전플래그:99:6,11)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,11
 					CALL DUNGEON_WORP,2,17,23
@@ -1454,7 +1454,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　階段横
 			CASE 216
 				IF !GETBIT(던전플래그:99:6,2)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,2
 					CALL DUNGEON_WORP,2,13,26
@@ -1462,7 +1462,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　騎士の像손前
 			CASE 217
 				IF !GETBIT(던전플래그:99:6,1)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,1
 					CALL DUNGEON_WORP,2,8,28
@@ -1470,7 +1470,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　複葉機の部屋前
 			CASE 218
 				IF !GETBIT(던전플래그:99:6,3)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,3
 					CALL DUNGEON_WORP,2,14,32
@@ -1478,7 +1478,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　玄関前
 			CASE 219
 				IF !GETBIT(던전플래그:99:6,13)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,13
 					CALL DUNGEON_WORP,2,5,37
@@ -1486,7 +1486,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　マリオネットの部屋
 			CASE 220
 				IF !GETBIT(던전플래그:99:6,14)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,14
 					CALL DUNGEON_WORP,2,15,39
@@ -1494,7 +1494,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城1F　マリオネットの部屋奥
 			CASE 222
 				IF !GETBIT(던전플래그:99:6,15)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,15
 					CALL DUNGEON_WORP,2,15,43
@@ -1502,7 +1502,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 300
 				IF !GETBIT(던전플래그:99:6,16)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,16
 					CALL DUNGEON_WORP,3,12,2
@@ -1510,7 +1510,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 301
 				IF !GETBIT(던전플래그:99:6,17)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,17
 					CALL DUNGEON_WORP,3,14,2
@@ -1518,7 +1518,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 302
 				IF !GETBIT(던전플래그:99:6,18)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,18
 					CALL DUNGEON_WORP,3,12,3
@@ -1526,7 +1526,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 303
 				IF !GETBIT(던전플래그:99:6,19)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,19
 					CALL DUNGEON_WORP,3,15,3
@@ -1534,7 +1534,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 304
 				IF !GETBIT(던전플래그:99:6,20)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,20
 					CALL DUNGEON_WORP,3,15,4
@@ -1542,7 +1542,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 307
 				IF !GETBIT(던전플래그:99:6,21)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,21
 					CALL DUNGEON_WORP,3,15,24
@@ -1550,7 +1550,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　2F
 			CASE 308
 				IF !GETBIT(던전플래그:99:6,22)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,22
 					CALL DUNGEON_WORP,3,13,31
@@ -1558,7 +1558,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 400
 				IF !GETBIT(던전플래그:99:6,23)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,23
 					CALL DUNGEON_WORP,4,6,2
@@ -1566,7 +1566,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 401
 				IF !GETBIT(던전플래그:99:6,24)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,24
 					CALL DUNGEON_WORP,4,14,2
@@ -1574,7 +1574,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 402
 				IF !GETBIT(던전플래그:99:6,25)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,25
 					CALL DUNGEON_WORP,4,1,7
@@ -1582,7 +1582,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 403
 				IF !GETBIT(던전플래그:99:6,26)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,26
 					CALL DUNGEON_WORP,4,1,9
@@ -1590,7 +1590,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 404
 				IF !GETBIT(던전플래그:99:6,27)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,27
 					CALL DUNGEON_WORP,4,1,11
@@ -1598,7 +1598,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 405
 				IF !GETBIT(던전플래그:99:6,28)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,28
 					CALL DUNGEON_WORP,4,1,13
@@ -1606,7 +1606,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 406
 				IF !GETBIT(던전플래그:99:6,29)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,29
 					CALL DUNGEON_WORP,4,1,15
@@ -1614,7 +1614,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 411
 				IF !GETBIT(던전플래그:99:6,30)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,30
 					CALL DUNGEON_WORP,4,8,19
@@ -1622,7 +1622,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 412
 				IF !GETBIT(던전플래그:99:6,31)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,31
 					CALL DUNGEON_WORP,4,16,27
@@ -1630,7 +1630,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■古城ロビー吹き抜け　3F
 			CASE 413
 				IF !GETBIT(던전플래그:99:6,32)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,32
 					CALL DUNGEON_WORP,4,14,32
@@ -1638,7 +1638,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■吹き抜け階段 - 寝室
 			CASE 823
 				IF !GETBIT(던전플래그:99:6,33)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,33
 					CALL DUNGEON_WORP,8,7,16
@@ -1646,7 +1646,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■5F　寝室屋根上
 			CASE 910
 				IF !GETBIT(던전플래그:99:6,34)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,34
 					CALL DUNGEON_WORP,9,9,13
@@ -1654,7 +1654,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■地下水路
 			CASE 1001
 				IF !GETBIT(던전플래그:99:6,35)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,35
 					CALL DUNGEON_WORP,10,13,9
@@ -1662,7 +1662,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■太陽の紋章先
 			CASE 1107
 				IF !GETBIT(던전플래그:99:6,39)
-					PRINTFORML レッドオーブ +5
+					PRINTFORML 레드 오브 +5
 					MONEY:99 += 5
 					SETBIT 던전플래그:99:6,39
 					CALL DUNGEON_WORP,11,9,16
@@ -1677,11 +1677,11 @@ ENDSELECT
 ;=======================================================================
 @JIKU_GOD_STATUE
 CUSTOMDRAWLINE =
-CALL MESSAGE_WINDOW_D, "", "＞ 時の傍観者たる時空神像がある/歴史のすべてを把握、記憶する神だ "
-CALL MESSAGE_WINDOW_D, "", @"＞ 現在のレッドオーブの所持数　{MONEY:99}/　　どうする？ "
-PRINTFORML [ 0] セーブする
-PRINTFORML [ 1] レッドオーブを使用する
-PRINTFORML [ 2] その場を離れる
+CALL MESSAGE_WINDOW_D, "", "＞ 시간의 방관자인 시공신상이 있다/역사의 모든 것을 파악, 기억하는 신이다 "
+CALL MESSAGE_WINDOW_D, "", @"＞ 현재 레드 오브의 소지 수　{MONEY:99}/　　무얼 할 것인지？ "
+PRINTFORML [ 0] 세이브 한다
+PRINTFORML [ 1] 레드 오브를 사용한다
+PRINTFORML [ 2] 그 자리를 뜬다
 INPUT
 IF RESULT == 0
 	CALL TITLE_SAVEGAME
@@ -1694,28 +1694,28 @@ ENDIF
 @ORB_SHOP
 $ORB_SHOP_99
 DRAWLINE
-PRINTFORML レッドオーブや블루오브의조각を소비して、아이템を취득できます
+PRINTFORML 레드 오브나 블루 오브 조각을 소비하여、아이템을 취득할 수 있습니다.
 PRINTFORML RO：{MONEY:99} / BO：{ITEM:블루오브의조각}
 PRINTFORML 
 PRINTFORML [ 0] 데빌스타　　RO x 550
 PRINTFORML  
 PRINTFORML [ 1] 인내력의향　　　　BO x 4
 PRINTFORML  
-PRINTFORML [ 2] やはりやめておく
+PRINTFORML [ 2] 역시 그만둔다
 INPUT
 IF RESULT == 0
 	PRINTFORML  【데빌스타】
-	PRINTFORML  ＞ 마력を結晶にした石
-	PRINTFORML  ＞ 데빌트리거ゲージを50分회복する
+	PRINTFORML  ＞ 마력을 결정으로 한 돌
+	PRINTFORML  ＞ 악마 트리거 게이지를 50 정도 회복하다
 	PRINTFORML  
-	PRINTFORML  レッドオーブを550소비して취득しますか？
-	CALL INPUT_YN, "취득する", "しない"
+	PRINTFORML  레드 오브를 550 소비해서 취득하겠습니까？
+	CALL INPUT_YN, "취득한다", "하지않는다"
 		IF RESULT == 0
 			IF MONEY:99 < 550
-				PRINTFORMW  レッドオーブが不足しています
+				PRINTFORMW  레드 오브가 부족합니다
 				RESTART
 			ELSEIF ITEM:데빌스타 == 5
-				PRINTFORMW  소지수の限界です
+				PRINTFORMW  소지수의 한계입니다
 				RESTART
 			ELSE
 				MONEY:99 -= 550
@@ -1728,16 +1728,16 @@ IF RESULT == 0
 		ENDIF
 ELSEIF RESULT == 1
 	PRINTFORML  【인내력의향】
-	PRINTFORML  ＞ 인내력の基礎値を１上げる香炉
+	PRINTFORML  ＞ 인내력의 기초치를 1위로 올리는 향
 	PRINTFORML  
-	PRINTFORML  블루오브의조각を4つ소비して취득しますか？
-	CALL INPUT_YN, "취득する", "しない"
+	PRINTFORML  블루오브의조각을 4개 소비하여 얻으시겠습니까？
+	CALL INPUT_YN, "취득한다", "하지않는다"
 		IF RESULT == 0
 			IF ITEM:블루오브의조각 < 4
-				PRINTFORMW  블루오브의조각が不足しています
+				PRINTFORMW  블루오브의조각가 부족합니다
 				RESTART
 			ELSEIF ITEM:인내력의향 == 99
-				PRINTFORMW  소지수の限界です
+				PRINTFORMW  소지수의 한계입니다
 				RESTART
 			ELSE
 				ITEM:블루오브의조각 -= 4

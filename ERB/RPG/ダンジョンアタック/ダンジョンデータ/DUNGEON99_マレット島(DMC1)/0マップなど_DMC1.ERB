@@ -64,7 +64,7 @@
 ;　3　古城へ侵入(1と2消滅)
 ;　4　아라스톨입수이벤트後の회화
 ;　5　グリフォン戦後、단테회화
-;　6　트리슈合流
+;　6　트리쉬合流
 ;　7　ドリーグ설명
 
 ;던전플래그:99:6 レッドオーブ취득フラグ(BIT計算 0:未입수 1:입수済)
@@ -273,14 +273,14 @@ IF LOCAL:1 != 99
 				CASE 35
 					IF ARG == 7 && ARG:1 == 1
 						IF !GETBIT(던전플래그:99:4,34)
-							CALL MESSAGE_WINDOW_D, "", "＞　強い마력で封じられている "
+							CALL MESSAGE_WINDOW_D, "", "＞　강한 마력으로 봉쇄되어 있다 "
 							RETURN 0
 						ENDIF
 					ENDIF
 				CASE 36
 					IF ARG == 18 && ARG:1 == 1
 						IF !GETBIT(던전플래그:99:4,38)
-							CALL MESSAGE_WINDOW_D, "", "＞　巨大な門だ/　　強い마력で封印されている "
+							CALL MESSAGE_WINDOW_D, "", "＞　거대한 문이다/　　강한 마력으로 봉인되어 있다 "
 							RETURN 0
 						ENDIF
 					ENDIF
@@ -289,7 +289,7 @@ IF LOCAL:1 != 99
 					RETURN 1
 			ENDSELECT
 		ELSE
-			PRINTW 高すぎてよじ登れない…
+			PRINTW 너무 높아서 기어오를 수 없다…
 			RETURN 0
 		ENDIF
 	ENDIF
@@ -300,21 +300,21 @@ SELECTCASE DA:ARG:(ARG:1)
 	CASE 2
 		;■ロビー扉
 		IF FLAG:현M == 2 && ARG == 8 && ARG:1 == 34 && !GETBIT(던전플래그:99:4,1)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/45個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
+			CALL MESSAGE_WINDOW_D, "", @"＞　이 문은 봉인되어 있다/45개의 레드 오브가 필요하다/레드 오브 소지수：{MONEY:99} "
 			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　레드 오브를 소비해서 문을 개방했다. "
 				MONEY:99 -= 45
 				SETBIT 던전플래그:99:4,1
 			ENDIF
 			RETURN 0
 		;■複葉機の部屋扉
 		ELSEIF FLAG:현M == 2 && ARG == 16 && ARG:1 == 30 && !GETBIT(던전플래그:99:4,2)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている/　　開くには古びた鍵が필요だ "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 닫혀 있다 /　　열기 위해서는 낡은 열쇠가 필요하다 "
 			IF 던전플래그:99:3 == 1
-				CALL MESSAGE_WINDOW_D, "", "＞　古びた鍵　を使いますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　낡은 열쇠를 사용합니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+						CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 						SETBIT 던전플래그:99:4,2
 					ENDIF
 			ENDIF
@@ -322,145 +322,145 @@ SELECTCASE DA:ARG:(ARG:1)
 		;■玄関前
 		ELSEIF FLAG:현M == 2 && ARG == 8 && ARG:1 == 38
 			IF 던전플래그:99:1 < 15
-				CALL MESSAGE_WINDOW_D, "", "＞　重い鉄の落とし格子が降りている "
+				CALL MESSAGE_WINDOW_D, "", "＞　무거운 쇠창살이 내려져 있다 "
 				RETURN 0
 			ENDIF
 		ELSEIF FLAG:현M == 2 && ARG == 8 && ARG:1 == 42 && 던전플래그:99:1 < 6
 			IF 던전플래그:99:1 < 14
-				CALL MESSAGE_WINDOW_D, "", "＞　跳ね橋が上がっていて、今外へ出ても仕方がないようだ "
+				CALL MESSAGE_WINDOW_D, "", "＞　도개교가 올려져 있어서 지금 밖에 나갈 방법은 없는 것 같다 "
 				RETURN 0
 			ENDIF
 		;■複葉機の部屋내부扉
 		ELSEIF FLAG:현M == 2 && ARG == 18 && ARG:1 == 27 && 던전플래그:99:1 == 0
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 잠겨 있다 "
 			RETURN 0
 		;■書庫の扉
 		ELSEIF FLAG:현M == 2 && ARG == 23 && ARG:1 == 11 && 던전플래그:99:1 < 2
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 잠겨 있다 "
 			RETURN 0
 		;■獅子の間扉
 		ELSEIF FLAG:현M == 2 && ARG == 30 && ARG:1 == 19 && !GETBIT(던전플래그:99:4,3)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている/　　開くには古びた鍵が필요だ "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 잠겨 있다/　　열려면 낡은 열쇠가 필요하다 "
 			IF 던전플래그:99:3 == 2
-				CALL MESSAGE_WINDOW_D, "", "＞　古びた鍵　を使いますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　낡은 열쇠를 사용합니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+						CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 						SETBIT 던전플래그:99:4,3
 					ENDIF
 			ENDIF
 			RETURN 0
 		;■聖堂扉
 		ELSEIF FLAG:현M == 2 && ARG == 25 && ARG:1 == 8 && !GETBIT(던전플래그:99:4,5)
-			CALL MESSAGE_WINDOW_D, "", "＞　死を司る裁判官のレリーフだ/　　杖をはめこむ場所がある "
+			CALL MESSAGE_WINDOW_D, "", "＞　죽음의 재판관 석상이다/　　지팡이를 끼워 넣는 장소가 있다 "
 			IF 던전플래그:99:3 == 3
-				CALL MESSAGE_WINDOW_D, "", "＞　裁きの宝杖　を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　심판의 보장을 사용하시겠습니까？ "
 			CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 					SETBIT 던전플래그:99:4,5
 				ENDIF
 			ENDIF
 			RETURN 0
 		;■獅子の間2F扉
 		ELSEIF FLAG:현M == 6 && ARG == 13 && ARG:1 == 9 && !GETBIT(던전플래그:99:4,6)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 잠겨 있다 "
 			RETURN 0
 		;■吹き抜け階段　最下層　地下水路への扉
 		ELSEIF FLAG:현M == 8 && ARG == 2 && ARG:1 == 4 && !GETBIT(던전플래그:99:4,7)
-			CALL MESSAGE_WINDOW_D, "", "＞　強힘な힘で封印されている "
-			CALL MESSAGE_WINDOW_D, "", "『この道は霊の導きで開かれる』 "
+			CALL MESSAGE_WINDOW_D, "", "＞　강력한 힘으로 봉인되어 있다 "
+			CALL MESSAGE_WINDOW_D, "", "『이 길은 영의 인도로 열린다』 "
 			IF 던전플래그:99:3 == 6
-				CALL MESSAGE_WINDOW_D, "", "＞　憂鬱なる魂を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　우울한 영혼을 사용하시겠습니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 封印が解かれた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 봉인이 풀렸다 "
 					SETBIT 던전플래그:99:4,7
 				ENDIF
 			ENDIF
 			RETURN 0
 		;■地下水路
 		ELSEIF FLAG:현M == 10 && ARG == 19 && ARG:1 == 11 && !GETBIT(던전플래그:99:4,8)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封じられている/　　開くには古びた鍵が필요だ "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 닫혀 있다 /　　열기 위해서는 낡은 열쇠가 필요하다 "
 			IF 던전플래그:99:3 == 7
-				CALL MESSAGE_WINDOW_D, "", "＞　古びた鍵　を使いますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　낡은 열쇠를 사용합니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+						CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 						SETBIT 던전플래그:99:4,8
 					ENDIF
 			ENDIF
 			RETURN 0
 		;■太陽の紋章先
 		ELSEIF FLAG:현M == 11 && ARG == 12 && ARG:1 == 11 && 던전플래그:99:1 < 13
-			CALL MESSAGE_WINDOW_D, "", "＞　重い鉄の落とし格子が降りている "
+			CALL MESSAGE_WINDOW_D, "", "＞　무거운 쇠창살이 내려져 있다 "
 			RETURN 0
 		;■闘技場　盾の扉：赤
 		ELSEIF FLAG:현M == 14 && ARG == 24 && ARG:1 == 6 && !GETBIT(던전플래그:99:4,18)
-			CALL MESSAGE_WINDOW_D, "", "＞　扉に赤い光を放つ盾の紋章が刻まれている "
+			CALL MESSAGE_WINDOW_D, "", "＞　문에 붉은 빛을 발하는 방패 문양이 새겨져 있다 "
 			IF 던전플래그:99:3 >= 13
-				CALL MESSAGE_WINDOW_D, "", "＞　小さな紋章の盾　を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　작은 문장의 방패를 사용하시겠습니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 					SETBIT 던전플래그:99:4,18
 				ENDIF
 			ENDIF
 			RETURN 0
 		;■闘技場　盾の扉：青
 		ELSEIF FLAG:현M == 14 && ARG == 24 && ARG:1 == 18 && !GETBIT(던전플래그:99:4,19)
-			CALL MESSAGE_WINDOW_D, "", "＞　扉に青い光を放つ盾の紋章が刻まれている "
+			CALL MESSAGE_WINDOW_D, "", "＞　문에 푸른 빛을 발하는 방패 문양이 새겨져 있다 "
 			IF 던전플래그:99:3 >= 13
-				CALL MESSAGE_WINDOW_D, "", "＞　小さな紋章の盾　を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　작은 문장의 방패를 사용하시겠습니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 					SETBIT 던전플래그:99:4,19
 				ENDIF
 			ENDIF
 			RETURN 0
 		;■闘技場　騎士の扉
 		ELSEIF FLAG:현M == 14 && ARG == 24 && ARG:1 == 12 && !GETBIT(던전플래그:99:4,20)
-			CALL MESSAGE_WINDOW_D, "", "＞　レリーフに騎士が刻まれている/　　対になっているようだ "
-			CALL MESSAGE_WINDOW_D, "", "＞　何かが掛けられる様になっており/　　その下には文字が刻まれている "
-			CALL MESSAGE_WINDOW_D, "", "『光を放つ盾と対なる二本の창/　　　全ては戦いの場に繋がる』 "
+			CALL MESSAGE_WINDOW_D, "", "＞　조각에 기사가 새겨져 있다/　　짝을 이룬 것 같다 "
+			CALL MESSAGE_WINDOW_D, "", "＞　무언가 걸 수 있게 되어 있고/　　그 밑에는 글자가 새겨져 있다 "
+			CALL MESSAGE_WINDOW_D, "", "『빛을 발하는 방패와 맞서는 두 개의 창/　　　모든 것은 싸움터로 이어진다』 "
 			IF 던전플래그:99:3 >= 14
-				CALL MESSAGE_WINDOW_D, "", "＞　対なる二창　を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　한 쌍의 창을　사용하시겠습니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 鍵を開けた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 열쇠로 문을 열었다. "
 					SETBIT 던전플래그:99:4,20
 				ENDIF
 			ENDIF
 			RETURN 0
 		;■闘技場　篝火の扉
 		ELSEIF FLAG:현M == 14 && ARG == 24 && ARG:1 == 23 && !GETBIT(던전플래그:99:4,10)
-			CALL MESSAGE_WINDOW_D, "", "＞　文字が刻まれている "
-			CALL MESSAGE_WINDOW_D, "", "『힘宿る二つの炎が道を開く』 "
+			CALL MESSAGE_WINDOW_D, "", "＞　글자가 새겨져 있다 "
+			CALL MESSAGE_WINDOW_D, "", "『힘이 깃든 두 개의 불꽃이 길을 연다』 "
 			IF 던전플래그:99:1 == 19
-				CALL MESSAGE_WINDOW_D, "", "＞　이프리트の힘を使い篝火を灯すと、扉が開いた "
+				CALL MESSAGE_WINDOW_D, "", "＞　이프리트의 힘을 사용하여 화톳불을 밝히자 문이 열렸다 "
 				SETBIT 던전플래그:99:4,10
 			ENDIF
 			RETURN 0
 		;■海賊船　船上
 		ELSEIF FLAG:현M == 21 && ARG == 4 && ARG:1 == 3
 			IF 던전플래그:99:1 > 23
-				CALL MESSAGE_WINDOW_D, "", "＞　水圧がかかって、扉を開けそうにない "
+				CALL MESSAGE_WINDOW_D, "", "＞　수압때문에 문이 열릴 것 같지 않다 "
 				RETURN 0
 			ELSEIF 던전플래그:99:1 < 22
-				CALL MESSAGE_WINDOW_D, "", "＞　船長室への扉は固く閉ざされている/　　何か書かれている "
-				CALL MESSAGE_WINDOW_D, "", "「我は冥界の狭間行く亡者の船」"
-				CALL MESSAGE_WINDOW_D, "", "「舟守を倒せ　その時こそ/　　セントエルモの火を授けよう」 "
-				CALL MESSAGE_WINDOW_D, "", "＞　その文字を読んだ途端、上空に気配が産まれた "
-				CALL MESSAGE_WINDOW_D, "", "＞　デスサイズが襲いかかってきた！ "
+				CALL MESSAGE_WINDOW_D, "", "＞　선장실로 가는 문이 굳게 닫혀 있다/　　뭔가 적혀 있다 "
+				CALL MESSAGE_WINDOW_D, "", "「우리는 저승길에 있는 망자의 배」"
+				CALL MESSAGE_WINDOW_D, "", "「뱃사람을 쓰러뜨려라 그때야말로/　　세인트 엘모의 불을 내리자」 "
+				CALL MESSAGE_WINDOW_D, "", "＞　그 글자를 읽는 순간、상공에 기척이 생겼다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　데스사이즈가 덮쳐왔다！ "
 				
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
 				CALL SET_ENEMY,9,[[キャラ:체르노보그]],60,0,1
-				NAME:(CHARANUM-1) = デス サイズ
-				CALLNAME:(CHARANUM-1) = デス サイズ
+				NAME:(CHARANUM-1) = 데스 사이즈
+				CALLNAME:(CHARANUM-1) = 데스 사이즈
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CALL SYNC_STATUS, (CHARANUM-1)
@@ -473,47 +473,47 @@ SELECTCASE DA:ARG:(ARG:1)
 				FLAG:선제기습취소 = 0
 				FLAG:미조우걸음수 = 0
 				
-				CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+				CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 				MONEY:99 += 100
 				
 				FORCEWAIT
 				던전플래그:99:1 = 22
-				CALL MESSAGE_WINDOW_D, "", "＞　舟守を倒すと、船首、マスト、船꼬리など4箇所に白い火が灯り船が動き出した "
+				CALL MESSAGE_WINDOW_D, "", "＞　뱃사람을 쓰러뜨리자 뱃머리, 돛대, 배꼬리 등 네 곳에 흰 불이 켜지고 배가 움직이기 시작했다 "
 				RETURN 0
 			ENDIF
 		;■山岳地
 		ELSEIF FLAG:현M == 23 && ARG == 14 && ARG:1 == 25 && !GETBIT(던전플래그:99:4,15)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/200個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
-			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
+			CALL MESSAGE_WINDOW_D, "", @"＞　이 문은 봉인되어 있다 / 200개의 레드 오브가 필요하다 / 레드 오브 소지수：{MONEY:99} "
+			IF MONEY:99 >=200
+				CALL MESSAGE_WINDOW_D, "", "＞　레드 오브를 소비하여 문을 열었다 "
 				MONEY:99 -= 200
 				SETBIT 던전플래그:99:4,15
 			ENDIF
 			RETURN 0
 		ELSEIF FLAG:현M == 23 && ARG == 5 && ARG:1 == 27 && !GETBIT(던전플래그:99:4,16)
-			CALL MESSAGE_WINDOW_D, "", @"＞　この扉は封印されている/100個のレッドㆍオーブが필요だ/レッドㆍオーブ소지수：{MONEY:99} "
-			IF MONEY:99 >=45
-				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
+			CALL MESSAGE_WINDOW_D, "", @"＞　이 문은 봉인되어 있다 / 100개의 레드 오브가 필요하다 / 레드 오브 소지수：{MONEY:99} "
+			IF MONEY:99 >=100
+				CALL MESSAGE_WINDOW_D, "", "＞　레드 오브를 소비하여 문을 열었다 "
 				MONEY:99 -= 100
 				SETBIT 던전플래그:99:4,16
 			ENDIF
 			RETURN 0
 		;■古城ㆍ後編　1F
 		ELSEIF FLAG:현M == 26 && ARG == 16 && ARG:1 == 30 && !GETBIT(던전플래그:99:4,24)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 봉인되어 있다 "
 			RETURN 0
 		ELSEIF FLAG:현M == 26 && ARG == 27 && ARG:1 == 5 && !GETBIT(던전플래그:99:4,25)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 봉인되어 있다 "
 			RETURN 0
 		;■闘技場の絵
 		ELSEIF FLAG:현M == 28 && ARG == 6 && ARG:1 == 21 && !GETBIT(던전플래그:99:4,28)
-			CALL MESSAGE_WINDOW_D, "", "＞　固く閉ざされている/　　扉の中央に丸い穴が開いている "
-			CALL MESSAGE_WINDOW_D, "", "「月の光を閉じ込めし珠を見せよ」 "
+			CALL MESSAGE_WINDOW_D, "", "＞　굳게 닫혀 있다/　　문 중앙에 둥근 구멍이 뚫려 있다 "
+			CALL MESSAGE_WINDOW_D, "", "「달빛을 가두어 진주를 보여라」 "
 			IF 던전플래그:99:3 >= 16
-				CALL MESSAGE_WINDOW_D, "", "＞　月光水　を사용しますか？ "
+				CALL MESSAGE_WINDOW_D, "", "＞　월광수 를 사용합니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 				IF !RESULT
-					CALL MESSAGE_WINDOW_D, "", "＞ 月光水　を사용して鍵を開けた "
+					CALL MESSAGE_WINDOW_D, "", "＞ 월광수 를 열쇠로 사용하여 문을 열었다 "
 					SETBIT 던전플래그:99:4,28
 				ENDIF
 			ENDIF
@@ -521,7 +521,7 @@ SELECTCASE DA:ARG:(ARG:1)
 		;■魔界　最深部
 		ELSEIF FLAG:현M == 36 && ARG == 15 && ARG:1 == 16
 			IF !GETBIT(던전플래그:99:4,35)
-				CALL MESSAGE_WINDOW_D, "", "＞　巨大な爪のようなものが入り口を塞いでいる/　　自힘では動かせそうにない "
+				CALL MESSAGE_WINDOW_D, "", "＞　거대한 손톱 같은 것이 입구를 막고 있다/　　자력으로는 움직일 수 없을 것 같다 "
 				RETURN 0
 			ENDIF
 		
@@ -536,7 +536,7 @@ SELECTCASE DA:ARG:(ARG:1)
 	;■聖堂내부　獅子の誇り
 	CASE 2004
 		IF 던전플래그:99:1 < 4
-			CALL MESSAGE_WINDOW_D, "", "＞　強힘な힘でこれ이상近づけない "
+			CALL MESSAGE_WINDOW_D, "", "＞　강력한 힘에 의해 이 이상 접근할 수 없다 "
 			RETURN 0
 		ENDIF
 	;■書庫내부　隠し扉
@@ -545,29 +545,29 @@ SELECTCASE DA:ARG:(ARG:1)
 			RETURN 0
 	;■海中通路先　塔
 	CASE 2014
-			CALL MESSAGE_WINDOW_D, "", "＞　「道を戻り、汝が勇猛さで奈落の底から帰り給え」 "
+			CALL MESSAGE_WINDOW_D, "", "＞　「길을 되돌아와、네가 용맹함으로 나락의 밑바닥에서 돌아와라」 "
 			RETURN 0
 	;■獅子の間　獅子の像
 	CASE 2139
 		IF 던전플래그:99:1 < 6
 			IF 던전플래그:99:1 < 6
-				CALL MESSAGE_WINDOW_D, "", "＞　強힘な힘でこれ이상近づけない "
-				CALL MESSAGE_WINDOW_D, "", "＞　獅子と対面するには「証」が필요だ "
+				CALL MESSAGE_WINDOW_D, "", "＞　강력한 힘에 의해 이 이상 접근할 수 없다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　사자와 대면하려면「증표」가 필요하다 "
 				IF 던전플래그:99:3 == 4
-					CALL MESSAGE_WINDOW_D, "", "＞ 獅子の誇りを사용しますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞ 사자의 긍지를 이용하시겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 獅子の像を覆う힘場が消滅した "
+						CALL MESSAGE_WINDOW_D, "", "＞ 사자상을 덮는 역장이 소멸했다 "
 						던전플래그:99:1 = 6
 				ENDIF
 			ENDIF
 		ELSEIF 던전플래그:99:1 == 6
-			CALL MESSAGE_WINDOW_D, "", "『ここに門番を封ずるなり/魔の힘での破壊が門番を解き放つ』 "
-			CALL MESSAGE_WINDOW_D, "", "＞　獅子の像を破壊しますか？ "
+			CALL MESSAGE_WINDOW_D, "", "『여기에 문지기를 봉하든지 / 마의 힘으로의 파괴하여 문지기를 해방시킨다』 "
+			CALL MESSAGE_WINDOW_D, "", "＞　사자상을 파괴하시겠습니까？ "
 				CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 獅子の像を破壊すると、跡から影が染み出し襲いかかってきた！ "
-						CALL MESSAGE_WINDOW_D, "", "＞ 섀도우　が一体出た！ "
+						CALL MESSAGE_WINDOW_D, "", "＞ 사자상을 파괴하자 흔적에서 그림자가 스며나와 덤벼들었다！ "
+						CALL MESSAGE_WINDOW_D, "", "＞ 섀도우　가 1체 나타났다！ "
 						
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
@@ -587,7 +587,7 @@ SELECTCASE DA:ARG:(ARG:1)
 						
 						CALL BATTLE_START
 						FORCEWAIT
-						CALL MESSAGE_WINDOW_D, "", "＞ 악마を倒すと、封じていた힘が消え去った気配がする…… "
+						CALL MESSAGE_WINDOW_D, "", "＞ 악마를 쓰러뜨리자 봉했던 힘이 사라진 기미가 보인다…… "
 						FLAG:선제공격플래그 = 0
 						FLAG:도주불가플래그 = 0
 						FLAG:회화불능플래그 = 0
@@ -595,20 +595,20 @@ SELECTCASE DA:ARG:(ARG:1)
 						FLAG:인카운트율 = 0
 						FLAG:미조우걸음수 = 0
 						
-						CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+						CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 						MONEY:99 += 100
 						
 						던전플래그:99:1 = 7
 						SETBIT 던전플래그:99:4,6
 					ENDIF
 		ELSEIF 던전플래그:99:1 == 7
-			CALL MESSAGE_WINDOW_D, "", "＞　もうなにもないようだ "
+			CALL MESSAGE_WINDOW_D, "", "＞　이젠 아무것도 없는 것 같다 "
 		ENDIF
 		RETURN 0
 	;■獅子の間　中央　隠しRオーブ
 	CASE 2149
 		IF !GETBIT(던전플래그:99:6,12)
-			CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+			CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,12
 		ENDIF
@@ -620,7 +620,7 @@ SELECTCASE DA:ARG:(ARG:1)
 	;■
 	CASE 11069
 		IF !GETBIT(던전플래그:99:6,38)
-			CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+			CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 			MONEY:99 += 100
 			SETBIT 던전플래그:99:6,38
 		ENDIF
@@ -632,14 +632,14 @@ SELECTCASE DA:ARG:(ARG:1)
 	;■闘技場　霧深き渓谷への扉
 	CASE 14029
 		IF !GETBIT(던전플래그:99:4,17)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 봉인되어 있다 "
 			RETURN 0
 		ENDIF
 	CASE 14049
 		IF !GETBIT(던전플래그:99:4,11)
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている/　　この封印を解くには、200個のレッドㆍオーブが필요だ "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 봉인되어 있다/　　이 봉인을 풀기 위해서는 200개의 레드 오브가 필요하다 "
 			IF MONEY:99 >=200
-				CALL MESSAGE_WINDOW_D, "", "＞　レッドㆍオーブを소비して扉を개방した "
+				CALL MESSAGE_WINDOW_D, "", "＞　레드 오브를 소비하여 문을 열었다 "
 				MONEY:99 -= 200
 				SETBIT 던전플래그:99:4,11
 			ENDIF
@@ -648,18 +648,18 @@ SELECTCASE DA:ARG:(ARG:1)
 	;■성배堂前
 	CASE 17009
 		IF 던전플래그:99:1 < 20
-			CALL MESSAGE_WINDOW_D, "", "＞　この扉は封印されている "
+			CALL MESSAGE_WINDOW_D, "", "＞　이 문은 봉인되어 있다 "
 			RETURN 0
 		ENDIF
 	;■성배堂	
 	CASE 18004
 		IF 던전플래그:99:1 < 21
-			CALL MESSAGE_WINDOW_D, "", "＞　強力な力でこれ以上近づけない "
+			CALL MESSAGE_WINDOW_D, "", "＞　강력한 힘으로 더 이상 접근할 수 없다"
 			RETURN 0
 		ENDIF
 	CASE 18014
 		IF !GETBIT(던전플래그:99:4,12)
-			CALL MESSAGE_WINDOW_D, "", "＞　崩れかけている壁を壊した "
+			CALL MESSAGE_WINDOW_D, "", "＞　붕괴되어 있는 벽을 부쉈다 "
 			SETBIT 던전플래그:99:4,12
 		ENDIF
 	CASE 18009
@@ -667,40 +667,40 @@ SELECTCASE DA:ARG:(ARG:1)
 			RETURN 0
 	;■海賊船　船底
 	CASE 20014
-		CALL MESSAGE_WINDOW_D, "", "＞　船体を止め置く巨大なイカリを/　　巻き上げるためのキャプスタンだ "
+		CALL MESSAGE_WINDOW_D, "", "＞　선체를 고정시키는 거대한 닻을/　　감아 올리기 위한 캡스턴이다 "
 		RETURN 0
 	CASE 20006
 		IF 던전플래그:99:1 >= 24
-			CALL MESSAGE_WINDOW_D, "", "＞　沈没の影響か、崩れてしまっている/　　他の탈출입を探すしかなさそうだ "
+			CALL MESSAGE_WINDOW_D, "", "＞　침몰의 영향인지 무너져있다/　　다른 길을 찾을 수 밖에 없는 것 같다 "
 			RETURN 0
 		ENDIF
 	;■漂流地
 	CASE 22029
 		IF 던전플래그:99:1 < 25
-			CALL MESSAGE_WINDOW_D, "", "＞　鉄柵が降りていて進めない "
+			CALL MESSAGE_WINDOW_D, "", "＞　철책이 내려져 있어서 나아갈 수 없다 "
 			RETURN 0
 		ENDIF
 	;■山岳地
 	CASE 23059
 		IF !GETBIT(던전플래그:99:4,17)
-			CALL MESSAGE_WINDOW_D, "", "＞　封印を解いた "
+			CALL MESSAGE_WINDOW_D, "", "＞　봉인을 풀었다 "
 			SETBIT 던전플래그:99:4,17
 		ENDIF
 	;■闘技場　地下
 	CASE 24004
 		IF !GETBIT(던전플래그:99:4,21)
-			CALL MESSAGE_WINDOW_D, "", "＞　崩れかけている壁を壊した "
+			CALL MESSAGE_WINDOW_D, "", "＞　붕괴되어 있는 벽을 부쉈다 "
 			SETBIT 던전플래그:99:4,21
 		ENDIF
 	CASE 24134
 		IF !GETBIT(던전플래그:99:4,22)
-			CALL MESSAGE_WINDOW_D, "", "＞　崩れかけている壁を壊した "
+			CALL MESSAGE_WINDOW_D, "", "＞　붕괴되어 있는 벽을 부쉈다 "
 			SETBIT 던전플래그:99:4,22
 		ENDIF
 	;■闘技場の絵
 	CASE 28009,28019,28039,28049
 		IF !GETBIT(던전플래그:99:4,27)
-			CALL MESSAGE_WINDOW_D, "", "＞　竜の力で封じられ、先へ進むことができない "
+			CALL MESSAGE_WINDOW_D, "", "＞　용의 힘으로 봉쇄되어 앞으로 나아갈 수 없다 "
 			RETURN 0
 		ENDIF
 	;■浸水牢獄
@@ -1723,14 +1723,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			;■開始地点　登攀
 			CASE 0
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,1,12,6
 			;■開始地点：上段　降り
 			CASE 100
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから下に飛び降りることもできるが…… "
-				CALL INPUT_YN_D, "飛び降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,0,13,6
 		;---------
@@ -1739,18 +1739,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■聖堂　獅子の誇り
 			CASE 200
 				IF 던전플래그:99:1 == 4
-					CALL MESSAGE_WINDOW_D, "", "【獅子の誇り】/＞　獅子の門番との対面が許される強者の証 "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "【사자의 긍지】/＞　사자 문지기와의 대면이 허용되는 강자의 증거 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　獅子の誇り　을 손에 넣었다 "
-						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%が獅子を模した紋章を손に取ると同時か/　　その거체は背後に降り立ち、莫大な熱とともに巨大な威圧感を放ちだす "
-						CALL MESSAGE_WINDOW_D, "단테", "「まったく、サービス정신旺盛だな」/　단테は입笛を吹き余裕の表情だ/　どうやらコレもかつてと同じなのだろう……となると、もちろんその強さも "
-						CALL MESSAGE_WINDOW_D, "팬텀", "「なんだ　このチビ共は？」 "
-						CALL MESSAGE_WINDOW_D, "팬텀", "「大きな闘気を感じたが……/　　　ただの인간か」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　거체に見合った顔をこちらへ寄せ一行を見やる様は/　　いかにも힘自慢といった傲慢な自信に溢れている "
-						CALL MESSAGE_WINDOW_D, "단테", "「よう化け物　相変わらず暑苦しいな」/「今度はちゃんと、筋肉이외も詰めてきたか？」 "
-						CALL MESSAGE_WINDOW_D, "팬텀", "「ほざいたな　虫ケラ」/「踏み潰してやるわ！」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　악마　팬텀が襲いかかってきた！ "
+						CALL MESSAGE_WINDOW_D, "", "＞　사자의 긍지　를 손에 넣었다 "
+						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%이 사자를 본뜬 문장을 손에 쥐는 동시에/　　그 거구는 등뒤에 내려와 엄청난 열과 함께 거대한 위압감을 내뿜는다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「나원참、서비스 정신이 투철하구만」/　단테는 휘파람을 불며 여유로운 표정이다. /　아무래도 이것도 예전과 같을 것이다………라는 것인가, 물론 그 강함도 포함해서 "
+						CALL MESSAGE_WINDOW_D, "팬텀", "「뭐야 이 꼬맹이들은？」 "
+						CALL MESSAGE_WINDOW_D, "팬텀", "「큰 투기를 느꼈지만……/　　　그냥 인간인가」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　거구에 걸맞은 얼굴을 이쪽으로 기대고 일행을 지켜보는 모양새는/　　자못 힘자랑이라는 오만한 자신감이 넘친다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「어이 괴물　여전히 덥구나」/「이번에는 제대로 근육 이외에도 잘 채워왔나？」 "
+						CALL MESSAGE_WINDOW_D, "팬텀", "「지껄였겠다　버러지가」/「밟아 뭉개버려주마！」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　악마　팬텀이 덤벼들기 시작했다！ "
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
@@ -1763,10 +1763,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 						FLAG:선제기습취소 = 0
 						FLAG:미조우걸음수 = 0
 						FORCEWAIT
-						CALL MESSAGE_WINDOW_D, "", "＞　熔岩蜘蛛は劣勢と見るや、身を翻し去っていった…… "
-						CALL MESSAGE_WINDOW_D, "단테", "「まあ、中ボスってやつだ/アトラクションはいよいよ本番へ、ってな」 "
-						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%は軽いノリに相槌を打ちつつも先へと歩みを進めた…… "
-						CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+						CALL MESSAGE_WINDOW_D, "", "＞　용암 거미는 열세가 되자 몸을 돌려 도망쳤다…… "
+						CALL MESSAGE_WINDOW_D, "단테", "「뭐、중간보스라는 녀석이다/어트랙션은 드디어 본방、이라는 거야」 "
+						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%은 가볍게 맞장구를 치면서 앞으로 걸음을 옮겼다…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +500 "
 						MONEY:99 += 500
 						
 						던전플래그:99:1 = 5
@@ -1775,37 +1775,37 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				ENDIF
 			;■海中通路先　헬メスの杖
 			CASE 202
-				CALL MESSAGE_WINDOW_D, "", "＞ 「錬金術で使われる헬メスの杖をかたどったもののようだ」 "
-				CALL MESSAGE_WINDOW_D, "", "＞ 「なにか마력のようなものをかんじるが今はどうすることもできない」 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 「연금술에 쓰이는 헤르메스 지팡이를 본뜬 것 같다」 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 「뭔가 마력 같은 것이 느껴지지만 지금은 어쩔 도리가 없다」 "
 			;■書庫　裁きの宝杖
 			CASE 203
 				IF 던전플래그:99:3 < 3
-					CALL MESSAGE_WINDOW_D, "", "【裁きの宝杖】/＞　不思議な光を放つ宝杖 "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "【심판의 보장】/＞　신기한 빛을 발하는 보석 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 裁きの宝杖　을 손에 넣었다 "
-						CALL MESSAGE_WINDOW_D, "", "＞ 背後から壁が動くような音が聞こえた…… "
+						CALL MESSAGE_WINDOW_D, "", "＞ 심판의 보장　을 손에 넣었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞ 등뒤에서 벽이 움직이는 듯한 소리가 들렸다…… "
 						던전플래그:99:3 = 3
 					ENDIF
 				ENDIF
 			;■書庫　死神の絵
 			CASE 204
 				IF 던전플래그:99:3 >= 2
-					CALL MESSAGE_WINDOW_D, "", "＞ 死神のような악마が描かれている "
+					CALL MESSAGE_WINDOW_D, "", "＞ 사신처럼 보이는 악마가 그려져 있다 "
 				ELSEIF 던전플래그:99:3 < 2
-					CALL MESSAGE_WINDOW_D, "", "＞ 死神のような악마が描かれている /　絵には鍵が埋め込まれている "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "＞ 사신처럼 보이는 악마가 그려져 있다 /　그림에는 열쇠가 박혀 있다 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 					SIF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 古びた鍵　을 손에 넣었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞ 낡은 열쇠 를 손에 넣었다 "
 						던전플래그:99:3 = 2
 				ENDIF
 			;■獅子の間　登攀
 			CASE 206
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL MESSAGE_WINDOW_D, "", "＞ どちらへ登りますか？ "
-				PRINTFORML [ 0] 獅子の扉
-				PRINTFORML [ 1] 2F通路
-				PRINTFORML [ 2] やはりやめておく
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL MESSAGE_WINDOW_D, "", "＞ 어느 쪽으로 올라갈까？ "
+				PRINTFORML [ 0] 사자의 문
+				PRINTFORML [ 1] 2F 통로
+				PRINTFORML [ 2] 역시 그만둔다
 				INPUT
 				IF RESULT == 0
 					CALL DUNGEON_WORP, 6,14,10
@@ -1819,8 +1819,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				CALL JIKU_GOD_STATUE
 			;■複葉機の間
 			CASE 208
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,2,25,32
 			
@@ -1830,20 +1830,20 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			;■古城ロビー吹き抜け　2F
 			CASE 300
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 4,11,2
 			;■古城ロビー吹き抜け　2F
 			CASE 301
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 4,15,4
 			;■古城ロビー吹き抜け　2F
 			CASE 302
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 4,15,9
 			;■古城ロビー吹き抜け　2F　時空神像
@@ -1851,61 +1851,61 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				CALL JIKU_GOD_STATUE
 			;■古城ロビー吹き抜け　2F　マリオネットの部屋
 			CASE 305
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 4,15,26
 			;■古城ロビー吹き抜け　2F
 			CASE 306
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから反対側へ飛び移ることもできそうだが…… "
-				CALL INPUT_YN_D, "飛び移る", "この場に留まる"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 반대편으로 뛰어넘을 수도 있을 것 같은데…… "
+				CALL INPUT_YN_D, "뛰어넘는다", "이 자리에 머무른다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 3,5,26
 			;■古城ロビー吹き抜け　2F
 			CASE 307
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから反対側へ飛び移ることもできそうだが…… "
-				CALL INPUT_YN_D, "飛び移る", "この場に留まる"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 반대편으로 뛰어넘을 수도 있을 것 같은데…… "
+				CALL INPUT_YN_D, "뛰어넘는다", "이 자리에 머무른다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 3,11,26
 			;■古城ロビー吹き抜け　2F　矛の間
 			CASE 308
-				CALL MESSAGE_WINDOW_D, "", "＞ 何かを刺す三つの穴が開いている "
+				CALL MESSAGE_WINDOW_D, "", "＞ 무언가를 찔러 넣을 수 있는 세 개의 구멍이 뚫려 있다 "
 				IF 던전플래그:99:3 == 9 && 던전플래그:99:1 < 15
-					CALL MESSAGE_WINDOW_D, "", "＞ 三叉の矛を刺しますか？ "
-					CALL INPUT_YN_D, "刺す", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞ 삼지창으로 찌릅니까？ "
+					CALL INPUT_YN_D, "찌른다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　三叉の矛を刺すと仕掛けが作動し、オブジェから水が排出され/　　それを동력に両側の歯車が動き出した "
-						CALL MESSAGE_WINDOW_D, "", "＞　下の階で重いものが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　삼지창을 찌르자 장치가 작동하여 오브제에서 물이 배출되고/　　그것을 동력으로 양쪽 톱니바퀴가 움직이기 시작했다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　아래층에서 무거운 물건이 움직이는 소리가 났다…… "
 						던전플래그:99:1 = 15
 					ENDIF
 				ENDIF
 			;■古城ロビー吹き抜け　3F
 			CASE 400
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから下に飛び降りることもできるが…… "
-				CALL INPUT_YN_D, "飛び降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,3,10,2
 			;■古城ロビー吹き抜け　3F
 			CASE 401,402
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから下に飛び降りることもできるが…… "
-				CALL INPUT_YN_D, "飛び降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,3,15,7
 			;■古城ロビー吹き抜け　3F　マリオネットの部屋
 			CASE 403
 				IF 던전플래그:99:3 == 0
-					CALL MESSAGE_WINDOW_D, "", "＞　マリオネットが鍵を손に持っている…… "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "＞　마리오네트가 열쇠를 손에 들고 있다…… "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 					SIF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　古びた鍵　을 손에 넣었다 "
-						CALL MESSAGE_WINDOW_D, "", "＞　鍵を손に取ると、辺りの空気が変わり악마の気配も漂ってきた/　　どうやらこれからがアトラクションの스타トということなのだろう "
+						CALL MESSAGE_WINDOW_D, "", "＞　낡은 열쇠　를 손에 넣었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　열쇠를 손에 쥐자、주위의 공기가 변하고 악마의 기운도 풍겨왔다/　　아무래도 이제부터가 어트랙션의 시작이라는 거겠지. "
 						던전플래그:99:3 = 1
 						던전플래그:99:11 = 1
 				ENDIF
 			;■古城ロビー吹き抜け　3F
 			CASE 404
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから下に飛び降りることもできるが…… "
-				CALL INPUT_YN_D, "飛び降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,3,15,25
 		;---------
@@ -1914,35 +1914,35 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■獅子像の間　2F　祭壇
 			CASE 600
 				IF !GETBIT(던전플래그:99:4,4)
-					CALL MESSAGE_WINDOW_D, "", "＞　祭壇がある "
-					CALL MESSAGE_WINDOW_D, "", "＞『道をひらくたくば、汝が힘で神を退けよ』/『神は汝の눈の前に居る』 "
-					CALL INPUT_YN_D, "祭壇を動かす", "動かさない"
+					CALL MESSAGE_WINDOW_D, "", "＞　제단이 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞『길을 내고 싶다면、네 힘으로 신을 물리쳐라』/『신은 너의 눈앞에 있다』 "
+					CALL INPUT_YN_D, "제단을 움직인다", "움직이지 않는다"
 					IF !RESULT
 						SETBIT 던전플래그:99:4,4
-						CALL MESSAGE_WINDOW_D, "", "＞　祭壇が奥へとずれ、隠されていた蓋を開けるた "
-						CALL MESSAGE_WINDOW_D, "", "＞　どうやら階下へ飛び降りる事ができるようだ "
-						CALL MESSAGE_WINDOW_D, "", "＞　ここから下に飛び降りることもできるが…… "
-						CALL INPUT_YN_D, "飛び降りる", "やめておく"
+						CALL MESSAGE_WINDOW_D, "", "＞　제단이 안쪽으로 젖혀져 숨겨져 있던 뚜껑을 열었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　아무래도 아래층으로 뛰어내릴 수 있을 것 같다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　여기서 아래로 뛰어내릴 수도 있지만…… "
+						CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 						SIF !RESULT
 							CALL DUNGEON_WORP,2,12,11
 					ENDIF
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやら階下へ飛び降りる事ができるようだが…… "
-					CALL INPUT_YN_D, "飛び降りる", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 아래층으로 뛰어내릴 수 있을 것 같은데…… "
+					CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,2,12,12
 				ENDIF
 			;■獅子像の間　2F　導きの魂の像
 			CASE 601
-				CALL MESSAGE_WINDOW_D, "", "＞ オブジェがある/穴の下に何か彫り込まれている "
-				CALL MESSAGE_WINDOW_D, "", "＞ 『導きの魂はここに集う』 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 오브제가 있다 / 구멍 밑에 뭔가 조각되어 있다 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 『인도의 영혼은 여기에 모인다』 "
 			;■獅子像の間　2F
 			CASE 602,
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから下に飛び降りることもできるが…… "
-				CALL MESSAGE_WINDOW_D, "", "＞ どちらへ移りますか？ "
-				PRINTFORML [ 0] 向かいの通路へ
-				PRINTFORML [ 1] 獅子の間1Fへ
-				PRINTFORML [ 2] やはりやめておく
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL MESSAGE_WINDOW_D, "", "＞ 어디로 이동하시겠습니까？ "
+				PRINTFORML [ 0] 맞은편 통로로
+				PRINTFORML [ 1] 사자의 길 1F로
+				PRINTFORML [ 2] 역시 그만둔다
 				INPUT
 				IF RESULT == 0
 					CALL DUNGEON_WORP, 6,14,12
@@ -1953,11 +1953,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				ENDIF
 			;■獅子像の間　2F
 			CASE 603
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから下に飛び降りることもできるが…… "
-				CALL MESSAGE_WINDOW_D, "", "＞ どちらへ移りますか？ "
-				PRINTFORML [ 0] 獅子の扉へ
-				PRINTFORML [ 1] 獅子の間1Fへ
-				PRINTFORML [ 2] やはりやめておく
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 아래로 뛰어내릴 수도 있지만…… "
+				CALL MESSAGE_WINDOW_D, "", "＞ 어디로 이동하시겠습니까？ "
+				PRINTFORML [ 0] 사자의 문으로
+				PRINTFORML [ 1] 사자의 길 1F로
+				PRINTFORML [ 2] 역시 그만둔다
 				INPUT
 				IF RESULT == 0
 					CALL DUNGEON_WORP, 6,14,9
@@ -1970,15 +1970,15 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			CASE 700
 				;海中通路から聖堂先の塔へ移動
 				IF 던전플래그:99:1 < 4
-					CALL MESSAGE_WINDOW_D, "", "＞　海水を押しのけるようにできた円状の部屋/　　その中央に歩みを進めると、床の中央が輝いている "
+					CALL MESSAGE_WINDOW_D, "", "＞　바닷물을 밀어낼 수 있게 만든 원형 방/　　그 중앙으로 걸음을 옮기자 바닥 중앙이 빛난다 "
 					던전플래그:99:1 = 4
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやらここから上へ帰れそうだ "
-					CALL INPUT_YN_D, "돌아간다", "ちょっと待て"
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 여기서 위로 돌아갈 수 있을 것 같다 "
+					CALL INPUT_YN_D, "돌아간다", "잠깐 기다린다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,2,36,5
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞ ここから上に돌아간다ことができそうだ…… "
-					CALL INPUT_YN_D, "돌아간다", "ちょっと待て"
+					CALL MESSAGE_WINDOW_D, "", "＞ 여기서부터 돌아갈 수 있을 것 같다…… "
+					CALL INPUT_YN_D, "돌아간다", "잠깐 기다린다"
 					IF !RESULT
 						IF !GETBIT(던전플래그:99:4,24)
 							CALL DUNGEON_WORP,2,36,5
@@ -1993,39 +1993,39 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■最下層　昇降機
 			CASE 800
 				IF 던전플래그:99:1 >= 8
-					CALL MESSAGE_WINDOW_D, "", "＞ 起動すると上まで上がれそうだ…… "
-					CALL INPUT_YN_D, "起動する", "ちょっと待て"
+					CALL MESSAGE_WINDOW_D, "", "＞ 기동하면 위까지 올라갈 수 있을 것 같다…… "
+					CALL INPUT_YN_D, "기동한다", "잠깐 기다린다"
 						SIF !RESULT
 							CALL DUNGEON_WORP,9,13,4
 				ENDIF
 			;■最下層　スイッチ
 			CASE 801
 				IF 던전플래그:99:1 < 8
-					CALL MESSAGE_WINDOW_D, "", "＞　마법진の描かれているシンボルがある/　　どうやら何かのスイッチになっているようだ…… "
-					CALL INPUT_YN_D, "起動する", "ちょっと待て"
+					CALL MESSAGE_WINDOW_D, "", "＞　마법진이 그려져 있는 심볼이 있다/　　어쩐지 뭔가 스위치가 되고 있는 것 같다…… "
+					CALL INPUT_YN_D, "기동한다", "잠깐 기다린다"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞ 背後の地面が光りだした…… "
+							CALL MESSAGE_WINDOW_D, "", "＞ 배후의 지면이 빛나기 시작했다…… "
 							던전플래그:99:1 = 8
 						ENDIF
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞ これ이상の操作は필요한いようだ "
+					CALL MESSAGE_WINDOW_D, "", "＞ 이 이상의 조작이 필요한 것 같다 "
 				ENDIF
 			;■女性の像
 			CASE 802
-				CALL MESSAGE_WINDOW_D, "", "＞　憂鬱な表情をした女性の像だ/　　가슴に何かを刺しこむ穴がある "
+				CALL MESSAGE_WINDOW_D, "", "＞　우울한 표정을 한 여성의 상이다/　　가슴에 무언가를 찔러 넣을 구멍이 있다 "
 				IF 던전플래그:99:3 == 5
-					CALL MESSAGE_WINDOW_D, "", "＞　死の宣告を사용しますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　죽음의 선고를 사용하시겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞　憂鬱なる魂/　　魂をかたどった装飾品/　　人が触れると、その힘は時間とともに失われてしまう "
-							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%が装飾品を손に取ると、そばに気配を感じた "
-							CALL MESSAGE_WINDOW_D, "", "＞　だが視線の先には鏡しかなく/――その鏡に映った自分たちが、こちらをはっきりとみつめている "
-							CALL MESSAGE_WINDOW_D, "단테", "「なるほど、こうなるか」 "
-							CALL MESSAGE_WINDOW_D, "", "＞　　一人で納得する단테と共に鏡から離れると/なんと鏡の自分たちがこちら側へ出てきた！ "
-							CALL MESSAGE_WINDOW_D, "단테", "「Hey,今度はお友達を連れて賑やかなもんだ/　宗旨変えでもしたのか？」 "
-							CALL MESSAGE_WINDOW_D, "", "＞　단테が気安く自分に話しかける/だが相手は黒い악마の騎士へと姿を変え、外へ来いとジェスチャーをして出ていった "
-							CALL MESSAGE_WINDOW_D, "단테", "「まあ見ての通り、自分と戦えるサービス付きだ」 "
-							CALL MESSAGE_WINDOW_D, "", "＞　これも同じらしい/　　アトラクション付きのホ라ハウスとは무서움入る "
+							CALL MESSAGE_WINDOW_D, "", "＞　우울한 영혼/　　영혼을 본뜬 장식품/　　사람이 만지자、그 힘은 시간이 지남에 따라 상실된다 "
+							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%이 장식품을 손에 쥐자 곁에서 기척을 느꼈다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　하지만 시선의 끝에는 거울밖에 없었고/――그 거울에 비친 모습들이、이쪽을 분명히 바라보고 있었다"
+							CALL MESSAGE_WINDOW_D, "단테", "「과연、그런건가」 "
+							CALL MESSAGE_WINDOW_D, "", "＞　　혼자 납득하는 단테와 함께 거울에서 벗어나자/무려 거울에 비친 모습들이 이쪽으로 나왔다！ "
+							CALL MESSAGE_WINDOW_D, "단테", "「Hey、이번에는 친구를 데리고 와서 떠들썩하구나/　종교라도 바꾼거냐？」 "
+							CALL MESSAGE_WINDOW_D, "", "＞　단테가 스스럼없이 자신에게 말을 건다/하지만 상대방은 검은악마 기사로 모습을 바꾸고 밖으로 나오라는 제스처를 취했다. "
+							CALL MESSAGE_WINDOW_D, "단테", "「뭐 보다시피、자신과 싸울 수 있는 서비스가 딸려 있다」 "
+							CALL MESSAGE_WINDOW_D, "", "＞　이것도 마찬가지인 것 같다 /　　어트랙션에 딸린 호러하우스는 무섭구나 "
 						ENDIF
 						던전플래그:99:1 = 9
 						던전플래그:99:3 = 6
@@ -2035,45 +2035,45 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				CALL JIKU_GOD_STATUE
 			;■鏡
 			CASE 804
-				CALL MESSAGE_WINDOW_D, "", "＞　吸い込まれそうに綺麗な鏡だ "
-				CALL MESSAGE_WINDOW_D, "", "＞　鏡の奥に暗黒の波動を感じるが/　　今はどうすることもできない "
+				CALL MESSAGE_WINDOW_D, "", "＞　빨려 들어갈 것처럼 예쁜 거울이다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　거울 속에 암흑의 파동을 느끼지만/　　지금은 어찌할 도리가 없다 "
 			;■太陽の紋章
 			CASE 805
 				IF !GETBIT(던전플래그:99:4,9)
-					CALL MESSAGE_WINDOW_D, "", "＞　太陽の紋章が刻まれている/　　その下に何か書かれている "
-					CALL MESSAGE_WINDOW_D, "", "『光輝く陽光の導きは/　　お前を焼き尽くすだろう』"
-					CALL MESSAGE_WINDOW_D, "", "『光に耐える힘を持った者だけが/　　　　　　新たな道を개방する』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　태양의 문장이 새겨져 있다/　　그 밑에 뭔가 적혀 있다 "
+					CALL MESSAGE_WINDOW_D, "", "『빛나는 햇빛의 인도는/　　너를 구워서 태워버릴 것이다』"
+					CALL MESSAGE_WINDOW_D, "", "『빛을 견디는 힘을 가진 자만이/　　　　　　새로운 길을 연다』 "
 					IF 던전플래그:99:3 == 8
-						CALL MESSAGE_WINDOW_D, "", "＞　陽光の導き　を사용しますか？ "
+						CALL MESSAGE_WINDOW_D, "", "＞　양광의 인도　를 사용 합니까？ "
 						CALL INPUT_YN_D, "YES", "NO"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞　紋章が上にスライドすると、扉が出現した "
+							CALL MESSAGE_WINDOW_D, "", "＞　문장이 위로 슬라이드하자、문이 출현했다 "
 							SETBIT 던전플래그:99:4,9
 						ENDIF
 					ENDIF
 				ENDIF
 			;■ベッド
 			CASE 806
-				CALL MESSAGE_WINDOW_D, "", "＞　領主が使っていただろうベッドだ "
+				CALL MESSAGE_WINDOW_D, "", "＞　영주가 썼을 침대다 "
 			;■紋章横の机
 			CASE 807
-				CALL MESSAGE_WINDOW_D, "", "＞　隣国との交渉に使われただろう/　　書面などが置かれている "
+				CALL MESSAGE_WINDOW_D, "", "＞　이웃 나라와의 교섭에 사용되었을 것인/　　서면 등이 놓여 있다 "
 			;■5F登攀
 			CASE 808
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 9,15,10
 			;■外壁　登り
 			CASE 809
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 8,4,23
 			;■外壁　降り
 			CASE 810
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから飛び降りる事ができるようだが…… "
-				CALL INPUT_YN_D, "降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 뛰어내릴 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 8,4,21
 		;---------
@@ -2081,11 +2081,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			;■最上階ジャンプ판정
 			CASE 900
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び移れる場所が二箇所ある "
-				CALL MESSAGE_WINDOW_D, "", "＞ どちらへ移りますか？ "
-				PRINTFORML [ 0] 東側の階段へ
-				PRINTFORML [ 1] 南側の발場へ
-				PRINTFORML [ 2] やはりやめておく
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어넘어서 갈 수 있는 장소가 두 군데 있다 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 어디로 이동합니까？ "
+				PRINTFORML [ 0] 동쪽 계단으로
+				PRINTFORML [ 1] 남쪽 발판으로
+				PRINTFORML [ 2] 역시 그만둔다
 				INPUT
 				IF RESULT == 0
 					CALL DUNGEON_WORP, 9,15,4
@@ -2095,41 +2095,41 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 					RETURN 1
 				ENDIF
 			CASE 901
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,9,13,4
 			;■最上階で死の宣告입수
 			CASE 902
 				IF 던전플래그:99:3 < 5
-					CALL MESSAGE_WINDOW_D, "", "＞　死の宣告/　　美しい飾りの施された검/　　儀式用の装飾物として作られているので/　　무기としては사용できない "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "＞　죽음의 선고/　　아름다운 장식이 된 검/　　의식용 장식물로 만들어졌기 때문에/　　무기로서는 사용할 수 없다 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞ 死の宣告　을 손에 넣었다 "
+							CALL MESSAGE_WINDOW_D, "", "＞ 죽음의 선고　를  손에 넣었다 "
 							던전플래그:99:3 = 5
 						ENDIF
 				ENDIF
 			;■5F　寝室屋根上
 			CASE 903
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,9,10,9
 			CASE 904
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP, 9,8,9
 			;■寝室前へ
 			CASE 905
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,8,6,18
 			;■屋根上へ돌아간다
 			CASE 906
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,8,12,16
 		;---------
@@ -2138,17 +2138,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■陽光の導き
 			CASE 1000
 				IF 던전플래그:99:3 < 8
-					CALL MESSAGE_WINDOW_D, "", "【陽光の導き】/＞　月と対をなす灼熱に輝く鍵/　　소지していると체력を徐々に奪われる "
+					CALL MESSAGE_WINDOW_D, "", "【양광의 인도】/＞　달과 짝을 이루는 작열의 빛을 발하는 열쇠/　　소지하다 보면 체력을 서서히 빼앗긴다 "
 					던전플래그:99:3 = 8
 				ENDIF
 			;■地下水路　大部屋
 			CASE 1001
 				IF 던전플래그:99:3 < 7
-					CALL MESSAGE_WINDOW_D, "", "【古びた鍵】/＞　錆びついてはいるが、/　　사용するのに問題はない "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", "【낡은 열쇠】/＞　녹이 슬긴 했지만、/　　사용하는 데 문제는 없다 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 古びた鍵　을 손에 넣었다 "
-						CALL MESSAGE_WINDOW_D, "", "＞　配管の奥から気配を感じる/　　見ると大型犬ほどの大きさの蝿のようなモノが這い出てきている/　　更に油断はできなくなったようだ…… "
+						CALL MESSAGE_WINDOW_D, "", "＞ 낡은 열쇠　를   손에 넣었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　배관 안쪽에서 기척을 느끼다/　　보면 대형견만한 파리 같은 녀석이 기어 나오고 있다/　　더욱 방심할 수 없게 된 것 같다…… "
 						던전플래그:99:1 = 11
 						던전플래그:99:3 = 7
 						던전플래그:99:11 = 4
@@ -2163,10 +2163,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■
 			CASE 1101
 				IF 던전플래그:99:3 < 9
-					CALL MESSAGE_WINDOW_D, "", @"【三叉の矛】/＞　重厚な装飾の施された三叉の矛/　　儀式用の品なので무기としては사용できない "
-					CALL INPUT_YN_D, "取る", "取らない"
+					CALL MESSAGE_WINDOW_D, "", @"【삼지창】/＞　중후하게 장식된 삼지창/　　의식용품이므로 무기로서는 사용할 수 없다 "
+					CALL INPUT_YN_D, "취한다", "취하지 않는다"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞ 三叉の矛　을 손에 넣었다 "
+							CALL MESSAGE_WINDOW_D, "", "＞ 삼지창　을 손에 넣었다 "
 							던전플래그:99:3 = 9
 						ENDIF
 				ENDIF
@@ -2176,88 +2176,88 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;■仕掛け
 			CASE 1200
 				IF 던전플래그:99:1 < 14
-					CALL MESSAGE_WINDOW_D, "", "＞　跳ね橋を巻き上げる機械のレバーだ/　　마력で封じられている "
-					CALL MESSAGE_WINDOW_D, "", "＞　強い충격を与えれば動きそうだ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　도개교를 감아 올리는 기계의 레버다./　　마력으로 봉쇄되어 있다. "
+					CALL MESSAGE_WINDOW_D, "", "＞　강한 충격을 주면 움직일 것 같다 "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞ 機械が作動し、勢いよく巻き取られていた鎖が降りてゆく/　　暫くすると、外から大きな音がすると共に動きが止まった "
-							CALL MESSAGE_WINDOW_D, "", "＞　おそらくこれで表の跳ね橋は降りただろう "
+							CALL MESSAGE_WINDOW_D, "", "＞ 기계가 작동하고、감겨 있던 쇠사슬이 힘차게 내려간다/　　잠시 후、밖에서 큰 소리가 나면서 움직임이 멈췄다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　아마 이것으로 앞의 도개교는 내려갔을 것이다. "
 							던전플래그:99:1 = 14
 						ENDIF
 				ENDIF
 			;■骸뼈
 			CASE 1201
-				CALL MESSAGE_WINDOW_D, "", "＞ この城に迷い込み힘尽きて/　　倒れた전사の亡骸だ "
-				CALL MESSAGE_WINDOW_D, "", "＞ なにか持っている "
-				CALL MESSAGE_WINDOW_D, "", "【グレネードガン】/＞ 爆発する榴弾を撃ち出す/　　破壊힘は極めて大きい "
-				CALL MESSAGE_WINDOW_D, "", "＞ だが、異界も細部までは再現できていないようだ/　　전투で使うことはできそうにない "
+				CALL MESSAGE_WINDOW_D, "", "＞ 이 성에 빠져 힘이 다하여/　　쓰러진 전사의 시체다 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 뭔가 가지고 있다 "
+				CALL MESSAGE_WINDOW_D, "", "【그레네이드건】/＞ 폭발하는 유탄을 쏘아낸다/　　파괴력은 지극히 크다 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 하지만、이계도 세부까지는 재현되지 않은 것 같다/　　전투에 사용할 수는 없을 것 같다 "
 		;---------
 		;　古城前　跳ね橋
 		;---------
 			;■발元の文字
 			CASE 1300
-				CALL MESSAGE_WINDOW_D, "", "＞ くぼみに文字が刻まれている "
-				CALL MESSAGE_WINDOW_D, "", "『운命の輪が始まりの地へ誘う』 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 구덩이에 글자가 새겨져 있다 "
+				CALL MESSAGE_WINDOW_D, "", "『운명의 바퀴가 시작점으로 이끈다』 "
 				IF !GETBIT(던전플래그:99:4,23)  && 던전플래그:99:3 == 15
-					CALL MESSAGE_WINDOW_D, "", "＞　운命の輪　を使いますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　운명의 바퀴를 사용합니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "＞　仕掛けが作動し、跳ね橋が再び降りてきた "
+							CALL MESSAGE_WINDOW_D, "", "＞　장치가 작동하고、도개교가 다시 내려왔다 "
 							던전플래그:99:1 = 27
 							SETBIT 던전플래그:99:4,23
 						ENDIF
 				ENDIF
 			CASE 1301
-				CALL MESSAGE_WINDOW_D, "", "＞ 石版に文字が刻まれている/　 何かの謎掛けのようだ "
-				CALL MESSAGE_WINDOW_D, "", "『赤き石が隠されし秘密の空間は/　非常道の行いにより開く事あり』 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 석판에 글자가 새겨져 있다/　 무슨 수수께끼 같은 것 같다 "
+				CALL MESSAGE_WINDOW_D, "", "『붉은 돌이 감추고 있는 비밀공간은/　비상시에 열리는 일이 있다』 "
 			CASE 1302
-				CALL MESSAGE_WINDOW_D, "", "＞ 石版に文字が刻まれている/　 何かの物語のようだ…… "
-				CALL MESSAGE_WINDOW_D, "", "『운命は、コロシアムの/　　奥深き地にて主を待っている』 "
+				CALL MESSAGE_WINDOW_D, "", "＞ 석판에 글자가 새겨져 있다/　 무슨 이야기 같다…… "
+				CALL MESSAGE_WINDOW_D, "", "『운명은 콜로세움의/　　깊숙한 땅에서 주인을 기다리고 있다』 "
 		;---------
 		;　闘技場
 		;---------
 			CASE 1400
 				IF !GETBIT(던전플래그:99:10,1)
-					CALL MESSAGE_WINDOW_D, "", "【魔光石】/＞　暗闇で光り輝く不思議な石/　　魔界に存在する変哲も無い石が、/　　인간世界に放置されて변화を起こしたものと思われる "
+					CALL MESSAGE_WINDOW_D, "", "【마광석】/＞　어둠 속에서 빛나는 이상한 돌/　　마계에 존재하는 변하지않는 돌、/　　인간 세계에 방치돼 변화된 것으로 보인다 "
 					SETBIT 던전플래그:99:10,1
 				ENDIF
 			CASE 1401
-				CALL MESSAGE_WINDOW_D, "", "『ア바롱の王、운命の輪を使い/　　物語を始まりの地に戻す』 "
+				CALL MESSAGE_WINDOW_D, "", "『아발론의 왕、운명의 바퀴를 사용하여/　　이야기를 시작의 땅으로 되돌린다』 "
 				IF 던전플래그:99:3 < 15
-					CALL MESSAGE_WINDOW_D, "", "【운命の輪】/＞　운命の繰り返しを象徴する/　　円盤状の플레이트 "
-					CALL MESSAGE_WINDOW_D, "", "＞　운命の輪　を입수した "
+					CALL MESSAGE_WINDOW_D, "", "【운명의 바퀴】/＞　운명의 반복을 상징한다/　　원반 모양의 플레이트 "
+					CALL MESSAGE_WINDOW_D, "", "＞　운명의 바퀴 를 입수했다. "
 					던전플래그:99:3 = 15
 				ENDIF
 			CASE 1402
-				CALL MESSAGE_WINDOW_D, "", "＞ コロシアムへ移動しますか？ "
-				CALL INPUT_YN_D, "移動する", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞ 콜로세움으로 이동하시겠습니까？ "
+				CALL INPUT_YN_D, "이동한다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,14,16,12
 			CASE 1403
 				IF 던전플래그:99:1 >= 26
-					CALL MESSAGE_WINDOW_D, "", "＞ 移動しますか？ "
-					CALL INPUT_YN_D, "移動する", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞ 이동하시겠습니까？ "
+					CALL INPUT_YN_D, "이동한다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,14,3,12
 				ENDIF
 			;グリフォン討伐後、단테회화
 			CASE 1404
 				IF 던전플래그:99:1 == 26 && 던전플래그:99:5 < 5
-					CALL MESSAGE_WINDOW_D, "", "＞　단테は気配の消え去った空を睨みつけている "
-					CALL MESSAGE_WINDOW_D, "단테", "「わかっちゃいたが、相変わらず汚ねぇことしやがる」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　仲間を使い捨てる、たしかにそんな組織は自分も御免被るところだ "
-					CALL MESSAGE_WINDOW_D, "단테", @"「さあて、いよいよ終盤戦だ/行こうぜ、%CALLNAME:MASTER%」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「何度だろうと変わらない/아버지의이름에맹세코――奴に死を！」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　단테는 기척이 사라진 하늘을 노려보고 있다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「알고는 있지만、 여전히 지저분한 짓을 저지르는구만」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　동료를 쓰고 버리는、확실히 그런 조직은 나라도 사양할 참이다 "
+					CALL MESSAGE_WINDOW_D, "단테", @"「자、드디어 종반전이다/가자구、%CALLNAME:MASTER%」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「몇번을 해도 변하지 않아/아버지의 이름에 맹세코――놈에게 죽음을！」 "
 					던전플래그:99:5 = 5
 				ENDIF
 			CASE 1405
-				CALL MESSAGE_WINDOW_D, "", "＞　飛び降りますか？ "
-				CALL INPUT_YN_D, "飛び降りる", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　뛰어내립니까？ "
+				CALL INPUT_YN_D, "뛰어내린다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,14,5,28
 			CASE 1406
-				CALL MESSAGE_WINDOW_D, "", "＞ ここから上によじ登れそうだが…… "
-				CALL INPUT_YN_D, "登る", "登らない"
+				CALL MESSAGE_WINDOW_D, "", "＞ 여기서 위로 기어오를 수 있을 것 같은데…… "
+				CALL INPUT_YN_D, "기어오른다", "기어오르지 않는다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,14,5,26
 		;---------
@@ -2265,64 +2265,64 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			CASE 1500
 				IF 던전플래그:99:1 == 16
-					CALL MESSAGE_WINDOW_D, "", "＞ 仕掛けを動かしますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞ 장치를 움직입니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞ 背後で何かが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞ 등 뒤에서 뭔가 움직이는 소리가 났다…… "
 						던전플래그:99:1 = 17
 					ENDIF
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞ もう操作の필요はなさそうだ "
+					CALL MESSAGE_WINDOW_D, "", "＞ 이제 조작할 필요는 없는 것 같다 "
 				ENDIF
 		;---------
 		;　霧深き渓谷
 		;---------
 			CASE 1600
 				IF 던전플래그:99:9 == 0
-					CALL MESSAGE_WINDOW_D, "", "＞　石碑に文字が刻まれている/　　何かの謎掛けのようだ "
-					CALL MESSAGE_WINDOW_D, "", "『きりの渓谷。正しき道を行かねば/　幻の地に踏み入ることかなわず』 "
-					CALL MESSAGE_WINDOW_D, "", "『か弱き光の守り손のみ/　正しき道を知る힘を授かる』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　비석에 글자가 새겨져 있다/　　무슨 수수께끼 같은 것 같다 "
+					CALL MESSAGE_WINDOW_D, "", "『안개의 계곡。바른 길로 가야만 /　 환상의 땅에 발을 디딜 수 있다』 "
+					CALL MESSAGE_WINDOW_D, "", "『연약한 빛의 수호자만이/　바른 길을 아는 힘을 준다』 "
 					IF RAND:2 ==0
 						;右が正解
-						CALL MESSAGE_WINDOW_D, "", "＞　石碑から光が出現し、右側の通路で漂っている…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　비석에서 빛이 출현하여、오른쪽 통로를 비추고 있다…… "
 						던전플래그:99:9 = 1
 					ELSE
 						;左が正解
-						CALL MESSAGE_WINDOW_D, "", "＞　石碑から光が出現し、左側の通路で漂っている…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　비석에서 빛이 출현하여、왼쪽 통로를 비추고 있다…… "
 						던전플래그:99:9 = 2
 					ENDIF
 				ELSEIF 던전플래그:99:9 == 1
-					CALL MESSAGE_WINDOW_D, "", "＞　光は右側の通路を漂っている…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　빛은 오른쪽 통로를 비추고 있다…… "
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞　光は左側の通路を漂っている…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　빛은 왼쪽 통로를 비추고 있다…… "
 				ENDIF
 		;---------
 		;　성배堂
 		;---------
 			CASE 1800
-				CALL MESSAGE_WINDOW_D, "", "＞　金色の騎士の像がある "
-				CALL MESSAGE_WINDOW_D, "", "＞　何かが置かれていた様だ "
+				CALL MESSAGE_WINDOW_D, "", "＞　금색 기사의 상이 있다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　뭔가 놓여 있던 모양이다 "
 				IF !GETBIT(던전플래그:99:4,13)
-					CALL MESSAGE_WINDOW_D, "", "＞　성배を使いますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　성배를 사용합니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 						SIF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　何かが動く音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　뭔가가 움직이는 소리가 났다…… "
 						SETBIT 던전플래그:99:4,13
 				ELSEIF GETBIT(던전플래그:99:4,13)
-					CALL MESSAGE_WINDOW_D, "", "＞　もうここには用はない "
+					CALL MESSAGE_WINDOW_D, "", "＞　이제 여기에는 볼일이 없다 "
 				ENDIF
 			CASE 1802
 				IF 던전플래그:99:1 < 21
-					CALL MESSAGE_WINDOW_D, "", "＞　힘ある光に守られた台座の上に/　　盃がのっている "
-					CALL MESSAGE_WINDOW_D, "", "『証を我に示せ』 "
-					CALL MESSAGE_WINDOW_D, "", "＞　純血の証を使いますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　힘있는 빛에 지켜진 받침대 위에/　　술잔이 올려져 있다 "
+					CALL MESSAGE_WINDOW_D, "", "『증거를 내게 보여라』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　순혈의 증거를 사용하시겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 						IF !RESULT
-							CALL MESSAGE_WINDOW_D, "", "【성배】/＞　聖なる人の死を称え、/　　生からの개방を祈り その生き血を受けた성배 "
-							CALL MESSAGE_WINDOW_D, "", "＞　성배　을 손에 넣었다と同時に、背後に気配が生まれる "
-							CALL MESSAGE_WINDOW_D, "", "＞　振り返ると、古城で戦ったネロㆍアンジェロが再び現れ、こちらを見据えている "
-							CALL MESSAGE_WINDOW_D, "단테", @"「さあ%CALLNAME:MASTER%、ラウンド2の始まりだ！」 "
-							CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロが襲いかかってきた！ "
+							CALL MESSAGE_WINDOW_D, "", "【성배】/＞　성인의 죽음을 기리고、/　　삶으로부터의 개방을 기원하며 그 생피를 받은 성배 "
+							CALL MESSAGE_WINDOW_D, "", "＞　성배　을 손에 넣음과 동시에、배후에 기척이 생겼다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　뒤돌아보니、고성에서 싸운 넬로ㆍ안젤로가 다시 나타나 이쪽을 바라보고 있다. "
+							CALL MESSAGE_WINDOW_D, "단테", @"「자아 %CALLNAME:MASTER%、라운드 2의 시작이다！」 "
+							CALL MESSAGE_WINDOW_D, "", "＞　넬로ㆍ안젤로가 덤벼들었다！ "
 							FLAG:도주불가플래그 = 1
 							FLAG:회화불능플래그 = 1
 							FLAG:선제기습취소 = 1
@@ -2336,9 +2336,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 							FLAG:미조우걸음수 = 0
 							FORCEWAIT
 							
-							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達に敗れ、ネロㆍアンジェロは再び姿を消した "
-							CALL MESSAGE_WINDOW_D, "", "＞　まだ決着を付ける時では無いようだ "
-							CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER% 들에게 패배하자、넬로 안젤로는 다시 사라졌다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　아직 결말을 지을 때는 아닌 것 같다"
+							CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +500 "
 							MONEY:99 += 500
 							던전플래그:99:1 = 21
 							던전플래그:99:3 = 11
@@ -2346,61 +2346,61 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				ENDIF
 			CASE 1803
 				IF 던전플래그:99:3 < 10
-					CALL MESSAGE_WINDOW_D, "", "【純潔の証】/＞　水晶の膜でコーティングされた剥製/　　성배탐색に불가欠な『純潔の意思』が封じ込められている "
-					CALL MESSAGE_WINDOW_D, "", "＞　純潔の証　を입수した "
+					CALL MESSAGE_WINDOW_D, "", "【순결의 증표】/＞　수정으로 된 막으로 코팅된 박제/　　성배 탐색에 불가결한『순결의 의사』가 봉해져 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　순결의 증표　를  입수했다 "
 					던전플래그:99:3 = 10
 				ENDIF
 			CASE 1804
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから向こうの발場に飛び移れそうだ/　　飛び乗りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 저쪽 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어 넘습니까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,18,16,21
 		;---------
 		;　海賊船　船底
 		;---------
 			CASE 2000
-				CALL MESSAGE_WINDOW_D, "", "【ニードルガン】/＞　水中で사용できる唯一の무기 "
-				CALL MESSAGE_WINDOW_D, "", "＞　だが、異界も細部までは再現できていないようだ/　　전투で使うことはできそうにない "
+				CALL MESSAGE_WINDOW_D, "", "【니들 건】/＞　수중에서 사용할 수 있는 유일한 무기 "
+				CALL MESSAGE_WINDOW_D, "", "＞　하지만、이계도 세부까지는 재현되지 않은 것 같다/　　전투에 사용할 수는 없을 것 같다 "
 		;---------
 		;　海賊船　船上
 		;---------
 			CASE 2100
 				IF 던전플래그:99:3 < 12
-					CALL MESSAGE_WINDOW_D, "", "【헬メスの杖】/＞　2匹の뱀が絡みついた意匠が施されている "
-					CALL MESSAGE_WINDOW_D, "", "＞　헬メスの杖　を입수した "
+					CALL MESSAGE_WINDOW_D, "", "【헤르메스의 지팡이】/＞　2마리의 뱀이 얽혀있는 의장이 되어 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　헤르메스의 지팡이　를 입수했다 "
 					던전플래그:99:3 = 12
-					CALL MESSAGE_WINDOW_D, "", "＞　헬メスの杖を손に取ると、それが合図だったかのように/　　海賊船が沈没し始めた！ "
-					CALL MESSAGE_WINDOW_D, "", "＞　あっという間に水没してしまいそうだ/　　急ぎ탈출せねばならない "
+					CALL MESSAGE_WINDOW_D, "", "＞　헤르메스의 지팡이를 집어들자、마치 신호인 것처럼/　　해적선이 침몰하기 시작했다！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　눈 깜짝할 사이에 물에 잠길 것 같다/　　급히 탈출하지 않으면 안 된다 "
 					던전플래그:99:1 = 24
 				ENDIF
 			CASE 2101
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,7,11
 			CASE 2102
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,12,11
 			CASE 2103
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,22,11
 			CASE 2104
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,6,22
 			CASE 2105
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,13,22
 			CASE 2106
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,21,21,22
 		;---------
@@ -2408,16 +2408,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			CASE 2200
 				IF 던전플래그:99:1 < 25 && 던전플래그:99:3 < 13
-					CALL MESSAGE_WINDOW_D, "", "「盾に刻まれし共鳴する紋章/　　　扉を封じし盾を退ける」 "
-					CALL MESSAGE_WINDOW_D, "", "小さな紋章の盾/＞　小さな盾の形をかたどったレリーフだ/　　コロシアムにある扉を封じている紋章と同じ形をしている "
-					CALL MESSAGE_WINDOW_D, "", "＞　小さな紋章の盾　を입수した "
+					CALL MESSAGE_WINDOW_D, "", "「방패에 새겨져 공명하는 문장/　　　문을 봉하고 방패를 물리치다」 "
+					CALL MESSAGE_WINDOW_D, "", "작은 문장의 방패/＞　작은 방패 모양을 본뜬 조각이다 /　　콜로세움에 있는 문을 봉하고 있는 문장과 같다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　작은 문장의 방패　를 입수했다 "
 					던전플래그:99:3 = 13
 				ELSEIF 던전플래그:99:1 < 25
-					CALL MESSAGE_WINDOW_D, "", "＞　骸뼈の팔がレバーになっている "
-					CALL MESSAGE_WINDOW_D, "", "＞　レバーを倒しますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　해골의 팔로 된 레버가 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레버를 당깁니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　どこかで何かが動いた音がした……/　　それと同時に仕掛けが作動し、床の罠が動き出した "
+						CALL MESSAGE_WINDOW_D, "", "＞　어딘가에서 뭔가 움직인 소리가 났다……/　　그와 동시에 장치가 작동하고、바닥의 덫이 움직이기 시작했다 "
 						던전플래그:99:1 = 25
 					ENDIF
 				ENDIF
@@ -2427,16 +2427,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;スイッチA
 			CASE 2401
 				IF !GETBIT(던전플래그:99:8,0)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを作動させますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　どこかで何かが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　어딘가에서 뭔가 움직이는 소리가 났다…… "
 						SETBIT 던전플래그:99:8,0
 					ENDIF
 				ENDIF
 			CASE 2402
 				IF GETBIT(던전플래그:99:8,2)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판으로 뛰어오를까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,6,17
@@ -2444,8 +2444,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;対なる二창입수
 			CASE 2403
 				IF 던전플래그:99:3 < 14
-					CALL MESSAGE_WINDOW_D, "", "【対なる二창】/　　『征옷者に破滅の창を託す/コロシアムの扉今こそ開かれん』 "
-					CALL MESSAGE_WINDOW_D, "", "＞　対なる二창　을 손에 넣었다 "
+					CALL MESSAGE_WINDOW_D, "", "【짝을 이루는 두 자루의 창】/　　『여행자에게 파멸의 창을 맡긴다 /콜로세움의 문이 이제야말로 열릴 것이다』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　짝을 이루는 두 자루의 창　을 손에 넣었다 "
 					던전플래그:99:3 = 14
 					CLEARBIT 던전플래그:99:8,00
 					CLEARBIT 던전플래그:99:8,01
@@ -2453,17 +2453,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;スイッチB
 			CASE 2404
 				IF !GETBIT(던전플래그:99:8,1)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを作動させますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　どこかで何かが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　어딘가에서 뭔가 움직이는 소리가 났다…… "
 						SETBIT 던전플래그:99:8,1
 					ENDIF
 				ENDIF
 			;ギミックA
 			CASE 2405
 				IF GETBIT(던전플래그:99:8,0)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판 위에 올라섭니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,8,15
@@ -2471,7 +2471,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;ギミックC
 			CASE 2406
 				IF GETBIT(던전플래그:99:8,3)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판 위에 올라섭니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,7,18
@@ -2479,7 +2479,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;ギミックB
 			CASE 2407
 				IF GETBIT(던전플래그:99:8,0)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판 위에 올라섭니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,9,16
@@ -2487,7 +2487,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;ギミックD
 			CASE 2408
 				IF GETBIT(던전플래그:99:8,3)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판 위에 올라섭니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,8,19
@@ -2495,18 +2495,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;スイッチC
 			CASE 2409
 				IF !GETBIT(던전플래그:99:8,2)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを作動させますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　どこかで何かが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　어딘가에서 뭔가 움직이는 소리가 났다…… "
 						SETBIT 던전플래그:99:8,2
 					ENDIF
 				ENDIF
 			;나이트메어β입수
 			CASE 2410
 				IF !GETBIT(던전플래그:99:10,2)
-					CALL MESSAGE_WINDOW_D, "", "【나이트메어β】/＞　魔界で造られた兵器/　　その위력は未知数である "
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやらこちらも完全再現とはいっていないようだ/　　なにかきっかけが필요かも知れない…… "
+					CALL MESSAGE_WINDOW_D, "", "【나이트메어β】/＞　마계에서 만들어진 무기/　　그 위력은 미지수이다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 이쪽도 완전 재현이라고는 할 수 없는 것 같다 /　　뭔가 계기가 필요할지도 모르겠다…… "
 					
 					SETBIT 던전플래그:99:10,2
 					CLEARBIT 던전플래그:99:8,02
@@ -2514,7 +2514,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 				ENDIF
 			CASE 2411
 				IF GETBIT(던전플래그:99:8,1)
-					CALL MESSAGE_WINDOW_D, "", "＞　발場へ飛び移りますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　발판 위에 올라섭니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					SIF !RESULT
 						CALL DUNGEON_WORP,24,10,17
@@ -2522,10 +2522,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;スイッチD
 			CASE 2412
 				IF !GETBIT(던전플래그:99:8,3)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを作動させますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　どこかで何かが動いた音がした…… "
+						CALL MESSAGE_WINDOW_D, "", "＞　어딘가에서 뭔가 움직이는 소리가 났다…… "
 						SETBIT 던전플래그:99:8,3
 					ENDIF
 				ENDIF
@@ -2533,26 +2533,26 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;　闘技場　地下下段
 		;---------
 			CASE 2500
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,24,6,15
 			CASE 2501
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから上の발場に登れそうだ/　　登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서부터 위로 발판에 오를 수 있을 것 같다/　　올라갑니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,24,10,19
 		;---------
 		;　古城ㆍ後半　1F
 		;---------
 			CASE 2600
-				CALL MESSAGE_WINDOW_D, "", "＞　水溜りが鏡のように透き通っている/　　ここから魔の波動を感じる "
-				CALL MESSAGE_WINDOW_D, "", "＞　머리の中に声が響いてくる "
-				CALL MESSAGE_WINDOW_D, "", "『魔への門を開かんとする者よ/ 　　　　　青き霊石の힘を借りよ』"
+				CALL MESSAGE_WINDOW_D, "", "＞　웅덩이가 거울처럼 투명하다/　　여기서 마의 파동이 느껴진다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　머릿속에 목소리가 울려온다 "
+				CALL MESSAGE_WINDOW_D, "", "『마의 문을 열려는 자여/ 　　　　　푸른 영석의 힘을 빌려라』"
 					IF !GETBIT(던전플래그:99:4,25)
-						CALL MESSAGE_WINDOW_D, "", "＞　透き通った水の中に蠢く何かが映り、こちら側へ這い出ようとしている "
-						CALL MESSAGE_WINDOW_D, "", "＞　それは슬라임のように蠢きながら次第に形を成してゆき/　　巨大な虫を思わせるような姿となり、こちらへ적意を向けてきた "
-						CALL MESSAGE_WINDOW_D, "", "＞　나이트메어が襲いかかってきた！ "
+						CALL MESSAGE_WINDOW_D, "", "＞　맑은 물속에 꿈틀거리는 무언가가 비치고、이쪽으로 기어 나오려고 하고 있다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그것은 슬라임처럼 꿈틀거리며 점차 형태를 이루어 가고/　　거대한 벌레를 연상시키는 듯한 모습이 되어、이쪽으로 적의를 향했다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　나이트메어가 덮쳐왔다！ "
 						SETBIT 던전플래그:99:8,4
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
@@ -2568,30 +2568,30 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 						FLAG:선제기습취소 = 0
 						FLAG:미조우걸음수 = 0
 						FORCEWAIT
-						CALL MESSAGE_WINDOW_D, "", "＞　나이트메어は叫びとともに蒸発するように消えていった‥‥‥ "
-						CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+						CALL MESSAGE_WINDOW_D, "", "＞　나이트메어는 외침과 함께 증발하듯 사라져 갔다‥‥‥ "
+						CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 						MONEY:99 += 500
 						던전플래그:99:1 = 28
 						CLEARBIT 던전플래그:99:8,4
 						SETBIT 던전플래그:99:4,25
 					ENDIF
 			CASE 2601
-				CALL MESSAGE_WINDOW_D, "", "＞　錬金術で使われる헬メスの杖をかたどったもの/　　闇夜の마력を受け　마력が満ちているようだ "
+				CALL MESSAGE_WINDOW_D, "", "＞　연금술에 쓰이는 헤르메스의 지팡이를 본뜬 것/　　암야의 마력을 받아 마력이 넘치는 것 같다 "
 				IF !GETBIT(던전플래그:99:4,26)
-					CALL MESSAGE_WINDOW_D, "", "＞　헬メスの杖　を사용しますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　헤르메스의 지팡이를 사용하시겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　両側のオブジェに小部屋の絵と、寝室の絵が浮かび上がった "
+						CALL MESSAGE_WINDOW_D, "", "＞　양쪽 오브제에 골방 그림과、침실 그림이 떠올랐다 "
 						SETBIT 던전플래그:99:4,26
 					ENDIF
 				ENDIF
 			CASE 2602
 				IF !GETBIT(던전플래그:99:4,24)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを作動させますか？ "
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키겠습니까？ "
 					CALL INPUT_YN_D, "YES", "NO"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　起動した途端、背後に稲아내が落ち/　　轟音とともに騎士像が破壊された "
-						CALL MESSAGE_WINDOW_D, "", "＞　破壊された像の跡には、뇌광をまとったコウモリが날개짓‥‥‥その姿が人形へと変わった/　　どうやら탐색はさらに困難を増していくようだ‥‥‥ "
+						CALL MESSAGE_WINDOW_D, "", "＞　기동하자마자 등뒤에 번개가 치고/　　굉음과 함께 기사상이 파괴되었다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　파괴된 상이 있던 곳에는 뇌광을 두른 박쥐가 날갯짓을 해오더니‥‥그 모습이 인간의 형태로 변했다/　　아무래도 탐색은 더욱 어려움을 가중시키는 것 같다‥‥‥ "
 						SETBIT 던전플래그:99:4,24
 						던전플래그:99:11 = 7
 					ENDIF
@@ -2601,7 +2601,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			CASE 2700
 				IF 던전플래그:99:1 == 30 && !GETBIT(던전플래그:99:4,29)
-					CALL MESSAGE_WINDOW_D, "", "＞　ふと見ると、闘技場の絵とは反対側に牢屋のような絵が浮かび上がっている "
+					CALL MESSAGE_WINDOW_D, "", "＞　문득 보니、투기장 그림과는 반대쪽에 감옥 같은 그림이 떠오르고 있다 "
 					SETBIT 던전플래그:99:4,29
 				ENDIF
 		;---------
@@ -2609,89 +2609,89 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			;移動
 			CASE 2800
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,7,3
 			;移動
 			CASE 2801
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,1,4
 			;移動
 			CASE 2802
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,3,4
 			;移動
 			CASE 2803
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,7,6
 			;月光水
 			CASE 2804
 				IF 던전플래그:99:1 == 29 && 던전플래그:99:3 < 16
-					CALL MESSAGE_WINDOW_D, "", "【月光水】/＞　中を水銀で満たされた水晶の玉/　　水銀には月の힘が宿っており、固く閉ざされた扉を開け放つ힘を持つ "
+					CALL MESSAGE_WINDOW_D, "", "【월광수】/＞　안을 수은으로 채운 수정 구슬/　　수은에는 달의 힘이 깃들어 있어、굳게 닫힌 문을 열어젖히는 힘이 있다 "
 					던전플래그:99:3 = 16
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞　オブジェがある‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", "＞　오브제가 있다‥‥‥ "
 				ENDIF
 			;移動
 			CASE 2805
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,5,4
 			;移動
 			CASE 2806
-				CALL MESSAGE_WINDOW_D, "", "＞　ここから발場に飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　여기서 발판으로 뛰어넘을 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,28,5,6
 			;仕掛け
 			CASE 2807
-				CALL MESSAGE_WINDOW_D, "", "＞　손動式のハンドルがある "
+				CALL MESSAGE_WINDOW_D, "", "＞　수동식 핸들이 있다 "
 				IF !GETBIT(던전플래그:99:4,27)
-					CALL MESSAGE_WINDOW_D, "", "＞　竜の힘で封じられているようだ/　　このままでは動かせない "
+					CALL MESSAGE_WINDOW_D, "", "＞　용의 힘으로 봉해져 있는 것 같다/　　이대로는 움직일 수 없다 "
 				ELSE
-					CALL MESSAGE_WINDOW_D, "", "＞　動かしますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　움직입니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　ハンドルを回すと、連動して鏡が向きを変えてゆく "
-						CALL MESSAGE_WINDOW_D, "", "＞　180度回転すると、鏡に반사された月の光が天井にも設置されていた鏡に반사し/　　奥に設置されたオブジェを照らす "
-						CALL MESSAGE_WINDOW_D, "", "＞　するとオブジェに光が集まり、球が産み出されたようだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　핸들을 돌리자、연동되어 거울의 방향이 바뀐다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　180도 회전하면、거울에 반사된 달빛이 천장에도 설치되어 있던 거울에 반사되어/　　안쪽에 설치된 오브제를 비춘다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　오브제에 빛이 모여 구슬이 만들어진 것 같다 "
 						던전플래그:99:1 = 29
 					ENDIF
 				ENDIF
 			;鏡
 			CASE 2808
-				CALL MESSAGE_WINDOW_D, "", "＞　鏡が天井から差し込む月の光を반사している "
+				CALL MESSAGE_WINDOW_D, "", "＞　거울이 천장에서 들어오는 달빛을 반사하고 있다 "
 			;石碑
 			CASE 2809
-				CALL MESSAGE_WINDOW_D, "", "『行く손を阻みし冥界の竜』/『검で勇気の証を見せよ/　　　竜は自らの炎で滅ぶだろう』 "
-				CALL MESSAGE_WINDOW_D, "", "『月の雫は鏡を渡りて珠となる』/『天上の道を知るものだけが/　　　　　珠玉の光を손に入れる』 "
+				CALL MESSAGE_WINDOW_D, "", "『앞길을 가로막는 명계의 용』/『검으로 용기의 증거를 보여라/　　　용은 스스로의 불길로 멸망할 것이다』 "
+				CALL MESSAGE_WINDOW_D, "", "『달의 물방울은 거울을 건너 진주가 된다』/『천상의 길을 아는 자만이/　　　　　주옥같은 빛을 손에 넣는다』 "
 		;---------
 		;　浸水牢獄
 		;---------
 			;移動
 			CASE 2900
 				IF GETBIT(던전플래그:99:4,31)
-					CALL MESSAGE_WINDOW_D, "", "＞　吹き抜け階段の上部分へ泳いで移動しますか？ "
-					CALL INPUT_YN_D, "移動する", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　불어나는 계단 윗부분으로 헤엄쳐 이동합니까？ "
+					CALL INPUT_YN_D, "이동한다", "그만둔다"
 					SIF !RESULT
 						CALL DUNGEON_WORP,30,20,5
 				ENDIF
 			;装置
 			CASE 2901
 				IF !GETBIT(던전플래그:99:4,31)
-					CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키시겠습니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させると、周囲が水で満たされた "
-						CALL MESSAGE_WINDOW_D, "", "＞　これであれば、高い場所へも自由に泳いで行けそうだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키자 、주위가 물로 채워진다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　이것이라면、높은 곳에도 자유롭게 헤엄쳐 갈 수 있을 것 같다 "
 						SETBIT 던전플래그:99:4,31
 					ENDIF
 				ENDIF
@@ -2701,22 +2701,22 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;哲学者の卵입수
 			CASE 3000
 				IF 던전플래그:99:3 < 17
-					CALL MESSAGE_WINDOW_D, "", "【哲学者の卵】/＞　錬金術に사용する物質 "
+					CALL MESSAGE_WINDOW_D, "", "【철학자의 알】/＞　연금술에 사용하는 물질 "
 					던전플래그:99:3 = 17
 				ENDIF
 			CASE 3001
-				CALL MESSAGE_WINDOW_D, "", "＞　無事な通路へ飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　무사한 통로로 뛰어넘어 갈 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,30,19,5
 			CASE 3002
-				CALL MESSAGE_WINDOW_D, "", "＞　無事な通路へ飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　무사한 통로로 뛰어넘어 갈 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,30,18,4
 			CASE 3003
-				CALL MESSAGE_WINDOW_D, "", "＞　無事な通路へ飛び移れそうだ/　　飛び移りますか？ "
-				CALL INPUT_YN_D, "飛び移る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　무사한 통로로 뛰어넘어 갈 수 있을 것 같다/　　뛰어오를까？ "
+				CALL INPUT_YN_D, "뛰어오른다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,30,22,4
 		;---------
@@ -2724,21 +2724,21 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			CASE 3100
 				IF 던전플래그:99:1 == 32 && 던전플래그:99:3 < 18
-					CALL MESSAGE_WINDOW_D, "", "＞　変成が종료したようだ "
-					CALL MESSAGE_WINDOW_D, "", "＞　変成された石から不思議な声が/　　머리の中に響いてくる "
-					CALL MESSAGE_WINDOW_D, "", "『我は魔の門を開く第一の鍵なり/二つ눈の鍵は映し世の世界にある』 "
-					CALL MESSAGE_WINDOW_D, "", "【霊石 エリキサ】/＞　「哲学者の卵」を変成してできた神秘の石/　　鏡の封印を解くことが出来る "
+					CALL MESSAGE_WINDOW_D, "", "＞　변성이 끝난 것 같다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　변성된 돌에서 이상한 목소리가/　　머릿속에 울려온다 "
+					CALL MESSAGE_WINDOW_D, "", "『나는 마의 문을 여는 제 1의 열쇠다 /두 번째 열쇠는 비춘 세상에 있다』 "
+					CALL MESSAGE_WINDOW_D, "", "【영석 엘릭서】/＞　「철학자의 알」을 변성하여 생긴 신비의 돌/　　거울의 봉인을 풀 수 있다. "
 					던전플래그:99:3 = 18
 				ELSEIF 던전플래그:99:1 == 31
-					CALL MESSAGE_WINDOW_D, "", "＞　変成には多少時間がかかるようだ "
+					CALL MESSAGE_WINDOW_D, "", "＞　변성에는 다소 시간이 걸릴 것 같다 "
 				ELSEIF 던전플래그:99:1 < 31
-					CALL MESSAGE_WINDOW_D, "", "＞　何かが彫り込まれている "
-					CALL MESSAGE_WINDOW_D, "", "『心理を求める者よ、卵を投じよ/　　ゆっくりと慎重に熱したまえ』 "
-					CALL MESSAGE_WINDOW_D, "", "『其は青き霊石となり/険しき道への道しるべとなる』 "
-					CALL MESSAGE_WINDOW_D, "", "＞　哲学者の卵　を사용しますか？ "
-					CALL INPUT_YN_D, "사용する", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　무엇인가 조각되어 있다 "
+					CALL MESSAGE_WINDOW_D, "", "『심리를 추구하는 자여 달걀을 던져라/　　천천히 조심스럽게 달궈라』 "
+					CALL MESSAGE_WINDOW_D, "", "『그것은 푸른 영석이 되고/험한 길로 가는 이정표가 된다』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　철학자의 알을 사용하시겠습니까？ "
+					CALL INPUT_YN_D, "사용한다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　変成には多少時間がかかるようだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　변성에는 다소 시간이 걸릴 것 같다 "
 						던전플래그:99:1 = 31
 					ENDIF
 				ELSE
@@ -2747,30 +2747,30 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;　寝室～鏡の世界
 		;---------
 			CASE 3200
-				CALL MESSAGE_WINDOW_D, "", "＞　鏡の世界から出ますか？ "
-				CALL INPUT_YN_D, "出る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　거울의 세계에서 나옵니까？ "
+				CALL INPUT_YN_D, "나온다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,32,14,2
 			
 			CASE 3201
-				CALL MESSAGE_WINDOW_D, "", "＞　エリキサの影響をうけて/　　鏡が不気味な輝きを増している "
-				CALL MESSAGE_WINDOW_D, "", "＞　鏡の中へ入りますか？ "
-				CALL INPUT_YN_D, "入る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　엘릭서의 영향을 받아/　　거울이 섬뜩한 빛을 더하고 있다 "
+				CALL MESSAGE_WINDOW_D, "", "＞　거울 속으로 들어갑니까？ "
+				CALL INPUT_YN_D, "들어간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,32,10,2
 			CASE 3202
-				CALL MESSAGE_WINDOW_D, "리림", "「そこの鏡から鏡の世界に行けるようになったんですって」 "
-				CALL MESSAGE_WINDOW_D, "리림", "「せっかく豪華なベッドで休んでたのに/　これじゃ安心して休めないじゃない！」 "
+				CALL MESSAGE_WINDOW_D, "리림", "「거기 있는 거울에서 거울의 세계로 갈 수 있게 되었다네요」 "
+				CALL MESSAGE_WINDOW_D, "리림", "「모처럼 호화로운 침대에서 쉬고 있었는데/　이래서는 안심하고 쉴 수 없잖아！」 "
 		;---------
 		;　魔界門
 		;---------
 			CASE 3400
 				IF !GETBIT(던전플래그:99:4,33)
-					CALL MESSAGE_WINDOW_D, "", "＞　禍々しき闇が입を広げている/　　これが魔界への門だ "
-					CALL MESSAGE_WINDOW_D, "", "＞　賢者の石　を사용しますか？ "
-					CALL INPUT_YN_D, "사용する", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　요란한 어둠이 드리워지고 있다/　　이것이 마계로 가는 문이다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　현자의 돌을 사용하시겠습니까？ "
+					CALL INPUT_YN_D, "사용한다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　門を覆っていた힘場が破れ、魔界の門が입を開いた "
+						CALL MESSAGE_WINDOW_D, "", "＞　문을 덮고 있던 역장이 파괴되고、마계의 문이 열렸다 "
 						SETBIT 던전플래그:99:4,33
 					ENDIF
 				ENDIF
@@ -2780,30 +2780,30 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 			;仕掛け2
 			CASE 3600
 				IF !GETBIT(던전플래그:99:4,37)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを起動させますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키시겠습니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させると、下から柱が伸びてきた/　　これで先へ進めそうだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키자、아래에서 기둥이 뻗어 나왔다/　　이걸로 앞으로 나아갈 수 있을 것 같다 "
 						SETBIT 던전플래그:99:4,37
 					ENDIF
 				ENDIF
 			;爪
 			CASE 3601
 				IF !GETBIT(던전플래그:99:4,35)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを起動させますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키시겠습니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させると、何処かで何かが動く気配がした "
+						CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키자、어딘가에서 뭔가 움직이는 기미가 보였다 "
 						SETBIT 던전플래그:99:4,35
 					ENDIF
 				ENDIF
 			;仕掛け1
 			CASE 3602
 				IF !GETBIT(던전플래그:99:4,36)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを起動させますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키시겠습니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させると、下から柱が伸びてきた/　　これで先へ進めそうだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키자 、아래에서 기둥이 뻗어 나왔다/　　이걸로 앞으로 나아갈 수 있을 것 같다 "
 						SETBIT 던전플래그:99:4,36
 					ENDIF
 				ENDIF
@@ -2811,8 +2811,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;　心臓の間　下段
 		;---------
 			CASE 3700,3701
-				CALL MESSAGE_WINDOW_D, "", "＞　上へ登りますか？ "
-				CALL INPUT_YN_D, "登る", "やめておく"
+				CALL MESSAGE_WINDOW_D, "", "＞　위로 올라가시겠습니까？ "
+				CALL INPUT_YN_D, "올라간다", "그만둔다"
 				SIF !RESULT
 					CALL DUNGEON_WORP,36,18,8
 		;---------
@@ -2820,11 +2820,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		;---------
 			CASE 3800
 				IF !GETBIT(던전플래그:99:4,38)
-					CALL MESSAGE_WINDOW_D, "", "＞　仕掛けを起動させますか？ "
-					CALL INPUT_YN_D, "動かす", "やめておく"
+					CALL MESSAGE_WINDOW_D, "", "＞　장치를 기동시키시겠습니까？ "
+					CALL INPUT_YN_D, "움직인다", "그만둔다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", "＞　装置を起動させると部屋中央の心臓が動き出した "
-						CALL MESSAGE_WINDOW_D, "", "＞　其れに伴い、奥にある大扉の封印が해제されたようだ "
+						CALL MESSAGE_WINDOW_D, "", "＞　장치를 작동시키자 방 한가운데 심장이 뛰기 시작했다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그에 따라、안쪽에 있는 대문의 봉인이 해제된 것 같다 "
 						SETBIT 던전플래그:99:4,38
 					ENDIF
 				ENDIF
@@ -2848,7 +2848,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CASE 300
 				IF 던전플래그:99:1 < 14
-					CALL MESSAGE_WINDOW_D, "", "＞　上へ登る梯子がある/　　だがふたが閉まっているので通れない "
+					CALL MESSAGE_WINDOW_D, "", "＞　위로 올라가는 사다리가 있다/　　하지만 뚜껑이 닫혀 있어서 지나갈 수 없다 "
 					RETURN 0
 				ELSE
 					CALL STAIRS_99
@@ -2859,7 +2859,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CASE 1200
 				IF 던전플래그:99:1 < 14
-					CALL MESSAGE_WINDOW_D, "", "＞　　ふたが閉まっているので通れない "
+					CALL MESSAGE_WINDOW_D, "", "＞　　뚜껑이 닫혀 있어서 지나갈 수 없다 "
 					RETURN 0
 				ELSE
 					CALL STAIRS_99
@@ -2883,10 +2883,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)% 10
 		SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CASE 1303
 				IF 던전플래그:99:1 >= 16
-					CALL MESSAGE_WINDOW_D, "", "＞　異界の綻びがある/　　ここから帰還できそうだが、どうしようか…… "
-					CALL INPUT_YN_D, "帰還する", "まだ탐색を続けよう"
+					CALL MESSAGE_WINDOW_D, "", "＞　이계의 구멍이 있다/　　여기서 귀환할 수 있을 것 같은데 어떻게 할까…… "
+					CALL INPUT_YN_D, "귀환한다", "탐색을 계속한다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達は自室へと帰還した "
+						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%들은 자기 방으로 귀환했다. "
 						FLAG:탈출 = 1
 						RETURN 1
 					ENDIF
@@ -3211,10 +3211,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■闘技場　グリフォン(3)戦
 			CASE 1403
 				IF 던전플래그:99:1 == 25
-					CALL MESSAGE_WINDOW_D, "", "＞　머리の中に誰かが囁きかけてくる "
-					CALL MESSAGE_WINDOW_D, "", "『コロシアムに生贄を捧げよ/贄の儀は운命の輪へと道を繋ぐ』 "
-					CALL MESSAGE_WINDOW_D, "", "＞　上空に稲아내が走り、再びグリフォンが마이(동방)い降りてきた "
-					CALL MESSAGE_WINDOW_D, "", "＞　グリフォンが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　머릿속에 누군가 속삭여 온다 "
+					CALL MESSAGE_WINDOW_D, "", "『콜로세움에 제물을 바쳐라/제물은 운명의 바퀴로 길을 잇는다』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　상공에 번개가 치고、다시 그리폰이 휙 하고 내려왔다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그리폰이 덤벼들었다！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -3229,18 +3229,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 					
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　片翼をもがれたグリフォンは中央の마법진の上へ倒れ伏す "
-					CALL MESSAGE_WINDOW_D, "", "＞　すると마법진が輝き、鷲獅子の거체が宙に浮き/　　――空から振ってきた大柱が地面に縫い止めた "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「まさに魔검사スパーダ……いや、それ이상か」 "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「だが私もムンドゥス様に仕える身/　　　　　これでは終わらん」 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　もう勝負はついた。そう%CALLNAME:MASTER%は制止するが/　　グリフォンは止まる様子はない "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「偉大なる我らが主よ」 "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「我に힘を与え給え/　この者を倒す힘を！」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　血を吐きながら主へ呼びかける姿に呼応し、空へ三つの赤い光と뇌광が現れた "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「おお　ムンドゥス様」 "
-					CALL MESSAGE_WINDOW_D, "ムンドゥス", "「グリフォン　失望したぞ/生かす値打ちもない」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　ムンドゥスの힘がグリフォンを襲い/グリフォンは断末魔の叫びとともに苦しみながら消滅してしまった…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　한쪽 날개가 떨어진 그리폰은 중앙 마법진 위로 쓰러진다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그러자 마법진이 빛나고、독수리 사자의 거구가 허공에 뜬다/　　――하늘이 흔들리고 큰 기둥이 땅에 꽂혔다 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「확실히 마검사 스파다……아니、그 이상인가」 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「하지만 나도 문두스님을 섬기는 몸/　　　　　이것으로는 끝나지 않는다」 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　이제 승부는 났다。 %CALLNAME:MASTER%은 제지하려하나 /　　그리폰은 멈추는 기색이 없다 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「위대한 우리의 주인이여」 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「나에게 힘을 주십시오/　이 자를 쓰러뜨릴 힘을！」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　피를 토하며 주인을 호소하는 모습에 호응하여、하늘에 세 개의 붉은 빛과 뇌광이 나타났다 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「오오  문두스님」 "
+					CALL MESSAGE_WINDOW_D, "문두스", "「그리폰 실망했다/너는 살려둘 가치도 없다」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　문두스의 힘이 그리폰을 덮쳤고/그리폰은 단말마의 외침과 함께 괴로워하며 소멸하고 말았다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					던전플래그:99:1 = 26
 				ENDIF
@@ -3249,7 +3249,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;---------
 			CASE 2600
 				IF 던전플래그:99:3 >= 18 && 던전플래그:99:5 < 8
-					CALL MESSAGE_WINDOW_D, "", "＞　エリキサの影響を受けて/　　魔の波動が活性化している "
+					CALL MESSAGE_WINDOW_D, "", "＞　엘릭서의 영향을 받아/　　마의 파동이 활성화되어 있다 "
 					CALL DUNGEON_WORP,34,2,4
 				ELSEIF 던전플래그:99:3 >= 18 && 던전플래그:99:5 == 8
 					CALL DUNGEON_WORP,34,2,4
@@ -3325,27 +3325,27 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■開始地点　단테からの어드바이스
 			CASE 0
 				IF 던전플래그:99:5 == 0
-					CALL MESSAGE_WINDOW_D, "단테", "「この島について教えておくことが一つあった」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「ここは老朽化が激しくてな、악마は補修作業なんざしちゃくれない」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「逆にそれを逆손に取って、至るところに악마が物を隠していることがあってな」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「へそくりならまだ可愛いんだが、鍵なんかの無視するわけにはいかないものもある」 "
-					CALL MESSAGE_WINDOW_D, "단테", @"「さて%CALLNAME:MASTER%、クライミングは好きか？/손始めにこの先を登ってみな」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「이 섬에 대해 가르쳐 둘 것이 하나 있다」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「여기는 노후화가 심하고、악마는 보수작업 따위는 해주지 않는다」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「반대로 그것을 거꾸로 잡고、도처에 악마가 물건을 숨기고 있는 일이 있어서 말이야」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「비상금이라면 좋겠지만、열쇠가 필요한 는 것도 있을 것이다」 "
+					CALL MESSAGE_WINDOW_D, "단테", @"「자 그럼 %CALLNAME:MASTER%、클라이밍은 좋아하냐？/시작하기에 앞서 이 앞을 올라가 보아라」 "
 				ENDIF
 			;■開始地点から1F玄関ホールへ移動
 			CASE 1
 				CALL DUNGEON_WORP,2,4,15
 				;古城に初進入時に이벤트。フラグ99を1でなければ2にして登攀어드바이스を消す
 				IF 던전플래그:99:5 == 0 || 던전플래그:99:5 == 2
-					CALL MESSAGE_WINDOW_D, "", @"＞　古城へ侵入した/＞　崩れた箇所もあるものの、악마の気配はしない "
-					CALL MESSAGE_WINDOW_D, "", @"＞　普通の異界とは勝손が違うのかもしれない/＞　%CALLNAME:MASTER%は気を引き締めて先へ進んだ…… "
+					CALL MESSAGE_WINDOW_D, "", @"＞　고성에 침입했다/＞　무너진 곳도 있지만、악마의 기색은 없다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　일반적인 이계와는 사정이 다른지도 모른다/＞　%CALLNAME:MASTER%은 정신을 차리고 앞으로 나아갔다…… "
 					던전플래그:99:5 = 3
 				ENDIF
 			;■開始地点：上段　宝箱を取った後の단테の해설
 			CASE 100
 				IF 던전플래그:99:5 == 1
-					CALL MESSAGE_WINDOW_D, "단테", "「とまあ、こういう塩梅だ」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「せっかくの프레젠트だ　有効活用してやれよ/なに、代金を請求されたら鉛玉で礼をしてやりゃ아이い」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「ただ、あまりがっつくと痛い눈見るのは女と同じだ/気をつけな」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「세상에、이런 형편이다」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「모처럼의 프레젠트다 유효 활용해 줘/뭐, 대금이 청구되면 납구슬로 예를 들면 돼」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「다만 너무 달라붙으면 따가운 눈으로 보는 것은 여자와 같다/조심해라」 "
 					던전플래그:99:5 = 2
 				ENDIF
 			;■聖堂先の橋から海中通路へ強制移動
@@ -3357,20 +3357,20 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■아라스톨입수이벤트
 			CASE 208
 				IF 던전플래그:99:1 < 2
-					CALL MESSAGE_WINDOW_D, "", "＞　고통に悶た女性のレリーフに/　　大검が突き立てられている "
-					CALL MESSAGE_WINDOW_D, "", "＞　머리の中に誰かが囁きかけてくる "
-					CALL MESSAGE_WINDOW_D, "", "『我が名は아라스톨』 "
-					CALL MESSAGE_WINDOW_D, "", "『힘無き者はその心臓を贄とし/　　　　　我に永遠の복종を誓え』 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　声が聞こえるなり女性のレリーフが消え、大검が浮かび上がり/　　%CALLNAME:MASTER%へ突き立たんと迫ってきた！ "
-					CALL MESSAGE_WINDOW_D, "단테", "「おっと、そいつはNGだ」/＞　コレも記憶通りなのだろう/　　단테は横から손を伸ばし、余裕を持って검を止める "
-					CALL MESSAGE_WINDOW_D, "", "＞　意思ある魔검は不옷を訴えるようにその身に雷を纏い단테を焼くが/　　当の本人は物ともしていない様子だ "
-					CALL MESSAGE_WINDOW_D, "", "＞　そのまま단테が검を振ってみせると/　　검は納得したかのように鎮まった "
-					CALL MESSAGE_WINDOW_D, "단테", @"「オーケー、いい子だ。　%CALLNAME:MASTER%、こいつを使いな」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　손軽に渡される魔검　本人(？)も驚いたのか/しばらく後にピリピリと不옷を表明しだし」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「俺には馴染んだ獲物があるからな/そいつのオリジナルはこの島での戦いで使ってた。んだが」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「あ～……質に入れた後、元気に戦いを求めて旅立ったらしい、安心しろ」 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　つまり、質に入れられるよりマシだろう？　そういうことだ/　　검も不承不承感はあるが、ようやく%CALLNAME:MASTER%の손に馴染んだ/　　……仲良くなれそうだと、そう思う "
-					CALL MESSAGE_WINDOW_D, "", "　　『我が名は아라스톨　今後とも　よろしく……』 "
+					CALL MESSAGE_WINDOW_D, "", "＞　고통에 시달리는 여성의 조각에/　　대검이 꽂혀 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　머리 속에 누군가 속삭여 온다 "
+					CALL MESSAGE_WINDOW_D, "", "『내 이름은 알라스토르』 "
+					CALL MESSAGE_WINDOW_D, "", "『힘없는 자는 그 심장을 제물로 삼고/　　　　　나에게 영원한 복종을 맹세하라』 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　목소리가 들리자마자 여성의 조각이 사라지고、대검이 떠올랐다/　　%CALLNAME:MASTER%에게 불쑥 다가왔다！ "
+					CALL MESSAGE_WINDOW_D, "단테", "「이런、그건 NG다」/＞　이것도 기억대로겠지/　　단테는 옆에서 손을 뻗어 여유롭게 검을 멈춘다. "
+					CALL MESSAGE_WINDOW_D, "", "＞　의사 있는 마검은 불의를 호소하듯 그 몸에 벼락을 두르고 단테를 굽지만/　　정작 본인은 아랑곳하지 않는 눈치다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그대로 단테가 검을 흔들어 보이자/　　검은 납득한 듯 가라앉았다. "
+					CALL MESSAGE_WINDOW_D, "단테", @"「오케이、착하지 착해。　%CALLNAME:MASTER%、이녀석을 써라」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　손쉽게 전달되는 마검 본인(？)도 놀랐는지/잠시 후에 찌릿찌릿 불의를 표명했다」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「나에게는 익숙한 전리품이 있으니까 말이야/그 녀석의 오리지널은 이 섬에서의 싸움에서 사용하고 있었어. 하지만」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「아～……전당포에 넣은 후、건강하게 싸움을 하러 떠난 모양이야、안심해」 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　즉, 전당 잡히는 것보다 낫겠지？ 그런 것이다/　　검도 마지못해하는 감은 있지만、결국은 %CALLNAME:MASTER%의 손에 익숙해졌다/　　……친해질 수 있을 것 같다고、그렇게 생각한다 "
+					CALL MESSAGE_WINDOW_D, "", "　　『나의 이름은 알라스토르　앞으로도 잘 부탁한다……』 "
 					CALL GET_ITEMS,"아라스톨",1
 					던전플래그:99:1 = 2
 				ENDIF
@@ -3378,21 +3378,21 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 209
 				;以降、적の레벨上昇
 				IF 던전플래그:99:1 == 2 && 던전플래그:99:3 == 3
-					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%は扉の노부に손をかけたところで違和感を覚えた "
-					CALL MESSAGE_WINDOW_D, "", @"＞　その違和感の元――上段にあった死神の絵をみやると/なんと絵の中から鎌を持った死神が出てきた！ "
-					CALL MESSAGE_WINDOW_D, "", @"＞　浮遊し、壁をすり抜ける적の登場がより一層の困難を予感させる…… "
+					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%은 문고리에 손을 댄 곳에서 위화감을 느꼈다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　그 위화감의 원인――상단에 있던 사신 그림을 보자/무려 그림 속에서 낫을 든 사신이 나왔다！ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　날아다니고、벽을 뚫으면서 나타나는 적의 등장이、/앞으로의 탐색이 더욱 어려워질 것을 예감케 한다…… "
 					던전플래그:99:1 = 3
 					던전플래그:99:11 = 2
 				ENDIF
 			;■아라스톨이벤트後、단테と회화
 			CASE 210
 				IF 던전플래그:99:1 == 2 && 던전플래그:99:5 < 4
-					CALL MESSAGE_WINDOW_D, "단테", "「魔具ってのは、元は巨大な악마が姿を変えたものだ」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「そいつはもちろんオリジナルじゃない/この異界が再現した存在なのは間違いがない。だが」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「贋作が真作に劣るなんて決まっちゃいないようだ/なかなかのガッツだぜ、そいつ」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやら、自分が손にする魔검はレプ리카ということにはなるだろうが/　　遜色ない巨大な힘を秘めているようだ "
-					CALL MESSAGE_WINDOW_D, "단테", "「ま、お前ならいつもと一緒さ/よく言われるんだろう？/お休みの際は악마に体を乗っ取られないようお気をつけて。ってな」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　단테はそう言いながらヒラヒラと손を振りながら歩みを進める/　　この魔具に相応しい主になる。どうやら楽しみが増えたらしい」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「마구라는 것은、원래 거대한 악마가 모습을 바꾼 것이다.」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「그 녀석은 물론 오리지널이 아니다/이 이계가 재현한 존재인 것은 틀림없다.하지만」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「위작이 진작에 뒤떨어지진다고 결정되진 않는 것 같다/상당한 놈이야、그놈」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 자신이 손에 쥐는 마검은 레플리카라고 할 수는 있겠지만/　　손색없는 거대한 힘을 간직하고 있는 것 같다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「뭐、너라면 언제나와 같아/자주 듣지？/휴가때는 악마에게 몸을 빼앗기지 않도록 조심하라구」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　단테는 그러면서 힐끗 손을 흔들며 걸음을 옮긴다/　　이 마구에 걸맞은 주인이 된다. 아무래도 즐거움이 늘어난 것 같다」 "
 					던전플래그:99:5 = 4
 				ENDIF
 			;■古城入り口
@@ -3432,38 +3432,38 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 	;=======
 			CASE 500
 				IF 던전플래그:99:1 == 0
-					CALL MESSAGE_WINDOW_D, "", "＞　待ち構えていたかのように、空間を割いて악마が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　기다렸다는 듯이、공간을 가르며 악마가 덮쳐왔다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
 					CALL SET_ENEMY,7,[[キャラ:마카브르]],33,0,1
-					NAME:(CHARANUM-1) = ブラッディーマリー
-					CALLNAME:(CHARANUM-1) = ブラッディーマリー
+					NAME:(CHARANUM-1) = 블러디메리
+					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,8,[[キャラ:목없는라이더]],33,0,1
-					NAME:(CHARANUM-1) = マリオネット
-					CALLNAME:(CHARANUM-1) = マリオネット
+					NAME:(CHARANUM-1) = 마리오네트
+					CALLNAME:(CHARANUM-1) = 마리오네트
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,9,[[キャラ:마카브르]],33,0,1
-					NAME:(CHARANUM-1) = ブラッディーマリー
-					CALLNAME:(CHARANUM-1) = ブラッディーマリー
+					NAME:(CHARANUM-1) = 블러디메리
+					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,10,[[キャラ:목없는라이더]],33,0,1
-					NAME:(CHARANUM-1) = マリオネット
-					CALLNAME:(CHARANUM-1) = マリオネット
+					NAME:(CHARANUM-1) = 마리오네트
+					CALLNAME:(CHARANUM-1) = 마리오네트
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,11,[[キャラ:마카브르]],33,0,1
-					NAME:(CHARANUM-1) = ブラッディーマリー
-					CALLNAME:(CHARANUM-1) = ブラッディーマリー
+					NAME:(CHARANUM-1) = 블러디메리
+					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
@@ -3476,10 +3476,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:인카운트율 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 					MONEY:99 += 100
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　どこかを封じていた힘が消え去った気配がする…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　어딘가를 봉하던 힘이 사라진 기미가 보인다…… "
 					던전플래그:99:1 = 1
 				ENDIF
 			;■獅子の間2F　吹き抜け階段へ
@@ -3510,9 +3510,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■ネロㆍアンジェロ戦
 			CASE 825
 				IF 던전플래그:99:1 == 9
-					CALL MESSAGE_WINDOW_D, "", @"＞　黒騎士と%CALLNAME:MASTER%達を模した악마達は/　　堂々と%CALLNAME:MASTER%達が降りてくるのを待っていた "
-					CALL MESSAGE_WINDOW_D, "단테", "「再現体だろうが本人だろうが負けるのは主義じゃない/さあて、派손にいこうか！」　 "
-					CALL MESSAGE_WINDOW_D, "", "＞　黒騎士達が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　흑기사와 %CALLNAME:MASTER%들을 본뜬 악마들은/　　당당하게 %CALLNAME:MASTER%들이 내려오기를 기다리고 있었다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「재현체든 본인이든 지는 주의가 아니다/자 그럼、화려하게 갈볼까！」　 "
+					CALL MESSAGE_WINDOW_D, "", "＞　흑기사들이 덤벼들었다！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -3526,14 +3526,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達の投影体は힘尽き/　　この場には黒騎士が一人残された "
-					CALL MESSAGE_WINDOW_D, "", "＞　黒騎士は膝を付いているが、いまだ闘志は失われていない "
-					CALL MESSAGE_WINDOW_D, "", "＞　とはいえ劣勢は認めざるを得ないと判断したのだろう/　　こちらを強い眼差しで見つめたあと、退却していった "
-					CALL MESSAGE_WINDOW_D, "단테", "「人数が増えても追い込みきれないか/……まあ、それでこそか」 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　何故か嬉しそうな단테を急かし/　　%CALLNAME:MASTER%は先へ進むことにした "
-					CALL MESSAGE_WINDOW_D, "", "＞　ふと気配を感じ寝室を見やると、影の門番がいる/　　別個体なのだろうが、更に油断はできなくなったようだ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%들의 투영체는 힘을 다했다/　　이 자리에는 흑기사가 홀로 남겨졌다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　흑기사는 무릎을 꿇고 있지만、아직 투지를 잃지는 않았다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그렇다고 해도 열세는 인정하지 않을 수 없다고 판단했을 것이다/　　이쪽을 강한 눈빛으로 바라본 후、퇴각해 갔다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「인원수가 늘어나도 몰아붙일 수 없는가/……뭐、그래줘야지」 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　왠지 기쁜 듯한 단테를 재촉하고/　　%CALLNAME:MASTER%는 앞으로 나아가기로 했다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　문득 기척을 느껴 침실을 바라보니、그림자의 문지기가 있다/　　별개의 개체겠지만、더욱 방심할 수 없게 된 것 같다 "
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +200 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +200 "
 					MONEY:99 += 200
 					
 					던전플래그:99:1 = 10
@@ -3554,17 +3554,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;■シンㆍサイズ戦
 			CASE 1000
 				IF 던전플래그:99:1 < 12
-					CALL MESSAGE_WINDOW_D, "", "＞　その場に발を踏み入れると、周囲を마력が囲み閉じ込められた "
-					CALL MESSAGE_WINDOW_D, "", "＞　気配を感じ、水路の壁面を見ると/なぜか壁にかかっている骸뼈から滲み出るように死神が出現し、こちらへ迫ってくる "
-					CALL MESSAGE_WINDOW_D, "", "＞　 シンㆍサイズ　が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　그 자리에 발을 들여놓자、주위를 마력이 에워싸고 갇혔다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　기척을 느껴、수로 벽면을 보니/왠지 벽에 걸려있는 해골에서 배어나오듯 저승사자가 출현하여 이쪽으로 다가온다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　 신ㆍ사이즈　가 덤벼들었다！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
 					CALL SET_ENEMY,9,[[キャラ:카마조츠]],50,0,1
-					NAME:(CHARANUM-1) = シン サイズ
-					CALLNAME:(CHARANUM-1) = シン サイズ
+					NAME:(CHARANUM-1) = 신 사이즈
+					CALLNAME:(CHARANUM-1) = 신 사이즈
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 					ABL:(CHARANUM-1):스킬1 = 2 ;히트フェイブ
@@ -3581,7 +3581,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 					MONEY:99 += 100
 					
 					던전플래그:99:1 = 12
@@ -3602,12 +3602,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL DUNGEON_WORP,8,3,15
 			CASE 1104
 				IF 던전플래그:99:1 < 13
-					CALL MESSAGE_WINDOW_D, "", @"＞　先へ進もうとする%CALLNAME:MASTER%達の前に、再び溶岩蜘蛛が立ちはだかった "
-					CALL MESSAGE_WINDOW_D, "팬텀", "「休み時間は終わったぜ　坊や！」 "
-					CALL MESSAGE_WINDOW_D, "팬텀", "「아귀の遊びはもうやめだ」/「やりたい放題やってやる！」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　꼬리を眼前の床に叩きつけ、気迫は十分な様子だが/단테はなおも余裕を崩さない "
-					CALL MESSAGE_WINDOW_D, "단테", "「やれよ/マジな遊びをしようぜ！」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　팬텀　が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　앞으로 나아가려는 %CALLNAME:MASTER%들 앞에、다시 용암거미가 가로막았다 "
+					CALL MESSAGE_WINDOW_D, "팬텀", "「쉬는 시간은 끝났다 아가야！」 "
+					CALL MESSAGE_WINDOW_D, "팬텀", "「애들 놀이는 이제 그만이다」/「하고 싶은 대로 해 주마！」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　꼬리를 눈앞의 바닥에 내려치고、기백은 충분한 모습이지만/단테는 여전히 여유를 잃지 않는다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「해봐라/진짜 놀이를 하자구！」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　팬텀　가 덤벼들기 시작했다！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -3622,14 +3622,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　최후의일격が決まり、大蜘蛛は断末魔を上げ吹き飛ぶ/　　着地点にあったステンドグラスがその荷重に耐えられず、割れて大蜘蛛と共に階下へ降り注ぎ/　　――大蜘蛛は直下にある騎馬兵の像、その掲げた창に貫かれた "
-					CALL MESSAGE_WINDOW_D, "", @"＞　大蜘蛛はもがき苦しみながらも、見下ろしている%CALLNAME:MASTER%達/　　――特に단테を睨み続けている "
-					CALL MESSAGE_WINDOW_D, "팬텀", "「お前達　ただの인간ではないな？」/「特にそこの男、キサマ何者だ」 "
-					CALL MESSAGE_WINDOW_D, "팬텀", "「まさか　伝説の魔검사スパーダ？」/「そんなバカな」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　단테の姿が、彼の父に重なったのだろう/　　악마は驚愕の言葉を残し、消滅した "
-					CALL MESSAGE_WINDOW_D, "단테", "「歳をくって、よりダンディになっちまったか？　その息子단테だ」/「もうリベンジはなしだ　そのままネンネしてな」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　言葉を贈り、一行は先へ進んでゆく/　　その姿を、階下から見ている影が居ることには気が付かずにいた…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　최후의 일격이 결정되어져、거미는 단말마를 올리며 날아간다/　　착지점에 있던 스테인드글라스가 그 하중을 견디지 못하고 깨져、큰 거미와 함께 아래층으로 쏟아지면서/　　――거미는 바로 아래에 있는 기마병의 상、그 내건 창에 꿰뚫렸다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　거미는 몸부림치며 괴로워하면서도 %CALLNAME:MASTER%들을 내려다보고 있다/　　――특히 단테를 계속 노려보고 있다 "
+					CALL MESSAGE_WINDOW_D, "팬텀", "「네놈들 평범한 인간이 아니구나？」/「특히 거기의 남자、네녀석 뭐하는놈이냐」 "
+					CALL MESSAGE_WINDOW_D, "팬텀", "「설마 전설의 마검사 스파다？」/「그런 바보같은 일이 있을리가」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　단테의 모습이 그의 아버지에게 겹쳤을 것이다/　　악마는 경악의 말을 남기고 소멸되었다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「나이가 들어서 더 댄디해졌겠냐？　그의 아들 단테다」/「이제 리벤지는 없다　그대로 잠이나 자라」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　말을 건네고、일행은 앞으로 나아간다/　　그 모습을、아래층에서 보고 있는 그림자가 있다는 것을 깨닫지 못하고 있었다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					던전플래그:99:1 = 13
 				ENDIF
@@ -3650,18 +3650,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				ENDIF
 			CASE 1302
 				IF 던전플래그:99:1 < 16
-					CALL MESSAGE_WINDOW_D, "", "＞　跳ね橋を渡り終えたところで、跳ね橋が再度上がってしまう/　　古城に돌아간다には、何らかの方法を探すしかないようだ "
+					CALL MESSAGE_WINDOW_D, "", "＞　도개교를 다 건너가려하니、도개교가 다시 올라가 버렸다/　　고성으로 돌아가려면、다른 방법을 찾아야 할 것 같다 "
 					던전플래그:99:1 = 16
 				ELSEIF !GETBIT(던전플래그:99:4,23)
-					CALL MESSAGE_WINDOW_D, "", "＞　跳ね橋は上がってしまい、渡ることができない "
+					CALL MESSAGE_WINDOW_D, "", "＞　도개교가 올라가 버려서 건널 수가 없다 "
 				ELSE
 				ENDIF
 			CASE 1303
 				IF 던전플래그:99:1 >= 16
-					CALL MESSAGE_WINDOW_D, "", "＞　異界の綻びがある/　　ここから帰還できそうだが、どうしようか…… "
-					CALL INPUT_YN_D, "帰還する", "まだ탐색を続けよう"
+					CALL MESSAGE_WINDOW_D, "", "＞　이계의 구멍이 있다/　　여기서 귀환할 수 있을 것 같은데 어떻게 할까…… "
+					CALL INPUT_YN_D, "귀환한다", "다시 탐색을 계속한다"
 					IF !RESULT
-						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%達は自室へと帰還した "
+						CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%들은 자기 방으로 귀환했다. "
 						FLAG:탈출 = 1
 						RETURN 1
 					ENDIF
@@ -3672,18 +3672,18 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;ブレイド出現
 			CASE 1400
 				IF 던전플래그:99:11 < 5
-					CALL MESSAGE_WINDOW_D, "", "＞　広場へ발を踏み入れると、地面からリザードマンのような/　　ナリの악마が飛び出してきた "
-					CALL MESSAGE_WINDOW_D, "", "＞　更に탐색の困難が増したようだ…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　광장에 들어서자、지면에서 리자드맨 같은/　　나리의 악마가 튀어어나왔다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　재차 탐색의 어려움이 가중된 것 같다…… "
 					던전플래그:99:11 = 5
 				ENDIF
 			;グリフォン戦
 			CASE 1401
 				IF 던전플래그:99:1 == 18
-					CALL MESSAGE_WINDOW_D, "", "＞　急に風が強くなり、空に雷鳴が響き始める/　　雷が集まり光を放つと、そこには巨大な鷲獅子が出現していた "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「貴様か」 "
-					CALL MESSAGE_WINDOW_D, "グリフォン", "「ムンドゥス様に楯突く/スパーダの息子というのは」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「消えなトリ머리/　それとも　痛い눈みるか？」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　グリフォンが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　갑자기 바람이 거세지고、하늘에 천둥소리가 울리기 시작한다/　　천둥이 모여 빛을 발하자、그곳에는 거대한 독수리 사자가 출현하고 있었다 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「네놈이냐」 "
+					CALL MESSAGE_WINDOW_D, "그리폰", "「문두스님께 맞서는/  스파다의 아들이라는 녀석은」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「사라져라 새대가리/　아니면 뜨거운 맛 좀 볼테냐？」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그리폰이 덤벼들었다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
@@ -3696,8 +3696,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　不利を悟ったか、大鷲獅子は飛び去っていった…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　불리함을 깨달았는지、큰 독수리 사자는 날아가 버렸다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					던전플래그:99:1 = 19
 				ENDIF
@@ -3707,8 +3707,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;フェティッシュ出現
 			CASE 1403
 				IF 던전플래그:99:11 < 6
-					CALL MESSAGE_WINDOW_D, "", "＞　その場に脚を踏み入れると、炎を纏った무기を持った人形が現れた "
-					CALL MESSAGE_WINDOW_D, "", "＞　更に탐색の困難が増したようだ…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　그 자리에 발을 디디자、불꽃을 두른 무기를 든 인형이 나타났다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　재차 탐색의 어려움이 가중된 것 같다…… "
 					던전플래그:99:11 = 6
 				ENDIF
 			;霧深き渓谷へ移動
@@ -3722,17 +3722,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL DUNGEON_WORP,14,32,27
 			CASE 1502
 				IF 던전플래그:99:1 < 18
-					CALL MESSAGE_WINDOW_D, "", "＞　一対の토시が保管されている "
-					CALL MESSAGE_WINDOW_D, "", "＞　台座に碑文が刻まれている "
-					CALL MESSAGE_WINDOW_D, "", "『我が名は이프리트』 "
-					CALL MESSAGE_WINDOW_D, "", "『我を目覚めさせる愚かなる者よ/지옥의업화をその身をもって知れ』 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　声が響くとともに、保管されていた토시が宙を마이(동방)い/――そのまま、%CALLNAME:MASTER%の팔へ装着されてしまう "
-					CALL MESSAGE_WINDOW_D, "", "＞　すると토시から마력と共に炎が溢れ出し/　　あっというまにその身を包み込もうと燃え広がった！ "
-					CALL MESSAGE_WINDOW_D, "단테", @"「%CALLNAME:MASTER%っ、根比べだ/　お前さんのガッツをそいつに見せてやれ！」 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%は己の保有するマグネタイトを이용し、이프리트に抗い/　　見事、抑え込むことに성공する "
-					CALL MESSAGE_WINDOW_D, "단테", "「ナイスガッツだ/　見てみろよ、そいつも満更でもなさそうだ」 "
-					CALL MESSAGE_WINDOW_D, "", @"＞　言われてみれば、이프리트は마력の炎で己を示しながらも/　　%CALLNAME:MASTER%によく馴染んでいる "
-					CALL MESSAGE_WINDOW_D, "", @"＞　寡黙な印象を受ける頼もしい토시を新しい供に/　　%CALLNAME:MASTER%は先を急いだ "
+					CALL MESSAGE_WINDOW_D, "", "＞　한쌍의 건틀렛이 보관되어있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　받침대에 비문이 새겨져 있다 "
+					CALL MESSAGE_WINDOW_D, "", "『나의 이름은 이프리트』 "
+					CALL MESSAGE_WINDOW_D, "", "『나를 깨우는 어리석은 자여/지옥의 업화를 그 몸으로 알라』 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　목소리가 울림과 동시에、보관되어 있던 건틀렛이 공중을 날아/――그대로 、%CALLNAME:MASTER%의 팔에 장착되어 버린다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그러자 건틀렛에서 마력과 함께 불길이 쏟아져 나오고/　　순식간에 그 몸을 감싸며 타올랐다！ "
+					CALL MESSAGE_WINDOW_D, "단테", @"「%CALLNAME:MASTER%、근성이다/　네 녀석의 근성을 그놈에게 보여줘라！」 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%은 자신이 보유한 마그네타이트를 이용하여 이프리트와 다투고/　　보기 좋게 억제하는 데 성공했다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「나이스 근성이다/　봐봐라、그녀석도 나쁜것만은 아니다 」 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　듣고 보니、이프리트는 마력의 불꽃으로 자신을 나타내면서도/　　%CALLNAME:MASTER%에 잘 따르고 있다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　과묵한 인상을 받는 믿음직한 건틀렛을 새로운 동반자로 하고/　　%CALLNAME:MASTER%은 앞으로의 길을 서둘렀다 "
 					CALL GET_ITEMS,"이프리트",1
 					던전플래그:99:1 = 18
 				ENDIF
@@ -3762,9 +3762,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL DUNGEON_WORP,18,5,23
 			CASE 1701
 				IF 던전플래그:99:1 < 20
-					CALL MESSAGE_WINDOW_D, "", @"＞　聖堂へ進もうとする%CALLNAME:MASTER%の前に、大蜘蛛が2体立ちはだかる "
-					CALL MESSAGE_WINDOW_D, "", "＞　あの팬텀程ではないが、こちらも無視するには難しい相手のようだ…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　사이클롭스が2体、襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　성당으로 가려는 %CALLNAME:MASTER%의 앞을、큰 거미 두마리가 가로막는다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　아까의 팬텀만큼은 아니지만、이쪽도 무시하기에는 어려운 상대인 것 같다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　사이클롭스가 2체、덤벼들었다！ "
 					
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -3791,7 +3791,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 					MONEY:99 += 100
 					던전플래그:99:1 = 20
 				ENDIF
@@ -3848,10 +3848,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 	;=======
 			CASE 2100
 				IF 던전플래그:99:1 == 22
-					CALL MESSAGE_WINDOW_D, "", "＞　順調に船が進んでいるところに、再びグリフォンが再び現れる "
-					CALL MESSAGE_WINDOW_D, "", "＞　鷲獅子が날개ばたくと灯火がかき消され、船が止まってしまった "
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやら、グリフォンをなんとかしないとこれ이상は進めないようだ "
-					CALL MESSAGE_WINDOW_D, "", "＞　グリフォンが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　배가 순조롭게 나아가고 있을 때、그리폰이 다시 나타난다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　독수리 사자가 날개짓을 하자 등불이 꺼지고、배가 멈춰 버렸다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도、그리폰을 어떻게든 하지 않으면 더 이상은 진행할 수 없을 것 같다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그리폰이 덤벼들었다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
@@ -3864,14 +3864,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　不利を悟ったか、大鷲獅子は飛び去っていった…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　불리함을 깨달았는지、큰 독수리 사자는 날아가 버렸다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					던전플래그:99:1 = 23
-					CALL MESSAGE_WINDOW_D, "", "＞　グリフォンを撃退することに성공した "
-					CALL MESSAGE_WINDOW_D, "", "＞　鷲獅子が飛び去ると再び火が灯り、船が進み始める "
-					CALL MESSAGE_WINDOW_D, "", "＞　また、船長室の方から何かが動く音が聞こえた…… "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그리폰을 격퇴하는 데 성공했다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　독수리 사자가 날아가자 다시 불이 켜지고、배가 나아가기 시작한다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　다시、선장실 쪽에서 뭔가 움직이는 소리가 들렸다…… "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					SETBIT 던전플래그:99:4,14
 				ENDIF
@@ -3905,22 +3905,22 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;霊石ㆍエリキサ입수した帰還時　寝室の絵出現
 			CASE 2600
 				IF 던전플래그:99:3 == 18 && !GETBIT(던전플래그:99:4,32)
-					CALL MESSAGE_WINDOW_D, "", "＞　エリキサがもう一方の絵に強く反応を示している "
+					CALL MESSAGE_WINDOW_D, "", "＞　엘릭서는 다른 그림에 대해 강한 반응을 보이고 있다 "
 					SETBIT 던전플래그:99:4,32
 				ENDIF
-		;트리슈合流ㆍDr.파우스트입수
+		;트리쉬合流ㆍDr.파우스트입수
 			CASE 2601
 				IF 던전플래그:99:5 < 6
-					CALL MESSAGE_WINDOW_D, "", @"＞　再び古城へ戻ってきた%CALLNAME:MASTER%達を、一人の女性が「おかえりなさい」と出迎えた "
-					CALL MESSAGE_WINDOW_D, "트리슈", @"「貴方が%CALLNAME:MASTER%ね？/　단테から聞いてるわ、彼に勝った遊び友達」"
-					CALL MESSAGE_WINDOW_D, "", "＞　트리슈は손に持つ白いテンガロンハットを弄りつつ/　「彼、嬉しそうに喋ってたわよ」と告げる "
-					CALL MESSAGE_WINDOW_D, "단테", "「Hey,間違えるなよ。負けちゃいない、よくて引き分けだ」/　そうだろう？　と負けず嫌いが主張するが、彼女は慣れた様子であしらっている"
-					CALL MESSAGE_WINDOW_D, "트리슈", "「その辺りはあとで仲良く相談してちょうだい/　私もこことは縁が深くてね。遅れちゃったけど、同行させてもらうわね」"
+					CALL MESSAGE_WINDOW_D, "", @"＞　다시 고성으로 돌아온 %CALLNAME:MASTER%들을、한 여성이「잘 다녀왔어요」라고 맞이했다 "
+					CALL MESSAGE_WINDOW_D, "트리쉬", @"「네가 %CALLNAME:MASTER%이구나？/　단테한테 들었어、그를 이긴 플레이메이트라고」"
+					CALL MESSAGE_WINDOW_D, "", "＞　트리쉬는 손에 들고 있는 하얀 카우보이 모자를 만지작거리며/　「그는、즐거운듯이 말했어」라고 말한다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「Hey、착각하지마。진게 아니야、무승부다」/　그렇지？　라고 지기 싫어하는 사람이 주장하지만、그녀는 익숙한 모습이라는 듯 대하고 있다"
+					CALL MESSAGE_WINDOW_D, "트리쉬", "「그 이야기는 나중에 사이좋게 상의해줘/　나도 여기랑은 인연이 깊어서。늦었지만、동행해주도록 할께」"
 					SIF FINDCHARA_B([[キャラ:버질]]) == 2
-						CALL MESSAGE_WINDOW_D, "", "「お互い獲物を譲る気は無いでしょうし、仲良くやりましょ？」/＞　彼女は何故か눈立たぬように黙り込んでいる버질にもにこやかに声をかけている/　　再現はされていないようだが、彼女もまた말렛섬（島）の関係者ということなのだろう "
-					CALL MESSAGE_WINDOW_D, "", @"＞　そして단테の忘れ物だから有効活用するといい、と%CALLNAME:MASTER%に告げて모자を손渡した "
-					CALL MESSAGE_WINDOW_D, "트리슈", "「デビルハンター　트리슈よ　今後ともヨロシク？」"
-					CALL MESSAGE_WINDOW_D, "", "＞　트리슈이(가) 동료가 되었다/　　Dr.파우스트　を입수した "
+						CALL MESSAGE_WINDOW_D, "", "「서로 사냥감을 양보할 생각은 없을 테고、사이좋게 지내자구요？」/＞　그녀는 왠지 눈에 띄지 않게 입을 다물고 있는 버질에게도 상냥하게 말하고 있다/　　그녀는 재현체인 것 같지는 않고、그녀 역시 말렛 섬의 관계자라는 듯 하다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　그리고 단테 분실물이니 유용하게 활용하면 좋겠다고、%CALLNAME:MASTER%에게 말하고 모자를 전달했다 "
+					CALL MESSAGE_WINDOW_D, "트리쉬", "「데빌헌터　트리쉬야　앞으로도 잘 부탁해？」"
+					CALL MESSAGE_WINDOW_D, "", "＞　트리쉬이(가) 동료가 되었다/　　Dr.파우스트　를 입수했다 "
 					SIF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == -1
 						CALL ADD_NEW_COMPANION,3505,500
 					CALL GET_ITEMS,"Dr.파우스트",1
@@ -3932,7 +3932,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;ネロㆍアンジェロ(3)戦종료後、浸水牢獄の絵出現
 			CASE 2700
 				IF 던전플래그:99:1 == 30 && !GETBIT(던전플래그:99:4,29)
-					CALL MESSAGE_WINDOW_D, "", "＞　闘技場の部屋とは反対側に、牢獄の絵が出現した "
+					CALL MESSAGE_WINDOW_D, "", "＞　투기장 방과 반대쪽에、감옥의 그림이 출현했다 "
 					SETBIT 던전플래그:99:4,29
 				ENDIF
 	;=======
@@ -3941,8 +3941,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;ドリーグ설명
 			CASE 2802
 				IF 던전플래그:99:5 < 7
-					CALL MESSAGE_WINDOW_D, "", "＞　部屋へ발を踏み入れると、奥の広間に飾られている竜の뼈の標本が動き出した！ "
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやら악마が憑依しているらしく　こちらへ적意を向けてきている/　　何かしら対処をしなくてはいけないだろう‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", "＞　방에 발을 들여놓자、방에 장식되어 있는 용의 뼈 표본이 움직이기 시작했다！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 악마가 빙의하고 있는 듯 이쪽으로 적의를 돌리고 있다/　　뭔가 대처를 하지 않으면 안 될 것이다‥‥‥ "
 					던전플래그:99:5 = 7
 				ENDIF
 		;転移（小部屋の絵へ）
@@ -3952,41 +3952,41 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;フロスト出現
 			CASE 2806
 				IF 던전플래그:99:11 < 8
-					CALL MESSAGE_WINDOW_D, "", @"＞　扉へ손をかけようとしたところ　%CALLNAME:MASTER%は背後に気配を感じ振り返った "
-					CALL MESSAGE_WINDOW_D, "", @"＞　其れは闘技場の壁の上で%CALLNAME:MASTER%達を観察しており/　　눈が合うと周囲に冷気を漂わせ　身軽に飛び降りこちらへ向かってくる "
-					CALL MESSAGE_WINDOW_D, "", "＞　どうやら侮れない적のようだ　탐색は一層困難を増してゆく‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　문에 손을 대려는데　%CALLNAME:MASTER%은 등뒤에 기척을 느끼고 뒤돌아보았다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　그것은 투기장 벽위에서 %CALLNAME:MASTER%들을 관찰하고 있으며/　　눈을 마주치자 주위에 냉기를 풍기며　가볍게 뛰어내려 이쪽으로 왔다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　아무래도 만만치 않은 적인 것 같다　탐색은 한층 더 어려움을 더해 간다‥‥‥ "
 					던전플래그:99:11 = 8
 				ENDIF
 		;ネロㆍアンジェロ(3)
 			CASE 2807
 				IF 던전플래그:99:1 < 30
-					CALL MESSAGE_WINDOW_D, "", @"＞　視線の先に、何度も見た背中が%CALLNAME:MASTER%達を待っていた "
-					CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロは망토を翻し、こちらを向き直って검を抜く "
+					CALL MESSAGE_WINDOW_D, "", @"＞　시선의 끝에는、몇 번이나 본 뒷모습이 %CALLNAME:MASTER%들을 기다리고 있었다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　넬로ㆍ안젤로는 망토를 휘날리며、이쪽으로 돌아 검을 뽑는다 "
 					;PTに鬼ぃちゃんIN
 					IF FINDCHARA_B([[キャラ:버질]]) == 2
-						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
-						CALL MESSAGE_WINDOW_D, "버질", "「‥‥皮肉のつもりか？」/＞　버질は苦虫を噛み潰したかのような表情だ "
-						CALL MESSAGE_WINDOW_D, "단테", "「まさか！/あの状況でも曲がってないってのを純粋に称賛してるのさ」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　兄弟の掛け合いを他所に、ネロㆍアンジェロは地面へ검を突き刺し/　　両손を交差させて힘を개방してゆく "
-						CALL MESSAGE_WINDOW_D, "", "＞　――そこには、버질の顔をした魔검사本当の姿があった/　　魔검사は再び검を取り、こちらへ검気を向けてくる "
-						CALL MESSAGE_WINDOW_D, "버질", "「ぬかせ。/ならば本物との差を見せてやる」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「여전히 좋은 근성이다/　너도 그렇게 생각하지？」 "
+						CALL MESSAGE_WINDOW_D, "버질", "「‥‥비아냥거릴 작정이냐？」/＞　버질은 쓴 벌레 씹은 듯한 표정이다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「에이 설마！/ 그 상황에서도 굽히지 않았다는 것을 순수하게 칭찬하고 있는 거야」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　형제의 만담은 안중에도 없는듯、넬로ㆍ안젤로는 지면에 검을 꼽고/　　양손을 교차시켜 힘을 개방해 간다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　――거기에는、 버질의 얼굴을 한 마검사 본연의 모습이 있었다/　　마검사는 다시 검을 들고、이쪽으로 검기를 돌린다 "
+						CALL MESSAGE_WINDOW_D, "버질", "「비켜라。/그렇게 나온다면 진짜와의 차이를 보여 주겠다」 "
 					;PTにいないけど鬼ぃちゃん加入済み
 					ELSEIF FINDCHARA_B([[キャラ:버질]]) == 1 || FINDCHARA_B([[キャラ:버질]]) == 12
-						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
-						CALL MESSAGE_WINDOW_D, "", @"＞　確かにこの魔검사からは、他の악마にはない힘への執念を%CALLNAME:MASTER%も感じていた "
-						CALL MESSAGE_WINDOW_D, "단테", "「だが、ラストステージだ。/　見てりゃわかるが、今までと同じと思ってたら――」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロㆍアンジェロが両손を交差させて힘を개방している "
-						CALL MESSAGE_WINDOW_D, "", "＞　暴風を伴い、本来の힘を개방させた魔검사/　　その顔は、今はいない隣の男の兄のものであった "
-						CALL MESSAGE_WINDOW_D, "단테", "「あっという間に首と몸통がさよなら、だ。/　さあて、ラストダンスも派손にいこうか！」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「여전히 좋은 근성이다/　너도 그렇게 생각하지？」 "
+						CALL MESSAGE_WINDOW_D, "", @"＞　확실히 이 마검사에게서는、다른 악마에게는 없는 힘에 대한 집념을 %CALLNAME:MASTER%도 느끼고 있었다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「하지만、라스트 스테이지다。/　보면 알겠지만、지금까지와 같다고 생각했다면――」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그렇게 말하는 단테의 시선 앞에서、넬로ㆍ안젤로가 양손을 교차시켜 힘을 개방하고 있다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　폭풍을 동반하여、본래의 힘을 개방시킨 마검사/　　그 얼굴은 지금은 없는、옆에 있는 남자의 형의 것이었다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「눈 깜짝할 사이에 목과 몸통이 안녕、이다./　자 그럼、라스트 댄스도 화려하게 가볼까！」 "
 					ELSE
-						CALL MESSAGE_WINDOW_D, "단테", "「相変わらずいいガッツだ/　あんたもそう思うだろ？」 "
-						CALL MESSAGE_WINDOW_D, "", @"＞　確かにこの魔검사からは、他の악마にはない힘への執念を%CALLNAME:MASTER%も感じていた "
-						CALL MESSAGE_WINDOW_D, "단테", "「だが、ラストステージだ。/　感じてるだろうが、今までと同じと思ってたら――」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　そう告げる단테の視線の先では、ネロㆍアンジェロが両손を交差させて힘を개방している "
-						CALL MESSAGE_WINDOW_D, "", "＞　暴風を伴い、本来の힘を개방させた魔검사/　　その顔は、どこか隣の男を思わせるものだ "
-						CALL MESSAGE_WINDOW_D, "단테", "「あっという間に首と몸통がさよなら、だ。/　さあて、ラストダンスも派손にいこうか！」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「여전히 좋은 근성이다/　너도 그렇게 생각하지？」 "
+						CALL MESSAGE_WINDOW_D, "", @"＞　확실히 이 마검사에게서는、다른 악마에게는 없는 힘에 대한 집념을 %CALLNAME:MASTER%도 느끼고 있었다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「하지만、라스트 스테이지다。/　보면 알겠지만、지금까지와 같다고 생각했다면――」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그렇게 말하는 단테의 시선 앞에서、넬로ㆍ안젤로가 양손을 교차시켜 힘을 개방하고 있다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　폭풍을 동반하여、본래의 힘을 개방시킨 마검사/　　그 얼굴은、어딘가 옆의 남자를 떠올리게 하는 것이었다 "
+						CALL MESSAGE_WINDOW_D, "단테", "「눈 깜짝할 사이에 목과 몸통이 안녕、이다./　자 그럼、라스트 댄스도 화려하게 가볼까！」 "
 					ENDIF
-					CALL MESSAGE_WINDOW_D, "", "＞　ネロㆍアンジェロが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　넬로ㆍ안젤로가 덤벼들었다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
@@ -4001,28 +4001,28 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　全힘を振り絞りなお敗れた魔검사は/　　声もなく膝から崩れ落ち、幻のごとく消えていった‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", "＞　전력을 다하고 패배한 마검사는/　　소리도 없이 무릎부터 무너져 내리고、환상이었던 것 처럼 사라져 갔다‥‥‥ "
 					IF FINDCHARA_B([[キャラ:버질]]) == 2
-						CALL MESSAGE_WINDOW_D, "", "＞　おそらく過去の己だったのだろう魔검사へ、自ら止めを刺した버질/　　その技の冴えに、단테が横で입笛を鳴らしている "
-						CALL MESSAGE_WINDOW_D, "버질", "「フン‥‥‥認めよう。/　　確かに俺は一度ムンドゥスに敗れ、傀儡と化した」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　아마도 과거의 자신이였을 마검사에게、몸소 숨통을 끊는 버질/　　그 기술의 탁월함에、단테가 옆에서 휘파람을 불고 있다. "
+						CALL MESSAGE_WINDOW_D, "버질", "「흥‥‥‥인정하지。/　　확실히 나는 한번 문두스에게 졌고、꼭두각시가 되었었다」 "
 						IF GETCHARA([[キャラ:버질]]) > -1 &&(IS_LOVER(GETCHARA([[キャラ:버질]])) || TALENT:(GETCHARA([[キャラ:버질]])):신뢰 || TALENT:(GETCHARA([[キャラ:버질]])):동료 || TALENT:(GETCHARA([[キャラ:버질]])):맹우)
-							CALL MESSAGE_WINDOW_D, "버질", @"「――いい機会だ。/　　%CALLNAME:MASTER%、側で観ているがいい」 "
-							CALL MESSAGE_WINDOW_D, "버질", "「今の俺は、もはやヤツなぞ眼中にない。その証明を見せてやる」 "
+							CALL MESSAGE_WINDOW_D, "버질", @"「――좋은 기회다。/　　%CALLNAME:MASTER%、옆에서 보고 있어라」 "
+							CALL MESSAGE_WINDOW_D, "버질", "「지금의 나는、이런 녀석은 안중에도 없다。그것을 증명해보이겠다」 "
 						ELSE
-							CALL MESSAGE_WINDOW_D, "버질", "「――残してやるつもりはない。/　　俺がヤツを狩る様を、성인しく観ているがいい」 "
+							CALL MESSAGE_WINDOW_D, "버질", "「――남겨줄 생각은 없어。/　　내가 놈을 사냥하는 모습을、얌전히 보고 있어라」 "
 						ENDIF
 					ELSEIF FINDCHARA_B([[キャラ:버질]]) == 1
-						CALL MESSAGE_WINDOW_D, "단테", "「お疲れさん。本人相手よりは流石に譲るが、최고のダンスを楽しめたろ？ "
-						CALL MESSAGE_WINDOW_D, "", "＞　確かに、闘技場で검を交えたあのときよりはマシではあるが/　　楽しめたかどうかはコメントを控えさせていただこう "
-						CALL MESSAGE_WINDOW_D, "단테", "「そうか？　まあ、ここまでくればもう一息だ/　　アトラクションは最後まで楽しまにゃ損だぜ」 "
-						CALL MESSAGE_WINDOW_D, "", @"＞　楽しむかは別として、ここまで来たらやりきるしか無いだろう/　　%CALLNAME:MASTER%達は先へ進むことにした "
+						CALL MESSAGE_WINDOW_D, "단테", "「수고했어。본인을 상대하는 것 보다는 덜하겠지만、최고의 춤을 즐길 수 있었지？ "
+						CALL MESSAGE_WINDOW_D, "", "＞　확실히、투기장에서 검을 겨누던 그때보다는 낫긴 하지만/　　즐거웠는지는 코멘트를 삼가도록 하겠습니다"
+						CALL MESSAGE_WINDOW_D, "단테", "「그러냐？　뭐、여기까지 오면 이제 한숨 돌려도 돼./　　어트랙션은 끝까지 즐기지 않으면 손해야」 "
+						CALL MESSAGE_WINDOW_D, "", @"＞　즐기느냐는 차치하고、이쯤 되면 할 수밖에 없을 것이다/　　%CALLNAME:MASTER%들은 앞으로 나아가기로 했다 "
 					ELSE
-						CALL MESSAGE_WINDOW_D, "단테", "「お疲れさん。本人相手と比べると流石に譲るんだが/　こっちも최고のダンスを楽しめたろ？」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　その입ぶりから　恐らく該当の人物はまだ存命で/　あれ이상の技の冴えであることは間違いないようだ‥‥‥ "
-						CALL MESSAGE_WINDOW_D, "단테", "「もしかしたら、いつかお前さんとこにも遊びに来るかもしれないしな、覚えといて損はないぜ/　おいおい、なに渋い顔してるんだ？」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　これもこの악마狩人と縁ができた결과として受け入れるしか無いようだ‥‥‥/　　ひとまず先のことは置いておき、今は先に進むこととした "
+						CALL MESSAGE_WINDOW_D, "단테", "「수고했어。본인을 상대하는 것과 비교하면 덜하겠지만/　이쪽도 최고의 춤을 즐길 수 있었지？」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그 말투로 보아 아마도 해당 인물은 아직도 생존해 있고/　저것 이상으로 기량이 뛰어난 것은 틀림없는 것 같다‥‥‥ "
+						CALL MESSAGE_WINDOW_D, "단테", "「어쩌면、언젠가 너네 집에도 놀러올지도 모르니까、기억해둬서 손해는 없어/　어이어이、뭘 또 똥씹은 표정이야？」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　이것도 이 악마 사냥꾼과 인연이 생긴 결과로 받아들일 수밖에 없는 것 같다‥‥‥/　　일단 앞일은 제쳐두고 지금은 앞으로 나아가기로 했다"
 					ENDIF
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +1500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +1500 "
 						MONEY:99 += 1500
 					던전플래그:99:1 = 30
 				ENDIF
@@ -4032,29 +4032,29 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;전투
 			CASE 2900
 				IF !GETBIT(던전플래그:99:4,30)
-					CALL MESSAGE_WINDOW_D, "", @"＞　中央まで泳いで進んだ%CALLNAME:MASTER%達を、壁をすり抜け死神が囲む/　　やり過ごすのは불可能のようだ "
-					CALL MESSAGE_WINDOW_D, "", "＞　シン シザーズが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", @"＞　중앙까지 헤엄쳐 나아간 %CALLNAME:MASTER%들을、벽을 뚫는 사신들이 에워싼다/　　그냥 지나쳐 가는 것은 불가능할 것 같다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　신 시저스가 덤벼들기 시작했다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
 					CALL SET_ENEMY,8,[[キャラ:그르르]],80,0,1
-					NAME:(CHARANUM-1) = シン シザーズ
-					CALLNAME:(CHARANUM-1) = シン シザーズ
+					NAME:(CHARANUM-1) = 신 시저스
+					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,9,[[キャラ:그르르]],80,0,1
-					NAME:(CHARANUM-1) = シン シザーズ
-					CALLNAME:(CHARANUM-1) = シン シザーズ
+					NAME:(CHARANUM-1) = 신 시저스
+					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,10,[[キャラ:그르르]],80,0,1
-					NAME:(CHARANUM-1) = シン シザーズ
-					CALLNAME:(CHARANUM-1) = シン シザーズ
+					NAME:(CHARANUM-1) = 신 시저스
+					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
@@ -4066,8 +4066,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　死神を退けると、壁が一部消え通路が現れた "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +100 "
+					CALL MESSAGE_WINDOW_D, "", "＞　사신을 물리치자、벽이 일부 사라지고 통로가 나타났다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +100 "
 					MONEY:99 += 100
 					SETBIT 던전플래그:99:4,30
 				ENDIF
@@ -4094,9 +4094,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CASE 3101
 				;나이트메어(2)戦
 				IF 던전플래그:99:1 == 31
-					CALL MESSAGE_WINDOW_D, "", "＞　哲学者の卵を変成させているのを嗅ぎつけたのか、またも地面から나이트메어が湧き出した "
-					CALL MESSAGE_WINDOW_D, "", "＞　まだ変成は終わりそうにない/　　ここで邪魔をされるわけにはいかないようだ "
-					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　철학자의 알을 변성시키는 것을 알아냈는지、다시 지면에서 나이트메어가 솟아났다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　변성은 아직 끝나지 않을 것 같다/　　여기서 방해받을 수는 없다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어가 덤벼들기 시작했다！ "
 					SETBIT 던전플래그:99:8,4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -4113,8 +4113,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 					
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어は叫びとともに蒸発するように消えていった‥‥‥ "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +500 "
+					CALL MESSAGE_WINDOW_D, "", "＞　나나이트메어는 외침과 함께 증발하듯 사라져 갔다‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브+500 "
 					MONEY:99 += 500
 					CLEARBIT 던전플래그:99:8,4
 					던전플래그:99:1 = 32
@@ -4132,17 +4132,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;賢者の石
 			CASE 3200
 				IF 던전플래그:99:3 < 19
-					CALL MESSAGE_WINDOW_D, "", "【賢者の石】/＞　魔界への門を開く鍵の役割を果たす "
-					CALL MESSAGE_WINDOW_D, "", @"＞　賢者の石を입수すると、3体の이형が%CALLNAME:MASTER%達を取り囲んだ "
-					CALL MESSAGE_WINDOW_D, "", "＞　歪な人の머리部、발の代わりに人の손がある四발の짐승が不気味な笑い声を上げる "
-					CALL MESSAGE_WINDOW_D, "", "＞　ノーバディが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "【현자의 돌】/＞　마계로 가는 문을 여는 열쇠 역할을 한다 "
+					CALL MESSAGE_WINDOW_D, "", @"＞　현자의 돌을 입수하자、3체의 이형이 %CALLNAME:MASTER%들을 에워싼다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　찌그러진 사람의 머리、다리 대신 사람의 손이 있는 네 발 짐승이 섬뜩한 웃음소리를 낸다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　노바디가 덤벼들기 시작했다！ "
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
 					CALL SET_ENEMY,8,[[キャラ:키메라]],80,0,1
-					NAME:(CHARANUM-1) = ノーバディ
-					CALLNAME:(CHARANUM-1) = ノーバディ
+					NAME:(CHARANUM-1) = 노바디
+					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
 					ABL:(CHARANUM-1):스킬2 = 2034 ;만마의난무
 					ABL:(CHARANUM-1):스킬3 = 2005 ;자폭
@@ -4151,8 +4151,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,9,[[キャラ:키메라]],80,0,1
-					NAME:(CHARANUM-1) = ノーバディ
-					CALLNAME:(CHARANUM-1) = ノーバディ
+					NAME:(CHARANUM-1) = 노바디
+					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
 					ABL:(CHARANUM-1):스킬2 = 2034 ;만마의난무
 					ABL:(CHARANUM-1):스킬3 = 2005 ;자폭
@@ -4161,8 +4161,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
 					CALL SET_ENEMY,10,[[キャラ:키메라]],80,0,1
-					NAME:(CHARANUM-1) = ノーバディ
-					CALLNAME:(CHARANUM-1) = ノーバディ
+					NAME:(CHARANUM-1) = 노바디
+					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
 					ABL:(CHARANUM-1):스킬2 = 2034 ;만마의난무
 					ABL:(CHARANUM-1):스킬3 = 2005 ;자폭
@@ -4177,7 +4177,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:선제기습취소 = 0
 					FLAG:미조우걸음수 = 0
 					
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +300 "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +300 "
 					MONEY:99 += 300
 					던전플래그:99:3 = 19
 					던전플래그:99:11 = 9
@@ -4188,10 +4188,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		;나이트메어(3)戦
 			CASE 3500
 				IF !GETBIT(던전플래그:99:4,34)
-					CALL MESSAGE_WINDOW_D, "", "＞　広間の中央へ발を踏み入れると　周囲を마력の壁が取り囲み/　　再び나이트메어が湧き出てきた "
-					CALL MESSAGE_WINDOW_D, "", "＞　再現しきれなかったのか、ぼんやりとした/　　おそらくは女性型だろう幻影体を連れている "
-					CALL MESSAGE_WINDOW_D, "", "＞　敗北が重なり、軟体の動きも鈍いようだ/　　もう一息といったところだろうか "
-					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어が襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "", "＞　넓은 방 한가운데로 들어서자 주위를 마력의 벽이 에워싸고/　　다시 나이트메어가 솟아 나왔다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　재현해내지 못했는지、멍하니 있다/　　아마도 여성형인듯한 환영체를 데리고 있다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　패배가 겹치면서 연체의 움직임도 더뎌진 것 같다/　　이제 한숨 돌려도 될만한 걸까 "
+					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어가 덤벼들기 시작했다！ "
 					SETBIT 던전플래그:99:8,4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -4209,8 +4209,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 					
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어はついにコアを砕かれ、断末魔と共に溶けていった‥‥‥ "
-					CALL MESSAGE_WINDOW_D, "", "＞　レッドオーブ +1000 "
+					CALL MESSAGE_WINDOW_D, "", "＞　나이트메어는 마침내 코어가 부서져、단말마와 함께 녹아내렸다‥‥‥ "
+					CALL MESSAGE_WINDOW_D, "", "＞　레드 오브 +1000 "
 					MONEY:99 += 1000
 					CLEARBIT 던전플래그:99:8,4
 					던전플래그:99:1 = 33
@@ -4263,59 +4263,59 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 	;=======
 			CASE 3900
 				IF 던전플래그:99:1 < 34
-					CALL MESSAGE_WINDOW_D, "", @"＞　神殿――神の謁見の間を思わせる場所/　　その最奥の玉座に座して魔帝ムンドゥスは%CALLNAME:MASTER%達を待ち受けていた "
-					CALL MESSAGE_WINDOW_D, "ムンドゥス", "「よくぞ来た。スパーダの血、そして―― "
+					CALL MESSAGE_WINDOW_D, "", @"＞　신전――신을 알현하는 문을 연상시키는 장소/　　그 가장 안쪽의 옥좌에 앉은 마제 문두스는 %CALLNAME:MASTER%들을 기다리고 있었다 "
+					CALL MESSAGE_WINDOW_D, "문두스", "「잘 왔다。스파다의 피、그리고―― "
 					IF FINDCHARA_B([[キャラ:버질]]) == 2
-						CALL MESSAGE_WINDOW_D, "ムンドゥス", "久しいな、我が配下よ/　　また私へ仕えに来たか」 "
-						CALL MESSAGE_WINDOW_D, "버질", "「つまらん도발をする。そのナリでよくもほざけたものだ」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　かつて敗れ、傀儡の辱めを受けた相手とはいえ/今の검鬼は雑事と魔帝の言葉を鼻で笑って聞き流す "
-						CALL MESSAGE_WINDOW_D, "", "＞　彼や단테からすれば、かの魔帝は見た눈こそ繕っているものの/　　この異界と同じく、どうやら自身も十全とはいい難い상태らしい "
-						CALL MESSAGE_WINDOW_D, "", "＞　その態度が気に入らなかったか、魔帝ムンドゥスは불쾌そうに鼻を鳴らした "
+						CALL MESSAGE_WINDOW_D, "문두스", "오래 되었구나、내 부하여/ 또 나를 섬기러 왔는가」 "
+						CALL MESSAGE_WINDOW_D, "버질", "「시시한 도발을 하는군。그 꼴을 보니 용케도 화가 났구나」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　일찍이 패하여、꼭두각시의 수모를 당한 상대라고는 하나/지금 검귀는 잡스러운 일이라는 듯 마제의 말을 코웃음치며 흘려듣는다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그나 단테로 미루어 보아、마제는 겉모습은 번지르르 하지만/　　이 이계와 마찬가지로 아무래도 자신도 완전하다고 말하기 어려운 상태인 것 같다 "
+						CALL MESSAGE_WINDOW_D, "", "＞　그 태도가 마음에 들지 않았는지、마제 문두스는 불쾌한 듯이 코를 킁킁거렸다 "
 						IF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "「フン、そして‥‥役割すら十全にこなせぬ役立たずか/　裏切り者めが恥ずかしげもなく、よくも再び顔を出せたものだ」 "
-							CALL MESSAGE_WINDOW_D, "트리슈", "「あらお言葉だこと/　でも自分が立てた策で敗北したのを、部下のせいにされても困るわね」 "
-							CALL MESSAGE_WINDOW_D, "트리슈", "「偉大なる魔帝ともあろうお方がそのようなザマでは/　産み出された者としても恥ずかしくて表を歩けませんわ？」 "
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "「貴様――っ」 "
+							CALL MESSAGE_WINDOW_D, "문두스", "「흥、그래서‥‥역할조차 제대로 해내지 못하는 쓸모없는 놈인가/　배신자녀석이 부끄러움도 없이、용케도 다시 얼굴을 내밀었군」 "
+							CALL MESSAGE_WINDOW_D, "트리쉬", "「아 그 말대로군요/　하지만 자신이 세운 계책에서 패배한 것을、부하 탓으로 돌려도 곤란하네요」 "
+							CALL MESSAGE_WINDOW_D, "트리쉬", "「위대한 마제라고 하는 분이 그런 꼴이라면/　태어난 자로서도 부끄러워서 앞을 걸을 수가 없어요？」 "
+							CALL MESSAGE_WINDOW_D, "문두스", "「네놈이――」 "
 						ENDIF
-						CALL MESSAGE_WINDOW_D, "단테", "「悪いが感動の再会はここまでだ/　どうやら他とは違って、あんたには記憶があるらしい」 "
-						CALL MESSAGE_WINDOW_D, "단테", "「いや、むしろ記憶を保つために、他が再現しきれなかったか？/　まあなんにせよ、だ」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「미안하지만 감동의 재회는 여기까지야/　어쩐지 다른 것과는 달리、너에게는 기억이 있는 것 같아」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「아니、오히려 기억을 유지하기 위해、다른 것을 재현하지 못한건가？/　뭐、 어쨌건 말이야」 "
 					ELSE
 						IF CFLAG:MASTER:당신의전공분야 == 7
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "악마の血を引く、矮小なる者よ/　ここまでこれた褒美に、我へ傅くことを許そう」 "
-							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%は魔帝から、己が上位者であると疑わぬ言動に恥じぬ마력を感じた "
-							CALL MESSAGE_WINDOW_D, "", "＞　だが、ただそれだけで膝を折るようならデビルハンターはやっていないのだ "
-							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%は魔帝の威圧を受け流し、どう打倒すべきか観察を始める "
-							CALL MESSAGE_WINDOW_D, "", "＞　その態度が気に入らなかったか、魔帝ムンドゥスは불쾌そうに鼻を鳴らして視線を切った "
+							CALL MESSAGE_WINDOW_D, "문두스", "악마의 피를 끌어들이는 、왜소한 자여/　여기까지 온 상으로、나의 시중드는 것을 허락하노라」 "
+							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%은 마제로부터、 자신이 상위자라고 의심하지 않는 언동에 부끄럽지 않은 마력을 느꼈다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　그러나、단지 그것만으로 무릎을 꿇는다면、악마 사냥꾼은 하지도 않았을 것이다 "
+							CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%은 마제의 위압을 받아넘기며、어떻게 하면 때려눕혀힐 수 있는지 관찰을 시작하였다 "
+							CALL MESSAGE_WINDOW_D, "", "＞　그 태도가 마음에 들지 않았는지、마제 문두스는 불쾌한 듯이 코웃음을 치며 시선을 끊었다 "
 						ELSE
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "くだらぬもの、인간よ/　スパーダの血へ張り付きここまで来るとは‥‥‥分際を知るがいい」 "
-							CALL MESSAGE_WINDOW_D, "", @"＞　魔帝ムンドゥスは人を、%CALLNAME:MASTER%を侮っている "
-							CALL MESSAGE_WINDOW_D, "", "＞　それが誤りであることは今までの己が証明してきたもので、それをここでも証明してみせよう "
-							CALL MESSAGE_WINDOW_D, "", "＞　その態度が気に入らなかったか、魔帝ムンドゥスは불쾌そうに鼻を鳴らして視線を切った "
+							CALL MESSAGE_WINDOW_D, "문두스", "하찮은、 인간이여/　스파다의 피에 달라붙어 여기까지 오다니‥‥‥분수를 아는 것이 좋을 것이다」 "
+							CALL MESSAGE_WINDOW_D, "", @"＞　마제 문두스는 사람을、 %CALLNAME:MASTER%을 업신여기고 있다. "
+							CALL MESSAGE_WINDOW_D, "", "＞　그것이 잘못이라는 것은 지금까지의 내가 증명해 온 것이며、그것을 여기서도 증명해 보이자 "
+							CALL MESSAGE_WINDOW_D, "", "＞　그 태도가 마음에 들지 않았는지、마제 문두스는 불쾌한 듯이 코웃음을 치며 시선을 끊었다 "
 						ENDIF
 						IF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "「フン、そして‥‥役割すら十全にこなせぬ役立たずか/　裏切り者めが恥ずかしげもなく、よくも再び顔を出せたものだ」 "
-							CALL MESSAGE_WINDOW_D, "트리슈", "「あらお言葉だこと/　でも自分が立てた策で敗北したのを、部下のせいにされても困るわね」 "
-							CALL MESSAGE_WINDOW_D, "트리슈", "「偉大なる魔帝ともあろうお方がそのようなザマでは/　産み出された者としても恥ずかしくて表を歩けませんわ？」 "
-							CALL MESSAGE_WINDOW_D, "ムンドゥス", "「貴様――っ」 "
-							CALL MESSAGE_WINDOW_D, "단테", "「悪いが感動の再会はここまでだ/　どうやら他とは違って、あんたには記憶があるらしい」 "
-							CALL MESSAGE_WINDOW_D, "단테", "「いや、むしろ記憶を保つために、他が再現しきれなかったか？/　まあなんにせよ、だ」 "
+							CALL MESSAGE_WINDOW_D, "문두스", "「흥、그래서‥‥역할조차 제대로 해내지 못하는 쓸모없는 놈인가/　배신자녀석이 부끄러움도 없이、용케도 다시 얼굴을 내밀었군」 "
+							CALL MESSAGE_WINDOW_D, "트리쉬", "「아 그 말대로군요/　하지만 자신이 세운 계책에서 패배한 것을、부하 탓으로 돌려도 곤란하네요」 "
+							CALL MESSAGE_WINDOW_D, "트리쉬", "「위대한 마제라고 하는 분이 그런 꼴이라면/　태어난 자로서도 부끄러워서 앞을 걸을 수가 없어요？」 "
+							CALL MESSAGE_WINDOW_D, "문두스", "「네놈이――」 "
+							CALL MESSAGE_WINDOW_D, "단테", "「미안하지만 감동의 재회는 여기까지야/　어쩐지 다른 것과는 달리、너에게는 기억이 있는 것 같아」 "
+							CALL MESSAGE_WINDOW_D, "단테", "「아니、오히려 기억을 유지하기 위해、다른 것을 재현하지 못한건가？/　뭐、 어쨌건 말이야」 "
 						ENDIF
 						IF CFLAG:MASTER:당신의전공분야 == 7
-							CALL MESSAGE_WINDOW_D, "단테", "「残念だが、こいつを使うにゃあんたじゃ荷が重い/　自分の創造した악마すら使いこなせないのに、あんまり見栄を張ると恥をかくぜ？"
+							CALL MESSAGE_WINDOW_D, "단테", "「유감이지만、이녀석을 상대하기에는 너는 버거울거다/　자기가 창조한 악마조차 제대로 못쓰는데、너무 허세 부리면 망신당한다고？"
 						ELSE
-							CALL MESSAGE_WINDOW_D, "단테", "「俺のおまけ？　こいつが？/　ハッ、継ぎ接ぎだらけで危機感すらなくなったのか？」 "
-							CALL MESSAGE_WINDOW_D, "단테", "「いや、あんたのそれは元々か。전회は俺を父の代わりと侮り――/　今度は、こいつを侮って恥をかく」 "
+							CALL MESSAGE_WINDOW_D, "단테", "「나의 덤？　이녀석이？/　하、누더기 투성이로 위기감마저 사라진건가？」 "
+							CALL MESSAGE_WINDOW_D, "단테", "「아니、당신은 원래 그랬던건가。전에는 나를 아버지 대신으로 업신여기고――/　이번에는、이 녀석을 업신여겨서 망신당하는거야」 "
 						ENDIF
-						CALL MESSAGE_WINDOW_D, "ムンドゥス", "「貴様――っ」 "
-						CALL MESSAGE_WINDOW_D, "단테", "「悪いが感動の再会はここまでだ/　どうやら他とは違って、あんたには記憶があるらしい」 "
-						CALL MESSAGE_WINDOW_D, "단테", "「いや、むしろ記憶を保つために、他が再現しきれなかったか？/　まあなんにせよ、だ」 "
+						CALL MESSAGE_WINDOW_D, "문두스", "「네놈이――」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「미안하지만 감동의 재회는 여기까지야/　어쩐지 다른 것과는 달리、너에게는 기억이 있는 것 같아」 "
+						CALL MESSAGE_WINDOW_D, "단테", "「아니、오히려 기억을 유지하기 위해、다른 것을 재현하지 못한건가？/　뭐、 어쨌건 말이야」 "
 					ENDIF
-					CALL MESSAGE_WINDOW_D, "단테", @"「Hey,%CALLNAME:MASTER%」/＞　威圧が増す魔帝を他所に、단테は%CALLNAME:MASTER%へ振り返り/　　楽しそうに――영맹に笑った "
-					CALL MESSAGE_WINDOW_D, "단테", "「ラストステージは、敗北が忘れられない魔界の帝王様がお相手だ」 "
-					CALL MESSAGE_WINDOW_D, "단테", "「どうやって復活したかは知らないが/　怖くて二度と인간界に顔が出せなくなるくらい、盛大に歓迎してやるか！」 "
-					CALL MESSAGE_WINDOW_D, "ムンドゥス", "「よくもほざいたっ」/＞　魔帝ムンドゥスの怒りの咆哮と共に神殿が붕괴し/　　辺りにマグマが吹き出しまさしく地獄の様相を見せる "
-					CALL MESSAGE_WINDOW_D, "ムンドゥス", "「使えぬ配下など、もとより使い捨てるつもりよ/　我こそが唯一絶対の힘。我が힘の真の偉大さ、今度こそ貴様らへ刻みつけてやろうぞ！」 "
-					CALL MESSAGE_WINDOW_D, "", "＞　魔帝　ムンドゥスが襲いかかってきた！ "
+					CALL MESSAGE_WINDOW_D, "단테", @"「Hey、%CALLNAME:MASTER%」/＞　위압이 커져가는 마제를 다른데에 있는 일이라는 듯이、단테는 %CALLNAME:MASTER%을 돌아보며/　　즐거운듯이――영악한 웃음을 지었다 "
+					CALL MESSAGE_WINDOW_D, "단테", "「라스트 스테이지는、패배를 잊지 못하는 마계의 제왕님이 상대다」 "
+					CALL MESSAGE_WINDOW_D, "단테", "「어떻게 부활했는지는 모르겠지만/　무서워서 다시는 인간계에 얼굴을 내밀 수 없게 될 정도로、성대하게 환영해 줄까！」 "
+					CALL MESSAGE_WINDOW_D, "문두스", "「잘도 지껄이는구나」/＞　마제 문두스의 분노의 포효와 함께 신전이 붕괴되고/　　주변에 마그마가 뿜어져 나오자 지옥의 모습이나 다름없게 되었다"
+					CALL MESSAGE_WINDOW_D, "문두스", "「쓸 수 없는 부하 따위는、처음부터 쓰다버릴 생각이었다/　나야말로 유일한 절대의 힘이다。내 힘의 진정한 위대함을、이번에야말로 네놈들에게 새겨 주마！」 "
+					CALL MESSAGE_WINDOW_D, "", "＞　마제 문두스가 덤벼들기 시작했다！ "
 					던전플래그:99:1 = 34
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -4331,40 +4331,40 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 				
 					FORCEWAIT
-					CALL MESSAGE_WINDOW_D, "", "＞　体を維持できず、魔帝ムンドゥスは末端から崩れてゆく "
-					CALL MESSAGE_WINDOW_D, "", "＞　それでもなお、怨嗟と共に손を伸ばす正面に단테は堂々と姿を晒し―― "
-					CALL MESSAGE_WINDOW_D, "단테", @"「Hey,%CALLNAME:MASTER%、フィナーレだ」/　이번회の동료を側へ呼んだ "
+					CALL MESSAGE_WINDOW_D, "", "＞　몸을 유지하지 못하고、마제 문두스는 아래로부터 무너져 간다 "
+					CALL MESSAGE_WINDOW_D, "", "＞　그럼에도 불구하고、원망과 함께 손을 뻗는 정면에 단테는 당당히 모습을 드러내고―― "
+					CALL MESSAGE_WINDOW_D, "단테", @"「Hey、%CALLNAME:MASTER%、피날레다」/　이번 파트너를 옆으로 불렀다 "
 					IF FINDCHARA_B([[キャラ:버질]]) == 2
-						CALL MESSAGE_WINDOW_D, "버질", "「あれは言うなよ」 "
-						CALL MESSAGE_WINDOW_D, "", "＞　眉間にシワを寄せた兄の言葉も受け流し/　二人は互いの총を一丁ずつ、交差させて힘を注ぐ "
+						CALL MESSAGE_WINDOW_D, "버질", "「그것은 말하지 마라」 "
+						CALL MESSAGE_WINDOW_D, "", "＞　미간을 찌푸린 형의 말도 받아 들이고/　두 사람은 서로의 총을 한 자루씩 교차시키며 힘을 쏟는다 "
 					ELSEIF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
-						CALL MESSAGE_WINDOW_D, "트리슈", "「決め言葉は？」 "
+						CALL MESSAGE_WINDOW_D, "트리쉬", "「마무리 대사는？」 "
 					ELSE
-						CALL MESSAGE_WINDOW_D, "", "＞　互いに視線を合わせ、にやりと笑い/　　締めはこれしかあるまいと声を上げ、同時に引き金を引いた―― "
+						CALL MESSAGE_WINDOW_D, "", "＞　서로 시선을 맞추고、히죽히죽 웃는다/　　마무리는 이것밖에 없다고 소리를 지르며、동시에 방아쇠를 당겼다―― "
 					ENDIF
 					CALL MESSAGE_WINDOW_D, @"%CALLNAME:MASTER%＆단테", "「Jack Pot!」 "
 					CALL MESSAGE_WINDOW_D, "", " "
 					CALL MESSAGE_WINDOW, "", "………/……/…"
-					CALL MESSAGE_WINDOW, "", "＞　魔帝ムンドゥスが再び滅び、支えがなくなった異界が消滅してゆく"
-					CALL MESSAGE_WINDOW, "", "＞　あわや巻き込まれるかと思いきや/　　二度눈になる단테を先머리に無事、탈출を果たした一行は말렛섬（島）の終わりを見届けた "
+					CALL MESSAGE_WINDOW, "", "＞　마제 문두스가 다시 멸망하고、주인이 없어진 이계가 소멸되어 간다"
+					CALL MESSAGE_WINDOW, "", "＞　하마터면 말려들뻔 했는데/　　두 번째 겪는 단테를 선두로 무사、탈출한 일행은 말렛섬의 끝을 지켜보았다 "
 					CALL MESSAGE_WINDOW, "", "………/……/…"
-					CALL MESSAGE_WINDOW, "", @"――某所　%CALLNAME:MASTER%事務所"
-					CALL MESSAGE_WINDOW, "", "＞　말렛섬（島）異界を攻略して間もない事務所/　　そこにはストロベリーサンデーを味わう단테がいた "
-					CALL MESSAGE_WINDOW, "", "なぜここにいる、と問えば硬いことを言うなと図太く笑う。そこへ――"
-					CALL MESSAGE_WINDOW, "트리슈", @"「ハァイ%CALLNAME:MASTER%、ただいま」/＞　すっかり居付き、気ままに泊まってゆくようになった트리슈が/　　大きめの箱を손に帰ってきた"
-					CALL MESSAGE_WINDOW, "", "＞　そして頼まれごとだったのだろう、その箱を단테へ渡したあと/　　ひょいとオリーブ抜きピザを1ピース取り上げぱくつきだす"
-					CALL MESSAGE_WINDOW, "단테", "「そう渋い表情するなよ。/　전회は助かったからな、ほら프레젠트だ」"
-					CALL MESSAGE_WINDOW, "", "＞　もしかしなくても、이번회はコレを渡すために待っていたようだ"
-					CALL MESSAGE_WINDOW, "", "＞　その割に自分で持ってこない辺り、ぶれない男だと感じつつも箱を開けると――/　　そこには『Devil May Cry』のロゴがデザインされた看板があった "
-					CALL MESSAGE_WINDOW, "단테", "「팬텀だったかに所属はしてるんだろうが/　デビルハンターとしての看板も필요だろう？」 "
-					CALL MESSAGE_WINDOW, "", "＞　なるほど、と相槌を打ちつつ看板を事務所の玄関へ掲げてみる "
+					CALL MESSAGE_WINDOW, "", @"――모처　%CALLNAME:MASTER%의 사무실"
+					CALL MESSAGE_WINDOW, "", "＞　말렛 섬 이계를 공략한 지 얼마 안 된 사무실/　　거기에는 스트로베리 선데이를 맛보는 단테가 있었다 "
+					CALL MESSAGE_WINDOW, "", "왜 여기 있냐고 물으면、딱딱한 소리 하지 말라고 뻔뻔하게 웃는다。거기에――"
+					CALL MESSAGE_WINDOW, "트리쉬", @"「Hi  %CALLNAME:MASTER%、다녀왔어」/＞　완전히 눌러앉아、마음대로 묵게 된 트리쉬가/　　큰 상자를 손에 들고 돌아왔다"
+					CALL MESSAGE_WINDOW, "", "＞　그리고 부탁을 받았을 것인、그 상자를 단테에게 건넨 뒤/　　불쑥 올리브 뺀 피자 한 조각을 집어 들고 먹기 시작한다"
+					CALL MESSAGE_WINDOW, "단테", "「그렇게 떫은 표정 짓지 마。/　전에는 도움받았으니까、자 선물이다」"
+					CALL MESSAGE_WINDOW, "", "＞　어쩌면 이번에는、이것을 건네기 위해 기다리고 있었던 것 같다"
+					CALL MESSAGE_WINDOW, "", "＞　그래놓고는 자기가 가져오지 않는、비정상적인 남자라고 느끼면서 상자를 여니――/　　거기에는『Devil May Cry』로고가 새겨진 표지판이 있었다 "
+					CALL MESSAGE_WINDOW, "단테", "「팬텀이었나에 소속되어있긴 하겠지만 /　데빌 헌터로서의 간판도 필요하겠지？」 "
+					CALL MESSAGE_WINDOW, "", "＞　과연、하고 맞장구를 치면서 간판을 사무실 현관에 걸어 보았다 "
 					IF ABL:MASTER:요리기능 >= 9
-						CALL MESSAGE_WINDOW, "", "＞　――いつだったか손요리をご馳走した時に見せた/　　마요네の表情が思い浮かんだが、意識して脇へ置いておくことにする "
+						CALL MESSAGE_WINDOW, "", "＞　――언젠가 손수 만든 요리를 대접했을 때 보였던/　　마요네의 표정이 떠올랐지만、의식해서 곁에 놓아두기로 했다 "
 					ELSE
-						CALL MESSAGE_WINDOW, "", "＞　――所属したばかりの時に、ピザを食べる己を見つめる/　　마요네のなんともいえない表情が思い浮かんだが、意識して脇へ置いておくことにする "
+						CALL MESSAGE_WINDOW, "", "＞　――소속된 지 얼마 되지 않았을 때 피자를 먹는 자신을 바라보는/　　마요네의 형언할 수 없는 표정이 떠올랐지만、의식해 곁에 놓아두기로 했다 "
 					ENDIF
-					CALL MESSAGE_WINDOW, "", "＞　そして今日も、事務所の뼈董電話が鳴り響き/　　合言葉の의뢰と供に、夜空に악마の啼き声が響き渡る―――― "
-					CALL MESSAGE_WINDOW, "", "―― Ending No.099 (Devil May Cray　魔帝狩り)" , , , , , , , , , "CENTER"
+					CALL MESSAGE_WINDOW, "", "＞　그리고 오늘도 사무실의 다이얼 전화기가 울리고/　　비밀의뢰와 함께、밤하늘에 악마의 울음소리가 울려 퍼진다.―――― "
+					CALL MESSAGE_WINDOW, "", "―― Ending No.099 (Devil May Cray　마제 사냥)" , , , , , , , , , "CENTER"
 					던전플래그:99:1 = 37
 					MONEY += 500000
 					MONEY:99 += 5000
@@ -4395,38 +4395,38 @@ ENDSELECT
 
 
 ;===============================
-;ドリーグ
+;ドリーグ  트릭
 ;===============================
 @D_LEAGUE
-#DIM 答え
-#DIMS 答え文字列 = "左", "右", "上", "下"
+#DIM 방향
+#DIMS 방향문자열 = "좌", "우", "상", "하"
 
-;答えを出しておく
-答え = RAND:4
+;答えを出しておく  답을 내놓다
+방향 = RAND:4
 
-CALL MESSAGE_WINDOW_D, "", "＞　目の前の骨竜の口が輝き出し、収束された火焔球がこちらに向かって吐き出された "
+CALL MESSAGE_WINDOW_D, "", "＞　눈앞의 본드래곤의 입이 반짝이기 시작했고、수렴된 화염구가 이쪽을 향해 뿜어져 나왔다 "
 SETCOLOR COLOR("PASTEL-YELLOW")
-CALL MESSAGE_WINDOW_D, "", @"%答え文字列:答え%を選べ！"
+CALL MESSAGE_WINDOW_D, "", @"%방향문자열:방향%와 같은 방향을 시간 내에 선택해라！"
 RESETCOLOR
-FOR LOCAL, 0, VARSIZE("答え文字列")
-	PRINTFORML [{LOCAL}] %答え文字列:LOCAL%
+FOR LOCAL, 0, VARSIZE("방향문자열")
+	PRINTFORML [{LOCAL}] %방향문자열:LOCAL%
 NEXT
 TINPUT 2000, -1, 1
 ;실패した패턴
-IF RESULT != 答え
+IF RESULT != 방향
 	CALL DUNGEON_TRAP_HP,10
 ;성공時フラグ+1　합계3で撃破
 ELSE
 	IF 던전플래그:99:10 == 2
-		CALL MESSAGE_WINDOW_D, "", "＞　打ち返した火球が直撃すると、ついに뼈竜は叫び声を上げながら爆散した/　　どうやら封印も해제されたようだ "
-		CALL MESSAGE_WINDOW_D, "", "＞　ドリーグ制覇――脳裏に、そんな言葉が過ぎった "
+		CALL MESSAGE_WINDOW_D, "", "＞　되받아친 화구가 직격탄을 맞자、마침내 본드래곤이 고함을 지르며 폭산했다/　　아무래도 봉인도 해제된 것 같다 "
+		CALL MESSAGE_WINDOW_D, "", "＞　트릭 제패――뇌리에、그런 말이 지나갔다 "
 		던전플래그:99:10 = 3
 		SETBIT 던전플래그:99:4,27
 	ELSEIF 던전플래그:99:10 == 1
-		CALL MESSAGE_WINDOW_D, "", "＞　再び火球を骨竜へ打ち返すと　明らかに疲弊してきている/　　あと一息といったところだろう "
+		CALL MESSAGE_WINDOW_D, "", "＞　다시 화구를 본드래곤으로 쳐내면 분명히 파괴되어져 있다/　　이제 한숨 돌렸을 것이다 "
 		던전플래그:99:10 = 2
 	ELSE
-		CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%が打ち返した球は　見事に骨竜へ直撃した/　　どうやら自らの攻撃でのみ傷つくようだ "
+		CALL MESSAGE_WINDOW_D, "", @"＞　%CALLNAME:MASTER%이 받아친 공은 멋지게 본드래곤에게 직격했다/　　아무래도 자신의 공격으로만 데미지를 받는 것 같다 "
 		던전플래그:99:10 = 1
 	ENDIF
 ENDIF
@@ -4935,21 +4935,21 @@ ABL:(CHARANUM-1):회화타입 = 331
 
 SELECTCASE NO:ARG
 	CASE [[キャラ:목없는라이더]]
-		NAME:(CHARANUM-1) = マリオネット
-		CALLNAME:(CHARANUM-1) = マリオネット
+		NAME:(CHARANUM-1) = 마리오네트
+		CALLNAME:(CHARANUM-1) = 마리오네트
 	
 	CASE [[キャラ:마카브르]]
-		NAME:(CHARANUM-1) = ブラッディーマリー
-		CALLNAME:(CHARANUM-1) = ブラッディーマリー
+		NAME:(CHARANUM-1) = 블러디메리
+		CALLNAME:(CHARANUM-1) = 블러디메리
 	
 	CASE [[キャラ:그르르]]
-		NAME:(CHARANUM-1) = シン シザーズ
-		CALLNAME:(CHARANUM-1) = シン シザーズ
+		NAME:(CHARANUM-1) = 신 시저스
+		CALLNAME:(CHARANUM-1) = 신 시저스
 	
 	;요조,959,카마조츠
 	CASE [[キャラ:카마조츠]]
-		NAME:(CHARANUM-1) = シン サイズ
-		CALLNAME:(CHARANUM-1) = シン サイズ
+		NAME:(CHARANUM-1) = 신 사이즈
+		CALLNAME:(CHARANUM-1) = 신 사이즈
 		MAXBASE:(CHARANUM-1):비구 = 120
 		BASE:(CHARANUM-1):비구 = 120
 		ABL:(CHARANUM-1):스킬1 = 2 ;히트フェイブ
@@ -4958,17 +4958,17 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬4 =2013 ;흡혈
 	
 	CASE [[キャラ:타나토스]]
-		NAME:(CHARANUM-1) = デス シザーズ
-		CALLNAME:(CHARANUM-1) = デス シザーズ
+		NAME:(CHARANUM-1) = 데스 시저스
+		CALLNAME:(CHARANUM-1) = 데스 시저스
 	
 	;사신,1627,체르노보그
 	CASE [[キャラ:체르노보그]]
-		NAME:(CHARANUM-1) = デス サイズ
-		CALLNAME:(CHARANUM-1) = デス サイズ
+		NAME:(CHARANUM-1) = 데스 사이즈
+		CALLNAME:(CHARANUM-1) = 데스 사이즈
 	
 	CASE [[キャラ:로어]]
-		NAME:(CHARANUM-1) = サルガッソー
-		CALLNAME:(CHARANUM-1) = サルガッソー
+		NAME:(CHARANUM-1) = 사르갓소
+		CALLNAME:(CHARANUM-1) = 사르갓소
 	
 	CASE [[キャラ:데스그리폰]]
 		NAME:(CHARANUM-1) = 섀도우
@@ -4979,12 +4979,12 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬4 = 2005 ;자폭
 	
 	CASE [[キャラ:혼돈]]
-		NAME:(CHARANUM-1) = ベルゼバブ
-		CALLNAME:(CHARANUM-1) = ベルゼバブ
+		NAME:(CHARANUM-1) = 벨제붑
+		CALLNAME:(CHARANUM-1) = 벨제붑
 	
 	CASE [[キャラ:오시치]]
-		NAME:(CHARANUM-1) = フェティッシュ
-		CALLNAME:(CHARANUM-1) = フェティッシュ
+		NAME:(CHARANUM-1) = 페티쉬
+		CALLNAME:(CHARANUM-1) = 페티쉬
 	
 	CASE [[キャラ:츠치구모]]
 		NAME:(CHARANUM-1) = 사이클롭스
@@ -4992,21 +4992,21 @@ SELECTCASE NO:ARG
 	
 	;요귀,656,베르세르크
 	CASE [[キャラ:베르세르크]]
-		NAME:(CHARANUM-1) = ブレイド
-		CALLNAME:(CHARANUM-1) = ブレイド
+		NAME:(CHARANUM-1) = 블레이드
+		CALLNAME:(CHARANUM-1) = 블레이드
 		MAXBASE:(CHARANUM-1):검격 = 80
 		BASE:(CHARANUM-1):검격 = 80
 		MAXBASE:(CHARANUM-1):빙결 = 100
 		BASE:(CHARANUM-1):빙결 = 100
 	
 	CASE [[キャラ:페리]]
-		NAME:(CHARANUM-1) = プラズマ
-		CALLNAME:(CHARANUM-1) = プラズマ
+		NAME:(CHARANUM-1) = 플라즈마
+		CALLNAME:(CHARANUM-1) = 플라즈마
 	
 	;요마,456,하누만
 	CASE [[キャラ:하누만]]
-		NAME:(CHARANUM-1) = フロスト
-		CALLNAME:(CHARANUM-1) = フロスト
+		NAME:(CHARANUM-1) = 프로스트
+		CALLNAME:(CHARANUM-1) = 프로스트
 		ABL:(CHARANUM-1):스킬1 = 345 ;앵화섬란
 		ABL:(CHARANUM-1):스킬2 = 805 ;마하ㆍ부흐라
 		ABL:(CHARANUM-1):스킬3 = 803 ;부흐다인
@@ -5016,8 +5016,8 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬7 = 0
 	
 	CASE [[キャラ:키메라]]
-		NAME:(CHARANUM-1) = ノーバディ
-		CALLNAME:(CHARANUM-1) = ノーバディ
+		NAME:(CHARANUM-1) = 노바디
+		CALLNAME:(CHARANUM-1) = 노바디
 		ABL:(CHARANUM-1):스킬1 = 304 ;메가클로
 		ABL:(CHARANUM-1):스킬2 = 2005 ;자폭
 		ABL:(CHARANUM-1):스킬3 = 2406 ;이악물기
@@ -5058,8 +5058,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 @PHANTOM_2
 IF GETBIT(던전플래그:99:8,4)
 	CALL SET_ENEMY,9,[[キャラ:츠치구모]],55,1,1
-	NAME:(CHARANUM-1) = 팬텀(幻影体)
-	CALLNAME:(CHARANUM-1) = 팬텀(幻影体)
+	NAME:(CHARANUM-1) = 팬텀(환영체)
+	CALLNAME:(CHARANUM-1) = 팬텀(환영체)
 ELSE
 	CALL SET_ENEMY,9,[[キャラ:츠치구모]],55,0,1
 	NAME:(CHARANUM-1) = 팬텀
@@ -5090,8 +5090,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @GIRFFON_1
 CALL SET_ENEMY,9,[[キャラ:헬그리폰]],57,0,1
-NAME:(CHARANUM-1) = グリフォン
-CALLNAME:(CHARANUM-1) = グリフォン
+NAME:(CHARANUM-1) = 그리폰
+CALLNAME:(CHARANUM-1) = 그리폰
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 
@@ -5104,8 +5104,8 @@ ABL:(CHARANUM-1):스킬6 = 0
 
 @GIRFFON_2
 CALL SET_ENEMY,9,[[キャラ:헬그리폰]],70,0,1
-NAME:(CHARANUM-1) = グリフォン
-CALLNAME:(CHARANUM-1) = グリフォン
+NAME:(CHARANUM-1) = 그리폰
+CALLNAME:(CHARANUM-1) = 그리폰
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 
@@ -5119,12 +5119,12 @@ ABL:(CHARANUM-1):스킬6 = 0
 @GIRFFON_3
 IF GETBIT(던전플래그:99:8,4)
 	CALL SET_ENEMY,9,[[キャラ:헬그리폰]],73,1,1
-	NAME:(CHARANUM-1) = グリフォン(幻影体)
-	CALLNAME:(CHARANUM-1) = グリフォン(幻影体)
+	NAME:(CHARANUM-1) = 그리폰(환영체)
+	CALLNAME:(CHARANUM-1) = 그리폰(환영체)
 ELSE
 	CALL SET_ENEMY,9,[[キャラ:헬그리폰]],73,0,1
-	NAME:(CHARANUM-1) = グリフォン
-	CALLNAME:(CHARANUM-1) = グリフォン
+	NAME:(CHARANUM-1) = 그리폰
+	CALLNAME:(CHARANUM-1) = 그리폰
 ENDIF
 IF !GETBIT(던전플래그:99:8,4)
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -5140,8 +5140,8 @@ ABL:(CHARANUM-1):스킬6 = 0
 
 @NERO_1
 CALL SET_ENEMY,9,[[キャラ:버질]],47,0,1
-NAME:(CHARANUM-1) = ネロㆍアンジェロ
-CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
+NAME:(CHARANUM-1) = 넬로ㆍ안젤로
+CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5166,8 +5166,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @NERO_2
 CALL SET_ENEMY,9,[[キャラ:버질]],65,0,1
-NAME:(CHARANUM-1) = ネロㆍアンジェロ
-CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
+NAME:(CHARANUM-1) = 넬로ㆍ안젤로
+CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5192,8 +5192,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @NERO_3
 CALL SET_ENEMY,9,[[キャラ:버질]],80,0,1
-NAME:(CHARANUM-1) = ネロㆍアンジェロ
-CALLNAME:(CHARANUM-1) = ネロㆍアンジェロ
+NAME:(CHARANUM-1) = 넬로ㆍ안젤로
+CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 CFLAG:(CHARANUM-1):ＭＰ보정 = 9999
 BASE:(CHARANUM-1):검격 = 100
@@ -5275,8 +5275,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @TORISH_ILLUSION
 CALL SET_ENEMY,9,[[キャラ:트리쉬(DMC)]],75,1,1
-NAME:(CHARANUM-1) = 女性の幻影体
-CALLNAME:(CHARANUM-1) = 女性の幻影体
+NAME:(CHARANUM-1) = 여성의 환영체
+CALLNAME:(CHARANUM-1) = 여성의 환영체
 ABL:(CHARANUM-1):스킬1 = 0 ;
 ABL:(CHARANUM-1):스킬7 = 0 ;
 
@@ -5285,8 +5285,8 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @MUNDUS
 CALL SET_ENEMY,9,3301,90,1,1
-NAME:(CHARANUM-1) = ムンドゥス
-CALLNAME:(CHARANUM-1) = ムンドゥス
+NAME:(CHARANUM-1) = 문두스
+CALLNAME:(CHARANUM-1) = 문두스
 CFLAG:(CHARANUM-1):행동횟수 = 2
 
 MAXBASE:(CHARANUM-1):ＨＰ = 15000
@@ -5480,14 +5480,14 @@ ENDIF
 IF 현HP비율(CHARANUM-1) < 85 && 던전플래그:99:1 == 34
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃数ばかり多い塵共めっ。尽く焼き尽くしてくれよう！　　　　　┃
-	PRINTFORML ┃＞　ムンドゥスの言葉に呼応し、溶岩でできた龍が2体現れた!　┃
+	PRINTFORML ┃숫자만 많은 쓰레기들。모조리 구워버려주마！             　　　　　┃
+	PRINTFORML ┃＞　문두수의 말에 호응하여、용암으로 된 용 2체가 나타났다!　    ┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	FORCEWAIT
 	;マグマ龍召還X2
 	CALL SET_ENEMY,8,757,80,1,0
-	NAME:(CHARANUM-1) = 溶岩龍
-	CALLNAME:(CHARANUM-1) = 溶岩龍
+	NAME:(CHARANUM-1) = 용암룡
+	CALLNAME:(CHARANUM-1) = 용암룡
 	
 	MAXBASE:(CHARANUM-1):화염 = 0
 	BASE:(CHARANUM-1):화염 = 0
@@ -5506,8 +5506,8 @@ IF 현HP비율(CHARANUM-1) < 85 && 던전플래그:99:1 == 34
 	CALL HEALTH_CHARA, (CHARANUM-1)
 	
 	CALL SET_ENEMY,10,757,80,1,0
-	NAME:(CHARANUM-1) = 溶岩龍
-	CALLNAME:(CHARANUM-1) = 溶岩龍
+	NAME:(CHARANUM-1) = 용암룡
+	CALLNAME:(CHARANUM-1) = 용암룡
 	
 	MAXBASE:(CHARANUM-1):화염 = 0
 	BASE:(CHARANUM-1):화염 = 0
@@ -5530,32 +5530,32 @@ IF 현HP비율(CHARANUM-1) < 85 && 던전플래그:99:1 == 34
 ELSEIF 현HP비율(CHARANUM-3) < 30 && 던전플래그:99:1 == 35
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃おのれ、またしてもここまで‥‥‥っ　　　　　　　　　　　　　　┃
-	PRINTFORML ┃＞　追い詰められ、怨嗟を漏らすムンドゥス　　　　　　　　　　　┃
-	PRINTFORML ┃　　取り繕っていた姿にも亀裂が走り――　　　　　　　　　　　　┃
+	PRINTFORML ┃네 이놈、다시 여기까지 오다니‥‥‥    　　　　　　　　　　　　┃
+	PRINTFORML ┃＞　궁지에 몰리고、원한을 토로하는 문두스　　　　　　   　　　┃
+	PRINTFORML ┃　　꾸며진 외형에도 균열이 생겨난다 ――　　　    　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	FORCEWAIT
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃おぉ‥‥‥我が崩れる。維持が出来ぬ‥‥‥　　　　　　　　　　　┃
-	PRINTFORML ┃おのれ、オノレェっ。スパーダ‥‥‥スパーダァ！　　　　　　　　┃
-	PRINTFORML ┃＞　外皮が崩れ落ち、そこからマグマにも似た魔力が覗き　　　　　┃
-	PRINTFORML ┃　　呪わしく、絡め取らんかのようにダンテへと腕を伸ばしている　┃
+	PRINTFORML ┃오오‥‥‥내가 무너진다。유지할수가 없다‥‥‥　　　　 　　　　　┃
+	PRINTFORML ┃네 이놈、네 이놈。스파다‥‥‥스파다아！　　　　　　              　┃
+	PRINTFORML ┃＞　외피가 무너져 내리고、거기에 마그마 같은 마력이 들여다보인다┃
+	PRINTFORML ┃　　저주스럽고、 얽히고설켜서 단테에게 팔을 뻗고 있다　 ┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	FORCEWAIT
 	PRINTFORML 
-	PRINTFORML ┏> 단테━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃悪いが、むさ苦しいお誘いは間に合ってる。　　　　　　　　　　　┃
-	PRINTFORML ┃お前にはママのハグよりいいものをやるよ、好物だったろ？　　　　┃
-	PRINTFORML ┃＞　ダンテは二丁拳銃を交差させ、ﾊﾞﾝと言いつつニヤリと笑った　 ┃
-	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	PRINTFORML ┏> 단테━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+	PRINTFORML ┃미안하지만、누추한 초대는 제시간에 맞출 수 있었다。　　　　　　　　　　　　　　　　┃
+	PRINTFORML ┃너한테는 엄마의 포옹보다 좋은 걸 줄게、좋아하던 거잖아？　　　　　　　　　　　　　┃
+	PRINTFORML ┃＞　단테는 두 자루 권총을 교차시켰고、빵! 하고 말하면서 히죽 웃었다　　　　　　　   ┃
+	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 	FORCEWAIT
 	던전플래그:99:1 = 36
 ENDIF
 
 
 ;---------------------------------------------------------------
-;ムンドゥス戦：HPが一定量減ると増援
+;ムンドゥス戦：HPが一定量減ると増援   문두스전' HP 일정량 줄면 증원
 ;増援死亡後2ターンで増援復活
 ;ARG　1:ターン開始時、コア処理ㆍ幻影復活処理 2:数を카운트
 ;---------------------------------------------------------------
@@ -5591,8 +5591,8 @@ ELSEIF ARG == 1
 		IF LOCAL:5 == 2
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃＞　ムンドゥスが手を頭上へかざす　　　　　　　　　　　　　　　┃
-			PRINTFORML ┃すると溶岩の龍が再び二体現れた！　　　　　　　　　　　　　　　┃
+			PRINTFORML ┃＞　문두수가 손을 머리 위로 갖다 대었다　　　　　　　　　　　　　┃
+			PRINTFORML ┃그러자 용암의 용이 다시 2 체 나타났다！　　　　　　　　　　　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 			FORCEWAIT
@@ -5620,7 +5620,7 @@ ENDIF
 #DIM 残存数
 
 ;LOCAL:4 ターン종료시の적総数
-;LOCAL:5 幻影の종류　1:팬텀 2:グリフォン 3:트리슈
+;LOCAL:5 幻影の종류　1:팬텀 2:グリフォン 3:트리쉬
 ;LOCAL:6 幻影復活카운트　2で復活
 
 IF 던전플래그:99:1 < 28
@@ -5670,9 +5670,9 @@ ELSEIF ARG == 1
 			SETCOLOR 0xff0032
 			PRINTL 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃＞　ナイトメアが動きを止め震えだす　　　　　┃
-			PRINTFORML ┃液状の体が固まり、コアが露出した！　　　　　┃
-			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
+			PRINTFORML ┃＞　나이트메어가 움직임을 멈추고 떨기 시작한다  ┃
+			PRINTFORML ┃액상의 몸이 굳어지고、코어가 노출되었다！         ┃
+			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTL 
 			RESETCOLOR
@@ -5725,8 +5725,8 @@ ELSEIF ARG == 1
 			SETCOLOR 0xff0032
 			PRINTL 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-			PRINTFORML ┃＞　ナイトメアが再び液状に変化してゆく　　　┃
-			PRINTFORML ┃コアが収納され、幻影が再び現れた‥‥‥　　　┃
+			PRINTFORML ┃＞　나이트메어가 다시 액상으로 변해 간다　　　┃
+			PRINTFORML ┃코어가 수납되고、환영이 다시 나타났다‥‥‥　　　┃
 			PRINTFORML ┃　　　　　　　　　　　　　　　　　　　　　　┃
 			PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTL 
