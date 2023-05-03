@@ -231,7 +231,7 @@ ENDIF
 ;ENDIF
 
 
-;조교사 END
+;조교사 경영 END
 IF FLAG:조교사명성 >= 400 && GETBIT(FLAG:취소된ED,2) == 0 && 이벤트플래그:1:1 < 1
 	SETBIT FLAG:취소된ED,2
 	PRINTFORMW ＞조교사로서의 %CALLNAME:MASTER%의 이름은 뒷 세계에 널리 알려지게 되었다……
@@ -304,7 +304,7 @@ IF FLAG:조교사명성 >= 400 && GETBIT(FLAG:취소된ED,2) == 0 && 이벤트�
 				ENDIF
 			ENDIF
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 다음의 사냥감을 생각하고 있었다……
-			PRINTW 　　　　　　　　―― Ending No.002 (조교사 END)
+			PRINTW 　　　　　　　　―― Ending No.002 (조교사 경영 END)
 		ELSE
 			CALL 구상호출 , "KOJO_MESSAGE_ENDING"
 			
@@ -389,7 +389,7 @@ IF FLAG:조교사명성 >= 2000 && GETBIT(FLAG:취소된ED,3) == 0 && 이벤트�
 				PRINTW 능욕의 연회는 끝나지 않는다…덧없는 꿈은 계속된다
 			ENDIF
 			PRINTW 
-			PRINTW 　　　　　　　　―― Ending No.003 (조교사 END "Master of slave")
+			PRINTW 　　　　　　　　―― Ending No.003 (조교사 경영 END "Master of slave")
 		ELSE
 			CALL 구상호출 , "KOJO_MESSAGE_ENDING"
 			
