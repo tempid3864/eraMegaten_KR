@@ -54,3 +54,7 @@ https://ux.getuploader.com/eraMegaten_picture/
     LFD나 SRW 등 다른 실행기도 있지만 사용의 편의성 때문에 해당 실행기를 넣어두었다
 
 * __Debug.bat__ : 기본 실행기를 디버그 모드로 실행하는 bat 파일
+
+* __delempty.bat__ : 0KB이거나 주석만 있는 파일을 삭제하는 bat 파일
+
+    파일을 삭제하는 것이므로 삭제 후 문제가 발생한다면 게임을 다시 받아서 사용할 것

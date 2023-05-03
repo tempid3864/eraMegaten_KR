@@ -81,7 +81,7 @@ KR 통합판 전용 컨텐츠는 이 파일에 표시하지 않는다
 
 - [--] eraMegaten_6092 (근친 이름 지원 외) 도입
 
-- [--] eraMegaten_609  (데이터정리)포함
+- [--] eraMegaten_6093 (데이터정리)포함
 
 - [--] eraMegaten_6094 (명칭 호칭 변경 미니 증보) 포함
 
@@ -217,7 +217,7 @@ KR 통합판 전용 컨텐츠는 이 파일에 표시하지 않는다
 
 - [--] eraMegaten_6200 (뒷정리 패치) 포함
 
-- [--] eraMegaten_6201 (delempty) 도입 ⇒ 툴에 격납
+- [O] eraMegaten_6201 (delempty) 도입
 
 - [--] eraMegaten_6203 (RPG용 캐릭터 독자변수 추가 및 버그 수정 등) 도입
 
