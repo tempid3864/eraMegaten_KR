@@ -19,31 +19,40 @@
 ;	009		2021/05/25		名無し		各種イベ、対象の体力が500なければ弾くように追記、プレイ回数を調整
 ;	010		2021/10/09		SUIHOU		イベント発生条件に好餌フラグオンを追記
 ;	011		2022/06/07		NEO			NTR防御服飾を増やして関数にしたので、分岐判断をチョイ修正
-
+;
+;	KR01	2023/05/04		JustTasty	EVENT_81_格好の餌에 eraAS, eratohoK의 NTR 이벤트를 이식한 내용 추가
+;										IS_ANTI_NTR_CLOTHES(ARG)로 NTR 방지 처리 통일, 일부 주석 번역
+;										좋은 미끼, 함락자간자매 이벤트 외에는 이벤트 플래그를 사용하지 않아 그 외 항목은 분리 가능 
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;好餌イベント1.2
 
 ;フラグ
-;이벤트플래그:81:0 = イベント可否確認用
-;이벤트플래그:81:1 = 陥落フラグ:1,陥落 2,竿姉妹
-;이벤트플래그:81:2 = 露出調教フラグ
-;이벤트플래그:81:3 = 野外調教フラグ
-;이벤트플래그:81:4 = 売春フラグ
-;이벤트플래그:81:5 = 恋慕竿フラグ
-;이벤트플래그:81:6 = 淫乱竿フラグ
-;이벤트플래그:81:7 = 服従竿フラグ
-;이벤트플래그:81:10 = 少年覗き見フラグ
+;이벤트플래그:81:0 = 이벤트 여부 확인용
+;	0 : 이벤트 진행 확인
+;	1 : 이벤트 진행 수락
+; 14+ : 이벤트 진행 거절
+;이벤트플래그:81:1 = 함락 플래그
+;	1 : 함락
+;	2 : 간자매
+;이벤트플래그:81:2 = 노출 조교 플래그
+;이벤트플래그:81:3 = 야외 조교 플래그
+;이벤트플래그:81:4 = 매춘 플래그
+;이벤트플래그:81:5 = 연모간 플래그
+;이벤트플래그:81:6 = 음란간 플래그
+;이벤트플래그:81:7 = 복종간 플래그
+;이벤트플래그:81:10 = 소년 엿보기 플래그
 
 ;====================
 ;조건
 ;====================
 
-;初日から数日反応しなければ消滅。
-;その後は素質：好餌を起点にエロデイリーイベを入れていきたい
-;女あなたが百合百合したりイチャラブしてても容赦なくエロに浸かる予定
+;첫날부터 며칠 반응하지 않으면 소멸
+;그 이후에는：【好餌】소질을 기점으로 에로 데일리 이벤트를 진행하고 싶다
+;여자 아나타가 백합이거나 실수로 눌렀다해도 사정없이 에로에 빠질 예정입니다
+;(원문 : 女あなたが百合百合したりイチャラブしてても容赦なくエロに浸かる予定)
 ;NTRイベと内容ダダ被りしちゃうのはなんとか避けていきたい
 ;（申し訳ないし、あれはあれでとても良いものだし、勉強になるし）
-;経験値計算系は娼館の賃金計算を参考にさせていただきました
+;경험치 계산 시스템은 창관의 임금 계산을 참조했습니다
 
 @PLAYABLE_EVENT_81
 IF TALENT:MASTER:남자 == 0 && 이벤트플래그:81:0 == 0 && DAY <= 2
@@ -61,18 +70,18 @@ RETURN 0
 @SHOPCOM_EVENT_81,ARG
 #DIM L_SEX
 #DIM 횟수
-;LOCAL:1 = 調教時間
-;LOCAL:2 = 報酬額
-;LOCAL:3 = 合計調教回数
-;LOCAL:4 = セックス系プレイ頻度(回数)
-;LOCAL:5 = 奉仕系プレイ頻度(回数)
-;LOCAL:6 = プレイ頻度合計(割合計算用)
-;LOCAL:7 = Ｖ／Ａプレイ回数差計算用
-;LOCAL:8 = Ｖプレイ回数
-;LOCAL:9 = Ａプレイ回数
-;LOCAL:10 = 処女喪失による珠加算補正
+;LOCAL:1 = 조교 시간
+;LOCAL:2 = 보수액
+;LOCAL:3 = 합계 조교 횟수
+;LOCAL:4 = 섹스계 플레이 빈도(횟수)
+;LOCAL:5 = 봉사계 플레이 빈도(횟수)
+;LOCAL:6 = 플레이 빈도 합계(비율 계산용)
+;LOCAL:7 = Ｖ／Ａ플레이 횟수 차이 계산용
+;LOCAL:8 = Ｖ플레이 횟수
+;LOCAL:9 = Ａ플레이 횟수
+;LOCAL:10 = 처녀 상실에 따른 구슬 가산 보정
 
-;LOCAL配列初期化
+;LOCAL배열 초기화
 VARSET LOCAL,0
 LOCAL:1 = 0
 LOCAL:2 = 0
@@ -301,7 +310,7 @@ ENDIF
 
 횟수 = 3 + RAND:((BASE:MASTER:체력/70)+1)
 
-	;毎回露出調教と野外調教フラグはリセット
+	;노출 조교, 야외 조교, 그리고 매춘 플래그는 매번 리셋
 	이벤트플래그:81:2 = 0
 	이벤트플래그:81:3 = 0
 	이벤트플래그:81:4 = 0
@@ -460,7 +469,7 @@ ENDIF
 	DRAWLINE
 	
 ;====================
-;함락자간자매플래그부여処理
+;함락자간자매플래그 부여 처리
 ;====================
 @MASTER_SEX_TRAIN_OFFERING
 #DIM DYNAMIC 함락캐릭터리스트,65536
@@ -470,86 +479,90 @@ ENDIF
 
 후보수 = 0
 
-;メンバー全員チェック
+;멤버 전원 체크
 FOR LCOUNT,0,CHARANUM
-	;렌탈中は除外
+	;렌탈 중은 제외
 	SIF CFLAG:LCOUNT:노역플래그 == 3
 		CONTINUE
-	;主人ならスキップ
+	;MASTER는 제외
 	SIF LCOUNT == MASTER
 		CONTINUE
-	;대상が남자ならスキップ
+	;남자는 제외
 	SIF TALENT:LCOUNT:남자
 		CONTINUE
-	;함락していないキャラは除外
+	;함락되지 않은 캐릭터는 제외
 	SIF 함락(LCOUNT) == 0
 		CONTINUE
-	;専有奴隷の首輪を装備している場合は対象外
+	;전용노예목걸이를 장비하고 있는 캐릭터는 제외
 	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
 	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
 		CONTINUE
-	;既にフラグついてるキャラは除外
+	;이미 플래그가 달린 캐릭터는 제외
 	SIF CFLAG:LCOUNT:함락자간자매플래그 == 1
 		CONTINUE
-	;全ての例外に当てはまらなかったらリストに追加、후보수+1
+	;모든 예외에 해당되지 않으면 목록에 추가, 후보수+1
 	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
 	후보수++
 NEXT
 
-;竿姉妹イベフラグ확인。オフの時は発生しないようにする
+;함락자간자매 이벤트 플래그 확인。OFF 때는 발생하지 않도록 한다
 SIF !GETBIT(FLAG:好餌フラグ , 1)
 	RETURN 0
 
-;候補が一人もいないときは종료
+;후보가 한 명도 없을 때는 종료
 SIF 후보수 <= 0
 	RETURN 0
 
-;대상を결정　一人もいないときは종료
+;대상을 결정. 대상이 한 사람도 없을 경우 종료.
 대상 = 함락캐릭터리스트:(RAND:후보수)
 SIF 대상 <= 0
 	RETURN 0
+
+;이후 대상에게 이벤트 실행
+PRINTFORML 
+PRINTFORML 　ㆍ
+PRINTFORML 　ㆍ　ㆍ
+PRINTFORMW 　ㆍ　ㆍ　ㆍ
 		
-		PRINTFORML 
-		PRINTFORML 　ㆍ
-		PRINTFORML 　ㆍ　ㆍ
-		PRINTFORMW 　ㆍ　ㆍ　ㆍ
-		
-		PRINTFORML 「자, 이제 너의 조련사로서의 성과를 볼까」
-		PRINTFORMW 남자는 스스로에게 탐닉당하고 쾌락의 여운을 느끼는 %CALLNAME:MASTER%에게 그렇게 말했다
-		PRINTFORMW 이전에 말했듯이 드디어 몸과 마음 이외도 바치게 하자는 것이다
-		PRINTFORMW %CALLNAME : MASTER%의 조련사로서의 성과, 즉……
-		PRINTFORML 
-		PRINTFORMW 「네가 조교한 %CALLNAME:대상%라고 했나?다음에 데려오게나」
-		IF TALENT:대상:연모 || TALENT:대상:친애 || TALENT:대상:아내
-			PRINTFORMW 마음이 통하게 된 %CALLNAME:대상%을、친히 내라는 것이었다
-			PRINTFORML 하지만 완전히 몸도 마음도 해쳐진 %CALLNAME:MASTER%는 그 말에 등골이 떨려
-			PRINTFORML ――나도 모르게 암컷의 기쁨을 새기며 헤매는 나와 %CALLNAME:대상%을 상상하며
-			PRINTFORMW 젖은 눈동자로 남자의 요구에 따를 것을 알린 후 가슴에 머리를 맡기고 다가섰다
-			CFLAG:대상:함락자간자매플래그 = 1
+PRINTFORML 「자, 이제 너의 조련사로서의 성과를 볼까」
+PRINTFORMW 남자는 스스로에게 탐닉당하고 쾌락의 여운을 느끼는 %CALLNAME:MASTER%에게 그렇게 말했다
+PRINTFORMW 이전에 말했듯이 드디어 몸과 마음 이외도 바치게 하자는 것이다
+PRINTFORMW %CALLNAME : MASTER%의 조련사로서의 성과, 즉……
+PRINTFORML 
+PRINTFORMW 「네가 조교한 %CALLNAME:대상%라고 했나?다음에 데려오게나」
 
-		ELSEIF TALENT:대상:음란 || TALENT:대상:창부 || TALENT:대상:음마
-			PRINTFORMW 스스로의 손으로 음란한 노예의 맛을 본다는 것이었다
-			PRINTFORMW 나도 모르게 자기는 부족하냐고, 남자의 자지에 손을 뻗는다
-			PRINTFORML 만질까 말까 초조하게 하는 움직임으로 무언의 항의를 해도
-			PRINTFORMW 남자는 그런 질투등 귀엽다며  %CALLNAME:MASTER%을 깔아뭉갰다
-			PRINTFORMW 「걱정하지 않아도, 둘을 합쳐 미치게 만들어주지. 어디, 증거를 보여주지」
-			PRINTFORMW 그렇게 말하고, 사양하지 않고 다시 발기한 자지를 %CALLNAME:MASTER%의 깊은 곳에 쑤셔넣었다……
-			CFLAG:대상:함락자간자매플래그 = 1
 
-		ELSEIF TALENT:대상:복종 || TALENT:대상:예속 || TALENT:대상:노리개
-			PRINTFORMW 스스로 복종시킨 노예의 맛을 본다는 거였어
-			PRINTFORMW %CALLNAME:MASTER%는 자신의 수완을 선보이는 것에 거부감이 없으며, 솔직하게 승낙한다
-			PRINTFORMW だがそこで남자는 더욱더 %CALLNAME:MASTER%의 입술을 빼앗은 후
-			PRINTFORMW 「맛을 본 후에는 그 노예에게 네가 쾌락에 빠져있는 모습을 감상하게 해 주마.」
-			PRINTFORMW 기학적인 미소를 지으면서, 그렇게 말했다
-			PRINTFORMW %CALLNAME:MASTER%는 스스로 타락한 자에게 자신의 타락한 모습을 보여주는 배덕감에 기대하여 뜨거운 한숨을 쉬며 고개를 끄덕였다……
-			CFLAG:대상:함락자간자매플래그 = 1
+	IF TALENT:대상:연모 || TALENT:대상:친애 || TALENT:대상:아내
+		PRINTFORMW 마음이 통하게 된 %CALLNAME:대상%을、친히 내라는 것이었다
+		PRINTFORML 하지만 완전히 몸도 마음도 해쳐진 %CALLNAME:MASTER%는 그 말에 등골이 떨려
+		PRINTFORML ――나도 모르게 암컷의 기쁨을 새기며 헤매는 나와 %CALLNAME:대상%을 상상하며
+		PRINTFORMW 젖은 눈동자로 남자의 요구에 따를 것을 알린 후 가슴에 머리를 맡기고 다가섰다
 
-		ENDIF
+	ELSEIF TALENT:대상:음란 || TALENT:대상:창부 || TALENT:대상:음마
+		PRINTFORMW 스스로의 손으로 음란한 노예의 맛을 본다는 것이었다
+		PRINTFORMW 나도 모르게 자기는 부족하냐고, 남자의 자지에 손을 뻗는다
+		PRINTFORML 만질까 말까 초조하게 하는 움직임으로 무언의 항의를 해도
+		PRINTFORMW 남자는 그런 질투등 귀엽다며  %CALLNAME:MASTER%을 깔아뭉갰다
+		PRINTFORMW 「걱정하지 않아도, 둘을 합쳐 미치게 만들어주지. 어디, 증거를 보여주지」
+		PRINTFORMW 그렇게 말하고, 사양하지 않고 다시 발기한 자지를 %CALLNAME:MASTER%의 깊은 곳에 쑤셔넣었다……
+
+	ELSEIF TALENT:대상:복종 || TALENT:대상:예속 || TALENT:대상:노리개
+		PRINTFORMW 스스로 복종시킨 노예의 맛을 본다는 거였어
+		PRINTFORMW %CALLNAME:MASTER%는 자신의 수완을 선보이는 것에 거부감이 없으며, 솔직하게 승낙한다
+		PRINTFORMW だがそこで남자는 더욱더 %CALLNAME:MASTER%의 입술을 빼앗은 후
+		PRINTFORMW 「맛을 본 후에는 그 노예에게 네가 쾌락에 빠져있는 모습을 감상하게 해 주마.」
+		PRINTFORMW 기학적인 미소를 지으면서, 그렇게 말했다
+		PRINTFORMW %CALLNAME:MASTER%는 스스로 타락한 자에게 자신의 타락한 모습을 보여주는 배덕감에 기대하여 뜨거운 한숨을 쉬며 고개를 끄덕였다……
+
+	ENDIF
+
+
+;대상에게 함락자간자매플래그 부여
+CFLAG:대상:함락자간자매플래그 = 1
 		
 
 ;====================
-;陥落者竿姉妹イベント
+;함락자간자매 이벤트
 ;====================
 @MASTER_SEX_3PTRAIN
 #DIM DYNAMIC 竿姉妹キャラリスト,65536
@@ -562,42 +575,44 @@ SIF 대상 <= 0
 
 ;メンバー全員チェック
 FOR LCOUNT,0,CHARANUM
-	;렌タル中は除外
+	;렌탈 중은 제외
 	SIF CFLAG:LCOUNT:노역플래그 == 3
 		CONTINUE
-	;体力が500未満であればスキップ
+	;체력이 500 미만이면 제외
 	SIF BASE:LCOUNT:체력 < 500
 		CONTINUE
-	;主人ならスキップ
+	;MASTER는 제외
 	SIF LCOUNT == MASTER
 		CONTINUE
-	;対象がオトコならスキップ
+	;남자는 제외
 	SIF TALENT:LCOUNT:남자
 		CONTINUE
-	;함락していないキャラは除外
+	;함락되지 않은 캐릭터는 제외
 	SIF 함락(LCOUNT) == 0
 		CONTINUE
-	;専有奴隷の首輪を装備している場合は対象外
+	;전용노예목걸이를 장비하고 있는 캐릭터는 제외
 	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
 	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
 		CONTINUE
-	;フラグが付いていないキャラは除外
+	;플래그가 붙지 않은 캐릭터는 제외
 	SIF !CFLAG:LCOUNT:함락자간자매플래그
 		CONTINUE
-	;全ての例外に当てはまらなかったらリストに追加、후보수+1
+	;모든 예외에 해당되지 않으면 목록에 추가, 후보수+1
 	ARRAYSHIFT 竿姉妹キャラリスト, 1, LCOUNT
 	후보수++
 NEXT
 
-;대상が一人もいないときは종료
+;후보가 한 명도 없을 때는 종료
 SIF 후보수 <= 0
 	RETURN 0
 	
 DRAWLINE
 
-;대상を결정
+;대상을 결정
 대상 = 竿姉妹キャラリスト:(RAND:후보수)
+
 횟수 = 3 + RAND:(BASE:대상:체력/70)
+
 	IF 이벤트플래그:81:5 == 0 && (TALENT:대상:연모 || TALENT:대상:친애 || TALENT:대상:아내)
 		PRINTFORMW %CALLNAME:대상%은 어느 호텔의 방에서 %CALLNAME:MASTER%에게 등 뒤에서 안겨 온 몸을 만지작거리고 있는
 		PRINTFORML 평소와 다른 %CALLNAME:MASTER%의 모습에 약간의 의문이 떠올랐지만 쾌락으로 잊혀져가고
@@ -633,6 +648,7 @@ DRAWLINE
 		이벤트플래그:81:5 = 1
 		CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 		CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
+
 	ELSEIF 이벤트플래그:81:6 == 0 && (TALENT:대상:음란 || TALENT:대상:창부 || TALENT:대상:음마)
 		PRINTFORMW %CALLNAME:대상%의 눈 앞에서 자신을 음란하게 만든 %CALLNAME:MASTER%가 남자에게 먹히고 있었다
 		PRINTFORML 찌를 때마다 짐승같은 교성을 지르며 시키는대로 남자의 강직한 자지에 귀여움을 받는  기쁨을 입에 담는 모습은
@@ -658,6 +674,7 @@ DRAWLINE
 		이벤트플래그:81:6 = 1
 		CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 		CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
+
 	ELSEIF 이벤트플래그:81:7 == 0 && (TALENT:대상:복종 || TALENT:대상:예속 || TALENT:대상:노리개)
 		PRINTFORMW %CALLNAME:대상%은 %CALLNAME:MASTER%에게 안겨진채 간부의 남자에게 엉덩이를 움쳐쥐고 관통 당했다
 		PRINTFORML 스팽킹을 받으며 매 순간마다 강렬한 쾌락을 받고, 교성을 지르면 주인으로부터 벌하듯 젖꼭지가 괴롭혀진다
@@ -682,7 +699,9 @@ DRAWLINE
 		이벤트플래그:81:7 = 1
 		CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,마조,キス")
 		CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,마조,キス")
+
 	ELSE
+		;해당 캐릭터가 2회 이상 함락자간자매 이벤트의 대상이 된 경우
 		SELECTCASE RAND:4
 			CASE 0
 				PRINTFORML 
@@ -692,12 +711,14 @@ DRAWLINE
 				PRINTFORMW 자신이 누구의 소유물인가를 떠올리게 되며 자궁으로 수컷의 맛을 기억했다……
 				CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 				CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
+
 			CASE 1
 				PRINTFORMW  침대에 걸터앉은 남자의 자지에 두 암컷이 들러붙었다
 				PRINTFORMW  천박한 소리가 나는 것도 신경쓰지 않을 정도로 열중해 핥으면서
 				PRINTFORMW  그 밑에는 먼저 절정 시키고자 서로를 자극하고 있다
 				PRINTFORMW  험악해지지 않도록 규칙을 정한 남자는 입으로 두 사람을 부추기며 치태를 즐겁게 바라보고 있다
 				PRINTFORM
+
 				IF RAND:2 == 0
 					PRINTFORML  
 					PRINTFORMW  %CALLNAME:대상%은 %CALLNAME:MASTER%가 정액을 입으로 받아들인 틈을 타 클리토리스를 괴롭히며 파고 들어 그녀를 절정으로 몰아넣는다
@@ -707,17 +728,22 @@ DRAWLINE
 					PRINTFORMW  가차없는 공격에 환희의 소리를 지르며 남자에게 사랑을 속삭이고 자궁을 바친다
 					PRINTFORML  
 					PRINTFORMW  수없이 절정에 달하던 차, 갑자기 등 뒤에서 껴안고 입술을 빼앗겼던
+
 					IF TALENT:MASTER:후타나리
 						PRINTFORMW  %CALLNAME:MASTER%가 자신도 %CALLNAME:대상%의 혀를 찾아 서로 얽히며, 자신의 발딱 선 자지로 국화같은 애널을 겨냥한다
+
 					ELSE
 						PRINTFORMW  %CALLNAME:MASTER%가 자신도 %CALLNAME:대상%의 혀를 찾아 서로 얽히며, 패니스밴드로 국화같은 애널을 겨냥한다
+
 					ENDIF
+
 					PRINTFORMW  정지할 틈도 없이 붙잡혀 양구멍을 동시에 찔리는 압박감에 허덕일 수 밖에 없었고
 					PRINTFORMW  거기다 다급히 조은 포상으로 대량의 질즙을 받아 %CALLNAME:대상%은 너무나 큰 쾌락에 절규하며 기를 잃었다
 					PRINTFORMW  남겨진 두 사람은 그대로 삽입감을 즐기면서도 꽁냥거리고 있었다
 					PRINTFORMW  그리고 깨어난 %CALLNAME:대상%이 간청하는 것도 무시하고 둘이서 그녀를 탐했다……
 					CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 					CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
+
 				ELSE
 					PRINTFORML  
 					PRINTFORMW  %CALLNAME:대상%은 %CALLNAME:MASTER%가 정액을 입으로 받아들인 틈을 타 클리토리스를 괴롭히며 파고 들어 그녀를 절정으로 몰아넣는다
@@ -727,11 +753,15 @@ DRAWLINE
 					PRINTFORMW  가차없는 공격에 환희의 소리를 지르며 남자에게 사랑을 속삭이고 자궁을 바친다
 					PRINTFORML  
 					PRINTFORMW  수없이 절정에 달하던 차, 갑자기 등 뒤에서 껴안고 입술을 빼앗겼던
+
 					IF TALENT:MASTER:후타나리
 						PRINTFORMW  %CALLNAME:MASTER%가 자신도 %CALLNAME:대상%의 혀를 찾아 서로 얽히며, 자신의 발딱 선 자지로 국화같은 애널을 겨냥한다
+
 					ELSE
 						PRINTFORMW  %CALLNAME:MASTER%가 자신도 %CALLNAME:대상%의 혀를 찾아 서로 얽히며, 패니스밴드로 국화같은 애널을 겨냥한다
+
 					ENDIF
+
 					PRINTFORMW  정지할 틈도 없이 붙잡혀 양구멍을 동시에 찔리는 압박감에 허덕일 수 밖에 없었고
 					PRINTFORMW  거기다 다급히 조은 포상으로 대량의 질즙을 받아 %CALLNAME:대상%은 너무나 큰 쾌락에 절규하며 기를 잃었다
 					PRINTFORMW  남겨진 두 사람은 그대로 삽입감을 즐기면서도 꽁냥거리고 있었다
@@ -739,6 +769,7 @@ DRAWLINE
 					CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 					CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 				ENDIF
+
 			CASE 2
 				PRINTFORMW  자매가 서로 화합하는 모습을 감상하면서 남자는 조교 성과에 만족스러워 하며 꿀보지 맛을 비교한다
 				PRINTFORMW  교대로 보내면서 때로는 집요하게 절정시키고 때로는 한쪽과 혀를 얽히며 오나홀처럼 다뤘다
@@ -748,6 +779,7 @@ DRAWLINE
 				PRINTFORMW  그리고 정신이 든 언니와 같이 남자에게 조교당하고 뺏고 뺏기기를 반복하며 자매와 주인님 3인은 셋이서 계속 사랑을 나눴다
 				CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
 				CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,キス")
+
 			CASE 3
 				PRINTFORMW  %CALLNAME:대상%은 %CALLNAME:MASTER%와 함께 시야를 가리고 신체가 묶인 상태에서 남자의 자지에 입으로만 봉사를 하고 있다
 				PRINTFORMW  시야를 빼앗김으로 날카로워진 후각, 촉각이 숨막히는 수컷의 냄새를 더욱 부각시켜 사정받을 때 마다 마치 뇌를 침범당하는 듯한 착각을 일으킨다
@@ -758,46 +790,49 @@ DRAWLINE
 				PRINTFORMW  자매는 남자에게 사랑을 속삭이고 쾌락을 졸라대며 열심히 봉사를 계속 했고, 상을 받을 때는 쌓인 성욕만큼 절정에 미쳐 교성을 질렀다……
 				CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,마조,긴박,キス")
 				CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,レズ,마조,긴박,キス")
+
 		ENDSELECT
+		
 	ENDIF
 
 ;====================
 ;좋은 미끼 이벤트 대상결정
+;-현재 사용되는 곳이 없는 함수
 ;====================
-@KOUJI_TARGET
-#DIM DYNAMIC 함락캐릭터리스트,65536
-#DIM 후보수
-#DIM LCOUNT
-#DIM 대상
-
-후보수 = 0
-
+;@KOUJI_TARGET
+;#DIM DYNAMIC 함락캐릭터리스트,65536
+;#DIM 후보수
+;#DIM LCOUNT
+;#DIM 대상
+;
+;후보수 = 0
+;
 ;メンバー全員チェック
-FOR LCOUNT,0,CHARANUM
-	;렌タル中は除外
-	SIF CFLAG:LCOUNT:노역플래그 == 3
-		CONTINUE
-	;体力が500未満であればスキップ
-	SIF BASE:LCOUNT:체력 < 500
-		CONTINUE
-	;함락되지 않은 캐릭터는 제외
-	SIF 함락(LCOUNT) == 0
-		CONTINUE
-	;専有奴隷の首輪を装備している場合は対象外
-	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
-	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
-		CONTINUE
-	;모든 예외에 적합하지 않으면 리스트에 추가、후보수+1
-	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
-	후보수++
-NEXT
-
-;대상이 한명도 없을 경우 종료
-SIF 후보수 <= 0
-	RETURN 0
-
-;대상を결정
-대상 = 함락캐릭터리스트:(RAND:후보수)
+;FOR LCOUNT,0,CHARANUM
+;	;렌タル中は除外
+;	SIF CFLAG:LCOUNT:노역플래그 == 3
+;		CONTINUE
+;	;体力が500未満であればスキップ
+;	SIF BASE:LCOUNT:체력 < 500
+;		CONTINUE
+;	;함락되지 않은 캐릭터는 제외
+;	SIF 함락(LCOUNT) == 0
+;		CONTINUE
+;	;専有奴隷の首輪を装備している場合は対象外
+;	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
+;	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+;		CONTINUE
+;	;모든 예외에 적합하지 않으면 리스트에 추가、후보수+1
+;	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+;	후보수++
+;NEXT
+;
+;;대상이 한명도 없을 경우 종료
+;SIF 후보수 <= 0
+;	RETURN 0
+;
+;;대상を결정
+;대상 = 함락캐릭터리스트:(RAND:후보수)
 
 ;====================
 ;기승 섹스이벤트
