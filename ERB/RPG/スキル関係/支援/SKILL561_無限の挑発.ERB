@@ -130,37 +130,34 @@ ELSE
 	LOCAL:2 = 17
 ENDIF
 
-;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
-IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
-	CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 16)
-	CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 16)
-ENDIF
-
 FOR LOCAL,LOCAL:1,LOCAL:2
 	SIF POS(LOCAL) < 0
 		CONTINUE
+
+	;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
 	IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 		CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 16)
 		CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 16)
+
 	ELSE
 		SELECTCASE RAND:8
 			CASE 0
-				;1/8の確率で4段階下降
+				;1/8의 확률로 4단계 약화
 				CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 16)
 				CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 16)
 				LOCALS = ４
 			CASE 1
-				;1/8の確率で3段階下降
+				;1/8의 확률로 3단계 약화
 				CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 12)
 				CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 12)
 				LOCALS = ３
 			CASE 2 TO 5
-				;1/2の確率で2段階下降
+				;1/2의 확률로 2단계 약화
 				CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 8)
 				CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 8)
 				LOCALS = ２
 			CASE 6 TO 7
-				;1/4の確率で1段階下降
+				;1/4의 확률로 1단계 약화
 				CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 4)
 				CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 4)
 				LOCALS = １
@@ -168,22 +165,22 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		ENDSELECT
 		SELECTCASE RAND:8
 			CASE 0
-				;1/8の確率で4段階上昇
+				;1/8의 확률로 4단계 상승
 				CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 16)
 				CFLAG:POS(LOCAL):마법위력강화 = MIN(32, CFLAG:POS(LOCAL):마법위력강화 + 16)
 				LOCALS:1 = ４
-				;1/8の確率で3段階上昇
 			CASE 1
+				;1/8의 확률로 3단계 상승
 				CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 12)
 				CFLAG:POS(LOCAL):마법위력강화 = MIN(32, CFLAG:POS(LOCAL):마법위력강화 + 12)
 				LOCALS:1 = ３
 			CASE 2 TO 5
-				;1/2の確率で2段階上昇
+				;1/2의 확률로 2단계 상승
 				CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 8)
 				CFLAG:POS(LOCAL):마법위력강화 = MIN(32, CFLAG:POS(LOCAL):마법위력강화 + 8)
 				LOCALS:1 = ２
 			CASE 6 TO 7
-				;1/4の確率で1段階上昇
+				;1/4의 확률로 1단계 상승
 				CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 4)
 				CFLAG:POS(LOCAL):마법위력강화 = MIN(32, CFLAG:POS(LOCAL):마법위력강화 + 4)
 				LOCALS:1 = １
