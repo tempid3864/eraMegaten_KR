@@ -1,0 +1,159 @@
+﻿;스킬의 템플릿이 적용되어 있음
+
+;스킬名
+@SKILL_NAME_금강계만다라,ARG
+RESULTS = 금강계만다라
+
+;　명중
+@SKILL_HITRATE_금강계만다라, ARG
+RETURN 100
+
+;　위력
+@SKILL_POWER_금강계만다라, ARG
+RETURN 450
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_금강계만다라,ARG
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_금강계만다라,ARG
+RETURN 1
+
+;　ＨＰ2を支払うかＭＰ3を支払うか
+@SKILL_COSTTYPE_금강계만다라, ARG
+RETURN 3
+;소비안함＝1
+
+;　コストの量
+@SKILL_COST_금강계만다라,ARG
+RETURN 80
+
+;　相性
+@SKILL_TYPE_금강계만다라,ARG
+RETURN 10
+;파마
+
+;　1EXTRAか2MAGICか
+@SKILL_DECIDE_TYPE_금강계만다라, ARG
+RETURN 2
+
+;　1물리데미지で計算するか2마법데미지で計算するか
+@SKILL_DAMAGETYPE_금강계만다라, ARG
+RETURN 2
+
+
+;　대상が1적か2아군か3場전체か4特殊か
+@SKILL_TARGET_금강계만다라
+RETURN 1
+
+;　사거리
+@SKILL_RANGE_금강계만다라,ARG
+RETURN 3
+
+;　범위　1１체　2１열　3전체　4　적아군전체
+@SKILL_SPHERE_금강계만다라,ARG
+RETURN 3
+
+;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
+@SKILL_EFECT_금강계만다라
+RETURN 1
+
+;　 特殊処理の有無、及び処理内容
+@SKILL_SPECIALEFECT_금강계만다라,ARG
+;ARG = 1だった場合は処理の有無を返します
+SIF ARG == 1
+	RETURN 0
+;以下に特殊な処理を記述します
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_금강계만다라
+RETURN 13
+;파마
+
+;속도보정
+@SKILL_SPEED_금강계만다라, ARG = -1; ARG 의미가 뭔지 원
+RETURN 0
+
+;　구상の표시とその타입
+@SKILL_MESSAGE_금강계만다라,ARG
+
+
+;전투時以外に사용できるか
+@SKILL_ACTIONABLE_FIELD_금강계만다라
+RETURN 0
+
+;스킬변화？用랭크
+@SKILL_RANK_금강계만다라
+RETURN 0;전부 전용기니 0 고정
+
+
+
+;テン플레이트用、추가효과シリーズ
+;추가효과스테이터스
+@SKILL_ADDTIONAL_STATE_금강계만다라,ARG
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_금강계만다라,ARG
+RETURN 0
+
+;추가효과기본부여확률
+@SKILL_ADDTIONAL_BASE_RATE_금강계만다라,ARG
+RETURN 0
+
+;추가효과부여확률上限
+@SKILL_ADDTIONAL_MAX_RATE_금강계만다라,ARG
+RETURN 0
+
+;====================================================
+;스킬及び行動の実行
+;====================================================
+@ACTION_금강계만다라,ARG,ARG:1,SKILL_NUM
+#DIM SKILL_NUM
+#LOCALSIZE 4
+
+CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
+
+;コストを支払う
+;CALL VAR_MP,ARG,-20
+
+IF ARG:1 == 19
+	LOCAL:2 = 1
+	LOCAL:3 = 7
+ELSE
+	LOCAL:2 = 7
+	LOCAL:3 = 17
+ENDIF
+
+FOR LOCAL,LOCAL:2,LOCAL:3
+	SIF POS(LOCAL) < 0
+		CONTINUE
+	FOR LOCAL:1,0,6
+		CFLAG:POS(LOCAL):(GET_BATTLESTATUS(LOCAL:1) + "강화") = MIN(0, CFLAG:POS(LOCAL):(GET_BATTLESTATUS(LOCAL:1) + "강화"))
+	NEXT
+NEXT
+PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@ 전체의 올라간 능력이 원래대로 돌아왔다!
+
+
+
+
+
+
+;====================================================
+;実行内容ここまで
+;====================================================
+
+;　 설명文の표시
+@SKILL_EXPLAIN_금강계만다라
+PRINTL [후열] 적 전체에게 파마속성 특대 마법데미지, 추가로 상승한 능력을 원래대로 되돌린다.
+
+;継承に필요한部位
+@継承部位_금강계만다라,ARG
+RETURN 1
+
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_금강계만다라,ARG
+RETURN 1
+;とくにない

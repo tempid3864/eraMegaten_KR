@@ -1,0 +1,69 @@
+﻿;======================================================
+;장비品の데이터
+;;
+;======================================================
+@기본능력수정_9000,ARG,ARG:1 = -1
+SELECTCASE GET_BASESTATUS(ARG)
+	CASE "힘"
+		RETURN 4
+	CASE "인내력"
+		RETURN 4
+ENDSELECT
+RETURN 0
+
+@증가CP_9000
+RETURN 100
+
+@전투능력수정_9000,ARG,ARG:1 = -1
+SELECTCASE ARG
+ENDSELECT
+RETURN 0
+
+@방어상성_9000,ARG,ARG:1 = -1
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+@공격상성_9000, ARG = -1
+RETURN 2
+
+@최저공격횟수_9000, ARG = -1
+RETURN 1
+
+@최대공격횟수_9000, ARG = -1
+RETURN 1
+
+@사거리_9000, ARG = -1
+RETURN 1
+
+@공격범위_9000, ARG = -1
+RETURN 1
+
+@장비箇所_9000
+RETURN 0
+
+@필요레벨_9000
+RETURN 0
+
+@장비조건_9000,ARG
+SIF NO:ARG == [[キャラ:메탈그레이몬]] || NO:ARG == [[キャラ:워그레이몬]] || NO:ARG == [[キャラ:오메가몬]]
+	RETURN 1
+RETURN 0
+
+@장비추가스킬_9000,ARG,ARG:1 = -1
+SELECTCASE ARG
+	CASE 0
+		RETURN [[스킬:치유촉진(대)]]
+ENDSELECT
+RETURN 0
+
+
+@장비조건설명_9000
+PRINTL 그레이몬 계열의 완전체 이상 디지몬
+;메탈그레이몬, 워그레이몬, 오메가몬
+
+@구입조건_9000
+RETURN 0
+
+@장비해설_9000
+PRINTL 신태일의 용기에서 온 힘을 바탕으로 한 문장, 그레이몬 계열의 디지몬을 강화한다.

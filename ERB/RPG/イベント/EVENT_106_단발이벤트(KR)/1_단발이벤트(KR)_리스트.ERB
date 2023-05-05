@@ -3,9 +3,9 @@
 ;32개(CASE 31)까지 작성가능
 
 @EVENT_106_LIST_0(ARG,ARG:1)
-;ARG:1 0 = 타이틀
+;ARG:1 0 = 타이틀(표시되는 제목)
 ;　　　1 = 출현체크
-;　　　2 = 이벤트
+;　　　2 = 이벤트(호출부)
 ;
 SELECTCASE ARG
 CASE 0 ;세라픽게이트
@@ -40,7 +40,7 @@ CASE 0 ;세라픽게이트
 		CALL 세라픽게이트
 	ENDIF
 
-CASE 1
+CASE 1 ;단죄의황녀
 	IF ARG:1 == 0
 		RESULTS = 【EX:원신】단죄의 황녀
 
@@ -55,6 +55,50 @@ CASE 1
 	
 	ELSEIF ARG:1 == 2
 		CALL 단죄의황녀
+		RETURN 1
+	ENDIF
+
+CASE 3 ;디지몬 모드
+	IF ARG:1 == 0
+		IF 디지몬이벤트진행도 == 0
+			RESULTS = Into the Coulomb
+
+		ELSEIF 디지몬이벤트진행도 == 1
+			RESULTS = Halfwit Girl
+
+		ELSEIF 디지몬이벤트진행도 == 2
+			RESULTS = 캐릭터추가테스트
+
+		ENDIF
+
+	ELSEIF ARG:1 == 1
+		SIF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0
+			RETURN 0
+
+		IF 디지몬이벤트진행도 == 0 && BASE:MASTER:LV >= 15
+			RETURN 1
+		ELSEIF 디지몬이벤트진행도 == 1 && BASE:MASTER:LV >= 30
+			RETURN 1
+		ELSEIF 디지몬이벤트진행도 == 2
+			RETURN 1
+		ELSE
+			RETURN 0
+		ENDIF
+		
+		RETURN 0
+	
+	ELSEIF ARG:1 == 2
+		IF 디지몬이벤트진행도 == 0
+			CALL EVENT_106_3_0_Into_the_Coulomb
+
+		ELSEIF 디지몬이벤트진행도 == 1
+			CALL EVENT_106_3_1_Halfwit_Girl
+
+		ELSEIF 디지몬이벤트진행도 == 2
+			CALL EVENT_106_3_X_캐릭터추가테스트
+
+		ENDIF
+		
 		RETURN 1
 	ENDIF
 

@@ -7,5 +7,5 @@
 ;   인간 : 84XX
 
 #DIM SAVEDATA 세라픽게이트진행도
-
+#DIM SAVEDATA 디지몬이벤트진행도
 

@@ -33,6 +33,9 @@
 ;	026		2021/10/24		NEO						経験値関連とゲームオーバー関連ソフトを追加
 ;	027		2022/01/01		kamedakeisuke(ﾟдﾟ)		전체的に容量を調整した
 ;	028		2021/01/01		JK好き					@SOFT_ON サマナー人数を見るNUM_SUMMONERから最大サマナーレベルを見るGET_SUMMONER_MLVに修正
+;
+;	KR_01	2023/05/05		JustTasty				디지몬 모드 이식으로 디지바이스 추가
+;													현재 미작동 상태로 수정 필요
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
 ;==========================================================
@@ -484,6 +487,15 @@ PRINTL 。
 @SOFT_EXPLAIN_590
 PRINTL 　[필요 서머너Lv:0] [용량:4]　당신의 상태에 관계없이 아군이 전멸할 때까지 게임 오버가 되지 않는다。
 
+
+;---- EDIT KR_01 ADD START -------------------------
+;디지바이스
+@SOFT_EXPLAIN_599
+PRINTFORML 　[필요 서머너Lv:0] [용량:0]　악마 합체시、조마와 특정 악마를 합체시키거나 두 디지몬을 합체시켜
+PRINTFORML %" "*34%새로운 디지몬을 만들 수 있는 컨버터。
+;---- EDIT KR_01 ADD END -------------------------
+
+
 @SOFT_SIZE(ARG)
 #FUNCTION
 	SELECTCASE ARG
@@ -781,7 +793,9 @@ PRINTL 　[필요 서머너Lv:0] [용량:4]　당신의 상태에 관계없이 �
 		CASE 590
 			;데스마치
 			RETURNF 4
-
+		CASE 599
+			;디지바이스
+			RETURNF 0
 	ENDSELECT
 RETURNF -1
 
@@ -1095,6 +1109,9 @@ RETURNF -1
 		CASE 590
 			;데스마치
 			RETURNF 1
+		CASE 599
+			;디지바이스
+			RETURNF 0
 
 		CASEELSE
 			RETURNF 1
@@ -1137,6 +1154,7 @@ RETURNF 0
 			CASE 558
 				;스킬키퍼
 				RETURNF 1
+			
 			CASEELSE
 		ENDSELECT
 	ENDIF
@@ -1186,6 +1204,9 @@ RETURNF 0
 			;후호의비
 			RETURNF 1
 		;東方ＭＯＤEX변경分ここまで
+		CASE 599
+			;디지바이스
+			RETURNF 1
 	ENDSELECT
 RETURNF 0
 

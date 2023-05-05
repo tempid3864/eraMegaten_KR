@@ -1,0 +1,149 @@
+﻿;스킬의 템플릿이 적용되어 있음
+
+;스킬名
+@SKILL_NAME_꼬마불꽃,ARG
+RESULTS = 꼬마불꽃
+
+;　명중
+@SKILL_HITRATE_꼬마불꽃, ARG
+RETURN 95
+
+;　위력
+@SKILL_POWER_꼬마불꽃, ARG
+SIF FLAG:확산플래그
+	RETURN 80
+RETURN 190
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_꼬마불꽃,ARG
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_꼬마불꽃,ARG
+RETURN 1
+
+;　ＨＰ2を支払うかＭＰ3を支払うか
+@SKILL_COSTTYPE_꼬마불꽃, ARG
+SIF FLAG:확산플래그
+	RETURN 1
+RETURN 3
+;소비안함＝1
+
+;　コストの量
+@SKILL_COST_꼬마불꽃,ARG
+RETURN 8
+
+;　相性
+@SKILL_TYPE_꼬마불꽃,ARG
+RETURN 4
+;화염
+
+;　1EXTRAか2MAGICか
+@SKILL_DECIDE_TYPE_꼬마불꽃, ARG
+RETURN 1
+
+;　1물리데미지で計算するか2마법데미지で計算するか
+@SKILL_DAMAGETYPE_꼬마불꽃, ARG
+RETURN 1
+
+
+;　대상が1적か2아군か3場전체か4特殊か
+@SKILL_TARGET_꼬마불꽃
+RETURN 1
+
+;　사거리
+@SKILL_RANGE_꼬마불꽃,ARG
+RETURN 2
+
+;　범위　1１체　2１열　3전체　4　적아군전체
+@SKILL_SPHERE_꼬마불꽃,ARG
+RETURN 1
+
+;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
+@SKILL_EFECT_꼬마불꽃
+RETURN 1
+
+;　 特殊処理の有無、及び処理内容
+@SKILL_SPECIALEFECT_꼬마불꽃,ARG
+;ARG = 1だった場合は処理の有無を返します
+SIF ARG == 1
+	RETURN 0
+;以下に特殊な処理を記述します
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_꼬마불꽃
+RETURN 7
+;화염
+
+;속도보정
+@SKILL_SPEED_꼬마불꽃, ARG = -1;이 ARG 의미가 뭔지 원
+RETURN 0
+
+;　구상の표시とその타입
+@SKILL_MESSAGE_꼬마불꽃,ARG
+
+
+;전투時以外に사용できるか
+@SKILL_ACTIONABLE_FIELD_꼬마불꽃
+RETURN 0
+
+;스킬변화？用랭크
+@SKILL_RANK_꼬마불꽃
+RETURN 0
+
+
+
+;テン플레이트用、추가효과シリーズ
+;추가효과스테이터스
+@SKILL_ADDTIONAL_STATE_꼬마불꽃,ARG
+RETURN 18
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_꼬마불꽃,ARG
+RETURN 4
+
+;추가효과기본부여확률
+@SKILL_ADDTIONAL_BASE_RATE_꼬마불꽃,ARG
+RETURN 10
+
+;추가효과부여확률上限
+@SKILL_ADDTIONAL_MAX_RATE_꼬마불꽃,ARG
+RETURN 75
+
+;拡散공격用추가処理
+@SKILL_SPREAD_꼬마불꽃,ARG
+RETURN 1
+;拡散距離:1
+
+;====================================================
+;스킬及び行動の実行
+;====================================================
+@ACTION_꼬마불꽃,ARG,ARG:1,SKILL_NUM
+#DIM SKILL_NUM
+
+CALL ATTACK_SPREAD,ARG,ARG:1,SKILL_NUM
+
+
+
+
+
+
+;====================================================
+;実行内容ここまで
+;====================================================
+
+;　 설명文の표시
+@SKILL_EXPLAIN_꼬마불꽃
+PRINTL [후열] 적 1체와 주변에게 화염속성 중 물리데미지, 저 확률로 FLAME
+
+;継承に필요한部位
+@継承部位_꼬마불꽃,ARG
+SIF TALENT:ARG:입;필요한 무기 혹 신체부위
+	RETURN 1
+RETURN 0
+;조건이 없다면 RETURN 1
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_꼬마불꽃,ARG
+RETURN 1
+;とくにない
