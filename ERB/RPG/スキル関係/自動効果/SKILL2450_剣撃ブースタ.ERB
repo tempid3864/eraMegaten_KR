@@ -5,7 +5,7 @@
 
 ;스킬名
 @SKILL_NAME_2450,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:링고]])
+IF SKILL_CHANGE(ARG, [[キャラ:링고(소울해커즈2)]])
 	RESULTS = 검격 적성
 ELSE
 	RESULTS = 검격 부스터
@@ -38,7 +38,7 @@ RETURN 0
 
 ;　 説明文の표시
 @SKILL_EXPLAIN_2450
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:링고]])
+IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:링고(소울해커즈2)]])
 	;将来的に仕様변경する
 	PRINTL 자동：검격 속성으로 주는 데미지가 25% 증가한다.
 ELSE
