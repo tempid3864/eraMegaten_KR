@@ -43,8 +43,6 @@ https://ux.getuploader.com/eraMegaten_picture/
 
 * __Emuera1824+v8.1__ : 기본 실행기
 
-    아래의 __Emuera1824_lazyloading__ 실행기 사용 중 버그 발생 시 이용할 것
-
 * __Emuera1824_lazyloading__  : 지연 로딩 기능으로 초기 로딩 속도와 메모리 사용량이 개선된 실행기
 
     최초 실행시 __lazyloading.cfg__ 을 참조하여 __lazyloading.dat__ 파일을 생성하며 이후 프로그램을 재실행해야 기능이 제대로 작동한다.
