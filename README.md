@@ -45,13 +45,19 @@ https://ux.getuploader.com/eraMegaten_picture/
 
     아래의 __Emuera1824_lazyloading__ 실행기 사용 중 버그 발생 시 이용할 것
 
-* __Emuera1824_lazyloading__  : 초기 로딩과 메모리 사용량이 개선된 실행기
+* __Emuera1824_lazyloading__  : 지연 로딩 기능으로 초기 로딩 속도와 메모리 사용량이 개선된 실행기
 
     최초 실행시 __lazyloading.cfg__ 을 참조하여 __lazyloading.dat__ 파일을 생성하며 이후 프로그램을 재실행해야 기능이 제대로 작동한다.
  
     게임 파일 변경 시 __lazyloading.dat__ 파일을 삭제 후 재생성 할 것
- 
-    LFD나 SRW 등 다른 실행기도 있지만 사용의 편의성 때문에 해당 실행기를 넣어두었다
+
+* __EmueraLFD+v8__  : ezEmuera, EmueraEE, WebP 통합 지원 및 로딩 속도 개선을 위한 실행기
+
+    다양한 기능을 지원 중이나 __반드시__ 사용법을 읽고 사용해야 한다.
+
+    자세한 내용은 _README\EmueraLFD_readme.txt를 참고할 것
+
+## 기타 파일
 
 * __Debug.bat__ : 기본 실행기를 디버그 모드로 실행하는 bat 파일
 
