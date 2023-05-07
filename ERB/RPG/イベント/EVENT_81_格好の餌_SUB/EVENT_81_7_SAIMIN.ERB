@@ -1,0 +1,220 @@
+﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
+;
+;	Module		:EVENT_81_7_SAIMIN.ERB
+;	Facility	:좋은 미끼 이벤트
+;
+;	Licence		:ライセンスフリー。(라이센스 프리)
+;
+;	Modification Data:
+;
+;	Edit	Date			Author		Reason
+;	KR_01	2023/05/04		JustTasty	EVENT_81_格好の餌에 eraAS, eratohoK의 NTR 이벤트를 이식한 내용 추가
+;										IS_ANTI_NTR_CLOTHES(ARG)로 NTR 방지 처리 통일, 일부 주석 번역
+;										좋은 미끼, 함락자간자매 이벤트 외에는 이벤트 플래그를 사용하지 않아 그 외 항목은 분리 가능 
+;	KR_02	2023/05/07		JustTasty	작성 편의를 위해 이벤트들의 파일 분리
+;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
+
+;====================
+;최면 이벤트
+; - 후속 이벤트 추가할지도?
+;====================
+@SAIMIN_MAN
+#DIM DYNAMIC 함락캐릭터리스트,65536
+#DIM 후보수
+#DIM LCOUNT
+#DIM 대상
+#DIM 횟수
+#DIM L_MONEY
+#DIM L_MONEY2
+
+
+후보수 = 0
+
+;メンバー全員체크
+FOR LCOUNT,0,CHARANUM
+	;렌탈中は除外
+	SIF CFLAG:LCOUNT:노역플래그 == 3
+		CONTINUE
+	;대상が남자ならスキップ
+	SIF TALENT:LCOUNT:남자
+		CONTINUE
+	;함락していないキャラは除外
+	SIF 함락(LCOUNT) == 0
+		CONTINUE
+	;전속노예의목걸이を장비している場合は대상外
+	;SIF (CFLAG:LCOUNT:그외 == 1116 || CFLAG:LCOUNT:그외2 == 1116 || CFLAG:LCOUNT:그외3 == 1116)
+	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+		CONTINUE
+	;모든例外に当てはまらなかったら리스트に추가、후보수+1
+	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+	후보수++
+NEXT
+
+;대상が一人もいないときは종료
+SIF 후보수 <= 0
+	RETURN 0
+
+;대상を결정
+대상 = 함락캐릭터리스트:(RAND:후보수)
+
+IF BASE:대상:체력 > 70
+	횟수 = 8 + RAND:(BASE:대상:체력/70)
+ELSE
+	횟수 = 8
+ENDIF
+
+SIF CFLAG:대상:최면_발생플래그 < 0
+	RETURN 0
+
+DRAWLINE
+
+	PRINTFORML 【최면 이벤트(불온):%CALLNAME:대상%】
+
+	PRINTFORML ……밤, 왕래가 적은 골목에서 수상쩍은 남자가 %CALLNAME:대상%을 기다리고 있었다.
+	PRINTFORML 그 손에 들린 스마트 폰에는, %CALLNAME:대상%의 성격에 맞춰 조정된 최면 어플리케이션이 인스톨 되고 있다……
+
+
+	PRINTFORML 심야의 밤거리에 살짝 경계하면서 귀한을 서두르는 %CALLNAME:대상%가 남자의 시야에 들어오기 시작했다.
+	PRINTFORML 잠깐의 시간이 흘러, %CALLNAME:대상%이 남자가 있는 골목을 지나치는 순간
+	PRINTFORML 골목 안에 있던 남자가 %CALLNAME:대상%의 앞으로 뛰쳐나왔다.
+
+	PRINTFORML "읏!?"
+	PRINTFORML 갑작스런 난입자에 놀랐지만, 제압을 위해 손을 뻗으려던 순간, 남자는 공격의 의사가 없다는 듯이 양 손을 앞으로 내민다.
+	PRINTFORML 상대가 공격적인 의사가 없다는 것은 확인헀지만, 갑자기 뛰쳐나온 만큼 제압 후 의도를 물어볼 필요가 있다고 판단한 %CALLNAME:대상%이지만,
+	PRINTFORML 시야 안에 들어온 스마트 폰의 화면을 보고 굳어 버렸다.
+
+	PRINTFORML 화면 안에서 전개되는 환각적인 나선과 전자음.
+	PRINTFORML 사이키델릭한 신호에 뇌가 이해를 하는 것에 앞서, 사고가 둔화도고 몸이 경직되기 시작했다.
+	
+	PRINTFORML ·
+	PRINTFORML ·
+	PRINTFORML ·
+	
+	LOCAL = 0	
+		
+	PRINTFORML 남자가 본색을 드러내고 눌러 덮쳐들어왔다.
+	PRINTFORML ·
+	PRINTFORML ·
+	PRINTFORML ·
+	
+	IF BASE:대상:30 > 30
+		PRINTFORML %CALLNAME:대상%는 최면 어플리케이션의 간섭을 상회할 정도의 강력한 존재감으로 견디고 있다...
+		LOCAL += 1
+	ENDIF
+	IF BASE:대상:32 > 30
+		PRINTFORML %CALLNAME:대상%의 뛰어난 두뇌는 최면 어플리케이션의 자아간섭에도 이성과 논리를 추구하고 있다...
+		LOCAL += 1
+	ENDIF
+	IF BASE:대상:33 > 30
+		PRINTFORML %CALLNAME:대상%의 드높은 마력은 어플리케이션의 영향력을 억누르고 있다...
+		LOCAL += 1
+	ENDIF
+	IF BASE:대상:36 > 30
+		PRINTFORML 알 수 없는 이유로 어플리케이션에 의한 영향이 억제되고 있다...
+		LOCAL += 1
+	ENDIF
+	IF ((BASE:대상:10 + CFLAG:대상:2)/2) >= 3000
+		PRINTFORML %CALLNAME:MASTER%에게의 확고한 충성심과 신뢰는 자기세뇌의 범주에 가깝다...
+		LOCAL += 1
+	ENDIF
+	
+	IF LOCAL >= 3
+		PRINTFORML ·
+		PRINTFORML ·
+		PRINTFORML ·
+		PRINTFORML 최면 어플리케이션의 영향을 견뎌낸  %조사처리(CALLNAME:대상,"는")% 남자를 제압했다.
+		PRINTFORML 이대로 놔두기에는 위험하다는 판단에 스마트폰을 부숴버린 후, %CALLNAME:MASTER%를 통해 팬텀으로 넘기게 되었다.
+		PRINTFORML 얄팍한 짓으로 욕망을 채우려던 어느 남자의 미래는, 소멸하게 된 것 이다...
+		CFLAG:대상:최면_발생플래그 = -1
+		RETURN 0	
+	ENDIF
+	
+	PRINTFORML ·
+	PRINTFORML ·
+	PRINTFORML ·
+	
+	PRINTFORML 얼굴을 돌리려고 해도, 두 눈은 삼킬 듯이 극채색을 계속 응시해,
+	PRINTFORML 한껏 빛의 명멸을 동공에 받은 %CALLNAME:대상%의 눈동자가, 몽롱하고 황홀한 느낌으로 바뀌는데까지 시간은 얼마 걸리지 않았다.
+	PRINTFORML 신체의 자유 뿐만 아니라 의식까지도 금방 불확실하게 되어, 더이상 손을 쓸 수 없게 되어,
+	PRINTFORML 비명, 혹은 도움을 청해 소리를 높이려고 해도, 입은 그저 허무하게 뻐끔거리기만 할 뿐 목에서 짜내지는 것은 아무것도 없다.
+	PRINTFORMW 시각과 청각의 자극은 끊임없고, 얼마 지나지 않아 %CALLNAME:대상%의 저항 의지는 전후의 기억과 함께, 어이없게 어둠속에 가라앉았다……
+	PRINTL ………………
+	PRINTL …………
+	PRINTW ……
+
+	PRINTFORML 완전하게 트랜스 상태에 빠진 %CALLNAME:대상%, 남자에게 명령받은 대로 주저 없이 페니스를 문다……
+
+	PRINTFORML 놀라울 정도 최면 도입이 순조로웠던 일도 있어, 암시를 마음 속 깊이 심기 위한 마무리는 이미 끝나 있었다.
+	PRINTFORMW 지금은 적당하게, 그 사용감을 실전에 앞서 시험하고 있는 것이다.
+	PRINTFORML 어슴푸레한 방범등아래, 전봇대에 기댄 남자의 앞에 주저앉아, 묵묵히 펠라치오 봉사에 열중하는 %CALLNAME:대상%。
+	PRINTFORM 여전히 인기척은 없지만, 
+	PRINTFORML 자랑스런 가슴을 위 아래로 출렁이며 가랑이에 얼굴을 묻은 모습이 부끄럽지도 않은 듯 보여주며,
+	PRINTFORMW 구강으로 훑어 내듯이 입술을 오므리고, 쭈웁쭈웁 자지를 빠는 소리를 주위에 울려 퍼지게 하는 그 모습은 그녀를 아는 사람이라면 생각할 수 없는 치태였다.
+
+	PRINTFORMW %CALLNAME:대상% 오로지 눈앞의 페니스에 달라붙어, 최선을 다해 빨아들이고 있다……
+	PRINTFORMW 　
+	PRINTFORML 이윽고 남자가 절정에 이르러, 마셔, 라고 명령하면 %CALLNAME:대상%은 페니스의 뿌리까지 단번에 가득 삼켰다.
+	PRINTFORML 맥동 하는 페니스에 혀가 휘감겨, 한 방울이라도 더 많은 정액을 짜내려고 성기 뒷부분을 아랫 입술로 간질인다.
+	PRINTFORML 남자는 %CALLNAME:대상%의 지각 없는 기교를 즐기며, 두세번 허리를 흔들어 요도에 남은 정액을 마저 토해내며, 천천히 페니스를 입에서부터 빼냈다.
+	PRINTFORMW 살짝, 열기와 풋내가 그녀의 구강에서부터 빠져, 무심코 얼굴을 찡그리지만, %CALLNAME:대상% 변함 없이 태연하게 하고 있다.
+	PRINTFORML 
+	PRINTFORMW 
+	PRINTFORML 밀어 쓰러트려져 격렬한 씨뿌리기 프레스를 먹으면서 움찔움찔 신체를 진동시킨다
+	PRINTFORML 하지만 조금 전과 달라 %조사처리(CALLNAME:대상,"는")% 저항도 하지 않고 전혀 아무 일도 없는 것처럼 무표정하다
+	PRINTFORMW 남의 최면을 받은 %조사처리(CALLNAME:대상,"는")% 지금 일어나고 있는 일을 올바르게 인식 되어 있지 않게 되어 있었다
+	PRINTFORML 「쿳! 꽤 좋은 형편이 아닌가! 어때! 범해지고 있는 기분은!」
+	PRINTFORML 격렬하게 허리를 쳐박아 오는 남자에게 그렇게 거론되어도 %조사처리(CALLNAME:대상,"는")% 멍청히 해 고개를 갸웃한다
+	PRINTFORML 그는 무슨 말을 하고 있는 것일까? 확실히 강간되고 있지만 보통 일이 아닐까
+	PRINTFORMW %조사처리(CALLNAME:대상,"는")% 움찔움찔 몸을 진동시키면서 스스로를 관철하는 남자의 페니스의 움직임을 다만 바라본다
+	PRINTFORML 「옷! 옷! 건방지게도 단단히 조여 오고 자빠져도! 오라! 이 암퇘지가!」
+	PRINTFORML %조사처리(CALLNAME:대상,"는")% 자신의 안에 격렬하게 출입하는 씩씩한 자지를 약간 발정한 눈으로 바라보고 있다
+	PRINTFORML 빵! 빵! 빵! (와)과 격렬하게 페니스를 쳐박아질 때에 보지가 격렬하게 실룩거린다
+	PRINTFORMW 사고와 달라 신체는 솔직하게 반응해, 무자각의 쾌락에 %조사처리(CALLNAME:대상,"는")% 숨을 거칠게 하고 있었다
+	PRINTFORML 「오오! 좋은 억압이다! 워, 원래 여기의 소질이 있지 않았을까? 오라!」
+	PRINTFORML 자지가 빼고 꽂기 될 때에않고 않고 와 추잡한 소리와 %CALLNAME:대상%의 신음소리가 영향을 준다
+	PRINTFORML 다소의 고통과 저리는 것 같은 감각을 기억하면서도 그것이 무엇인 것인가, %CALLNAME:대상%에는 모른다
+	PRINTFORMW 남이 허리의 움직임을 가속시키면, %CALLNAME:대상%도 또한 움찔움찔 전신을 진동시키기 시작했다
+	PRINTFORML 「오라! 오라! 너도 느껴라! 빗치같이 미친듯이 앙앙거리면서 가버려라!」
+	PRINTFORMW 남이 뭔가를 아우성친다…
+	PRINTFORML 하면 다음의 순간 강렬한 쾌감이 전신에 달려, %조사처리(CALLNAME:대상,"는")% 크게 신체를 뒤로 젖히게 했다
+	PRINTFORML 갑자기 덤벼 들어 온 폭력적인 충격에 %조사처리(CALLNAME:대상,"는")% 혼란하면서 몹시 놀라 조수를 분다
+	PRINTFORMW 육체 감각을 민감하게 된 %조사처리(CALLNAME:대상,"는")% 사고를 튀게 하면서 명령받은 대로 미친듯이 자지러지는 신음소리를 낸다
+	PRINTFORML 「쿠우! 좋아! 한층 더 단단히 조여 오고 자빠져! 싼다! 오라! 가라! 오라! 오라!」
+	PRINTFORMW 사정 선언에 %조사처리(CALLNAME:대상,"는")% 무의식 중에 그에게 매달려, 자궁입구구두나 키라고 대망때를 맞이했다
+	PRINTFORML 
+	PRINTFORML 뷰르르룰!
+	PRINTFORML 
+	PRINTFORML ♥♥♥♥♥♥♥♥♥♥♥♥♥♥♥
+	PRINTFORMW 
+	PRINTFORML 작열의 정액이 발해지면 %조사처리(CALLNAME:대상,"는")% 시야를 새하얗게 하면서 절정에 이르렀다
+	PRINTFORMW %조사처리(CALLNAME:대상,"는")% 힘차게 쏟아지는 정액을 태로 느끼면서 단정치 못한 교성을 미치게 했다
+	PRINTFORML …남자는 %CALLNAME:대상%의 최면 강도를 올릴 수 있도록 그 뒤도 끝없이 조교를 계속 반복했다
+	PRINTFORMW 절정의 여운이 남은 %조사처리(CALLNAME:대상,"는")% 이미 쾌락의 물결에 저항하지 못하고, 명령되는 대로 몇 번이나 절정 했다
+	PRINTFORMW 깨달으면 %조사처리(CALLNAME:대상,"는")% 자택의 앞에 있었다
+			PRINTFORML 는이라고, 어느새? 확실히 오늘은 일을 소개되고 있었을 것
+			PRINTFORML 어떤 일을 한 것이던가?
+			PRINTFORMW 그렇게 생각하면 찌잉하고 하복부가 아팠다
+			PRINTFORML 하지만 %조사처리(CALLNAME:대상,"가")% 그것에 대해 깊게 생각하는 일은 없었다
+			PRINTFORMW %조사처리(CALLNAME:대상,"는")% 아마 첫일로 지쳤을 것이라고 자신에게 타일러 집에 들어갔다
+			PRINTFORMW …몸에 새겨진 능욕의 자국에 일절 깨닫지 않는 채
+	PRINTFORMW 일단 별다른 문제는 없는 것 같고, 나중의 호출도 기대 할 수 있을 것이다……
+
+	PRINTFORMW 
+	
+	RESETCOLOR
+
+	;CALL FUCK(MASTER,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,キス,売春,羞恥,노출")
+	EXP:대상:0 += 5	;V
+	EXP:대상:1 += 5	;A
+	EXP:대상:2 += 5	;절정
+	EXP:대상:4 += 5	;성교
+	EXP:대상:5 += 5	;질사
+	EXP:대상:6 += 5	;키스
+	EXP:대상:20 += 5	;정액
+	EXP:대상:21 += 5	;봉사
+	EXP:대상:22 += 5	;펠라
+	EXP:대상:30 += 5	;고통쾌락
+	EXP:대상:33 += 5	;야외
+	EXP:대상:70 += 5	;조교
+
+DRAWLINE

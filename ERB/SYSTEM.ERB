@@ -1001,8 +1001,9 @@ IF TIME == 3
 	;---- EDIT KR_01 ADD START -------------------------
 	;好餌フラグ+ 판정, 조건 만족 시 50% 확률로 발생
 	;추후 연계되는 이벤트를 하나로 묶고, CFLAG를 정리할 필요가 있다
+	
 	IF (FLAG:ＮＴＲ기능 && FLAG:好餌フラグ) && (RAND:2 == 0)
-		FOR LCOUNT, 0, 5
+		FOR LCOUNT, 0, 14
 			SELECTCASE RAND:14
 				CASE 0
 					CALL NTR_ALBA

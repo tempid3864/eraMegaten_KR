@@ -1,0 +1,320 @@
+﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
+;
+;	Module		:EVENT_81_1_HAPPYTOILET.ERB
+;	Facility	:좋은 미끼 이벤트
+;
+;	Licence		:ライセンスフリー。(라이센스 프리)
+;
+;	Modification Data:
+;
+;	Edit	Date			Author		Reason
+;	KR_01	2023/05/04		JustTasty	EVENT_81_格好の餌에 eraAS, eratohoK의 NTR 이벤트를 이식한 내용 추가
+;										IS_ANTI_NTR_CLOTHES(ARG)로 NTR 방지 처리 통일, 일부 주석 번역
+;										좋은 미끼, 함락자간자매 이벤트 외에는 이벤트 플래그를 사용하지 않아 그 외 항목은 분리 가능 
+;	KR_02	2023/05/07		JustTasty	작성 편의를 위해 이벤트들의 파일 분리
+;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
+
+;====================
+;행복의 화장실 이벤트
+;====================
+@HAPPY_TOILET_SEX
+#DIM DYNAMIC 함락캐릭터리스트,65536
+#DIM 후보수
+#DIM LCOUNT
+#DIM 대상
+#DIM 횟수
+#DIM VAL
+
+후보수 = 0
+
+;メンバー全員체크
+FOR LCOUNT,0,CHARANUM
+	;렌탈中は除外
+	SIF CFLAG:LCOUNT:노역플래그 == 3
+		CONTINUE
+	;体力が500未満であればスキップ
+	SIF BASE:LCOUNT:체력 < 500
+		CONTINUE
+	;대상が남자ならスキップ
+	SIF TALENT:LCOUNT:남자
+		CONTINUE
+	;함락していないキャラは除外
+	SIF 함락(LCOUNT) == 0
+		CONTINUE
+	;専有奴隷の首輪を装備している場合は対象外
+	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
+	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+		CONTINUE
+	;모든例外に当てはまらなかったら리스트に추가、후보수+1
+	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+	후보수++
+NEXT
+
+;대상が一人もいないときは종료
+SIF 후보수 <= 0
+	RETURN 0
+
+;대상を결정
+대상 = 함락캐릭터리스트:(RAND:후보수)
+
+횟수 = 3 + RAND:(BASE:대상:체력/70)
+
+DRAWLINE
+
+
+	PRINTFORMW ＞그 공원의 남자 화장실 가장 안쪽 별실에는 공개되지 않도록 조밀한 소문이 있다
+	PRINTFORMW ＞밤낮을 불문하고 부정기적으로 얼굴도 모르는, 하지만 미녀임을 확실히 알 수 있는 여자를 육변기로 사용할 수 있다는 것이다.
+	PRINTFORMW ＞그것이 언제 개최될지는 아무도 모른다, 하지만 어느새인가 사람이 모여 이번에도 연회는 열리고 있다……
+	PRINTFORML 
+	PRINTFORMW %CALLNAME:대상%이 어떤 공원에서 산책을 하고 있는데 낡은 공중화장실이 문득 눈에 들어온다
+	PRINTFORMW 마치 남의 눈을 피하듯이 나무들로 시야를 가리고 있는 그것을 분명히 의식한 순간, 의식이 끊겨――
+	
+	PRINTFORML ·
+	PRINTFORML ·
+	PRINTFORML ·
+	
+	VAL = 0	
+		
+	IF BASE:대상:30 > 30
+		PRINTFORML %CALLNAME:대상%의 본연의 강력한 존재감은 남자의 눈에서 발해지는 불길한 마력을 상회한다...
+		VAL += 1	
+	ENDIF
+	IF BASE:대상:32 > 30
+		PRINTFORML %CALLNAME:대상%의 뛰어난 두뇌는 불길한 마력에 대응해 현재의 상황에 대한 올바른 이해와 판단을 사고하고 있다.
+		VAL += 1
+	ENDIF
+	IF BASE:대상:33 > 30
+		PRINTFORML %CALLNAME:대상%의 드높은 마력은 눈동자의 마력을 억누르고 있다...
+		VAL += 1
+	ENDIF
+	IF BASE:대상:36 > 30
+		PRINTFORML 알 수 없는 이유로 눈동자의 마력에 의한 영향이 억제되고 있다...
+		VAL += 1
+	ENDIF
+	IF ((BASE:대상:10 + CFLAG:대상:2)/2) >= 3000
+		PRINTFORML %CALLNAME:MASTER%에게의 확고한 충성심과 신뢰는 자기세뇌의 범주에 가깝다...
+		VAL += 1
+	ENDIF
+	
+	IF VAL >= 3
+		PRINTFORML ·
+		PRINTFORML ·
+		PRINTFORML ·
+		PRINTFORML ... 몽롱해지던 의식을 부여잡은 %조사처리(CALLNAME:대상,"는")% 머리를 흔들며 자리를 떠났다.
+		RETURN 0	
+	ENDIF
+	
+	PRINTFORMW %CALLNAME:대상%은 아무 일도 없었던 것처럼 『남자화장실에』 들어갔다
+	PRINTFORML 
+	PRINTFORML 『호오…정말 멋진 변기가 걸려들었군』
+	PRINTFORMW 남자화장실의 개인실 문을 열자, 거기에는 턱을 괴고 대변기에 앉아있는 ――벨페골이 있었다
+	PRINTFORMW %CALLNAME:대상%은 자신을 변기라고 부르며 거침없이 몸을 만지작 거리는 악마를 혐오감 없이 받아들인다
+	PRINTFORML 
+	IF TALENT:대상:처녀 == 1 || TALENT:대상:재생처녀 == 1
+		PRINTFORML 『호오, 오늘밤의 변기는 처녀인가! 그것은 좋다……만, 변기로는 부족하다』
+		PRINTFORMW 악마는 부족하다고 평가하면서도 기쁜 마음으로 자신의 자지를 꺼내어, 남자를 모르지만 이미 준비된 %CALLNAME:대상%의 보지에 넣었다
+		PRINTFORML 『호색의 악마에게 자지맛을 배운다니, 너에게도 경사로군』
+		PRINTFORMW 가차없이 깊은 곳까지 꿰뚫고, 『이용자』의 전에 암컷의 쾌락을 새겨주기로 했다
+	ELSE
+		PRINTFORML 『이건 좋군. 그럼 업무 전에 듬뿍 대접해주도록 할까』
+		PRINTFORMW 기분이 좋아진 악마는 자신의 자지를 꺼내, 『이용자』를 맞이하기 위한 사전 준비를 하기로 했다
+	ENDIF
+	PRINTFORML 
+	PRINTFORML 　ㆍ
+	PRINTFORML 　ㆍ　ㆍ
+	PRINTFORMW 　ㆍ　ㆍ　ㆍ
+	PRINTFORML 
+	PRINTFORMW 남자화장실 제일 안쪽의 별실로부터 살을 부딪히는 소리와 함께 여자의 교성이 울려퍼진다
+	IF RAND:3 == 0
+		PRINTFORMW %CALLNAME:대상%은 악마에게 배젼좌위로 엉덩이 구멍이 뚫리며, 자주 오는  『이용자』에게는 자신의 보지로 대접하고 있다
+		PRINTFORMW 이용자는 %CALLNAME:대상%를 단지 상태 좋은 육변기로만 인식하고 사양없이 자궁에 정액을 쏟아붓고 돌아갔다
+		PRINTFORML 악마는 이용자가 들어갈 때마다 방금전 물었던 이용자의 자지에 대한 감상을 말하며
+		PRINTFORMW 다음의 이용자가 올 때까지 %CALLNAME:대상%의 엉덩이를 즐겼다
+		PRINTFORML 
+		PRINTFORMW %CALLNAME:대상%은 {횟수}명의 이용이 끝날 때 까지 오로지 쾌락이 계속되어 절정에서 되돌아올 수 없었다
+		PRINTFORMW 『흠, 역시 오늘 밤의 변기는 좋았다. MAG의 양도 그렇지만 무엇보다 사용감이 좋군』
+		PRINTFORMW 악마가 만족한 듯 %CALLNAME:대상%의 엉덩이를 뚫었던 자지를 빼내어, 대량의 정액이 흘러내려 다시금 %CALLNAME:대상%은 절정에 달했다
+	ELSE
+		PRINTFORMW %CALLNAME:대상%은 악마에게 보지를 뚫은채, 쑤셔싸기위해 내민 엉덩이 구멍으로 『이용자』를 대접한다
+		PRINTFORMW 이용자는%CALLNAME:대상%를 단지 상태 좋은 육변기로만 인식하여 무심히 사양없이 장내에 정액을 쏟아붓고 돌아갔다
+		PRINTFORML 악마는 이용자가 들어갈 때마다 방금전 물었던 이용자의 자지에 대한 감상을 말하며
+		PRINTFORMW 다음의 이용자가 올 때까지 %CALLNAME:대상%의 보지의 맛을 즐기며 자궁에 정액을 배출했다
+		PRINTFORML 
+		PRINTFORMW %CALLNAME:대상%은 {횟수}명의 이용이 끝날 때 까지 오로지 쾌락이 계속되어 절정에서 되돌아올 수 없었다
+		PRINTFORMW 『흠, 역시 오늘 밤의 변기는 좋았다. MAG의 양도 그렇지만 무엇보다 사용감이 좋군』		
+		PRINTFORMW 악마가 만족한 듯 %CALLNAME:대상%의 보지를 뚫었던 자지를 빼내어, 대량의 정액이 흘러내려 다시금 %CALLNAME:대상%은 절정에 달했다
+	ENDIF
+	PRINTFORML 
+	PRINTFORMW 『그럼 이름 모를 육변기여、”잘먹었습니다”』
+	PRINTFORMW 그렇게 말하며 악마는 자신의 자지를 %CALLNAME:대상%의 입으로 깨끗이 정리한 후 떠났다
+	PRINTFORMW 유인한 여자를 그릇으로 남자에게 쓰게 하고 여러 사람과 섞이는 여자를 범함으로써 흡수하는 MAG의 양과 질을 높이는 ”식사”
+	PRINTFORMW 남저들의 행복의 화장실이라 불리는 잔치는 오늘도 악마가 포만감을 느끼며 끝을 맞이했고
+	PRINTFORMW 홀로 남겨진 %CALLNAME:대상%은, 양구멍으로부터 대량의 정액을 흘리며, 공허하게 느슨해진 암컷의 표정으로 진정되지 않는 절정에 몸을 튕기고 있다 ……
+	CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,性交,キス")
+
+DRAWLINE
+
+
+;====================
+;공용육변기
+; 추후 행복의 화장실 후속 이벤트로 개조할지도?
+;====================
+@NTR_PUBLIC_TOILET
+#DIM DYNAMIC 함락캐릭터리스트,65536
+#DIM 후보수
+#DIM LCOUNT
+#DIM 대상
+#DIM 횟수
+#DIM ID
+#DIMS 간역
+
+후보수 = 0
+
+;メンバー全員체크
+FOR LCOUNT,0,CHARANUM
+	;렌탈中は除外
+	SIF CFLAG:LCOUNT:노역플래그 == 3
+		CONTINUE
+	;대상が남자ならスキップ
+	SIF TALENT:LCOUNT:남자
+		CONTINUE
+	;함락していないキャラは除外
+	SIF 함락(LCOUNT) == 0
+		CONTINUE
+	;전속노예의목걸이を장비している場合は대상外
+	;SIF (CFLAG:LCOUNT:그외 == 1116 || CFLAG:LCOUNT:그외2 == 1116 || CFLAG:LCOUNT:그외3 == 1116)
+	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+		CONTINUE
+	;모든例外に当てはまらなかったら리스트に추가、후보수+1
+	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+	후보수++
+NEXT
+
+;대상が一人もいないときは종료
+SIF 후보수 <= 0
+	RETURN 0
+
+;대상を결정
+대상 = 함락캐릭터리스트:(RAND:후보수)
+
+IF BASE:대상:체력 > 70
+	횟수 = 8 + RAND:(BASE:대상:체력/70)
+ELSE
+	횟수 = 8
+ENDIF
+
+; 창부소질이 있고 변기, 매춘, 바람, 윤간 합계 경험이 100 이상이면 이벤트 발생, 그 외 이벤트 종료
+SIF !(TALENT:대상:6 == 1 && ((EXP:대상:75 + EXP:대상:72 + EXP:대상:84 + EXP:대상:82) >= 100))
+	RETURN 0
+
+DRAWLINE
+
+	PRINTFORML 【공용육변기 - %CALLNAME:대상%】
+	PRINTFORMW %CALLNAME:대상%의 신체가, 쑤시고 있는 것 같다……
+	SELECTCASE RAND:12
+		CASE 0
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 창녀로서 일해 온 것 같다
+			PRINTFORML 몇 번이나 범해진 것으로 강제적으로 닦아진 섹스의 팔은, 손님을 매우 만족시켰다
+			PRINTFORML 몇 사람이나 되는 손님이 %조사처리(CALLNAME:대상,"를")% 사, 그 입을, 질을, 엉덩이 구멍을 새하얗게 염색해 내 갔다
+			PRINTFORML 하지만 그런데도, 손님과 창녀라는, 폭력이나 불합리의 존재하지 않는 "정직한"관계에서는, %조사처리(CALLNAME:대상,"는")% 만족 할 수 없었다
+			PRINTFORML 신체의 내외를 새하얗게 물들이면서도, %CALLNAME:대상%의 육욕은 채워지지 않았던 것 같다
+			;CALL COLOR_PRINTL(@"자금이 다소 증가했습니다", 칼라_주의)
+			MONEY += RAND(3000, 10000)
+			간역 = 창관의손님
+		CASE 1
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 병사들의 노리겟감이 되기 시작한 것 같다
+			PRINTFORML 처음은 놀라고 있던 병사들이었지만, %조사처리(CALLNAME:대상,"가")% 스스로 무릎 꿇어 것을 빨기 시작하면, 눈빛을 바꾸었다
+			PRINTFORML 앞 다투어 %CALLNAME:대상%에 모여, 모든 구멍에 하나의 물건을 쑤셔 넣어 간다
+			PRINTFORML 여자 가뭄의 그들의 허리 사용은 몹시 거칠고, %조사처리(CALLNAME:대상,"는")% 몇 번이나 절정 했다……
+			PRINTFORML 그 후, %조사처리(CALLNAME:대상,"는")% 몇명의 병사에 섹스프렌드로 해 받은 것 같다
+		CASE 2
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 공중변소의 변기가 되기 시작한 것 같다
+			PRINTFORML 몇 사람이나 되는 남자들이 번갈아 방문해서는, %조사처리(CALLNAME:대상,"로")% 성욕을 처리해 나간다
+			PRINTFORML 이름도 모르는 남자에게 일회용쾌감에, %조사처리(CALLNAME:대상,"는")% 견딜 수 없게 흥분하고 있다
+			PRINTFORML 밤이 끝나는 무렵에는, 그 허벅지에는 몇십이라는 정의 글자가 새겨지고 있었다
+			PRINTFORML 고기구멍에는, 이용요금일 잔돈과 지폐가 무리하게 담겨 있었다
+			;CALL COLOR_PRINTL(@"자금이 다소 증가했습니다", 칼라_주의)
+			MONEY += RAND(500, 1000)
+			간역 = 지나가는남자
+		CASE 3
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 벽고로서 사용되어 온 것 같다
+			PRINTFORML 얼굴도 안보이는 남자가, 같은 얼굴도 안보이는 %조사처리(CALLNAME:대상,"를")% 저 좋은 대로 사용해 간다
+			PRINTFORML 오나홀, 아니 휴지 이하의 취급에, %조사처리(CALLNAME:대상,"는")% 견딜 수 없는 흥분을 느끼고 있다
+			PRINTFORML 밤이 끝나는 무렵에는, 그 질 구멍과 엉덩이 구멍으로부터는, 몇십 인분의 백탁이 뚝뚝 흘러 떨어지고 있었다
+			PRINTFORML 벽의 저쪽이 원으로, %CALLNAME:대상%피부인것 같은 있고 아헤얼굴을 쬐고 있었다……
+			간역 = 지나가는남자
+		CASE 4
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 난교 파티에 참가한 것 같다
+			PRINTFORML 회장에서는 이미 몇조의 남녀가 서로 사귀고 있었다
+			PRINTFORML %CALLNAME:대상%의 육체는, 남자들을 매료하기에 충분했던 것 같다
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 몇 사람이나 되는 낯선 남자들과 정열적인 시간을 보냈다
+			PRINTFORML 하지만, 이러한 장소에서의 "착실한"주고받음에서는, 변기인 그녀의 사용되고 싶다는 욕망은 채울 수 없는 것 같다……
+			간역 = 난교파티의참가자
+		CASE 5
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 지나가는 남자에 말을 건 것 같다
+			PRINTFORML 숙소에 들어가, 입실 하자마자, %조사처리(CALLNAME:대상,"는")% 남자에게 무릎 꿇어 하나의 물건을 빨기 시작했다
+			PRINTFORML 그 교묘한 입 기술에, 남자는 눈 깜짝할 순간에 백탁을 입안에 털어 놓는다
+			PRINTFORML 흥분한 남자는, 그대로 %조사처리(CALLNAME:대상,"를")% 침대에 쓰러트리고 이미 흠뻑 젖고 있던 비부를 그대로 관철했다……
+			PRINTFORML 그대로 두 명은, 밤이 희어질 때까지, 몇십발과 계속 교접한 것 같다……
+			PRINTFORML 가볍게 목욕을 끝마치면, 연락처를 교환해, 두 명은 헤어졌다
+			간역 = 지나가는남자
+		CASE 6
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 슬럼가를 걸어 온 것 같다
+			PRINTFORML %조사처리(CALLNAME:대상,"와")% 같은 여자가 혼자서 걷고 있으면, 당연, 악한들이 얽힐 수 있다
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 위협해지는 대로 따라가, 데리고 들어가진 폐허에서 한껏 범해졌다……
+			PRINTFORML 구에도 질에도 엉덩이 구멍에도 차례차례로 난폭하게 육봉이 쑤셔 넣어지는 이 쾌락이야말로, 그녀가 요구하고 있던 것이다……
+			PRINTFORML 이윽고 만족한 남자들은, 모든 구멍으로부터 백탁을 흘려 보내는 %조사처리(CALLNAME:대상,"를")% 방치해, 어딘가에 떠나 갔다
+			간역 = 건달
+		CASE 7
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 질 나쁜 남자들을 뒤따라 간 것 같다
+			PRINTFORML 남자들은 %CALLNAME:대상%에 이상한 듯한 약을 먹여, 범하고 있다
+			PRINTFORML 약의 효과로 몽롱해진 %조사처리(CALLNAME:대상,"는")%, 스스로 그들의 것을 빨아, 가랑이를 열어, 쾌락을 조르고 있다
+			PRINTFORML 이지만, 약의 효과 따위 없어도, 그녀라면 완전히 똑같이한 것일 것이다……
+			PRINTFORML 남자들은 심하게 %조사처리(CALLNAME:대상,"로")% 사정하면, 백탁 투성이의 그녀를 도로변에 던져 버려, 떠나 갔다
+			간역 = 건달
+		CASE 8
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 남수명에 구애해져 숙소에 데리고 들어가진 것 같다
+			PRINTFORML 방으로 들어가자열쇠를 잠글 수 있어 옷을 난폭하게 벗겨내진다
+			PRINTFORML 그리고 그대로, 유무를 말하게 하지 않고 여러 번범해졌다……
+			간역 = 지나가는남자
+		CASE 9
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 부랑자에게 말을 건 것 같다
+			PRINTFORML 치구 투성이의 페니스를 빨아 세우면, 그는 완전히 그럴 기분이 들어, %조사처리(CALLNAME:대상,"를")%쓰러트린다
+			PRINTFORML 그리고 그대로, 추접스러운 육봉을, 흠뻑 젖은 비밀의 틈으로 출납하기 시작했다
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 부랑자로 여러 번 사귀어, 입맞춤을 주고 받아, 그리고 백탁을 자궁으로 받아 들였다……
+			PRINTFORML 부랑자의 섹스에 굴한 %조사처리(CALLNAME:대상,"는")%, 향후도 만날 약속을 일방적으로 성립시킬 수 있었다
+			간역 = 부랑자
+		CASE 10
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 지나가는 남자에 말을 건 것 같다
+			PRINTFORML 그대로 남자에게 뒤골목에 데리고 들어가지면, 서서뒷치기의 자세로 한껏 범해졌다
+			PRINTFORML 남은 %CALLNAME:대상%의 속옷을 빼앗으면, 그대로의 모습으로 돌아가도록(듯이) 명했다
+			PRINTFORML 대량으로 사정된 백탁이 허벅지로부터 타는 것을 느끼면서, %조사처리(CALLNAME:대상,"는")% 거점으로 돌아왔다……
+			간역 = 지나가는남자
+		CASE 11
+			PRINTFORML %조사처리(CALLNAME:대상,"는")% 부랑자들의 거처에, 알몸으로 향하고 있었던
+			PRINTFORML 당연, 흥분한 부랑자에게 모여져 밀어 쓰러트려져 범해진다
+			PRINTFORML 저속해지는 곳까지 저속해진 섹스는, %조사처리(CALLNAME:대상,"를")% 더 이상 없게 흥분시켰다
+			PRINTFORML 그녀는 스스로 적극적으로 페니스를 빨아, 허리를 흔들어, 몇 번이나, 몇 십회나, 백탁을 받아 들여 간다
+			PRINTFORML 이윽고 밤이 희어지는 무렵에는, 흰색이나 황색에 전신을 붉힌 %CALLNAME:대상%만이 강변에 눕고 있었다……
+			간역 = 부랑자
+	ENDSELECT
+	;CALL FUCK_GANGBANG(대상, GET_SPERM_ID("불명"), @"%간역%의 \@ RAND:2 ? 페니스 # 입술\@", @"%간역%")
+
+	EXP:대상:0 += 15	;V
+	EXP:대상:1 += 15	;A
+	EXP:대상:2 += 15	;절정
+	EXP:대상:4 += 15	;성교
+	EXP:대상:5 += 15	;질사
+	EXP:대상:6 += 15	;키스
+	EXP:대상:20 += 15	;정액
+	EXP:대상:21 += 15	;봉사
+	EXP:대상:22 += 15	;펠라
+	EXP:대상:30 += 15	;고통쾌락
+	EXP:대상:33 += 5	;야외
+	EXP:대상:70 += 15	;조교
+	EXP:대상:72 += 15	;매춘
+	EXP:대상:75 += 15	;변기
+	EXP:대상:82 += 15	;윤간
+	EXP:대상:84 += 15	;바람
+
+DRAWLINE

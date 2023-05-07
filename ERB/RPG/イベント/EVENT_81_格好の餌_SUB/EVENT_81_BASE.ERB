@@ -1,0 +1,323 @@
+﻿;====================
+;좋은 미끼 이벤트 대상결정 함수
+;- 기본적인 대상을 걸러내는 함수
+;====================
+@KOUJI_TARGET
+#DIM DYNAMIC 함락캐릭터리스트,65536
+#DIM 후보수
+#DIM LCOUNT
+#DIM 대상
+
+후보수 = 0
+
+;멤버 전원 체크
+FOR LCOUNT,0,CHARANUM
+	;렌탈 중은 제외
+	SIF CFLAG:LCOUNT:노역플래그 == 3
+		CONTINUE
+	;체력이 500 미만이면 제외 (피곤하니 쉬어야지)
+	SIF BASE:LCOUNT:체력 < 500
+		CONTINUE
+	;함락되지 않은 캐릭터는 제외
+	SIF 함락(LCOUNT) == 0
+		CONTINUE
+	;NTR 방지 의상을 착용한 캐릭터는 제외
+	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+		CONTINUE
+    ;남자는 제외
+    SIF TALENT:LCOUNT:남자
+        CONTINUE
+    ;MASTER는 제외
+    SIF LCOUNT == MASTER
+        CONTINUE
+	;모든 예외에 적합하지 않으면 리스트에 추가、후보수+1
+	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+	후보수++
+NEXT
+
+;대상이 한명도 없을 경우 종료
+SIF 후보수 <= 0
+	RETURN 0
+
+;대상を결정
+대상 = 함락캐릭터리스트:(RAND:후보수)
+RETURN 대상
+
+;====================
+;경험치処理
+;====================
+;CALL FUCK(대상,횟수,경험치文字列)
+;第一引数：대상を指定
+;第二引数：SEX횟수を指定
+;第三引数："で区切った中に例の様に경험を入れたい文字を入れる、どんな文字が使えるかは下記HORO_FUCK_EXP_PROCESS参照
+;　　　　　ＢＣＶＡＭのみ後ろに小OR大とつけることで加減가능
+;
+;
+@FUCK(대상,횟수,경험치文字列)
+#DIM 대상
+#DIM 횟수
+#DIMS 경험치文字列
+
+CALL FUCK_EXP_PROCESS(대상,횟수,경험치文字列)
+
+;-------------------------------------------------
+;FUCK한 부위별로 경험치를 가산하는 함수
+;-------------------------------------------------
+@FUCK_EXP_PROCESS(대상,횟수,경험치指定文字列)
+#DIM 대상
+#DIM 횟수
+#DIMS 경험치指定文字列
+#DIMS 경험치, 100
+
+;LOCAL:2 = 횟수
+;LOCAL:3 = 섹스系プレイ頻度(횟수)
+;LOCAL:4 = 봉사系プレイ頻度(횟수)
+;LOCAL:5 = SM系그 외プレイ頻度（횟수）
+;LOCAL:6 = プレイ頻度합계(割합계算用)
+;LOCAL:7 = Ｖ／Ａプレイ횟수差計算用
+;LOCAL:8 = Ｖプレイ횟수
+;LOCAL:9 = Ａプレイ횟수
+
+;LOCAL配列초기化
+VARSET LOCAL,0
+LOCAL:3 = 0
+LOCAL:4 = 0
+LOCAL:5 = 0
+LOCAL:6 = 0
+LOCAL:7 = 0
+LOCAL:8 = 0
+LOCAL:9 = 0
+
+LOCAL:2 = 횟수
+
+;それぞれのプレイ횟수を計算
+;소질、능력に応じて行為の比率の결정(各소질は持ってれば1が入っている）
+;섹스系、기본的に大きい。AV감각、처녀、재생처녀、섹스중독、섹스광、애널광
+
+;남자が無い場合のみＶでの횟수を加算する
+SIF !TALENT:대상:남자
+LOCAL:3 = ABL:대상:4+TALENT:대상:0*7+TALENT:대상:1*3+TALENT:대상:75*5
+LOCAL:3 += ABL:대상:5+ABL:대상:18+TALENT:대상:76*5
+
+;봉사系、봉사정신と정액중독が高く、헌신적
+IF TALENT:대상:처녀 == 1
+	LOCAL:4 = LOCAL:3/3
+ELSE
+	LOCAL:4 = ABL:대상:7+ABL:대상:16+TALENT:대상:63*5
+ENDIF
+
+;SM系、|새드끼-마조끼|の수치が大きい、도착적、새드、마조、체력大눈
+;마조傾向
+IF ABL:대상:9 >= ABL:대상:10
+	LOCAL:5 = ABL:대상:9-ABL:대상:10+TALENT:대상:84*10+TALENT:대상:80*5
+;새드傾向
+ELSEIF ABL:대상:10 > ABL:대상:9
+	LOCAL:5 = ABL:대상:10-ABL:대상:9+TALENT:대상:83*10+TALENT:대상:80*5
+;同値
+ELSE
+	LOCAL:5 = ABL:대상:9+TALENT:대상:80*5
+ENDIF
+
+;各조교횟수計算
+LOCAL:6 = MAX(1,LOCAL:3 + LOCAL:4 + LOCAL:5)
+;それぞれの系統のプレイ횟수を산출してLOCAL:4とLOCAL:5に入れる
+LOCAL:3 = LOCAL:2 * LOCAL:3 / LOCAL:6
+LOCAL:4 = LOCAL:2 * LOCAL:4 / LOCAL:6
+LOCAL:5 = LOCAL:2 * LOCAL:5 / LOCAL:6
+
+SIF LOCAL:3 + LOCAL:4 + LOCAL:5 == 0
+	LOCAL:(3+RAND:4) = LOCAL:2
+
+IF LOCAL:4 > 0
+	;VとAのプレイ差
+	IF ABL:대상:4 > ABL:대상:5
+		LOCAL:7 = ABL:대상:4-ABL:대상:5
+		LOCAL:8 = LOCAL:3/2+LOCAL:7
+		LOCAL:9 = LOCAL:3-LOCAL:8
+	ELSE
+		LOCAL:7 = ABL:대상:5-ABL:대상:4
+		LOCAL:8 = LOCAL:3/2-LOCAL:7
+		LOCAL:9 = LOCAL:3-LOCAL:8
+	ENDIF
+
+	SIF LOCAL:8 < 0
+		LOCAL:8 = 0
+	SIF LOCAL:9 < 0
+		LOCAL:9 = 0
+ENDIF
+
+
+VARSET 경험치
+SPLIT 경험치指定文字列, ",", 경험치
+LOCAL:1 = 0
+FOR LOCAL, 0, VARSIZE("경험치")
+	;空文字列ならスキップ
+	SIF 경험치:LOCAL == ""
+		CONTINUE
+	;スペースを除去
+	경험치:LOCAL = %REPLACE(경험치:LOCAL, " ", "")%
+	경험치:LOCAL = %REPLACE(경험치:LOCAL, "　", "")%
+
+	IF 경험치:LOCAL == "Ｃ"
+		JUEL:대상:쾌Ｃ += ABL:대상:Ｃ감각 * 5 + 4 + LOCAL:4 * 50
+		LOCAL:1 += ABL:대상:Ｃ감각
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "Ｖ" && !TALENT:대상:남자
+		;처녀상실플래그
+		IF TALENT:대상:0 == 1
+			TALENT:대상:처녀 = 0
+			CFLAG:대상:처녀상실플래그 = 1
+		ENDIF
+		;재생처녀상실플래그
+		IF TALENT:대상:1 == 1
+			TALENT:대상:재생처녀 = 0
+			CFLAG:대상:재생처녀상실플래그 = 1
+		ENDIF
+		EXP:대상:Ｖ경험 += ABL:대상:Ｖ감각 * 5 + 4 + LOCAL:8
+		EXP:대상:성교경험 += ABL:대상:Ｖ감각 * 5 + 4 + LOCAL:8
+		EXP:대상:질사경험 += (ABL:대상:Ｖ감각 * 5 + 4 + LOCAL:8)/3
+		EXP:대상:정액경험 += (ABL:대상:Ｖ감각 * 5 + 4 + LOCAL:8)/3
+		JUEL:대상:쾌Ｖ += ABL:대상:Ｖ감각 * 5 + 4 + LOCAL:8 * 50
+		LOCAL:1 += ABL:대상:Ｖ감각
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "Ｂ"
+		JUEL:대상:쾌Ｂ += ABL:대상:Ｂ감각 * 5 + 4 + LOCAL:4 * 50
+		LOCAL:1 += ABL:대상:Ｂ감각
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "Ａ"
+		EXP:대상:Ａ경험 += ABL:대상:Ａ감각 * 5 + 4 +LOCAL:9
+		EXP:대상:성교경험 += ABL:대상:Ａ감각 * 5 + 4 +LOCAL:9
+		EXP:대상:정액경험 += (ABL:대상:Ａ감각 * 5 + 4 + LOCAL:9)/3
+		JUEL:대상:쾌Ａ += ABL:대상:Ａ감각 * 5 + 4 + LOCAL:9 * 50
+		LOCAL:1 += ABL:대상:Ａ감각
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "他"
+		EXP:대상:절정경험 += LOCAL:2 * 2/3
+		JUEL:대상:복종 += ABL:대상:순종 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:욕정 += ABL:대상:욕망 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:윤활 += (ABL:대상:Ｃ감각 + ABL:대상:Ｂ감각) * 5 + 7 + LOCAL:1 + RAND:10 * 50
+		JUEL:대상:굴복 += (ABL:대상:순종 + ABL:대상:욕망 + ABL:대상:봉사정신) * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "羞恥"
+		EXP:대상:자위경험 += (ABL:대상:욕망 + ABL:대상:자위중독) * 5 + 4 +LOCAL:5
+		EXP:대상:조교자위경험 += (ABL:대상:욕망 + ABL:대상:자위중독) * 5 + 4 +LOCAL:5
+		JUEL:대상:복종 += ABL:대상:순종 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:욕정 += ABL:대상:욕망 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:윤활 += (ABL:대상:Ｃ감각 + ABL:대상:Ｂ감각) * 5 + 7 + LOCAL:1 * 50
+		JUEL:대상:굴복 += (ABL:대상:순종 + ABL:대상:욕망 + ABL:대상:노출증) * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:치정 += (ABL:대상:욕망 + ABL:대상:자위중독) * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "봉사"
+		EXP:대상:봉사쾌락경험 += ABL:대상:봉사정신 * 5 + 5 + LOCAL:4
+		EXP:대상:펠라경험 += ABL:대상:봉사정신 * 5 + 5 + LOCAL:4 * 2/3
+		JUEL:대상:굴복 += ABL:대상:봉사정신 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:습득 += ABL:대상:봉사정신 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "性交"
+		EXP:대상:성교경험 += LOCAL:3
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "レズ" && !TALENT:대상:남자
+		EXP:대상:레즈경험 += LOCAL:2
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "ＢＬ" && TALENT:대상:남자
+		EXP:대상:ＢＬ경험 += LOCAL:2
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "노출"
+		EXP:대상:야외노출경험 += ABL:대상:노출증 * 6 + 6 + RAND:10
+		JUEL:대상:치정 += ABL:대상:노출증 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "자위"
+		EXP:대상:자위경험 += ABL:대상:자위중독 * 3 + 5 + RAND:6
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "사정" && TALENT:대상:후타나리 || TALENT:대상:남자
+		EXP:대상:사정경험 += LOCAL:2 * 2/3
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "분유" && TALENT:대상:모유체질
+		EXP:대상:분유경험 += ABL:대상:분유중독 * 2 + 3 + RAND:4
+		JUEL:대상:쾌Ｂ += ABL:대상:분유중독 * 5 + 7 + LOCAL:1 * 50
+		JUEL:대상:굴복 += ABL:대상:분유중독 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:치정 += ABL:대상:분유중독 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "촉수"
+		EXP:대상:촉수경험 += ABL:대상:촉수중독 * 3 + 5 + RAND:8
+		JUEL:대상:굴복 += ABL:대상:촉수중독 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:고통 += ABL:대상:촉수중독 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:공포 += ABL:대상:촉수중독 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "마조"
+		EXP:대상:고통쾌락경험 += ABL:대상:마조끼 * 3 + 5 + RAND:5
+		JUEL:대상:굴복 += ABL:대상:마조끼 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:고통 += ABL:대상:마조끼 * 5 + 7 + LOCAL:1 * 30
+		JUEL:대상:공포 += ABL:대상:마조끼 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "새드"
+		EXP:대상:가학쾌락경험 += ABL:대상:새드끼 * 3 + 5 + RAND:5
+		JUEL:대상:습득 += ABL:대상:새드끼 * 5 + 7 + LOCAL:1 * 30
+		CONTINUE
+	ENDIF
+
+
+	IF 경험치:LOCAL == "Ｖ확장" && !TALENT:대상:남자
+		EXP:대상:Ｖ확장경험 += RAND:5
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "Ａ확장"
+		EXP:대상:Ａ확장경험 += RAND:5
+		CONTINUE
+	ENDIF
+
+	IF 경험치:LOCAL == "긴박"
+		EXP:대상:긴박경험 += 3 + RAND:4
+		CONTINUE
+	ENDIF
+	
+	IF 경험치:LOCAL == "キス"
+		EXP:대상:키스경험 += LOCAL:4 * 2 + RAND:8
+		CONTINUE
+	ENDIF
+		
+;	IF 경험치:LOCAL == "입淫"
+;		EXP:대상:입淫경험 += 3 + RAND:5
+;		CONTINUE
+;	ENDIF
+	
+	IF 경험치:LOCAL == "売春"
+		EXP:대상:매춘경험 += 3 + RAND(2, MAX(3, MIN(8, ABL:대상:욕망)))
+		CONTINUE
+	ENDIF
+NEXT
+
+RETURN 1

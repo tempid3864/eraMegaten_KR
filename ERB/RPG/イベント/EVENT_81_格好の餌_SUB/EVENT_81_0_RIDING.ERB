@@ -1,0 +1,109 @@
+﻿;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
+;
+;	Module		:EVENT_81_0_RIDING.ERB
+;	Facility	:좋은 미끼 이벤트
+;
+;	Licence		:ライセンスフリー。(라이센스 프리)
+;
+;	Modification Data:
+;
+;	Edit	Date			Author		Reason
+;	KR_01	2023/05/04		JustTasty	EVENT_81_格好の餌에 eraAS, eratohoK의 NTR 이벤트를 이식한 내용 추가
+;										IS_ANTI_NTR_CLOTHES(ARG)로 NTR 방지 처리 통일, 일부 주석 번역
+;										좋은 미끼, 함락자간자매 이벤트 외에는 이벤트 플래그를 사용하지 않아 그 외 항목은 분리 가능 
+;	KR_02	2023/05/07		JustTasty	작성 편의를 위해 이벤트들의 파일 분리
+;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+;====================
+;기승 섹스이벤트
+;====================
+@RIDING_SEX
+#DIM DYNAMIC 함락캐릭터리스트,65536
+#DIM 후보수
+#DIM LCOUNT
+#DIM 대상
+#DIM 횟수
+
+후보수 = 0
+
+;メンバー全員チェック
+FOR LCOUNT,0,CHARANUM
+	;렌탈 중인 경우 제외
+	SIF CFLAG:LCOUNT:노역플래그 == 3
+		CONTINUE
+	;体力が500未満であればスキップ
+	SIF BASE:LCOUNT:체력 < 500
+		CONTINUE
+	;대상이 남자라면 제외
+	SIF TALENT:LCOUNT:남자
+		CONTINUE
+	;음란계 함락이 아닌 캐릭터는 제외
+	SIF !(TALENT:LCOUNT:음란 || TALENT:LCOUNT:창부 || TALENT:LCOUNT:음마)
+		CONTINUE
+	;専有奴隷の首輪を装備している場合は対象外
+	;→22/06/07：동일한 효과의 옷을 늘려 함수로 했으므로 수정
+	SIF IS_ANTI_NTR_CLOTHES(LCOUNT) == 1
+		CONTINUE
+	;모든 예외에 적합하지 않으면 리스트에 추가、후보수+1
+	ARRAYSHIFT 함락캐릭터리스트, 1, LCOUNT
+	후보수++
+NEXT
+
+;대상이 한명도 없을 경우 종료
+SIF 후보수 <= 0
+	RETURN 0
+
+;대상を결정
+대상 = 함락캐릭터리스트:(RAND:후보수)
+
+횟수 = 3 + RAND:(BASE:대상:체력/70)
+
+;KR판 추가수정 추정
+;연모/친애/아내/정조관념 소질이 있고 매춘 및 바람 합계경험이 50 이하일 경우 이벤트 종료
+SIF ((TALENT:대상:2 == 1 || TALENT:대상:6 == 1 || TALENT:대상:170 == 1 || TALENT:대상:30 == 1) && ((EXP:대상:73+EXP:대상:84) < 50))
+	RETURN 0
+
+;기승 악마의 후보 메모 ：베리스/엘리고르/4기사/발키리（馬）、볼락/아스타로트（ドラゴン）、マザハ（짐승）
+;오딘（슬레이프니르）、와일드헌트
+DRAWLINE
+
+	PRINTFORML 
+	PRINTFORMW %CALLNAME:대상%이 어느 이계를 걷고 있을 때 베리트가 말을 걸어왔다
+	PRINTFORMW 아무래도 헌팅인 듯, 악마는 신사적으로 데이터를 권해왔다
+	PRINTFORML 
+	PRINTFORML 일부러 싸울 필요도 없고, 무엇보다 악마에게 권유 받는다는 희귀한 상황에 %CALLNAME:대상%은 흥미가 자극되어
+	PRINTFORMW 물론 경계를 게을리 하지는 않지만 승마 데이트를 혼쾌히 수락하고 악마의 뒤를 따랐다
+	PRINTFORML 
+	PRINTFORML 　ㆍ
+	PRINTFORML 　ㆍ　ㆍ
+	PRINTFORMW 　ㆍ　ㆍ　ㆍ
+	PRINTFORML 
+	PRINTFORMW 악마는 %CALLNAME:대상%를 배려해서 데이트 내내 신사적으로 행동했다
+	PRINTFORML 보람이 있어 %CALLNAME:대상%의 경계심은 풀려가고, 탄 위치도 그의 품안에 등을 맡기게 된다
+	PRINTFORMW 차츰 서로의 기분이 고조되어 입맞춤을 나누게까지 된다
+	PRINTFORML 
+	PRINTFORMW 테두리를 벗어나면 그대로 흘러가는대로  서로가 고조되어, 마침내 %CALLNAME:대상%은 마주보고 악마의 자지에 꿰뚫렸다
+	PRINTFORMW 악마는%CALLNAME:대상%의 입술을 열정적으로 뺏은 뒤, 앞서와는 다른 기승의 장점을 알려주겠다며 애마를 몰기 시작한다
+	PRINTFORML 
+	SELECTCASE RAND:3
+		CASE 0
+			PRINTFORMW 악마는 능숙한 고삐질로 때로는 느린걸음을, 어떤 때는 빠른 걸음으로 전환한다
+			PRINTFORML %CALLNAME:대상%은 그때마다 스스로의 움직임에 더해 생물의 약동에 의한 압력을 받아
+			PRINTFORMW 제어하지 못한 채 쏟아지는쾌락에 달콤한 신음을 지르며 악마에 매달려 그의 귀를 즐겁게 했다
+		CASE 1
+			PRINTFORMW %CALLNAME:대상%은 느린 걸음으로 걷는 말로 인해 템포 좋게 찔리며, 악마에게 보지를 희롱당했다
+			PRINTFORMW 자신의 의지도 악마의 의지도 아닌 생물의 약동에 의해 보지 깊숙한 곳을 도려내듯 찔려지고, 그때마다 기쁨의 교성을 지르고 있다
+			PRINTFORMW %CALLNAME:대상%은 쾌락에 저항하지 못하고 악마에게서 귓가에 치태의 감상을 속삭임 받으며 달콤하게 설득당했다
+		CASE 2
+			PRINTFORMW %CALLNAME:대상%은 템포 좋게 찔려가며 녹아내린 듯한 표정으로 악마와 입을 맞추고 있다
+			PRINTFORMW 기분좋게 만든 악마는 더욱 대단한 체험을 시켜주겠다고 말하며 %CALLNAME:대상%의 대답도 기다리지 않고 말에게 지시를 내렸다
+			PRINTFORMW 그순간 달리는 듯한 벌걸음이 되어 찔림은 더욱 격렬하게, 그리고 복잡하게 되어간다
+			PRINTFORMW %CALLNAME:대상%은 그대로 도망칠 수 없는 찌르기에 농락당해 악마에 의지한채 쾌락을 졸랐다
+		ENDSELECT
+	PRINTFORML
+	PRINTFORMW 악마는 잔뜩 기승섹스를 즐기며 눅진해져 얼이 빠진 %CALLNAME:대상%을 자신의 침실로 이끌었다
+	PRINTFORMW 일상에서 경험할 수 없는 쾌락에 설득된 %CALLNAME:대상%은 저항하지 않고 오히려 그에게 기대어 입을 맞추가며 잠자리에 들어갔다
+	PRINTFORMW 그대로 두사람은 끝없는 욕정이 이끌리는대로 한때의 만남을 즐겼다……
+	CALL FUCK(대상,횟수,"Ｃ,Ｖ,Ａ,Ｂ,他,봉사,性交,노출,キス")
+
+DRAWLINE
