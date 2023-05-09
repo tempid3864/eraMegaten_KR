@@ -1115,35 +1115,43 @@ SIF TALENT:92
 
 ;奴隷の피사경험を見る
 IF EXP:TARGET:63 >= EXPLV:5
-	비디오배율 += 30
+	비디오배율 += 1500
 ELSEIF EXP:TARGET:63 >= EXPLV:3
-	비디오배율 += 20
+	비디오배율 += 1000
 ELSEIF EXP:TARGET:63 >= EXPLV:1
-	비디오배율 += 10
+	비디오배율 += 500
 ENDIF
 
 ;촬영자を見る
 ;主人
 IF FLAG:촬영자 == 1
 	;촬영기능を見る
-	IF ABL:MASTER:촬영기능 >= 5
-		비디오배율 += (50 + ABL:MASTER:촬영기능 * 10)
+	IF ABL:MASTER:촬영기능 >= 6
+		비디오배율 += (50+ABL:MASTER:촬영기능 * 50)
+	ELSEIF ABL:MASTER:촬영기능 == 5
+		비디오배율 += 100		
 	ELSEIF ABL:MASTER:촬영기능 == 4
-		비디오배율 += 50
+		비디오배율 += 80
 	ELSEIF ABL:MASTER:촬영기능 == 3
-		비디오배율 += 20
+		비디오배율 += 60
+	ELSEIF ABL:MASTER:촬영기능 == 2
+		비디오배율 += 40
 	ELSEIF ABL:MASTER:촬영기능 <= 1
 		비디오배율 += 20
 	ENDIF
 ;조수
 ELSEIF FLAG:촬영자 == 2
 	;촬영기능を見る
-	IF ABL:ASSI:촬영기능 >= 5
-		비디오배율 += (50 + ABL:ASSI:촬영기능 * 10)
+	IF ABL:ASSI:촬영기능 >= 6
+		비디오배율 += (50+ABL:ASSI:촬영기능 * 50)
+	ELSEIF ABL:ASSI:촬영기능 == 5
+		비디오배율 += 100	
 	ELSEIF ABL:ASSI:촬영기능 == 4
-		비디오배율 += 50
+		비디오배율 += 80
 	ELSEIF ABL:ASSI:촬영기능 == 3
-		비디오배율 += 20
+		비디오배율 += 60
+	ELSEIF ABL:ASSI:촬영기능 == 2
+		비디오배율 += 40
 	ELSEIF ABL:ASSI:촬영기능 <= 1
 		비디오배율 += 20
 	ENDIF
@@ -1364,9 +1372,19 @@ ELSEIF ABL:PLAYER:촬영기능 == 2
 ELSEIF ABL:PLAYER:촬영기능 == 3
 	B = 250
 ELSEIF ABL:PLAYER:촬영기능 == 4
-	B = 300
+	B = 450
+ELSEIF ABL:PLAYER:촬영기능 == 5
+	B = 1000
+ELSEIF ABL:PLAYER:촬영기능 == 6
+	B = 1500
+ELSEIF ABL:PLAYER:촬영기능 == 7
+	B = 2000
+ELSEIF ABL:PLAYER:촬영기능 == 8
+	B = 3000
+ELSEIF ABL:PLAYER:촬영기능 == 9
+	B = 4000
 ELSE
-	B = 500
+	B = 5000
 ENDIF
 
 ;입系
@@ -1540,8 +1558,18 @@ ELSEIF EXP:분유경험 <= EXPLV:3
 	TFLAG:노예모유가격 *= 4
 ELSEIF EXP:분유경험 <= EXPLV:4
 	TFLAG:노예모유가격 *= 5
-ELSE
+ELSEIF EXP:분유경험 <= EXPLV:5
 	TFLAG:노예모유가격 *= 6
+ELSEIF EXP:분유경험 <= EXPLV:6
+	TFLAG:노예모유가격 *= 7
+ELSEIF EXP:분유경험 <= EXPLV:7
+	TFLAG:노예모유가격 *= 8
+ELSEIF EXP:분유경험 <= EXPLV:8
+	TFLAG:노예모유가격 *= 9
+ELSEIF EXP:분유경험 <= EXPLV:9
+	TFLAG:노예모유가격 *= 10
+ELSE
+	TFLAG:노예모유가격 *= 11
 ENDIF
 ;難易度処理
 ;EASY
@@ -1567,8 +1595,18 @@ ELSEIF EXP:MASTER:54 <= EXPLV:3
 	TFLAG:주인모유가격 *= 4
 ELSEIF EXP:MASTER:54 <= EXPLV:4
 	TFLAG:주인모유가격 *= 5
-ELSE
+ELSEIF EXP:MASTER:54 <= EXPLV:5
 	TFLAG:주인모유가격 *= 6
+ELSEIF EXP:MASTER:54 <= EXPLV:6
+	TFLAG:주인모유가격 *= 7
+ELSEIF EXP:MASTER:54 <= EXPLV:7
+	TFLAG:주인모유가격 *= 8
+ELSEIF EXP:MASTER:54 <= EXPLV:8
+	TFLAG:주인모유가격 *= 9
+ELSEIF EXP:MASTER:54 <= EXPLV:9
+	TFLAG:주인모유가격 *= 10
+ELSE
+	TFLAG:주인모유가격 *= 11
 ENDIF
 ;難易度処理
 ;EASY
@@ -1595,8 +1633,18 @@ ELSEIF EXP:ASSI:54 <= EXPLV:3
 	TFLAG:조수모유가격 *= 4
 ELSEIF EXP:ASSI:54 <= EXPLV:4
 	TFLAG:조수모유가격 *= 5
-ELSE
+ELSEIF EXP:ASSI:54 <= EXPLV:5
 	TFLAG:조수모유가격 *= 6
+ELSEIF EXP:ASSI:54 <= EXPLV:6
+	TFLAG:조수모유가격 *= 7
+ELSEIF EXP:ASSI:54 <= EXPLV:7
+	TFLAG:조수모유가격 *= 8
+ELSEIF EXP:ASSI:54 <= EXPLV:8
+	TFLAG:조수모유가격 *= 9
+ELSEIF EXP:ASSI:54 <= EXPLV:9
+	TFLAG:조수모유가격 *= 10
+ELSE
+	TFLAG:조수모유가격 *= 11
 ENDIF
 ;難易度処理
 ;EASY
