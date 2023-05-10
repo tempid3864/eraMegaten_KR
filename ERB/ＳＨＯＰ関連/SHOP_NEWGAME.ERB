@@ -492,6 +492,9 @@ VARSET 롯폰기창관플래그, 0
 ;단발이벤트(KR) 리셋
 VARSET 세라픽게이트진행도, 0
 VARSET 디지몬이벤트진행도, 0
+FOR LOCAL, 0, 100
+	메멘토스의뢰:LOCAL = 0
+NEXT
 
 ;アーミヤのクラスチェンジ先のレベルと能力値保存枠を初期化
 CALL RESET_ALL_CLASS_STATUS_K812
