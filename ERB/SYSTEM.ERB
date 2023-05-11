@@ -999,42 +999,53 @@ IF TIME == 3
 		CALL NTR_AVACTRESS
 	ENDIF
 	;---- EDIT KR_01 ADD START -------------------------
-	;好餌フラグ+ 판정, 조건 만족 시 50% 확률로 발생
+	;好餌フラグ+ 판정, 50% 확률로 발생 후 조건 판정
 	;추후 연계되는 이벤트를 하나로 묶고, CFLAG를 정리할 필요가 있다
 	
-	IF (FLAG:ＮＴＲ기능 && FLAG:好餌フラグ) && (RAND:2 == 0)
-		FOR LCOUNT, 0, 14
-			SELECTCASE RAND:14
-				CASE 0
-					CALL NTR_ALBA
-				CASE 1
-					CALL NTR_BEASTIALITY
-				CASE 2
-					CALL NTR_PUBLIC_TOILET
-				CASE 3
-					CALL NTR_NANPA
-				CASE 4
-					CALL NTR_DRUG_SEX			
-				CASE 5
-					CALL NTR_ONSEN
-				CASE 6
-					CALL NTR_TAVERN
-				CASE 7
-					CALL NTR_BRAIN_WASH
-				CASE 8
-					CALL ESTRUS_SHOTA
-				CASE 9
-					CALL SAIMIN_MAN
-				CASE 10
-					CALL NTR_ENKOU
-				CASE 11
-					CALL NTR_ENKOU_AFTER
-				CASE 12
-					CALL NTR_NAKAI
-				CASE 13
-					CALL NTR_DRUG_ADDICTED
-			ENDSELECT
-		NEXT
+	;좋은 미끼+ 이벤트 (4~9)
+	IF FLAG:好餌フラグ
+		;우연한 만남 이벤트 (50% 판정을 추가로 넣어 각각 25%확률로 발생)
+		IF GETBIT(FLAG:好餌フラグ , 4) && RAND:2 == 0
+			SIF RAND:2 == 0
+				CALL ESTRUS_SHOTA
+			SIF RAND:2 == 0
+				CALL NTR_ONSEN
+			SIF RAND:2 == 0
+				CALL NTR_TAVERN
+		ENDIF
+
+		;아르바이트 이벤트
+		SIF GETBIT(FLAG:好餌フラグ , 5) && RAND:2 == 0
+			CALL NTR_ALBA
+
+		;수간 이벤트
+		SIF GETBIT(FLAG:好餌フラグ , 6) && RAND:2 == 0
+			CALL NTR_BEASTIALITY
+
+		;원조교제 이벤트
+		IF GETBIT(FLAG:好餌フラグ , 7) && RAND:2 == 0
+			CALL NTR_NANPA
+			CALL NTR_ENKOU
+			CALL NTR_ENKOU_AFTER
+		ENDIF
+
+		;수상한약 이벤트
+		IF GETBIT(FLAG:好餌フラグ , 8) && RAND:2 == 0
+			CALL NTR_DRUG_SEX
+			CALL NTR_DRUG_ADDICTED
+		ENDIF
+
+		;최면 이벤트
+		IF GETBIT(FLAG:好餌フラグ , 9) && RAND:2 == 0
+			CALL SAIMIN_MAN
+			CALL NTR_BRAIN_WASH
+		ENDIF
+
+		;매춘여관 이벤트
+		SIF GETBIT(FLAG:好餌フラグ , 10) && RAND:2 == 0
+			CALL NTR_NAKAI
+
+
 	ENDIF
 	;---- EDIT KR_01 ADD END -------------------------
 
@@ -1050,6 +1061,7 @@ IF TIME == 1 || TIME == 2
 		;幸せのトイレフラグ확인
 		SIF GETBIT(FLAG:好餌フラグ , 3) && RAND:2 == 0
 			CALL HAPPY_TOILET_SEX
+			;CALL NTR_PUBLIC_TOILET ;후속 이벤트로?
 	ENDIF
 ENDIF
 
