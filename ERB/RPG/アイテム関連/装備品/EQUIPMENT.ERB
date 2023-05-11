@@ -102,7 +102,7 @@ CALL STATUS_WINDOW_EQUIP_ITEM_LIST , LOCAL:10 , 0 , 52
 ;
 IF 변경장비부위 != -1
 	CALL STATUS_WINDOW_EQUIP_DATA , LOCAL:10 , 13 , 76 , EQUIP:(LOCAL:10):GET_EQUIP(변경장비부위) , ""
-	CALL SET_PICTURE , "[-],,,-_표시정보전환_[+],,,+" , 13 , , 100
+	CALL SET_PICTURE , "[-],,,-_표시정보변경_[+],,,+" , 13 , , 100
 ENDIF
 IF 변경장비부위 > -1 && 변경예정장비:변경장비부위 != -1
 	CALL SET_PICTURE , "↓↓↓" , 23 , , 90
@@ -309,7 +309,7 @@ ELSEIF RESULTS == "장비상세선택" && 변경장비부위 >= 0
 	CALL 장비변경시스테이터스갱신 , LOCAL:10
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "+" || RESULTS == "-"
-	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시전환%RESULTS%"
+	CALL STATUS_WINDOW_EQUIP_DATA , , , , , @"표시변경%RESULTS%"
 	GOTO PRINTLOOP
 ELSEIF RESULTS == "≫"
 	FLAG:윈도우내성표시설정 = ++FLAG:윈도우내성표시설정 % 3
