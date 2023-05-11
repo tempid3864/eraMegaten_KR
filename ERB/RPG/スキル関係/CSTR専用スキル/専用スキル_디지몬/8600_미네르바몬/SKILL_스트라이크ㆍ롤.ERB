@@ -54,7 +54,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_스트라이크ㆍ롤
+@SKILL_EFECT_스트라이크ㆍ롤,ARG
 RETURN 1
 
 @SKILL_SPECIALEFECT_스트라이크ㆍ롤,ARG
@@ -121,7 +121,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_스트라이크ㆍ롤
+@SKILL_EXPLAIN_스트라이크ㆍ롤,ARG
 PRINTL [후열] 적 1체에 검격속성 특대 물리데미지. 조금 빠르게 발동된다. 
 
 ;継承に필요한部位

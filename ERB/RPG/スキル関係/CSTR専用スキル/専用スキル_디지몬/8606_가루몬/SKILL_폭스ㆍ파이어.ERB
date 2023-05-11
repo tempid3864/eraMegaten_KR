@@ -60,7 +60,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_폭스ㆍ파이어
+@SKILL_EFECT_폭스ㆍ파이어,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -135,7 +135,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_폭스ㆍ파이어
+@SKILL_EXPLAIN_폭스ㆍ파이어,ARG
 PRINTL [후열] 적 하나와 주변에 화염속성 중 물리데미지, 중 확률로 FLAME
 
 ;継承に필요한部位

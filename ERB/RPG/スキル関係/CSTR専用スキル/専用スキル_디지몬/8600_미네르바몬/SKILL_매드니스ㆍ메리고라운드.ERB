@@ -62,7 +62,7 @@ RETURN 3
 RETURN 3
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_매드니스ㆍ메리고라운드
+@SKILL_EFECT_매드니스ㆍ메리고라운드,ARG
 RETURN 1
 
 @SKILL_SPECIALEFECT_매드니스ㆍ메리고라운드,ARG
@@ -129,7 +129,7 @@ CALL ATTACK_RAND,ARG,ARG:1,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_매드니스ㆍ메리고라운드
+@SKILL_EXPLAIN_매드니스ㆍ메리고라운드,ARG
 PRINTL [후열] 적 전체에게 랜덤하게 검격속성 3~6회 물리데미지. 
 
 ;継承に필요한部位

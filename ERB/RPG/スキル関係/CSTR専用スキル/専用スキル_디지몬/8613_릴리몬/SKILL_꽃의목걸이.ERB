@@ -55,7 +55,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_꽃의목걸이
+@SKILL_EFECT_꽃의목걸이,ARG
 RETURN 3
 
 ;　 特殊処理の有無、及び処理内容
@@ -122,7 +122,7 @@ CALL SINGLE_BADSTATE,ARG,LOCAL,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_꽃의목걸이
+@SKILL_EXPLAIN_꽃의목걸이,ARG
 PRINTL 적 1체에게 대 확률로 CHARM 부여
 ;공격력 2랭크 다운은 추후 업데이트에....
 

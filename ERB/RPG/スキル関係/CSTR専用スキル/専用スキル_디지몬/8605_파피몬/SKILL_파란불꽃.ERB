@@ -56,7 +56,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_파란불꽃
+@SKILL_EFECT_파란불꽃,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -125,7 +125,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_파란불꽃
+@SKILL_EXPLAIN_파란불꽃,ARG
 PRINTL [후열] 적 1체에게 화염속성 중 마법데미지.
 
 ;継承に필요한部位

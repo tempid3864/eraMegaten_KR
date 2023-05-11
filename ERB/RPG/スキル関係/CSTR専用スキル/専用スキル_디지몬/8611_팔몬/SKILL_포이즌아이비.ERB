@@ -55,7 +55,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_포이즌아이비
+@SKILL_EFECT_포이즌아이비,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -121,7 +121,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_포이즌아이비
+@SKILL_EXPLAIN_포이즌아이비,ARG
 PRINTL [후열] 적 하나에게 전술속성 중 물리데미지, 낮은 확률로 마비.
 
 ;継承に필요한部位

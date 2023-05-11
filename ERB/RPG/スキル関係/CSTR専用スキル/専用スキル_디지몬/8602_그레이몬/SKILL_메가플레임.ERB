@@ -60,7 +60,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_메가플레임
+@SKILL_EFECT_메가플레임,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -133,7 +133,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_메가플레임
+@SKILL_EXPLAIN_메가플레임,ARG
 PRINTL [후열] 적 1체와 주변에게 화염속성 대 물리데미지, 중 확률로 FLAME
 
 ;継承に필요한部位

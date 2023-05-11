@@ -56,7 +56,7 @@ RETURN 3
 RETURN 3
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_가이아ㆍ포스
+@SKILL_EFECT_가이아ㆍ포스,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -123,7 +123,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_가이아ㆍ포스
+@SKILL_EXPLAIN_가이아ㆍ포스,ARG
 PRINTL [후열] 적 전체에게 화염 속성 대 물리데미지, 공격 전에 자신의 공격력을 상승.
 
 ;継承に필요한部位

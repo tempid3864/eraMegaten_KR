@@ -55,7 +55,7 @@ RETURN 3
 RETURN 1
 
 ;　 効果の타입　1공격、2회복、3상태변화、4特殊、5상태회복
-@SKILL_EFECT_홀리ㆍ애로우
+@SKILL_EFECT_홀리ㆍ애로우,ARG
 RETURN 1
 
 ;　 特殊処理の有無、及び処理内容
@@ -121,7 +121,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,SKILL_NUM
 ;====================================================
 
 ;　 설명文の표시
-@SKILL_EXPLAIN_홀리ㆍ애로우
+@SKILL_EXPLAIN_홀리ㆍ애로우,ARG
 PRINTL 적 1체에게 파마속성 특대 마법데미지, 명중률이 조금 높다.
 
 ;継承に필요한部位
