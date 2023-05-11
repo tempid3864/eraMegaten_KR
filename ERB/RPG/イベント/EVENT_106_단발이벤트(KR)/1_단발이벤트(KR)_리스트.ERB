@@ -58,25 +58,25 @@ CASE 1 ;단죄의황녀
 CASE 2 ;일그러진 도쿄
 	IF ARG:1 == 0;타이틀
 		IF 일그러진도쿄진행도 == 0
-			RESULTS = [일그러진 도쿄] 미나미스나마치 이변 조사
+			RESULTS = 【일그러진 도쿄】미나미스나마치 이변 조사
 
 		ELSEIF 일그러진도쿄진행도 == 1
-			RESULTS = [일그러진 도쿄] 마인의 연주
+			RESULTS = 【일그러진 도쿄】마인의 연주
 
 		ELSEIF 일그러진도쿄진행도 == 2
-			RESULTS = [일그러진 도쿄] 즉신마인
+			RESULTS = 【일그러진 도쿄】즉신마인
 
 		ELSEIF 일그러진도쿄진행도 == 3
-			RESULTS = [일그러진 도쿄] 마인의 질주
+			RESULTS = 【일그러진 도쿄】마인의 질주
 
 		ELSEIF 일그러진도쿄진행도 == 4
-			RESULTS = [일그러진 도쿄] 살육마인방송
+			RESULTS = 【일그러진 도쿄】살육마인방송
 
 		ELSEIF 일그러진도쿄진행도 == 5
-			RESULTS = [일그러진 도쿄] 소녀마인
+			RESULTS = 【일그러진 도쿄】소녀마인
 
 		ELSEIF 일그러진도쿄진행도 == 6
-			RESULTS = [일그러진 도쿄] 구세마인
+			RESULTS = 【일그러진 도쿄】구세마인
 		ENDIF
 
 	ELSEIF ARG:1 == 1;출현체크
@@ -127,13 +127,13 @@ CASE 2 ;일그러진 도쿄
 CASE 3 ;디지몬 모드
 	IF ARG:1 == 0
 		IF 디지몬이벤트진행도 == 0
-			RESULTS = Into the Coulomb
+			RESULTS = 【EX:DIGIMON】Into the Coulomb
 
 		ELSEIF 디지몬이벤트진행도 == 1
-			RESULTS = Halfwit Girl
+			RESULTS = 【EX:DIGIMON】Halfwit Girl
 
 		ELSEIF 디지몬이벤트진행도 == 2
-			RESULTS = 캐릭터추가테스트
+			RESULTS = 【EX:DIGIMON】캐릭터추가테스트
 
 		ENDIF
 
@@ -145,7 +145,7 @@ CASE 3 ;디지몬 모드
 			RETURN 1
 		ELSEIF 디지몬이벤트진행도 == 1 && BASE:MASTER:LV >= 30
 			RETURN 1
-		ELSEIF 디지몬이벤트진행도 == 2
+		ELSEIF 디지몬이벤트진행도 == 2 && BASE:MASTER:LV >= 70
 			RETURN 1
 		ENDIF
 

@@ -22,44 +22,44 @@ SIF GETBIT(FLAG:이벤트출현2,99 - 78)
 ;=======================================================================
 @PLAYABLE_EVENT_107
 IF BASE:MASTER:LV > 8 && 이벤트플래그:107:0 == 0
-	RESULTS = [BanG_Dream!] Phantom Thieves of Twilight
+	RESULTS = 【BanG_Dream!】Phantom Thieves of Twilight
 	RETURN 1
 
 ;적대적
 
 ELSEIF BASE:MASTER:LV > 13 && 이벤트플래그:107:0 == 1
-	RESULTS = [BanG_Dream!] No More "Same as Always"
+	RESULTS = 【BanG_Dream!】No More "Same as Always"
 	RETURN 1
 
 ELSEIF BASE:MASTER:LV > 22 && 이벤트플래그:107:0 == 3
-	RESULTS = [BanG_Dream!] Tea Time
+	RESULTS = 【BanG_Dream!】Tea Time
 	RETURN 1
 	
 ELSEIF BASE:MASTER:LV > 25 && 이벤트플래그:107:0 == 4
-	RESULTS = [BanG_Dream!] Tied to the Skies
+	RESULTS = 【BanG_Dream!】Tied to the Skies
 	RETURN 1
 	
 ELSEIF BASE:MASTER:LV > 30 && 이벤트플래그:107:0 == 5
-	RESULTS = [BanG_Dream!] As Evening Clears
+	RESULTS = 【BanG_Dream!】As Evening Clears
 	RETURN 1
 	
 
 ;우호적	
 	
 ELSEIF 이벤트플래그:107:0 == 6
-	RESULTS = [BanG_Dream!] The Happy Phantom's Request
+	RESULTS = 【BanG_Dream!】The Happy Phantom's Request
 	RETURN 1
 	
 ELSEIF 이벤트플래그:107:0 == 7
-	RESULTS = [BanG_Dream!] The Tsurumaki Residence Heist! 
+	RESULTS = 【BanG_Dream!】The Tsurumaki Residence Heist! 
 	RETURN 1
 	
 ELSEIF BASE:MASTER:LV > 20 && 이벤트플래그:107:0 == 8
-	RESULTS = [BanG_Dream!] Grand Scarlet Stage
+	RESULTS = 【BanG_Dream!】Grand Scarlet Stage
 	RETURN 1
 	
 ELSEIF BASE:MASTER:LV > 30 && 이벤트플래그:107:0 == 9 && CFLAG:GETCHARA(8465):전투참가불가능 != 1
-	RESULTS = [BanG_Dream!] It's showtime!
+	RESULTS = 【BanG_Dream!】It's showtime!
 	RETURN 1
 	
 ENDIF
