@@ -417,7 +417,7 @@ RETURN 1
 ;ENDSELECT
 
 @SENZAI_FLAG,ARG,ARGS,ARG:1
-#DIM 潜在発動キャラ,17
+#DIM 잠재발동캐릭터,17
 #DIM LCOUNT
 ;ARG 潜在を使用するキャラ
 ;ARGS 行動処理を指定する文字列
@@ -426,24 +426,24 @@ RETURN 1
 ;ARGSに応じて処理を行う
 SELECTCASE ARGS
 	CASE "初期化"
-		VARSET 潜在発動キャラ,-1
-		潜在発動캐릭터:0 = 0
+		VARSET 잠재발동캐릭터,-1
+		잠재발동캐릭터:0 = 0
 	CASE "登録"
 		;;潜在能力が反撃or特殊でなければ中断
 		;;潜在反撃持ちだが、HPが25%以下でない、もしくはDYING済み or 潜在特殊持ちだが、HPが0以下ではない場合も中断
 		;SIF GROUPMATCH(ABL:ARG:잠재능력,0,4) == 0 || (ABL:ARG:잠재능력 == 0 && (현HP비율(ARG) > 25 || GET_STATE(CFLAG:ARG:상태이상) == "DYING")) || (ABL:ARG:잠재능력 == 4 && BASE:ARG:ＨＰ > 0)
 		;	RETURN -1
-		SIF MATCH(潜在発動キャラ,ARG,1)
+		SIF MATCH(잠재발동캐릭터,ARG,1)
 			RETURN -1
-		潜在発動캐릭터:0 ++
-		潜在発動캐릭터:(潜在発動캐릭터:0) = ARG
-		;PRINTFORM %CALLNAME:ARG%が{潜在発動캐릭터:0}番の枠に登録されました
+		잠재발동캐릭터:0 ++
+		잠재발동캐릭터:(잠재발동캐릭터:0) = ARG
+		;PRINTFORM %CALLNAME:ARG%が{잠재발동캐릭터:0}番の枠に登録されました
 	CASE "返還"
 		RESULT = -1
 		FOR LCOUNT,1,17
-			SIF 潜在発動캐릭터:LCOUNT != ARG
+			SIF 잠재발동캐릭터:LCOUNT != ARG
 				CONTINUE
-			RESULT = 潜在発動캐릭터:LCOUNT
+			RESULT = 잠재발동캐릭터:LCOUNT
 		NEXT
 		RETURN RESULT
 ENDSELECT
