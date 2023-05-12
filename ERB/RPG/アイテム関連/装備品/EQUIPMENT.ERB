@@ -25,6 +25,8 @@
 ;	013		2021/06/23		lemukot					半魔당신に対する생득무기の장비制限の緩和
 ;	014		2021/09/16		JK好き					@全장비해제 특수탄は해제されないように변경
 ;	015		2022/09/24		kamedakeisuke			생득무기의 장비제한을 완화（반마＋무기 or사격무기 보유시도 추가）、및 Aion도 생득무기（COMP）를 운용할 수 있게
+;
+;	KR_01	2023/05/12		Moscode					XCOM2 모드용 장비 추가스킬 코드 추가
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;===================================================================
 ;장비品の변경等
@@ -1746,6 +1748,72 @@ ELSE
 					CALLFORM SKILL_NAME_{RESULT},ARG:1
 					PRINTFORM  [%RESULTS%]
 				ENDIF
+				;---- EDIT KR_01 ADD START -------------------------------
+				; XCOM 모드 추가보정
+				TRYCCALLFORM 장비추가스킬_{ARG},3,ARG:1
+					IF RESULT > 0
+						CALLFORM SKILL_NAME_{RESULT},ARG:1
+						PRINTFORM  [%RESULTS%]
+					ENDIF
+					TRYCCALLFORM 장비추가스킬_{ARG},4,ARG:1
+						IF RESULT > 0
+							CALLFORM SKILL_NAME_{RESULT},ARG:1
+							PRINTFORM  [%RESULTS%]
+						ENDIF
+						TRYCCALLFORM 장비추가스킬_{ARG},5,ARG:1
+						IF RESULT > 0
+							CALLFORM SKILL_NAME_{RESULT},ARG:1
+							PRINTFORM  [%RESULTS%]
+						ENDIF
+							TRYCCALLFORM 장비추가스킬_{ARG},6,ARG:1
+							IF RESULT > 0
+								CALLFORM SKILL_NAME_{RESULT},ARG:1
+								PRINTFORM  [%RESULTS%]
+							ENDIF
+								TRYCCALLFORM 장비추가스킬_{ARG},7,ARG:1
+								IF RESULT > 0
+									CALLFORM SKILL_NAME_{RESULT},ARG:1
+									PRINTFORM  [%RESULTS%]
+								ENDIF
+									TRYCCALLFORM 장비추가스킬_{ARG},8,ARG:1
+									IF RESULT > 0
+										CALLFORM SKILL_NAME_{RESULT},ARG:1
+										PRINTFORM  [%RESULTS%]
+									ENDIF
+										TRYCCALLFORM 장비추가스킬_{ARG},9,ARG:1
+										IF RESULT > 0
+											CALLFORM SKILL_NAME_{RESULT},ARG:1
+											PRINTFORM  [%RESULTS%]
+										ENDIF
+											TRYCCALLFORM 장비추가스킬_{ARG},10,ARG:1
+											IF RESULT > 0
+												CALLFORM SKILL_NAME_{RESULT},ARG:1
+												PRINTFORM  [%RESULTS%]
+											ENDIF
+												TRYCCALLFORM 장비추가스킬_{ARG},11,ARG:1
+												IF RESULT > 0
+													CALLFORM SKILL_NAME_{RESULT},ARG:1
+													PRINTFORM  [%RESULTS%]
+												ENDIF
+												CATCH
+												ENDCATCH
+											CATCH
+											ENDCATCH
+										CATCH
+										ENDCATCH
+									CATCH
+									ENDCATCH
+								CATCH
+								ENDCATCH
+							CATCH
+							ENDCATCH
+						CATCH
+						ENDCATCH
+					CATCH
+					ENDCATCH
+				CATCH
+				ENDCATCH
+				;---- EDIT KR_01 ADD END ---------------------------------
 			CATCH
 			ENDCATCH
 		CATCH

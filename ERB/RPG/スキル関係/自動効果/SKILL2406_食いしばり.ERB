@@ -3,7 +3,11 @@
 
 ;스킬명
 @SKILL_NAME_2406,ARG
-RESULTS = 이악물기
+IF CSTR:ARG:종족명 == "사이오니스트"
+	RESULTS = 지탱
+ELSE
+	RESULTS = 이악물기
+ENDIF
 
 ;　1 EXTRA　2 MAGIC
 @SKILL_DECIDE_TYPE_2406, ARG

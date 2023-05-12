@@ -21,6 +21,7 @@
 ;	012		2022/07/21		NEO						EXフィルター8番(ヤマタイカ系)削除……これデフォでオンにならんか？ということでVerUP.ERBの方で消してます
 ;
 ;	KR_01	2023/05/10		JustTasty				(KR) BanG_Dream!를 EX필터 12번에 배치
+;	KR_02	2023/05/10		Moscode					(KR) XCOM2 선택된 자의 전쟁:전술적 유산을 EX필터 8번에 배치
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
 @EXTRA_EVENT_FILTER
@@ -71,12 +72,14 @@ FOR COUNT, 0, 21
 		PRINTL [7] 아이돌마스터
 		SIF LOCAL == 1
 			PRINTL 　　시나리오 존재 (완결)。전투ㆍ노역 이벤트、ED 있음 / 각 캐릭터별 구현 상황은 독립
+	;---- EDIT KR_02 MOD END -------------------------
 	ELSEIF COUNT == 8
-	;---- EDIT 011 ADD START -------------------------
 		;現在欠番
-		CLEARBIT FLAG:EXTRA이벤트필터, 8
-	;---- EDIT 011 MOOD END ---------------------------
-
+		;CLEARBIT FLAG:EXTRA이벤트필터, 8
+		PRINTL [8] (KR) XCOM2 선택된 자의 전쟁:전술적 유산
+		SIF LOCAL == 1
+			PRINTL 　　시나리오 존재 (완결)。전투계 의뢰。파견 의뢰。ED 있음
+	;---- EDIT KR_02 MOOD END ---------------------------
 	ELSEIF COUNT == 9
 		PRINTL [9] 인터넷 밈（절 태생의 T씨ㆍSCP재단）
 		SIF LOCAL == 1

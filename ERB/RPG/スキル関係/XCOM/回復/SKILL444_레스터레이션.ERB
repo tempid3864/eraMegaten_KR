@@ -1,0 +1,202 @@
+﻿;XCOM2 특수병 전장의무병 최종 단계 스킬
+
+;스킬명
+@SKILL_NAME_444,ARG
+RESULTS = 레스터레이션
+
+;　명중
+@SKILL_HITRATE_444, ARG
+RETURN 100
+
+;　위력
+@SKILL_POWER_444, ARG
+RETURN 800
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_444,ARG
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_444,ARG
+RETURN 1
+
+;　ＨＰ를 소모하면 2 ＭＰ를 소모하면 3
+@SKILL_COSTTYPE_444, ARG
+RETURN 3
+;소비없음＝1
+
+;　비용의 양
+@SKILL_COST_444,ARG
+SIF ARG > -1
+	RETURN MAX((MAXBASE:ARG:ＭＰ / 20),1)
+RETURN 1
+
+;　상성
+@SKILL_TYPE_444,ARG
+RETURN 0
+
+;　EXTRA면 1, MAGIC이면 2
+@SKILL_DECIDE_TYPE_444, ARG
+RETURN 1
+;엑스트라
+
+;　물리 타격 판정 1 마법 타격 판정2
+@SKILL_DAMAGETYPE_444, ARG
+RETURN 0
+
+;　공격대상 : 1적 2아군 3 전체 4특수
+@SKILL_TARGET_444
+RETURN 2
+
+;　사거리
+@SKILL_RANGE_444,ARG
+RETURN 1
+
+;　범위　1 1체　2 1열　3 전체　4 적아군전체
+@SKILL_SPHERE_444,ARG
+RETURN 3
+
+;　 효과타입　1공격、2회복、3상태변화、4특수、5상태회복
+@SKILL_EFECT_444
+RETURN 4
+
+;　 특수처리 여부 및 처리내용
+@SKILL_SPECIALEFECT_444,ARG
+;ARG = 1인 경우는 처리 여부를 반환합니다
+SIF ARG == 1
+	RETURN 0
+;아래쪽에 특수처리를 기술합니다
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_444
+RETURN 4
+;회복
+
+;계승불능
+@계승불능_444
+RETURN 1
+
+;속도보정
+@SKILL_SPEED_444, ARG = -1
+RETURN 2
+
+;　구상의 표시와 그 타입
+@SKILL_MESSAGE_444,ARG
+
+;전투시 이외에 사용 가능한가
+@SKILL_ACTIONABLE_FIELD_444
+RETURN 1
+
+;스킬변화？用ランク
+@SKILL_RANK_444
+RETURN 0
+
+;추가효과 스테이터스
+@SKILL_ADDTIONAL_STATE_444,ARG
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_444,ARG
+RETURN 0
+
+;추가효과 기본 부여 확률
+@SKILL_ADDTIONAL_BASE_RATE_444,ARG
+RETURN 0
+
+;추가효과 부여확률 상한
+@SKILL_ADDTIONAL_MAX_RATE_444,ARG
+RETURN 0
+
+;====================================================
+;스킬 및 행동의 실행
+;====================================================
+@ACTION_444,ARG,ARG:1
+IF CFLAG:(ARG):PT플래그 == 0
+	LOCAL:1 = 7
+	LOCAL:2 = 17
+ELSE
+	LOCAL:1 = 1
+	LOCAL:2 = 7
+ENDIF
+
+	CALL HEAL_FIELD,ARG,ARG:1,444
+
+	FOR LOCAL:3,LOCAL:1,LOCAL:2
+		SIF POS(LOCAL:3) < 0
+			CONTINUE
+		CALL SKILL_CURE_STATE_444,CFLAG:(LOCAL:3):상태이상
+		IF RESULT == 1
+			PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(LOCAL:3),20,LEFT%　>>> 치료 및 상태 회복！
+			PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(LOCAL:3),20,LEFT%　>>> 부활！
+			CFLAG:LOCAL:상태이상 = 0
+			CFLAG:LOCAL:상태이상경과턴수 = 0
+			CALL VAR_HP,(LOCAL:3),MAXBASE:(LOCAL:3):ＨＰ/2
+		ELSEIF RESULT == 2
+			PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(LOCAL:3),20,LEFT%　>>> 부활！
+			CFLAG:(LOCAL:3):상태이상 = 0
+			CFLAG:(LOCAL:3):상태이상경과턴수 = 0
+			CALL VAR_HP,(LOCAL:3),MAXBASE:(LOCAL:3):ＨＰ/2	
+		ENDIF
+	NEXT
+WAIT
+;====================================================
+;실행내용 여기까지
+;====================================================
+;====================================================
+;전투中以外での実行
+;====================================================
+@ACTION_FIELD_444,ARG,ARG:1
+CALL HEAL_FIELD,ARG,ARG:1,444
+
+FOR LOCAL:9,1,7
+	LOCALS = 포지션{LOCAL:9}
+	SIF FLAG:LOCALS < 0
+		CONTINUE
+	LOCAL = FLAG:LOCALS
+	CALL SKILL_CURE_STATE_444,CFLAG:LOCAL:상태이상
+	IF RESULT == 1
+		PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(LOCAL),20,LEFT%　>>> 치료 및 상태 회복！
+		CALL ALL_CURE_STATE,POS(LOCAL)
+	ELSEIF RESULT == 2
+		PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(LOCAL),20,LEFT%　>>> 부활！
+		CFLAG:LOCAL:상태이상 = 0
+		CFLAG:LOCAL:상태이상경과턴수 = 0
+		CALL VAR_HP,(LOCAL),MAXBASE:(LOCAL):ＨＰ/2		
+	ENDIF
+NEXT
+WAIT
+;====================================================
+;실행내용 여기까지
+;====================================================
+
+;설명문 표시
+@SKILL_EXPLAIN_444
+PRINTL 전장 의무병의 최종 단계 치료능력. 아군 전체에게 그렘린을 보내 원거리에서 원격 치료한다。
+PRINTL 스킬적 성능은 사망자에게는 안정화, 생존자에게는 회복프로토콜+아군 전체 그렘린치료。
+PRINTL 전투 외에도 사용 가능。전체 MP의 20분의 1을 소모한다。
+PRINTL 회복하는 상태이상:FREEZE,POISON,BOMB,PALYZE,STONE,HEAT,FLAME,HAPPY,PANIC,SLEEP,CURSE,SHOCK
+
+;계승에 필요한 부위
+@계승부위_444,ARG
+RETURN 1
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_444,ARG
+RETURN 1
+
+@SKILL_SPECIAL_TARGET_444,ARG
+CALLFORM SKILL_CURE_STATE_444,(CFLAG:POS(ARG):상태이상)
+RETURN RESULT
+
+@SKILL_T_RESERVE_444
+RETURN 0
+
+@SKILL_CURE_STATE_444,ARG
+SELECTCASE GET_STATE(ARG)
+	CASE "DYING"
+		RETURN 2
+	CASE "FREEZE","POISON","BOMB","PALYZE","STONE","HEAT","FLAME","HAPPY","PANIC","SLEEP","CURSE","SHOCK"
+		RETURN 1
+	CASEELSE
+		RETURN 0
+ENDSELECT

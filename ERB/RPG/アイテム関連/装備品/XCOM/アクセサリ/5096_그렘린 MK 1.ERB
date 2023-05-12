@@ -1,0 +1,126 @@
+﻿;======================================================
+;XCOM2 WOTC TLP 악세서리:그렘린
+;======================================================
+@기본능력수정_5096,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+ENDSELECT
+RETURN 0
+
+@전투능력수정_5096,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE GET_BATTLESTATUS(ARG)
+	CASE "마법위력"
+		RETURN 10
+	CASE "마법효과"
+		RETURN 10
+ENDSELECT
+RETURN 0
+
+@방어상성_5096,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+;그렘린 세트 스킬
+@장비추가스킬_5096,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+IF ARG:1 != -1
+	;케블러 방어구 세트 + 돌격소총. 어떤 경우에도 스킬 안나옴.
+	IF EQUIP:(ARG:1):몸통 == 3805 && EQUIP:(ARG:1):팔 == 4072 && EQUIP:(ARG:1):발 == 4700 && EQUIP:(ARG:1):총 == 2631
+		SELECTCASE ARG
+		ENDSELECT
+	;급조된 특수병용 야전방어구 세트 + 구세대 돌격소총. 어떤 경우에도 스킬 안나옴
+	ELSEIF EQUIP:(ARG:1):몸통 == 3838 && EQUIP:(ARG:1):팔 == 4104 && EQUIP:(ARG:1):발 == 4732 && EQUIP:(ARG:1):총 == 2685
+		SELECTCASE ARG
+		ENDSELECT
+	;급조된 특수병용 야전방어구 세트 + 교란용소총. 어떤 경우에도 스킬 안나옴
+	ELSEIF EQUIP:(ARG:1):몸통 == 3838 && EQUIP:(ARG:1):팔 == 4104 && EQUIP:(ARG:1):발 == 4732 && EQUIP:(ARG:1):총 == 2695
+		SELECTCASE ARG
+		ENDSELECT
+	;케블러 방어구 세트 + 교란용소총. 어떤 경우에도 스킬 안나옴
+	ELSEIF EQUIP:(ARG:1):몸통 == 3805 && EQUIP:(ARG:1):팔 == 4072 && EQUIP:(ARG:1):발 == 4700 && EQUIP:(ARG:1):총 == 2695
+		SELECTCASE ARG
+		ENDSELECT
+	ELSE
+	;위 세 가지 경우가 아니라면?
+		SELECTCASE ARG
+			CASE 0
+				;메딕킷치료
+				RETURN 440
+			CASE 1
+				;안정화
+				RETURN 441
+		ENDSELECT
+	ENDIF
+ENDIF
+
+@BS내성_5096,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+	CASE GET_STATE_NUM("POISON")
+		RETURN -100
+ENDSELECT
+RETURN 0
+
+@전투개시시효과_5096, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+CFLAG:ARG:POISON무효화횟수 += 999
+
+@장비부위_5096
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN GET_EQUIPNUM("악세서리")
+
+;-----------------------------
+;- 조건ㆍ설명처리
+;-----------------------------
+@필요레벨_5096
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+
+@장비조건_5096,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SIF BASE:ARG:LV < 5
+	RETURN 0
+SIF CSTR:ARG:종족명 == "SPARK"
+	RETURN 0
+SIF CSTR:ARG:종족명 == "리퍼"
+	RETURN 0
+SIF CSTR:ARG:종족명 == "스커미셔"
+	RETURN 0
+SIF CSTR:ARG:종족명 == "템플러"
+	RETURN 0
+SIF CSTR:ARG:종족명 == "사이오니스트"
+	RETURN 0
+RETURN 1
+
+@장비해설_5096
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL XCOM의 최첨단 드론 '그렘린'의 초기 단계형인 MK 1. 특별히 전투 해커와 전투 의무병 능력을 함께 쓸 수 있다.
+PRINTL 기본적으로 메딕킷을 세트로 구비하고 있으므로 POISON 면역 및 POISON 무효화 횟수 + 999를 제공한다.
+PRINTL 케블러 방어구와 돌격소총을 함께 장비시 지원프로토콜을, 레벨 10부터는 전투프로토콜과 그렘린 치료를 쓸 수 있다.
+PRINTL 특수병 장비 세트가 아니더라도 메딕킷치료와 안정화는 사용할 수 있다.
+PRINTL TACTICAL LEGACY 장비와도 호환 가능.
+;-----------------------------
+;- 구입ㆍ인수인계
+;-----------------------------
+@구입조건_5096,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+@인계가능불가능_5096
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0

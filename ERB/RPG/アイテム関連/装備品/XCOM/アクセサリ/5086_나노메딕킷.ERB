@@ -1,0 +1,101 @@
+﻿;======================================================
+;XCOM2 WOTC TLP 악세서리:나노메딕킷
+;======================================================
+@기본능력수정_5086,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+ENDSELECT
+RETURN 0
+
+@전투능력수정_5086,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE GET_BATTLESTATUS(ARG)
+	CASE "마법위력"
+		RETURN 30
+	CASE "마법효과"
+		RETURN 30
+ENDSELECT
+RETURN 0
+
+@방어상성_5086,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+@장비추가스킬_5086,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+	CASE 0
+		;메딕킷치료
+		RETURN 440
+	CASE 1
+		;안정화
+		RETURN 441
+ENDSELECT
+RETURN 0
+
+@BS내성_5086,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+	CASE GET_STATE_NUM("POISON")
+		RETURN -100
+ENDSELECT
+RETURN 0
+
+@전투개시시효과_5086, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+CFLAG:ARG:POISON무효화횟수 += 999
+
+@장비부위_5086
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN GET_EQUIPNUM("악세서리")
+
+;-----------------------------
+;- 조건ㆍ설명처리
+;-----------------------------
+@필요레벨_5086
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 15
+
+@장비조건_5086,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SIF BASE:ARG:LV < 15
+	RETURN 0
+SIF CSTR:ARG:종족명 == "SPARK"
+	RETURN 0
+RETURN 1
+
+@장비조건설명_5086
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL 장비조건：LV15～
+
+@장비해설_5086
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL XCOM의 의료 도구 메딕킷의 업그레이드형.
+PRINTL 마찬가지로 FREEZE, POISON, BOMB, PALYZE, STONE, HEAT, FLAME 상태이상을 치료할 수 있다。
+PRINTL 장비시 독에 면역이다。
+
+;-----------------------------
+;- 구입ㆍ인수인계
+;-----------------------------
+@구입조건_5086,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+@인계가능불가능_5086
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0

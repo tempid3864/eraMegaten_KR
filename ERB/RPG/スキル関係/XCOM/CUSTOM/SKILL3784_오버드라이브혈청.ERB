@@ -1,0 +1,203 @@
+﻿;XCOM2 R.A.G.E. 장비스킬 + 제인 켈리용 스킬
+
+;스킬명
+@SKILL_NAME_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RESULTS = 오버드라이브혈청
+
+;　명중
+@SKILL_HITRATE_3784, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 100
+
+;　위력
+@SKILL_POWER_3784, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　ＨＰ를 소모하면 2 ＭＰ를 소모하면 3
+@SKILL_COSTTYPE_3784, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+;소모없음＝1
+
+;　비용의 양
+@SKILL_COST_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+
+;　상성
+@SKILL_TYPE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　EXTRA면 1, MAGIC이면 2
+@SKILL_DECIDE_TYPE_3784, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+;EXTRA. 특수 기술
+
+;　물리 타격 판정 1 마법 타격 판정2
+@SKILL_DAMAGETYPE_3784, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+
+;　공격대상 : 1적 2아군 3 전체 4특수
+@SKILL_TARGET_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 4
+
+;　사거리
+@SKILL_RANGE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　범위　1 1체　2 1열　3 전체　4 적아군전체
+@SKILL_SPHERE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　 효과타입　1공격、2회복、3상태변화、4특수、5상태회복
+@SKILL_EFECT_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 4
+
+;　 특수처리 여부 및 처리내용
+@SKILL_SPECIALEFECT_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+;ARG = 1인 경우는 처리 여부를 반환합니다
+SIF ARG == 1
+	RETURN 0
+;아래쪽에 특수처리를 기술합니다
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+;지원
+
+;계승불능
+@계승불능_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;속도수정
+@SKILL_SPEED_3784, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5000
+
+;　구상의 표시와 그 타입
+@SKILL_MESSAGE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+
+;전투시 이외에 사용 가능한가
+@SKILL_ACTIONABLE_FIELD_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;스킬변화？용 랭크
+@SKILL_RANK_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;템플릿용、추가효과 시리즈
+;추가효과 스테이터스
+@SKILL_ADDTIONAL_STATE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 기본 부여 확률
+@SKILL_ADDTIONAL_BASE_RATE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 부여확률 상한
+@SKILL_ADDTIONAL_MAX_RATE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;====================================================
+;스킬 및 행동의 실행
+;====================================================
+@ACTION_3784,ARG,ARG:1
+#LOCALSIZE 3
+#LOCALSSIZE 2
+;코스트를 지불한다
+;CALL PAY_COST,ARG,3784
+
+CFLAG:ARG:방어강화 = MIN(64, CFLAG:ARG:방어강화 + 32)
+CFLAG:ARG:HAPPY무효화횟수 += 999
+CFLAG:ARG:CHARM무효화횟수 += 999
+CFLAG:ARG:PANIC무효화횟수 += 999
+CFLAG:ARG:CURSE무효화횟수 += 999
+CFLAG:ARG:SLEEP무효화횟수 += 999
+CFLAG:ARG:SHOCK무효화횟수 += 999
+
+CFLAG:ARG:오버드라이브플래그 = 3
+
+PRINTFORML %CALLNAME:ARG%의 방어력이 최대값(8단계)으로 올랐다！
+PRINTFORMW 3턴간 정신계 상태이상 4종과 기절(SHOCK), 저주(CURSE)를 막는다!
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+;　 설명문의 표시
+@SKILL_EXPLAIN_3784
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL 버서커의 부신에서 추출한 물질로 만들어낸 황색의 기체를 전신에 살포한다.
+PRINTL 혈청은 사용자의 신경계를 자극해 모든 피해에 대한 현저한 저항력을 제공한다.
+PRINTL 또한 모든 종류의 정신계 상태 이상과 기절, 저주 상태가 3턴 한정으로 완전 면역.
+PRINTL 전체 HP의 5% 소모。중복 사용시 효과의 남은 턴이 최대 3턴까지 계속 연장된다.
+
+;계승에 필요한 부위
+@계승부위_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_3784,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1

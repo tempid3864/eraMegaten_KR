@@ -1,0 +1,245 @@
+﻿;XCOM2 스커미셔 최종 단계 스킬
+
+;스킬명
+@SKILL_NAME_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RESULTS = 수동조작
+
+;　명중
+@SKILL_HITRATE_3745, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 9999
+
+;　위력
+@SKILL_POWER_3745, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 100
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　ＨＰ를 소모하면 2 ＭＰ를 소모하면 3
+@SKILL_COSTTYPE_3745, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+;소모없음＝1
+
+;　비용의 양
+@SKILL_COST_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+
+;　상성
+@SKILL_TYPE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　EXTRA면 1, MAGIC이면 2
+@SKILL_DECIDE_TYPE_3745, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+;EXTRA. 특수 기술
+
+;　물리 타격 판정 1 마법 타격 판정2
+@SKILL_DAMAGETYPE_3745, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+
+;　공격대상 : 1적 2아군 3 전체 4특수
+@SKILL_TARGET_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 4
+
+;　사거리
+@SKILL_RANGE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　범위　1 1체　2 1열　3 전체　4 적아군전체
+@SKILL_SPHERE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　 효과타입　1공격、2회복、3상태변화、4특수、5상태회복
+@SKILL_EFECT_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+
+;　 특수처리 여부 및 처리내용
+@SKILL_SPECIALEFECT_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+;ARG = 1인 경우는 처리 여부를 반환합니다
+SIF ARG == 1
+	RETURN 0
+;아래쪽에 특수처리를 기술합니다
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+;지원
+
+;계승불능
+@계승불능_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;속도수정
+@SKILL_SPEED_3745, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　구상의 표시와 그 타입
+@SKILL_MESSAGE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+
+;전투시 이외에 사용 가능한가
+@SKILL_ACTIONABLE_FIELD_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;스킬변화？용 랭크
+@SKILL_RANK_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;템플릿용、추가효과 시리즈
+;추가효과 스테이터스
+@SKILL_ADDTIONAL_STATE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 기본 부여 확률
+@SKILL_ADDTIONAL_BASE_RATE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 부여확률 상한
+@SKILL_ADDTIONAL_MAX_RATE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;====================================================
+;스킬 및 행동의 실행
+;====================================================
+@ACTION_3745,ARG,ARG:1
+#LOCALSIZE 3
+#LOCALSSIZE 2
+
+PRINTFORMW 　　TARGET:[{ARG:1,2}] %CALLNAME:(ARG),20,LEFT%　>>>>>>　{MAXBASE:ARG:ＭＰ/10}MP 회복
+CALL VAR_MP,ARG,MAXBASE:ARG:ＭＰ/10,3
+
+;====================================================
+;전투중 이외에서의 실행
+;====================================================
+@ACTION_FIELD_3745,ARG,ARG:1
+#LOCALSIZE 3
+#LOCALSSIZE 2
+	SETCOLOR 0x33ffcc
+	IF RAND:12 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"시간이 줄어들고 있어",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:11 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"공격 준비중",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:10 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"시간이 다 됬어",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:9 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"거의 다 됬어",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:8 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"전술 조작 준비",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:7 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"기다릴 시간이 없어",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:6 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"다시 집중하겠어",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:5 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"이제 금방이야",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:4 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"그리 길지 않을거야",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:3 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"수동 조작 개시",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSEIF RAND:2 == 0
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"조작중",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ELSE
+		PRINTFORML ┏┓＠%CALLNAME:ARG,20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+		PRINTFORML ┃%"시간 단축",72,LEFT%┃
+		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+	ENDIF
+	RESETCOLOR
+PRINTFORMW 　　TARGET:[{ARG:1,2}] %CALLNAME:(ARG),20,LEFT%　>>>>>>　{MAXBASE:ARG:ＭＰ/10}MP 회복
+CALL VAR_MP,ARG,MAXBASE:ARG:ＭＰ/10,3
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+;　 설명문 표시
+@SKILL_EXPLAIN_3745
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL 스커미셔의 최종 단계 스킬.
+PRINTL 자신의 전체 MP중 10%를 회복시켜 전술적 우세를 점한다.
+PRINTL 매번 HP 5%를 소모한다. 전투 이외에도 실행 가능.
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_3745,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+;특별히 없음

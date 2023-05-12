@@ -92,6 +92,8 @@
 ;	082		2022/08/02		Schrott					전투중의 회심확정ㆍ회심률강화 플래그의 처리, 전투 종료시의 각종 데미지 보정 리셋 처리를 추가. 극빈불행신의 １문자 변수를 RAND 처리로
 ;	083		2022/08/20		kamedakeisuke(ﾟдﾟ)		필사적인 공부의 배율을 1.5에서 1.25로
 ;	084		2022/09/17		kamedakeisuke(ﾟдﾟ)		Aion식 소환술 쪽 사양을 추가
+;
+;	KR_01	2023/05/12		Moscode					(KR) XCOM2 선택된 자의 전쟁:전술적 유산 관련 내용 추가
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 ;==================================================================
 ;전투でのメイン화면の処理と전투時の各種処理を行います
@@ -2422,6 +2424,12 @@ FOR LOCAL:1,1,7
 	;포지션にキャラがいなければ戻る
 	SIF FLAG:LOCALS < 0
 		CONTINUE
+	;---- EDIT KR_01 ADD START -------------------------------
+	IF CFLAG:MASTER:82 != 1 ;XCOM2 WOTC 이벤트 전투
+		SIF MASTER != FLAG:LOCALS && !함락(FLAG:LOCALS)
+			CONTINUE
+	ENDIF
+	;---- EDIT KR_01 ADD END -------------------------------
 	;マスターがPTに存在し、今見ているのがマスターでなく、かつ함락していなければ戻る
 	;EDIT 072：ソフト「デスマーチ」があれば함락状況を問わない(함락しておらずデスマーチをインストしていない)
 	SIF LOCAL:2 == 1 && MASTER != FLAG:LOCALS && !함락(FLAG:LOCALS) && !EQUIP:MASTER:데스마치
@@ -2444,6 +2452,13 @@ IF FLAG:디버그전투플래그
 	FLAG:승리플래그 = 1
 	RETURN 0
 ENDIF
+;---- EDIT KR_01 ADD START -------------------------------
+IF CFLAG:MASTER:82 == 1 ;XCOM2 WOTC 이벤트 전투
+	FLAG:승리플래그 = 1
+	CFLAG:MASTER:85 = 1
+	RETURN 0
+ENDIF
+;---- EDIT KR_01 ADD END -------------------------------
 SIF ASSI > 0
 	CALL SUPORT(2, 2)
 IF FLAG:SHOP커맨드 == [[SHOP:콜로세움참가]]
@@ -4590,10 +4605,478 @@ FOR LOCAL,0,16
 		;---- EDIT 049 ADD END -----------------------------
 		;---- EDIT 077 DEL END -----------------------------
 		;---- EDIT 039 ADD END -------------------------------
+		
+		;---- EDIT KR_01 ADD START -------------------------------
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 리퍼 스킬. 목표물정의
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3810); && CFLAG:(FLAG:(LOCALS:5)):회피강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:2 = 포지션{A}
+				SIF FLAG:(LOCALS:2) < 0
+					CONTINUE
+				SIF CFLAG:(FLAG:(LOCALS:2)):회피강화 < 32
+					CFLAG:(FLAG:(LOCALS:2)):회피강화 -= 8
+			NEXT
+			SETCOLOR 203, 160, 0
+			IF RAND:9 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"나에게서 절대로 숨지 못 해",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:8 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"절대로 내 시야에서 벗어나지 못해",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:7 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 항상 너희를 찾아낼 수 있지",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:6 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"도망갈 장소 따위는 없어",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:5 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"저 너머의 목표 전부가 확보됐다",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:4 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"넌! 도망칠 수 없어",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:3 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"숨바꼭질 시간은 끝났어",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:2 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"네가 어디 있는지 다 알아",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSE
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"목표가 포착됐다",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ENDIF
+			PRINTFORML
+			RESETCOLOR
+			PRINTFORML 목표물정의!
+			PRINTFORML 	\@ CFLAG:(LOCAL:1):PT플래그 == 2 ? 적 # 아군 \@의 회피율을 저하시켰다!
+			PRINTFORML
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 리퍼 스킬. 섀도잠행
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3802); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(16, CFLAG:(LOCAL:1):명중강화 + 16)
+				SIF CFLAG:(LOCAL:1):회피강화 < 32
+					CFLAG:(LOCAL:1):회피강화 = MIN(16, CFLAG:(LOCAL:1):회피강화 + 16)
+			NEXT
+			SETCOLOR 203, 160, 0
+			IF RAND:10 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 어둠 속에서 공격하지",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:9 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"내 모습은 보이지 않아",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:8 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"마치 배경처럼",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:7 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 투명 그 자체지",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:6 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"이제 집중할 시간이군",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:5 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"나는 사냥꾼이다",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:4 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 어둠 속에서 태어났다",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:3 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"그림자 속으로",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:2 == 0
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"어둠은 내 영역이지",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSE
+				PRINTFORML
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"사냥 시작이다",72,LEFT%┃
+				PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ENDIF
+			RESETCOLOR
+			PRINTFORML 섀도 잠행에 돌입!
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%의 명중, 회피 상승!
+			RESETCOLOR
+			PRINTFORML
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 경량 방어 슈트의 스킬
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3803); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(8, CFLAG:(LOCAL:1):명중강화 + 8)
+			NEXT
+			SETCOLOR 0x33ffcc
+			IF RAND:6 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"갈고리 사출!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:5 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"높은 위치로!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:4 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"위로 이동!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:3 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"후크 사출!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:2 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"갈고리 발사",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSE
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"고지로 이동!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ENDIF
+			RESETCOLOR
+			PRINTFORML
+			PRINTFORML 고지를 점거!
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%의 명중 상승!
+			PRINTFORML
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 스커미셔들의 스킬
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3804); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(8, CFLAG:(LOCAL:1):명중강화 + 8)
+			NEXT
+			SETCOLOR 0x33ffcc
+			IF RAND:8 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"전략적 이동",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:7 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"위치 재조정중",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:6 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"유용한 지원이지",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:5 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"사출장치 사용",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:4 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"위치 변경",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:3 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"새로운 접근법을 시도하지",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:2 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"후크 사출",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSE
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"위치 변경중",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ENDIF
+			RESETCOLOR
+			PRINTFORML
+			PRINTFORML 고지를 점거!
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%의 명중 상승!
+			PRINTFORML
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 돌격병의 패시브 스킬.
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3805); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):공격강화 < 32
+					CFLAG:(LOCAL:1):공격강화 = MIN(8, CFLAG:(LOCAL:1):공격강화 + 8)
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(8, CFLAG:(LOCAL:1):명중강화 + 8)
+				SIF CFLAG:(LOCAL:1):회피강화 < 32
+					CFLAG:(LOCAL:1):회피강화 = MIN(8, CFLAG:(LOCAL:1):회피강화 + 8)
+			NEXT
+			SETCOLOR 0x33ffcc
+			IF RAND:15 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"배경에 녹아든다……",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:14 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"사라진다……",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:13 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 여기 없었던거야",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:12 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"아무것도 못 볼거야",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:11 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"난 유령이지",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:10 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"잠입 시작",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:9 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"놈들은 아무것도 못 볼거야",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:8 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"엄폐!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:7 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"은폐 실시!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:6 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"그림자 속으로!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:5 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"어둠속으로!",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:4 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"이제 내가 보여?",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:3 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"숨바꼭질 시작",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSEIF RAND:2 == 0
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"잠복 상태로",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ELSE
+				PRINTFORML ┏┓＠%CALLNAME:(LOCAL:1),20,LEFT%　┏━━━━━━━━━━━━━━━━━━━━━━┓
+				PRINTFORML ┃%"은폐 개시",72,LEFT%┃
+				PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+			ENDIF
+			RESETCOLOR
+			PRINTFORML
+			PRINTFORML 잠행 실시!
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%의 공격, 명중, 회피가 상승!
+			PRINTFORML
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 템플러의 패시브 스킬
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3807); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):공격강화 < 32
+					CFLAG:(LOCAL:1):공격강화 = MIN(4, CFLAG:(LOCAL:1):공격강화 + 4)
+				SIF CFLAG:(LOCAL:1):마법위력강화 < 32
+					CFLAG:(LOCAL:1):마법위력강화 = MIN(8, CFLAG:(LOCAL:1):마법위력강화 + 8)
+				SIF CFLAG:(LOCAL:1):마법효과강화 < 32
+					CFLAG:(LOCAL:1):마법효과강화 = MIN(8, CFLAG:(LOCAL:1):마법효과강화 + 8)
+			NEXT
+			PRINTFORML
+			SETCOLOR 255, 50, 255
+			PRINTFORML 정신각성! 칼바람의 데미지 및 효과 증가!
+			RESETCOLOR
+			PRINTFORML
+			RESETCOLOR
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 레이스 슈트의 '레이스'
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3808); && CFLAG:(FLAG:(LOCALS:5)):회피강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):회피강화 < 32
+					CFLAG:(LOCAL:1):회피강화 = MIN(8, CFLAG:(LOCAL:1):회피강화 + 8)
+			NEXT
+			PRINTFORML
+			SETCOLOR 0x33ffcc
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%이(가) 레이스 발동! 회피율 증가!
+			RESETCOLOR
+			PRINTFORML
+			RESETCOLOR
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 줄리안의 명중 버프
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3809); && CFLAG:(FLAG:(LOCALS:5)):회피강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(8, CFLAG:(LOCAL:1):명중강화 + 8)
+			NEXT
+		ENDIF
+		;XCOM2 사이오니스트 위로 능력의 경우
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3806) && CFLAG:(FLAG:(LOCALS:5)):HAPPY무효화횟수 < 1
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 7
+				A:8 = 17
+			ELSE
+				A:7 = 1
+				A:8 = 7
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:2 = 포지션{A}
+				SIF FLAG:(LOCALS:2) < 0
+					CONTINUE
+				SIF CFLAG:(FLAG:(LOCALS:2)):HAPPY무효화횟수 < 1
+					CFLAG:(FLAG:(LOCALS:2)):HAPPY무효화횟수 += 999
+				SIF CFLAG:(FLAG:(LOCALS:2)):PANIC무효화횟수 < 1
+					CFLAG:(FLAG:(LOCALS:2)):PANIC무효화횟수 += 999
+				SIF CFLAG:(FLAG:(LOCALS:2)):SLEEP무효화횟수 < 1
+					CFLAG:(FLAG:(LOCALS:2)):SLEEP무효화횟수 += 999
+				SIF CFLAG:(FLAG:(LOCALS:2)):CHARM무효화횟수 < 1
+					CFLAG:(FLAG:(LOCALS:2)):CHARM무효화횟수 += 999
+				SIF CFLAG:(FLAG:(LOCALS:2)):CURSE무효화횟수 < 1
+					CFLAG:(FLAG:(LOCALS:2)):CURSE무효화횟수 += 999
+			NEXT
+			PRINTFORML [「위로」] %CALLNAME:(LOCAL:1)% >>>>> \@ CFLAG:(LOCAL:1):PT플래그 == 0 ? 적 # 아군 \@의 위로 오오라가 정신계 상태이상을 막는다！
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN : 이카루스 아머의 이카루스 점프
+		LOCAL:1 = FLAG:(LOCALS:5)
+		IF CFLAG:(LOCAL:1):상태이상 != GET_STATE_NUM("DYING") && HAVE_SKILL(LOCAL:1,3761); && CFLAG:(FLAG:(LOCALS:5)):명중강화 < 32
+			IF CFLAG:(LOCAL:1):PT플래그 == 0
+				A:7 = 1
+				A:8 = 7
+			ELSE
+				A:7 = 7
+				A:8 = 17
+			ENDIF
+			FOR A,A:7,A:8
+				LOCALS:1 = 포지션{A}
+				SIF FLAG:(LOCALS:1) < 0
+					CONTINUE
+				SIF CFLAG:(LOCAL:1):공격강화 < 32
+					CFLAG:(LOCAL:1):공격강화 = MIN(32, CFLAG:(LOCAL:1):공격강화 + 7)
+				SIF CFLAG:(LOCAL:1):방어강화 < 32
+					CFLAG:(LOCAL:1):방어강화 = MIN(32, CFLAG:(LOCAL:1):방어강화 + 7)
+				SIF CFLAG:(LOCAL:1):명중강화 < 32
+					CFLAG:(LOCAL:1):명중강화 = MIN(32, CFLAG:(LOCAL:1):명중강화 + 7)
+				SIF CFLAG:(LOCAL:1):회피강화 < 32
+					CFLAG:(LOCAL:1):회피강화 = MIN(32, CFLAG:(LOCAL:1):회피강화 + 7)
+				SIF CFLAG:(LOCAL:1):마법위력강화 < 32
+					CFLAG:(LOCAL:1):마법위력강화 = MIN(32, CFLAG:(LOCAL:1):마법위력강화 + 7)
+				SIF CFLAG:(LOCAL:1):마법효과강화 < 32
+					CFLAG:(LOCAL:1):마법효과강화 = MIN(32, CFLAG:(LOCAL:1):마법효과강화 + 7)
+				SIF CFLAG:(LOCAL:1):크리티컬강화 < 32
+					CFLAG:(LOCAL:1):크리티컬강화 = MIN(32, CFLAG:(LOCAL:1):크리티컬강화 + 1)
+				SIF CFLAG:(LOCAL:1):BS부착률강화 < 32
+					CFLAG:(LOCAL:1):BS부착률강화 = MIN(32, CFLAG:(LOCAL:1):BS부착률강화 - 1)
+			NEXT
+			PRINTFORML 이카루스 점프!
+			PRINTFORML %CALLNAME:(LOCAL:1),0,LEFT%이(가) 유리한 위치를 점거!
+			PRINTFORML 모든 능력 상승!
+		ENDIF
+		;한글판 개조 XCOM2 WAR OF THE CHOSEN 끝
+		;---- EDIT KR_01 ADD END -------------------------------
 	ENDIF
 NEXT
-; SIF LINECOUNT != LOCAL:2
-; 	WAIT
+SIF LINECOUNT != LOCAL:2
+	WAIT
 RETURN 0
 
 ;===================================

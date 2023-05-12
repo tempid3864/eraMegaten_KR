@@ -1,0 +1,176 @@
+﻿;XCOM2 메딕킷의 안정화 능력
+
+;스킬명
+@SKILL_NAME_441,ARG
+RESULTS = 안정화
+
+;　명중
+@SKILL_HITRATE_441, ARG
+RETURN 100
+
+;　위력
+@SKILL_POWER_441, ARG
+RETURN 50
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_441,ARG
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_441,ARG
+RETURN 1
+
+;　ＨＰ를 소모하면 2 ＭＰ를 소모하면 3
+@SKILL_COSTTYPE_441, ARG
+RETURN 3
+;소비없음＝1
+
+;　비용의 양
+@SKILL_COST_441,ARG
+RETURN 12
+
+;　상성
+@SKILL_TYPE_441,ARG
+RETURN 0
+
+;　EXTRA면 1, MAGIC이면 2
+@SKILL_DECIDE_TYPE_441, ARG
+RETURN 1
+;엑스트라
+
+;　물리 타격 판정 1 마법 타격 판정2
+@SKILL_DAMAGETYPE_441, ARG
+RETURN 0
+
+;　공격대상 : 1적 2아군 3 전체 4특수
+@SKILL_TARGET_441
+RETURN 2
+
+;　사거리
+@SKILL_RANGE_441,ARG
+RETURN 1
+
+;　범위　1 1체　2 1열　3 전체　4 적아군전체
+@SKILL_SPHERE_441,ARG
+RETURN 1
+
+;　 효과타입　1공격、2회복、3상태변화、4특수、5상태회복
+@SKILL_EFECT_441
+RETURN 5
+
+;　 특수처리 여부 및 처리내용
+@SKILL_SPECIALEFECT_441,ARG
+;ARG = 1인 경우는 처리 여부를 반환합니다
+SIF ARG == 1
+	RETURN 0
+;아래쪽에 특수처리를 기술합니다
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_441
+RETURN 4
+;회복
+
+;계승불능
+@계승불능_441
+RETURN 1
+
+;속도보정
+@SKILL_SPEED_441, ARG = -1
+RETURN 2
+
+;　구상의 표시와 그 타입
+@SKILL_MESSAGE_441,ARG
+
+;전투시 이외에 사용 가능한가
+@SKILL_ACTIONABLE_FIELD_441
+RETURN 1
+
+;스킬변화？用랭크
+@SKILL_RANK_441
+RETURN 0
+
+;추가효과 스테이터스
+@SKILL_ADDTIONAL_STATE_441,ARG
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_441,ARG
+RETURN 0
+
+;추가효과 기본 부여 확률
+@SKILL_ADDTIONAL_BASE_RATE_441,ARG
+RETURN 0
+
+;추가효과 부여확률 상한
+@SKILL_ADDTIONAL_MAX_RATE_441,ARG
+RETURN 0
+
+;====================================================
+;스킬 및 행동의 실행
+;====================================================
+@ACTION_441,ARG,ARG:1
+;코스트를 지불한다
+;CALL PAY_COST,ARG,441
+
+CALL SKILL_CURE_STATE_441,CFLAG:(ARG:1):상태이상
+IF RESULT == 1
+	PRINTFORMW %조사처리(CALLNAME:(ARG:1),"는")% 되살아났다
+	CFLAG:(ARG:1):상태이상 = 0
+	CFLAG:(ARG:1):상태이상경과턴수 = 0
+	CALL VAR_HP,(ARG:1),MAXBASE:(ARG:1):ＨＰ/3
+ENDIF
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+
+;====================================================
+;전투中以外での実行
+;====================================================
+@ACTION_FIELD_441,ARG,ARG:1
+;コスト支払い
+;CALL PAY_COST,ARG,441
+
+CALL SKILL_CURE_STATE_441,CFLAG:(ARG:1):상태이상
+IF RESULT == 1
+	PRINTFORMW %조사처리(CALLNAME:(ARG:1),"는")% 되살아났다
+	CFLAG:(ARG:1):상태이상 = 0
+	CFLAG:(ARG:1):상태이상경과턴수 = 0
+	CALL VAR_HP,(ARG:1),MAXBASE:(ARG:1):ＨＰ/3
+ELSE
+	PRINTW 효과가 없었다
+ENDIF
+
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+
+;　 설명문 표시
+@SKILL_EXPLAIN_441
+PRINTL 메딕킷과 그렘린의 치료 능력.
+PRINTL DYING 상태인 아군 1인을 전체 HP의 3분의 1 상태로 부활시킨다。
+
+;계승에 필요한 부위
+@계승부위_441,ARG
+RETURN 1
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_441,ARG
+RETURN 1
+
+@SKILL_SPECIAL_TARGET_441,ARG
+CALLFORM SKILL_CURE_STATE_441,(CFLAG:ARG:상태이상)
+RETURN RESULT
+
+@SKILL_T_RESERVE_441
+RETURN 1
+
+@SKILL_CURE_STATE_441,ARG
+SELECTCASE GET_STATE(ARG)
+	CASE "DYING"
+		RETURN 1
+	CASEELSE
+		RETURN 0
+ENDSELECT
+

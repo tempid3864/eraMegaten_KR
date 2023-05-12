@@ -1,0 +1,237 @@
+﻿;XCOM2 병사들의 자기 방어 자세
+
+;스킬명
+@SKILL_NAME_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RESULTS = 잠복
+
+;　명중
+@SKILL_HITRATE_3782, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 100
+
+;　위력
+@SKILL_POWER_3782, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　최저공격횟수
+@SKILL_MINATTACKNUMBER_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　최대공격횟수
+@SKILL_MAXATTACKNUMBER_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　ＨＰ를 소모하면 2 ＭＰ를 소모하면 3
+@SKILL_COSTTYPE_3782, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+;소모없음＝1
+
+;　비용의 양
+@SKILL_COST_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　상성
+@SKILL_TYPE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;　EXTRA면 1, MAGIC이면 2
+@SKILL_DECIDE_TYPE_3782, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+;EXTRA. 특수 기술
+
+;　물리 타격 판정 1 마법 타격 판정2
+@SKILL_DAMAGETYPE_3782, ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+
+;　공격대상 : 1적 2아군 3 전체 4특수
+@SKILL_TARGET_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 4
+
+;　사거리
+@SKILL_RANGE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　범위　1 1체　2 1열　3 전체　4 적아군전체
+@SKILL_SPHERE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;　 효과타입　1공격、2회복、3상태변화、4특수、5상태회복
+@SKILL_EFECT_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 4
+
+;　 특수처리 여부 및 처리내용
+@SKILL_SPECIALEFECT_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+;ARG = 1인 경우는 처리 여부를 반환합니다
+SIF ARG == 1
+	RETURN 0
+;아래쪽에 특수처리를 기술합니다
+
+;계승타입
+@SKILL_SUCCESSION_TYPE_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5
+;지원
+
+;계승불능
+@계승불능_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;속도수정
+@SKILL_SPEED_3782, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 5000
+
+;　구상의 표시와 그 타입
+@SKILL_MESSAGE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+
+;전투시 이외에 사용 가능한가
+@SKILL_ACTIONABLE_FIELD_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;스킬변화？용 랭크
+@SKILL_RANK_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;템플릿용、추가효과 시리즈
+;추가효과 스테이터스
+@SKILL_ADDTIONAL_STATE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과상성
+@SKILL_ADDTIONAL_TYPE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 기본 부여 확률
+@SKILL_ADDTIONAL_BASE_RATE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;추가효과 부여확률 상한
+@SKILL_ADDTIONAL_MAX_RATE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+;====================================================
+;스킬 및 행동의 실행
+;====================================================
+@ACTION_3782,ARG,ARG:1
+#LOCALSIZE 3
+#LOCALSSIZE 2
+;코스트를 지불한다
+;CALL PAY_COST,ARG,3782
+
+CALL SKILL_CURE_STATE_3782,CFLAG:ARG:상태이상
+IF RESULT == 1
+	PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(ARG),20,LEFT%　>>>　엄폐물에 잠복！
+	PRINTFORML 　　TARGET:[{ARG:1,2}] %CALLNAME:(ARG),20,LEFT%　>>>　FLAME 치료！
+	CFLAG:ARG:상태이상 = 0
+	CFLAG:ARG:상태이상경과턴수 = 0
+ENDIF
+
+CFLAG:ARG:방어강화 = MIN(32, CFLAG:ARG:방어강화 + 8)
+CFLAG:ARG:회피강화 = MIN(32, CFLAG:ARG:회피강화 + 8)
+CFLAG:ARG:잠복플래그 = 1
+CFLAG:ARG:입력행동 = -1
+CFLAG:ARG:방어플래그 = 1
+
+PRINTFORML 엄폐물에 잠복!
+PRINTFORMW 1턴 한정 방어력, 회피율 획득!
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+
+;====================================================
+;戦闘中以外での実行
+;====================================================
+
+
+;====================================================
+;실행내용 여기까지
+;====================================================
+;　 설명문 표시
+@SKILL_EXPLAIN_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL XCOM 병사들의 자기 방어 기술. 엄폐물에 의지해 몸을 낮춰 방어 태세를 갖추고 상태이상 FLAME을 회복한다.
+PRINTL 1턴 한정으로 방어 2단계, 회피 2단계 상승 및 GUARD 판정.
+
+;계승에 필요한 부위
+@계승부위_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+;사용조건
+@SKILL_SPECIAL_ACTIONABLE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@SKILL_SPECIAL_TARGET_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SIF CFLAG:POS(ARG):상태이상 == 0
+	RETURN 0
+CALLFORM SKILL_CURE_STATE_3782,(CFLAG:POS(ARG):상태이상)
+RETURN RESULT
+
+@SKILL_T_RESERVE_3782
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+@SKILL_CURE_STATE_3782,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE GET_STATE(ARG)
+	CASE "FLAME"
+		RETURN 1
+	CASEELSE
+		RETURN 0
+ENDSELECT

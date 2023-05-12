@@ -1,0 +1,85 @@
+﻿;======================================================
+;장비품 데이터. XCOM2 WOTC TLP용
+;전자기합금탄환
+;======================================================
+
+@기본능력수정_2237,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE GET_BASESTATUS(ARG)
+ENDSELECT
+RETURN 0
+
+@전투능력수정_2237,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE GET_BATTLESTATUS(ARG)
+ENDSELECT
+RETURN 0
+
+@방어상성_2237,ARG,ARG:1 = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+SELECTCASE ARG
+ENDSELECT
+RETURN 100
+
+@공격상성_2237, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN GET_TYPE_NUM("비구")
+
+@최저공격횟수_2237, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@최대공격횟수_2237, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@사거리_2237, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 2
+
+@공격범위_2237, ARG = -1
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@장비부위_2237
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN GET_EQUIPNUM("검")
+
+;-----------------------------
+;- 조건ㆍ설명처리
+;-----------------------------
+@필요레벨_2237
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@장비조건_2237,ARG
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 1
+
+@장비해설_2237
+#LOCALSIZE 2
+#LOCALSSIZE 2
+PRINTL 어드밴트 전용 전자기 합금 탄환. 비구 상성으로 공격하게 한다. 능력 없음.
+;-----------------------------
+;- 구입ㆍ인수인계
+;-----------------------------
+@구입조건_2237
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0
+
+@인계가능불가능_2237
+#LOCALSIZE 2
+#LOCALSSIZE 2
+RETURN 0

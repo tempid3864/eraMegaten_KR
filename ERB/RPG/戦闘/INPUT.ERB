@@ -61,6 +61,8 @@
 ;	046		2021/12/07		JK好き					@HAVE_EXTRA @HAVE_MAGICを新規作成し、@SHOW_COMMAND_LIST及び@INPUT_COM_SKILLにEXTRA/MAGICを持っていない場合に選択出来ないようにする処理を추가
 ;	020		2022/06/07		Collared				UI 정리 프로젝트에 따라 일부 번호 변경
 ;	021		2022/09/17		kamedakeisuke(ﾟдﾟ)		Aion식 소환술 쪽 사양을 추가
+;
+;	KR_01	2023/05/12		Moscode					1체 소생 관련하여 XCOM2 안정화 스킬 관련 항목 추가
 ;_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/#
 
 ;==================================================================
@@ -155,8 +157,10 @@ FOR LOCAL,1,7
 			ELSEIF CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:스리스티]]
 				TARGETS =  >>> [--] 아군전체
 			;---- EDIT 025 ADD END
-			;1체蘇生 도반옥ㆍ반혼향ㆍ리캄ㆍ사마리캄ㆍトンリン芳香
-			ELSEIF CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:사마리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:도반옥]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:반혼향]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:통령「통령요시카」]]
+			;---- EDIT KR_01 MOD START -------------------------------
+			;1체 소생 도반옥ㆍ반혼향ㆍ리캄ㆍ사마리캄ㆍ통령 요시카+한글판 개조모드 XCOM 스킬 안정화
+			ELSEIF CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:사마리캄]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:도반옥]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:반혼향]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:통령「통령요시카」]] || CFLAG:(FLAG:LOCALS):입력행동 == [[스킬:안정화]]
+			;---- EDIT KR_01 MOD END ---------------------------------
 				;現타겟が蘇生대상か見る
 				CALL CHECK_TARGET_RESUSCITATION, FLAG:LOCALS
 				IF RESULT > -1 
