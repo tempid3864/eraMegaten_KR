@@ -2030,7 +2030,7 @@ RETURN 1
 
 	$INPUT_LOOP2
 	PRINTL 사용 가능한 스킬 카드
-	;継承部位考えると、キャラ造らずに処理通すのはちょっと無理そげ
+	;계승부위考えると、キャラ造らずに処理通すのはちょっと無理そげ
 	ADDCHARA DITEMTYPE:ARG:페르소나("NO")
 	IF ARG >= 50
 		CALLF STRFLAG_EV("초기페르소나스킬습득", 1, [[이벤트:페르소나]])
