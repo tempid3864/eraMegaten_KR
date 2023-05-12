@@ -37,6 +37,9 @@
 	PRINTFORML
 	PRINTFORMW 클리어 보상 : 강력한 능력치를 가진 선택된 자의 무기 5종과 사이오닉 리피터 지급. (엔딩으로 넘어갈 시에도 보상은 지급됩니다)
 	PRINTFORML
+	PRINTFORMW 참고:사령관의 아바타는 강제로 파티에 참여하며, 전투중에는 동료마 소환이 불가능합니다.
+	PRINTFORMW 또한, 사령관의 아바타가 사망할 시 바로 게임오버가 되니 주의하십시요.
+	PRINTFORML
 	PRINTL
 ;====================
 ;내용
@@ -4586,6 +4589,7 @@ PRINTW 　　　　　　　　―― Ending No.021 (XCOM2 War of the Chosen 엔
 	ELSEIF RESULT == 1
 		PRINTFORMW 클리어 보상! 엘더를 무너뜨리고 지구를 해방한 그대를 위한 특전!
 		PRINTFORMW 『선택된 자의 무기 5종과 사이오닉 리피터가 지급되었습니다!』
+		PRINTFORMW 참고:다음 회차로 넘어갈 시, 혹은 이 엔딩을 2회 이상 달성했을시 무기 5종과 사이오닉 리피터의 숫자는 무조건 1개로 고정됩니다.
 		ITEM:카타나 = 1
 		ITEM:아라시 = 1
 		ITEM:검은창 = 1
