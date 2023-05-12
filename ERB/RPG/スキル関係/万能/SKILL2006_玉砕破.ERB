@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_2006,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:E졸다트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:E졸다트]])
 	RESULTS = Blitz bombe
 ELSE
 	RESULTS = 옥쇄파
@@ -36,7 +36,7 @@ RETURN 5
 
 ;　상성
 @SKILL_TYPE_2006,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:E졸다트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:E졸다트]])
 	RETURN 6
 ELSE
 	RETURN 17
@@ -133,7 +133,7 @@ SIF CFLAG:ARG:상태이상 < GET_STATE_NUM("DYING")
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2006
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:E졸다트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:E졸다트]]
 PRINTL 전광기관을 통해 생명력을 변환해 목숨과 맞바꿔 적 전체에 전격 데미지
 PRINTL 옥쇄파의 E졸다트 전용화 스킬
 ELSE

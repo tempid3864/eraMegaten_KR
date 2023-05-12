@@ -36,7 +36,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 160
 		LOCAL = 160
-		IF NO:(ARG:1) == [[キャラ:요시토라]]
+		IF NO:(ARG:1) == [[캐릭터:요시토라]]
 			LOCAL += 125 * (MIN(MAX(51,MAXBASE:(ARG:1):LV),70) - 50) / 20
 		ELSEIF ABL:(ARG:1):속성LD == 1 && MAXBASE:(ARG:1):LV > 69
 			SIF TALENT:(ARG:1):매혹
@@ -53,7 +53,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 116
 		LOCAL = 116
-		IF NO:(ARG:1) == [[キャラ:요시토라]]
+		IF NO:(ARG:1) == [[캐릭터:요시토라]]
 			LOCAL += 70 * (MIN(MAX(51,MAXBASE:(ARG:1):LV),70) - 50) / 20
 		ELSEIF ABL:(ARG:1):속성LD == 1 && MAXBASE:(ARG:1):LV > 69
 			SIF TALENT:(ARG:1):매력
@@ -107,7 +107,7 @@ RETURN 0
 RETURN GET_EQUIPNUM("검")
 
 @장비추가스킬_2406,ARG,ARG:1 = -1
-IF ARG:1 < 0 || NO:(ARG:1) == [[キャラ:요시토라]]
+IF ARG:1 < 0 || NO:(ARG:1) == [[캐릭터:요시토라]]
 	SELECTCASE ARG
 	CASE 0
 		RETURN 3538
@@ -123,7 +123,7 @@ RETURN 0
 ;一体まで
 SIF EQUIPMENT_COUNT(2406) >= 1
 	RETURN 0
-SIF NO:ARG == [[キャラ:요시토라]]
+SIF NO:ARG == [[캐릭터:요시토라]]
 	RETURN 1
 SIF ABL:ARG:속성LD != 1
 	RETURN 0

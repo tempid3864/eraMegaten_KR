@@ -5,9 +5,9 @@
 ;스킬명
 @SKILL_NAME_941, ARG
 ;天堂真矢が使用する場合、ケラウノスに（악마변신前提）
-IF SKILL_CHANGE(ARG, [[キャラ:마야（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마야（무대소녀）]])
 	RESULTS = 솟구치는뇌정
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RESULTS = 토르해머ㆍ벽뢰
 ;それ以外
 ELSE
@@ -20,7 +20,7 @@ RETURN 90
 
 ;　위력
 @SKILL_POWER_941, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 450
 ELSE
 	RETURN 320
@@ -41,7 +41,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_941, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 26
 ELSE
 	RETURN 17
@@ -136,12 +136,12 @@ CALL ATTACK_SINGLE, ARG, LOCAL, 941
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_941
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:마야（무대소녀）]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마야（무대소녀）]]
 	PRINTL 케라우노스로부터 흘러나온 천둥이 사악한 것을 쳐서 멸한다.
 	PRINTL 적 한 체에 전격 속성의 물리공격으로 대 데미지＋감전. 후열 사용 가능.
 ELSE
 	PRINTL [후열] 뇌신 토르의 망치와도 같은 일격. 적 1체에 전격속성 대 물리데미지. (낮은 확률로 SHOCK)
-	IF U > 0 && U < CHARANUM && NO:U == [[キャラ:블레이드(X)]] && EQUIP:U:악세서리 == 5349
+	IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:블레이드(X)]] && EQUIP:U:악세서리 == 5349
 		SETCOLOR 0x14ffd7
 		PRINTL 벽색의뇌정 장비중　위력 강화
 		RESETCOLOR

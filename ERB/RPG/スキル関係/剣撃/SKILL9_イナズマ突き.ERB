@@ -4,12 +4,12 @@
 ;스킬명
 @SKILL_NAME_9, ARG
 ;ファントムが使用する場合ジェットㆍマグナムに
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = 제트ㆍ매그넘
 ;桐条美鶴Lv50以上。アルテミシア限定
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
 	RESULTS = 꾸ㆍ드르와
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RESULTS = 번개찌르기ㆍ벽뢰
 ELSE
 	RESULTS = 번개찌르기
@@ -21,9 +21,9 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_9, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 210
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 280
 ELSE
 	RETURN 225
@@ -44,9 +44,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_9, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 6
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 9
 ELSE
 	RETURN 7
@@ -56,14 +56,14 @@ ENDIF
 @SKILL_TYPE_9, ARG
 #LOCALSSIZE 3
 #LOCALSIZE 4
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	;타격
 	RETURN 2
 ;桐条美鶴Lv50以上。アルテミシア限定
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
 	;전격
 	RETURN 6
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("검격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -116,7 +116,7 @@ RETURN 1
 
 ;　사거리
 @SKILL_RANGE_9, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -158,7 +158,7 @@ RETURN 0
 RETURN 4
 
 @SKILL_RANKUP_9
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	;サンダーフィスト
 	D:1 = 257
 	;ランクアップ先は１つ
@@ -188,7 +188,7 @@ RETURN 70
 ;====================================================
 @ACTION_9, ARG, ARG:1
 LOCAL = POS(ARG:1)
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	CALL SKILL_TYPE_9, ARG
 	PRINT 상성판정：
 	SELECTCASE RESULT
@@ -212,7 +212,7 @@ CALL ATTACK_SINGLE, ARG, LOCAL, 9
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_9
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:미츠루]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:미츠루]]
 	PRINTL 키리조 미츠루의 스킬。
 	PRINTL 커맨드는 ←모은 뒤→+AorB。
 	PRINTL 파고들어 적 1체를 검으로 찌르는 돌진기。
@@ -225,12 +225,12 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:미츠루]]
 	;PRINTL SB版は発生がかなり早く、硬直もB版より短い。
 	;PRINTL またB版と同じように空中ヒットさせると相手をスライドダウンさせるため、硬直の短さによって容易に追撃を行うことができる。単発ダメージはB版より低い。
 	;PRINTL スーパーキャンセル対応。
-ELSEIF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+ELSEIF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 좌완 플라즈마ㆍ스테이크 3개를 대전시켜 후려갈겨 적 1체를 공격하고、감전시킨다。
 	PRINTL 덧붙여 게슈펜스트 계열기 중에는 업어치기를 후 이를 때려박는 컴뱃 패턴을 가진 기종도 존재한다。
 ELSE
 	PRINTL 손에 쥔 무기로 적 1체를 공격해、감전시킨다。후열 사용 가능。
-	IF U > 0 && U < CHARANUM && NO:U == [[キャラ:블레이드(X)]] && EQUIP:U:악세서리 == 5349
+	IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:블레이드(X)]] && EQUIP:U:악세서리 == 5349
 		SETCOLOR 0x14ffd7
 		PRINTL 벽색의뇌정 장비중　위력강화／상성변경：검격＋전격
 		RESETCOLOR

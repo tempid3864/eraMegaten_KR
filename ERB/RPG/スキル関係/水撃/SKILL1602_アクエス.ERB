@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_1602,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RESULTS = 수열참
 ELSE
 	RESULTS = 아쿠에스
@@ -15,7 +15,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_1602, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 290
 ELSE
 	RETURN 235
@@ -36,7 +36,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_1602,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 9
 ELSE
 	RETURN 6
@@ -49,7 +49,7 @@ RETURN 13
 
 ;　1 EXTRA　2 MAGIC
 @SKILL_DECIDE_TYPE_1602, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -58,7 +58,7 @@ ENDIF
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_1602, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -71,7 +71,7 @@ RETURN 1
 
 ;　사거리
 @SKILL_RANGE_1602,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 1
 ELSE
 	RETURN 3
@@ -154,7 +154,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,1602
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1602
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:키사라기]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:키사라기]])
 	PRINTL 『물』의 기를 두른 비수류의 참격을 날린다
 	PRINTL 적 1체에 수격 물리데미지를 준다。
 ELSE

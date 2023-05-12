@@ -111,12 +111,12 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트병사]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트장교]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:섹토이드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트병사]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트장교]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:섹토이드]],1000)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
-	CALL SET_ENEMY,7,[[キャラ:어드밴트병사]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트병사]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 410
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8503
@@ -124,7 +124,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
-	CALL SET_ENEMY,8,[[キャラ:어드밴트병사]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트병사]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 410
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8503
@@ -132,7 +132,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 420, 540)
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],5,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 397
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 452
@@ -141,14 +141,14 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
-	CALL SET_ENEMY,10,[[キャラ:어드밴트병사]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트병사]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 410
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;섹토이드 체력 7 고정 (420)
-	CALL SET_ENEMY,11,[[キャラ:섹토이드]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:섹토이드]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 376
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 371
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -205,7 +205,7 @@ NEXT
 	WAIT
 
 	;어쌔신
-	CALL SET_ENEMY,9,[[キャラ:어쌔신]],1,0,1
+	CALL SET_ENEMY,9,[[캐릭터:어쌔신]],1,0,1
 	BASE:(CHARANUM-1):ＭＡＧ = 19800
 	NAME:(CHARANUM-1) = 어쌔신
 	CALLNAME:(CHARANUM-1) = 어쌔신

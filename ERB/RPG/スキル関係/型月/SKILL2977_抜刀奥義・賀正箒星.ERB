@@ -112,7 +112,7 @@ RETURN 23
 ;CALL ATTACK_SINGLE,ARG,LOCAL,2977
 
 ;おまじない：琥珀が使用した場合のみ貫通
-IF 현HP비율(ARG) < 33 && SKILL_CHANGE(ARG, [[キャラ:코하쿠]])
+IF 현HP비율(ARG) < 33 && SKILL_CHANGE(ARG, [[캐릭터:코하쿠]])
 	PRINTFORML %CALLNAME:ARG,20% >>>>> 내일로 나아가는 발걸음이 발도술에 힘을 실어준다！
 	IF CFLAG:ARG:포지션 < 7
 		LOCAL:1 = 7

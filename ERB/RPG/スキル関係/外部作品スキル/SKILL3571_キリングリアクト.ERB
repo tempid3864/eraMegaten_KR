@@ -1,6 +1,6 @@
 ﻿;스킬명
 @SKILL_NAME_3571,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:포말하우트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:포말하우트]])
 	RESULTS = 커스 리액트
 ELSE
 	RESULTS = 킬링 리액트
@@ -116,7 +116,7 @@ RETURN 0
 ;====================================================
 @ACTION_3571,ARG,ARG:1
 TFLAG:킬링리액트 = MAX(1, TFLAG:킬링리액트)
-IF SKILL_CHANGE(ARG, [[キャラ:포말하우트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:포말하우트]])
 	PRINTFORMW %ARG는% 대상을 저주상태로 만든 경우、추가행동을 하게 되었다！
 ELSE
 	PRINTFORMW %ARG는% 대상을 전투불능으로 만든 경우、추가행동을 하게 되었다！
@@ -125,7 +125,7 @@ ENDIF
 @SPECIAL_ACTION_3571,ARG
 #LOCALSIZE 3
 ;ARG:0 使用者
-IF SKILL_CHANGE(ARG, [[キャラ:포말하우트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:포말하우트]])
 	;生きてるターゲット選出
 	WHILE 1
 		LOCAL:2 = RAND:6 + 1
@@ -138,7 +138,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:포말하우트]])
 	FOR LOCAL, 7, 17
 		SIF POS(LOCAL) == -1 || CFLAG:POS(LOCAL):상태이상 == GET_STATE_NUM("DYING")
 			CONTINUE
-		IF NO:(POS(LOCAL)) == [[キャラ:포말하우트]]
+		IF NO:(POS(LOCAL)) == [[캐릭터:포말하우트]]
 			;妖花烈風 改め 闇の疾風
 			SETCOLOR 0xff0033
 			PRINTFORML ┏>CHARA━━━━━━━━━━┓　┏>ACT━━━━━━━━━━━━━━━━━━┓
@@ -168,7 +168,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3571
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:포말하우트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:포말하우트]]
 	PRINTL 적을 저주상태로 만든 경우、추가로 행동한다
 ELSE
 	PRINTL 적을 빈사시킨 경우、추가로 행동한다

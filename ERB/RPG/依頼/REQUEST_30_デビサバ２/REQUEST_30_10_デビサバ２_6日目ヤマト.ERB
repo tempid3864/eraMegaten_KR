@@ -274,7 +274,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		MONEY += 100000
 		;- キャラ추가(ヤマト勢힘)
 		
-		CALL ADD_NEW_COMPANION,[[キャラ:야마토]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:야마토]],1000
 		;추가した場合
 		IF RESULT
 			;조교有無関係なしに전투に참가できる
@@ -283,7 +283,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:케이타]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:케이타]],1000
 		;추가した場合
 		IF RESULT
 			;조교有無関係なしに전투に참가できる
@@ -292,7 +292,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:후미]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:후미]],1000
 		;추가した場合
 		IF RESULT
 			;조교有無関係なしに전투に참가できる
@@ -301,7 +301,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:마코토]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:마코토]],1000
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -310,7 +310,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:다이치]],500
+		CALL ADD_NEW_COMPANION,[[캐릭터:다이치]],500
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -319,7 +319,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:데빌서바２주인공]],500
+		CALL ADD_NEW_COMPANION,[[캐릭터:데빌서바２주인공]],500
 		;추가した場合は초기설정を行う
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる

@@ -382,7 +382,7 @@ RETURNF 5 * ARG * (ARG+1) * (ARG+2) / 3 * (ARG:1 ? 5 # 4) / 4
 			$AUTO_LEVELUP_LOOP
 			;特定のキャラの레벨アップをある程度方向づけたい場合
 			;例、魔=知>耐＝速>운>힘の場合
-			IF ARG == GETCHARA([[キャラ:에이린]])
+			IF ARG == GETCHARA([[캐릭터:에이린]])
 				SELECTCASE RAND:17
 					CASE 0
 						LOCAL:2 += 1

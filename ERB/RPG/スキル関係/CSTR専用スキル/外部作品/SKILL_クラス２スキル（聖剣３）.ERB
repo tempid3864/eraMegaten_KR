@@ -6,7 +6,7 @@
 @SKILL_NAME_クラス２スキル（聖剣３）,ARG
 #DIM クラス技変数
 クラス技変数 = PU_SKILLNUM_GET(ARG,"クラス２スキル（聖剣３）")
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	IF CFLAG:ARG:900 == 1
 		RESULTS = 진공파동창
 	ELSEIF CFLAG:ARG:900 == 2
@@ -14,7 +14,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 	ELSE
 		RESULTS = 선풍창
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	IF CFLAG:ARG:900 == 1
 		RESULTS = 폴짝폴짝
 	ELSEIF CFLAG:ARG:900 == 2
@@ -22,7 +22,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 	ELSE
 		RESULTS = 콩콩
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	IF CFLAG:ARG:900 == 1
 		RESULTS = 핑크 타이푼
 	ELSEIF CFLAG:ARG:900 == 2
@@ -42,7 +42,7 @@ RETURN 100
 @SKILL_POWER_クラス２スキル（聖剣３）, ARG
 #DIM クラス技変数
 クラス技変数 = PU_SKILLNUM_GET(ARG,"クラス２スキル（聖剣３）")
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	IF CFLAG:ARG:900 == 1
 		;クラス４解禁時
 		SIF CFLAG:ARG:902 != 0
@@ -64,7 +64,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 	ELSE
 		RETURN 180
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	IF CFLAG:ARG:900 == 1
 		;クラス４解禁時
 		SIF CFLAG:ARG:902 != 0
@@ -86,7 +86,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 	ELSE
 		RETURN 180
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	IF CFLAG:ARG:900 == 1
 		;クラス４解禁時
 		SIF CFLAG:ARG:902 != 0
@@ -114,11 +114,11 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -126,11 +126,11 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -150,7 +150,7 @@ RETURN 50
 @SKILL_TYPE_クラス２スキル（聖剣３）,ARG
 #LOCALSSIZE 5
 #LOCALSIZE 4
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("충격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -181,7 +181,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("타격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -212,7 +212,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("질풍")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -253,11 +253,11 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_クラス２スキル（聖剣３）, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 2
 ELSE
 	RETURN 1
@@ -270,11 +270,11 @@ RETURN 1
 
 ;射程　1:S 2:M 3:L
 @SKILL_RANGE_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 3
 ELSE
 	RETURN 3
@@ -282,13 +282,13 @@ ENDIF
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	SIF CFLAG:ARG:900 == 2
 		RETURN 2
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -296,7 +296,7 @@ ENDIF
 
 ;拡散範囲　アンジェラのみ拡散型
 @SKILL_SPREAD_クラス２スキル（聖剣３）,ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 RETURN 0
 
@@ -323,17 +323,17 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	;마코토(페르소나5)空波動で転倒
 	SIF CFLAG:ARG:900 == 1
 		RETURN GET_STATE_NUM("SLIP")
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	;だっしゅで睡眠
 	SIF CFLAG:ARG:900 == 2
 		RETURN GET_STATE_NUM("SLEEP")
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	;ピンクタイフーンで魅了
 	SIF CFLAG:ARG:900 == 1
 		RETURN GET_STATE_NUM("CHARM")
@@ -345,15 +345,15 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_クラス２スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	SIF CFLAG:ARG:900 == 1
 		RETURN GET_TYPE_NUM("충격")
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	SIF CFLAG:ARG:900 == 2
 		RETURN GET_TYPE_NUM("정신")
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	SIF CFLAG:ARG:900 == 1
 		RETURN GET_TYPE_NUM("정신")
 	RETURN 0
@@ -385,7 +385,7 @@ RETURN 0
 ;ヒット時ダメージ前処理
 ;====================================================
 @SKILL_HIT_EFFECT_クラス２スキル（聖剣３）,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	;闇時
 	IF CFLAG:ARG:900 == 2
 		CFLAG:(ARG:1):방어강화 = MAX(-16, CFLAG:(ARG:1):방어강화 - 4)
@@ -402,7 +402,7 @@ ENDIF
 #LOCALSIZE 4
 #DIM クラス技変数
 クラス技変数 = PU_SKILLNUM_GET(ARG,"クラス２スキル（聖剣３）")
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	;光時、攻撃前に強化
 	IF CFLAG:ARG:900 == 1
 		IF CFLAG:(ARG):PT플래그 == 0
@@ -422,7 +422,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 		PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격ㆍ회피가 UP！
 	ENDIF
 	CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	IF CFLAG:ARG:900 == 1
 		IF ARG:1 == 19
 			LOCAL:2 = 1
@@ -442,7 +442,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 		PRINTFORMW \@ CFLAG:ARG:PT플래그 > 0 ? 아군 # 적 \@의 운다계 효과를 지워버렸다！
 	ENDIF
 	CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	IF CFLAG:ARG:900 == 2
 		;闇状態であり、HP５％以上でかつ魔法威力強化が32未満の場合、５％消費して魔法威力強化
 		IF BASE:ARG:ＨＰ > (MAXBASE:ARG:ＨＰ / 20) && CFLAG:ARG:마법위력강화 < 32
@@ -461,7 +461,7 @@ CALL SKILLGAGE_D_SET,ARG,クラス技変数,3
 ;====================================================
 ;　 설명문 표시
 @SKILL_EXPLAIN_クラス２スキル（聖剣３）,ARG
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:리스]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:리스]]
 	IF CFLAG:ARG:900 == 1
 		PRINTL 『진공선풍창』
 		;クラス４解禁時
@@ -504,7 +504,7 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:리스]]
 	ELSE
 		PRINTL 클래스 체인지를 거치기 전의 스킬。적 １열에 충격ㆍ검격의 복합속성으로 중위력의 물리공격。
 	ENDIF
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:샤를로트]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:샤를로트]]
 	IF CFLAG:ARG:900 == 1
 		PRINTL 『じゃんぷ』
 		;クラス４解禁時
@@ -546,7 +546,7 @@ ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:샤를로트]]
 	ELSE
 		PRINTL 클래스 체인지를 거치기 전의 스킬。적 １열에打撃ㆍ破魔の複合属性で中威力の魔法攻撃。
 	ENDIF
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:안젤라]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:안젤라]]
 	IF CFLAG:ARG:900 == 1
 		PRINTL 『ピンクタイフーン』
 		;クラス４解禁時
@@ -606,13 +606,13 @@ RETURN 1
 #DIM クラス技変数
 クラス技変数 = PU_SKILLNUM_GET(ARG,"クラス２スキル（聖剣３）")
 SETCOLOR 0x999999
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	SIF SKILLGAGE_D_GET(ARG,クラス技変数) > 0
 		PRINTFORML 클래스 스킬 쿨다운：앞으로 {SKILLGAGE_D_GET(ARG,クラス技変数)}턴
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	SIF SKILLGAGE_D_GET(ARG,クラス技変数) > 0
 		PRINTFORML 클래스 스킬 쿨다운：앞으로 {SKILLGAGE_D_GET(ARG,クラス技変数)}턴
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	SIF SKILLGAGE_D_GET(ARG,クラス技変数) > 0
 		PRINTFORML 클래스 스킬 쿨다운：앞으로 {SKILLGAGE_D_GET(ARG,クラス技変数)}턴
 ENDIF

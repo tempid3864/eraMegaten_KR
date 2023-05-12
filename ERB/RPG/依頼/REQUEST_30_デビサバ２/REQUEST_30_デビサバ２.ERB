@@ -238,9 +238,9 @@ SELECTCASE L_FLAG_REQ
 	CASE 1000 TO 1099
 		
 		;大阪勢の面々が전투참가불가능になる또는매각とかされていなくなる
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:야마토]]) < 0 || GETCHARA([[キャラ:후미]]) < 0 || GETCHARA([[キャラ:케이타]]) < 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:야마토]]) < 0 || GETCHARA([[캐릭터:후미]]) < 0 || GETCHARA([[캐릭터:케이타]]) < 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:마코토]]) < 0 || CFLAG:GETCHARA([[キャラ:마코토]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:마코토]]) < 0 || CFLAG:GETCHARA([[캐릭터:마코토]]):전투참가불가능 > 0)
 			RETURN 0
 		
 		;- CHK:이벤트플래그
@@ -268,13 +268,13 @@ SELECTCASE L_FLAG_REQ
 	CASE 2000 TO 2099
 		
 		;名古屋勢の面々が전투참가불가능になる또는매각とかされていなくなる
-		SIF GETCHARA([[キャラ:아이리]]) < 0 || CFLAG:GETCHARA([[キャラ:아이리]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:아이리]]) < 0 || CFLAG:GETCHARA([[캐릭터:아이리]]):전투참가불가능 > 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:오토메]]) < 0 || CFLAG:GETCHARA([[キャラ:오토메]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:오토메]]) < 0 || CFLAG:GETCHARA([[캐릭터:오토메]]):전투참가불가능 > 0
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:죠]]) < 0 || CFLAG:(GETCHARA([[キャラ:죠]])):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:죠]]) < 0 || CFLAG:(GETCHARA([[캐릭터:죠]])):전투참가불가능 > 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:로나우도]]) < 0 || CFLAG:(GETCHARA([[キャラ:로나우도]])):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:로나우도]]) < 0 || CFLAG:(GETCHARA([[캐릭터:로나우도]])):전투참가불가능 > 0)
 			RETURN 0
 		
 		;- CHK:이벤트플래그
@@ -306,18 +306,18 @@ SELECTCASE L_FLAG_REQ
 	CASE 3000 TO 3099
 		
 		;이오と아이리がいなくなる
-		SIF GETCHARA([[キャラ:이오]]) < 0
+		SIF GETCHARA([[캐릭터:이오]]) < 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:아이리]]) < 0 || CFLAG:GETCHARA([[キャラ:아이리]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:아이리]]) < 0 || CFLAG:GETCHARA([[캐릭터:아이리]]):전투참가불가능 > 0
 			RETURN 0
 		;東京勢が仲間になった後、전투참가불가능になる또는매각とかされていなくなる
-		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[キャラ:데빌서바２주인공]]) < 0
+		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[캐릭터:데빌서바２주인공]]) < 0
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:다이치]]) < 0 || CFLAG:GETCHARA([[キャラ:다이치]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:다이치]]) < 0 || CFLAG:GETCHARA([[캐릭터:다이치]]):전투참가불가능 > 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:히나코]]) < 0 || CFLAG:GETCHARA([[キャラ:히나코]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:히나코]]) < 0 || CFLAG:GETCHARA([[캐릭터:히나코]]):전투참가불가능 > 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[キャラ:준고]]) < 0 || CFLAG:GETCHARA([[キャラ:준고]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && (GETCHARA([[캐릭터:준고]]) < 0 || CFLAG:GETCHARA([[캐릭터:준고]]):전투참가불가능 > 0)
 			RETURN 0
 		
 		;- CHK:이벤트플래그
@@ -345,20 +345,20 @@ SELECTCASE L_FLAG_REQ
 	CASE 4000 TO 4099
 		
 		;이오と아이리がいなくなる
-		SIF GETCHARA([[キャラ:이오]]) < 0
+		SIF GETCHARA([[캐릭터:이오]]) < 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:아이리]]) < 0 || CFLAG:GETCHARA([[キャラ:아이리]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:아이리]]) < 0 || CFLAG:GETCHARA([[캐릭터:아이리]]):전투참가불가능 > 0
 			RETURN 0
 		;東京勢とサダクが仲間になった後、전투참가불가능になる또는매각とかされていなくなる
-		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[キャラ:사다크]]) < 0
+		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[캐릭터:사다크]]) < 0
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[キャラ:데빌서바２주인공]]) < 0
+		SIF L_FLAG_EVENT_DIGIT >= 10 && GETCHARA([[캐릭터:데빌서바２주인공]]) < 0
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[キャラ:다이치]]) < 0 || CFLAG:GETCHARA([[キャラ:다이치]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[캐릭터:다이치]]) < 0 || CFLAG:GETCHARA([[캐릭터:다이치]]):전투참가불가능 > 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[キャラ:히나코]]) < 0 || CFLAG:GETCHARA([[キャラ:히나코]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[캐릭터:히나코]]) < 0 || CFLAG:GETCHARA([[캐릭터:히나코]]):전투참가불가능 > 0)
 			RETURN 0
-		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[キャラ:준고]]) < 0 || CFLAG:GETCHARA([[キャラ:준고]]):전투참가불가능 > 0)
+		SIF L_FLAG_EVENT_DIGIT >= 10 && ( GETCHARA([[캐릭터:준고]]) < 0 || CFLAG:GETCHARA([[캐릭터:준고]]):전투참가불가능 > 0)
 			RETURN 0
 		
 		;- CHK:이벤트플래그
@@ -385,7 +385,7 @@ SELECTCASE L_FLAG_REQ
 				RETURN 1
 			; [50-59] 新しき明日へ
 			CASE 50 TO 59 
-				LOCAL = GETCHARA([[キャラ:사다크]])
+				LOCAL = GETCHARA([[캐릭터:사다크]])
 				;サダクが함락してない
 				SIF !TALENT:LOCAL:3 && !TALENT:LOCAL:4 && !TALENT:LOCAL:5 && !TALENT:LOCAL:6 && !TALENT:LOCAL:7 && !TALENT:LOCAL:8
 					RETURN 0
@@ -399,15 +399,15 @@ SELECTCASE L_FLAG_REQ
 	CASE 3100 TO 3199
 		
 		;東京勢と아이리が전투참가불가능になる또는매각とかされていなくなる
-		SIF GETCHARA([[キャラ:이오]]) < 0 || GETCHARA([[キャラ:데빌서바２주인공]]) < 0
+		SIF GETCHARA([[캐릭터:이오]]) < 0 || GETCHARA([[캐릭터:데빌서바２주인공]]) < 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:아이리]]) < 0 || CFLAG:GETCHARA([[キャラ:아이리]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:아이리]]) < 0 || CFLAG:GETCHARA([[캐릭터:아이리]]):전투참가불가능 > 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:다이치]]) < 0 || CFLAG:GETCHARA([[キャラ:다이치]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:다이치]]) < 0 || CFLAG:GETCHARA([[캐릭터:다이치]]):전투참가불가능 > 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:히나코]]) < 0 || CFLAG:GETCHARA([[キャラ:히나코]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:히나코]]) < 0 || CFLAG:GETCHARA([[캐릭터:히나코]]):전투참가불가능 > 0
 			RETURN 0
-		SIF GETCHARA([[キャラ:준고]]) < 0 || CFLAG:GETCHARA([[キャラ:준고]]):전투참가불가능 > 0
+		SIF GETCHARA([[캐릭터:준고]]) < 0 || CFLAG:GETCHARA([[캐릭터:준고]]):전투참가불가능 > 0
 			RETURN 0
 		
 		;- CHK:이벤트플래그
@@ -427,17 +427,17 @@ SELECTCASE L_FLAG_REQ
 			; [30-39] 세계回帰ルート
 			CASE 30 TO 39
 				;サダク以外のデビサバ２キャラが誰か一人でもいない
-				SIF GETCHARA([[キャラ:야마토]]) < 0 || GETCHARA([[キャラ:후미]]) < 0 || GETCHARA([[キャラ:케이타]]) < 0
+				SIF GETCHARA([[캐릭터:야마토]]) < 0 || GETCHARA([[캐릭터:후미]]) < 0 || GETCHARA([[캐릭터:케이타]]) < 0
 					RETURN 0
-				SIF GETCHARA([[キャラ:티코]]) < 0 || GETCHARA([[キャラ:코하루]]) < 0
+				SIF GETCHARA([[캐릭터:티코]]) < 0 || GETCHARA([[캐릭터:코하루]]) < 0
 					RETURN 0
-				SIF GETCHARA([[キャラ:오토메]]) < 0 || CFLAG:GETCHARA([[キャラ:오토메]]):전투참가불가능 > 0
+				SIF GETCHARA([[캐릭터:오토메]]) < 0 || CFLAG:GETCHARA([[캐릭터:오토메]]):전투참가불가능 > 0
 					RETURN 0
-				SIF GETCHARA([[キャラ:로나우도]]) < 0 || CFLAG:GETCHARA([[キャラ:로나우도]]):전투참가불가능 > 0
+				SIF GETCHARA([[캐릭터:로나우도]]) < 0 || CFLAG:GETCHARA([[캐릭터:로나우도]]):전투참가불가능 > 0
 					RETURN 0
-				SIF GETCHARA([[キャラ:죠]]) < 0 || CFLAG:GETCHARA([[キャラ:죠]]):전투참가불가능 > 0
+				SIF GETCHARA([[캐릭터:죠]]) < 0 || CFLAG:GETCHARA([[캐릭터:죠]]):전투참가불가능 > 0
 					RETURN 0
-				SIF GETCHARA([[キャラ:마코토]]) < 0 || CFLAG:GETCHARA([[キャラ:마코토]]):전투참가불가능 > 0
+				SIF GETCHARA([[캐릭터:마코토]]) < 0 || CFLAG:GETCHARA([[캐릭터:마코토]]):전투참가불가능 > 0
 					RETURN 0
 				RESULTS = 나아가야 할 내일로（7TH DAY）
 				RETURN 1

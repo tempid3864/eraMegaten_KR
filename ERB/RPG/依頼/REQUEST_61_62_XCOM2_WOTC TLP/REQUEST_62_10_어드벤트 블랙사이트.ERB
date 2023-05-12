@@ -73,7 +73,7 @@ FOR A,1,7
 	ENDIF
 NEXT
 
-	CALL INCREASE_ANALYZE([[キャラ:제인켈리42]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:제인켈리42]],1000)
 
 	;XCOM병사. 제인 켈리42 등장
 	CALL ADD_NEW_COMPANION,8529,0
@@ -102,7 +102,7 @@ NEXT
 
 	;어드밴트 MEC 체력 7, 12. 체력 1당 60
 	;목표 체력 420, 720. 리바이어던 사양은 X3 = 2160, 레벨 40
-	CALL SET_ENEMY,8,[[キャラ:어드밴트MEC]],20,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트MEC]],20,0,0
 	NAME:(CHARANUM-1) = 중형 MEC
 	CALLNAME:(CHARANUM-1) = 중형 MEC
 	BASE:(CHARANUM-1):힘 = 15
@@ -118,7 +118,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;아르콘. 체력 수치를 3배로. 360 X 3 1080
-	CALL SET_ENEMY,9,[[キャラ:아르콘]],15,0,0
+	CALL SET_ENEMY,9,[[캐릭터:아르콘]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 882
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1029
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -166,7 +166,7 @@ NEXT
 	WAIT
 
 	;게이트키퍼 리바이어던 사양. HP 1800 X 4 = 7200
-	CALL SET_ENEMY,7,[[キャラ:게이트키퍼]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:게이트키퍼]],40,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 4
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6655
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 6969
@@ -176,7 +176,7 @@ NEXT
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 320, 540)
 	;장교용 리바이어던 사양 540 X 4 = 2160. 체력 수치만 같음
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],30,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1817
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2040
@@ -194,7 +194,7 @@ NEXT
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;고급 병사는 X2 960
-	CALL SET_ENEMY,10,[[キャラ:어드밴트병사]],15,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트병사]],15,0,0
 	BASE:(CHARANUM-1):힘 = 12
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -212,7 +212,7 @@ NEXT
 	;어드밴트 사제 체력 5, 10, 13 (300, 900, 780)
 	;사제의 성전사 능력. HP 40%를 사용하므로 사제는 체력이 높아야함.
 	;장교의 3배 체력. 3240
-	CALL SET_ENEMY,11,[[キャラ:어드밴트사제]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:어드밴트사제]],40,0,0
 	BASE:(CHARANUM-1):힘 = 15
 	BASE:(CHARANUM-1):지혜 = 20
 	BASE:(CHARANUM-1):마력 = 14
@@ -229,7 +229,7 @@ NEXT
 
 	;스펙터는 체력 1200으로 크게 상향
 	;리바이어던 사양은 X3 = 3600/레벨도 올려야함.
-	CALL SET_ENEMY,12,[[キャラ:스팩터]],25,0,0
+	CALL SET_ENEMY,12,[[캐릭터:스팩터]],25,0,0
 	BASE:(CHARANUM-1):힘 = 8
 	BASE:(CHARANUM-1):지혜 = 6
 	BASE:(CHARANUM-1):마력 = 6
@@ -245,7 +245,7 @@ NEXT
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
 	;목표 체력 7560
-	CALL SET_ENEMY,14,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,14,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6975
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 7408
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -256,7 +256,7 @@ NEXT
 	;어드밴트 방패병. 체력 6, 8 (360, 480)
 	;중장갑 방패병이므로 체력 수치를 X4 1920으로
 	;리바이어던 사양에서는 X2 = 3840, 레벨 40
-	CALL SET_ENEMY,15,[[キャラ:어드밴트방패병]],30,0,0
+	CALL SET_ENEMY,15,[[캐릭터:어드밴트방패병]],30,0,0
 	BASE:(CHARANUM-1):힘 = 20
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -273,7 +273,7 @@ NEXT
 
 	;섹토이드 체력 7 고정 (420)
 	;리바이어던 사양으로 X 3 = 1260, 레벨과 스텟만 낮음.
-	CALL SET_ENEMY,16,[[キャラ:섹토이드]],25,0,0
+	CALL SET_ENEMY,16,[[캐릭터:섹토이드]],25,0,0
 	BASE:(CHARANUM-1):힘 = 8
 	BASE:(CHARANUM-1):지혜 = 12
 	BASE:(CHARANUM-1):마력 = 12
@@ -304,7 +304,7 @@ NEXT
 
 	;어쌔신. 보스 플래그를 꺼버리는 대신 스텟이 높음!
 	;체력 9500
-	CALL SET_ENEMY,9,[[キャラ:어쌔신]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어쌔신]],30,0,0
 	BASE:(CHARANUM-1):ＭＡＧ = 446400
 	BASE:(CHARANUM-1):힘 += 10
 	BASE:(CHARANUM-1):지혜 += 10
@@ -357,14 +357,14 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트병사]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:뮤톤]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:아르콘]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:섹토포드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트병사]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:뮤톤]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:아르콘]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:섹토포드]],1000)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;고급 병사는 X2 960
-	CALL SET_ENEMY,7,[[キャラ:어드밴트병사]],15,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트병사]],15,0,0
 	BASE:(CHARANUM-1):힘 = 12
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -381,7 +381,7 @@ NEXT
 
 	;뮤톤 체력 8 고정 (480)
 	;리바이어던 사양일시 체력 수치 X4 1920 레벨 40
-	CALL SET_ENEMY,8,[[キャラ:뮤톤]],25,0,0
+	CALL SET_ENEMY,8,[[캐릭터:뮤톤]],25,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1565
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1842
 	CSTR:(CHARANUM-1):사고패턴 = 8507
@@ -390,7 +390,7 @@ NEXT
 
 	;외계인버서커 체력 15 고정 (60x15 = 900 X 4 = 3600)
 	;리바이어던 사양. 체력 수치만 같음.
-	CALL SET_ENEMY,9,[[キャラ:외계인버서커]],25,0,0
+	CALL SET_ENEMY,9,[[캐릭터:외계인버서커]],25,0,0
 	BASE:(CHARANUM-1):힘 = 20
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -405,7 +405,7 @@ NEXT
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
 	;목표 체력 7560
-	CALL SET_ENEMY,10,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6975
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 7408
 	CFLAG:(CHARANUM-1):행동횟수 = 5

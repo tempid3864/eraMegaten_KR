@@ -168,7 +168,7 @@ ELSE
 	PRINTL [0]　이스루기 후타바로는 하나야기 카오루코를 대신할 수는 없다
 	PRINTL [1]　전투원으로 일해주기를 기대하고 있었는데……
 	
-	LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 	;整合性を保つため、性的な選択肢は함락後には出ないようにする
 	IF TALENT:(LOCAL:0):연모 == 0 || TALENT:(LOCAL:0):친애 == 0 || TALENT:(LOCAL:0):음란 == 0 || TALENT:(LOCAL:0):창부 == 0
 		PRINTL [2]　귀찮네 벗어
@@ -409,7 +409,7 @@ ELSE
 			PRINTW 남겨진 당신은, 아직 온기가 남아있는 속옷을 쥐면서, 망연자실해 하늘을 올려다보았다……。
 			PRINTL
 			
-			LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 			IF ABL:LOCAL:순종 < 1
 				ABL:LOCAL:순종 = 1
 				PRINTL ＞후타바의 순종이 1이 되었다
@@ -521,7 +521,7 @@ ELSE
 			PRINTW 당신은, 불만스러운 표정의 후타바를 약간 억지로 쫓아내고는, 조교실의 뒷정리에 들어갔다……。
 			PRINTL
 			
-			LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 			
 			EXP:(LOCAL:0):절정경험 += 1
 			PRINTL ＞후타바는 절정경험 을 1 얻었다
@@ -710,8 +710,8 @@ ELSEIF GETBIT(이벤트플래그:93:5,21)
 	PRINTL
 	PRINTL
 	
-	LOCAL:0 = GETCHARA([[キャラ:카오루코]])
-	LOCAL:1 = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL:0 = GETCHARA([[캐릭터:카오루코]])
+	LOCAL:1 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 	;香子が함락してる場合はこっち
 	IF (TALENT:(LOCAL:0):연모 || TALENT:(LOCAL:0):친애 || TALENT:(LOCAL:0):음란 || TALENT:(LOCAL:0):창부)
 		
@@ -1443,7 +1443,7 @@ ELSEIF GETBIT(이벤트플래그:93:5,21)
 			PRINTL
 			
 			;素質추가とか
-			LOCAL = GETCHARA([[キャラ:카오루코]])
+			LOCAL = GETCHARA([[캐릭터:카오루코]])
 			
 			TALENT:LOCAL:도착적 = 1
 			TALENT:LOCAL:바이 = 1
@@ -1499,7 +1499,7 @@ ELSEIF GETBIT(이벤트플래그:93:5,21)
 			PRINTL
 			
 			;素質추가とか
-			LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+			LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 			
 			IF ABL:LOCAL:Ａ감각 < 1
 				ABL:LOCAL:Ａ감각 = 1
@@ -1753,7 +1753,7 @@ ELSEIF GETBIT(이벤트플래그:93:5,21)
 				PRINTL
 				
 				;キラめき消滅、전투能力削除、素質변경
-				LOCAL = GETCHARA([[キャラ:카오루코]])
+				LOCAL = GETCHARA([[캐릭터:카오루코]])
 				CALL EVENT93_KIRAMEKI_LOST,LOCAL
 				
 				TALENT:LOCAL:프라이드높음 = 0
@@ -1954,7 +1954,7 @@ ELSEIF GETBIT(이벤트플래그:93:5,21)
 				PRINTL 
 				
 				;キラめき消滅、전투能力削除、素質변경
-				LOCAL = GETCHARA([[キャラ:카오루코]])
+				LOCAL = GETCHARA([[캐릭터:카오루코]])
 				CALL EVENT93_KIRAMEKI_LOST,LOCAL
 				
 				TALENT:LOCAL:눈에띄고싶어함 = 0
@@ -2070,8 +2070,8 @@ ELSE
 		PRINTW 격렬한 음향에 물드는 무대의 앞에서, 당신은――
 		PRINTL
 		
-		LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
-		LOCAL:1 = GETCHARA([[キャラ:카오루코]])
+		LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
+		LOCAL:1 = GETCHARA([[캐릭터:카오루코]])
 		;LV에 더블스코어 차이가 나면 숨겨진 이벤트（하지만 숨겨진 이벤트가 발생하면 스타라이트되지 않는다）
 		SIF BASE:(LOCAL:0):LV <= (BASE:(LOCAL:1):LV * 2)
 			SETCOLOR 0x33ffcc
@@ -2159,8 +2159,8 @@ ELSE
 			PRINTL
 			PRINTL
 			
-			LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
-			LOCAL:1 = GETCHARA([[キャラ:카오루코]])
+			LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
+			LOCAL:1 = GETCHARA([[캐릭터:카오루코]])
 			
 			;LVにダブルスコアが付いてると……
 			IF BASE:(LOCAL:0):LV > (BASE:(LOCAL:1):LV * 2)
@@ -2239,9 +2239,9 @@ ELSE
 					PRINTW 「내가 지켜줄게, 언제라도, 몇번이라도……」
 					PRINTL
 
-					LOCAL = GETCHARA([[キャラ:카오루코]])
+					LOCAL = GETCHARA([[캐릭터:카오루코]])
 					CALL 캐릭터삭제, LOCAL
-					LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+					LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 					TALENT:(LOCAL:0):광기 = 1
 					CFLAG:(LOCAL:0):선악치 = -256
 					CFLAG:(LOCAL:0):질혼치 = -256
@@ -2274,9 +2274,9 @@ ELSE
 					PRINTW 　저는 당신에게, 일시적으로 고용된 것이기는 합니다만,
 					PRINTW 　지금은 함께 그녀들의 여로를 기도해줍시다. ＡＭＥＮ．」
 					PRINTL
-					LOCAL = GETCHARA([[キャラ:카오루코]])
+					LOCAL = GETCHARA([[캐릭터:카오루코]])
 					CALL 캐릭터삭제, LOCAL
-					LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+					LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 					CALL 캐릭터삭제, LOCAL
 					PRINTW 두 사람의 혼이, 한데 어우러지면서 승천하는 것을 끝까지 확인하고, 엔젤은 무대에 불을 붙였다.
 					PRINTW ……반짝임에 의해 복제된 위작은, 과연 어디로 가는 것일까.
@@ -2448,7 +2448,7 @@ ELSE
 					PRINTL
 					PRINTW 둘의 사이는, 아직 조금 삐걱대는 듯 했지만, 적어도 오늘 같은 귀찮은 일은 더이상 일어나지 않을 것 같았다……。
 					PRINTL
-					LOCAL = GETCHARA([[キャラ:카오루코]])
+					LOCAL = GETCHARA([[캐릭터:카오루코]])
 					TALENT:LOCAL:유아체형 = 1
 					TALENT:LOCAL:절벽 = 1
 					TALENT:LOCAL:영매체질 = 1
@@ -2627,10 +2627,10 @@ ELSE
 				PRINTW 당신은, 공중에 떠있는 채로 있는 기린무늬 멀티콥터를 흘깃 보며, 혼자 쓸쓸하게, 귀로에 올랐다……。
 				PRINTL
 				
-				LOCAL = GETCHARA([[キャラ:카오루코]])
+				LOCAL = GETCHARA([[캐릭터:카오루코]])
 				;アライメントを善に（セルフスタァライトしちゃったので）
 				CFLAG:LOCAL:선악치 = 256
-				LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+				LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 				;アライメントを善に（セルフスタァライトしちゃったので）
 				CFLAG:LOCAL:선악치 = 256
 				
@@ -2827,10 +2827,10 @@ ELSE
 				PRINTL
 				PRINTL
 				
-				LOCAL = GETCHARA([[キャラ:카오루코]])
+				LOCAL = GETCHARA([[캐릭터:카오루코]])
 				;アライメントを善に（セルフスタァライトしちゃったので）
 				CFLAG:LOCAL:선악치 = 256
-				LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+				LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 				;アライメントを善に（セルフスタァライトしちゃったので）
 				CFLAG:LOCAL:선악치 = 256
 				
@@ -3244,7 +3244,7 @@ CUSTOMDRAWLINE =
 		PRINTW 황금색의 빛이 당신의 등 뒤에서 솟아오른다.
 		PRINTW 암살자―― 아니, 무대소녀ㆍ다이바 나나가, 하늘을 덮는 어둠을 노려보며 칼을 뽑는다.
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTFORMW 「나아가！　%CSTR:LOCAL:이인칭%！
 		PRINTW 　당신의 마음이, 분명 세계를 바꿀테니까！」
 		
@@ -3572,11 +3572,11 @@ RESETCOLOR
 	PRINTW ＞이스루기 후타바는　이능자 데빌 시프터　로 처리됩니다
 	PRINTL 
 	
-	LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 
 	CFLAG:LOCAL:링크악마 = -1
 	TALENT:LOCAL:데빌시프터 = 1
-	CFLAG:LOCAL:초기링크악마 = [[キャラ:장화의페로]]
+	CFLAG:LOCAL:초기링크악마 = [[캐릭터:장화의페로]]
 	;전술
 	ABL:LOCAL:초기링크악마공격상성 = 3
 	;사거리M
@@ -3652,7 +3652,7 @@ CUSTOMDRAWLINE =
 	SETBIT 이벤트플래그:93:15, 2
 	
 	;- SET:클로딘
-	CALL SET_ENEMY,9,[[キャラ:클로딘]],75,1,3
+	CALL SET_ENEMY,9,[[캐릭터:클로딘]],75,1,3
 	CALLNAME:(CHARANUM-1) = 마왕 루시퍼
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	;CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
@@ -3840,7 +3840,7 @@ CUSTOMDRAWLINE =
 	PRINTW 　이 빛 너머에 내일이――
 	PRINTW 　우리들의 모험이, 기다리고 있으니까！」
 LOCAL:1 = RESULT
-LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 PRINTL 
 CUSTOMDRAWLINE =
 	PRINTL 
@@ -3933,7 +3933,7 @@ SAVEGLOBAL
 	PRINTL 
 	PRINTW ＞마왕　루시퍼　가 나타났다！
 	;双葉を변신させておく
-	LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 	CALL ACTION_2310, LOCAL
 	CALL SYNC_STATUS, LOCAL
 

@@ -1,7 +1,7 @@
 ﻿
 ;스킬명
 @SKILL_NAME_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 화룡
 ELSE
 	RESULTS = 모코이부메랑
@@ -13,7 +13,7 @@ RETURN 120
 
 ;　위력
 @SKILL_POWER_115, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 280
 ELSE
 	RETURN 120
@@ -34,7 +34,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 25
 ELSE
 	RETURN 6
@@ -42,7 +42,7 @@ ENDIF
 
 ;　상성
 @SKILL_TYPE_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 4
 ELSE
 	RETURN 1
@@ -69,7 +69,7 @@ RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 2
 ELSE
 	RETURN 3
@@ -114,7 +114,7 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN GET_STATE_NUM("FLAME")
 ELSE
 	RETURN GET_STATE_NUM("PANIC")
@@ -122,7 +122,7 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_115,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 4
 ELSE
 	RETURN 9
@@ -152,7 +152,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,115
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_115
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 불꽃의 기를 두른 화살을 날린다。
 	PRINTL 적 1열에 화염 물리 중 데미지를 주고、확률로 FLAME 상태로 만든다。
 ELSE

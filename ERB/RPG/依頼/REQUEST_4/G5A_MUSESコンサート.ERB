@@ -75,14 +75,14 @@ ELSE
 	PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 보고 비난하는、가면당원들이 우후죽순처럼 나타났다
 	PRINTL 가면 쓴 남자들이 습격해 왔다！
 	WAIT
-	CALL SET_ENEMY,7, [[キャラ:황소가면]],21, 0
-	CALL SET_ENEMY,8, [[キャラ:황소가면]],21, 0
-	CALL SET_ENEMY,10, [[キャラ:사자가면]],21, 0
-	CALL SET_ENEMY,11, [[キャラ:사자가면]],21, 0
-	CALL SET_ENEMY,12, [[キャラ:전갈가면]],21, 0
-	CALL SET_ENEMY,13, [[キャラ:전갈가면]],21, 0
-	CALL SET_ENEMY,15, [[キャラ:물병가면]],21, 0
-	CALL SET_ENEMY,16, [[キャラ:물병가면]],21, 0
+	CALL SET_ENEMY,7, [[캐릭터:황소가면]],21, 0
+	CALL SET_ENEMY,8, [[캐릭터:황소가면]],21, 0
+	CALL SET_ENEMY,10, [[캐릭터:사자가면]],21, 0
+	CALL SET_ENEMY,11, [[캐릭터:사자가면]],21, 0
+	CALL SET_ENEMY,12, [[캐릭터:전갈가면]],21, 0
+	CALL SET_ENEMY,13, [[캐릭터:전갈가면]],21, 0
+	CALL SET_ENEMY,15, [[캐릭터:물병가면]],21, 0
+	CALL SET_ENEMY,16, [[캐릭터:물병가면]],21, 0
 	CALL BATTLE_START
 	CUSTOMDRAWLINE =
 	WAIT
@@ -433,7 +433,7 @@ ELSE
 		CALL INCREASE_LD, 16
 		CALL REFRESH_POS
 		SIF STRFLAG_REQ("게스트참전")
-			CALL 캐릭터삭제(GETCHARA([[キャラ:타츠야]]))
+			CALL 캐릭터삭제(GETCHARA([[캐릭터:타츠야]]))
 	ELSEIF STRFLAG_REQ("풀어주지않는다")
 		PRINTFORMW 토러스는 절명했다…
 		PRINTFORMW 소녀들은 피투성이지만, 어떻게 죽지는 않은 것 같다
@@ -454,7 +454,7 @@ ELSE
 		CUSTOMDRAWLINE =
 		WAIT
 		;たっちゃんはここでの隠しボス的扱いなのでかなり強くしときます
-		CALL SET_ENEMY, 9, [[キャラ:스오우 타츠야]], 30,0,1
+		CALL SET_ENEMY, 9, [[캐릭터:스오우 타츠야]], 30,0,1
 		;HP9000/MP500 난이도보정はマニアック1.2倍、루나1.4倍、悪夢1.6倍
 		LOCAL = FLAG:전투난이도 - 3 > 0 ? 100 + (FLAG:전투난이도 - 3) * 20 # 100
 		CALL SET_BATTLE_STATUS(CHARANUM-1, 90 * LOCAL, "ＨＰ")
@@ -509,9 +509,9 @@ CALLF STRFLAG_REQ("MUSES콘서트클리어",1)
 CALLF STRFLAG_NUM_EV("죄루트진행", "=", , 6, [[이벤트:페르소나２]])
 ;奴隷획득
 IF STRFLAG_REQ("긴코GET", -1)
-	CALL ADD_NEW_COMPANION, [[キャラ:리사]],500
+	CALL ADD_NEW_COMPANION, [[캐릭터:리사]],500
 	IF RESULT == 1 
-		LOCAL = GETCHARA([[キャラ:리사]])
+		LOCAL = GETCHARA([[캐릭터:리사]])
 		;こっちのルートなら가창경험증가＆라이브경험부여
 		EXP:LOCAL:가창경험 = 50
 		EXP:LOCAL:라이브경험 = 50
@@ -546,11 +546,11 @@ IF STRFLAG_REQ("긴코GET", -1)
 	ENDIF
 ENDIF
 SIF STRFLAG_REQ("탓쨩GET", -1)
-	CALL ADD_NEW_COMPANION, [[キャラ:타츠야]],0
+	CALL ADD_NEW_COMPANION, [[캐릭터:타츠야]],0
 IF STRFLAG_REQ("미포GET", -1)
-	CALL ADD_NEW_COMPANION, [[キャラ:미호]],500
+	CALL ADD_NEW_COMPANION, [[캐릭터:미호]],500
 	IF RESULT == 1
-		LOCAL = GETCHARA([[キャラ:미호]])
+		LOCAL = GETCHARA([[캐릭터:미호]])
 		;조교済みの場合は이벤트가입を1に
 		;微妙に変えてるけど、二人はまぁ기본的にコピペ
 		IF STRFLAG_NUM_EV("로리콘 프로듀서의 소문", , , , [[이벤트:소문]]) == 2
@@ -594,9 +594,9 @@ IF STRFLAG_REQ("미포GET", -1)
 	ENDIF
 ENDIF
 IF STRFLAG_REQ("아삿치GET", -1)
-	CALL ADD_NEW_COMPANION, [[キャラ:아사미]],500
+	CALL ADD_NEW_COMPANION, [[캐릭터:아사미]],500
 	IF RESULT == 1
-		LOCAL = GETCHARA([[キャラ:아사미]])
+		LOCAL = GETCHARA([[캐릭터:아사미]])
 		IF STRFLAG_NUM_EV("로리콘 프로듀서의 소문", , , , [[이벤트:소문]]) == 2
 			CFLAG:LOCAL:이벤트가입 = 1
 			TALENT:LOCAL:처녀 = 0
@@ -1355,7 +1355,7 @@ RETURN 1
 
 ;呼び出し場所が数カ所あるので
 @SET_TAURUS
-CALL SET_ENEMY, 9, [[キャラ:토러스]], 25,0,1
+CALL SET_ENEMY, 9, [[캐릭터:토러스]], 25,0,1
 LOCAL = CHARANUM - 1
 ;HP8000/MP1000
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 10 + (FLAG:전투난이도 - 3) * 2 # 10
@@ -1379,7 +1379,7 @@ CALL HEALTH_CHARA, LOCAL
 ;特徴としては노이즈샷は撃つたびに必ず補充、他の弾は2個おんなじのをいれないようにする
 @EVENT_BATTLE_TURNEND_REQUEST4
 ;토러스がいないなら先に進まない
-SIF !FINDCHARA_ENEMY([[キャラ:토러스]])
+SIF !FINDCHARA_ENEMY([[캐릭터:토러스]])
 	RETURN 0
 LOCAL= RESULT:1
 IF EQUIP:LOCAL:특수탄1 == [[스킬:ＧＵＮ]] || EQUIP:LOCAL:특수탄2 == [[스킬:ＧＵＮ]] || EQUIP:LOCAL:특수탄3 == [[스킬:ＧＵＮ]]
@@ -1558,7 +1558,7 @@ SIF STRFLAG_NUM_EV("아이돌 매춘 소문", , , , [[이벤트:소문]]) == 2
 SIF STRFLAG_NUM_EV("히어로의 소문", , , , [[이벤트:소문]]) == 2
 	RETURN 0
 ;토러스がいないなら先に進まない
-SIF !FINDCHARA_ENEMY([[キャラ:토러스]])
+SIF !FINDCHARA_ENEMY([[캐릭터:토러스]])
 	RETURN 0
 LOCAL = RESULT:1
 ;토러스のHPが50%미만になったら이벤트発生
@@ -1715,8 +1715,8 @@ ELSEIF RESULT == 1
 		PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━━┛
 		PRINTL 
 		;타츠야が居ない場合はゲスト参戦
-		IF GETCHARA([[キャラ:타츠야]]) == -1
-			CALL ADD_GUEST_COMPANION([[キャラ:타츠야]], 500)
+		IF GETCHARA([[캐릭터:타츠야]]) == -1
+			CALL ADD_GUEST_COMPANION([[캐릭터:타츠야]], 500)
 			IF RESULT
 				PRINTFORMDW 타츠야는 수긍하고,%CALLNAME:MASTER%의 파티에 참가했다
 				SIF RESULT:1 >= 0
@@ -1726,35 +1726,35 @@ ELSEIF RESULT == 1
 			ENDIF
 		ENDIF
 		CALLF STRFLAG_REQ("토러스협력격파", 1)
-		CALL SET_ENEMY,7,[[キャラ:황소가면]],21,0,1
+		CALL SET_ENEMY,7,[[캐릭터:황소가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마구날뛰기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,8,[[キャラ:황소가면]],21,0,1
+		CALL SET_ENEMY,8,[[캐릭터:황소가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마구날뛰기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,10,[[キャラ:사자가면]],21,0,1
+		CALL SET_ENEMY,10,[[캐릭터:사자가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:회전베기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,11,[[キャラ:사자가면]],21,0,1
+		CALL SET_ENEMY,11,[[캐릭터:사자가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:회전베기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,12,[[キャラ:전갈가면]],21,0,1
+		CALL SET_ENEMY,12,[[캐릭터:전갈가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:메ㆍ디아라마]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,13,[[キャラ:전갈가면]],21,0,1
+		CALL SET_ENEMY,13,[[캐릭터:전갈가면]],21,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:메ㆍ디아라마]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,15,[[キャラ:물병가면]],21,0,1
+		CALL SET_ENEMY,15,[[캐릭터:물병가면]],21,0,1
 		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ갈라]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,16,[[キャラ:물병가면]],21,0,1
+		CALL SET_ENEMY,16,[[캐릭터:물병가면]],21,0,1
 		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ갈라]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1783,7 +1783,7 @@ ELSE
 ENDIF
 
 @SET_GUEST_REQ5
-LOCAL = GETCHARA([[キャラ:타츠야]])
+LOCAL = GETCHARA([[캐릭터:타츠야]])
 BASE:LOCAL:LV = 30
 BASE:LOCAL:힘 = 14
 BASE:LOCAL:지혜 = 11
@@ -1799,7 +1799,7 @@ EQUIP:LOCAL:머리 = [[아이템:야크트헬름]]
 EQUIP:LOCAL:몸통 = [[아이템:야크트아머]]
 EQUIP:LOCAL:팔 = [[아이템:야크트글러브]]
 EQUIP:LOCAL:발 = [[아이템:야크트레그]]
-ABL:LOCAL:초기페르소나 = [[キャラ:불카누스ㆍ개(페르소나)]]
+ABL:LOCAL:초기페르소나 = [[캐릭터:불카누스ㆍ개(페르소나)]]
 ;新페르소나処理
 IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
 
@@ -1808,7 +1808,7 @@ ELSE
 	EQUIP:LOCAL:소지페르소나1 = 페르소나("게스트페르소나1")
 	EQUIP:LOCAL:소지페르소나2 = 페르소나("게스트페르소나2")
 	EQUIP:LOCAL:소지페르소나3 = 페르소나("게스트페르소나3")
-	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[キャラ:잭프로스트]]
+	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[캐릭터:잭프로스트]]
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("LV") = 30
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("힘") = 10
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("지혜") = 10
@@ -1827,7 +1827,7 @@ ELSE
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LD") = 2
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LC") = 2
 
-	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[キャラ:엘리고르]]
+	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[캐릭터:엘리고르]]
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("LV") = 30
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("힘") = 16
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("지혜") = 9
@@ -1845,7 +1845,7 @@ ELSE
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LD") = 2
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LC") = 3
 
-	DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[キャラ:타케미나카타]]
+	DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[캐릭터:타케미나카타]]
 	DITEMTYPE:페르소나("게스트페르소나3"):페르소나("LV") = 30
 	DITEMTYPE:페르소나("게스트페르소나3"):페르소나("힘") = 15
 	DITEMTYPE:페르소나("게스트페르소나3"):페르소나("지혜") = 12
@@ -1874,7 +1874,7 @@ PRINTFORMW 「젊은 아이돌이 밉다…」
 PRINTFORMW 어쩌면, 이것이 그 소문의 유령인 것일까…
 PRINTFORMW 「젊은 아이돌에 달려드는 팬이 밉다…！」
 PRINTFORMW 괴기 린다가 습격해 왔다！
-CALL SET_ENEMY, 9, [[キャラ:린다]], 25,0,1
+CALL SET_ENEMY, 9, [[캐릭터:린다]], 25,0,1
 ;HP6000/MP500 난이도보정はマニアック1.2倍、루나1.4倍、悪夢1.6倍
 LOCAL = FLAG:전투난이도 - 3 > 0 ? 100 + (FLAG:전투난이도 - 3) * 20 # 100
 CALL SET_BATTLE_STATUS(CHARANUM-1, 60 * LOCAL, "ＨＰ")

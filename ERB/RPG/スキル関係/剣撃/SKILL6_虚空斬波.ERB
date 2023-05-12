@@ -3,11 +3,11 @@
 
 ;스킬명
 @SKILL_NAME_6,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+IF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RESULTS = 농장월
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RESULTS = 댄싱 캣
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:텐도]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:텐도]])
 	RESULTS = 귀도섬
 ELSE
 	RESULTS = 허공참파
@@ -19,9 +19,9 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_6, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+IF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RETURN 380
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 350
 ELSE
 	RETURN 410
@@ -42,9 +42,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_6,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+IF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 27
 ELSE
 	RETURN 35
@@ -62,7 +62,7 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_6, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 2
 ELSE
 	RETURN 1
@@ -148,13 +148,13 @@ CALL ATTACK_FIELD,ARG,ARG:1,6
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_6
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:쿄이치]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:쿄이치]])
 	PRINTL 눈에도 보이지 않는 기세로 칼을 휘둘러、강렬한 검격을 퍼붓는다。
 	PRINTL 적 전체에 검격 물리 대 데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:마리(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:마리(마인학원)]])
 	PRINTL 요묘『메피스토』를 마술로 조종해、적진에서 종횡무진으로 춤추게 해 공격。
 	PRINTL 적 전체에 검격 마법 대 데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:텐도]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:텐도]])
 	PRINTL 외법에 의해 강화된 역력으로、강력한 검격을 날린다。
 	PRINTL 적 전체에 검격 물리 특대 데미지를 준다。
 ELSE

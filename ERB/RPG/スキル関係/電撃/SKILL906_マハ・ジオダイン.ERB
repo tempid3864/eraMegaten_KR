@@ -4,9 +4,9 @@
 ;스킬명
 @SKILL_NAME_906,ARG
 LOCALS = 마를로네
-IF SKILL_CHANGE(ARG, [[キャラ:무명의대학생]]) && NAME:ARG == LOCALS
+IF SKILL_CHANGE(ARG, [[캐릭터:무명의대학생]]) && NAME:ARG == LOCALS
 	RESULTS = 라이트닝
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:텐도]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:텐도]])
 	RESULTS = 외법ㆍ사뢰초래
 ELSE
 	RESULTS = 마하ㆍ지오다인
@@ -131,7 +131,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,905
 ;　 설명문 표시
 @SKILL_EXPLAIN_906
 LOCALS = 마를로네
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:무명의대학생]] && NAME:U == LOCALS
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:무명의대학생]] && NAME:U == LOCALS
 	PRINTL 「별과 달의 지팡이」로부터 발해지는 마리의 필살기。
 	PRINTL 전격으로 적 １열을 공격한다。
 ELSE

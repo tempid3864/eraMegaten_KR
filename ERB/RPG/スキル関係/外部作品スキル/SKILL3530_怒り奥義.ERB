@@ -3,7 +3,7 @@
 @SKILL_NAME_3530,ARG
 IF TFLAG:전투중 == 0
 	RESULTS = 분노오의
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		RESULTS = 아무베ㆍ야트로
@@ -19,13 +19,13 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RESULTS = 알.레타라.카무이흠.마키리
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	RESULTS = 6태도 난무
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RESULTS = 아오이
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RESULTS = 백화요란
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	RESULTS = 왓카ㆍ시쿠테
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
@@ -40,7 +40,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RESULTS = 콘루ㆍ스투ㆍ포로
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	RESULTS = 염멸
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
@@ -65,7 +65,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_3530, ARG
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -83,14 +83,14 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 650
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 100
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RETURN 720
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RETURN 140
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 275
 	;修羅
@@ -106,7 +106,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 600
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 250
 	;修羅
@@ -127,14 +127,14 @@ RETURN 100
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+IF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 8
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RETURN 1
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RETURN 6
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	;修羅
 	;IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	;羅刹
@@ -147,14 +147,14 @@ RETURN 1
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+IF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 8
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RETURN 1
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RETURN 6
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	;修羅
 	;IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	;羅刹
@@ -167,10 +167,10 @@ RETURN 1
 
 ;一体辺りの最低ＨＩＴ数
 @SKILL_MINATK_PER_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+IF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 3
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	;修羅
 	;IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	;羅刹
@@ -183,10 +183,10 @@ RETURN 1
 
 ;一体辺りの最大ＨＩＴ数
 @SKILL_MAXATK_PER_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+IF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 4
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	;修羅
 	;IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	;羅刹
@@ -204,7 +204,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -222,14 +222,14 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 28
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 25
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RETURN 25
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RETURN 25
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 20
 	;修羅
@@ -245,7 +245,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 28
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 25
 	;修羅
@@ -269,7 +269,7 @@ RETURN 25
 ;#LOCALSSIZE 3
 #LOCALSIZE 5
 VARSET LOCALS
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -298,9 +298,9 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 			LOCALS:3 = 파마
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 13
 	;修羅
@@ -315,7 +315,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 	ELSE
 		RETURN 5
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	RETURN 4
 ENDIF
 SIF LOCALS == ""
@@ -359,12 +359,12 @@ RETURN 1
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_3530, ARG
 LOCAL = SKILL_USE_CHARA()
-IF SKILL_CHANGE(LOCAL,[[キャラ:리무루루]])
+IF SKILL_CHANGE(LOCAL,[[캐릭터:리무루루]])
 	;羅刹時の秘奥義のみ物理
 	SIF SKILLGAGE_H_GET(LOCAL,3530) == 2 && SKILLGAGE_F_GET(LOCAL,[[스킬:분노폭발]]) == 1
 		RETURN 1
 	RETURN 2
-ELSEIF SKILL_CHANGE(LOCAL,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(LOCAL,[[캐릭터:카즈키]])
 	;修羅
 	IF SKILLGAGE_F_GET(LOCAL,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(LOCAL,3530) == 2
@@ -382,7 +382,7 @@ RETURN 1
 
 ;　사거리
 @SKILL_RANGE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -400,9 +400,9 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 2
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 3
 	;修羅
@@ -418,14 +418,14 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 2
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	RETURN 1
 ENDIF
 RETURN 1
 
 ;　범위　1１체　2１열　3전체　4　적아군 전체
 @SKILL_SPHERE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -443,14 +443,14 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 1
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 3
 	SIF SKILLGAGE_H_GET(ARG,3530) == 1
 		RETURN 1
 	SIF SKILLGAGE_H_GET(ARG,3530) == 2
 		RETURN 1
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 2
 	;修羅
@@ -466,7 +466,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 1
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	RETURN 1
 ENDIF
 RETURN 1
@@ -509,7 +509,7 @@ RETURN 0
 ;テンプレート用、追加効果シリーズ
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 0
 	;修羅
@@ -525,7 +525,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 5
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 	;羅刹
@@ -539,7 +539,7 @@ RETURN 0
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 0
 	;修羅
@@ -555,7 +555,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 5
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	RETURN 4
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 18
@@ -577,7 +577,7 @@ RETURN 0
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 0
 	;修羅
@@ -593,7 +593,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 		SIF SKILLGAGE_H_GET(ARG,3530) == 2
 			RETURN 80
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 40
 	;修羅
@@ -614,7 +614,7 @@ RETURN 0
 
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 0
 	;修羅
@@ -624,7 +624,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 	ELSE
 		RETURN 100
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 95
 	;修羅
@@ -638,7 +638,7 @@ RETURN 0
 
 ;拡散攻撃用追加処理
 @SKILL_SPREAD_3530,ARG
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		SIF SKILLGAGE_H_GET(ARG,3530) == 0
@@ -646,7 +646,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 	;나찰
 	ELSE
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	SIF SKILLGAGE_H_GET(ARG,3530) == 0
 		RETURN 1
 	;修羅
@@ -662,7 +662,7 @@ ENDIF
 ;ヒット時ダメージ前処理
 ;====================================================
 @SKILL_HIT_EFFECT_3530,ARG,ARG:1
-IF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+IF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	IF SKILLGAGE_H_GET(ARG,3530) == 2 && SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 1 && FLAG:확산플래그 < 1
 		IF CFLAG:(ARG:1):마법반사플래그 > 0
 			CFLAG:(ARG:1):마법반사플래그 = 0
@@ -709,7 +709,7 @@ ENDIF
 ;ダメージ発動時
 ;====================================================
 @SKILL_DAMAGE_EFFECT_3530,ARG,ARG:1
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	;修羅
 	IF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
 		IF SKILLGAGE_H_GET(ARG,3530) == 0 && CFLAG:(ARG:1):공격강화 > -16
@@ -725,7 +725,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 			NEXT
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	;SIF SKILLGAGE_H_GET(ARG,3530) == 0
 	;	RETURN 25
 	IF SKILLGAGE_H_GET(ARG,3530) == 1
@@ -741,7 +741,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
 			ENDIF
 		NEXT
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	IF SKILLGAGE_H_GET(ARG,3530) == 0
 		CFLAG:(ARG:1):BS부착률강화 = MIN(4, CFLAG:(ARG:1):BS부착률강화 + 4)
 		PRINT  & BS부착률 UP
@@ -771,7 +771,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 			NEXT
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	IF SKILLGAGE_H_GET(ARG,3530) == 0
 	;修羅
 	ELSEIF SKILLGAGE_F_GET(ARG,[[스킬:분노폭발]]) == 0
@@ -803,7 +803,7 @@ SIF FLAG:행동순2 < 0
 #LOCALSIZE 5
 #DIM STOCK,6
 
-IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
+IF SKILL_CHANGE(ARG,[[캐릭터:나코루루]])
 	STOCK:0 = MAXBASE:ARG:공격
 	STOCK:1 = CFLAG:ARG:공격강화
 	MAXBASE:ARG:공격 = MAXBASE:ARG:마법위력
@@ -859,7 +859,7 @@ IF SKILL_CHANGE(ARG,[[キャラ:나코루루]])
 	ENDIF
 	MAXBASE:ARG:공격 = STOCK:0
 	CFLAG:ARG:공격강화 = STOCK:1
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:요시토라]])
 	FLAG:확산플래그 = 0
 	IF SKILLGAGE_H_GET(ARG,3530) == 0
 		CALL ATTACK_RAND,ARG,ARG:1,3530
@@ -907,7 +907,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:요시토라]])
 	SIF FLAG:확산플래그
 		CALL SKILLGAGE_D_SET,ARG,[[스킬:분노폭발]],0
 	FLAG:확산플래그 = 0
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:리무루루]])
 	IF SKILLGAGE_H_GET(ARG,3530) == 0
 		CALL ATTACK_FIELD,ARG,ARG:1,3530
 	;修羅
@@ -952,7 +952,7 @@ ELSEIF SKILL_CHANGE(ARG,[[キャラ:리무루루]])
 				CALL SKILLGAGE_D_SET,ARG,[[스킬:분노폭발]],0
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(ARG,[[캐릭터:카즈키]])
 	IF SKILLGAGE_H_GET(ARG,3530) == 0
 		CALL ATTACK_SPREAD,ARG,ARG:1,3530
 		IF BASE:ARG:ＨＰ > 0 && CFLAG:ARG:상태이상 != 15
@@ -1064,7 +1064,7 @@ IF CFLAG:(CHARANUM-1):PT플래그 || U < 0 || U >= CHARANUM
 	PRINTL 분노상태가 되면 오의가 생기게 된다。커맨드의 오의에서 사용할 수 있다。
 	PRINTL 또한 분노폭발 또는 HP 25% 이하면 비오의(秘奥義)도 사용할 수 있게 된다。오의、비오의를 사용하면 분노상태가 사라진다
 ENDIF
-IF SKILL_CHANGE(U,[[キャラ:나코루루]])
+IF SKILL_CHANGE(U,[[캐릭터:나코루루]])
 	IF CFLAG:(CHARANUM-1):PT플래그
 		PRINTL 수라　　통상　화염 확산공격+공격력 저하
 		PRINTL 　　　　오의　검격ㆍ파마 전열 공격+적 공격력、마법위력 저하+아군 방어、마법효과 상승
@@ -1097,7 +1097,7 @@ IF SKILL_CHANGE(U,[[キャラ:나코루루]])
 			PRINTL 1체에 검격+전격+충격+파마의 초특대 데미지+능력상승해제。이 스킬은 마법위력으로 데미지를 계산한다
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(U,[[キャラ:요시토라]])
+ELSEIF SKILL_CHANGE(U,[[캐릭터:요시토라]])
 	IF CFLAG:(CHARANUM-1):PT플래그
 		PRINTL 　통상　적 전체 랜덤하게 검격 상성으로 3～8회 공격한다
 		PRINTL 　오의　벽、상성을 무시한 검격 공격+방어 대폭 저하+검격내성 파괴
@@ -1113,7 +1113,7 @@ ELSEIF SKILL_CHANGE(U,[[キャラ:요시토라]])
 		PRINTL 적 1체에 검격 상성의 소 데미지를 6회 공격、공격시마다 유우초카(遊蝶華) 게이지가 쌓인다
 		PRINTL 이 공격은 내성을 무시한다
 	ENDIF
-ELSEIF SKILL_CHANGE(U,[[キャラ:리무루루]])
+ELSEIF SKILL_CHANGE(U,[[캐릭터:리무루루]])
 	IF CFLAG:(CHARANUM-1):PT플래그
 		PRINTL 　　　　통상　수격 1열+적 이상상태내성 저하
 		PRINTL 수라　　오의　빙결 전체공격+마비+적 공격력、마법위력、명중ㆍ회피 저하
@@ -1147,7 +1147,7 @@ ELSEIF SKILL_CHANGE(U,[[キャラ:리무루루]])
 			PRINTL 그 뒤、빙결 속성의 초특대 데미지의 물리공격한다。이 공격은 마법위력으로 데미지를 계산한다
 		ENDIF
 	ENDIF
-ELSEIF SKILL_CHANGE(U,[[キャラ:카즈키]])
+ELSEIF SKILL_CHANGE(U,[[캐릭터:카즈키]])
 	IF CFLAG:(CHARANUM-1):PT플래그
 		PRINTL 　　　　통상　화염 확산+FLAME+자신의 명중ㆍ회피 상승
 		PRINTL 수라　　오의　화염 1체+화염가드킬+FLAME+방어、마법효과 저하

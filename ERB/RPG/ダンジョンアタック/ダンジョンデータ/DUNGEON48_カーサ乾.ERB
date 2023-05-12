@@ -453,94 +453,94 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;20％　요마코파텐구Lv19（22）
-				RETURN [[キャラ:코파텐구]], 22
+				RETURN [[캐릭터:코파텐구]], 22
 			CASE IS < 35
 				;15%　요귀오니　Lv20（23）
-				RETURN [[キャラ:오니]], 23
+				RETURN [[캐릭터:오니]], 23
 			CASE IS < 50
 				;15%　용왕노즈치　Lv19（22）
-				RETURN [[キャラ:노즈치]], 22
+				RETURN [[캐릭터:노즈치]], 22
 			CASE IS < 65
 				;15%　요귀유키죠로　Lv21（24）
-				RETURN [[キャラ:유키죠로]], 24
+				RETURN [[캐릭터:유키죠로]], 24
 			CASE IS < 80
 				;15%　마수블랙위도우　Lv23
-				RETURN [[キャラ:블랙위도우]], 23
+				RETURN [[캐릭터:블랙위도우]], 23
 			CASE IS < 90
 				;10%　외도굴라　Lv22
-				RETURN [[キャラ:굴라]], 22
+				RETURN [[캐릭터:굴라]], 22
 			CASE IS < 100
 				;10%　요정엘프　Lv23
-				RETURN [[キャラ:엘프]], 23
+				RETURN [[캐릭터:엘프]], 23
 		ENDSELECT
 	CASE 1
 	;二階
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;20％　요마코파텐구Lv19（22）
-				RETURN [[キャラ:코파텐구]], 22
+				RETURN [[캐릭터:코파텐구]], 22
 			CASE IS < 35
 				;15%　요귀오니　Lv20（23）
-				RETURN [[キャラ:오니]], 23
+				RETURN [[캐릭터:오니]], 23
 			CASE IS < 50
 				;15%　용왕노즈치　Lv19（22）
-				RETURN [[キャラ:노즈치]], 22
+				RETURN [[캐릭터:노즈치]], 22
 			CASE IS < 65
 				;15%　요귀유키죠로　Lv21（24）
-				RETURN [[キャラ:유키죠로]], 24
+				RETURN [[캐릭터:유키죠로]], 24
 			CASE IS < 80
 				;15%　마수블랙위도우　Lv23
-				RETURN [[キャラ:블랙위도우]], 23
+				RETURN [[캐릭터:블랙위도우]], 23
 			CASE IS < 90
 				;10%　외도굴라　Lv22
-				RETURN [[キャラ:굴라]], 22
+				RETURN [[캐릭터:굴라]], 22
 			CASE IS < 100
 				;10%　요정엘프　Lv23
-				RETURN [[キャラ:엘프]], 23
+				RETURN [[캐릭터:엘프]], 23
 		ENDSELECT
 	CASE 2
 	;三階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15％　요마이소라Lv23
-				RETURN [[キャラ:이소라]], 23
+				RETURN [[캐릭터:이소라]], 23
 			CASE IS < 35
 				;20%　요귀모무노후　Lv25
-				RETURN [[キャラ:모무노후]], 25
+				RETURN [[캐릭터:모무노후]], 25
 			CASE IS < 50
 				;15%　마수오르트로스　Lv23
-				RETURN [[キャラ:오르트로스]], 23
+				RETURN [[캐릭터:오르트로스]], 23
 			CASE IS < 70
 				;20%　요귀한냐　Lv25
-				RETURN [[キャラ:한냐]], 25
+				RETURN [[캐릭터:한냐]], 25
 			CASE IS < 85
 				;15%　요조켈라이노　Lv25
-				RETURN [[キャラ:켈라이노]], 25
+				RETURN [[캐릭터:켈라이노]], 25
 			CASE IS < 100
 				;15%　요정엘프　Lv23
-				RETURN [[キャラ:엘프]], 23
+				RETURN [[캐릭터:엘프]], 23
 		ENDSELECT
 	CASE 3
 	;四階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15％　요마이소라Lv23（26）
-				RETURN [[キャラ:이소라]], 26
+				RETURN [[캐릭터:이소라]], 26
 			CASE IS < 35
 				;20%　요귀모무노후　Lv25
-				RETURN [[キャラ:모무노후]], 25
+				RETURN [[캐릭터:모무노후]], 25
 			CASE IS < 50
 				;15%　마수오르트로스　Lv23
-				RETURN [[キャラ:오르트로스]], 23
+				RETURN [[캐릭터:오르트로스]], 23
 			CASE IS < 70
 				;20%　요귀한냐　Lv25
-				RETURN [[キャラ:한냐]], 25
+				RETURN [[캐릭터:한냐]], 25
 			CASE IS < 85
 				;15%　요조켈라이노　Lv25
-				RETURN [[キャラ:켈라이노]], 25
+				RETURN [[캐릭터:켈라이노]], 25
 			CASE IS < 100
 				;15%　요정밴시　Lv27
-				RETURN [[キャラ:밴시]], 27
+				RETURN [[캐릭터:밴시]], 27
 		ENDSELECT
 ENDSELECT
 
@@ -649,10 +649,10 @@ SELECTCASE FLAG:현M
 			MONEY += 50000
 			던전플래그:48:0 = 1
 			DA:(FLAG:현X):(FLAG:현Y) = 1
-			CALL LIFTING_A_BAN([[キャラ:부대병]])
-			CALL LIFTING_A_BAN([[キャラ:이누이]])
-			;FLAG:(10000+[[キャラ:부대병]]) = 1
-			;FLAG:(10000+[[キャラ:이누이]]) = 1
+			CALL LIFTING_A_BAN([[캐릭터:부대병]])
+			CALL LIFTING_A_BAN([[캐릭터:이누이]])
+			;FLAG:(10000+[[캐릭터:부대병]]) = 1
+			;FLAG:(10000+[[캐릭터:이누이]]) = 1
 			FLAG:탈출 = 1
 			RETURN 1
 		ENDIF
@@ -900,11 +900,11 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:모무노후]] , 3 + RAND:10 , CSVBASE([[キャラ:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:모무노후]] , 3 + RAND:10 , CSVBASE([[캐릭터:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:오르트로스]] , 3 + RAND:10 , CSVBASE([[キャラ:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오르트로스]] , 3 + RAND:10 , CSVBASE([[캐릭터:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:이소라]] , 3 + RAND:10 , CSVBASE([[キャラ:이소라]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:이소라]] , 3 + RAND:10 , CSVBASE([[캐릭터:이소라]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

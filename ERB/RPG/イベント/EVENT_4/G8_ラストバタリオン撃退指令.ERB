@@ -49,18 +49,18 @@ PRINTL 병사
 PRINTW 「우리 라스트 바탈리온과 싸울 생각인가? 얼마나 멍청한 거냐」
 PRINTL ＞제국병　코만단트가 １체 나타났다！
 PRINTL ＞제국병　슈트룸졸다트가 3체 나타났다！
-CALL INCREASE_ANALYZE, [[キャラ:Ｓ졸다트]], 1
-CALL INCREASE_ANALYZE, [[キャラ:Ｍ졸다트]], 1
-CALL INCREASE_ANALYZE, [[キャラ:Ｓ슛체]], 1
-CALL INCREASE_ANALYZE, [[キャラ:Ｖ크래프트]], 1
-CALL INCREASE_ANALYZE, [[キャラ:코만단트]], 1
+CALL INCREASE_ANALYZE, [[캐릭터:Ｓ졸다트]], 1
+CALL INCREASE_ANALYZE, [[캐릭터:Ｍ졸다트]], 1
+CALL INCREASE_ANALYZE, [[캐릭터:Ｓ슛체]], 1
+CALL INCREASE_ANALYZE, [[캐릭터:Ｖ크래프트]], 1
+CALL INCREASE_ANALYZE, [[캐릭터:코만단트]], 1
 
 CUSTOMDRAWLINE =
 WAIT
-CALL SET_ENEMY,8, [[キャラ:Ｓ졸다트]], 40, 0
-CALL SET_ENEMY,9, [[キャラ:Ｓ졸다트]], 40, 0
-CALL SET_ENEMY,10, [[キャラ:Ｓ졸다트]], 40, 0
-CALL SET_ENEMY,14, [[キャラ:코만단트]], 40, 0
+CALL SET_ENEMY,8, [[캐릭터:Ｓ졸다트]], 40, 0
+CALL SET_ENEMY,9, [[캐릭터:Ｓ졸다트]], 40, 0
+CALL SET_ENEMY,10, [[캐릭터:Ｓ졸다트]], 40, 0
+CALL SET_ENEMY,14, [[캐릭터:코만단트]], 40, 0
 CALL ADJUST_IMPERIAL
 CALL BATTLE_START
 CUSTOMDRAWLINE =
@@ -71,12 +71,12 @@ PRINTL ＞제국병　마시넨졸다트가 3체 나타났다！
 PRINTL ＞제국병　샤프슛체가 2체 나타났다！
 CUSTOMDRAWLINE =
 WAIT
-CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 40, 0
-CALL SET_ENEMY,14, [[キャラ:코만단트]], 40, 0
-CALL SET_ENEMY,15, [[キャラ:Ｓ슛체]], 40, 0
+CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 40, 0
+CALL SET_ENEMY,14, [[캐릭터:코만단트]], 40, 0
+CALL SET_ENEMY,15, [[캐릭터:Ｓ슛체]], 40, 0
 CALL ADJUST_IMPERIAL
 CALL BATTLE_START
 CUSTOMDRAWLINE =
@@ -84,16 +84,16 @@ PRINTL 병사：
 PRINTW 「크… 서머너」
 PRINTW 「우리들이 뒤처진다고 해도… 에에잇, 싸우자!」
 WAIT
-CALL SET_ENEMY,7, [[キャラ:Ｓ졸다트]], 40, 0
-CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 40, 0
-CALL SET_ENEMY,11, [[キャラ:Ｓ졸다트]], 40, 0
-CALL SET_ENEMY,12, [[キャラ:Ｖ크래프트]], 40, 0
-CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 40, 0
-CALL SET_ENEMY,14, [[キャラ:코만단트]], 40, 0
-CALL SET_ENEMY,15, [[キャラ:Ｓ슛체]], 40, 0
-CALL SET_ENEMY,16, [[キャラ:Ｖ크래프트]], 40, 0
+CALL SET_ENEMY,7, [[캐릭터:Ｓ졸다트]], 40, 0
+CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 40, 0
+CALL SET_ENEMY,11, [[캐릭터:Ｓ졸다트]], 40, 0
+CALL SET_ENEMY,12, [[캐릭터:Ｖ크래프트]], 40, 0
+CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 40, 0
+CALL SET_ENEMY,14, [[캐릭터:코만단트]], 40, 0
+CALL SET_ENEMY,15, [[캐릭터:Ｓ슛체]], 40, 0
+CALL SET_ENEMY,16, [[캐릭터:Ｖ크래프트]], 40, 0
 CALL ADJUST_IMPERIAL
 PRINTL ＞제국병　코만단트가 １체 나왔다！
 PRINTL ＞제국병　마시넨졸다트가 3체 나왔다！
@@ -122,9 +122,9 @@ PRINTW 「페르소나 구사자의 이능을 봉인하는 성창의 힘! 복제
 PRINTL 롱기누스１２
 PRINTW 「천천히 그 눈에 새겨두어라!」
 
-CALL SET_ENEMY,8, [[キャラ:롱기누스１１]], 40, 0, 1
-CALL SET_ENEMY,9, [[キャラ:롱기누스１２]], 40, 0, 1
-CALL SET_ENEMY,10, [[キャラ:롱기누스１３]], 40, 0, 1
+CALL SET_ENEMY,8, [[캐릭터:롱기누스１１]], 40, 0, 1
+CALL SET_ENEMY,9, [[캐릭터:롱기누스１２]], 40, 0, 1
+CALL SET_ENEMY,10, [[캐릭터:롱기누스１３]], 40, 0, 1
 CALL ADJUST_IMPERIAL
 PRINTL ＞성창기사단　롱기누스１１가 １체 나타났다！
 PRINTL ＞성창기사단　롱기누스１２가 １체 나타났다！
@@ -163,15 +163,15 @@ PRINTL
 			PRINTW
 			VARSET LOCAL
 			LOCAL = 1
-			IF GETCHARA([[キャラ:롱기누스１１]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스１１]]) < 0
 				PRINTL ＞[1]롱기누스１１
 				LOCAL:(LOCAL++) = 1
 			ENDIF
-			IF GETCHARA([[キャラ:롱기누스１２]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스１２]]) < 0
 				PRINTL ＞[2]롱기누스１２
 				LOCAL:(LOCAL++) = 2
 			ENDIF
-			IF GETCHARA([[キャラ:롱기누스１３]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스１３]]) < 0
 				PRINTL ＞[3]롱기누스１３
 				LOCAL:(LOCAL++) = 3
 			ENDIF
@@ -181,8 +181,8 @@ PRINTL
 			SELECTCASE RESULT
 			CASE 1
 				PRINTW ＞롱기누스１１을 손에 넣었다.
-				IF GETCHARA([[キャラ:롱기누스１１]]) < 0
-					CALL ADD_NEW_COMPANION,[[キャラ:롱기누스１１]],0,,,1
+				IF GETCHARA([[캐릭터:롱기누스１１]]) < 0
+					CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스１１]],0,,,1
 					IF RESULT
 						BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 						ABL:(RESULT:1):종족 = 0
@@ -318,8 +318,8 @@ PRINTL
 				ENDIF
 			CASE 2
 				PRINTW ＞롱기누스１２를 손에 넣었다
-				IF GETCHARA([[キャラ:롱기누스１２]]) < 0
-					CALL ADD_NEW_COMPANION,[[キャラ:롱기누스１２]],0,,,1
+				IF GETCHARA([[캐릭터:롱기누스１２]]) < 0
+					CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스１２]],0,,,1
 					IF RESULT
 						BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 						ABL:(RESULT:1):종족 = 0
@@ -454,8 +454,8 @@ PRINTL
 				ENDIF
 			CASE 3
 				PRINTW ＞롱기누스１３을 손에 넣었다
-				IF GETCHARA([[キャラ:롱기누스１３]]) < 0
-					CALL ADD_NEW_COMPANION,[[キャラ:롱기누스１３]],0,,,1
+				IF GETCHARA([[캐릭터:롱기누스１３]]) < 0
+					CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스１３]],0,,,1
 					IF RESULT
 						BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 						ABL:(RESULT:1):종족 = 0

@@ -660,10 +660,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:메그레즈]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:메그레즈]],1000)
 
 			;- SET:메그레즈
-			CALL SET_ENEMY,9,[[キャラ:메그레즈]],REQUEST_30_BASE_LV(4),1,1
+			CALL SET_ENEMY,9,[[캐릭터:메그레즈]],REQUEST_30_BASE_LV(4),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 2

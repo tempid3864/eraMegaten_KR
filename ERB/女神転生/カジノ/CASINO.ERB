@@ -235,7 +235,7 @@ SELECTCASE RESULT
 		CASE 1
 		IF MONEY:3 > 10000
 			PRINTL ＞토르가 동료마가 되었다！
-			CALL ADD_NEW_COMPANION,[[キャラ:토르]],1
+			CALL ADD_NEW_COMPANION,[[캐릭터:토르]],1
 			IF RESULT == 1
 			LOCAL = RESULT:1
 			ABL:LOCAL:스킬2 = [[스킬:스파크볼트]]
@@ -249,7 +249,7 @@ SELECTCASE RESULT
 		CASE 2
 		IF MONEY:3 > 10000
 			PRINTL ＞아레스가 동료마가 되었다！
-			CALL ADD_NEW_COMPANION,[[キャラ:아레스]],1
+			CALL ADD_NEW_COMPANION,[[캐릭터:아레스]],1
 			IF RESULT == 1
 			LOCAL = RESULT:1
 			ABL:LOCAL:스킬1 = [[스킬:아기다인]]

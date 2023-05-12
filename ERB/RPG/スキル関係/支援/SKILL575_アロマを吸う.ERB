@@ -3,15 +3,15 @@
 
 ;스킬명
 @SKILL_NAME_575,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:타츠마]])
+IF SKILL_CHANGE(ARG, [[캐릭터:타츠마]])
 	RESULTS = 각무
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RESULTS = 화살 떨어뜨리기
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 아이우치
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RESULTS = 백인반환
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RESULTS = 아에토네앙아그라
 ELSE
 	RESULTS = 아로마를피운다
@@ -153,19 +153,19 @@ PRINTFORML %CALLNAME:ARG%의 회피율이 크게 높아졌다！
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_575
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:타츠마]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:타츠마]])
 	PRINTL 갈고닦은 고무도의 후각으로、상대의 공격을 판별한다。
 	PRINTL 사용자의 회피율을 최대까지 상승시킨다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:쿄이치]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:쿄이치]])
 	PRINTL 갈고닦은 검술의 후각으로、상대의 공격을 판별한다。
 	PRINTL 사용자의 회피율을 최대까지 상승시킨다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 갈고닦은 궁술의 후각으로、상대의 공격을 판별한다。
 	PRINTL 사용자의 회피율을 최대까지 상승시킨다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:키사라기]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:키사라기]])
 	PRINTL 갈고닦은 비수류의 후각으로、상대의 공격을 판별한다。
 	PRINTL 사용자의 회피율을 최대까지 상승시킨다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:마리(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:마리(마인학원)]])
 	PRINTL 마술로 힘의 흐름을 읽어、상대의 공격을 판별한다。
 	PRINTL 사용자의 회피율을 최대까지 상승시킨다。
 ELSE

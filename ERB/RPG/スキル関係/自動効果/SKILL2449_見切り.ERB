@@ -3,11 +3,11 @@
 
 ;스킬명
 @SKILL_NAME_2449,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+IF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RESULTS = 받아넘기기
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RESULTS = 투권반환
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RESULTS = 아미안투스
 ELSE
     RESULTS = 간파
@@ -37,13 +37,13 @@ RETURN 0
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2449
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:쿄이치]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:쿄이치]])
 	PRINTL 상대의 움직임과 공격을 판별해、자신의 공격은 맞히기 쉬워지고、상대의 반격이 받기 어렵게 한다。
 	PRINTL 자동：물리공격의 명중률이 높아지고、상태의 카운터를 무효화한다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:키사라기]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:키사라기]])
 	PRINTL 상대의 움직임과 공격을 판별해、자신의 공격은 맞히기 쉬워지고、상대의 반격이 받기 어렵게 한다。
 	PRINTL 자동：물리공격의 명중률이 높아지고、상태의 카운터를 무효화한다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:마리(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:마리(마인학원)]])
 	PRINTL 마법으로 상대의 움직임과 공격을 판별해、자신의 공격은 맞히기 쉬워지고、상대의 반격이 받기 어렵게 한다。
 	PRINTL 자동：물리공격의 명중률이 높아지고、상태의 카운터를 무효화한다。
 ELSE

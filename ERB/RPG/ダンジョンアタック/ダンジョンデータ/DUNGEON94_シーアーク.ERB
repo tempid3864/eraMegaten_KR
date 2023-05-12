@@ -928,9 +928,9 @@ FOR LCOUNT, 1, 6900
 		CONTINUE
 
 	; ;一部特殊악마は조건次第で出現させる
-	; SIF LCOUNT == [[キャラ:하루트]]
+	; SIF LCOUNT == [[캐릭터:하루트]]
 	; 	GOTO SET_ENEMYS_NO
-	; SIF LCOUNT == [[キャラ:마루트]]
+	; SIF LCOUNT == [[캐릭터:마루트]]
 	; 	GOTO SET_ENEMYS_NO
 
 	;解析率が50미만の악마は出現しない
@@ -1031,12 +1031,12 @@ ENDIF
 
 IF LOCAL:2 < 3 || LOCAL == 0 || LOCAL == LOCAL:1
 	出現する悪魔の種類 = 6
-	出現悪魔:0 = [[キャラ:픽시]]
-	出現悪魔:1 = [[キャラ:하피]]
-	出現悪魔:2 = [[キャラ:아프사라스]]
-	出現悪魔:3 = [[キャラ:노커]]
-	出現悪魔:4 = [[キャラ:춍춍]]
-	出現悪魔:5 = [[キャラ:아귀]]
+	出現悪魔:0 = [[캐릭터:픽시]]
+	出現悪魔:1 = [[캐릭터:하피]]
+	出現悪魔:2 = [[캐릭터:아프사라스]]
+	出現悪魔:3 = [[캐릭터:노커]]
+	出現悪魔:4 = [[캐릭터:춍춍]]
+	出現悪魔:5 = [[캐릭터:아귀]]
 	LOCAL:1 = 0
 ELSE
 	出現する悪魔の種類 = LOCAL
@@ -1160,9 +1160,9 @@ FOR LCOUNT, 1, 6900
 		CONTINUE
 
 	;一部特殊악마は조건次第で出現させる
-	; SIF LCOUNT == [[キャラ:하루트]]
+	; SIF LCOUNT == [[캐릭터:하루트]]
 	; 	GOTO SET_ENEMYS_NO
-	; SIF LCOUNT == [[キャラ:마루트]]
+	; SIF LCOUNT == [[캐릭터:마루트]]
 	; 	GOTO SET_ENEMYS_NO
 
 	;解析率が50미만の악마は出現しない
@@ -1265,17 +1265,17 @@ ENDIF
 IF LOCAL:2 < 3 || LOCAL == 0 || LOCAL == LOCAL:1
 	SELECTCASE RAND:6
 		CASE IS < 1
-			RETURN [[キャラ:픽시]],3
+			RETURN [[캐릭터:픽시]],3
 		CASE IS < 2
-			RETURN [[キャラ:하피]],4
+			RETURN [[캐릭터:하피]],4
 		CASE IS < 3
-			RETURN [[キャラ:아프사라스]],5
+			RETURN [[캐릭터:아프사라스]],5
 		CASE IS < 4
-			RETURN [[キャラ:노커]],4
+			RETURN [[캐릭터:노커]],4
 		CASE IS < 5
-			RETURN [[キャラ:춍춍]],4
+			RETURN [[캐릭터:춍춍]],4
 		CASE IS < 6
-			RETURN [[キャラ:아귀]],4
+			RETURN [[캐릭터:아귀]],4
 	ENDSELECT
 ELSE
 	;등록した악마の数を保存
@@ -1358,11 +1358,11 @@ RETURN -1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코볼트]] , 3 + RAND:10 , CSVBASE([[キャラ:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코볼트]] , 3 + RAND:10 , CSVBASE([[캐릭터:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 ;=======================================================================

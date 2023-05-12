@@ -1,9 +1,9 @@
 ﻿
 ;스킬명
 @SKILL_NAME_201,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미나카미]])
+IF SKILL_CHANGE(ARG, [[캐릭터:미나카미]])
 	RESULTS = 상단차기
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:타츠마]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:타츠마]])
 	RESULTS = 장타
 ELSE
 	RESULTS = 돌격
@@ -15,7 +15,7 @@ RETURN 95
 
 ;　위력
 @SKILL_POWER_201, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:타츠마]])
+IF SKILL_CHANGE(ARG, [[캐릭터:타츠마]])
 	RETURN 180
 ELSE
 	RETURN 125
@@ -36,7 +36,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_201,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:타츠마]])
+IF SKILL_CHANGE(ARG, [[캐릭터:타츠마]])
 	RETURN 7
 ELSE
 	RETURN 2
@@ -44,7 +44,7 @@ ENDIF
 
 ;　상성
 @SKILL_TYPE_201,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:타츠마]])
+IF SKILL_CHANGE(ARG, [[캐릭터:타츠마]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -146,7 +146,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,201
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_201
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:타츠마]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:타츠마]])
 	PRINTL 고무도 기본기 중 하나。
 	PRINTL 적 1체에 타격 물리데미지를 준다。
 ELSE

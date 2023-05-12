@@ -260,7 +260,7 @@ PRINTW 그 옆모습은 늠름했다.
 LOCAL = EVENT93_推しの位置取得()
 SELECTCASE 이벤트플래그:93:10
 	;ひかりちゃんルート時のみ、反応が変わる
-	CASE [[キャラ:히카리]]
+	CASE [[캐릭터:히카리]]
 		PRINTW 히카리는, 파랗게 질린 그대로, 「응」이라고 수긍만 할 뿐,
 		PRINTW 카렌의 손은, 잡지 않았다.
 	;それ以外
@@ -295,7 +295,7 @@ PRINTL
 LOCAL = EVENT93_推しの位置取得()
 
 SELECTCASE 이벤트플래그:93:10
-	CASE [[キャラ:카렌（무대소녀）]]
+	CASE [[캐릭터:카렌（무대소녀）]]
 	PRINTFORML 「어라？　%CSTR:LOCAL:이인칭%도 돌아가는 건가요？」
 		FORCEWAIT
 		PRINTL 
@@ -321,7 +321,7 @@ SELECTCASE 이벤트플래그:93:10
 		PRINTW 「좋아ー, 열심히 해버릴테야ー！」
 		PRINTL 
 		PRINTW 당신은 더해지는 열기를 등 뒤에 느끼면서, 빠른 걸음으로 그 자리를 뒤로 했다――
-	CASE [[キャラ:히카리]]
+	CASE [[캐릭터:히카리]]
 	PRINTFORML 「%CSTR:LOCAL:이인칭%」
 		FORCEWAIT
 		PRINTL 
@@ -343,7 +343,7 @@ SELECTCASE 이벤트플래그:93:10
 		PRINTL 
 		PRINTW 아무것도 아니면 불러세우지 말라니까.
 		PRINTW 아직도 파란, 히카리의 안색에는 신경이 쓰였지만, 저쪽이 먼저 입을 열어주기를 기다릴 수밖에 없겠지――
-	CASE [[キャラ:쥰나]]
+	CASE [[캐릭터:쥰나]]
 	PRINTFORML 「%CSTR:LOCAL:이인칭%」
 		FORCEWAIT
 		PRINTL 
@@ -369,7 +369,7 @@ SELECTCASE 이벤트플래그:93:10
 		PRINTW 「반드시 너에게 멋진 걸 보여줄테니까！　그러니까, 그러니까」
 		PRINTL 
 		PRINTW 당신은 불꽃과 별에 삼켜질 것 같아 무심코 시선을 돌려버렸다――
-	CASE [[キャラ:마히루]]
+	CASE [[캐릭터:마히루]]
 	PRINTFORML 「%CSTR:LOCAL:이인칭%！」
 		FORCEWAIT
 		PRINTL 
@@ -391,7 +391,7 @@ SELECTCASE 이벤트플래그:93:10
 		PRINTL 
 		PRINTW 마히루의, 반짝반짝 빛나는 희망의 색을 담은 눈동자는, 처음 만났을 때와는 전혀 달랐다.
 		PRINTW 당신은 심한 눈부심을 느껴 빠르게 그 자리를 뒤로 했다――
-	CASE [[キャラ:후타바（무대소녀）]]
+	CASE [[캐릭터:후타바（무대소녀）]]
 	PRINTFORMW 「어라, 가버리는 거야？」
 		FORCEWAIT
 		PRINTL 
@@ -436,7 +436,7 @@ SELECTCASE 이벤트플래그:93:10
 			PRINTW 후타바는, 그녀를 뒤쫓지도 못한 채, 그저 그 자리에 서 있었다――
 		ENDIF
 		
-	CASE [[キャラ:카오루코]]
+	CASE [[캐릭터:카오루코]]
 	PRINTFORML 「어라, 어데 가는 건가요？」
 		FORCEWAIT
 		PRINTL 
@@ -501,11 +501,11 @@ SELECTCASE 이벤트플래그:93:10
 			PRINTW 　설령, 당신의 마음을, 짓밟아버린다 해도――」
 		ENDIF
 	
-	CASE [[キャラ:나나]]
+	CASE [[캐릭터:나나]]
 		;아야章量が多いので可読性のために分離
 		CALL EVENT_93_10_BANANA
 		
-	CASE [[キャラ:마야（무대소녀）]]
+	CASE [[캐릭터:마야（무대소녀）]]
 	PRINTFORML 「왠지, 제가 어리광을 부려버린 것 같네요」
 		FORCEWAIT
 		PRINTL 
@@ -587,7 +587,7 @@ SELECTCASE 이벤트플래그:93:10
 			PRINTW 그 진지한 눈빛에 견딜 수 없게 되어버린 당신은 황급히 발길을 옮겨, 열기가 휘몰아치는 지하극장을 뒤로 했다――
 		ENDIF
 		
-	CASE [[キャラ:클로딘]]
+	CASE [[캐릭터:클로딘]]
 		PRINTL 「고마워, 코치」
 		FORCEWAIT
 		PRINTL 

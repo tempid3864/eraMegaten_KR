@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_2532,ARG
 ;후타바（무대소녀）が사용する場合
-IF SKILL_CHANGE(ARG, [[キャラ:후타바（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:후타바（무대소녀）]])
 	RESULTS = 카오루코를 건들지 마！
 ELSE
 	RESULTS = 자애의맹반격（보스용）
@@ -16,7 +16,7 @@ RETURN 999
 
 ;　위력
 @SKILL_POWER_2532, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:후타바（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:후타바（무대소녀）]])
 	RETURN 120
 ELSE
 	RETURN 300
@@ -45,7 +45,7 @@ RETURN 0
 SIF ARG < 0
 	RETURN 0
 ;후타바（무대소녀）は충격
-IF SKILL_CHANGE(ARG, [[キャラ:후타바（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:후타바（무대소녀）]])
 	RETURN 7
 ;デフォは素の공격상성
 ELSE
@@ -175,7 +175,7 @@ PRINTL
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2532
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:후타바（무대소녀）]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:후타바（무대소녀）]]
 	PRINTL 카오루코가 공격당했을 때、적을 향해 충격 상성으로 반격 한다
 ELSE
 	PRINTL 아군이 공격당했을 때、적을 향해 반격 한다

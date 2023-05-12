@@ -110,7 +110,7 @@ IF 의뢰플래그:10:0 >= 100 && ABL:MASTER:속성LD != 3 && FLAG:10303 == 0
 	WAIT
 	PRINTL 사무소에 백합이 장식된 순백의 꽃병이 도착했다
 	PRINTW ……누가 보내준 거지?
-	CALL LIFTING_A_BAN([[キャラ:가브리엘]])
+	CALL LIFTING_A_BAN([[캐릭터:가브리엘]])
 	;FLAG:10303 = 1
 ENDIF
 ;100万以上送金する＆속성がLight以外でルキフグス解禁
@@ -119,7 +119,7 @@ IF 의뢰플래그:10:1 >= 200 && ABL:MASTER:속성LD != 1 && FLAG:10244 == 0
 	PRINTL 
 	PRINTW 어디선가 코인이 떨어지는 소리나 났다……는 생각이 든다
 	PRINTL 
-	CALL LIFTING_A_BAN([[キャラ:루키프구스]])
+	CALL LIFTING_A_BAN([[캐릭터:루키프구스]])
 	;FLAG:10244 = 1
 ENDIF
 

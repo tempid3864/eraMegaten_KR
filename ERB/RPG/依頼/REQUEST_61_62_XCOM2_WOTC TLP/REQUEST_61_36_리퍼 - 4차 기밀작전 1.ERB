@@ -111,10 +111,10 @@ PRINTL
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트병사]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트장교]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트MEC]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:스팩터]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트병사]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트장교]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트MEC]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩터]],1000)
 
 LOCAL = 0 ;주인공이 있는 포지션번호
 LOCAL:1 = 0 ;동료의 목록번호
@@ -139,7 +139,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	;XCOM병사. 엘레나 드라그노바40 등장.
 	CALL ADD_NEW_COMPANION,8549,0
 
-	CALL INCREASE_ANALYZE([[キャラ:엘레나드라그노바40]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:엘레나드라그노바40]],1000) ;이제 인외이므로 애널라이즈 필요.
 
 	;파티 특별배치
 	CALL INSERT_POSITION,1,CHARANUM-1
@@ -162,7 +162,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;앨리트 병사는 X3 1440, 레벨 40. 리바이어던 사양.
-	CALL SET_ENEMY,8,[[キャラ:어드밴트병사]],25,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트병사]],25,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -179,7 +179,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 320, 540)
 	;장교용 리바이어던 사양 540 X 4 = 2160. 체력 수치만 같음
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],30,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1817
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2040
@@ -197,7 +197,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;어드밴트 MEC 체력 7, 12. 체력 1당 60
 	;목표 체력 420, 720. 리바이어던 사양은 X3 = 2160, 레벨 40
-	CALL SET_ENEMY,10,[[キャラ:어드밴트MEC]],30,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트MEC]],30,0,0
 	NAME:(CHARANUM-1) = 중형 MEC
 	CALLNAME:(CHARANUM-1) = 중형 MEC
 	BASE:(CHARANUM-1):힘 = 20
@@ -237,7 +237,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;앨리트 병사는 X3 1440, 레벨 40. 리바이어던 사양.
-	CALL SET_ENEMY,8,[[キャラ:어드밴트병사]],25,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트병사]],25,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -254,7 +254,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;앨리트 병사는 X3 1440, 레벨 40. 리바이어던 사양.
-	CALL SET_ENEMY,9,[[キャラ:어드밴트병사]],25,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트병사]],25,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -271,7 +271,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	;어드밴트 정화자. 체력 4, 6, 10
 	;240, 360, 600으로 증가 앨리트 정화자는 X 3 = 1800
-	CALL SET_ENEMY,10,[[キャラ:어드밴트정화자]],25,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트정화자]],25,0,0
 	BASE:(CHARANUM-1):힘 = 13
 	BASE:(CHARANUM-1):지혜 = 8
 	BASE:(CHARANUM-1):마력 = 8
@@ -343,7 +343,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;로스트
-	CALL SET_ENEMY,7,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:로스트]],5,0,0
 	BASE:(CHARANUM-1):속도 += 25
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	NAME:(CHARANUM-1) = 로스트 대셔
@@ -352,7 +352,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,8,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:로스트]],5,0,0
 	BASE:(CHARANUM-1):속도 += 25
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	NAME:(CHARANUM-1) = 로스트 대셔
@@ -361,7 +361,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,9,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:로스트]],5,0,0
 	BASE:(CHARANUM-1):속도 += 25
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 750
 	NAME:(CHARANUM-1) = 로스트 하울러
@@ -370,7 +370,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,10,[[キャラ:로스트]],15,0,0
+	CALL SET_ENEMY,10,[[캐릭터:로스트]],15,0,0
 	BASE:(CHARANUM-1):속도 += 25
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 900
 	NAME:(CHARANUM-1) = 로스트 브루트
@@ -379,7 +379,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,11,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:로스트]],5,0,0
 	BASE:(CHARANUM-1):속도 += 25
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 900
 	NAME:(CHARANUM-1) = 로스트 브루트
@@ -388,31 +388,31 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,12,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,12,[[캐릭터:로스트]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,13,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,13,[[캐릭터:로스트]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,14,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,14,[[캐릭터:로스트]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,15,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,15,[[캐릭터:로스트]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;로스트
-	CALL SET_ENEMY,16,[[キャラ:로스트]],5,0,0
+	CALL SET_ENEMY,16,[[캐릭터:로스트]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 600
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)

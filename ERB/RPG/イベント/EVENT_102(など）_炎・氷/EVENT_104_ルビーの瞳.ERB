@@ -5,10 +5,10 @@
 ;====================
 @PLAYABLE_EVENT_104
 ;ギンヌンガガップで守護神に会う.アミかレナをパーティに入れている
-IF FINDCHARA_B([[キャラ:레나]]) == 2 && 던전플래그:98:0 == 4
+IF FINDCHARA_B([[캐릭터:레나]]) == 2 && 던전플래그:98:0 == 4
 	RESULTS = ルビーの瞳
 	RETURN 1
-ELSEIF FINDCHARA_B([[キャラ:아미]]) == 2 && 던전플래그:98:0 == 4
+ELSEIF FINDCHARA_B([[캐릭터:아미]]) == 2 && 던전플래그:98:0 == 4
 	RESULTS = ルビーの瞳
 	RETURN 1
 ENDIF

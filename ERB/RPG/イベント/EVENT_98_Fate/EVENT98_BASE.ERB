@@ -1380,9 +1380,9 @@ ELSEIF 이벤트플래그:98:0 == 4
 					PRINTFORMW 만약 교내에서 의식을 유지중이던 인간이 있어 보고 수상히 여긴다면、외부자인 %CALLNAME:MASTER%로서는 형편이 좋지 않다。
 					PRINTW 이 곳은 린에게 맡기고、구속한 신지를 데리고 떠나기로 하자。
 					PRINTW 뭐、본래 상정중이었던 적인 랜서는 아니었지만、서번트를 1체 쓰러트릴 수 있었던건 크겠지。
-					CALL ADD_NEW_COMPANION,[[キャラ:신지]],0
+					CALL ADD_NEW_COMPANION,[[캐릭터:신지]],0
 					IF RESULT == 1
-						LOCAL = GETCHARA([[キャラ:신지]])
+						LOCAL = GETCHARA([[캐릭터:신지]])
 						TALENT:LOCAL:서머너 = 0
 						TALENT:LOCAL:도구지식 = 0
 						TALENT:LOCAL:비전투원 = 1
@@ -1559,7 +1559,7 @@ ELSEIF 이벤트플래그:98:0 == 4
 					PRINTW 신지『이런 방법을 사용한 이상 대책은 있는게 당연하잖아？　뒤는 내게 맡기고 빨리 사라져주지 않겠어？』
 					PRINTFORMW 약간 불안감은 있지만、이 학교와는 연이 없는 %CALLNAME:MASTER%로서는 뒷정리에 관해서 할 수 있는 일도 없을터다。
 					PRINTW 이번에는 서번트 1체를 쓰러트릴 수 있었으니 좋다고 생각해야겠지。
-					CALL ADD_NEW_COMPANION,[[キャラ:린Fate]],0
+					CALL ADD_NEW_COMPANION,[[캐릭터:린Fate]],0
 				ELSEIF RESULT != 1
 					GOTO INPUT_LOOP_4_1_2
 				ELSE

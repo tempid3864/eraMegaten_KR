@@ -198,7 +198,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL INCREASE_ANALYZE([[キャラ:아귀]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:아귀]],1000)
 			CALL SET_ENEMY,8,1093,1,0,0
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 0
@@ -263,10 +263,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL MESSAGE_WINDOW_D, "","＞아무래도 함께 행동하기로 한 듯하다"
 		CALL MESSAGE_WINDOW_D, "",@"＞등에 칼을 들이대고 있는듯한 느낌을 받으며/%CALLNAME:MASTER%는、이계화를 해결하기 위해 움직였다"
 			FLAG:탈출스킬금지 = 1
-			LOCAL = GETCHARA([[キャラ:쿄우지]])
+			LOCAL = GETCHARA([[캐릭터:쿄우지]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:쿄우지]], 100)
-				LOCAL = GETCHARA([[キャラ:쿄우지]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:쿄우지]], 100)
+				LOCAL = GETCHARA([[캐릭터:쿄우지]])
 				NAME:LOCAL = 謎の男
 				CALLNAME:LOCAL = 謎の男
 ;				BASE:LOCAL:LV = 50
@@ -302,7 +302,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL INCREASE_ANALYZE([[キャラ:피샤차]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:피샤차]],1000)
 			CALL SET_ENEMY,8,1033,15,0,0
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 300
@@ -382,7 +382,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL MESSAGE_WINDOW_D, "","………………/…………/……"
 		CALL MESSAGE_WINDOW_D, "","＞세이프티 하우스로 돌아가、의뢰를 해결했음을 보고 했다"
 		CALL MESSAGE_WINDOW_D, "","＞의뢰 보수로 ￥10000을 얻었다……"
-		LOCAL = GETCHARA([[キャラ:쿄우지]])
+		LOCAL = GETCHARA([[캐릭터:쿄우지]])
 		IF LOCAL >= 0 && !CFLAG:LOCAL:인계횟수
 		CALL DEL_GUEST, LOCAL
 		MONEY += 10000

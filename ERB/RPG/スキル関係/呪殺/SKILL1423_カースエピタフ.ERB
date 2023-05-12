@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_1423,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RESULTS = 블러디ㆍ페스타
 ELSE
 	RESULTS = 저주비문
@@ -31,7 +31,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_1423,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RETURN 25
 ELSE
 	RETURN 20
@@ -117,13 +117,13 @@ RETURN 95
 ;====================================================
 @ACTION_1423,ARG,ARG:1
 #LOCALSSIZE 1
-SIF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	PRINTFORMW ＞%CALLNAME:ARG%의 주위로부터、엄청난 양의 사령의 떼가 적 전체를 덮쳤다！
 
 CALL FIELD_BADSTATE,ARG,ARG:1,1423
 
 ;小梅の互換スキルとしての追加分(CURCE判定を抜けた相手に対し、スキルゲージを消費しての万能BIND)
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	;疑似付与管理用のDゲージを取得。
 	LOCAL:3= (SKILLGAGE_D_GET(ARG,3622))
 	FOR LOCAL,7,17
@@ -173,7 +173,7 @@ ENDIF
 ;　 설명문 표시
 @SKILL_EXPLAIN_1423
 
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:코우메]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:코우메]]
 	PRINTL 무수한 사령을 적 전체에 해방함으로써 적 전체를 CURSE 상태로 만들고、추가로 사령을 엉겨 붙게 한다。
 	PRINTL 또한、상대에게 사령 카운터가 이미 5 이상 부여되어 있고、CURSE 상태가 되지 않았을 경우는 대상의 사령 카운터를 5 소비해 BIND 상태로 만든다。
 	PRINTL 사령 카운터를 5 소비하여 발동한다。
@@ -188,7 +188,7 @@ RETURN 1
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_1423,ARG
 
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 ;小梅が使用する場合は固有ゲージが5以上ないと発動できない。
 	SIF SKILLGAGE_H_GET(ARG,3622) >= 5
 		RETURN 1

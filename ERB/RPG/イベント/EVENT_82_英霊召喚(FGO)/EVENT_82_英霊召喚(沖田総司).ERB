@@ -23,7 +23,7 @@
 ;※召喚は이벤트플래그:82:1が必ず4以上から。
 LOCAL = GETCHARA(4402)
 IF 이벤트플래그:82:1 > 3
-	IF GETCHARA([[キャラ:오키타소지]]) > 0
+	IF GETCHARA([[캐릭터:오키타소지]]) > 0
 		RESULTS = 병약 여검객(오키타 소지)
 		RESULTS:1 = 필요 촉매：LV50이상의 남자가 아닌 조마　가입완료
 		RETURN 0
@@ -59,7 +59,7 @@ ENDIF
 
 ;■イベント本文を記載■
 
-	対象 = [[キャラ:오키타소지]]
+	対象 = [[캐릭터:오키타소지]]
 	;バトルイベント識別のために이벤트플래그を特定値に設定
 	이벤트플래그:82:5 = 50
 	PRINTFORML  「자、소환술은 다음 스테이지로
@@ -144,7 +144,7 @@ ENDIF
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:오키타소지]],50,1,3
+			CALL SET_ENEMY,9,[[캐릭터:오키타소지]],50,1,3
 			CFLAG:(CHARANUM-1):행동횟수 = 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = (MAXBASE:(CHARANUM-1):ＨＰ / 2)
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 99999
@@ -183,7 +183,7 @@ ENDIF
 			PRINTFORML 
 			PRINTFORMW  ＞ 영령 오키타 소지 가 중마가 되었다！
 			PRINTFORML  
-			CALL ADD_NEW_COMPANION, [[キャラ:오키타소지]], 1000
+			CALL ADD_NEW_COMPANION, [[캐릭터:오키타소지]], 1000
 			;バトルイベント識別に使った이벤트플래그を片付け
 			이벤트플래그:82:5 = 0
 		CASE 1
@@ -207,7 +207,7 @@ ENDIF
 			PRINTFORMW  ＞ 영령 오키타 소지 가 중마가 되었다！
 			PRINTFORML  
 			PRINTFORML  
-			CALL ADD_NEW_COMPANION, [[キャラ:오키타소지]], 1000
+			CALL ADD_NEW_COMPANION, [[캐릭터:오키타소지]], 1000
 			;バトルイベント識別に使った이벤트플래그を片付け
 			이벤트플래그:82:5 = 0
 		CASEELSE

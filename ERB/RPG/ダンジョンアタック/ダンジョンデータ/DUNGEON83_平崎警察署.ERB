@@ -418,7 +418,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 		FLAG:선제기습취소 = 1
 		
 			;쿠반다
-				CALL SET_ENEMY,9,[[キャラ:쿠반다]],53,0,1
+				CALL SET_ENEMY,9,[[캐릭터:쿠반다]],53,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 3500
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 8000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -634,28 +634,28 @@ SELECTCASE FLAG:현M
 	CASE 0,1,2,
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:짐]], 40
+				RETURN [[캐릭터:짐]], 40
 			CASE IS < 55
-				RETURN [[キャラ:레기온]], 41
+				RETURN [[캐릭터:레기온]], 41
 			CASE IS < 70
-				RETURN [[キャラ:아마존]], 40
+				RETURN [[캐릭터:아마존]], 40
 			CASE IS < 85
-				RETURN [[キャラ:바질리스크]], 42
+				RETURN [[캐릭터:바질리스크]], 42
 			CASE IS < 100
-				RETURN [[キャラ:좀비캅]], 40
+				RETURN [[캐릭터:좀비캅]], 40
 		ENDSELECT
 CASEELSE
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:스프리건]], 43
+				RETURN [[캐릭터:스프리건]], 43
 			CASE IS < 55
-				RETURN [[キャラ:서큐버스]], 44
+				RETURN [[캐릭터:서큐버스]], 44
 			CASE IS < 70
-				RETURN [[キャラ:베르세르크]], 45
+				RETURN [[캐릭터:베르세르크]], 45
 			CASE IS < 85
-				RETURN [[キャラ:파워]], 45
+				RETURN [[캐릭터:파워]], 45
 			CASE IS < 100
-				RETURN [[キャラ:좀비캅]], 43
+				RETURN [[캐릭터:좀비캅]], 43
 			ENDSELECT
 ENDSELECT
 
@@ -667,9 +667,9 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:좀비캅]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비캅]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베르세르크]] , 3 + RAND:10 , CSVBASE([[캐릭터:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:레기온]] , 3 + RAND:10 , CSVBASE([[キャラ:레기온]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:레기온]] , 3 + RAND:10 , CSVBASE([[캐릭터:레기온]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

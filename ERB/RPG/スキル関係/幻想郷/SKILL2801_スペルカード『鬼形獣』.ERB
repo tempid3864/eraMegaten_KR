@@ -1,21 +1,21 @@
 ﻿;スキル名　スペルカード『鬼形獣』。鬼形獣キャラ習得用スペルカード素体。
 
 @SKILL_NAME_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RESULTS = 경질기「머슬 익스플로전」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RESULTS = 선형「리니어 크리처」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RESULTS = 하니와「텅 빈 무진장 병단」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RESULTS = 귀부「귀갑 지옥」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 SIF MAXBASE:ARG:ＨＰ / BASE:ARG:ＨＰ >= 2
 	RESULTS = 혈전「전령 오니와타리」
 	RESULTS = 귀부「오니와타리 시련」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RESULTS = 석부「스톤 베이비」
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RESULTS = 석부「칠드런즈 림보」
 ELSE
 	RESULTS = 스펠카드『귀형수』
@@ -23,19 +23,19 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_2801, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 150
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 100
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 100
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 130
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 100
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 85
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 120
 ELSE
 	RETURN 100
@@ -43,21 +43,21 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_2801, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 300
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 300
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 150
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 300
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 SIF MAXBASE:ARG:ＨＰ / BASE:ARG:ＨＰ >= 2
 	RETURN 400
 	RETURN 240
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 300
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 240
 ELSE
 	RETURN 300
@@ -65,19 +65,19 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -85,19 +85,19 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -110,19 +110,19 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 40
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 50
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 25
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 20
 ELSE
 	RETURN 20
@@ -131,21 +131,21 @@ ENDIF
 
 ;　상성
 @SKILL_TYPE_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN GET_TYPE_NUM("충격")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN GET_TYPE_NUM("만능")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	SIF CFLAG:ARG:집중플래그 == 1
 		RETURN GET_TYPE_NUM("만능")
 	RETURN GET_TYPE_NUM("전술")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN GET_TYPE_NUM("화염")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN GET_TYPE_NUM("비구")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN GET_TYPE_NUM("중력")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN GET_TYPE_NUM("수격")
 ELSE
 	RETURN GET_TYPE_NUM("검격")
@@ -157,9 +157,9 @@ ENDIF
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_2801, ARG
-IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:사키(동방)]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[キャラ:사키(동방)]])
+IF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:사키(동방)]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[캐릭터:사키(동방)]])
 	RETURN 1;物理
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마유미]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[キャラ:마유미]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:마유미]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[캐릭터:마유미]])
 	RETURN 1;物理
 ELSE
 	RETURN 2;魔法
@@ -179,19 +179,19 @@ ENDIF
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_2801,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 2
 ELSE
 	RETURN 2
@@ -232,41 +232,41 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_2801,ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN GET_STATE_NUM("BIND")
-SIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN GET_STATE_NUM("PANIC")
-SIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN GET_STATE_NUM("POISON")
 RETURN 0
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_2801,ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 		RETURN GET_TYPE_NUM("신경")
-SIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 		RETURN GET_TYPE_NUM("정신")
-SIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 		RETURN GET_TYPE_NUM("신경")
 RETURN 0
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_2801,ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 40
-SIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 35
-SIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 50
 RETURN 0
 
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_2801,ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	RETURN 95
-SIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	RETURN 95
-SIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	RETURN 95
 RETURN 0
 
@@ -275,13 +275,13 @@ RETURN 0
 ;====================================================
 @ACTION_2801,ARG,ARG:1
 #LOCALSIZE 5
-IF SKILL_CHANGE(ARG, [[キャラ:사키(동방)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사키(동방)]])
 	CFLAG:ARG:공격강화 = MIN(32, CFLAG:ARG:공격강화 + 4)
 	CFLAG:ARG:방어강화 = MIN(32, CFLAG:ARG:방어강화 + 4)
 	CFLAG:ARG:마법위력강화 = MIN(32, CFLAG:ARG:마법위력강화 - 8)
 	PRINTFORMW 마법위력이 대폭 다운하는 대신、공격력ㆍ방어력이 업！
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:케이키]])
 	SELECTCASE ARG:1
 		CASE 17
 			LOCAL:1 = 1
@@ -312,13 +312,13 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:케이키]])
 			CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 8)
 		ENDIF
 	NEXT
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마유미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마유미]])
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야치에]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야치에]])
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿠타카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿠타카]])
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:우루미]])
 	SELECTCASE ARG:1
 		CASE 17
 			LOCAL:1 = 1
@@ -348,7 +348,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:우루미]])
 			CFLAG:POS(LOCAL):회피강화 = MAX(-16, CFLAG:POS(LOCAL):회피강화 - 4)
 		ENDIF
 	NEXT
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:에이카]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:에이카]])
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
 ELSE
 	CALL ATTACK_FIELD,ARG,ARG:1,2801
@@ -365,37 +365,37 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2801
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:사키(동방)]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:사키(동방)]]
 	PRINTL 적 전체에 충격 속성으로 대위력의 물리공격을 1회 행한다。
 	PRINTL 추가효과：높은 명중률、공격 전에 자신의 공격력ㆍ방어력을 상승、마법위력 2단계 하락。
 	PRINTL 사용할수록 마음대로 흥분하고 강화되는、모든 적을 위압하는 근육의 빛으로 공격한다。
 	PRINTL 천마　쿠로코마 사키의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:케이키]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:케이키]]
 	PRINTL 적 1열에 만능 속성으로 대위력의 마법공격을 1회 행한다。
 	PRINTL 추가효과：방어력ㆍ마법효과 2단계 저하
 	PRINTL 무수한 선형상의 공격을 날려、상대의 방어력을 파괴하고 다시 만든다。
 	PRINTL 조형신　하니야스신 케이키의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:마유미]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마유미]]
 	PRINTL 적 1열에 전술 속성으로 소위력의 물리공격을 2~3회 행한다。
 	PRINTL 추가효과：컨센트레이트 시 만능 속성화。
 	PRINTL 하니와 병단을 지휘해、적을 공격한다。집중으로 보다 공격의 숙련도가 높아져、빈틈을 정확하게 공격한다。
 	PRINTL 병장　조토구 마유미의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:야치에]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:야치에]]
 	PRINTL 적 전체에 화염 속성으로 대위력의 마법공격을 1회 행한다。
 	PRINTL 추가효과：높은 명중률。신경 속성 구속（고확률）
 	PRINTL 귀갑문으로 도망갈 곳을 막고、집요하게 표적을 쫓아다니는 화염탄을 쏜다。
 	PRINTL 용왕　킷쵸 야치에의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:쿠타카]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:쿠타카]]
 	PRINTL 적 전체에 비구 속성으로 중위력의 마법공격을 1회 행한다。
 	PRINTL 추가효과：정신 속성 혼란。HP 잔량 절반 이하로 위력 증가。
 	PRINTL 령의 무리를 날려、다각도에서 저격한다。상처를 입으면 령 자체도 추적 공격을 시작한다。
 	PRINTL 신조 　니와타리 쿠타카의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:우루미]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:우루미]]
 	PRINTL 적 1열에 중력 속성으로 대위력의 마법공격을 1회 행한다。
 	PRINTL 추가효과：낮은 명중률、회피율 저하。
 	PRINTL 너무나 무거운 아기 석상을 던져 공격한다。건네주지 않는다는 것은、맞으면 아프다。
 	PRINTL 규키　우시자키 우루미의 스펠카드（전용）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:에이카]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:에이카]]
 	PRINTL 적 1열에 수격 속성으로 중위력의 마법공격을 1회 행한다。
 	PRINTL 추가효과：신경 속성 독（고확률）
 	PRINTL 그녀들의 왕국으로부터 따라왔을 것인、미즈코의 령들에 의한 영장공격。

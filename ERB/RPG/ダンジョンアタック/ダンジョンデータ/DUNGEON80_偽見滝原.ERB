@@ -701,7 +701,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
-						CALL SET_ENEMY,9,[[キャラ:악마호무라]],90,0,5;악마호무라(超強いと思うので頑張って)
+						CALL SET_ENEMY,9,[[캐릭터:악마호무라]],90,0,5;악마호무라(超強いと思うので頑張って)
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -777,7 +777,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 								CALL MESSAGE_WINDOW_D, "악마 호무라", "그렇다면 재차…/나는 악마 아케미 호무라. 서머너, 지금부터 잘 부탁해…"
 								CALL MESSAGE_WINDOW_D, "", "＞역시 피폐해져있었기 때문인지, 아케미 호무라는 바로 COMP로 돌아갔다…＞우선, 이걸로 문제는 없을 것이다…"
 								던전플래그:80:10 = 1
-								CALL ADD_NEW_COMPANION,[[キャラ:악마호무라]],1500
+								CALL ADD_NEW_COMPANION,[[캐릭터:악마호무라]],1500
 						ENDSELECT
 						CALL MESSAGE_WINDOW_D, "", "＞그때, 갑자기 목소리가 들려왔다"
 						CALL MESSAGE_WINDOW_D, "목소리", "이런이런, 아케미 호무라를 너희들이 막아줘서 살았어"

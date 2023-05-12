@@ -587,19 +587,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:선제기습취소 = 1
 				
 				;쁘띠프로스트×3
-				CALL SET_ENEMY,8,[[キャラ:쁘띠프로스트]],5,0,1
+				CALL SET_ENEMY,8,[[캐릭터:쁘띠프로스트]],5,0,1
 				BASE:(CHARANUM-1):빙결 = -200
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CSTR:(CHARANUM-1):사고패턴 = プチ공격
 				
-				CALL SET_ENEMY,9,[[キャラ:쁘띠프로스트]],5,0,1
+				CALL SET_ENEMY,9,[[캐릭터:쁘띠프로스트]],5,0,1
 				BASE:(CHARANUM-1):빙결 = -200
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CSTR:(CHARANUM-1):사고패턴 = プチ공격
 				
-				CALL SET_ENEMY,10,[[キャラ:쁘띠프로스트]],5,0,1
+				CALL SET_ENEMY,10,[[캐릭터:쁘띠프로스트]],5,0,1
 				BASE:(CHARANUM-1):빙결 = -200
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -631,7 +631,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1		
-				CALL SET_ENEMY,9,[[キャラ:라타토스크]],9,0,0
+				CALL SET_ENEMY,9,[[캐릭터:라타토스크]],9,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				NAME:(CHARANUM-1) = 소우타
@@ -667,13 +667,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,14,[[キャラ:세츠나]],8,0,1
+				CALL SET_ENEMY,14,[[캐릭터:세츠나]],8,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CSTR:(CHARANUM-1):사고패턴 = 데빌
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,9,[[キャラ:쿨]],10,0,0
+				CALL SET_ENEMY,9,[[캐릭터:쿨]],10,0,0
 				NAME:(CHARANUM-1) = 쿨
 				CALLNAME:(CHARANUM-1) = 쿨
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 200
@@ -681,13 +681,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,8,[[キャラ:쁘띠프로스트]],8,0,0
+				CALL SET_ENEMY,8,[[캐릭터:쁘띠프로스트]],8,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:춍춍]],8,0,0
+				CALL SET_ENEMY,10,[[캐릭터:춍춍]],8,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -729,13 +729,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,14,[[キャラ:미라이]],8,0,1
+				CALL SET_ENEMY,14,[[캐릭터:미라이]],8,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CSTR:(CHARANUM-1):사고패턴 = 데빌
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,9,[[キャラ:벨]],10,0,1
+				CALL SET_ENEMY,9,[[캐릭터:벨]],10,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				NAME:(CHARANUM-1) = 벨
@@ -745,7 +745,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,8,[[キャラ:픽시]],9,0,0
+				CALL SET_ENEMY,8,[[캐릭터:픽시]],9,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				ABL:(CHARANUM-1):스킬1 = 404
@@ -753,7 +753,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:엔젤]],8,0,0
+				CALL SET_ENEMY,10,[[캐릭터:엔젤]],8,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 				ABL:(CHARANUM-1):스킬1 = 404
@@ -984,25 +984,25 @@ SELECTCASE FLAG:현M
 CASE 2 , 3 , 6 , 7 , 8
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:쁘띠프로스트]], 7
+		RETURN [[캐릭터:쁘띠프로스트]], 7
 	CASE IS < 20
-		RETURN [[キャラ:픽시]],7
+		RETURN [[캐릭터:픽시]],7
 	CASE IS < 30
-		RETURN [[キャラ:홀리고스트]], 6
+		RETURN [[캐릭터:홀리고스트]], 6
 	CASE IS < 40
-		RETURN [[キャラ:나하트코볼트]], 6
+		RETURN [[캐릭터:나하트코볼트]], 6
 	CASE IS < 50
-		RETURN [[キャラ:라타토스크]], 6
+		RETURN [[캐릭터:라타토스크]], 6
 	CASE IS < 60
-		RETURN [[キャラ:모코이]], 6
+		RETURN [[캐릭터:모코이]], 6
 	CASE IS < 70
-		RETURN [[キャラ:커시]],7
+		RETURN [[캐릭터:커시]],7
 	CASE IS < 80
-		RETURN [[キャラ:유킨코]], 7
+		RETURN [[캐릭터:유킨코]], 7
 	CASE IS < 90
-		RETURN [[キャラ:자시키와라시]], 7
+		RETURN [[캐릭터:자시키와라시]], 7
 	CASE IS < 100
-		RETURN [[キャラ:화백]], 7
+		RETURN [[캐릭터:화백]], 7
 	ENDSELECT
 	
 
@@ -1010,23 +1010,23 @@ SELECTCASE RAND:100
 CASEELSE
 SELECTCASE RAND:100
 	CASE IS < 15
-		RETURN [[キャラ:쁘띠프로스트]], 3
+		RETURN [[캐릭터:쁘띠프로스트]], 3
 	CASE IS < 30
-		RETURN [[キャラ:나이트메어]], 3
+		RETURN [[캐릭터:나이트메어]], 3
 	CASE IS < 45
-		RETURN [[キャラ:픽시]],3
+		RETURN [[캐릭터:픽시]],3
 	CASE IS < 60
-		RETURN [[キャラ:코다마]], 3
+		RETURN [[캐릭터:코다마]], 3
 	CASE IS < 70
-		RETURN [[キャラ:하피]], 4
+		RETURN [[캐릭터:하피]], 4
 	CASE IS < 80
-		RETURN [[キャラ:카부소]], 3
+		RETURN [[캐릭터:카부소]], 3
 	CASE IS < 90
-		RETURN [[キャラ:큐피도]], 4
+		RETURN [[캐릭터:큐피도]], 4
 	CASE IS < 95
-		RETURN [[キャラ:홀리고스트]], 5
+		RETURN [[캐릭터:홀리고스트]], 5
 	CASE IS < 100
-		RETURN [[キャラ:나하트코볼트]], 5
+		RETURN [[캐릭터:나하트코볼트]], 5
 	ENDSELECT
 ENDSELECT
 
@@ -1038,10 +1038,10 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:카부소]] , 3 + RAND:10 , CSVBASE([[キャラ:카부소]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:카부소]] , 3 + RAND:10 , CSVBASE([[캐릭터:카부소]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코다마]] , 3 + RAND:10 , CSVBASE([[キャラ:코다마]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코다마]] , 3 + RAND:10 , CSVBASE([[캐릭터:코다마]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:커시]] , 3 + RAND:10 , CSVBASE([[キャラ:커시]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:커시]] , 3 + RAND:10 , CSVBASE([[캐릭터:커시]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

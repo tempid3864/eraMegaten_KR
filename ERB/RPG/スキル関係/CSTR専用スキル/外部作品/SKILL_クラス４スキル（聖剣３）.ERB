@@ -6,7 +6,7 @@
 @SKILL_NAME_クラス４スキル（聖剣３）,ARG
 #DIM クラス必殺変数
 クラス必殺変数 = PU_SKILLNUM_GET(ARG,"クラス４スキル（聖剣３）")
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	;ミーティア
 	IF CFLAG:ARG:902 == 1
 		RESULTS = 천성창
@@ -16,7 +16,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 	ELSE
 		RESULTS = 선풍창３
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	;ハイㆍプリーステス
 	IF CFLAG:ARG:902 == 1
 		RESULTS = どっかーーーん!!
@@ -26,7 +26,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 	ELSE
 		RESULTS = ぽかすか３
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	;ウィッチクイーン
 	IF CFLAG:ARG:902 == 1
 		RESULTS = ヘブンマリアージュ
@@ -48,7 +48,7 @@ RETURN 110
 @SKILL_POWER_クラス４スキル（聖剣３）, ARG
 #DIM クラス必殺変数
 クラス必殺変数 = PU_SKILLNUM_GET(ARG,"クラス４スキル（聖剣３）")
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	IF CFLAG:ARG:902 == 1
 		RETURN 400
 	ELSEIF CFLAG:ARG:902 == 2
@@ -56,7 +56,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 	ELSE
 		RETURN 300
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	IF CFLAG:ARG:902 == 1
 		RETURN 400
 	ELSEIF CFLAG:ARG:902 == 2
@@ -64,7 +64,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 	ELSE
 		RETURN 300
 	ENDIF
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	IF CFLAG:ARG:902 == 1
 		RETURN 400
 	ELSEIF CFLAG:ARG:902 == 2
@@ -78,11 +78,11 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -90,11 +90,11 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -116,7 +116,7 @@ RETURN 50
 @SKILL_TYPE_クラス４スキル（聖剣３）,ARG
 #LOCALSSIZE 5
 #LOCALSIZE 4
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("만능")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -153,7 +153,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:리스]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("만능")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -190,7 +190,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("만능")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -237,11 +237,11 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_クラス４スキル（聖剣３）, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -254,11 +254,11 @@ RETURN 1
 
 ;射程　1:S 2:M 3:L
 @SKILL_RANGE_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 3
 ELSE
 	RETURN 3
@@ -266,11 +266,11 @@ ENDIF
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 3
 ELSE
 	RETURN 1
@@ -303,11 +303,11 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 0
 ELSE
 	RETURN 0
@@ -316,11 +316,11 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_クラス４スキル（聖剣３）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	RETURN 0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	RETURN 0
 ELSE
 	RETURN 0
@@ -380,11 +380,11 @@ IF MAXBASE:ARG:공격 < MAXBASE:ARG:마법위력
 	MAXBASE:ARG:공격 = MAXBASE:ARG:마법위력
 	CFLAG:ARG:공격강화 += CFLAG:ARG:마법위력강화
 
-	IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-	ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+	ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-	ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+	ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 	ENDIF
 
@@ -400,11 +400,11 @@ ELSE
 	;タルカジャ、マカカジャ合算
 	CFLAG:ARG:공격강화 += CFLAG:ARG:마법위력강화
 
-	IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-	ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+	ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
-	ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+	ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 		CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 	ENDIF
 
@@ -425,7 +425,7 @@ SETCOLOR 0x33ffcc
 	PRINTL 탐색 종료까지 지속되며、최대 시에만 전체 게이지 소비로 클래스 필살기가 사용 가능해진다。
 	PRINTL 단、클래스 필살기를 사용하는 턴은 게이지가 증가하지 않는다。
 RESETCOLOR
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:리스]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:리스]]
 	IF CFLAG:ARG:902 == 1
 		;ミーティア
 		PRINTL 『천성창』
@@ -447,7 +447,7 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:리스]]
 	ELSE
 		PRINTL バグりました。ご報告ください。
 	ENDIF
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:샤를로트]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:샤를로트]]
 	IF CFLAG:ARG:902 == 1
 		;ハイㆍプリーステス
 		PRINTL 『どっかーーーん!!』
@@ -469,7 +469,7 @@ ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:샤를로트]]
 	ELSE
 		PRINTL バグりました。ご報告ください。
 	ENDIF
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:안젤라]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:안젤라]]
 	IF CFLAG:ARG:902 == 1
 		;ウィッチクイーン
 		PRINTL 『ヘブンマリアージュ』
@@ -510,17 +510,17 @@ RETURN 1
 クラス必殺変数 = PU_SKILLNUM_GET(ARG,"クラス４スキル（聖剣３）")
 SETCOLOR 0x999999
 ;参照時に超過していた場合補正。
-IF SKILL_CHANGE(ARG, [[キャラ:리스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리스]])
 	;必殺ゲージ量を表示。チャージ完了時カラーで強調
 	SIF SKILLGAGE_F_GET(ARG,クラス必殺変数) == 100
 		SETCOLOR 0x009e25
 	PRINTFORML ＳＰゲージ：{SKILLGAGE_F_GET(ARG,クラス必殺変数)}％
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:샤를로트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:샤를로트]])
 	;必殺ゲージ量を表示。チャージ完了時カラーで強調
 	SIF SKILLGAGE_F_GET(ARG,クラス必殺変数) == 100
 		SETCOLOR 0xffaa00
 	PRINTFORML ＳＰゲージ：{SKILLGAGE_F_GET(ARG,クラス必殺変数)}％
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:안젤라]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:안젤라]])
 	;必殺ゲージ量を表示。チャージ完了時カラーで強調
 	SIF SKILLGAGE_F_GET(ARG,クラス必殺変数) == 100
 		SETCOLOR 0x782069

@@ -54,14 +54,14 @@ IF 던전플래그:63:0 == 7
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:제트]], 40, 0, 1
+		CALL SET_ENEMY,9,[[캐릭터:제트]], 40, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:가샤도쿠로]], 36, 0, 1
+		CALL SET_ENEMY,8,[[캐릭터:가샤도쿠로]], 36, 0, 1
 		NAME:(CHARANUM-1) = スケルトン
 		CALLNAME:(CHARANUM-1) = スケルトン
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 600
@@ -69,7 +69,7 @@ IF 던전플래그:63:0 == 7
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:킨키]], 36, 0, 1
+		CALL SET_ENEMY,10,[[캐릭터:킨키]], 36, 0, 1
 		NAME:(CHARANUM-1) = ゴーレム
 		CALLNAME:(CHARANUM-1) = ゴーレム
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 600
@@ -642,7 +642,7 @@ CASE  150
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 
-		CALL SET_ENEMY,9,[[キャラ:에레지]], 38, 0, 1
+		CALL SET_ENEMY,9,[[캐릭터:에레지]], 38, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 800
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -652,7 +652,7 @@ CASE  150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:아스모데우스]], 36, 0, 1
+		CALL SET_ENEMY,8,[[캐릭터:아스모데우스]], 36, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 600
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		ABL:(CHARANUM-1):스킬1 = [[스킬:아기라오]]
@@ -662,7 +662,7 @@ CASE  150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:데모고르곤]], 36, 0, 1
+		CALL SET_ENEMY,10,[[캐릭터:데모고르곤]], 36, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 600
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		ABL:(CHARANUM-1):스킬1 = [[스킬:아기라오]]
@@ -699,7 +699,7 @@ IF 던전플래그:63:4 == 0
 		IF RESULT == 0
 			CALL MESSAGE_WINDOW_D, "아바돈", "아무쪼록 잘 부탁드리오"
 			CALL MESSAGE_WINDOW_D, "", "＞아바돈이 동료마로 들어왔다"
-			CALL ADD_NEW_COMPANION,[[キャラ:아바돈(데빌칠드런)]],300
+			CALL ADD_NEW_COMPANION,[[캐릭터:아바돈(데빌칠드런)]],300
 			던전플래그:63:4 = 1
 		ELSE
 			CALL MESSAGE_WINDOW_D, "아바돈", "그런가… 어쩔 수 없는가…"
@@ -713,7 +713,7 @@ IF 던전플래그:63:4 == 0
 		IF RESULT == 0
 			CALL MESSAGE_WINDOW_D, "파이몬", "앞으로도 잘 부탁해"
 			CALL MESSAGE_WINDOW_D, "", "＞파이몬이 동료마로 들어왔다"
-			CALL ADD_NEW_COMPANION,[[キャラ:파이몬]],300
+			CALL ADD_NEW_COMPANION,[[캐릭터:파이몬]],300
 			던전플래그:63:4 = 1
 		ELSE
 			CALL MESSAGE_WINDOW_D, "파이몬", "그러네… 너무 자기 맘대로였네…"
@@ -735,7 +735,7 @@ CASE 200
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 
-		CALL SET_ENEMY,9,[[キャラ:이시스]], 40, 0, 1
+		CALL SET_ENEMY,9,[[캐릭터:이시스]], 40, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 800
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -887,100 +887,100 @@ SELECTCASE FLAG:현M
 CASE 2
 SELECTCASE RAND:100
 	CASE IS < 15
-		RETURN [[キャラ:알케니]], 30
+		RETURN [[캐릭터:알케니]], 30
 	CASE IS < 30
-		RETURN [[キャラ:가샤도쿠로]], 30
+		RETURN [[캐릭터:가샤도쿠로]], 30
 	CASE IS < 40
-		RETURN [[キャラ:바질리스크]], 30
+		RETURN [[캐릭터:바질리스크]], 30
 	CASE IS < 50
-		RETURN [[キャラ:페가수스]], 30
+		RETURN [[캐릭터:페가수스]], 30
 	CASE IS < 60
-		RETURN [[キャラ:피닉스]], 30
+		RETURN [[캐릭터:피닉스]], 30
 	CASE IS < 70
-		RETURN [[キャラ:오키츠네]], 30
+		RETURN [[캐릭터:오키츠네]], 30
 	CASE IS < 80
-		RETURN [[キャラ:잔트만]], 31
+		RETURN [[캐릭터:잔트만]], 31
 	CASE IS < 90
-		RETURN [[キャラ:키지무나]], 33
+		RETURN [[캐릭터:키지무나]], 33
 	CASE IS < 100
-		RETURN [[キャラ:파워]], 33
+		RETURN [[캐릭터:파워]], 33
 ENDSELECT
 
 ;２、Ｂ１階
 CASE 1 , 3
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:알케니]], 32
+		RETURN [[캐릭터:알케니]], 32
 	CASE IS < 20
-		RETURN [[キャラ:가샤도쿠로]], 32
+		RETURN [[캐릭터:가샤도쿠로]], 32
 	CASE IS < 30
-		RETURN [[キャラ:파워]], 32
+		RETURN [[캐릭터:파워]], 32
 	CASE IS < 40
-		RETURN [[キャラ:오키츠네]], 32
+		RETURN [[캐릭터:오키츠네]], 32
 	CASE IS < 50
-		RETURN [[キャラ:잔트만]], 32
+		RETURN [[캐릭터:잔트만]], 32
 	CASE IS < 60
-		RETURN [[キャラ:아에로]], 32
+		RETURN [[캐릭터:아에로]], 32
 	CASE IS < 66
-		RETURN [[キャラ:와이번]], 32
+		RETURN [[캐릭터:와이번]], 32
 	CASE IS < 72
-		RETURN [[キャラ:피샤차]], 32
+		RETURN [[캐릭터:피샤차]], 32
 	CASE IS < 83
-		RETURN [[キャラ:맨이터]],33
+		RETURN [[캐릭터:맨이터]],33
 	CASE IS < 91
-		RETURN [[キャラ:야카]], 34
+		RETURN [[캐릭터:야카]], 34
 	CASE IS < 100
-		RETURN [[キャラ:스코그스라]], 34
+		RETURN [[캐릭터:스코그스라]], 34
 ENDSELECT
 
 ;Ｂ２階
 CASE 0
 SELECTCASE RAND:100
 	CASE IS < 15
-		RETURN [[キャラ:알케니]], 33
+		RETURN [[캐릭터:알케니]], 33
 	CASE IS < 30
-		RETURN [[キャラ:가샤도쿠로]], 33
+		RETURN [[캐릭터:가샤도쿠로]], 33
 	CASE IS < 45
-		RETURN [[キャラ:바질리스크]], 33
+		RETURN [[캐릭터:바질리스크]], 33
 	CASE IS < 55
-		RETURN [[キャラ:피닉스]], 33
+		RETURN [[캐릭터:피닉스]], 33
 	CASE IS < 65
-		RETURN [[キャラ:피샤차]], 33
+		RETURN [[캐릭터:피샤차]], 33
 	CASE IS < 75
-		RETURN [[キャラ:탐ㆍ린]], 35
+		RETURN [[캐릭터:탐ㆍ린]], 35
 	CASE IS < 83
-		RETURN [[キャラ:잔트만]], 35
+		RETURN [[캐릭터:잔트만]], 35
 	CASE IS < 90
-		RETURN [[キャラ:미즈치]], 35
+		RETURN [[캐릭터:미즈치]], 35
 	CASE IS < 95
-		RETURN [[キャラ:아조트]], 35
+		RETURN [[캐릭터:아조트]], 35
 	CASE IS < 100
-		RETURN [[キャラ:스튐팔리데스]], 35
+		RETURN [[캐릭터:스튐팔리데스]], 35
 ENDSELECT
 
 ;이시스の部屋
 CASE 4
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:알케니]], 35
+		RETURN [[캐릭터:알케니]], 35
 	CASE IS < 20
-		RETURN [[キャラ:가샤도쿠로]], 35
+		RETURN [[캐릭터:가샤도쿠로]], 35
 	CASE IS < 30
-		RETURN [[キャラ:바질리스크]], 35
+		RETURN [[캐릭터:바질리스크]], 35
 	CASE IS < 40
-		RETURN [[キャラ:피샤차]], 35
+		RETURN [[캐릭터:피샤차]], 35
 	CASE IS < 50
-		RETURN [[キャラ:아조트]],35
+		RETURN [[캐릭터:아조트]],35
 	CASE IS < 60
-		RETURN [[キャラ:탐ㆍ린]], 36
+		RETURN [[캐릭터:탐ㆍ린]], 36
 	CASE IS < 70
-		RETURN [[キャラ:스코그스라]], 36
+		RETURN [[캐릭터:스코그스라]], 36
 	CASE IS < 80
-		RETURN [[キャラ:네반]], 36
+		RETURN [[캐릭터:네반]], 36
 	CASE IS < 90
-		RETURN [[キャラ:스튐팔리데스]], 36
+		RETURN [[캐릭터:스튐팔리데스]], 36
 	CASE IS < 100
-		RETURN [[キャラ:청우괴]], 37
+		RETURN [[캐릭터:청우괴]], 37
 ENDSELECT
 ENDSELECT
 ;=======================================================================
@@ -991,10 +991,10 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:피샤차]] , 3 + RAND:10 , CSVBASE([[キャラ:피샤차]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:피샤차]] , 3 + RAND:10 , CSVBASE([[캐릭터:피샤차]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:바질리스크]] , 3 + RAND:10 , CSVBASE([[キャラ:바질리스크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:바질리스크]] , 3 + RAND:10 , CSVBASE([[캐릭터:바질리스크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:탐ㆍ린]] , 3 + RAND:10 , CSVBASE([[キャラ:탐ㆍ린]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:탐ㆍ린]] , 3 + RAND:10 , CSVBASE([[캐릭터:탐ㆍ린]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

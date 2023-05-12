@@ -640,7 +640,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				FLAG:기습플래그 = 1
-				CALL SET_ENEMY,9,[[キャラ:쿠라마텐구]],32,0,1
+				CALL SET_ENEMY,9,[[캐릭터:쿠라마텐구]],32,0,1
 				ABL:(CHARANUM-1):스킬5 = 0
 				ABL:(CHARANUM-1):스킬6 = 0
 				CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -676,7 +676,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:아귀]],38,0,1
+				CALL SET_ENEMY,9,[[캐릭터:아귀]],38,0,1
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				CALL BATTLE_START
@@ -1161,7 +1161,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL MESSAGE_WINDOW_D, "아수라", "나는…영원한 싸움을 짊어진 광명신이라고도、/알고 있는건지 모르는 건지…。"
 			CALL MESSAGE_WINDOW_D, "", "나에게 칼을 향한다는 의미를 이해하고 있을테지、/분수를 모르는 인간이여。/떨면서…죽어라！"
 			;ルシファーがパーティにいる場合、전투회피
-			IF FINDCHARA_B([[キャラ:루시퍼]]) == 2
+			IF FINDCHARA_B([[캐릭터:루시퍼]]) == 2
 				CALL MESSAGE_WINDOW_D, "", "＞루시퍼가 대화에 끼어들어 왔다。"
 				CALL MESSAGE_WINDOW_D, "루시퍼", "아수라 왕이여。/귀공의 본모습을 드러내소서！"
 				CALL MESSAGE_WINDOW_D, "", "＞루시퍼가 말을 걸자、아수라의 모습이 변화했다！"

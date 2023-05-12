@@ -646,7 +646,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			;Ｂ５Ｆ　이벤트
 			CASE 200
 				;ヒルコ
-				IF 던전플래그:[[던전:아카사카]]:1 == 0 && (의뢰플래그:13:0 != 4 || FINDCHARA_B([[キャラ:키쿠에]]) != 2 )
+				IF 던전플래그:[[던전:아카사카]]:1 == 0 && (의뢰플래그:13:0 != 4 || FINDCHARA_B([[캐릭터:키쿠에]]) != 2 )
 					CALL MESSAGE_WINDOW_D , "목소리" , "오지 마라！ 나에게 다가오지 말아라！！"
 					CALL MESSAGE_WINDOW_D , "뮤턴트" , "돌아가라！/얌전히 돌아가지 않겠다면/다만 미안할 따름이구나！"
 				ELSEIF 던전플래그:[[던전:아카사카]]:1 == 0
@@ -760,7 +760,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					ENDIF
 				ELSEIF 던전플래그:[[던전:아카사카]]:1 == 1
 					
-					CALLF FINDCHARA_B([[キャラ:키쿠에]])
+					CALLF FINDCHARA_B([[캐릭터:키쿠에]])
 					LOCAL = RESULT:1
 					GOTO Q_200
 				ELSEIF 던전플래그:[[던전:아카사카]]:1 == 2
@@ -771,7 +771,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				ENDIF
 			CASE 201
 				;メッセンジャー
-				IF 던전플래그:[[던전:아카사카]]:1 == 0 && (의뢰플래그:13:0 != 4 || FINDCHARA_B([[キャラ:키쿠에]]) != 2 )
+				IF 던전플래그:[[던전:아카사카]]:1 == 0 && (의뢰플래그:13:0 != 4 || FINDCHARA_B([[캐릭터:키쿠에]]) != 2 )
 					CALL MESSAGE_WINDOW_D , "뮤턴트" , "뭐야、너？/너 따위가 왔다고 그분을 만날 수 있을까 보냐"
 				ELSEIF 던전플래그:[[던전:아카사카]]:1 != 0
 					CALL MESSAGE_WINDOW_D , "뮤턴트" , "히루코 님은/봉인된 신들의 비밀을 알고 있어서/쫓겨난 거다"
@@ -1100,43 +1100,43 @@ SELECTCASE FLAG:현M
 	CASE 3 TO 6
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:노커]], 15
+				RETURN [[캐릭터:노커]], 15
 			CASE IS < 30
-				RETURN [[キャラ:브라우니]], 17
+				RETURN [[캐릭터:브라우니]], 17
 			CASE IS < 50
-				RETURN [[キャラ:화백]], 17
+				RETURN [[캐릭터:화백]], 17
 			CASE IS < 70
-				RETURN [[キャラ:츠치구모]], 18
+				RETURN [[캐릭터:츠치구모]], 18
 			CASE IS < 85
-				RETURN [[キャラ:코파텐구]], 19
+				RETURN [[캐릭터:코파텐구]], 19
 			CASE IS < 95
-				RETURN [[キャラ:드베르가]], 23
+				RETURN [[캐릭터:드베르가]], 23
 			CASE IS < 100
 				IF RAND:2 == 1
-					RETURN [[キャラ:카라스텐구]], 28
+					RETURN [[캐릭터:카라스텐구]], 28
 				ELSEIF RAND:2 == 1
-					RETURN [[キャラ:우벨루리]], 33
+					RETURN [[캐릭터:우벨루리]], 33
 				ELSE
-					RETURN [[キャラ:티탄]], 45
+					RETURN [[캐릭터:티탄]], 45
 				ENDIF
 		ENDSELECT
 	;뮤턴트ㆍコミュニティー
 	CASE 0 TO 2
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:다크엘프]], 19
+				RETURN [[캐릭터:다크엘프]], 19
 			CASE IS < 30
-				RETURN [[キャラ:츠치구모]], 19
+				RETURN [[캐릭터:츠치구모]], 19
 			CASE IS < 45
-				RETURN [[キャラ:노즈치]], 19
+				RETURN [[캐릭터:노즈치]], 19
 			CASE IS < 60
-				RETURN [[キャラ:특공대]], 20
+				RETURN [[캐릭터:특공대]], 20
 			CASE IS < 75
-				RETURN [[キャラ:네코마타]], 22
+				RETURN [[캐릭터:네코마타]], 22
 			CASE IS < 90
-				RETURN [[キャラ:드베르가]], 25
+				RETURN [[캐릭터:드베르가]], 25
 			CASE IS < 100
-				RETURN [[キャラ:밴시]], 27
+				RETURN [[캐릭터:밴시]], 27
 		ENDSELECT
 ENDSELECT
 ;=================================
@@ -1145,15 +1145,15 @@ ENDSELECT
 @SET_ENEMY_STATUS_29, ARG
 #LOCALSIZE 1
 SELECTCASE NO:ARG
-	CASE [[キャラ:노커]]
+	CASE [[캐릭터:노커]]
 		ABL:ARG:스킬3 = [[스킬:디아라마]]
 		ABL:ARG:스킬5 = [[스킬:소닉펀치]]
 		ABL:ARG:스킬2 = [[스킬:마그나스]]
 		ABL:ARG:스킬7 = [[스킬:마하ㆍ마그나]]
-	CASE [[キャラ:브라우니]]
+	CASE [[캐릭터:브라우니]]
 		ABL:ARG:스킬2 = [[스킬:그라이바]]
 		ABL:ARG:스킬5 = [[스킬:마하ㆍ그라이]]
-	CASE [[キャラ:화백]]
+	CASE [[캐릭터:화백]]
 		ABL:ARG:스킬1 = [[스킬:아기라오]]
 		ABL:ARG:스킬4 = [[스킬:펨파트라]]
 	CASEELSE
@@ -1202,13 +1202,13 @@ GOTO GAIA
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:우벨루리]] , 3 + RAND:10 , CSVBASE([[キャラ:우벨루리]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:우벨루리]] , 3 + RAND:10 , CSVBASE([[캐릭터:우벨루리]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:티탄]] , 3 + RAND:10 , CSVBASE([[キャラ:티탄]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:티탄]] , 3 + RAND:10 , CSVBASE([[캐릭터:티탄]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:츠치구모]] , 3 + RAND:10 , CSVBASE([[キャラ:츠치구모]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:츠치구모]] , 3 + RAND:10 , CSVBASE([[캐릭터:츠치구모]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:노즈치]] , 3 + RAND:10 , CSVBASE([[キャラ:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:노즈치]] , 3 + RAND:10 , CSVBASE([[캐릭터:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

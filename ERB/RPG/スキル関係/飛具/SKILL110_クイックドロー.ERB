@@ -1,7 +1,7 @@
 ﻿
 ;스킬명
 @SKILL_NAME_110,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 서서쏘기
 ELSE
 	RESULTS = 퀵드로
@@ -30,9 +30,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_110,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 7
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 5
 ELSE
 	RETURN 3
@@ -136,10 +136,10 @@ CALL ATTACK_SINGLE,ARG,LOCAL,110
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_110
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 궁술의 기본기 중 하나。
 	PRINTL 적 1체에 비구 물리데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아란]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아란]])
 	PRINTL QuickDraw。
 	PRINTL 적 1체에 재빠르게 비구 물리데미지를 준다。
 ELSE

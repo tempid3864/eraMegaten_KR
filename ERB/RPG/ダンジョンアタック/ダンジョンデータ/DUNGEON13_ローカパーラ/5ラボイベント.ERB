@@ -432,16 +432,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 			
-				CALL SET_ENEMY,8,[[キャラ:크투가]],45
+				CALL SET_ENEMY,8,[[캐릭터:크투가]],45
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,9,[[キャラ:히노카구츠치]],45
+				CALL SET_ENEMY,9,[[캐릭터:히노카구츠치]],45
 				ABL:(CHARANUM-1):스킬4 = 724
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:비야키]],45
+				CALL SET_ENEMY,10,[[캐릭터:비야키]],45
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
@@ -462,11 +462,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 			
-				CALL SET_ENEMY,8,[[キャラ:제파르]],45
+				CALL SET_ENEMY,8,[[캐릭터:제파르]],45
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:틀랄테쿠흐틀리]],45
+				CALL SET_ENEMY,10,[[캐릭터:틀랄테쿠흐틀리]],45
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
@@ -498,11 +498,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 			
-				CALL SET_ENEMY,8,[[キャラ:파주주]],46
+				CALL SET_ENEMY,8,[[캐릭터:파주주]],46
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:카나로아]],46
+				CALL SET_ENEMY,10,[[캐릭터:카나로아]],46
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
@@ -532,16 +532,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 			
-				CALL SET_ENEMY,9,[[キャラ:히노카구츠치]],48
+				CALL SET_ENEMY,9,[[캐릭터:히노카구츠치]],48
 				ABL:(CHARANUM-1):스킬4 = 724
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,8,[[キャラ:파주주]],48
+				CALL SET_ENEMY,8,[[캐릭터:파주주]],48
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:히노카구츠치]],48
+				CALL SET_ENEMY,10,[[캐릭터:히노카구츠치]],48
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
@@ -587,16 +587,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 			
-				CALL SET_ENEMY,9,[[キャラ:아타파구]],50
+				CALL SET_ENEMY,9,[[캐릭터:아타파구]],50
 				ABL:(CHARANUM-1):스킬4 = 724
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,8,[[キャラ:나타태자]],50
+				CALL SET_ENEMY,8,[[캐릭터:나타태자]],50
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:스라오샤]],50
+				CALL SET_ENEMY,10,[[캐릭터:스라오샤]],50
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
@@ -668,7 +668,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,8,[[キャラ:커시]],55,0,1
+			CALL SET_ENEMY,8,[[캐릭터:커시]],55,0,1
 				;충격、질풍
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
@@ -687,7 +687,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,9,[[キャラ:우벨루리]],55,0,1
+				CALL SET_ENEMY,9,[[캐릭터:우벨루리]],55,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				MAXBASE:(CHARANUM-1):검격 = 10
 				BASE:(CHARANUM-1):검격 = 10
@@ -707,7 +707,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 				
-			CALL SET_ENEMY,10,[[キャラ:강가]],55,0,1
+			CALL SET_ENEMY,10,[[캐릭터:강가]],55,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:엑스트라원]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:파이어스톰]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:아이온의비]]
@@ -725,13 +725,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL HEALTH_CHARA,(CHARANUM-1)
 				
 				
-			CALL SET_ENEMY,14,[[キャラ:고로]],55,0,1
+			CALL SET_ENEMY,14,[[캐릭터:고로]],55,0,1
 				CFLAG:(CHARANUM-1):속도보정 = 50
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):사고패턴 = ラボ明智
 				EQUIP:(CHARANUM-1):검 = 2059
 				EQUIP:(CHARANUM-1):몸통 = 3599
-				ABL:(CHARANUM-1):초기페르소나 = [[キャラ:로키]]
+				ABL:(CHARANUM-1):초기페르소나 = [[캐릭터:로키]]
 				ABL:(CHARANUM-1):스킬1 = [[스킬:코우가온]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:에이가온]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마한마온]]
@@ -892,8 +892,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D, "", "그러자 위에서 마법이 날아와 일행을 모두 날려버렸다！ "
 				CALL MESSAGE_WINDOW_D, "", "그때 서프에게 마법이 직격하여 피를 흘리는 것이 보였다 "
 				CALL MESSAGE_WINDOW_D, "", "그리고서 서프와 히트는 EGG 안으로 들어가버렸다 "
-				SIF GETCHARA([[キャラ:서프]]) > 0
-					CFLAG:GETCHARA([[キャラ:서프]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:서프]]) > 0
+					CFLAG:GETCHARA([[캐릭터:서프]]):이자리에없는플래그 = 1
 				CALL MESSAGE_WINDOW_D, "알지라", "서프！！ "
 				CALL MESSAGE_WINDOW_D, "", "알지라는 곧바로 일어나서 EGG 쪽으로 달려간다"
 				CALL MESSAGE_WINDOW_D, "게일", "알지라！　달리지 마！ "
@@ -951,7 +951,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,9,[[キャラ:미륵보살]],58,0,2
+			CALL SET_ENEMY,9,[[캐릭터:미륵보살]],58,0,2
 				CFLAG:(CHARANUM-1):행동횟수 = 3
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				CFLAG:(CHARANUM-1):속도보정 = 0
@@ -1019,8 +1019,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D, "", "나중에 돌아온 서프의 말에 따르면/히트는 방에 도착했을 때/숨을 거두고 말았다고 한다 "
 				CALL MESSAGE_WINDOW_D, "", "히트는 마지막에 세라를 부탁한다는 말을 남기고/죽었다고 서프는 말했다 "
 				CALL MESSAGE_WINDOW_D, "", " "
-				SIF GETCHARA([[キャラ:서프]]) > 0
-					CFLAG:GETCHARA([[キャラ:서프]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:서프]]) > 0
+					CFLAG:GETCHARA([[캐릭터:서프]]):이자리에없는플래그 = 0
 					
 				CALL MESSAGE_WINDOW_D, "", @"＞명성 250을 얻었다"
 				FLAG:명성 += 250
@@ -1052,7 +1052,7 @@ PRINTW 　[5]조사한다 로 2타일 앞까지 날아갈 수 있습니다
 		CALL MESSAGE_WINDOW_D, "악마", "그러나 나의 앞에 나타난 네놈들에게 내일은 없다… "
 		CALL MESSAGE_WINDOW_D, "악마", "이곳을 네놈들의 무덤으로 만들어주마！/와라！ 나의 자매들！ "
 		
-				CALL SET_ENEMY,9,[[キャラ:브륀힐드(영웅)]],55,0,1
+				CALL SET_ENEMY,9,[[캐릭터:브륀힐드(영웅)]],55,0,1
 				NAME:(CHARANUM-1) = 브륀힐드
 				CALLNAME:(CHARANUM-1) = 브륀힐드
 				CFLAG:(CHARANUM-1):BS무효플래그 = 1
@@ -1063,7 +1063,7 @@ PRINTW 　[5]조사한다 로 2타일 앞까지 날아갈 수 있습니다
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,8,[[キャラ:브륀힐드]],53
+				CALL SET_ENEMY,8,[[캐릭터:브륀힐드]],53
 				NAME:(CHARANUM-1) = ワルキューレ
 				CALLNAME:(CHARANUM-1) = ワルキューレ
 				ABL:(CHARANUM-1):스킬4 = [[스킬:소닉무버]]
@@ -1072,7 +1072,7 @@ PRINTW 　[5]조사한다 로 2타일 앞까지 날아갈 수 있습니다
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,7,[[キャラ:브륀힐드]],53
+				CALL SET_ENEMY,7,[[캐릭터:브륀힐드]],53
 				NAME:(CHARANUM-1) = ワルキューレ
 				CALLNAME:(CHARANUM-1) = ワルキューレ
 				ABL:(CHARANUM-1):스킬4 = [[스킬:소닉무버]]
@@ -1081,13 +1081,13 @@ PRINTW 　[5]조사한다 로 2타일 앞까지 날아갈 수 있습니다
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:발키리]],53
+				CALL SET_ENEMY,10,[[캐릭터:발키리]],53
 				ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ그라다인]]
 				CFLAG:(CHARANUM-1):BS무효플래그 = 1
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,11,[[キャラ:발키리]],53
+				CALL SET_ENEMY,11,[[캐릭터:발키리]],53
 				ABL:(CHARANUM-1):스킬4 = [[스킬:마하ㆍ그라다인]]
 				CFLAG:(CHARANUM-1):BS무효플래그 = 1
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -1157,54 +1157,54 @@ RETURN 1
 @rabo_enemy, ARG
 		IF ARG == 0 && FLAG:현M == 39
 			SIF RAND:4 == 0
-				RETURN [[キャラ:브륀힐드]]
+				RETURN [[캐릭터:브륀힐드]]
 			SIF RAND:3 == 0
-				RETURN [[キャラ:발키리]]
+				RETURN [[캐릭터:발키리]]
 			SIF RAND:5 == 0
-				RETURN [[キャラ:야마타노오로치]]
+				RETURN [[캐릭터:야마타노오로치]]
 			SIF RAND:4 == 0
-				RETURN [[キャラ:아드라멜렉]]
+				RETURN [[캐릭터:아드라멜렉]]
 			SIF RAND:3 == 0
-				RETURN [[キャラ:로렐라이]]
+				RETURN [[캐릭터:로렐라이]]
 			SIF RAND:2 == 0
-				RETURN [[キャラ:모리안]]
+				RETURN [[캐릭터:모리안]]
 				
-				RETURN [[キャラ:크르스니크]]
+				RETURN [[캐릭터:크르스니크]]
 		ELSEIF ARG == 0
 			IF RAND:8 == 0
-				RETURN [[キャラ:히노카구츠치]]
+				RETURN [[캐릭터:히노카구츠치]]
 			ELSEIF RAND:16 == 0
-				RETURN [[キャラ:파주주]]
+				RETURN [[캐릭터:파주주]]
 			ELSEIF RAND:15 == 0
-				RETURN [[キャラ:틀랄테쿠흐틀리]]
+				RETURN [[캐릭터:틀랄테쿠흐틀리]]
 			ELSEIF RAND:14 == 0
-				RETURN [[キャラ:타나토스]]
+				RETURN [[캐릭터:타나토스]]
 			ELSEIF RAND:13 == 0
-				RETURN [[キャラ:보라색거울]]
+				RETURN [[캐릭터:보라색거울]]
 			ELSEIF RAND:12 == 0
-				RETURN [[キャラ:트리글라프]]
+				RETURN [[캐릭터:트리글라프]]
 			ELSEIF RAND:11 == 0
-				RETURN [[キャラ:벨로보그]]
+				RETURN [[캐릭터:벨로보그]]
 			ELSEIF RAND:10== 0
-				RETURN [[キャラ:카나로아]]
+				RETURN [[캐릭터:카나로아]]
 			ELSEIF RAND:9 == 0
-				RETURN [[キャラ:비야키]]
+				RETURN [[캐릭터:비야키]]
 			ELSEIF RAND:8 == 0
-				RETURN [[キャラ:봉황]]
+				RETURN [[캐릭터:봉황]]
 			ELSEIF RAND:7 == 0
-				RETURN [[キャラ:제파르]]
+				RETURN [[캐릭터:제파르]]
 			ELSEIF RAND:6 == 0
-				RETURN [[キャラ:바이브ㆍ카흐]]
+				RETURN [[캐릭터:바이브ㆍ카흐]]
 			ELSEIF RAND:5 == 0
-				RETURN [[キャラ:나타태자]]
+				RETURN [[캐릭터:나타태자]]
 			ELSEIF RAND:4 == 0
-				RETURN [[キャラ:아타파구]]
+				RETURN [[캐릭터:아타파구]]
 			ELSEIF RAND:3 == 0
-				RETURN [[キャラ:크투가]]
+				RETURN [[캐릭터:크투가]]
 			ELSEIF RAND:2 == 0
-				RETURN [[キャラ:루흐]]
+				RETURN [[캐릭터:루흐]]
 			ELSE
-				RETURN [[キャラ:스라오샤]]
+				RETURN [[캐릭터:스라오샤]]
 			ENDIF
 		ELSEIF ARG == 1
 			
@@ -1222,19 +1222,19 @@ RETURN 1
 @rabo_ENEMY_STATUS,ARG
 
 SELECTCASE NO:ARG
-	CASE [[キャラ:히노카구츠치]]
+	CASE [[캐릭터:히노카구츠치]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:대염상]]
-	CASE [[キャラ:브륀힐드]]
+	CASE [[캐릭터:브륀힐드]]
 		NAME:(CHARANUM-1) = ワルキューレ
 		CALLNAME:(CHARANUM-1) = ワルキューレ
 		ABL:(CHARANUM-1):스킬4 = [[스킬:소닉무버]]
-	CASE [[キャラ:발키리]]
+	CASE [[캐릭터:발키리]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:소닉무버]]
 ENDSELECT
 
 
 @EVENT_BATTLE_rabo
-SIF !FINDCHARA_ENEMY([[キャラ:미륵보살]])
+SIF !FINDCHARA_ENEMY([[캐릭터:미륵보살]])
 	RETURN 0
 LOCAL= RESULT:1
 

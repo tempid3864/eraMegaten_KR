@@ -3,7 +3,7 @@
 ;====================
 @EXPLAIN_REQUEST_70_3
 PRINTL 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 PRINTFORMW ＞%CALLNAME:LOCAL%에게 행해진 실험에 대해 조사하기로 한 %CALLNAME:MASTER%。
 PRINTFORMW ＞메시아교의 의뢰를 이용해 몇몇 구 가이아교 시설에 잠입했었지만、실험에 대해 이렇다 할 자료는 손에 들어오지 않았다。
@@ -28,7 +28,7 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 	
 	PRINTFORMW 「다음의 의뢰는 여기다」
@@ -180,7 +180,7 @@ LOCAL = RESULT:1
 	PRINTFORMW ＞그런데、%CALLNAME:LOCAL%은 MAG를 필요로 하지 않고、COMP에 들어가지 않았다。
 	PRINTFORMW ＞…다른 실험인가？　그렇지 않으면、거기에 비밀이 있는 것인가？
 	;인간と악마を合体するとどうなるか、についてナイトㆍテイルの카야ちゃん合体이벤트を参照しました
-	IF FINDCHARA_B([[キャラ:아인]]) == 2
+	IF FINDCHARA_B([[캐릭터:아인]]) == 2
 		PRINTFORMW 와 같은 것 들을 %CALLNAME:MASTER%가 생각하고 있으니、%CALLNAME:LOCAL%이 남자에게 말을 건넸다。
 		PRINTFORML
 		PRINTFORMW 「나는 여기에 있었어？」
@@ -205,7 +205,7 @@ LOCAL = RESULT:1
 	PRINTFORML 
 	PRINTFORMW ＞이렇다할 방해도 없이、무사하게 연구실에 도착했다。
 	PRINTFORMW ＞조속히ID카드를 사용해 나카로 들어와 갔다…
-	IF FINDCHARA_B([[キャラ:아인]]) == 2
+	IF FINDCHARA_B([[캐릭터:아인]]) == 2
 		PRINTFORML 
 		PRINTFORMW 「여기는……？」
 		PRINTFORML
@@ -315,7 +315,7 @@ LOCAL = RESULT:1
 		PRINTFORMW ＞그러나、안의 악마…？　도대체 무슨 일일까。
 		PRINTFORMW ＞어쨌건 간에、조직에 실험체를 인도하면 밝혀질 것이다…
 ;		FLAG:LOCALS = LOCAL
-		CALL ADD_GUEST_COMPANION([[キャラ:아인]], 0, 1)
+		CALL ADD_GUEST_COMPANION([[캐릭터:아인]], 0, 1)
 		CFLAG:LOCAL:게스트가입플래그 = 0
 	ELSE
 		PRINTFORMW ＞여기에 더 이상의 자료는 없는 것 같다…　이제 도망치도록 하자。

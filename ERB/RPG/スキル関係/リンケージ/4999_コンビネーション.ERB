@@ -202,19 +202,19 @@ IF U < 0 || CHARANUM >= U || CFLAG:(CHARANUM-1):PT플래그
 	RETURN
 ENDIF
 ;発動者がゲイルの場合
-IF NO:U == [[キャラ:게일]]
+IF NO:U == [[캐릭터:게일]]
 	LOCALS = %CALLNAME:U%
 	
 	;千枝(特殊友情持ち)
-	SIF 특수우정확인(U,GETCHARA([[キャラ:치에]]))
-		LOCALS:1 += CALLNAME:GETCHARA([[キャラ:치에]]) + "　"
+	SIF 특수우정확인(U,GETCHARA([[캐릭터:치에]]))
+		LOCALS:1 += CALLNAME:GETCHARA([[캐릭터:치에]]) + "　"
 ;発動者が千枝の場合
-ELSEIF NO:U == [[キャラ:치에]]
+ELSEIF NO:U == [[캐릭터:치에]]
 	LOCALS = %CALLNAME:U%
 	
 	;ゲイル(特殊友情持ち)
-	SIF 특수우정확인(U,GETCHARA([[キャラ:게일]]))
-		LOCALS:1 += CALLNAME:GETCHARA([[キャラ:게일]]) + "　"
+	SIF 특수우정확인(U,GETCHARA([[캐릭터:게일]]))
+		LOCALS:1 += CALLNAME:GETCHARA([[캐릭터:게일]]) + "　"
 ENDIF
 
 SELECTCASE ARG
@@ -234,7 +234,7 @@ SIF CPOS(ARG) < 1 || CPOS(ARG) > 6
 SIF U < 0 || ARG < 0
 	RETURN 0
 ;ゲイルと千枝のコンビネーションで特殊友情がある
-IF (NO:U == [[キャラ:게일]] && NO:ARG == [[キャラ:치에]]) || (NO:U == [[キャラ:치에]] && NO:ARG == [[キャラ:게일]])
+IF (NO:U == [[캐릭터:게일]] && NO:ARG == [[캐릭터:치에]]) || (NO:U == [[캐릭터:치에]] && NO:ARG == [[캐릭터:게일]])
 	IF 특수우정확인(U,ARG)
 		CALL CHECK_COST_LINCAGE, ARG, 4999, ARG:1
 		SIF RESULT

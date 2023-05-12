@@ -702,9 +702,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL MESSAGE_WINDOW_D, "롱기누스５", "마리오넷트여/자신을 조종하는 실을 조종하는 손에 대해 생각해 봤는가？"
 		CALL MESSAGE_WINDOW_D, "롱기누스６", "네놈은 확실히 인형극을 난장판으로 만들었다/하지만 그렇다고 해서 너 자신이 꼭두각시가 /아니라고 할 수도 없지"
 		CALL MESSAGE_WINDOW_D, "롱기누스７", "어리석은 인형이여… 여기서 헛되이 죽어라！！"
-		CALL SET_ENEMY,8, [[キャラ:롱기누스５]], 60, 0, 1
-		CALL SET_ENEMY,9, [[キャラ:롱기누스６]], 60, 0, 1
-		CALL SET_ENEMY,10, [[キャラ:롱기누스７]], 60, 0, 1
+		CALL SET_ENEMY,8, [[캐릭터:롱기누스５]], 60, 0, 1
+		CALL SET_ENEMY,9, [[캐릭터:롱기누스６]], 60, 0, 1
+		CALL SET_ENEMY,10, [[캐릭터:롱기누스７]], 60, 0, 1
 		CALL ADJUST_IMPERIAL
 		CALL MESSAGE_WINDOW_D, "", "＞성창기사단 롱기누스5가 １체 나타났다！/＞성창기사단 롱기누스6이 １체 나타났다！/＞성창기사단 롱기누스7이 １체 나타났다！"
 		FLAG:도주불가플래그 = 1
@@ -735,15 +735,15 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 
 					VARSET LOCAL
 					LOCAL = 1
-					IF GETCHARA([[キャラ:롱기누스７]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스７]]) < 0
 						PRINTL ＞[1]롱기누스７
 						LOCAL:(LOCAL++) = 1
 					ENDIF
-					IF GETCHARA([[キャラ:롱기누스６]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스６]]) < 0
 						PRINTL ＞[2]롱기누스６
 						LOCAL:(LOCAL++) = 2
 					ENDIF
-					IF GETCHARA([[キャラ:롱기누스５]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스５]]) < 0
 						PRINTL ＞[3]롱기누스５
 						LOCAL:(LOCAL++) = 3
 					ENDIF
@@ -755,7 +755,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 					SELECTCASE RESULT
 					CASE 1
 						PRINTW ＞롱기누스７을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스７]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스７]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 							ABL:(RESULT:1):종족 = 0
@@ -918,7 +918,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 						ENDIF
 					CASE 2
 						PRINTW ＞롱기누스６을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스６]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스６]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 							ABL:(RESULT:1):종족 = 0
@@ -1055,7 +1055,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 						ENDIF
 					CASE 3
 						PRINTW ＞롱기누스５을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스５]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스５]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 							ABL:(RESULT:1):종족 = 0
@@ -1200,10 +1200,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL MESSAGE_WINDOW_D, "롱기누스３", "네 녀석이 힘이 있구나…/허나、불쌍한 광대일 뿐/결국은 여기서 끝날 숙명이다！"
 		CALL MESSAGE_WINDOW_D, "", @"＞성창기사단은 %CALLNAME:MASTER% 일행을 포위했다"
 		CALL MESSAGE_WINDOW_D, "롱기누스１", "꿈쩍도 하지 않나……/엄청난 자신이로군、팬텀 소사이어티의 앞잡이여/때론 사람은 자기의 전능함에 취해 잘못을 범하지/바로 지금이 그 때란 걸 알아라！！"
-		CALL SET_ENEMY,14, [[キャラ:롱기누스１]], 65, 0, 1
-		CALL SET_ENEMY,8, [[キャラ:롱기누스２]], 63, 0, 1
-		CALL SET_ENEMY,9, [[キャラ:롱기누스３]], 63, 0, 1
-		CALL SET_ENEMY,10, [[キャラ:롱기누스４]], 63, 0, 1
+		CALL SET_ENEMY,14, [[캐릭터:롱기누스１]], 65, 0, 1
+		CALL SET_ENEMY,8, [[캐릭터:롱기누스２]], 63, 0, 1
+		CALL SET_ENEMY,9, [[캐릭터:롱기누스３]], 63, 0, 1
+		CALL SET_ENEMY,10, [[캐릭터:롱기누스４]], 63, 0, 1
 		CALL ADJUST_IMPERIAL
 		CALL MESSAGE_WINDOW_D, "", "＞성창기사단 롱기누스１이 １체 나타났다！/＞성창기사단 롱기누스２가 １체 나타났다！/＞성창기사단 롱기누스３가 １체 나타났다！/＞성창기사단 롱기누스４가 １체 나타났다！"
 		FLAG:도주불가플래그 = 1
@@ -1234,19 +1234,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 					VARSET LOCAL
 					LOCAL = 1
 
-					IF GETCHARA([[キャラ:롱기누스４]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스４]]) < 0
 						PRINTL ＞[1]롱기누스４
 						LOCAL:(LOCAL++) = 1
 					ENDIF
-					IF GETCHARA([[キャラ:롱기누스３]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스３]]) < 0
 						PRINTL ＞[2]롱기누스３
 						LOCAL:(LOCAL++) = 2
 					ENDIF
-					IF GETCHARA([[キャラ:롱기누스２]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스２]]) < 0
 						PRINTL ＞[3]롱기누스２
 						LOCAL:(LOCAL++) = 3
 					ENDIF
-					IF GETCHARA([[キャラ:롱기누스１]]) < 0
+					IF GETCHARA([[캐릭터:롱기누스１]]) < 0
 						PRINTL ＞[4]롱기누스１
 						LOCAL:(LOCAL++) = 4
 					ENDIF
@@ -1259,7 +1259,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 					SELECTCASE RESULT
 					CASE 1
 						PRINTW ＞롱기누스４을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스４]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스４]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 							ABL:(RESULT:1):종족 = 0
@@ -1406,7 +1406,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 						ENDIF
 					CASE 2
 					PRINTW ＞롱기누스３을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스３]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스３]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
 							ABL:(RESULT:1):종족 = 0
@@ -1548,7 +1548,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 						ENDIF
 					CASE 3
 					PRINTW ＞롱기누스２을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스２]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스２]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):LV = 40
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -1689,7 +1689,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 						ENDIF
 					CASE 4
 					PRINTW ＞롱기누스１을 손에 넣었다
-						CALL ADD_NEW_COMPANION,[[キャラ:롱기누스１]],0,,,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스１]],0,,,1
 						IF RESULT == 1
 							BASE:(RESULT:1):LV = 40
 							BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -1840,7 +1840,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL MESSAGE_WINDOW_D, "", @"＞방안은 냉기로 가득차 있어 얼어 버릴 것만 같다/＞근처에 얼어붙은 캡슐이 굴러다니고 있다/＞%마스터가% 캡슐을 확인하려 하자 사람의 그림자가 눈에 들어왔다"
 		CALL MESSAGE_WINDOW_D, "???", "캬하！！/머기、머기！！"
 		CALL MESSAGE_WINDOW_D, "", @"＞우주인을 생각나게 하는 이상한 풍채를 한 그것이/%마스터를% 습격했다！/＞우주인？ 포론틱１이 １체 나타났다！"
-		CALL SET_ENEMY,9,[[キャラ:포론틱１]],65,0,1
+		CALL SET_ENEMY,9,[[캐릭터:포론틱１]],65,0,1
 		LOCAL = CHARANUM-1
 		CSTR:LOCAL:사고패턴 = 포론틱
 		CFLAG:LOCAL:행동횟수 = 2
@@ -1861,7 +1861,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL MESSAGE_WINDOW_D, "", "＞우주인？을 쓰러트리자 근처에 다른 우주인？이 나타났다"
 		CALL MESSAGE_WINDOW_D, "다른 우주인？", "와따！！/와따！！/배거푸다！！"
 		CALL MESSAGE_WINDOW_D, "", "＞우주인？ 포론틱２가 １체 나타났다！"		
-		CALL SET_ENEMY,9,[[キャラ:포론틱２]],65,0,1
+		CALL SET_ENEMY,9,[[캐릭터:포론틱２]],65,0,1
 		CALL SET_BATTLE_STATUS(LOCAL, 100 * LOCAL:2, "ＨＰ")
 		CALL SET_BATTLE_STATUS(LOCAL, 100 * LOCAL:2, "ＭＰ")
 		CALL SYNC_STATUS, LOCAL
@@ -1873,7 +1873,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL SHOW_PICTURE, "D"
 		CALL MESSAGE_WINDOW_D, "다른 우주인？", "아아！！/칭구가！/포론티긔 칭구가！"
 		CALL MESSAGE_WINDOW_D, "", "＞숨 돌릴 새도 없이 다른 우주인이 덮쳐왔다/＞우주인？ 포론틱３가 １체 나타났다！"
-		CALL SET_ENEMY,9,[[キャラ:포론틱３]],65,0,1
+		CALL SET_ENEMY,9,[[캐릭터:포론틱３]],65,0,1
 		LOCAL = CHARANUM-1
 		CSTR:LOCAL:사고패턴 = 포론틱
 		CFLAG:LOCAL:행동횟수 = 2
@@ -1890,7 +1890,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL SHOW_PICTURE, "D"
 		CALL MESSAGE_WINDOW_D, "다른 우주인？", "머야！　머야！/어떠케 댄거야！/잉간！/그러묜 먹눈다！！"
 		CALL MESSAGE_WINDOW_D, "", "＞우주인？ 포론틱４가 １체 나타났다！"
-		CALL SET_ENEMY,9,[[キャラ:포론틱４]],65,0,1
+		CALL SET_ENEMY,9,[[캐릭터:포론틱４]],65,0,1
 		LOCAL = CHARANUM-1
 		CSTR:LOCAL:사고패턴 = 포론틱
 		CFLAG:LOCAL:행동횟수 = 2
@@ -1907,7 +1907,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		CALL SHOW_PICTURE, "D"
 		CALL MESSAGE_WINDOW_D, "다른 우주인？", "캬하！！/캬하！！/캬하하하하하！！！！"
 		CALL MESSAGE_WINDOW_D, "", "＞우주인？ 포론틱5가 １체 나타났다！"
-		CALL SET_ENEMY,9,[[キャラ:포론틱５]],65,0,1
+		CALL SET_ENEMY,9,[[캐릭터:포론틱５]],65,0,1
 		LOCAL = CHARANUM-1
 		CSTR:LOCAL:사고패턴 = 포론틱
 		CFLAG:LOCAL:행동횟수 = 2
@@ -1949,7 +1949,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:퓌러]],70,0,1
+		CALL SET_ENEMY,9,[[캐릭터:퓌러]],70,0,1
 		LOCAL = CHARANUM-1
 		CSTR:LOCAL:사고패턴 = 퓌러
 		CFLAG:LOCAL:행동횟수 = 2
@@ -2027,66 +2027,66 @@ IF RAND:100 < FLAG:인카운트율
 	IF !RAND:4 && FLAG:현M < 5
 		SELECTCASE RAND:100
 			CASE IS < 10
-				CALL SET_ENEMY,7, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
 			CASE IS < 30
-				CALL SET_ENEMY,7, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
 			CASE IS < 45
-				CALL SET_ENEMY,7, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
 			CASE IS < 60
-				CALL SET_ENEMY,7, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
 			CASE IS < 75
-				CALL SET_ENEMY,8, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
 			CASE IS < 90
-				CALL SET_ENEMY,7, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
 			CASEELSE
-				CALL SET_ENEMY,7, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,8, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,9, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,10, [[キャラ:Ｓ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,11, [[キャラ:Ｍ졸다트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,12, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,14, [[キャラ:코만단트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,15, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
-				CALL SET_ENEMY,16, [[キャラ:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,7, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,8, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,9, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,10, [[캐릭터:Ｓ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,11, [[캐릭터:Ｍ졸다트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,12, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,14, [[캐릭터:코만단트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,15, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
+				CALL SET_ENEMY,16, [[캐릭터:Ｖ크래프트]], 56 + RAND:2 * 3, 0
 		ENDSELECT
 	ELSE
 		던전플래그:(FLAG:현던전):1 = RAND:2 ? 1 # 0
@@ -2116,47 +2116,47 @@ RETURN ENEMY_NUM_COMMON("最上級", ARG)
 IF FLAG:현M < 5
 	SELECTCASE RAND:100
 		CASE IS < 20
-			RETURN [[キャラ:키메라]], 58
+			RETURN [[캐릭터:키메라]], 58
 		CASE IS < 40
-			RETURN [[キャラ:발키리]], 56
+			RETURN [[캐릭터:발키리]], 56
 		CASE IS < 60
-			RETURN [[キャラ:퀸메이브]], 58
+			RETURN [[캐릭터:퀸메이브]], 58
 		CASE IS < 70
-			RETURN [[キャラ:테스카틀리포카]], 58
+			RETURN [[캐릭터:테스카틀리포카]], 58
 		CASE IS < 90
-			RETURN [[キャラ:체르노보그]], 57
+			RETURN [[캐릭터:체르노보그]], 57
 		CASEELSE
-			RETURN [[キャラ:위칠로포치틀리]], 57
+			RETURN [[캐릭터:위칠로포치틀리]], 57
 	ENDSELECT
 ELSE
 	IF 던전플래그:(FLAG:현던전):1 == 1
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:Ｍ첸타오아]], 61
+				RETURN [[캐릭터:Ｍ첸타오아]], 61
 			CASE IS < 60
-				RETURN [[キャラ:헬제엔]], 61
+				RETURN [[캐릭터:헬제엔]], 61
 			CASE IS < 80
-				RETURN [[キャラ:친위대]], 63
+				RETURN [[캐릭터:친위대]], 63
 			CASEELSE
-				RETURN [[キャラ:메탈ㆍ드랏헤]], 64
+				RETURN [[캐릭터:메탈ㆍ드랏헤]], 64
 		ENDSELECT
 	ELSE
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:화조]], 64
+				RETURN [[캐릭터:화조]], 64
 			CASE IS < 40
-				RETURN [[キャラ:퀴벨레]], 62
+				RETURN [[캐릭터:퀴벨레]], 62
 			CASE IS < 55
 			;킨마몬
-				RETURN [[キャラ:킨마몬]], 62
+				RETURN [[캐릭터:킨마몬]], 62
 			CASE IS < 70
-				RETURN [[キャラ:고모리]], 61
+				RETURN [[캐릭터:고모리]], 61
 			CASE IS < 80
-				RETURN [[キャラ:네르갈]], 62
+				RETURN [[캐릭터:네르갈]], 62
 			CASE IS < 90
-				RETURN [[キャラ:헤임달]], 61
+				RETURN [[캐릭터:헤임달]], 61
 			CASEELSE
-				RETURN [[キャラ:무르무르]], 61
+				RETURN [[캐릭터:무르무르]], 61
 		ENDSELECT
 	ENDIF
 ENDIF
@@ -2329,32 +2329,32 @@ RETURN 1
 IF 던전플래그:(FLAG:현던전):1 == 1 && FLAG:현M >= 5
 	SELECTCASE RAND:4
 		CASE 0
-			RETURN [[キャラ:Ｍ첸타오아]] , 3 + RAND:10 , CSVBASE([[キャラ:Ｍ첸타오아]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:Ｍ첸타오아]] , 3 + RAND:10 , CSVBASE([[캐릭터:Ｍ첸타오아]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 1
-			RETURN [[キャラ:헬제엔]] , 3 + RAND:10 , CSVBASE([[キャラ:헬제엔]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:헬제엔]] , 3 + RAND:10 , CSVBASE([[캐릭터:헬제엔]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 2
-			RETURN [[キャラ:친위대]] , 3 + RAND:10 , CSVBASE([[キャラ:친위대]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:친위대]] , 3 + RAND:10 , CSVBASE([[캐릭터:친위대]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 3
-			RETURN [[キャラ:메탈ㆍ드랏헤]] , 3 + RAND:10 , CSVBASE([[キャラ:메탈ㆍ드랏헤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:메탈ㆍ드랏헤]] , 3 + RAND:10 , CSVBASE([[캐릭터:메탈ㆍ드랏헤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDSELECT
 ELSEIF 던전플래그:(FLAG:현던전):1 == 0 && FLAG:현M >= 5
 	SELECTCASE RAND:4
 		CASE 0
-			RETURN [[キャラ:퀴벨레]] , 3 + RAND:10 , CSVBASE([[キャラ:퀴벨레]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:퀴벨레]] , 3 + RAND:10 , CSVBASE([[캐릭터:퀴벨레]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 1
-			RETURN [[キャラ:네르갈]] , 3 + RAND:10 , CSVBASE([[キャラ:네르갈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:네르갈]] , 3 + RAND:10 , CSVBASE([[캐릭터:네르갈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 2
-			RETURN [[キャラ:헤임달]] , 3 + RAND:10 , CSVBASE([[キャラ:헤임달]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:헤임달]] , 3 + RAND:10 , CSVBASE([[캐릭터:헤임달]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 3
-			RETURN [[キャラ:무르무르]] , 3 + RAND:10 , CSVBASE([[キャラ:무르무르]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:무르무르]] , 3 + RAND:10 , CSVBASE([[캐릭터:무르무르]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDSELECT
 ELSE
 	SELECTCASE RAND:3
 		CASE 0
-			RETURN [[キャラ:테스카틀리포카]] , 3 + RAND:10 , CSVBASE([[キャラ:테스카틀리포카]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:테스카틀리포카]] , 3 + RAND:10 , CSVBASE([[캐릭터:테스카틀리포카]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 1
-			RETURN [[キャラ:체르노보그]] , 3 + RAND:10 , CSVBASE([[キャラ:체르노보그]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:체르노보그]] , 3 + RAND:10 , CSVBASE([[캐릭터:체르노보그]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 2
-			RETURN [[キャラ:위칠로포치틀리]] , 3 + RAND:10 , CSVBASE([[キャラ:위칠로포치틀리]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:위칠로포치틀리]] , 3 + RAND:10 , CSVBASE([[캐릭터:위칠로포치틀리]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDSELECT
 ENDIF

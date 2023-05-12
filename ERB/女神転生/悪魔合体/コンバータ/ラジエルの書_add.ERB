@@ -6,23 +6,23 @@
 #FUNCTION
 SELECTCASE ARG
 ;妖精
-CASE [[キャラ:픽시]],[[キャラ:밴시]]
+CASE [[캐릭터:픽시]],[[캐릭터:밴시]]
 	RETURNF 1
 ;龍王
-CASE [[キャラ:나가]],[[キャラ:미즈치]]
+CASE [[캐릭터:나가]],[[캐릭터:미즈치]]
 	RETURNF 1
 ;魔獣
-CASE [[キャラ:네코마타]]
+CASE [[캐릭터:네코마타]]
 	RETURNF 1
 ;妖鳥
-CASE [[キャラ:하피]]
+CASE [[캐릭터:하피]]
 	RETURNF 1
 ;精霊
-CASE [[キャラ:놈]]
+CASE [[캐릭터:놈]]
 	RETURNF 1
 ;ヒッポウ暫定処理(ルフのcsvが本家収録されたら統合予定)
-CASE [[キャラ:필방]]
-	SIF EXISTCSV(970,0) ;[[キャラ:루흐]]
+CASE [[캐릭터:필방]]
+	SIF EXISTCSV(970,0) ;[[캐릭터:루흐]]
 	RETURNF 1
 ENDSELECT
 RETURNF 0
@@ -33,7 +33,7 @@ RETURNF 0
 ;ARG = キャラ番号
 @EXTRA_DEVIL_CHILDREN, ARG
 SELECTCASE NO:ARG
-CASE [[キャラ:픽시]]
+CASE [[캐릭터:픽시]]
 	TALENT:ARG:처녀 = 0
 	TALENT:ARG:후타나리 = 0
 	TALENT:ARG:Ｖ민감 = 0
@@ -43,25 +43,25 @@ CASE [[キャラ:픽시]]
 	CFLAG:ARG:ＴＳ시회화타입 = ABL:ARG:회화타입
 	ABL:ARG:회화타입 = 313 ; 男ㆍ子供
 	;ランクアップでシルフ
-	ABL:ARG:변이 = [[キャラ:실프]]
+	ABL:ARG:변이 = [[캐릭터:실프]]
 	ABL:ARG:변이레벨 = 12
-CASE [[キャラ:밴시]]
+CASE [[캐릭터:밴시]]
 	;ランクアップでデュラハン
-	ABL:ARG:변이 = [[キャラ:듀라한]]
+	ABL:ARG:변이 = [[캐릭터:듀라한]]
 	ABL:ARG:변이레벨 = 32
-CASE [[キャラ:미즈치]]
+CASE [[캐릭터:미즈치]]
 	;女になる(男のオトヒメとか嫌なので)
 	TALENT:ARG:남자 = 0
 	TALENT:ARG:오토코노코 = 0
 	TALENT:ARG:처녀 = 1
 	;ランクアップでオトヒメ
-	ABL:ARG:변이 = [[キャラ:오토히메]]
+	ABL:ARG:변이 = [[캐릭터:오토히메]]
 	ABL:ARG:변이레벨 = 39
-CASE [[キャラ:나가]]
+CASE [[캐릭터:나가]]
 	;ランクアップでアナンタ
-	ABL:ARG:변이 = [[キャラ:아난타]]
+	ABL:ARG:변이 = [[캐릭터:아난타]]
 	ABL:ARG:변이레벨 = 53
-CASE [[キャラ:네코마타]]
+CASE [[캐릭터:네코마타]]
 	ABL:ARG:회화타입 = 303 ;女ㆍ少女
 	IF !TALENT:ARG:소인체형	
 		TALENT:ARG:유아체형 = 1
@@ -76,22 +76,22 @@ CASE [[キャラ:네코마타]]
 	CFLAG:ARG:전신복 = 0
 	CFLAG:ARG:전신속옷 = [[衣装:레오타드]]
 	;ランクアップでバハン
-	;ABL:ARG:변이 = [[キャラ:バハン]]
+	;ABL:ARG:변이 = [[캐릭터:バハン]]
 	;ABL:ARG:변이레벨 = XX
-CASE [[キャラ:하피]]
+CASE [[캐릭터:하피]]
 	CFLAG:ARG:전신복 = [[衣装:원피스]]
 	CFLAG:ARG:신발 = [[衣装:샌들]]
 	;ランクアップでセイレーン
-	ABL:ARG:변이 = [[キャラ:세이렌]]
+	ABL:ARG:변이 = [[캐릭터:세이렌]]
 	ABL:ARG:변이레벨 = 16
-CASE [[キャラ:필방]]
+CASE [[캐릭터:필방]]
 	;ランクアップでルフ
-	ABL:ARG:변이 = 970	;[[キャラ:루흐]]
+	ABL:ARG:변이 = 970	;[[캐릭터:루흐]]
 	ABL:ARG:변이레벨 = 40
-CASE [[キャラ:놈]]
+CASE [[캐릭터:놈]]
 	SIF !TALENT:ARG:유아체형 && !TALENT:ARG:큰체형 && !TALENT:ARG:거체
 		TALENT:ARG:소인체형 = 1
 	;랭크アップで一寸法師(のルーツとされる스쿠나히코나)
-	ABL:ARG:변이 = [[キャラ:스쿠나히코나]]
+	ABL:ARG:변이 = [[캐릭터:스쿠나히코나]]
 	ABL:ARG:변이레벨 = 21
 ENDSELECT

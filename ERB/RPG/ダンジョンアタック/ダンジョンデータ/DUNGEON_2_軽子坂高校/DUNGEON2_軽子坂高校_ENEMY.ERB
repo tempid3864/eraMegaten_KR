@@ -56,17 +56,17 @@ SELECTCASE FLAG:현M
 	CASE 0
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:픽시]], 3
+				RETURN [[캐릭터:픽시]], 3
 			CASE IS < 50
-				RETURN [[キャラ:좀비쨩]], 4
+				RETURN [[캐릭터:좀비쨩]], 4
 			CASE IS < 70
-				RETURN [[キャラ:아프사라스]], 5
+				RETURN [[캐릭터:아프사라스]], 5
 			CASE IS < 80
-				RETURN [[キャラ:좀비독]], 1
+				RETURN [[캐릭터:좀비독]], 1
 			CASE IS < 90
-				RETURN [[キャラ:춍춍]], 4
+				RETURN [[캐릭터:춍춍]], 4
 			CASE IS < 100
-				RETURN [[キャラ:코볼트]], 5
+				RETURN [[캐릭터:코볼트]], 5
 		ENDSELECT
 	;2Ｆでの遭遇
 	CASE 1
@@ -82,7 +82,7 @@ SELECTCASE FLAG:현M
 				RETURN 1002, 9
 			CASE IS < 80
 				;20%でアンドラス
-				RETURN [[キャラ:안드라스]], 8
+				RETURN [[캐릭터:안드라스]], 8
 			CASE IS < 90
 				;10%でポルターガイスト
 				RETURN 1057, 7

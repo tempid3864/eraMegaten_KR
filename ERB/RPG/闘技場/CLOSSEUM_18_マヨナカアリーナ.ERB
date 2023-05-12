@@ -128,7 +128,7 @@ FLAG:선제기습취소 = 1
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;아스테리오스
-		CALL SET_ENEMY,10,[[キャラ:아스테리오스]],20,0,1
+		CALL SET_ENEMY,10,[[캐릭터:아스테리오스]],20,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 4500
 		BASE:(CHARANUM-1):LV += 35
 		BASE:(CHARANUM-1):힘 += 30
@@ -153,7 +153,7 @@ FLAG:선제기습취소 = 1
 		;第6戦へのフラグを立てる
 ;		FLAG:마요나카아레나진행도 = 6
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 의식을 잃은 라비리스를 확보하자 콜로세움을 뒤로했다…
-		IF FLAG:DEBUG == 1 && FINDCHARA_B([[キャラ:라비리스]]) == 0
+		IF FLAG:DEBUG == 1 && FINDCHARA_B([[캐릭터:라비리스]]) == 0
 			CALL INPUT_YN("라비리스를 노예로 삼는다","하지 않는다")
 			IF RESULT == 0
 				PRINTFORMW 라비리스를 노예로 삼았습니다
@@ -162,7 +162,7 @@ FLAG:선제기습취소 = 1
 				PRINTFORMW 라비리스를 노예로 삼지 않고, 돌아갑니다
 			ENDIF
 			PRINTFORMW 이벤트 종료…
-		ELSEIF FINDCHARA_B([[キャラ:라비리스]]) > 0
+		ELSEIF FINDCHARA_B([[캐릭터:라비리스]]) > 0
 			PRINTFORMW 이벤트 종료…
 		ELSE
 			PRINTFORMW 라비리스를 노예로 삼았습니다

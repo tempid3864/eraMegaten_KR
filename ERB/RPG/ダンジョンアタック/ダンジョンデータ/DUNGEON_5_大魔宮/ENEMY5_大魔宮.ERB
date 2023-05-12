@@ -36,20 +36,20 @@ IF RAND:100 < FLAG:인카운트율
 			IF LOCAL == 7 || LOCAL == 12
 				SELECTCASE RAND:100
 					CASE IS < 60
-						LOCAL:1 = LOCAL == 7 ? [[キャラ:좀비사무라이]] # [[キャラ:좀비헌병]]
+						LOCAL:1 = LOCAL == 7 ? [[캐릭터:좀비사무라이]] # [[캐릭터:좀비헌병]]
 					CASE IS < 80
-						LOCAL:1 = [[キャラ:콥스]]
+						LOCAL:1 = [[캐릭터:콥스]]
 						LOCAL:2 = 30 + RAND:3 * 3
 					CASEELSE
-						LOCAL:1 = [[キャラ:레기온]]
+						LOCAL:1 = [[캐릭터:레기온]]
 						LOCAL:2 = 30 + RAND:3 * 3
 				ENDSELECT
 				LOCAL:2 = 30 + RAND:3 * 3
 			ENDIF
 			CALL SET_ENEMY, LOCAL, LOCAL:1, LOCAL:2, 0
-			IF LOCAL:1 == [[キャラ:좀비사무라이]] || [[キャラ:좀비헌병]]
+			IF LOCAL:1 == [[캐릭터:좀비사무라이]] || [[캐릭터:좀비헌병]]
 				CALL SET_BATTLE_STATUS(CHARANUM-1, MAXBASE:(CHARANUM-1):ＨＰ * 2, "ＨＰ")
-				SIF LOCAL:1 == [[キャラ:좀비사무라이]]
+				SIF LOCAL:1 == [[캐릭터:좀비사무라이]]
 					ABL:(CHARANUM-1):스킬3 = [[스킬:옥쇄파]]
 				CFLAG:(CHARANUM-1):속도보정 -= 20
 				CALL SYNC_STATUS, CHARANUM-1
@@ -107,59 +107,59 @@ SELECTCASE FLAG:현M
 	CASE 1, 2, 3
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:유키죠로]], 21
+				RETURN [[캐릭터:유키죠로]], 21
 			CASE IS < 30
-				RETURN [[キャラ:굴라]], 21
+				RETURN [[캐릭터:굴라]], 21
 			CASE IS < 45
-				RETURN [[キャラ:랴난시]], 20
+				RETURN [[캐릭터:랴난시]], 20
 			CASE IS < 60
-				RETURN [[キャラ:루살카]], 19
+				RETURN [[캐릭터:루살카]], 19
 			CASE IS < 75
-				RETURN [[キャラ:로어]], 19
+				RETURN [[캐릭터:로어]], 19
 			CASE IS < 90
-				RETURN [[キャラ:코파텐구]], 19
+				RETURN [[캐릭터:코파텐구]], 19
 			CASE IS < 100
-				RETURN [[キャラ:그르르]], 20
+				RETURN [[캐릭터:그르르]], 20
 		ENDSELECT
 	;ダイダロス中層
 	CASE 4, 5, 6
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:유키죠로]], 21
+				RETURN [[캐릭터:유키죠로]], 21
 			CASE IS < 30
-				RETURN [[キャラ:굴라]], 21
+				RETURN [[캐릭터:굴라]], 21
 			CASE IS < 45
-				RETURN [[キャラ:블랙위도우]], 23
+				RETURN [[캐릭터:블랙위도우]], 23
 			CASE IS < 60
-				RETURN [[キャラ:엘프]], 23
+				RETURN [[캐릭터:엘프]], 23
 			CASE IS < 75
-				RETURN [[キャラ:오니]], 21
+				RETURN [[캐릭터:오니]], 21
 			CASE IS < 90
-				RETURN [[キャラ:잭랜턴]], 23
+				RETURN [[캐릭터:잭랜턴]], 23
 			CASE IS < 100
-				RETURN [[キャラ:그르르]], 22
+				RETURN [[캐릭터:그르르]], 22
 		ENDSELECT
 	;ダイダロス下層
 	CASE 7
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:유키죠로]], 21+RAND:2*3
+				RETURN [[캐릭터:유키죠로]], 21+RAND:2*3
 			CASE IS < 30
-				RETURN [[キャラ:굴라]], 21+RAND:2*3
+				RETURN [[캐릭터:굴라]], 21+RAND:2*3
 			CASE IS < 45
-				RETURN [[キャラ:블랙위도우]], 23+RAND:2*3
+				RETURN [[캐릭터:블랙위도우]], 23+RAND:2*3
 			CASE IS < 55
-				RETURN [[キャラ:엘프]], 23+RAND:2*3
+				RETURN [[캐릭터:엘프]], 23+RAND:2*3
 			CASE IS < 65
-				RETURN [[キャラ:이소라]], 23+RAND:2*3
+				RETURN [[캐릭터:이소라]], 23+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:오니]], 21+RAND:2*3
+				RETURN [[캐릭터:오니]], 21+RAND:2*3
 			CASE IS < 85
-				RETURN [[キャラ:잭랜턴]], 23+RAND:2*3
+				RETURN [[캐릭터:잭랜턴]], 23+RAND:2*3
 			CASE IS < 95
-				RETURN [[キャラ:그르르]], 22+RAND:2*3
+				RETURN [[캐릭터:그르르]], 22+RAND:2*3
 			CASEELSE
-				RETURN [[キャラ:모무노후]], 22+RAND:2*3
+				RETURN [[캐릭터:모무노후]], 22+RAND:2*3
 		ENDSELECT
 	;ヴァルハラ
 	CASE 9, 10
@@ -167,189 +167,189 @@ SELECTCASE FLAG:현M
 		IF FLAG:현X > 27
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:헬]], 35+RAND:2*3
+					RETURN [[캐릭터:헬]], 35+RAND:2*3
 				CASE IS < 40
-					RETURN [[キャラ:알라우네]], 33+RAND:2*3
+					RETURN [[캐릭터:알라우네]], 33+RAND:2*3
 				CASE IS < 55
-					RETURN [[キャラ:다프네]], 34+RAND:2*3
+					RETURN [[캐릭터:다프네]], 34+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:젤라론즈]], 35+RAND:2*3
+					RETURN [[캐릭터:젤라론즈]], 35+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:야크시니]], 35+RAND:2*3
+					RETURN [[캐릭터:야크시니]], 35+RAND:2*3
 				CASE IS < 90
-					RETURN [[キャラ:바포멧트]], 33+RAND:2*3
+					RETURN [[캐릭터:바포멧트]], 33+RAND:2*3
 				CASE IS < 100
-					RETURN [[キャラ:콥스]], 34+RAND:2*3
+					RETURN [[캐릭터:콥스]], 34+RAND:2*3
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:헬]], 32+RAND:2*3
+					RETURN [[캐릭터:헬]], 32+RAND:2*3
 				CASE IS < 40
-					RETURN [[キャラ:알라우네]], 32+RAND:2*3
+					RETURN [[캐릭터:알라우네]], 32+RAND:2*3
 				CASE IS < 55
-					RETURN [[キャラ:아에로]], 31+RAND:2*3
+					RETURN [[캐릭터:아에로]], 31+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:고르곤]], 30+RAND:2*3
+					RETURN [[캐릭터:고르곤]], 30+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:엘리고르]], 29+RAND:2*3
+					RETURN [[캐릭터:엘리고르]], 29+RAND:2*3
 				CASE IS < 90
-					RETURN [[キャラ:바포멧트]], 31+RAND:2*3
+					RETURN [[캐릭터:바포멧트]], 31+RAND:2*3
 				CASE IS < 100
-					RETURN [[キャラ:콥스]], 32+RAND:2*3
+					RETURN [[캐릭터:콥스]], 32+RAND:2*3
 			ENDSELECT
 		ENDIF
 	;ビエン1F/2F
 	CASE 13, 14
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:한냐]], 25+RAND:2*3
+				RETURN [[캐릭터:한냐]], 25+RAND:2*3
 			CASE IS < 40
-				RETURN [[キャラ:켈라이노]], 25+RAND:2*3
+				RETURN [[캐릭터:켈라이노]], 25+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:고르곤]], 28+RAND:2
+				RETURN [[캐릭터:고르곤]], 28+RAND:2
 			CASE IS < 70
-				RETURN [[キャラ:아에슈마]],27+RAND:2
+				RETURN [[캐릭터:아에슈마]],27+RAND:2
 			CASE IS < 80
-				RETURN [[キャラ:모무노후]], 25+RAND:2*3
+				RETURN [[캐릭터:모무노후]], 25+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:시트리]], 25+RAND:2*3
+				RETURN [[캐릭터:시트리]], 25+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:잭랜턴]], 25+RAND:2*3
+				RETURN [[캐릭터:잭랜턴]], 25+RAND:2*3
 		ENDSELECT
 	;ビエンB1F/3F/4F
 	CASE 12, 15, 16
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:밴시]], 27+RAND:2*3
+				RETURN [[캐릭터:밴시]], 27+RAND:2*3
 			CASE IS < 40
-				RETURN [[キャラ:맨이터]], 27+RAND:2*3
+				RETURN [[캐릭터:맨이터]], 27+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:고르곤]], 30
+				RETURN [[캐릭터:고르곤]], 30
 			CASE IS < 70
-				RETURN [[キャラ:아에슈마]], 27+RAND:2*3
+				RETURN [[캐릭터:아에슈마]], 27+RAND:2*3
 			CASE IS < 80
-				RETURN [[キャラ:메가이라]], 27+RAND:2*3
+				RETURN [[캐릭터:메가이라]], 27+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:인큐버스]], 27+RAND:2*3
+				RETURN [[캐릭터:인큐버스]], 27+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:나가]], 28+RAND:2*3
+				RETURN [[캐릭터:나가]], 28+RAND:2*3
 		ENDSELECT
 	;マズルカ ヴァルハラ側
 	CASE IS < 25
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:마하]], 42+RAND:2*3
+				RETURN [[캐릭터:마하]], 42+RAND:2*3
 			CASE IS < 30
-				RETURN [[キャラ:페레]], 40+RAND:2*3
+				RETURN [[캐릭터:페레]], 40+RAND:2*3
 			CASE IS < 45
-				RETURN [[キャラ:뉵스]], 42+RAND:2*3
+				RETURN [[캐릭터:뉵스]], 42+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:라이라]], 41+RAND:2*3
+				RETURN [[캐릭터:라이라]], 41+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:레기온]], 40+RAND:2*3
+				RETURN [[캐릭터:레기온]], 40+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가ㆍ라쟈]], 42+RAND:2*3
+				RETURN [[캐릭터:나가ㆍ라쟈]], 42+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:카마조츠]], 40+RAND:2*3
+				RETURN [[캐릭터:카마조츠]], 40+RAND:2*3
 		ENDSELECT
 	;マズルカ 7F 8F
 	CASE 25, 26
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:마하]], 44+RAND:2*3
+				RETURN [[캐릭터:마하]], 44+RAND:2*3
 			CASE IS < 30
-				RETURN [[キャラ:페레]], 42+RAND:2*3
+				RETURN [[캐릭터:페레]], 42+RAND:2*3
 			CASE IS < 45
-				RETURN [[キャラ:뉵스]], 44+RAND:2*3
+				RETURN [[캐릭터:뉵스]], 44+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:라이라]], 43+RAND:2*3
+				RETURN [[캐릭터:라이라]], 43+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:레기온]], 42+RAND:2*3
+				RETURN [[캐릭터:레기온]], 42+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가ㆍ라쟈]], 42+RAND:2*3
+				RETURN [[캐릭터:나가ㆍ라쟈]], 42+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:카마조츠]], 42+RAND:2*3
+				RETURN [[캐릭터:카마조츠]], 42+RAND:2*3
 		ENDSELECT
 	;マズルカ　腐海側
 	CASE IS < 31
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:마하]], 45+RAND:2*3
+				RETURN [[캐릭터:마하]], 45+RAND:2*3
 			CASE IS < 30
-				RETURN [[キャラ:세크메트]], 44+RAND:2*3
+				RETURN [[캐릭터:세크메트]], 44+RAND:2*3
 			CASE IS < 45
-				RETURN [[キャラ:뉵스]], 45+RAND:2*3
+				RETURN [[캐릭터:뉵스]], 45+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:서큐버스]], 44+RAND:2*3
+				RETURN [[캐릭터:서큐버스]], 44+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:레기온]], 44+RAND:2*3
+				RETURN [[캐릭터:레기온]], 44+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:나가ㆍ라쟈]], 44+RAND:2*3
+				RETURN [[캐릭터:나가ㆍ라쟈]], 44+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:베르세르크]], 45+RAND:2*3
+				RETURN [[캐릭터:베르세르크]], 45+RAND:2*3
 		ENDSELECT
 	;腐海　マズルカ側
 	CASE IS < 36
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:마하]], 48+RAND:2*3
+				RETURN [[캐릭터:마하]], 48+RAND:2*3
 			CASE IS < 30
-				RETURN [[キャラ:다키니]], 48+RAND:2*3
+				RETURN [[캐릭터:다키니]], 48+RAND:2*3
 			CASE IS < 45
-				RETURN [[キャラ:세드나]], 48+RAND:2*3
+				RETURN [[캐릭터:세드나]], 48+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:모리안]], 48+RAND:2*3
+				RETURN [[캐릭터:모리안]], 48+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:쿠라마텐구]], 48+RAND:2*3
+				RETURN [[캐릭터:쿠라마텐구]], 48+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:뱀파이어]], 49+RAND:2*3
+				RETURN [[캐릭터:뱀파이어]], 49+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:섀도우]], 48+RAND:2*3
+				RETURN [[캐릭터:섀도우]], 48+RAND:2*3
 		ENDSELECT
 	;炎の腐海　アンフィニ側下層
 	CASE IS < 38
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:바스테트]],54 + RAND:2*3
+				RETURN [[캐릭터:바스테트]],54 + RAND:2*3
 			CASE IS < 40
-				RETURN [[キャラ:티타니아]], 53+RAND:2*3
+				RETURN [[캐릭터:티타니아]], 53+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:모리안]], 52+RAND:2*3
+				RETURN [[캐릭터:모리안]], 52+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:케르눈노스]], 53+RAND:2*3
+				RETURN [[캐릭터:케르눈노스]], 53+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:케찰코아틀]], 54+RAND:2*3
+				RETURN [[캐릭터:케찰코아틀]], 54+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:하누만]], 53+RAND:2*3
+				RETURN [[캐릭터:하누만]], 53+RAND:2*3
 		ENDSELECT
 	;炎の腐海　アンフィニ側上層
 	CASE IS < 40
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:바스테트]], 55+RAND:2*3
+				RETURN [[캐릭터:바스테트]], 55+RAND:2*3
 			CASE IS < 40
-				RETURN [[キャラ:파르바티]], 56+RAND:2*3
+				RETURN [[캐릭터:파르바티]], 56+RAND:2*3
 			CASE IS < 60
-				RETURN [[キャラ:아라미사키]], 56+RAND:2*3
+				RETURN [[캐릭터:아라미사키]], 56+RAND:2*3
 			CASE IS < 75
-				RETURN [[キャラ:아가레스]], 55+RAND:2*3
+				RETURN [[캐릭터:아가레스]], 55+RAND:2*3
 			CASE IS < 90
-				RETURN [[キャラ:케찰코아틀]], 56+RAND:2*3
+				RETURN [[캐릭터:케찰코아틀]], 56+RAND:2*3
 			CASE IS < 100
-				RETURN [[キャラ:알렉토]], 55+RAND:2*3
+				RETURN [[캐릭터:알렉토]], 55+RAND:2*3
 		ENDSELECT
 	;アンフィニ
 	CASE IS < 48
 		SELECTCASE RAND:100
 			CASE IS < 25
-				RETURN [[キャラ:픽시]], 80
+				RETURN [[캐릭터:픽시]], 80
 			CASE IS < 50
-				RETURN [[キャラ:좀비쨩]],80
+				RETURN [[캐릭터:좀비쨩]],80
 			CASE IS < 75
-				RETURN [[キャラ:하피]], 80
+				RETURN [[캐릭터:하피]], 80
 			CASEELSE
-				RETURN [[キャラ:아프사라스]], 80
+				RETURN [[캐릭터:아프사라스]], 80
 		ENDSELECT
 ENDSELECT
 ;=================================
@@ -359,7 +359,7 @@ ENDSELECT
 #LOCALSIZE 1
 IF RANGE(FLAG:현M, 41, 53)
 	SELECTCASE NO:ARG
-		CASE [[キャラ:픽시]]
+		CASE [[캐릭터:픽시]]
 			ABL:ARG:스킬1 = [[스킬:지오다인]]
 			ABL:ARG:스킬2 = [[스킬:지오다인]]
 			ABL:ARG:스킬3 = [[스킬:해피스텝]]
@@ -368,7 +368,7 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬6 = [[스킬:메ㆍ디아라한]]
 			ABL:ARG:스킬7 = [[스킬:메기도라온]]
 			ABL:ARG:스킬8 = [[스킬:메기도라온]]
-		CASE [[キャラ:좀비쨩]]
+		CASE [[캐릭터:좀비쨩]]
 			ABL:ARG:스킬1 = [[스킬:마인드슬라이스]]
 			ABL:ARG:스킬2 = [[스킬:마인드슬라이스]]
 			ABL:ARG:스킬3 = [[스킬:석화물어뜯기]]
@@ -377,7 +377,7 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬6 = [[스킬:메테오피스트]]
 			ABL:ARG:스킬7 = [[스킬:삼할의활천]]
 			ABL:ARG:스킬8 = [[스킬:이악물기]]
-		CASE [[キャラ:하피]]
+		CASE [[캐릭터:하피]]
 			ABL:ARG:스킬1 = [[스킬:마하ㆍ잔다인]]
 			ABL:ARG:스킬2 = [[스킬:마하ㆍ잔다인]]
 			ABL:ARG:스킬3 = [[스킬:선풍진]]
@@ -386,7 +386,7 @@ IF RANGE(FLAG:현M, 41, 53)
 			ABL:ARG:스킬6 = [[스킬:악셀클로]]
 			ABL:ARG:스킬7 = [[스킬:천우의춤]]
 			ABL:ARG:스킬8 = [[스킬:천우의춤]]
-		CASE [[キャラ:아프사라스]]
+		CASE [[캐릭터:아프사라스]]
 			ABL:ARG:스킬1 = [[스킬:마하ㆍ지오다인]]
 			ABL:ARG:스킬2 = [[스킬:마하ㆍ지오다인]]
 			ABL:ARG:스킬3 = [[스킬:아쿠아리타이드]]
@@ -416,7 +416,7 @@ ENDIF
 ;---------------------------------------------------------------
 @SET_MINOTAUR
 #LOCALSIZE 2
-CALL SET_ENEMY,9,[[キャラ:미노타우로스]],30,0,1
+CALL SET_ENEMY,9,[[캐릭터:미노타우로스]],30,0,1
 LOCAL = CHARANUM-1
 IF !ITEM:정옥
 	ABL:LOCAL:아이템3 = GETNUM(ITEM, "정옥")
@@ -458,7 +458,7 @@ CALL HEALTH_CHARA,(CHARANUM-1)
 ;---------------------------------------------------------------
 @SET_MEDOUSA
 #LOCALSIZE 2
-CALL SET_ENEMY, 9, [[キャラ:메두사]], 50, 0, 1
+CALL SET_ENEMY, 9, [[캐릭터:메두사]], 50, 0, 1
 LOCAL = CHARANUM -1
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 CALL SET_BATTLE_STATUS(LOCAL, 60 * LOCAL:1, "ＨＰ")
@@ -549,7 +549,7 @@ SIF CFLAG:ARG:입력행동 == [[스킬:ＤＵＭＭＹ]]
 ;---------------------------------------------------------------
 @SET_LOKI
 #LOCALSIZE 2
-CALL SET_ENEMY, 9, [[キャラ:로키]], 60, 0, 1
+CALL SET_ENEMY, 9, [[캐릭터:로키]], 60, 0, 1
 LOCAL = CHARANUM -1
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 CSTR:LOCAL:사고패턴 = LOKI
@@ -694,7 +694,7 @@ RETURN 1
 ;---------------------------------------------------------------
 @SET_HECATE
 #LOCALSIZE 2
-CALL SET_ENEMY, 9, [[キャラ:헤카테]], 60 + FLAG:월령 * 5 / 2, 0, 1
+CALL SET_ENEMY, 9, [[캐릭터:헤카테]], 60 + FLAG:월령 * 5 / 2, 0, 1
 LOCAL = CHARANUM -1
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 BASE:LOCAL:LV = 50
@@ -891,7 +891,7 @@ RETURN 1
 ;---------------------------------------------------------------
 @SET_SET
 #LOCALSIZE 2
-CALL SET_ENEMY, 9, [[キャラ:세트]], 66, 0, 1
+CALL SET_ENEMY, 9, [[캐릭터:세트]], 66, 0, 1
 LOCAL = CHARANUM -1
 ;通常악마と同数値程度だとあからさまにボスとしては弱くなるので
 FOR LOCAL:1, 1, 7
@@ -1076,7 +1076,7 @@ RETURN 1
 SIF FLAG:행동순1 == -1
 	RETURN 0
 ;적の로키を探す
-SIF !FINDCHARA_ENEMY([[キャラ:로키]])
+SIF !FINDCHARA_ENEMY([[캐릭터:로키]])
 	RETURN 0
 LOCAL = RESULT:1
 IF CFLAG:(FLAG:행동순1):PT플래그
@@ -1102,7 +1102,7 @@ ENDIF
 TFLAG:436 = BASE:LOCAL:ＨＰ
 @EVENT_BATTLE_TURNEND_DUNGEON5
 ;적の로키を探す
-SIF !FINDCHARA_ENEMY([[キャラ:로키]])
+SIF !FINDCHARA_ENEMY([[캐릭터:로키]])
 	RETURN 0
 MAXBASE:(RESULT:1):만능 = 100
 
@@ -1115,23 +1115,23 @@ MAXBASE:(RESULT:1):만능 = 100
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE FLAG:현M
 	CASE 1 , 2 , 3
-		RETURN [[キャラ:코파텐구]] , 3 + RAND:10 , CSVBASE([[キャラ:코파텐구]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코파텐구]] , 3 + RAND:10 , CSVBASE([[캐릭터:코파텐구]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 4 , 5 , 6
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 7
-		RETURN [[キャラ:모무노후]] , 3 + RAND:10 , CSVBASE([[キャラ:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:모무노후]] , 3 + RAND:10 , CSVBASE([[캐릭터:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 9 , 10
-		RETURN [[キャラ:콥스]] , 6 + RAND:10 , CSVBASE([[キャラ:콥스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:콥스]] , 6 + RAND:10 , CSVBASE([[캐릭터:콥스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 13 , 14
-		RETURN [[キャラ:모무노후]] , 3 + RAND:10 , CSVBASE([[キャラ:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:모무노후]] , 3 + RAND:10 , CSVBASE([[캐릭터:모무노후]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 12 , 15 , 16
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 17 TO 25
-		RETURN [[キャラ:레기온]] , 6 + RAND:10 , CSVBASE([[キャラ:레기온]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:레기온]] , 6 + RAND:10 , CSVBASE([[캐릭터:레기온]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 25 , 26
-		RETURN [[キャラ:나가ㆍ라쟈]] , 3 + RAND:10 , CSVBASE([[キャラ:나가ㆍ라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:나가ㆍ라쟈]] , 3 + RAND:10 , CSVBASE([[캐릭터:나가ㆍ라쟈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 27 TO 31
-		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베르세르크]] , 3 + RAND:10 , CSVBASE([[캐릭터:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 32 TO 36
-		RETURN [[キャラ:뱀파이어]] , 3 + RAND:10 , CSVBASE([[キャラ:뱀파이어]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:뱀파이어]] , 3 + RAND:10 , CSVBASE([[캐릭터:뱀파이어]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

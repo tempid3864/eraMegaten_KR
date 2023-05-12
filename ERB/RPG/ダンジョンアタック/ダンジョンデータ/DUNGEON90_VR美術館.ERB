@@ -1689,7 +1689,7 @@ RETURN 1
 @EVENT_BATTLE_ACTEND_DUNGEON90
 SIF POS(9) == -1
 	RETURN 0
-SIF NO:POS(9) != [[キャラ:스내피]]
+SIF NO:POS(9) != [[캐릭터:스내피]]
 	RETURN 0
 IF BASE:POS(9):ＨＰ < MAXBASE:POS(9):ＨＰ/8 && 던전플래그:(FLAG:현던전):6 == 0
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -1835,9 +1835,9 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:2
 	CASE 0
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:좀비아미]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비아미]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

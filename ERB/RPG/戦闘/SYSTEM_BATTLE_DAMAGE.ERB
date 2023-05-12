@@ -170,14 +170,14 @@ SIF GET_STATE(CFLAG:ARG:상태이상) == "POISON"
 ;		;貫通持ちは耐性と無効を無視
 ;		LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSEIF CFLAG:(ARG:1):(GET_TYPE(ARG:3) + "ガードキル") && (MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) < 100 || MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) == 999)
 ;		;ガードキル効果：耐性以上を完全に無視
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -425,7 +425,7 @@ SIF GET_STATE(CFLAG:ARG:상태이상) == "CLOSE"
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -605,14 +605,14 @@ RETURN 1
 ;		;貫通持ちは耐性と無効を無視
 ;		LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSEIF CFLAG:(ARG:1):(GET_TYPE(ARG:3) + "ガードキル") && (MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) < 100 || MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) == 999)
 ;		;ガードキル効果：耐性以上を完全に無視
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -713,7 +713,7 @@ RETURN 1
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -892,7 +892,7 @@ L_貫通フラグ = BTL_CHK_SKILL_관통(L_P,L_ダメージタイプ,L_相性値
 ;-----------------------------
 
 ;人間不可侵&人間からの攻撃
-IF HAVE_SKILL(L_T,2506) && ABL:L_P:종족 == 0 && NO:L_P != [[キャラ:코로마루]] && (!CFLAG:L_P:악마변신 || TALENT:L_P:이능자 || TALENT:L_P:이능자 || TALENT:L_P:서머너 || TALENT:L_P:페르소나구사자)
+IF HAVE_SKILL(L_T,2506) && ABL:L_P:종족 == 0 && NO:L_P != [[캐릭터:코로마루]] && (!CFLAG:L_P:악마변신 || TALENT:L_P:이능자 || TALENT:L_P:이능자 || TALENT:L_P:서머너 || TALENT:L_P:페르소나구사자)
 	L_BLOCK=1
 ;ガードキル未発動 且つ 反射
 ELSEIF !L_ガードキル && (L_相性値 == 999)
@@ -1133,14 +1133,14 @@ ELSEIF L_貫通フラグ && L_相性値 >= 0 && L_相性値 != 999;024
 	;貫通持ちは耐性と無効を無視
 	L_DMG *= MAX(100, L_相性値)
 	;ベルㆍデルは貫通でも0ダメージに
-	SIF NO:L_T == [[キャラ:벨ㆍ데르]]
+	SIF NO:L_T == [[캐릭터:벨ㆍ데르]]
 		L_DMG = 0
 ;ガードキル
 ELSEIF CFLAG:L_T:(L_相性名 + "가드킬") && (L_相性値 < 100 || L_相性値 == 999)
 	;ガードキル効果：耐性以上を完全に無視
 	L_DMG *= 100
 	;ベルㆍデルは貫通でも0ダメージに
-	SIF NO:L_T == [[キャラ:벨ㆍ데르]]
+	SIF NO:L_T == [[캐릭터:벨ㆍ데르]]
 		L_DMG = 0
 ELSE
 	L_DMG *= L_相性値
@@ -1790,7 +1790,7 @@ L_ダメージ補正 += RESULT
 ;---- EDIT 033 ADD END   ---------------------------
 ;---- 東方MOD START   ---------------------------
 ;アナーキーバレットヘルㆍ魔法攻撃のみ+25%
-SIF HAVE_SKILL(L_P,2947) && L_ダメージタイプ == 2 && NO:L_P == [[キャラ:오키나]]
+SIF HAVE_SKILL(L_P,2947) && L_ダメージタイプ == 2 && NO:L_P == [[캐릭터:오키나]]
 	L_ダメージ補正 += 25
 ;---- 東方MOD END   ---------------------------
 
@@ -2232,7 +2232,7 @@ ENDIF
 SIF CFLAG:L_T:PT플래그 < 0
 	L_DMG = L_DMG * (CFLAG:L_T:비율데미지보정 +100) / 100
 
-IF NO:L_T == [[キャラ:벨ㆍ데르]]
+IF NO:L_T == [[캐릭터:벨ㆍ데르]]
 	CALL BATTLE_EVENT_ATTACK, ARG , ARG:1, 0, 1
 	PRINT BLOCK
 	RETURN 0

@@ -273,14 +273,14 @@ SELECTCASE SKILLGAGE_F_GET(ARG,SKILL_NUM)
 	CASE 6
 		;電熱砲
 		;イベント用
-		IF CFLAG:ARG:998 == 2 && GETCHARA([[キャラ:국경문]]) > -1
+		IF CFLAG:ARG:998 == 2 && GETCHARA([[캐릭터:국경문]]) > -1
 			IF MAXBASE:ARG:ＭＰ < 100
-				IF BASE:ARG:ＭＰ < MAXBASE:ARG:ＭＰ && BASE:GETCHARA([[キャラ:국경문]]):ＨＰ < MAXBASE:GETCHARA([[キャラ:국경문]]):ＨＰ / 3
+				IF BASE:ARG:ＭＰ < MAXBASE:ARG:ＭＰ && BASE:GETCHARA([[캐릭터:국경문]]):ＨＰ < MAXBASE:GETCHARA([[캐릭터:국경문]]):ＨＰ / 3
 					RETURN BASE:ARG:ＭＰ
 				ELSE
 					RETURN MAXBASE:ARG:ＭＰ
 				ENDIF
-			ELSEIF BASE:ARG:ＭＰ < 100 && BASE:GETCHARA([[キャラ:국경문]]):ＨＰ < MAXBASE:GETCHARA([[キャラ:국경문]]):ＨＰ / 3
+			ELSEIF BASE:ARG:ＭＰ < 100 && BASE:GETCHARA([[캐릭터:국경문]]):ＨＰ < MAXBASE:GETCHARA([[캐릭터:국경문]]):ＨＰ / 3
 				RETURN BASE:ARG:ＭＰ
 			ELSE
 				RETURN 100
@@ -558,7 +558,7 @@ SELECTCASE SKILLGAGE_F_GET(ARG,SKILL_NUM)
 	CASE 6
 		;電熱砲
 		IF GETCONFIGS("描画インターフェース") != "WINAPI"
-			SIF NO:ARG == [[キャラ:마르푸샤]]
+			SIF NO:ARG == [[캐릭터:마르푸샤]]
 				CALL 電熱砲
 		ENDIF
 		

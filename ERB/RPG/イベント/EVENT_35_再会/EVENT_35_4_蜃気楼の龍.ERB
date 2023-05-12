@@ -459,7 +459,7 @@ CALL INPUTINT,0,1
 		FLAG:ＣＯＭＰ용량 += 2
 		;ゴズテンノウからの강화⇒나나미に영매체질추가
 		PRINTFORML ＞나나미に영매체질が추가された。
-		LOCAL = GETCHARA([[キャラ:나나미]])
+		LOCAL = GETCHARA([[캐릭터:나나미]])
 		TALENT:LOCAL:영매체질 = 1
 		PRINTFORML 
 		PRINTFORML 우두천왕：
@@ -618,7 +618,7 @@ PRINTFORMW 次の準備の為にも一先ず帰って休むことにしよう。
 PRINTFORML 
 ;こっそり나나미ちゃんの의존도、충성도を上限付きでアップ
 ;最後まで完走したら未조교でも연모付くかな…？
-LOCAL = GETCHARA([[キャラ:나나미]])
+LOCAL = GETCHARA([[캐릭터:나나미]])
 SIF	CFLAG:LOCAL:의존도 <= 800
 	CFLAG:LOCAL:의존도 = CFLAG:LOCAL:의존도 + 200
 SIF	BASE:LOCAL:충성도 <= 8000

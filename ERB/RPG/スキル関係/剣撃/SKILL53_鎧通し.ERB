@@ -1,7 +1,7 @@
 ﻿;
 ;스킬명
 @SKILL_NAME_53,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RESULTS = 리볼빙ㆍ스테이크
 ELSE
 	RESULTS = 갑옷관통
@@ -13,7 +13,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_53, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RETURN 410
 ELSE
 	RETURN 220
@@ -34,7 +34,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_53,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RETURN 48
 ELSE
 	RETURN 12
@@ -85,7 +85,7 @@ RETURN 0
 
 ;속도보정
 @SKILL_SPEED_53, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RETURN -1
 ELSE
 	RETURN 0
@@ -150,7 +150,7 @@ SIF A == 1
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_53
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:나하트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:나하트]]
 	PRINTL 적 1체에 파일 벙커를 찔러、카트리지를 격발시켜 특대 데미지를 때려박는다。
 	PRINTL 덧붙여 공격 시 장전되어 있는 카트리지를 전부 격발시키고 있는 모양。
 ELSE

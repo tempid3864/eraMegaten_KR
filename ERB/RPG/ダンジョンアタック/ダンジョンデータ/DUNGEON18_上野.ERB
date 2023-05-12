@@ -422,7 +422,7 @@ IF DA:(FLAG:현X):(FLAG:현Y) == 11 && 던전플래그:(FLAG:현던전):11
 		FLAG:선제기습취소 = 1
 		IF !RAND:3
 			CALL MESSAGE_WINDOW_D, "", "＞마인 마타도르가 １체 나타났다！"
-			CALL SET_ENEMY,9,[[キャラ:마타도르]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:마타도르]],40,0,1
 			BASE:(CHARANUM-1):지혜 += 10
 			BASE:(CHARANUM-1):마력 += 10
 			BASE:(CHARANUM-1):운 += 10
@@ -435,7 +435,7 @@ IF DA:(FLAG:현X):(FLAG:현Y) == 11 && 던전플래그:(FLAG:현던전):11
 			;FLAG:14101 = 1
 		ELSEIF RAND:2
 			CALL MESSAGE_WINDOW_D, "", "＞마인 헬즈엔젤이 １체 나타났다！"
-			CALL SET_ENEMY,9,[[キャラ:헬즈엔젤]],56,0,1
+			CALL SET_ENEMY,9,[[캐릭터:헬즈엔젤]],56,0,1
 			BASE:(CHARANUM-1):지혜 += 10
 			BASE:(CHARANUM-1):마력 += 10
 			BASE:(CHARANUM-1):운 += 15
@@ -448,7 +448,7 @@ IF DA:(FLAG:현X):(FLAG:현Y) == 11 && 던전플래그:(FLAG:현던전):11
 			;FLAG:14102 = 1
 		ELSE
 			CALL MESSAGE_WINDOW_D, "", "＞마인 대승정이 １체 나타났다！"
-			CALL SET_ENEMY,9,[[キャラ:대승정]],82,0,1
+			CALL SET_ENEMY,9,[[캐릭터:대승정]],82,0,1
 			BASE:(CHARANUM-1):운 += 25
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 3605
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
@@ -494,7 +494,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:라돈]],50,0,1
+		CALL SET_ENEMY,9,[[캐릭터:라돈]],50,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2035
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
 		CSTR:(CHARANUM-1):사고패턴 = 라돈
@@ -564,16 +564,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,7,[[キャラ:어새신]],38,0,0
-					CALL SET_ENEMY,8,[[キャラ:정키]],38,0,0
-					CALL SET_ENEMY,9,[[キャラ:가면성]],42,0,0
-					CALL SET_ENEMY,10,[[キャラ:정키]],38,0,0
-					CALL SET_ENEMY,11,[[キャラ:어새신]],38,0,0
-					CALL SET_ENEMY,12,[[キャラ:어새신]],38,0,0
-					CALL SET_ENEMY,13,[[キャラ:정키]],38,0,0
-					CALL SET_ENEMY,14,[[キャラ:가면성]],42,0,0
-					CALL SET_ENEMY,15,[[キャラ:정키]],38,0,0
-					CALL SET_ENEMY,16,[[キャラ:어새신]],38,0,0
+					CALL SET_ENEMY,7,[[캐릭터:어새신]],38,0,0
+					CALL SET_ENEMY,8,[[캐릭터:정키]],38,0,0
+					CALL SET_ENEMY,9,[[캐릭터:가면성]],42,0,0
+					CALL SET_ENEMY,10,[[캐릭터:정키]],38,0,0
+					CALL SET_ENEMY,11,[[캐릭터:어새신]],38,0,0
+					CALL SET_ENEMY,12,[[캐릭터:어새신]],38,0,0
+					CALL SET_ENEMY,13,[[캐릭터:정키]],38,0,0
+					CALL SET_ENEMY,14,[[캐릭터:가면성]],42,0,0
+					CALL SET_ENEMY,15,[[캐릭터:정키]],38,0,0
+					CALL SET_ENEMY,16,[[캐릭터:어새신]],38,0,0
 					CALL BATTLE_START
 					FLAG:도주불가플래그 = 0
 					FLAG:회화불능플래그 = 0
@@ -654,16 +654,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,7,[[キャラ:뮤턴트]],35,0,0
-		CALL SET_ENEMY,8,[[キャラ:어새신]],35,0,0
-		CALL SET_ENEMY,9,[[キャラ:정키]],35,0,0
-		CALL SET_ENEMY,10,[[キャラ:어새신]],35,0,0
-		CALL SET_ENEMY,11,[[キャラ:뮤턴트]],35,0,0
-		CALL SET_ENEMY,12,[[キャラ:뮤턴트]],35,0,0
-		CALL SET_ENEMY,13,[[キャラ:어새신]],35,0,0
-		CALL SET_ENEMY,14,[[キャラ:정키]],35,0,0
-		CALL SET_ENEMY,15,[[キャラ:어새신]],35,0,0
-		CALL SET_ENEMY,16,[[キャラ:뮤턴트]],35,0,0
+		CALL SET_ENEMY,7,[[캐릭터:뮤턴트]],35,0,0
+		CALL SET_ENEMY,8,[[캐릭터:어새신]],35,0,0
+		CALL SET_ENEMY,9,[[캐릭터:정키]],35,0,0
+		CALL SET_ENEMY,10,[[캐릭터:어새신]],35,0,0
+		CALL SET_ENEMY,11,[[캐릭터:뮤턴트]],35,0,0
+		CALL SET_ENEMY,12,[[캐릭터:뮤턴트]],35,0,0
+		CALL SET_ENEMY,13,[[캐릭터:어새신]],35,0,0
+		CALL SET_ENEMY,14,[[캐릭터:정키]],35,0,0
+		CALL SET_ENEMY,15,[[캐릭터:어새신]],35,0,0
+		CALL SET_ENEMY,16,[[캐릭터:뮤턴트]],35,0,0
 		CALL BATTLE_START
 		FLAG:도주불가플래그 = 0
 		FLAG:회화불능플래그 = 0
@@ -827,55 +827,55 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で사라시나히메Lv30
-				RETURN [[キャラ:사라시나히메]], 30
+				RETURN [[캐릭터:사라시나히메]], 30
 			CASE IS < 20
 				;10%で헬Lv30
-				RETURN [[キャラ:헬]], 30
+				RETURN [[캐릭터:헬]], 30
 			CASE IS < 30
 				;10%で알라우네Lv31
-				RETURN [[キャラ:알라우네]], 31
+				RETURN [[캐릭터:알라우네]], 31
 			CASE IS < 40
 				;10%で후지무스메Lv31
-				RETURN [[キャラ:후지무스메]], 31
+				RETURN [[캐릭터:후지무스메]], 31
 			CASE IS < 50
 				;10%で아에로Lv32
-				RETURN [[キャラ:아에로]], 32
+				RETURN [[캐릭터:아에로]], 32
 			CASE IS < 60
 				;10%で선리Lv33
-				RETURN [[キャラ:선리]], 33
+				RETURN [[캐릭터:선리]], 33
 			CASE IS < 70
 				;10%で지라이야
 				RETURN 3119, 30
 			CASE IS < 80
 				;10%　사룡바질리스크LV25(34)
-				RETURN [[キャラ:바질리스크]], 34
+				RETURN [[캐릭터:바질리스크]], 34
 			CASE IS < 90
 				;10%でクグツシ
 				RETURN 3120, 30
 			CASE IS < 100
 				;10%で정키Lv35
-				RETURN [[キャラ:정키]], 35
+				RETURN [[캐릭터:정키]], 35
 		ENDSELECT
 	CASE 1
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で사라시나히메Lv30
-				RETURN [[キャラ:사라시나히메]], 30
+				RETURN [[캐릭터:사라시나히메]], 30
 			CASE IS < 20
 				;10%で헬Lv30
-				RETURN [[キャラ:헬]], 30
+				RETURN [[캐릭터:헬]], 30
 			CASE IS < 30
 				;10%で알라우네Lv31
-				RETURN [[キャラ:알라우네]], 31
+				RETURN [[캐릭터:알라우네]], 31
 			CASE IS < 40
 				;10%で후지무스메Lv31
-				RETURN [[キャラ:후지무스메]], 31
+				RETURN [[캐릭터:후지무스메]], 31
 			CASE IS < 50
 				;10%で아에로Lv32
-				RETURN [[キャラ:아에로]], 32
+				RETURN [[캐릭터:아에로]], 32
 			CASE IS < 60
 				;10%で선리Lv33
-				RETURN [[キャラ:선리]], 33
+				RETURN [[캐릭터:선리]], 33
 			CASE IS < 70
 				;10%で지라이야
 				RETURN 3119, 30
@@ -887,31 +887,31 @@ SELECTCASE FLAG:현M
 				RETURN 3127, 32
 			CASE IS < 100
 				;10%で정키Lv35
-				RETURN [[キャラ:정키]], 35
+				RETURN [[캐릭터:정키]], 35
 		ENDSELECT
 	CASE 2
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で사라시나히메Lv30
-				RETURN [[キャラ:사라시나히메]], 30
+				RETURN [[캐릭터:사라시나히메]], 30
 			CASE IS < 20
 				;10%で헬Lv30
-				RETURN [[キャラ:헬]], 30
+				RETURN [[캐릭터:헬]], 30
 			CASE IS < 30
 				;10%で알라우네Lv31
-				RETURN [[キャラ:알라우네]], 31
+				RETURN [[캐릭터:알라우네]], 31
 			CASE IS < 40
 				;10%で후지무스메Lv31
-				RETURN [[キャラ:후지무스메]], 31
+				RETURN [[캐릭터:후지무스메]], 31
 			CASE IS < 50
 				;10%で아에로Lv32
-				RETURN [[キャラ:아에로]], 32
+				RETURN [[캐릭터:아에로]], 32
 			CASE IS < 60
 				;10%で선리Lv33
-				RETURN [[キャラ:선리]], 33
+				RETURN [[캐릭터:선리]], 33
 			CASE IS < 70
 				;10%で어새신Lv32
-				RETURN [[キャラ:어새신]], 32
+				RETURN [[캐릭터:어새신]], 32
 			CASE IS < 80
 				;10%で지라이야
 				RETURN 3119, 30
@@ -920,98 +920,98 @@ SELECTCASE FLAG:현M
 				RETURN 3127, 32
 			CASE IS < 100
 				;10%で정키Lv35
-				RETURN [[キャラ:정키]], 35
+				RETURN [[캐릭터:정키]], 35
 		ENDSELECT
 	CASE 3
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で사라시나히메Lv30　랭크1
-				RETURN [[キャラ:사라시나히메]], 33
+				RETURN [[캐릭터:사라시나히메]], 33
 			CASE IS < 20
 				;10%で헬Lv30　랭크1
-				RETURN [[キャラ:헬]], 33
+				RETURN [[캐릭터:헬]], 33
 			CASE IS < 30
 				;10%で알라우네Lv31　랭크1
-				RETURN [[キャラ:알라우네]], 34
+				RETURN [[캐릭터:알라우네]], 34
 			CASE IS < 40
 				;10%で후지무스메Lv31　랭크1
-				RETURN [[キャラ:후지무스메]], 34
+				RETURN [[캐릭터:후지무스메]], 34
 			CASE IS < 50
 				;10%で아에로Lv32　랭크1
-				RETURN [[キャラ:아에로]], 35
+				RETURN [[캐릭터:아에로]], 35
 			CASE IS < 60
 				;10%で선리Lv33　랭크1
-				RETURN [[キャラ:선리]], 36
+				RETURN [[캐릭터:선리]], 36
 			CASE IS < 75
 				;15%で어새신Lv32　랭크1
-				RETURN [[キャラ:어새신]], 35
+				RETURN [[캐릭터:어새신]], 35
 			CASE IS < 90
 				;15%でアルキミコ
 				RETURN 3127, 35
 			CASE IS < 100
 				;10%で정키Lv35　랭크1
-				RETURN [[キャラ:정키]], 38
+				RETURN [[캐릭터:정키]], 38
 		ENDSELECT
 	CASE 4
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で백낭자Lv34　랭크1
-				RETURN [[キャラ:백낭자]], 37
+				RETURN [[캐릭터:백낭자]], 37
 			CASE IS < 25
 				;10%で야크시니Lv34　랭크1
-				RETURN [[キャラ:야크시니]], 37
+				RETURN [[캐릭터:야크시니]], 37
 			CASE IS < 40
 				;15%で오시치Lv35
-				RETURN [[キャラ:오시치]], 35
+				RETURN [[캐릭터:오시치]], 35
 			CASE IS < 50
 				;10%で파이몬Lv36
-				RETURN [[キャラ:파이몬]], 36
+				RETURN [[캐릭터:파이몬]], 36
 			CASE IS < 60
 				;10%で나쟈Lv36
-				RETURN [[キャラ:나쟈]], 36
+				RETURN [[캐릭터:나쟈]], 36
 			CASE IS < 70
 				;10%でアルキミコ
 				RETURN 3127, 35
 			CASE IS < 80
 				;10%で가면성Lv39
-				RETURN [[キャラ:가면성]], 39
+				RETURN [[캐릭터:가면성]], 39
 			CASE IS < 90
 				;10%で어새신Lv32　랭크2
-				RETURN [[キャラ:어새신]], 38
+				RETURN [[캐릭터:어새신]], 38
 			CASE IS < 100
 				;10%で정키Lv35　랭크1
-				RETURN [[キャラ:정키]], 38
+				RETURN [[캐릭터:정키]], 38
 		ENDSELECT
 	CASE 5
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で백낭자Lv34　랭크1
-				RETURN [[キャラ:백낭자]], 37
+				RETURN [[캐릭터:백낭자]], 37
 			CASE IS < 25
 				;10%で야크시니Lv34　랭크1
-				RETURN [[キャラ:야크시니]], 37
+				RETURN [[캐릭터:야크시니]], 37
 			CASE IS < 40
 				;15%で오시치Lv35
-				RETURN [[キャラ:오시치]], 35
+				RETURN [[캐릭터:오시치]], 35
 			CASE IS < 50
 				;10%で파이몬Lv36
-				RETURN [[キャラ:파이몬]], 36
+				RETURN [[캐릭터:파이몬]], 36
 			CASE IS < 65
 				;15%で나쟈Lv36
-				RETURN [[キャラ:나쟈]], 36
+				RETURN [[캐릭터:나쟈]], 36
 			CASE IS < 75
 				;10%で가면성Lv39
-				RETURN [[キャラ:가면성]], 39
+				RETURN [[캐릭터:가면성]], 39
 			CASE IS < 85
 				;10%で어새신Lv32　랭크2
-				RETURN [[キャラ:어새신]], 38
+				RETURN [[캐릭터:어새신]], 38
 			CASE IS < 90
 				;5%で광인오니죠로Lv34
 				RETURN 3111, 34
-				;RETURN [[キャラ:오니죠로]], 34
+				;RETURN [[캐릭터:오니죠로]], 34
 			CASE IS < 100
 				;10%で정키Lv35　랭크1
-				RETURN [[キャラ:정키]], 38
+				RETURN [[캐릭터:정키]], 38
 		ENDSELECT
 ENDSELECT
 @SET_ACTION_라돈,ARG
@@ -1108,9 +1108,9 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:가면성]] , 3 + RAND:10 , CSVBASE([[キャラ:가면성]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:가면성]] , 3 + RAND:10 , CSVBASE([[캐릭터:가면성]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:정키]] , 3 + RAND:10 , CSVBASE([[キャラ:정키]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:정키]] , 3 + RAND:10 , CSVBASE([[캐릭터:정키]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:파계승]] , 3 + RAND:10 , CSVBASE([[キャラ:파계승]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:파계승]] , 3 + RAND:10 , CSVBASE([[캐릭터:파계승]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

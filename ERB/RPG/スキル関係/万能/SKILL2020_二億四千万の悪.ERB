@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_2020,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:앙리마유]])
+IF SKILL_CHANGE(ARG, [[캐릭터:앙리마유]])
 	RESULTS = 2억4천만의악（弱）
 ELSE
 	RESULTS = 2억4천만의악
@@ -15,7 +15,7 @@ RETURN 120
 
 ;　위력
 @SKILL_POWER_2020, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:앙리마유]])
+IF SKILL_CHANGE(ARG, [[캐릭터:앙리마유]])
 	RETURN 250
 ELSE
 	RETURN 500
@@ -36,7 +36,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_2020,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:앙리마유]])
+IF SKILL_CHANGE(ARG, [[캐릭터:앙리마유]])
 	RETURN 18
 ELSE
 	RETURN 36
@@ -156,7 +156,7 @@ NEXT
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2020
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:앙리마유]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:앙리마유]])
 	PRINTL Neutral 속성의 적 전체에 대 데미지를 준다、마왕 앙리ㆍ만유의 필살기
 	PRINTL ……의、짝퉁。그래서 위력은 많이 떨어져 있다。
 ELSE

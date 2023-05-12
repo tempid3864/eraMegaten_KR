@@ -121,11 +121,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:돈]],37
+			CALL SET_ENEMY,8,[[캐릭터:돈]],37
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:오세]],37
+			CALL SET_ENEMY,10,[[캐릭터:오세]],37
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -162,11 +162,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:잠바반]],39
+			CALL SET_ENEMY,8,[[캐릭터:잠바반]],39
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:스튐팔리데스]],39
+			CALL SET_ENEMY,10,[[캐릭터:스튐팔리데스]],39
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -219,11 +219,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:칼리아흐베라]],38
+			CALL SET_ENEMY,8,[[캐릭터:칼리아흐베라]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:네반]],38
+			CALL SET_ENEMY,10,[[캐릭터:네반]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -258,7 +258,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,7,[[キャラ:쿠치사케]],40,1,1
+			CALL SET_ENEMY,7,[[캐릭터:쿠치사케]],40,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 -= 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마하에이하]]
@@ -283,7 +283,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,8,[[キャラ:쿠치사케]],40,1,1
+			CALL SET_ENEMY,8,[[캐릭터:쿠치사케]],40,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 -= 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마하에이하]]
@@ -308,7 +308,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,9,[[キャラ:쿠ㆍ훌린]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:쿠ㆍ훌린]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬4 = [[스킬:라쿤ㆍ다]]
 				BASE:(CHARANUM-1):61 -= 100
@@ -331,7 +331,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:도미니온]],40,1,1
+			CALL SET_ENEMY,10,[[캐릭터:도미니온]],40,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 -= 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마하코우하]]
@@ -357,7 +357,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,11,[[キャラ:도미니온]],40,1,1
+			CALL SET_ENEMY,11,[[캐릭터:도미니온]],40,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 -= 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마하코우하]]
@@ -383,7 +383,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,14,[[キャラ:고로]],40,0,1
+			CALL SET_ENEMY,14,[[캐릭터:고로]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):사고패턴 = 空港明智
 				ABL:(CHARANUM-1):스킬1 = [[스킬:코우가온]]
@@ -543,7 +543,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		ENDIF
 		
 		
-			CALL SET_ENEMY,9,[[キャラ:마라]],50,0,1
+			CALL SET_ENEMY,9,[[캐릭터:마라]],50,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -571,7 +571,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		
-			CALL SET_ENEMY,7,[[キャラ:그르르]],43,0,1
+			CALL SET_ENEMY,7,[[캐릭터:그르르]],43,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
@@ -599,7 +599,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		
-			CALL SET_ENEMY,8,[[キャラ:기리메칼라]],40,0,1
+			CALL SET_ENEMY,8,[[캐릭터:기리메칼라]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):사고패턴 = 데카쟈요원
 				ABL:(CHARANUM-1):스킬1 = [[스킬:데스바운드]]
@@ -626,7 +626,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		
-			CALL SET_ENEMY,10,[[キャラ:기리메칼라]],40,0,1
+			CALL SET_ENEMY,10,[[캐릭터:기리메칼라]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):사고패턴 = 데카쟈요원
 				ABL:(CHARANUM-1):스킬1 = [[스킬:데스바운드]]
@@ -653,7 +653,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		
-			CALL SET_ENEMY,11,[[キャラ:그르르]],40,0,1
+			CALL SET_ENEMY,11,[[캐릭터:그르르]],40,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:타루ㆍ카쟈]]
@@ -714,16 +714,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL MESSAGE_WINDOW_D, "시에로", "돌아가서 다 같이 얘기하자"
 		ENDIF
 		
-				SIF GETCHARA([[キャラ:안]]) > 0
-					CFLAG:GETCHARA([[キャラ:안]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:류지]]) > 0
-					CFLAG:GETCHARA([[キャラ:류지]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:서프]]) > 0
-					CFLAG:GETCHARA([[キャラ:서프]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:게일]]) > 0
-					CFLAG:GETCHARA([[キャラ:게일]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:로알드]]) > 0
-					CFLAG:GETCHARA([[キャラ:로알드]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:안]]) > 0
+					CFLAG:GETCHARA([[캐릭터:안]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:류지]]) > 0
+					CFLAG:GETCHARA([[캐릭터:류지]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:서프]]) > 0
+					CFLAG:GETCHARA([[캐릭터:서프]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:게일]]) > 0
+					CFLAG:GETCHARA([[캐릭터:게일]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:로알드]]) > 0
+					CFLAG:GETCHARA([[캐릭터:로알드]]):이자리에없는플래그 = 0
 				던전플래그:13:1 = 5
 				CALL DUNGEON_WORP,0,14,18
 					
@@ -1058,27 +1058,27 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,8,[[キャラ:팔라스아테나]],45,0,0
+					CALL SET_ENEMY,8,[[캐릭터:팔라스아테나]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,9,[[キャラ:도플갱어]],45,0,0
+					CALL SET_ENEMY,9,[[캐릭터:도플갱어]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,10,[[キャラ:썬더버드]],45,0,0
+					CALL SET_ENEMY,10,[[캐릭터:썬더버드]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,13,[[キャラ:스라오샤]],45,0,0
+					CALL SET_ENEMY,13,[[캐릭터:스라오샤]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 					
-					CALL SET_ENEMY,14,[[キャラ:섀도우]],45,0,0
+					CALL SET_ENEMY,14,[[캐릭터:섀도우]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 						
-					CALL SET_ENEMY,15,[[キャラ:천선낭랑]],45,0,0
+					CALL SET_ENEMY,15,[[캐릭터:천선낭랑]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 					
@@ -1123,41 +1123,41 @@ SELECTCASE FLAG:현M
 	CASE 28,29,30
 		IF ARG == 0
 			IF RAND:18 == 0
-				RETURN [[キャラ:젤라론즈]]
+				RETURN [[캐릭터:젤라론즈]]
 			ELSEIF RAND:17 == 0
-				RETURN [[キャラ:오시치]]
+				RETURN [[캐릭터:오시치]]
 			ELSEIF RAND:16 == 0
-				RETURN [[キャラ:파이몬]]
+				RETURN [[캐릭터:파이몬]]
 			ELSEIF RAND:15 == 0
-				RETURN [[キャラ:디스]]
+				RETURN [[캐릭터:디스]]
 			ELSEIF RAND:14 == 0
-				RETURN [[キャラ:이바라키도지]]
+				RETURN [[캐릭터:이바라키도지]]
 			ELSEIF RAND:13 == 0
-				RETURN [[キャラ:칼리아흐베라]]
+				RETURN [[캐릭터:칼리아흐베라]]
 			ELSEIF RAND:12 == 0
-				RETURN [[キャラ:하트호르]]
+				RETURN [[캐릭터:하트호르]]
 			ELSEIF RAND:11 == 0
-				RETURN [[キャラ:네반]]
+				RETURN [[캐릭터:네반]]
 			ELSEIF RAND:10== 0
-				RETURN [[キャラ:나가ㆍ칸냐]]
+				RETURN [[캐릭터:나가ㆍ칸냐]]
 			ELSEIF RAND:9 == 0
-				RETURN [[キャラ:스튐팔리데스]]
+				RETURN [[캐릭터:스튐팔리데스]]
 			ELSEIF RAND:8 == 0
-				RETURN [[キャラ:돈]]
+				RETURN [[캐릭터:돈]]
 			ELSEIF RAND:7 == 0
-				RETURN [[キャラ:오세]]
+				RETURN [[캐릭터:오세]]
 			ELSEIF RAND:6 == 0
-				RETURN [[キャラ:오로바스]]
+				RETURN [[캐릭터:오로바스]]
 			ELSEIF RAND:5 == 0
-				RETURN [[キャラ:청우괴]]
+				RETURN [[캐릭터:청우괴]]
 			ELSEIF RAND:4 == 0
-				RETURN [[キャラ:슈텐도지]]
+				RETURN [[캐릭터:슈텐도지]]
 			ELSEIF RAND:3 == 0
-				RETURN [[キャラ:오로바스]]
+				RETURN [[캐릭터:오로바스]]
 			ELSEIF RAND:2 == 0
-				RETURN [[キャラ:아라하바키]]
+				RETURN [[캐릭터:아라하바키]]
 			ELSE
-				RETURN [[キャラ:잠바반]]
+				RETURN [[캐릭터:잠바반]]
 			ENDIF
 		ELSEIF ARG == 1
 			

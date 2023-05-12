@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_950, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]])
 	IF EQUIP:ARG:악세서리 == 5349
 		RESULTS = 썬더 잔바ㆍ벽뢰
 	ELSE
@@ -19,7 +19,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_950, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	SIF FLAG:확산플래그
 		RETURN 175
 	RETURN 235
@@ -31,7 +31,7 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_950, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 2
 ELSE
 	RETURN 1
@@ -39,7 +39,7 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_950, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 2
 ELSE
 	RETURN 1
@@ -54,7 +54,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_950, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
+IF SKILL_CHANGE(ARG, [[캐릭터:블레이드(X)]]) && EQUIP:ARG:악세서리 == 5349
 	RETURN 27
 ELSE
 	RETURN 18
@@ -158,7 +158,7 @@ CALL ATTACK_SPREAD, ARG, ARG:1, 950
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_950
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:블레이드(X)]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:블레이드(X)]]
 	PRINTL 상공에서 곧바로 벼락을 내리쳐、대상과 그 주위에 전격 상성의 물리데미지＋SHOCK
 	IF EQUIP:U:악세서리 == 5349
 		SETCOLOR 0x14ffd7

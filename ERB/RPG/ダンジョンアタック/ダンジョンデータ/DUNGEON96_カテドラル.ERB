@@ -1715,7 +1715,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				;また、フツオ以外は死んだらCOMPに戻ることを表現するため、死体が残るようにする変更も元に戻す
 				;フツオが戦力として働くようになったので補正を+50から+40に低減
 				LOCAL:1 = 40
-				CALL SET_ENEMY, 8 ,[[キャラ:시바]],99,0,0
+				CALL SET_ENEMY, 8 ,[[캐릭터:시바]],99,0,0
 				BASE:(CHARANUM-1):힘 += LOCAL:1
 				BASE:(CHARANUM-1):지혜 += LOCAL:1
 				BASE:(CHARANUM-1):마력 += LOCAL:1
@@ -1726,7 +1726,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 				;HPがクッソ高いのでたぶんグレートなパスカルですよコイツぁ
-				CALL SET_ENEMY, 9 ,[[キャラ:케르베로스]],99,0,0
+				CALL SET_ENEMY, 9 ,[[캐릭터:케르베로스]],99,0,0
 				BASE:(CHARANUM-1):힘 += LOCAL:1
 				BASE:(CHARANUM-1):지혜 += LOCAL:1
 				BASE:(CHARANUM-1):마력 += LOCAL:1
@@ -1739,7 +1739,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 				;癒し、呪殺と精神さえなんとかしてればだが
-				CALL SET_ENEMY, 10 ,[[キャラ:마라]],99,0,0
+				CALL SET_ENEMY, 10 ,[[캐릭터:마라]],99,0,0
 				BASE:(CHARANUM-1):힘 += LOCAL:1
 				BASE:(CHARANUM-1):지혜 += LOCAL:1
 				BASE:(CHARANUM-1):마력 += LOCAL:1
@@ -1750,7 +1750,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 				;やはりボスにはデカジャデクンダくらいは搭載せねばならぬのじゃが素材の味
-				CALL SET_ENEMY, 13 ,[[キャラ:벨제붑]],99,0,0
+				CALL SET_ENEMY, 13 ,[[캐릭터:벨제붑]],99,0,0
 				BASE:(CHARANUM-1):힘 += LOCAL:1
 				BASE:(CHARANUM-1):지혜 += LOCAL:1
 				BASE:(CHARANUM-1):마력 += LOCAL:1
@@ -1800,7 +1800,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 
 				;메디아라한を使う害悪枠
 				;ただ弱点も多いのでこのくらいしないと…………
-				CALL SET_ENEMY, 15 ,[[キャラ:락슈미]],99,0,0
+				CALL SET_ENEMY, 15 ,[[캐릭터:락슈미]],99,0,0
 				BASE:(CHARANUM-1):힘 += LOCAL:1
 				BASE:(CHARANUM-1):지혜 += LOCAL:1
 				BASE:(CHARANUM-1):마력 += LOCAL:1
@@ -1854,7 +1854,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,9,[[キャラ:아수라왕]],95,0,4
+					CALL SET_ENEMY,9,[[캐릭터:아수라왕]],95,0,4
 					CSTR:(CHARANUM-1):사고패턴 = カテ아수라왕
 					CFLAG:(CHARANUM-1):BS무효플래그 = 1
 					ABL:(CHARANUM-1):최저공격횟수 = 3
@@ -1907,7 +1907,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "네가 모두를 구하지/않으면 안된다/구세주로서"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "그때야말로 시작될 것이다/미래 영겁 끝날 수 없는/지복과 기쁨으로 가득찬 세상ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, "신의 심부름꾼", "신의 통치에 의한 영원한 낙원/천년왕국이!!"
-					CALL LIFTING_A_BAN([[キャラ:미카엘]])
+					CALL LIFTING_A_BAN([[캐릭터:미카엘]])
 					CALL ENDING_NO33
 					;ロウエンド
 				ELSEIF 던전플래그:96:20 == 3
@@ -2056,7 +2056,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:아리오크]],80,0,2
+				CALL SET_ENEMY,9,[[캐릭터:아리오크]],80,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2085,7 +2085,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				
 				CALL MESSAGE_WINDOW_D, "아리오크", "너는 악마를 거느리고 있는 것 같구나/너와 함께 신과 싸우는 건 나쁘지 않을 것 같아"
 				CALL MESSAGE_WINDOW_D, "아리오크", "내 힘이 필요해지면 언제든지 부르는 것이 좋다"
-				CALL LIFTING_A_BAN([[キャラ:아리오크]])
+				CALL LIFTING_A_BAN([[캐릭터:아리오크]])
 				
 				던전플래그:96:13 = 2
 			ELSEIF 던전플래그:96:13 == 0
@@ -2118,7 +2118,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:아스타로트]],80,0,2
+				CALL SET_ENEMY,9,[[캐릭터:아스타로트]],80,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2147,7 +2147,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "", @"＞%ITEMNAME:4064%을 손에 넣었다"
 				
 				CALL MESSAGE_WINDOW_D, "아스타로트", "함께 신에게 맞서자/힘이 필요할 땐 나를 불러내라/홋홋홋호"
-				CALL LIFTING_A_BAN([[キャラ:아스타로트]])
+				CALL LIFTING_A_BAN([[캐릭터:아스타로트]])
 				던전플래그:96:14 = 2
 			ELSEIF 던전플래그:96:14 == 0
 				CALL MESSAGE_WINDOW_D, "아스타로트", "홋홋홋호/신에 맞서고자 하는/씩씩한 사람의 자식은 그대들인가?"
@@ -2182,7 +2182,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:수르트]],75,0,2
+				CALL SET_ENEMY,9,[[캐릭터:수르트]],75,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2213,7 +2213,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "", @"＞%ITEMNAME:4564%을 손에 넣었다"
 				
 				CALL MESSAGE_WINDOW_D, "수르트", "내 힘을 빌려 주마/힘을 기르거든 나를 불러라"
-				CALL LIFTING_A_BAN([[キャラ:수르트]])
+				CALL LIFTING_A_BAN([[캐릭터:수르트]])
 				
 				던전플래그:96:15 = 2
 			ELSEIF 던전플래그:96:15 == 0
@@ -2249,7 +2249,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:우리엘]],75,0,2
+				CALL SET_ENEMY,9,[[캐릭터:우리엘]],75,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2272,7 +2272,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "우리엘", "그대에게 내 힘을 주리라"
 				
 				CALL MESSAGE_WINDOW_D, "", "우리엘의 화염을 손에 넣었다"
-				CALL LIFTING_A_BAN([[キャラ:우리엘]])
+				CALL LIFTING_A_BAN([[캐릭터:우리엘]])
 				CALL GET_ITEMS(ITEMNAME:4518,1)
 				CALL MESSAGE_WINDOW_D, "", @"＞%ITEMNAME:4518%을 손에 넣었다"
 				
@@ -2310,7 +2310,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:가브리엘]],80,0,2
+				CALL SET_ENEMY,9,[[캐릭터:가브리엘]],80,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2333,7 +2333,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "가브리엘", "나의 힘이 깃든 빛을 당신들에게 드리겠습니다"
 				
 				CALL MESSAGE_WINDOW_D, "", "가브리엘의 유리를 손에 넣었다"
-				CALL LIFTING_A_BAN([[キャラ:가브리엘]])
+				CALL LIFTING_A_BAN([[캐릭터:가브리엘]])
 				CALL GET_ITEMS(ITEMNAME:4018,1)
 				CALL MESSAGE_WINDOW_D, "", @"＞%ITEMNAME:4018%을 손에 넣었다"
 				
@@ -2372,7 +2372,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:라파엘]],85,0,2
+				CALL SET_ENEMY,9,[[캐릭터:라파엘]],85,0,2
 				ABL:(CHARANUM-1):최저공격횟수 = 3
 				ABL:(CHARANUM-1):최대공격횟수 = 3
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2396,7 +2396,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				CALL MESSAGE_WINDOW_D, "라파엘", "지상에 평화가 찾아올 때까지/그대에게 힘을 주리라"
 				
 				CALL MESSAGE_WINDOW_D, "", "라파엘의 날개을 손에 넣었다"
-				CALL LIFTING_A_BAN([[キャラ:라파엘]])
+				CALL LIFTING_A_BAN([[캐릭터:라파엘]])
 				CALL GET_ITEMS(ITEMNAME:3518,1)
 				CALL MESSAGE_WINDOW_D, "", @"＞%ITEMNAME:3518%을 손에 넣었다"
 				
@@ -2516,7 +2516,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,9,[[キャラ:미카엘]],95,0,4
+					CALL SET_ENEMY,9,[[캐릭터:미카엘]],95,0,4
 					CSTR:(CHARANUM-1):사고패턴 = カテ미카엘
 					CFLAG:(CHARANUM-1):BS무효플래그 = 1
 					ABL:(CHARANUM-1):최저공격횟수 = 3
@@ -2561,7 +2561,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					CALL MESSAGE_WINDOW_D, "루시퍼", "혼돈이야말로 세계의 모습이다!　좀 더 강한/보다 아름다운 자들이 속속 생겨나는/파괴와 재생은 영원히 계속된다!"
 					CALL MESSAGE_WINDOW_D, "루시퍼", "그러나 법의 신은 멸망하지 않았다/그 사람이야말로 진정한 파괴자이자/세계에 침묵을 가져오는 것이다ㆍㆍㆍ"
 					CALL MESSAGE_WINDOW_D, "루시퍼", "나도 그의 일부일 뿐이다/이게 뭘 뜻하는지/사람의 아이여 잘 생각하라ㆍㆍㆍ"
-					CALL LIFTING_A_BAN([[キャラ:아수라왕]])
+					CALL LIFTING_A_BAN([[캐릭터:아수라왕]])
 					CALL ENDING_NO34
 					;カオスエンド
 				ELSEIF 던전플래그:96:11 == 3
@@ -2663,7 +2663,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:라마]],70,0,1
+				CALL SET_ENEMY,9,[[캐릭터:라마]],70,0,1
 				;CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 				;CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				ABL:(CHARANUM-1):최저공격횟수 = 4
@@ -2761,7 +2761,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:라바나]],60,0,1
+				CALL SET_ENEMY,9,[[캐릭터:라바나]],60,0,1
 				;CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 				;CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				ABL:(CHARANUM-1):최저공격횟수 = 2
@@ -2780,7 +2780,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:인드라지트]],65,0,1
+				CALL SET_ENEMY,9,[[캐릭터:인드라지트]],65,0,1
 				;CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 				;CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				ABL:(CHARANUM-1):최저공격횟수 = 3
@@ -2823,7 +2823,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 9
 					CALL MESSAGE_WINDOW_D, "라바나", "카테드랄의 중심문인 결계를 지나갈 수 있는 가호를 내려주마/카테드랄의 정상에 있는 미카엘을 쓰러트리러 가는 거다/"
 					;CALL MESSAGE_WINDOW_D, "라바나", "단 데빌링이 없으면 녀석은 쓰러트릴 수 없다/일단 지하에 있는 아수라왕을 만나러 가라/"
 					CALL MESSAGE_WINDOW_D, "라바나", "부탁한다//"
-					CALL LIFTING_A_BAN([[キャラ:라바나]])
+					CALL LIFTING_A_BAN([[캐릭터:라바나]])
 					CALL MESSAGE_WINDOW_D, "", @"방을 나가면 거기에는%ワルオ%가 있다//"
 					CALL MESSAGE_WINDOW_D, ワルオ, "마침내 카테드랄의 동력로를/움직였다/"
 					CALL MESSAGE_WINDOW_D, ワルオ, "게다가 상급천사 무리들을 거느리고/대천사 미카엘이/카테드랄의 8층에 행차했다고 해"
@@ -3002,192 +3002,192 @@ SELECTCASE FLAG:현M
 	CASE 0,1,2
 		LOCAL = 6
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:파프니르]],66
+			RETURN [[캐릭터:파프니르]],66
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:하리티]],67
+			RETURN [[캐릭터:하리티]],67
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:펜드래곤]],67
+			RETURN [[캐릭터:펜드래곤]],67
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:펜리르]],68
+			RETURN [[캐릭터:펜리르]],68
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:플라로우스]],72
+			RETURN [[캐릭터:플라로우스]],72
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:칼리]],75
+			RETURN [[캐릭터:칼리]],75
 			
 		;SELECTCASE RAND:100
 		;	CASE IS < 20
-		;		RETURN [[キャラ:파프니르]],66
+		;		RETURN [[캐릭터:파프니르]],66
 		;	CASE IS < 40
-		;		RETURN [[キャラ:하리티]],67
+		;		RETURN [[캐릭터:하리티]],67
 		;	CASE IS < 60
-		;		RETURN [[キャラ:펜드래곤]],67
+		;		RETURN [[캐릭터:펜드래곤]],67
 		;	CASE IS < 80
-		;		RETURN [[キャラ:펜리르]],68
+		;		RETURN [[캐릭터:펜리르]],68
 		;	CASE IS < 90
-		;		RETURN [[キャラ:플라로우스]],72
+		;		RETURN [[캐릭터:플라로우스]],72
 		;	CASEELSE
-		;		RETURN [[キャラ:칼리]],75
+		;		RETURN [[캐릭터:칼리]],75
 		;ENDSELECT
 	CASE 3,4
 		LOCAL = 6
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:란다]],60
+			RETURN [[캐릭터:란다]],60
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:야마타노오로치]],63
+			RETURN [[캐릭터:야마타노오로치]],63
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:리치]],66
+			RETURN [[캐릭터:리치]],66
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:아바돈]],66
+			RETURN [[캐릭터:아바돈]],66
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:하리티]],67
+			RETURN [[캐릭터:하리티]],67
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:뱀파이어]],68
+			RETURN [[캐릭터:뱀파이어]],68
 			
 	CASE 5,6,18
 		LOCAL = 8
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:이참나]],57
+				RETURN [[캐릭터:이참나]],57
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:란다]],58
+				RETURN [[캐릭터:란다]],58
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:서큐버스]],58
+				RETURN [[캐릭터:서큐버스]],58
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:리치]],60
+				RETURN [[캐릭터:리치]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:어새신]],60
+				RETURN [[캐릭터:어새신]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:아바돈]],60
+				RETURN [[캐릭터:아바돈]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:사마엘]],61
+				RETURN [[캐릭터:사마엘]],61
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:뱀파이어]],62
+				RETURN [[캐릭터:뱀파이어]],62
 	
 	CASE 7 , 16
 		LOCAL = 13
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:지라이야]],18
+				RETURN [[캐릭터:지라이야]],18
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:괴뢰자]],12
+				RETURN [[캐릭터:괴뢰자]],12
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:네오파이트]],18
+				RETURN [[캐릭터:네오파이트]],18
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:메이거스]],35
+				RETURN [[캐릭터:메이거스]],35
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:템플나이트(여성)]],25
+				RETURN [[캐릭터:템플나이트(여성)]],25
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:떠돌이무녀]],25
+				RETURN [[캐릭터:떠돌이무녀]],25
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:다키니]],46
+				RETURN [[캐릭터:다키니]],46
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:서큐버스]],44
+				RETURN [[캐릭터:서큐버스]],44
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:현무]],46
+				RETURN [[캐릭터:현무]],46
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:트롤]],46
+				RETURN [[캐릭터:트롤]],46
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠ㆍ훌린]],46
+				RETURN [[캐릭터:쿠ㆍ훌린]],46
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:뱀파이어]],48
+				RETURN [[캐릭터:뱀파이어]],48
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:암법사]],52
+				RETURN [[캐릭터:암법사]],52
 				
 	CASE 8
 		LOCAL = 7
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:암법사]],52
+				RETURN [[캐릭터:암법사]],52
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:스캐너]],53
+				RETURN [[캐릭터:스캐너]],53
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:이참나]],53
+				RETURN [[캐릭터:이참나]],53
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:케찰코아틀]],54
+				RETURN [[캐릭터:케찰코아틀]],54
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:기리메칼라]],54
+				RETURN [[캐릭터:기리메칼라]],54
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:아틀라스]],57
+				RETURN [[캐릭터:아틀라스]],57
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:가네샤]],58
+				RETURN [[캐릭터:가네샤]],58
 	CASE 9,10,17
 		LOCAL = 8
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:달인]],57
+				RETURN [[캐릭터:달인]],57
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:스캐너]],58
+				RETURN [[캐릭터:스캐너]],58
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:이참나]],58
+				RETURN [[캐릭터:이참나]],58
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:기리메칼라]],59
+				RETURN [[캐릭터:기리메칼라]],59
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:케찰코아틀]],59
+				RETURN [[캐릭터:케찰코아틀]],59
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠ㆍ훌린]],60
+				RETURN [[캐릭터:쿠ㆍ훌린]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:가네샤]],61
+				RETURN [[캐릭터:가네샤]],61
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:테스카틀리포카]],62
+				RETURN [[캐릭터:테스카틀리포카]],62
 	CASE 11,12
 		LOCAL = 6
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:터미네이터]],60
+				RETURN [[캐릭터:터미네이터]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:쿠ㆍ훌린]],60
+				RETURN [[캐릭터:쿠ㆍ훌린]],60
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:가네샤]],63
+				RETURN [[캐릭터:가네샤]],63
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:펜리르]],65
+				RETURN [[캐릭터:펜리르]],65
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:야마타노오로치]],65
+				RETURN [[캐릭터:야마타노오로치]],65
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:하누만]],66
+				RETURN [[캐릭터:하누만]],66
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:오르커스]],68
+				RETURN [[캐릭터:오르커스]],68
 	CASE 13,14,15
 		LOCAL = 7
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:가네샤]],65
+				RETURN [[캐릭터:가네샤]],65
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:펜드래곤]],67
+				RETURN [[캐릭터:펜드래곤]],67
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:오베론]],68
+				RETURN [[캐릭터:오베론]],68
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:하누만]],68
+				RETURN [[캐릭터:하누만]],68
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:펜리르]],68
+				RETURN [[캐릭터:펜리르]],68
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:오르커스]],72
+				RETURN [[캐릭터:오르커스]],72
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:도철]],75
+				RETURN [[캐릭터:도철]],75
 	CASE 19
 		LOCAL = 7
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:타케미카즈치]],70
+				RETURN [[캐릭터:타케미카즈치]],70
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:아타파구]],75
+				RETURN [[캐릭터:아타파구]],75
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:킨마몬]],75
+				RETURN [[캐릭터:킨마몬]],75
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:후츠누시]],71
+				RETURN [[캐릭터:후츠누시]],71
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:아라미사키]],72
+				RETURN [[캐릭터:아라미사키]],72
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:미야스도코로]],73
+				RETURN [[캐릭터:미야스도코로]],73
 		SIF !RAND:(LOCAL--)
-				RETURN [[キャラ:센코]],74
+				RETURN [[캐릭터:센코]],74
 	;応急処置
 	CASEELSE
 		LOCAL = 6
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:파프니르]],66
+			RETURN [[캐릭터:파프니르]],66
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:하리티]],67
+			RETURN [[캐릭터:하리티]],67
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:펜드래곤]],67
+			RETURN [[캐릭터:펜드래곤]],67
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:펜리르]],68
+			RETURN [[캐릭터:펜리르]],68
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:플라로우스]],72
+			RETURN [[캐릭터:플라로우스]],72
 		SIF !RAND:(LOCAL--)
-			RETURN [[キャラ:칼리]],75
+			RETURN [[캐릭터:칼리]],75
 ENDSELECT
 
 
@@ -3411,7 +3411,7 @@ RETURN 1
 ;=======================================================================
 @EVENT_BATTLE_TURNTOP_DUNGEON96
 #LOCALSIZE 4
-IF FINDCHARA_ENEMY([[キャラ:미카엘]]) && CFLAG:(RESULT:1):보스플래그 > 0
+IF FINDCHARA_ENEMY([[캐릭터:미카엘]]) && CFLAG:(RESULT:1):보스플래그 > 0
 	IF FLAG:경과턴수 % 3 == 0
 		LOCAL = RESULT:1
 		SETCOLOR 0xff0033
@@ -3463,11 +3463,11 @@ RETURN -1
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코볼트]] , 3 + RAND:10 , CSVBASE([[キャラ:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코볼트]] , 3 + RAND:10 , CSVBASE([[캐릭터:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 @SET_ACTION_カテ아수라왕,ARG

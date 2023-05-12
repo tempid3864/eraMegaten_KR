@@ -54,7 +54,7 @@ RETURN 1
 RETURN GET_EQUIPNUM("검")
 
 @장비추가스킬_2063,ARG,ARG:1 = -1
-IF ARG:1 != -1 && NO:(ARG:1) == [[キャラ:당신]]
+IF ARG:1 != -1 && NO:(ARG:1) == [[캐릭터:당신]]
 	IF EQUIP:(ARG:1):머리 == 3020 && EQUIP:(ARG:1):몸통 == 3520 && EQUIP:(ARG:1):팔 == 4050 && EQUIP:(ARG:1):발 == 4550
 		SELECTCASE ARG
 			CASE 0

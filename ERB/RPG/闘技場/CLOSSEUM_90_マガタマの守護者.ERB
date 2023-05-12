@@ -173,7 +173,7 @@ RETURN 0,0
 ;原作でボス戦の無い、一部のマガタマなどはTRPG版を参考にしますた
 IF ARG == 8200
 	;マロガレ、初級
-	CALL SET_ENEMY,9,[[キャラ:도플갱어]],35,0,1
+	CALL SET_ENEMY,9,[[캐릭터:도플갱어]],35,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -181,7 +181,7 @@ IF ARG == 8200
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,14,[[キャラ:섀도우]],35,0,1
+	CALL SET_ENEMY,14,[[캐릭터:섀도우]],35,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -194,7 +194,7 @@ IF ARG == 8200
 	RETURN 60,8200
 ELSEIF ARG == 8201
 	;ワダツミ
-	CALL SET_ENEMY,8,[[キャラ:포르네우스]],35,0,1
+	CALL SET_ENEMY,8,[[캐릭터:포르네우스]],35,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -202,7 +202,7 @@ ELSEIF ARG == 8201
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:유키죠로]],34,0,1
+	CALL SET_ENEMY,10,[[캐릭터:유키죠로]],34,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	ABL:(CHARANUM-1):아이템1 = 1002
@@ -213,7 +213,7 @@ ELSEIF ARG == 8201
 ELSEIF ARG == 8202
 	;アンク
 	FOR LOCAL,7,12
-		CALL SET_ENEMY,LOCAL,[[キャラ:픽시]],25,0,1
+		CALL SET_ENEMY,LOCAL,[[캐릭터:픽시]],25,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 200
 		ABL:(CHARANUM-1):아이템1 = 1002
@@ -221,21 +221,21 @@ ELSEIF ARG == 8202
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 	NEXT
-	CALL SET_ENEMY,LOCAL,[[キャラ:픽시]],30,0,1
+	CALL SET_ENEMY,LOCAL,[[캐릭터:픽시]],30,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 500
 	ABL:(CHARANUM-1):아이템1 = 1002
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,LOCAL,[[キャラ:픽시]],30,0,1
+	CALL SET_ENEMY,LOCAL,[[캐릭터:픽시]],30,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 500
 	ABL:(CHARANUM-1):아이템1 = 1002
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,9,[[キャラ:하이픽시]],35,0,1
+	CALL SET_ENEMY,9,[[캐릭터:하이픽시]],35,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -246,7 +246,7 @@ ELSEIF ARG == 8202
 	RETURN 60,8202
 ELSEIF ARG == 8203
 	;イヨマンテ
-	CALL SET_ENEMY,9,[[キャラ:알케니]],38,0,1
+	CALL SET_ENEMY,9,[[캐릭터:알케니]],38,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -257,7 +257,7 @@ ELSEIF ARG == 8203
 	RETURN 60,8203
 ELSEIF ARG == 8204
 	;シラヌイ
-	CALL SET_ENEMY,8,[[キャラ:메즈키]],33,0,1
+	CALL SET_ENEMY,8,[[캐릭터:메즈키]],33,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -265,7 +265,7 @@ ELSEIF ARG == 8204
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:고즈키]],33,0,1
+	CALL SET_ENEMY,10,[[캐릭터:고즈키]],33,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -276,7 +276,7 @@ ELSEIF ARG == 8204
 	RETURN 60,8204
 ELSEIF ARG == 8205
 	;ヒ후미
-	CALL SET_ENEMY,9,[[キャラ:오퀴페테]],34,0,1
+	CALL SET_ENEMY,9,[[캐릭터:오퀴페테]],34,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 900
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 900
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -284,7 +284,7 @@ ELSEIF ARG == 8205
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,8,[[キャラ:켈라이노]],32,0,1
+	CALL SET_ENEMY,8,[[캐릭터:켈라이노]],32,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 900
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 900
 	CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -292,7 +292,7 @@ ELSEIF ARG == 8205
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:아에로]],32,0,1
+	CALL SET_ENEMY,10,[[캐릭터:아에로]],32,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 900
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 900
 	CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -301,7 +301,7 @@ ELSEIF ARG == 8205
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	FOR LOCAL,13,16
-		CALL SET_ENEMY,LOCAL,[[キャラ:하피]],28,0,1
+		CALL SET_ENEMY,LOCAL,[[캐릭터:하피]],28,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 200
 		ABL:(CHARANUM-1):아이템1 = 1002
@@ -312,7 +312,7 @@ ELSEIF ARG == 8205
 	RETURN 60,8205
 ELSEIF ARG == 8206
 	;カ무도
-	CALL SET_ENEMY,9,[[キャラ:아레스]],40,0,1
+	CALL SET_ENEMY,9,[[캐릭터:아레스]],40,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1200
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -323,7 +323,7 @@ ELSEIF ARG == 8206
 	RETURN 60,8206
 ELSEIF ARG == 8207
 	;나루카미
-	CALL SET_ENEMY,9,[[キャラ:토르]],36,0,1
+	CALL SET_ENEMY,9,[[캐릭터:토르]],36,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -335,7 +335,7 @@ ELSEIF ARG == 8207
 	RETURN 60,8207
 ELSEIF ARG == 8208
 	;アナテマ、中級
-	CALL SET_ENEMY,9,[[キャラ:오세]],45,0,1
+	CALL SET_ENEMY,9,[[캐릭터:오세]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1500
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -350,7 +350,7 @@ ELSEIF ARG == 8208
 ELSEIF ARG == 8209
 	;ミアズマ
 	FOR LOCAL,8,11
-		CALL SET_ENEMY,LOCAL,[[キャラ:나가]],41,0,1
+		CALL SET_ENEMY,LOCAL,[[캐릭터:나가]],41,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 400
 		ABL:(CHARANUM-1):아이템1 = 1002
@@ -358,7 +358,7 @@ ELSEIF ARG == 8209
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 	NEXT
-	CALL SET_ENEMY,14,[[キャラ:미즈치]],45,0,1
+	CALL SET_ENEMY,14,[[캐릭터:미즈치]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1500
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -372,7 +372,7 @@ ELSEIF ARG == 8210
 	;열반
 	;TRPGより아누비스神。「覚えたぞッ」ㆍㆍㆍえ、違う？
 	;약점消えてます。
-	CALL SET_ENEMY,9,[[キャラ:아누비스]],44,0,1
+	CALL SET_ENEMY,9,[[캐릭터:아누비스]],44,0,1
 	MAXBASE:(CHARANUM-1):검격 = 999
 	BASE:(CHARANUM-1):검격 = 999
 	MAXBASE:(CHARANUM-1):타격 = 999
@@ -393,7 +393,7 @@ ELSEIF ARG == 8210
 	RETURN 80,8210
 ELSEIF ARG == 8211
 	;ムラクモ
-	CALL SET_ENEMY,9,[[キャラ:온교우키]],45,0,1
+	CALL SET_ENEMY,9,[[캐릭터:온교우키]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1400
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1400
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -406,7 +406,7 @@ ELSEIF ARG == 8211
 ELSEIF ARG == 8212
 	;ゲッシュ
 	;パズルゲームってことでㆍㆍㆍ嫌がらせを
-	CALL SET_ENEMY,9,[[キャラ:라비]],45,0,1
+	CALL SET_ENEMY,9,[[캐릭터:라비]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1500
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -418,7 +418,7 @@ ELSEIF ARG == 8212
 	RETURN 80,8212
 ELSEIF ARG == 8213
 	;ジェド
-	CALL SET_ENEMY,10,[[キャラ:클로토]],42,0,1
+	CALL SET_ENEMY,10,[[캐릭터:클로토]],42,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	ABL:(CHARANUM-1):스킬1 = 402
@@ -433,7 +433,7 @@ ELSEIF ARG == 8213
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,9,[[キャラ:라케시스]],42,0,1
+	CALL SET_ENEMY,9,[[캐릭터:라케시스]],42,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 800
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	MAXBASE:(CHARANUM-1):속도 += 10
@@ -450,7 +450,7 @@ ELSEIF ARG == 8213
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,8,[[キャラ:아트로포스]],42,0,1
+	CALL SET_ENEMY,8,[[캐릭터:아트로포스]],42,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	ABL:(CHARANUM-1):스킬1 = 705
@@ -468,7 +468,7 @@ ELSEIF ARG == 8213
 	RETURN 80,8213
 ELSEIF ARG == 8214
 	;ムスペル
-	CALL SET_ENEMY,9,[[キャラ:슬라임마라님]],48,0,1
+	CALL SET_ENEMY,9,[[캐릭터:슬라임마라님]],48,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 100
 	;冥界波無いので、돌격系ㆍㆍは弱いからシモネタ方面に特化、디아라한は原作仕様
@@ -487,7 +487,7 @@ ELSEIF ARG == 8214
 	RETURN 100,8214
 ELSEIF ARG == 8215
 	;ゲヘナ、上級
-	CALL SET_ENEMY,9,[[キャラ:수르트]],60,0,1
+	CALL SET_ENEMY,9,[[캐릭터:수르트]],60,0,1
 	ABL:(CHARANUM-1):스킬1 = 51
 	ABL:(CHARANUM-1):스킬2 = 748
 	ABL:(CHARANUM-1):스킬3 = 733
@@ -501,12 +501,12 @@ ELSEIF ARG == 8215
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL LIFTING_A_BAN([[キャラ:수르트]])
-	;FLAG:(10000+[[キャラ:수르트]]) = 1
+	CALL LIFTING_A_BAN([[캐릭터:수르트]])
+	;FLAG:(10000+[[캐릭터:수르트]]) = 1
 	RETURN 100,8215
 ELSEIF ARG == 8216
 	;カムロギ
-	CALL SET_ENEMY,9,[[キャラ:잭랜턴]],60,0,1
+	CALL SET_ENEMY,9,[[캐릭터:잭랜턴]],60,0,1
 	ABL:(CHARANUM-1):스킬1 = 706
 	ABL:(CHARANUM-1):스킬2 = 741
 	ABL:(CHARANUM-1):스킬3 = 2003
@@ -523,7 +523,7 @@ ELSEIF ARG == 8216
 	RETURN 100,8216
 ELSEIF ARG == 8217
 	;사탄
-	CALL SET_ENEMY,9,[[キャラ:사악프로스트]],65,0,1
+	CALL SET_ENEMY,9,[[캐릭터:사악프로스트]],65,0,1
 	ABL:(CHARANUM-1):스킬1 = 706
 	ABL:(CHARANUM-1):스킬2 = 810
 	ABL:(CHARANUM-1):스킬3 = 1413
@@ -541,7 +541,7 @@ ELSEIF ARG == 8217
 ELSEIF ARG == 8218
 	;アダマ
 	;グラ繋がりでゴグマゴグ
-	CALL SET_ENEMY,9,[[キャラ:고그마고그]],60,1,1
+	CALL SET_ENEMY,9,[[캐릭터:고그마고그]],60,1,1
 	;原作소지스킬……부동검、ギロチンカット、히트웨이브、冥界破、霊魂流出
 	;＋era版アダマの스킬……우뢰의세례、삼할의마맥、다크브레스
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 0
@@ -567,7 +567,7 @@ ELSEIF ARG == 8219
 	;ヴィマーナ
 	;TRPG版では비슈누。시바繋がりで소재の란다ㆍ바롱のセット
 	;＋era版ヴィマーナの스킬……이악물기、방어부수기、삼할의활천、아카샤아츠
-	CALL SET_ENEMY,8,[[キャラ:란다]],60,1,1
+	CALL SET_ENEMY,8,[[캐릭터:란다]],60,1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 	MAXBASE:(CHARANUM-1):신경 = 0
 	BASE:(CHARANUM-1):신경 = 0
@@ -584,7 +584,7 @@ ELSEIF ARG == 8219
 	ABL:(CHARANUM-1):입수확률1 = 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:바롱]],60,1,1
+	CALL SET_ENEMY,10,[[캐릭터:바롱]],60,1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 	MAXBASE:(CHARANUM-1):신경 = 0
 	BASE:(CHARANUM-1):신경 = 0
@@ -605,7 +605,7 @@ ELSEIF ARG == 8219
 ELSEIF ARG == 8220
 	;グンダリ
 	;みんなだいすき비사문천。一人でも검격と화염が通らないと全힘でころがします。
-	CALL SET_ENEMY,9,[[キャラ:비사문천]],60,0,1
+	CALL SET_ENEMY,9,[[캐릭터:비사문천]],60,0,1
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 	CSTR:(CHARANUM-1):사고패턴 = 11922960
 	ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ라기다인]]
@@ -625,7 +625,7 @@ ELSEIF ARG == 8220
 ELSEIF ARG == 8221
 	;소피아
 	;原作は구입。TRPG版より가브리엘……は合体조건악마なので気軽に出せず、엔젤で。
-	CALL SET_ENEMY,9,[[キャラ:엔젤]],65,0,1
+	CALL SET_ENEMY,9,[[캐릭터:엔젤]],65,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 	MAXBASE:(CHARANUM-1):신경 = 0
 	BASE:(CHARANUM-1):신경 = 0
@@ -646,7 +646,7 @@ ELSEIF ARG == 8221
 ELSEIF ARG == 8222
 	;가이아
 	;原作は宝箱産。元레벨がかなり高いけど、丁度良いのでガイアママン＋토르＋오르트로스＋야크시니
-		CALL SET_ENEMY,9,[[キャラ:토르]],60,0,1
+		CALL SET_ENEMY,9,[[캐릭터:토르]],60,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 		ABL:(CHARANUM-1):아이템1 = 1002
@@ -654,7 +654,7 @@ ELSEIF ARG == 8222
 		ABL:(CHARANUM-1):스킬1 = [[스킬:하이퍼카운터]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,10,[[キャラ:오르트로스]],60,0,1
+			CALL SET_ENEMY,10,[[캐릭터:오르트로스]],60,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 			ABL:(CHARANUM-1):스킬1 = [[스킬:석화물어뜯기]]
@@ -667,7 +667,7 @@ ELSEIF ARG == 8222
 			ABL:(CHARANUM-1):입수확률1 = 0
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,8,[[キャラ:야크시니]],60,0,1
+		CALL SET_ENEMY,8,[[캐릭터:야크시니]],60,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 		ABL:(CHARANUM-1):아이템1 = 1002
@@ -678,7 +678,7 @@ ELSEIF ARG == 8222
 		ABL:(CHARANUM-1):스킬4 = [[스킬:삼할의활천]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,14,[[キャラ:가이아]],65,0,1
+	CALL SET_ENEMY,14,[[캐릭터:가이아]],65,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 0
 	MAXBASE:(CHARANUM-1):타격 = 50
 	BASE:(CHARANUM-1):타격 = 50
@@ -706,7 +706,7 @@ ELSEIF ARG == 8223
 	;原作だと구입、TRPGだとティアマット。
 	;代わりに懐かしの아귀３体。カイラース스킬＋마카빔搭載。
 	FOR LOCAL, 8, 11
-		CALL SET_ENEMY,LOCAL,[[キャラ:아귀]],70,0,1
+		CALL SET_ENEMY,LOCAL,[[캐릭터:아귀]],70,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 10000
 		BASE:(CHARANUM-1):힘 += 10
 		BASE:(CHARANUM-1):지혜 += 10
@@ -732,7 +732,7 @@ ELSEIF ARG == 8223
 ELSEIF ARG == 8224
 	;マサカドゥス、最上級
 	;DDS인수라じゃないかな
-		CALL SET_ENEMY,9,[[キャラ:인수라-]],80,0,1
+		CALL SET_ENEMY,9,[[캐릭터:인수라-]],80,0,1
 		CSTR:(CHARANUM-1):사고패턴 = 41992017
 		CSTR:(CHARANUM-1):증원패턴 = ヒトシュラの
 		CFLAG:(CHARANUM-1):601 = 0
@@ -781,7 +781,7 @@ ELSEIF ARG == 8224
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 			;초기取り巻き쿠ㆍ훌린
-			CALL SET_ENEMY,8,[[キャラ:쿠ㆍ훌린]],40,0,1
+			CALL SET_ENEMY,8,[[캐릭터:쿠ㆍ훌린]],40,0,1
 			;お遊び
 			SIF RAND:100 == 0
 				CALLNAME:(CHARANUM-1) = クーフー･リン
@@ -806,7 +806,7 @@ ELSEIF ARG == 8224
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 				;초기取り巻き기리메칼라
-				CALL SET_ENEMY,10,[[キャラ:기리메칼라]],40,0,1
+				CALL SET_ENEMY,10,[[캐릭터:기리메칼라]],40,0,1
 				;お遊び
 				SIF RAND:100 == 0
 					CALLNAME:(CHARANUM-1) = ギリメカテ
@@ -834,7 +834,7 @@ ELSEIF ARG == 8224
 ELSE
 	;混沌王たち
 	;おまけの二枚내성。
-		CALL SET_ENEMY,8,[[キャラ:인수라-]],99,0,1
+		CALL SET_ENEMY,8,[[캐릭터:인수라-]],99,0,1
 		CSTR:(CHARANUM-1):사고패턴 = 41992017
 		CSTR:(CHARANUM-1):증원패턴 = ひとしゅらの
 		CFLAG:(CHARANUM-1):601 = 0
@@ -882,7 +882,7 @@ ELSE
 		ABL:(CHARANUM-1):입수확률1 = 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,10,[[キャラ:인수라]],99,0,1
+			CALL SET_ENEMY,10,[[캐릭터:인수라]],99,0,1
 			CSTR:(CHARANUM-1):사고패턴 = 41982017
 			CSTR:(CHARANUM-1):증원패턴 = ヒトシュラの
 			CFLAG:(CHARANUM-1):601 = 0
@@ -931,7 +931,7 @@ ELSE
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			;초기取り巻き쿠ㆍ훌린
-			CALL SET_ENEMY,7,[[キャラ:쿠ㆍ훌린]],50,0,1
+			CALL SET_ENEMY,7,[[캐릭터:쿠ㆍ훌린]],50,0,1
 			;お遊び
 			SIF RAND:100 == 0
 				CALLNAME:(CHARANUM-1) = クーフー･リン
@@ -956,7 +956,7 @@ ELSE
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 				;초기取り巻き기리메칼라
-				CALL SET_ENEMY,11,[[キャラ:기리메칼라]],50,0,1
+				CALL SET_ENEMY,11,[[캐릭터:기리메칼라]],50,0,1
 				;お遊び
 				SIF RAND:100 == 0
 					CALLNAME:(CHARANUM-1) = ギリメカテ
@@ -989,7 +989,7 @@ RETURN 60
 @증원패턴_アルビオンもどきの, ARG, ARG:1, ARG:2
 IF ARG:2 == 1
 	;黒ビオンこと운디네
-	CALL SET_ENEMY, ARG:1, [[キャラ:운디네]],55,0,0
+	CALL SET_ENEMY, ARG:1, [[캐릭터:운디네]],55,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 	ABL:(CHARANUM-1):스킬1 = [[스킬:부흐다인]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ부흐다인]]
@@ -1003,7 +1003,7 @@ IF ARG:2 == 1
 	ABL:(CHARANUM-1):입수확률1 = 0
 ELSEIF ARG:2 == 2
 	;緑ビオンこと실프
-	CALL SET_ENEMY, ARG:1, [[キャラ:실프]],55,0,0
+	CALL SET_ENEMY, ARG:1, [[캐릭터:실프]],55,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 	ABL:(CHARANUM-1):스킬1 = [[스킬:잔다인]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ잔다인]]
@@ -1017,7 +1017,7 @@ ELSEIF ARG:2 == 2
 	ABL:(CHARANUM-1):입수확률1 = 0
 ELSEIF ARG:2 == 3
 	;赤ビオンこと살라만더
-	CALL SET_ENEMY, ARG:1, [[キャラ:살라만더]],55,0,0
+	CALL SET_ENEMY, ARG:1, [[캐릭터:살라만더]],55,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 	ABL:(CHARANUM-1):스킬1 = [[스킬:아기다인]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ라기다인]]
@@ -1031,7 +1031,7 @@ ELSEIF ARG:2 == 3
 	ABL:(CHARANUM-1):입수확률1 = 0
 ELSE
 	;黄ビオンこと놈
-	CALL SET_ENEMY, ARG:1, [[キャラ:놈]],55,0,0
+	CALL SET_ENEMY, ARG:1, [[캐릭터:놈]],55,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 	ABL:(CHARANUM-1):스킬1 = [[스킬:지오다인]]
 	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ지오다인]]
@@ -1300,7 +1300,7 @@ RETURN 0
 @증원패턴_ヒトシュラの, ARG, ARG:1, ARG:2
 IF CFLAG:ARG:601 == 0
 	;추가の１番눈取り巻き픽시
-	CALL SET_ENEMY,ARG:1,[[キャラ:픽시]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:픽시]],40,0,1
 	;特に이름ネタはない
 	CSTR:(CHARANUM-1):사고패턴 = 41996666
 	BASE:(CHARANUM-1):힘 += 20
@@ -1324,7 +1324,7 @@ IF CFLAG:ARG:601 == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 1
 	;추가の２番눈取り巻き아라하바키
-	CALL SET_ENEMY,ARG:1,[[キャラ:아라하바키]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:아라하바키]],40,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = 아라하바키
@@ -1350,7 +1350,7 @@ ELSEIF CFLAG:ARG:601 == 1
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 2
 	;추가の３番눈取り巻き티타니아
-	CALL SET_ENEMY,ARG:1,[[キャラ:티타니아]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:티타니아]],40,0,1
 	;特に이름변경ネタはない
 	CSTR:(CHARANUM-1):사고패턴 = 41996666
 	BASE:(CHARANUM-1):힘 += 20
@@ -1374,7 +1374,7 @@ ELSEIF CFLAG:ARG:601 == 2
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 3
 	;추가の４番눈取り巻き파르바티……はcsvないので사라스바티
-	CALL SET_ENEMY,ARG:1,[[キャラ:사라스바티]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:사라스바티]],40,0,1
 	;파르바티の振りをする。稀に이름がそのまま
 	SIF RAND:100
 		CALLNAME:(CHARANUM-1) = 파르바티
@@ -1400,7 +1400,7 @@ ELSEIF CFLAG:ARG:601 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 4
 	;５番눈取り巻き쿠ㆍ훌린（または초기）
-	CALL SET_ENEMY,ARG:1,[[キャラ:쿠ㆍ훌린]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:쿠ㆍ훌린]],40,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = クーフー･リン
@@ -1426,7 +1426,7 @@ ELSEIF CFLAG:ARG:601 == 4
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 5
 	;６番눈取り巻き기리메칼라（または초기）
-	CALL SET_ENEMY,ARG:1,[[キャラ:기리메칼라]],40,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:기리메칼라]],40,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = ギリメカテ
@@ -1632,7 +1632,7 @@ RETURN 0
 @증원패턴_ひとしゅらの, ARG, ARG:1, ARG:2
 IF CFLAG:ARG:601 == 0
 	;추가の１番눈取り巻き픽시
-	CALL SET_ENEMY,ARG:1,[[キャラ:픽시]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:픽시]],50,0,1
 	;特に이름ネタはない
 	CSTR:(CHARANUM-1):사고패턴 = 41996666
 	BASE:(CHARANUM-1):힘 += 25
@@ -1656,7 +1656,7 @@ IF CFLAG:ARG:601 == 0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 1
 	;추가の２番눈取り巻き아라하바키
-	CALL SET_ENEMY,ARG:1,[[キャラ:아라하바키]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:아라하바키]],50,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = 아키ハバラ
@@ -1682,7 +1682,7 @@ ELSEIF CFLAG:ARG:601 == 1
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 2
 	;추가の３番눈取り巻き티타니아
-	CALL SET_ENEMY,ARG:1,[[キャラ:티타니아]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:티타니아]],50,0,1
 	;特に이름변경ネタはない
 	CSTR:(CHARANUM-1):사고패턴 = 41996666
 	BASE:(CHARANUM-1):힘 += 25
@@ -1706,7 +1706,7 @@ ELSEIF CFLAG:ARG:601 == 2
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 3
 	;추가の４番눈取り巻き파르바티……はcsvないので사라스바티
-	CALL SET_ENEMY,ARG:1,[[キャラ:사라스바티]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:사라스바티]],50,0,1
 	;파르바티の振りをする。稀に이름がそのまま
 	SIF RAND:100
 		CALLNAME:(CHARANUM-1) = 파르바티
@@ -1732,7 +1732,7 @@ ELSEIF CFLAG:ARG:601 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 4
 	;５番눈取り巻き쿠ㆍ훌린（または초기）
-	CALL SET_ENEMY,ARG:1,[[キャラ:쿠ㆍ훌린]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:쿠ㆍ훌린]],50,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = クーフー･リン
@@ -1758,7 +1758,7 @@ ELSEIF CFLAG:ARG:601 == 4
 	CALL HEALTH_CHARA,(CHARANUM-1)
 ELSEIF CFLAG:ARG:601 == 5
 	;６番눈取り巻き기리메칼라（または초기）
-	CALL SET_ENEMY,ARG:1,[[キャラ:기리메칼라]],50,0,1
+	CALL SET_ENEMY,ARG:1,[[캐릭터:기리메칼라]],50,0,1
 	;お遊び
 	SIF RAND:100 == 0
 		CALLNAME:(CHARANUM-1) = ギリメカテ

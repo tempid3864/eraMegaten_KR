@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_504,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RESULTS = 역천사의 녹
 ELSE
 	RESULTS = 라쿠ㆍ카쟈
@@ -152,7 +152,7 @@ SIF !ARG:2
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_504
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아오이(마인학원)]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아오이(마인학원)]])
 	PRINTL 역천사에게 기도를 올려、아군의 수비를 굳힌다。
 	PRINTL 아군 전체의 방어력을 상승시킨다。
 ELSE

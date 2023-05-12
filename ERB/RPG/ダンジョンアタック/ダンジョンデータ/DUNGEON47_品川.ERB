@@ -951,7 +951,7 @@ ENDSELECT
 @ENEMY_47, ARG
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:라비]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:라비]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASE IS < 20
 ;메이거스
 		RETURN 3123, 30 + RAND:2 * 3		
@@ -959,51 +959,51 @@ SELECTCASE RAND:100
 ;템플나이트♀
 		RETURN 3128, 29 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASE IS < 40
-		RETURN [[キャラ:템플나이트]], 29 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:템플나이트]], 29 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	;광신자は2枠で出やすい
 	CASE IS < 55
-		RETURN [[キャラ:광신자]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:광신자]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASE IS < 70
-		RETURN [[キャラ:광신자]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:광신자]], 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASEELSE
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 1
 				IF !RAND:3
-					RETURN [[キャラ:하우르바타트]], 30 + RAND:2 * 3
+					RETURN [[캐릭터:하우르바타트]], 30 + RAND:2 * 3
 				ELSEIF RAND:2
-					RETURN [[キャラ:아무르타트]], 34 + RAND:2 * 3
+					RETURN [[캐릭터:아무르타트]], 34 + RAND:2 * 3
 				ELSE
-					RETURN [[キャラ:프린시펄리티]], 31 + RAND:2 * 3
+					RETURN [[캐릭터:프린시펄리티]], 31 + RAND:2 * 3
 				ENDIF
 			CASE 2
 				IF !RAND:3
-					RETURN [[キャラ:하우르바타트]], 37 + RAND:2 * 3
+					RETURN [[캐릭터:하우르바타트]], 37 + RAND:2 * 3
 				ELSEIF RAND:2
-					RETURN [[キャラ:아무르타트]], 41 + RAND:2 * 3
+					RETURN [[캐릭터:아무르타트]], 41 + RAND:2 * 3
 				ELSE
-					RETURN [[キャラ:파워]], 40 + RAND:2 * 3
+					RETURN [[캐릭터:파워]], 40 + RAND:2 * 3
 				ENDIF
 			CASE 3
 				IF !RAND:3
-					RETURN [[キャラ:아무르타트]], 44 + RAND:2 * 3
+					RETURN [[캐릭터:아무르타트]], 44 + RAND:2 * 3
 				ELSEIF RAND:2
-					RETURN [[キャラ:알마티]], 48 + RAND:2 * 3
+					RETURN [[캐릭터:알마티]], 48 + RAND:2 * 3
 				ELSE
-					RETURN [[キャラ:파워]], 45 + RAND:2 * 3
+					RETURN [[캐릭터:파워]], 45 + RAND:2 * 3
 				ENDIF
 			CASE 4
 				IF !RAND:3
-					RETURN [[キャラ:알마티]], 53 + RAND:2 * 3
+					RETURN [[캐릭터:알마티]], 53 + RAND:2 * 3
 				ELSEIF RAND:2
-					RETURN [[キャラ:버쳐]], 54 + RAND:2 * 3
+					RETURN [[캐릭터:버쳐]], 54 + RAND:2 * 3
 				ELSE
-					RETURN [[キャラ:도미니온]], 53 + RAND:2 * 3
+					RETURN [[캐릭터:도미니온]], 53 + RAND:2 * 3
 				ENDIF
 		ENDSELECT
 ENDSELECT
 @SET_ENEMY_STATUS_47, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:템플나이트]]
+	CASE [[캐릭터:템플나이트]]
 		;デフォは잔마ㆍ마카쟈마ㆍ연속사격ㆍ돌려차기
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 2
@@ -1016,7 +1016,7 @@ SELECTCASE NO:ARG
 				ABL:ARG:스킬1 = [[스킬:잔다인]]
 				ABL:ARG:스킬4 = [[스킬:데스바운드]]
 		ENDSELECT
-	CASE [[キャラ:광신자]]
+	CASE [[캐릭터:광신자]]
 		;デフォは메디아ㆍ숏잽
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 2
@@ -1029,7 +1029,7 @@ SELECTCASE NO:ARG
 				ABL:ARG:스킬1 = [[스킬:메ㆍ디아라마]]
 				ABL:ARG:스킬3 = [[스킬:옥쇄파]]
 		ENDSELECT
-	CASE [[キャラ:라비]]
+	CASE [[캐릭터:라비]]
 		;デフォは지온가ㆍ한마ㆍ연속사격ㆍ마린카린ㆍ텐타라후
 		SELECTCASE 던전플래그:(FLAG:현던전):0
 			CASE 3
@@ -1061,17 +1061,17 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:광신자]] , 3 + RAND:10 , 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:광신자]] , 3 + RAND:10 , 25 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASE 1
-		RETURN [[キャラ:템플나이트]] , 3 + RAND:10 , 29 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
+		RETURN [[캐릭터:템플나이트]] , 3 + RAND:10 , 29 + RAND:2 * 3 + 던전플래그:(FLAG:현던전):0 * 7
 	CASE 2
 		SELECTCASE  던전플래그:(FLAG:현던전):0
 			CASE 1
-				RETURN [[キャラ:프린시펄리티]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
+				RETURN [[캐릭터:프린시펄리티]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
 			CASE 2,3
-				RETURN [[キャラ:파워]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
+				RETURN [[캐릭터:파워]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
 			CASE 4
-				RETURN [[キャラ:도미니온]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
+				RETURN [[캐릭터:도미니온]] , 3 + RAND:10 , 31 + 던전플래그:(FLAG:현던전):0 * 7
 		ENDSELECT
 ENDSELECT
 

@@ -492,11 +492,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,7,[[キャラ:하이웨이스타]],33,0,0
-				CALL SET_ENEMY,8,[[キャラ:하이웨이스타]],33,0,0
-				CALL SET_ENEMY,9,[[キャラ:하이웨이스타]],33,0,0
-				CALL SET_ENEMY,10,[[キャラ:하이웨이스타]],33,0,0
-				CALL SET_ENEMY,11,[[キャラ:하이웨이스타]],33,0,0
+				CALL SET_ENEMY,7,[[캐릭터:하이웨이스타]],33,0,0
+				CALL SET_ENEMY,8,[[캐릭터:하이웨이스타]],33,0,0
+				CALL SET_ENEMY,9,[[캐릭터:하이웨이스타]],33,0,0
+				CALL SET_ENEMY,10,[[캐릭터:하이웨이스타]],33,0,0
+				CALL SET_ENEMY,11,[[캐릭터:하이웨이스타]],33,0,0
 				CALL BATTLE_START
 				CALL SHOW_PICTURE, "D"
 				FLAG:도주불가플래그 = 0
@@ -537,7 +537,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		;SET_ENEMY,적の포지션, 적のキャラ번호、레벨、시체잔존フラグ,보스플래그となっています
-		CALL SET_ENEMY,9,[[キャラ:바람]],35,0,1
+		CALL SET_ENEMY,9,[[캐릭터:바람]],35,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 8000
 		CSTR:(CHARANUM-1):사고패턴 = 209
@@ -545,22 +545,22 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,7,[[キャラ:뮤턴트]],35,0,0
+		CALL SET_ENEMY,7,[[캐릭터:뮤턴트]],35,0,0
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:헬]],35,0,0
+		CALL SET_ENEMY,8,[[캐릭터:헬]],35,0,0
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:헬]],35,0,0
+		CALL SET_ENEMY,10,[[캐릭터:헬]],35,0,0
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,11,[[キャラ:뮤턴트]],35,0,0
+		CALL SET_ENEMY,11,[[캐릭터:뮤턴트]],35,0,0
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 150
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -613,7 +613,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL ADD_NEW_COMPANION,4501, 500, 1
 				SIF RESULT
 					CFLAG:(RESULT:1):전투참가불가능 = -1
-				CFLAG:GETCHARA([[キャラ:베스]], 0):이벤트가입 = 1
+				CFLAG:GETCHARA([[캐릭터:베스]], 0):이벤트가입 = 1
 			ELSE
 				CALL MESSAGE_WINDOW_D,  "소녀", "…그렇습니까…알았습니다/…어쩔수…없지요…/상처가…나으면…나가겠습니다…"
 				CALL MESSAGE_WINDOW_D,  "", "소녀는 매우 슬픈 듯이  그렇게 중얼거렸다……"
@@ -636,29 +636,29 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,7,[[キャラ:하이웨이스타]],33,0,0
-			CALL SET_ENEMY,8,[[キャラ:고르곤]],29,0,0
-			CALL SET_ENEMY,9,[[キャラ:뮤턴트]],32,0,0
-			CALL SET_ENEMY,10,[[キャラ:고르곤]],29,0,0
-			CALL SET_ENEMY,11,[[キャラ:하이웨이스타]],33,0,0
-			CALL SET_ENEMY,12,[[キャラ:유키죠로]],27,0,0
-			CALL SET_ENEMY,13,[[キャラ:파계승]],28,0,0
-			CALL SET_ENEMY,14,[[キャラ:익스타브]],29,0,0
-			CALL SET_ENEMY,15,[[キャラ:파계승]],28,0,0
-			CALL SET_ENEMY,16,[[キャラ:유키죠로]],27,0,0
+			CALL SET_ENEMY,7,[[캐릭터:하이웨이스타]],33,0,0
+			CALL SET_ENEMY,8,[[캐릭터:고르곤]],29,0,0
+			CALL SET_ENEMY,9,[[캐릭터:뮤턴트]],32,0,0
+			CALL SET_ENEMY,10,[[캐릭터:고르곤]],29,0,0
+			CALL SET_ENEMY,11,[[캐릭터:하이웨이스타]],33,0,0
+			CALL SET_ENEMY,12,[[캐릭터:유키죠로]],27,0,0
+			CALL SET_ENEMY,13,[[캐릭터:파계승]],28,0,0
+			CALL SET_ENEMY,14,[[캐릭터:익스타브]],29,0,0
+			CALL SET_ENEMY,15,[[캐릭터:파계승]],28,0,0
+			CALL SET_ENEMY,16,[[캐릭터:유키죠로]],27,0,0
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
 			CALL MESSAGE_WINDOW_D,  "", "＞악마들은 힘이 다했다……/＞그러나 홀에는 아직 다수의 적들이 남아있다……/＞가이아교도와 악마들이 습격해 왔다！"
-			CALL SET_ENEMY,7,[[キャラ:뮤턴트]],32,0,0
-			CALL SET_ENEMY,8,[[キャラ:고르곤]],29,0,0
-			CALL SET_ENEMY,9,[[キャラ:뮤턴트]],32,0,0
-			CALL SET_ENEMY,10,[[キャラ:고르곤]],29,0,0
-			CALL SET_ENEMY,11,[[キャラ:뮤턴트]],32,0,0
-			CALL SET_ENEMY,12,[[キャラ:유키죠로]],27,0,0
-			CALL SET_ENEMY,13,[[キャラ:파계승]],28,0,0
-			CALL SET_ENEMY,14,[[キャラ:헬]],30,0,0
-			CALL SET_ENEMY,15,[[キャラ:파계승]],28,0,0
-			CALL SET_ENEMY,16,[[キャラ:유키죠로]],27,0,0
+			CALL SET_ENEMY,7,[[캐릭터:뮤턴트]],32,0,0
+			CALL SET_ENEMY,8,[[캐릭터:고르곤]],29,0,0
+			CALL SET_ENEMY,9,[[캐릭터:뮤턴트]],32,0,0
+			CALL SET_ENEMY,10,[[캐릭터:고르곤]],29,0,0
+			CALL SET_ENEMY,11,[[캐릭터:뮤턴트]],32,0,0
+			CALL SET_ENEMY,12,[[캐릭터:유키죠로]],27,0,0
+			CALL SET_ENEMY,13,[[캐릭터:파계승]],28,0,0
+			CALL SET_ENEMY,14,[[캐릭터:헬]],30,0,0
+			CALL SET_ENEMY,15,[[캐릭터:파계승]],28,0,0
+			CALL SET_ENEMY,16,[[캐릭터:유키죠로]],27,0,0
 			CALL BATTLE_START
 			CALL SHOW_PICTURE, "D"
 			CALL MESSAGE_WINDOW_D,  "", "＞악마들은 힘이 다했다……/＞주위에서 격렬하게 야유하는 소리가 들리기 시작하고 있다……"
@@ -817,55 +817,55 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で펑크스Lv13　랭크3
-				RETURN [[キャラ:펑크스]], 24
+				RETURN [[캐릭터:펑크스]], 24
 			CASE IS < 30
 				;15%で킹즈헤드Lv15　랭크3
-				RETURN [[キャラ:킹즈헤드]], 25
+				RETURN [[캐릭터:킹즈헤드]], 25
 			CASE IS < 45
 				;15%で메탈Lv19　랭크2
-				RETURN [[キャラ:메탈]], 26
+				RETURN [[캐릭터:메탈]], 26
 			CASE IS < 60
 				;15%で하이웨이스타Lv21　랭크1
-				RETURN [[キャラ:하이웨이스타]], 24
+				RETURN [[캐릭터:하이웨이스타]], 24
 			CASE IS < 70
 				;10%で유키죠로Lv21　랭크1
-				RETURN [[キャラ:유키죠로]], 24
+				RETURN [[캐릭터:유키죠로]], 24
 			CASE IS < 80
 				;10%で굴라Lv22　랭크1
-				RETURN [[キャラ:굴라]], 25
+				RETURN [[캐릭터:굴라]], 25
 			CASE IS < 90
 				;10%で익스타브Lv23　랭크1
-				RETURN [[キャラ:익스타브]], 26
+				RETURN [[캐릭터:익스타브]], 26
 			CASE IS < 100
 				;10%で뷔브르Lv23　랭크1
-				RETURN [[キャラ:뷔브르]], 26
+				RETURN [[캐릭터:뷔브르]], 26
 		ENDSELECT
 	CASEELSE
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で프라이데이Lv24　랭크1
-				RETURN [[キャラ:프라이데이]],27
+				RETURN [[캐릭터:프라이데이]],27
 			CASE IS < 30
 				;15%で파계승Lv25　랭크1
-				RETURN [[キャラ:파계승]],28
+				RETURN [[캐릭터:파계승]],28
 			CASE IS < 45
 				;15%で메탈Lv19　랭크3
-				RETURN [[キャラ:메탈]],28
+				RETURN [[캐릭터:메탈]],28
 			CASE IS < 60
 				;15%で하이웨이스타Lv21　랭크2
-				RETURN [[キャラ:하이웨이스타]],27
+				RETURN [[캐릭터:하이웨이스타]],27
 			CASE IS < 70
 				;10%で사라시나히메Lv30
-				RETURN [[キャラ:사라시나히메]],27
+				RETURN [[캐릭터:사라시나히메]],27
 			CASE IS < 80
 				;10%で맨이터Lv27
-				RETURN [[キャラ:맨이터]],27
+				RETURN [[캐릭터:맨이터]],27
 			CASE IS < 90
 				;10%で아에슈마
-				RETURN [[キャラ:아에슈마]],27
+				RETURN [[캐릭터:아에슈마]],27
 			CASE IS < 100
 				;10%で고르곤Lv29
-				RETURN [[キャラ:고르곤]],28
+				RETURN [[캐릭터:고르곤]],28
 		ENDSELECT
 ENDSELECT
 ;=================================
@@ -873,15 +873,15 @@ ENDSELECT
 ;=================================
 @SET_ENEMY_STATUS_16, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:뷔브르]]
+	CASE [[캐릭터:뷔브르]]
 		ABL:ARG:아이템2 = 1002
 		ABL:ARG:입수확률2 = 15
-	CASE [[キャラ:아에슈마]]
+	CASE [[캐릭터:아에슈마]]
 		ABL:ARG:아이템1 = 1002
 		ABL:ARG:입수확률1 = 10
 		ABL:ARG:아이템2 = 1017
 		ABL:ARG:입수확률2 = 5
-	CASE [[キャラ:맨이터]]
+	CASE [[캐릭터:맨이터]]
 		ABL:ARG:아이템2 = 3501
 		ABL:ARG:입수확률2 = 5
 		ABL:ARG:아이템3 = 1018
@@ -984,11 +984,11 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:메탈]] , 3 + RAND:10 , CSVBASE([[キャラ:메탈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:메탈]] , 3 + RAND:10 , CSVBASE([[캐릭터:메탈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:펑크스]] , 3 + RAND:10 , CSVBASE([[キャラ:펑크스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:펑크스]] , 3 + RAND:10 , CSVBASE([[캐릭터:펑크스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:파계승]] , 3 + RAND:10 , CSVBASE([[キャラ:파계승]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:파계승]] , 3 + RAND:10 , CSVBASE([[캐릭터:파계승]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:하이웨이스타]] , 3 + RAND:10 , CSVBASE([[キャラ:하이웨이스타]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:하이웨이스타]] , 3 + RAND:10 , CSVBASE([[캐릭터:하이웨이스타]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

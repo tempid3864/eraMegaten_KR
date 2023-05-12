@@ -31,16 +31,16 @@ ENDIF
 
 ;EXシナリオ
 IF (GETBIT(FLAG:EXTRA이벤트설정, 0) == 1 || GETBIT(FLAG:EXTRA이벤트필터, 19) == 0)
-	IF FLAG:백합의꽃루트 == 6 && FINDCHARA_B([[キャラ:아마네]]) > 0
+	IF FLAG:백합의꽃루트 == 6 && FINDCHARA_B([[캐릭터:아마네]]) > 0
 		RESULTS = （EX:eraten X ARMORED CORE）상문회
 		RETURN 1
-	ELSEIF FLAG:백합의꽃루트 == 8 && FINDCHARA_B([[キャラ:아마네]]) > 0
+	ELSEIF FLAG:백합의꽃루트 == 8 && FINDCHARA_B([[캐릭터:아마네]]) > 0
 		RESULTS = （EX:eraten X ARMORED CORE）아마네의 결의
 		RETURN 1
-	ELSEIF FLAG:백합의꽃루트 == 10 && FINDCHARA_B([[キャラ:아마네]]) > 0
+	ELSEIF FLAG:백합의꽃루트 == 10 && FINDCHARA_B([[캐릭터:아마네]]) > 0
 		RESULTS = （EX:eraten X ARMORED CORE）팩토리 해방작전
 		RETURN 1
-	ELSEIF FLAG:백합의꽃루트 == 12 && FINDCHARA_B([[キャラ:아마네]]) > 0
+	ELSEIF FLAG:백합의꽃루트 == 12 && FINDCHARA_B([[캐릭터:아마네]]) > 0
 		RESULTS = （EX:eraten X ARMORED CORE）구원 요청
 		RETURN 1
 	ELSE

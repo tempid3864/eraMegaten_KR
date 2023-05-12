@@ -1,11 +1,11 @@
 ﻿;スキル名　元素爆発（原神）ゲージを使う、強力なスキルと長いリキャストが特徴のスキル。
 
 @SKILL_NAME_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RESULTS = 바람신의 시
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RESULTS = 천성
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RESULTS = 오의ㆍ몽상진설
 ELSE
 	RESULTS = 원소해방（원신）
@@ -23,7 +23,7 @@ RETURN 120
 #DIM LTARGET = -1
 元素スキル継続時間 = PU_SKILLNUM_GET(ARG,"元素スキル（原神）")
 
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	;非戦闘中なら元々の威力を返す
 	SIF !TFLAG:전투중
 		RETURN 100
@@ -35,7 +35,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 		SIF LTARGET < 0 || CFLAG:LTARGET:PT플래그 != CFLAG:ARG:PT플래그
 			CONTINUE
 		;バアルでなければ飛ばす。
-		SIF NO:LTARGET != [[キャラ:기묘한바알]]
+		SIF NO:LTARGET != [[캐릭터:기묘한바알]]
 			CONTINUE
 		;更にバアルであっても雷罰悪曜の眼がオフである場合飛ばす
 		SIF SKILLGAGE_D_GET(LTARGET,元素スキル継続時間) == 0
@@ -46,7 +46,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 		BREAK
 	NEXT
 	RETURN 100 + ADD_POW
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	;非戦闘中なら元々の威力を返す
 	SIF !TFLAG:전투중
 		RETURN 400
@@ -58,7 +58,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 		SIF LTARGET < 0 || CFLAG:LTARGET:PT플래그 != CFLAG:ARG:PT플래그
 			CONTINUE
 		;バアルでなければ飛ばす。
-		SIF NO:LTARGET != [[キャラ:기묘한바알]]
+		SIF NO:LTARGET != [[캐릭터:기묘한바알]]
 			CONTINUE
 		;更にバアルであっても雷罰悪曜の眼がオフである場合飛ばす
 		SIF SKILLGAGE_D_GET(LTARGET,元素スキル継続時間) == 0
@@ -69,7 +69,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 		BREAK
 	NEXT
 	RETURN 400 + ADD_POW
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	;自前の雷罰悪曜の眼で爆発威力上がるの反則じゃないかなこの神。
 	SIF SKILLGAGE_D_GET(ARG,元素スキル継続時間) > 0
 		RETURN 550
@@ -80,11 +80,11 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 4
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -92,11 +92,11 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 4
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -116,7 +116,7 @@ RETURN 50
 @SKILL_TYPE_元素爆発（原神）,ARG
 #LOCALSSIZE 5
 #LOCALSIZE 4
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("충격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -147,7 +147,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("지변")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -178,7 +178,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 		ENDIF
 	NEXT
 	RETURN GET_TYPE_NUM(LOCALS)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("전격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -228,11 +228,11 @@ RETURN 1
 
 ;射程　1:S 2:M 3:L
 @SKILL_RANGE_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 3
 ELSE
 	RETURN 3
@@ -240,11 +240,11 @@ ENDIF
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 2
 ELSE
 	RETURN 3
@@ -273,11 +273,11 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN GET_STATE_NUM("SLIP")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN GET_STATE_NUM("STONE")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN GET_STATE_NUM("SHOCK")
 ELSE
 	RETURN 1
@@ -286,11 +286,11 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_元素爆発（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN GET_TYPE_NUM("충격")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN GET_TYPE_NUM("지변")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN GET_TYPE_NUM("전격")
 ELSE
 	RETURN 0
@@ -312,12 +312,12 @@ RETURN 95
 ;ヒット時ダメージ前処理
 ;====================================================
 @SKILL_HIT_EFFECT_元素爆発（原神）,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	;命中前、守備と魔防を2段階破壊。本当は翠緑の効果なんですけどね。
 	CFLAG:(ARG:1):방어강화 = MAX(-16, CFLAG:(ARG:1):방어강화 - 2)
 	CFLAG:(ARG:1):마법효과강화 = MAX(-16, CFLAG:(ARG:1):마법효과강화 - 2)
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 ENDIF
 
 ;====================================================
@@ -328,7 +328,7 @@ ENDIF
 #LOCALSIZE 4
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	ALIGNMENT CENTER
 	SETCOLOR 0x009e25
 	IF RAND:2 ==0
@@ -345,7 +345,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 	CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 	CALL SKILLGAGE_D_SET,ARG,元素爆発制御変数,5
 	CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	ALIGNMENT CENTER
 	SETCOLOR 0xffaa00
 	IF RAND:3 == 0
@@ -366,7 +366,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 	CALL ATTACK_FIELD,ARG,ARG:1,SKILL_NUM;			範囲攻撃(列、全体)
 	CALL SKILLGAGE_D_SET,ARG,元素爆発制御変数,5
 	CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,0
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	ALIGNMENT CENTER
 	SETCOLOR 0x782069
 	IF RAND:3 == 0
@@ -400,7 +400,7 @@ SETCOLOR 0x33ffcc
 	PRINTL 元素エネルギーゲージが追加され、平時の様々な行動で上昇する様になる。
 	PRINTL 主に元素スキルで大きく上昇し、最大時のみ元素爆発が使用可能になる。
 RESETCOLOR
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한바르바토스]]
 	PRINTL 元素爆発『風神の詩』
 	PRINTL 적 전체에 衝撃と万能の複合属性で小威力の物理攻撃を４回行う。
 	PRINT 追加効果：命中の度に防御ㆍ魔法効果を微量ダウンし、高確率で転倒。
@@ -410,7 +410,7 @@ IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
 	PRINTL 
 	PRINTL 千の風を集めた矢を放ち、巨大な暴風の目を作る。
 	PRINTL 風神　奇妙なバルバトスの元素爆発技（CSTR専用）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한모라쿠스]]
 	PRINTL 元素爆発『天星』
 	PRINTL 적 전체에 地変と万能の複合属性で特大威力の物理攻撃を１回行う。
 	PRINT 追加効果：高確率の石化を付与する。
@@ -420,7 +420,7 @@ ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
 	PRINTL 
 	PRINTL 巨大な星岩を落下させ、眼前の全ての敵を石にする。
 	PRINTL 岩神　奇妙なモラクスの元素爆発技（CSTR専用）
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바알]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한바알]]
 	PRINTL 元素爆発『奥義ㆍ夢想真説』
 	PRINTL 적 1열에 電撃と万能の複合属性で特大威力の物理攻撃を１回行う。
 	PRINT 追加効果：高確率の感電を付与する。
@@ -442,7 +442,7 @@ ENDIF
 @SKILL_SPECIAL_ACTIONABLE_元素爆発（原神）,ARG
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	;元素爆発リキャスト中は不可
 	SIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 0
 		RETURN 0
@@ -450,13 +450,13 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) < 60
 		RETURN 0
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	SIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 0
 		RETURN 0
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) < 40
 		RETURN 0
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	SIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 0
 		RETURN 0
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) < 90
@@ -469,7 +469,7 @@ ENDIF
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
 SETCOLOR 0x999999
 ;参照時に超過していた場合補正。
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 60
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,60
 	;元素爆発リキャスト中はリキャストターン表示
@@ -479,7 +479,7 @@ IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) == 60
 		SETCOLOR 0x009e25
 	PRINTFORML 風神の詩　元素エネルギー：{SKILLGAGE_F_GET(ARG,元素爆発制御変数)}／60
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 40
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,40
 	;元素爆発リキャスト中はリキャストターン表示
@@ -489,7 +489,7 @@ ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) == 40
 		SETCOLOR 0xffaa00
 	PRINTFORML 天星　元素エネルギー；{SKILLGAGE_F_GET(ARG,元素爆発制御変数)}／40
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 90
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,90
 	;元素爆発リキャスト中はリキャストターンㆍ効果時間表示
@@ -572,13 +572,13 @@ IF CFLAG:ARG:현데미지 > 0 || GETBIT(CFLAG:ARG:받음플래그,18) || GETBIT(
 	CALL SKILLGAGE_F_ADD,ARG,元素爆発制御変数,LOCAL
 ENDIF
 ;ゲージはキャラごとに上限が違う
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 60
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,60
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 40
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,40
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	SIF SKILLGAGE_F_GET(ARG,元素爆発制御変数) > 90
 		CALL SKILLGAGE_F_SET,ARG,元素爆発制御変数,90
 ENDIF

@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_1608,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:니토리]])
+IF SKILL_CHANGE(ARG, [[캐릭터:니토리]])
 	RESULTS = 수부「워터 카펫」
 ELSE
 	RESULTS = 피어트렌트
@@ -46,7 +46,7 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_1608, ARG
-IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:니토리]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[キャラ:니토리]])
+IF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:니토리]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[캐릭터:니토리]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -102,7 +102,7 @@ RETURN 0
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_1608,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:니토리]])
+IF SKILL_CHANGE(ARG, [[캐릭터:니토리]])
 	RETURN 3
 ELSE
 	RETURN 5
@@ -110,7 +110,7 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_1608,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:니토리]])
+IF SKILL_CHANGE(ARG, [[캐릭터:니토리]])
 	RETURN 9
 ELSE
 	RETURN 13
@@ -141,7 +141,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,1608
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1608
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:니토리]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:니토리]]
 	PRINTL 거센 물살로 적 전체를 휩쓸어 수격 상성의 물리데미지＋저확률로 PANIC。
 	PRINTL 요귀　카와시로 니토리의 스펠카드。
 ELSE

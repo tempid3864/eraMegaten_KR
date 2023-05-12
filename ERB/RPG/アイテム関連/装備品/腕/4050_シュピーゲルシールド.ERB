@@ -75,7 +75,7 @@ RETURN 0
 RETURN 1
 
 @장비추가스킬_4050,ARG,ARG:1 = -1
-IF ARG:1 != -1 && NO:(ARG:1) == [[キャラ:당신]]
+IF ARG:1 != -1 && NO:(ARG:1) == [[캐릭터:당신]]
 	IF EQUIP:(ARG:1):머리 == 3020
 		SELECTCASE ARG
 			CASE 0

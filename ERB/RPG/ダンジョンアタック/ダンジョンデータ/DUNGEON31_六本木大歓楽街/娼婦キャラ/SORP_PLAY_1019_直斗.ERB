@@ -23,7 +23,7 @@ SELECTCASE ARGS
 		;(絶縁状はナオヤルート進行時のみ発生する認識のため、百合の花とは排他になる認識)
 		IF 롯폰기창관플래그:19 >= 3
 			RETURN 1
-		ELSEIF 이벤트플래그:6:0 == 2 && FINDCHARA_B([[キャラ:나오토]]) < 1
+		ELSEIF 이벤트플래그:6:0 == 2 && FINDCHARA_B([[캐릭터:나오토]]) < 1
 			RETURN 0
 		ELSE
 			RETURN 1

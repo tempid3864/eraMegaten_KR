@@ -507,7 +507,7 @@ FOR カウント , 0 , 10
 			LOCAL:4 = 1
 		BREAK
 	ELSEIF カウント == 9
-		작성종족 = [[キャラ:슬라임]]
+		작성종족 = [[캐릭터:슬라임]]
 	ENDIF
 NEXT
 	LOCAL:3 = TALENT:ARG:남자
@@ -521,7 +521,7 @@ NEXT
 	ENDIF
 	
 	;女体化処理
-	IF LOCAL:3 == 0 && 작성종족 == [[キャラ:슬라임]]
+	IF LOCAL:3 == 0 && 작성종족 == [[캐릭터:슬라임]]
 		TALENT:ARG:남자 = 0
 		TALENT:ARG:팔 = 1
 		TALENT:ARG:발 = 1

@@ -613,7 +613,7 @@ RETURN 0
 @BOSS_NAME_5
 ;조건：ダイダロスの塔で미노타우로스を倒す
 	IF 던전플래그:5:12 == 1
-		RETURN [[キャラ:미노타우로스]]
+		RETURN [[캐릭터:미노타우로스]]
 	ENDIF
 RETURN 0
 
@@ -626,7 +626,7 @@ RETURN 0
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	FLAG:RESULT스킵 = 1
-		CALL SET_ENEMY,9,[[キャラ:미노타우로스]],30,0,1
+		CALL SET_ENEMY,9,[[캐릭터:미노타우로스]],30,0,1
 		LOCAL = CHARANUM-1
 		LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 		CALL SET_BATTLE_STATUS(LOCAL, 30 * LOCAL:1, "ＨＰ")
@@ -702,7 +702,7 @@ ENDIF
 @BOSS_NAME_6
 ;조건：콜로세움던전성냥でレッドベアーを倒す
 	IF 던전플래그:6:0 == 2
-		RETURN [[キャラ:레드ㆍ베어]]
+		RETURN [[캐릭터:레드ㆍ베어]]
 	ENDIF
 RETURN 0
 
@@ -715,7 +715,7 @@ RETURN 0
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	FLAG:RESULT스킵 = 1
-	CALL SET_ENEMY,9,[[キャラ:레드ㆍ베어]],22,0,1
+	CALL SET_ENEMY,9,[[캐릭터:레드ㆍ베어]],22,0,1
 	CALL BATTLE_START
 	FLAG:도주불가플래그 = 0
 	FLAG:회화불능플래그 = 0
@@ -822,7 +822,7 @@ ENDIF
 @BOSS_NAME_8
 ;조건：ヴァルハラの回廊で로키を倒す
 	IF 던전플래그:8:14 == 1
-		RETURN [[キャラ:로키]]
+		RETURN [[캐릭터:로키]]
 	ENDIF
 RETURN 0
 
@@ -835,7 +835,7 @@ RETURN 0
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	FLAG:RESULT스킵 = 1
-	CALL SET_ENEMY,9,[[キャラ:로키]],50,0,1
+	CALL SET_ENEMY,9,[[캐릭터:로키]],50,0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1210,7 +1210,7 @@ IF 던전플래그:33:71 == 0
 	던전플래그:33:71 = 1
 	
 ENDIF
-	CALL LIFTING_A_BAN([[キャラ:라바나]])
+	CALL LIFTING_A_BAN([[캐릭터:라바나]])
 	;FLAG:(10000+262) = 1
 
 ;후생의토령可否
@@ -1275,7 +1275,7 @@ IF 던전플래그:33:72 == 0
 	던전플래그:33:72 = 1
 	
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:수르트]])
+CALL LIFTING_A_BAN([[캐릭터:수르트]])
 ;FLAG:(10000+266) = 1
 
 ;후생의토령可否
@@ -1420,7 +1420,7 @@ IF 던전플래그:33:74 == 0
 	던전플래그:33:74 = 1
 	
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:미카엘]])
+CALL LIFTING_A_BAN([[캐릭터:미카엘]])
 ;FLAG:(10000+365) = 1
 
 ;후생의토령可否
@@ -1483,7 +1483,7 @@ IF 던전플래그:33:75 == 0
 	MONEY:1 += 50
 	던전플래그:33:75 = 1
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:제불]])
+CALL LIFTING_A_BAN([[캐릭터:제불]])
 	;FLAG:(10000+278) = 1
 
 ;후생의토령可否
@@ -1811,7 +1811,7 @@ IF 던전플래그:33:80 == 0
 	MONEY:1 += 50
 	던전플래그:33:80 = 1
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:솀하자이]])
+CALL LIFTING_A_BAN([[캐릭터:솀하자이]])
 ;FLAG:(10000+234) = 1
 
 ;후생의토령可否
@@ -1859,7 +1859,7 @@ IF 던전플래그:33:81 == 0
 	MONEY:1 += 50
 	던전플래그:33:81 = 1
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:아자젤]])
+CALL LIFTING_A_BAN([[캐릭터:아자젤]])
 ;FLAG:(10000+235) = 1
 
 ;후생의토령可否
@@ -1907,7 +1907,7 @@ IF 던전플래그:33:82 == 0
 	MONEY:1 += 50
 	던전플래그:33:82 = 1
 ENDIF
-CALL LIFTING_A_BAN([[キャラ:사타나엘]])
+CALL LIFTING_A_BAN([[캐릭터:사타나엘]])
 ;FLAG:(10000+236) = 1
 
 ;후생의토령可否

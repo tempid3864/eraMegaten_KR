@@ -1,7 +1,7 @@
 ﻿;스킬명　リミットブレイク（ＦＦ７）　今後実装されるかどうかはさておいて
 
 @SKILL_NAME_リミットブレイク（ＦＦ７）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	RESULTS = 『슬롯』
 ELSE
 	RESULTS = 리미트 브레이크（ＦＦ７）
@@ -9,7 +9,7 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_リミットブレイク（ＦＦ７）, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	RETURN 120
 ELSE
 	RETURN 100
@@ -17,7 +17,7 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_リミットブレイク（ＦＦ７）, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	SIF ARG == -1
 		RETURN 100
 	;実際の攻撃威力計算時、ランダムで０．８倍、１倍、１．２５倍にチェンジ。配分基準はレベルに応じて強化
@@ -65,7 +65,7 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_リミットブレイク（ＦＦ７）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	SIF ARG == -1
 		RETURN 1
 	IF BASE:ARG:LV > 59
@@ -89,7 +89,7 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_リミットブレイク（ＦＦ７）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	SIF ARG == -1
 		RETURN 1
 	IF BASE:ARG:LV > 59
@@ -118,7 +118,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_リミットブレイク（ＦＦ７）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	SIF ARG == -1
 		RETURN 1
 	IF BASE:ARG:LV >= 59
@@ -144,7 +144,7 @@ ENDIF
 @SKILL_TYPE_リミットブレイク（ＦＦ７）,ARG
 #LOCALSSIZE 5
 #LOCALSIZE 4
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	SIF ARG < 0 || 스킬속성표시중
 		RETURN GET_TYPE_NUM("타격")
 	SIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
@@ -187,7 +187,7 @@ RETURN 1
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 ;スキルチェンジ関数で行けるようになったらしいぞ、やったねたえちゃん
 @SKILL_DAMAGETYPE_リミットブレイク（ＦＦ７）, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -200,7 +200,7 @@ RETURN 1
 
 ;射程　1:S 2:M 3:L
 @SKILL_RANGE_リミットブレイク（ＦＦ７）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	RETURN 2
 ELSE
 	RETURN 1
@@ -253,7 +253,7 @@ RETURN 0
 #DIM SKILL_NUM
 #DIM リミットゲージ
 リミットゲージ = PU_SKILLNUM_GET(ARG,"リミットブレイク（ＦＦ７）")
-IF SKILL_CHANGE(ARG, [[キャラ:티파]])
+IF SKILL_CHANGE(ARG, [[캐릭터:티파]])
 	FLAG:확산플래그 = 1
 	CALL ATTACK_SINGLE,ARG,POS(ARG:1),SKILL_NUM;	単体攻撃
 	PRINTFORML 　
@@ -275,7 +275,7 @@ SETCOLOR 0x33ffcc
 	PRINTL 리미트 게이지가 추가되어、평상시의 다양한 행동으로 상승하게 된다。
 	PRINTL 주로 적으로부터 데미지를 입었을 때 크게 상승하며、최대 시 리미트기가 사용 가능해진다。
 RESETCOLOR
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:티파]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:티파]]
 	PRINTL 리미트 브레이크『슬롯』
 	;あまりに煩雑すぎたが頑張ってスロット要素作ってみた。
 	PRINTL 적 1체에、타격ㆍ비구ㆍ전술의 복합속성으로、소위력의 물리공격을 최대 ７회 행한다。고 크리티컬률
@@ -323,7 +323,7 @@ RESETCOLOR
 IF ARG == ARG:1
 	CALL SKILLGAGE_F_ADD,ARG,リミットゲージ,5
 	;티파がプレミアムハートを所持時、更に＋５
-	SIF SKILL_CHANGE(ARG, [[キャラ:티파]]) && EQUIP:ARG:검 == 2389
+	SIF SKILL_CHANGE(ARG, [[캐릭터:티파]]) && EQUIP:ARG:검 == 2389
 		CALL SKILLGAGE_F_ADD,ARG,リミットゲージ,5
 	
 	;ダメージを受けた敵の数に応じてスキルゲージアップ

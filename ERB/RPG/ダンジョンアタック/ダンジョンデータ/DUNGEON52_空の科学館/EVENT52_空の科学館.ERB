@@ -44,20 +44,20 @@ CASE 1
 				PRINTFORMW ＞문을 여니 안은 아이들로 넘치고 있다…
 				PRINTFORMW ＞모두 같은 학교 학생인지 같은 복장의 교복을 입고 있다
 				IF STRFLAG_EV("죄루트", 0, [[이벤트:페르소나２]])
-					IF FINDCHARA_B([[キャラ:아카리]], 0) == 2
+					IF FINDCHARA_B([[캐릭터:아카리]], 0) == 2
 						PRINTL 아카리:
 						PRINTFORMW 「우와아, 하늘관이 이렇게 혼잡하다니…」
 						PRINTFORMW 「보아하니 5학년생들의 사회과 견학이구나」
 						PRINTFORMW 「아카리는 따분해서 땡땡이 쳐버렸지만」
 						PRINTFORMW 「어쩐지 모두들 꽤나 즐거워 보이네……」
-					ELSEIF FINDCHARA_B([[キャラ:안나]], 0) == 2
+					ELSEIF FINDCHARA_B([[캐릭터:안나]], 0) == 2
 						PRINTL 안나:
 						PRINTFORMW 「왜 이렇게 아이들이…」
 						PRINTFORMW 「……아아, 사회견학이라도 있는 건가」
 						PRINTFORMW 「그렇다 쳐도 하필 오늘이라니……」
 						PRINTFORMW 「아니…… 그렇기 때문에 일부러 이 날을 선책한 건가」
 						PRINTFORMW 「……그보다 일단 어떻게든 하지 않으면」
-					ELSEIF FINDCHARA_B([[キャラ:리사]], 0) == 2 || FINDCHARA_B([[キャラ:리사]], 1) == 2
+					ELSEIF FINDCHARA_B([[캐릭터:리사]], 0) == 2 || FINDCHARA_B([[캐릭터:리사]], 1) == 2
 						PRINTL 리사:
 						PRINTFORMW 「사회견학 같네…」
 						PRINTFORMW 「그러고 보니 넌 그 비행기를 타겠다고 칭얼거렸지…」
@@ -152,11 +152,11 @@ CASE 1
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
-						CALL SET_ENEMY,7, [[キャラ:프린시펄리티]],30, 0
-						CALL SET_ENEMY,8, [[キャラ:카라스텐구]],30, 0
-						CALL SET_ENEMY,9, [[キャラ:모스맨]],30, 0
-						CALL SET_ENEMY,10, [[キャラ:켈라이노]],30, 0
-						CALL SET_ENEMY,11, [[キャラ:오시치]],30, 0
+						CALL SET_ENEMY,7, [[캐릭터:프린시펄리티]],30, 0
+						CALL SET_ENEMY,8, [[캐릭터:카라스텐구]],30, 0
+						CALL SET_ENEMY,9, [[캐릭터:모스맨]],30, 0
+						CALL SET_ENEMY,10, [[캐릭터:켈라이노]],30, 0
+						CALL SET_ENEMY,11, [[캐릭터:오시치]],30, 0
 						CALL BATTLE_START
 						FLAG:도주불가플래그 = 0
 						FLAG:회화불능플래그 = 0
@@ -209,7 +209,7 @@ CASE 1
 							PRINTL 마야:
 							PRINTFORMW 「아, 그렇지. 나도 싸울 수 있으니 마음대로 지시를 내려서 부려먹어도 돼」
 							CALL INCREASE_LD(10)
-							SIF GETCHARA([[キャラ:마야(기자)]]) == -1
+							SIF GETCHARA([[캐릭터:마야(기자)]]) == -1
 								CALL SET_GUEST_D14
 							CALLF STRFLAG_D("마야동행", 1)
 						ELSE
@@ -468,7 +468,7 @@ IF LOCAL == 0
 				PRINTL 아이:
 				PRINTFORMW 「사악한 가면당놈들! 이 전생전사 이슈킥이 혼내 줄테다…!」
 				PRINTFORMW 「뭐라―, 오늘이야말로 네 녀석을 헤치워버리겠다! 각오해라!」
-				IF FINDCHARA_B([[キャラ:아카리]], 0) == 2
+				IF FINDCHARA_B([[캐릭터:아카리]], 0) == 2
 					PRINTL 
 					PRINTFORMW ＞떠들고 있는 아이들을 보고 있자니, 아카리가 환성을 지른다
 					PRINTL 아카리:
@@ -476,7 +476,7 @@ IF LOCAL == 0
 					PRINTFORMW 「라는 말은, 농담 농담」
 					PRINTFORMW 「이제부터 아카리들은 소꿉놀이가 아니라 정말로 악을 쓰러뜨릴 테니」
 					PRINTFORMW 「놀고 있을 틈이 없네요!」
-				ELSEIF FINDCHARA_B([[キャラ:안나]], 0) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:안나]], 0) == 2
 					PRINTL 
 					PRINTFORMW ＞떠드는 아이들을 보고 안나가 쓴웃음을 짓는다
 					PRINTFORMW 「…사악한 가면당이라」
@@ -485,7 +485,7 @@ IF LOCAL == 0
 					PRINTFORMW 「뭐… 원래 나도 가면당 자체는 되어먹지 못한 무리라고 생각해왔으니」
 					PRINTFORMW 「괜찮긴 한데, 왠지 이런 식으로 명확하게 말해져 버리면 좀 그렇군」
 					PRINTFORMW 「……귀찮지만, 서둘러 과거의 자신을 마무리 짓지 않으면 안 되겠…네요」
-				ELSEIF FINDCHARA_B([[キャラ:리사]], 0) == 2 || FINDCHARA_B([[キャラ:리사]], 1) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:리사]], 0) == 2 || FINDCHARA_B([[캐릭터:리사]], 1) == 2
 					PRINTL 
 					PRINTFORMW ＞떠들고 있는 아이들을 보고 리사가 웃는다
 					PRINTL 
@@ -574,7 +574,7 @@ ELSEIF LOCAL == 2
 			CASE 3
 				PRINTFORMW ＞미처 피난하지 못한 아이가 있다…
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:아카리]], 0) == 2
+				IF FINDCHARA_B([[캐릭터:아카리]], 0) == 2
 					PRINTL 아카리:
 					PRINTFORMW 「이 전생전사 이슈킥이 온 이상 괜찮아!」
 					PRINTFORMW 「미래가 있는 아이들을 나쁜 곳에서、죽게 놔두지 않을테니!」
@@ -624,7 +624,7 @@ ELSEIF LOCAL == 2
 			CASE 5
 				PRINTFORMW ＞미처 피난하지 못한 아이가 있다…
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:안나]], 0) == 2
+				IF FINDCHARA_B([[캐릭터:안나]], 0) == 2
 					PRINTL 안나:
 					PRINTFORMW 「……괜찮니?」
 					PRINTFORMW 「우와앙…」
@@ -663,7 +663,7 @@ ELSEIF LOCAL == 2
 			CASE 7
 				PRINTFORMW ＞미처 피난하지 못한 아이가 있다…
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:리사]], 0) == 2 || FINDCHARA_B([[キャラ:리사]], 1) == 2
+				IF FINDCHARA_B([[캐릭터:리사]], 0) == 2 || FINDCHARA_B([[캐릭터:리사]], 1) == 2
 					PRINTL 리사:
 					PRINTFORMW 「아！ 거기에 초등학생」
 					PRINTL 
@@ -680,7 +680,7 @@ ELSEIF LOCAL == 2
 			CASE 8
 				PRINTFORMW ＞미처 피난하지 못한 아이가 있다…
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:타츠야]], 0) == 2
+				IF FINDCHARA_B([[캐릭터:타츠야]], 0) == 2
 					PRINTL 타츠야:
 					PRINTFORMW 「…………」
 					PRINTFORMW ＞타츠야는 아이를 가만히 바라 보았다…
@@ -758,7 +758,7 @@ ELSEIF LOCAL == 3
 					PRINTL 가면을 쓴 남자:
 					PRINTFORMW 「왔는가… 새로운 대흉성이여. 솜씨가 나쁜 편은 아니구나」
 					IF STRFLAG_D("마야동행")
-						IF FINDCHARA_B([[キャラ:타츠야]], 0) == 2
+						IF FINDCHARA_B([[캐릭터:타츠야]], 0) == 2
 							PRINTFORMW 「게다가 옛 대흉성인 마녀도 함께 올 줄이야」
 						ELSE
 							PRINTFORMW 「게다가 마녀도 함께라니 딱 좋군…」
@@ -772,7 +772,7 @@ ELSEIF LOCAL == 3
 				PRINTFORMW ＞그러면서 킹ㆍ레오는 검을 %CALLNAME:MASTER%에게로 향했다
 				;아카리ㆍ안나ㆍ타츠야ㆍ마야の優先度の順で추가の회화이벤트が起きる
 				;さらにこの時点で아카리ㆍ안나が페르소나강화されていない場合、강화이벤트が起きる
-				IF FINDCHARA_B([[キャラ:아카리]], 0) == 2
+				IF FINDCHARA_B([[캐릭터:아카리]], 0) == 2
 					PRINTL 아카리:
 					PRINTFORMW 「레오 님!! 어째서 불을 붙였나요!? 가면당은 정의의 사도가 아니었어!?」
 					PRINTL 
@@ -807,10 +807,10 @@ ELSEIF LOCAL == 3
 						PRINTFORMW ＞그렇게 외치는 아카리의 등 뒤에 파리카의 모습이 나타난다
 						PRINTFORMW ＞아카리의 마음에 응답해 파리카가 강화되었다!
 						PRINTL 
-						ABL:(RESULT:1):초기페르소나 = [[キャラ:파리카2]]
+						ABL:(RESULT:1):초기페르소나 = [[캐릭터:파리카2]]
 						CALL SYNC_STATUS, RESULT:1
 					ENDIF
-				ELSEIF FINDCHARA_B([[キャラ:안나]], 0) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:안나]], 0) == 2
 					PRINTL 안나:
 					PRINTFORMW 「킹… 어째서 이러는 건가요?」
 					PRINTL 킹:
@@ -857,10 +857,10 @@ ELSEIF LOCAL == 3
 						PRINTFORMW ＞이렇게 외치는 안나 뒤에 아에슈마의 모습이 나타났다
 						PRINTFORMW ＞안나의 마음에 응답해 아에슈마가 강화되었다!
 						PRINTL 
-						ABL:(RESULT:1):초기페르소나 = [[キャラ:아에슈마2]]
+						ABL:(RESULT:1):초기페르소나 = [[캐릭터:아에슈마2]]
 						CALL SYNC_STATUS, RESULT:1
 					ENDIF
-				ELSEIF FINDCHARA_B([[キャラ:타츠야]], 0) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:타츠야]], 0) == 2
 					PRINTL 
 					PRINTFORMW ＞타츠야가 %마스터를% 지키며 킹 레오 앞에 섰다
 					PRINTL 
@@ -872,7 +872,7 @@ ELSEIF LOCAL == 3
 					PRINTFORMW 「하지만 어떻게 되는 네 녀석의 죄는 사라지지 않아!」
 					PRINTFORMW 「운명이 망가졌음에도、이렇게 네 녀석이 여기서 불에 타 죽는 것도 숙명이라는 놈이다!」
 					PRINTFORMW 「히ー얏핫핫핫하!」
-				ELSEIF FINDCHARA_B([[キャラ:마야(기자)]], 0) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:마야(기자)]], 0) == 2
 					PRINTL 마야:
 					PRINTFORMW 「어쩐지 잘 모르겠지만、이 테러는 저 녀석 탓인 것 같군요…」
 					PRINTL 
@@ -903,7 +903,7 @@ ELSEIF LOCAL == 3
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:킹ㆍ레오]], 35, 0 , 1
+				CALL SET_ENEMY,9, [[캐릭터:킹ㆍ레오]], 35, 0 , 1
 				LOCAL = CHARANUM - 1
 				CFLAG:LOCAL:단독링케이지 = 1
 				CFLAG:LOCAL:크리티컬보정 = -50
@@ -986,7 +986,7 @@ ELSEIF LOCAL == 3
 					CALL INPUT_YN("딱히 없다", "노예로 만든다")
 					IF RESULT == 0
 						;ゲスト抹消処理
-						LOCAL = GETCHARA([[キャラ:마야(기자)]])
+						LOCAL = GETCHARA([[캐릭터:마야(기자)]])
 						SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 							CALL DEL_GUEST, LOCAL, "아세이미나이프", "IMI데저트이글", "강철꽃장식", "레이디스메일", "인텔가드", "풀메탈힐", "매직링"
 						PRINTL 마야:
@@ -1019,7 +1019,7 @@ ELSEIF LOCAL == 3
 						PRINTFORMW ＞%마스터는% 가면당 간부를 또 한 명 잡을 수 있었던 것에 만족하며 귀로에 올랐다…
 						PRINTFORMW ＞간부를 처치한 보상으로 ￥100000이 들어왔다…
 						;引き継ぎでない場合は페르소나を外し、PTからはずす
-						LOCAL = GETCHARA([[キャラ:마야(기자)]])
+						LOCAL = GETCHARA([[캐릭터:마야(기자)]])
 						IF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 							EQUIP:LOCAL:장비페르소나 = 0
 							EQUIP:LOCAL:소지페르소나1 = 0
@@ -1065,7 +1065,7 @@ ELSEIF LOCAL == 3
 				SAVESTR:(100 + [[던전:하늘의과학관]]) = /이벤트클리어/
 				CALLF STRFLAG_NUM_EV("죄루트진행", "=", , 8, [[이벤트:페르소나２]])
 				CALLF STRFLAG_NUM_EV("하늘의과학관클리어", TOSTR(1), [[이벤트:페르소나２]])
-				SIF GETCHARA([[キャラ:마야(기자)]]) >= 0
+				SIF GETCHARA([[캐릭터:마야(기자)]]) >= 0
 					CALLF STRFLAG_D("마야가입", 1)
 				MONEY += 100000
 				FLAG:탈출 = 1
@@ -1153,7 +1153,7 @@ ELSEIF LOCAL == 3
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				FOR LOCAL, 7, 12
-					CALL SET_ENEMY, LOCAL, [[キャラ:쇼고스]], 22, 1 , 1
+					CALL SET_ENEMY, LOCAL, [[캐릭터:쇼고스]], 22, 1 , 1
 					LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 					CALL SET_BATTLE_STATUS(POS(LOCAL), LOCAL:1 * 10, "ＨＰ")
 					CALL SET_BATTLE_STATUS(POS(LOCAL), LOCAL:1 * 5, "ＭＰ")
@@ -1250,7 +1250,7 @@ ELSEIF LOCAL == 3
 				PRINTW 「전파로부터 아무도 도망칠 수 없다아아아아!!」
 				PRINTL 
 				PRINTFORMW ＞ＪＯＫＥＲ 스도 타츠야가 습격해 왔다!
-				CALL SET_ENEMY,9, [[キャラ:스도타츠야]], 25, 0 , 1
+				CALL SET_ENEMY,9, [[캐릭터:스도타츠야]], 25, 0 , 1
 				LOCAL = CHARANUM - 1
 				LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 				CALL SET_BATTLE_STATUS(LOCAL, 25 * LOCAL:1, "ＨＰ")
@@ -1411,11 +1411,11 @@ DA:(FLAG:현X):(FLAG:현Y) = 1
 
 @SET_GUEST_D14
 
-CALL ADD_GUEST_COMPANION([[キャラ:마야(기자)]], 0, 1)
+CALL ADD_GUEST_COMPANION([[캐릭터:마야(기자)]], 0, 1)
 PRINTFORMW 아마노 마야가 %CALLNAME:MASTER%의 파티에 참가했다
 SIF RESULT:1 >= 0
 	PRINTFORMW %조사처리(CALLNAME:(RESULT:1),"를")% COMP에 돌려보냈으므로 주의해 주세요
-LOCAL = (GETCHARA([[キャラ:마야(기자)]]))
+LOCAL = (GETCHARA([[캐릭터:마야(기자)]]))
 ;引き継いでいた場合はLV5加入となる。ただし경험치は上限オーバーさせとくので、次の전투で一気に레벨があがる
 ;まぁ던전内で1레벨加入はちょっと…なんで
 IF CFLAG:LOCAL:인계횟수 == 0
@@ -1427,7 +1427,7 @@ IF CFLAG:LOCAL:인계횟수 == 0
 	BASE:LOCAL:인내력 = 8
 	BASE:LOCAL:속도 = 11
 	BASE:LOCAL:운 = 12
-	;ABL:LOCAL:초기페르소나 = [[キャラ:마이아ㆍ개]]
+	;ABL:LOCAL:초기페르소나 = [[캐릭터:마이아ㆍ개]]
 	;소문で음란化してた場合はABL及び経験변경
 	IF STRFLAG_NUM_EV("틀려먹은 잡지 기자의 소문", , , , [[이벤트:소문]]) == 2
 		;소문で음란化してた場合はABL及び経験변경
@@ -1488,7 +1488,7 @@ ELSE
 	DITEMTYPE:(LOCAL:1):페르소나("스킬5") = [[스킬:멀티디멘션]]
 	DITEMTYPE:(LOCAL:1):페르소나("스킬6") = [[스킬:마비할퀴기]]
 
-	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[キャラ:데메테르]]
+	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[캐릭터:데메테르]]
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("LV") = 30
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("힘") = 10
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("지혜") = 10
@@ -1507,7 +1507,7 @@ ELSE
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LD") = 2
 	DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LC") = 1
 
-	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[キャラ:마하]]
+	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[캐릭터:마하]]
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("LV") = 30
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("힘") = 5
 	DITEMTYPE:페르소나("게스트페르소나2"):페르소나("지혜") = 13

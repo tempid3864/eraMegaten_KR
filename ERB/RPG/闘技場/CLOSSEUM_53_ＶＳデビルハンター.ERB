@@ -43,7 +43,7 @@ IF 투기장플래그:53:0 == 0
 	WAIT
 	;
 	;ダンテLv80
-	CALL SET_ENEMY,9,[[キャラ:단테]],80,0,1
+	CALL SET_ENEMY,9,[[캐릭터:단테]],80,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 9999
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -130,7 +130,7 @@ ELSEIF  투기장플래그:53:0 == 1
 	WAIT
 	;
 	;단테Lv80
-	CALL SET_ENEMY,9,[[キャラ:버질]],80,0,1
+	CALL SET_ENEMY,9,[[캐릭터:버질]],80,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 9999
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
 	CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -182,7 +182,7 @@ ELSEIF  투기장플래그:53:0 == 1
 		CALL MESSAGE_WINDOW_D, "버질", @"%CALLNAME:MASTER%、그 영감의 가면을 벗기러 가볼까"
 		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%은 버질과 함께 링을 뒤로 했다"
 		CALL MESSAGE_WINDOW_D, , "＞버질이 동료 악마가 되었다"
-		CALL ADD_NEW_COMPANION,[[キャラ:버질]],500
+		CALL ADD_NEW_COMPANION,[[캐릭터:버질]],500
 	ELSE
 		CALL MESSAGE_WINDOW_D, , "＞버질의 모습은 보이지 않게 되었다"
 		CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%는 링을 뒤로 했다."
@@ -213,7 +213,7 @@ NEXT
 ;いろいろな方を参考にさせてもらっています
 @EVENT_BATTLE_TURNEND_COLOSSEUM53
 #LOCALSIZE 2
-IF FINDCHARA_ENEMY([[キャラ:단테]])
+IF FINDCHARA_ENEMY([[캐릭터:단테]])
 	LOCAL = RESULT:1
 	IF HAVE_SKILL(LOCAL, [[스킬:데빌트리거]]) && SKILLGAGE_F_GET(LOCAL, [[스킬:데빌트리거]]) > 99 && 현HP비율(LOCAL) < 40
 		SETCOLOR 0xff0033
@@ -225,7 +225,7 @@ IF FINDCHARA_ENEMY([[キャラ:단테]])
 		RESETCOLOR
 		CALL ACTION_3600,LOCAL
 	ENDIF
-ELSEIF FINDCHARA_ENEMY([[キャラ:버질]])
+ELSEIF FINDCHARA_ENEMY([[캐릭터:버질]])
 	LOCAL = RESULT:1
 	SIF 현HP비율(LOCAL) < 70 && CFLAG:LOCAL:800 < 1
 		CFLAG:LOCAL:800 = 1

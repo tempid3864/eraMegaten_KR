@@ -16,7 +16,7 @@
 ;이벤트종료前で의뢰「構成員탐색」と闘技場「이인조여성」종료済み.
 IF 이벤트플래그:27:0 == 0 && 의뢰플래그:33:0 == 2 && 투기장플래그:6:0 == 1
 	;네밋사がパーティ内にいる
-	IF (FINDCHARA_B([[キャラ:네밋사(밝음)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) == 2)
+	IF (FINDCHARA_B([[캐릭터:네밋사(밝음)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) == 2)
 		;朝か昼
 		IF TIME == 0 || TIME == 1
 			RESULTS = 네밋사와의 대화
@@ -27,7 +27,7 @@ IF 이벤트플래그:27:0 == 0 && 의뢰플래그:33:0 == 2 && 투기장플래�
 			RETURN 1
 		ENDIF
 	;네밋사が加入している
-	ELSEIF (FINDCHARA_B([[キャラ:네밋사(밝음)]]) >= 1 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) >= 1 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) >= 1)
+	ELSEIF (FINDCHARA_B([[캐릭터:네밋사(밝음)]]) >= 1 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) >= 1 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) >= 1)
 		RESULTS = 네밋사와의 대화
 		RETURN 1
 	ENDIF
@@ -40,7 +40,7 @@ RETURN 0
 @SHOPCOM_EVENT_27
 
 ;네밋사がパーティ内にいる
-IF (FINDCHARA_B([[キャラ:네밋사(밝음)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) == 2)
+IF (FINDCHARA_B([[캐릭터:네밋사(밝음)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) == 2)
 	;朝か昼
 	IF TIME == 0 || TIME == 1
 		;네밋사との회화
@@ -51,7 +51,7 @@ IF (FINDCHARA_B([[キャラ:네밋사(밝음)]]) == 2 || FINDCHARA_B([[キャラ
 		CALL EVENT_27_00
 	ENDIF
 ;네밋사が加入している
-ELSEIF (FINDCHARA_B([[キャラ:네밋사(밝음)]]) >= 1 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) >= 1 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) >= 1)
+ELSEIF (FINDCHARA_B([[캐릭터:네밋사(밝음)]]) >= 1 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) >= 1 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) >= 1)
 	;네밋사との회화
 	CALL EVENT_27_01
 ENDIF
@@ -69,7 +69,7 @@ PRINTW 네밋사의 말대로 저녁이나 밤에 그녀를 데리고 있으면 
 ;무위스の襲撃
 @EVENT_27_00
 ;캐롤Ｊがパーティ内にいる
-IF FINDCHARA_B([[キャラ:캐롤Ｊ]]) == 2
+IF FINDCHARA_B([[캐릭터:캐롤Ｊ]]) == 2
 	PRINTW 네밋사 일행과, 짧은 의뢰를 마치고 돌아가는 길……
 	CUSTOMDRAWLINE =
 	PRINTL 　
@@ -97,7 +97,7 @@ PRINTW 그것은, 새빨간 코트와 모자의 틈새로부터 들여다보는 
 ;クリア상태당신がクリア
 IF 던전플래그:89:1 == 1 || 던전플래그:89:1 == 2 || 던전플래그:89:1 == 3
 	;캐롤Ｊがパーティ内にいる
-	IF FINDCHARA_B([[キャラ:캐롤Ｊ]]) == 2
+	IF FINDCHARA_B([[캐릭터:캐롤Ｊ]]) == 2
 		PRINTL 　
 		PRINTW 「이 기색……무, 무위스인가!?」
 		PRINTW 박물관에서 본 적이 있어서 인가, 재빨리 정체를 간파한 캐롤J가 소리쳤다.
@@ -124,7 +124,7 @@ PRINTW 「우리가 위험한……. 네놈을 없애주마…….」
 PRINTW 네밋사의 질문을 무시하고, 무위스는 몸에서 여러가지 조직을 확장시킨다.
 PRINTL 　
 ;캐롤Ｊがパーティ内にいる
-IF FINDCHARA_B([[キャラ:캐롤Ｊ]]) == 2
+IF FINDCHARA_B([[캐릭터:캐롤Ｊ]]) == 2
 	PRINTW 「오는 거냐! 박물관에서의 빚, 갚아주마아아!」
 	PRINTL 
 	PRINTW 「마무리 짓지 말아줘! 묻고 싶은게 있으니까!」
@@ -166,7 +166,7 @@ FLAG:선제기습취소 = 0
 
 CUSTOMDRAWLINE =
 ;캐롤Ｊがパーティ内にいる
-IF FINDCHARA_B([[キャラ:캐롤Ｊ]]) == 2
+IF FINDCHARA_B([[캐릭터:캐롤Ｊ]]) == 2
 	PRINTL 　
 	PRINTW 「이이ーー익! 해주셨겠다!」
 ENDIF

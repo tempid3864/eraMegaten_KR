@@ -740,9 +740,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 				CALL MESSAGE_WINDOW_D, "", "＞문 앞은 무너져내린 성이였다。"
 				CALL MESSAGE_WINDOW_D, "유리아", "어머……。지금쯤 오셨군요"
 				CALL MESSAGE_WINDOW_D, "", "＞석조건물을 완전히 그 형태를 잃었고、/깃발도、집물도、카펫도、/모든 것이 검게 태워져 있었다。＞"
-				IF FINDCHARA_B([[キャラ:코시로]],1)== 2
+				IF FINDCHARA_B([[캐릭터:코시로]],1)== 2
 					CALL MESSAGE_WINDOW_D, "코시로", "기다려주세요、탐정씨"
-					IF FINDCHARA_B([[キャラ:코우린]],1)== 2
+					IF FINDCHARA_B([[캐릭터:코우린]],1)== 2
 						CALL MESSAGE_WINDOW_D, "코우린", "아가씨의 그 눈、제정신이 아닙니다"
 					ELSE
 						CALL MESSAGE_WINDOW_D, "코시로", "……유리아씨、여기를 봐주지 않아요"
@@ -751,7 +751,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 				CALL MESSAGE_WINDOW_D, "유리아", "꿈의 왕국、에이닌ㆍ미힌은 이미 사라지고、/포말의 기사는 무로 돌아갔다……"
 				CALL MESSAGE_WINDOW_D, "유리아", "여기는 잔해、그들이 살았던、그 잔해"
 				CALL MESSAGE_WINDOW_D, "유리아", "――저는 지킵니다。/비록 이 군기를 든 자가、남김없이 죽어가고 있다고 하더라도"
-				IF FINDCHARA_B([[キャラ:코시로]],1)== 2
+				IF FINDCHARA_B([[캐릭터:코시로]],1)== 2
 						CALL MESSAGE_WINDOW_D, "코시로", "우와、이거 때리지 않으면 안되는 녀석이네요"
 				ENDIF
 				CALL MESSAGE_WINDOW_D, "", "＞유리아는 찢어진 드레스를 휘날리며 텅 빈 눈인 채로 덤벼왔다！"
@@ -759,7 +759,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 			ELSE
 				CALL MESSAGE_WINDOW_D, "", "＞문 앞에는 온통 꽃밭이 펼쳐져 있다…/＞그리고、꽃밭에는 홀연히 순백의 드레스를 몸에 두른 금발의 소녀가 기다리고 있었다"
 				CALL MESSAGE_WINDOW_D, "소녀", "저의 이름은 왈라키아 공녀 유리아 페테아스카/그 용공의 딸이자 다난의 기사/이곳은 꿈과 현실의 틈새 에이닌 미힌/그리고 당신의 묘지가 될 장소예요"
-				IF FINDCHARA_B([[キャラ:코시로]],1)== 2
+				IF FINDCHARA_B([[캐릭터:코시로]],1)== 2
 					CALL MESSAGE_WINDOW_D, "코시로", "기다려주세요、유리아씨"
 					CALL MESSAGE_WINDOW_D, "유리아", "코시로쨩…"
 					CALL MESSAGE_WINDOW_D, "코시로", "이런 거 이상하다구요/어째서 우리들이 싸우지 않으면 안된다는 건가요"
@@ -775,7 +775,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 				CALL MESSAGE_WINDOW_D, "", "＞슬픈 눈동자를 한 눈 앞의 소녀는 망설임을 떨쳐내는듯이 덤벼왔다！"
 				ENDIF
 			ENDIF
-			CALL SET_ENEMY,9,[[キャラ:유리아]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:유리아]],40,0,1
 			CSTR:(CHARANUM-1):종족명 = 용왕
 			CSTR:(CHARANUM-1):사고패턴 = 4570
 			ABL:(CHARANUM-1):스킬1 = 2400
@@ -809,10 +809,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 			CALL INPUT_YN_D
 			IF RESULT == 0
 				CALL MESSAGE_WINDOW_D, "", "＞유리아ㆍ페테아스카가 노예가 되었다"
-				CALL ADD_NEW_COMPANION,[[キャラ:유리아]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:유리아]],500
 			ELSEIF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "", @"＞%조사처리(CALLNAME:MASTER,"는")% 떠나기로 했다…"
-				IF FINDCHARA_B([[キャラ:코우린]],1)== 2
+				IF FINDCHARA_B([[캐릭터:코우린]],1)== 2
 					CALL MESSAGE_WINDOW_D, "코우린", "나중에 이쪽에서 회수해 두겠습니다"
 				ENDIF
 			ENDIF
@@ -874,7 +874,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y)/10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:그르르]],36,0,0
+				CALL SET_ENEMY,9,[[캐릭터:그르르]],36,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += MAXBASE:(CHARANUM-1):ＨＰ * 2
 				CALL SYNC_STATUS, (CHARANUM-1)
 				CALL HEALTH_CHARA, (CHARANUM-1)
@@ -1242,17 +1242,17 @@ IF RAND:100 < FLAG:인카운트율
 			CALL MESSAGE_WINDOW_D, "악마", "おいで！　プルートゥ！"
 			
 			
-			CALL SET_ENEMY,9,[[キャラ:좀비마우스]],60,0,3
+			CALL SET_ENEMY,9,[[캐릭터:좀비마우스]],60,0,3
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			CFLAG:(CHARANUM-1):BS무효플래그 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:데몬덕]],60,0,3
+			CALL SET_ENEMY,8,[[캐릭터:데몬덕]],60,0,3
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			CFLAG:(CHARANUM-1):BS무효플래그 = 1
 			
-			CALL SET_ENEMY,10,[[キャラ:오르트로스]],45,0,1
+			CALL SET_ENEMY,10,[[캐릭터:오르트로스]],45,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			
@@ -1312,64 +1312,64 @@ SELECTCASE FLAG:현M
 			CASE 1
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:맨이터]], 28; + RAND:2 * 3
+						RETURN [[캐릭터:맨이터]], 28; + RAND:2 * 3
 					CASE IS < 40
-						RETURN [[キャラ:고르곤]], 29; + RAND:2 * 3
+						RETURN [[캐릭터:고르곤]], 29; + RAND:2 * 3
 					CASE IS < 60
-						RETURN [[キャラ:토도메키]], 28; + RAND:2 * 3
+						RETURN [[캐릭터:토도메키]], 28; + RAND:2 * 3
 					CASE IS < 80
-						RETURN [[キャラ:히노엔마]], 29; + RAND:2 * 3
+						RETURN [[캐릭터:히노엔마]], 29; + RAND:2 * 3
 					CASE IS < 90
-						RETURN [[キャラ:엘리고르]], 29; + RAND:2 * 3
+						RETURN [[캐릭터:엘리고르]], 29; + RAND:2 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 28; + RAND:2 * 3
+						RETURN [[캐릭터:인큐버스]], 28; + RAND:2 * 3
 				ENDSELECT
 			CASE 2
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:맨이터]], 35; + RAND:2 * 3
+						RETURN [[캐릭터:맨이터]], 35; + RAND:2 * 3
 					CASE IS < 40
-						RETURN [[キャラ:쿠치사케]], 38; + RAND:2 * 3
+						RETURN [[캐릭터:쿠치사케]], 38; + RAND:2 * 3
 					CASE IS < 60
-						RETURN [[キャラ:토도메키]], 35; + RAND:2 * 3
+						RETURN [[캐릭터:토도메키]], 35; + RAND:2 * 3
 					CASE IS < 80
-						RETURN [[キャラ:아마존]], 37; + RAND:2 * 3
+						RETURN [[캐릭터:아마존]], 37; + RAND:2 * 3
 					CASE IS < 90
-						RETURN [[キャラ:이바라키도지]], 36; + RAND:2 * 3
+						RETURN [[캐릭터:이바라키도지]], 36; + RAND:2 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 35; + RAND:2 * 3
+						RETURN [[캐릭터:인큐버스]], 35; + RAND:2 * 3
 				ENDSELECT
 			CASE 3
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:다키니]], 45; + RAND:2 * 3
+						RETURN [[캐릭터:다키니]], 45; + RAND:2 * 3
 					CASE IS < 40
-						RETURN [[キャラ:서큐버스]], 41; + RAND:2 * 3
+						RETURN [[캐릭터:서큐버스]], 41; + RAND:2 * 3
 					CASE IS < 60
-						RETURN [[キャラ:뱀파이어]], 45; + RAND:2 * 3
+						RETURN [[캐릭터:뱀파이어]], 45; + RAND:2 * 3
 					CASE IS < 70
-						RETURN [[キャラ:아마존]], 42; + RAND:2 * 3
+						RETURN [[캐릭터:아마존]], 42; + RAND:2 * 3
 					CASE IS < 80
-						RETURN [[キャラ:베르세르크]], 45; + RAND:2 * 3
+						RETURN [[캐릭터:베르세르크]], 45; + RAND:2 * 3
 					CASE IS < 90
-						RETURN [[キャラ:이바라키도지]], 42; + RAND:2 * 3
+						RETURN [[캐릭터:이바라키도지]], 42; + RAND:2 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 40; + RAND:2 * 3
+						RETURN [[캐릭터:인큐버스]], 40; + RAND:2 * 3
 				ENDSELECT
 			CASE 4
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:서큐버스]], 50; + RAND:2 * 3
+						RETURN [[캐릭터:서큐버스]], 50; + RAND:2 * 3
 					CASE IS < 35
-						RETURN [[キャラ:뱀파이어]], 51; + RAND:2 * 3
+						RETURN [[캐릭터:뱀파이어]], 51; + RAND:2 * 3
 					CASE IS < 50
-						RETURN [[キャラ:달기]], 54; + RAND:2 * 3
+						RETURN [[캐릭터:달기]], 54; + RAND:2 * 3
 					CASE IS < 65
-						RETURN [[キャラ:란다]], 53; + RAND:2 * 3
+						RETURN [[캐릭터:란다]], 53; + RAND:2 * 3
 					CASE IS < 90
-						RETURN [[キャラ:베르세르크]], 48; + RAND:2 * 3
+						RETURN [[캐릭터:베르세르크]], 48; + RAND:2 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 47; + RAND:2 * 3
+						RETURN [[캐릭터:인큐버스]], 47; + RAND:2 * 3
 				ENDSELECT
 		ENDSELECT
 	CASEELSE
@@ -1378,71 +1378,71 @@ SELECTCASE FLAG:현M
 			CASE 1
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:맨이터]], 28; + RAND:3 * 3
+						RETURN [[캐릭터:맨이터]], 28; + RAND:3 * 3
 					CASE IS < 40
-						RETURN [[キャラ:고르곤]], 29; + RAND:3 * 3
+						RETURN [[캐릭터:고르곤]], 29; + RAND:3 * 3
 					CASE IS < 60
-						RETURN [[キャラ:토도메키]], 31; + RAND:3 * 3
+						RETURN [[캐릭터:토도메키]], 31; + RAND:3 * 3
 					CASE IS < 70
-						RETURN [[キャラ:쿠치사케]], 32; + RAND:3 * 3
+						RETURN [[캐릭터:쿠치사케]], 32; + RAND:3 * 3
 					CASE IS < 80
-						RETURN [[キャラ:엘리고르]], 29; + RAND:3 * 3
+						RETURN [[캐릭터:엘리고르]], 29; + RAND:3 * 3
 					CASE IS < 90
 						;10%　사룡바질리스크LV25
-						RETURN [[キャラ:바질리스크]], 31; + RAND:3 * 3
+						RETURN [[캐릭터:바질리스크]], 31; + RAND:3 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 28; + RAND:3 * 3
+						RETURN [[캐릭터:인큐버스]], 28; + RAND:3 * 3
 				ENDSELECT
 			CASE 2
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:맨이터]], 35; + RAND:3 * 3
+						RETURN [[캐릭터:맨이터]], 35; + RAND:3 * 3
 					CASE IS < 40
-						RETURN [[キャラ:쿠치사케]], 38; + RAND:3 * 3
+						RETURN [[캐릭터:쿠치사케]], 38; + RAND:3 * 3
 					CASE IS < 60
-						RETURN [[キャラ:토도메키]], 35; + RAND:3 * 3
+						RETURN [[캐릭터:토도메키]], 35; + RAND:3 * 3
 					CASE IS < 80
-						RETURN [[キャラ:아마존]], 37; + RAND:3 * 3
+						RETURN [[캐릭터:아마존]], 37; + RAND:3 * 3
 					CASE IS < 85
-						RETURN [[キャラ:이바라키도지]], 36; + RAND:3 * 3
+						RETURN [[캐릭터:이바라키도지]], 36; + RAND:3 * 3
 					CASE IS < 90
-						RETURN [[キャラ:베르세르크]], 40; + RAND:3 * 3
+						RETURN [[캐릭터:베르세르크]], 40; + RAND:3 * 3
 					CASE IS < 100
-						RETURN [[キャラ:인큐버스]], 35; + RAND:3 * 3
+						RETURN [[캐릭터:인큐버스]], 35; + RAND:3 * 3
 				ENDSELECT
 			CASE 3
 				SELECTCASE RAND:100
 					CASE IS < 20
-						RETURN [[キャラ:다키니]], 45; + RAND:3 * 3
+						RETURN [[캐릭터:다키니]], 45; + RAND:3 * 3
 					CASE IS < 40
-						RETURN [[キャラ:뉵스]], 46; + RAND:3 * 3
+						RETURN [[캐릭터:뉵스]], 46; + RAND:3 * 3
 					CASE IS < 60
-						RETURN [[キャラ:뱀파이어]], 45; + RAND:3 * 3
+						RETURN [[캐릭터:뱀파이어]], 45; + RAND:3 * 3
 					CASE IS < 70
-						RETURN [[キャラ:달기]], 46; + RAND:3 * 3
+						RETURN [[캐릭터:달기]], 46; + RAND:3 * 3
 					CASE IS < 80
-						RETURN [[キャラ:베르세르크]], 45; + RAND:3 * 3
+						RETURN [[캐릭터:베르세르크]], 45; + RAND:3 * 3
 					CASE IS < 90
 						;10%　사룡바질리스크LV25
-						RETURN [[キャラ:바질리스크]], 44; + RAND:3 * 3
+						RETURN [[캐릭터:바질리스크]], 44; + RAND:3 * 3
 					CASE IS < 100
-						RETURN [[キャラ:이바라키도지]], 42; + RAND:3 * 3
+						RETURN [[캐릭터:이바라키도지]], 42; + RAND:3 * 3
 				ENDSELECT
 			CASE 4
 				SELECTCASE RAND:100
 					CASE IS < 15
 						;20％　요마서큐버스Lv44（53）
-						RETURN [[キャラ:도플갱어]], 51; + RAND:3 * 3
+						RETURN [[캐릭터:도플갱어]], 51; + RAND:3 * 3
 					CASE IS < 35
-						RETURN [[キャラ:란다]], 52; + RAND:3 * 3
+						RETURN [[캐릭터:란다]], 52; + RAND:3 * 3
 					CASE IS < 50
-						RETURN [[キャラ:섀도우]], 53; + RAND:3 * 3
+						RETURN [[캐릭터:섀도우]], 53; + RAND:3 * 3
 					CASE IS < 65
-						RETURN [[キャラ:달기]], 50; + RAND:3 * 3
+						RETURN [[캐릭터:달기]], 50; + RAND:3 * 3
 					CASE IS < 90
-						RETURN [[キャラ:케르눈노스]], 52; + RAND:3 * 3
+						RETURN [[캐릭터:케르눈노스]], 52; + RAND:3 * 3
 					CASE IS < 100
-						RETURN [[キャラ:아가레스]], 53; + RAND:3 * 3
+						RETURN [[캐릭터:아가레스]], 53; + RAND:3 * 3
 				ENDSELECT
 		ENDSELECT
 ENDSELECT
@@ -1451,17 +1451,17 @@ ENDSELECT
 ;=======================================================================
 @SET_ENEMY_STATUS_35, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:맨이터]]
+	CASE [[캐릭터:맨이터]]
 		SIF 던전플래그:(FLAG:현던전):0 == 2
 			ABL:ARG:스킬3 = [[스킬:브레인쉐이크]]
-	CASE [[キャラ:인큐버스]]
+	CASE [[캐릭터:인큐버스]]
 		SIF 던전플래그:(FLAG:현던전):0 >= 2
 			ABL:ARG:스킬2 = [[스킬:잔다인]]
 		SIF 던전플래그:(FLAG:현던전):0 == 3
 			ABL:ARG:스킬3 = [[스킬:마하ㆍ잔마]]
 		SIF 던전플래그:(FLAG:현던전):0 == 4
 			ABL:ARG:스킬3 = [[스킬:마하ㆍ잔다인]]
-	CASE [[キャラ:뱀파이어]]
+	CASE [[캐릭터:뱀파이어]]
 		;무드온
 		ABL:ARG:스킬1 = [[스킬:무드온]]
 		;마하에이하
@@ -1476,11 +1476,11 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:뱀파이어]] , 3 + RAND:10 , CSVBASE([[キャラ:뱀파이어]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:뱀파이어]] , 3 + RAND:10 , CSVBASE([[캐릭터:뱀파이어]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:바포멧트]] , 3 + RAND:10 , CSVBASE([[キャラ:바포멧트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:바포멧트]] , 3 + RAND:10 , CSVBASE([[캐릭터:바포멧트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 ;사룡에키드나の사고패턴
@@ -1801,7 +1801,7 @@ ELSE
 ENDIF
 
 @SET_ECHIDNA
-CALL SET_ENEMY,9,[[キャラ:에키드나]],62,0,1
+CALL SET_ENEMY,9,[[캐릭터:에키드나]],62,0,1
 CSTR:(CHARANUM -1):사고패턴 = 에키드나
 ABL:(CHARANUM -1):스킬1 = [[스킬:마하ㆍ부흐다인]]
 ABL:(CHARANUM -1):스킬2 = [[스킬:메가톤프레스]]
@@ -1902,7 +1902,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;					WAIT 
 ;					IF FLAG:주회횟수 >= 1
 ;						;사룡에키드나Lv53
-;						CALL SET_ENEMY,9,[[キャラ:에키드나]],77,0,0
+;						CALL SET_ENEMY,9,[[캐릭터:에키드나]],77,0,0
 ;						CSTR:(CHARANUM-1):사고패턴 = 707
 ;						ABL:(CHARANUM-1):스킬1 = 810
 ;						;○かじり
@@ -1927,7 +1927,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;						MAXBASE:(CHARANUM-1):빙결 = 125
 ;						MAXBASE:(CHARANUM-1):수격 = 150
 ;					ELSE
-;						CALL SET_ENEMY,9,[[キャラ:에키드나]],65,0,0
+;						CALL SET_ENEMY,9,[[캐릭터:에키드나]],65,0,0
 ;						CSTR:(CHARANUM-1):사고패턴 = 707
 ;						ABL:(CHARANUM-1):스킬1 = 810
 ;						ABL:(CHARANUM-1):스킬2 = 326
@@ -2008,7 +2008,7 @@ CALL HEALTH_CHARA, (CHARANUM -1)
 ;				PRINTFORML
 ;				PRINTFORMW ＞슬픈 눈동자를 한 눈앞의 소녀는 망설임을 베듯이 덤벼들었다！
 ;			ENDIF
-;			CALL SET_ENEMY,9,[[キャラ:유리아]],55,0,1
+;			CALL SET_ENEMY,9,[[캐릭터:유리아]],55,0,1
 ;			CSTR:(CHARANUM-1):종족명 = 용왕
 ;			CSTR:(CHARANUM-1):사고패턴 = 4570
 ;			ABL:(CHARANUM-1):스킬1 = 2400

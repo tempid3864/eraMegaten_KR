@@ -258,7 +258,7 @@ ENDIF
 CALL SET_ENEMY,8, [[キャラ:안드라스]],25, 1, 1
 ;スキルがよわよわなので補強。ついでに原作にあった剣撃描写も拾う
 ABL:(CHARANUM-1):스킬1 = [[스킬:아기다인]]
-ABL:(CHARANUM-1):스킬2 = [[스킬:마하・라기온]]
+ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ라기온]]
 ABL:(CHARANUM-1):스킬3 = [[스킬:데스바운드]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:기가리온]]
 CFLAG:(CHARANUM-1):ＭＰ보정 += 500
@@ -293,7 +293,7 @@ MAXBASE:(CHARANUM-1):빙결 = 50
 BASE:(CHARANUM-1):빙결 = 50
 MAXBASE:(CHARANUM-1):전격 = 50
 BASE:(CHARANUM-1):전격 = 50
-ABL:(CHARANUM-1):스킬1 = [[스킬:마하・잔마]]
+ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ잔마]]
 ABL:(CHARANUM-1):스킬2 = [[스킬:잔다인]]
 ABL:(CHARANUM-1):스킬3 = [[스킬:텐타라후]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:유혹의안개]]
@@ -429,7 +429,7 @@ IF 의뢰플래그:18:0 == 1
 	PRINTFORMW そんなことを考えながら歩いていると、ポニーテールの少女を先頭にした忍者達が、にこやかに%CALLNAME:MASTER%を出迎えた。
 	PRINTL
 	PRINTFORMW 「ありがとう、今回は助かったわ。
-	PRINTFORMW 　私、日下茉莉花。こっちは日光名物・江戸村忍者軍団……」
+	PRINTFORMW 　私、日下茉莉花。こっちは日光名物ㆍ江戸村忍者軍団……」
 	PRINTFORMW 「日下さぁん、その冗談はやめてくださいってばあ」
 	PRINTL
 	PRINTFORMW 忍者たちに突っ込まれ、茉莉花はごめんごめんと笑って見せた。

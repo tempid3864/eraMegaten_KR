@@ -169,7 +169,7 @@
 @PLAYABLE_EVENT_41
 
 	;나기ちゃんの番号とかを取得
-	CALLF FINDCHARA_B([[キャラ:나기]])
+	CALLF FINDCHARA_B([[캐릭터:나기]])
 	LOCAL = RESULT:1
 
 	;いきなり奴隷にしたとかエンディングを迎えたとかでイベントが強制終了
@@ -214,7 +214,7 @@
 			RETURN 0
 
 		;나기ちゃんがPTに入ってないと「入れてね！」ってだけのイベントになる
-		IF FINDCHARA_B([[キャラ:나기]]) != 2
+		IF FINDCHARA_B([[캐릭터:나기]]) != 2
 			RESULTS = （나기를 PT에 편성해주십시오）
 			이벤트플래그:41:2 = 1
 			RETURN 1

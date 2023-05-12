@@ -154,9 +154,9 @@ CLEARLINE 1
 SETCOLOR 0x66FFFF
 IF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 0
 	IF GETCONFIGS("描画インターフェース") != "WINAPI"
-		SIF NO:ARG == [[キャラ:마르푸샤]]
+		SIF NO:ARG == [[캐릭터:마르푸샤]]
 			CALL ドリンク_マルフーシャ
-		IF NO:ARG == [[キャラ:라이카(Marufusha)]]
+		IF NO:ARG == [[캐릭터:라이카(Marufusha)]]
 			IF RAND:2
 				CALL ドリンク_ライカ
 			ELSEIF RAND:2
@@ -165,28 +165,28 @@ IF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 0
 				CALL アクション_ライカ_2
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:벨카(Marufusha)]]
+		IF NO:ARG == [[캐릭터:벨카(Marufusha)]]
 			IF RAND:2
 				CALL ドリンク_ベルカ
 			ELSE
 				CALL アクション_ベルカ
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:스트렐카(Marufusha)]]
+		IF NO:ARG == [[캐릭터:스트렐카(Marufusha)]]
 			IF RAND:2
 				CALL ドリンク_ストレルカ
 			ELSE
 				CALL アクション_ストレルカ
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:펠리세트]]
+		IF NO:ARG == [[캐릭터:펠리세트]]
 			IF RAND:2
 				CALL ドリンク_フェリセット
 			ELSE
 				CALL アクション_フェリセット_2
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:알리비나]]
+		IF NO:ARG == [[캐릭터:알리비나]]
 			IF RAND:2
 				CALL ドリンク_アリビナ
 			ELSEIF RAND:2
@@ -197,7 +197,7 @@ IF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 0
 				CALL アクション_アリビナ_2
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:비온]]
+		IF NO:ARG == [[캐릭터:비온]]
 			IF RAND:2
 				CALL ドリンク_ビオン
 			ELSEIF RAND:2
@@ -206,7 +206,7 @@ IF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 0
 				CALL アクション_ビオン_2
 			ENDIF
 		ENDIF
-		IF NO:ARG == [[キャラ:에노스]]
+		IF NO:ARG == [[캐릭터:에노스]]
 			IF RAND:2
 				CALL ドリンク_エノス
 			ELSEIF RAND:2
@@ -220,42 +220,42 @@ IF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 0
 	PRINTL 남은 키트 수：★★☆
 ELSEIF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 1
 	IF GETCONFIGS("描画インターフェース") != "WINAPI"
-		SIF NO:ARG == [[キャラ:마르푸샤]]
+		SIF NO:ARG == [[캐릭터:마르푸샤]]
 			CALL シャワー_マルフーシャ
-		SIF NO:ARG == [[キャラ:라이카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:라이카(Marufusha)]]
 			CALL シャワー_ライカ
-		SIF NO:ARG == [[キャラ:벨카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:벨카(Marufusha)]]
 			CALL シャワー_ベルカ
-		SIF NO:ARG == [[キャラ:스트렐카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:스트렐카(Marufusha)]]
 			CALL シャワー_ストレルカ
-		SIF NO:ARG == [[キャラ:펠리세트]]
+		SIF NO:ARG == [[캐릭터:펠리세트]]
 			CALL シャワー_フェリセット
-		SIF NO:ARG == [[キャラ:알리비나]]
+		SIF NO:ARG == [[캐릭터:알리비나]]
 			CALL シャワー_アリビナ
-		SIF NO:ARG == [[キャラ:비온]]
+		SIF NO:ARG == [[캐릭터:비온]]
 			CALL シャワー_ビオン
-		SIF NO:ARG == [[キャラ:에노스]]
+		SIF NO:ARG == [[캐릭터:에노스]]
 			CALL シャワー_エノス
 		PRINTL 
 	ENDIF
 	PRINTL 남은 키트 수：★☆☆
 ELSEIF SKILLGAGE_F_GET(ARG,SKILL_NUM) == 2
 	IF GETCONFIGS("描画インターフェース") != "WINAPI"
-		SIF NO:ARG == [[キャラ:마르푸샤]]
+		SIF NO:ARG == [[캐릭터:마르푸샤]]
 			CALL スリープ_マルフーシャ
-		SIF NO:ARG == [[キャラ:라이카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:라이카(Marufusha)]]
 			CALL スリープ_ライカ
-		SIF NO:ARG == [[キャラ:벨카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:벨카(Marufusha)]]
 			CALL スリープ_ベルカ
-		SIF NO:ARG == [[キャラ:스트렐카(Marufusha)]]
+		SIF NO:ARG == [[캐릭터:스트렐카(Marufusha)]]
 			CALL スリープ_ストレルカ
-		SIF NO:ARG == [[キャラ:펠리세트]]
+		SIF NO:ARG == [[캐릭터:펠리세트]]
 			CALL スリープ_フェリセット
-		SIF NO:ARG == [[キャラ:알리비나]]
+		SIF NO:ARG == [[캐릭터:알리비나]]
 			CALL スリープ_アリビナ
-		SIF NO:ARG == [[キャラ:비온]]
+		SIF NO:ARG == [[캐릭터:비온]]
 			CALL スリープ_ビオン
-		SIF NO:ARG == [[キャラ:에노스]]
+		SIF NO:ARG == [[캐릭터:에노스]]
 			CALL スリープ_エノス
 		PRINTL 
 	ENDIF

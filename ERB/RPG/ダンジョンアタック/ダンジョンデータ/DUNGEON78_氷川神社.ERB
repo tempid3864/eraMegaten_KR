@@ -74,7 +74,7 @@ IF 던전플래그:78:0 == 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 				;스트리고이
-					CALL SET_ENEMY,8,[[キャラ:스트리고이]],32,0,1
+					CALL SET_ENEMY,8,[[캐릭터:스트리고이]],32,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -95,7 +95,7 @@ IF 던전플래그:78:0 == 1
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				;스트리게스
-					CALL SET_ENEMY,10,[[キャラ:스트리게스]],30,0,1
+					CALL SET_ENEMY,10,[[캐릭터:스트리게스]],30,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1200
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 					CFLAG:(CHARANUM-1):속도보정 = 5
@@ -117,7 +117,7 @@ IF 던전플래그:78:0 == 1
 				CALL MESSAGE_WINDOW_D, "", "＞싸우는 도중에도 빛이 없는 눈으로 서 있던 하타노 쿠미코를 데리고 돌아갔다。"
 				CALL MESSAGE_WINDOW_D, "", "………/……/…"
 				CALL MESSAGE_WINDOW_D, "", "＞하타노 쿠미코가 노예가 되었다"
-				CALL ADD_NEW_COMPANION,[[キャラ:쿠미코]],0
+				CALL ADD_NEW_COMPANION,[[캐릭터:쿠미코]],0
 				던전플래그:78:1 = 1
 			CASE 2
 				CALL MESSAGE_WINDOW_D, "", "＞쿠미코는 악마들에게 납치되었다……"
@@ -444,21 +444,21 @@ SELECTCASE FLAG:현M
 	CASE 0
 		SELECTCASE RAND:100
 			CASE IS < 13
-				RETURN [[キャラ:오키쿠무시]], 23
+				RETURN [[캐릭터:오키쿠무시]], 23
 			CASE IS < 26
-				RETURN [[キャラ:랴난시]], 23
+				RETURN [[캐릭터:랴난시]], 23
 			CASE IS < 39
-				RETURN [[キャラ:이츠마데]], 24
+				RETURN [[캐릭터:이츠마데]], 24
 			CASE IS < 52
-				RETURN [[キャラ:네코마타]], 25
+				RETURN [[캐릭터:네코마타]], 25
 			CASE IS < 65
-				RETURN [[キャラ:니스록]], 26
+				RETURN [[캐릭터:니스록]], 26
 			CASE IS < 78
-				RETURN [[キャラ:히노엔마]], 27
+				RETURN [[캐릭터:히노엔마]], 27
 			CASE IS < 91
-				RETURN [[キャラ:알라우네]], 28
+				RETURN [[캐릭터:알라우네]], 28
 			CASE IS < 100
-				RETURN [[キャラ:토도메키]], 29
+				RETURN [[캐릭터:토도메키]], 29
 		ENDSELECT
 ENDSELECT
 
@@ -470,7 +470,7 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:2
 	CASE 0
-		RETURN [[キャラ:이츠마데]] , 3 + RAND:10 , CSVBASE([[キャラ:이츠마데]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:이츠마데]] , 3 + RAND:10 , CSVBASE([[캐릭터:이츠마데]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:니스록]] , 3 + RAND:10 , CSVBASE([[キャラ:니스록]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:니스록]] , 3 + RAND:10 , CSVBASE([[캐릭터:니스록]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

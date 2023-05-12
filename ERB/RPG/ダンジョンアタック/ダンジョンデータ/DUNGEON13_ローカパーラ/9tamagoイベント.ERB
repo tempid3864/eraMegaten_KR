@@ -262,7 +262,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				IF RESULT == 1
 					CALL MESSAGE_WINDOW_D, "", "쓰러진 아케치를 내팽개치고 앞으로 나아갔다"
 				ELSEIF RESULT == 0
-					CALL ADD_NEW_COMPANION,[[キャラ:고로]],100
+					CALL ADD_NEW_COMPANION,[[캐릭터:고로]],100
 					CALL MESSAGE_WINDOW_D, "", "아케치 고로를 손에 넣었다"
 				ENDIF
 				
@@ -567,7 +567,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D, "세라", "괜찮아 나도 왠지 모르게 서고 싶으니까"
 				
 				
-				CALL ADD_NEW_COMPANION,[[キャラ:세라]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:세라]],100
 				IF RESULT
 					ABL:(RESULT:1):초기변신악마습득스킬6 = 2708
 					ABL:(RESULT:1):초기변신악마습득LV6 = 63
@@ -693,7 +693,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,7,[[キャラ:스세리비메]],18,0,0
+				CALL SET_ENEMY,7,[[캐릭터:스세리비메]],18,0,0
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -750,20 +750,20 @@ RETURN 1
 		IF ARG == 0
 			IF FLAG:현M > 58
 				SIF RAND:14 == 0		
-					RETURN [[キャラ:서왕모]]
+					RETURN [[캐릭터:서왕모]]
 				SIF RAND:13 == 0		
-					RETURN [[キャラ:치치미틀]]
+					RETURN [[캐릭터:치치미틀]]
 				SIF RAND:12 == 0		
 					RETURN 1531
 				SIF RAND:11 == 0		
 					RETURN 1423
 				SIF RAND:10 == 0		
-					RETURN [[キャラ:팔라스아테나]]
+					RETURN [[캐릭터:팔라스아테나]]
 			ENDIF
 				SIF RAND:9 == 0		
-					RETURN [[キャラ:치치미틀]]
+					RETURN [[캐릭터:치치미틀]]
 				SIF RAND:8 == 0		
-					RETURN [[キャラ:팔레스]]
+					RETURN [[캐릭터:팔레스]]
 				SIF RAND:7 == 0		
 					RETURN 1725
 				SIF RAND:6 == 0		
@@ -773,11 +773,11 @@ RETURN 1
 				SIF RAND:4 == 0		
 					RETURN 719
 				SIF RAND:3 == 0		
-					RETURN [[キャラ:라마슈투]]
+					RETURN [[캐릭터:라마슈투]]
 				SIF RAND:2 == 0		
 					RETURN 429
 				
-					RETURN [[キャラ:산달폰]]
+					RETURN [[캐릭터:산달폰]]
 		ELSEIF ARG == 1
 			SIF FLAG:현M > 58
 				RETURN 75 + RAND:4

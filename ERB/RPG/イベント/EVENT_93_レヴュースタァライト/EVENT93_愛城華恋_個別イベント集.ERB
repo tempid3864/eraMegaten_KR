@@ -172,7 +172,7 @@ CUSTOMDRAWLINE =
 		PRINTW 악마의 마음을 굴복시켰다……？
 		PRINTW 단지 그것만으로……？
 		
-		CALL ADD_NEW_COMPANION,[[キャラ:잭프로스트]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:잭프로스트]],0
 		IF RESULT == 1
 			;ステップ系を勝手に覚える特別仕様
 			;まあフレーバー程度に
@@ -755,7 +755,7 @@ CUSTOMDRAWLINE =
 		PRINTW 황금색의 빛이 당신의 등 뒤에서 솟아오른다.
 		PRINTW 마술사 멀린―― 아니, 무대소녀ㆍ다이바 나나가, 하늘을 덮는 어둠을 노려보며 칼을 뽑는다.
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTFORMW 「나아가！　%CSTR:LOCAL:이인칭%！
 		PRINTW 　당신의 마음이, 분명 세계를 바꿀테니까！」
 	ELSE
@@ -1506,11 +1506,11 @@ WAIT
 	PRINTW ＞아이죠 카렌은　이능자 데빌 시프터　로 처리됩니다
 	PRINTL 
 	
-	LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 
 	CFLAG:LOCAL:링크악마 = -1
 	TALENT:LOCAL:데빌시프터 = 1
-	CFLAG:LOCAL:초기링크악마 = [[キャラ:킹ㆍ아서]]
+	CFLAG:LOCAL:초기링크악마 = [[캐릭터:킹ㆍ아서]]
 	ABL:LOCAL:초기링크악마공격상성 = 0
 	ABL:LOCAL:초기링크악마사거리 = 1
 	ABL:LOCAL:초기링크악마공격범위 = 1
@@ -1581,7 +1581,7 @@ CUSTOMDRAWLINE =
 	SETBIT 이벤트플래그:93:11, 2
 	
 	;- SET:나나
-	CALL SET_ENEMY,9,[[キャラ:나나]],75,1,3
+	CALL SET_ENEMY,9,[[캐릭터:나나]],75,1,3
 	CALLNAME:(CHARANUM-1) = 『탑의 여신』
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	;CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
@@ -1918,7 +1918,7 @@ SAVEGLOBAL
 	PRINTW ＞초인　일곱번째의 여신　이 나타났다！
 	PRINTL 
 	;華恋を변신させておく
-	LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 	CALL ACTION_2310, LOCAL
 	CALL SYNC_STATUS, LOCAL
 

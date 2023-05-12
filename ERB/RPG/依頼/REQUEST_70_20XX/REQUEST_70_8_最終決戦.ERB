@@ -3,7 +3,7 @@
 ;====================
 @EXPLAIN_REQUEST_70_8
 PRINTL 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 IF 의뢰플래그:70:3 == 1
 	PRINTFORMW ＞%CALLNAME:LOCAL%과 함께 지내기 위해、메시아교를 뒤따르기로 결정한 %CALLNAME:MASTER%。
@@ -69,7 +69,7 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
-	CALLF FINDCHARA_B([[キャラ:아인]])
+	CALLF FINDCHARA_B([[캐릭터:아인]])
 	LOCAL = RESULT:1
 	
 	IF 의뢰플래그:70:3 == 1
@@ -476,7 +476,7 @@ CUSTOMDRAWLINE =
 		FOR LOCAL, 0, CHARANUM
 			CALL HEALTH_CHARA, LOCAL
 		NEXT
-		CALLF FINDCHARA_B([[キャラ:아인]])
+		CALLF FINDCHARA_B([[캐릭터:아인]])
 		LOCAL = RESULT:1
 		PRINTFORML
 		PRINTFORML ㆍㆍㆍㆍㆍ
@@ -581,7 +581,7 @@ CUSTOMDRAWLINE =
 		FOR LOCAL, 0, CHARANUM
 			CALL HEALTH_CHARA, LOCAL
 		NEXT
-		CALLF FINDCHARA_B([[キャラ:아인]])
+		CALLF FINDCHARA_B([[캐릭터:아인]])
 		LOCAL = RESULT:1
 		PRINTFORML
 		PRINTFORML ㆍㆍㆍㆍㆍ
@@ -717,7 +717,7 @@ CUSTOMDRAWLINE =
 			GOTO LVUP_LOOP_1
 		;ここまでメタトロンの레벨あげる処理
 			
-		CALLF FINDCHARA_B([[キャラ:아인]])
+		CALLF FINDCHARA_B([[캐릭터:아인]])
 		LOCAL = RESULT:1
 		CALL SET_ENEMY,9, 369 ,LOCAL:1, 0 , 10 ;메타트론、CHAOSルートラスボス
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -893,7 +893,7 @@ CUSTOMDRAWLINE =
 			GOTO LVUP_LOOP_2
 		;ここまで마라の레벨あげる処理
 			
-		CALLF FINDCHARA_B([[キャラ:아인]])
+		CALLF FINDCHARA_B([[캐릭터:아인]])
 		LOCAL = RESULT:1
 		CALL SET_ENEMY,9, 292 ,LOCAL:1, 0 , 10 ;마라、LAW、NEWTRALルートラスボス
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -917,7 +917,7 @@ CUSTOMDRAWLINE =
 		ABL:(CHARANUM-1):스킬8 = 1227;유혹의안개
 		CALL BATTLE_START
 		;마라様解禁
-		CALL LIFTING_A_BAN([[キャラ:마라]])
+		CALL LIFTING_A_BAN([[캐릭터:마라]])
 			;FLAG:10292 = 1
 		PRINTFORML
 		PRINTFORMW ＞역시 제육천마왕。　상상을 초월한힘으로 몇번이고 이쪽을 추적해 왔다。

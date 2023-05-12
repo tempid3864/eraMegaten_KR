@@ -566,7 +566,7 @@ IF RESULT == 0
 			;さらにDCに傾く
 			CALL INCREASE_LD, -10
 			CALL INCREASE_LC, -10
-			CALL ADD_NEW_COMPANION, [[キャラ:치카링]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:치카링]], 500
 		ELSE
 			PRINTFORMW ＞무서워하는 치카링을 놔두고, %조사처리(CALLNAME:MASTER,"는")% 가게를 뒤로 했다…
 		ENDIF
@@ -783,7 +783,7 @@ ELSEIF RESULT == 2
 				;조교済み치카링加入、もちろん会うたびに섹스もとい조교してたわけですね
 				;５ターン소비で연모加入なんでちょっと割がよすぎるかなぁと思ったりもするけど、これ이상長くしてもあれだろうなぁ
 				;ということでこんなもんに、능력はまぁ割と適当。普通の恋人同士でついてそうなの＋ちょっと鬼畜ぐらい
-				CALL ADD_NEW_COMPANION, [[キャラ:치카링]], 1000
+				CALL ADD_NEW_COMPANION, [[캐릭터:치카링]], 1000
 				LOCAL = RESULT:1
 				TARGET = LOCAL
 				ASSI = -1

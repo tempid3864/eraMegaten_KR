@@ -737,7 +737,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:파주주]],55,0,1
+			CALL SET_ENEMY,9,[[캐릭터:파주주]],55,0,1
 			CSTR:(CHARANUM-1):사고패턴 = 255
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
@@ -801,7 +801,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:파주주]],49,0,1
+				CALL SET_ENEMY,9,[[캐릭터:파주주]],49,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 255
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1500
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
@@ -837,7 +837,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,8,[[キャラ:베스]],35,0,1
+				CALL SET_ENEMY,8,[[캐릭터:베스]],35,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 				CFLAG:(CHARANUM-1):속도보정 = 10
@@ -859,7 +859,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:베스]],35,0,1
+				CALL SET_ENEMY,10,[[캐릭터:베스]],35,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 				CFLAG:(CHARANUM-1):속도보정 = 10
@@ -895,7 +895,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			PRINTFORMW 「저도 당분간은 이 땅을 비워야 합니다만 용서해 주십시요」
 			PRINTFORML 「때가 되면 저도 구세주 님의 하인으로서 힘을 빌려드리지요」
 			PRINTFORMW 「그날을 즐겁게 기다리지요、큭큭큭」
-			CALL LIFTING_A_BAN([[キャラ:파주주]])
+			CALL LIFTING_A_BAN([[캐릭터:파주주]])
 			;FLAG:11617 = 1
 			CUSTOMDRAWLINE =
 		ELSEIF FINDCHARA_B(4501,1)== 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
@@ -1098,7 +1098,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		;전투後の경험値処理をスキップする
 		FLAG:RESULT스킵 = 1
 
-		CALL SET_ENEMY,8,[[キャラ:템플나이트]],46,1,1
+		CALL SET_ENEMY,8,[[캐릭터:템플나이트]],46,1,1
 		;번개찌르기
 		ABL:(CHARANUM-1):스킬1 = 9
 		;데스바운드
@@ -1108,7 +1108,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,9,[[キャラ:템플나이트]],46,1,1
+		CALL SET_ENEMY,9,[[캐릭터:템플나이트]],46,1,1
 		;타루카쟈
 		ABL:(CHARANUM-1):스킬1 = 501
 		;찰나장대비쏘기
@@ -1118,7 +1118,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:템플나이트]],46,1,1
+		CALL SET_ENEMY,10,[[캐릭터:템플나이트]],46,1,1
 		;메ㆍ디아라마
 		ABL:(CHARANUM-1):스킬1 = 405
 		;サム리캄
@@ -1443,112 +1443,112 @@ IF FLAG:현M < 2
 	SELECTCASE RAND:100
 		CASE IS < 10
 			;10%で머신라비　Lv35
-			RETURN [[キャラ:라비]], 35
+			RETURN [[캐릭터:라비]], 35
 		CASE IS < 30
 			;20%で광인템플나이트　Lv22（34）
-			RETURN [[キャラ:템플나이트]], 34
+			RETURN [[캐릭터:템플나이트]], 34
 		CASE IS < 45
 			;15%で천사파워　Lv34
-			RETURN [[キャラ:파워]], 34
+			RETURN [[캐릭터:파워]], 34
 		CASE IS < 55
 			;10%で잠바반　Lv35
-			RETURN [[キャラ:잠바반]], 35
+			RETURN [[캐릭터:잠바반]], 35
 		CASE IS < 65
 			;10%で마수누에　Lv31（34）
-			RETURN [[キャラ:누에]], 34
+			RETURN [[캐릭터:누에]], 34
 		CASE IS < 80
 			;15%で천사아무르타트　Lv32（35）
-			RETURN [[キャラ:아무르타트]], 35
+			RETURN [[캐릭터:아무르타트]], 35
 		CASE IS < 90
 			;10%で나쟈　Lv36
-			RETURN [[キャラ:나쟈]], 36
+			RETURN [[캐릭터:나쟈]], 36
 		CASE IS < 100
 			;10%で요마디스　Lv36
-			RETURN [[キャラ:디스]], 36
+			RETURN [[캐릭터:디스]], 36
 	ENDSELECT
 ;二階
 ELSEIF FLAG:현M >= 2 && FLAG:현M < 4
 	SELECTCASE RAND:100
 		CASE IS < 10
 			;10%で머신라비　Lv35（38）
-			RETURN [[キャラ:라비]], 38
+			RETURN [[캐릭터:라비]], 38
 		CASE IS < 30
 			;20%で광인템플나이트　Lv22（37）
-			RETURN [[キャラ:템플나이트]], 37
+			RETURN [[캐릭터:템플나이트]], 37
 		CASE IS < 45
 			;15%で천사파워　Lv34（37）
-			RETURN [[キャラ:파워]], 37
+			RETURN [[캐릭터:파워]], 37
 		CASE IS < 55
 			;10%で환마잠바반　Lv35（38）
-			RETURN [[キャラ:잠바반]], 38
+			RETURN [[캐릭터:잠바반]], 38
 		CASE IS < 65
 			;10%で요조스튐팔리데스　Lv35（38）
-			RETURN [[キャラ:스튐팔리데스]], 38
+			RETURN [[캐릭터:스튐팔리데스]], 38
 		CASE IS < 75
 			;10%で천사아무르타트　Lv32（35）
-			RETURN [[キャラ:아무르타트]], 35
+			RETURN [[캐릭터:아무르타트]], 35
 		CASE IS < 90
 			;15%で천사라이라　Lv39
-			RETURN [[キャラ:라이라]], 39
+			RETURN [[캐릭터:라이라]], 39
 		CASE IS < 100
 			;10%で요마디스　Lv36
-			RETURN [[キャラ:디스]], 36
+			RETURN [[캐릭터:디스]], 36
 	ENDSELECT
 ;三階
 ELSEIF FLAG:현M >= 4 && FLAG:현M < 6
 	SELECTCASE RAND:100
 		CASE IS < 10
 			;10%で머신라비　Lv35（38）
-			RETURN [[キャラ:라비]], 38
+			RETURN [[캐릭터:라비]], 38
 		CASE IS < 30
 			;20%で광인템플나이트　Lv22（40）
-			RETURN [[キャラ:템플나이트]], 40
+			RETURN [[캐릭터:템플나이트]], 40
 		CASE IS < 45
 			;15%で천사파워　Lv34（40）
-			RETURN [[キャラ:파워]], 40
+			RETURN [[캐릭터:파워]], 40
 		CASE IS < 55
 			;10%で환마잠바반　Lv35（38）
-			RETURN [[キャラ:잠바반]], 38
+			RETURN [[캐릭터:잠바반]], 38
 		CASE IS < 65
 			;10%で요조스튐팔리데스　Lv35（41）
-			RETURN [[キャラ:스튐팔리데스]], 41
+			RETURN [[캐릭터:스튐팔리데스]], 41
 		CASE IS < 80
 			;15%で천사라이라　Lv39（42）
-			RETURN [[キャラ:라이라]], 42
+			RETURN [[캐릭터:라이라]], 42
 		CASE IS < 90
 			;10%で천사버쳐　Lv43
-			RETURN [[キャラ:버쳐]], 43
+			RETURN [[캐릭터:버쳐]], 43
 		CASE IS < 100
 			;10%で요마디스　Lv36（39）
-			RETURN [[キャラ:디스]], 39
+			RETURN [[캐릭터:디스]], 39
 	ENDSELECT
 ;地下
 ELSEIF FLAG:현M == 6
 	SELECTCASE RAND:100
 		CASE IS < 10
 			;10%で머신라비　Lv35（38）
-			RETURN [[キャラ:라비]], 38
+			RETURN [[캐릭터:라비]], 38
 		CASE IS < 25
 			;15%で광인템플나이트　Lv22（40）
-			RETURN [[キャラ:템플나이트]], 40
+			RETURN [[캐릭터:템플나이트]], 40
 		CASE IS < 45
 			;20%で광인뮤턴트　Lv29（41）
-			RETURN [[キャラ:뮤턴트]], 41
+			RETURN [[캐릭터:뮤턴트]], 41
 		CASE IS < 55
 			;10%で천사파워　Lv34（40）
-			RETURN [[キャラ:파워]], 40
+			RETURN [[캐릭터:파워]], 40
 		CASE IS < 70
 			;15%で천사라이라　Lv39（42）
-			RETURN [[キャラ:라이라]], 42
+			RETURN [[캐릭터:라이라]], 42
 		CASE IS < 80
 			;10%で천사버쳐　Lv43
-			RETURN [[キャラ:버쳐]], 43
+			RETURN [[캐릭터:버쳐]], 43
 		CASE IS < 85
 			;5%で요마알라우네　Lv31（40）
-			RETURN [[キャラ:알라우네]], 40
+			RETURN [[캐릭터:알라우네]], 40
 		CASE IS < 100
 			;15%で섀도우　Lv39（42）
-			RETURN [[キャラ:섀도우]], 42
+			RETURN [[캐릭터:섀도우]], 42
 	ENDSELECT
 ENDIF
 ;=======================================================================
@@ -1556,18 +1556,18 @@ ENDIF
 ;=======================================================================
 @SET_ENEMY_STATUS_46, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:라이라]]
+	CASE [[캐릭터:라이라]]
 		ABL:(CHARANUM-1):스킬4 = 0
-	CASE [[キャラ:파워]]
+	CASE [[캐릭터:파워]]
 		ABL:(CHARANUM-1):스킬5 = 705
-	CASE [[キャラ:뮤턴트]]
+	CASE [[캐릭터:뮤턴트]]
 		ABL:(CHARANUM-1):스킬3 = 302
 		ABL:(CHARANUM-1):스킬4 = 323
-	CASE [[キャラ:템플나이트]]
+	CASE [[캐릭터:템플나이트]]
 		ABL:(CHARANUM-1):스킬1 = 1002
 		ABL:(CHARANUM-1):스킬5 = 3005
 		ABL:(CHARANUM-1):스킬6 = 1302
-	CASE [[キャラ:잠바반]]
+	CASE [[캐릭터:잠바반]]
 		ABL:(CHARANUM-1):스킬5 = 0
 		ABL:(CHARANUM-1):스킬6 = 511
 ENDSELECT
@@ -1821,12 +1821,12 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:뮤턴트]] , 3 + RAND:10 , CSVBASE([[キャラ:뮤턴트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:뮤턴트]] , 3 + RAND:10 , CSVBASE([[캐릭터:뮤턴트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:템플나이트]] , 3 + RAND:10 , CSVBASE([[キャラ:템플나이트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:템플나이트]] , 3 + RAND:10 , CSVBASE([[캐릭터:템플나이트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:파워]] , 3 + RAND:10 , CSVBASE([[キャラ:파워]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:파워]] , 3 + RAND:10 , CSVBASE([[캐릭터:파워]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:버쳐]] , 3 + RAND:10 , CSVBASE([[キャラ:버쳐]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:버쳐]] , 3 + RAND:10 , CSVBASE([[캐릭터:버쳐]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

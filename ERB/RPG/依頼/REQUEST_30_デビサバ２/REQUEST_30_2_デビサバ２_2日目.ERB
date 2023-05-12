@@ -309,10 +309,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:집스국원]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:집스국원]],1000)
 
 			;- SET:수수께끼의해커 (집스국원を加工して作成)
-			CALL SET_ENEMY,9,[[キャラ:집스국원]],REQUEST_30_BASE_LV(2),1,1
+			CALL SET_ENEMY,9,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(2),1,1
 			L_TMP = CHARANUM-1
 			CFLAG:L_TMP:ＨＰ보정 = 1000
 			CFLAG:L_TMP:ＭＰ보정 = 1000
@@ -337,10 +337,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			FLAG:선제기습취소 = 1
 
 			;- SET:雑魚
-			CALL SET_ENEMY,7, [[キャラ:타마모]],REQUEST_30_BASE_LV(2),0
-			CALL SET_ENEMY,8, [[キャラ:백낭자]],REQUEST_30_BASE_LV(2),0
-			CALL SET_ENEMY,10, [[キャラ:야크시니]],REQUEST_30_BASE_LV(2),0
-			CALL SET_ENEMY,11, [[キャラ:발키리]],REQUEST_30_BASE_LV(2),0
+			CALL SET_ENEMY,7, [[캐릭터:타마모]],REQUEST_30_BASE_LV(2),0
+			CALL SET_ENEMY,8, [[캐릭터:백낭자]],REQUEST_30_BASE_LV(2),0
+			CALL SET_ENEMY,10, [[캐릭터:야크시니]],REQUEST_30_BASE_LV(2),0
+			CALL SET_ENEMY,11, [[캐릭터:발키리]],REQUEST_30_BASE_LV(2),0
 
 			;- 전투開始
 			CALL BATTLE_START
@@ -623,10 +623,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:메라크]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:메라크]],1000)
 
 			;- SET:메라크
-			CALL SET_ENEMY,9,[[キャラ:메라크]],REQUEST_30_BASE_LV(2),1,1
+			CALL SET_ENEMY,9,[[캐릭터:메라크]],REQUEST_30_BASE_LV(2),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 2

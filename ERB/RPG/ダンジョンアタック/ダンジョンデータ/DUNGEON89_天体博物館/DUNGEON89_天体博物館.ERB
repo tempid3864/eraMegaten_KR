@@ -743,65 +743,65 @@ SELECTCASE FLAG:현M
 	CASE 0
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:하피]],9
+				RETURN [[캐릭터:하피]],9
 			CASE IS < 35
-				RETURN [[キャラ:하피]],10
+				RETURN [[캐릭터:하피]],10
 			CASE IS < 65
-				RETURN [[キャラ:아즈미]],8
+				RETURN [[캐릭터:아즈미]],8
 			CASE IS < 70
-				RETURN [[キャラ:아체리]],9
+				RETURN [[캐릭터:아체리]],9
 			CASE IS < 80
-				RETURN [[キャラ:아체리]],12
+				RETURN [[캐릭터:아체리]],12
 			CASE IS < 85
-				RETURN [[キャラ:아체리]],13
+				RETURN [[캐릭터:아체리]],13
 			CASE IS < 90
-				RETURN [[キャラ:저돈사]],13
+				RETURN [[캐릭터:저돈사]],13
 			CASE IS < 95
-				RETURN [[キャラ:세에레]],10
+				RETURN [[캐릭터:세에레]],10
 			CASE IS < 100
-				RETURN [[キャラ:세에레]],12
+				RETURN [[캐릭터:세에레]],12
 		ENDSELECT
 	CASE 1
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:하피]],11
+				RETURN [[캐릭터:하피]],11
 			CASE IS < 35
-				RETURN [[キャラ:하피]],12
+				RETURN [[캐릭터:하피]],12
 			CASE IS < 65
-				RETURN [[キャラ:아즈미]],11
+				RETURN [[캐릭터:아즈미]],11
 			CASE IS < 70
-				RETURN [[キャラ:아즈미]],12
+				RETURN [[캐릭터:아즈미]],12
 			CASE IS < 80
-				RETURN [[キャラ:아체리]],13
+				RETURN [[캐릭터:아체리]],13
 			CASE IS < 85
-				RETURN [[キャラ:아체리]],14
+				RETURN [[캐릭터:아체리]],14
 			CASE IS < 90
-				RETURN [[キャラ:저돈사]],14
+				RETURN [[캐릭터:저돈사]],14
 			CASE IS < 95
-				RETURN [[キャラ:세에레]],12
+				RETURN [[캐릭터:세에레]],12
 			CASE IS < 100
-				RETURN [[キャラ:세에레]],13
+				RETURN [[캐릭터:세에레]],13
 		ENDSELECT
 	CASE 2
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:하피]],13
+				RETURN [[캐릭터:하피]],13
 			CASE IS < 25
-				RETURN [[キャラ:하피]],14
+				RETURN [[캐릭터:하피]],14
 			CASE IS < 40
-				RETURN [[キャラ:아즈미]],13
+				RETURN [[캐릭터:아즈미]],13
 			CASE IS < 50
-				RETURN [[キャラ:아즈미]],14
+				RETURN [[캐릭터:아즈미]],14
 			CASE IS < 65
-				RETURN [[キャラ:아체리]],14
+				RETURN [[캐릭터:아체리]],14
 			CASE IS < 75
-				RETURN [[キャラ:아체리]],16
+				RETURN [[캐릭터:아체리]],16
 			CASE IS < 90
-				RETURN [[キャラ:세에레]],13
+				RETURN [[캐릭터:세에레]],13
 			CASE IS < 95
-				RETURN [[キャラ:세에레]],15
+				RETURN [[캐릭터:세에레]],15
 			CASE IS < 100
-				RETURN [[キャラ:저돈사]],16
+				RETURN [[캐릭터:저돈사]],16
 		ENDSELECT
 ENDSELECT
 
@@ -891,5 +891,5 @@ RETURN -1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0 , 1 ,2
-		RETURN [[キャラ:세에레]] , 3 + RAND:10 , CSVBASE([[キャラ:세에레]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:세에레]] , 3 + RAND:10 , CSVBASE([[캐릭터:세에레]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

@@ -345,7 +345,7 @@ ENDSELECT
 				CALL MESSAGE_WINDOW_D, "", "＞활짝 열린 사물함에서 같은 것들이 텀벙텀벙 떨어졌다/＞그리고 작은 손을 내밀어 이쪽에 매달려 왔다!"
 				CALL MESSAGE_WINDOW_D, "악마", "맘마아……맘마아아아아아아아아아아아아아아!!!"
 				CALL MESSAGE_WINDOW_D, "", "＞괴이 코인로커 베이비가 10체 나타났다!"
-					IF FINDCHARA_B([[キャラ:이자나미]]) == 2 && TALENT:MASTER:모성 == 0
+					IF FINDCHARA_B([[캐릭터:이자나미]]) == 2 && TALENT:MASTER:모성 == 0
 						CALL MESSAGE_WINDOW_D, "", "＞………/＞……/＞…"
 						CALL MESSAGE_WINDOW_D, "", @"＞전투 상태에 들어가기 직전、누군가가 양자의 앞을 가로막았다/＞%CALLNAME:MASTER%의 동료마인 이자나미다"
 						CALL MESSAGE_WINDOW_D, "이자나미", "기다리세요/이 아이들에게 칼을 들이대지 마십시오!/일단 떨어지십시오!"
@@ -388,7 +388,7 @@ ENDSELECT
 						FLAG:선제기습취소 = 1
 						;スライム10体
 						FOR LOCAL, 7, 17
-							CALL SET_ENEMY,LOCAL,[[キャラ:슬라임]],15,0
+							CALL SET_ENEMY,LOCAL,[[캐릭터:슬라임]],15,0
 							CFLAG:(CHARANUM-1):ＨＰ보정 += 150
 							NAME:(CHARANUM-1) = CL베이비
 							CALLNAME:(CHARANUM-1) = CL베이비
@@ -519,7 +519,7 @@ SELECTCASE RAND:100
 		RETURN 467, 14
 	CASE IS < 40
 		;10%　용왕야토노카미LV22 
-		RETURN [[キャラ:야토노카미]], 14
+		RETURN [[캐릭터:야토노카미]], 14
 	CASE IS < 55
 		;15%で아체리Lv10（13）
 		RETURN 608, 13
@@ -542,11 +542,11 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:좀비캅]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비캅]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:나하트코볼트]] , 3 + RAND:10 , CSVBASE([[キャラ:나하트코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:나하트코볼트]] , 3 + RAND:10 , CSVBASE([[캐릭터:나하트코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:임프]] , 3 + RAND:10 , CSVBASE([[キャラ:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:임프]] , 3 + RAND:10 , CSVBASE([[캐릭터:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

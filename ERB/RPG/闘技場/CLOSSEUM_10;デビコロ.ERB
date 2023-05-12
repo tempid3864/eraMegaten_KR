@@ -140,29 +140,29 @@ SELECTCASE 투기장플래그:10:0
 			PRINTW ＞악마들이 나타났다!
 			
 			;原作のＦ랭크ボス、Ｅ랭크ボス、主人公초기소지악마のうち、eraMegaten0.309수정6に存在するものを纏めて。ボスには보스플래그。また、原作の相性を반영
-			CALL SET_ENEMY,10,[[キャラ:바질리스크]],16,1,1
+			CALL SET_ENEMY,10,[[캐릭터:바질리스크]],16,1,1
 			BASE:(CHARANUM-1):주살 = -100
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,8,[[キャラ:킹프로스트]],17,1,1
+			CALL SET_ENEMY,8,[[캐릭터:킹프로스트]],17,1,1
 			BASE:(CHARANUM-1):타격 = 0
 			BASE:(CHARANUM-1):정신 = 0
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,9,[[キャラ:야누스]],17,1,1
+			CALL SET_ENEMY,9,[[캐릭터:야누스]],17,1,1
 			BASE:(CHARANUM-1):신경 = 0
 			BASE:(CHARANUM-1):주살 = 0
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,13,[[キャラ:노커]],14,1,0
+			CALL SET_ENEMY,13,[[캐릭터:노커]],14,1,0
 			BASE:(CHARANUM-1):파마 = 0
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,15,[[キャラ:하이픽시]],15,1,0
+			CALL SET_ENEMY,15,[[캐릭터:하이픽시]],15,1,0
 			BASE:(CHARANUM-1):신경 = 50
 			BASE:(CHARANUM-1):파마 = 0
 			BASE:(CHARANUM-1):주살 = 0
@@ -190,9 +190,9 @@ SELECTCASE 투기장플래그:10:0
 				PRINTW ＞당신은 소녀를 상품으로 받고 콜로세움을 뒤로했다
 				투기장플래그:10:1 = 1
 				;既に仲魔にいる場合이름を입력する処理を飛ばす
-				IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) < 0
-					CALL ADD_NEW_COMPANION,[[キャラ:데빌콜로주인공]],500
-					LOCAL = GETCHARA([[キャラ:데빌콜로주인공]])
+				IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) < 0
+					CALL ADD_NEW_COMPANION,[[캐릭터:데빌콜로주인공]],500
+					LOCAL = GETCHARA([[캐릭터:데빌콜로주인공]])
 					$INPUT_LOOP_DEBIKO_NAME
 					PRINTL 데빌 콜로세움 주인공의 이름을 입력하십시오
 					INPUTS
@@ -223,7 +223,7 @@ SELECTCASE 투기장플래그:10:0
 		PRINTW 콜로세움에 도착하자 남자가 말을 걸어왔다
 		PRINTL 콜로세움의 남자
 		PRINTW 「Ｄ랭크, 승격 축하한다!」
-		IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+		IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 			PRINTL 콜로세움의 남자
 			IF 투기장플래그:10:1
 				PRINTL 「오, 저번에 댁이 상품으로 받은 애 아냐. 바로 끌고 다니고 있군.
@@ -250,13 +250,13 @@ SELECTCASE 투기장플래그:10:0
 		PRINTL 당신은 링에 올랐다
 		PRINTW 악마들이 나타났다!
 		
-		CALL SET_ENEMY,10,[[キャラ:바포멧트]],28,1,1
+		CALL SET_ENEMY,10,[[캐릭터:바포멧트]],28,1,1
 		BASE:(CHARANUM-1):파마 = 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;サルタヒコが居ないので아메노우즈메で代用。代用してる악마は原作のが추가されたら변경するつもり
-		CALL SET_ENEMY,8,[[キャラ:아메노우즈메]],29,1,1
+		CALL SET_ENEMY,8,[[캐릭터:아메노우즈메]],29,1,1
 		BASE:(CHARANUM-1):화염 = 999
 		BASE:(CHARANUM-1):신경 = 0
 		BASE:(CHARANUM-1):주살 = 0
@@ -292,7 +292,7 @@ SELECTCASE 투기장플래그:10:0
 		PRINTW 악마들이 나타났다!
 
 		;ベルフェゴールが居ないので七つの大罪繋がりのリヴァイアサンの息子の타라스크。苦しい
-		CALL SET_ENEMY,7,[[キャラ:타라스크]],32,1,1
+		CALL SET_ENEMY,7,[[캐릭터:타라스크]],32,1,1
 		BASE:(CHARANUM-1):화염 = 999
 		BASE:(CHARANUM-1):신경 = 0
 		BASE:(CHARANUM-1):파마 = 0
@@ -301,7 +301,7 @@ SELECTCASE 투기장플래그:10:0
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;대마궁ボスの헤카테の代わりに헤카테と同一視される아르테미스。他ルートでボスはってる악마は原則出したくない
-		CALL SET_ENEMY,8,[[キャラ:아르테미스]],33,1,1
+		CALL SET_ENEMY,8,[[캐릭터:아르테미스]],33,1,1
 		BASE:(CHARANUM-1):빙결 = 50
 		BASE:(CHARANUM-1):전격 = 50
 		BASE:(CHARANUM-1):정신 = 999
@@ -310,7 +310,7 @@ SELECTCASE 투기장플래그:10:0
 
 		;真2√に出てきそうな우리엘の代わりに라구엘。主催がアレな事を考えると우리엘出てきてもおかしくないんだけど、LV34だし
 		;↑主催がアレだし低레벨に使い走りに出されるというのもありそう。ということで4대천사は真ルートに登場次第差し替えたい
-		CALL SET_ENEMY,10,[[キャラ:라구엘]],34,1,1
+		CALL SET_ENEMY,10,[[캐릭터:라구엘]],34,1,1
 		BASE:(CHARANUM-1):검격 = 999
 		BASE:(CHARANUM-1):비구 = 999
 		BASE:(CHARANUM-1):타격 = 999
@@ -321,7 +321,7 @@ SELECTCASE 투기장플래그:10:0
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;真2√に出てきそうな라파엘の代わりに아크엔젤
-		CALL SET_ENEMY,11,[[キャラ:아크엔젤]],35,1,1
+		CALL SET_ENEMY,11,[[캐릭터:아크엔젤]],35,1,1
 		BASE:(CHARANUM-1):전격 = 999
 		BASE:(CHARANUM-1):충격 = 999
 		BASE:(CHARANUM-1):신경 = 999
@@ -374,14 +374,14 @@ SELECTCASE 투기장플래그:10:0
 		PRINTL 당신은 링에 올랐다
 		PRINTW 악마들이 나타났다!
 
-		CALL SET_ENEMY,7,[[キャラ:티아마트]],45,1,1
+		CALL SET_ENEMY,7,[[캐릭터:티아마트]],45,1,1
 		BASE:(CHARANUM-1):신경 = 0
 		BASE:(CHARANUM-1):파마 = 0
 		BASE:(CHARANUM-1):주살 = 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:아스타로트]],46,1,1
+		CALL SET_ENEMY,8,[[캐릭터:아스타로트]],46,1,1
 		BASE:(CHARANUM-1):빙결 = 50
 		BASE:(CHARANUM-1):전격 = 50
 		BASE:(CHARANUM-1):정신 = 999
@@ -389,14 +389,14 @@ SELECTCASE 투기장플래그:10:0
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;マスターテリオンの代わりに묵시록繋がりでアバドン出そうと思ったらアバドンもいないのでアバドンの原型の一つである퓌톤を出す
-		CALL SET_ENEMY,9,[[キャラ:퓌톤]],47,1,1
+		CALL SET_ENEMY,9,[[캐릭터:퓌톤]],47,1,1
 		BASE:(CHARANUM-1):화염 = 200
 		BASE:(CHARANUM-1):주살 = -100
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;미카엘の代わりに아크엔젤を出すともう戦ってるので代わりにモブ천사では一番格が高い스로네
-		CALL SET_ENEMY,10,[[キャラ:스로네]],48,1,1
+		CALL SET_ENEMY,10,[[캐릭터:스로네]],48,1,1
 		BASE:(CHARANUM-1):화염 = 999
 		BASE:(CHARANUM-1):신경 = 0
 		BASE:(CHARANUM-1):파마 = 0
@@ -404,7 +404,7 @@ SELECTCASE 투기장플래그:10:0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,11,[[キャラ:아바돈]],49,1,1
+		CALL SET_ENEMY,11,[[캐릭터:아바돈]],49,1,1
 		BASE:(CHARANUM-1):화염 = -50
 		BASE:(CHARANUM-1):빙결 = -50
 		BASE:(CHARANUM-1):전격 = -50
@@ -443,14 +443,14 @@ SELECTCASE 투기장플래그:10:0
 
 		;○○○○「Ａ랭크だしそろそろ本気だす」
 		
-		CALL SET_ENEMY,8,[[キャラ:아타파구]],55,1,1
+		CALL SET_ENEMY,8,[[캐릭터:아타파구]],55,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 		BASE:(CHARANUM-1):비구 = 999
 		BASE:(CHARANUM-1):정신 = 999
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,9,[[キャラ:비로샤나]],56,1,1
+		CALL SET_ENEMY,9,[[캐릭터:비로샤나]],56,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 		BASE:(CHARANUM-1):화염 = 999
 		BASE:(CHARANUM-1):주살 = 0
@@ -458,7 +458,7 @@ SELECTCASE 투기장플래그:10:0
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;마라様の代わりにちんことインド繋がりで
-		CALL SET_ENEMY,10,[[キャラ:라후]],57,1,1
+		CALL SET_ENEMY,10,[[캐릭터:라후]],57,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 400
 		BASE:(CHARANUM-1):비구 = 999
 		BASE:(CHARANUM-1):화염 = 125
@@ -501,7 +501,7 @@ SELECTCASE 투기장플래그:10:0
 		PRINTL 당신은 링에 올랐다
 		PRINTW 악마들이 나타났다!
 
-		CALL SET_ENEMY,8,[[キャラ:벨제붑]],65,1,1
+		CALL SET_ENEMY,8,[[캐릭터:벨제붑]],65,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		BASE:(CHARANUM-1):검격 = 999
@@ -512,7 +512,7 @@ SELECTCASE 투기장플래그:10:0
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;クズリュウの代わり
-		CALL SET_ENEMY,10,[[キャラ:크툴루]],66,1,1
+		CALL SET_ENEMY,10,[[캐릭터:크툴루]],66,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		BASE:(CHARANUM-1):정신 = 200
@@ -545,7 +545,7 @@ SELECTCASE 투기장플래그:10:0
 			PRINTW 　간다!」
 			PRINTW 신령　혼다의 망령이 1명 나타났다!
 			
-			CALL SET_ENEMY,9,[[キャラ:혼다의망령]],65,1,1
+			CALL SET_ENEMY,9,[[캐릭터:혼다의망령]],65,1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			;原作：공격마법ㆍ만능흡수　정신系무효
@@ -568,7 +568,7 @@ SELECTCASE 투기장플래그:10:0
 			CALL INPUT_YN,"Yes","No"
 			IF RESULT == 0
 				PRINT 당신은 혼다의 망령을 
-				CALL ADD_NEW_COMPANION,[[キャラ:혼다의망령]],0
+				CALL ADD_NEW_COMPANION,[[캐릭터:혼다의망령]],0
 			ELSE
 				PRINT 당신은 상금 1000마카를 
 				MONEY:1 += 1000
@@ -591,7 +591,7 @@ SELECTCASE 투기장플래그:10:0
 			PRINTW 콜로세움에 도착하자 여느 때의 남자가 이쪽으로 달려왔다
 			PRINTL 콜로세움의 남자
 			PRINTW 「이봐! 말 좀 들어줘! 저기 통로에서 엄청난 소문을 들어버렸어!」
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTFORMW 남자는 %CALLNAME:(RESULT:1)%에게 말을 건넸다
 				PRINTL 콜로세움의 남자
 				PRINTL 「놀랍게도 콜로세움의 주최자는 댁이랑 같은 15세라더라!
@@ -605,7 +605,7 @@ SELECTCASE 투기장플래그:10:0
 			PRINTW 　주최자가 그 강대한 마력으로 이 콜로세움에 불러들인 거라더라!?
 			PRINTL 　그런 괴물급의 악마를 불러내다니 틀림없이 평범한 인간이 아닐걸!
 			PRINTW 　심지어 이 대회의 마지막에는 터무니없는 악마를 준비한다더군!」
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTL 　댁 뺨의 흉터를 보는 한, 오빠와 만나서 아무 일도 없을 상황은 아니겠지?
 				PRINTW 　만약 싸우게 됐다간 죽을 거다
 				PRINTW 　이대로 주최자와는 만나지 말고 잊는 편이 댁을 위하는 길이야」
@@ -613,7 +613,7 @@ SELECTCASE 투기장플래그:10:0
 				PRINTW 　그런 것하고 싸웠다간 댁이라도 살해당할걸!」
 			ENDIF
 			;@함락作ってくれた人有難う
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2 && 함락(RESULT:1) > 0
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2 && 함락(RESULT:1) > 0
 				PRINTFORML %조사처리(CALLNAME:(RESULT:1),"가")% 불안한 눈으로 쳐다보고 있다.
 				PRINTFORMW 당신은 %CALLNAME:(RESULT:1)%에게 괜찮다고 일렀다
 			ELSE
@@ -633,19 +633,19 @@ SELECTCASE 투기장플래그:10:0
 			PRINTL 당신은 링에 올랐다
 			PRINTW 악마들이 나타났다!
 
-			CALL SET_ENEMY,7,[[キャラ:체바오트]],66,0,1
+			CALL SET_ENEMY,7,[[캐릭터:체바오트]],66,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			BASE:(CHARANUM-1):검격 = 200
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,9,[[キャラ:엘로힘]],68,0,1
+			CALL SET_ENEMY,9,[[캐릭터:엘로힘]],68,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			BASE:(CHARANUM-1):충격 = 200
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,11,[[キャラ:샤다이]],67,0,1
+			CALL SET_ENEMY,11,[[캐릭터:샤다이]],67,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 			BASE:(CHARANUM-1):화염 = 200
 			CALL SYNC_STATUS,(CHARANUM-1)
@@ -688,7 +688,7 @@ SELECTCASE 투기장플래그:10:0
 			PRINTL 주최자
 			PRINTW 「두려움 없이 이곳에 올 줄이야」
 			PRINTL 
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTFORMW 주최자는 %조사처리(CALLNAME:(RESULT:1),"를")% 바라보며 말한다.
 				PRINTL 
 				PRINTL 주최자
@@ -706,7 +706,7 @@ SELECTCASE 투기장플래그:10:0
 			PRINTL 　숭배하는 것을 잊은 어리석은 인류를 멸하기 위해서 말이지
 			PRINTW 　그러기 위해선 인류의 희망이 될 구세주를 없애야만 하노라」
 			PRINTL 
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTL 오빠 (신령 ＹＨＶＨ)
 				PRINTL 「설마, 네가 나의 종들을 모두 쓰러뜨리고 구세주로 성장할 줄이야
 				PRINTW 　그런데 빙의한 놈의 여동생이 인류의 구세주가 된다니. 단순한 우연인가?」
@@ -720,7 +720,7 @@ SELECTCASE 투기장플래그:10:0
 				PRINTL 신령 ＹＨＶＨ
 				PRINTL 「인류는 더욱 뛰어난 예지를 지나치게 갈구했다
 				PRINTW 　하필이면 창조주인 바로 나에게 다가서려 한 것이다
-				IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+				IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 					PRINTW 　인류에게 있어서 네가 최후의 희망. 되다만 구세주여, 저주받을지어다!」
 				ELSE
 					PRINTW 　인류여, 저주받을지어다!」
@@ -730,12 +730,12 @@ SELECTCASE 투기장플래그:10:0
 				PRINTL 마왕 루시퍼
 				PRINTL 「쿼어어어어…. 뉘가 이 거대한 마법진의 중앙에 대량의 생체 ＭＡＧ를 모아,
 				PRINTW 　마계의 왕인 이 몸을 의도적으로 이곳에 불러냈는가
-				PRINTFORML 　그렇군. 너의 그 힘…\@ FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2 ? , 인류의 구세주라는 뜻인가 # \@
+				PRINTFORML 　그렇군. 너의 그 힘…\@ FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2 ? , 인류의 구세주라는 뜻인가 # \@
 				PRINTW 　유일신에게 놀아나고 있는 어리석은 인간아
-				PRINTFORMW 　\@ FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2 ? 네가 진정한 구세주로서 정녕 어울리는지 아닌지 # 네 힘을 \@ 시험해주리라… 간다!!」
+				PRINTFORMW 　\@ FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2 ? 네가 진정한 구세주로서 정녕 어울리는지 아닌지 # 네 힘을 \@ 시험해주리라… 간다!!」
 				PRINTL 
 				
-				CALL SET_ENEMY,9,[[キャラ:루시퍼]],70,1,1
+				CALL SET_ENEMY,9,[[캐릭터:루시퍼]],70,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				BASE:(CHARANUM-1):화염 = 200
@@ -775,7 +775,7 @@ SELECTCASE 투기장플래그:10:0
 				PRINTW 　인류는 멸망의 길을, 자기 발로 걸었느니라!!」
 				PRINTL 
 				
-				CALL SET_ENEMY,9,[[キャラ:사탄]],70,1,1
+				CALL SET_ENEMY,9,[[캐릭터:사탄]],70,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				BASE:(CHARANUM-1):검격 = 999
@@ -815,7 +815,7 @@ SELECTCASE 투기장플래그:10:0
 				PRINTW 　사람의 자식이 사탄을 쓰러뜨렸으니 천사들이 내버려두지 않는다
 			ENDIF
 			PRINTW 　인류와 악마의 전쟁이 발발해 인류는 멸망의 길을 걸을 것이다」
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTFORMW 신령 ＹＨＶＨ는 %조사처리(CALLNAME:(RESULT:1),"를")% 바라보며 말하기 시작했다
 				PRINTL 
 				PRINTL 신령 ＹＨＶＨ
@@ -826,8 +826,8 @@ SELECTCASE 투기장플래그:10:0
 			PRINTL 신령 ＹＨＶＨ
 			PRINTW 「그럼, 작별이다」
 			PRINTL 데빌 콜로세움에서 신령 ＹＨＶＨ의 기척이 완전히 사라졌다
-			PRINTFORMW 그 뒤에는 \@ FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2 ? %CALLNAME:(RESULT:1)%의 오빠 # 주최자인 남자 \@가 쓰러져 있었다. 심하게 쇠약해져 있는 것 같다
-			IF FINDCHARA_B([[キャラ:데빌콜로주인공]]) == 2
+			PRINTFORMW 그 뒤에는 \@ FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2 ? %CALLNAME:(RESULT:1)%의 오빠 # 주최자인 남자 \@가 쓰러져 있었다. 심하게 쇠약해져 있는 것 같다
+			IF FINDCHARA_B([[캐릭터:데빌콜로주인공]]) == 2
 				PRINTFORMW %조사처리(CALLNAME:(RESULT:1),"는")% 오빠의 곁으로 달려가 안아들었다
 				PRINTL 
 				PRINTFORML %CALLNAME:(RESULT:1)%의 오빠
@@ -980,29 +980,29 @@ IF RAND:5 == 0 || FLAG:DEBUG
 			SELECTCASE 투기장플래그:10:0
 				CASE 1
 					;原作F。Eのア무도ゥキアスは0309수정6に存在しないので、Dは에키드나なのでなし。女타천사추가のブネを使わせて頂きました
-					CALL SET_ENEMY,9,[[キャラ:부네]],30,1,1
+					CALL SET_ENEMY,9,[[캐릭터:부네]],30,1,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				CASE 2
-					CALL SET_ENEMY,9,[[キャラ:크자판]],36,1,1
+					CALL SET_ENEMY,9,[[캐릭터:크자판]],36,1,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				CASE 3
-					CALL SET_ENEMY,9,[[キャラ:무르무르]],50,1,1
+					CALL SET_ENEMY,9,[[캐릭터:무르무르]],50,1,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1200
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				CASE 4
-					CALL SET_ENEMY,9,[[キャラ:하겐티]],58,1,1
+					CALL SET_ENEMY,9,[[캐릭터:하겐티]],58,1,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				CASE 5
-					CALL SET_ENEMY,9,[[キャラ:로노웨]],66,1,1
+					CALL SET_ENEMY,9,[[캐릭터:로노웨]],66,1,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CALL SYNC_STATUS,(CHARANUM-1)
@@ -1019,20 +1019,20 @@ IF RAND:5 == 0 || FLAG:DEBUG
 			IF RESULT == 0
 				SELECTCASE 투기장플래그:10:0
 					CASE 1
-						SIF FINDCHARA_B([[キャラ:부네]]) < 0
-							CALL ADD_NEW_COMPANION,[[キャラ:부네]],1000
+						SIF FINDCHARA_B([[캐릭터:부네]]) < 0
+							CALL ADD_NEW_COMPANION,[[캐릭터:부네]],1000
 					CASE 2
-						SIF FINDCHARA_B([[キャラ:크자판]]) < 0
-							CALL ADD_NEW_COMPANION,[[キャラ:크자판]],1000
+						SIF FINDCHARA_B([[캐릭터:크자판]]) < 0
+							CALL ADD_NEW_COMPANION,[[캐릭터:크자판]],1000
 					CASE 3
-						SIF FINDCHARA_B([[キャラ:무르무르]]) < 0
-							CALL ADD_NEW_COMPANION,[[キャラ:무르무르]],1000
+						SIF FINDCHARA_B([[캐릭터:무르무르]]) < 0
+							CALL ADD_NEW_COMPANION,[[캐릭터:무르무르]],1000
 					CASE 4
-						SIF FINDCHARA_B([[キャラ:하겐티]]) < 0
-							CALL ADD_NEW_COMPANION,[[キャラ:하겐티]],1000
+						SIF FINDCHARA_B([[캐릭터:하겐티]]) < 0
+							CALL ADD_NEW_COMPANION,[[캐릭터:하겐티]],1000
 					CASE 5
-						SIF FINDCHARA_B([[キャラ:로노웨]]) < 0
-							CALL ADD_NEW_COMPANION,[[キャラ:로노웨]],1000
+						SIF FINDCHARA_B([[캐릭터:로노웨]]) < 0
+							CALL ADD_NEW_COMPANION,[[캐릭터:로노웨]],1000
 				ENDSELECT
 
 				;キャラ数上限で加入できなかった場合等を弾く

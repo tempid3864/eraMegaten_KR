@@ -458,7 +458,7 @@ SELECTCASE DA:ARG:(ARG:1)
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:체르노보그]],60,0,1
+				CALL SET_ENEMY,9,[[캐릭터:체르노보그]],60,0,1
 				NAME:(CHARANUM-1) = 데스 사이즈
 				CALLNAME:(CHARANUM-1) = 데스 사이즈
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -573,7 +573,7 @@ SELECTCASE DA:ARG:(ARG:1)
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
 						
-						CALL SET_ENEMY,9,[[キャラ:데스그리폰]],50,0,1
+						CALL SET_ENEMY,9,[[캐릭터:데스그리폰]],50,0,1
 						NAME:(CHARANUM-1) = 섀도우
 						CALLNAME:(CHARANUM-1) = 섀도우
 						CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -3437,31 +3437,31 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,7,[[キャラ:마카브르]],33,0,1
+					CALL SET_ENEMY,7,[[캐릭터:마카브르]],33,0,1
 					NAME:(CHARANUM-1) = 블러디메리
 					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,8,[[キャラ:목없는라이더]],33,0,1
+					CALL SET_ENEMY,8,[[캐릭터:목없는라이더]],33,0,1
 					NAME:(CHARANUM-1) = 마리오네트
 					CALLNAME:(CHARANUM-1) = 마리오네트
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,9,[[キャラ:마카브르]],33,0,1
+					CALL SET_ENEMY,9,[[캐릭터:마카브르]],33,0,1
 					NAME:(CHARANUM-1) = 블러디메리
 					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,10,[[キャラ:목없는라이더]],33,0,1
+					CALL SET_ENEMY,10,[[캐릭터:목없는라이더]],33,0,1
 					NAME:(CHARANUM-1) = 마리오네트
 					CALLNAME:(CHARANUM-1) = 마리오네트
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,11,[[キャラ:마카브르]],33,0,1
+					CALL SET_ENEMY,11,[[캐릭터:마카브르]],33,0,1
 					NAME:(CHARANUM-1) = 블러디메리
 					CALLNAME:(CHARANUM-1) = 블러디메리
 					CALL SYNC_STATUS, (CHARANUM-1)
@@ -3562,7 +3562,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,9,[[キャラ:카마조츠]],50,0,1
+					CALL SET_ENEMY,9,[[캐릭터:카마조츠]],50,0,1
 					NAME:(CHARANUM-1) = 신 사이즈
 					CALLNAME:(CHARANUM-1) = 신 사이즈
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -3770,14 +3770,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,8,[[キャラ:츠치구모]],55,0,1
+					CALL SET_ENEMY,8,[[캐릭터:츠치구모]],55,0,1
 					NAME:(CHARANUM-1) = 사이클롭스
 					CALLNAME:(CHARANUM-1) = 사이클롭스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,10,[[キャラ:츠치구모]],55,0,1
+					CALL SET_ENEMY,10,[[캐릭터:츠치구모]],55,0,1
 					NAME:(CHARANUM-1) = 사이클롭스
 					CALLNAME:(CHARANUM-1) = 사이클롭스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -3916,12 +3916,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL MESSAGE_WINDOW_D, "", "＞　트리쉬는 손에 들고 있는 하얀 카우보이 모자를 만지작거리며/　「그는、즐거운듯이 말했어」라고 말한다 "
 					CALL MESSAGE_WINDOW_D, "단테", "「Hey、착각하지마。진게 아니야、무승부다」/　그렇지？　라고 지기 싫어하는 사람이 주장하지만、그녀는 익숙한 모습이라는 듯 대하고 있다"
 					CALL MESSAGE_WINDOW_D, "트리쉬", "「그 이야기는 나중에 사이좋게 상의해줘/　나도 여기랑은 인연이 깊어서。늦었지만、동행해주도록 할께」"
-					SIF FINDCHARA_B([[キャラ:버질]]) == 2
+					SIF FINDCHARA_B([[캐릭터:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "", "「서로 사냥감을 양보할 생각은 없을 테고、사이좋게 지내자구요？」/＞　그녀는 왠지 눈에 띄지 않게 입을 다물고 있는 버질에게도 상냥하게 말하고 있다/　　그녀는 재현체인 것 같지는 않고、그녀 역시 말렛 섬의 관계자라는 듯 하다 "
 					CALL MESSAGE_WINDOW_D, "", @"＞　그리고 단테 분실물이니 유용하게 활용하면 좋겠다고、%CALLNAME:MASTER%에게 말하고 모자를 전달했다 "
 					CALL MESSAGE_WINDOW_D, "트리쉬", "「데빌헌터　트리쉬야　앞으로도 잘 부탁해？」"
 					CALL MESSAGE_WINDOW_D, "", "＞　트리쉬이(가) 동료가 되었다/　　Dr.파우스트　를 입수했다 "
-					SIF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == -1
+					SIF FINDCHARA_B([[캐릭터:트리쉬(DMC)]]) == -1
 						CALL ADD_NEW_COMPANION,3505,500
 					CALL GET_ITEMS,"Dr.파우스트",1
 					던전플래그:99:5 = 6
@@ -3963,7 +3963,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL MESSAGE_WINDOW_D, "", @"＞　시선의 끝에는、몇 번이나 본 뒷모습이 %CALLNAME:MASTER%들을 기다리고 있었다 "
 					CALL MESSAGE_WINDOW_D, "", "＞　넬로ㆍ안젤로는 망토를 휘날리며、이쪽으로 돌아 검을 뽑는다 "
 					;PTに鬼ぃちゃんIN
-					IF FINDCHARA_B([[キャラ:버질]]) == 2
+					IF FINDCHARA_B([[캐릭터:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "단테", "「여전히 좋은 근성이다/　너도 그렇게 생각하지？」 "
 						CALL MESSAGE_WINDOW_D, "버질", "「‥‥비아냥거릴 작정이냐？」/＞　버질은 쓴 벌레 씹은 듯한 표정이다 "
 						CALL MESSAGE_WINDOW_D, "단테", "「에이 설마！/ 그 상황에서도 굽히지 않았다는 것을 순수하게 칭찬하고 있는 거야」 "
@@ -3971,7 +3971,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						CALL MESSAGE_WINDOW_D, "", "＞　――거기에는、 버질의 얼굴을 한 마검사 본연의 모습이 있었다/　　마검사는 다시 검을 들고、이쪽으로 검기를 돌린다 "
 						CALL MESSAGE_WINDOW_D, "버질", "「비켜라。/그렇게 나온다면 진짜와의 차이를 보여 주겠다」 "
 					;PTにいないけど鬼ぃちゃん加入済み
-					ELSEIF FINDCHARA_B([[キャラ:버질]]) == 1 || FINDCHARA_B([[キャラ:버질]]) == 12
+					ELSEIF FINDCHARA_B([[캐릭터:버질]]) == 1 || FINDCHARA_B([[캐릭터:버질]]) == 12
 						CALL MESSAGE_WINDOW_D, "단테", "「여전히 좋은 근성이다/　너도 그렇게 생각하지？」 "
 						CALL MESSAGE_WINDOW_D, "", @"＞　확실히 이 마검사에게서는、다른 악마에게는 없는 힘에 대한 집념을 %CALLNAME:MASTER%도 느끼고 있었다 "
 						CALL MESSAGE_WINDOW_D, "단테", "「하지만、라스트 스테이지다。/　보면 알겠지만、지금까지와 같다고 생각했다면――」 "
@@ -4002,16 +4002,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:미조우걸음수 = 0
 					FORCEWAIT
 					CALL MESSAGE_WINDOW_D, "", "＞　전력을 다하고 패배한 마검사는/　　소리도 없이 무릎부터 무너져 내리고、환상이었던 것 처럼 사라져 갔다‥‥‥ "
-					IF FINDCHARA_B([[キャラ:버질]]) == 2
+					IF FINDCHARA_B([[캐릭터:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "", "＞　아마도 과거의 자신이였을 마검사에게、몸소 숨통을 끊는 버질/　　그 기술의 탁월함에、단테가 옆에서 휘파람을 불고 있다. "
 						CALL MESSAGE_WINDOW_D, "버질", "「흥‥‥‥인정하지。/　　확실히 나는 한번 문두스에게 졌고、꼭두각시가 되었었다」 "
-						IF GETCHARA([[キャラ:버질]]) > -1 &&(IS_LOVER(GETCHARA([[キャラ:버질]])) || TALENT:(GETCHARA([[キャラ:버질]])):신뢰 || TALENT:(GETCHARA([[キャラ:버질]])):동료 || TALENT:(GETCHARA([[キャラ:버질]])):맹우)
+						IF GETCHARA([[캐릭터:버질]]) > -1 &&(IS_LOVER(GETCHARA([[캐릭터:버질]])) || TALENT:(GETCHARA([[캐릭터:버질]])):신뢰 || TALENT:(GETCHARA([[캐릭터:버질]])):동료 || TALENT:(GETCHARA([[캐릭터:버질]])):맹우)
 							CALL MESSAGE_WINDOW_D, "버질", @"「――좋은 기회다。/　　%CALLNAME:MASTER%、옆에서 보고 있어라」 "
 							CALL MESSAGE_WINDOW_D, "버질", "「지금의 나는、이런 녀석은 안중에도 없다。그것을 증명해보이겠다」 "
 						ELSE
 							CALL MESSAGE_WINDOW_D, "버질", "「――남겨줄 생각은 없어。/　　내가 놈을 사냥하는 모습을、얌전히 보고 있어라」 "
 						ENDIF
-					ELSEIF FINDCHARA_B([[キャラ:버질]]) == 1
+					ELSEIF FINDCHARA_B([[캐릭터:버질]]) == 1
 						CALL MESSAGE_WINDOW_D, "단테", "「수고했어。본인을 상대하는 것 보다는 덜하겠지만、최고의 춤을 즐길 수 있었지？ "
 						CALL MESSAGE_WINDOW_D, "", "＞　확실히、투기장에서 검을 겨누던 그때보다는 낫긴 하지만/　　즐거웠는지는 코멘트를 삼가도록 하겠습니다"
 						CALL MESSAGE_WINDOW_D, "단테", "「그러냐？　뭐、여기까지 오면 이제 한숨 돌려도 돼./　　어트랙션은 끝까지 즐기지 않으면 손해야」 "
@@ -4038,21 +4038,21 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,8,[[キャラ:그르르]],80,0,1
+					CALL SET_ENEMY,8,[[캐릭터:그르르]],80,0,1
 					NAME:(CHARANUM-1) = 신 시저스
 					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,9,[[キャラ:그르르]],80,0,1
+					CALL SET_ENEMY,9,[[캐릭터:그르르]],80,0,1
 					NAME:(CHARANUM-1) = 신 시저스
 					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,10,[[キャラ:그르르]],80,0,1
+					CALL SET_ENEMY,10,[[캐릭터:그르르]],80,0,1
 					NAME:(CHARANUM-1) = 신 시저스
 					CALLNAME:(CHARANUM-1) = 신 시저스
 					;CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -4140,7 +4140,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,8,[[キャラ:키메라]],80,0,1
+					CALL SET_ENEMY,8,[[캐릭터:키메라]],80,0,1
 					NAME:(CHARANUM-1) = 노바디
 					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
@@ -4150,7 +4150,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,9,[[キャラ:키메라]],80,0,1
+					CALL SET_ENEMY,9,[[캐릭터:키메라]],80,0,1
 					NAME:(CHARANUM-1) = 노바디
 					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
@@ -4160,7 +4160,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL SYNC_STATUS, (CHARANUM-1)
 					CALL HEALTH_CHARA, (CHARANUM-1)
 					
-					CALL SET_ENEMY,10,[[キャラ:키메라]],80,0,1
+					CALL SET_ENEMY,10,[[캐릭터:키메라]],80,0,1
 					NAME:(CHARANUM-1) = 노바디
 					CALLNAME:(CHARANUM-1) = 노바디
 					ABL:(CHARANUM-1):스킬1 = 305 ;아이언클로
@@ -4265,13 +4265,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				IF 던전플래그:99:1 < 34
 					CALL MESSAGE_WINDOW_D, "", @"＞　신전――신을 알현하는 문을 연상시키는 장소/　　그 가장 안쪽의 옥좌에 앉은 마제 문두스는 %CALLNAME:MASTER%들을 기다리고 있었다 "
 					CALL MESSAGE_WINDOW_D, "문두스", "「잘 왔다。스파다의 피、그리고―― "
-					IF FINDCHARA_B([[キャラ:버질]]) == 2
+					IF FINDCHARA_B([[캐릭터:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "문두스", "오래 되었구나、내 부하여/ 또 나를 섬기러 왔는가」 "
 						CALL MESSAGE_WINDOW_D, "버질", "「시시한 도발을 하는군。그 꼴을 보니 용케도 화가 났구나」 "
 						CALL MESSAGE_WINDOW_D, "", "＞　일찍이 패하여、꼭두각시의 수모를 당한 상대라고는 하나/지금 검귀는 잡스러운 일이라는 듯 마제의 말을 코웃음치며 흘려듣는다 "
 						CALL MESSAGE_WINDOW_D, "", "＞　그나 단테로 미루어 보아、마제는 겉모습은 번지르르 하지만/　　이 이계와 마찬가지로 아무래도 자신도 완전하다고 말하기 어려운 상태인 것 같다 "
 						CALL MESSAGE_WINDOW_D, "", "＞　그 태도가 마음에 들지 않았는지、마제 문두스는 불쾌한 듯이 코를 킁킁거렸다 "
-						IF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
+						IF FINDCHARA_B([[캐릭터:트리쉬(DMC)]]) == 2
 							CALL MESSAGE_WINDOW_D, "문두스", "「흥、그래서‥‥역할조차 제대로 해내지 못하는 쓸모없는 놈인가/　배신자녀석이 부끄러움도 없이、용케도 다시 얼굴을 내밀었군」 "
 							CALL MESSAGE_WINDOW_D, "트리쉬", "「아 그 말대로군요/　하지만 자신이 세운 계책에서 패배한 것을、부하 탓으로 돌려도 곤란하네요」 "
 							CALL MESSAGE_WINDOW_D, "트리쉬", "「위대한 마제라고 하는 분이 그런 꼴이라면/　태어난 자로서도 부끄러워서 앞을 걸을 수가 없어요？」 "
@@ -4292,7 +4292,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL MESSAGE_WINDOW_D, "", "＞　그것이 잘못이라는 것은 지금까지의 내가 증명해 온 것이며、그것을 여기서도 증명해 보이자 "
 							CALL MESSAGE_WINDOW_D, "", "＞　그 태도가 마음에 들지 않았는지、마제 문두스는 불쾌한 듯이 코웃음을 치며 시선을 끊었다 "
 						ENDIF
-						IF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
+						IF FINDCHARA_B([[캐릭터:트리쉬(DMC)]]) == 2
 							CALL MESSAGE_WINDOW_D, "문두스", "「흥、그래서‥‥역할조차 제대로 해내지 못하는 쓸모없는 놈인가/　배신자녀석이 부끄러움도 없이、용케도 다시 얼굴을 내밀었군」 "
 							CALL MESSAGE_WINDOW_D, "트리쉬", "「아 그 말대로군요/　하지만 자신이 세운 계책에서 패배한 것을、부하 탓으로 돌려도 곤란하네요」 "
 							CALL MESSAGE_WINDOW_D, "트리쉬", "「위대한 마제라고 하는 분이 그런 꼴이라면/　태어난 자로서도 부끄러워서 앞을 걸을 수가 없어요？」 "
@@ -4334,10 +4334,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL MESSAGE_WINDOW_D, "", "＞　몸을 유지하지 못하고、마제 문두스는 아래로부터 무너져 간다 "
 					CALL MESSAGE_WINDOW_D, "", "＞　그럼에도 불구하고、원망과 함께 손을 뻗는 정면에 단테는 당당히 모습을 드러내고―― "
 					CALL MESSAGE_WINDOW_D, "단테", @"「Hey、%CALLNAME:MASTER%、피날레다」/　이번 파트너를 옆으로 불렀다 "
-					IF FINDCHARA_B([[キャラ:버질]]) == 2
+					IF FINDCHARA_B([[캐릭터:버질]]) == 2
 						CALL MESSAGE_WINDOW_D, "버질", "「그것은 말하지 마라」 "
 						CALL MESSAGE_WINDOW_D, "", "＞　미간을 찌푸린 형의 말도 받아 들이고/　두 사람은 서로의 총을 한 자루씩 교차시키며 힘을 쏟는다 "
-					ELSEIF FINDCHARA_B([[キャラ:트리쉬(DMC)]]) == 2
+					ELSEIF FINDCHARA_B([[캐릭터:트리쉬(DMC)]]) == 2
 						CALL MESSAGE_WINDOW_D, "트리쉬", "「마무리 대사는？」 "
 					ELSE
 						CALL MESSAGE_WINDOW_D, "", "＞　서로 시선을 맞추고、히죽히죽 웃는다/　　마무리는 이것밖에 없다고 소리를 지르며、동시에 방아쇠를 당겼다―― "
@@ -4723,171 +4723,171 @@ ENDIF
 SELECTCASE FLAG:현M
 	CASE 7
 		IF 던전플래그:99:11 >= 5
-			RETURN [[キャラ:로어]], 70+RAND:2*3
+			RETURN [[캐릭터:로어]], 70+RAND:2*3
 		ELSEIF 던전플래그:99:11 >= 3
-			RETURN [[キャラ:로어]], 45+RAND:2*3
+			RETURN [[캐릭터:로어]], 45+RAND:2*3
 		ELSEIF 던전플래그:99:11 == 2
-			RETURN [[キャラ:로어]], 40+RAND:2*3
+			RETURN [[캐릭터:로어]], 40+RAND:2*3
 		ELSE
-			RETURN [[キャラ:로어]], 35+RAND:2*3
+			RETURN [[캐릭터:로어]], 35+RAND:2*3
 		ENDIF
 	CASE 10
 		SELECTCASE RAND:100
 			CASE IS <25
-				RETURN [[キャラ:목없는라이더]], 40+RAND:2*3
+				RETURN [[캐릭터:목없는라이더]], 40+RAND:2*3
 			CASE IS <50
-				RETURN [[キャラ:그르르]], 43+RAND:2*3
+				RETURN [[캐릭터:그르르]], 43+RAND:2*3
 			CASE IS <= 100
-				RETURN [[キャラ:혼돈]], 45+RAND:2*3
+				RETURN [[캐릭터:혼돈]], 45+RAND:2*3
 		ENDSELECT
 	CASE 1,2,3,4,5,6,8,9,11,12
 		IF 던전플래그:99:11 == 1
 			SELECTCASE RAND:100
 					CASE IS < 50
-						RETURN [[キャラ:목없는라이더]], 28+RAND:2*3
+						RETURN [[캐릭터:목없는라이더]], 28+RAND:2*3
 					CASE IS < 80
-						RETURN [[キャラ:마카브르]], 30+RAND:2*3
+						RETURN [[캐릭터:마카브르]], 30+RAND:2*3
 					CASE IS <= 100
-						RETURN [[キャラ:바포멧트]], 33+RAND:2*3
+						RETURN [[캐릭터:바포멧트]], 33+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 2
 			SELECTCASE RAND:100
 				CASE IS < 50
-					RETURN [[キャラ:목없는라이더]], 30+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 30+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:마카브르]], 33+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 33+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:그르르]], 35+RAND:2*3
+					RETURN [[캐릭터:그르르]], 35+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 3
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:목없는라이더]], 30+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 30+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:마카브르]], 33+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 33+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:그르르]], 35+RAND:2*3
+					RETURN [[캐릭터:그르르]], 35+RAND:2*3
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:목없는라이더]], 40+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 40+RAND:2*3
 				CASE IS < 45
-					RETURN [[キャラ:마카브르]], 42+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 42+RAND:2*3
 				CASE IS < 60
-					RETURN [[キャラ:그르르]], 43+RAND:2*3
+					RETURN [[캐릭터:그르르]], 43+RAND:2*3
 				CASE IS < 100
-					RETURN [[キャラ:데스그리폰]], 43+RAND:2*3
+					RETURN [[캐릭터:데스그리폰]], 43+RAND:2*3
 			ENDSELECT
 		ENDIF
 	CASE 13,14,15,19,22,23,24,25
 		IF 던전플래그:99:11 <= 4
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:목없는라이더]], 42+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 42+RAND:2*3
 				CASE IS < 50
-					RETURN [[キャラ:마카브르]], 42+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 42+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:그르르]], 43+RAND:2*3
+					RETURN [[캐릭터:그르르]], 43+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:카마조츠]], 43+RAND:2*3
+					RETURN [[캐릭터:카마조츠]], 43+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 5
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:목없는라이더]], 43+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 43+RAND:2*3
 				CASE IS < 50
-					RETURN [[キャラ:마카브르]], 43+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 43+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:베르세르크]], 44+RAND:2*3
+					RETURN [[캐릭터:베르세르크]], 44+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:카마조츠]], 47+RAND:2*3
+					RETURN [[캐릭터:카마조츠]], 47+RAND:2*3
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 20
-					RETURN [[キャラ:목없는라이더]], 50+RAND:2*3
+					RETURN [[캐릭터:목없는라이더]], 50+RAND:2*3
 				CASE IS < 40
-					RETURN [[キャラ:마카브르]], 50+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 50+RAND:2*3
 				CASE IS < 60
-					RETURN [[キャラ:오시치]], 53+RAND:2*3
+					RETURN [[캐릭터:오시치]], 53+RAND:2*3
 				CASE IS < 80
-					RETURN [[キャラ:베르세르크]], 55+RAND:2*3
+					RETURN [[캐릭터:베르세르크]], 55+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:카마조츠]], 55+RAND:2*3
+					RETURN [[캐릭터:카마조츠]], 55+RAND:2*3
 			ENDSELECT
 		ENDIF
 	CASE 16
 		SELECTCASE RAND:100
 			CASE IS < 25
-				RETURN [[キャラ:마카브르]], 50+RAND:2*3
+				RETURN [[캐릭터:마카브르]], 50+RAND:2*3
 			CASE IS < 70
-				RETURN [[キャラ:오시치]], 53+RAND:2*3
+				RETURN [[캐릭터:오시치]], 53+RAND:2*3
 			CASE IS <= 100
-				RETURN [[キャラ:카마조츠]], 55+RAND:2*3
+				RETURN [[캐릭터:카마조츠]], 55+RAND:2*3
 		ENDSELECT
 	CASE 17
-		RETURN [[キャラ:츠치구모]], 55+RAND:2*3
+		RETURN [[캐릭터:츠치구모]], 55+RAND:2*3
 	CASE 18,21
 		SELECTCASE RAND:100
 			CASE IS < 25
-				RETURN [[キャラ:목없는라이더]], 50+RAND:2*3
+				RETURN [[캐릭터:목없는라이더]], 50+RAND:2*3
 			CASE IS <50
-				RETURN [[キャラ:베르세르크]], 55+RAND:2*3
+				RETURN [[캐릭터:베르세르크]], 55+RAND:2*3
 			CASE IS <= 100
-				RETURN [[キャラ:타나토스]], 57+RAND:2*3
+				RETURN [[캐릭터:타나토스]], 57+RAND:2*3
 		ENDSELECT
 	CASE 20
-		RETURN [[キャラ:베르세르크]], 60+RAND:2*3
+		RETURN [[캐릭터:베르세르크]], 60+RAND:2*3
 	CASE 26,27,28,29,30,31,32,33,34,35,36,37,38
 		IF 던전플래그:99:11 == 9 && 던전플래그:99:1 >= 33
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:오시치]], 72+RAND:2*3
+					RETURN [[캐릭터:오시치]], 72+RAND:2*3
 				CASE IS < 50
-					RETURN [[キャラ:페리]], 75+RAND:2*3
+					RETURN [[캐릭터:페리]], 75+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:하누만]], 77+RAND:2*3
+					RETURN [[캐릭터:하누만]], 77+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:키메라]], 80+RAND:2*3
+					RETURN [[캐릭터:키메라]], 80+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 9 && 던전플래그:99:1 < 33
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:오시치]], 66+RAND:2*3
+					RETURN [[캐릭터:오시치]], 66+RAND:2*3
 				CASE IS < 50
-					RETURN [[キャラ:페리]], 68+RAND:2*3
+					RETURN [[캐릭터:페리]], 68+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:하누만]], 72+RAND:2*3
+					RETURN [[캐릭터:하누만]], 72+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:키메라]], 75+RAND:2*3
+					RETURN [[캐릭터:키메라]], 75+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 8
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:오시치]], 63+RAND:2*3
+					RETURN [[캐릭터:오시치]], 63+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:페리]], 65+RAND:2*3
+					RETURN [[캐릭터:페리]], 65+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:하누만]], 70+RAND:2*3
+					RETURN [[캐릭터:하누만]], 70+RAND:2*3
 			ENDSELECT
 		ELSEIF 던전플래그:99:11 == 7
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:마카브르]], 63+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 63+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:오시치]], 65+RAND:2*3
+					RETURN [[캐릭터:오시치]], 65+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:페리]], 70+RAND:2*3
+					RETURN [[캐릭터:페리]], 70+RAND:2*3
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 25
-					RETURN [[キャラ:마카브르]], 60+RAND:2*3
+					RETURN [[캐릭터:마카브르]], 60+RAND:2*3
 				CASE IS < 70
-					RETURN [[キャラ:오시치]], 63+RAND:2*3
+					RETURN [[캐릭터:오시치]], 63+RAND:2*3
 				CASE IS <= 100
-					RETURN [[キャラ:카마조츠]], 65+RAND:2*3
+					RETURN [[캐릭터:카마조츠]], 65+RAND:2*3
 			ENDSELECT
 		ENDIF
 	CASEELSE
@@ -4895,33 +4895,33 @@ ENDSELECT
 		;LOCALに종류数を入れる
 ;		LOCAL = 5
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:목없는라이더]], 28
+;			RETURN [[캐릭터:목없는라이더]], 28
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:마카브르]], 30
+;			RETURN [[캐릭터:마카브르]], 30
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:シン シザーズ]], 1
+;			RETURN [[캐릭터:シン シザーズ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:シン サイズ]], 1
+;			RETURN [[캐릭터:シン サイズ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:デス サイズ]], 1
+;			RETURN [[캐릭터:デス サイズ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:サルガッソー]], 1
+;			RETURN [[캐릭터:サルガッソー]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:ベルゼバブ]], 1
+;			RETURN [[캐릭터:ベルゼバブ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:ブレイド]], 1
+;			RETURN [[캐릭터:ブレイド]], 1
 ;	요귀,656,베르세르크
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:フェティッシュ]], 1
+;			RETURN [[캐릭터:フェティッシュ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:사이클롭스]], 1
+;			RETURN [[캐릭터:사이클롭스]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:プラズマ]], 1
+;			RETURN [[캐릭터:プラズマ]], 1
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:フロスト]], 1
+;			RETURN [[캐릭터:フロスト]], 1
 ;	요마,456,하누만
 ;		SIF !RAND:(LOCAL --)
-;			RETURN [[キャラ:ノーバディ]], 1
+;			RETURN [[캐릭터:ノーバディ]], 1
 ;ENDSELECT
 
 ;=======================================================================
@@ -4934,20 +4934,20 @@ ENDSELECT
 ABL:(CHARANUM-1):회화타입 = 331
 
 SELECTCASE NO:ARG
-	CASE [[キャラ:목없는라이더]]
+	CASE [[캐릭터:목없는라이더]]
 		NAME:(CHARANUM-1) = 마리오네트
 		CALLNAME:(CHARANUM-1) = 마리오네트
 	
-	CASE [[キャラ:마카브르]]
+	CASE [[캐릭터:마카브르]]
 		NAME:(CHARANUM-1) = 블러디메리
 		CALLNAME:(CHARANUM-1) = 블러디메리
 	
-	CASE [[キャラ:그르르]]
+	CASE [[캐릭터:그르르]]
 		NAME:(CHARANUM-1) = 신 시저스
 		CALLNAME:(CHARANUM-1) = 신 시저스
 	
 	;요조,959,카마조츠
-	CASE [[キャラ:카마조츠]]
+	CASE [[캐릭터:카마조츠]]
 		NAME:(CHARANUM-1) = 신 사이즈
 		CALLNAME:(CHARANUM-1) = 신 사이즈
 		MAXBASE:(CHARANUM-1):비구 = 120
@@ -4957,20 +4957,20 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬3 =508 ;스쿤ㆍ다
 		ABL:(CHARANUM-1):스킬4 =2013 ;흡혈
 	
-	CASE [[キャラ:타나토스]]
+	CASE [[캐릭터:타나토스]]
 		NAME:(CHARANUM-1) = 데스 시저스
 		CALLNAME:(CHARANUM-1) = 데스 시저스
 	
 	;사신,1627,체르노보그
-	CASE [[キャラ:체르노보그]]
+	CASE [[캐릭터:체르노보그]]
 		NAME:(CHARANUM-1) = 데스 사이즈
 		CALLNAME:(CHARANUM-1) = 데스 사이즈
 	
-	CASE [[キャラ:로어]]
+	CASE [[캐릭터:로어]]
 		NAME:(CHARANUM-1) = 사르갓소
 		CALLNAME:(CHARANUM-1) = 사르갓소
 	
-	CASE [[キャラ:데스그리폰]]
+	CASE [[캐릭터:데스그리폰]]
 		NAME:(CHARANUM-1) = 섀도우
 		CALLNAME:(CHARANUM-1) = 섀도우
 		ABL:(CHARANUM-1):스킬1 = 326 ;베어먹기
@@ -4978,20 +4978,20 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬3 = 328 ;어설트다이브
 		ABL:(CHARANUM-1):스킬4 = 2005 ;자폭
 	
-	CASE [[キャラ:혼돈]]
+	CASE [[캐릭터:혼돈]]
 		NAME:(CHARANUM-1) = 벨제붑
 		CALLNAME:(CHARANUM-1) = 벨제붑
 	
-	CASE [[キャラ:오시치]]
+	CASE [[캐릭터:오시치]]
 		NAME:(CHARANUM-1) = 페티쉬
 		CALLNAME:(CHARANUM-1) = 페티쉬
 	
-	CASE [[キャラ:츠치구모]]
+	CASE [[캐릭터:츠치구모]]
 		NAME:(CHARANUM-1) = 사이클롭스
 		CALLNAME:(CHARANUM-1) = 사이클롭스
 	
 	;요귀,656,베르세르크
-	CASE [[キャラ:베르세르크]]
+	CASE [[캐릭터:베르세르크]]
 		NAME:(CHARANUM-1) = 블레이드
 		CALLNAME:(CHARANUM-1) = 블레이드
 		MAXBASE:(CHARANUM-1):검격 = 80
@@ -4999,12 +4999,12 @@ SELECTCASE NO:ARG
 		MAXBASE:(CHARANUM-1):빙결 = 100
 		BASE:(CHARANUM-1):빙결 = 100
 	
-	CASE [[キャラ:페리]]
+	CASE [[캐릭터:페리]]
 		NAME:(CHARANUM-1) = 플라즈마
 		CALLNAME:(CHARANUM-1) = 플라즈마
 	
 	;요마,456,하누만
-	CASE [[キャラ:하누만]]
+	CASE [[캐릭터:하누만]]
 		NAME:(CHARANUM-1) = 프로스트
 		CALLNAME:(CHARANUM-1) = 프로스트
 		ABL:(CHARANUM-1):스킬1 = 345 ;앵화섬란
@@ -5015,7 +5015,7 @@ SELECTCASE NO:ARG
 		ABL:(CHARANUM-1):스킬6 = 0
 		ABL:(CHARANUM-1):스킬7 = 0
 	
-	CASE [[キャラ:키메라]]
+	CASE [[캐릭터:키메라]]
 		NAME:(CHARANUM-1) = 노바디
 		CALLNAME:(CHARANUM-1) = 노바디
 		ABL:(CHARANUM-1):스킬1 = 304 ;메가클로
@@ -5031,7 +5031,7 @@ ENDSELECT
 ;=======================================================================
 @PHANTOM_1
 
-CALL SET_ENEMY,9,[[キャラ:츠치구모]],40,0,1
+CALL SET_ENEMY,9,[[캐릭터:츠치구모]],40,0,1
 NAME:(CHARANUM-1) = 팬텀
 CALLNAME:(CHARANUM-1) = 팬텀
 CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
@@ -5057,11 +5057,11 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @PHANTOM_2
 IF GETBIT(던전플래그:99:8,4)
-	CALL SET_ENEMY,9,[[キャラ:츠치구모]],55,1,1
+	CALL SET_ENEMY,9,[[캐릭터:츠치구모]],55,1,1
 	NAME:(CHARANUM-1) = 팬텀(환영체)
 	CALLNAME:(CHARANUM-1) = 팬텀(환영체)
 ELSE
-	CALL SET_ENEMY,9,[[キャラ:츠치구모]],55,0,1
+	CALL SET_ENEMY,9,[[캐릭터:츠치구모]],55,0,1
 	NAME:(CHARANUM-1) = 팬텀
 	CALLNAME:(CHARANUM-1) = 팬텀
 ENDIF
@@ -5089,7 +5089,7 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 
 @GIRFFON_1
-CALL SET_ENEMY,9,[[キャラ:헬그리폰]],57,0,1
+CALL SET_ENEMY,9,[[캐릭터:헬그리폰]],57,0,1
 NAME:(CHARANUM-1) = 그리폰
 CALLNAME:(CHARANUM-1) = 그리폰
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -5103,7 +5103,7 @@ ABL:(CHARANUM-1):스킬5 = 0
 ABL:(CHARANUM-1):스킬6 = 0
 
 @GIRFFON_2
-CALL SET_ENEMY,9,[[キャラ:헬그리폰]],70,0,1
+CALL SET_ENEMY,9,[[캐릭터:헬그리폰]],70,0,1
 NAME:(CHARANUM-1) = 그리폰
 CALLNAME:(CHARANUM-1) = 그리폰
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -5118,11 +5118,11 @@ ABL:(CHARANUM-1):스킬6 = 0
 
 @GIRFFON_3
 IF GETBIT(던전플래그:99:8,4)
-	CALL SET_ENEMY,9,[[キャラ:헬그리폰]],73,1,1
+	CALL SET_ENEMY,9,[[캐릭터:헬그리폰]],73,1,1
 	NAME:(CHARANUM-1) = 그리폰(환영체)
 	CALLNAME:(CHARANUM-1) = 그리폰(환영체)
 ELSE
-	CALL SET_ENEMY,9,[[キャラ:헬그리폰]],73,0,1
+	CALL SET_ENEMY,9,[[캐릭터:헬그리폰]],73,0,1
 	NAME:(CHARANUM-1) = 그리폰
 	CALLNAME:(CHARANUM-1) = 그리폰
 ENDIF
@@ -5139,7 +5139,7 @@ ABL:(CHARANUM-1):스킬5 = 0
 ABL:(CHARANUM-1):스킬6 = 0
 
 @NERO_1
-CALL SET_ENEMY,9,[[キャラ:버질]],47,0,1
+CALL SET_ENEMY,9,[[캐릭터:버질]],47,0,1
 NAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -5165,7 +5165,7 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 
 @NERO_2
-CALL SET_ENEMY,9,[[キャラ:버질]],65,0,1
+CALL SET_ENEMY,9,[[캐릭터:버질]],65,0,1
 NAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -5191,7 +5191,7 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 
 @NERO_3
-CALL SET_ENEMY,9,[[キャラ:버질]],80,0,1
+CALL SET_ENEMY,9,[[캐릭터:버질]],80,0,1
 NAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CALLNAME:(CHARANUM-1) = 넬로ㆍ안젤로
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
@@ -5215,11 +5215,11 @@ CALL HEALTH_CHARA, (CHARANUM-1)
 
 @NIGTHMARE
 IF 던전플래그:99:1 < 28
-	CALL SET_ENEMY,8,[[キャラ:에레보스]],75,0,1
+	CALL SET_ENEMY,8,[[캐릭터:에레보스]],75,0,1
 ELSEIF 던전플래그:99:1 < 32
-	CALL SET_ENEMY,8,[[キャラ:에레보스]],80,0,1
+	CALL SET_ENEMY,8,[[캐릭터:에레보스]],80,0,1
 ELSE
-	CALL SET_ENEMY,8,[[キャラ:에레보스]],83,0,1
+	CALL SET_ENEMY,8,[[캐릭터:에레보스]],83,0,1
 ENDIF
 
 NAME:(CHARANUM-1) = 나이트메어
@@ -5274,7 +5274,7 @@ CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
 @TORISH_ILLUSION
-CALL SET_ENEMY,9,[[キャラ:트리쉬(DMC)]],75,1,1
+CALL SET_ENEMY,9,[[캐릭터:트리쉬(DMC)]],75,1,1
 NAME:(CHARANUM-1) = 여성의 환영체
 CALLNAME:(CHARANUM-1) = 여성의 환영체
 ABL:(CHARANUM-1):스킬1 = 0 ;
@@ -5436,11 +5436,11 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:카부소]] , 3 + RAND:10 , CSVBASE([[キャラ:카부소]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:카부소]] , 3 + RAND:10 , CSVBASE([[캐릭터:카부소]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코다마]] , 3 + RAND:10 , CSVBASE([[キャラ:코다마]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코다마]] , 3 + RAND:10 , CSVBASE([[캐릭터:코다마]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:커시]] , 3 + RAND:10 , CSVBASE([[キャラ:커시]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:커시]] , 3 + RAND:10 , CSVBASE([[캐릭터:커시]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

@@ -51,12 +51,12 @@ PRINTFORMW ……
 PRINTFORMW 아니나 다를까、학원 안은 완전히 마계화 되어있다。
 PRINTFORMW 내부는 광란이 소용돌이치고 있었다。달콤한 향기、제정신이 아닌 남녀의 웃음소리、그리고 교성……。
 PRINTFORMW 복도에서 난교하고 있던 악마들이 %CALLNAME:MASTER%을 눈치채고 괴성을 지르며 덮쳐왔다！
-CALL SET_ENEMY,7, [[キャラ:오크]],13, 0
-CALL SET_ENEMY,8, [[キャラ:고블린]],13, 0
-CALL SET_ENEMY,10, [[キャラ:이누가미]],13, 0
-CALL SET_ENEMY,11, [[キャラ:안드라스]],13, 0
-CALL SET_ENEMY,12, [[キャラ:라미아]],13, 0
-CALL SET_ENEMY,16, [[キャラ:리림]],13, 0
+CALL SET_ENEMY,7, [[캐릭터:오크]],13, 0
+CALL SET_ENEMY,8, [[캐릭터:고블린]],13, 0
+CALL SET_ENEMY,10, [[캐릭터:이누가미]],13, 0
+CALL SET_ENEMY,11, [[캐릭터:안드라스]],13, 0
+CALL SET_ENEMY,12, [[캐릭터:라미아]],13, 0
+CALL SET_ENEMY,16, [[캐릭터:리림]],13, 0
 CALL BATTLE_START
 CUSTOMDRAWLINE =
 PRINTFORMW 쓰러진 악마들은、서서히 모습이 희미해지고、학생――나이 어린 소년 소녀의 모습으로 변해간다。
@@ -131,7 +131,7 @@ IF 의뢰플래그:17:0 == 2
 	CALL SET_ENEMY,9, 4214,15, 1
 	CALL SET_ENEMY,10, 4214,15, 1
 
-	CALL SET_ENEMY,14, [[キャラ:마리카]],19, 1, 1
+	CALL SET_ENEMY,14, [[캐릭터:마리카]],19, 1, 1
 	;マヒ針
 	ABL:(CHARANUM-1):스킬1 = 103
 	;催眠波⇒この段階で精神전체はエグイ。代わりにスクㆍンダ
@@ -169,9 +169,9 @@ ELSE
 	PRINTL 
 	PRINTFORMW 상당히 흥분한 상태 같다、이 쪽이 하는 말을 들어줄 것 같지도 않다。
 	PRINTFORMW 싸워서 길을 트는 수밖에 없다。
-	CALL SET_ENEMY,9, [[キャラ:오크]],15, 0
-	CALL SET_ENEMY,10, [[キャラ:고블린]],15, 0
-	CALL SET_ENEMY,14, [[キャラ:오퀴페테]],19, 0, 1
+	CALL SET_ENEMY,9, [[캐릭터:오크]],15, 0
+	CALL SET_ENEMY,10, [[캐릭터:고블린]],15, 0
+	CALL SET_ENEMY,14, [[캐릭터:오퀴페테]],19, 0, 1
 CUSTOMDRAWLINE =
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓

@@ -522,10 +522,10 @@ SIF SKILLGAGE_H_GET(ARG,PU_SKILLNUM_GET(ARG,"カードスキルB")) == 0
 SIF ARG:1 < 0 || GET_STATE(CFLAG:(ARG:1):상태이상) == "DYING"
 	RETURN 0
 ;イベント用　国境門
-IF CFLAG:ARG:998 == 2 && GETCHARA([[キャラ:국경문]]) > -1
-	SIF !GETBIT(CFLAG:GETCHARA([[キャラ:국경문]]):받음플래그,18) && !GETBIT(CFLAG:GETCHARA([[キャラ:국경문]]):받음플래그,19)
+IF CFLAG:ARG:998 == 2 && GETCHARA([[캐릭터:국경문]]) > -1
+	SIF !GETBIT(CFLAG:GETCHARA([[캐릭터:국경문]]):받음플래그,18) && !GETBIT(CFLAG:GETCHARA([[캐릭터:국경문]]):받음플래그,19)
 		RETURN 0
-	SIF !CFLAG:GETCHARA([[キャラ:국경문]]):현데미지
+	SIF !CFLAG:GETCHARA([[캐릭터:국경문]]):현데미지
 		RETURN 0
 	SIF INRANGE(CPOS(ARG:1), 1, 3) || INRANGE(CPOS(ARG:1), 7, 11)
 		RETURN 1

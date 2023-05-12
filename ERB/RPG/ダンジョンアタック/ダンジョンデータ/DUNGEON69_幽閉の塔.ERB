@@ -1500,7 +1500,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 		CASE 0
 			CALL MESSAGE_WINDOW_D, "불량 소년", "뭐야 여긴.../왜 맨홀 밑이 이런데로 연결되어 있는거야? "
 			CALL MESSAGE_WINDOW_D, "", "＞불량 소년은 혼잣말을 중얼거리고 있다."
-			IF FINDCHARA_B([[キャラ:타마키]]) == 2
+			IF FINDCHARA_B([[캐릭터:타마키]]) == 2
 				CALL MESSAGE_WINDOW_D, "타마키", "앗, 카루코자카타카츠나 복서목 양키과 미야모토속 아키라군이다/히호"
 				CALL MESSAGE_WINDOW_D, "아키라", "우치다인가… 도대체 어떻게 된단 말이야/맨홀에서 내렸더니 이런 곳으로 나와 버렸다"
 				CALL MESSAGE_WINDOW_D, "", "＞타마키는 여기까지의 경위를 설명했다.……"
@@ -1508,7 +1508,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL MESSAGE_WINDOW_D, "타마키", "그럭저럭 다치지 않아서 다행이야/미야모토군도 같이 왔어？"
 				CALL MESSAGE_WINDOW_D, "아키라", "……달리 밖에 나갈리도 없으니까."
 				CALL MESSAGE_WINDOW_D, "", "＞미야모토 아키라가 동료가 되었다."
-				CALL ADD_NEW_COMPANION,[[キャラ:아키라]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:아키라]],500
 				SIF RESULT
 					CFLAG:(RESULT:1):전투참가불가능 = -1
 				CALL MESSAGE_WINDOW_D, "타마키", "얀키 미야모토 아키라군이 중마가 되었다/오늘부터 잘부탁해"
@@ -1532,12 +1532,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", "＞당신이 방에 들어가자 악어가 근육 트레이닝을 하고 있었다… "
 			CALL MESSAGE_WINDOW_D, "세벡", "フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！/フンフンフンフンフンフンフン！！！"
 			CALL MESSAGE_WINDOW_D, "세벡", "フンフンフン…ん？　뭐야 닝겐인가 / 보다시피 우리는 근육 트레이닝 중이야 / 볼일이 있으면 다음에 해줘"
-			IF FINDCHARA_B([[キャラ:아키라]]) == 2
+			IF FINDCHARA_B([[캐릭터:아키라]]) == 2
 				CALL MESSAGE_WINDOW_D, "세벡", "어?/거기 인간 아몬 기척이 난다？ "
 				CALL MESSAGE_WINDOW_D, "아키라", "…내게 깃든 악마는 그렇게 자칭하고 있었군"
 				CALL MESSAGE_WINDOW_D, "세벡", "오! 너는 아몬과 하나가 되었구나!/그렇다면 너는 아몬과 같다는 말이구나.！ "
 				CALL MESSAGE_WINDOW_D, "아키라", "준비! 그럼 이 신수 세백님이 너희들에게 힘이 되어주마!/앞으로도 잘 부탁해!"
-				CALL ADD_NEW_COMPANION,[[キャラ:세벡]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:세벡]],500
 				던전플래그:69:5 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ENDIF
@@ -1550,12 +1550,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			IF FLAG:월령 == 0
 				CALL MESSAGE_WINDOW_D, "하트호르", "휴... / 어머? 닝겐이 이 방에 오다니 신기하네" 
 				CALL MESSAGE_WINDOW_D, "하트호르", "하지만 저는 지금 중마가 오기를 기다리고 있어요 / 볼일이 있다면 다음에 또 와줄까요?"
-				IF FINDCHARA_B([[キャラ:아키라]]) == 2
+				IF FINDCHARA_B([[캐릭터:아키라]]) == 2
 					CALL MESSAGE_WINDOW_D, "하트호르", "…？/그곳의 당신 아몬과 같은 낌새를 느껴요"
 					CALL MESSAGE_WINDOW_D, "아키라", "…나에게 깃든 악마는 아몬이라고 자칭하고 있었다."
 					CALL MESSAGE_WINDOW_D, "하트호르", "그렇군요.. 아몬은 당신과 하나로.. / 그럼 저도 당신들에게 힘을 보태겠습니다."
 					CALL MESSAGE_WINDOW_D, "하트호르", "저는 여신 하트로홀/앞으로도 잘부탁드립니다."
-					CALL ADD_NEW_COMPANION,[[キャラ:하트호르]],500
+					CALL ADD_NEW_COMPANION,[[캐릭터:하트호르]],500
 					던전플래그:69:4 = 1
 					DA:(FLAG:현X):(FLAG:현Y) = 1
 				ENDIF
@@ -1591,7 +1591,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:아오파샤]],26,0,1
+			CALL SET_ENEMY,9,[[캐릭터:아오파샤]],26,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			ABL:(CHARANUM-1):스킬4 = 1122
@@ -1623,13 +1623,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "토트", "ううむ…/ううむ……/ううむ……………………"
 			CALL MESSAGE_WINDOW_D, "토트", "…………………………………………/…………………………………………/……………………오! 깜짝이야！"
 			CALL MESSAGE_WINDOW_D, "토트", "인간이 오다니 신기한 일도 있구나 / 공교롭게도 이몸은 독서 중이니까, 볼일이 있으면 다음에 와 주게"
-			IF FINDCHARA_B([[キャラ:아키라]]) == 2
+			IF FINDCHARA_B([[캐릭터:아키라]]) == 2
 				CALL MESSAGE_WINDOW_D, "세벡", "음...? / 왠지 그대에게서 그리운 힘을 느낄거야, 마치 아몬같은… "
 				CALL MESSAGE_WINDOW_D, "아키라", "…나는 그 아몬과 하나가 된 것 같아"
 				CALL MESSAGE_WINDOW_D, "세벡", "이럴수가!/그 아몬이…… "
 				CALL MESSAGE_WINDOW_D, "아키라", "으음... / 좋아, 이것도 무슨 인연이지 / 이몸도 너희에게 힘을 보태준다고 하자."
 				CALL MESSAGE_WINDOW_D, "세벡", "이몸은 마신 토트/앞으로도 잘 부탁한다"
-				CALL ADD_NEW_COMPANION,[[キャラ:토트]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:토트]],500
 				던전플래그:69:6 = 1
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ENDIF
@@ -1669,7 +1669,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:알렉스]],30,0,1
+			CALL SET_ENEMY,9,[[캐릭터:알렉스]],30,0,1
 				NAME:(CHARANUM-1) = 謎の少女
 			CALLNAME:(CHARANUM-1) = 謎の少女
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1716,7 +1716,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:브샨스타]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:브샨스타]],40,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -1834,7 +1834,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:고스트Ｑ]],45,0,1
+				CALL SET_ENEMY,9,[[캐릭터:고스트Ｑ]],45,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -1847,8 +1847,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
 				FLAG:선제기습취소 = 0
-					FLAG:(10000+[[キャラ:고스트Ｑ]]) = 1
-				CALL ADD_NEW_COMPANION,[[キャラ:고스트Ｑ]],500
+					FLAG:(10000+[[캐릭터:고스트Ｑ]]) = 1
+				CALL ADD_NEW_COMPANION,[[캐릭터:고스트Ｑ]],500
 				던전플래그:69:22 = 2
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 			ELSEIF RESULT == 2
@@ -1867,7 +1867,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:드루즈]],48,0,1
+			CALL SET_ENEMY,9,[[캐릭터:드루즈]],48,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -1918,7 +1918,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:알렉스]],55,0,1
+			CALL SET_ENEMY,9,[[캐릭터:알렉스]],55,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 6500
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -1960,8 +1960,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL MESSAGE_WINDOW_D, "", "＞데모니카의 기능을 정지했다"
 				CALL MESSAGE_WINDOW_D, "알렉스", "으…/조…지……"
 				CALL MESSAGE_WINDOW_D, "", "＞당신은 알렉스의 몸을 짊어졌다"
-				CALL ADD_NEW_COMPANION,[[キャラ:알렉스]],-100
-				LOCAL = (GETCHARA([[キャラ:알렉스]]))
+				CALL ADD_NEW_COMPANION,[[캐릭터:알렉스]],-100
+				LOCAL = (GETCHARA([[캐릭터:알렉스]]))
 				IF CFLAG:LOCAL:인계횟수 == 0
 					BASE:LOCAL:LV = 50
 					BASE:LOCAL:힘 = 20
@@ -2029,7 +2029,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:케르눈노스]],60,0,1
+				CALL SET_ENEMY,9,[[캐릭터:케르눈노스]],60,0,1
 					NAME:(CHARANUM-1) = サルワ
 				CALLNAME:(CHARANUM-1) = サルワ
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -2063,7 +2063,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:쟈히]],60,0,1
+				CALL SET_ENEMY,9,[[캐릭터:쟈히]],60,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 3
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -2106,7 +2106,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:아지ㆍ다하카]],65,0,1
+			CALL SET_ENEMY,9,[[캐릭터:아지ㆍ다하카]],65,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 9000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -2151,7 +2151,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:앙리ㆍ만유]],70,0,3
+			CALL SET_ENEMY,9,[[캐릭터:앙리ㆍ만유]],70,0,3
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 12000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 90000
@@ -2275,7 +2275,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:주르반]],80,0,1
+			CALL SET_ENEMY,9,[[캐릭터:주르반]],80,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 15000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 90000
@@ -2304,7 +2304,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 			
 		CASE 3500
-			IF FINDCHARA_B([[キャラ:알렉스]]) == 2 && 던전플래그:69:10 == 0 && 의뢰플래그:42:10 == 2
+			IF FINDCHARA_B([[캐릭터:알렉스]]) == 2 && 던전플래그:69:10 == 0 && 의뢰플래그:42:10 == 2
 				CALL MESSAGE_WINDOW_D, "조지", "<<…이건?＞＞"
 				CALL MESSAGE_WINDOW_D, "알렉스", "조지? 왜 그래?"
 				CALL MESSAGE_WINDOW_D, "조지", "<<…내 시스템에…모종의 개입이…강제적으로…>"
@@ -2361,7 +2361,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:셰키나]],88,0,3
+			CALL SET_ENEMY,9,[[캐릭터:셰키나]],88,0,3
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 18000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 90000
@@ -2398,7 +2398,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", "ㆍㆍㆍ/ㆍㆍㆍㆍㆍㆍ/ㆍㆍㆍㆍㆍㆍㆍㆍㆍ"
 			IF 던전플래그:69:41 == 1
 				CALL MESSAGE_WINDOW_D, "", "＞여신 데메테르의 특수 합체가 해금되었습니다"
-				FLAG:(10000+[[キャラ:데메테르（여신）]]) = 1
+				FLAG:(10000+[[캐릭터:데메테르（여신）]]) = 1
 			ENDIF
 			던전플래그:69:0 = 1
 			FLAG:탈출 = 1
@@ -2461,230 +2461,230 @@ SELECTCASE FLAG:현M
 	CASE 0 TO 2
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:좀비독]],7
+				RETURN [[캐릭터:좀비독]],7
 			CASE IS < 35
-				RETURN [[キャラ:좀비독]],8
+				RETURN [[캐릭터:좀비독]],8
 			CASE IS < 65
-				RETURN [[キャラ:슬라임]],8
+				RETURN [[캐릭터:슬라임]],8
 			CASE IS < 70
-				RETURN [[キャラ:슬라임]],9
+				RETURN [[캐릭터:슬라임]],9
 			CASE IS < 80
-				RETURN [[キャラ:아귀]],8
+				RETURN [[캐릭터:아귀]],8
 			CASE IS < 90
-				RETURN [[キャラ:아귀]],10
+				RETURN [[캐릭터:아귀]],10
 			CASE IS < 95
-				RETURN [[キャラ:드래그퀸]],12
+				RETURN [[캐릭터:드래그퀸]],12
 			CASE IS < 100
-				RETURN [[キャラ:드래그퀸]],13
+				RETURN [[캐릭터:드래그퀸]],13
 			ENDSELECT
 	CASE 3 TO 4
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:잭ㆍ더ㆍ리퍼]],12
+				RETURN [[캐릭터:잭ㆍ더ㆍ리퍼]],12
 			CASE IS < 35
-				RETURN [[キャラ:잭ㆍ더ㆍ리퍼]],13
+				RETURN [[캐릭터:잭ㆍ더ㆍ리퍼]],13
 			CASE IS < 65
-				RETURN [[キャラ:오바리욘]],11
+				RETURN [[캐릭터:오바리욘]],11
 			CASE IS < 70
-				RETURN [[キャラ:오바리욘]],12
+				RETURN [[캐릭터:오바리욘]],12
 			CASE IS < 80
-				RETURN [[キャラ:빌뷔스]],11
+				RETURN [[캐릭터:빌뷔스]],11
 			CASE IS < 90
-				RETURN [[キャラ:빌뷔스]],12
+				RETURN [[캐릭터:빌뷔스]],12
 			CASE IS < 95
-				RETURN [[キャラ:파리카]],14
+				RETURN [[캐릭터:파리카]],14
 			CASE IS < 100
-				RETURN [[キャラ:파리카]],15
+				RETURN [[캐릭터:파리카]],15
 			ENDSELECT
 	CASE 5 TO 6
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:엠푸사]],15
+				RETURN [[캐릭터:엠푸사]],15
 			CASE IS < 35
-				RETURN [[キャラ:엠푸사]],17
+				RETURN [[캐릭터:엠푸사]],17
 			CASE IS < 65
-				RETURN [[キャラ:카시마레이코]],16
+				RETURN [[캐릭터:카시마레이코]],16
 			CASE IS < 70
-				RETURN [[キャラ:카시마레이코]],17
+				RETURN [[캐릭터:카시마레이코]],17
 			CASE IS < 80
-				RETURN [[キャラ:오키쿠무시]],16
+				RETURN [[캐릭터:오키쿠무시]],16
 			CASE IS < 90
-				RETURN [[キャラ:잭프로스트]],18
+				RETURN [[캐릭터:잭프로스트]],18
 			CASE IS < 95
-				RETURN [[キャラ:잭랜턴]],20
+				RETURN [[캐릭터:잭랜턴]],20
 			CASE IS < 100
-				RETURN [[キャラ:마카브르]],20
+				RETURN [[캐릭터:마카브르]],20
 			ENDSELECT
 	CASE 7 TO 8
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:오니]],20
+				RETURN [[캐릭터:오니]],20
 			CASE IS < 35
-				RETURN [[キャラ:오니]],22
+				RETURN [[캐릭터:오니]],22
 			CASE IS < 65
-				RETURN [[キャラ:가름]],20
+				RETURN [[캐릭터:가름]],20
 			CASE IS < 70
-				RETURN [[キャラ:가름]],23
+				RETURN [[캐릭터:가름]],23
 			CASE IS < 80
-				RETURN [[キャラ:코파텐구]],19
+				RETURN [[캐릭터:코파텐구]],19
 			CASE IS < 90
-				RETURN [[キャラ:코파텐구]],22
+				RETURN [[캐릭터:코파텐구]],22
 			CASE IS < 95
-				RETURN [[キャラ:드베르가]],23
+				RETURN [[캐릭터:드베르가]],23
 			CASE IS < 100
-				RETURN [[キャラ:드베르가]],25
+				RETURN [[캐릭터:드베르가]],25
 			ENDSELECT
 	CASE 9 TO 11
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:모무노후]],25
+				RETURN [[캐릭터:모무노후]],25
 			CASE IS < 35
-				RETURN [[キャラ:모무노후]],27
+				RETURN [[캐릭터:모무노후]],27
 			CASE IS < 65
-				RETURN [[キャラ:바질리스크]],25
+				RETURN [[캐릭터:바질리스크]],25
 			CASE IS < 70
-				RETURN [[キャラ:유키죠로]],27
+				RETURN [[캐릭터:유키죠로]],27
 			CASE IS < 80
-				RETURN [[キャラ:위커맨]],28
+				RETURN [[캐릭터:위커맨]],28
 			CASE IS < 90
-				RETURN [[キャラ:위커맨]],30
+				RETURN [[캐릭터:위커맨]],30
 			CASE IS < 95
-				RETURN [[キャラ:웬디고]],28
+				RETURN [[캐릭터:웬디고]],28
 			CASE IS < 100
-				RETURN [[キャラ:웬디고]],29
+				RETURN [[캐릭터:웬디고]],29
 			ENDSELECT
 	CASE 12
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:인큐버스]],27
+				RETURN [[캐릭터:인큐버스]],27
 			CASE IS < 35
-				RETURN [[キャラ:인큐버스]],29
+				RETURN [[캐릭터:인큐버스]],29
 			CASE IS < 65
-				RETURN [[キャラ:리림]],27
+				RETURN [[캐릭터:리림]],27
 			CASE IS < 70
-				RETURN [[キャラ:리림]],28
+				RETURN [[캐릭터:리림]],28
 			CASE IS < 80
-				RETURN [[キャラ:나하트코볼트]],26
+				RETURN [[캐릭터:나하트코볼트]],26
 			CASE IS < 90
-				RETURN [[キャラ:나이트메어]],26
+				RETURN [[캐릭터:나이트메어]],26
 			CASE IS < 95
-				RETURN [[キャラ:나하트코볼트]],30
+				RETURN [[캐릭터:나하트코볼트]],30
 			CASE IS < 100
-				RETURN [[キャラ:나이트메어]],28
+				RETURN [[캐릭터:나이트메어]],28
 			ENDSELECT
 	CASE 13 TO 16
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:야카]],33
+				RETURN [[캐릭터:야카]],33
 			CASE IS < 35
-				RETURN [[キャラ:야카]],35
+				RETURN [[캐릭터:야카]],35
 			CASE IS < 65
-				RETURN [[キャラ:크리스틴]],34
+				RETURN [[캐릭터:크리스틴]],34
 			CASE IS < 70
-				RETURN [[キャラ:크리스틴]],36
+				RETURN [[캐릭터:크리스틴]],36
 			CASE IS < 80
-				RETURN [[キャラ:콥스]],33
+				RETURN [[캐릭터:콥스]],33
 			CASE IS < 90
-				RETURN [[キャラ:콥스]],35
+				RETURN [[캐릭터:콥스]],35
 			CASE IS < 95
-				RETURN [[キャラ:바포멧트]],34
+				RETURN [[캐릭터:바포멧트]],34
 			CASE IS < 100
-				RETURN [[キャラ:바포멧트]],36
+				RETURN [[캐릭터:바포멧트]],36
 			ENDSELECT
 	CASE 17 TO 18
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:가샤도쿠로]],35
+				RETURN [[캐릭터:가샤도쿠로]],35
 			CASE IS < 35
-				RETURN [[キャラ:가샤도쿠로]],37
+				RETURN [[캐릭터:가샤도쿠로]],37
 			CASE IS < 65
-				RETURN [[キャラ:비야키]],38
+				RETURN [[캐릭터:비야키]],38
 			CASE IS < 70
-				RETURN [[キャラ:비야키]],39
+				RETURN [[캐릭터:비야키]],39
 			CASE IS < 80
-				RETURN [[キャラ:그레이맨]],37
+				RETURN [[캐릭터:그레이맨]],37
 			CASE IS < 90
-				RETURN [[キャラ:그레이맨]],39
+				RETURN [[캐릭터:그레이맨]],39
 			CASE IS < 95
-				RETURN [[キャラ:퓌톤]],38
+				RETURN [[캐릭터:퓌톤]],38
 			CASE IS < 100
-				RETURN [[キャラ:퓌톤]],39
+				RETURN [[캐릭터:퓌톤]],39
 			ENDSELECT
 	CASE 19 TO 25
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:아마존]],43
+				RETURN [[캐릭터:아마존]],43
 			CASE IS < 35
-				RETURN [[キャラ:니드호그]],45
+				RETURN [[캐릭터:니드호그]],45
 			CASE IS < 65
-				RETURN [[キャラ:베르세르크]],45
+				RETURN [[캐릭터:베르세르크]],45
 			CASE IS < 70
-				RETURN [[キャラ:쿠치사케]],44
+				RETURN [[캐릭터:쿠치사케]],44
 			CASE IS < 80
-				RETURN [[キャラ:코스모좀비]],46
+				RETURN [[캐릭터:코스모좀비]],46
 			CASE IS < 90
-				RETURN [[キャラ:스프리건]],45
+				RETURN [[캐릭터:스프리건]],45
 			CASE IS < 95
-				RETURN [[キャラ:티탄]],45
+				RETURN [[캐릭터:티탄]],45
 			CASE IS < 100
-				RETURN [[キャラ:스퀼라]],47
+				RETURN [[캐릭터:스퀼라]],47
 			ENDSELECT
 	CASE 26 TO 29
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:카토블레파스]],48
+				RETURN [[캐릭터:카토블레파스]],48
 			CASE IS < 35
-				RETURN [[キャラ:쿠드락]],49
+				RETURN [[캐릭터:쿠드락]],49
 			CASE IS < 65
-				RETURN [[キャラ:뱀파이어]],48
+				RETURN [[캐릭터:뱀파이어]],48
 			CASE IS < 70
-				RETURN [[キャラ:사이클롭스]],51
+				RETURN [[캐릭터:사이클롭스]],51
 			CASE IS < 80
-				RETURN [[キャラ:야마타노오로치]],52
+				RETURN [[캐릭터:야마타노오로치]],52
 			CASE IS < 90
-				RETURN [[キャラ:오베론]],50
+				RETURN [[캐릭터:오베론]],50
 			CASE IS < 95
-				RETURN [[キャラ:페리]],51
+				RETURN [[캐릭터:페리]],51
 			CASE IS < 100
-				RETURN [[キャラ:섀도우]],49
+				RETURN [[캐릭터:섀도우]],49
 			ENDSELECT
 	CASE 30 TO 31
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:사이클롭스]],54
+				RETURN [[캐릭터:사이클롭스]],54
 			CASE IS < 35
-				RETURN [[キャラ:무슈후슈]],54
+				RETURN [[캐릭터:무슈후슈]],54
 			CASE IS < 65
-				RETURN [[キャラ:아에슈마]],55
+				RETURN [[캐릭터:아에슈마]],55
 			CASE IS < 70
-				RETURN [[キャラ:아에슈마]],56
+				RETURN [[캐릭터:아에슈마]],56
 			CASE IS < 80
-				RETURN [[キャラ:보티스]],55
+				RETURN [[캐릭터:보티스]],55
 			CASE IS < 90
-				RETURN [[キャラ:보티스]],56
+				RETURN [[캐릭터:보티스]],56
 			CASE IS < 95
-				RETURN [[キャラ:기리메칼라]],54
+				RETURN [[캐릭터:기리메칼라]],54
 			CASE IS < 100
-				RETURN [[キャラ:기리메칼라]],57
+				RETURN [[캐릭터:기리메칼라]],57
 			ENDSELECT
 	CASE 32 TO 36
 		SELECTCASE RAND:100
 			CASE IS < 30
-				RETURN [[キャラ:탈로스]],60
+				RETURN [[캐릭터:탈로스]],60
 			CASE IS < 35
-				RETURN [[キャラ:탈로스]],63
+				RETURN [[캐릭터:탈로스]],63
 			CASE IS < 65
-				RETURN [[キャラ:리치]],60
+				RETURN [[캐릭터:리치]],60
 			CASE IS < 70
-				RETURN [[キャラ:크로우크루아흐]],62
+				RETURN [[캐릭터:크로우크루아흐]],62
 			CASE IS < 80
-				RETURN [[キャラ:그리미즈]],61
+				RETURN [[캐릭터:그리미즈]],61
 			CASE IS < 90
-				RETURN [[キャラ:오오미츠누]],64
+				RETURN [[캐릭터:오오미츠누]],64
 			CASE IS < 95
-				RETURN [[キャラ:테스카틀리포카]],61
+				RETURN [[캐릭터:테스카틀리포카]],61
 			CASE IS < 100
-				RETURN [[キャラ:플라로우스]],63
+				RETURN [[캐릭터:플라로우스]],63
 			ENDSELECT
 			
 			
@@ -2699,27 +2699,27 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , レベル
 SELECTCASE FLAG:현M
 	CASE 0 TO 2
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3 TO 4
-		RETURN [[キャラ:잭ㆍ더ㆍ리퍼]] , 3 + RAND:10 , CSVBASE([[キャラ:잭ㆍ더ㆍ리퍼]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:잭ㆍ더ㆍ리퍼]] , 3 + RAND:10 , CSVBASE([[캐릭터:잭ㆍ더ㆍ리퍼]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 5 TO 6
-		RETURN [[キャラ:야마치치]] , 3 + RAND:10 , CSVBASE([[キャラ:야마치치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야마치치]] , 3 + RAND:10 , CSVBASE([[캐릭터:야마치치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 7 TO 8
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 9 TO 11
-		RETURN [[キャラ:웬디고]] , 3 + RAND:10 , CSVBASE([[キャラ:웬디고]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:웬디고]] , 3 + RAND:10 , CSVBASE([[캐릭터:웬디고]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 12
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 13 TO 16
-		RETURN [[キャラ:바포멧트]] , 3 + RAND:10 , CSVBASE([[キャラ:바포멧트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:바포멧트]] , 3 + RAND:10 , CSVBASE([[캐릭터:바포멧트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 17 TO 18
-		RETURN [[キャラ:비야키]] , 3 + RAND:10 , CSVBASE([[キャラ:비야키]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:비야키]] , 3 + RAND:10 , CSVBASE([[캐릭터:비야키]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 19 TO 25
-		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베르세르크]] , 3 + RAND:10 , CSVBASE([[캐릭터:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 26 TO 31
-		RETURN [[キャラ:사이클롭스]] , 3 + RAND:10 , CSVBASE([[キャラ:사이클롭스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:사이클롭스]] , 3 + RAND:10 , CSVBASE([[캐릭터:사이클롭스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 32 TO 36
-		RETURN [[キャラ:그리미즈]] , 3 + RAND:10 , CSVBASE([[キャラ:그리미즈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:그리미즈]] , 3 + RAND:10 , CSVBASE([[캐릭터:그리미즈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		
 ENDSELECT
 
@@ -3847,7 +3847,7 @@ ELSE
 ENDIF
 
 @증원패턴_塔ドゥルジ, ARG, ARG:1, ARG:2
-CALL SET_ENEMY,ARG:1,[[キャラ:나아스]],30,0,1
+CALL SET_ENEMY,ARG:1,[[캐릭터:나아스]],30,0,1
 NAME:(CHARANUM-1) = ハエの群れ
 CALLNAME:(CHARANUM-1) = ハエの群れ
 ;CFLAG:(CHARANUM-1):ＨＰ보정 += 100
@@ -5349,7 +5349,7 @@ ENDIF
 
 @EVENT_BATTLE_START_DUNGEON69
 #DIM CHARA 
-IF NO:(CHARANUM-1) == [[キャラ:셰키나]]
+IF NO:(CHARANUM-1) == [[캐릭터:셰키나]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃환희하라! 그리고 찬양하라!　　　　　　　　┃
@@ -5357,7 +5357,7 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]]
 	PRINTFORML ┃신령 셰키나다！　　　　　　　　　　　　┃
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
-ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리ㆍ만유]]
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:앙리ㆍ만유]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃짐의 악은 질서도 혼돈도 가리지 않는 미혹자에게는┃
@@ -5369,12 +5369,12 @@ ENDIF
 
 @EVENT_BATTLE_TURNEND_DUNGEON69
 #DIM CHARA
-IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 던전플래그:69:41 == 0
+IF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 던전플래그:69:41 == 0
 	CALL シェキナー実り変化(CHARANUM-1,FLAG:경과턴수)
-ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 던전플래그:69:41 == 1
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 던전플래그:69:41 == 1
 	CALL シェキナー実り変化ㆍ２(CHARANUM-1,FLAG:경과턴수)
 ENDIF
-IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 80 && 던전플래그:69:40 == 0
+IF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 현HP비율(CHARANUM-1) < 80 && 던전플래그:69:40 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃아직도 신에게 저항하는 건가…　　　　　　　　　　　　　┃
@@ -5386,7 +5386,7 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 80 &&
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:40 = 1
-ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:40 == 1 && 던전플래그:69:41 == 1
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:40 == 1 && 던전플래그:69:41 == 1
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃바보같은……！　　　　　　　　　　　　　　　┃
@@ -5405,7 +5405,7 @@ ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 5
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	던전플래그:69:40 = 2
-ELSEIF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:40 == 2
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:40 == 2
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃네 이놈……소현한 인간들이！┃
@@ -5832,7 +5832,7 @@ ENDIF
 
 @EVENT_BATTLE_ACTEND_DUNGEON69
 #DIM CHARA 
-IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:41 == 0
+IF NO:(CHARANUM-1) == [[캐릭터:셰키나]] && 현HP비율(CHARANUM-1) < 30 && 던전플래그:69:41 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃데메테르！　　　　　　　　　　　　　　　　┃
@@ -5931,7 +5931,7 @@ IF NO:(CHARANUM-1) == [[キャラ:셰키나]] && 현HP비율(CHARANUM-1) < 30 &&
 	BASE:(CHARANUM-1):ＭＰ = (MAXBASE:(CHARANUM-1):ＭＰ)
 	던전플래그:69:41 = 1
 
-ELSEIF NO:(CHARANUM-1) == [[キャラ:앙리ㆍ만유]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:42 == 0
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:앙리ㆍ만유]] && 현HP비율(CHARANUM-1) < 50 && 던전플래그:69:42 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃꽤 하는군 인간… 하지만 장난은 여기까지다　　┃

@@ -526,7 +526,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:선제기습취소 = 1
 				CUSTOMDRAWLINE =
 				WAIT
-				CALL SET_ENEMY, 9, [[キャラ:그림자에가려진남자]], 60, 0, 1
+				CALL SET_ENEMY, 9, [[캐릭터:그림자에가려진남자]], 60, 0, 1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1500
 				CSTR:(CHARANUM-1):사고패턴 = 3342
 				BASE:(CHARANUM-1):힘 += 10
@@ -681,27 +681,27 @@ RETURN ENEMY_NUM_COMMON("最上級", ARG)
 @ENEMY_75, ARG
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:스로네]], 55
+		RETURN [[캐릭터:스로네]], 55
 	CASE IS < 20
-		RETURN [[キャラ:키메라]], 56
+		RETURN [[캐릭터:키메라]], 56
 	CASE IS < 30
-		RETURN [[キャラ:도플갱어]], 55
+		RETURN [[캐릭터:도플갱어]], 55
 	CASE IS < 40
-		RETURN [[キャラ:섀도우]], 55
+		RETURN [[캐릭터:섀도우]], 55
 	CASE IS < 50
-		RETURN [[キャラ:페리]], 54
+		RETURN [[캐릭터:페리]], 54
 	CASE IS < 60
-		RETURN [[キャラ:발키리]], 56
+		RETURN [[캐릭터:발키리]], 56
 	CASE IS < 70
-		RETURN [[キャラ:테스카틀리포카]], 58
+		RETURN [[캐릭터:테스카틀리포카]], 58
 	CASE IS < 80
-		RETURN [[キャラ:케르베로스]], 55
+		RETURN [[캐릭터:케르베로스]], 55
 	CASE IS < 100
 		;夜のみ
 		IF TIME == 3
-			RETURN [[キャラ:비동풍의여무사]], 58
+			RETURN [[캐릭터:비동풍의여무사]], 58
 		ELSE
-			RETURN [[キャラ:도화의뇨고]], 58
+			RETURN [[캐릭터:도화의뇨고]], 58
 		ENDIF
 ENDSELECT
 ;=======================================================================
@@ -841,8 +841,8 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:2
 	CASE 0
-		RETURN [[キャラ:케르베로스]] , 3 + RAND:10 , CSVBASE([[キャラ:케르베로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:케르베로스]] , 3 + RAND:10 , CSVBASE([[캐릭터:케르베로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:스로네]] , 3 + RAND:10 , CSVBASE([[キャラ:스로네]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:스로네]] , 3 + RAND:10 , CSVBASE([[캐릭터:스로네]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

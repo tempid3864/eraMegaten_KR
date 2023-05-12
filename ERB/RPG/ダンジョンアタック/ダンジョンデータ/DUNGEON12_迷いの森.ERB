@@ -22,7 +22,7 @@ SIF 던전플래그:11:7 != 2
 SIF 던전플래그:12:0 == 10
 	RETURN 0
 ;마키がいない
-SIF GETCHARA([[キャラ:마키]], 0) == -1
+SIF GETCHARA([[캐릭터:마키]], 0) == -1
 	RETURN 0
 RETURN 1
 ;=======================================================================
@@ -83,7 +83,7 @@ IF 던전플래그:(FLAG:현던전):1 == 0
 	CALL MESSAGE_WINDOW, "", "＞시스템에 접속된 소녀「소노무라 마키」를 시스템에서 분리하려면/＞그녀의 심상세계에 놓여진 시스템과의 접점을 제거할 필요가 있다", , "로그를 남기지 않는다/버튼을 이용한다/재이용하지 않는다", "CENTER", 72, 4
 	CALL MESSAGE_WINDOW, "", @"＞심상 세계에 침임하는 것은 사이코 다이버의 도움을 받는다면 가능하다/＞하지만、그 전에 %마스터와% 행동을 함께하고 있는 소노무라 마키에게/＞현상을 설명해야할 것이다/＞……그녀가、시스템에 의해 구축된 가상의 가상의 존재라는 사실을……", , "로그를 남기지 않는다/버튼을 이용한다/재이용하지 않는다", "CENTER", 72, 4
 	CALL MESSAGE_WINDOW, "", "………………/…………/……", , "로그를 남기지 않는다/버튼을 이용한다/재이용하지 않는다", "CENTER", 72, 4
-	LOCAL = GETCHARA([[キャラ:마키]], 0)
+	LOCAL = GETCHARA([[캐릭터:마키]], 0)
 	IF 함락(LOCAL) >= 1
 		CALL MESSAGE_WINDOW, "", @"＞……%CALLNAME:MASTER%의 이야기를 들은 마키는 얼굴이 파랗게 질렸다/＞하지만、마음을 다잡고 %CALLNAME:MASTER%의 눈을 똑바로 응시한다", , "로그를 남기지 않는다/버튼을 이용한다/재이용하지 않는다", "CENTER", 72, 4
 		CALL MESSAGE_WINDOW, "마키", "내가 어떻게든 할 수 밖에 없겠……지요/＞그뿐이라면、알겠어요/＞……힘을 빌려주세요", , "로그를 남기지 않는다/버튼을 이용한다/재이용하지 않는다", "CENTER", 72, 4
@@ -382,7 +382,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:앨러건스]],55,0,0
+					CALL SET_ENEMY,9,[[캐릭터:앨러건스]],55,0,0
 					CALL BATTLE_START
 					CALL SHOW_PICTURE, "D"
 					CALL MESSAGE_WINDOW_D, "업마 앨러건스", "크크‥‥으으으‥‥윽‥‥"
@@ -409,7 +409,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					CALL MESSAGE_WINDOW_D, "", "＞그렇게 말하며 조소하던 소녀의 모습이 천천히 이형의 것으로 변해간다……/＞업마　옵신이 1명 나타났다！"
-					CALL SET_ENEMY,9,[[キャラ:옵신]],45,0,0
+					CALL SET_ENEMY,9,[[캐릭터:옵신]],45,0,0
 					CALL BATTLE_START
 					CALL SHOW_PICTURE, "D"
 					CALL MESSAGE_WINDOW_D, "업마 옵신", "크크‥‥으으으‥‥윽‥‥"
@@ -562,5 +562,5 @@ ENDIF
 ;=======================================================================
 @DUNGEON_RAPE_DEVIL_12
 ;RETURN CSV번호 , 人数 , 레벨
-RETURN [[キャラ:슈텐도지]] , 3 + RAND:10 , CSVBASE([[キャラ:슈텐도지]] , GETNUM(BASE , "LV") , 0) + RAND:3
+RETURN [[캐릭터:슈텐도지]] , 3 + RAND:10 , CSVBASE([[캐릭터:슈텐도지]] , GETNUM(BASE , "LV") , 0) + RAND:3
 

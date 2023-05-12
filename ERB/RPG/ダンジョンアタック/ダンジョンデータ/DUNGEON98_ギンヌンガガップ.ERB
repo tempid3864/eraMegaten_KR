@@ -524,7 +524,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:메피스토]], 69, 0, 1
+				CALL SET_ENEMY,9,[[캐릭터:메피스토]], 69, 0, 1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -543,7 +543,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:이삭]], 69, 0, 1
+				CALL SET_ENEMY,9,[[캐릭터:이삭]], 69, 0, 1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -569,7 +569,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:헬]],70,0,0
+				CALL SET_ENEMY,9,[[캐릭터:헬]],70,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				NAME:(CHARANUM-1) = 氷の使徒
@@ -599,7 +599,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,9,[[キャラ:크투가]],70,0,0
+				CALL SET_ENEMY,9,[[캐릭터:크투가]],70,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				NAME:(CHARANUM-1) = 炎の使徒
@@ -627,7 +627,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "天使　レミエル", "そう、ですね。レナを、レナを助けなければ"
 			
 				CALL MESSAGE_WINDOW_D, "", "＞天使　レミエルが仲魔になった"
-				CALL ADD_NEW_COMPANION,[[キャラ:레미엘]],200,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:레미엘]],200,1
 				ABL:(CHARANUM-1):스킬4 = [[스킬:라그나로크]]
 			ELSEIF 이벤트플래그:102:0 == 6
 				CALL MESSAGE_WINDOW_D, "", "＞ヴァルハラの戦士が立ちふさがった"
@@ -641,21 +641,21 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,9,[[キャラ:아즈라엘]],70,0,1
+				CALL SET_ENEMY,9,[[캐릭터:아즈라엘]],70,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,8,[[キャラ:아스테리오스]],71,0,0
+				CALL SET_ENEMY,8,[[캐릭터:아스테리오스]],71,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마하ㆍ마그다인]]
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:미노타우로스]],71,0,0
+				CALL SET_ENEMY,10,[[캐릭터:미노타우로스]],71,0,0
 				ABL:(CHARANUM-1):스킬1 = [[스킬:어스브레이크]]
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -676,7 +676,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "ブル", "にいさん…"
 				CALL MESSAGE_WINDOW_D, "ガイ", "世界の卵を使えるのは特別な人間だけという話だ、だがお前たちならば…"
 				CALL MESSAGE_WINDOW_D, "", "＞ヴァルハラのガイが仲魔になった"
-				CALL ADD_NEW_COMPANION,[[キャラ:아스테리오스]],200,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:아스테리오스]],200,1
 				ABL:(RESULT:1):종족 = 6
 				CSTR:(RESULT:1):종족명 = 『妖鬼』
 			ENDIF
@@ -708,7 +708,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,10,[[キャラ:치치미틀]],76,0,1
+				CALL SET_ENEMY,10,[[캐릭터:치치미틀]],76,0,1
 				NAME:(CHARANUM-1) = ゾズマ
 				CALLNAME:(CHARANUM-1) = ゾズマ
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
@@ -718,7 +718,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,9,[[キャラ:라구엘]],75,0,1
+				CALL SET_ENEMY,9,[[캐릭터:라구엘]],75,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):종족명 = 天使
@@ -730,7 +730,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:마르코시아스]],75,0,1
+				CALL SET_ENEMY,10,[[캐릭터:마르코시아스]],75,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):종족명 = 天使
@@ -813,7 +813,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							FLAG:회화불능플래그 = 1
 							FLAG:선제기습취소 = 1
 
-							CALL SET_ENEMY,9,[[キャラ:레나]],75,0,1
+							CALL SET_ENEMY,9,[[캐릭터:레나]],75,0,1
 							CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 							CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 							CSTR:(CHARANUM-1):종족명 = 인간
@@ -825,7 +825,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL SYNC_STATUS,(CHARANUM-1)
 							CALL HEALTH_CHARA,(CHARANUM-1)
 
-							CALL SET_ENEMY,9,[[キャラ:아미]],75,0,1
+							CALL SET_ENEMY,9,[[캐릭터:아미]],75,0,1
 							CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 							CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 							CSTR:(CHARANUM-1):종족명 = 인간
@@ -867,7 +867,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL MESSAGE_WINDOW_D, "ジャシン", "お前の勝ちだ…"
 							CALL MESSAGE_WINDOW_D, "ジャシン", "ならばこの先はお前のものになろう…"
 							CALL MESSAGE_WINDOW_D, "", "＞ジャシンが奴隷になった"
-							CALL ADD_NEW_COMPANION,[[キャラ:쟈신]],300
+							CALL ADD_NEW_COMPANION,[[캐릭터:쟈신]],300
 
 							던전플래그:98:1 = 2
 							던전플래그:98:0 = 6
@@ -894,10 +894,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL BATTLE_jyasin
 					CALL MESSAGE_WINDOW_D, "ジャシン", "わたしのまけだ…"
 					;撃破ボーナス：ジャシン解禁
-					CALL LIFTING_A_BAN([[キャラ:쟈신]])
+					CALL LIFTING_A_BAN([[캐릭터:쟈신]])
 					CALL MESSAGE_WINDOW_D, "ジャシン", "時間旅行者よ、後は好きにするがいい…"
 					CALL MESSAGE_WINDOW_D, "", "＞ジャシンが奴隷になった"
-					CALL ADD_NEW_COMPANION,[[キャラ:쟈신]],300
+					CALL ADD_NEW_COMPANION,[[캐릭터:쟈신]],300
 					던전플래그:98:1 = 2
 				CASE 2
 					CALL MESSAGE_WINDOW_D, "ジャシン", "そうか……"
@@ -913,7 +913,7 @@ RETURN 1
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9,[[キャラ:쟈신]],87,0,1
+	CALL SET_ENEMY,9,[[캐릭터:쟈신]],87,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 10000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 	BASE:(CHARANUM-1):힘 += 5
@@ -1061,84 +1061,84 @@ SELECTCASE FLAG:현M
 CASE 0 , 1
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:큐리오테스]], 60
+		RETURN [[캐릭터:큐리오테스]], 60
 	CASE IS < 20
-		RETURN [[キャラ:프로스트에이스]], 60
+		RETURN [[캐릭터:프로스트에이스]], 60
 	CASE IS < 30
-		RETURN [[キャラ:유키죠로]], 60
+		RETURN [[캐릭터:유키죠로]], 60
 	CASE IS < 40
-		RETURN [[キャラ:클로토]], 60
+		RETURN [[캐릭터:클로토]], 60
 	CASE IS < 50
-		RETURN [[キャラ:모리안]], 60
+		RETURN [[캐릭터:모리안]], 60
 	CASE IS < 60
-		RETURN [[キャラ:쿠드락]], 60
+		RETURN [[캐릭터:쿠드락]], 60
 	CASE IS < 75
-		RETURN [[キャラ:마르두크]], 60
+		RETURN [[캐릭터:마르두크]], 60
 	CASE IS < 80
-		RETURN [[キャラ:이참나]], 60
+		RETURN [[캐릭터:이참나]], 60
 	CASE IS < 85
-		RETURN [[キャラ:앙그르보다]], 63
+		RETURN [[캐릭터:앙그르보다]], 63
 	CASE IS < 90
-		RETURN [[キャラ:도플갱어]], 63
+		RETURN [[캐릭터:도플갱어]], 63
 	CASE IS < 95
-		RETURN [[キャラ:란다]], 63
+		RETURN [[캐릭터:란다]], 63
 	CASE IS < 100
-		RETURN [[キャラ:달기]], 63
+		RETURN [[캐릭터:달기]], 63
 ENDSELECT
 
 
 CASE 2 TO 4
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:큐리오테스]], 60
+		RETURN [[캐릭터:큐리오테스]], 60
 	CASE IS < 20
-		RETURN [[キャラ:프로스트에이스]], 60
+		RETURN [[캐릭터:프로스트에이스]], 60
 	CASE IS < 30
-		RETURN [[キャラ:유키죠로]], 60
+		RETURN [[캐릭터:유키죠로]], 60
 	CASE IS < 40
-		RETURN [[キャラ:라케시스]], 60
+		RETURN [[캐릭터:라케시스]], 60
 	CASE IS < 50
-		RETURN [[キャラ:모리안]], 60
+		RETURN [[캐릭터:모리안]], 60
 	CASE IS < 60
-		RETURN [[キャラ:쿠드락]], 60
+		RETURN [[캐릭터:쿠드락]], 60
 	CASE IS < 75
-		RETURN [[キャラ:마르두크]], 60
+		RETURN [[캐릭터:마르두크]], 60
 	CASE IS < 80
-		RETURN [[キャラ:이참나]], 61
+		RETURN [[캐릭터:이참나]], 61
 	CASE IS < 85
-		RETURN [[キャラ:앙그르보다]], 63
+		RETURN [[캐릭터:앙그르보다]], 63
 	CASE IS < 90
-		RETURN [[キャラ:도플갱어]], 63
+		RETURN [[캐릭터:도플갱어]], 63
 	CASE IS < 95
-		RETURN [[キャラ:란다]], 63
+		RETURN [[캐릭터:란다]], 63
 	CASE IS < 100
-		RETURN [[キャラ:달기]], 63
+		RETURN [[캐릭터:달기]], 63
 ENDSELECT
 
 CASEELSE
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:큐리오테스]], 65
+		RETURN [[캐릭터:큐리오테스]], 65
 	CASE IS < 20
-		RETURN [[キャラ:발키리]], 65
+		RETURN [[캐릭터:발키리]], 65
 	CASE IS < 30
-		RETURN [[キャラ:카구야]], 65
+		RETURN [[캐릭터:카구야]], 65
 	CASE IS < 40
-		RETURN [[キャラ:도올]], 65
+		RETURN [[캐릭터:도올]], 65
 	CASE IS < 50
-		RETURN [[キャラ:파프니르]], 66
+		RETURN [[캐릭터:파프니르]], 66
 	CASE IS < 60
-		RETURN [[キャラ:칼리]], 65
+		RETURN [[캐릭터:칼리]], 65
 	CASE IS < 70
-		RETURN [[キャラ:다곤(데빌칠드런)]], 66
+		RETURN [[캐릭터:다곤(데빌칠드런)]], 66
 	CASE IS < 80
-		RETURN [[キャラ:큐리오테스]],66
+		RETURN [[캐릭터:큐리오테스]],66
 	CASE IS < 90
-		RETURN [[キャラ:아트로포스]], 67
+		RETURN [[캐릭터:아트로포스]], 67
 	CASE IS < 95
-		RETURN [[キャラ:고모리]], 68
+		RETURN [[캐릭터:고모리]], 68
 	CASE IS < 100
-		RETURN [[キャラ:보후ㆍ마나흐]], 68
+		RETURN [[캐릭터:보후ㆍ마나흐]], 68
 ENDSELECT
 
 ENDSELECT
@@ -1150,9 +1150,9 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , レベル
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:쿠드락]] , 3 + RAND:10 , CSVBASE([[キャラ:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:쿠드락]] , 3 + RAND:10 , CSVBASE([[캐릭터:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:야마타노오로치]] , 3 + RAND:10 , CSVBASE([[キャラ:야마타노오로치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야마타노오로치]] , 3 + RAND:10 , CSVBASE([[캐릭터:야마타노오로치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:케르눈노스]] , 3 + RAND:10 , CSVBASE([[キャラ:케르눈노스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:케르눈노스]] , 3 + RAND:10 , CSVBASE([[캐릭터:케르눈노스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

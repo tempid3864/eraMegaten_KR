@@ -65,7 +65,7 @@ NEXT
 
 	;어드밴트 정화자. 체력 4, 6, 10
 	;240, 360, 600으로 증가
-	CALL SET_ENEMY,8,[[キャラ:어드밴트정화자]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트정화자]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 556
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 551
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -73,7 +73,7 @@ NEXT
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 420, 540)
 	;레벨 15일시 체력 X2 1080
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],15,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],15,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 883
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1026
@@ -91,7 +91,7 @@ NEXT
 
 	;어드밴트 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
 	;헤비는 X2 960
-	CALL SET_ENEMY,10,[[キャラ:어드밴트스턴랜서]],15,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트스턴랜서]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 801
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 909
 	BASE:(CHARANUM-1):힘 = 19
@@ -146,13 +146,13 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트MEC]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트사제]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:스팩터]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:바이퍼]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트MEC]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트사제]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩터]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:바이퍼]],1000)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
-	CALL SET_ENEMY,7,[[キャラ:어드밴트병사]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트병사]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 410
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8503
@@ -162,7 +162,7 @@ NEXT
 	;어드밴트 사제 체력 5, 10, 13 (300, 900, 780)
 	;사제의 성전사 능력. HP 40%를 사용하므로 사제는 체력이 높아야함.
 	;장교의 3배 체력. 3240
-	CALL SET_ENEMY,9,[[キャラ:어드밴트사제]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트사제]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3181
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 3202
 	CSTR:(CHARANUM-1):사고패턴 = 8510
@@ -170,7 +170,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스펙터는 체력 1200으로 크게 상향
-	CALL SET_ENEMY,10,[[キャラ:스팩터]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:스팩터]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1141
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1166
 	CSTR:(CHARANUM-1):사고패턴 = 8514
@@ -178,7 +178,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;바이퍼. 체력 7 고정. (420)
-	CALL SET_ENEMY,11,[[キャラ:바이퍼]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:바이퍼]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 368
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 384
 	CSTR:(CHARANUM-1):사고패턴 = 8515
@@ -186,7 +186,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
-	CALL SET_ENEMY,7,[[キャラ:어드밴트병사]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트병사]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 410
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8503
@@ -195,7 +195,7 @@ NEXT
 
 	;어드밴트 MEC 체력 7, 12. 체력 1당 60
 	;목표 체력 420, 720.
-	CALL SET_ENEMY,13,[[キャラ:어드밴트MEC]],10,0,0
+	CALL SET_ENEMY,13,[[캐릭터:어드밴트MEC]],10,0,0
 	CSTR:(CHARANUM-1):사고패턴 = 8502
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 590
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 682
@@ -203,7 +203,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;페이스리스 체력 8 고정. (480)
-	CALL SET_ENEMY,14,[[キャラ:페이스리스]],5,0,0
+	CALL SET_ENEMY,14,[[캐릭터:페이스리스]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 394
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 463
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -448,7 +448,7 @@ NEXT
 	WAIT
 
 	;헌터. 체력 MP 7500
-	CALL SET_ENEMY,9,[[キャラ:헌터]],15,0,0
+	CALL SET_ENEMY,9,[[캐릭터:헌터]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 7228
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 7387
 	CFLAG:(CHARANUM-1):행동횟수 = 3

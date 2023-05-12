@@ -104,13 +104,13 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:게이트키퍼]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:안드로메돈]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:안드로메돈셀]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:게이트키퍼]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:안드로메돈]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:안드로메돈셀]],1000)
 
 	;안드로메돈 (리바이어던 사양으로 1260 X4 = 5040)
 	;체력과 스텟만 낮은 사양. 체력수치는 같음.
-	CALL SET_ENEMY,7,[[キャラ:안드로메돈]],30,0,0
+	CALL SET_ENEMY,7,[[캐릭터:안드로메돈]],30,0,0
 	BASE:(CHARANUM-1):힘 = 17
 	BASE:(CHARANUM-1):지혜 = 10
 	BASE:(CHARANUM-1):마력 = 10
@@ -124,7 +124,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;게이트키퍼 리바이어던 사양. HP 1800 X 4 = 7200
-	CALL SET_ENEMY,8,[[キャラ:게이트키퍼]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:게이트키퍼]],40,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 4
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6655
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 6969
@@ -134,7 +134,7 @@ NEXT
 
 	;페이스리스 체력 8 고정. (480) 레벨 40 = X8 3840
 	;리바이어던 사양이지만 미등장. 체력수치는 같음.
-	CALL SET_ENEMY,9,[[キャラ:페이스리스]],20,0,0
+	CALL SET_ENEMY,9,[[캐릭터:페이스리스]],20,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -148,7 +148,7 @@ NEXT
 
 	;외계인버서커 체력 15 고정 (60x15 = 900 X 4 = 3600)
 	;리바이어던 사양. 체력 수치만 같음.
-	CALL SET_ENEMY,10,[[キャラ:외계인버서커]],25,0,0
+	CALL SET_ENEMY,10,[[캐릭터:외계인버서커]],25,0,0
 	BASE:(CHARANUM-1):힘 = 20
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -162,7 +162,7 @@ NEXT
 
 	;크리살리드 체력 8 고정 (480) 레벨 40 = X8 3840
 	;리바이어던 사양. 체력만 체력수치는 같음.
-	CALL SET_ENEMY,11,[[キャラ:크리살리드]],25,0,0
+	CALL SET_ENEMY,11,[[캐릭터:크리살리드]],25,0,0
 	BASE:(CHARANUM-1):힘 = 13
 	BASE:(CHARANUM-1):지혜 = 9
 	BASE:(CHARANUM-1):마력 = 6
@@ -176,7 +176,7 @@ NEXT
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 320, 540)
 	;장교용 리바이어던 사양 540 X 4 = 2160. 체력 수치만 같음
-	CALL SET_ENEMY,14,[[キャラ:어드밴트장교]],30,0,0
+	CALL SET_ENEMY,14,[[캐릭터:어드밴트장교]],30,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1817
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2040
@@ -194,7 +194,7 @@ NEXT
 
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
-	CALL SET_ENEMY,15,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,15,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1935
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2368
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -246,7 +246,7 @@ NEXT
 
 	;안드로메돈 셀 (리바이어던 사양으로 1260 X4 = 5040)
 	;체력과 스텟만 낮은 사양. 체력수치는 같음.
-	CALL SET_ENEMY,7,[[キャラ:안드로메돈셀]],30,0,0
+	CALL SET_ENEMY,7,[[캐릭터:안드로메돈셀]],30,0,0
 	BASE:(CHARANUM-1):힘 = 30
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -299,7 +299,7 @@ NEXT
 	WAIT
 
 	;아르콘킹
-	CALL SET_ENEMY,9,[[キャラ:아르콘킹]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:아르콘킹]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 79010
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 79655
 	CFLAG:(CHARANUM-1):행동횟수 = 6

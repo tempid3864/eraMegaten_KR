@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_2034,ARG
 ;アーベントが使用する場合PㆍランチャーWに
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RESULTS = Pㆍ런처W
 ELSE
 	RESULTS = 만마의난무
@@ -12,7 +12,7 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_2034, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 90
 ELSE
 	RETURN 80
@@ -20,7 +20,7 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_2034, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 90
 ELSE
 	RETURN 215
@@ -28,14 +28,14 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_2034,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 4
 ELSE
 	RETURN 2
 ENDIF
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_2034,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 4
 ELSE
 	RETURN 8
@@ -56,7 +56,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_2034,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 20
 ELSE
 	RETURN 42
@@ -86,7 +86,7 @@ RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_2034,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 1
 ELSE
 	RETURN 3
@@ -141,7 +141,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_2034,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	LOCAL = POS(ARG:1)
 	CALL ATTACK_SINGLE,ARG,LOCAL,2034
 ELSE
@@ -156,7 +156,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2034
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아벤트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:아벤트]]
 	PRINTL 적 1체에 빔과 실탄의 4연속 공격을 퍼붓는다。
 	PRINTL 실탄을 이용하고 있지만 데미지 계산은「마법데미지」이므로 주의
 	PRINTL 정식명칭「파르티잔ㆍ런처 W 모드」。B모드와 E모드를 사용한 컨버트패턴。

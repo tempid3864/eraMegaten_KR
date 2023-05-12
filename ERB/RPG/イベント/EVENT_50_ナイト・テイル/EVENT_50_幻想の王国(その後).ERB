@@ -171,12 +171,12 @@ PRINTFORML
 PRINTFORML 
 PRINTFORMW 이후、유리아 페테아스카가 협력해주기로 했다。
 
-LOCAL = GETCHARA([[キャラ:유리아]])
+LOCAL = GETCHARA([[캐릭터:유리아]])
 
 IF LOCAL == -1
 	CALL ADD_NEW_COMPANION,4570,0
 	CFLAG:(RESULT:1):전투참가불가능 = -1
-	LOCAL = GETCHARA([[キャラ:유리아]])
+	LOCAL = GETCHARA([[캐릭터:유리아]])
 	BASE:LOCAL:LV = 45
 	BASE:LOCAL:힘 = 45
 	BASE:LOCAL:지혜 = 2

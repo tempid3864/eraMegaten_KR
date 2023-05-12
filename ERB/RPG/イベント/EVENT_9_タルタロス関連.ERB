@@ -75,7 +75,7 @@ IF 이벤트플래그:9:0 == 0
 			PRINTW 「그도 분명 기뻐할거야」
 		ENDIF
 		던전플래그:70:(94)=1
-		CALL ADD_NEW_COMPANION, [[キャラ:P3남주인공]],500
+		CALL ADD_NEW_COMPANION, [[캐릭터:P3남주인공]],500
 		;新規加入したかどうか
 		LOCAL = RESULT
 	ELSE
@@ -87,7 +87,7 @@ IF 이벤트플래그:9:0 == 0
 			PRINTW 「히야, 은밀히 그런 것이 유행한다고는 들었지만 실물로 보게 된다니!」
 		ENDIF
 		던전플래그:70:(94)=2
-		CALL ADD_NEW_COMPANION, [[キャラ:P3여주인공]],500
+		CALL ADD_NEW_COMPANION, [[캐릭터:P3여주인공]],500
 		;新規加入したかどうか
 		LOCAL = RESULT
 	ENDIF

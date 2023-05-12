@@ -53,9 +53,9 @@
 ;市庁をクリアして、
 IF 던전플래그:81:0 == 1 && !던전플래그:85:0
 	;쿠미코を助けていて함락
-	LOCAL = GETCHARA([[キャラ:쿠미코]])
-;		IF 던전플래그:78:1 == 1 && FINDCHARA_B([[キャラ:쿠미코]]) == 1 && 함락(LOCAL)
-		IF 던전플래그:78:1 == 1 && FINDCHARA_B([[キャラ:쿠미코]]) == 1
+	LOCAL = GETCHARA([[캐릭터:쿠미코]])
+;		IF 던전플래그:78:1 == 1 && FINDCHARA_B([[캐릭터:쿠미코]]) == 1 && 함락(LOCAL)
+		IF 던전플래그:78:1 == 1 && FINDCHARA_B([[캐릭터:쿠미코]]) == 1
 		RETURN 1
 	;쿠미코を助けていない
 	ELSEIF 던전플래그:78:1 == 2
@@ -810,7 +810,7 @@ RETURN RESULT
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:오오마가츠히]],75,0,1
+			CALL SET_ENEMY,9,[[캐릭터:오오마가츠히]],75,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1001,7 +1001,7 @@ RETURN RESULT
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,9,[[キャラ:시드]],75,0,1
+				CALL SET_ENEMY,9,[[캐릭터:시드]],75,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1067,7 +1067,7 @@ RETURN RESULT
 
 				;シドの仲間Ａ：4306_サカタノキントキ
 				;シドの仲魔は鬼系だが、切り札としての“鬼退治の英雄”
-				CALL SET_ENEMY,7,[[キャラ:사카타노킨토키]],80,1,1
+				CALL SET_ENEMY,7,[[캐릭터:사카타노킨토키]],80,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 6000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1109,7 +1109,7 @@ RETURN RESULT
 				;シドの仲間Ｂ：XXXX_ワタナベノツナ
 				;シドの仲魔は鬼系だが、切り札としての“鬼退治の英雄”
 				;綱さんいないのでタケミカヅチのカスタム
-				CALL SET_ENEMY,8,[[キャラ:타케미카즈치]],80,1,1
+				CALL SET_ENEMY,8,[[캐릭터:타케미카즈치]],80,1,1
 				NAME:(CHARANUM-1) = ワタナベノツナ
 				CALLNAME:(CHARANUM-1) = ワタナベノツナ
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 4000
@@ -1150,7 +1150,7 @@ RETURN RESULT
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 				;魔人シド
-				CALL SET_ENEMY,9,[[キャラ:시드]],90,1,1
+				CALL SET_ENEMY,9,[[캐릭터:시드]],90,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1185,7 +1185,7 @@ RETURN RESULT
 
 				;シドの仲間Ｃ：612_イバラキドウジ
 				;シドはどっちかってーと陰陽師的な意味での鬼使いっぽいが……
-				CALL SET_ENEMY,10,[[キャラ:이바라키도지]],80,1,1
+				CALL SET_ENEMY,10,[[캐릭터:이바라키도지]],80,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 6000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1227,7 +1227,7 @@ RETURN RESULT
 
 
 				;シドの仲間Ｄ：シュテンドウジ
-				CALL SET_ENEMY,11,[[キャラ:슈텐도지]],80,1,1
+				CALL SET_ENEMY,11,[[캐릭터:슈텐도지]],80,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1286,7 +1286,7 @@ RETURN RESULT
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 
-				CALL SET_ENEMY,14,[[キャラ:이나루나]],100,1,1
+				CALL SET_ENEMY,14,[[캐릭터:이나루나]],100,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1298,7 +1298,7 @@ RETURN RESULT
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 				;オオマガツヒ：15
-				CALL SET_ENEMY,15,[[キャラ:오오마가츠히]],75,1,1
+				CALL SET_ENEMY,15,[[캐릭터:오오마가츠히]],75,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1338,8 +1338,8 @@ RETURN RESULT
 					SELECTCASE RESULT
 						CASE 1
 							CALL MESSAGE_WINDOW_D, "", "＞イナルナ姫を仲魔にした"
-							CALL ADD_NEW_COMPANION,[[キャラ:이나루나]],1000
-							LOCAL = GETCHARA([[キャラ:이나루나]])
+							CALL ADD_NEW_COMPANION,[[캐릭터:이나루나]],1000
+							LOCAL = GETCHARA([[캐릭터:이나루나]])
 							
 							;完全にへし折られてgkbr状態なのでTALENTやらABLやら変更
 							ABL:LOCAL:순종 = 3
@@ -1354,7 +1354,7 @@ RETURN RESULT
 							TALENT:LOCAL:아픔에약함 = 1
 							TALENT:LOCAL:약점 = 1
 							TALENT:LOCAL:巨尻 = 1 ;動画で見てみたらいいケツしてたので
-							CALL LIFTING_A_BAN([[キャラ:이나루나]])
+							CALL LIFTING_A_BAN([[캐릭터:이나루나]])
 						CASE 2
 							CALL MESSAGE_WINDOW_D, "", "＞もはや彼女にはなにもできないだろう。/＞そんなものに興味はない……"
 						ENDSELECT
@@ -1370,11 +1370,11 @@ RETURN RESULT
 							CALL MESSAGE_WINDOW_D, "イナルナ姫", @"いや……いやよ……いやじゃ……/どうして……こんなことに……"
 							CALL MESSAGE_WINDOW_D, "", "＞데빌시프터ㆍイナルナ姫を手に入れた。"
 							; レベル40、忠誠度1500で加入
-							CALL ADD_NEW_COMPANION,[[キャラ:쿠미코]],1500
+							CALL ADD_NEW_COMPANION,[[캐릭터:쿠미코]],1500
 							;久美子が既に仲魔になっていない場合（新規仲魔の場合）
 							IF RESULT == 1
 
-								LOCAL = GETCHARA([[キャラ:쿠미코]])
+								LOCAL = GETCHARA([[캐릭터:쿠미코]])
 								;名前を変更
 								NAME:LOCAL = イナルナ姫
 								CALLNAME:LOCAL = イナルナ姫
@@ -1423,7 +1423,7 @@ RETURN RESULT
 								;なお、デビルシフターにはなるが、ガンスリンガーなどは取得できない。
 								CFLAG:LOCAL:링크악마 = -1
 								TALENT:LOCAL:데빌시프터 = 1
-								CFLAG:LOCAL:초기링크악마 = [[キャラ:이나루나]]
+								CFLAG:LOCAL:초기링크악마 = [[캐릭터:이나루나]]
 								ABL:LOCAL:초기링크악마공격상성 = 2
 								ABL:LOCAL:초기링크악마사거리 = 3
 								ABL:LOCAL:초기링크악마공격범위 = 1
@@ -1523,10 +1523,10 @@ RETURN RESULT
 						CALL MESSAGE_WINDOW_D, "", "＞シドㆍデイビスを仲魔にした"
 						;基本、ゴトウを仲間にする時といっしょの処理
 						;レベル50、忠誠度ゼロで加入
-						CALL ADD_NEW_COMPANION,[[キャラ:시드]],0
+						CALL ADD_NEW_COMPANION,[[캐릭터:시드]],0
 						;シドが既に仲魔になっていない場合（新規仲魔の場合）
 						IF RESULT == 1
-							LOCAL = GETCHARA([[キャラ:시드]])
+							LOCAL = GETCHARA([[캐릭터:시드]])
 
 							;種族超人→인간
 							ABL:LOCAL:종족 = 0
@@ -1629,7 +1629,7 @@ RETURN RESULT
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 
-					CALL SET_ENEMY,9,[[キャラ:이나루나]],80,0,1
+					CALL SET_ENEMY,9,[[캐릭터:이나루나]],80,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1644,7 +1644,7 @@ RETURN RESULT
 				CALL MESSAGE_WINDOW_D, "", "＞これがシドの言う『大破壊の力』か……！/＞止めなければならない！"
 
 
-					CALL SET_ENEMY,9,[[キャラ:이나루나]],100,0,1
+					CALL SET_ENEMY,9,[[캐릭터:이나루나]],100,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 4000
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1663,8 +1663,8 @@ RETURN RESULT
 				IF 던전플래그:78:1 == 1
 						CALL MESSAGE_WINDOW_D, "이나루나 공주", "이 은혜는 와라와의 힘으로 깊겠노라。"
 								CALL MESSAGE_WINDOW_D, "", "＞이나루나 공주가 동료마가 되었다"
-									CALL ADD_NEW_COMPANION,[[キャラ:이나루나]],1000
-									CALL LIFTING_A_BAN([[キャラ:이나루나]])
+									CALL ADD_NEW_COMPANION,[[캐릭터:이나루나]],1000
+									CALL LIFTING_A_BAN([[캐릭터:이나루나]])
 									;FLAG:10227 = 1
 
 				ELSEIF 던전플래그:78:1 == 2
@@ -1676,7 +1676,7 @@ RETURN RESULT
 							SELECTCASE RESULT
 								CASE 1
 								CALL MESSAGE_WINDOW_D, "", "＞망가진 하타노 쿠미코를 손에 넣었다。"
-									CALL ADD_NEW_COMPANION,[[キャラ:쿠미코]],200
+									CALL ADD_NEW_COMPANION,[[캐릭터:쿠미코]],200
 									IF RESULT == 1
 										LOCAL = RESULT:1
 										TALENT:LOCAL:붕괴 = 1
@@ -1860,39 +1860,39 @@ ENDIF
 @ENEMY_85, ARG
 	SELECTCASE RAND:17
 		CASE IS < 1
-			RETURN [[キャラ:빠챠카마쿠]], 41
+			RETURN [[캐릭터:빠챠카마쿠]], 41
 		CASE IS < 2
-			RETURN [[キャラ:발로르]], 49
+			RETURN [[캐릭터:발로르]], 49
 		CASE IS < 3
-			RETURN [[キャラ:카토블레파스]], 52
+			RETURN [[캐릭터:카토블레파스]], 52
 		CASE IS < 4
-			RETURN [[キャラ:안주]], 53
+			RETURN [[캐릭터:안주]], 53
 		CASE IS < 5
-			RETURN [[キャラ:스로네]], 57
+			RETURN [[캐릭터:스로네]], 57
 		CASE IS < 6
-			RETURN [[キャラ:무슈후슈]], 58
+			RETURN [[캐릭터:무슈후슈]], 58
 		CASE IS < 7
-			RETURN [[キャラ:야마타노오로치]], 59
+			RETURN [[캐릭터:야마타노오로치]], 59
 		CASE IS < 8
-			RETURN [[キャラ:란다]], 59
+			RETURN [[캐릭터:란다]], 59
 		CASE IS < 9
-			RETURN [[キャラ:그렌델]], 59
+			RETURN [[캐릭터:그렌델]], 59
 		CASE IS < 10
-			RETURN [[キャラ:가네샤]], 60
+			RETURN [[캐릭터:가네샤]], 60
 		CASE IS < 11
-			RETURN [[キャラ:도철]], 64
+			RETURN [[캐릭터:도철]], 64
 		CASE IS < 12
-			RETURN [[キャラ:도올]], 65
+			RETURN [[캐릭터:도올]], 65
 		CASE IS < 13
-			RETURN [[キャラ:화조]], 66
+			RETURN [[캐릭터:화조]], 66
 		CASE IS < 14
-			RETURN [[キャラ:라후]], 66
+			RETURN [[캐릭터:라후]], 66
 		CASE IS < 15
-			RETURN [[キャラ:우로보로스]], 67
+			RETURN [[캐릭터:우로보로스]], 67
 		CASE IS < 16
-			RETURN [[キャラ:고그마고그]], 67
+			RETURN [[캐릭터:고그마고그]], 67
 		CASE IS < 17
-			RETURN [[キャラ:에스]], 50
+			RETURN [[캐릭터:에스]], 50
 		ENDSELECT	
 
 ;=======================================================================
@@ -1903,11 +1903,11 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:도올]] , 3 + RAND:10 , CSVBASE([[キャラ:도올]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:도올]] , 3 + RAND:10 , CSVBASE([[캐릭터:도올]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:도철]] , 3 + RAND:10 , CSVBASE([[キャラ:도철]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:도철]] , 3 + RAND:10 , CSVBASE([[캐릭터:도철]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:라후]] , 3 + RAND:10 , CSVBASE([[キャラ:라후]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:라후]] , 3 + RAND:10 , CSVBASE([[캐릭터:라후]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 ;=====================================================================
 ;トラップ：麻痺

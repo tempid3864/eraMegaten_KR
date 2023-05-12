@@ -29,13 +29,13 @@ CASE 4
 		RETURN 1
 CASE 5
 	;有香ちゃんが연모ルートで함락+아이돌인기が50이상
-	IF FINDCHARA_B([[キャラ:유카(아이마스)]]) >= 1
+	IF FINDCHARA_B([[캐릭터:유카(아이마스)]]) >= 1
 		SIF (TAlENT:GETCHARA(5605):연모 || TALENT:GETCHARA(5605):친애) && CFLAG:GETCHARA(5605):아이돌인기 > 49
 		RETURN 1
 	ENDIF
 ; CASE 6
 ; 	;メロウイエロー三人が연모ルートで함락+아이돌인기100이상
-; 	IF FINDCHARA_B([[キャラ:유카(아이마스)]]) >= 1 && FINDCHARA_B([[キャラ:미즈모토 유카리]]) >= 1 && FINDCHARA_B([[キャラ:노리코(아이마스)]]) >= 1
+; 	IF FINDCHARA_B([[캐릭터:유카(아이마스)]]) >= 1 && FINDCHARA_B([[캐릭터:미즈모토 유카리]]) >= 1 && FINDCHARA_B([[캐릭터:노리코(아이마스)]]) >= 1
 ; 	SIF (TALENT:GETCHARA(5605):연모 || TALENT:GETCHARA(5605):친애) && CFLAG:GETCHARA(5605):아이돌인기 > 99 && (TALENT:GETCHARA(5606):연모 || TALENT:GETCHARA(5606):친애) && CFLAG:GETCHARA(5606):아이돌인기 > 99 && (TALENT:GETCHARA(5607):연모 || TALENT:GETCHARA(5607):친애) && CFLAG:GETCHARA(5607):아이돌인기 > 99
 ; 		RETURN 1
 ; 	ENDIF

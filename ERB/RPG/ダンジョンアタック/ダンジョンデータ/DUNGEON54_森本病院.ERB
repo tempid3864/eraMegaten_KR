@@ -244,10 +244,10 @@ WAIT
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
-CALL SET_ENEMY,8,[[キャラ:판렌]], 13
-CALL SET_ENEMY,9,[[キャラ:판렌]], 13
-CALL SET_ENEMY,10,[[キャラ:판렌]], 13
-CALL SET_ENEMY,14,[[キャラ:류우만]], 15
+CALL SET_ENEMY,8,[[캐릭터:판렌]], 13
+CALL SET_ENEMY,9,[[캐릭터:판렌]], 13
+CALL SET_ENEMY,10,[[캐릭터:판렌]], 13
+CALL SET_ENEMY,14,[[캐릭터:류우만]], 15
 CALL BATTLE_START
 FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
@@ -484,16 +484,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,7,[[キャラ:판렌]], 16
-		CALL SET_ENEMY,8,[[キャラ:판렌]], 16
-		CALL SET_ENEMY,9,[[キャラ:판렌]], 16
-		CALL SET_ENEMY,10,[[キャラ:판렌]], 16
-		CALL SET_ENEMY,11,[[キャラ:판렌]], 16
-		CALL SET_ENEMY,12,[[キャラ:류우만]], 18
-		CALL SET_ENEMY,13,[[キャラ:류우만]], 18
-		CALL SET_ENEMY,14,[[キャラ:류우만]], 20
-		CALL SET_ENEMY,15,[[キャラ:류우만]], 18
-		CALL SET_ENEMY,16,[[キャラ:류우만]], 18
+		CALL SET_ENEMY,7,[[캐릭터:판렌]], 16
+		CALL SET_ENEMY,8,[[캐릭터:판렌]], 16
+		CALL SET_ENEMY,9,[[캐릭터:판렌]], 16
+		CALL SET_ENEMY,10,[[캐릭터:판렌]], 16
+		CALL SET_ENEMY,11,[[캐릭터:판렌]], 16
+		CALL SET_ENEMY,12,[[캐릭터:류우만]], 18
+		CALL SET_ENEMY,13,[[캐릭터:류우만]], 18
+		CALL SET_ENEMY,14,[[캐릭터:류우만]], 20
+		CALL SET_ENEMY,15,[[캐릭터:류우만]], 18
+		CALL SET_ENEMY,16,[[캐릭터:류우만]], 18
 		FOR LOCAL, 7, 17
 			LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 300 + (FLAG:전투난이도 - 3) * 50 # 250
 			CALL SET_BATTLE_STATUS(POS(LOCAL), MAXBASE:POS(LOCAL):ＨＰ * LOCAL:1 / 100, "ＨＰ")
@@ -586,7 +586,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 				PRINTW 　이런 식으로 언제 ＪＯＫＥＲ가 될지 무서워하며 살 바에야 ……」
 				PRINTL 
 				PRINTW ＞카타야마 노리코를 손에 넣었다
-				CALL ADD_NEW_COMPANION,[[キャラ:노리코]],1000
+				CALL ADD_NEW_COMPANION,[[캐릭터:노리코]],1000
 				SIF RESULT
 					TALENT:(RESULT:1):약점 = 1
 			ENDIF
@@ -624,7 +624,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) /10
 				PRINTW 「저기、잠깐…꺄악……!?」
 				PRINTL 
 				PRINTW ＞카타야마 노리코를 손에 넣었다
-				CALL ADD_NEW_COMPANION,[[キャラ:노리코]],200,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:노리코]],200,1
 			ENDIF
 			CALLF STRFLAG_D("노리코", 1)
 		ELSE
@@ -713,33 +713,33 @@ ENDIF
 IF 던전플래그:(FLAG:현던전):1
 	SELECTCASE RAND:100
 		CASE IS < 20
-			RETURN [[キャラ:파리카]], 14
+			RETURN [[캐릭터:파리카]], 14
 		CASE IS < 40
-			RETURN [[キャラ:요모츠시코메]], 14
+			RETURN [[캐릭터:요모츠시코메]], 14
 		CASE IS < 60
 			;20%で픽시
-			RETURN [[キャラ:네코마타]], 12
+			RETURN [[캐릭터:네코마타]], 12
 		CASE IS < 75
 			;15%で좀비쨩
-			RETURN [[キャラ:잭프로스트]], 15
+			RETURN [[캐릭터:잭프로스트]], 15
 		CASE IS < 90
 			;15%で좀비군
-			RETURN [[キャラ:츠치구모]], 15
+			RETURN [[캐릭터:츠치구모]], 15
 		CASEELSE
-			RETURN [[キャラ:가기손]], 12
+			RETURN [[캐릭터:가기손]], 12
 	ENDSELECT
 ELSE
 	IF RAND:2
-		RETURN [[キャラ:판렌]], 13
+		RETURN [[캐릭터:판렌]], 13
 	ELSE
-		RETURN [[キャラ:류우만]], 15
+		RETURN [[캐릭터:류우만]], 15
 	ENDIF
 ENDIF
 ;=================================
 ;特殊調整
 ;=================================
 @SET_ENEMY_STATUS_54, ARG
-SIF GROUPMATCH(NO:ARG, [[キャラ:류우만]], [[キャラ:판렌]])
+SIF GROUPMATCH(NO:ARG, [[캐릭터:류우만]], [[캐릭터:판렌]])
 	CALL SET_BATTLE_STATUS(ARG, MAXBASE:ARG:공격*3/2, "총공격")
 
 
@@ -751,15 +751,15 @@ SIF GROUPMATCH(NO:ARG, [[キャラ:류우만]], [[キャラ:판렌]])
 ;RETURN CSV번호 , 人数 , 레벨
 IF 던전플래그:(FLAG:현던전):1
 	IF RAND:2
-		RETURN [[キャラ:류우만]] , 3 + RAND:10 , CSVBASE([[キャラ:류우만]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:류우만]] , 3 + RAND:10 , CSVBASE([[캐릭터:류우만]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ELSE
-		RETURN [[キャラ:판렌]] , 3 + RAND:10 , CSVBASE([[キャラ:판렌]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:판렌]] , 3 + RAND:10 , CSVBASE([[캐릭터:판렌]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDIF
 ELSE
 	SELECTCASE RAND:2
 		CASE 0
-			RETURN [[キャラ:츠치구모]] , 3 + RAND:10 , CSVBASE([[キャラ:츠치구모]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:츠치구모]] , 3 + RAND:10 , CSVBASE([[캐릭터:츠치구모]] , GETNUM(BASE , "LV") , 0) + RAND:3
 		CASE 1
-			RETURN [[キャラ:가기손]] , 3 + RAND:10 , CSVBASE([[キャラ:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:가기손]] , 3 + RAND:10 , CSVBASE([[캐릭터:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	ENDSELECT
 ENDIF

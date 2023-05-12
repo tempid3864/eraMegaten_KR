@@ -144,7 +144,7 @@ IF 던전플래그:34:30 == 1
 	CALL MESSAGE_WINDOW_D, "", @"＞하츠다이 쉘터에 들어가려던 때、/＞%CALLNAME:MASTER%의 휴대전화가 울렸다"
 	CALL MESSAGE_WINDOW_D, "목소리", "후후… 일하던 중이었으려나？"
 	CALL MESSAGE_WINDOW_D, "", "＞전화기 너머에서 들려오는 것은 마요네의 목소리였다"
-	IF GETCHARA([[キャラ:마리]]) == -1
+	IF GETCHARA([[캐릭터:마리]]) == -1
 		IF RAND:2 == 0
 			CALL MESSAGE_WINDOW_D, "", "＞노예의 것인지/＞가끔、찰팍찰팍하고 음탕한 물소리가 섞여있다…"
 		ELSE
@@ -154,7 +154,7 @@ IF 던전플래그:34:30 == 1
 	CALL MESSAGE_WINDOW_D, "마요네", "쉘터의 가까운 곳에 우리들、/팬텀 소사이어티에 적대한는 세력/쿠즈노하의 사람이 보였다는 정보가 들어왔어요"
 	CALL MESSAGE_WINDOW_D, "", "＞위험을 알리는 마요네의 음성은 즐거운 것 같다…"
 	CALL MESSAGE_WINDOW_D, "마요네", "뭐…만약, 만나버렸다면/당신같은 햇병아리는 어떻게 해볼 상대가 아니에요/조심하도록 해"
-	IF GETCHARA([[キャラ:도리]]) == -1
+	IF GETCHARA([[캐릭터:도리]]) == -1
 		CALL MESSAGE_WINDOW_D, "", @"＞충고하는 마요네의 목소리와 함께 전화의 너머에서/＞%\@RAND:2?철썩#파앗\@%하는 채찍소리가 들린다"
 		CALL MESSAGE_WINDOW_D, "소녀인 듯한 목소리", @"%\@RAND:2?주인님, 용서를…#\힉, 살려…\@%"
 		CALL MESSAGE_WINDOW_D, "", @"＞%\@RAND:2?비명#애원\@%과 함께 전화는 끊어졌다…"
@@ -557,7 +557,7 @@ ENDIF
 IF DA:(FLAG:현X):(FLAG:현Y) == 8
 	IF FLAG:현M == 0 && FLAG:현X ==4 && FLAG:현Y == 0
 		;さらば라이도우
-		LOCAL = GETCHARA([[キャラ:라이도우]])
+		LOCAL = GETCHARA([[캐릭터:라이도우]])
 		IF LOCAL >= 0 && !CFLAG:LOCAL:인계횟수
 			CALL SHOW_PICTURE, "D"
 			CALL MESSAGE_WINDOW_D, "고우토", "돌아갈 건가？/우리가 너희에게 가르쳐줄 수 있는 기회는/오늘 밖에 없다"
@@ -777,31 +777,31 @@ IF 던전플래그:34:30
 	SELECTCASE RAND:100
 		CASE IS < 10
 			;10%で라타토스크Lv5
-			RETURN [[キャラ:라타토스크]], 5
+			RETURN [[캐릭터:라타토스크]], 5
 		CASE IS < 25
 			;15%で픽시Lv3
-			RETURN [[キャラ:픽시]], 3
+			RETURN [[캐릭터:픽시]], 3
 		CASE IS < 40
 			;15%で아프사라스Lv5
-			RETURN [[キャラ:아프사라스]], 5
+			RETURN [[캐릭터:아프사라스]], 5
 		CASE IS < 60
 			;20%で좀비쨩Lv4
-			RETURN [[キャラ:좀비쨩]], 4
+			RETURN [[캐릭터:좀비쨩]], 4
 		CASE IS < 70
 			;10%で좀비군Lv5
-			RETURN [[キャラ:좀비군]], 5
+			RETURN [[캐릭터:좀비군]], 5
 		CASE IS < 80
 			;10%で좀비독
-			RETURN [[キャラ:좀비독]], 1
+			RETURN [[캐릭터:좀비독]], 1
 		CASE IS < 85
 			;5%で코볼트Lv5
-			RETURN [[キャラ:코볼트]], 5
+			RETURN [[캐릭터:코볼트]], 5
 		CASE IS < 95
 			;5%で노커Lv4
-			RETURN [[キャラ:노커]], 4
+			RETURN [[캐릭터:노커]], 4
 		CASE IS < 100
 			;10%で아귀Lv4
-			RETURN [[キャラ:아귀]], 4
+			RETURN [[캐릭터:아귀]], 4
 	ENDSELECT
 ELSE
 	SELECTCASE FLAG:현M
@@ -810,120 +810,120 @@ ELSE
 			SELECTCASE RAND:100
 				CASE IS < 15
 					;15%で픽시Lv3
-					RETURN [[キャラ:픽시]], 3
+					RETURN [[캐릭터:픽시]], 3
 				CASE IS < 30
 					;15%で아프사라스Lv5
-					RETURN [[キャラ:아프사라스]], 5
+					RETURN [[캐릭터:아프사라스]], 5
 				CASE IS < 50
 					;20%で좀비쨩Lv4
-					RETURN [[キャラ:좀비쨩]], 4
+					RETURN [[캐릭터:좀비쨩]], 4
 				CASE IS < 60
 					;15%で좀비군Lv7
-					RETURN [[キャラ:좀비군]], 7
+					RETURN [[캐릭터:좀비군]], 7
 				CASE IS < 70
 					;10%で좀비독
-					RETURN [[キャラ:좀비독]], 3
+					RETURN [[캐릭터:좀비독]], 3
 				CASE IS < 80
 					;15%で코볼트Lv5
-					RETURN [[キャラ:코볼트]], 5
+					RETURN [[캐릭터:코볼트]], 5
 				CASE IS < 90
 					;10%で노커Lv4
-					RETURN [[キャラ:노커]], 4
+					RETURN [[캐릭터:노커]], 4
 				CASE IS < 100
 					;10%で아귀Lv4
-					RETURN [[キャラ:아귀]], 4
+					RETURN [[캐릭터:아귀]], 4
 			ENDSELECT
 		;六階-七階
 	CASE IS < 8
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で아프사라스
-				RETURN [[キャラ:아프사라스]], 5
+				RETURN [[캐릭터:아프사라스]], 5
 			CASE IS < 30
 				;15%で라타토스크Lv5
-				RETURN [[キャラ:라타토스크]], 5
+				RETURN [[캐릭터:라타토스크]], 5
 			CASE IS < 45
 				;15%で좀비쨩
-				RETURN [[キャラ:좀비쨩]], 7
+				RETURN [[캐릭터:좀비쨩]], 7
 			CASE IS < 50
 				;5%で좀비너스
-				RETURN [[キャラ:좀비너스]], 8
+				RETURN [[캐릭터:좀비너스]], 8
 			CASE IS < 55
 				;5%で모코이Lv6
-				RETURN [[キャラ:모코이]], 6
+				RETURN [[캐릭터:모코이]], 6
 			CASE IS < 65
 				;10%で고블린Lv7
-				RETURN [[キャラ:고블린]], 7
+				RETURN [[캐릭터:고블린]], 7
 			CASE IS < 75
 				;10%で커시Lv6
-				RETURN [[キャラ:커시]], 6
+				RETURN [[캐릭터:커시]], 6
 			CASE IS < 90
 				;15%で아귀
-				RETURN [[キャラ:아귀]], 7
+				RETURN [[캐릭터:아귀]], 7
 			CASE IS < 100
 				;10%で좀비군
-				RETURN [[キャラ:좀비군]], 7
+				RETURN [[캐릭터:좀비군]], 7
 		ENDSELECT
 	;七階-九階
 	CASE IS < 10
 		SELECTCASE RAND:100
 			CASE IS < 5
 				;5%で리림Lv9
-				RETURN [[キャラ:리림]], 9
+				RETURN [[캐릭터:리림]], 9
 			CASE IS < 15
 				;10%で실키LV7
-				RETURN [[キャラ:실키]], 7
+				RETURN [[캐릭터:실키]], 7
 			CASE IS < 30
 				;15%で라타토스크
-				RETURN [[キャラ:라타토스크]], 8
+				RETURN [[캐릭터:라타토스크]], 8
 			CASE IS < 45
 				;15%で좀비쨩　랭크1
-				RETURN [[キャラ:좀비쨩]], 7
+				RETURN [[캐릭터:좀비쨩]], 7
 			CASE IS < 50
 				;5%で좀비너스
-				RETURN [[キャラ:좀비너스]], 8
+				RETURN [[캐릭터:좀비너스]], 8
 			CASE IS < 55
 				;5%で모코이랭크1
-				RETURN [[キャラ:모코이]], 9
+				RETURN [[캐릭터:모코이]], 9
 			CASE IS < 65
 				;10%で고블린
-				RETURN [[キャラ:고블린]], 7
+				RETURN [[캐릭터:고블린]], 7
 			CASE IS < 75
 				;10%で커시
-				RETURN [[キャラ:커시]], 9
+				RETURN [[캐릭터:커시]], 9
 			CASE IS < 85
 				;10%で안드라스
-				RETURN [[キャラ:안드라스]], 8
+				RETURN [[캐릭터:안드라스]], 8
 			CASE IS < 100
 				;15%で좀비군
-				RETURN [[キャラ:좀비군]], 7
+				RETURN [[캐릭터:좀비군]], 7
 		ENDSELECT
 	CASEELSE
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で리림　랭크1
-				RETURN [[キャラ:리림]], 12
+				RETURN [[캐릭터:리림]], 12
 			CASE IS < 25
 				;10%で실키　랭크1
-				RETURN [[キャラ:실키]], 10
+				RETURN [[캐릭터:실키]], 10
 			CASE IS < 40
 				;15%で좀비쨩　랭크2
-				RETURN [[キャラ:좀비쨩]], 10
+				RETURN [[캐릭터:좀비쨩]], 10
 			CASE IS < 50
 				;10%で좀비너스
-				RETURN [[キャラ:좀비너스]], 11
+				RETURN [[캐릭터:좀비너스]], 11
 			CASE IS < 60
 				;10%で브라우니
-				RETURN [[キャラ:브라우니]], 11
+				RETURN [[캐릭터:브라우니]], 11
 			CASE IS < 75
 				;15%で이누가미
-				RETURN [[キャラ:이누가미]], 13
+				RETURN [[캐릭터:이누가미]], 13
 			CASE IS < 90
 				;15%で좀비군　랭크1
-				RETURN [[キャラ:좀비군]], 10
+				RETURN [[캐릭터:좀비군]], 10
 			CASE IS < 100
 				;10%で안드라스　랭크1
-				RETURN [[キャラ:안드라스]], 11
+				RETURN [[캐릭터:안드라스]], 11
 		ENDSELECT
 	ENDSELECT
 ENDIF
@@ -976,7 +976,7 @@ SELECTCASE FLAG:현M
 			CALL MESSAGE_WINDOW_D, "고우토", "데빌서머너는 TALK로 교섭하여,/동료마를 늘리는 것이 가능하다/ＣＯＭＰ, 컴퓨터라고 말하나?"
 			CALL MESSAGE_WINDOW_D, "고우토", "그것이 꽉 차있으면 악마는 동료마로 하는 것은 불가능하다/항상 비어있는 용량에는 주의하라는 것이다"
 			CALL MESSAGE_WINDOW_D, "고우토", "우선 이 층에서 확실히 동료마를 모아보면 좋겠지/소수정예라고 말해도, 그것으로는 듣기 좋겠지만…/그 만큼의 실력이 요구된다는 것이다/자네는 아직 신출내기, 솔직하게 무리를 짓는 것이 좋을 것이야"
-			SIF GETCHARA([[キャラ:픽시]]) >= 0 && CPOS(GETCHARA([[キャラ:픽시]])) == 0
+			SIF GETCHARA([[캐릭터:픽시]]) >= 0 && CPOS(GETCHARA([[캐릭터:픽시]])) == 0
 				CALL MESSAGE_WINDOW_D, "고우토", "그건 그렇고, 자네는 계약하고 있는 악마가 없는건가?/만약 있다면, 확실하게 소환해두는 편이 좋다/막상, 전투가 시작하면, ＣＯＭＰ에서 부르기에는 늦을 때도 많이 있을 테니까/소환은 셋업에서 가능하다"
 			CALL MESSAGE_WINDOW_D, "고우토", "또한, 파티에 ＣＯＭＰ를 다룰 서머너가 아무도 없다면/악마와 교섭하는 것도 소환하는 것도 할 수 없다/수면이나 마비 등의 배드 스테이터스 같은 것에도 조심해라"
 			던전플래그:34:11 = 1
@@ -993,9 +993,9 @@ SELECTCASE FLAG:현M
 			FLAG:선제기습취소 = 1
 			;전투後の경험치処理をスキップする
 			FLAG:RESULT스킵 = 1
-			CALL SET_ENEMY,7,[[キャラ:좀비군]],1,0,0
-			CALL SET_ENEMY,8,[[キャラ:좀비쨩]],1,0,0
-			CALL SET_ENEMY,9,[[キャラ:좀비군]],1,0,0
+			CALL SET_ENEMY,7,[[캐릭터:좀비군]],1,0,0
+			CALL SET_ENEMY,8,[[캐릭터:좀비쨩]],1,0,0
+			CALL SET_ENEMY,9,[[캐릭터:좀비군]],1,0,0
 			CALL BATTLE_START
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
@@ -1080,7 +1080,7 @@ SELECTCASE FLAG:현M
 			IF FINDCHARA_B(4542,0) == 2
 				FLAG:RESULT스킵 = 1
 				FOR LOCAL, 7, 12
-					CALL SET_ENEMY,LOCAL,[[キャラ:좀비군]],9,0,1
+					CALL SET_ENEMY,LOCAL,[[캐릭터:좀비군]],9,0,1
 					CSTR:(CHARANUM-1):사고패턴 = チュートリアル좀비
 					BASE:(CHARANUM-1):질풍 = 25
 					BASE:(CHARANUM-1):화염 = 400
@@ -1093,11 +1093,11 @@ SELECTCASE FLAG:현M
 					CALL HEALTH_CHARA, CHARANUM-1
 				NEXT
 			ELSE
-				CALL SET_ENEMY,7,[[キャラ:좀비군]],13,0,0
-				CALL SET_ENEMY,8,[[キャラ:좀비쨩]],10,0,0
-				CALL SET_ENEMY,9,[[キャラ:좀비군]],13,0,0
-				CALL SET_ENEMY,10,[[キャラ:좀비너스]],14,0,0
-				CALL SET_ENEMY,11,[[キャラ:좀비쨩]],10,0,0
+				CALL SET_ENEMY,7,[[캐릭터:좀비군]],13,0,0
+				CALL SET_ENEMY,8,[[캐릭터:좀비쨩]],10,0,0
+				CALL SET_ENEMY,9,[[캐릭터:좀비군]],13,0,0
+				CALL SET_ENEMY,10,[[캐릭터:좀비너스]],14,0,0
+				CALL SET_ENEMY,11,[[캐릭터:좀비쨩]],10,0,0
 			ENDIF
 			CALL BATTLE_START
 			FLAG:도주불가플래그 = 0
@@ -1135,7 +1135,7 @@ SELECTCASE FLAG:현M
 			CALL MESSAGE_WINDOW_D, "고우토", "주살에 성공하면, 아무리 체력이 많아도 일격으로 죽어버린다/그 무서움, 이야기를 듣는 것만으로도 잘 알겠지？/그러나, 대항책이 없다는 것은 아니다"
 		ENDIF
 		CALL MESSAGE_WINDOW_D, "고우토", "자네는 GUARD하고 있어라/GUARD하고 있는 한, 자네가 주살당하는 일은 없다/그 동안 라이도우가 녀석을 쓰려뜨려줄 것이다"
-		CALL SET_ENEMY, 9,[[キャラ:키쿠리히메]],9,0,1
+		CALL SET_ENEMY, 9,[[캐릭터:키쿠리히메]],9,0,1
 		CSTR:(CHARANUM-1):사고패턴 = チュートリアル키쿠리히메
 		CFLAG:(CHARANUM-1):속도보정 = 100
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -1174,7 +1174,7 @@ SELECTCASE FLAG:현M
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			;라이도우
-			IF (FINDCHARA_B(4542,1) == 2 || FINDCHARA_B(4542,0) == 2) && GETCHARA([[キャラ:모ㆍ쇼보]]) == -1
+			IF (FINDCHARA_B(4542,1) == 2 || FINDCHARA_B(4542,0) == 2) && GETCHARA([[캐릭터:모ㆍ쇼보]]) == -1
 				CALL MESSAGE_WINDOW_D, "", "＞통로에 대량의 머신이 있다！"
 				FLAG:RESULT스킵 = 1
 				IF 던전플래그:34:14 == 0
@@ -1192,15 +1192,15 @@ SELECTCASE FLAG:현M
 					CALL MESSAGE_WINDOW_D, "고우토", "거기에 코로나샷을 넣으면,/일렬의 적에게 코로나샷을 쏜다/하지만, 이 경우는 그거로는 부족하다。라이도우！"
 				ENDIF
 				CALL MESSAGE_WINDOW_D, "", "＞라이도우는 흉조 모ㆍ쇼보를 소환했다/＞모ㆍ쇼보가 일시적으로 파티에 가입했다"
-				CALL ADD_GUEST_COMPANION, [[キャラ:모ㆍ쇼보]], 200, 1
-				ABL:GETCHARA([[キャラ:모ㆍ쇼보]]):스킬2 = [[스킬:마하ㆍ갈]]
+				CALL ADD_GUEST_COMPANION, [[캐릭터:모ㆍ쇼보]], 200, 1
+				ABL:GETCHARA([[캐릭터:모ㆍ쇼보]]):스킬2 = [[스킬:마하ㆍ갈]]
 				SIF ITEM:코로나샷 == 0
 					CALL GET_ITEMS,"코로나샷",3
 				CALL MESSAGE_WINDOW_D, "고우토", "코로나샷과 갈이나 마하 갈을/조합하는 것으로 뇌령마법탄이라는 기술을 사용한다/두 사람이 함께 공격하는 것으로, /보통으로 공격하는 것보다 강하다는 것이다"
 				CALL MESSAGE_WINDOW_D, "고우토", "핸드건으로 공격하면 일렬공격,/그리고 샷건으로 공격하면, 전체공격이 된다/전투가 시작하면, 링케이지를 선택하는 거다"
 				CALL MESSAGE_WINDOW_D, "", "＞비트볼이 10체 나타났다！"
 				FOR LOCAL, 7 ,17
-					CALL SET_ENEMY,LOCAL,[[キャラ:비트볼]],9,0,1
+					CALL SET_ENEMY,LOCAL,[[캐릭터:비트볼]],9,0,1
 					CSTR:(CHARANUM-1):사고패턴 = チュートリアル비트볼
 					BASE:(CHARANUM-1):질풍 = 25
 					BASE:(CHARANUM-1):전격 = 300
@@ -1219,9 +1219,9 @@ SELECTCASE FLAG:현M
 				CALL MESSAGE_WINDOW_D, "", "＞통로를 막는 듯이 머신이 있다"
 				CALL MESSAGE_WINDOW_D, "머신", "침 입 자 발 견.　배 제 합 니 다"
 				CALL MESSAGE_WINDOW_D, "", "＞비트볼이 3체 나타났다！"
-				CALL SET_ENEMY,8,[[キャラ:비트볼]],13,0,0
-				CALL SET_ENEMY,9,[[キャラ:비트볼]],13,0,0
-				CALL SET_ENEMY,10,[[キャラ:비트볼]],13,0,0
+				CALL SET_ENEMY,8,[[캐릭터:비트볼]],13,0,0
+				CALL SET_ENEMY,9,[[캐릭터:비트볼]],13,0,0
+				CALL SET_ENEMY,10,[[캐릭터:비트볼]],13,0,0
 			ENDIF
 			CALL BATTLE_START
 			FLAG:도주불가플래그 = 0
@@ -1229,7 +1229,7 @@ SELECTCASE FLAG:현M
 			FLAG:선제기습취소 = 0
 			FLAG:RESULT스킵 = 0
 			IF 던전플래그:34:32
-				CALL 캐릭터삭제(GETCHARA([[キャラ:모ㆍ쇼보]]))
+				CALL 캐릭터삭제(GETCHARA([[캐릭터:모ㆍ쇼보]]))
 				IF 던전플래그:34:18 == 2
 					FLAG:현Y -= 2
 					CALL SHOW_PICTURE, "D"
@@ -1267,9 +1267,9 @@ SELECTCASE FLAG:현M
 			FLAG:선제기습취소 = 1
 			;チュートリアルだとLVが減る
 			IF 던전플래그:34:30
-				CALL SET_ENEMY,9, [[キャラ:단탈리온]],8,0,1
+				CALL SET_ENEMY,9, [[캐릭터:단탈리온]],8,0,1
 			ELSE
-				CALL SET_ENEMY,9, [[キャラ:단탈리온]],15,0,1
+				CALL SET_ENEMY,9, [[캐릭터:단탈리온]],15,0,1
 			ENDIF
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 400
@@ -1286,7 +1286,7 @@ SELECTCASE FLAG:현M
 			CALL MESSAGE_WINDOW_D, "", "＞적당히 조작을 해서, 소프트의 설명서를 발견했다/＞『새로운 의식에 적응하여, 새로운 솔로몬의 열쇠를 작성……』/＞『천사를 추방해, 우리들의 길을 열기 위한 프로그램……』"
 			CALL MESSAGE_WINDOW_D, "", @"＞아무래도, 이것은 컨버터인 것 같다/＞게다가, 벌써 완성이 끝난 상태인 것 같다……/＞%조사처리(CALLNAME:MASTER,"는")% 소프트를 다운로드하기로 했다…/＞인스톨 소프트【고에티아】를 손에 넣었다…"
 			;라이도우
-			LOCAL = GETCHARA([[キャラ:라이도우]])
+			LOCAL = GETCHARA([[캐릭터:라이도우]])
 			IF LOCAL >= 0 && !CFLAG:LOCAL:인계횟수
 				CALL MESSAGE_WINDOW_D, "고우토", "아무래도 여기는 우리들이 찾고 있는 장소가 아닌 듯 하군/펜텀의 서머너여/함께하는 것은 여기까지다"
 				CALL MESSAGE_WINDOW_D, "고우토", "오늘 가르쳐준 것을 잊지 않고/당신 스스로 수련하여, 강해지는 것이다"
@@ -1409,7 +1409,7 @@ ELSEIF RESULT == 1
 ELSEIF RESULT == 2
 	CALL SETUP_SOFT
 ELSEIF RESULT == 3
-	LOCAL = GETCHARA([[キャラ:라이도우]])
+	LOCAL = GETCHARA([[캐릭터:라이도우]])
 	IF LOCAL >= 0 && !CFLAG:LOCAL:인계횟수
 		CALL MESSAGE_WINDOW_D, "고우토", "돌아갈 건가？/우리가 너희에게 가르쳐줄 수 있는 기회는/오늘 밖에 없다"
 		CALL INPUT_YN_D
@@ -1488,13 +1488,13 @@ CFLAG:ARG:타겟 = CPOS(MASTER)
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:노커]] , 6 + RAND:15 , CSVBASE([[キャラ:노커]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:노커]] , 6 + RAND:15 , CSVBASE([[캐릭터:노커]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코볼트]] , 3 + RAND:10 , CSVBASE([[キャラ:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코볼트]] , 3 + RAND:10 , CSVBASE([[캐릭터:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

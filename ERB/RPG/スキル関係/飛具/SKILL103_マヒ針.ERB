@@ -1,7 +1,7 @@
 ﻿
 ;스킬명
 @SKILL_NAME_103,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RESULTS = 마비약투척
 ELSE
 	RESULTS = 마비침
@@ -57,7 +57,7 @@ RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_103,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 2
 ELSE
 	RETURN 1
@@ -108,7 +108,7 @@ RETURN 8
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_103,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 70
 ELSE
 	RETURN 40
@@ -116,7 +116,7 @@ ENDIF
 
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_103,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 100
 ELSE
 	RETURN 70
@@ -126,7 +126,7 @@ ENDIF
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_103,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	CALL ATTACK_FIELD,ARG,ARG:1,103
 ELSE
 	LOCAL = POS(ARG:1)
@@ -145,7 +145,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_103
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:마리카]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마리카]]
 	PRINTL 적 1열에 마비약을 내던져 소 데미지＋고확률 PALYZE
 ELSE
 	PRINTL 적 1체에 바늘을 날려 공격。마비시키는 경우가 있다。

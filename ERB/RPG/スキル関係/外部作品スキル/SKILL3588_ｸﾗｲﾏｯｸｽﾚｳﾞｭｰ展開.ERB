@@ -236,23 +236,23 @@ RETURN 0
 ;====================================================
 
 @ACTION_3588,ARG,ARG:1
-;	IF NO:ARG == [[キャラ:카렌（무대소녀）]]
+;	IF NO:ARG == [[캐릭터:카렌（무대소녀）]]
 ;		SETBGCOLOR 0xff0033
-;	ELSEIF NO:ARG == [[キャラ:히카리]]
+;	ELSEIF NO:ARG == [[캐릭터:히카리]]
 ;		SETBGCOLOR 0x5687e6
-;	ELSEIF NO:ARG == [[キャラ:마히루]]
+;	ELSEIF NO:ARG == [[캐릭터:마히루]]
 ;		SETBGCOLOR 0x56b78e
-;	ELSEIF NO:ARG == [[キャラ:쥰나]]
+;	ELSEIF NO:ARG == [[캐릭터:쥰나]]
 ;		SETBGCOLOR 0x8ac4ec
-;	ELSEIF NO:ARG == [[キャラ:후타바（무대소녀）]]
+;	ELSEIF NO:ARG == [[캐릭터:후타바（무대소녀）]]
 ;		SETBGCOLOR 0x815ca1
-;	ELSEIF NO:ARG == [[キャラ:카오루코]]
+;	ELSEIF NO:ARG == [[캐릭터:카오루코]]
 ;		SETBGCOLOR 0xdc7b8c
-;	ELSEIF NO:ARG == [[キャラ:나나]]
+;	ELSEIF NO:ARG == [[캐릭터:나나]]
 ;		SETBGCOLOR 0xfdca57
-;	ELSEIF NO:ARG == [[キャラ:마야（무대소녀）]]
+;	ELSEIF NO:ARG == [[캐릭터:마야（무대소녀）]]
 ;		SETBGCOLOR 0xffffff
-;	ELSEIF NO:ARG == [[キャラ:클로딘]]
+;	ELSEIF NO:ARG == [[캐릭터:클로딘]]
 ;		SETBGCOLOR 0xff8e48
 ;	ENDIF
 ;SETCOLOR 0xFFFFFF
@@ -274,23 +274,23 @@ PRINTFORMW 　무대장치가 가동된다！　%CALLNAME:ARG%의 모습을 스�
 @SKILL_SPECIAL_COMMAND_3588,ARG,LOCAL
 #LOCALSIZE 1
 IF SKILLGAGE_H_GET(ARG,3588) > 99
-	IF NO:ARG == [[キャラ:카렌（무대소녀）]]
+	IF NO:ARG == [[캐릭터:카렌（무대소녀）]]
 		SETCOLOR 0xff0033
-	ELSEIF NO:ARG == [[キャラ:히카리]]
+	ELSEIF NO:ARG == [[캐릭터:히카리]]
 		SETCOLOR 0x5687e6
-	ELSEIF NO:ARG == [[キャラ:마히루]]
+	ELSEIF NO:ARG == [[캐릭터:마히루]]
 		SETCOLOR 0x56b78e
-	ELSEIF NO:ARG == [[キャラ:쥰나]]
+	ELSEIF NO:ARG == [[캐릭터:쥰나]]
 		SETCOLOR 0x8ac4ec
-	ELSEIF NO:ARG == [[キャラ:후타바（무대소녀）]]
+	ELSEIF NO:ARG == [[캐릭터:후타바（무대소녀）]]
 		SETCOLOR 0x815ca1
-	ELSEIF NO:ARG == [[キャラ:카오루코]]
+	ELSEIF NO:ARG == [[캐릭터:카오루코]]
 		SETCOLOR 0xdc7b8c
-	ELSEIF NO:ARG == [[キャラ:나나]]
+	ELSEIF NO:ARG == [[캐릭터:나나]]
 		SETCOLOR 0xfdca57
-	ELSEIF NO:ARG == [[キャラ:마야（무대소녀）]]
+	ELSEIF NO:ARG == [[캐릭터:마야（무대소녀）]]
 		SETCOLOR 0xffffff
-	ELSEIF NO:ARG == [[キャラ:클로딘]]
+	ELSEIF NO:ARG == [[캐릭터:클로딘]]
 		SETCOLOR 0xff8e48
 	ENDIF
 	PRINTFORML [{LOCAL}] ＣＬＩＭＡＸ　ＲＥＶＵＥ！
@@ -328,23 +328,23 @@ RETURN -1
 @SKILLGAGE_DISPLAY_3588,ARG
 SETCOLOR 0x999999
 IF SKILLGAGE_D_GET(ARG,3588) > 0
-	IF NO:ARG == [[キャラ:카렌（무대소녀）]]
+	IF NO:ARG == [[캐릭터:카렌（무대소녀）]]
 		SETCOLOR 0xff0033
-	ELSEIF NO:ARG == [[キャラ:히카리]]
+	ELSEIF NO:ARG == [[캐릭터:히카리]]
 		SETCOLOR 0x5687e6
-	ELSEIF NO:ARG == [[キャラ:마히루]]
+	ELSEIF NO:ARG == [[캐릭터:마히루]]
 		SETCOLOR 0x56b78e
-	ELSEIF NO:ARG == [[キャラ:쥰나]]
+	ELSEIF NO:ARG == [[캐릭터:쥰나]]
 		SETCOLOR 0x8ac4ec
-	ELSEIF NO:ARG == [[キャラ:후타바（무대소녀）]]
+	ELSEIF NO:ARG == [[캐릭터:후타바（무대소녀）]]
 		SETCOLOR 0x815ca1
-	ELSEIF NO:ARG == [[キャラ:카오루코]]
+	ELSEIF NO:ARG == [[캐릭터:카오루코]]
 		SETCOLOR 0xdc7b8c
-	ELSEIF NO:ARG == [[キャラ:나나]]
+	ELSEIF NO:ARG == [[캐릭터:나나]]
 		SETCOLOR 0xfdca57
-	ELSEIF NO:ARG == [[キャラ:마야（무대소녀）]]
+	ELSEIF NO:ARG == [[캐릭터:마야（무대소녀）]]
 		SETCOLOR 0xffffff
-	ELSEIF NO:ARG == [[キャラ:클로딘]]
+	ELSEIF NO:ARG == [[캐릭터:클로딘]]
 		SETCOLOR 0xff8e48
 	ENDIF
 ENDIF

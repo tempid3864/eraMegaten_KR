@@ -46,29 +46,29 @@ RETURN ENEMY_NUM_COMMON("初級", ARG)
 SELECTCASE RAND:100
 	CASE IS < 19
 		;20%で나이트메어
-		RETURN [[キャラ:나이트메어]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:나이트메어]], 8 + RAND:3 * 2
 	CASE IS < 39
 		;20%で라타토스크
-		RETURN [[キャラ:라타토스크]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:라타토스크]], 8 + RAND:3 * 2
 	CASE IS < 59
 		;20%で픽시
-		RETURN [[キャラ:픽시]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:픽시]], 8 + RAND:3 * 2
 	CASE IS < 74
 		;15%で좀비쨩
-		RETURN [[キャラ:좀비쨩]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:좀비쨩]], 8 + RAND:3 * 2
 	CASE IS < 89
 		;15%で좀비군
-		RETURN [[キャラ:좀비군]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:좀비군]], 8 + RAND:3 * 2
 	CASEELSE
 		;10%で모코이
-		RETURN [[キャラ:모코이]], 8 + RAND:3 * 2
+		RETURN [[캐릭터:모코이]], 8 + RAND:3 * 2
 ENDSELECT
 ;=================================
 ;特殊調整
 ;=================================
 @SET_ENEMY_STATUS_50, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:픽시]]
+	CASE [[캐릭터:픽시]]
 		ABL:ARG:회화타입 = 302
 		CFLAG:ARG:전신복 = [[衣装:원피스]]
 		CFLAG:ARG:전신속옷 = 0
@@ -80,7 +80,7 @@ ENDSELECT
 ;=================================
 @SET_COMPANION_DUNGEON_50, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:픽시]]
+	CASE [[캐릭터:픽시]]
 		ABL:ARG:회화타입 = 302
 		CFLAG:ARG:전신복 = [[衣装:원피스]]
 		CFLAG:ARG:전신속옷 = 0
@@ -234,7 +234,7 @@ ENDIF
 
 ;힘技で、JOKER노리코を最速行動させて、そこで処理を行う
 @EVENT_BATTLE_TURNTOP_DUNGEON50
-LOCAL = GETCHARA([[キャラ:ＪＯＫＥＲ노리코]])
+LOCAL = GETCHARA([[캐릭터:ＪＯＫＥＲ노리코]])
 SIF LOCAL == -1
 	RETURN 0
 SIF ABL:LOCAL:초기페르소나 == -1
@@ -291,7 +291,7 @@ ABL:ARG:초기페르소나 = -1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:2
 	CASE 0
-		RETURN [[キャラ:모코이]] , 3 + RAND:10 , CSVBASE([[キャラ:모코이]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:모코이]] , 3 + RAND:10 , CSVBASE([[캐릭터:모코이]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

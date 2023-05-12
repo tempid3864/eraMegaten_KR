@@ -2,18 +2,18 @@
 ;스킬명
 @SKILL_NAME_206,ARG
 ;ファントムが使用する場合究極！ゲシュペンストキックに
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = 궁극！게슈펜스트킥
 ELSEIF SKILL_CHANGE(ARG, 5054)
 	RESULTS = 시엘사마
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:레이무]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:레이무]])
 	RESULTS = 승천각
 ELSE
 	RESULTS = 섬머솔트
 ENDIF
 ;　명중
 @SKILL_HITRATE_206, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RETURN 110
 ELSE
 	RETURN 85
@@ -21,7 +21,7 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_206, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RETURN 480
 ELSE
 	RETURN 210
@@ -42,7 +42,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_206,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	;比較的早く使える代わりに消費は他に比べて重め
 	RETURN 48
 ELSE
@@ -92,7 +92,7 @@ RETURN 2
 
 ;속도보정
 @SKILL_SPEED_206, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RETURN 1
 ELSE
 	RETURN 0
@@ -146,7 +146,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,206
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_206
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 높이 날아올라、적 전열 １체에 타격 상성의 궁극 킥。후열 사용 가능、후열 공격 가능。
 	PRINTL 덧붙여 본래는 발동 코드가 음성 입력이기 때문에、외치는 것이 약속인 것 같지만 본작에서는 따로 외치지 않아도 Ok。
 ELSE

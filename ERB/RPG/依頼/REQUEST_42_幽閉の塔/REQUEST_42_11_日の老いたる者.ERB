@@ -9,7 +9,7 @@ PRINTFORMW ※전투가 있습니다
 ;内容
 ;====================
 @REQUEST_42_11
-IF 의뢰플래그:42:10 == 1 && 던전플래그:69:17 == 0 && FINDCHARA_B([[キャラ:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
+IF 의뢰플래그:42:10 == 1 && 던전플래그:69:17 == 0 && FINDCHARA_B([[캐릭터:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
 	CALL SHOW_PICTURE, "NONFLOORD", "　"
 	CALL MESSAGE_WINDOW, "？？？？", "우리는 항상 너를 보고 있다…", , , , , 4
 	CALL MESSAGE_WINDOW, "？？？？", "너는 희망을 줬다고 생각하겠지만 / 그 희망은 곧 무너진다", , , , , 4
@@ -107,7 +107,7 @@ IF 의뢰플래그:42:10 == 1 && 던전플래그:69:17 == 0 && FINDCHARA_B([[キ
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,14,[[キャラ:에인션트데이]],80,0,1
+	CALL SET_ENEMY,14,[[캐릭터:에인션트데이]],80,0,1
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 14000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
@@ -179,7 +179,7 @@ ENDIF
 
 @EVENT_BATTLE_START_REQUEST42_11
 #DIM CHARA 
-IF NO:(CHARANUM-1) == [[キャラ:에인션트데이]]
+IF NO:(CHARANUM-1) == [[캐릭터:에인션트데이]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃타락한 명성의 미움은 시간의 흐름을 거스른 죄에 거듭되어　　┃

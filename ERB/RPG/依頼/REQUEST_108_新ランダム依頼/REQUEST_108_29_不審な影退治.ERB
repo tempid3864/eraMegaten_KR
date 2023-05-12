@@ -42,7 +42,7 @@ PRINTW ＞女悪魔が襲ってきた。
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 
-	CALL SET_ENEMY, 9 ,[[キャラ:서큐버스]],44+RAND:5,0,0
+	CALL SET_ENEMY, 9 ,[[캐릭터:서큐버스]],44+RAND:5,0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	CALL BATTLE_START

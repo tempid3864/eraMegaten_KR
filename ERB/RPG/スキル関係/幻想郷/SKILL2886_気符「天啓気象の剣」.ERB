@@ -9,7 +9,7 @@
 ;스킬명
 @SKILL_NAME_2886,ARG
 ;使用者が天子でなく、敵であるとき、ネーム変更。主に敵ボスが使用する強力な攻撃の時のもの。
-IF ARG > -1 && !SKILL_CHANGE(ARG, [[キャラ:텐시]]) && CFLAG:ARG:PT플래그 == 0
+IF ARG > -1 && !SKILL_CHANGE(ARG, [[캐릭터:텐시]]) && CFLAG:ARG:PT플래그 == 0
 	RESULTS = 만마조복의검
 ELSE
 	RESULTS = 기부「천계기상의검」

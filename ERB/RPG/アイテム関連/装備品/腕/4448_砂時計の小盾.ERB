@@ -28,37 +28,37 @@ IF ARG:1 > -1
 	SELECTCASE GET_BASESTATUS(ARG)
 		;キリカ陥落時、力＋２
 		CASE "힘"
-			LOCAL = GETCHARA([[キャラ:키리카]])
+			LOCAL = GETCHARA([[캐릭터:키리카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
 		;ほむら陥落時、知＋２
 		CASE "지혜"
-			LOCAL = GETCHARA([[キャラ:호무라]])
+			LOCAL = GETCHARA([[캐릭터:호무라]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
 		;まどか陥落時、魔＋２
 		CASE "마력"
-			LOCAL = GETCHARA([[キャラ:마도카]])
+			LOCAL = GETCHARA([[캐릭터:마도카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
 		;さやか陥落時、体＋２
 		CASE "인내력"
-			LOCAL = GETCHARA([[キャラ:사야카]])
+			LOCAL = GETCHARA([[캐릭터:사야카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
 		;杏子陥落時、速＋２
 		CASE "속도"
-			LOCAL = GETCHARA([[キャラ:쿄코]])
+			LOCAL = GETCHARA([[캐릭터:쿄코]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
 		;マミ陥落時、運＋２
 		CASE "운"
-			LOCAL = GETCHARA([[キャラ:마미]])
+			LOCAL = GETCHARA([[캐릭터:마미]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2
 			ENDIF
@@ -81,7 +81,7 @@ IF ARG:1 > -1
 		ENDIF
 	NEXT
 	;眼鏡ほむら陥落時、レベル＋１０
-	LOCAL:1 = GETCHARA([[キャラ:호무라(U-U)]])
+	LOCAL:1 = GETCHARA([[캐릭터:호무라(U-U)]])
 	IF LOCAL:1 > 0 && FAVORITE_1(LOCAL:1) == ARG:1 && 함락(LOCAL:1)
 		LOCAL:2 += 10
 	ENDIF
@@ -112,31 +112,31 @@ IF ARG:1 > -1
 	SELECTCASE GET_TYPE(ARG)
 		;キリカ陥落時、物理に薄い耐性
 		CASE "검격", "비구", "타격", "전술"
-			LOCAL = GETCHARA([[キャラ:키리카]])
+			LOCAL = GETCHARA([[캐릭터:키리카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 90
 			ENDIF
 		;マミ陥落時、神経半減
 		CASE "신경"
-			LOCAL = GETCHARA([[キャラ:마미]])
+			LOCAL = GETCHARA([[캐릭터:마미]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 50
 			ENDIF
 		;杏子陥落時、精神半減
 		CASE "정신"
-			LOCAL = GETCHARA([[キャラ:쿄코]])
+			LOCAL = GETCHARA([[캐릭터:쿄코]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 50
 			ENDIF
 		;まどか陥落時、破魔半減
 		CASE "파마"
-			LOCAL = GETCHARA([[キャラ:마도카]])
+			LOCAL = GETCHARA([[캐릭터:마도카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 50
 			ENDIF
 		;円環の理陥落時、万能に薄い耐性
 		CASE "만능"
-			LOCAL = GETCHARA([[キャラ:원환의이치]])
+			LOCAL = GETCHARA([[캐릭터:원환의이치]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 90
 			ENDIF
@@ -188,7 +188,7 @@ RETURN 0
 
 @전투개시시효과_4448, ARG
 ;ほむら陥落時、呪殺を一回無効化
-LOCAL = GETCHARA([[キャラ:호무라]])
+LOCAL = GETCHARA([[캐릭터:호무라]])
 IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG && 함락(LOCAL)
 	CFLAG:ARG:주살무효화횟수 += 1
 ENDIF
@@ -198,19 +198,19 @@ IF ARG:1 > -1
 	SELECTCASE ARG
 		;さやか陥落時、自動治癒（中）追加
 		CASE 0
-			LOCAL = GETCHARA([[キャラ:사야카]])
+			LOCAL = GETCHARA([[캐릭터:사야카]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2409
 			ENDIF
 		;ゆま陥落時、ラクカジャオート追加
 		CASE 1
-			LOCAL = GETCHARA([[キャラ:유마]])
+			LOCAL = GETCHARA([[캐릭터:유마]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2415
 			ENDIF
 		;おりこ陥落時、スクカジャオート追加
 		CASE 2
-			LOCAL = GETCHARA([[キャラ:오리코]])
+			LOCAL = GETCHARA([[캐릭터:오리코]])
 			IF LOCAL > 0 && FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL)
 				RETURN 2417
 			ENDIF

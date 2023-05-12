@@ -1,9 +1,9 @@
 ﻿
 ;스킬명
 @SKILL_NAME_111,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 유가에리
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RESULTS = 원 홀 샷
 ELSE
 	RESULTS = 싱글샷
@@ -15,9 +15,9 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_111, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 220
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 200
 ELSE
 	RETURN 130
@@ -38,9 +38,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_111,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 11
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 8
 ELSE
 	RETURN 3
@@ -147,10 +147,10 @@ CALL ATTACK_SINGLE,ARG,LOCAL,111
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_111
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 궁술의 기본적인 동작 중 하나。
 	PRINTL 적 1체에 비구 물리 중 데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아란]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아란]])
 	PRINTL OneHallShot。
 	PRINTL 적 1체에 비구 물리 중 데미지를 준다。
 ELSE

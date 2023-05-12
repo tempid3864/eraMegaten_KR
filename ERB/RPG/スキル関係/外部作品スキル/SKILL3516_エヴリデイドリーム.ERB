@@ -27,7 +27,7 @@ RETURN 100
 	LOCAL = 50 + MIN(ABL:ARG:가창기능 * 5, 50)
 
 	;念のため：威力向上はまゆ限定
-	IF SKILL_CHANGE(ARG, [[キャラ:마유]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:마유]])
 		;対象が睡眠状態である場合（拡散フラグが立っている場合）、威力が「陥落段階+1」倍
 		LOCAL:1 = POS(CFLAG:ARG:타겟)
 		;おまじない
@@ -50,7 +50,7 @@ SIF ARG < 0
 LOCAL = 2
 
 ;念のため：最低回数向上はまゆ限定
-SIF SKILL_CHANGE(ARG, [[キャラ:마유]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:마유]])
 	LOCAL = 2 + 함락(ARG)
 
 RETURN LOCAL
@@ -87,7 +87,7 @@ IF ARG < 0 || 스킬속성표시중
 ELSEIF CFLAG:ARG:타겟 > 16 || CFLAG:ARG:타겟 < 1
 	RETURN GET_TYPE_NUM("정신")
 ;陥落している場合、精神と重力の複合に変化（重い……）
-ELSEIF 함락(ARG) >= 1 && SKILL_CHANGE(ARG, [[キャラ:마유]])
+ELSEIF 함락(ARG) >= 1 && SKILL_CHANGE(ARG, [[캐릭터:마유]])
 	LOCAL = POS(CFLAG:ARG:타겟)
 	SIF LOCAL < 0
 		RETURN GET_TYPE_NUM("정신")
@@ -186,7 +186,7 @@ SIF ARG < 0
 LOCAL = 25
 
 ;念のため：付与率向上はまゆ限定
-SIF SKILL_CHANGE(ARG, [[キャラ:마유]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:마유]])
 	LOCAL = 25 * (1 + 함락(ARG))
 
 RETURN LOCAL
@@ -215,7 +215,7 @@ CALL ATTACK_RAND, ARG, ARG:1, 3516
 PRINTL 적 복수체에 정신 상성으로 극소 데미지+SLEEP
 PRINTL 가창기능으로 기초데미지가 높아진다
 ;おまじない
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:마유]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마유]]
 	PRINTL 함락단계에 따라 공격횟수가 증가하고、SLEEP 부여율이 상승。공격상성에 중력이 추가된다
 	PRINTL 또한、SLEEP 상태의 적을 대상으로 한 경우、함락단계에 따라 데미지가 배로 증가한다
 ELSE

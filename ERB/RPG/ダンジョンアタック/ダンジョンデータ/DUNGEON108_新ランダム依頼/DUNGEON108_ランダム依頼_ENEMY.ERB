@@ -152,45 +152,45 @@ ENDSELECT
 SELECTCASE 의뢰플래그:108:1
 	;氷漬けの工場
 	CASE 0
-		RETURN [[キャラ:잭프로스트]], 13
+		RETURN [[캐릭터:잭프로스트]], 13
 	;下水道の異音
 	CASE 3
-		RETURN [[キャラ:슬라임]], 1
+		RETURN [[캐릭터:슬라임]], 1
 	;武装集団排除
 	CASE 5,
-		RETURN [[キャラ:오니]], 20
+		RETURN [[캐릭터:오니]], 20
 	;機密情報奪還
 	CASE 6
-		RETURN [[キャラ:비트볼]], 15
+		RETURN [[캐릭터:비트볼]], 15
 	;強奪部隊追撃
 	CASE 7
-		RETURN [[キャラ:오르트로스]], 23
+		RETURN [[캐릭터:오르트로스]], 23
 	;防衛システム破壊
 	CASE 9
-		RETURN [[キャラ:라비]], 35
+		RETURN [[캐릭터:라비]], 35
 	;拠点ビル襲撃
 	CASE 12
-		RETURN [[キャラ:템플나이트]], 25
+		RETURN [[캐릭터:템플나이트]], 25
 	;ゴブリン排除
 	CASE 15
-		RETURN [[キャラ:고블린]], 10
+		RETURN [[캐릭터:고블린]], 10
 	;山を飛ぶ不審な影
 	CASE 23
-		RETURN [[キャラ:안주]], 25
+		RETURN [[캐릭터:안주]], 25
 	;廃工場侵入
 	CASE 24
-		RETURN [[キャラ:템플나이트]], 20
+		RETURN [[캐릭터:템플나이트]], 20
 	;異界化したビルの解放
 	CASE 26
-		RETURN [[キャラ:좀비독]], 10
+		RETURN [[캐릭터:좀비독]], 10
 	;変異したウナギの始末
 	CASE 28
-		RETURN [[キャラ:아즈미]], 15
+		RETURN [[캐릭터:아즈미]], 15
 	;ドリアードを間引いてくれ
 	CASE 30
-		RETURN [[キャラ:드라이어드]], 12
+		RETURN [[캐릭터:드라이어드]], 12
 	CASE 32
-		RETURN [[キャラ:좀비독]], 10
+		RETURN [[캐릭터:좀비독]], 10
 ENDSELECT
 
 
@@ -202,7 +202,7 @@ ENDSELECT
 
 ;防衛システム破壊
 IF 의뢰플래그:108:1 == 9
-	IF NO:ARG == [[キャラ:라비]]
+	IF NO:ARG == [[캐릭터:라비]]
 		NAME:ARG = 警備ロボ
 		CALLNAME:ARG = 警備ロボ
 	ENDIF

@@ -9,7 +9,7 @@ PRINTFORMW ※戦闘があります
 ;内容
 ;====================
 @REQUEST_42_10
-IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キャラ:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
+IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[캐릭터:알렉스]]) == 2 && (TALENT:(RESULT:1):연모 || TALENT:(RESULT:1):친애)
 	CALL SHOW_PICTURE, "NONFLOORD", "　"
 	CALL MESSAGE_WINDOW, "", "＞알렉스가 말을 걸어왔다", , , , , 4
 	CALL MESSAGE_WINDOW, "알렉스", "실은... 당신의 힘을 빌려줬으면 하는 일이 있어.", , , , , 4
@@ -133,13 +133,13 @@ IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キ�
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,7,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,7,[[캐릭터:Ｐ아미]],45,0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,8,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,8,[[캐릭터:Ｐ아미]],45,0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,9,[[キャラ:Ｐ아미]],50,0,1
+	CALL SET_ENEMY,9,[[캐릭터:Ｐ아미]],50,0,1
 	NAME:(CHARANUM-1) = Ｐウォーリアー
 	CALLNAME:(CHARANUM-1) = Ｐウォーリアー
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
@@ -150,13 +150,13 @@ IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キ�
 	ABL:(CHARANUM-1):스킬4 = [[스킬:플레어샷]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,10,[[캐릭터:Ｐ아미]],45,0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,11,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,11,[[캐릭터:Ｐ아미]],45,0,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,13,[[キャラ:Ｐ아미]],50,0,1
+	CALL SET_ENEMY,13,[[캐릭터:Ｐ아미]],50,0,1
 	NAME:(CHARANUM-1) = Ｐウォーリアー
 	CALLNAME:(CHARANUM-1) = Ｐウォーリアー
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
@@ -167,7 +167,7 @@ IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キ�
 	ABL:(CHARANUM-1):스킬4 = [[스킬:플레어샷]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,14,[[キャラ:Ｐ아미]],55,0,1
+	CALL SET_ENEMY,14,[[캐릭터:Ｐ아미]],55,0,1
 	NAME:(CHARANUM-1) = Ｐジャイアント
 	CALLNAME:(CHARANUM-1) = Ｐジャイアント
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -180,7 +180,7 @@ IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キ�
 	ABL:(CHARANUM-1):스킬6 = [[스킬:라쿤ㆍ다]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,15,[[キャラ:Ｐ아미]],50,0,1
+	CALL SET_ENEMY,15,[[캐릭터:Ｐ아미]],50,0,1
 	NAME:(CHARANUM-1) = Ｐウォーリアー
 	CALLNAME:(CHARANUM-1) = Ｐウォーリアー
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
@@ -207,34 +207,34 @@ IF 의뢰플래그:42:10 == 0 && 던전플래그:69:9 == 1 && FINDCHARA_B([[キ�
 	CALL INPUT_SELECT_M , "＞여전히 장난치는 소리밖에 안하는구나, / 이 마왕은…！//[1]마치 고장난 스피커다/" , , , , 3
 	CALL MESSAGE_WINDOW, "", "＞플루토에서 뿜어져 나오는 장기가 기세를 더했다…/>아무래도 위협하고 있는 것 같다…！", , , , , 4
 	CALL MESSAGE_WINDOW, "", "/＞마왕 플루토가 덤벼들었다！//" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,8,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,8,[[캐릭터:Ｐ아미]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,9,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,9,[[캐릭터:Ｐ아미]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,10,[[キャラ:Ｐ아미]],45,0,1
+	CALL SET_ENEMY,10,[[캐릭터:Ｐ아미]],45,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,13,[[キャラ:체르노보그]],55,0,1
+	CALL SET_ENEMY,13,[[캐릭터:체르노보그]],55,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
 	ABL:(CHARANUM-1):스킬4 = [[스킬:메ㆍ디아라마]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,15,[[キャラ:체르노보그]],55,0,1
+	CALL SET_ENEMY,15,[[캐릭터:체르노보그]],55,0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
 	ABL:(CHARANUM-1):스킬4 = [[스킬:메ㆍ디아라마]]
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-	CALL SET_ENEMY,14,[[キャラ:플루토]],59,0,1
+	CALL SET_ENEMY,14,[[캐릭터:플루토]],59,0,1
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 8000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50000
@@ -370,7 +370,7 @@ ENDIF
 
 @EVENT_BATTLE_START_REQUEST42_10
 #DIM CHARA 
-IF NO:(CHARANUM-1) == [[キャラ:플루토]]
+IF NO:(CHARANUM-1) == [[캐릭터:플루토]]
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃나는 더러움을 구축한다…　　　┃
@@ -384,7 +384,7 @@ ENDIF
 
 @EVENT_BATTLE_ACTEND_REQUEST42_10
 #DIM CHARA 
-IF NO:(CHARANUM-1) == [[キャラ:플루토]] && 현HP비율(CHARANUM-1) < 80 && 의뢰플래그:42:12 == 0
+IF NO:(CHARANUM-1) == [[캐릭터:플루토]] && 현HP비율(CHARANUM-1) < 80 && 의뢰플래그:42:12 == 0
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃중지하라　중지하라　　　　　　　　　　　　┃
@@ -396,7 +396,7 @@ IF NO:(CHARANUM-1) == [[キャラ:플루토]] && 현HP비율(CHARANUM-1) < 80 &&
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	의뢰플래그:42:12 = 1
-ELSEIF NO:(CHARANUM-1) == [[キャラ:플루토]] && 현HP비율(CHARANUM-1) < 50 && 의뢰플래그:42:12 == 1
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:플루토]] && 현HP비율(CHARANUM-1) < 50 && 의뢰플래그:42:12 == 1
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃나는 신의 장치…　　　　　　　　　　　　┃
@@ -408,7 +408,7 @@ ELSEIF NO:(CHARANUM-1) == [[キャラ:플루토]] && 현HP비율(CHARANUM-1) < 5
 	PRINTFORMW ┗━━━━━━━━━━━━━━━━━━━━━┛
 	RESETCOLOR
 	의뢰플래그:42:12 = 2
-ELSEIF NO:(CHARANUM-1) == [[キャラ:플루토]] && 현HP비율(CHARANUM-1) < 25 && 의뢰플래그:42:12 == 2
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:플루토]] && 현HP비율(CHARANUM-1) < 25 && 의뢰플래그:42:12 == 2
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃나는 신의 장치　　　　　　　　　　　　　┃

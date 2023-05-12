@@ -146,48 +146,48 @@ LOCALS:3 = 검격
 
 ;発動者で基本相性変更
 ;これは手持ちの武器で
-IF NO:(LOCAL:1) == [[キャラ:카렌（무대소녀）]]
+IF NO:(LOCAL:1) == [[캐릭터:카렌（무대소녀）]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
 	LOCALS:3 = 검격
-ELSEIF NO:(LOCAL:1) == [[キャラ:히카리]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:히카리]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
 	LOCALS:3 = 검격
-ELSEIF NO:(LOCAL:1) == [[キャラ:마히루]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:마히루]]
 	LOCALS = 타격
 	LOCALS:1 = 타격
 	LOCALS:2 = 타격
 	LOCALS:3 = 타격
-ELSEIF NO:(LOCAL:1) == [[キャラ:쥰나]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:쥰나]]
 	LOCALS = 비구
 	LOCALS:1 = 비구
 	LOCALS:2 = 비구
 	LOCALS:3 = 비구
-ELSEIF NO:(LOCAL:1) == [[キャラ:후타바（무대소녀）]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:후타바（무대소녀）]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
 	LOCALS:3 = 검격
-ELSEIF NO:(LOCAL:1) == [[キャラ:카오루코]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:카오루코]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
 	LOCALS:3 = 검격
-ELSEIF NO:(LOCAL:1) == [[キャラ:나나]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:나나]]
 	;でぇばは戦技で
 	LOCALS = 전술
 	LOCALS:1 = 전술
 	LOCALS:2 = 전술
 	LOCALS:3 = 전술
-ELSEIF NO:(LOCAL:1) == [[キャラ:마야（무대소녀）]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:마야（무대소녀）]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
 	LOCALS:3 = 검격
-ELSEIF NO:(LOCAL:1) == [[キャラ:클로딘]]
+ELSEIF NO:(LOCAL:1) == [[캐릭터:클로딘]]
 	LOCALS = 검격
 	LOCALS:1 = 검격
 	LOCALS:2 = 검격
@@ -198,31 +198,31 @@ ENDIF
 IF CFLAG:(LOCAL:1):아이돌인기 >= 100
 	;発動者で追加相性変更
 	;相性はスタリラちゃんの星４【무대소녀】シリーズを見ながらそれっぽいものを（被る場合はまた考える）
-	IF NO:(LOCAL:1) == [[キャラ:카렌（무대소녀）]]
+	IF NO:(LOCAL:1) == [[캐릭터:카렌（무대소녀）]]
 		;花
 		LOCALS:2 = 핵열
-	ELSEIF NO:(LOCAL:1) == [[キャラ:히카리]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:히카리]]
 		;月
 		LOCALS:2 = 정신
-	ELSEIF NO:(LOCAL:1) == [[キャラ:마히루]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:마히루]]
 		;花……は被るので地属性で
 		LOCALS:2 = 지변
-	ELSEIF NO:(LOCAL:1) == [[キャラ:쥰나]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:쥰나]]
 		;雪
 		LOCALS:2 = 빙결
-	ELSEIF NO:(LOCAL:1) == [[キャラ:후타바（무대소녀）]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:후타바（무대소녀）]]
 		;宙
 		LOCALS:2 = 중력
-	ELSEIF NO:(LOCAL:1) == [[キャラ:카오루코]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:카오루코]]
 		;風
 		LOCALS:2 = 질풍
-	ELSEIF NO:(LOCAL:1) == [[キャラ:나나]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:나나]]
 		;雲……雲ってなんだ？　達人なので微妙な属性に
 		LOCALS:2 = 주살
-	ELSEIF NO:(LOCAL:1) == [[キャラ:마야（무대소녀）]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:마야（무대소녀）]]
 		;月　達人なので微妙な属性に
 		LOCALS:2 = 파마
-	ELSEIF NO:(LOCAL:1) == [[キャラ:클로딘]]
+	ELSEIF NO:(LOCAL:1) == [[캐릭터:클로딘]]
 		;雲……雲ってなんだ？（二度目）
 		LOCALS:2 = 전격
 	;それ以外（バグ抑制）は……暫定的に神経でも入れておこうか（他と被らないし）
@@ -342,7 +342,7 @@ CALL ATTACK_FIELD, ARG, ARG:1, 4940
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_4940
-IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카렌（무대소녀）]])
+IF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:카렌（무대소녀）]])
 	SETCOLOR 0xff0033
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격ㆍ핵열ㆍ만능 복합
@@ -351,7 +351,7 @@ IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카렌（무대소녀）]])
 	ELSE
 		PRINT 검격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:히카리]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:히카리]])
 	SETCOLOR 0x5687e6
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격ㆍ정신ㆍ만능 복합
@@ -360,7 +360,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:히카리]])
 	ELSE
 		PRINT 검격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마히루]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:마히루]])
 	SETCOLOR 0x56b78e
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 타격ㆍ지변ㆍ만능
@@ -369,7 +369,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마히루]])
 	ELSE
 		PRINT 타격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:쥰나]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:쥰나]])
 	SETCOLOR 0x8ac4ec
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 비구ㆍ빙결ㆍ만능 복합상성
@@ -378,7 +378,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:쥰나]])
 	ELSE
 		PRINT 비구
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:후타바（무대소녀）]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:후타바（무대소녀）]])
 	SETCOLOR 0x815ca1
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격ㆍ중력ㆍ만능 복합
@@ -387,7 +387,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:후타바（무대소녀）
 	ELSE
 		PRINT 검격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카오루코]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:카오루코]])
 	SETCOLOR 0xdc7b8c
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격 질풍 만능 복합
@@ -396,7 +396,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:카오루코]])
 	ELSE
 		PRINT 검격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:나나]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:나나]])
 	SETCOLOR 0xfdca57
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 전술ㆍ주살ㆍ만능 복합
@@ -405,7 +405,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:나나]])
 	ELSE
 		PRINT 전술
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마야（무대소녀）]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:마야（무대소녀）]])
 	SETCOLOR 0xffffff
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격ㆍ파마ㆍ만능 복합
@@ -414,7 +414,7 @@ ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:마야（무대소녀）]])
 	ELSE
 		PRINT 검격
 	ENDIF
-ELSEIF (U > 0 && U < CHARANUM && NO:U == [[キャラ:클로딘]])
+ELSEIF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:클로딘]])
 	SETCOLOR 0xff8e48
 	IF CFLAG:(LOCAL:1):아이돌인기 > 199
 		PRINT 검격ㆍ전격ㆍ만능 복합

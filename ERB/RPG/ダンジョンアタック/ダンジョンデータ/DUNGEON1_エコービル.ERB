@@ -442,7 +442,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:도우만]],10,0,1
+			CALL SET_ENEMY,9,[[캐릭터:도우만]],10,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			ABL:(CHARANUM-1):아이템1 = 10704
@@ -590,103 +590,103 @@ SELECTCASE FLAG:현M
 				RETURN 501, 3
 				;参考例　以下の記述でも動きます。数字を指定するのと문자열を指定するのは好みでどうぞ
 				;なお、문자열指定は予め、_Rename.csvで등록していないと無理です。ｃｓｖを見てみましょう
-				;RETURN [[キャラ:픽시]],3
+				;RETURN [[캐릭터:픽시]],3
 			CASE IS < 35
 				;15%で하피
-				RETURN [[キャラ:하피]],4
+				RETURN [[캐릭터:하피]],4
 			CASE IS < 50
 				;15%で좀비쨩
-				RETURN [[キャラ:좀비쨩]],4
+				RETURN [[캐릭터:좀비쨩]],4
 			CASE IS < 65
 				;15%で아프사라스
-				RETURN [[キャラ:아프사라스]],5
+				RETURN [[캐릭터:아프사라스]],5
 			CASE IS < 74
 				;9%で노커
-				RETURN [[キャラ:노커]],4
+				RETURN [[캐릭터:노커]],4
 			CASE IS < 83
 				;9%で좀비독
 				RETURN 1083, 1
 			CASE IS < 92
 				;9%で춍춍
-				RETURN [[キャラ:춍춍]],4
+				RETURN [[캐릭터:춍춍]],4
 			CASE IS < 100
 				;8%で아귀
-				RETURN [[キャラ:아귀]],4
+				RETURN [[캐릭터:아귀]],4
 		ENDSELECT
 	CASE 2 , 3
 		SELECTCASE RAND:100
 			CASE IS < 14
 				;14%で픽시
-				RETURN [[キャラ:픽시]],3
+				RETURN [[캐릭터:픽시]],3
 			CASE IS < 28
 				;14%で하피
-				RETURN [[キャラ:하피]],4
+				RETURN [[캐릭터:하피]],4
 			CASE IS < 42
 				;14%で좀비쨩
-				RETURN [[キャラ:좀비쨩]],4
+				RETURN [[캐릭터:좀비쨩]],4
 			CASE IS < 56
 				;14%で아프사라스
-				RETURN [[キャラ:아프사라스]],5
+				RETURN [[캐릭터:아프사라스]],5
 			CASE IS < 61
 				;7%で픽시랭크１
-				RETURN [[キャラ:픽시]],6
+				RETURN [[캐릭터:픽시]],6
 			CASE IS < 64
 				;3%で하피랭크１
-				RETURN [[キャラ:하피]],7
+				RETURN [[캐릭터:하피]],7
 			CASE IS < 67
 				;3%で좀비쨩랭크１
-				RETURN [[キャラ:좀비쨩]],7
+				RETURN [[캐릭터:좀비쨩]],7
 			CASE IS < 70
 				;3%で노커랭크１
-				RETURN [[キャラ:노커]],7
+				RETURN [[캐릭터:노커]],7
 			CASE IS < 73
 				;3%で아귀랭크１
-				RETURN [[キャラ:아귀]],7
+				RETURN [[캐릭터:아귀]],7
 			CASE IS < 76
 				;3%で춍춍랭크１
-				RETURN [[キャラ:춍춍]],7
+				RETURN [[캐릭터:춍춍]],7
 			CASE IS < 83
 				;7%で코볼트
-				RETURN [[キャラ:코볼트]],5
+				RETURN [[캐릭터:코볼트]],5
 			CASE IS < 86
 				;3%で좀비독
 				RETURN 1083, 1
 			CASE IS < 100
 				;14%で화백
-				RETURN [[キャラ:화백]],7
+				RETURN [[캐릭터:화백]],7
 		ENDSELECT
 	CASE 4
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で픽시랭크１
-				RETURN [[キャラ:픽시]],7
+				RETURN [[캐릭터:픽시]],7
 			CASE IS < 20
 				;10%で하피랭크１
-				RETURN [[キャラ:하피]],7
+				RETURN [[캐릭터:하피]],7
 			CASE IS < 30
 				;10%で좀비쨩랭크１
-				RETURN [[キャラ:좀비쨩]],7
+				RETURN [[캐릭터:좀비쨩]],7
 			CASE IS < 40
 				;10%で아프사라스랭크1
-				RETURN [[キャラ:아프사라스]],7
+				RETURN [[캐릭터:아프사라스]],7
 			CASE IS < 50
 				;10%で픽시랭크２
-				RETURN [[キャラ:픽시]],9
+				RETURN [[캐릭터:픽시]],9
 			CASE IS < 60
 				;10%で춍춍랭크１
-				RETURN [[キャラ:춍춍]],7
+				RETURN [[캐릭터:춍춍]],7
 			CASE IS < 70
 				;10%で노커랭크1
-				RETURN [[キャラ:노커]],7
+				RETURN [[캐릭터:노커]],7
 			CASE IS < 80
 				;10%で좀비군
-				RETURN [[キャラ:좀비군]],7
+				RETURN [[캐릭터:좀비군]],7
 			CASE IS < 90
 				;10%で코볼트
-				RETURN [[キャラ:코볼트]],7
+				RETURN [[캐릭터:코볼트]],7
 			CASE IS < 100
 				;10%で화백
-				RETURN [[キャラ:화백]],7
+				RETURN [[캐릭터:화백]],7
 		ENDSELECT
 ENDSELECT
 
@@ -816,11 +816,11 @@ RETURN -1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:아귀]] , 3 + RAND:10 , CSVBASE([[キャラ:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아귀]] , 3 + RAND:10 , CSVBASE([[캐릭터:아귀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:코볼트]] , 3 + RAND:10 , CSVBASE([[キャラ:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코볼트]] , 3 + RAND:10 , CSVBASE([[캐릭터:코볼트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

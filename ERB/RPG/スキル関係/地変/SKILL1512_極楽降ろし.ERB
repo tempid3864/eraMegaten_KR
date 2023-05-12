@@ -2,7 +2,7 @@
 
 ;スキル名
 @SKILL_NAME_1512,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:스이카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:스이카]])
 	;本来は『符の壱　「投擲の天岩戸」』、男投げは「岩を投げるスキル」としては不適当であるためこちらで
 	RESULTS = 췌부「내던져진 아마노이와토」
 ELSE
@@ -50,7 +50,7 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_1512, ARG
-IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:스이카]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[キャラ:스이카]])
+IF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:스이카]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[캐릭터:스이카]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -140,7 +140,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,1512
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1512
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:스이카]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:스이카]]
 	PRINTL 거대한 암괴를 내던져、대상과 그 주위에 지변 상성의 중위력 물리데미지를 ２회 준다。
 	PRINTL 요귀　이부키 스이카의 스펠카드。
 ELSE

@@ -3,13 +3,13 @@
 @SKILL_NAME_通常攻撃（原神）,ARG
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RESULTS = 신성한 사격술
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RESULTS = 바위 비
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
 		RESULTS = 몽상일심
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RESULTS = 원류
 ELSE
 	RESULTS = 통상공격（원신）
@@ -24,7 +24,7 @@ RETURN 120
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
 ;バアルが爆発一心中の間のみ、攻撃力が増大。
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
 	SIF ARG == -1
 		RETURN 200
 	IF BASE:ARG:LV >= 39
@@ -60,11 +60,11 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_通常攻撃（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -72,11 +72,11 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_通常攻撃（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 1
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 1
 ELSE
 	RETURN 1
@@ -110,11 +110,11 @@ ENDIF
 @SKILL_TYPE_通常攻撃（原神）,ARG
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN GET_TYPE_NUM("비구")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN GET_TYPE_NUM("전술")
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	SIF SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
 		RETURN GET_TYPE_NUM("만능")	
 	RETURN GET_TYPE_NUM("검격")
@@ -138,11 +138,11 @@ RETURN 1
 
 ;射程　1:S 2:M 3:L
 @SKILL_RANGE_通常攻撃（原神）,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바르바토스]])
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바르바토스]])
 	RETURN 3
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한모라쿠스]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한모라쿠스]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]])
 	RETURN 2
 ELSE
 	RETURN 2
@@ -195,7 +195,7 @@ RETURN 0
 #DIM SKILL_NUM
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF SKILL_CHANGE(ARG, [[キャラ:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
+IF SKILL_CHANGE(ARG, [[캐릭터:기묘한바알]]) && SKILLGAGE_D_GET(ARG,元素爆発制御変数) > 2
 	;奇妙なバアル、爆発効果時間中
 	;他の仲間の元素エネルギーゲージを＋１５させる。元素エネルギーが無い仲間にもドバドバ注ぎ込む。害はないと思う。
 	CALL ATTACK_SINGLE,ARG,POS(ARG:1),SKILL_NUM;	単体攻撃
@@ -225,17 +225,17 @@ ENDIF
 @SKILL_EXPLAIN_通常攻撃（原神）,ARG
 #DIM 元素爆発制御変数
 元素爆発制御変数 = PU_SKILLNUM_GET(ARG,"元素爆発（原神）")
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바르바토스]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한바르바토스]]
 	PRINTL 적 1체에 飛具属性で小威力の物理攻撃を１回行う。
 	PRINTL 付加効果：高必殺率。レベルに応じて、コストと威力が増大する。
 	PRINTL 
 	PRINTL 忘れ去られた、精緻な射術による攻撃。
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한모라쿠스]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한모라쿠스]]
 	PRINTL 적 1체에 戦技属性で小威力の物理攻撃を１回行う。
 	PRINTL 付加効果：高必殺率。レベルに応じて、コストと威力が増大する。
 	PRINTL 
 	PRINTL 忘れ去られた、質実剛健を地で行く槍術による攻撃。
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:기묘한바알]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:기묘한바알]]
 	IF SKILLGAGE_D_GET(U,元素爆発制御変数) > 2
 		PRINTL 적 1체에 万能属性で小威力の物理攻撃を１回行う。
 		PRINTL 付加効果：高必殺率。レベルに応じて、コストと威力が増大する。

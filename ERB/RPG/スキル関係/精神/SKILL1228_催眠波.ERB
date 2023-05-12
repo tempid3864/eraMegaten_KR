@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_1228,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RESULTS = 봄꽃의술
 ELSE
 	RESULTS = 최면파
@@ -32,7 +32,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_1228,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 10
 ELSE
 	RETURN 14
@@ -109,7 +109,7 @@ RETURN 9
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_1228,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 80
 ELSE
 	RETURN 45
@@ -117,7 +117,7 @@ ENDIF
 
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_1228,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리카]])
 	RETURN 100
 ELSE
 	RETURN 80
@@ -140,7 +140,7 @@ CALL FIELD_BADSTATE,ARG,ARG:1,1228
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1228
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:마리카]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마리카]]
 	PRINTL 적 전체를 재운다
 ELSE
 	PRINTL 적 전체를 재운다

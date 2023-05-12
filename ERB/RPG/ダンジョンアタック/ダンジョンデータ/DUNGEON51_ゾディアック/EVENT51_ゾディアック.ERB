@@ -272,11 +272,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			;イシュが검격COOP取れるキャラが複数いるなら、つまり인간落としてるならイシュ潰し
 			;そうじゃないなら、가면당원減らしがおすすめか
 			;상태이상はどっちにしろ、有効だと思います
-			CALL SET_ENEMY,9, [[キャラ:이슈킥]], 24, 0, 1
+			CALL SET_ENEMY,9, [[캐릭터:이슈킥]], 24, 0, 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 250
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,7,[[キャラ:황소가면]],21
+			CALL SET_ENEMY,7,[[캐릭터:황소가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 400
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -285,7 +285,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,8,[[キャラ:황소가면]],21
+			CALL SET_ENEMY,8,[[캐릭터:황소가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 400
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -294,7 +294,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,10,[[キャラ:사자가면]],21
+			CALL SET_ENEMY,10,[[캐릭터:사자가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 350
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -303,7 +303,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,11,[[キャラ:사자가면]],21
+			CALL SET_ENEMY,11,[[캐릭터:사자가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 350
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -312,7 +312,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,12,[[キャラ:전갈가면]],21
+			CALL SET_ENEMY,12,[[캐릭터:전갈가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 250
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -321,7 +321,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,13,[[キャラ:전갈가면]],21
+			CALL SET_ENEMY,13,[[캐릭터:전갈가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 250
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -330,7 +330,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,15,[[キャラ:물병가면]],21
+			CALL SET_ENEMY,15,[[캐릭터:물병가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 250
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -339,7 +339,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			MAXBASE:(CHARANUM-1):신경 = 150
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,16,[[キャラ:물병가면]],21
+			CALL SET_ENEMY,16,[[캐릭터:물병가면]],21
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 250
 			CSTR:(CHARANUM-1):사고패턴 = %CALLNAME:(CHARANUM-1)%
 			MAXBASE:(CHARANUM-1):파마 = 20
@@ -359,19 +359,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTW ＞너무 어려 꺼려지는 감도 있지만, 이거라면 높은 값에 팔릴 것 같다
 			PRINTW ＞아니, 오히려 이런 것을 좋아하는 인간이라면 군침이 흐를 정도의 물건일 것이다
 			PRINTW ＞호시 아카리 를 손에 넣었다
-			CALL ADD_NEW_COMPANION,[[キャラ:아카리]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:아카리]],200
 			;LV20に調整+저항추가
 			IF RESULT == 1
-				BASE:(GETCHARA([[キャラ:아카리]])):LV = 20
-				BASE:(GETCHARA([[キャラ:아카리]])):ＥＸＰ = 5*19*20*21/3
-				CALL SYNC_STATUS,GETCHARA([[キャラ:아카리]])
-				BASE:(GETCHARA([[キャラ:아카리]])):힘 = 7
-				BASE:(GETCHARA([[キャラ:아카리]])):지혜 = 4
-				BASE:(GETCHARA([[キャラ:아카리]])):마력 = 4
-				BASE:(GETCHARA([[キャラ:아카리]])):인내력 = 5
-				BASE:(GETCHARA([[キャラ:아카리]])):속도 = 8
-				BASE:(GETCHARA([[キャラ:아카리]])):운 = 11
-				TALENT:(GETCHARA([[キャラ:아카리]])):저항 = 1
+				BASE:(GETCHARA([[캐릭터:아카리]])):LV = 20
+				BASE:(GETCHARA([[캐릭터:아카리]])):ＥＸＰ = 5*19*20*21/3
+				CALL SYNC_STATUS,GETCHARA([[캐릭터:아카리]])
+				BASE:(GETCHARA([[캐릭터:아카리]])):힘 = 7
+				BASE:(GETCHARA([[캐릭터:아카리]])):지혜 = 4
+				BASE:(GETCHARA([[캐릭터:아카리]])):마력 = 4
+				BASE:(GETCHARA([[캐릭터:아카리]])):인내력 = 5
+				BASE:(GETCHARA([[캐릭터:아카리]])):속도 = 8
+				BASE:(GETCHARA([[캐릭터:아카리]])):운 = 11
+				TALENT:(GETCHARA([[캐릭터:아카리]])):저항 = 1
 			ENDIF
 		ELSE
 			IF STRFLAG_NUM_EV("전 육상부원의 뜻밖의 취직 장소의 소문", , , , [[이벤트:소문]]) == 2
@@ -402,7 +402,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			;레이디はイシュと比べるとふつー
 			;ふつーすぎるんで、色々AIでフォロー
 			;でも가운一속성で火약점はまぁどうとでもなると思います
-			CALL SET_ENEMY,9, [[キャラ:레이디]], 24, 0 , 1
+			CALL SET_ENEMY,9, [[캐릭터:레이디]], 24, 0 , 1
 			;SMクラブ化している場合は채찍の위력UP
 			SIF STRFLAG_NUM_EV("전 육상부원의 뜻밖의 취직 장소의 소문", , , , [[이벤트:소문]]) == 2
 				BASE:(CHARANUM-1):힘 += 10
@@ -421,22 +421,22 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTW ＞그러자, 가면 아래에서 아름답게 생긴 얼굴이 드러났다
 			PRINTW ＞이거라면 충분히 비싸게 팔 수 있을 것이다
 			PRINTW ＞귀찮은 임무가 있었지만, 이것은 상당한 횡재일지도 모른다
-			CALL ADD_NEW_COMPANION,[[キャラ:안나]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:안나]],200
 			IF RESULT == 1
 				IF STRFLAG_NUM_EV("전 육상부원의 뜻밖의 취직 장소의 소문", , , , [[이벤트:소문]]) == 2
-					ABL:(GETCHARA([[キャラ:안나]])):새드끼 = 3
-					EXP:(GETCHARA([[キャラ:안나]])):가학쾌락경험 = 30
+					ABL:(GETCHARA([[캐릭터:안나]])):새드끼 = 3
+					EXP:(GETCHARA([[캐릭터:안나]])):가학쾌락경험 = 30
 				ENDIF
-				BASE:(GETCHARA([[キャラ:안나]])):LV = 20
-				BASE:(GETCHARA([[キャラ:안나]])):ＥＸＰ = 5*19*20*21/3
-				CALL SYNC_STATUS, GETCHARA([[キャラ:안나]])
-				BASE:(GETCHARA([[キャラ:안나]])):힘 = 5
-				BASE:(GETCHARA([[キャラ:안나]])):지혜 = 8
-				BASE:(GETCHARA([[キャラ:안나]])):마력 = 9
-				BASE:(GETCHARA([[キャラ:안나]])):인내력 = 4
-				BASE:(GETCHARA([[キャラ:안나]])):속도 = 9
-				BASE:(GETCHARA([[キャラ:안나]])):운 = 4
-				TALENT:(GETCHARA([[キャラ:안나]])):저항 = 1
+				BASE:(GETCHARA([[캐릭터:안나]])):LV = 20
+				BASE:(GETCHARA([[캐릭터:안나]])):ＥＸＰ = 5*19*20*21/3
+				CALL SYNC_STATUS, GETCHARA([[캐릭터:안나]])
+				BASE:(GETCHARA([[캐릭터:안나]])):힘 = 5
+				BASE:(GETCHARA([[캐릭터:안나]])):지혜 = 8
+				BASE:(GETCHARA([[캐릭터:안나]])):마력 = 9
+				BASE:(GETCHARA([[캐릭터:안나]])):인내력 = 4
+				BASE:(GETCHARA([[캐릭터:안나]])):속도 = 9
+				BASE:(GETCHARA([[캐릭터:안나]])):운 = 4
+				TALENT:(GETCHARA([[캐릭터:안나]])):저항 = 1
 			ENDIF
 			PRINTW ＞요시자카 안나 를 손에 넣었다
 		ENDIF

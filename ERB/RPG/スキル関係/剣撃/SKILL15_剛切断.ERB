@@ -5,9 +5,9 @@
 @SKILL_NAME_15,ARG
 IF SKILL_CHANGE(ARG, 5050)
 	RESULTS = 에테라이트ㆍ그랜드
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RESULTS = 팔상베기
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:이누가미(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:이누가미(마인학원)]])
 	RESULTS = 베어가르기
 ELSE
 	RESULTS = 강절단
@@ -36,9 +36,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_15,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+IF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RETURN 10
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:이누가미(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:이누가미(마인학원)]])
 	RETURN 10
 ELSE
 	RETURN 4
@@ -144,10 +144,10 @@ CALL ATTACK_SINGLE,ARG,LOCAL,15
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_15
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:쿄이치]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:쿄이치]])
 	PRINTL 팔상의 자세에서 검격을 날린다。
 	PRINTL 적 1체에 검격 물리데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:이누가미(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:이누가미(마인학원)]])
 	PRINTL 날카로운 발톱으로 베어가른다。
 	PRINTL 적 1체에 검격 물리데미지를 준다。
 ELSE

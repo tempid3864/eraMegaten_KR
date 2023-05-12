@@ -2,7 +2,7 @@
 
 #DIMS 참가キャラ = "_"
 FOR LOCAL, 0, CHARANUM
-	SIF GROUPMATCH(NO:LOCAL, [[キャラ:마요네]]) && CFLAG:LOCAL:전투참가불가능 < 1
+	SIF GROUPMATCH(NO:LOCAL, [[캐릭터:마요네]]) && CFLAG:LOCAL:전투참가불가능 < 1
 		참가キャラ += @"%CSVCALLNAME(NO:LOCAL)%_"
 NEXT
 
@@ -86,35 +86,35 @@ PRINTL ＞GAMPよりかは同じ총型COMPであるデビラザーに似たよ�
 			FLAG:선제기습취소 = 1
 			
 			
-			CALL SET_ENEMY,16,[[キャラ:이스라펠]],68,0,1
+			CALL SET_ENEMY,16,[[캐릭터:이스라펠]],68,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,15,[[キャラ:에키드나]],66,0,1
+			CALL SET_ENEMY,15,[[캐릭터:에키드나]],66,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,14,[[キャラ:이그드라실]],65,0,1
+			CALL SET_ENEMY,14,[[캐릭터:이그드라실]],65,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,13,[[キャラ:부네]],70,0,1
+			CALL SET_ENEMY,13,[[캐릭터:부네]],70,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,12,[[キャラ:리치]],68,0,1
+			CALL SET_ENEMY,12,[[캐릭터:리치]],68,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
@@ -123,28 +123,28 @@ PRINTL ＞GAMPよりかは同じ총型COMPであるデビラザーに似たよ�
 			;後衛↑
 			
 			;前衛↓
-			CALL SET_ENEMY,11,[[キャラ:티아마트]],67,0,1
+			CALL SET_ENEMY,11,[[캐릭터:티아마트]],67,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,10,[[キャラ:마하]],70,0,1
+			CALL SET_ENEMY,10,[[캐릭터:마하]],70,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,9,[[キャラ:네반]],70,0,1
+			CALL SET_ENEMY,9,[[캐릭터:네반]],70,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,8,[[キャラ:모리안]],66,0,1
+			CALL SET_ENEMY,8,[[캐릭터:모리안]],66,0,1
 			;
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
@@ -152,7 +152,7 @@ PRINTL ＞GAMPよりかは同じ총型COMPであるデビラザーに似たよ�
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,7,[[キャラ:란다]],67,0,1
+			CALL SET_ENEMY,7,[[캐릭터:란다]],67,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
@@ -185,14 +185,14 @@ PRINTL ＞帰れよ、頼むからと答えれば有無を言わず악마を出�
 			FLAG:선제기습취소 = 1
 			
 			
-			CALL SET_ENEMY,14,[[キャラ:이슈타르]],74,0,1
+			CALL SET_ENEMY,14,[[캐릭터:이슈타르]],74,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,13,[[キャラ:노른]],70,0,1
+			CALL SET_ENEMY,13,[[캐릭터:노른]],70,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
@@ -203,14 +203,14 @@ PRINTL ＞帰れよ、頼むからと答えれば有無を言わず악마を出�
 			
 			;前衛↓
 			
-			CALL SET_ENEMY,10,[[キャラ:쟌느]],76,0,1
+			CALL SET_ENEMY,10,[[캐릭터:쟌느]],76,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,9,[[キャラ:브륀힐드]],72,0,1
+			CALL SET_ENEMY,9,[[캐릭터:브륀힐드]],72,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5

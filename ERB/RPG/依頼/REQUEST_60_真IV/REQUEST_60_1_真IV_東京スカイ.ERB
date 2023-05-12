@@ -84,7 +84,7 @@
 		CUSTOMDRAWLINE =
 		WAIT
 
-		CALL SET_ENEMY, 9, [[キャラ:메두사]], 25, 0, 1
+		CALL SET_ENEMY, 9, [[캐릭터:메두사]], 25, 0, 1
 		LOCAL = CHARANUM -1
 		LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 		CALL SET_BATTLE_STATUS(LOCAL, 60 * LOCAL:1, "ＨＰ")

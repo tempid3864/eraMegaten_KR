@@ -57,7 +57,7 @@ RETURN GET_EQUIPNUM("몸통")
 
 ;불굴의투지
 @장비추가스킬_3520,ARG,ARG:1 = -1
-IF ARG:1 != -1 && NO:(ARG:1) == [[キャラ:당신]]
+IF ARG:1 != -1 && NO:(ARG:1) == [[캐릭터:당신]]
 	IF EQUIP:(ARG:1):발 == 4550
 		SELECTCASE ARG
 			CASE 0

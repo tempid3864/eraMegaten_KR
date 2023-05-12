@@ -246,7 +246,7 @@ CUSTOMDRAWLINE =
 舞台少女の人数 = EVENT93_人数確認()
 
 ;FOR LOCAL, 0, CHARANUM
-;	IF GROUPMATCH(NO:LOCAL, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
+;	IF GROUPMATCH(NO:LOCAL, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
 ;		わたしたちは舞台少女 += @"%CSVCALLNAME(NO:LOCAL)%_"
 ;		舞台少女の人数 += 1
 ;	ENDIF
@@ -550,7 +550,7 @@ IF GETBIT(이벤트플래그:93:8,20)
 			PRINTL
 			PRINTL
 			PRINTL
-			LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+			LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 			BASE:(LOCAL:0):지혜 += 3
 			BASE:(LOCAL:0):속도 += 3
 			PRINTL ＞마야의 지혜가 3 올랐다
@@ -859,7 +859,7 @@ IF GETBIT(이벤트플래그:93:8,20)
 				;だいたいデフォ　화염と파마に弱い
 				;ボスクラスついてるだけの雑魚
 				;突入時期によっては레벨差が激しいけど、逆に言えば上손くやれば経験値がウマい感じに
-				CALL SET_ENEMY,9, [[キャラ:콥스]],30, 1
+				CALL SET_ENEMY,9, [[캐릭터:콥스]],30, 1
 				CFLAG:(CHARANUM-1):행동횟수 = 1
 				;독가스브레스추가
 				ABL:(CHARANUM-1):스킬4 = 1112
@@ -915,7 +915,7 @@ IF GETBIT(이벤트플래그:93:8,20)
 				PRINTW 에에잇, 끈적끈적거리기는, 사이 좋구만 너네들.
 				PRINTW 당신은 그 모습을 흘겨보며 걷는 속도를 높였다……。
 		
-				LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+				LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 				BASE:(LOCAL:0):힘 += 3
 				BASE:(LOCAL:0):운 += 3
 				PRINTL
@@ -1022,8 +1022,8 @@ ELSE
 				PRINTW 테이블 위에 준비된 컵케익을 천천히 들어올리면,
 				PRINTW 『뇌물이에요♪』라고 쓰여진 쪽지가, 팔랑팔랑 바닥에 떨어졌다……。
 				
-				LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-				LOCAL:1 = GETCHARA([[キャラ:나나]])
+				LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+				LOCAL:1 = GETCHARA([[캐릭터:나나]])
 				
 				BASE:(LOCAL:0):인내력 += 1
 				BASE:(LOCAL:1):인내력 += 1
@@ -1039,8 +1039,8 @@ ELSE
 			ELSE
 				PRINTW 당신은 홀로 남겨졌지만, 별로 그녀들을 뒤쫓을 이유도 없었기에 사무작업으로 돌아가기로 했다.……。
 				
-				LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-				LOCAL:1 = GETCHARA([[キャラ:나나]])
+				LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+				LOCAL:1 = GETCHARA([[캐릭터:나나]])
 				
 				BASE:(LOCAL:0):인내력 += 1
 				BASE:(LOCAL:1):인내력 += 1
@@ -1076,8 +1076,8 @@ ELSE
 			PRINTW 그렇게 말하고, 두 사람은 담소를 나누며 밖으로 걸어나갔다.
 			PRINTW 당신은 홀로 남겨졌지만, 별로 그녀들을 뒤쫓을 이유도 없었기에 사무작업으로 돌아가기로 했다.……。
 			
-			LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-			LOCAL:1 = GETCHARA([[キャラ:후타바（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+			LOCAL:1 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 			
 			BASE:(LOCAL:0):속도 += 1
 			BASE:(LOCAL:1):속도 += 1
@@ -1131,8 +1131,8 @@ ELSE
 					PRINTW 예고도 없이 나타난 당신에게, 클로딘은 당황한 표정을 지었지만,
 					PRINTW 쥰나는 조금 수다스럽게, 세 명이서의 조깅을 시종 즐기고 있었다……。
 					PRINTL 
-					LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-					LOCAL:1 = GETCHARA([[キャラ:쥰나]])
+					LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+					LOCAL:1 = GETCHARA([[캐릭터:쥰나]])
 					
 					BASE:(LOCAL:0):지혜 += 1
 					BASE:(LOCAL:1):지혜 += 1
@@ -1153,8 +1153,8 @@ ELSE
 					PRINTW 쥰나는 유감스러운 듯 미소를 지으며, 현관 쪽으로 걸어나갔다.
 					PRINTW 당신은 홀로 남겨졌지만, 별로 그녀들을 뒤쫓을 이유도 없었기에 사무작업으로 돌아가기로 했다.……。
 					PRINTL 
-					LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-					LOCAL:1 = GETCHARA([[キャラ:쥰나]])
+					LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+					LOCAL:1 = GETCHARA([[캐릭터:쥰나]])
 					
 					BASE:(LOCAL:0):지혜 += 1
 					BASE:(LOCAL:1):지혜 += 1
@@ -1168,8 +1168,8 @@ ELSE
 			ELSE
 				PRINTW 당신은 홀로 남겨졌지만, 별로 그녀들을 뒤쫓을 이유도 없었기에 사무작업으로 돌아가기로 했다.……。
 				PRINTL 
-				LOCAL:0 = GETCHARA([[キャラ:클로딘]])
-				LOCAL:1 = GETCHARA([[キャラ:쥰나]])
+				LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
+				LOCAL:1 = GETCHARA([[캐릭터:쥰나]])
 				
 				BASE:(LOCAL:0):지혜 += 1
 				BASE:(LOCAL:1):지혜 += 1
@@ -1413,7 +1413,7 @@ ELSE
 		PRINTW 당신은 서로 장난치는 둘을 곁눈질하며, 말 없이 그 자리를 뒤로 했다……。
 		PRINTL 
 		
-		LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+		LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 		BASE:(LOCAL:0):인내력 += 5
 		PRINTL ＞마야의 인내력이 5 올랐다
 		WAIT
@@ -1810,7 +1810,7 @@ CUSTOMDRAWLINE =
 		PRINTW 황금색의 빛이 당신의 등 뒤에서 솟아오른다.
 		PRINTW 페니키아의 소녀――아니, 무대소녀ㆍ다이바 나나가, 하늘을 덮는 어둠을 노려보며 칼을 뽑는다.
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTFORMW 「나아가！　%CSTR:LOCAL:이인칭%！
 		PRINTW 　당신의 마음이, 분명 세계를 바꿀테니까！」
 	ELSE
@@ -2137,11 +2137,11 @@ WAIT
 	PRINTW ＞텐도 마야는　이능자 데빌 시프터　로 처리됩니다
 	PRINTL 
 	
-	LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 
 	CFLAG:LOCAL:링크악마 = -1
 	TALENT:LOCAL:데빌시프터 = 1
-	CFLAG:LOCAL:초기링크악마 = [[キャラ:대신제우스]]
+	CFLAG:LOCAL:초기링크악마 = [[캐릭터:대신제우스]]
 	ABL:LOCAL:초기링크악마공격상성 = 6
 	ABL:LOCAL:초기링크악마사거리 = 3
 	ABL:LOCAL:초기링크악마공격범위 = 3
@@ -2236,7 +2236,7 @@ CUSTOMDRAWLINE =
 	SETBIT 이벤트플래그:93:18, 2
 	
 	;- SET:마야（무대소녀）　何回目だ天堂真矢
-	CALL SET_ENEMY,9,[[キャラ:마야（무대소녀）]],75,1,3
+	CALL SET_ENEMY,9,[[캐릭터:마야（무대소녀）]],75,1,3
 	CALLNAME:(CHARANUM-1) = 미노타우로스
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	;CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
@@ -2469,7 +2469,7 @@ SAVEGLOBAL
 	PRINTW ＞초인　미노타우로스　가 나타났다！
 	PRINTL 
 	;天堂真矢を변신させておく
-	LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 	CALL ACTION_2310, LOCAL
 	CALL SYNC_STATUS, LOCAL
 

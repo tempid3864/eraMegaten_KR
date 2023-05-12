@@ -1010,7 +1010,7 @@ SELECTCASE FLAG:현M
 		SELECTCASE DA:(FLAG:현X):(FLAG:현Y)
 			CASE 104
 				PRINTFORML ＞사교의관
-				IF 던전플래그:42:신주쿠플래그("貢いだ回数") == 1000 && GETCHARA([[キャラ:모ㆍ쇼보]]) == -1
+				IF 던전플래그:42:신주쿠플래그("貢いだ回数") == 1000 && GETCHARA([[캐릭터:모ㆍ쇼보]]) == -1
 					PRINTFORMW ＞사교의 관의 주인과 흉조 모ㆍ쇼보가 있었다。
 					PRINTFORMW 언제나와는 모습이 다른 것 같다。
 					PRINTFORMW 「1000번이나 오다니……」
@@ -1041,7 +1041,7 @@ SELECTCASE FLAG:현M
 				ELSE
 					IF 던전플래그:42:신주쿠플래그("貢いだ回数") > 1000
 						IF RAND:2 == 0
-							IF GETCHARA([[キャラ:모ㆍ쇼보]]) >= 0
+							IF GETCHARA([[캐릭터:모ㆍ쇼보]]) >= 0
 								PRINTFORMW 「그 아가씨는 모ㆍ쇼보가 아닌가、건강하게 지내는가」
 							ELSE
 								PRINTFORMW 「모ㆍ쇼보는 건강하게 지내고 있는가？」
@@ -1184,9 +1184,9 @@ SELECTCASE FLAG:현M
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				PRINTL 외도 좀비군이 ３체 나타났다！
-				CALL SET_ENEMY,8, [[キャラ:좀비군]], 15, 0
-				CALL SET_ENEMY,9, [[キャラ:좀비군]], 15, 0
-				CALL SET_ENEMY,10, [[キャラ:좀비군]], 15, 0
+				CALL SET_ENEMY,8, [[캐릭터:좀비군]], 15, 0
+				CALL SET_ENEMY,9, [[캐릭터:좀비군]], 15, 0
+				CALL SET_ENEMY,10, [[캐릭터:좀비군]], 15, 0
 				CALL BATTLE_START
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
@@ -1236,7 +1236,7 @@ SELECTCASE FLAG:현M
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:오크]], 20, 0
+				CALL SET_ENEMY,9, [[캐릭터:오크]], 20, 0
 				CALL BATTLE_START
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
@@ -1538,7 +1538,7 @@ SELECTCASE FLAG:현M
 				FLAG:선제기습취소 = 0
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 				;ITEM:겨우살이 = 0
-				CALL LIFTING_A_BAN([[キャラ:발드르]])
+				CALL LIFTING_A_BAN([[캐릭터:발드르]])
 				;FLAG:10409 = 1
 				;TALENT:MASTER:도구지식 = LOCAL
 				FLAG:벨신격파 |= 8
@@ -1573,10 +1573,10 @@ SELECTCASE FLAG:현M
 					PRINTW 「네놈도 한꺼번에 먹어주마！」
 					PRINTL ＞벨신 벨ㆍ데르가 나타났다！
 					PRINTW ＞벨ㆍ데르의 부하들이 나타났다！
-					CALL SET_ENEMY, 7, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 8, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 10, [[キャラ:리림]], 20
-					CALL SET_ENEMY, 11, [[キャラ:리림]], 20
+					CALL SET_ENEMY, 7, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 8, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 10, [[캐릭터:리림]], 20
+					CALL SET_ENEMY, 11, [[캐릭터:리림]], 20
 					CALL SET_BALDEL
 					CALL SET_BALDEL_SERVANT_ST
 					FLAG:도주불가플래그 = 1
@@ -1596,7 +1596,7 @@ SELECTCASE FLAG:현M
 						PRINTW ＞소년의 정체를 조사하기 위해 짐을 살펴보았다…
 						PRINTW ＞그러자、게임기형의 COMP가 발견되었다
 						PRINTW ＞기동하자、소년의 이름을 확인할 수 있었다…
-						CALL ADD_NEW_COMPANION, [[キャラ:데빌서바주인공]],200
+						CALL ADD_NEW_COMPANION, [[캐릭터:데빌서바주인공]],200
 						IF RESULT
 							LOCAL = CHARANUM - 1
 							$MAKE_NAME
@@ -1618,9 +1618,9 @@ SELECTCASE FLAG:현M
 							PRINTL [2]마수 카부소다
 							CALL INPUTINT(0,1,2)
 							IF RESULT == 0
-								IF GETCHARA([[キャラ:코볼트]]) == -1
+								IF GETCHARA([[캐릭터:코볼트]]) == -1
 									PRINTW ＞요귀 코볼트를 손에 넣었다
-									CALL ADD_NEW_COMPANION, [[キャラ:코볼트]],200
+									CALL ADD_NEW_COMPANION, [[캐릭터:코볼트]],200
 								ELSE
 									PRINTL ＞코볼트의 데이터를 넣으려고 했지만 
 									PRINTW ＞이미 동료마에 코볼트가 있어서 그만두었다
@@ -1650,9 +1650,9 @@ SELECTCASE FLAG:현M
 								BASE:LOCAL:속도 = 4
 								BASE:LOCAL:운 = 4
 							ELSEIF RESULT == 1
-								IF GETCHARA([[キャラ:픽시]]) == -1
+								IF GETCHARA([[캐릭터:픽시]]) == -1
 									PRINTW ＞요정 픽시를 손에 넣었다
-									CALL ADD_NEW_COMPANION, [[キャラ:픽시]],200
+									CALL ADD_NEW_COMPANION, [[캐릭터:픽시]],200
 								ELSE
 									PRINTL ＞픽시의 데이터를 넣으려고 했지만 
 									PRINTW ＞이미 동료마에 픽시가 있어서 그만두었다
@@ -1682,9 +1682,9 @@ SELECTCASE FLAG:현M
 								BASE:LOCAL:속도 = 6
 								BASE:LOCAL:운 = 4
 							ELSE
-								IF GETCHARA([[キャラ:카부소]]) == -1
+								IF GETCHARA([[캐릭터:카부소]]) == -1
 									PRINTW ＞요귀 카부소를 손에 넣었다
-									CALL ADD_NEW_COMPANION, [[キャラ:카부소]],200
+									CALL ADD_NEW_COMPANION, [[캐릭터:카부소]],200
 								ELSE
 									PRINTL ＞카부소의 데이터를 넣으려 했지만 
 									PRINTW ＞이미 동료마에 카부소가 있어 그만두었다
@@ -1941,7 +1941,7 @@ SELECTCASE FLAG:현M
 						PRINTW 「읏、그만둬…！」
 						PRINTL 
 						PRINTW ＞하루 요시노 를 손에 넣었다
-						CALL ADD_NEW_COMPANION, [[キャラ:하루]], 200
+						CALL ADD_NEW_COMPANION, [[캐릭터:하루]], 200
 						던전플래그:42:신주쿠플래그("하루입수") = 1
 						PRINTL 
 						PRINTL ？？？:
@@ -2102,10 +2102,10 @@ SELECTCASE FLAG:현M
 					던전플래그:42:신주쿠플래그("유즈회화") = 1
 					PRINTL ＞벨신 벨ㆍ데르가 나타났다！
 					PRINTW ＞벨ㆍ데르의 부하들이 나타났다！
-					CALL SET_ENEMY, 7, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 8, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 10, [[キャラ:리림]], 20
-					CALL SET_ENEMY, 11, [[キャラ:리림]], 20
+					CALL SET_ENEMY, 7, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 8, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 10, [[캐릭터:리림]], 20
+					CALL SET_ENEMY, 11, [[캐릭터:리림]], 20
 					CALL SET_BALDEL
 					CALL SET_BALDEL_SERVANT_ST
 					FLAG:도주불가플래그 = 1
@@ -2169,16 +2169,16 @@ SELECTCASE FLAG:현M
 				CALL INPUT_YN("악마들을 쓰러뜨린다", "내버려둔다")
 				IF RESULT == 0
 					PRINTW ＞벨ㆍ데르의 부하들이 나타났다！
-					CALL SET_ENEMY, 7, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 8, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 9, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 10, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 11, [[キャラ:임프]], 20
-					CALL SET_ENEMY, 12, [[キャラ:가기손]], 20
-					CALL SET_ENEMY, 13, [[キャラ:가기손]], 20
-					CALL SET_ENEMY, 14, [[キャラ:가기손]], 20
-					CALL SET_ENEMY, 15, [[キャラ:가기손]], 20
-					CALL SET_ENEMY, 16, [[キャラ:가기손]], 20
+					CALL SET_ENEMY, 7, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 8, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 9, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 10, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 11, [[캐릭터:임프]], 20
+					CALL SET_ENEMY, 12, [[캐릭터:가기손]], 20
+					CALL SET_ENEMY, 13, [[캐릭터:가기손]], 20
+					CALL SET_ENEMY, 14, [[캐릭터:가기손]], 20
+					CALL SET_ENEMY, 15, [[캐릭터:가기손]], 20
+					CALL SET_ENEMY, 16, [[캐릭터:가기손]], 20
 					CALL SET_BALDEL_SERVANT_ST
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
@@ -2190,7 +2190,7 @@ SELECTCASE FLAG:현M
 					PRINTW ＞소녀의 눈에는 촛점이 없지만、아직 살아 있는 것 같다
 					CALL INPUT_YN("주워간다", "필요없어")
 					IF RESULT == 0
-						CALL ADD_NEW_COMPANION, [[キャラ:유즈]],200
+						CALL ADD_NEW_COMPANION, [[캐릭터:유즈]],200
 						IF RESULT == 1
 							LOCAL = RESULT:1
 							TALENT:LOCAL:처녀 = 0
@@ -2343,10 +2343,10 @@ SELECTCASE FLAG:현M
 				ENDIF
 				PRINTL ＞벨신 벨ㆍ데르가 나타났다！
 				PRINTW ＞벨ㆍ데르의 부하들이 나타났다！
-				CALL SET_ENEMY, 7, [[キャラ:임프]], 20
-				CALL SET_ENEMY, 8, [[キャラ:임프]], 20
-				CALL SET_ENEMY, 10, [[キャラ:리림]], 20
-				CALL SET_ENEMY, 11, [[キャラ:리림]], 20
+				CALL SET_ENEMY, 7, [[캐릭터:임프]], 20
+				CALL SET_ENEMY, 8, [[캐릭터:임프]], 20
+				CALL SET_ENEMY, 10, [[캐릭터:리림]], 20
+				CALL SET_ENEMY, 11, [[캐릭터:리림]], 20
 				CALL SET_BALDEL
 				CALL SET_BALDEL_SERVANT_ST
 				FLAG:도주불가플래그 = 1
@@ -2729,7 +2729,7 @@ SELECTCASE FLAG:현M
 					CUSTOMDRAWLINE =
 					;☆　１４３０　２５１６
 					;久慈川리세
-					CALL SET_ENEMY,9,[[キャラ:섀도우리세]], 20, 0, 1
+					CALL SET_ENEMY,9,[[캐릭터:섀도우리세]], 20, 0, 1
 					SIF 이벤트플래그:5:0 < 1
 						CSTR:(CHARANUM-1):종족명 = 악마빙의자
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 500
@@ -2927,7 +2927,7 @@ SELECTCASE FLAG:현M
 				PRINTFORMW ＞백합꽃 공동 모금으로부터 %CALLNAME:MASTER%의 계좌에 ￥50000이 입금되었다
 				MONEY += 50000
 				ITEM:겨우살이 = 0
-				CALL LIFTING_A_BAN([[キャラ:발드르]])
+				CALL LIFTING_A_BAN([[캐릭터:발드르]])
 				;FLAG:10409 = 1
 				FLAG:벨신격파 |= 8
 				던전플래그:42:신주쿠플래그("이벤트클리어플래그") = 3
@@ -3158,13 +3158,13 @@ SELECTCASE FLAG:현M
 						PRINTFORMW ＞%마스터는% 아츠로우의 열의에 눌러져 함께 데려 돌아가기로 했다
 						PRINTL ＞타니가와 유즈를 손에 넣었다
 						PRINTW ＞키하라 아츠로우를 손에 넣었다
-						CALL ADD_NEW_COMPANION, [[キャラ:유즈]],500
+						CALL ADD_NEW_COMPANION, [[캐릭터:유즈]],500
 						;전투참가가능で加入するが、조교で전투참가불가능になる
 						SIF RESULT == 1
-							CFLAG:GETCHARA([[キャラ:유즈]]):전투참가불가능 = -1
-						CALL ADD_NEW_COMPANION, [[キャラ:아츠로우]],500
+							CFLAG:GETCHARA([[캐릭터:유즈]]):전투참가불가능 = -1
+						CALL ADD_NEW_COMPANION, [[캐릭터:아츠로우]],500
 						SIF RESULT == 1
-							CFLAG:GETCHARA([[キャラ:아츠로우]]):전투참가불가능 = -1
+							CFLAG:GETCHARA([[캐릭터:아츠로우]]):전투참가불가능 = -1
 					ELSE
 						PRINTL 유즈:
 						PRINTW 「………」
@@ -3288,10 +3288,10 @@ SELECTCASE FLAG:현M
 				PRINTL 
 				PRINTL ＞벨신 벨ㆍ데르가 나타났다！
 				PRINTW ＞벨ㆍ데르의 부하들이 나타났다！
-				CALL SET_ENEMY, 7, [[キャラ:임프]], 20
-				CALL SET_ENEMY, 8, [[キャラ:임프]], 20
-				CALL SET_ENEMY, 10, [[キャラ:리림]], 20
-				CALL SET_ENEMY, 11, [[キャラ:리림]], 20
+				CALL SET_ENEMY, 7, [[캐릭터:임프]], 20
+				CALL SET_ENEMY, 8, [[캐릭터:임프]], 20
+				CALL SET_ENEMY, 10, [[캐릭터:리림]], 20
+				CALL SET_ENEMY, 11, [[캐릭터:리림]], 20
 				CALL SET_BALDEL
 				CALL SET_BALDEL_SERVANT_ST
 				FLAG:도주불가플래그 = 1
@@ -3817,15 +3817,15 @@ IF RAND:100 < FLAG:인카운트율
 		FOR LOCAL, 1, 3
 			SELECTCASE RAND:5
 				CASE 0
-					LOCAL:LOCAL = [[キャラ:임프]]
+					LOCAL:LOCAL = [[캐릭터:임프]]
 				CASE 1
-					LOCAL:LOCAL = [[キャラ:오퀴페테]]
+					LOCAL:LOCAL = [[캐릭터:오퀴페테]]
 				CASE 2
-					LOCAL:LOCAL = [[キャラ:잭프로스트]]
+					LOCAL:LOCAL = [[캐릭터:잭프로스트]]
 				CASE 3
-					LOCAL:LOCAL = [[キャラ:리림]]
+					LOCAL:LOCAL = [[캐릭터:리림]]
 				CASE 4
-					LOCAL:LOCAL = [[キャラ:가기손]]
+					LOCAL:LOCAL = [[캐릭터:가기손]]
 			ENDSELECT
 		NEXT
 		FOR LOCAL, 7, 17
@@ -4018,7 +4018,7 @@ SELECTCASE FLAG:현M
 				RETURN 3120, 15
 			CASEELSE
 				;15%　외도좀비너스　Lv8　랭크2
-				RETURN [[キャラ:특공대]], 15
+				RETURN [[캐릭터:특공대]], 15
 		ENDSELECT
 ENDSELECT
 ;=================================
@@ -4527,9 +4527,9 @@ ELSE
 ENDIF
 @SET_BALDEL
 IF 던전플래그:42:신주쿠플래그("벨데르첫전투")
-	CALL SET_ENEMY, 9, [[キャラ:벨ㆍ데르]], 25, 0, 1
+	CALL SET_ENEMY, 9, [[캐릭터:벨ㆍ데르]], 25, 0, 1
 ELSE
-	CALL SET_ENEMY, 9, [[キャラ:벨ㆍ데르]], 20, 0, 1
+	CALL SET_ENEMY, 9, [[캐릭터:벨ㆍ데르]], 20, 0, 1
 ENDIF
 LOCAL = CHARANUM - 1
 ;HP2000/MP1000
@@ -4582,7 +4582,7 @@ SIF CFLAG:ARG:타겟 == -1
 RETURN 1
 @EVENT_BATTLE_TURNEND_DUNGEON42
 ;벨ㆍ데르がPT번호0以外なら先に進まない
-SIF !FINDCHARA_ENEMY([[キャラ:벨ㆍ데르]])
+SIF !FINDCHARA_ENEMY([[캐릭터:벨ㆍ데르]])
 	RETURN 0
 ;初전투時は戻る
 IF !던전플래그:42:신주쿠플래그("벨데르첫전투")
@@ -4612,7 +4612,7 @@ ENDIF
 RESETCOLOR
 @EVENT_BATTLE_ACTEND_DUNGEON42
 ;벨ㆍ데르がいないなら先に進まない
-SIF !FINDCHARA_ENEMY([[キャラ:벨ㆍ데르]])
+SIF !FINDCHARA_ENEMY([[캐릭터:벨ㆍ데르]])
 	RETURN 0
 ;初전투時
 SIF 던전플래그:42:신주쿠플래그("벨데르첫전투")
@@ -4631,15 +4631,15 @@ RETURN -1
 
 @증원패턴_벨ㆍ데르, ARG, ARG:1, ARG:2
 IF RAND:5 == 0
-	CALL SET_ENEMY, ARG:1, [[キャラ:임프]], 20
+	CALL SET_ENEMY, ARG:1, [[캐릭터:임프]], 20
 ELSEIF RAND:4 == 0
-	CALL SET_ENEMY, ARG:1, [[キャラ:오퀴페테]], 20
+	CALL SET_ENEMY, ARG:1, [[캐릭터:오퀴페테]], 20
 ELSEIF RAND:3 == 0
-	CALL SET_ENEMY, ARG:1, [[キャラ:잭프로스트]], 20
+	CALL SET_ENEMY, ARG:1, [[캐릭터:잭프로스트]], 20
 ELSEIF RAND:2
-	CALL SET_ENEMY, ARG:1, [[キャラ:리림]], 20
+	CALL SET_ENEMY, ARG:1, [[캐릭터:리림]], 20
 ELSE
-	CALL SET_ENEMY, ARG:1, [[キャラ:가기손]], 20
+	CALL SET_ENEMY, ARG:1, [[캐릭터:가기손]], 20
 ENDIF
 CALL SET_BALDEL_SERVANT_ST
 SIF ARG:2 < 2
@@ -4651,7 +4651,7 @@ FOR LOCAL:1, 7 , 17
 	SIF LOCAL < 0
 		CONTINUE
 	SELECTCASE NO:LOCAL
-		CASE [[キャラ:임프]]
+		CASE [[캐릭터:임프]]
 			ABL:LOCAL:스킬1 = [[스킬:잔마]]
 			ABL:LOCAL:스킬3 = [[스킬:무거운공기]]
 			MAXBASE:LOCAL:비구 = 200
@@ -4659,19 +4659,19 @@ FOR LOCAL:1, 7 , 17
 			MAXBASE:LOCAL:충격 = 200
 			MAXBASE:LOCAL:파마 = 200
 			MAXBASE:LOCAL:질풍 = 200
-		CASE [[キャラ:오퀴페테]]
+		CASE [[캐릭터:오퀴페테]]
 			ABL:LOCAL:스킬4 = [[스킬:자장가]]
 			MAXBASE:LOCAL:비구 = 300
 			MAXBASE:LOCAL:전술 = 200
 			MAXBASE:LOCAL:충격 = 200
-		CASE [[キャラ:잭프로스트]]
+		CASE [[캐릭터:잭프로스트]]
 			ABL:LOCAL:스킬1 = [[스킬:타루ㆍ카쟈]]
 			ABL:LOCAL:스킬4 = [[스킬:해피스텝]]
 			MAXBASE:LOCAL:중력 = 200
 			MAXBASE:LOCAL:충격 = 200
 			MAXBASE:LOCAL:화염 = 300
 			MAXBASE:LOCAL:핵열 = 300
-		CASE [[キャラ:리림]]
+		CASE [[캐릭터:리림]]
 			ABL:LOCAL:스킬4 = [[스킬:프린파]]
 			ABL:LOCAL:스킬5 = [[스킬:도루미나]]
 			MAXBASE:LOCAL:비구 = 200
@@ -4679,7 +4679,7 @@ FOR LOCAL:1, 7 , 17
 			MAXBASE:LOCAL:충격 = 200
 			MAXBASE:LOCAL:파마 = 200
 			MAXBASE:LOCAL:질풍 = 200
-		CASE [[キャラ:가기손]]
+		CASE [[캐릭터:가기손]]
 			ABL:LOCAL:스킬1 = [[스킬:포이즈마]]
 			ABL:LOCAL:스킬4 = [[스킬:지온가]]
 			MAXBASE:LOCAL:비구 = 150
@@ -4706,13 +4706,13 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:5
 	CASE 0
-		RETURN [[キャラ:가기손]] , 3 + RAND:10 , CSVBASE([[キャラ:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:가기손]] , 3 + RAND:10 , CSVBASE([[캐릭터:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:특공대]] , 3 + RAND:10 , CSVBASE([[キャラ:특공대]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:특공대]] , 3 + RAND:10 , CSVBASE([[캐릭터:특공대]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:야쿠자]] , 3 + RAND:10 , CSVBASE([[キャラ:야쿠자]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야쿠자]] , 3 + RAND:10 , CSVBASE([[캐릭터:야쿠자]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:광신자]] , 3 + RAND:10 , CSVBASE([[キャラ:광신자]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:광신자]] , 3 + RAND:10 , CSVBASE([[캐릭터:광신자]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 4
-		RETURN [[キャラ:임프]] , 3 + RAND:10 , CSVBASE([[キャラ:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:임프]] , 3 + RAND:10 , CSVBASE([[캐릭터:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

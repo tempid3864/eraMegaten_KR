@@ -286,12 +286,12 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		IF L_BTL_FLG
 			
 			;- SET:雑魚戦
-			CALL SET_ENEMY,7,[[キャラ:킨키]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,8,[[キャラ:지국천]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,9,[[キャラ:파워]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,14,[[キャラ:토트]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,15,[[キャラ:인큐버스]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,16,[[キャラ:바포멧트]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,7,[[캐릭터:킨키]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,8,[[캐릭터:지국천]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,9,[[캐릭터:파워]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,14,[[캐릭터:토트]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,15,[[캐릭터:인큐버스]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,16,[[캐릭터:바포멧트]],REQUEST_30_BASE_LV(3)
 			
 			;- 전투開始
 			CALL BATTLE_START
@@ -624,17 +624,17 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		IF L_BTL_FLG
 			
 			;- SET:局員
-			CALL SET_ENEMY,8,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,8,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):타격 = 50
-			CALL SET_ENEMY,9,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,9,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):검격 = 50
-			CALL SET_ENEMY,10,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,10,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):전술 = 50
-			CALL SET_ENEMY,14,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,14,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):화염 = 50
-			CALL SET_ENEMY,15,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,15,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):충격 = 50
-			CALL SET_ENEMY,16,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,16,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):질풍 = 50
 			
 			;- 전투開始
@@ -701,22 +701,22 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		IF L_BTL_FLG
 			
 			;- SET:？？？
-			CALL SET_ENEMY,7,[[キャラ:선리]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,8,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,7,[[캐릭터:선리]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,8,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):빙결 = 50
-			CALL SET_ENEMY,9,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,9,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):전격 = 50
-			CALL SET_ENEMY,10,[[キャラ:집스국원]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,10,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(3),1,1
 			BASE:(CHARANUM-1):정신 = 50
 			BASE:(CHARANUM-1):신경 = 50
-			CALL SET_ENEMY,11,[[キャラ:파워]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,12,[[キャラ:탁비]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,13,[[キャラ:알라우네]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,14,[[キャラ:데메테르]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,15,[[キャラ:사라스바티]],REQUEST_30_BASE_LV(3),1,1
-			CALL SET_ENEMY,16,[[キャラ:로렐라이]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,11,[[캐릭터:파워]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,12,[[캐릭터:탁비]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,13,[[캐릭터:알라우네]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,14,[[캐릭터:데메테르]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,15,[[캐릭터:사라스바티]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,16,[[캐릭터:로렐라이]],REQUEST_30_BASE_LV(3),1,1
 			;多いです
-			;CALL SET_ENEMY,17,[[キャラ:토트]],REQUEST_30_BASE_LV(3),1,1
+			;CALL SET_ENEMY,17,[[캐릭터:토트]],REQUEST_30_BASE_LV(3),1,1
 			
 			;- 전투開始
 			CALL BATTLE_START
@@ -781,7 +781,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW ＞…그녀라면、할 수 있을 것이다。
 		PRINTW 「응、저…노력해 볼께요。…들어 줘서 고마워요…서모너씨」
 		;上位함락경험済み
-		IF GETBIT(FLAG:(50000+[[キャラ:이오]]), 2) || GETBIT(FLAG:(50000+[[キャラ:이오]]), 4) || GETBIT(FLAG:(50000+[[キャラ:이오]]), 6)
+		IF GETBIT(FLAG:(50000+[[캐릭터:이오]]), 2) || GETBIT(FLAG:(50000+[[캐릭터:이오]]), 4) || GETBIT(FLAG:(50000+[[캐릭터:이오]]), 6)
 			PRINTW 「그러고 보니、서모너씨는 내일이 되면은 돌아가버리는 거지요」
 			PRINTW 「…하나、부탁해도 괜찮을까요」
 			PRINTW 「전의 세계 때와 같이、저를 서모너씨의 장소로 데려가 줬으면 해요」
@@ -793,11 +793,11 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW …전의 세계에서의 이오를 생각해 낸다。이전의 세계에서의%CALLNAME:MASTER%와 이오의 관계는…
 			
 			PRINTL 
-		SIF GETBIT(FLAG:(50000+[[キャラ:이오]]), 2)
+		SIF GETBIT(FLAG:(50000+[[캐릭터:이오]]), 2)
 			PRINTL [1] 서로 사랑하고 있었다
-		SIF GETBIT(FLAG:(50000+[[キャラ:이오]]), 4)
+		SIF GETBIT(FLAG:(50000+[[캐릭터:이오]]), 4)
 			PRINTL [2] 육체 관계로 서로 깊게 연결되는 파트너였다
-		SIF GETBIT(FLAG:(50000+[[キャラ:이오]]), 6)
+		SIF GETBIT(FLAG:(50000+[[캐릭터:이오]]), 6)
 			PRINTL [3] 주인과 노예였다
 			PRINTL 
 			INPUT
@@ -844,7 +844,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTW 이오가 가입합니다。
 			
 			;- キャラ추가(이오)
-			CALL ADD_NEW_COMPANION,[[キャラ:이오]],1000
+			CALL ADD_NEW_COMPANION,[[캐릭터:이오]],1000
 			;추가した場合は레벨アップとそれに合わせた강화を行う
 			IF RESULT
 				;전투참가가능で加入するが、조교で전투참가불가능になる

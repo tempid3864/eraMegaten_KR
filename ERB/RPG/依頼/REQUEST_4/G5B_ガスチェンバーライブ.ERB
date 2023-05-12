@@ -33,14 +33,14 @@ PRINTFORMW 「의식을 방해하러 왔나」
 PRINTFORMW %조사처리(CALLNAME:MASTER,"를")% 보고 비난하는、가면당원들이 우후죽순처럼 나타났다
 PRINTL 가면 쓴 남자들이 습격해 왔다！
 WAIT
-CALL SET_ENEMY,7, [[キャラ:황소가면]],21,0
-CALL SET_ENEMY,8, [[キャラ:황소가면]],21, 0
-CALL SET_ENEMY,10, [[キャラ:사자가면]],21, 0
-CALL SET_ENEMY,11, [[キャラ:사자가면]],21, 0
-CALL SET_ENEMY,12, [[キャラ:전갈가면]],21, 0
-CALL SET_ENEMY,13, [[キャラ:전갈가면]],21, 0
-CALL SET_ENEMY,15, [[キャラ:물병가면]],21, 0
-CALL SET_ENEMY,16, [[キャラ:물병가면]],21, 0
+CALL SET_ENEMY,7, [[캐릭터:황소가면]],21,0
+CALL SET_ENEMY,8, [[캐릭터:황소가면]],21, 0
+CALL SET_ENEMY,10, [[캐릭터:사자가면]],21, 0
+CALL SET_ENEMY,11, [[캐릭터:사자가면]],21, 0
+CALL SET_ENEMY,12, [[캐릭터:전갈가면]],21, 0
+CALL SET_ENEMY,13, [[캐릭터:전갈가면]],21, 0
+CALL SET_ENEMY,15, [[캐릭터:물병가면]],21, 0
+CALL SET_ENEMY,16, [[캐릭터:물병가면]],21, 0
 CALL BATTLE_START
 CUSTOMDRAWLINE =
 WAIT
@@ -166,7 +166,7 @@ IF STRFLAG_NUM_EV("히어로의 소문", , , , [[이벤트:소문]]) == 2
 	PRINTFORMW 「우…」
 	PRINTFORMW 프린스ㆍ토러스가 쓰러진 뒤, 미야비가 남아 있다…
 	PRINTFORMW 하나노코우지 미야비를 손에 넣었다…
-	CALL ADD_NEW_COMPANION, [[キャラ:미야비]],200
+	CALL ADD_NEW_COMPANION, [[캐릭터:미야비]],200
 	CALLF STRFLAG_REQ("토러스사망", 1)
 	CALLF STRFLAG_REQ("미야비GET", 1)
 ELSE
@@ -291,7 +291,7 @@ ELSE
 	CALL INPUT_YN("에이키치를 때려 눕힌다", "프린스에게 미야비를 해방하면 놓쳐준다고 전한다")
 	IF RESULT == 0
 		PRINTW 페르소나구사자 미시나 에이키치가 나타났다！
-		CALL SET_ENEMY,9, [[キャラ:미시나 에이키치]], 25, 0,1
+		CALL SET_ENEMY,9, [[캐릭터:미시나 에이키치]], 25, 0,1
 		CALL BATTLE_START
 		PRINTFORMW 벌써 프린스는 없다…
 		PRINTFORMW 「에이키치 군、에이키치 군、미안해요。미안해요…」
@@ -300,9 +300,9 @@ ELSE
 		IF RESULT == 1
 			PRINTFORMW 미시나 에이키치를 손에 넣었다
 			PRINTFORMW 하나노코우지 미야비를 손에 넣었다
-			CALL ADD_NEW_COMPANION, [[キャラ:에이키치]],200
-			CALL ADD_NEW_COMPANION, [[キャラ:미야비]],200
-			LOCAL = GETCHARA([[キャラ:미야비]])
+			CALL ADD_NEW_COMPANION, [[캐릭터:에이키치]],200
+			CALL ADD_NEW_COMPANION, [[캐릭터:미야비]],200
+			LOCAL = GETCHARA([[캐릭터:미야비]])
 			IF STRFLAG_NUM_EV("번장의 여자친구 소문", , , , [[이벤트:소문]])
 				TALENT:LOCAL:거유 = 0
 				TALENT:LOCAL:큰체형 = 0
@@ -321,35 +321,35 @@ ELSE
 		PRINTFORMW 「그렇지만…、시간 벌기는 되었다！」
 		PRINTFORMW 「여봐라(原: お前たちっ)…！」
 		PRINTFORMW 깨달았을 때는, 가면 당원들에게 둘러쌓여 있었다
-		CALL SET_ENEMY,7,[[キャラ:황소가면]],24,0,1
+		CALL SET_ENEMY,7,[[캐릭터:황소가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마구날뛰기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,8,[[キャラ:황소가면]],24,0,1
+		CALL SET_ENEMY,8,[[캐릭터:황소가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마구날뛰기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,10,[[キャラ:사자가면]],24,0,1
+		CALL SET_ENEMY,10,[[캐릭터:사자가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:회전베기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,11,[[キャラ:사자가면]],24,0,1
+		CALL SET_ENEMY,11,[[캐릭터:사자가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:회전베기]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,12,[[キャラ:전갈가면]],24,0,1
+		CALL SET_ENEMY,12,[[캐릭터:전갈가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:메ㆍ디아라마]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,13,[[キャラ:전갈가면]],24,0,1
+		CALL SET_ENEMY,13,[[캐릭터:전갈가면]],24,0,1
 		ABL:(CHARANUM-1):스킬3 = [[스킬:메ㆍ디아라마]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,15,[[キャラ:물병가면]],24,0,1
+		CALL SET_ENEMY,15,[[캐릭터:물병가면]],24,0,1
 		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ갈라]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,16,[[キャラ:물병가면]],24,0,1
+		CALL SET_ENEMY,16,[[캐릭터:물병가면]],24,0,1
 		ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ갈라]]
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)

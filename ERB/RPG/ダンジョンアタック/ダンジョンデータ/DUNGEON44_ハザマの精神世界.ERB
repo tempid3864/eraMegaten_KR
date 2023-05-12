@@ -951,7 +951,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:마신황하자마]],86,0,1
+				CALL SET_ENEMY,9,[[캐릭터:마신황하자마]],86,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 				CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -1169,7 +1169,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,14,[[キャラ:마신황하자마]],92,0,1
+					CALL SET_ENEMY,14,[[캐릭터:마신황하자마]],92,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 5000
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 					CFLAG:(CHARANUM-1):행동횟수 = 4
@@ -1182,7 +1182,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,8,[[キャラ:유미]],77,0,1
+					CALL SET_ENEMY,8,[[캐릭터:유미]],77,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1201,7 +1201,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,9,[[キャラ:타마키]],80,0,1
+					CALL SET_ENEMY,9,[[캐릭터:타마키]],80,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					ABL:(CHARANUM-1):스킬1 = 2101
@@ -1218,7 +1218,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,10,[[キャラ:레이코]],83,0,1
+					CALL SET_ENEMY,10,[[캐릭터:레이코]],83,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1259,7 +1259,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:마신황하자마]],99,0,1
+					CALL SET_ENEMY,9,[[캐릭터:마신황하자마]],99,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 					CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -1461,121 +1461,121 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で지모신두르가Lv65
-				RETURN [[キャラ:두르가]], 65
+				RETURN [[캐릭터:두르가]], 65
 			CASE IS < 20
 				;10％で요마서큐버스Lv44　랭크6
-				RETURN [[キャラ:서큐버스]], 62
+				RETURN [[캐릭터:서큐버스]], 62
 			CASE IS < 40
 				;20%で요마발키리Lv56　랭크2
-				RETURN [[キャラ:발키리]], 62
+				RETURN [[캐릭터:발키리]], 62
 			CASE IS < 50
 				;10%で요정티타니아Lv51　랭크4
-				RETURN [[キャラ:티타니아]], 63
+				RETURN [[캐릭터:티타니아]], 63
 			CASE IS < 60
 				;10%で용왕에키드나Lv53　랭크3
-				RETURN [[キャラ:에키드나]], 62
+				RETURN [[캐릭터:에키드나]], 62
 			CASE IS < 70
 				;15%で마수키메라Lv56　랭크2
-				RETURN [[キャラ:키메라]], 62
+				RETURN [[캐릭터:키메라]], 62
 			CASE IS < 80
 				;10%で니드호그LV43(62)
-				RETURN [[キャラ:니드호그]], 62
+				RETURN [[캐릭터:니드호그]], 62
 			CASE IS < 90
 				;10%で용왕야마타노오로치LV52(63)
-				RETURN [[キャラ:야마타노오로치]], 63
+				RETURN [[캐릭터:야마타노오로치]], 63
 			CASE IS < 100
 				;10%で외도도플갱어Lv55　랭크3
-				RETURN [[キャラ:도플갱어]], 64
+				RETURN [[캐릭터:도플갱어]], 64
 		ENDSELECT
 	CASE 1
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で지모신두르가Lv65
-				RETURN [[キャラ:두르가]], 65
+				RETURN [[캐릭터:두르가]], 65
 			CASE IS < 20
 				;10％で요마서큐버스Lv44　랭크6
-				RETURN [[キャラ:서큐버스]], 62
+				RETURN [[캐릭터:서큐버스]], 62
 			CASE IS < 40
 				;20%で요마발키리Lv56　랭크2
-				RETURN [[キャラ:발키리]], 62
+				RETURN [[캐릭터:발키리]], 62
 			CASE IS < 50
 				;10%で요정티타니아Lv51　랭크4
-				RETURN [[キャラ:티타니아]], 63
+				RETURN [[캐릭터:티타니아]], 63
 			CASE IS < 60
 				;10%で용왕에키드나Lv53　랭크3
-				RETURN [[キャラ:에키드나]], 62
+				RETURN [[캐릭터:에키드나]], 62
 			CASE IS < 70
 				;15%で마수키메라Lv56　랭크2
-				RETURN [[キャラ:키메라]], 62
+				RETURN [[캐릭터:키메라]], 62
 			CASE IS < 80
 				;10%で니드호그LV43(62)
-				RETURN [[キャラ:니드호그]], 62
+				RETURN [[캐릭터:니드호그]], 62
 			CASE IS < 90
 				;10%で용왕야마타노오로치LV52(63)
-				RETURN [[キャラ:야마타노오로치]], 63
+				RETURN [[캐릭터:야마타노오로치]], 63
 			CASE IS < 100
 				;10%で외도도플갱어Lv55　랭크3
-				RETURN [[キャラ:도플갱어]], 64
+				RETURN [[캐릭터:도플갱어]], 64
 		ENDSELECT
 	CASE 2
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で지모신두르가Lv65
-				RETURN [[キャラ:두르가]], 65
+				RETURN [[캐릭터:두르가]], 65
 			CASE IS < 20
 				;10％で요마서큐버스Lv44　랭크6
-				RETURN [[キャラ:서큐버스]], 62
+				RETURN [[캐릭터:서큐버스]], 62
 			CASE IS < 40
 				;20%で요마발키리Lv56　랭크2
-				RETURN [[キャラ:발키리]], 62
+				RETURN [[캐릭터:발키리]], 62
 			CASE IS < 50
 				;10%で요정티타니아Lv51　랭크4
-				RETURN [[キャラ:티타니아]], 63
+				RETURN [[캐릭터:티타니아]], 63
 			CASE IS < 60
 				;10%で용왕에키드나Lv53　랭크3
-				RETURN [[キャラ:에키드나]], 62
+				RETURN [[캐릭터:에키드나]], 62
 			CASE IS < 70
 				;15%で마수키메라Lv56　랭크2
-				RETURN [[キャラ:키메라]], 62
+				RETURN [[캐릭터:키메라]], 62
 			CASE IS < 80
 				;10%で니드호그LV43(62)
-				RETURN [[キャラ:니드호그]], 62
+				RETURN [[캐릭터:니드호그]], 62
 			CASE IS < 90
 				;10%で용왕야마타노오로치LV52(63)
-				RETURN [[キャラ:야마타노오로치]], 63
+				RETURN [[캐릭터:야마타노오로치]], 63
 			CASE IS < 100
 				;10%で외도도플갱어Lv55　랭크3
-				RETURN [[キャラ:도플갱어]], 64
+				RETURN [[캐릭터:도플갱어]], 64
 		ENDSELECT
 	CASE 3
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で지모신두르가Lv65
-				RETURN [[キャラ:두르가]], 65
+				RETURN [[캐릭터:두르가]], 65
 			CASE IS < 20
 				;10％で요마서큐버스Lv44　랭크6
-				RETURN [[キャラ:서큐버스]], 62
+				RETURN [[캐릭터:서큐버스]], 62
 			CASE IS < 40
 				;20%で요마발키리Lv56　랭크2
-				RETURN [[キャラ:발키리]], 62
+				RETURN [[캐릭터:발키리]], 62
 			CASE IS < 50
 				;10%で요정티타니아Lv51　랭크4
-				RETURN [[キャラ:티타니아]], 63
+				RETURN [[캐릭터:티타니아]], 63
 			CASE IS < 60
 				;10%で용왕에키드나Lv53　랭크3
-				RETURN [[キャラ:에키드나]], 62
+				RETURN [[캐릭터:에키드나]], 62
 			CASE IS < 70
 				;15%で마수키메라Lv56　랭크2
-				RETURN [[キャラ:키메라]], 62
+				RETURN [[캐릭터:키메라]], 62
 			CASE IS < 80
 				;10%で니드호그LV43(62)
-				RETURN [[キャラ:니드호그]], 62
+				RETURN [[캐릭터:니드호그]], 62
 			CASE IS < 90
 				;10%で용왕야마타노오로치LV52(63)
-				RETURN [[キャラ:야마타노오로치]], 63
+				RETURN [[캐릭터:야마타노오로치]], 63
 			CASE IS < 100
 				;10%で외도도플갱어Lv55　랭크3
-				RETURN [[キャラ:도플갱어]], 64
+				RETURN [[캐릭터:도플갱어]], 64
 		ENDSELECT
 ENDSELECT
 

@@ -517,7 +517,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:ＣＯＭＰ용량 += 1
 			ENDIF
 			CALL MESSAGE_WINDOW_D, "", "＞나카지마 아케미가 동료가 됐다"
-			CALL ADD_NEW_COMPANION, [[キャラ:아케미]], 200
+			CALL ADD_NEW_COMPANION, [[캐릭터:아케미]], 200
 			SIF RESULT == 1
 				CFLAG:(RESULT:1):전투참가불가능 = -1
 			LOCAL:1 = -1
@@ -530,12 +530,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				ENDIF
 			NEXT
 			SIF LOCAL:1 > 0
-				CALL INSERT_POSITION, LOCAL:1, GETCHARA([[キャラ:아케미]])
+				CALL INSERT_POSITION, LOCAL:1, GETCHARA([[캐릭터:아케미]])
 		ELSEIF RESULT == 1
 			CALL MESSAGE_WINDOW_D, "아케미", "노예…그런 말도 안되는 일…！/아니…、그래서 힘을 빌려주는 거라면…/이것도 대가인가…"
 			CALL MESSAGE_WINDOW_D, "아케미", "알겠습니다/나에게 무얼해도 상관없어요"
 			PRINTW 「」
-			CALL ADD_NEW_COMPANION, [[キャラ:아케미]], 200
+			CALL ADD_NEW_COMPANION, [[캐릭터:아케미]], 200
 			IF RESULT == 1
 				CFLAG:(RESULT:1):전투참가불가능 = 0
 				CFLAG:(RESULT:1):이벤트가입 = 1
@@ -570,7 +570,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:네코마타]],25,0,1
+				CALL SET_ENEMY,9,[[캐릭터:네코마타]],25,0,1
 				NAME:(CHARANUM-1) = 티아마트
 				CALLNAME:(CHARANUM-1) = 티아마트
 				CALL BATTLE_START
@@ -596,7 +596,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				ELSE
 					CALL MESSAGE_WINDOW_D, "네코마타", "아、아니。뭐 하는 거야？ 꺄아！"
 					CALL MESSAGE_WINDOW_D, "", "＞네코마타를 밀어 넘어뜨렸다"
-					CALL ADD_NEW_COMPANION, [[キャラ:네코마타]], 200, 1
+					CALL ADD_NEW_COMPANION, [[캐릭터:네코마타]], 200, 1
 					CALL INCREASE_LD, 2
 					;若干、旧1風に調整
 					;IF RESULT
@@ -636,8 +636,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		CALL MESSAGE_WINDOW_D, "마왕 미노타우로스", "제…제법이지 않은가…"
 		CALL MESSAGE_WINDOW_D, "", "＞미노타우로스는 숨이 끊어졌다…"
 		DA:(FLAG:현X):(FLAG:현Y) = 1
-		;FLAG:(10000+[[キャラ:미노타우로스]]) = 1
-		CALL LIFTING_A_BAN([[キャラ:미노타우로스]])
+		;FLAG:(10000+[[캐릭터:미노타우로스]]) = 1
+		CALL LIFTING_A_BAN([[캐릭터:미노타우로스]])
 		CALLF STRFLAG_D("미노타우로스격파", 1)
 		CALLF STRFLAG_NUM_D("대마궁진행", "+=", , 1)
 	CASE 900
@@ -646,7 +646,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		CALL MESSAGE_WINDOW_D, "노는 분위기의 남자", "이미、알고 있다고 생각하지만、나는 로키/이【발할라의 회랑】을 다스리는 마왕이다"
 		CALL MESSAGE_WINDOW_D, "", "＞노는 분위기의 남자의 모습이 빠르게 변해가、/＞푸른 피부의 거대한 악마가 나타났다"
 		CALL MESSAGE_WINDOW_D, "마왕 로키", "이것이 나의 본모습이다/지상에서 놀려면 인간의 모습을 하고 있는 쪽이 편리해서、/보통은 변신을 하고 있지만 말이야"
-		IF FINDCHARA_B([[キャラ:아케미]]) == 2
+		IF FINDCHARA_B([[캐릭터:아케미]]) == 2
 			CALL MESSAGE_WINDOW_D, "아케미", "마왕 로키、그녀의 원수를 갚겠어！"
 			CALL MESSAGE_WINDOW_D, "마왕 로키", "이런、나카지마/자네도 와있었군/게다가、이 인간에게 협력하고 있을 줄은…/"
 			CALL MESSAGE_WINDOW_D, "마왕 로키", "딱 좋아/나는 평소에도、너나 나오야 군이 손을 잡으면、/세계를 바꿀 수 있다고 생각했어/"
@@ -672,8 +672,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		DA:(FLAG:현X):(FLAG:현Y) = 1
 		CALLF STRFLAG_D("로키격파", 1)
 		CALLF STRFLAG_NUM_D("대마궁진행", "+=", , 1)
-		;FLAG:(10000+[[キャラ:로키]]) = 1
-		CALL LIFTING_A_BAN([[キャラ:로키]])
+		;FLAG:(10000+[[캐릭터:로키]]) = 1
+		CALL LIFTING_A_BAN([[캐릭터:로키]])
 		FLAG:도주불가플래그 = 0
 		FLAG:회화불능플래그 = 0
 		FLAG:선제기습취소 = 0
@@ -685,7 +685,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		ENDIF
 		CALL MESSAGE_WINDOW_D, "마왕 로키", "후후、대단하구나…/이제부터、네가 이【발할라의 회랑】의 지배자다/이제부터는 나도 너의 동료마로서、협력해주지"
 		CALL MESSAGE_WINDOW_D, "", "＞마왕 로키가 동료마가 되었다"
-		CALL ADD_NEW_COMPANION, [[キャラ:로키]], 1000, 1
+		CALL ADD_NEW_COMPANION, [[캐릭터:로키]], 1000, 1
 		IF RESULT
 			BASE:(RESULT:1):LV = 40
 			BASE:(RESULT:1):ＥＸＰ = 5*(39)*(40)*(41)/3
@@ -700,7 +700,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(RESULT:1)
 			CALL HEALTH_CHARA,(RESULT:1)
 		ENDIF
-		IF FINDCHARA_B([[キャラ:아케미]]) % 10 == 2
+		IF FINDCHARA_B([[캐릭터:아케미]]) % 10 == 2
 			CALL MESSAGE_WINDOW_D, "마왕 로키", @"자、나카시마/이렇게 되어버린 거다/요컨데 %\@TALENT:MASTER:남자 ? 그 #그녀\@%와 나는 동료가 되었다는 이야기지"
 			CALL MESSAGE_WINDOW_D, "마왕 로키", @"%\@TALENT:MASTER:남자?그#그녀\@%가 너의 복수를 도와주는 일은 예상 밖의 일이었던 것으로/이대로 계속할 수는 없겠지？"
 			CALL MESSAGE_WINDOW_D, "아케미", "큭…"
@@ -802,10 +802,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			RETURN 0
 		CALL SHOW_PICTURE, "D"
 		CALL MESSAGE_WINDOW_D, "", "＞썩은 냄새가 난다…"
-		IF STRFLAG_D("명계플래그") && FINDCHARA_B([[キャラ:로키]], 1) > 0
+		IF STRFLAG_D("명계플래그") && FINDCHARA_B([[캐릭터:로키]], 1) > 0
 			IF !STRFLAG_D("첫명계",1)
 				CALL MESSAGE_WINDOW_D, "마왕 로키", "여기가 저승의 입구야/예전에 어리석은 연인을 감싸다、/죽어버린 비극의 히로인이 있었단 말이다"
-				IF FINDCHARA_B([[キャラ:아케미]]) == 2
+				IF FINDCHARA_B([[캐릭터:아케미]]) == 2
 					CALL MESSAGE_WINDOW_D, "아케미", "く……"
 					CALL MESSAGE_WINDOW_D, "마왕 로키", "큭큭、그런 무서운 얼굴 하지 말아줘/여하튼、도움이 될테니까/그렇지？"
 					CALL MESSAGE_WINDOW_D, "아케미", "………"
@@ -955,8 +955,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 0
 		FLAG:회화불능플래그 = 0
 		FLAG:선제기습취소 = 0
-		;FLAG:(10000+[[キャラ:메두사]]) = 1
-		CALL LIFTING_A_BAN([[キャラ:메두사]])
+		;FLAG:(10000+[[캐릭터:메두사]]) = 1
+		CALL LIFTING_A_BAN([[캐릭터:메두사]])
 		CALLF STRFLAG_D("메두사격파", 1)
 		CALLF STRFLAG_NUM_D("대마궁진행", "+=", , 1)
 		CALL MESSAGE_WINDOW_D, "마왕 메두사", "서、설마 이 내가…"
@@ -967,7 +967,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 1601
 		CALL MESSAGE_WINDOW_D, "", "＞한 자루의 검이 바위에 꽂혀 있다"
 		;ステの판정はなしに
-		IF FINDCHARA_B([[キャラ:아케미]]) == 2
+		IF FINDCHARA_B([[캐릭터:아케미]]) == 2
 			CALL MESSAGE_WINDOW_D, "아케미", "이건 히노카쿠츠치의 검……/이런 곳에 불려갔던 건가…/기다려 주세요"
 			CALL MESSAGE_WINDOW_D, "", "＞아케미는 바위에서 검을 뽑아내었다/＞【히노카쿠츠치의 검】을 손에 넣었다"
 			CALL GET_ITEMS,"히노카쿠츠치의검", 1
@@ -985,7 +985,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D, "", "＞뽑습니까？"
 				CALL INPUT_YN_D
 				IF RESULT == 0
-					IF GETCHARA([[キャラ:유미코]]) >= 0 && 함락(GETCHARA([[キャラ:유미코]]))
+					IF GETCHARA([[캐릭터:유미코]]) >= 0 && 함락(GETCHARA([[캐릭터:유미코]]))
 						CALL MESSAGE_WINDOW_D, "", "＞힘을 집중하자 의외로 시원스럽게 검을 뽑아낼 수 있었다/＞【히노카쿠츠치의 검】을 손에 넣었다"
 						CALL GET_ITEMS,"히노카쿠츠치의검", 1
 						DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1068,7 +1068,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:섀도우]],50,0,1
+		CALL SET_ENEMY,9,[[캐릭터:섀도우]],50,0,1
 		LOCAL = CHARANUM - 1
 		ABL:LOCAL:스킬1 = [[스킬:마하무드온]]
 		ABL:LOCAL:스킬2 = [[스킬:유혹의안개]]
@@ -1247,8 +1247,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					DA:(FLAG:현X):(FLAG:현Y) = 1
 					CALLF STRFLAG_D("헤카테격파", 1)
 					CALLF STRFLAG_NUM_D("대마궁진행", "+=", , 1)
-					;FLAG:(10000+[[キャラ:헤카테]]) = 1
-					CALL LIFTING_A_BAN([[キャラ:헤카테]])
+					;FLAG:(10000+[[캐릭터:헤카테]]) = 1
+					CALL LIFTING_A_BAN([[캐릭터:헤카테]])
 					FLAG:도주불가플래그 = 0
 					FLAG:회화불능플래그 = 0
 					FLAG:선제기습취소 = 0
@@ -1259,7 +1259,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					IF ABL:MASTER:속성LD == 3 && ABL:MASTER:속성LC == 3
 						CALL MESSAGE_WINDOW_D, "헤카테", "이제、지금부터는 네가 이【마주르카의 회랑】의 지배자다/이제부터는 나도 당신에게 힘을 빌려주지"
 						CALL MESSAGE_WINDOW_D, "헤카테", "자、함께 나아가자/그 분은 당신 스스로의 다리로/자신의 근원에 도착을 것을 희망하고 계시니…/될 수 있다면 나도 그 행보를 도와주지"
-						CALL ADD_NEW_COMPANION, [[キャラ:헤카테]], 1000, 1
+						CALL ADD_NEW_COMPANION, [[캐릭터:헤카테]], 1000, 1
 						IF RESULT
 							BASE:(RESULT:1):LV += 3
 							BASE:(RESULT:1):마력 += 3
@@ -1820,7 +1820,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 1001
 		CALL MESSAGE_WINDOW_D, "마계인", "이１층에 이상한 가게를 하고 있는 녀석이 있다네"
 	CASE 1002
-		IF FINDCHARA_B([[キャラ:아케미]]) == 2
+		IF FINDCHARA_B([[캐릭터:아케미]]) == 2
 			CALL MESSAGE_WINDOW_D, "요모츠시코메", "오오、당신이야말로 이자나기의 환생체！/당신의 도움이 되도록 비엔 마을에/히노카쿠츠치가 소환되었습니다！"
 			CALL MESSAGE_WINDOW_D, "요모츠시코메", "가장 높은 곳의 바닥을 잘 조사하면 길을 열 수 있습니다！/그럼 무운을 기원하겠습니다"
 			CALL MESSAGE_WINDOW_D, "", "＞요모츠시코메는 그 정도만 아케미에게 알리고 어딘가에 가 버렸다"
@@ -1959,9 +1959,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTW 「」
 		ELSEIF RESULT == 2
 			IF STRFLAG_D("최면술사협력")
-				IF FINDCHARA_B([[キャラ:헬]]) > 0 || FINDCHARA_B([[キャラ:펜리르]]) > 0
+				IF FINDCHARA_B([[캐릭터:헬]]) > 0 || FINDCHARA_B([[캐릭터:펜리르]]) > 0
 					IF 함락(RESULT:1)
-						IF NO:(RESULT:1) == [[キャラ:헬]]
+						IF NO:(RESULT:1) == [[캐릭터:헬]]
 							CALL MESSAGE_WINDOW_D, "최면술사", "흠、헬을 데려 온 건가/아무래도 로키를 쓰러뜨릴 때 도움을 줬나보군？"
 							CALL MESSAGE_WINDOW_D, "헬", "뭐…/저런 부모 조금 고생하는 편이 좋아요/그 녀석 탓에 내가 얼마나 고생을 했는지…/아아、정말 나는 불행해…！"
 							CALL MESSAGE_WINDOW_D, "최면술사", "음、이의는 없네、시작한다"
@@ -1983,7 +1983,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 						CALL MESSAGE_WINDOW_D, "", "＞완성된【롤의 부적】을 손에 넣었다！"
 						CALLF STRFLAG_D("부적완성", 1)
 					ELSE
-						CALL MESSAGE_WINDOW_D, "최면술사", @"흠…%\@NO:(RESULT:1) == [[キャラ:헬]]?헬#펜리르\@%은 없어보이는군…/자네에겐 심복이 없는것 같구려/이것으로는 부적을 만들 수 없네"
+						CALL MESSAGE_WINDOW_D, "최면술사", @"흠…%\@NO:(RESULT:1) == [[캐릭터:헬]]?헬#펜리르\@%은 없어보이는군…/자네에겐 심복이 없는것 같구려/이것으로는 부적을 만들 수 없네"
 					ENDIF
 				ELSE
 					CALL MESSAGE_WINDOW_D, "최면술사", "좋아/헬이나 펜리르/어느 쪽이던 데려오지 않으면 부적은 완성되지 않아"
@@ -2552,7 +2552,7 @@ SELECTCASE -DA:(FLAG:현X):(FLAG:현Y)/10
 		CALL MESSAGE_WINDOW_D, "", "＞사신 세트는 힘이 다했다"
 			CALLF STRFLAG_D("세트격파", 1)
 			DA:(FLAG:현X):(FLAG:현Y) = 1
-			CALL LIFTING_A_BAN([[キャラ:세트]])
+			CALL LIFTING_A_BAN([[캐릭터:세트]])
 			;FLAG:11629 = 1
 			RETURN 1
 		ENDIF
@@ -2569,21 +2569,21 @@ SELECTCASE -DA:(FLAG:현X):(FLAG:현Y)/10
 	CASE 6001
 		CALL SHOW_PICTURE, "D"
 		CALL MESSAGE_WINDOW_D, "", "＞소녀가 누워있다……"
-		IF FINDCHARA_B([[キャラ:아케미]]) == 2
+		IF FINDCHARA_B([[캐릭터:아케미]]) == 2
 			CALL MESSAGE_WINDOW_D, "아케미", "시라사기…！"
 			CALL MESSAGE_WINDOW_D, "", "＞아케미는 소녀에게 달려가 안아 일으켰다……/＞아케미의 눈으로부터 눈물이 흘러 넘쳐、소녀에게로 떨어진다……/＞그러자、소녀는 천천히 눈을 떴다……"
 			CALL MESSAGE_WINDOW_D, "소녀", "나카지마 군…와 주었군요…"
 			CALL MESSAGE_WINDOW_D, "", "＞아케미를 응시한 소녀의 눈에도 순식간에 눈물이 넘치기 시작한다…/＞그리고、두 사람은 강하게 서로를 끌어안았다…"
 			CALL MESSAGE_WINDOW_D, "", "＞시라사키 유미코를 구했다…"
 		ELSE
-			IF FINDCHARA_B([[キャラ:아케미]]) == 1
+			IF FINDCHARA_B([[캐릭터:아케미]]) == 1
 				CALL MESSAGE_WINDOW_D, "", @"＞이 소녀가 시라사기 유미코인 것 같다/＞유미코는 일어날 기미가 없다……/＞%마스터는% 일단 잠 들어있는 유미코를 데리고、/＞탐색을 계속했다…"
 			ELSE
 				CALL MESSAGE_WINDOW_D, "", "＞소녀로부터 불가사의한 힘이 느껴진다/＞단지 그 뿐만은 아닌 것 같지만……"
 				CALL INPUT_YN_D("데리고 돌아간다", "내버려 둔다")
 				IF RESULT == 0
 					CALL MESSAGE_WINDOW_D, "", "＞시라사기 유미코를 손에 넣었다"
-					CALL ADD_NEW_COMPANION, [[キャラ:유미코]], 200, 1
+					CALL ADD_NEW_COMPANION, [[캐릭터:유미코]], 200, 1
 				ELSE
 					CALL MESSAGE_WINDOW_D, "", "＞소녀를 방치하고、계속 나아가기로 했다…"
 				ENDIF

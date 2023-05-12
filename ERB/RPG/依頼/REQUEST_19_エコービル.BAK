@@ -158,7 +158,7 @@ IF 의뢰플래그:19:0 == 1
 		PRINTFORMW 見るからに旗色が悪いが、退く心算はない様だ。
 		PRINTFORMW オセは煩わしそうに、いかにも適当にそちらの相手をしていたが、%CALLNAME:MASTER%に気付いて、にたりと笑って振り向いた。
 		PRINTL
-		PRINTFORMW 「ほおう？　デビル・サマナーというやつか。
+		PRINTFORMW 「ほおう？　デビルㆍサマナーというやつか。
 		PRINTFORMW 　少々遅かったな。　八神の花咲く娘は、我が手の内だ。
 		PRINTFORMW 　己が無力を知るがよい」
 		LOCAL = 1
@@ -183,7 +183,7 @@ ELSE
 	PRINTL
 	PRINTFORMW 「ですが、貴方のような醜いものの手に堕ちるのは願い下げです。
 	PRINTFORMW 　幸いにしてここには生体マグネタイトもある、あとは、生け贄だけ。
-	PRINTFORMW 　――永遠なる我が父、主・オセよ！　幸くませ！」
+	PRINTFORMW 　――永遠なる我が父、主ㆍオセよ！　幸くませ！」
 	PRINTL
 	PRINTFORMW ガゥーン……！
 	PRINTFORMW 轟音と共に、小林少年は自らの頭を拳銃で撃ち抜いた。
@@ -227,17 +227,17 @@ CUSTOMDRAWLINE =
 	PRINTFORMW ＞堕天使　オセが現れた！
 
 ;難易度別共通
-;戦技・火炎・精神＋マカラカーンデカジャデクンダ
+;戦技ㆍ火炎ㆍ精神＋マカラカーンデカジャデクンダ
 ;このオセは剣を持ってないので剣撃スキルは無し
 ;IF LOCAL == 0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1000
 	ABL:(CHARANUM-1):스킬1 = [[스킬:유혹의안개]]
-	ABL:(CHARANUM-1):스킬2 = [[스킬:마하・라기온]]
+	ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ라기온]]
 	ABL:(CHARANUM-1):스킬3 = [[스킬:마카라칸]]
 	ABL:(CHARANUM-1):스킬4 = [[스킬:데스클로]]
-	ABL:(CHARANUM-1):스킬5 = [[스킬:데・카쟈]]
-	ABL:(CHARANUM-1):스킬6 = [[스킬:데・쿤다]]
+	ABL:(CHARANUM-1):스킬5 = [[스킬:데ㆍ카쟈]]
+	ABL:(CHARANUM-1):스킬6 = [[스킬:데ㆍ쿤다]]
 	ABL:(CHARANUM-1):스킬7 = [[스킬:대염상]]
 	ABL:(CHARANUM-1):스킬8 = [[스킬:꼬치꿰기]]
 ;ENDIF
@@ -301,7 +301,7 @@ IF LOCAL == 0
 				CFLAG:LCOUNT:전투참가불가능 = 0
 		NEXT
 	ELSE
-		PRINTFORMW 「……そう。さようなら、ファントムのデビル・サマナー」
+		PRINTFORMW 「……そう。さようなら、ファントムのデビルㆍサマナー」
 		PRINTL
 		PRINTFORMW %CALLNAME:MASTER%は京子と分かれて立ち去った。
 	ENDIF
@@ -318,7 +318,7 @@ ELSEIF LOCAL == 1
 	PRINTFORMW 　……これで、私達のここでの仕事もおしまい、かな」
 	CALL INPUT_YN("茉莉花を仲魔に誘う", "さようなら")
 	IF RESULT == 0
-		PRINTFORMW 「んー、ファントム・ソサエティに雇われるのは体面上マズいんだけど……
+		PRINTFORMW 「んー、ファントムㆍソサエティに雇われるのは体面上マズいんだけど……
 		PRINTFORMW 　ま、あなたのことは分かったし、個人的に協力する分なら問題ないか！
 		PRINTFORMW 　このジャックフロストの人形を持ってって。握って名前を呼んでくれれば、話くらいは聞いてあげる」
 		PRINTL
@@ -330,7 +330,7 @@ ELSEIF LOCAL == 1
 				CFLAG:LCOUNT:전투참가불가능 = -1
 		NEXT
 		PRINTFORMW 「それじゃ、またこんどね！
-		PRINTFORMW 　……あ、もちろんタダじゃないから！　ビジネスよ、び・じ・ね・す！
+		PRINTFORMW 　……あ、もちろんタダじゃないから！　ビジネスよ、びㆍじㆍねㆍす！
 		PRINTFORMW 　ばいばーい！」
 		PRINTL
 		PRINTFORMW 茉莉花はいつかと同じようにウインクしながら音もなく消えた。
@@ -468,21 +468,21 @@ ELSE
 			
 			;このオセは剣を持ってない
 			ABL:LOCAL:초기변신악마스킬1 = [[스킬:마린카린]]
-			ABL:LOCAL:초기변신악마스킬2 = [[스킬:마하・라기온]]
+			ABL:LOCAL:초기변신악마스킬2 = [[스킬:마하ㆍ라기온]]
 			ABL:LOCAL:초기변신악마스킬3 = [[스킬:파이어브레스]]
 			ABL:LOCAL:초기변신악마스킬4 = [[스킬:데스클로]]
 			
 			ABL:LOCAL:초기변신악마습득스킬1 = [[스킬:꼬치꿰기]]
 				ABL:LOCAL:초기변신악마습득LV1 = 14
-			ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:마하・라기다인]]
+			ABL:LOCAL:초기변신악마습득스킬2 = [[스킬:마하ㆍ라기다인]]
 				ABL:LOCAL:초기변신악마습득LV2 = 24
 			ABL:LOCAL:초기변신악마습득스킬3 = [[스킬:폭렬의손톱]]
 				ABL:LOCAL:초기변신악마습득LV3 = 33
 			ABL:LOCAL:초기변신악마습득스킬4 = [[스킬:대염상]]
 				ABL:LOCAL:초기변신악마습득LV4 = 36
-			ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:데・카쟈]]
+			ABL:LOCAL:초기변신악마습득스킬5 = [[스킬:데ㆍ카쟈]]
 				ABL:LOCAL:초기변신악마습득LV5 = 39
-			ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데・쿤다]]
+			ABL:LOCAL:초기변신악마습득스킬6 = [[스킬:데ㆍ쿤다]]
 				ABL:LOCAL:초기변신악마습득LV6 = 39
 			ABL:LOCAL:초기변신악마습득스킬7 = [[스킬:화염가드브레이크]]
 				ABL:LOCAL:초기변신악마습득LV7 = 67

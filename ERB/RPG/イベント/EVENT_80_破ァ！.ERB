@@ -53,7 +53,7 @@ IF 이벤트플래그:80:0 == 0
 	PRINTW 절 태생은 굉장하군。
 	PRINTL
 	PRINTW 인간　절 태생의 T씨가 동료가 되었다!
-		CALL ADD_NEW_COMPANION, [[キャラ:T씨]], 1000
+		CALL ADD_NEW_COMPANION, [[캐릭터:T씨]], 1000
 		IF RESULT > 0
 			CFLAG:(RESULT:1):전투참가불가능 = -1
 			BASE:(RESULT:1):LV = 55

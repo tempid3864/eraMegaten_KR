@@ -224,9 +224,9 @@ ELSEIF 이벤트플래그:5:1 == 0 && 이벤트플래그:5:2 == 1 && (STRFLAG_EV
 	이벤트플래그:5:1 = 1
 
 ;벨벳룸経由であれば弾く
-ELSEIF STRFLAG_NUM_EV("니알라진행", , , , [[이벤트:페르소나２]]) == 4 && GETCHARA([[キャラ:니알랏토텝]]) >= 0 && 이벤트플래그:5:2 == 0
+ELSEIF STRFLAG_NUM_EV("니알라진행", , , , [[이벤트:페르소나２]]) == 4 && GETCHARA([[캐릭터:니알랏토텝]]) >= 0 && 이벤트플래그:5:2 == 0
 	CALLF STRFLAG_NUM_EV("니알라진행", "=", , 5, [[이벤트:페르소나２]])
-	LOCAL = GETCHARA([[キャラ:니알랏토텝]])
+	LOCAL = GETCHARA([[캐릭터:니알랏토텝]])
 	PRINTFORML %CALLNAME:LOCAL%:
 	PRINTW 「왔구나…기다리고 있었어」
 	PRINTL 
@@ -287,7 +287,7 @@ ELSEIF STRFLAG_NUM_EV("니알라진행", , , , [[이벤트:페르소나２]]) ==
 		CFLAG:LOCAL:이자리에없는플래그 = 0
 		SIF CFLAG:MASTER:악마변신
 			CALL ACTION_2310 , MASTER, 0
-		ABL:MASTER:초기페르소나 = [[キャラ:니알랏토텝(약)]]
+		ABL:MASTER:초기페르소나 = [[캐릭터:니알랏토텝(약)]]
 		TALENT:MASTER:페르소나구사자 = 1
 		TALENT:MASTER:석세서 = 0
 		TALENT:MASTER:도구지식 = 0
@@ -735,8 +735,8 @@ SELECTCASE RESULT
 					LOCAL:1 = TARGET
 					LOCAL:2 = ASSI
 					;ここでニャル作っとく
-					CALL ADD_NEW_COMPANION, [[キャラ:니알랏토텝]], 10
-					LOCAL:3 = GETCHARA([[キャラ:니알랏토텝]])
+					CALL ADD_NEW_COMPANION, [[캐릭터:니알랏토텝]], 10
+					LOCAL:3 = GETCHARA([[캐릭터:니알랏토텝]])
 					IF RESULT == 1
 						;そして、正式加入はもうちょいあとなので隠しとく。
 						CFLAG:(LOCAL:3):이자리에없는플래그 = 1

@@ -74,7 +74,7 @@ CUSTOMDRAWLINE =
 		;メガネ
 		;最終戦は出ない
 		IF LOCAL:99 < 6
-			CALL SET_ENEMY,8,[[キャラ:쥰나]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,8,[[캐릭터:쥰나]],LOCAL:98,1,(LOCAL:97 - 1)
 			NAME:(CHARANUM-1) = 안경（공부용）
 			CALLNAME:(CHARANUM-1) = 안경（공부용）
 			;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
@@ -101,7 +101,7 @@ CUSTOMDRAWLINE =
 		;本体
 		;6戦눈　★★★★★
 		IF LOCAL:99 > 5
-			CALL SET_ENEMY,9,[[キャラ:쥰나]],LOCAL:98,1,(LOCAL:97)
+			CALL SET_ENEMY,9,[[캐릭터:쥰나]],LOCAL:98,1,(LOCAL:97)
 			CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 			ABL:(CHARANUM-1):공격상성 = 1
@@ -123,7 +123,7 @@ CUSTOMDRAWLINE =
 			ABL:(CHARANUM-1):스킬12 = 0
 		;1～5戦눈（素体。下でメガネと一緒に弄る）
 		ELSE
-			CALL SET_ENEMY,9,[[キャラ:쥰나]],LOCAL:98,1,LOCAL:97
+			CALL SET_ENEMY,9,[[캐릭터:쥰나]],LOCAL:98,1,LOCAL:97
 			;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 			ABL:(CHARANUM-1):공격상성 = 1
@@ -152,7 +152,7 @@ CUSTOMDRAWLINE =
 		;メガネ
 		;最終戦は出ない
 		IF LOCAL:99 < 6
-			CALL SET_ENEMY,10,[[キャラ:쥰나]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,10,[[캐릭터:쥰나]],LOCAL:98,1,(LOCAL:97 - 1)
 			NAME:(CHARANUM-1) = 안경（일상용）
 			CALLNAME:(CHARANUM-1) = 안경（일상용）
 			;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
@@ -181,7 +181,7 @@ CUSTOMDRAWLINE =
 		ENDIF
 
 		;解析度MAX処理
-		CALL INCREASE_ANALYZE([[キャラ:쥰나]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:쥰나]],1000)
 		
 		;6戦눈　★★★★★★
 		IF LOCAL:99 > 5

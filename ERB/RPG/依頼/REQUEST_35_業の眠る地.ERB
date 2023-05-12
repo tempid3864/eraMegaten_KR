@@ -63,7 +63,7 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:레이호우]], 60, 0, 1
+	CALL SET_ENEMY,9, [[캐릭터:레이호우]], 60, 0, 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = +1000
 	CFLAG:(CHARANUM-1):ＭＰ보정 = +1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -85,18 +85,18 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 	CALL MESSAGE_WINDOW, "나오미", "확실히 조교사라고 했지요"
 	CALL MESSAGE_WINDOW, "나오미", "이 여자를 비참하게 만들 정도로 능욕해 주지 않을래"
 	CALL MESSAGE_WINDOW, "", "＞레이･레이호우가 노예가 되었다"
-	CALL ADD_NEW_COMPANION,[[キャラ:레이호우]],-200
+	CALL ADD_NEW_COMPANION,[[캐릭터:레이호우]],-200
 	CALL MESSAGE_WINDOW, "나오미", "레이를 물리쳤……지만、이제 노사도 모두들도 없어……"
 	CALL MESSAGE_WINDOW, "나오미", "……당신에게 신세를 져도 좋을까？"
 	CALL MESSAGE_WINDOW, "나오미", "그 때 당신에게 도와달라고 하지 않았으면 내 복수를 이룰 수 없었어요"
 	CALL MESSAGE_WINDOW, "나오미", "당신이 있는 곳이라면 지루하지 않을 것 같은데、어때요？"
 	CALL MESSAGE_WINDOW, "", "＞나오미의 힘을 함께 싸워봐서 잘 알고 있다。그녀의 제안을 받아들다。"
 	CALL MESSAGE_WINDOW, "나오미", "그럼、잘 부탁해요"
-	LOCAL = GETCHARA([[キャラ:나오미]])
+	LOCAL = GETCHARA([[캐릭터:나오미]])
 	SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 		CALL DEL_GUEST, LOCAL, "큰곰자리별의활", "알즈ㆍ록", "백칠겁팔식철귀", "맥시밀리언", "라우린의반지", "미라주부츠", "도사뱃지"
 	CALL MESSAGE_WINDOW, "", "＞나오미가 동료가 되었다！"
-	CALL ADD_NEW_COMPANION,[[キャラ:나오미]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:나오미]],500
 	IF RESULT == 1
 		LOCAL = RESULT:1
 		BASE:LOCAL:ＭＡＧ = 10000
@@ -111,12 +111,12 @@ ELSEIF 의뢰플래그:35:0 == 1 && 던전플래그:95:0 == 2
 ENDIF
 
 @SET_GUEST_REQ35
-	CALL ADD_GUEST_COMPANION([[キャラ:나오미]], 300)
+	CALL ADD_GUEST_COMPANION([[캐릭터:나오미]], 300)
 	SIF RESULT:1 >= 0
 		PRINTFORMW %CALLNAME:(RESULT:1)%를 COMP로 되돌렸으니 주의해주세요
 	;新規加入ならRESULT:2は1、인계된 캐릭터ならRESULT:2は0
 	IF RESULT:2 == 1
-		LOCAL = GETCHARA([[キャラ:나오미]])
+		LOCAL = GETCHARA([[캐릭터:나오미]])
 		BASE:LOCAL:ＭＡＧ = 50000
 	ENDIF
 	CALL SYNC_STATUS, LOCAL

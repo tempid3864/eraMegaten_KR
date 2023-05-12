@@ -96,7 +96,7 @@ IF FLAG:현M == 0 && ARG == 4 && ARG:1 == 1 && 던전플래그:41:2 == 0
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				;아크엔젤
-				CALL SET_ENEMY,9,[[キャラ:아크엔젤]],24,0,0
+				CALL SET_ENEMY,9,[[캐릭터:아크엔젤]],24,0,0
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 300
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -409,10 +409,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		;마요네함락済みでＰＴにいる
 		IF FINDCHARA_B(4516,0) == 2
 			;아크엔젤Lv24
-			CALL SET_ENEMY,8,[[キャラ:아크엔젤]],39,0,0
+			CALL SET_ENEMY,8,[[캐릭터:아크엔젤]],39,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 300
 		ELSE
-			CALL SET_ENEMY,8,[[キャラ:아크엔젤]],30,0,0
+			CALL SET_ENEMY,8,[[캐릭터:아크엔젤]],30,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		ENDIF
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -422,10 +422,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		;마요네함락済みでＰＴにいる
 		IF FINDCHARA_B(4516,0) == 2
 			;아크엔젤Lv24
-			CALL SET_ENEMY,9,[[キャラ:아크엔젤]],39,0,0
+			CALL SET_ENEMY,9,[[캐릭터:아크엔젤]],39,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 300
 		ELSE
-			CALL SET_ENEMY,9,[[キャラ:아크엔젤]],30,0,0
+			CALL SET_ENEMY,9,[[캐릭터:아크엔젤]],30,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		ENDIF
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -434,11 +434,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		;마요네함락済みでＰＴにいる
 		IF FINDCHARA_B(4516,0) == 2
 			;아크엔젤Lv24
-			CALL SET_ENEMY,10,[[キャラ:아크엔젤]],39,0,0
+			CALL SET_ENEMY,10,[[캐릭터:아크엔젤]],39,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 300
 		ELSE
 			;아크엔젤Lv24
-			CALL SET_ENEMY,10,[[キャラ:아크엔젤]],30,0,0
+			CALL SET_ENEMY,10,[[캐릭터:아크엔젤]],30,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		ENDIF
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -491,7 +491,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			;파워Lv34
-			CALL SET_ENEMY,9,[[キャラ:파워]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:파워]],40,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
@@ -524,7 +524,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,14,[[キャラ:마요네]],30,0,1
+			CALL SET_ENEMY,14,[[캐릭터:마요네]],30,0,1
 			;シングル
 			ABL:(CHARANUM-1):스킬1 = 111
 			;連続
@@ -553,10 +553,10 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
 			;팬텀윗치　Lv12（27）
-			CALL SET_ENEMY,13,[[キャラ:F윗치]],27,0,0
+			CALL SET_ENEMY,13,[[캐릭터:F윗치]],27,0,0
 
 			;교조의탑　Lv27（30）
-			CALL SET_ENEMY,15,[[キャラ:교조의탑]],30,0,0
+			CALL SET_ENEMY,15,[[캐릭터:교조의탑]],30,0,0
 			ABL:(CHARANUM-1):스킬1 = 902
 			ABL:(CHARANUM-1):스킬2 = 904
 			ABL:(CHARANUM-1):스킬3 = 1101
@@ -565,19 +565,19 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
 			;맨이터　Lv27（30）
-			CALL SET_ENEMY,8,[[キャラ:맨이터]],30,0,0
+			CALL SET_ENEMY,8,[[캐릭터:맨이터]],30,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
 			;고르곤Lv29
-			CALL SET_ENEMY,9,[[キャラ:고르곤]],29,0,0
+			CALL SET_ENEMY,9,[[캐릭터:고르곤]],29,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			;알케니　Lv28
-			CALL SET_ENEMY,10,[[キャラ:알케니]],28,0,0
+			CALL SET_ENEMY,10,[[캐릭터:알케니]],28,0,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -664,48 +664,48 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;20%で엔젤Lv5（23）
-				RETURN [[キャラ:엔젤]], 23
+				RETURN [[캐릭터:엔젤]], 23
 			CASE IS < 35
 				;15%で니케Lv17（23）
-				RETURN [[キャラ:니케]], 23
+				RETURN [[캐릭터:니케]], 23
 			CASE IS < 15
 				;15%で엘프Lv23
-				RETURN [[キャラ:엘프]], 23
+				RETURN [[캐릭터:엘프]], 23
 			CASE IS < 50
 				;15%で켈라이노Lv25
-				RETURN [[キャラ:켈라이노]], 25
+				RETURN [[캐릭터:켈라이노]], 25
 			CASE IS < 70
 				;10%で좀비아미Lv15（24）
-				RETURN [[キャラ:좀비아미]], 24
+				RETURN [[캐릭터:좀비아미]], 24
 			CASE IS < 85
 				;15%で드베르가Lv23
 				RETURN 554, 23
 				;RETURN [[드베르가]], 23
 			CASE IS < 100
 				;15%で히-호ＢLv20（23）
-				RETURN [[キャラ:잭랜턴]], 23
+				RETURN [[캐릭터:잭랜턴]], 23
 		ENDSELECT
 	CASE 1
 	;２Ｆでの遭遇
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で엘프Lv23（26）
-				RETURN [[キャラ:엘프]], 26
+				RETURN [[캐릭터:엘프]], 26
 			CASE IS < 35
 				;20%で니케Lv17（26）
-				RETURN [[キャラ:니케]], 26
+				RETURN [[캐릭터:니케]], 26
 			CASE IS < 50
 				;15%で켈라이노Lv25
-				RETURN [[キャラ:켈라이노]], 25
+				RETURN [[캐릭터:켈라이노]], 25
 			CASE IS < 60
 				;10%で하우르바타트Lv25
-				RETURN [[キャラ:하우르바타트]], 25
+				RETURN [[캐릭터:하우르바타트]], 25
 			CASE IS < 75
 				;15%で아크엔젤Lv24
-				RETURN [[キャラ:아크엔젤]], 24
+				RETURN [[캐릭터:아크엔젤]], 24
 			CASE IS < 85
 				;10%で좀비아미Lv15（24）
-				RETURN [[キャラ:좀비아미]], 24
+				RETURN [[캐릭터:좀비아미]], 24
 			CASE IS < 5
 				;10%で잭랜턴Lv20（26）
 				;RETURN [[잭랜턴]], 26
@@ -719,25 +719,25 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で엘프Lv23（26）
-				RETURN [[キャラ:엘프]], 26
+				RETURN [[캐릭터:엘프]], 26
 			CASE IS < 30
 				;15%で밴시Lv27
-				RETURN [[キャラ:밴시]], 27
+				RETURN [[캐릭터:밴시]], 27
 			CASE IS < 50
 				;20%で니케Lv17（26）
-				RETURN [[キャラ:니케]], 26
+				RETURN [[캐릭터:니케]], 26
 			CASE IS < 65
 				;15%で켈라이노
-				RETURN [[キャラ:켈라이노]], 25
+				RETURN [[캐릭터:켈라이노]], 25
 			CASE IS < 75
 				;10%で하우르바타트Lv25（28）
-				RETURN [[キャラ:하우르바타트]], 28
+				RETURN [[캐릭터:하우르바타트]], 28
 			CASE IS < 90
 				;15%で아크엔젤Lv24（27）
-				RETURN [[キャラ:아크엔젤]], 27
+				RETURN [[캐릭터:아크엔젤]], 27
 			CASE IS < 100
 				;10%で프린시펄리티Lv28
-				RETURN [[キャラ:프린시펄리티]], 28
+				RETURN [[캐릭터:프린시펄리티]], 28
 		ENDSELECT
 ENDSELECT
 
@@ -749,9 +749,9 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:프린시펄리티]] , 3 + RAND:10 , CSVBASE([[キャラ:프린시펄리티]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:프린시펄리티]] , 3 + RAND:10 , CSVBASE([[캐릭터:프린시펄리티]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:아크엔젤]] , 3 + RAND:10 , CSVBASE([[キャラ:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아크엔젤]] , 3 + RAND:10 , CSVBASE([[캐릭터:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:좀비아미]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비아미]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

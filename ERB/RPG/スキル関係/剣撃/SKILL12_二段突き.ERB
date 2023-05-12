@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_12,ARG
 ;ファントムが使用する場合プラズマサイズに
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = 플라즈마사이즈
 ELSE
 	RESULTS = 이단찌르기
@@ -12,7 +12,7 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_12, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 100
 ELSE
 	RETURN 90
@@ -20,7 +20,7 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_12, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 180
 ELSE
 	RETURN 145
@@ -41,7 +41,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_12,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 10
 ELSE
 	RETURN 8
@@ -147,7 +147,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,12
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_12
-IF INRANGE(U, 0, CHARANUM-1) && GROUPMATCH(NO:U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF INRANGE(U, 0, CHARANUM-1) && GROUPMATCH(NO:U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 좌완 플라즈마ㆍ스테이크 3개 중 안쪽 2개를 뽑아、소형 빔 낫으로 변형시키고
 	PRINTL 내던져 적 전열 1체에 2회 공격。후열 사용 가능
 ELSE

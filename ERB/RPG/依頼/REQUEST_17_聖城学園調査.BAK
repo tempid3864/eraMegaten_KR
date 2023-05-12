@@ -134,7 +134,7 @@ IF 의뢰플래그:17:0 == 2
 	CALL SET_ENEMY,14, [[キャラ:마리카]],19, 1, 1
 	;マヒ針
 	ABL:(CHARANUM-1):스킬1 = 103
-	;催眠波⇒この段階で精神전체はエグイ。代わりにスク・ンダ
+	;催眠波⇒この段階で精神전체はエグイ。代わりにスクㆍンダ
 	ABL:(CHARANUM-1):스킬2 = 508
 	;秘孔突き（打撃即死）
 	ABL:(CHARANUM-1):스킬3 = 240
@@ -154,7 +154,7 @@ IF 의뢰플래그:17:0 == 2
 CUSTOMDRAWLINE =
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
-	PRINTFORML ┃타이밍이 나빠、데빌・서머너ー！　　				 ┃
+	PRINTFORML ┃타이밍이 나빠、데빌ㆍ서머너ー！　　				 ┃
 	PRINTFORML ┃그보다 당신의 적은 우리가 아니잖아、　　　	 ┃
 	PRINTFORML ┃분위기 좀 파악해！　　　　　　　　　　　　　 ┃
 	PRINTFORML ┗━━━━━━━━━━━━━━━━━━━━━━┛
@@ -224,7 +224,7 @@ PRINTFORMW 그들의 성기로、찌걱찌걱하고 거품을 내며、천진난
 PRINTL
 PRINTFORMW ――쳇、또 새로운 놈인가。
 PRINTFORMW ――【마녀의 왕、레오나르드여、
-PRINTFORMW ――　프레지던트・오세의 가호를 받고 나의 소환에 응하여라！】
+PRINTFORMW ――　프레지던트ㆍ오세의 가호를 받고 나의 소환에 응하여라！】
 PRINTL
 PRINTFORMW 어디선가 목소리가 들리고、실내의 마그네타이트가 급속히 눈 앞의 치태로 수렴해 간다。
 PRINTFORMW 누런 살과 하얀 살갗이 한 층 더 격렬하게 부딪친다。

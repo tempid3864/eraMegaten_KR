@@ -3,7 +3,7 @@
 ;====================
 @EXPLAIN_REQUEST_70_5
 PRINTL 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 PRINTFORMW ＞%CALLNAME:LOCAL%을 조수로 하는 것을 팬텀에 인정받은 %CALLNAME:MASTER%。
 PRINTFORMW ＞정말로 기뻐하는 %CALLNAME:LOCAL%을 보고、%CALLNAME:MASTER%는 자그마한 파티를 열어줄까 생각했다。
@@ -25,7 +25,7 @@ CUSTOMDRAWLINE =
 		ENDIF
 	NEXT
 	
-	CALLF FINDCHARA_B([[キャラ:아인]])
+	CALLF FINDCHARA_B([[캐릭터:아인]])
 	LOCAL = RESULT:1
 	
 	PRINTFORMW 「파티……？　내가、무사하게 됐으니까……？」

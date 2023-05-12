@@ -824,7 +824,7 @@ ENDIF
 IF 보컬리스트ㆍ세이렌진행 > 1
 	FOR LOCAL, 0, CHARANUM
 		;劇場憑きの세이렌はここで판정
-		IF NO:LOCAL == [[キャラ:세이렌]] && CFLAG:LOCAL:998 == 1
+		IF NO:LOCAL == [[캐릭터:세이렌]] && CFLAG:LOCAL:998 == 1
 			PRINTL 　보컬리스트ㆍ세이렌의 가호 ×110％
 			TIMES S , 1.10
 			BREAK
@@ -835,7 +835,7 @@ ENDIF
 IF 시나리오라이터ㆍ지크프리트진행 > 1
 	FOR LOCAL, 0, CHARANUM
 		;劇場憑きの지크프리트はここで판정
-		IF NO:LOCAL == [[キャラ:지크프리트]] && CFLAG:LOCAL:998 == 1
+		IF NO:LOCAL == [[캐릭터:지크프리트]] && CFLAG:LOCAL:998 == 1
 			PRINTL 　시나리오라이터ㆍ지크프리트의 가호 ×110％
 			TIMES S , 1.10
 			BREAK
@@ -846,7 +846,7 @@ ENDIF
 IF 『관객』디오니소스진행 > 1
 	FOR LOCAL, 0, CHARANUM
 		;劇場憑きの디오니소스はここで판정
-		IF NO:LOCAL == [[キャラ:디오니소스]] && CFLAG:LOCAL:998 == 1
+		IF NO:LOCAL == [[캐릭터:디오니소스]] && CFLAG:LOCAL:998 == 1
 			PRINTL 　『관객』디오니소스의 가호 ×115％
 			TIMES S , 1.15
 			BREAK

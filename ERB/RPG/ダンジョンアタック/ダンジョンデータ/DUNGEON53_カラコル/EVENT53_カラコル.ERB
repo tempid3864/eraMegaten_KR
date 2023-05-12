@@ -214,16 +214,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		PRINTW 「지크 하일!」
 		PRINTL 
 		WAIT
-		CALL SET_ENEMY,7, [[キャラ:Ｓ졸다트]], 45, 0
-		CALL SET_ENEMY,8, [[キャラ:Ｍ졸다트]], 45, 0
-		CALL SET_ENEMY,9, [[キャラ:Ｍ졸다트]], 45, 0
-		CALL SET_ENEMY,10, [[キャラ:Ｍ졸다트]], 45, 0
-		CALL SET_ENEMY,11, [[キャラ:Ｓ졸다트]], 45, 0
-		CALL SET_ENEMY,12, [[キャラ:Ｖ크래프트]], 45, 0
-		CALL SET_ENEMY,13, [[キャラ:Ｓ슛체]], 45, 0
-		CALL SET_ENEMY,14, [[キャラ:코만단트]], 45, 0
-		CALL SET_ENEMY,15, [[キャラ:Ｓ슛체]], 45, 0
-		CALL SET_ENEMY,16, [[キャラ:Ｖ크래프트]], 45, 0
+		CALL SET_ENEMY,7, [[캐릭터:Ｓ졸다트]], 45, 0
+		CALL SET_ENEMY,8, [[캐릭터:Ｍ졸다트]], 45, 0
+		CALL SET_ENEMY,9, [[캐릭터:Ｍ졸다트]], 45, 0
+		CALL SET_ENEMY,10, [[캐릭터:Ｍ졸다트]], 45, 0
+		CALL SET_ENEMY,11, [[캐릭터:Ｓ졸다트]], 45, 0
+		CALL SET_ENEMY,12, [[캐릭터:Ｖ크래프트]], 45, 0
+		CALL SET_ENEMY,13, [[캐릭터:Ｓ슛체]], 45, 0
+		CALL SET_ENEMY,14, [[캐릭터:코만단트]], 45, 0
+		CALL SET_ENEMY,15, [[캐릭터:Ｓ슛체]], 45, 0
+		CALL SET_ENEMY,16, [[캐릭터:Ｖ크래프트]], 45, 0
 		CALL ADJUST_IMPERIAL
 		PRINTL ＞제국병 코만단트가 １체 나타났다！
 		PRINTL ＞제국병 마시넨졸다트가 3체 나타났다！
@@ -253,7 +253,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:조커]],50,0,1
+		CALL SET_ENEMY,9,[[캐릭터:조커]],50,0,1
 		CALL ADJUST_KAMEN
 		CALL BATTLE_START
 		PRINTW 페르소나 사용자 조커를 쓰러뜨렸다
@@ -271,14 +271,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		PRINTW 「퀸、크..。어쩔 수 없다… 하지만 기억해 둬라。네 녀석은 내가 쓰러뜨린다！」
 		PRINTL 
 		PRINTW ＞조커는 이렇게 말하면서 퀸과 함께 방에서 나갔다
-		CALL SET_ENEMY, 7, [[キャラ:황소가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 8, [[キャラ:사자가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 10, [[キャラ:전갈가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 11, [[キャラ:물병가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 12, [[キャラ:황소가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 13, [[キャラ:사자가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 15, [[キャラ:전갈가면Ｒ]], 45, 0
-		CALL SET_ENEMY, 16, [[キャラ:물병가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 7, [[캐릭터:황소가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 8, [[캐릭터:사자가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 10, [[캐릭터:전갈가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 11, [[캐릭터:물병가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 12, [[캐릭터:황소가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 13, [[캐릭터:사자가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 15, [[캐릭터:전갈가면Ｒ]], 45, 0
+		CALL SET_ENEMY, 16, [[캐릭터:물병가면Ｒ]], 45, 0
 		FOR LOCAL:1, 7 , 17
 			LOCAL = POS(LOCAL:1)
 			SIF LOCAL < 0
@@ -395,9 +395,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,8, [[キャラ:롱기누스１０]], 50, 0, 1
-		CALL SET_ENEMY,9, [[キャラ:롱기누스９]], 50, 0, 1
-		CALL SET_ENEMY,10, [[キャラ:롱기누스８]], 50, 0, 1
+		CALL SET_ENEMY,8, [[캐릭터:롱기누스１０]], 50, 0, 1
+		CALL SET_ENEMY,9, [[캐릭터:롱기누스９]], 50, 0, 1
+		CALL SET_ENEMY,10, [[캐릭터:롱기누스８]], 50, 0, 1
 		CALL ADJUST_IMPERIAL
 		PRINTL ＞성창기사단 롱기누스１０이 １체 나타났다！
 		PRINTL ＞성창기사단 롱기누스９이 １체 나타났다！
@@ -428,15 +428,15 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 
 			VARSET LOCAL
 			LOCAL = 1
-			IF GETCHARA([[キャラ:롱기누스１０]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스１０]]) < 0
 				PRINTL ＞[1]롱기누스１０
 				LOCAL:(LOCAL++) = 1
 			ENDIF
-			IF GETCHARA([[キャラ:롱기누스９]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스９]]) < 0
 				PRINTL ＞[2]롱기누스９
 				LOCAL:(LOCAL++) = 2
 			ENDIF
-			IF GETCHARA([[キャラ:롱기누스８]]) < 0
+			IF GETCHARA([[캐릭터:롱기누스８]]) < 0
 				PRINTL ＞[3]롱기누스８
 				LOCAL:(LOCAL++) = 3
 			ENDIF
@@ -447,7 +447,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			SELECTCASE RESULT
 			CASE 1
 			PRINTW ＞롱기누스１０을 손에 넣었다
-				CALL ADD_NEW_COMPANION,[[キャラ:롱기누스１０]],0,,,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스１０]],0,,,1
 				IF RESULT == 1
 					BASE:(RESULT:1):LV = 40
 					BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -599,7 +599,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				ENDIF
 			CASE 2
 			PRINTW ＞롱기누스９을 손에 넣었다
-				CALL ADD_NEW_COMPANION,[[キャラ:롱기누스９]],0,,,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스９]],0,,,1
 				IF RESULT == 1
 					BASE:(RESULT:1):LV = 40
 					BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -745,7 +745,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				ENDIF
 			CASE 3
 			PRINTW ＞롱기누스８을 손에 넣었다
-				CALL ADD_NEW_COMPANION,[[キャラ:롱기누스８]],0,,,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:롱기누스８]],0,,,1
 				IF RESULT == 1
 					BASE:(RESULT:1):LV = 40
 					BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -986,7 +986,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:메탈ㆍ맘]],55,0,1
+		CALL SET_ENEMY,9,[[캐릭터:메탈ㆍ맘]],55,0,1
 		CALL ADJUST_KAMEN
 		CALL BATTLE_START
 		CUSTOMDRAWLINE =
@@ -1040,7 +1040,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		PRINTW ＞그리고 순식간에 조커를 이형의 모습으로 바꿔나갔다
 		PRINTW ＞페르소나 사용자？ 엔젤조커가 １체 나타났다！
 
-		CALL SET_ENEMY,9,[[キャラ:엔젤조커]],60,0,1
+		CALL SET_ENEMY,9,[[캐릭터:엔젤조커]],60,0,1
 		CALL ADJUST_KAMEN
 		CALL BATTLE_START
 		CUSTOMDRAWLINE =
@@ -1069,7 +1069,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		PRINTW ＞쿠로스 쥰을 손에 넣었다
 		PRINTW ＞팬텀 소사이어티에서 라스트 바탈리온을 지상에서 추방한 보상을 지급했다
 		PRINTW ＞￥100000을 손에 넣었다
-		CALL ADD_NEW_COMPANION, [[キャラ:쥰]], 100
+		CALL ADD_NEW_COMPANION, [[캐릭터:쥰]], 100
 		MONEY += 100000
 		CALLF STRFLAG_NUM_EV("죄루트진행", "=", , 11, [[이벤트:페르소나２]])
 		FLAG:탈출 = 1

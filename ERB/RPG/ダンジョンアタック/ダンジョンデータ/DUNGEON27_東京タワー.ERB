@@ -115,7 +115,7 @@ ENDIF
 ;クリアフラグが立っている
 IF 던전플래그:27:1 && GETBIT(던전플래그:27:10,11) == 0
 	;かれひか揃い
-	IF FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+	IF FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 		CALL MESSAGE_WINDOW_D, "", "＞도쿄 타워를 올려다본 무대소녀들이 슬픈 표정을 하고 있다"
 		CALL MESSAGE_WINDOW_D, "카렌", "우리들이 아는 도쿄 타워가…… 아니네"
 		CALL MESSAGE_WINDOW_D, "히카리", "뻔한 일이잖아/이제 와서 무슨 소리야/……부탁드려요, 이 아이에게, 현실을 보여주세요"
@@ -125,24 +125,24 @@ IF 던전플래그:27:1 && GETBIT(던전플래그:27:10,11) == 0
 		SETBIT 던전플래그:27:10,11
 		
 	;華恋しか居ない（※水族館入れません）
-	ELSEIF FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2
+	ELSEIF FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2
 		CALL MESSAGE_WINDOW_D, "카렌", "이게 도쿄 타워…… 야？"
 		CALL MESSAGE_WINDOW_D, "", "＞당신은 적당히 대답했다/＞카구라 히카리를 데려오지 않은 건 걱정이지만,/＞뭐어, 버려진 수족관 흔적이라도 보여주면 현실이 보이겠지……"
 		
 	;ひかりしか居ない（※水族館入れません）
-	ELSEIF FINDCHARA_B([[キャラ:히카리]]) == 2
+	ELSEIF FINDCHARA_B([[캐릭터:히카리]]) == 2
 		CALL MESSAGE_WINDOW_D, "히카리", "나만 데려오는 건, 곤란"
 		CALL MESSAGE_WINDOW_D, "", "＞히카리는 괴로운 듯 눈을 깔고 있다/＞변해버린 도쿄 타워를, 직시하고 싶지 않은 것일 터이다"
 	ENDIF
 	
 ;クリアフラグが立ってない
 ELSEIF GETBIT(던전플래그:27:10,10) == 0
-	SIF FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2
+	SIF FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2
 		CALL MESSAGE_WINDOW_D, "카렌", "도쿄…… 타워……？"
-	SIF FINDCHARA_B([[キャラ:히카리]]) == 2
+	SIF FINDCHARA_B([[캐릭터:히카리]]) == 2
 		CALL MESSAGE_WINDOW_D, "히카리", "도쿄 타워가…… 도쿄 타워가……"
 	
-	IF FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 || FINDCHARA_B([[キャラ:히카리]]) == 2
+	IF FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 || FINDCHARA_B([[캐릭터:히카리]]) == 2
 		CALL MESSAGE_WINDOW_D, "", "＞안되겠다, 꿈꾸는 무대소녀가,/＞어려운 현실에 눈이 뒤집히기 시작했다"
 		CALL MESSAGE_WINDOW_D, "", "＞당신은, 쇼크로 부들부들 떨기 시작한 무대소녀에게/＞『일단 오늘은 일을 도와줘』라고만 확인시키고,/＞떨어진 무기를 다시 쥐여주었다"
 		;愛城華恋突入フラグON
@@ -211,7 +211,7 @@ ELSEIF GETBIT(던전플래그:27:13,5) == 0 && GETBIT(던전플래그:27:13,4)
 	;ちょっとスタァライトされる
 	CFLAG:MASTER:선악치 += 32
 	
-	LOCAL:0 = GETCHARA([[キャラ:히카리]])
+	LOCAL:0 = GETCHARA([[캐릭터:히카리]])
 	;だいぶスタァライトされる
 	CFLAG:(LOCAL:0):선악치 += 64
 	
@@ -667,7 +667,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CALL MESSAGE_WINDOW_D, "", "＞사락/＞무언가가 떨어졌다"
 							CALL MESSAGE_WINDOW_D, "", "＞이 책자는…… 취급설명서인가？"
 							CALL MESSAGE_WINDOW_D, "", "＞오브젝트　SCP-191　가 동료마가 되었다"
-							CALL ADD_NEW_COMPANION,[[キャラ:SCP-191]],0
+							CALL ADD_NEW_COMPANION,[[캐릭터:SCP-191]],0
 							SIF RESULT == 1
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 							던전플래그:27:12 = 1
@@ -738,12 +738,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 3
 ;=======
 ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 6
 	;水族館を見たあと、土産物屋に行っていない、かつ현Mが1
-	IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2 && FLAG:현M == 1
+	IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2 && FLAG:현M == 1
 		CALL MESSAGE_WINDOW_D, "카렌", "히카리 쨩……"
 		CALL MESSAGE_WINDOW_D, "히카리", "……죄송합니다, 카렌, 기념품점도 신경쓰이는 모양이예요/이 층 어딘가에 있을 거라고 생각합니다"
 		FLAG:현Y = 5
 	;土産物屋を見たあと、展望台に行っていない、かつ현Mが2
-	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2 && FLAG:현M == 2
+	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2 && FLAG:현M == 2
 		CALL MESSAGE_WINDOW_D, "카렌", "전망대……"
 		CALL MESSAGE_WINDOW_D, "히카리", "그런 표정으로 보지 마"
 		FLAG:현X = 3
@@ -754,17 +754,17 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 6
 
 ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 7
 	;水族館を見たあと、土産物屋に行っていない、かつ현Mが1
-	IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2 && FLAG:현M == 1
+	IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2 && FLAG:현M == 1
 		CALL MESSAGE_WINDOW_D, "카렌", "히카리 쨔앙……"
 		CALL MESSAGE_WINDOW_D, "히카리", "……죄송합니다, 일단, 기념품 가게도/이 층 어딘가에 있으리라 생각합니다"
 		FLAG:현Y = 5
 	;土産物屋を見たあと、展望台に行っていない、かつ현Mが1
-	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2 && FLAG:현M == 1
+	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2 && FLAG:현M == 1
 		CALL MESSAGE_WINDOW_D, "카렌", "전망대……"
 		CALL MESSAGE_WINDOW_D, "히카리", "그런 표정으로 보지 마"
 		FLAG:현X = 6
 	;土産物屋を見たあと、展望台に行っていない、かつ현Mが2
-	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2 && FLAG:현M == 2
+	ELSEIF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2 && FLAG:현M == 2
 		CALL MESSAGE_WINDOW_D, "카렌", "전망대……"
 		CALL MESSAGE_WINDOW_D, "히카리", "그런 표정으로 보지 마"
 		FLAG:현Y = 3
@@ -824,7 +824,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 		CASE 100
 			;クリアフラグが立っていて、かつ、かれひかセット
 			;かれひか観光フラグㆍ水族館が立ってない
-			IF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			IF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "", "＞도쿄 타워 수족관……이라는 간판은 있다"
 				CALL MESSAGE_WINDOW_D, "카렌", "여기, 가？"
 				CALL MESSAGE_WINDOW_D, "", "＞하지만, 그곳은 깜깜하다/＞공기조절기가 멈춘 듯한 그곳은 먼지투성이었고, 왠지 모르게 비린내가 난다/＞죽은 듯한 공기가, 가득 감돌고 있었다"
@@ -851,13 +851,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:현X = 3
 				FLAG:현Y = 1
 				
-			ELSEIF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2
+			ELSEIF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2
 				CALL MESSAGE_WINDOW_D, "", "＞도쿄타워 수족관…… 이라는 간판은 있다"
 				CALL MESSAGE_WINDOW_D, "카렌", "모, 못 들어가겠어……"
 				CALL MESSAGE_WINDOW_D, "", "＞하지만, 오늘따라 대량의 악마가 모여있다/＞이것을 뚫는 건 어렵다……"
 				FLAG:현X = 3
 				FLAG:현Y = 1
-			ELSEIF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF GETBIT(던전플래그:27:13,1) == 0 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "", "＞도쿄타워 수족관…… 이라는 간판은 있다"
 				CALL MESSAGE_WINDOW_D, "히카리", "……안 보여"
 				CALL MESSAGE_WINDOW_D, "", "＞하지만, 오늘따라 대량의 악마가 모여있다/＞이것을 뚫는 건 어렵다……"
@@ -869,7 +869,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 		CASE 101
 			;クリアフラグが立っていて、かつ、かれひかセット
 			;かれひか観光フラグㆍ水族館が立っていて、観光フラグㆍ売店が立ってない
-			IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			IF GETBIT(던전플래그:27:13,2) == 0 && GETBIT(던전플래그:27:13,1) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "잭프로스트", "히ー호ー！　도쿄 타워 기념품은 어때！/오늘이라면 이……어라？　왠지 분위기 어둡네？　왜 그래？"
 				CALL MESSAGE_WINDOW_D, "", "＞점원놀이하고 있는 잭프로스트가,/＞인상을 쓰며, 아이죠 카렌을 올려다보고 있다"
 				CALL MESSAGE_WINDOW_D, "카렌", "아, 히ー호ー 군이다/여긴……？"
@@ -1216,7 +1216,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			
 		;メインデッキ
 		CASE 200
-			IF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			IF GETBIT(던전플래그:27:13,3) == 0 && GETBIT(던전플래그:27:13,2) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "", "＞전망대에서 바라보면, 도쿄의 경치가 멀리까지 보였다/＞당신에게 있어서는 익숙한, 빛바랜, 어둡고 잠긴 마의 도시다"
 				;朝
 				IF TIME == 0
@@ -1279,12 +1279,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL MESSAGE_WINDOW_D, "마녀", "사람 돕는 김에, 이 근처 정리하는 거 도와주지 않을래？/안돼？　아, 그래"
 				RETURN 1
 			;かれひか東京タワー観光済み＆魔女を助けてる
-			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 11 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 11 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "마녀", "너희들, 정말 도쿄 타워 좋아하네/같이 살지 그래？　방, 비어있어"
 				CALL MESSAGE_WINDOW_D, "히카리", "그만둬주세요, 진심이 되어버리는 아이가 있으므로"
 				RETURN 1
 			;かれひか東京タワー観光中＆魔女を助けてる
-			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 11 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 11 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "마녀", "아ー？　왠지 처음 보는 애가 있네, 신참 악마？"
 				CALL MESSAGE_WINDOW_D, "히카리", "……비슷한 겁니다/실례하겠습니다, 방해해서 죄송합니다"
 				CALL MESSAGE_WINDOW_D, "마녀", "네 괜찮습니다아, 나쁜 짓 안 한다면, 나름대로 환영할게"
@@ -1322,13 +1322,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL MESSAGE_WINDOW_D, "", "여기에는 이제 피얼룩밖에 없다"
 				RETURN 1
 			;かれひか東京タワー観光済み＆メシア教の의뢰を受けた
-			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 13 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 13 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "카즈펠", "무대, 무대인가/나도 뭔가, 즉흥극 같은 걸 방송해볼까……？"
 				CALL MESSAGE_WINDOW_D, "카렌", "굿굿이예요！/천사 님, 좋은 목소리이신걸요！　분명 좋은 무대가 될거예요！"
 			
 				RETURN 1
 			;かれひか東京タワー観光中＆メシア教の의뢰を受けた
-			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 13 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 13 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "카즈펠", "아아, 팬텀의 서머너씨. 전번에는 고마웠습니다./이쪽의 귀여우신 분들은？/보아하니…… 굉장히 화려한 모습입니다만"
 				CALL MESSAGE_WINDOW_D, "", "＞어떤 상상을 하고 있는지, 가즈펠은 그 아름다운 눈썹을 분노의 형태로 일그러뜨렸다"
 				CALL MESSAGE_WINDOW_D, "카렌", "처음 뵙겠습니다, 아이죠 카렌입니다！/당신은, 그게…… 천사님？/이야기는 듣고 있습니다！"
@@ -1360,12 +1360,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				RETURN 1
 				
 			;かれひか東京タワー観光済み＆ファントムが占領
-			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 13 && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF GETBIT(던전플래그:27:13,4) && 던전플래그:(FLAG:현던전):11 == 13 && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "팬텀 구성원", "앗, 쟤가 예의 무대소녀입니까？/헤에, 확실히 귀여운 얼굴이야/그쪽에 놔두기에는 아깝다고나 할까 적임이라고나 할까……"
 			
 				RETURN 1
 			;かれひか東京タワー観光中＆ファントムが占領
-			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 14 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[キャラ:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[キャラ:히카리]]) == 2
+			ELSEIF (GETBIT(던전플래그:27:13,4) == 0) && 던전플래그:(FLAG:현던전):11 == 14 && GETBIT(던전플래그:27:13,3) && 던전플래그:27:1 && FINDCHARA_B([[캐릭터:카렌（무대소녀）]]) == 2 && FINDCHARA_B([[캐릭터:히카리]]) == 2
 				CALL MESSAGE_WINDOW_D, "팬텀 구성원", "앗, 쟤가 예의 무대소녀입니까？/헤에, 확실히 귀여운 얼굴이야/그쪽에 놔두기에는 아깝다고나 할까 적임이라고나 할까……"
 			
 				;連続イベントが終了したので토라에스트解禁
@@ -1410,7 +1410,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:도쿄타워의마녀]],42,0,1
+					CALL SET_ENEMY,9,[[캐릭터:도쿄타워의마녀]],42,0,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 					
@@ -1447,7 +1447,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					CALL MESSAGE_WINDOW_D, "마녀", "지키지 않으면, 안됐는데"
 					CALL MESSAGE_WINDOW_D, "", "/＞초인 도쿄 타워의 마녀는 힘이 다했다/" , , , , , , , , , "CENTER"
 					
-					CALL ADD_NEW_COMPANION,[[キャラ:도쿄타워의마녀]],0
+					CALL ADD_NEW_COMPANION,[[캐릭터:도쿄타워의마녀]],0
 					
 					CALL MESSAGE_WINDOW_D, "","＞당신은 마녀의 시체를 자루에 담았다/＞소생시킨다면 쓸모는 얼마든지 있을 것이다"
 					CALL MESSAGE_WINDOW_D, "","＞노예　도쿄 타워의 마녀를 손에 넣었다"
@@ -1488,7 +1488,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:도쿄타워의마녀]],42,0,1
+					CALL SET_ENEMY,9,[[캐릭터:도쿄타워의마녀]],42,0,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 					
@@ -1530,7 +1530,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					CALL MESSAGE_WINDOW_D, "마녀", "지키지 않으면, 안됐는데"
 					CALL MESSAGE_WINDOW_D, "", "/＞초인 도쿄 타워의 마녀는 힘을 다했다/" , , , , , , , , , "CENTER"
 					
-					CALL ADD_NEW_COMPANION,[[キャラ:도쿄타워의마녀]],0
+					CALL ADD_NEW_COMPANION,[[캐릭터:도쿄타워의마녀]],0
 					
 					CALL MESSAGE_WINDOW_D, "","＞이정도라면 도반옥으로 되살아난다/＞당신은 마녀의 시체를 자루에 담았다"
 					CALL MESSAGE_WINDOW_D, "","＞노예　도쿄 타워의 마녀를 손에 넣었다"
@@ -1663,7 +1663,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:카즈펠]],42,0,1
+				CALL SET_ENEMY,9,[[캐릭터:카즈펠]],42,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 2250
 				
@@ -1692,7 +1692,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:선제기습취소 = 0
 				
 				;カズフェル合体開放。
-				FLAG:(10000 + [[キャラ:카즈펠]]) = 1
+				FLAG:(10000 + [[캐릭터:카즈펠]]) = 1
 				
 				CALL MESSAGE_WINDOW_D, "카즈펠", "어, 어째서？/나에게는 아직 해야 할 일이……/＞사람들을, 천년왕국으로 이끌어야 하는데！"
 				CALL MESSAGE_WINDOW_D, "", "＞쓰러진 카즈펠이 인간의 모습으로 돌아가 있다……/＞보기에도 중태다/＞이대로 내버려두면 어느쪽이든지 죽을 것이다"
@@ -1714,7 +1714,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					CALL MESSAGE_WINDOW_D, "", "＞당신은 꼼짝 못하게 된 가즈펠에게 재갈을 물리고/＞묶어서 시체자루에 집어넣었다"
 					CALL MESSAGE_WINDOW_D, "","＞노예　카즈펠을 손에 넣었다"
 					
-					CALL ADD_NEW_COMPANION, [[キャラ:교도카즈펠]],0
+					CALL ADD_NEW_COMPANION, [[캐릭터:교도카즈펠]],0
 					IF RESULT == 1
 						;かつてはここに何やかんやする処理があった
 						;痕跡だけ残す
@@ -1858,57 +1858,57 @@ SELECTCASE FLAG:현M
 				CASE IS < 20
 					;20%で
 					;RETURN [登場악마のキャラ番号], LV　となっています
-					RETURN [[キャラ:프린시펄리티]],28
+					RETURN [[캐릭터:프린시펄리티]],28
 				CASE IS < 35
 					;15%で
-					RETURN [[キャラ:아크엔젤]],28
+					RETURN [[캐릭터:아크엔젤]],28
 				CASE IS < 50
 					;15%で
-					RETURN [[キャラ:파워]],31
+					RETURN [[캐릭터:파워]],31
 				CASE IS < 65
 					;15%で
-					RETURN [[キャラ:홀리고스트]],26
+					RETURN [[캐릭터:홀리고스트]],26
 				CASE IS < 74
 					;9%で
-					RETURN [[キャラ:파워]],34
+					RETURN [[캐릭터:파워]],34
 				CASE IS < 83
 					;9%で
-					RETURN [[キャラ:메이거스]],30
+					RETURN [[캐릭터:메이거스]],30
 				CASE IS < 92
 					;9%で
-					RETURN [[キャラ:듀나미스]],31
+					RETURN [[캐릭터:듀나미스]],31
 				CASE IS < 100
 					;8%で
-					RETURN [[キャラ:템플나이트]],28
+					RETURN [[캐릭터:템플나이트]],28
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 20
 					;20%で
 					;RETURN [登場악마のキャラ番号], LV　となっています
-					RETURN [[キャラ:엘프]],27
+					RETURN [[캐릭터:엘프]],27
 				CASE IS < 35
 					;15%で
-					RETURN [[キャラ:밴시]],27
+					RETURN [[캐릭터:밴시]],27
 				CASE IS < 50
 					;15%で
-					RETURN [[キャラ:포르투나]],27
+					RETURN [[캐릭터:포르투나]],27
 				CASE IS < 65
 					;15%で
-					RETURN [[キャラ:뮤턴트]],29
+					RETURN [[캐릭터:뮤턴트]],29
 				CASE IS < 74
 					;9%で
-					RETURN [[キャラ:사라시나히메]],28
+					RETURN [[캐릭터:사라시나히메]],28
 				CASE IS < 83
 					;9%で
-					RETURN [[キャラ:고르곤]],29
+					RETURN [[캐릭터:고르곤]],29
 				CASE IS < 92
 					;9%で
 					;こんなところで湧いて来るなと言われればその通りだ……
-					RETURN [[キャラ:오르트로스]],30
+					RETURN [[캐릭터:오르트로스]],30
 				CASE IS < 100
 					;8%で
-					RETURN [[キャラ:웬디고]],28
+					RETURN [[캐릭터:웬디고]],28
 			ENDSELECT
 		ENDIF
 	CASE 2 , 3
@@ -1918,91 +1918,91 @@ SELECTCASE FLAG:현M
 				CASE IS < 20
 					;20%で
 					;RETURN [登場악마のキャラ番号], LV　となっています
-					RETURN [[キャラ:프린시펄리티]],28
+					RETURN [[캐릭터:프린시펄리티]],28
 				CASE IS < 35
 					;15%で
-					RETURN [[キャラ:아크엔젤]],28
+					RETURN [[캐릭터:아크엔젤]],28
 				CASE IS < 50
 					;15%で
-					RETURN [[キャラ:파워]],31
+					RETURN [[캐릭터:파워]],31
 				CASE IS < 65
 					;15%で
-					RETURN [[キャラ:홀리고스트]],26
+					RETURN [[캐릭터:홀리고스트]],26
 				CASE IS < 74
 					;9%で
-					RETURN [[キャラ:파워]],34
+					RETURN [[캐릭터:파워]],34
 				CASE IS < 83
 					;9%で
-					RETURN [[キャラ:메이거스]],30
+					RETURN [[캐릭터:메이거스]],30
 				CASE IS < 92
 					;9%で
-					RETURN [[キャラ:듀나미스]],31
+					RETURN [[캐릭터:듀나미스]],31
 				CASE IS < 100
 					;8%で
-					RETURN [[キャラ:템플나이트]],28
+					RETURN [[캐릭터:템플나이트]],28
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 20
 					;20%で
 					;RETURN [登場악마のキャラ番号], LV　となっています
-					RETURN [[キャラ:엘프]],27
+					RETURN [[캐릭터:엘프]],27
 				CASE IS < 35
 					;15%で
-					RETURN [[キャラ:밴시]],27
+					RETURN [[캐릭터:밴시]],27
 				CASE IS < 50
 					;15%で
-					RETURN [[キャラ:포르투나]],26
+					RETURN [[캐릭터:포르투나]],26
 				CASE IS < 65
 					;15%で
-					RETURN [[キャラ:뮤턴트]],29
+					RETURN [[캐릭터:뮤턴트]],29
 				CASE IS < 74
 					;9%で
-					RETURN [[キャラ:사라시나히메]],28
+					RETURN [[캐릭터:사라시나히메]],28
 				CASE IS < 83
 					;9%で
-					RETURN [[キャラ:고르곤]],29
+					RETURN [[캐릭터:고르곤]],29
 				CASE IS < 92
 					;9%で
 					;こんなところで湧いて来るなと言われればその通りだ……
-					RETURN [[キャラ:오르트로스]],30
+					RETURN [[캐릭터:오르트로스]],30
 				CASE IS < 100
 					;8%で
-					RETURN [[キャラ:웬디고]],28
+					RETURN [[캐릭터:웬디고]],28
 			ENDSELECT
 		ENDIF
 	CASE 4
 		SELECTCASE RAND:100
 			CASE IS < 10
 				;10%で픽시랭크１
-				RETURN [[キャラ:픽시]],7
+				RETURN [[캐릭터:픽시]],7
 			CASE IS < 20
 				;10%で하피랭크１
-				RETURN [[キャラ:하피]],7
+				RETURN [[캐릭터:하피]],7
 			CASE IS < 30
 				;10%で좀비쨩랭크１
-				RETURN [[キャラ:좀비쨩]],7
+				RETURN [[캐릭터:좀비쨩]],7
 			CASE IS < 40
 				;10%で아프사라스랭크1
-				RETURN [[キャラ:아프사라스]],7
+				RETURN [[캐릭터:아프사라스]],7
 			CASE IS < 50
 				;10%で픽시랭크２
-				RETURN [[キャラ:픽시]],9
+				RETURN [[캐릭터:픽시]],9
 			CASE IS < 60
 				;10%で춍춍랭크１
-				RETURN [[キャラ:춍춍]],7
+				RETURN [[캐릭터:춍춍]],7
 			CASE IS < 70
 				;10%で노커랭크1
-				RETURN [[キャラ:노커]],7
+				RETURN [[캐릭터:노커]],7
 			CASE IS < 80
 				;10%で좀비군
-				RETURN [[キャラ:좀비군]],7
+				RETURN [[캐릭터:좀비군]],7
 			CASE IS < 90
 				;10%で코볼트
-				RETURN [[キャラ:코볼트]],7
+				RETURN [[캐릭터:코볼트]],7
 			CASE IS < 100
 				;10%で화백
-				RETURN [[キャラ:화백]],7
+				RETURN [[캐릭터:화백]],7
 		ENDSELECT
 ENDSELECT
 
@@ -2146,11 +2146,11 @@ RETURN -1
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:엘프]] , 3 + RAND:10 , CSVBASE([[キャラ:엘프]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:엘프]] , 3 + RAND:10 , CSVBASE([[캐릭터:엘프]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:고르곤]] , 3 + RAND:10 , CSVBASE([[キャラ:고르곤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:고르곤]] , 3 + RAND:10 , CSVBASE([[캐릭터:고르곤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:오르트로스]] , 3 + RAND:10 , CSVBASE([[キャラ:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오르트로스]] , 3 + RAND:10 , CSVBASE([[캐릭터:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 ;=======================================================================
@@ -2158,7 +2158,7 @@ ENDSELECT
 ;=======================================================================
 @EVENT_BATTLE_ACTEND_DUNGEON27
 ;東京タワーの魔女はHP50％未満でミサイルをﾌﾞｯﾊﾟするように
-IF NO:(CHARANUM-1) == [[キャラ:도쿄타워의마녀]] && ABL:(CHARANUM-1):스킬7 != 0 && 현HP비율(CHARANUM-1) < 50
+IF NO:(CHARANUM-1) == [[캐릭터:도쿄타워의마녀]] && ABL:(CHARANUM-1):스킬7 != 0 && 현HP비율(CHARANUM-1) < 50
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃날아가더라도, 원망하지 마　　　　　　　　┃
@@ -2171,7 +2171,7 @@ IF NO:(CHARANUM-1) == [[キャラ:도쿄타워의마녀]] && ABL:(CHARANUM-1):�
 	ABL:(CHARANUM-1):스킬7 = 0
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 ;カズフェルはHP50％未満で行動変化
-ELSEIF NO:(CHARANUM-1) == [[キャラ:카즈펠]] && ABL:(CHARANUM-1):스킬4 != [[스킬:유혹의안개]] && 현HP비율(CHARANUM-1) < 50
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:카즈펠]] && ABL:(CHARANUM-1):스킬4 != [[스킬:유혹의안개]] && 현HP비율(CHARANUM-1) < 50
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃어리석도다, 데빌ㆍ서머너！　　　　　　　　┃
@@ -2182,7 +2182,7 @@ ELSEIF NO:(CHARANUM-1) == [[キャラ:카즈펠]] && ABL:(CHARANUM-1):스킬4 !=
 	ABL:(CHARANUM-1):스킬4 = [[스킬:유혹의안개]]
 	
 ;カズフェルはHP15％未満で発狂
-ELSEIF NO:(CHARANUM-1) == [[キャラ:카즈펠]] && ABL:(CHARANUM-1):스킬1 != [[스킬:회전설법]] && 현HP비율(CHARANUM-1) < 15
+ELSEIF NO:(CHARANUM-1) == [[캐릭터:카즈펠]] && ABL:(CHARANUM-1):스킬1 != [[스킬:회전설법]] && 현HP비율(CHARANUM-1) < 15
 	PRINTFORML 
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃어째서, 어째서 날을 들이대는 겁니까……！？　　　　　┃

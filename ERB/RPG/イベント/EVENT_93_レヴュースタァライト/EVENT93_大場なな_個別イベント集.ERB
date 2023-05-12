@@ -56,7 +56,7 @@
 @EVENT_93_大場なな_02
 LOADGLOBAL
 
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 ;２周눈（こっちを認識してない）
 IF 다이바나나의기억_L:0:1 == 1
 	CUSTOMDRAWLINE =
@@ -156,17 +156,17 @@ ELSE
 			PRINTW 「서머너씨…… 응응, 멋있어♪
 			PRINTW 　좋겠네에, 악마 소환사인가. 살짝 텐션 오를지도.
 			PRINTW 　서머너씨, 잘 부탁드립니다아♪」
-			LOCAL = GETCHARA([[キャラ:나나]])
+			LOCAL = GETCHARA([[캐릭터:나나]])
 			CSTR:LOCAL:이인칭 = 서머너씨
 		ELSEIF RESULT == 0
 			PRINTW 「팬텀 씨…… 응응, 멋있어！
 			PRINTW 　왠지 오페라의 유령 같아. 그럼, 우리들은 크리스틴인가？
 			PRINTW 　팬텀 씨, 잘 부탁드립니다아♪」
-			LOCAL = GETCHARA([[キャラ:나나]])
+			LOCAL = GETCHARA([[캐릭터:나나]])
 			CSTR:LOCAL:이인칭 = 팬텀 씨
 		ELSEIF RESULT == 2
 			PRINTW 「어라, 의외로 서민적이구나.
-			LOCAL = GETCHARA([[キャラ:나나]])
+			LOCAL = GETCHARA([[캐릭터:나나]])
 			IF TALENT:MASTER:남자
 				PRINTW 　그럼 오빠, 잘 부탁드립니다아♪」	   
 				CSTR:LOCAL:이인칭 = 오빠
@@ -178,7 +178,7 @@ ELSE
 			$MASTER_INPUT_LOOP
 			PRINTL 뭐라고 불릴까?
 			INPUTS
-			LOCAL = GETCHARA([[キャラ:나나]])
+			LOCAL = GETCHARA([[캐릭터:나나]])
 			IF CSTR:LOCAL:이인칭 == ""
 				CSTR:LOCAL:이인칭 = 팬텀 씨
 			ELSE
@@ -259,27 +259,27 @@ CALL EVENT_93_TURN_END
 LOADGLOBAL
 CUSTOMDRAWLINE =
 PRINTL
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 
 ;誰かが欠けている（舞台소녀9人未満）
 IF 舞台少女の人数 < 9
 		PRINTW 「――아아.
-	SIF GETCHARA([[キャラ:카렌（무대소녀）]]) < 1
+	SIF GETCHARA([[캐릭터:카렌（무대소녀）]]) < 1
 		PRINTW 　언제나 활기차고, 미소가 멋진, 카렌 쨩.
-	SIF GETCHARA([[キャラ:히카리]]) < 1
+	SIF GETCHARA([[캐릭터:히카리]]) < 1
 		PRINTW 　차분하지만, 아이처럼 귀여운, 히카리 쨩.
 	;ほかの子とは(n)年も一緒にいたけど、ひかりちゃんだけは、まだ1年も過ごしていないので
-	SIF GETCHARA([[キャラ:마히루]]) < 1
+	SIF GETCHARA([[캐릭터:마히루]]) < 1
 		PRINTW 　언제나 상냥하고 밝으며, 부드럽게 미소짓는, 마히루 쨩.
-	SIF GETCHARA([[キャラ:후타바（무대소녀）]]) < 1
+	SIF GETCHARA([[캐릭터:후타바（무대소녀）]]) < 1
 		PRINTW 　언제나 시원시원하고, 보고 있으면 기운이 나는, 후타바 쨩.
-	SIF GETCHARA([[キャラ:카오루코]]) < 1
+	SIF GETCHARA([[캐릭터:카오루코]]) < 1
 		PRINTW 　언제나 좋은 향기가 나고, 그렇지만 지기는 싫어하는, 카오루코 쨩.
-	SIF GETCHARA([[キャラ:클로딘]]) < 1
+	SIF GETCHARA([[캐릭터:클로딘]]) < 1
 		PRINTW 　언제나 반짝반짝거리고, 어떤 때라도 멋있는 클로 쨩.
-	SIF GETCHARA([[キャラ:마야（무대소녀）]]) < 1
+	SIF GETCHARA([[캐릭터:마야（무대소녀）]]) < 1
 		PRINTW 　언제나 가슴을 펴고, 어떤 때라도, 자기를 굽히지 않았던 마야 쨩.
-	SIF GETCHARA([[キャラ:쥰나]]) < 1
+	SIF GETCHARA([[캐릭터:쥰나]]) < 1
 		PRINTW 　언제나 성실하고 노력파에다, 모두를 이끌어주는 쥰나 쨩.
 	;四人以上欠けてる
 	IF 舞台少女の人数 < 6
@@ -305,7 +305,7 @@ IF 舞台少女の人数 < 9
 	PRINTW 그녀는 당신을 보지 않는다.
 	PRINTW 다만, 차가운 무대 위에서 변함없이 우뚝 선, 탑의 정상을 바라보고 있었다.
 	PRINTL 
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	;１周눈（大場消滅）
 	IF 다이바나나의기억_L:0:1 < 1
 		PRINTW 「모두를 지키고 싶었어, 나만큼은 얼마나 더럽혀지더라도,
@@ -355,7 +355,7 @@ IF 舞台少女の人数 < 9
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 		DELCHARA LOCAL
 		
 		PRINTL 
@@ -424,7 +424,7 @@ IF 舞台少女の人数 < 9
 	ENDIF
 ;上司全自動オコトワリフラグが立った
 ELSEIF 다이바나나의기억:0:5
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 「에헤헤, 기다렸어요♪」
 	PRINTL
 	PRINTW 지하극장의 관객석에서, 다이바 나나는 생긋 웃고 있었다.
@@ -445,7 +445,7 @@ PRINTFORMW 「%CSTR:LOCAL:이인칭%, 함께 힘내자,
 	PRINTL
 ;でぇばの認識後推しに選んだ
 ELSEIF 다이바나나의기억_L:0:1 > 2
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 「――미안, 여기에 있으면, 당신이 와줄 거라고 생각했어」
 	PRINTL
 	PRINTW 지하극장의 관객석에서, 다이바 나나는 쓸쓸하게 웃고 있었다.
@@ -598,7 +598,7 @@ ELSEIF 다이바나나의기억_L:0:1 > 2
 
 ;3周눈以降
 ELSEIF 다이바나나의기억_L:0:1 > 1
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 「……다시, 모두가 모였어. 이번에는 실패하지 않았어.
 	PRINTW 　하지만, 이제부터는? 나는 도대체 어떻게 하면, 어떻게 하면 그 아이들을……」
 	PRINTL
@@ -649,7 +649,7 @@ PRINTFORMW 「아, %CSTR:LOCAL:이인칭%다. 수고 많으십니다♪
 	ENDIF
 ;2周눈（こっちを認識したら3周눈ばななへ
 ELSEIF 다이바나나의기억_L:0:0 > 0 && 다이바나나의기억_L:0:1 < 2
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 「……역시, 아무도, 알아차리지 못했어.
 	PRINTW 　나만이.
 	PRINTW 　나만이, 앞으로 있을 일을, 희미하게나마 알아차리고 있어.」
@@ -945,7 +945,7 @@ PRINTFORMW 「아, %CSTR:LOCAL:이인칭%다. 수고하십니다♪
 	ENDIF
 ;1周눈
 ELSE
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 「이걸로 전원……이네요」			  
 	PRINTL
 	PRINTW 2층석의 난간에 기대어, 막이 내려진 무대를, 눈을 가늘게 뜬 채 바라보는 소녀가 있었다.
@@ -1089,7 +1089,7 @@ ELSE
 		PRINTL
 		PRINTW 나나는 쓴웃음을 지었다.
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 		IF TALENT:LOCAL:연모 || TALENT:LOCAL:친애
 			PRINTW 「아아, 나의 밥은, 그렇게나 맛있게 먹으면서어？
 			PRINTW 　내가 이런 표정을 하고 있어도, 당신은 조금도 마음이 움직이지 않는구나.
@@ -2202,7 +2202,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%」
 						다이바나나의기억:0:4 = 1
 					ENDIF
 					SAVEGLOBAL
-					LOCAL:0 = GETCHARA([[キャラ:나나]])
+					LOCAL:0 = GETCHARA([[캐릭터:나나]])
 					;アライメントをLに
 					CFLAG:(LOCAL:0):선악치 = 256
 					PRINTL
@@ -2267,7 +2267,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%」
 					PRINTW 「으읏, 나나――！」
 					PRINTL 
 					PRINTW 바람을 가르는 소리. 심한 충격이 머리에 가해진다. 휘둘러진 쥰나의 활이 일그러진 시야의 구석에 비추어졌다.
-					LOCAL:0 = GETCHARA([[キャラ:쥰나]])
+					LOCAL:0 = GETCHARA([[캐릭터:쥰나]])
 					IF BASE:MASTER:LV < BASE:LOCAL:LV
 						PRINTW 쥰나는 당신보다 강하다―― 무방비한 채로 맞아버린 당신은 쓰레기처럼 날아, 벽을 뚫고 옆방까지 날려갔다.
 					ELSEIF BASE:MASTER:LV == BASE:LOCAL:LV
@@ -2280,7 +2280,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%」
 					PRINTL 
 					PRINTW 「나나！　나나！　괜찮아！？　이렇게 벗겨져서는……！」
 					PRINTW 「아, 아니야, 쥰나 쨩, 아냐……」
-					LOCAL:0 = GETCHARA([[キャラ:쥰나]])
+					LOCAL:0 = GETCHARA([[캐릭터:쥰나]])
 					IF TALENT:LOCAL:신뢰 || TALENT:LOCAL:동료
 					PRINTFORMW 「%CSTR:LOCAL:이인칭%, 저, 당신을 잘못 보았어요.
 						PRINTW 　다가오지 마세요.
@@ -2598,7 +2598,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%」
 					ENDIF
 					SAVEGLOBAL
 					
-					LOCAL:0 = GETCHARA([[キャラ:나나]])
+					LOCAL:0 = GETCHARA([[캐릭터:나나]])
 					;アライメントをLに
 					CFLAG:(LOCAL:0):선악치 = 256
 					PRINTL
@@ -2728,7 +2728,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%」
 					다이바나나의기억:0:4 = 1
 				ENDIF
 				
-				LOCAL:0 = GETCHARA([[キャラ:나나]])
+				LOCAL:0 = GETCHARA([[캐릭터:나나]])
 				;アライメントをLに
 				CFLAG:(LOCAL:0):선악치 = 256
 				PRINTL
@@ -3351,7 +3351,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%……？」
 		다이바나나의기억:0:4 = 1
 	ENDIF
 	SAVEGLOBAL
-	LOCAL:0 = GETCHARA([[キャラ:나나]])
+	LOCAL:0 = GETCHARA([[캐릭터:나나]])
 	;アライメントをLに
 	CFLAG:(LOCAL:0):선악치 = 256
 	PRINTL
@@ -3381,7 +3381,7 @@ PRINTFORMW 「%CSTR:(ARG:0):이인칭%……？」
 
 @EVENT_93_大場なな_04
 
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 
 PRINTW ――카메라의 셔터 소리.
 PRINTL 
@@ -3638,7 +3638,7 @@ CALL SYNC_STATUS, MASTER
 SETBIT 이벤트플래그:93:17, 3
 
 ;- SET:なな
-CALL SET_ENEMY,9,[[キャラ:나나]],999,1,99
+CALL SET_ENEMY,9,[[캐릭터:나나]],999,1,99
 CFLAG:(CHARANUM-1):행동횟수 = 7
 CFLAG:(CHARANUM-1):ＨＰ보정 += 99999
 CFLAG:(CHARANUM-1):ＭＰ보정 += 99999
@@ -3687,7 +3687,7 @@ FLAG:선제기습취소 = 1
 SETBIT 이벤트플래그:93:17, 4
 
 ;- SET:なな
-CALL SET_ENEMY,9,[[キャラ:나나]],999,1,99
+CALL SET_ENEMY,9,[[캐릭터:나나]],999,1,99
 CFLAG:(CHARANUM-1):행동횟수 = 7
 CFLAG:(CHARANUM-1):ＨＰ보정 += 99999
 CFLAG:(CHARANUM-1):ＭＰ보정 += 99999
@@ -3819,7 +3819,7 @@ PRINTL
 PRINTW 심한 악취와, 미지근한 바람을 맞으며, 호시미 쥰나는 하늘을 노려본다.
 PRINTW 마치 이물질을 배제하려는 듯, 수많은 악마가 적란운처럼 다가온다.
 PRINTL 
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 PRINTFORMW 「가주세요, “%CSTR:LOCAL:이인칭%”！
 PRINTW 　그 아이의 마음을 받아들일 수 있는 건, 분명, 그 아이를 사랑하였던 당신뿐일테니！」
 PRINTL 
@@ -3941,7 +3941,7 @@ NEXT
 ;SIF LOCAL:98 < 80
 	LOCAL:98 = 80
 
-CALL SET_ENEMY,9, [[キャラ:나나]], LOCAL:98, 1, 4
+CALL SET_ENEMY,9, [[캐릭터:나나]], LOCAL:98, 1, 4
 CFLAG:(CHARANUM-1):행동횟수 = 3
 CFLAG:(CHARANUM-1):ＭＰ보정 += 99999
 
@@ -4129,7 +4129,7 @@ CUSTOMDRAWLINE =
 	PRINTL 
 	PRINTW 빙글. 나나는 당신을 향해 돌아섰다.
 	PRINTL 
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 PRINTFORMW 「안녕, %CSTR:LOCAL:이인칭%」
 	PRINTL 
 	PRINTW ――안녕, 다이바 나나.
@@ -4258,7 +4258,7 @@ ENDIF
 @EVENT_BATTLE_TURNTOP_EVENT93_大場パワーアップイベント_大場セリフ
 
 ;大場がパーティ内に居る（戦闘が最終段階である）
-IF FINDCHARA_B([[キャラ:나나]]) == 2
+IF FINDCHARA_B([[캐릭터:나나]]) == 2
 	LOCAL = EVENT93_推しの位置取得()
 	;しなない
 	CFLAG:LOCAL:불사신플래그 = 1
@@ -4317,7 +4317,7 @@ ENDIF
 ;ENDIF
 
 ;大場がパーティ内に居る（戦闘が最終段階である）
-IF FINDCHARA_B([[キャラ:나나]]) == 2
+IF FINDCHARA_B([[캐릭터:나나]]) == 2
 	;大場が星のティアラを装備してたら毎ターンクライマックスレヴュー延長
 	IF EQUIP:(EVENT93_推しの位置取得()):악세서리 == [[아이템:별의티아라]]
 		CALL SKILLGAGE_D_SET, (EVENT93_推しの位置取得()), 3588, 999
@@ -4355,7 +4355,7 @@ IF BASE:MASTER:ＨＰ < 1
 ENDIF
 
 ;大場がパーティ内に居る（戦闘が最終段階である）
-IF FINDCHARA_B([[キャラ:나나]]) == 2
+IF FINDCHARA_B([[캐릭터:나나]]) == 2
 	;大場が星のティアラを装備してたら毎ターンクライマックスレヴュー延長
 	IF EQUIP:(EVENT93_推しの位置取得()):악세서리 == [[아이템:별의티아라]]
 		CALL SKILLGAGE_D_SET, (EVENT93_推しの位置取得()), 3588, 999
@@ -4818,7 +4818,7 @@ ELSEIF !GETBIT(이벤트플래그:93:17, 7) && 현HP비율(CHARANUM-1) < 25
 	PRINTL 
 	PRINTW 「이 세계에 대한 것도！　당신에 대한 것도！　내가 가장 잘 알고 있거든！
 	PRINTW 　싸우는 것도 자신 있어！　야한 짓도, 다른 누구보다 잘하는걸！
-LOCAL = GETCHARA([[キャラ:나나]])
+LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTW 　당신도 쥰나도 바보 취급하지 마앗！　나, 서투른 게, 아니니까아！」
 	PRINTL 
 	PRINTW 중학교 교복 차림을 한 채, 대태도 한 자루를 움켜쥔 다이바 나나가, 울음을 터뜨리며 화를 내고 있었다.
@@ -4902,7 +4902,7 @@ PRINTFORMW 「있지, %CSTR:LOCAL:이인칭%」
 		ENDIF
 	NEXT
 
-	LOCAL = GETCHARA([[キャラ:나나]])
+	LOCAL = GETCHARA([[캐릭터:나나]])
 	
 	;この段階で陥落していなかったら信頼を付与し出オチを防ぐ
 	SIF 함락(LOCAL) < 1
@@ -4917,7 +4917,7 @@ PRINTFORMW 「있지, %CSTR:LOCAL:이인칭%」
 	
 	CFLAG:LOCAL:링크악마 = -1
 	TALENT:LOCAL:데빌시프터 = 1
-	CFLAG:LOCAL:초기링크악마 = [[キャラ:『무대소녀』나나]]
+	CFLAG:LOCAL:초기링크악마 = [[캐릭터:『무대소녀』나나]]
 	ABL:LOCAL:초기링크악마공격상성 = 0
 	ABL:LOCAL:초기링크악마사거리 = 1
 	ABL:LOCAL:초기링크악마공격범위 = 1
@@ -5352,7 +5352,7 @@ ENDIF
 		;쇼우見にスタァライトされていたら強制的に星見ルート
 		;ほか、星見のレベルが大場以上、星見の歌唱技能が大場以上、星見の忠誠度が大場以上、星見が信頼陥落している、
 		;LOCAL = 0
-		;LOCAL:1 = GETCHARA([[キャラ:쥰나]])
+		;LOCAL:1 = GETCHARA([[캐릭터:쥰나]])
 		;LOCAL:2 = EVENT93_推しの位置取得()
 		;IF 다이바나나의기억:0:4 == 2
 		;	LOCAL = 1
@@ -5509,10 +5509,10 @@ IF DAY < 2 && TIME < 1
 
 ;一日目朝以外は大場の二人称と各舞台少女の陥落状態をただひたすら覚えておく
 ;大場がいる
-ELSEIF GETCHARA([[キャラ:나나]]) > -1
+ELSEIF GETCHARA([[캐릭터:나나]]) > -1
 	LOADGLOBAL
 	
-	LOCAL:1 = GETCHARA([[キャラ:나나]])
+	LOCAL:1 = GETCHARA([[캐릭터:나나]])
 	다이바나나의이인칭 = %CSTR:(LOCAL:1):이인칭%
 	
 	;各舞台少女の陥落状態
@@ -5520,23 +5520,23 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 	;こっちはアバウトに記録（最後に読んだセーブデータでころころ変わる）
 	FOR LOCAL:1, 1, 10
 		IF LOCAL:1 == 1
-			LOCAL:0 = GETCHARA([[キャラ:카렌（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:카렌（무대소녀）]])
 		ELSEIF LOCAL:1 == 2
-			LOCAL:0 = GETCHARA([[キャラ:히카리]])
+			LOCAL:0 = GETCHARA([[캐릭터:히카리]])
 		ELSEIF LOCAL:1 == 3
-			LOCAL:0 = GETCHARA([[キャラ:쥰나]])
+			LOCAL:0 = GETCHARA([[캐릭터:쥰나]])
 		ELSEIF LOCAL:1 == 4
-			LOCAL:0 = GETCHARA([[キャラ:마히루]])
+			LOCAL:0 = GETCHARA([[캐릭터:마히루]])
 		ELSEIF LOCAL:1 == 5
-			LOCAL:0 = GETCHARA([[キャラ:후타바（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:후타바（무대소녀）]])
 		ELSEIF LOCAL:1 == 6
-			LOCAL:0 = GETCHARA([[キャラ:카오루코]])
+			LOCAL:0 = GETCHARA([[캐릭터:카오루코]])
 		ELSEIF LOCAL:1 == 7
 			CONTINUE
 		ELSEIF LOCAL:1 == 8
-			LOCAL:0 = GETCHARA([[キャラ:마야（무대소녀）]])
+			LOCAL:0 = GETCHARA([[캐릭터:마야（무대소녀）]])
 		ELSEIF LOCAL:1 == 9
-			LOCAL:0 = GETCHARA([[キャラ:클로딘]])
+			LOCAL:0 = GETCHARA([[캐릭터:클로딘]])
 		ENDIF
 		;-1が帰って来た（存在しない）
 		IF LOCAL < 0
@@ -5588,7 +5588,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 	;以下記録作業
 	
 	;大場だけは細かく記録していくゾ
-	LOCAL:0 = GETCHARA([[キャラ:나나]])
+	LOCAL:0 = GETCHARA([[캐릭터:나나]])
 	
 	;崩壊していて崩壊の記録がない
 	IF TALENT:LOCAL:붕괴 && 다이바나나의기억_L:1:0 != 3 
@@ -5607,7 +5607,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 			RETURN
 		ENDIF
 
-		LOCAL:0 = GETCHARA([[キャラ:나나]])
+		LOCAL:0 = GETCHARA([[캐릭터:나나]])
 		;신뢰
 		IF TALENT:LOCAL:신뢰 || TALENT:LOCAL:동료
 			다이바나나의기억_L:1:0 = 4
@@ -5645,7 +5645,7 @@ ELSEIF GETCHARA([[キャラ:나나]]) > -1
 	
 	SAVEGLOBAL
 ;大場が２週目以降、認識後推しに選ぶ前で、かつ大場の記憶に崩壊が記録されておらず、かつ大場加入後にもかかわらず大場が居ない（売ったor消した）
-ELSEIF 다이바나나의기억:0:0 > 0 &&  다이바나나의기억:0:1 < 3 && 다이바나나의기억:1:0 != 3 && GETBIT(이벤트플래그:93:7,1) && GETCHARA([[キャラ:나나]]) < 0
+ELSEIF 다이바나나의기억:0:0 > 0 &&  다이바나나의기억:0:1 < 3 && 다이바나나의기억:1:0 != 3 && GETBIT(이벤트플래그:93:7,1) && GETCHARA([[캐릭터:나나]]) < 0
 	LOADGLOBAL
 	;後から崩壊したのと同じ判定
 	CALL EVENT_93_大場なな_後から崩壊した時の処理
@@ -5850,7 +5850,7 @@ IF 다이바나나의기억:0:1 > 1
 			
 		CFLAG:LOCAL:링크악마 = -1
 		TALENT:LOCAL:데빌시프터 = 1
-		CFLAG:LOCAL:초기링크악마 = [[キャラ:『무대소녀』나나]]
+		CFLAG:LOCAL:초기링크악마 = [[캐릭터:『무대소녀』나나]]
 		ABL:LOCAL:초기링크악마공격상성 = 0
 		ABL:LOCAL:초기링크악마사거리 = 1
 		ABL:LOCAL:초기링크악마공격범위 = 1

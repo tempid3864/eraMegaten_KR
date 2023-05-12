@@ -16,7 +16,7 @@
 @PLAYABLE_EVENT_90
 SIF !FLAG:나오야루트
 	RETURN 0
-SIF GETCHARA([[キャラ:아케미]]) < 0 || CFLAG:GETCHARA([[キャラ:아케미]]):전투참가불가능 == 1
+SIF GETCHARA([[캐릭터:아케미]]) < 0 || CFLAG:GETCHARA([[캐릭터:아케미]]):전투참가불가능 == 1
 	RETURN 0
 IF STRFLAG_D("미노타우로스격파", , [[던전:대마궁]]) && !STRFLAG_EV("아케미의조언", 0, 90)
 	IF !STRFLAG_D("메두사격파", , [[던전:대마궁]]) && !STRFLAG_D("로키격파", , [[던전:대마궁]])
@@ -34,12 +34,12 @@ IF ITEM:롤의부적 && !STRFLAG_EV("롤의부적", 0, 90)
 ENDIF
 IF STRFLAG_EV("롤의부적", 0, 90) && !STRFLAG_D("부적완성", , [[던전:대마궁]])
 	IF !STRFLAG_D("로키격파", , [[던전:대마궁]])
-		IF GETCHARA([[キャラ:헬]]) >= 0 && 함락(GETCHARA([[キャラ:헬]]))
+		IF GETCHARA([[캐릭터:헬]]) >= 0 && 함락(GETCHARA([[캐릭터:헬]]))
 			RESULTS = 부적 만들기
 			 이벤트플래그:90:0 = 3
 			RETURN 1
 		ENDIF
-		IF GETCHARA([[キャラ:펜리르]]) >= 0 && 함락(GETCHARA([[キャラ:펜리르]]))
+		IF GETCHARA([[캐릭터:펜리르]]) >= 0 && 함락(GETCHARA([[캐릭터:펜리르]]))
 			RESULTS = 부적 만들기
 			이벤트플래그:90:0 = 4
 			RETURN 1
@@ -180,7 +180,7 @@ SELECTCASE 이벤트플래그:90:0
 		PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")% 유미코를 받아들이기로 했다…
 		PRINTL 
 		PRINTW ＞시라사기 유미코를 손에 넣었다
-		CALL ADD_NEW_COMPANION, [[キャラ:유미코]], 1000
+		CALL ADD_NEW_COMPANION, [[캐릭터:유미코]], 1000
 		SIF RESULT == 1
 			CFLAG:(RESULT:1):전투참가불가능 = 0
 		CALLF STRFLAG_EV("유미코의결심", 1)

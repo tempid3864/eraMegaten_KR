@@ -569,11 +569,11 @@ SELECTCASE FLAG:현M
 	CASE 10 TO 14
 		SELECTCASE RAND:100
 			CASE IS < 40
-				RETURN [[キャラ:카라스텐구]], 30 + RAND:5
+				RETURN [[캐릭터:카라스텐구]], 30 + RAND:5
 			CASE IS < 70
-				RETURN [[キャラ:가샤도쿠로]], 35 + RAND:5
+				RETURN [[캐릭터:가샤도쿠로]], 35 + RAND:5
 			CASE IS < 100
-				RETURN [[キャラ:네비로스]], 40 + RAND:5
+				RETURN [[캐릭터:네비로스]], 40 + RAND:5
 		ENDSELECT
 ENDSELECT
 
@@ -581,21 +581,21 @@ ENDSELECT
 ;特殊調整
 ;=======================================================================
 @SET_ENEMY_STATUS_25, ARG
-SIF NO:ARG == [[キャラ:후지무스메]]
+SIF NO:ARG == [[캐릭터:후지무스메]]
 	ABL:ARG:스킬4 = 106
 IF NO:ARG == 1014
 	NAME:ARG = オボログルマ
 	CALLNAME:ARG = オボログルマ
-ELSEIF NO:ARG == [[キャラ:좀비아미]]
+ELSEIF NO:ARG == [[캐릭터:좀비아미]]
 	NAME:ARG = トゥルダク
 	CALLNAME:ARG = トゥルダク
-ELSEIF NO:ARG == [[キャラ:카라스텐구]]
+ELSEIF NO:ARG == [[캐릭터:카라스텐구]]
 	NAME:ARG = クラマテング
 	CALLNAME:ARG = クラマテング
-ELSEIF NO:ARG == [[キャラ:블랙맨]]
+ELSEIF NO:ARG == [[캐릭터:블랙맨]]
 	NAME:ARG = 赤マント
 	CALLNAME:ARG = 赤マント
-ELSEIF NO:ARG == [[キャラ:슬라임]]
+ELSEIF NO:ARG == [[캐릭터:슬라임]]
 	NAME:ARG = ヒルコ
 	CALLNAME:ARG = ヒルコ
 ENDIF	
@@ -978,7 +978,7 @@ IF FLAG:현X == 7 && FLAG:현Y == 11
 	CALL MESSAGE_WINDOW_D, "", @"＞이자나미는 그 자리에서 쓰러졌다/＞살갗이 찬 옷에서 들여다보이는 피부는 %CALLNAME:MASTER%의 정욕을 돋우기에는 충분했다/＞전설의 국모도 이렇게 되면 한낱 여자에 지나지 않는다"
 	CALL MESSAGE_WINDOW_D, "", "＞지모신 이자나미을 손에 넣었다"
 	;FLAG:10007 = 1
-	CALL LIFTING_A_BAN([[キャラ:이자나미]])
+	CALL LIFTING_A_BAN([[캐릭터:이자나미]])
 	CALL ADD_NEW_COMPANION,7,0,1
 	SIF FLAG:20007 < 100
 		FLAG:20007 = 100

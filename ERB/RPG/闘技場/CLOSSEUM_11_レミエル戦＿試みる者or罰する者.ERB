@@ -42,9 +42,9 @@ PRINTW 천사　레미엘이 1명 나타났다!
 CUSTOMDRAWLINE =
 WAIT
 IF 함락(GETCHARA(4513))
-	CALL SET_ENEMY,9,[[キャラ:레미엘]],CSVBASE([[キャラ:레미엘]],GETNUM(BASE,"LV"),0),0,1
+	CALL SET_ENEMY,9,[[캐릭터:레미엘]],CSVBASE([[캐릭터:레미엘]],GETNUM(BASE,"LV"),0),0,1
 ELSE
-	CALL SET_ENEMY,9,[[キャラ:레미엘]],CSVBASE([[キャラ:레미엘]],GETNUM(BASE,"LV"),0)+30,0,1
+	CALL SET_ENEMY,9,[[캐릭터:레미엘]],CSVBASE([[캐릭터:레미엘]],GETNUM(BASE,"LV"),0)+30,0,1
 	ABL:(CHARANUM-1):스킬1 = 2003
 ENDIF
 CALL BATTLE_START

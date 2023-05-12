@@ -649,10 +649,10 @@ L_USER = -1
 ;ARGSに応じて、攻撃者側か防御者側にいるスキル所有者の番号をL_USERに代入
 SELECTCASE ARGS
 	CASE "溜め攻撃処理","ターン終了時処理","ダメージ↑","戦闘終了時処理"
-		SIF NO:ARG == [[キャラ:덴게키코]]
+		SIF NO:ARG == [[캐릭터:덴게키코]]
 			L_USER = ARG
 	CASE "被ダメージ↓"
-		SIF NO:(ARG:1) == [[キャラ:덴게키코]]
+		SIF NO:(ARG:1) == [[캐릭터:덴게키코]]
 			L_USER = ARG:1
 ENDSELECT
 ;代入できず さらに ARGS が戦闘終了時処理でなければ終了

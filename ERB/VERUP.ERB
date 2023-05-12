@@ -239,54 +239,54 @@ IF LASTLOAD_VERSION < 0261
 	FOR LOCAL,0, CHARANUM
 		SIF TALENT:LOCAL:페르소나구사자 == 0
 			CONTINUE
-		SIF NO:LOCAL == [[キャラ:리세]]
+		SIF NO:LOCAL == [[캐릭터:리세]]
 			TALENT:LOCAL:페르소나구사자 = 2
-		IF NO:LOCAL == [[キャラ:아이기스]]
-			ABL:LOCAL:초기페르소나 = [[キャラ:팔라디온(페르소나)]]
+		IF NO:LOCAL == [[캐릭터:아이기스]]
+			ABL:LOCAL:초기페르소나 = [[캐릭터:팔라디온(페르소나)]]
 			TALENT:LOCAL:페르소나구사자 = 2
 		ENDIF
-		SIF NO:LOCAL == [[キャラ:P3남주인공]]
-			ABL:LOCAL:초기페르소나 = [[キャラ:오르페우스(페르소나)]]
-		SIF NO:LOCAL == [[キャラ:P3여주인공]]
-			ABL:LOCAL:초기페르소나 = [[キャラ:오르페우스(페르소나)]]
+		SIF NO:LOCAL == [[캐릭터:P3남주인공]]
+			ABL:LOCAL:초기페르소나 = [[캐릭터:오르페우스(페르소나)]]
+		SIF NO:LOCAL == [[캐릭터:P3여주인공]]
+			ABL:LOCAL:초기페르소나 = [[캐릭터:오르페우스(페르소나)]]
 		SELECTCASE ABL:LOCAL:초기페르소나
 			CASE 110
-				ABL:LOCAL:초기페르소나 = [[キャラ:베르단디(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:베르단디(페르소나)]]
 			CASE 211
-				ABL:LOCAL:초기페르소나 = [[キャラ:아에슈마2]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:아에슈마2]]
 			CASE 212
-				ABL:LOCAL:초기페르소나 = [[キャラ:아에슈마3]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:아에슈마3]]
 			CASE 320
-				ABL:LOCAL:초기페르소나 = [[キャラ:가브리엘(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:가브리엘(페르소나)]]
 			CASE 412
-				ABL:LOCAL:초기페르소나 = [[キャラ:파리카2]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:파리카2]]
 			CASE 413
-				ABL:LOCAL:초기페르소나 = [[キャラ:파리카3]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:파리카3]]
 			CASE 1510
-				ABL:LOCAL:초기페르소나 = [[キャラ:프레이아(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:프레이아(페르소나)]]
 			CASE 4051
-				ABL:LOCAL:초기페르소나 = [[キャラ:불카누스ㆍ개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:불카누스ㆍ개(페르소나)]]
 			CASE 4052
-				ABL:LOCAL:초기페르소나 = [[キャラ:아폴로(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:아폴로(페르소나)]]
 			CASE 4053
-				ABL:LOCAL:초기페르소나 = [[キャラ:에로스ㆍ개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:에로스ㆍ개(페르소나)]]
 			CASE 4054
-				ABL:LOCAL:초기페르소나 = [[キャラ:비너스(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:비너스(페르소나)]]
 			CASE 4055
-				ABL:LOCAL:초기페르소나 = [[キャラ:마이아ㆍ개(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:마이아ㆍ개(페르소나)]]
 			CASE 4056
-				ABL:LOCAL:초기페르소나 = [[キャラ:아르테미스(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:아르테미스(페르소나)]]
 			CASE 4057
-				ABL:LOCAL:초기페르소나 = [[キャラ:니알랏토텝(약)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:니알랏토텝(약)]]
 		ENDSELECT
 	NEXT
 	FOR LOCAL, 1, 11
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4051
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:불카누스ㆍ개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[캐릭터:불카누스ㆍ개(페르소나)]]
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4053
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:에로스ㆍ개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[캐릭터:에로스ㆍ개(페르소나)]]
 		SIF DITEMTYPE:LOCAL:페르소나("NO") == 4055
-			DITEMTYPE:LOCAL:페르소나("NO") = [[キャラ:마이아ㆍ개(페르소나)]]
+			DITEMTYPE:LOCAL:페르소나("NO") = [[캐릭터:마이아ㆍ개(페르소나)]]
 	NEXT
 ENDIF
 
@@ -349,9 +349,9 @@ IF LASTLOAD_VERSION < 0272
 		;☆리세、나오토の초기페르소나を변경
 		SELECTCASE NO:LOCAL
 			CASE 4531
-				ABL:LOCAL:초기페르소나 = [[キャラ:히미코(페르소나)]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:히미코(페르소나)]]
 			CASE 4541
-				ABL:LOCAL:초기페르소나 = [[キャラ:스쿠나히코나]]
+				ABL:LOCAL:초기페르소나 = [[캐릭터:스쿠나히코나]]
 				TALENT:LOCAL:페르소나구사자 = 2
 			;正規加入조건を満たしているものとして이벤트플래그추가
 			CASE 4501, 4502, 4503, 4508
@@ -361,9 +361,9 @@ IF LASTLOAD_VERSION < 0272
 ENDIF
 
 IF LASTLOAD_VERSION < 0274
-	LOCAL = GETCHARA([[キャラ:리세]])
+	LOCAL = GETCHARA([[캐릭터:리세]])
 	SIF LOCAL >= 0
-		ABL:LOCAL:초기페르소나 = [[キャラ:히미코(페르소나)]]
+		ABL:LOCAL:초기페르소나 = [[캐릭터:히미코(페르소나)]]
 	FOR LOCAL, 0, CHARANUM
 		IF TALENT:LOCAL:페르소나구사자
 			SIF EQUIP:LOCAL:소지페르소나1
@@ -632,7 +632,7 @@ IF LASTLOAD_VERSION < 0282
 	;유리코の番号변경
 	CALL CONVERT_CHARA_NO,663,424
 	FOR LOCAL, 0, CHARANUM
-		IF NO:LOCAL == [[キャラ:아마네]] || NO:LOCAL == [[キャラ:마인드아마네]]
+		IF NO:LOCAL == [[캐릭터:아마네]] || NO:LOCAL == [[캐릭터:마인드아마네]]
 			ABL:LOCAL:종족 = 0
 			BASE:LOCAL:CP = 0
 			FOR LOCAL:1, 0, FLAG:상성수
@@ -793,7 +793,7 @@ ENDIF
 IF LASTLOAD_VERSION < 0284
 	FOR LOCAL,0,CHARANUM
 		;코시로ちゃんの민속학습득処理
-		IF NO:LOCAL == [[キャラ:코시로]]
+		IF NO:LOCAL == [[캐릭터:코시로]]
 			ABL:LOCAL:인간시스킬1 = [[스킬:민속학]]
 			SIF CFLAG:LOCAL:악마변신 == 0
 				ABL:LOCAL:스킬1 = [[스킬:민속학]]
@@ -803,7 +803,7 @@ ENDIF
 
 IF LASTLOAD_VERSION < 0286
 	FOR LOCAL,0,CHARANUM
-		IF NO:LOCAL == [[キャラ:코시로]]
+		IF NO:LOCAL == [[캐릭터:코시로]]
 			ABL:LOCAL:인간시스킬1 = [[스킬:민속학]]
 		ENDIF
 	NEXT
@@ -828,8 +828,8 @@ IF LASTLOAD_VERSION < 0288
 ENDIF
 
 IF LASTLOAD_VERSION < 0289
-	SIF GETCHARA([[キャラ:유리아]] , 0) > -1 && ABL:GETCHARA([[キャラ:유리아]] , 0):습득LV4 > 0
-		ABL:GETCHARA([[キャラ:유리아]] , 0):습득스킬4 = [[스킬:유혹]]
+	SIF GETCHARA([[캐릭터:유리아]] , 0) > -1 && ABL:GETCHARA([[캐릭터:유리아]] , 0):습득LV4 > 0
+		ABL:GETCHARA([[캐릭터:유리아]] , 0):습득스킬4 = [[스킬:유혹]]
 	;ＮＴＲ기능추가により、主人への함락記憶
 	FOR LOCAL,1,CHARANUM
 		IF TALENT:LOCAL:연모
@@ -911,7 +911,7 @@ ENDIF
 
 IF LASTLOAD_VERSION < 0295
 	FOR LOCAL , 0 , CHARANUM
-		IF NO:LOCAL == [[キャラ:조마]]
+		IF NO:LOCAL == [[캐릭터:조마]]
 			TALENT:LOCAL:천사 = 0
 			TALENT:LOCAL:타천사 = 0
 			TALENT:LOCAL:새 = 0
@@ -1097,10 +1097,10 @@ IF LASTLOAD_VERSION < 0300
 ENDIF
 
 IF LASTLOAD_VERSION < 0301
-	SIF GETCHARA([[キャラ:미츠루]], 0) >= 0
-		ABL:GETCHARA([[キャラ:미츠루]], 0):초기페르소나3 = CSVABL([[キャラ:미츠루]], GETNUM(ABL, "초기페르소나3"),0)
-	SIF GETCHARA([[キャラ:유카리]], 0) >= 0
-		ABL:GETCHARA([[キャラ:유카리]], 0):초기페르소나3 = CSVABL([[キャラ:유카리]], GETNUM(ABL, "초기페르소나3"),0)
+	SIF GETCHARA([[캐릭터:미츠루]], 0) >= 0
+		ABL:GETCHARA([[캐릭터:미츠루]], 0):초기페르소나3 = CSVABL([[캐릭터:미츠루]], GETNUM(ABL, "초기페르소나3"),0)
+	SIF GETCHARA([[캐릭터:유카리]], 0) >= 0
+		ABL:GETCHARA([[캐릭터:유카리]], 0):초기페르소나3 = CSVABL([[캐릭터:유카리]], GETNUM(ABL, "초기페르소나3"),0)
 	FOR LOCAL, 1, CHARANUM
 		SIF (TALENT:LOCAL:연모 || TALENT:LOCAL:친애) && !(TALENT:LOCAL:신뢰 || TALENT:LOCAL:동료)
 			SETBIT FLAG:(50000+NO:LOCAL), 1
@@ -1130,21 +1130,21 @@ IF LASTLOAD_VERSION < 0301
 ENDIF
 
 IF LASTLOAD_VERSION < 0302
-	IF GETCHARA([[キャラ:해리Ｑ]], 0) >= 0
-		TALENT:GETCHARA([[キャラ:해리Ｑ]], 0):화염 = 1
+	IF GETCHARA([[캐릭터:해리Ｑ]], 0) >= 0
+		TALENT:GETCHARA([[캐릭터:해리Ｑ]], 0):화염 = 1
 		FOR LOCAL, 1, 21
-			IF ABL:GETCHARA([[キャラ:해리Ｑ]], 0):@"초기변신악마습득스킬{LOCAL}"
-				ABL:GETCHARA([[キャラ:해리Ｑ]], 0):@"초기변신악마습득스킬{LOCAL}" = CSVABL([[キャラ:해리Ｑ]], GETNUM(ABL, @"초기변신악마습득스킬{LOCAL}"),0)
-				ABL:GETCHARA([[キャラ:해리Ｑ]], 0):@"초기변신악마습득LV{LOCAL}" = CSVABL([[キャラ:해리Ｑ]], GETNUM(ABL, @"초기변신악마습득LV{LOCAL}"),0)
+			IF ABL:GETCHARA([[캐릭터:해리Ｑ]], 0):@"초기변신악마습득스킬{LOCAL}"
+				ABL:GETCHARA([[캐릭터:해리Ｑ]], 0):@"초기변신악마습득스킬{LOCAL}" = CSVABL([[캐릭터:해리Ｑ]], GETNUM(ABL, @"초기변신악마습득스킬{LOCAL}"),0)
+				ABL:GETCHARA([[캐릭터:해리Ｑ]], 0):@"초기변신악마습득LV{LOCAL}" = CSVABL([[캐릭터:해리Ｑ]], GETNUM(ABL, @"초기변신악마습득LV{LOCAL}"),0)
 			ENDIF
 		NEXT
 	ENDIF
-	IF GETCHARA([[キャラ:지나나]], 0) >= 0
+	IF GETCHARA([[캐릭터:지나나]], 0) >= 0
 		FOR LOCAL, 1, 21
-			TALENT:GETCHARA([[キャラ:지나나]], 0):파마 = 1
-			IF ABL:GETCHARA([[キャラ:지나나]], 0):@"초기변신악마습득스킬{LOCAL}"
-				ABL:GETCHARA([[キャラ:지나나]], 0):@"초기변신악마습득스킬{LOCAL}" = CSVABL([[キャラ:지나나]], GETNUM(ABL, @"초기변신악마습득스킬{LOCAL}"),0)
-				ABL:GETCHARA([[キャラ:지나나]], 0):@"초기변신악마습득LV{LOCAL}" = CSVABL([[キャラ:지나나]], GETNUM(ABL, @"초기변신악마습득LV{LOCAL}"),0)
+			TALENT:GETCHARA([[캐릭터:지나나]], 0):파마 = 1
+			IF ABL:GETCHARA([[캐릭터:지나나]], 0):@"초기변신악마습득스킬{LOCAL}"
+				ABL:GETCHARA([[캐릭터:지나나]], 0):@"초기변신악마습득스킬{LOCAL}" = CSVABL([[캐릭터:지나나]], GETNUM(ABL, @"초기변신악마습득스킬{LOCAL}"),0)
+				ABL:GETCHARA([[캐릭터:지나나]], 0):@"초기변신악마습득LV{LOCAL}" = CSVABL([[캐릭터:지나나]], GETNUM(ABL, @"초기변신악마습득LV{LOCAL}"),0)
 			ENDIF
 		NEXT
 	ENDIF
@@ -1165,7 +1165,7 @@ IF LASTLOAD_VERSION < 0304
 		SWAP DB:102:32 , DB:101:32
 	;치에と유키코が引継ぎ済みでかつ-1にされた場合の処理
 	FOR LOCAL , 0 , CHARANUM
-		SIF (NO:LOCAL == [[キャラ:치에]] || NO:LOCAL == [[キャラ:유키코]]) && CFLAG:LOCAL:인계횟수 > 0 && CFLAG:LOCAL:전투참가불가능 == -1
+		SIF (NO:LOCAL == [[캐릭터:치에]] || NO:LOCAL == [[캐릭터:유키코]]) && CFLAG:LOCAL:인계횟수 > 0 && CFLAG:LOCAL:전투참가불가능 == -1
 			CFLAG:LOCAL:전투참가불가능 = 0
 	NEXT
 	;시나가와とT.D.Lのフラグをリセット
@@ -1185,12 +1185,12 @@ ENDIF
 IF LASTLOAD_VERSION < 0305
 	DB:[[던전:T.D.L.]]:0 = MIN(DB:[[던전:T.D.L.]]:0, 3)
 	DB:[[던전:시나가와]]:0 = MIN(DB:[[던전:시나가와]]:0, 3)
-	LOCAL = FINDCHARA(NO , [[キャラ:코시로]])
+	LOCAL = FINDCHARA(NO , [[캐릭터:코시로]])
 	IF LOCAL > 0
 		ABL:LOCAL:인간시스킬1 = [[스킬:민속학]]
 	ENDIF
 	FOR LOCAL , 0 , CHARANUM
-		IF !GROUPMATCH(NO:LOCAL , [[キャラ:당신의딸]] , [[キャラ:노예의딸]])
+		IF !GROUPMATCH(NO:LOCAL , [[캐릭터:당신의딸]] , [[캐릭터:노예의딸]])
 			CFLAG:LOCAL:딸의부친고유번호딸 = -1
 			CFLAG:LOCAL:딸의친부모고유번호딸 = -1
 		ENDIF
@@ -1212,16 +1212,16 @@ IF LASTLOAD_VERSION < 0306
 	DB:[[던전:T.D.L.]]:0 = MIN(DB:[[던전:T.D.L.]]:0, 3)
 	CFLAG:MASTER:딸의부친고유번호딸 = -1
 	CFLAG:MASTER:딸의친부모고유번호딸 = -1
-	IF GETCHARA([[キャラ:해리Ｑ]], 0) >= 0
+	IF GETCHARA([[캐릭터:해리Ｑ]], 0) >= 0
 		FOR LOCAL, 1, 21
-			CFLAG:GETCHARA([[キャラ:해리Ｑ]], 0):@"상성{LOCAL}" = CSVCFLAG([[キャラ:해리Ｑ]], GETNUM(CFLAG, @"상성{LOCAL}"), 0)
-			CFLAG:GETCHARA([[キャラ:해리Ｑ]], 0):@"상성치{LOCAL}" = CSVCFLAG([[キャラ:해리Ｑ]], GETNUM(CFLAG, @"상성치{LOCAL}"), 0)
+			CFLAG:GETCHARA([[캐릭터:해리Ｑ]], 0):@"상성{LOCAL}" = CSVCFLAG([[캐릭터:해리Ｑ]], GETNUM(CFLAG, @"상성{LOCAL}"), 0)
+			CFLAG:GETCHARA([[캐릭터:해리Ｑ]], 0):@"상성치{LOCAL}" = CSVCFLAG([[캐릭터:해리Ｑ]], GETNUM(CFLAG, @"상성치{LOCAL}"), 0)
 		NEXT
 	ENDIF
-	IF GETCHARA([[キャラ:지나나]], 0) >= 0
+	IF GETCHARA([[캐릭터:지나나]], 0) >= 0
 		FOR LOCAL, 1, 21
-			CFLAG:GETCHARA([[キャラ:지나나]], 0):@"상성{LOCAL}" = CSVCFLAG([[キャラ:지나나]], GETNUM(CFLAG, @"상성{LOCAL}"), 0)
-			CFLAG:GETCHARA([[キャラ:지나나]], 0):@"상성치{LOCAL}" = CSVCFLAG([[キャラ:지나나]], GETNUM(CFLAG, @"상성치{LOCAL}"), 0)
+			CFLAG:GETCHARA([[캐릭터:지나나]], 0):@"상성{LOCAL}" = CSVCFLAG([[캐릭터:지나나]], GETNUM(CFLAG, @"상성{LOCAL}"), 0)
+			CFLAG:GETCHARA([[캐릭터:지나나]], 0):@"상성치{LOCAL}" = CSVCFLAG([[캐릭터:지나나]], GETNUM(CFLAG, @"상성치{LOCAL}"), 0)
 		NEXT
 	ENDIF
 	FOR LOCAL, 0, CHARANUM
@@ -1253,7 +1253,7 @@ IF LASTLOAD_VERSION < 0308
 		CSTR:LOCAL:상성그룹 = %CSVCSTR(NO:LOCAL , GETNUM(CSTR , "상성그룹") , 0)%
 	NEXT
 	IF !(FLAG:버전관리보조 == 1 && LASTLOAD_VERSION == 0307 )
-		LOCAL = FINDCHARA(NO , [[キャラ:코시로]])
+		LOCAL = FINDCHARA(NO , [[캐릭터:코시로]])
 		IF LOCAL > 0
 			ABL:LOCAL:인간시스킬1 = [[스킬:민속학]]
 		ENDIF
@@ -1476,8 +1476,8 @@ ENDIF
 ;ループ数はRev134におけるABL:스킬xxの数だけ、つまり20。습득스킬xxも同じ20なのでこれで動くはず。
 IF LASTLOAD_VERSION < 00309135
 	;愛城華恋
-	LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
-	IF GETCHARA([[キャラ:카렌（무대소녀）]]) > -1
+	LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
+	IF GETCHARA([[캐릭터:카렌（무대소녀）]]) > -1
 		PRINTL ※愛城華恋の存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;イナズマ突きを覚えている場合、専用技1に差し替え
@@ -1511,8 +1511,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 
 	;神楽ひかり
-	LOCAL = GETCHARA([[キャラ:히카리]])
-	IF GETCHARA([[キャラ:히카리]]) > -1
+	LOCAL = GETCHARA([[캐릭터:히카리]])
+	IF GETCHARA([[캐릭터:히카리]]) > -1
 		PRINTL ※神楽ひかりの存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;柔の波を覚えている場合、専用技1に差し替え
@@ -1546,8 +1546,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 	
 	;露崎まひる
-	LOCAL = GETCHARA([[キャラ:마히루]])
-	IF GETCHARA([[キャラ:마히루]]) > -1
+	LOCAL = GETCHARA([[캐릭터:마히루]])
+	IF GETCHARA([[캐릭터:마히루]]) > -1
 		PRINTL ※露崎まひるの存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;大暴れを覚えている場合、専用技1に差し替え
@@ -1581,8 +1581,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 	
 	;星見純那
-	LOCAL = GETCHARA([[キャラ:쥰나]])
-	IF GETCHARA([[キャラ:쥰나]]) > -1
+	LOCAL = GETCHARA([[캐릭터:쥰나]])
+	IF GETCHARA([[캐릭터:쥰나]]) > -1
 		PRINTL ※星見純那の存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;切なさ乱れうちを覚えている場合、専用技1に差し替え
@@ -1616,8 +1616,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 		
 	;大場なな
-	LOCAL = GETCHARA([[キャラ:나나]])
-	IF GETCHARA([[キャラ:나나]]) > -1
+	LOCAL = GETCHARA([[캐릭터:나나]])
+	IF GETCHARA([[캐릭터:나나]]) > -1
 		PRINTL ※大場ななの存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;浮月砕破を覚えている場合、専用技1に差し替え
@@ -1677,8 +1677,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 	
 	;石動双葉
-	LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
-	IF GETCHARA([[キャラ:후타바（무대소녀）]]) > -1
+	LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
+	IF GETCHARA([[캐릭터:후타바（무대소녀）]]) > -1
 		PRINTL ※石動双葉の存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;烈風撃を覚えている場合、専用技1に差し替え
@@ -1712,8 +1712,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 	
 	;花柳香子
-	LOCAL = GETCHARA([[キャラ:카오루코]])
-	IF GETCHARA([[キャラ:카오루코]]) > -1
+	LOCAL = GETCHARA([[캐릭터:카오루코]])
+	IF GETCHARA([[캐릭터:카오루코]]) > -1
 		PRINTL ※花柳香子の存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;テンタラフーを覚えている場合、専用技1に差し替え
@@ -1760,8 +1760,8 @@ IF LASTLOAD_VERSION < 00309135
 	ENDIF
 	
 	;天堂真矢
-	LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
-	IF GETCHARA([[キャラ:마야（무대소녀）]]) > -1
+	LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
+	IF GETCHARA([[캐릭터:마야（무대소녀）]]) > -1
 		PRINTL ※天堂真矢の存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;夜桜の舞いを覚えている場合、専用技1に差し替え
@@ -1796,8 +1796,8 @@ IF LASTLOAD_VERSION < 00309135
 	
 	
 	;西條クロディーヌ
-	LOCAL = GETCHARA([[キャラ:클로딘]])
-	IF GETCHARA([[キャラ:클로딘]]) > -1
+	LOCAL = GETCHARA([[캐릭터:클로딘]])
+	IF GETCHARA([[캐릭터:클로딘]]) > -1
 		PRINTL ※西條クロディーヌの存在を確認　変化스킬が専用스킬へアップデートされます
 		FOR LOCAL:1, 1, 21, 1
 			;集雷撃を覚えている場合、専用技1に差し替え
@@ -1976,8 +1976,8 @@ ENDIF
 ;Schrott
 IF LASTLOAD_VERSION < 00309141
 ;専用技になっていないただの剣撃グングニルへの統合を差し戻し。
-	LOCAL = GETCHARA([[キャラ:레밀리아]])
-	IF GETCHARA([[キャラ:레밀리아]]) > -1
+	LOCAL = GETCHARA([[캐릭터:레밀리아]])
+	IF GETCHARA([[캐릭터:레밀리아]]) > -1
 		FOR LOCAL:1, 1, 21, 1
 			IF ABL:LOCAL:@"스킬{LOCAL:1}" == [[스킬:신창궁니르]]
 				ABL:LOCAL:@"스킬{LOCAL:1}" = [[스킬:신창「스피어･더･궁니르」]]
@@ -1988,21 +1988,21 @@ IF LASTLOAD_VERSION < 00309141
 			ENDIF
 		NEXT
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:케이네]])
-	IF GETCHARA([[キャラ:케이네]]) > -1
+	LOCAL = GETCHARA([[캐릭터:케이네]])
+	IF GETCHARA([[캐릭터:케이네]]) > -1
 		TALENT:LOCAL:식노 = 0
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:미코]])
-	IF GETCHARA([[キャラ:미코]]) > -1
+	LOCAL = GETCHARA([[캐릭터:미코]])
+	IF GETCHARA([[캐릭터:미코]]) > -1
 		TALENT:LOCAL:석세서 = 0
 		TALENT:LOCAL:건슬링거 = 0
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:요리히메]])
-	IF GETCHARA([[キャラ:요리히메]]) > -1
+	LOCAL = GETCHARA([[캐릭터:요리히메]])
+	IF GETCHARA([[캐릭터:요리히메]]) > -1
 		TALENT:LOCAL:페르소나구사자 = 0
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:마미조우]])
-	IF GETCHARA([[キャラ:마미조우]]) > -1
+	LOCAL = GETCHARA([[캐릭터:마미조우]])
+	IF GETCHARA([[캐릭터:마미조우]]) > -1
 		TALENT:LOCAL:데빌시프터 = 0
 	ENDIF
 ENDIF

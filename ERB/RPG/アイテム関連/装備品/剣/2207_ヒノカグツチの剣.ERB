@@ -9,21 +9,21 @@
 @기본능력수정_2207,ARG,ARG:1 = -1
 #LOCALSIZE 1
 #LOCALSSIZE 1
-LOCAL = GETCHARA([[キャラ:유미코]])
+LOCAL = GETCHARA([[캐릭터:유미코]])
 SIF LOCAL < 0
 	RETURN 0
 SIF ARG:1 < 0
 	RETURN 0
-SIF ARG:1 == GETCHARA([[キャラ:아케미]]) || (FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL))
+SIF ARG:1 == GETCHARA([[캐릭터:아케미]]) || (FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL))
 	RETURN BASE:LOCAL:GET_BASESTATUS(ARG) / 10
 RETURN 0
 @전투능력수정_2207,ARG,ARG:1 = -1
 #LOCALSIZE 3
-LOCAL = GETCHARA([[キャラ:유미코]])
+LOCAL = GETCHARA([[캐릭터:유미코]])
 LOCAL:1 = 0
 LOCAL:2 = 40
 ;剣のレベル設定。弓子が陥落している場合、弓子のレベルの半分が加算される
-SIF ARG:1 >=0 && LOCAL >= 0 && (NO:(ARG:1) == [[キャラ:아케미]] || 함락(LOCAL, ARG:1))
+SIF ARG:1 >=0 && LOCAL >= 0 && (NO:(ARG:1) == [[캐릭터:아케미]] || 함락(LOCAL, ARG:1))
 	LOCAL:2 += MIN(BASE:LOCAL:LV / 2, 40)
 LOCAL:2 += 5
 ;レベルによる戦闘能力値
@@ -38,7 +38,7 @@ SELECTCASE GET_BATTLESTATUS(ARG)
 		LOCAL:1 = LOCAL:2
 ENDSELECT
 ;STATUSによる能力値　朱美ありは弓子陥落でステータスによって性能が加算される
-IF ARG:1 >= 0 && (NO:(ARG:1) == [[キャラ:아케미]] || (LOCAL >=0 && 함락(LOCAL, ARG:1)))
+IF ARG:1 >= 0 && (NO:(ARG:1) == [[캐릭터:아케미]] || (LOCAL >=0 && 함락(LOCAL, ARG:1)))
 	SELECTCASE GET_BATTLESTATUS(ARG)
 		CASE "공격"
 			LOCAL:1 +=  BASE:(ARG:1):힘*3/2 + BASE:(ARG:1):인내력 / 2

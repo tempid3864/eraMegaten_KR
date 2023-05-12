@@ -14,9 +14,9 @@
 ;ARG:0　캐릭터번호
 ;ARG:1　함수종류　1,개방조건　2,타이틀　3,이벤트
 ;ARG:2　이벤트번호（0～63까지）
-COPEN = GETCHARA([[キャラ:아큐라(X)]])
-BLADE = GETCHARA([[キャラ:블레이드(X)]])
-GV = GETCHARA([[キャラ:GV]])
+COPEN = GETCHARA([[캐릭터:아큐라(X)]])
+BLADE = GETCHARA([[캐릭터:블레이드(X)]])
+GV = GETCHARA([[캐릭터:GV]])
 SELECTCASE ARG:2
 CASE 0
 	;解放条件
@@ -51,7 +51,7 @@ CASE 0
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;PTにデンゲキコはいるか？
-			SIF NO:(FLAG:LOCALS) == [[キャラ:덴게키코]]
+			SIF NO:(FLAG:LOCALS) == [[캐릭터:덴게키코]]
 				RETURN 1
 		NEXT
 		RETURN 0
@@ -81,15 +81,15 @@ CASE 0
 		CALL 疑似的画面クリア
 		[IF_DEBUG]
 			;DEBUG時にアキュラくんたちを加入、DIMに代入しておく
-			CALL ADD_NEW_COMPANION,[[キャラ:아큐라(X)]]
+			CALL ADD_NEW_COMPANION,[[캐릭터:아큐라(X)]]
 			COPEN = RESULT:1
 			NAME:(RESULT:1) = アキュラ
 			CALLNAME:(RESULT:1) = アキュラ
-			CALL ADD_NEW_COMPANION,[[キャラ:블레이드(X)]]
+			CALL ADD_NEW_COMPANION,[[캐릭터:블레이드(X)]]
 			BLADE = RESULT:1
 			NAME:(RESULT:1) = ブレイド
 			CALLNAME:(RESULT:1) = ブレイド
-			CALL ADD_NEW_COMPANION,[[キャラ:GV]]
+			CALL ADD_NEW_COMPANION,[[캐릭터:GV]]
 			GV = RESULT:1
 			NAME:(RESULT:1) = ＧＶ
 			CALLNAME:(RESULT:1) = ＧＶ
@@ -290,7 +290,7 @@ CASE 0
 		FOR LOCAL,1,7
 			SIF POS(LOCAL) < 0
 				CONTINUE
-			IF NO:POS(LOCAL) != [[キャラ:덴게키코]]
+			IF NO:POS(LOCAL) != [[캐릭터:덴게키코]]
 				L_PARTY_SLOT:LOCAL = POS(LOCAL)
 				CALL REMOVE_POSITION, LOCAL
 			ENDIF
@@ -298,7 +298,7 @@ CASE 0
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY, 9, [[キャラ:블레이드(X)]], 50, 1, 1
+		CALL SET_ENEMY, 9, [[캐릭터:블레이드(X)]], 50, 1, 1
 		NAME:(CHARANUM-1) = 블레이드
 		CALLNAME:(CHARANUM-1) = 블레이드
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -339,7 +339,7 @@ CASE 0
 		CALL SYNC_STATUS, (CHARANUM-1)
 		CALL HEALTH_CHARA, (CHARANUM-1)
 
-		CALL SET_ENEMY, 14, [[キャラ:GV]], 50, 1, 1
+		CALL SET_ENEMY, 14, [[캐릭터:GV]], 50, 1, 1
 		NAME:(CHARANUM-1) = GV
 		CALLNAME:(CHARANUM-1) = GV
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -673,11 +673,11 @@ LOCAL = 0
 ;味方時のステータスを参照したいので味方キャラのを取得
 ;GV:0とBLADE:0は味方、GV:1とBLADE:1は敵の番号を代入
 ;:0 の方は使う予定がなくなったのでコメントアウト
-;GV:0 = FINDCHARA(NO,[[キャラ:GV]])
-GV:1 = FINDLASTCHARA(NO,[[キャラ:GV]])
-BLADE:0 = FINDCHARA(NO,[[キャラ:블레이드(X)]])
-BLADE:1 = FINDLASTCHARA(NO,[[キャラ:블레이드(X)]])
-DENGEKIKO = FINDCHARA(NO,[[キャラ:덴게키코]])
+;GV:0 = FINDCHARA(NO,[[캐릭터:GV]])
+GV:1 = FINDLASTCHARA(NO,[[캐릭터:GV]])
+BLADE:0 = FINDCHARA(NO,[[캐릭터:블레이드(X)]])
+BLADE:1 = FINDLASTCHARA(NO,[[캐릭터:블레이드(X)]])
+DENGEKIKO = FINDCHARA(NO,[[캐릭터:덴게키코]])
 IF GET_STATE(CFLAG:(BLADE:1):상태이상) == "DYING" && 進行度 < 100
 	進行度 = 100
 ELSEIF GET_STATE(CFLAG:(GV:1):상태이상) == "DYING" && 進行度 < 200
@@ -689,28 +689,28 @@ SELECTCASE 進行度
 		LOCALS:0 = 예전부터 생각해고 있었습니다만、역시 1대2는 비겁하지 않나요！？
 		LOCALS:1 = 분명히 제 한계를 넘었다는 생각이 들어서 견딜수가 없습니다만！！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 호오？ 그정도면 수다를 떨 여유는 있어 보이는데？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 수다를 떨며 필사적으로 속이지 않으면 못하겠어요、이쪽은！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 흥！
 		LOCALS:1 = 그렇다면 그 억지를 부리지 않고 싸울 수 있도록、마무리 해줄 뿐이야！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		LOCALS:0 = （아니……확실히 저 경쾌한 입담은 공포를 속이는 의미도 있겠지만）
 		LOCALS:1 = （그와 동시에、헤이트 컨트롤의 일종으로 이용하고 있다는 생각이 들지 않을수 없는데…）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		進行度 = 10
 		RESETCOLOR
@@ -719,41 +719,41 @@ SELECTCASE 進行度
 		LOCALS:0 = 대충！ 맨투맨으로 전투 요령을 알려주는 느낌의 지도가 좋았어요！？
 		LOCALS:1 = 이렇게 일부러 실전 형식으로 할 필요성이 있나요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 안타깝게도、내가 너를 지도해 줄 수 있는 시간은 그리 많지 않아！
 		LOCALS:1 = 그래서、빠르게 배울 수 있는 실전 형식으로 만들었다！ 그뿐이다！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 그렇다고 해서、그렇게 살기를 내뿜지 않아도 돼요！
 		LOCALS:1 = 자칫 잘못하면 크게 다칠수도 있잖아요、이거！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 전투에서 부상을 당하는 것은 당연한 섭리다！
 		LOCALS:1 = 다치고 싶지 않다면……전력으로、싸워라！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
 		LOCALS:0 = 블레이드、왠지 어울리지 않네요…
 		LOCALS:1 = 평소에는 기분 좋은 움직임을 하고 있는데、지금은…난폭하다는 느낌이 들어요
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = （무리도 아니다。 자라온 환경의 차이도 있지만、덴게키코와 우리 사이에는 싸움에 대한 인식이 너무 다르다）
 		LOCALS:1 = （최근까지 평온과는 무관했던 블레이드에게、어정쩡한 태도를 보이는 덴게키코에게 뭔가 생각이 있는것 같다）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		LOCALS:0 = （시간이 아까워서、무심코 실전 형식으로 만드는데 동의해버렸지만…）
 		LOCALS:1 = （만일의 사태에 대비해、두 사람을 막을 수 있도록 해야 할 것 같다）
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 20
 		RESETCOLOR
 	CASE 20
@@ -761,93 +761,93 @@ SELECTCASE 進行度
 		LOCALS:0 = 아아、이런！ 블레이드씨로도 벅찬데、ＧＶ씨가 끈질기게 엄호를！
 		LOCALS:1 = 잠깐 ＧＶ씨！ 또 멍하니 허밍하고 있어도 괜찮으니、옆으로 하는거 멈추지 않을래요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 어라。 멍하니 있는 줄은 알았는데、허밍까지 하고 있었구나、나！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 하던데요！？ 뭔가 건들이면 안 되는 사람이라는 분위기가 물씬 풍겼어요！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 그、그렇게………。
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
 		LOCALS:0 = 잠깐！ ＧＶ를 이상한 사람처럼 말하지 마！
 		LOCALS:1 = ＧＶ는 너와 달리、항상 열심히 해주는 천사니깐！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 천사라면 좀더 이렇게、사람들에게 잘해줬으면 좋겠는데요！
 		LOCALS:1 = 뭐랄까요、천사라니！？ ＧＶ씨、요정님께 그렇게 부르라고 하시는 거예요！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 아니、일러주지 않았어！ 아큐라의『익스』랑 똑같아！
 		LOCALS:1 = 그리고 요정이 아니라、그녀에게는 시안이라는 훌륭한 이름이 있어！ 제대로 이름으로 불러줘！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 엣。 아큐라씨의 『익스』와 같은…그건、그러니깐…！
 		LOCALS:1 = 즉、즉 그런 건가요！？ 블레이드씨！！？？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 무슨 소리야、너는…！？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 30
 		RESETCOLOR
 	CASE 30
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 크윽！ 두개의 무기를 동시에 다루는게 생각보다 어렵네요、이거！？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 적의 공격에 맞춰 칼날을 휘둘러！ 자루를 잡는 힘을 더 강하게 해！
 		LOCALS:1 = 그런 얄팍한 자세로는 공격을 막아내기는 커녕、칼이 튕겨져 나갈 뿐이야！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 죄송하지만！ 이거 회피용이 아니라 공격용이거든요！
 		LOCALS:1 = 그렇다기보다 회피에 관해서는 거의 잊고있었어요！ 죄송합니다！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 공격용이라고？ 그럼 좀 더 공격적인 자세를 보여！
 		LOCALS:1 = 수동적인 자세로는 목각인형밖에 안돼、그건！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 공격용은 공격용이라도 비장의 무기라는 거예요！
 		LOCALS:1 = 결정적일 때 사용하지 않으면 뭔가 아깝잖아요！ 스코어라던가！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 에에잇、주문이 많은 녀석이구나…쯧！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		LOCALS:0 = （근접전용으로 차탄야라쿠샹쿠를 배우고는 있지만、근접무기의 기술은 아직 배우지 않은 채로 있었군……）
 		LOCALS:1 = （만약을 위해 근접무기 취급도、라고 생각했지만……이렇게까지 힘들것 같으면、뒤로 미루는 것이 맞을지도 모르겠어）
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		RESETCOLOR
 		進行度 = 40
@@ -855,39 +855,39 @@ SELECTCASE 進行度
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 큭、이렇게 되면……！ 지금 당장 쓸수 있는 비장의 무기를 꺼낼수밖에 없어요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 읏……！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		LOCALS:0 = 비장의 무기라고…！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 오오오오오！！！ 뿜어져라─────、
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		LOCALS:0 = 　　　　　암드블루
 		LOCALS:1 = ─────푸른뇌정이여！！！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 암드블루
 		LOCALS:1 = 푸른뇌정……！？
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x1d9eff
 		LOCALS:0 = 잠깐만、ＧＶ！ 저건……！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 지금입니다！ 그래！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		RESETCOLOR
 		PRINTL
 		PRINTFORMW %CALLNAME:DENGEKIKO%는 최루탄을 투척했다！
@@ -895,14 +895,14 @@ SELECTCASE 進行度
 		SETCOLOR 0xff0033
 		LOCALS:0 = 앗、당했다……！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		LOCALS:0 = 큭、블러프에 걸리다니…！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x1d9eff
 		LOCALS:0 = 아아！ 저건 가짜인줄 알았는데！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		進行度 = 50
 		RESETCOLOR
 		PRINTL
@@ -923,24 +923,24 @@ SELECTCASE 進行度
 		LOCALS:0 = 좋아！ 어떻게든 블레이드씨를 돌파할 수 있었어요！
 		LOCALS:1 = 아、여기까지 오는데 고생했다니깐요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 큿、접근전에 돌입했구나…！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 자、이번에야말로 3번째는 잘 먹겠습니다、ＧＶ씨！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0xff0033
 		LOCALS:0 = 앗、아니……여기는 공격한다！ 반대로 11번째는 받아갈게、덴게키코！
 		LOCAL = CFLAG:(GV:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN("ＧＶ",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("ＧＶ",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0x1d9eff
 		LOCALS:0 = 힘내、ＧＶ！ 저런 녀석에게 지지마！
 		LOCAL = 6500
-		CALL MESSAGE_P_LN("시안",0,[[キャラ:GV]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN("시안",0,[[캐릭터:GV]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		RESETCOLOR
 		PRINTFORMW 시안의 응원으로 %CALLNAME:(GV:1)%의 능력이 강화되었다！
@@ -961,26 +961,26 @@ SELECTCASE 進行度
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 좋아요！ ＧＶ씨 격파！ 이걸로 3번째는 벌써 딴 거나 다름없네요！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		SETCOLOR 0xff0033
 		LOCALS:0 = 흥、벌써 이겼다고 생각하는건가。 아직 적이 남아있는데도 여유가 있어보이네？
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0x33ffcc
 		LOCALS:0 = 아니아니아니、내가 지는 이유는 대부분 블레드이 씨에게 붙들려 있는 동안에、
 		LOCALS:1 = ＧＶ씨의 간섭이 강타했을때가 많으니깐요？
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		LOCALS:0 = 게다가、ＧＶ씨와 단독으로 싸우는 것보다、블레이드씨와 타이밍을 맞추는 횟수가 더 많으니깐요！
 		LOCALS:1 = 필연적으로 블레이드 씨의 대처에는 익숙해진다는 것입니다！ 여기까지 오면 승률은 반반이에요、반반！
 		CALL MESSAGE_B2(CALLNAME:DENGEKIKO,0,LOCALS:0,LOCALS:1)
-		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[キャラ:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
+		;CALL MESSAGE_P_LN(CALLNAME:DENGEKIKO,0,[[캐릭터:덴게키코]],LOCAL,LOCALS:0,LOCALS:1)
 		VARSET LOCALS
 		SETCOLOR 0xff0033
 		LOCALS:0 = 말했겠다…！ 그렇다면 너의 그 교만함、나의 뇌격으로 부숴버리겠어！
 		LOCAL = CFLAG:(BLADE:1):얼굴이미지 * 100
-		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[キャラ:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
+		CALL MESSAGE_P_LN(CALLNAME:BLADE,0,[[캐릭터:블레이드(X)]],LOCAL,LOCALS:0,LOCALS:1)
 		RESETCOLOR
 		PRINTFORML %CALLNAME:(BLADE:1)%가 검을 다시 잡았다！
 		PRINTFORMW %CALLNAME:(BLADE:1)%에게서 기합이 끝없이 흘러나오는 것을 느낀다……！

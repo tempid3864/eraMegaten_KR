@@ -303,10 +303,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:보티스]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:보티스]],1000)
 
 			;- SET:보티스
-			CALL SET_ENEMY,9,[[キャラ:보티스]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,9,[[캐릭터:보티스]],REQUEST_30_BASE_LV(3),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -322,8 +322,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			;- SET:雑魚
-			CALL SET_ENEMY,8, [[キャラ:오세]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,10, [[キャラ:오세]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,8, [[캐릭터:오세]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,10, [[캐릭터:오세]],REQUEST_30_BASE_LV(3)
 
 			;- 전투開始
 			CALL BATTLE_START
@@ -428,21 +428,21 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;- 暴徒を３体설정
 			;-----------------------------
 			;- SET:xxx(局員の이름を変えて暴徒)
-			CALL SET_ENEMY,13,[[キャラ:집스국원]],REQUEST_30_BASE_LV(1)
+			CALL SET_ENEMY,13,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(1)
 			NAME:(CHARANUM-1) = 폭도
 			CALLNAME:(CHARANUM-1) = 폭도
-			CALL SET_ENEMY,14,[[キャラ:집스국원]],REQUEST_30_BASE_LV(1)
+			CALL SET_ENEMY,14,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(1)
 			NAME:(CHARANUM-1) = 폭도
 			CALLNAME:(CHARANUM-1) = 폭도
-			CALL SET_ENEMY,15,[[キャラ:집스국원]],REQUEST_30_BASE_LV(1)
+			CALL SET_ENEMY,15,[[캐릭터:집스국원]],REQUEST_30_BASE_LV(1)
 			NAME:(CHARANUM-1) = 폭도
 			CALLNAME:(CHARANUM-1) = 폭도
 			
-			CALL SET_ENEMY,7,[[キャラ:모스맨]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,8,[[キャラ:성성이]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,9,[[キャラ:웬디고]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,10,[[キャラ:오르트로스]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,11,[[キャラ:스코그스라]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,7,[[캐릭터:모스맨]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,8,[[캐릭터:성성이]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,9,[[캐릭터:웬디고]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,10,[[캐릭터:오르트로스]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,11,[[캐릭터:스코그스라]],REQUEST_30_BASE_LV(3)
 			
 			;- 전투開始
 			CALL BATTLE_START
@@ -744,12 +744,12 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:적로나우도]],1000)
-			CALL INCREASE_ANALYZE([[キャラ:바포멧트]],1000)
-			CALL INCREASE_ANALYZE([[キャラ:피닉스]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:적로나우도]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:바포멧트]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:피닉스]],1000)
 
 			;- SET:로나우도
-			CALL SET_ENEMY,9,[[キャラ:적로나우도]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,9,[[캐릭터:적로나우도]],REQUEST_30_BASE_LV(3),1,1
 			NAME:(CHARANUM-1) = 쿠리키 로나우도
 			CALLNAME:(CHARANUM-1) = 로나우도
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
@@ -760,8 +760,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			;- SET:雑魚
-			CALL SET_ENEMY,8, [[キャラ:바포멧트]],REQUEST_30_BASE_LV(3)
-			CALL SET_ENEMY,10, [[キャラ:피닉스]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,8, [[캐릭터:바포멧트]],REQUEST_30_BASE_LV(3)
+			CALL SET_ENEMY,10, [[캐릭터:피닉스]],REQUEST_30_BASE_LV(3)
 
 			;- 전투開始
 			CALL BATTLE_START
@@ -900,10 +900,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:페크다]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:페크다]],1000)
 
 			;- SET:페크다
-			CALL SET_ENEMY,9,[[キャラ:페크다]],REQUEST_30_BASE_LV(3),1,1
+			CALL SET_ENEMY,9,[[캐릭터:페크다]],REQUEST_30_BASE_LV(3),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):속도보정 = 15
@@ -1176,7 +1176,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			WHILE 1
 				SIF CHARANUM == (L_I + 1)
 					BREAK
-				L_I = FINDCHARA(NO, [[キャラ:페크다]], L_I + 1)
+				L_I = FINDCHARA(NO, [[캐릭터:페크다]], L_I + 1)
 				SIF L_I < 0
 					BREAK
 				L_CNT ++
@@ -1190,7 +1190,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			WHILE 1
 				SIF CHARANUM == (L_I + 1)
 					BREAK
-				L_I = FINDCHARA(NO, [[キャラ:페크다]], L_I + 1)
+				L_I = FINDCHARA(NO, [[캐릭터:페크다]], L_I + 1)
 				SIF L_I < 0
 					BREAK
 				DELCHARA L_I
@@ -1209,7 +1209,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 					CALL MESSAGE_B(1,"로나우도：뭣…!?２개로 나뉘었다고！")
 
 				;- SET:페크다α（물리약점）
-				CALL SET_ENEMY,8,[[キャラ:페크다]],REQUEST_30_BASE_LV(3),1,1
+				CALL SET_ENEMY,8,[[캐릭터:페크다]],REQUEST_30_BASE_LV(3),1,1
 				CALLNAME:(CHARANUM-1) = 페크다α
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -1237,7 +1237,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				BASE:(CHARANUM-1):ＨＰ = L_TMP
 
 				;- SET:페크다β（4속성약점）
-				CALL SET_ENEMY,10,[[キャラ:페크다]],REQUEST_30_BASE_LV(3),1,1
+				CALL SET_ENEMY,10,[[캐릭터:페크다]],REQUEST_30_BASE_LV(3),1,1
 				CALLNAME:(CHARANUM-1) = 페크다β
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -1281,7 +1281,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				ENDIF
 
 				;- SET:페크다
-				CALL SET_ENEMY,9,[[キャラ:페크다]],REQUEST_30_BASE_LV(3),1,1
+				CALL SET_ENEMY,9,[[캐릭터:페크다]],REQUEST_30_BASE_LV(3),1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 				CFLAG:(CHARANUM-1):속도보정 = 15

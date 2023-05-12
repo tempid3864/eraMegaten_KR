@@ -1368,7 +1368,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
 						FOR LOCAL , 0 , 10
-							CALL SET_ENEMY,7+LOCAL,[[キャラ:템플나이트]],22,0,0
+							CALL SET_ENEMY,7+LOCAL,[[캐릭터:템플나이트]],22,0,0
 						NEXT
 						CALL SYNC_STATUS, (LOCAL)
 						CALL HEALTH_CHARA, (LOCAL)
@@ -1571,7 +1571,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 									CALL MESSAGE_WINDOW_D, "", "＞나쟈는 손키스를 하고 사라졌다……"
 									CALL MESSAGE_WINDOW_D, "", "＞요정 나쟈가 동료마가 되었다"
 									CALL MESSAGE_WINDOW_D, "", "＞팩토리 지하통로의 열쇠를 손에 넣었다"
-									CALL ADD_NEW_COMPANION , [[キャラ:나쟈]] , 500 , 1
+									CALL ADD_NEW_COMPANION , [[캐릭터:나쟈]] , 500 , 1
 								ELSE
 									CALL MESSAGE_WINDOW_D, "나쟈", "그럴수가아……"
 									CALL MESSAGE_WINDOW_D, "나쟈", "……됐다 뭐, 이 근처의 악마랑 할테니까……"
@@ -1618,7 +1618,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						FLAG:도주불가플래그 = 1
 						FLAG:회화불능플래그 = 1
 						FLAG:선제기습취소 = 1
-						CALL SET_ENEMY,9,[[キャラ:야누스]],34,0,1
+						CALL SET_ENEMY,9,[[캐릭터:야누스]],34,0,1
 						LOCAL = CHARANUM -1
 						CFLAG:(LOCAL):행동횟수 = 2
 						CFLAG:(LOCAL):ＭＰ보정 = 500
@@ -1643,8 +1643,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 						던전플래그:[[던전:팩토리]]:4 = 1
 						DA:(FLAG:현X):(FLAG:현Y) = 1
 						;야누스 해방　특수합체는 뭐가 좋을까。특정 남×녀 라던지？
-						CALL LIFTING_A_BAN([[キャラ:야누스]])
-						;FLAG:(10000 + [[キャラ:야누스]]) = 1
+						CALL LIFTING_A_BAN([[캐릭터:야누스]])
+						;FLAG:(10000 + [[캐릭터:야누스]]) = 1
 					ELSE
 						CALL MESSAGE_WINDOW_D, "야누스", "뭐야아 물러나는 거야?/뭐냐고 물러나는 건가?"
 						CALL SHOW_FORCEMOVE, \@ARG == 2 ? UU # DD \@, "D", , "야누스", "재미없어 얘에/시시하구마안"
@@ -1936,136 +1936,136 @@ SELECTCASE FLAG:현M
 		IF FLAG:현Y < 22
 			SELECTCASE RAND:100
 				CASE IS < 15
-					RETURN [[キャラ:부쳐]], 9
+					RETURN [[캐릭터:부쳐]], 9
 				CASE IS < 30
-					RETURN [[キャラ:보디코니언]], 12
+					RETURN [[캐릭터:보디코니언]], 12
 				CASE IS < 45
-					RETURN [[キャラ:슬레이브]], 9
+					RETURN [[캐릭터:슬레이브]], 9
 				CASE IS < 60
-					RETURN [[キャラ:데미난디]], 11
+					RETURN [[캐릭터:데미난디]], 11
 				CASE IS < 75
-					RETURN [[キャラ:뎁스]], 12
+					RETURN [[캐릭터:뎁스]], 12
 				CASE IS < 90
-					RETURN [[キャラ:슬라임]], 9
+					RETURN [[캐릭터:슬라임]], 9
 				CASE IS < 99
-					RETURN [[キャラ:리림]], 9
+					RETURN [[캐릭터:리림]], 9
 				CASE IS < 100
-					RETURN [[キャラ:돌연변이데미난디]], 30
+					RETURN [[캐릭터:돌연변이데미난디]], 30
 			ENDSELECT
 		ELSEIF FLAG:현Y < 32
 			SELECTCASE RAND:100
 				CASE IS < 15
-					RETURN [[キャラ:부쳐]], 9
+					RETURN [[캐릭터:부쳐]], 9
 				CASE IS < 30
-					RETURN [[キャラ:리림]], 11
+					RETURN [[캐릭터:리림]], 11
 				CASE IS < 45
-					RETURN [[キャラ:슬레이브]], 9
+					RETURN [[캐릭터:슬레이브]], 9
 				CASE IS < 60
-					RETURN [[キャラ:데미난디]], 11
+					RETURN [[캐릭터:데미난디]], 11
 				CASE IS < 75
-					RETURN [[キャラ:이누가미]], 13
+					RETURN [[캐릭터:이누가미]], 13
 				CASE IS < 90
-					RETURN [[キャラ:임프]], 9
+					RETURN [[캐릭터:임프]], 9
 				CASE IS < 99
-					RETURN [[キャラ:잭프로스트]], 15
+					RETURN [[캐릭터:잭프로스트]], 15
 				CASE IS < 100
-					RETURN [[キャラ:돌연변이데미난디]], 30	
+					RETURN [[캐릭터:돌연변이데미난디]], 30	
 			ENDSELECT
 		ELSE
 			SELECTCASE RAND:100
 				CASE IS < 15
-					RETURN [[キャラ:네코마타]], 12
+					RETURN [[캐릭터:네코마타]], 12
 				CASE IS < 30
-					RETURN [[キャラ:모ㆍ쇼보]], 15
+					RETURN [[캐릭터:모ㆍ쇼보]], 15
 				CASE IS < 45
-					RETURN [[キャラ:슬레이브]], 9
+					RETURN [[캐릭터:슬레이브]], 9
 				CASE IS < 60
-					RETURN [[キャラ:데미난디]], 11
+					RETURN [[캐릭터:데미난디]], 11
 				CASE IS < 75
-					RETURN [[キャラ:이누가미]], 13
+					RETURN [[캐릭터:이누가미]], 13
 				CASE IS < 90
-					RETURN [[キャラ:오키쿠무시]], 16
+					RETURN [[캐릭터:오키쿠무시]], 16
 				CASE IS < 95
-					RETURN [[キャラ:템플나이트]], 22
+					RETURN [[캐릭터:템플나이트]], 22
 				CASE IS < 99
-					RETURN [[キャラ:잭랜턴]], 20
+					RETURN [[캐릭터:잭랜턴]], 20
 				CASE IS < 100
-					RETURN [[キャラ:돌연변이데미난디]], 30
+					RETURN [[캐릭터:돌연변이데미난디]], 30
 			ENDSELECT
 		ENDIF
 	;発掘現場１Ｆ～Ｂ１Ｆ
 	CASE 4, 5
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:부쳐]], 9
+				RETURN [[캐릭터:부쳐]], 9
 			CASE IS < 30
-				RETURN [[キャラ:보디코니언]], 12
+				RETURN [[캐릭터:보디코니언]], 12
 			CASE IS < 45
-				RETURN [[キャラ:슬레이브]], 9
+				RETURN [[캐릭터:슬레이브]], 9
 			CASE IS < 60
-				RETURN [[キャラ:데미난디]], 11
+				RETURN [[캐릭터:데미난디]], 11
 			CASE IS < 75
-				RETURN [[キャラ:뎁스]], 12
+				RETURN [[캐릭터:뎁스]], 12
 			CASE IS < 90
-				RETURN [[キャラ:슬라임]], 9
+				RETURN [[캐릭터:슬라임]], 9
 			CASE IS < 100
-				RETURN [[キャラ:리림]], 9
+				RETURN [[캐릭터:리림]], 9
 		ENDSELECT
 	;発掘現場Ｂ２Ｆ～Ｂ３Ｆ
 	CASE 6, 7
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:웜]], 13
+				RETURN [[캐릭터:웜]], 13
 			CASE IS < 35
-				RETURN [[キャラ:가기손]], 15
+				RETURN [[캐릭터:가기손]], 15
 			CASE IS < 50
-				RETURN [[キャラ:슬레이브]], 12
+				RETURN [[캐릭터:슬레이브]], 12
 			CASE IS < 65
-				RETURN [[キャラ:데미난디]], 13
+				RETURN [[캐릭터:데미난디]], 13
 			CASE IS < 85
-				RETURN [[キャラ:엠푸사]], 15
+				RETURN [[캐릭터:엠푸사]], 15
 			CASE IS < 90
-				RETURN [[キャラ:다츠에바]], 18
+				RETURN [[캐릭터:다츠에바]], 18
 			CASE IS < 95
-				RETURN [[キャラ:오니]], 20
+				RETURN [[캐릭터:오니]], 20
 			CASE IS < 100
-				RETURN [[キャラ:워커홀릭]], 21
+				RETURN [[캐릭터:워커홀릭]], 21
 		ENDSELECT
 	;強制収容所
 	CASE 8, 9
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:광신자]], 15
+				RETURN [[캐릭터:광신자]], 15
 			CASE IS < 40
-				RETURN [[キャラ:엔젤]], 21
+				RETURN [[캐릭터:엔젤]], 21
 			CASE IS < 55
-				RETURN [[キャラ:부쳐]], 13
+				RETURN [[캐릭터:부쳐]], 13
 			CASE IS < 75
-				RETURN [[キャラ:엔젤]], 14
+				RETURN [[캐릭터:엔젤]], 14
 			CASE IS < 94
-				RETURN [[キャラ:템플나이트]], 22
+				RETURN [[캐릭터:템플나이트]], 22
 			CASE IS < 97
-				RETURN [[キャラ:아크엔젤]], 24
+				RETURN [[캐릭터:아크엔젤]], 24
 			CASE IS < 100
-				RETURN [[キャラ:프린시펄리티]], 28
+				RETURN [[캐릭터:프린시펄리티]], 28
 		ENDSELECT
 	;地下通路Ｂ１Ｆ、Ｂ７Ｆ
 	CASE 10, 11
 		SELECTCASE RAND:100
 			CASE IS < 15
-				RETURN [[キャラ:좀비아미]], 15
+				RETURN [[캐릭터:좀비아미]], 15
 			CASE IS < 40
-				RETURN [[キャラ:엠푸사]], 15
+				RETURN [[캐릭터:엠푸사]], 15
 			CASE IS < 55
-				RETURN [[キャラ:웜]], 13
+				RETURN [[캐릭터:웜]], 13
 			CASE IS < 75
-				RETURN [[キャラ:엔젤]], 14
+				RETURN [[캐릭터:엔젤]], 14
 			CASE IS < 94
-				RETURN [[キャラ:이누가미]], 16
+				RETURN [[캐릭터:이누가미]], 16
 			CASE IS < 97
-				RETURN [[キャラ:아크엔젤]], 24
+				RETURN [[캐릭터:아크엔젤]], 24
 			CASE IS < 100
-				RETURN [[キャラ:맨이터]], 27
+				RETURN [[캐릭터:맨이터]], 27
 		ENDSELECT
 ENDSELECT
 ;=================================
@@ -2074,7 +2074,7 @@ ENDSELECT
 @SET_ENEMY_STATUS_28, ARG
 #LOCALSIZE 1
 SELECTCASE NO:ARG
-	CASE [[キャラ:엔젤]]
+	CASE [[캐릭터:엔젤]]
 		ABL:ARG:스킬1 = [[스킬:디아라마]]
 		ABL:ARG:스킬2 = [[스킬:마한마]]
 		ABL:ARG:스킬3 = [[스킬:갈라]]
@@ -2093,17 +2093,17 @@ ENDSELECT
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:6
 	CASE 0
-		RETURN [[キャラ:부쳐]] , 3 + RAND:10 , CSVBASE([[キャラ:부쳐]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:부쳐]] , 3 + RAND:10 , CSVBASE([[캐릭터:부쳐]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:데미난디]] , 3 + RAND:10 , CSVBASE([[キャラ:데미난디]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:데미난디]] , 3 + RAND:10 , CSVBASE([[캐릭터:데미난디]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:템플나이트]] , 3 + RAND:10 , CSVBASE([[キャラ:템플나이트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:템플나이트]] , 3 + RAND:10 , CSVBASE([[캐릭터:템플나이트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:광신자]] , 3 + RAND:10 , CSVBASE([[キャラ:광신자]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:광신자]] , 3 + RAND:10 , CSVBASE([[캐릭터:광신자]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 4
-		RETURN [[キャラ:아크엔젤]] , 3 + RAND:10 , CSVBASE([[キャラ:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아크엔젤]] , 3 + RAND:10 , CSVBASE([[캐릭터:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 5
-		RETURN [[キャラ:슬레이브]] , 3 + RAND:10 , CSVBASE([[キャラ:슬레이브]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:슬레이브]] , 3 + RAND:10 , CSVBASE([[캐릭터:슬레이브]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 
@@ -2358,7 +2358,7 @@ IF RESULT == 0
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:데미난디]],39,0,1
+			CALL SET_ENEMY,9,[[캐릭터:데미난디]],39,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			
@@ -2939,7 +2939,7 @@ ENDIF
 @DUNGEON_28_키쿠에救出加入処理
 #DIM 日付計算
 日付計算 = DAY - STRFLAG_NUM_REQ("의뢰를받은날" , , , , 13)	
-CALL ADD_NEW_COMPANION , [[キャラ:키쿠에]] , 500
+CALL ADD_NEW_COMPANION , [[캐릭터:키쿠에]] , 500
 IF RESULT == 1
 	LOCAL = RESULT:1
 	BASE:LOCAL:LV += 10
@@ -3276,7 +3276,7 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
-CALL SET_ENEMY,9,[[キャラ:니드호그]],45,0,1
+CALL SET_ENEMY,9,[[캐릭터:니드호그]],45,0,1
 LOCAL = CHARANUM -1
 CFLAG:(LOCAL):행동횟수 = 2
 CFLAG:(LOCAL):ＨＰ보정 = 3000

@@ -50,11 +50,11 @@ CALL MESSAGE_WINDOW, "", "＞시마즈 관리관이 1명 나왔다！/＞ＳＡ�
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 FOR LOCAL, 7, 17
 	IF LOCAL == 14
-		CALL SET_ENEMY, LOCAL, [[キャラ:시마즈관리관]], 36, 0 , 1
+		CALL SET_ENEMY, LOCAL, [[캐릭터:시마즈관리관]], 36, 0 , 1
 		CALL SET_BATTLE_STATUS(CHARANUM - 1, 24 * LOCAL:1, "ＨＰ")
 		CALL SET_BATTLE_STATUS(CHARANUM - 1, 20 * LOCAL:1, "ＭＰ")
 	ELSE
-		CALL SET_ENEMY, LOCAL, [[キャラ:SAT]], 32, 0 , 1
+		CALL SET_ENEMY, LOCAL, [[캐릭터:SAT]], 32, 0 , 1
 		CALL SET_BATTLE_STATUS(CHARANUM - 1, 12 * LOCAL:1, "ＨＰ")
 		CALL SET_BATTLE_STATUS(CHARANUM - 1, 20 * LOCAL:1, "ＭＰ")
 	ENDIF
@@ -85,7 +85,7 @@ IF RESULT == 0
 		CALL MESSAGE_WINDOW, "", "＞카츠야는 떠나갔다。" , , , , , 4
 	ELSE
 		CALL MESSAGE_WINDOW, "", "＞카츠야를 뒤에서 내리쳤다。/＞카츠야는 기절해、그대로 쓰러졌다。/＞스오우 카츠야를 손에 넣었다…" , , , , , 4
-		CALL ADD_NEW_COMPANION, [[キャラ:카츠야]],  200, 1
+		CALL ADD_NEW_COMPANION, [[캐릭터:카츠야]],  200, 1
 	ENDIF
 ELSE
 	CALL MESSAGE_WINDOW, "카츠야", "뭐라고？/하지만、너는 비합법 조직의 일원이잖아？/그런 도움을 빌리는……" , , , , , 4
@@ -93,7 +93,7 @@ ELSE
 	CALL MESSAGE_WINDOW, "카츠야", "나 혼자의 힘으로는 막을 수 없는 비극도 너와 함께라면/처리 할 수 있을지도 모른다……" , , , , , 4
 	CALL MESSAGE_WINDOW, "카츠야", "오히려、 내가 먼저 너에게 협력을 부탁하고 싶군。/나에게 힘을 빌려 줘。" , , , , , 4
 	CALL MESSAGE_WINDOW, "", "＞카츠야는 그렇게 말하며 머리를 숙였다。/＞스오우 카츠야가 중마가 되었다。" , , , , , 4
-	CALL ADD_NEW_COMPANION, [[キャラ:카츠야]],  500
+	CALL ADD_NEW_COMPANION, [[캐릭터:카츠야]],  500
 	SIF RESULT
 		CFLAG:(RESULT:1):전투참가불가능 = -1 
 ENDIF

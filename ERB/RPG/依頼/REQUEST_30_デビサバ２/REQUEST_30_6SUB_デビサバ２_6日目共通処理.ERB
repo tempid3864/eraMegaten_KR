@@ -73,7 +73,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;SETしヴぁ
-		CALL SET_ENEMY,9,[[キャラ:시바]],95,1,1
+		CALL SET_ENEMY,9,[[캐릭터:시바]],95,1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 3
 		;물리반사
 		FOR LOCAL,GETNUM(MAXBASE,"검격"),GETNUM(MAXBASE,"전술") + 1
@@ -108,7 +108,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;SETジュンゴ
-		CALL SET_ENEMY,8,[[キャラ:준고]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,8,[[캐릭터:준고]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):속도보정 = 15
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -129,7 +129,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:다이치
-		CALL SET_ENEMY,9,[[キャラ:다이치]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:다이치]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		
@@ -148,7 +148,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM-1):스킬8 = 0
 		
 		;SET主人公
-		CALL SET_ENEMY,10,[[キャラ:데빌서바２주인공]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,10,[[캐릭터:데빌서바２주인공]],L_ENEMY_LV,1,1
 		NAME:(CHARANUM-1) = 히어로
 		CALLNAME:(CHARANUM-1) = 히어로
 		CFLAG:(CHARANUM-1):속도보정 = 10
@@ -164,7 +164,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM-1):스킬8 = 0
 		
 		;- SET:히나코
-		CALL SET_ENEMY,11,[[キャラ:히나코]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,11,[[캐릭터:히나코]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		
@@ -192,12 +192,12 @@ SELECTCASE FLAG:데빌서바２진행도
 		NEXT
 
 		;SET雑魚
-		CALL SET_ENEMY,7,[[キャラ:누에]],L_ENEMY_LV
-		CALL SET_ENEMY,12,[[キャラ:하트호르]],L_ENEMY_LV
-		CALL SET_ENEMY,13,[[キャラ:파이몬]],L_ENEMY_LV
-		CALL SET_ENEMY,14,[[キャラ:퓌톤]],L_ENEMY_LV
-		CALL SET_ENEMY,15,[[キャラ:후지무스메]],L_ENEMY_LV
-		CALL SET_ENEMY,16,[[キャラ:서큐버스]],L_ENEMY_LV
+		CALL SET_ENEMY,7,[[캐릭터:누에]],L_ENEMY_LV
+		CALL SET_ENEMY,12,[[캐릭터:하트호르]],L_ENEMY_LV
+		CALL SET_ENEMY,13,[[캐릭터:파이몬]],L_ENEMY_LV
+		CALL SET_ENEMY,14,[[캐릭터:퓌톤]],L_ENEMY_LV
+		CALL SET_ENEMY,15,[[캐릭터:후지무스메]],L_ENEMY_LV
+		CALL SET_ENEMY,16,[[캐릭터:서큐버스]],L_ENEMY_LV
 
 		;- 전투開始
 		CALL BATTLE_START
@@ -220,7 +220,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- SET:마코토
-		CALL SET_ENEMY,8,[[キャラ:마코토]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,8,[[캐릭터:마코토]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):속도보정 = 5
@@ -243,7 +243,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:후미
-		CALL SET_ENEMY,9,[[キャラ:후미]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:후미]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 		CFLAG:(CHARANUM-1):속도보정 = 5
@@ -267,7 +267,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:케이타
-		CALL SET_ENEMY,10,[[キャラ:케이타]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,10,[[캐릭터:케이타]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):속도보정 = 5
@@ -290,11 +290,11 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:雑魚
-		CALL SET_ENEMY,13,[[キャラ:아르테미스]],L_ENEMY_LV
-		CALL SET_ENEMY,14,[[キャラ:아타파구]],L_ENEMY_LV
-		CALL SET_ENEMY,15,[[キャラ:빠챠카마쿠]],L_ENEMY_LV
-		CALL SET_ENEMY,7,[[キャラ:스퀼라]],L_ENEMY_LV
-		CALL SET_ENEMY,11,[[キャラ:트리글라프]],L_ENEMY_LV
+		CALL SET_ENEMY,13,[[캐릭터:아르테미스]],L_ENEMY_LV
+		CALL SET_ENEMY,14,[[캐릭터:아타파구]],L_ENEMY_LV
+		CALL SET_ENEMY,15,[[캐릭터:빠챠카마쿠]],L_ENEMY_LV
+		CALL SET_ENEMY,7,[[캐릭터:스퀼라]],L_ENEMY_LV
+		CALL SET_ENEMY,11,[[캐릭터:트리글라프]],L_ENEMY_LV
 
 		;- 전투開始
 		CALL BATTLE_START
@@ -316,7 +316,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- SET:마코토
-		CALL SET_ENEMY,9,[[キャラ:마코토]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:마코토]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -340,7 +340,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:후미
-		CALL SET_ENEMY,14,[[キャラ:후미]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,14,[[캐릭터:후미]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 2000
 		CFLAG:(CHARANUM-1):속도보정 = 10
@@ -364,14 +364,14 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:雑魚
-		CALL SET_ENEMY,7,[[キャラ:베르세르크]],L_ENEMY_LV
-		CALL SET_ENEMY,8,[[キャラ:아타파구]],L_ENEMY_LV
-		CALL SET_ENEMY,10,[[キャラ:바스테트]],L_ENEMY_LV
-		CALL SET_ENEMY,11,[[キャラ:오토히메]],L_ENEMY_LV
-		CALL SET_ENEMY,12,[[キャラ:파주주]],L_ENEMY_LV
-		CALL SET_ENEMY,13,[[キャラ:킨마몬]],L_ENEMY_LV
-		CALL SET_ENEMY,15,[[キャラ:스프리건]],L_ENEMY_LV
-		CALL SET_ENEMY,16,[[キャラ:뉵스]],L_ENEMY_LV
+		CALL SET_ENEMY,7,[[캐릭터:베르세르크]],L_ENEMY_LV
+		CALL SET_ENEMY,8,[[캐릭터:아타파구]],L_ENEMY_LV
+		CALL SET_ENEMY,10,[[캐릭터:바스테트]],L_ENEMY_LV
+		CALL SET_ENEMY,11,[[캐릭터:오토히메]],L_ENEMY_LV
+		CALL SET_ENEMY,12,[[캐릭터:파주주]],L_ENEMY_LV
+		CALL SET_ENEMY,13,[[캐릭터:킨마몬]],L_ENEMY_LV
+		CALL SET_ENEMY,15,[[캐릭터:스프리건]],L_ENEMY_LV
+		CALL SET_ENEMY,16,[[캐릭터:뉵스]],L_ENEMY_LV
 				
 		;- 전투開始
 		CALL BATTLE_START
@@ -390,7 +390,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- SET:케이타
-		CALL SET_ENEMY,9,[[キャラ:케이타]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:케이타]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 2000
@@ -416,8 +416,8 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:雑魚
-		CALL SET_ENEMY,8,[[キャラ:후츠누시]],L_ENEMY_LV
-		CALL SET_ENEMY,10,[[キャラ:페리]],L_ENEMY_LV
+		CALL SET_ENEMY,8,[[캐릭터:후츠누시]],L_ENEMY_LV
+		CALL SET_ENEMY,10,[[캐릭터:페리]],L_ENEMY_LV
 		
 		;- 전투開始
 		CALL BATTLE_START
@@ -431,7 +431,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;SETロナウド
-		CALL SET_ENEMY,9,[[キャラ:로나우도]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:로나우도]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):속도보정 = 10
@@ -452,7 +452,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;SETジョー
-		CALL SET_ENEMY,14,[[キャラ:죠]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,14,[[캐릭터:죠]],L_ENEMY_LV,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 		CFLAG:(CHARANUM-1):속도보정 = 5
@@ -475,10 +475,10 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;SET雑魚
-		CALL SET_ENEMY,7,[[キャラ:아메노후토타마]],L_ENEMY_LV
-		CALL SET_ENEMY,8,[[キャラ:트리글라프]],L_ENEMY_LV
-		CALL SET_ENEMY,10,[[キャラ:아타파구]],L_ENEMY_LV
-		CALL SET_ENEMY,11,[[キャラ:란다]],L_ENEMY_LV
+		CALL SET_ENEMY,7,[[캐릭터:아메노후토타마]],L_ENEMY_LV
+		CALL SET_ENEMY,8,[[캐릭터:트리글라프]],L_ENEMY_LV
+		CALL SET_ENEMY,10,[[캐릭터:아타파구]],L_ENEMY_LV
+		CALL SET_ENEMY,11,[[캐릭터:란다]],L_ENEMY_LV
 
 		;- 전투開始
 		CALL BATTLE_START
@@ -506,7 +506,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 
 		;SETヤマト
-		CALL SET_ENEMY,9,[[キャラ:야마토]],60,1,1
+		CALL SET_ENEMY,9,[[캐릭터:야마토]],60,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 2000
@@ -526,14 +526,14 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;SET雑魚
-		CALL SET_ENEMY,7,[[キャラ:듀라한]],L_ENEMY_LV
-		CALL SET_ENEMY,8,[[キャラ:쿠치사케]],L_ENEMY_LV
-		CALL SET_ENEMY,10,[[キャラ:아마존]],L_ENEMY_LV
-		CALL SET_ENEMY,11,[[キャラ:도올]],L_ENEMY_LV
-		CALL SET_ENEMY,12,[[キャラ:바르바토스]],L_ENEMY_LV
-		CALL SET_ENEMY,13,[[キャラ:얌]],L_ENEMY_LV
-		CALL SET_ENEMY,15,[[キャラ:루흐]],L_ENEMY_LV
-		CALL SET_ENEMY,16,[[キャラ:빠챠카마쿠]],L_ENEMY_LV
+		CALL SET_ENEMY,7,[[캐릭터:듀라한]],L_ENEMY_LV
+		CALL SET_ENEMY,8,[[캐릭터:쿠치사케]],L_ENEMY_LV
+		CALL SET_ENEMY,10,[[캐릭터:아마존]],L_ENEMY_LV
+		CALL SET_ENEMY,11,[[캐릭터:도올]],L_ENEMY_LV
+		CALL SET_ENEMY,12,[[캐릭터:바르바토스]],L_ENEMY_LV
+		CALL SET_ENEMY,13,[[캐릭터:얌]],L_ENEMY_LV
+		CALL SET_ENEMY,15,[[캐릭터:루흐]],L_ENEMY_LV
+		CALL SET_ENEMY,16,[[캐릭터:빠챠카마쿠]],L_ENEMY_LV
 		
 		;- 전투開始
 		CALL BATTLE_START
@@ -567,9 +567,9 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- 악마解析度증가処理(1000でMAX)
-		CALL INCREASE_ANALYZE([[キャラ:베네트나쉬]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:베네트나쉬]],1000)
 		
-		CALL SET_ENEMY,9,[[キャラ:베네트나쉬]],60,1,1
+		CALL SET_ENEMY,9,[[캐릭터:베네트나쉬]],60,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 
@@ -597,7 +597,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;SET本体
-		CALL SET_ENEMY,8,[[キャラ:베네트나쉬]],60,1,1
+		CALL SET_ENEMY,8,[[캐릭터:베네트나쉬]],60,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		
@@ -616,7 +616,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL SYNC_STATUS,(CHARANUM-1)
 		
 		;SET두베메그레즈
-		CALL SET_ENEMY,9,[[キャラ:베네트나쉬]],60
+		CALL SET_ENEMY,9,[[캐릭터:베네트나쉬]],60
 		NAME:(CHARANUM-1) = 破軍の娘
 		CALLNAME:(CHARANUM-1) = 破軍の娘
 		CFLAG:(CHARANUM-1):속도보정 = 15
@@ -643,7 +643,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL SYNC_STATUS,(CHARANUM-1)
 		
 		;SET메라크페크다
-		CALL SET_ENEMY,10,[[キャラ:베네트나쉬]],60
+		CALL SET_ENEMY,10,[[캐릭터:베네트나쉬]],60
 		NAME:(CHARANUM-1) = 破軍の娘
 		CALLNAME:(CHARANUM-1) = 破軍の娘
 		CFLAG:(CHARANUM-1):속도보정 = 5
@@ -669,7 +669,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL SYNC_STATUS,(CHARANUM-1)
 		
 		;SET미자르알리오츠
-		CALL SET_ENEMY,11,[[キャラ:베네트나쉬]],60
+		CALL SET_ENEMY,11,[[캐릭터:베네트나쉬]],60
 		NAME:(CHARANUM-1) = 破軍の娘
 		CALLNAME:(CHARANUM-1) = 破軍の娘
 		CFLAG:(CHARANUM-1):속도보정 = 20
@@ -746,11 +746,11 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;SET보티스
-		CALL SET_ENEMY,8,[[キャラ:보티스]],60,1,1
+		CALL SET_ENEMY,8,[[캐릭터:보티스]],60,1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		
 		;SETビフロンス
-		CALL SET_ENEMY,10,[[キャラ:비프론스]],60,1,1
+		CALL SET_ENEMY,10,[[캐릭터:비프론스]],60,1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 
 		;- 전투開始
@@ -768,7 +768,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CUSTOMDRAWLINE =
 		
 		;- SET:야마토
-		CALL SET_ENEMY,9,[[キャラ:야마토]],65,1,1
+		CALL SET_ENEMY,9,[[캐릭터:야마토]],65,1,1
 		ABL:(CHARANUM-1):종족 = 43
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -808,7 +808,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- SET:오토메
-		CALL SET_ENEMY,7,[[キャラ:오토메]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,7,[[캐릭터:오토메]],L_ENEMY_LV,1,1
 
 		;전격신경정신주살무효물리약점
 		FOR LOCAL,GETNUM(MAXBASE,"검격"),GETNUM(MAXBASE,"전술") + 1
@@ -830,7 +830,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 			
 		;- SET:다이치
-		CALL SET_ENEMY,8,[[キャラ:다이치]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,8,[[캐릭터:다이치]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		
 		;화염흡수빙결약점
@@ -848,7 +848,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:마코토
-		CALL SET_ENEMY,9,[[キャラ:마코토]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:마코토]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 
 		;물리무효화염약점빙결반사
@@ -869,7 +869,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:준고
-		CALL SET_ENEMY,10,[[キャラ:준고]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,10,[[캐릭터:준고]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 		
 		;충격반사전격정신신경파마주살약점
@@ -891,7 +891,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:로나우도
-		CALL SET_ENEMY,11,[[キャラ:로나우도]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,11,[[캐릭터:로나우도]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 5
 		
 		;물리흡수화염무효
@@ -916,7 +916,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:히나코
-		CALL SET_ENEMY,12,[[キャラ:히나코]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,12,[[캐릭터:히나코]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		
 		;화염약점빙결흡수신경정신주살무효
@@ -937,7 +937,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:죠
-		CALL SET_ENEMY,13,[[キャラ:죠]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,13,[[캐릭터:죠]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		
 		;전격약점충격흡수신경정신주살무효
@@ -958,7 +958,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:후미
-		CALL SET_ENEMY,15,[[キャラ:후미]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,15,[[캐릭터:후미]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		
 		;화염약점빙결흡수신경정신주살무효
@@ -979,7 +979,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		ABL:(CHARANUM - 1):스킬8 = 0
 		
 		;- SET:아이리
-		CALL SET_ENEMY,16,[[キャラ:아이리]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,16,[[캐릭터:아이리]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 15
 		
 		;화염빙결약점전격충격무효
@@ -1019,7 +1019,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		WAIT
 		
 		;- SET:이오
-		CALL SET_ENEMY,8,[[キャラ:이오]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,8,[[캐릭터:이오]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		ABL:(CHARANUM-1):종족 = 10
@@ -1042,7 +1042,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:야마토
-		CALL SET_ENEMY,9,[[キャラ:야마토]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,9,[[캐릭터:야마토]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 10
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		ABL:(CHARANUM-1):종족 = 10
@@ -1067,7 +1067,7 @@ SELECTCASE FLAG:데빌서바２진행도
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;- SET:케이타
-		CALL SET_ENEMY,10,[[キャラ:케이타]],L_ENEMY_LV,1,1
+		CALL SET_ENEMY,10,[[캐릭터:케이타]],L_ENEMY_LV,1,1
 		CFLAG:(CHARANUM-1):속도보정 = 15
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		ABL:(CHARANUM-1):종족 = 10
@@ -1094,11 +1094,11 @@ SELECTCASE FLAG:데빌서바２진행도
 		PRINTL
 		CUSTOMDRAWLINE =
 		;- 악마解析度증가処理(1000でMAX)
-		CALL INCREASE_ANALYZE([[キャラ:폴라리스]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:폴라리스]],1000)
 		PRINTL 북극성　폴라리스A가 1명 나왔다！
 		
 		;SET本体
-		CALL SET_ENEMY,9,[[キャラ:폴라리스]],75,1,1
+		CALL SET_ENEMY,9,[[캐릭터:폴라리스]],75,1,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 2000
 		CFLAG:(CHARANUM-1):속도보정 = 10
@@ -1122,7 +1122,7 @@ SELECTCASE FLAG:데빌서바２진행도
 			PRINTL 섭리의 창　폴라리스B가 1명 나왔다！
 			PRINTL 섭리의 방패　폴라리스Ab가 1명 나왔다！
 			
-			CALL SET_ENEMY,8,[[キャラ:폴라리스]],70,1,0
+			CALL SET_ENEMY,8,[[캐릭터:폴라리스]],70,1,0
 			NAME:(CHARANUM-1) = 폴라리스B
 			CALLNAME:(CHARANUM-1) = 폴라리스B
 			CSTR:(CHARANUM-1):종족명 =  섭리의 창
@@ -1150,7 +1150,7 @@ SELECTCASE FLAG:데빌서바２진행도
 			BASE:(CHARANUM-1):수격 = 0
 			BASE:(CHARANUM-1):질풍 = 0
 			
-			CALL SET_ENEMY,10,[[キャラ:폴라리스]],70,1,0
+			CALL SET_ENEMY,10,[[캐릭터:폴라리스]],70,1,0
 			NAME:(CHARANUM-1) = 폴라리스Ab
 			CALLNAME:(CHARANUM-1) = 폴라리스Ab
 			CSTR:(CHARANUM-1):종족명 =  섭리의 방패
@@ -1178,7 +1178,7 @@ SELECTCASE FLAG:데빌서바２진행도
 			PRINTL 하늘의 창 폴라리스B가 1명 나왔다！
 			PRINTL 하늘의 방패 폴라리스Ab가 1명 나왔다！
 			
-			CALL SET_ENEMY,8,[[キャラ:폴라리스]],70,1,0
+			CALL SET_ENEMY,8,[[캐릭터:폴라리스]],70,1,0
 			NAME:(CHARANUM-1) = 폴라리스B
 			CALLNAME:(CHARANUM-1) = 폴라리스B
 			CSTR:(CHARANUM-1):종족명 =  하늘의 창
@@ -1204,7 +1204,7 @@ SELECTCASE FLAG:데빌서바２진행도
 			BASE:(CHARANUM-1):수격 = 0
 			BASE:(CHARANUM-1):질풍 = 0
 			
-			CALL SET_ENEMY,10,[[キャラ:폴라리스]],70,1,0
+			CALL SET_ENEMY,10,[[캐릭터:폴라리스]],70,1,0
 			NAME:(CHARANUM-1) = 폴라리스Ab
 			CALLNAME:(CHARANUM-1) = 폴라리스Ab
 			CSTR:(CHARANUM-1):종족명 =  하늘의 방패
@@ -1282,7 +1282,7 @@ SELECTCASE FLAG:데빌서바２진행도
 			IF L_POSITION < 0
 				CONTINUE
 			;該当位置がヤマト
-			ELSEIF NO:L_POSITION == [[キャラ:야마토]]
+			ELSEIF NO:L_POSITION == [[캐릭터:야마토]]
 				L_NO = L_POSITION
 			;該当する位置のキャラが死んでない
 			ELSEIF CFLAG:L_POSITION:상태이상 != GET_STATE_NUM("DYING")

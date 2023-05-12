@@ -83,60 +83,60 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		
-		CALL SET_ENEMY,7, [[キャラ:피샤차]], 53, 1, 0
+		CALL SET_ENEMY,7, [[캐릭터:피샤차]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전피샤차
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,8, [[キャラ:나가]], 53, 1, 0
+		CALL SET_ENEMY,8, [[캐릭터:나가]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전나가
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,9, [[キャラ:락샤사]], 53, 1, 0
+		CALL SET_ENEMY,9, [[캐릭터:락샤사]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전락샤사
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,10, [[キャラ:아귀]], 53, 1, 0
+		CALL SET_ENEMY,10, [[캐릭터:아귀]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전아귀
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,11, [[キャラ:쿠반다]], 60, 1, 0
+		CALL SET_ENEMY,11, [[캐릭터:쿠반다]], 60, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전쿠반다
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,12, [[キャラ:지국천]], 61, 1, 1
+		CALL SET_ENEMY,12, [[캐릭터:지국천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전지국천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,13, [[キャラ:광목천]], 61, 1, 1
+		CALL SET_ENEMY,13, [[캐릭터:광목천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전광목천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,14, [[キャラ:비사문천]], 62, 1, 1
+		CALL SET_ENEMY,14, [[캐릭터:비사문천]], 62, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전비사문천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,15, [[キャラ:야크시니]], 53, 1, 0
+		CALL SET_ENEMY,15, [[캐릭터:야크시니]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전야크시니
 		;CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,16, [[キャラ:증장천]], 61, 1, 1
+		CALL SET_ENEMY,16, [[캐릭터:증장천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전증장천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -157,7 +157,7 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,14, [[キャラ:비사문천]], 59, 1, 1
+		CALL SET_ENEMY,14, [[캐릭터:비사문천]], 59, 1, 1
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -178,48 +178,48 @@ IF 의뢰플래그:8:0 == 0 && 던전플래그:47:1 >= 4
 		CALL MESSAGE_WINDOW, , "＞사천왕 중 남아있는 전원과 그외 악마들이 나타났다！/　"
 		
 		;アイ디아元の1つにデビサバがあるのでデビサバのゾウチョウコウモク戦を参考にしてみる
-		CALL SET_ENEMY,7, [[キャラ:지국천]], 61, 1, 1
+		CALL SET_ENEMY,7, [[캐릭터:지국천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전지국천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,8, [[キャラ:란다]], 49, 1, 1
+		CALL SET_ENEMY,8, [[캐릭터:란다]], 49, 1, 1
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,9, [[キャラ:광목천]], 61, 1, 1
+		CALL SET_ENEMY,9, [[캐릭터:광목천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전광목천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		
-		CALL SET_ENEMY,10, [[キャラ:케르베로스]], 59, 1, 0
+		CALL SET_ENEMY,10, [[캐릭터:케르베로스]], 59, 1, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,11, [[キャラ:증장천]], 61, 1, 1
+		CALL SET_ENEMY,11, [[캐릭터:증장천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전증장천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,12, [[キャラ:쿠엘레브레]], 47, 1, 0
+		CALL SET_ENEMY,12, [[캐릭터:쿠엘레브레]], 47, 1, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,13, [[キャラ:야크시니]], 52, 1, 0
+		CALL SET_ENEMY,13, [[캐릭터:야크시니]], 52, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전야크시니
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		
-		CALL SET_ENEMY,15, [[キャラ:청룡]], 46, 1, 0
+		CALL SET_ENEMY,15, [[캐릭터:청룡]], 46, 1, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,16, [[キャラ:아가레스]], 57, 1, 0
+		CALL SET_ENEMY,16, [[캐릭터:아가레스]], 57, 1, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
@@ -290,38 +290,38 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 			CALL MESSAGE_WINDOW, "", "＞사천왕과 그 권속들이 나왔다！", , , , , 4
 		ENDIF
 
-		CALL SET_ENEMY,7, [[キャラ:피샤차]], 53, 1, 0
+		CALL SET_ENEMY,7, [[캐릭터:피샤차]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전피샤차
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,8, [[キャラ:나가]], 53, 1, 0
+		CALL SET_ENEMY,8, [[캐릭터:나가]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전나가
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,9, [[キャラ:락샤사]], 53, 1, 0
+		CALL SET_ENEMY,9, [[캐릭터:락샤사]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전락샤사
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,10, [[キャラ:아귀]], 53, 1, 0
+		CALL SET_ENEMY,10, [[캐릭터:아귀]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전아귀
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,11, [[キャラ:쿠반다]], 60, 1, 0
+		CALL SET_ENEMY,11, [[캐릭터:쿠반다]], 60, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전쿠반다
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 	IF FINDCHARA_B(1403) < 0
-		CALL SET_ENEMY,12, [[キャラ:지국천]], 61, 1, 1
+		CALL SET_ENEMY,12, [[캐릭터:지국천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전지국천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -329,7 +329,7 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 	ENDIF
 	
 	IF FINDCHARA_B(1402) < 0		
-		CALL SET_ENEMY,13, [[キャラ:광목천]], 61, 1, 1
+		CALL SET_ENEMY,13, [[캐릭터:광목천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전광목천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -337,21 +337,21 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 	ENDIF
 	
 	IF FINDCHARA_B(1404) < 0
-		CALL SET_ENEMY,14, [[キャラ:비사문천]], 62, 1, 1
+		CALL SET_ENEMY,14, [[캐릭터:비사문천]], 62, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전비사문천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 	ENDIF
 		
-		CALL SET_ENEMY,15, [[キャラ:야크시니]], 53, 1, 0
+		CALL SET_ENEMY,15, [[캐릭터:야크시니]], 53, 1, 0
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전야크시니
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 	IF FINDCHARA_B(1401) < 0
-		CALL SET_ENEMY,16, [[キャラ:증장천]], 61, 1, 1
+		CALL SET_ENEMY,16, [[캐릭터:증장천]], 61, 1, 1
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전증장천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -392,7 +392,7 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 		ELSE
 			CALL MESSAGE_WINDOW, "？？？", "인간이여/여기에/발을 들였다면/각오는 되어 있는가", , , , , 4
 			CALL MESSAGE_WINDOW, , "＞비사문천이 나타났다！", , , , , 4
-			CALL SET_ENEMY,14, [[キャラ:비사문천]], 59, 1, 1
+			CALL SET_ENEMY,14, [[캐릭터:비사문천]], 59, 1, 1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -401,7 +401,7 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 			CALL MESSAGE_WINDOW, "비사문천", "우리가 인정하는 인간이/나타날 때까지/도쿄의 사방을 수호하고/다스리는 일을", , , , , 4
 			CALL MESSAGE_WINDOW, "비사문천", @"그리고 이제/그대가 나타났으니/우리의 힘/%CALLNAME:MASTER%에게 주겠노라", , , , , 4
 			CALL MESSAGE_WINDOW, "", "＞비사문천이 중마가 되었다", , , , , 4
-			CALL LIFTING_A_BAN([[キャラ:비사문천]])
+			CALL LIFTING_A_BAN([[캐릭터:비사문천]])
 			;FLAG:11404 = 1
 			CALL ADD_NEW_COMPANION, 1404, 1000, 1
 		ENDIF
@@ -435,71 +435,71 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 >= 4
 			CALL MESSAGE_WINDOW, "", "＞남아있는 사천왕과 악마들이 나타났다！", , , , , 4
 			;アイ디아元の1つにデビサバがあるのでデビサバのゾウチョウコウモク戦を参考にしてみる
 			IF FINDCHARA_B(1403) < 0
-				CALL SET_ENEMY,7, [[キャラ:지국천]], 61, 1, 1
+				CALL SET_ENEMY,7, [[캐릭터:지국천]], 61, 1, 1
 				CSTR:(CHARANUM -1):사고패턴 = 사천왕전지국천
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 			ENDIF
 
-			CALL SET_ENEMY,8, [[キャラ:란다]], 49, 1, 1
+			CALL SET_ENEMY,8, [[캐릭터:란다]], 49, 1, 1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			IF FINDCHARA_B(1402) < 0
-				CALL SET_ENEMY,9, [[キャラ:광목천]], 61, 1, 1
+				CALL SET_ENEMY,9, [[캐릭터:광목천]], 61, 1, 1
 				CSTR:(CHARANUM -1):사고패턴 = 사천왕전광목천
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 			ENDIF
 
-			CALL SET_ENEMY,10, [[キャラ:케르베로스]], 59, 1, 0
+			CALL SET_ENEMY,10, [[캐릭터:케르베로스]], 59, 1, 0
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			IF FINDCHARA_B(1401) < 0
-				CALL SET_ENEMY,11, [[キャラ:증장천]], 61, 1, 1
+				CALL SET_ENEMY,11, [[캐릭터:증장천]], 61, 1, 1
 				CSTR:(CHARANUM -1):사고패턴 = 사천왕전증장천
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 			ENDIF
 
-			CALL SET_ENEMY,12, [[キャラ:쿠엘레브레]], 47, 1, 0
+			CALL SET_ENEMY,12, [[캐릭터:쿠엘레브레]], 47, 1, 0
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,13, [[キャラ:야크시니]], 52, 1, 0
+			CALL SET_ENEMY,13, [[캐릭터:야크시니]], 52, 1, 0
 			CSTR:(CHARANUM -1):사고패턴 = 사천왕전야크시니
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,14, [[キャラ:야크시니]], 52, 1, 0
+			CALL SET_ENEMY,14, [[캐릭터:야크시니]], 52, 1, 0
 			CSTR:(CHARANUM -1):사고패턴 = 사천왕전야크시니
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,15, [[キャラ:청룡]], 46, 1, 0
+			CALL SET_ENEMY,15, [[캐릭터:청룡]], 46, 1, 0
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,16, [[キャラ:아가레스]], 57, 1, 0
+			CALL SET_ENEMY,16, [[캐릭터:아가레스]], 57, 1, 0
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 			CALL BATTLE_START
 			
-			CALL LIFTING_A_BAN([[キャラ:증장천]])
-			CALL LIFTING_A_BAN([[キャラ:광목천]])
-			CALL LIFTING_A_BAN([[キャラ:지국천]])
+			CALL LIFTING_A_BAN([[캐릭터:증장천]])
+			CALL LIFTING_A_BAN([[캐릭터:광목천]])
+			CALL LIFTING_A_BAN([[캐릭터:지국천]])
 			;FLAG:11401 = 1
 			;FLAG:11402 = 1
 			;FLAG:11403 = 1
@@ -570,28 +570,28 @@ ELSEIF 의뢰플래그:8:0 == 0 && 던전플래그:35:1 == -1 && 던전플래그
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		
-		CALL SET_ENEMY,7, [[キャラ:광목천]], 62, 0, 1
+		CALL SET_ENEMY,7, [[캐릭터:광목천]], 62, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전광목천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,9, [[キャラ:비사문천]], 67, 0, 1
+		CALL SET_ENEMY,9, [[캐릭터:비사문천]], 67, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전비사문천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 				
-		CALL SET_ENEMY,11, [[キャラ:증장천]], 62, 0, 1
+		CALL SET_ENEMY,11, [[캐릭터:증장천]], 62, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전증장천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,14, [[キャラ:지국천]], 62, 0, 1
+		CALL SET_ENEMY,14, [[캐릭터:지국천]], 62, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CSTR:(CHARANUM -1):사고패턴 = 사천왕전지국천
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -735,22 +735,22 @@ BEGIN TURNEND
 ;적セット＆전투開始
 ;====================
 @도쿄수호격파잡몹전
-		CALL SET_ENEMY,7, [[キャラ:락샤사]], 48, 0, 0
+		CALL SET_ENEMY,7, [[캐릭터:락샤사]], 48, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,9, [[キャラ:슈텐도지]], 49, 0, 0
+		CALL SET_ENEMY,9, [[캐릭터:슈텐도지]], 49, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,11, [[キャラ:쿠라마텐구]], 52, 0, 0
+		CALL SET_ENEMY,11, [[캐릭터:쿠라마텐구]], 52, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,12, [[キャラ:다키니]], 45, 0, 0
+		CALL SET_ENEMY,12, [[캐릭터:다키니]], 45, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,14, [[キャラ:이바라키도지]], 38, 0, 0
+		CALL SET_ENEMY,14, [[캐릭터:이바라키도지]], 38, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
-		CALL SET_ENEMY,16, [[キャラ:야크시니]], 30, 0, 0
+		CALL SET_ENEMY,16, [[캐릭터:야크시니]], 30, 0, 0
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		CALL BATTLE_START

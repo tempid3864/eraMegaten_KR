@@ -2,7 +2,7 @@
 
 ;스킬명
 @SKILL_NAME_1912,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = Nㆍ블래스터
 ELSE
 	RESULTS = 플래시봄
@@ -14,12 +14,12 @@ RETURN 80
 
 ;　위력
 @SKILL_POWER_1912, ARG
-SIF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 200
 RETURN 180
 
 @SKILL_CRITICAL_RATE_1912, ARG
-SIF SKILL_CHANGE(U, [[キャラ:팬텀]]) || SKILL_CHANGE(U, [[キャラ:팻]])
+SIF SKILL_CHANGE(U, [[캐릭터:팬텀]]) || SKILL_CHANGE(U, [[캐릭터:팻]])
 	RETURN 0
 RETURN -200
 
@@ -116,7 +116,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @SKILL_DAMAGE_EFFECT_1912,ARG,ARG:1
-SIF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+SIF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN
 PRINT  & 명중ㆍ회피 저하
 CFLAG:(ARG:1):명중강화 = MAX(-16, CFLAG:(ARG:1):명중강화 - 4)
@@ -136,7 +136,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,1912
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1912
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 흉부 중앙의 에너지 캐논에서 중성자 빔을 발사해 적 1열에 핵열 상성의 물리데미지를 준다
 	PRINTL 정식명칭은「뉴트론ㆍ블래스터」。
 ELSE

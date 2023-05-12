@@ -397,13 +397,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", @"＞히ー호ー군이라고 이름을 밝힌 잭프로스트의 말에 따르면、/＞이 앞으로 나아가기 위한 비밀통로는 개통과 유지에 특수한 마력이 필요하여、/＞%CALLNAME:MASTER%나、%CALLNAME:MASTER%의 동료마들로써는 지나갈 방법이 없다고 한다。"
 			CALL MESSAGE_WINDOW_D, "히ー호ー군", "그럼、나는 아래층으로 돌아갈게호/여기에는 마이 하니ー히호코양이 남을테니、/돌아가고 싶을 때는 말해줘호"
 			;ゆきのがパーティにいて、함락している
-			IF FINDCHARA_B([[キャラ:유키노상]])== 2 && 함락(RESULT:1) && ABL:(RESULT:1):초기페르소나 != [[キャラ:두르가(페르소나)]]
+			IF FINDCHARA_B([[캐릭터:유키노상]])== 2 && 함락(RESULT:1) && ABL:(RESULT:1):초기페르소나 != [[캐릭터:두르가(페르소나)]]
 				CALL MESSAGE_WINDOW_D, "히ー호ー군", "……아、참。/방금、이런걸 주웠다호/아마、너희들이 가지고 있는 편이 도움이 될 것 같다는 생각이 든다호"
 				CALL MESSAGE_WINDOW_D, "", "＞히ー호ー군은 마침 떠오랐다는 듯이 말하며、/＞주머니에서 무언가를 꺼내서 쥐어줬다。"
 				;ゆきの초기페르소나バージョンアップ
 				CALL MESSAGE_WINDOW_D, "", "＞유키노가 받아들인 그것은 들소의 뿔로 만든 장식물처럼 보인다。/＞직후、유키노의 뒤쪽에서 그녀의 페르소나「베스타」가 나타났다。/＞뿔은 불타오르듯 빛을 내뿜으며、베스타에게 흡수되듯 사라졌다。"
 				CALL MESSAGE_WINDOW_D, "", "＞유키노의 초기페르소나가 성장했다！"
-				ABL:(RESULT:1):초기페르소나 = [[キャラ:두르가(페르소나)]]
+				ABL:(RESULT:1):초기페르소나 = [[캐릭터:두르가(페르소나)]]
 				CALL SYNC_STATUS, RESULT:1
 			ENDIF
 			IF TALENT:MASTER:140
@@ -433,13 +433,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL MESSAGE_WINDOW_D, "", "＞그곳에는、교복을 입은 잭프로스트가 있었다。"
 			CALL MESSAGE_WINDOW_D, "히ー호ー군", "윗층으로 갈거야호？/그럼 따라와호！"
 			;ゆきのがパーティにいて、함락している
-			IF FINDCHARA_B([[キャラ:유키노상]])== 2 && 함락(RESULT:1) && ABL:(RESULT:1):초기페르소나 != [[キャラ:두르가(페르소나)]]
+			IF FINDCHARA_B([[캐릭터:유키노상]])== 2 && 함락(RESULT:1) && ABL:(RESULT:1):초기페르소나 != [[캐릭터:두르가(페르소나)]]
 				CALL MESSAGE_WINDOW_D, "히ー호ー군", "……아、참。/방금、이런걸 주웠다호/아마、너희들이 가지고 있는 편이 도움이 될 것 같다는 생각이 든다호"
 				CALL MESSAGE_WINDOW_D, "", "＞히ー호ー군은 마침 떠오랐다는 듯이 말하며、/＞주머니에서 무언가를 꺼내서 쥐어줬다。"
 				;ゆきの초기페르소나バージョンアップ
 				CALL MESSAGE_WINDOW_D, "", "＞유키노가 받아들인 그것은 들소의 뿔로 만든 장식물처럼 보인다。/＞직후、유키노의 뒤쪽에서 그녀의 페르소나「베스타」가 나타났다。/＞뿔은 불타오르듯 빛을 내뿜으며、베스타에게 흡수되듯 사라졌다。"
 				CALL MESSAGE_WINDOW_D, "", "＞유키노의 초기페르소나가 성장했다！"
-				ABL:(RESULT:1):초기페르소나 = [[キャラ:두르가(페르소나)]]
+				ABL:(RESULT:1):초기페르소나 = [[캐릭터:두르가(페르소나)]]
 				CALL SYNC_STATUS, RESULT:1
 			ENDIF
 			FLAG:현M = 3
@@ -449,7 +449,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			CALL AUTOMAP
 		CASE 4
 ;아야세がパーティにいて、함락している
-			IF FINDCHARA_B([[キャラ:아야세]])== 2 && 함락(RESULT:1) && 던전플래그:66:5 == 0
+			IF FINDCHARA_B([[캐릭터:아야세]])== 2 && 함락(RESULT:1) && 던전플래그:66:5 == 0
 				CALL MESSAGE_WINDOW_D, "아야세", @"어머？//이것 봐봐、%CALLNAME:MASTER%ー？"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 뒤돌아보니、/＞복도 구석에 쭈그려 앉은 아야세가 무언가를 줏어들었다。/＞……깨진 거울의 파편인 듯하다。"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 미처 던져버리라고 지시하기도 전에、아야세의 손 안에서 그것이 빛을 발하기 시작했다。/＞……빛이 사그라들 무렵、아야세의 손에는 한 장의 가면이 올려져있엇다。/＞그 표면은 마치 거울처럼 빛을 반사하고 있었지만、신기하게도 그것을 착용해도 시야가 가려지지는 않았다。/＞아야세는 얼마간 이런저런 각도로 비춰본 뒤、"
@@ -463,7 +463,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 		CASE 5
 ;에리がパーティにいて、함락している
-			IF FINDCHARA_B([[キャラ:에리]])== 2 && 함락(RESULT:1) && 던전플래그:66:6 == 0
+			IF FINDCHARA_B([[캐릭터:에리]])== 2 && 함락(RESULT:1) && 던전플래그:66:6 == 0
 				CALL MESSAGE_WINDOW_D, "에리", "어머？/이건……mirror？"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 뒤돌아보니、/＞에리가 발치에서 굴러다니던 무언가를 줏어들었다。/＞……깨진 거울의 파편인 듯하다。"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 미처 던져버리라고 지시하기도 전에、에리의 손 안에서 그것이 빛을 발하기 시작했다。/＞……빛이 사그라들 무렵、에리의 손안에는 한자루의 검이 있엇다。/＞마치 유리를 잘게 깨뜨려 만든것처럼 생겼지만、유리같이 약한 재질은 아닌 것 같다。/＞에리는 확인해보듯 한두번 휘둘러보곤、"
@@ -477,7 +477,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			ENDIF
 		CASE 6
 ;ゆきのがパーティにいて、함락している
-			IF FINDCHARA_B([[キャラ:유키노상]])== 2 && 함락(RESULT:1) && 던전플래그:66:7 == 0
+			IF FINDCHARA_B([[캐릭터:유키노상]])== 2 && 함락(RESULT:1) && 던전플래그:66:7 == 0
 				CALL MESSAGE_WINDOW_D, "유키노", "음、……이건 뭐지？"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 뒤돌아보니、/＞유키노가 창틀에 있던 무언가를 집어들었다。/＞……깨진 거울의 파편인 듯하다。"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%가 미처 던져버리라고 지시하기도 전에、유키노의 손 안에서 그것이 빛을 발하기 시작했다。/＞……빛이 사그라들 무렵、유키노의 손위에는 한벌의 갑옷이 있엇다。/＞그 표면은、마치 잘 닦은 거울처럼 빛나고 있다。/＞유키노는 그 갑옷을 몇번 콩콩 두들겨 보고는、"
@@ -522,7 +522,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:아수라여왕]], 70, 0, 1
+			CALL SET_ENEMY,9,[[캐릭터:아수라여왕]], 70, 0, 1
 			;NAME:(CHARANUM-1) = アシュラ女王
 			;CALLNAME:(CHARANUM-1) = アシュラ女王
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
@@ -616,17 +616,17 @@ RETURN ENEMY_NUM_COMMON("最上級", ARG)
 @ENEMY_66, ARG
 SELECTCASE RAND:100
 	CASE IS < 9
-		RETURN [[キャラ:옵신]], 55
+		RETURN [[캐릭터:옵신]], 55
 	CASE IS < 18
-		RETURN [[キャラ:그리드]], 56
+		RETURN [[캐릭터:그리드]], 56
 	CASE IS < 27
-		RETURN [[キャラ:질러시]], 57
+		RETURN [[캐릭터:질러시]], 57
 	CASE IS < 36
-		RETURN [[キャラ:벨리커시티]], 58
+		RETURN [[캐릭터:벨리커시티]], 58
 	CASE IS < 45
-		RETURN [[キャラ:레이지니스]], 59
+		RETURN [[캐릭터:레이지니스]], 59
 	CASE IS < 54
-		RETURN [[キャラ:앨러건스]], 60
+		RETURN [[캐릭터:앨러건스]], 60
 	CASE IS < 63
 		RETURN 356, 56
 	CASE IS < 72
@@ -635,7 +635,7 @@ SELECTCASE RAND:100
 		RETURN 656, 56
 	CASE IS < 90
 		;9%　사룡무슈후슈LV48(55) 
-		RETURN [[キャラ:무슈후슈]], 55
+		RETURN [[캐릭터:무슈후슈]], 55
 	CASEELSE
 		RETURN 408, 56
 ENDSELECT
@@ -872,11 +872,11 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:도미니온]] , 3 + RAND:10 , CSVBASE([[キャラ:도미니온]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:도미니온]] , 3 + RAND:10 , CSVBASE([[캐릭터:도미니온]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베르세르크]] , 3 + RAND:10 , CSVBASE([[캐릭터:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

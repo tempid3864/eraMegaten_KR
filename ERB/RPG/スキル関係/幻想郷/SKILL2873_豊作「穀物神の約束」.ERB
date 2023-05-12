@@ -160,7 +160,7 @@ RETURN 0
 CALL HEAL_FIELD,ARG,ARG:1,2873
 
 ;穣子が使用時、かつPTに静葉がいる場合
-IF SKILL_CHANGE(ARG, [[キャラ:미노리코]]) &&  FINDCHARA_B([[キャラ:시즈하]]) == 2
+IF SKILL_CHANGE(ARG, [[캐릭터:미노리코]]) &&  FINDCHARA_B([[캐릭터:시즈하]]) == 2
 	CALL CURE_STATE_FIELD,ARG,ARG:1,2873
 	PRINTFORMW 높아지는 가을의 힘으로、추가로 \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 상태이상이 회복했다！
 ENDIF

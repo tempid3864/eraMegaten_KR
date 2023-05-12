@@ -4,11 +4,11 @@
 #DIM ゲシン点呼
 ゲシン点呼 = 0
 
-SIF FINDCHARA_B([[キャラ:기묘한바르바토스]]) > -1
+SIF FINDCHARA_B([[캐릭터:기묘한바르바토스]]) > -1
 	ゲシン点呼 += 1
-SIF FINDCHARA_B([[キャラ:기묘한모라쿠스]]) > -1
+SIF FINDCHARA_B([[캐릭터:기묘한모라쿠스]]) > -1
 	ゲシン点呼 += 10
-SIF FINDCHARA_B([[キャラ:기묘한바알]]) > -1
+SIF FINDCHARA_B([[캐릭터:기묘한바알]]) > -1
 	ゲシン点呼 += 100
 
 IF ゲシン点呼 == 0
@@ -52,7 +52,7 @@ ENDIF
 	SETCOLOR 0x00EEEE
 	PRINTFORML [ＳＲ魔神]　奇妙なバルバトス
 	RESETCOLOR
-		CALL ADD_NEW_COMPANION, [[キャラ:기묘한바르바토스]], 100
+		CALL ADD_NEW_COMPANION, [[캐릭터:기묘한바르바토스]], 100
 		SIF RESULT > 0
 			CFLAG:(RESULT:1):전투참가불가능 = -1
 
@@ -60,7 +60,7 @@ ENDIF
 	SETCOLOR 0x00EEEE
 	PRINTFORML [ＳＲ魔神]　奇妙なモラクス
 	RESETCOLOR
-		CALL ADD_NEW_COMPANION, [[キャラ:기묘한모라쿠스]], 100
+		CALL ADD_NEW_COMPANION, [[캐릭터:기묘한모라쿠스]], 100
 		SIF RESULT > 0
 			CFLAG:(RESULT:1):전투참가불가능 = -1
 
@@ -68,7 +68,7 @@ ENDIF
 	SETCOLOR 0x00EEEE
 	PRINTFORML [ＳＲ魔神]　奇妙なバアル
 	RESETCOLOR
-		CALL ADD_NEW_COMPANION, [[キャラ:기묘한바알]], 100
+		CALL ADD_NEW_COMPANION, [[캐릭터:기묘한바알]], 100
 		SIF RESULT > 0
 			CFLAG:(RESULT:1):전투참가불가능 = -1
 

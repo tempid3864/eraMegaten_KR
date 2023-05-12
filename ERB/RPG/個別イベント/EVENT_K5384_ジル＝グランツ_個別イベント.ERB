@@ -431,7 +431,7 @@ CASE 0
 				PRINTFORML 
 				;FINDCHARA 함수는 건재한 전투 참가 멤버(2) > 건재하지 않은 전투 참가 멤버(12) > 건재한COMP내 악마OR탐색불참가인간(1) > 건재하지 않은～(11) > 자택 서버에 보존되어 있는 악마(0)
 				;셋 중 한명도 없을 때
-				IF FINDCHARA_B([[キャラ:루나리에]]) < 0 || FINDCHARA_B([[キャラ:클레스]]) < 0 || FINDCHARA_B([[キャラ:아이리（LT）]]) < 0
+				IF FINDCHARA_B([[캐릭터:루나리에]]) < 0 || FINDCHARA_B([[캐릭터:클레스]]) < 0 || FINDCHARA_B([[캐릭터:아이리（LT）]]) < 0
 					PRINTFORML 
 					PRINTFORMW 「그런데 말이야……」
 					PRINTFORML 
@@ -453,21 +453,21 @@ CASE 0
 					CALL INPUTINT, 0 , 1
 						IF RESULT == 0
 							;３人加入処理
-							CALL ADD_NEW_COMPANION, [[キャラ:루나리에]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:루나리에]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CALL SYNC_STATUS,(RESULT:1)
 								CALL HEALTH_CHARA,(RESULT:1)
 								PRINTFORML 루나리에가 가입했습니다。
 							ENDIF
-							CALL ADD_NEW_COMPANION, [[キャラ:클레스]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:클레스]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CALL SYNC_STATUS,(RESULT:1)
 								CALL HEALTH_CHARA,(RESULT:1)
 								PRINTFORML 클레스가 가입했습니다。
 							ENDIF
-							CALL ADD_NEW_COMPANION, [[キャラ:아이리（LT）]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:아이리（LT）]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CALL SYNC_STATUS,(RESULT:1)
@@ -480,7 +480,7 @@ CASE 0
 						;ネタバレ回避版
 						ELSEIF RESULT == 1
 							;３人加入処理
-							CALL ADD_NEW_COMPANION, [[キャラ:루나리에]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:루나리에]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CSTR:(RESULT:1):종족명 = 인간
@@ -492,14 +492,14 @@ CASE 0
 								CALL HEALTH_CHARA,(RESULT:1)
 								PRINTFORML 루나리에가 가입했습니다。
 							ENDIF
-							CALL ADD_NEW_COMPANION, [[キャラ:클레스]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:클레스]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CALL SYNC_STATUS,(RESULT:1)
 								CALL HEALTH_CHARA,(RESULT:1)
 								PRINTFORML 클레스가 가입했습니다。
 							ENDIF
-							CALL ADD_NEW_COMPANION, [[キャラ:아이리（LT）]], 1000
+							CALL ADD_NEW_COMPANION, [[캐릭터:아이리（LT）]], 1000
 							IF RESULT > 0
 								CFLAG:(RESULT:1):전투참가불가능 = -1
 								CSTR:(RESULT:1):종족명 = 인간
@@ -618,7 +618,7 @@ CASE 0
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY, 8, [[キャラ:클레스]], 60, 1, 1
+				CALL SET_ENEMY, 8, [[캐릭터:클레스]], 60, 1, 1
 				NAME:(CHARANUM-1) = 의에 불타는 클레스
 				CALLNAME:(CHARANUM-1) = 의에 불타는 클레스
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
@@ -668,7 +668,7 @@ CASE 0
 				BASE:(CHARANUM-1):핵열 = 100
 				MAXBASE:(CHARANUM-1):핵열 = 100
 
-				CALL SET_ENEMY, 9, [[キャラ:루나리에]], 70, 1, 1
+				CALL SET_ENEMY, 9, [[캐릭터:루나리에]], 70, 1, 1
 				NAME:(CHARANUM-1) = 격앙하는 루나리에
 				CALLNAME:(CHARANUM-1) = 격앙하는 루나리에
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
@@ -720,7 +720,7 @@ CASE 0
 				BASE:(CHARANUM-1):핵열 = 100
 				MAXBASE:(CHARANUM-1):핵열 = 100
 
-				CALL SET_ENEMY, 10, [[キャラ:아이리（LT）]], 60, 1, 1
+				CALL SET_ENEMY, 10, [[캐릭터:아이리（LT）]], 60, 1, 1
 				NAME:(CHARANUM-1) = 진지한 얼굴의 아이리
 				CALLNAME:(CHARANUM-1) = 진지한 얼굴의 아이리
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
@@ -826,7 +826,7 @@ CASE 0
 			PRINTFORMW ……다루기에 따라서는、좋은 성노예가 될 수 있겠지。
 			PRINTFORML 
 			;３人のうち誰かかけていた場合加入時の選択肢へ。
-			IF FINDCHARA_B([[キャラ:루나리에]]) < 0 || FINDCHARA_B([[キャラ:클레스]]) < 0 || FINDCHARA_B([[キャラ:아이리（LT）]]) < 0
+			IF FINDCHARA_B([[캐릭터:루나리에]]) < 0 || FINDCHARA_B([[캐릭터:클레스]]) < 0 || FINDCHARA_B([[캐릭터:아이리（LT）]]) < 0
 				PRINTFORMW 애널라이즈를 한다면、약력 등도 조사할 수 있을지 모른다。
 				PRINTFORML 
 				FORCEWAIT
@@ -836,19 +836,19 @@ CASE 0
 				CALL INPUTINT, 0 , 1
 				IF RESULT == 0
 					;３人加入処理
-					CALL ADD_NEW_COMPANION, [[キャラ:루나리에]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:루나리에]], 100
 					IF RESULT > 0
 						CALL SYNC_STATUS,(RESULT:1)
 						CALL HEALTH_CHARA,(RESULT:1)
 						PRINTFORML 루나리에를 노예로 추가했습니다。
 					ENDIF
-					CALL ADD_NEW_COMPANION, [[キャラ:클레스]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:클레스]], 100
 					IF RESULT > 0
 						CALL SYNC_STATUS,(RESULT:1)
 						CALL HEALTH_CHARA,(RESULT:1)
 						PRINTFORML 클레스를 노예로 추가했습니다。
 					ENDIF
-					CALL ADD_NEW_COMPANION, [[キャラ:아이리（LT）]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:아이리（LT）]], 100
 					IF RESULT > 0
 						CALL SYNC_STATUS,(RESULT:1)
 						CALL HEALTH_CHARA,(RESULT:1)
@@ -858,7 +858,7 @@ CASE 0
 				;ネタバレ回避版
 				ELSEIF RESULT == 1
 					;３人加入処理
-					CALL ADD_NEW_COMPANION, [[キャラ:루나리에]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:루나리에]], 100
 					IF RESULT > 0
 						CSTR:(RESULT:1):종족명 = 인간
 						CSTR:(RESULT:1):44 = 그녀는 어릴 적부터 악마의 아이라고 불려지며 기피의 대상이 되었다。
@@ -869,13 +869,13 @@ CASE 0
 						CALL HEALTH_CHARA,(RESULT:1)
 						PRINTFORML ルナリエを노예로 추가했습니다。
 					ENDIF
-					CALL ADD_NEW_COMPANION, [[キャラ:클레스]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:클레스]], 100
 					IF RESULT > 0
 						CALL SYNC_STATUS,(RESULT:1)
 						CALL HEALTH_CHARA,(RESULT:1)
 						PRINTFORML 클레스를 노예로 추가했습니다。
 					ENDIF
-					CALL ADD_NEW_COMPANION, [[キャラ:아이리（LT）]], 100
+					CALL ADD_NEW_COMPANION, [[캐릭터:아이리（LT）]], 100
 					IF RESULT > 0
 						CFLAG:(RESULT:1):전투참가불가능 = -1
 						CSTR:(RESULT:1):종족명 = 인간

@@ -59,11 +59,11 @@
 @PREREQUISITE_DUNGEON_4
 IF FLAG:백합의꽃루트 == 5 || FLAG:나오야루트 == 5
 	RETURN 1
-ELSEIF (FLAG:백합의꽃루트 == 7  || FLAG:백합의꽃루트 == 9)&& FINDCHARA_B([[キャラ:아마네]]) == 2
+ELSEIF (FLAG:백합의꽃루트 == 7  || FLAG:백합의꽃루트 == 9)&& FINDCHARA_B([[캐릭터:아마네]]) == 2
 	RETURN 1
-ELSEIF FLAG:백합의꽃루트 == 11&& FINDCHARA_B([[キャラ:아마네]]) != 2
+ELSEIF FLAG:백합의꽃루트 == 11&& FINDCHARA_B([[캐릭터:아마네]]) != 2
 	RETURN 1
-ELSEIF FLAG:백합의꽃루트 == 13&& FINDCHARA_B([[キャラ:아마네]]) == 2
+ELSEIF FLAG:백합의꽃루트 == 13&& FINDCHARA_B([[캐릭터:아마네]]) == 2
 	RETURN 1
 ELSE
 	RETURN 0
@@ -603,84 +603,84 @@ ENDIF
 IF FLAG:백합의꽃루트 == 5
 	SELECTCASE RAND:100
 		CASE IS < 20
-			RETURN [[キャラ:맨이터]], 27
+			RETURN [[캐릭터:맨이터]], 27
 		CASE IS < 40
-			RETURN [[キャラ:밴시]], 27
+			RETURN [[캐릭터:밴시]], 27
 		CASE IS < 60
-			RETURN [[キャラ:고르곤]], 29
+			RETURN [[캐릭터:고르곤]], 29
 		CASE IS < 80
-			RETURN [[キャラ:나가]], 28
+			RETURN [[캐릭터:나가]], 28
 		CASE IS < 100
-			RETURN [[キャラ:피닉스]], 28
+			RETURN [[캐릭터:피닉스]], 28
 	ENDSELECT
 ELSEIF FLAG:백합의꽃루트 == 7
-	RETURN [[キャラ:템플나이트]], 25+RAND:5
+	RETURN [[캐릭터:템플나이트]], 25+RAND:5
 ELSEIF FLAG:백합의꽃루트 == 9
 	SELECTCASE FLAG:현M
 		CASE 21, 22
 			SELECTCASE RAND:100
 				CASE IS < 20
-					RETURN [[キャラ:하이픽시]], 7+RAND:5
+					RETURN [[캐릭터:하이픽시]], 7+RAND:5
 				CASE IS < 30
-					RETURN [[キャラ:케트시]], 12+RAND:5
+					RETURN [[캐릭터:케트시]], 12+RAND:5
 				CASE IS < 40
-					RETURN [[キャラ:잭프로스트]], 12+RAND:5
+					RETURN [[캐릭터:잭프로스트]], 12+RAND:5
 				CASE IS < 50
-					RETURN [[キャラ:잭랜턴]], 13+RAND:5
+					RETURN [[캐릭터:잭랜턴]], 13+RAND:5
 				CASE IS < 60
-					RETURN [[キャラ:커시]], 14+RAND:5
+					RETURN [[캐릭터:커시]], 14+RAND:5
 				CASE IS < 70
-					RETURN [[キャラ:다크엘프]], 18+RAND:5
+					RETURN [[캐릭터:다크엘프]], 18+RAND:5
 				CASE IS < 90
-					RETURN [[キャラ:엘프]], 20+RAND:5
+					RETURN [[캐릭터:엘프]], 20+RAND:5
 				CASE IS < 100
-					RETURN [[キャラ:밴시]], 28+RAND:5
+					RETURN [[캐릭터:밴시]], 28+RAND:5
 			ENDSELECT
 		CASE 23, 24
 			SELECTCASE RAND:100
 				CASE IS < 50
-					RETURN [[キャラ:템플나이트]], 25+RAND:5
+					RETURN [[캐릭터:템플나이트]], 25+RAND:5
 				CASE IS < 100
-					RETURN [[キャラ:메이거스]], 34+RAND:5
+					RETURN [[캐릭터:메이거스]], 34+RAND:5
 			ENDSELECT
 	ENDSELECT
 ELSEIF FLAG:백합의꽃루트 == 11
 	SELECTCASE RAND:100
 		CASE IS < 50
-			RETURN [[キャラ:템플나이트]], 25+RAND:5
+			RETURN [[캐릭터:템플나이트]], 25+RAND:5
 		CASE IS < 100
-			RETURN [[キャラ:메이거스]], 34+RAND:5
+			RETURN [[캐릭터:메이거스]], 34+RAND:5
 	ENDSELECT
 ELSEIF FLAG:백합의꽃루트 == 13
 	IF 던전플래그:4:40 == 0
 		SELECTCASE RAND:100
 			CASE IS < 50
-				RETURN [[キャラ:템플나이트]], 25+RAND:5
+				RETURN [[캐릭터:템플나이트]], 25+RAND:5
 			CASE IS < 100
-				RETURN [[キャラ:메이거스]], 34+RAND:5
+				RETURN [[캐릭터:메이거스]], 34+RAND:5
 		ENDSELECT
 	ELSE
 		SELECTCASE RAND:100
 			CASE IS < 25
-				RETURN [[キャラ:템플나이트]], 25+RAND:5
+				RETURN [[캐릭터:템플나이트]], 25+RAND:5
 			CASE IS < 50
-				RETURN [[キャラ:도미니온]], 43+RAND:5
+				RETURN [[캐릭터:도미니온]], 43+RAND:5
 			CASE IS < 75
-				RETURN [[キャラ:스로네]], 52+RAND:5
+				RETURN [[캐릭터:스로네]], 52+RAND:5
 			CASE IS <100
-				RETURN [[キャラ:메이거스]], 34+RAND:5
+				RETURN [[캐릭터:메이거스]], 34+RAND:5
 		ENDSELECT
 	ENDIF
 ELSEIF FLAG:나오야루트 == 5
 	SELECTCASE RAND:100
 		CASE IS < 30
-			RETURN [[キャラ:엔젤]], 32
+			RETURN [[캐릭터:엔젤]], 32
 		CASE IS < 60
-			RETURN [[キャラ:니케]], 33
+			RETURN [[캐릭터:니케]], 33
 		CASE IS < 80
-			RETURN [[キャラ:아크엔젤]], 33
+			RETURN [[캐릭터:아크엔젤]], 33
 		CASE IS < 100
-			RETURN [[キャラ:프린시펄리티]], 34
+			RETURN [[캐릭터:프린시펄리티]], 34
 	ENDSELECT
 ENDIF
 

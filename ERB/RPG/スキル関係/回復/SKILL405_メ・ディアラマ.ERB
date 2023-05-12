@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_405,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RESULTS = 치유의 바람
 ELSE
 	RESULTS = 메ㆍ디아라마
@@ -154,7 +154,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_405
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아오이(마인학원)]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아오이(마인학원)]])
 	PRINTL 【수성：야타】의 성스러운 힘으로 기도해、치유의 힘을 바람에 싣는다。
 	PRINTL 아군 전체의 ＨＰ를 크게 회복한다。
 ELSE

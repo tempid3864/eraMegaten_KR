@@ -2,11 +2,11 @@
 ;스킬명
 @SKILL_NAME_107,ARG
 ;アーベントが使用する場合PㆍランチャーBに
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RESULTS = Pㆍ런처B
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 질풍쏘기
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RESULTS = 브레이크 나우
 ELSE
 	RESULTS = 고천열풍탄
@@ -14,11 +14,11 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_107, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 90
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 100
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 100
 ELSE
 	RETURN 95
@@ -26,11 +26,11 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_107, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 140
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 350
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 380
 ELSE
 	RETURN 410
@@ -38,7 +38,7 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_107,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 3
 ELSE
 	RETURN 1
@@ -46,7 +46,7 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_107,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 5
 ELSE
 	RETURN 1
@@ -59,11 +59,11 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_107,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 10
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 32
 ELSE
 	RETURN 38
@@ -154,7 +154,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_107,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	CALL ATTACK_RAND,ARG,ARG:1,107
 ELSE
 	CALL ATTACK_FIELD,ARG,ARG:1,107
@@ -169,13 +169,13 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_107
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아벤트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:아벤트]]
 	PRINTL 적 전체에 특수 철갑탄을 랜덤하게 ３～５회 발사하는 공격
 	PRINTL 정식명칭「파르티잔ㆍ런처 B 모드」。상단의 총신에서 특수 철갑탄을 발사한다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 눈에 보이지도 않는 속도로 광범위에 기를 두른 화살을 날린다。
 	PRINTL 적 전체에 비구 물리 대 데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아란]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아란]])
 	PRINTL BreakNow。
 	PRINTL 적 전체에 비구 물리 대 데미지를 준다。
 ELSE

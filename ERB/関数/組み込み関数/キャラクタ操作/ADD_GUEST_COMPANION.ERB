@@ -27,7 +27,7 @@ IF ARG:2
 	IF LOCAL:1 == -1
 		FOR LOCAL, 6, 0, -1
 			LOCALS = 포지션{LOCAL} 
-			IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[キャラ:메어리]] ) && (FLAG:LOCALS) != MASTER
+			IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[캐릭터:메어리]] ) && (FLAG:LOCALS) != MASTER
 				LOCAL:1 = LOCAL
 				;LOCAL:2にどかすキャラを入れる
 				LOCAL:2 = POS(LOCAL)
@@ -48,7 +48,7 @@ ELSE
 	IF LOCAL:1 == -1
 		FOR LOCAL, 1, 7
 			LOCALS = 포지션{LOCAL} 
-			IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[キャラ:메어리]] ) && (FLAG:LOCALS) != MASTER
+			IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[캐릭터:메어리]] ) && (FLAG:LOCALS) != MASTER
 				LOCAL:1 = LOCAL
 				;LOCAL:2にどかすキャラを入れる
 				LOCAL:2 = POS(LOCAL)

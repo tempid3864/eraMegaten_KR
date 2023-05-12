@@ -3,9 +3,9 @@
 
 ;스킬명
 @SKILL_NAME_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RESULTS = 비수영봉
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:텐도]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:텐도]])
 	RESULTS = 외법ㆍ사수초래
 ELSE
 	RESULTS = 마하ㆍ아쿠다인
@@ -17,7 +17,7 @@ RETURN 90
 
 ;　위력
 @SKILL_POWER_1606, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 380
 ELSE
 	RETURN 305
@@ -38,7 +38,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 25
 ELSE
 	RETURN 20
@@ -51,7 +51,7 @@ RETURN 13
 
 ;　1 EXTRA　2 MAGIC
 @SKILL_DECIDE_TYPE_1606, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -110,7 +110,7 @@ RETURN 10
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN GET_STATE_NUM("PALYZE")
 ELSE
 	RETURN 0
@@ -118,7 +118,7 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 8
 ELSE
 	RETURN 0
@@ -126,7 +126,7 @@ ENDIF
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 30
 ELSE
 	RETURN 0
@@ -134,7 +134,7 @@ ENDIF
 
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_1606,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 75
 ELSE
 	RETURN 0
@@ -156,7 +156,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,1606
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1606
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:키사라기]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:키사라기]])
 	PRINTL 『물』의 기를 가다듬은 비수류의 오의 중 하나。
 	PRINTL 적 1열에 수격 마법 대 데미지를 주고、확률로 PALYZE 상태로 만든다。
 ELSE

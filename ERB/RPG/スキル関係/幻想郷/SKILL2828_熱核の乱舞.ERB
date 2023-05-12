@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_2828,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리사]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리사]])
 	RESULTS = 의부「오러리스 선」
 ELSE
 	RESULTS = 열핵의난무
@@ -18,7 +18,7 @@ RETURN 90
 ;上限HIT数に引っかからなければ単体あたりの期待値は240
 ;スペカの方は回数増やした分ちょっと弱体化。
 @SKILL_POWER_2828, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리사]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리사]])
 	RETURN 140
 ELSE
 	RETURN 160
@@ -28,7 +28,7 @@ ENDIF
 ;敵総数の判定を全後列合計にできるという強みもあるので、ここで少し絞っといても総HIT数は割合稼げる…はず
 ;最低攻撃回数
 @SKILL_MINATTACKNUMBER_2828,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리사]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리사]])
 	RETURN 3
 ELSE
 	RETURN 2
@@ -40,7 +40,7 @@ RETURN 8
 
 ;一体辺りの最大ＨＩＴ数
 @SKILL_MAXATK_PER_2828,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리사]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리사]])
 	RETURN 4
 ELSE
 	RETURN 3
@@ -155,7 +155,7 @@ CALL ATTACK_RAND,ARG,ARG:1,2828
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2828
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:마리사]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:마리사]]
 	PRINTL 천체를 본뜬 탄막을 자신의 주위에 선회시켜 핵열 상성의 데미지를 여러 차례 준다。
 	PRINTL 키리사메 마리사의 스펠카드。
 ELSE

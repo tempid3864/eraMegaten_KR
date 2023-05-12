@@ -144,7 +144,7 @@ FLAG:명성 += 80
 IF 의뢰플래그:27:0 != 2
 ;会長を捕えてない
 	CALL ADD_NEW_COMPANION, 4610,0
-	SIF FINDCHARA_B([[キャラ:사사즈카치요(바스테트)]]) < 0
+	SIF FINDCHARA_B([[캐릭터:사사즈카치요(바스테트)]]) < 0
 		CALL ADD_NEW_COMPANION, 840,0,1
 ENDIF
 IF 의뢰플래그:27:0 != 5

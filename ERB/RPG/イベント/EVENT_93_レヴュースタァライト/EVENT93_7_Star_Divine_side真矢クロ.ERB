@@ -3,7 +3,7 @@
 우리들은무대소녀 = %EVENT93_出席確認()%
 
 ;FOR LOCAL, 0, CHARANUM
-;	SIF GROUPMATCH(NO:LOCAL, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
+;	SIF GROUPMATCH(NO:LOCAL, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
 ;		우리들은무대소녀 += @"%CSVCALLNAME(NO:LOCAL)%_"
 ;NEXT
 
@@ -178,7 +178,7 @@ RESETCOLOR
 		LOCAL:98 = 10
 	
 	;- SET:마야
-		CALL SET_ENEMY,8,[[キャラ:마야（무대소녀）]],LOCAL:98,1,(LOCAL:97)
+		CALL SET_ENEMY,8,[[캐릭터:마야（무대소녀）]],LOCAL:98,1,(LOCAL:97)
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*3
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9000
@@ -197,7 +197,7 @@ RESETCOLOR
 		LOCAL = CHARANUM-1
 
 	;- SET:끌로듼
-		CALL SET_ENEMY,10,[[キャラ:클로딘]],LOCAL:98,1,(LOCAL:97)
+		CALL SET_ENEMY,10,[[캐릭터:클로딘]],LOCAL:98,1,(LOCAL:97)
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*3
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -283,8 +283,8 @@ RESETCOLOR
 		CALL HEALTH_CHARA,(CHARANUM-2)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL INCREASE_ANALYZE([[キャラ:마야（무대소녀）]],1000)
-		CALL INCREASE_ANALYZE([[キャラ:클로딘]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:마야（무대소녀）]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:클로딘]],1000)
 
 	;天堂真矢復活フラグ
 	SETBIT 이벤트플래그:93:18, 1

@@ -690,39 +690,39 @@ IF GETBIT(FLAG:취소된ED,6) == 0 && FLAG:조직공헌도 >= 3000000 && 이벤�
 			;他にもいたら加筆してほしい
 			IF 0
 			;앨리스
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:앨리스]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:앨리스]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;ショボたん
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:모ㆍ쇼보]])  == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:모ㆍ쇼보]])  == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;나쟈
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:나쟈]])  == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:나쟈]])  == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;유킨코
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:유킨코]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:유킨코]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;미라이
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:미라이]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:미라이]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;こだいちゃん
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:코시로]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:코시로]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;ナナコン！！！！
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:나나코]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:나나코]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;에리카
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:에리카]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:에리카]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;마이코
-			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[キャラ:마이코]]) == LCOUNT
+			ELSEIF TALENT:LCOUNT:친애 && GETCHARA([[캐릭터:마이코]]) == LCOUNT
 				LENDING_CONDITION_1 += 3
 				LENDING_CONDITION_2 += 1
 			;아이（業が深い）
@@ -1614,79 +1614,79 @@ ELSE
 ENDIF
 
 @롱기누스_END_CHECK
-IF FINDCHARA_B([[キャラ:롱기누스１３]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스１３]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스１２]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스１２]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스１１]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스１１]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스１０]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스１０]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스９]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스９]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스８]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스８]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스７]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스７]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스６]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스６]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스５]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스５]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스４]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스４]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스３]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스３]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스２]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스２]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE
 	RETURN 0
 ENDIF
-IF FINDCHARA_B([[キャラ:롱기누스１]]) > -1
+IF FINDCHARA_B([[캐릭터:롱기누스１]]) > -1
 	SIF !IS_LOVER(RESULT:1)
 		RETURN 0
 ELSE

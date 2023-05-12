@@ -4,7 +4,7 @@
 ;スキル名
 @SKILL_NAME_561,ARG
 ;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
-IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
+IF SKILL_CHANGE(ARG, [[캐릭터:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 	RESULTS = 끝없는 도발（교토）
 ELSE
 	RESULTS = 끝없는 도발
@@ -34,7 +34,7 @@ RETURN 3
 ;　코스트량
 @SKILL_COST_561,ARG
 ;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
-IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
+IF SKILL_CHANGE(ARG, [[캐릭터:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 	RETURN 60
 ELSE
 	RETURN 40
@@ -135,7 +135,7 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		CONTINUE
 
 	;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
-	IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
+	IF SKILL_CHANGE(ARG, [[캐릭터:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 		CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 16)
 		CFLAG:POS(LOCAL):마법효과강화 = MAX(-16, CFLAG:POS(LOCAL):마법효과강화 - 16)
 
@@ -188,7 +188,7 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 		ENDSELECT
 	ENDIF
 NEXT
-IF SKILL_CHANGE(ARG, [[キャラ:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
+IF SKILL_CHANGE(ARG, [[캐릭터:카오루코]]) && (EQUIP:ARG:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어、마법효과를 ４단계 낮췄다！
 ELSE
 	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어、마법효과를%LOCALS%단계 낮추고、공격력、마법위력을 %LOCALS:1%단계 높였다！
@@ -210,7 +210,7 @@ ENDIF
 ;　 설명문 표시
 @SKILL_EXPLAIN_561
 ;トップスタァイベント後の香子が使用する場合、京言葉のキレが上がる
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:카오루코]] && (EQUIP:U:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:카오루코]] && (EQUIP:U:악세서리 == [[아이템:별의티아라]] && 다이바나나의기억:3:6 > 0)
 	PRINTL 끝없이 나오는 교토말씨로 상대를 무진장 갈군다
 	PRINTL 적의 방어력、마법효과를 ４단계 낮춘다
 ELSE

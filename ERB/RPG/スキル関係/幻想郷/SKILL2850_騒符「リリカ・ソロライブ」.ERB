@@ -16,7 +16,7 @@ SIF ARG == -1
 	RETURN 130
 
 ;リリカが使用すると最大威力430、他は380
-IF SKILL_CHANGE(ARG, [[キャラ:리리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리리카]])
 	LOCAL = 130 + MIN((ABL:ARG:가창기능) * 30, 300)
 ELSE
 	LOCAL = 130 + MIN((ABL:ARG:가창기능) * 25, 250)
@@ -42,7 +42,7 @@ RETURN 3
 SIF ARG == -1
 	RETURN 11
 ;リリカが使用すると最大消費31、他は35
-IF SKILL_CHANGE(ARG, [[キャラ:리리카]])
+IF SKILL_CHANGE(ARG, [[캐릭터:리리카]])
 	LOCAL = 11 + MIN((ABL:ARG:가창기능) * 2, 20)
 ELSE
 	LOCAL = 15 + MIN((ABL:ARG:가창기능) * 2, 20)

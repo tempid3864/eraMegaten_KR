@@ -546,7 +546,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL MESSAGE_WINDOW_D, "", "＞쓰러진 판도라는 뭔가 말하고 싶어하는 표정으로 천천히 사라져 갔다。"
 		CALL MESSAGE_WINDOW_D, "", "＞세계에 균열이 생겨난다…/＞판도라가 사라지자、세계를 지탱하는 힘을 잃어버린 것이다。/＞지금부터 탈출을 시도해도、늦지는 않을 것 같다"
 ;마키がいれば、外に出してくれる。いなければシステムをハックして탈출
-		IF FINDCHARA_B([[キャラ:마키]])== 2
+		IF FINDCHARA_B([[캐릭터:마키]])== 2
 			CALL MESSAGE_WINDOW_D, "", "＞그렇게 생각하고 있는데 마키가 앞으로 나섰다。"
 			CALL MESSAGE_WINDOW_D, "마키", "나에게 맡겨줘。/모두、무사히 밖으로 내보내주겠어"
 			CALL MESSAGE_WINDOW_D, "", @"＞마키의 그 말과 함께、%CALLNAME:MASTER%의 시계가 하얗게 물들어 가기 시작했다。"
@@ -556,17 +556,17 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		ELSE
 			CALL MESSAGE_WINDOW_D, "", "＞……DEVA시스템에 개입 할 수 밖에 없다。/＞도망칠 시간 정도는 벌어야……/＞발 밑은 흔들리는데다、천장에는 금이 가고 있고、눈에 보이는 속도로 모든 것이 붕괴해 가던 중、"
 			CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%는、DEVA시템에 대한 조사보고를 떠올리며、/＞COMP를 통해 DEVA시스템의 해킹 작업을 시도했다……"
-			IF FINDCHARA_B([[キャラ:유키노상]])== 2
+			IF FINDCHARA_B([[캐릭터:유키노상]])== 2
 				CALL MESSAGE_WINDOW_D, "유키노", "위험해！！"
 				CALL MESSAGE_WINDOW_D, "", @"＞%CALLNAME:MASTER%의 머리 위로 떨어지는 천장의 파편을、유키노의 페르소나가 막아줬다。"
 				CALL MESSAGE_WINDOW_D, "유키노", "주위는 신경쓰지 않아도 좋아！그쪽은 맡기겠어！"
 			ENDIF
 			CALL MESSAGE_WINDOW_D, "", "＞……매개하는 인간도 없이、/＞장시간 DEVA시스템을 작동시킬 수는 없지만/＞부서진 부분을 보충하고 어떻게든 시간을 벌고/＞다음에는 필사적으로 도망칠 뿐이었다"
-			IF FINDCHARA_B([[キャラ:에리]])== 2
+			IF FINDCHARA_B([[캐릭터:에리]])== 2
 				CALL MESSAGE_WINDOW_D, "에리", "여기에요！"
 				CALL MESSAGE_WINDOW_D, "", "＞에리는 선두에서 달리고 있다。/＞장대한 미로를、잘도 알고 있다。"
 			ENDIF
-			IF FINDCHARA_B([[キャラ:아야세]])== 2
+			IF FINDCHARA_B([[캐릭터:아야세]])== 2
 				CALL MESSAGE_WINDOW_D, "아야세", "아얏 위험해 위험하니 어서 서둘러！"
 				CALL MESSAGE_WINDOW_D, "", "＞아야세가 소리치며 달린다。/＞쏟아지는 파편으로부터 머리부분을 감싸며 필사적인 모습이다。"
 			ENDIF
@@ -586,7 +586,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CALL MESSAGE_WINDOW_D, "", "＞DEVA시스템은 기능을 정지해 버린 것 같다。/＞어쨌든 이로서、이 건은 끝났다고 말할 수 있겠다。/＞이 것의 보수로、￥50000이 지급되었다。"
 		CALL MESSAGE_WINDOW_D, "", "＞……일에 걸맞는 보수라고 할 수는 없다。/＞조직의 역정을 사버리는 바람에、/＞앞으로는 싸움에 조심할 필요도 생겨버렸다。"
 		CALL MESSAGE_WINDOW_D, "", @"＞……하지만、얻은 것이 있었다고 %CALLNAME:MASTER%는 생각한다"
-		IF FINDCHARA_B([[キャラ:마키]])== 2
+		IF FINDCHARA_B([[캐릭터:마키]])== 2
 			CALL MESSAGE_WINDOW_D, "", @"＞떨어진 곳에서 잡담에 즐거워하는 「진짜」 소노무라 마키/＞그 때 사라진 「이상의 자신」이 얻은 기억이나 경험이 고스란히 남아 있는 듯、/＞여기에 남기를 원하는、%CALLNAME:MASTER%도 그것을 승낙했다"
 			CALL MESSAGE_WINDOW_D, "", "＞처음에는 언행에 위화감을 느꼈지만、/＞점점 차이를 느끼지 않게 되었다。"
 			CALL MESSAGE_WINDOW_D, "", "＞「이상의 자신」의 영향이 강한건가、/＞「진짜 자신」이 과거의 이상을 쫓고 있는 것이 아닐까、/＞분명 그것은 본인조차 모르는 일을 것이다……"
@@ -665,17 +665,17 @@ RETURN ENEMY_NUM_COMMON("上級", ARG)
 @ENEMY_60, ARG
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:옵신]], 55
+		RETURN [[캐릭터:옵신]], 55
 	CASE IS < 20
-		RETURN [[キャラ:그리드]], 56
+		RETURN [[캐릭터:그리드]], 56
 	CASE IS < 30
-		RETURN [[キャラ:질러시]], 57
+		RETURN [[캐릭터:질러시]], 57
 	CASE IS < 40
-		RETURN [[キャラ:벨리커시티]], 58
+		RETURN [[캐릭터:벨리커시티]], 58
 	CASE IS < 50
-		RETURN [[キャラ:레이지니스]], 59
+		RETURN [[캐릭터:레이지니스]], 59
 	CASE IS < 60
-		RETURN [[キャラ:앨러건스]], 60
+		RETURN [[캐릭터:앨러건스]], 60
 	CASE IS < 70
 		RETURN 356, 56
 	CASE IS < 80
@@ -796,9 +796,9 @@ RETURN 1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:도미니온]] , 3 + RAND:10 , CSVBASE([[キャラ:도미니온]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:도미니온]] , 3 + RAND:10 , CSVBASE([[캐릭터:도미니온]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:베르세르크]] , 3 + RAND:10 , CSVBASE([[キャラ:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베르세르크]] , 3 + RAND:10 , CSVBASE([[캐릭터:베르세르크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

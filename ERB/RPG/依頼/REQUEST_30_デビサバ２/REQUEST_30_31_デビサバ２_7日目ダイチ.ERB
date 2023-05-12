@@ -140,7 +140,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「뭐…그야 모르지. 원래 세계가 평화로웠는지, 알 순 없지만」
 		PRINTFORMW 「그래도…적어도 지금보다 평화로웠던 것은 사실이제. 응, 분명히」
 		PRINTL
-		PRINTFORMW 문득、%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가「그럼、폴라리스 쓰러트려？」라고、말을 꺼냈다。
+		PRINTFORMW 문득、%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가「그럼、폴라리스 쓰러트려？」라고、말을 꺼냈다。
 		PRINTFORMW 확실히 어떤 세계를 창조하던지 여전히 세계를 판단 한번에 소멸시킬 수 있는 폴라리스는 계속 존재한다。
 		PRINTFORMW 차라리 없어지는 것이 좋을지도 모른다。
 		PRINTFORMW 그의 방안에 찬동하는 사람도 많은 것 같다…。
@@ -150,11 +150,11 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「보통은 쓰러트릴 수 없지, 세계의 관리자란건！그런걸 쓰러트려 버리면 세계가 어떻게 될지 모르잖아！」
 		PRINTL 히나코：
 		PRINTFORMW 「아～…그것도 그렇제。역시 위험할까나、괜찮은 방안이라 생각했는데」
-		IF GETCHARA([[キャラ:로나우도]]) > 0
+		IF GETCHARA([[캐릭터:로나우도]]) > 0
 			PRINTL 로나우도：
 			PRINTFORMW 「폴라리스를 쓰러트린다、인가。어떻게 될 진 모르지만、확실히 타개책의 한가지긴 하지…」
 		ENDIF
-		IF GETCHARA([[キャラ:야마토]]) > 0
+		IF GETCHARA([[캐릭터:야마토]]) > 0
 			PRINTL 야마토：
 			PRINTFORMW 「…관리자 부재로 세계에 폐해가 생길 수 있다」
 			PRINTFORMW 「그러나 폴라리스와는 별도로 인간에 호의적인 관리자를 세울 수 있다면, 어떻게든 될지도 모르겠군」
@@ -182,7 +182,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 근심하는 자：
 		PRINTFORMW 「……」
 		PRINTFORMW 「과연…답할 수 있는 건 답해요、무슨 일인데？」
-		PRINTFORMW ＞「세계를 복원해도 기억을 남겨둘 수 있는가」라고、%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 물었다。
+		PRINTFORMW ＞「세계를 복원해도 기억을 남겨둘 수 있는가」라고、%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 물었다。
 		PRINTL
 		PRINTL 근심하는 자：
 		PRINTFORMW 「…과연、즉 자네는、대참사 전의 세계로의 복원을 폴라리스에게 빌고 싶은 건가」
@@ -214,7 +214,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 
 		PRINTL 히나코：
 		PRINTFORMW 「사라졌나…뭐여、저넘」
-		PRINTFORMW ＞「아군이야」라고、%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 대답했다。
+		PRINTFORMW ＞「아군이야」라고、%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 대답했다。
 		PRINTL 히나코：
 		PRINTFORMW 「아군…그럴까나。그녀석、방금 우리덜에게 힌트도 준덧 하고…」
 		PRINTL 아이리：
@@ -237,21 +237,21 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 	;-示された道
 	CASE 10 TO 19
 		LOCAL = 0
-		SIF GETCHARA([[キャラ:마코토]]) > 0 && CFLAG:GETCHARA([[キャラ:마코토]]):전투참가불가능 < 1
+		SIF GETCHARA([[캐릭터:마코토]]) > 0 && CFLAG:GETCHARA([[캐릭터:마코토]]):전투참가불가능 < 1
 			LOCAL ++
-		SIF GETCHARA([[キャラ:케이타]]) > 0 
+		SIF GETCHARA([[캐릭터:케이타]]) > 0 
 			LOCAL ++
-		SIF GETCHARA([[キャラ:야마토]]) > 0 
+		SIF GETCHARA([[캐릭터:야마토]]) > 0 
 			LOCAL ++
-		SIF GETCHARA([[キャラ:오토메]]) > 0  && CFLAG:GETCHARA([[キャラ:오토메]]):전투참가불가능 < 1
+		SIF GETCHARA([[캐릭터:오토메]]) > 0  && CFLAG:GETCHARA([[캐릭터:오토메]]):전투참가불가능 < 1
 			LOCAL ++
-		SIF GETCHARA([[キャラ:코하루]]) > 0
+		SIF GETCHARA([[캐릭터:코하루]]) > 0
 			LOCAL ++
-		SIF GETCHARA([[キャラ:죠]]) > 0  && CFLAG:GETCHARA([[キャラ:죠]]):전투참가불가능 < 1
+		SIF GETCHARA([[캐릭터:죠]]) > 0  && CFLAG:GETCHARA([[캐릭터:죠]]):전투참가불가능 < 1
 			LOCAL ++
-		SIF GETCHARA([[キャラ:로나우도]]) > 0  && CFLAG:GETCHARA([[キャラ:로나우도]]):전투참가불가능 < 1
+		SIF GETCHARA([[캐릭터:로나우도]]) > 0  && CFLAG:GETCHARA([[캐릭터:로나우도]]):전투참가불가능 < 1
 			LOCAL ++
-		SIF GETCHARA([[キャラ:티코]]) > 0 
+		SIF GETCHARA([[캐릭터:티코]]) > 0 
 			LOCAL ++
 		SIF LOCAL == 8 && 이벤트플래그:85:13 == 4
 			LOCAL:1 = 1
@@ -315,7 +315,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTL 근심하는 자：
 			PRINTFORMW 「…그게 너희들이 내린 결론이야? 끝없이 어려운 선택이지만, 각오는 되어있는거야？」
 			PRINTL 야마토：
-			PRINTFORMW 「…당연하다。나와 %CALLNAME:MASTER%、그리고 %CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 있는한、불가능은 없어」
+			PRINTFORMW 「…당연하다。나와 %CALLNAME:MASTER%、그리고 %CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 있는한、불가능은 없어」
 			PRINTL 근심하는 자：
 			PRINTFORMW 「…세계를 복원하면 너희들의 기억은 지워지고 세계는 같은 실수를 반복 할 수 있어」
 			PRINTFORMW 「폴라리스가 없어져도 인류는 파멸과 타락의 길을 걷게 될지도 몰라」
@@ -406,7 +406,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「추가로 실패허면、잘 알지도 못하는 이차원으로 날라가버리고。다시는 돌아오지도 못허제、하하하」
 		PRINTL 다이치：
 		PRINTFORMW 「끄아아！워야 그건！불가능이란 말이잖아！」
-		IF GETCHARA([[キャラ:오토메]]) > 0
+		IF GETCHARA([[캐릭터:오토메]]) > 0
 			PRINTL 오토메：
 			PRINTFORMW 「저기 후미쨩、뭐 없어？뭐 다른 방법은…」
 		ELSE
@@ -419,7 +419,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「그런건 저기…뭐랄까、초상적인 힘이라던가、그런 느낌의 무언가가 있으면 좋을텐데…」
 		PRINTL 히나코：
 		PRINTFORMW 「그런 바보같은！악마만 해도 초자연적인 그런게 뚝 떨어질리 없…나？」
-		PRINTFORMW %CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 뭔가 번뜩인것 같다…。
+		PRINTFORMW %CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 뭔가 번뜩인것 같다…。
 		PRINTFORMW 물어 보면 「용맥이다」라 답했다。
 		PRINTFORMW 그러고 보니 그것도 초상적이었고, 마지막 하나가 도청에 남아 있었다…。
 		PRINTL 
@@ -450,14 +450,14 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 다이치：
 		PRINTFORMW 「하하、크레인이라도 가져와? 아니, 나도 운전은 무리인데」
 		PRINTFORMW 「아～…이거 작아지거나 하지 않을라나、손에 딱하고 들어갈정도로...그럴리가」
-		PRINTFORMW ＞그렇게 하자 %CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 농담이라도 하듯이 작아져라 라고 했다。
+		PRINTFORMW ＞그렇게 하자 %CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 농담이라도 하듯이 작아져라 라고 했다。
 		PRINTFORMW ＞그랬더니, 용맥의 표면에 금이 가고 순식간에 무너져 잔해만 남았다。
 		PRINTFORMW ＞…잘 봤더니、뭔가 빛나는 물건이 떨어져 있었다。
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 집어든 것을 보니, 용맥의 머리모양의 금빛 악세서리였다。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 집어든 것을 보니, 용맥의 머리모양의 금빛 악세서리였다。
 		PRINTL 
 		PRINTL 다이치：
 		PRINTFORMW 「이거…용맥？줄었잖아！잠…정말로 줄어들었다고 이거！」
-		IF GETCHARA([[キャラ:야마토]]) > 0
+		IF GETCHARA([[캐릭터:야마토]]) > 0
 			PRINTL 야마토：
 			PRINTFORMW 「…놀랍군。용맥이란건、순수한 개념이니까。정의를 주는 상대가 원하는 모습이 된거군」
 		ELSE
@@ -466,7 +466,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW 「용맥이란건 순수한 개념인거지? 그렸으면 정의를 주는 상대가 원하는 모습이 될 거 아녀？」
 		ENDIF
 		PRINTL 후미：
-		PRINTFORMW 「그러고보면 %CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가、방금 작아지라고 말했었지。그게 정의를 준건가」
+		PRINTFORMW 「그러고보면 %CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가、방금 작아지라고 말했었지。그게 정의를 준건가」
 		PRINTL 다이치：
 		PRINTFORMW 「그렇구만…。뭔가 졸라 편한 힘이네、호츠인 가는 번영하겠어」
 		PRINTL 히나코：
@@ -494,9 +494,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 다이치：
 		PRINTFORMW 「도착했다…、진짜 여기 맞겠지？딴데 짐작가는데가 없으니。…～긴장되왔다！」
 		PRINTL 후미：
-		PRINTFORMW 「뭐、팍팍 가자、팍팍。%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%、용맥의 용은 가지고 왔지？」
+		PRINTFORMW 「뭐、팍팍 가자、팍팍。%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%、용맥의 용은 가지고 왔지？」
 		PRINTFORMW 「그러면…그거 써서 터미널을 강화하자」
-		IF GETCHARA([[キャラ:야마토]]) > 0
+		IF GETCHARA([[캐릭터:야마토]]) > 0
 			PRINTL 히나코：
 			PRINTFORMW 「글고보면、용맥으로 강화한다 케도 어떻게 하는겨？호츠인파워 같은걸로、팍하고 강화하는 긴 아닐꺼아녀？」
 			PRINTL 야마토：
@@ -507,14 +507,14 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW 「우-웅、실제 어떻게 강화허는디？ 내、짐작도 안가는디」
 			PRINTL 후미：
 			PRINTFORMW 「아～아무튼 그게 아닐까？ 어디까지나 추측이지만」
-			PRINTFORMW 「용맥은 순수한 개념이니까、도청 앞에서 %CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 한 것 같이、정의를 주면 좋지 않아？」
+			PRINTFORMW 「용맥은 순수한 개념이니까、도청 앞에서 %CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 한 것 같이、정의를 주면 좋지 않아？」
 		ENDIF
 		PRINTL 이오：
-		PRINTFORMW 「아…그래。%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%군이 그 때、작게 되길 바랬으니까…」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가「해 본다」라며、앞에 나섰다。
+		PRINTFORMW 「아…그래。%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%군이 그 때、작게 되길 바랬으니까…」
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가「해 본다」라며、앞에 나섰다。
 		PRINTL 다이치：
 		PRINTFORMW 「아、너、바로 해보는거야！？아무튼…좋지만、해 보는건 공짜고」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 용맥을 가지고 터미널의 조작장치 앞에 섰다…。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 용맥을 가지고 터미널의 조작장치 앞에 섰다…。
 		PRINTFORMW ＞그러자、방 전체가 흔들리고、빛이 빛나기 시작한다…。
 		PRINTL
 		PRINTL
@@ -529,7 +529,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL
 		PRINTFORMW 『아직이야、말했을텐데。마지막 셉텐트리온을 쓰러뜨리지 않으면 안되』
 		PRINTFORMW ＞「언제、어디에 나타나는데？」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 소년에게 그렇게 물어 보았다。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 소년에게 그렇게 물어 보았다。
 		PRINTL
 		PRINTFORMW 『곧바로 나타나。…너희들의 눈앞에』
 		PRINTFORMW 『…빛나는 자여。내 이름은 알코르』
@@ -564,7 +564,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「…쯧、해 부리자고…！이케 됬다면 해뿌리자고！」
 		PRINTL 준고：
 		PRINTFORMW 「준고、슬퍼…。조금 동료라고 생각했다…。그렇지만…지지 않아！」
-		IF GETCHARA([[キャラ:야마토]]) > 0
+		IF GETCHARA([[캐릭터:야마토]]) > 0
 			PRINTL 야마토：
 			PRINTFORMW 「흥…마지막 시련인가…。가겠어、%CALLNAME:MASTER%！」
 		ENDIF
@@ -590,7 +590,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「아…그、그렇긴 하지만。 뭔가…그。이상할지도 모르지만、너와 싸우고 싶진 않았어」
 		PRINTL
 		PRINTFORMW 『하하…이상하네。나도야…』
-		IF GETCHARA([[キャラ:야마토]]) > 0
+		IF GETCHARA([[캐릭터:야마토]]) > 0
 			PRINTL 야마토：
 			PRINTFORMW 「…알코르、였던가。 호츠인가와 당신간의、기나긴 인연도…이것으로 끝이다」
 			PRINTL
@@ -602,7 +602,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		ENDIF
 		PRINTFORMW ＞알코르가 손가락을 울리자、터미널의 제어장치로부터 푸른 빛이 천정으로 뻗어가、방의 설비가 움직이기 시작했다…。
 		PRINTL 
-		PRINTFORMW 『가…%NAME:MASTER%…%NAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%…동료들。이 앞에 폴라리스가 기다리고 있어』
+		PRINTFORMW 『가…%NAME:MASTER%…%NAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%…동료들。이 앞에 폴라리스가 기다리고 있어』
 		PRINTFORMW ＞그 말을 마지막으로、알코르는 소멸했다…。
 		PRINTL 
 		PRINTL 다이치：
@@ -618,7 +618,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「…우리들、여러가지로 너무 잃어버렸어、더 이상、잃버릴것도 없잖아」
 		PRINTL 히나코：
 		PRINTFORMW 「그라네…드디어 최훈기가。마음 단단히 먹고 갈까나」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 강하게 수긍했다…。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 강하게 수긍했다…。
 		PRINTFORMW ＞%CALLNAME:MASTER%(은)는 동료들에게 호령을 내려、터미널의 제어장치를 조작한다。
 		PRINTFORMW ＞바닥이 빛나기 시작해、역시계방향으로 돌고 있던 거대 톱니바퀴가 시계회전으로 돌기 시작한다…。
 		PRINTFORMW ＞톱니바퀴의 움직임은 자꾸자꾸 빨라져、전송이 개시되었다…。
@@ -786,7 +786,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 다이치：
 		PRINTFORMW 「도착했다…、진짜 여기 맞겠지？딴데 짐작가는데가 없으니。…～긴장되왔다！」
 		PRINTL 후미：
-		PRINTFORMW 「뭐、팍팍 가자、팍팍。%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%、용맥의 용은 가지고 왔지？」
+		PRINTFORMW 「뭐、팍팍 가자、팍팍。%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%、용맥의 용은 가지고 왔지？」
 		PRINTFORMW 「그러면…그거 써서 터미널을 강화하자」
 		PRINTL 히나코：
 		PRINTFORMW 「글고보면、용맥으로 강화한다 케도 어떻게 하는겨？호츠인파워 같은걸로、팍하고 강화하는 긴 아닐꺼아녀？」
@@ -794,10 +794,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「…그렇지。호츠인가라고 해도、여기부터는 미지。어디까지나 추측의 역을 넘지 않겠지만…」
 		PRINTFORMW 「아마 방법은 같다。도청 앞에서 그가 보여줬지？ 용맥에 정의를 준다」
 		PRINTFORMW 「터미널의 강화…、폴라리스에게의 길을 강하게 바래라。그럼、무엇인가가 일어날 것이다」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 수긍하면서、「해 본다」라며、앞에 나섰다。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 수긍하면서、「해 본다」라며、앞에 나섰다。
 		PRINTL 야마토：
 		PRINTFORMW 「맡긴다。너의 힘이라면 할 수 있어」
-	 		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%는 용맥을 터미널의 장치 앞에 내밀었다…。
+	 		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%는 용맥을 터미널의 장치 앞에 내밀었다…。
 		PRINTFORMW ＞그러자、방 전체가 흔들리고、빛이 빛나기 시작한다…。
 		PRINTL
 		PRINTL
@@ -837,7 +837,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「그러니까、원래대로 돌아간 세계에서도…또…만나요。절대로、약속이에요…！」
 		PRINTL 사다크：
 		PRINTFORMW 「가자…드디어야。폴라리스를 알현하러 가자！」
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%가 강하게 수긍하자、사다크가 제어장치에 손을 뻗었다。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%가 강하게 수긍하자、사다크가 제어장치에 손을 뻗었다。
 		PRINTFORMW ＞그러자、푸른 빛이 기둥이 되어 뻗어가、방의 설비가 움직이기 시작한다…。
 		PRINTL 사다크：
 		PRINTFORMW 「자、때가 왔다。인류가 잃은 모두를 되찾기 위해서！」
@@ -950,47 +950,47 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「저것이 폴라리스의 진정한 모습이야…。온다 빛나는 자！」
 		PRINTL 폴라리스：
 		PRINTFORMW 『인간들、그리고 알코르。너희의 존재는 결코 용서되지 않는다！』
-		IF FINDCHARA_B([[キャラ:히나코]]) == 2
+		IF FINDCHARA_B([[캐릭터:히나코]]) == 2
 			PRINTL 히나코：
 			PRINTFORMW 「각오혀라、폴라리스！우리덜의 강함、그 눈으로 지켜보라고！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:준고]]) == 2
+		IF FINDCHARA_B([[캐릭터:준고]]) == 2
 			PRINTL 준고：
 			PRINTFORMW 「응…괜찮아。동료가 있으니까…지지 않는다！이겨서 인간의 힘、알게한다！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:이오]]) == 2
+		IF FINDCHARA_B([[캐릭터:이오]]) == 2
 			PRINTL 이오：
 			PRINTFORMW 「지、지지 않아…。모두가 있으니깐…、그러니까、지지 않아！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:다이치]]) == 2
+		IF FINDCHARA_B([[캐릭터:다이치]]) == 2
 			PRINTL 다이치：
 			PRINTFORMW 「이、이것이 최후…。그렇다면 나라도 할 수 있다…、할수 있다고 젠장！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:아이리]]) == 2
+		IF FINDCHARA_B([[캐릭터:아이리]]) == 2
 			PRINTL 아이리：
 			PRINTFORMW 「나、할거야！이대로 세계가 사라져버리는 건、싫은 걸！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:케이타]]) == 2
+		IF FINDCHARA_B([[캐릭터:케이타]]) == 2
 			PRINTL 케이타：
 			PRINTFORMW 「핫…장난치고 있네。뭐가 세계의 관리자냐、언제까지 내려다 볼꺼냐！밟아 뭉개주마 멍청아！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:죠]]) == 2
+		IF FINDCHARA_B([[캐릭터:죠]]) == 2
 			PRINTL 죠：
 			PRINTFORMW 「뭐～할 수밖에 없나。폴라리스 쓰러뜨려、챡챡하고 끝내 버리자」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:마코토]]) == 2
+		IF FINDCHARA_B([[캐릭터:마코토]]) == 2
 			PRINTL 마코토：
 			PRINTFORMW 「이것이 마지막 싸움이다…！어떻게 되도 물러날 수는 없다！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:로나우도]]) == 2
+		IF FINDCHARA_B([[캐릭터:로나우도]]) == 2
 			PRINTL 로나우도：
 			PRINTFORMW 「폴라리스…！세계를 지켜내 주겠어、이 주먹에 걸고！나의…아니、인간의 주먹을 받아봐라！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:오토메]]) == 2
+		IF FINDCHARA_B([[캐릭터:오토메]]) == 2
 			PRINTL 오토메：
 			PRINTFORMW 「이것이 폴라리스…！으응、무섭지 않아！아이들의 미래를 지키기 위해서라도！」
 		ENDIF
-		IF FINDCHARA_B([[キャラ:야마토]]) == 2
+		IF FINDCHARA_B([[캐릭터:야마토]]) == 2
 			PRINTL 야마토：
 			PRINTFORMW 「흥、세계의 관리자인가。네놈을 굴복시키는 것도 일흥이다…！그럼 가겠어、나의 힘을 느껴봐라！」
 		ENDIF
@@ -1084,7 +1084,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「뭐랄까…재미있었어。또 뭔가 일어나면、너。하게되면 불러라…절대로다」
 		PRINTL
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:후미]])
+		LOCAL = GETCHARA([[캐릭터:후미]])
 		IF CFLAG:LOCAL:201 >= 5
 			PRINTL 후미：
 			PRINTFORMW 「욧、건강해？하하하」
@@ -1105,7 +1105,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTL
 			PRINTL
 		ENDIF
-		LOCAL = GETCHARA([[キャラ:오토메]])
+		LOCAL = GETCHARA([[캐릭터:오토메]])
 		IF CFLAG:LOCAL:201 >= 6
 			PRINTL 오토메：
 			PRINTFORMW 「…%CSTR:(LOCAL):이인칭%、잘 노력해 주셨어요」
@@ -1147,7 +1147,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「후후、과연입니다。지도자란、그렇게 하는거겠지요…」
 		PRINTFORMW 「저는 당신을 따라와、다행이었습니다。그러니까、감사를 말하게 해 주십시요」
 		PRINTFORMW 「서머너…고맙습니다。당신과 함께 싸울 수 있던 것을 자랑으로 생각합니다」
-		IF TALENT:GETCHARA([[キャラ:마코토]]):친애
+		IF TALENT:GETCHARA([[캐릭터:마코토]]):친애
 			PRINTFORMW …마코토는 쭈뼛뿌뼛 하고 있다。그 밖에 무엇인가 말하고 싶은 일이 있는 것일까。
 			PRINTFORMW 「아！？아니、벼벼벼、별일 아니에욥！」
 			PRINTFORMW 「…복원된 세계가 어떻게 될지는 모르겠지만、그 세계에서도 저는 사람들을 지키기 위한 일에 종사하고 있을꺼란。그런 생각이 듭니다」
@@ -1166,7 +1166,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「아、그렇다。나도 지금은 그러길 바라고 있다…」
 		PRINTL
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:이오]])
+		LOCAL = GETCHARA([[캐릭터:이오]])
 		IF CFLAG:LOCAL:201 >= 5
 			PRINTL 이오：
 			PRINTFORMW 「……뭔가…이상한 느낌이네요、이거」
@@ -1178,7 +1178,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTL
 			PRINTL
 		ENDIF
-		PRINTFORMW ＞마지막에 %CALLNAME:MASTER%의 앞에 온 것은、%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%였다。
+		PRINTFORMW ＞마지막에 %CALLNAME:MASTER%의 앞에 온 것은、%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%였다。
 		PRINTFORMW ＞서로 격려의 서로 인사한다。
 		IF !TALENT:MASTER:남자 || TALENT:MASTER:오토코노코
 			PRINTFORMW ＞복원된 세계가 평화롭게 되면、답례로 여러 가지를 가르쳐줄게、라고 생각하는 척 말해 보면、그는「그것도 좋다」라고、싫은것도 아닌 것 같은 웃는 얼굴을 띄웠다。
@@ -1186,7 +1186,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW ＞복원된 세계가 평화로워 지면、답례로 어른의 세계를 여러 가지 가르쳐줄게、 라고 생각하는 척 말해 보면、그는「그것도 좋다」라며 쓴 웃음을 띄웠다。
 		ENDIF
 		PRINTFORMW ＞…이제 시간이 얼마 남지 않은 것 같다。
-		PRINTFORMW ＞%CALLNAME:(GETCHARA([[キャラ:데빌서바２주인공]]))%와、다시 만날 것을 서로 약속한다。
+		PRINTFORMW ＞%CALLNAME:(GETCHARA([[캐릭터:데빌서바２주인공]]))%와、다시 만날 것을 서로 약속한다。
 		PRINTL
 		PRINTFORMW ＞휴대전화에 착신이왔다…。
 		PRINTFORMW ＞신사와 티코가 나타났다…。

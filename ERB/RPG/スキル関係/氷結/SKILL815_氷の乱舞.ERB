@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_815,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아키라（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아키라（무대소녀）]])
 	RESULTS = 백은의 퍼레이드
 ELSE
 	RESULTS = 얼음의난무
@@ -57,7 +57,7 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_815, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아키라（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아키라（무대소녀）]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -143,7 +143,7 @@ CALL ATTACK_RAND,ARG,ARG:1,815
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_815
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아키라（무대소녀）]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:아키라（무대소녀）]]
 	PRINTL 얼음을 휘감으며 적진을 헤쳐나가、닥치는 대로 얼려버린다。
 	PRINTL 적 전체 랜덤하게 2～8회 빙결 상성의 물리 소 데미지
 ELSE

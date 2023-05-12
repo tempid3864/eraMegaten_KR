@@ -46,7 +46,7 @@ CUSTOMDRAWLINE =
 	PRINTL
 	PRINTW 배짱은 충분히 있는 듯하다. 뭐라고 답을 해줄까.
 
-	LOCAL = GETCHARA([[キャラ:히카리]])
+	LOCAL = GETCHARA([[캐릭터:히카리]])
 	;念のため엘라ー회피
 	IF LOCAL != -1 && (TALENT:LOCAL:연모 || TALENT:LOCAL:친애)
 		
@@ -360,7 +360,7 @@ CUSTOMDRAWLINE =
 					
 				ENDIF
 				
-				LOCAL:0 = GETCHARA([[キャラ:히카리]])
+				LOCAL:0 = GETCHARA([[캐릭터:히카리]])
 				
 				IF TALENT:MASTER:남자 || TALENT:MASTER:후타나리
 					EXP:(LOCAL:0):정액경험 += 30
@@ -540,7 +540,7 @@ CUSTOMDRAWLINE =
 				PRINTL
 				
 				;キラめき消滅、전투能力削除、素質변경
-				LOCAL = GETCHARA([[キャラ:히카리]])
+				LOCAL = GETCHARA([[캐릭터:히카리]])
 				CALL EVENT93_KIRAMEKI_LOST,LOCAL
 				
 				
@@ -929,7 +929,7 @@ CUSTOMDRAWLINE =
 		PRINTW 황금색의 빛이 당신의 등 뒤에서 솟아오른다.
 		PRINTW 스쿠나히코나―― 아니, 무대소녀ㆍ다이바 나나가, 하늘을 덮는 어둠을 노려보며 칼을 뽑는다.
 		PRINTL
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 	PRINTFORMW 「나아가！　%CSTR:LOCAL:이인칭%！
 		PRINTW 　당신의 마음이, 분명 세계를 바꿀테니까！」
 	ELSE
@@ -1625,13 +1625,13 @@ CUSTOMDRAWLINE =
 	PRINTW ＞카구라 히카리는　이능자 데빌 시프터　로 처리됩니다
 	PRINTL 
 	
-	LOCAL = GETCHARA([[キャラ:히카리]])
+	LOCAL = GETCHARA([[캐릭터:히카리]])
 
 	CFLAG:LOCAL:링크악마 = -1
 	;데빌시프터ではないば아이、引継ぎキャラ等ではないとみなし、초기링크악마설정を行う
 	IF TALENT:LOCAL:데빌시프터 < 1
 		TALENT:LOCAL:데빌시프터 = 1
-		CFLAG:LOCAL:초기링크악마 = [[キャラ:별빛의아마테라스]]
+		CFLAG:LOCAL:초기링크악마 = [[캐릭터:별빛의아마테라스]]
 		ABL:LOCAL:초기링크악마공격상성 = 0
 		ABL:LOCAL:초기링크악마사거리 = 1
 		ABL:LOCAL:초기링크악마공격범위 = 1
@@ -1711,7 +1711,7 @@ CUSTOMDRAWLINE =
 	SETBIT 이벤트플래그:93:12, 2
 	
 	;- SET:카렌（무대소녀）（もろもろの事情により、素体は愛城で）
-	CALL SET_ENEMY,9,[[キャラ:카렌（무대소녀）]],75,1,3
+	CALL SET_ENEMY,9,[[캐릭터:카렌（무대소녀）]],75,1,3
 	CALLNAME:(CHARANUM-1) = 스사노오＆츠쿠요미
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	;CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
@@ -1931,7 +1931,7 @@ SAVEGLOBAL
 	PRINTL 
 	PRINTW ＞초인　스사노오＆츠쿠요미　가 출현했다！
 	;神楽を변신させておく
-	LOCAL = GETCHARA([[キャラ:히카리]])
+	LOCAL = GETCHARA([[캐릭터:히카리]])
 	CALL ACTION_2310, LOCAL
 	CALL SYNC_STATUS, LOCAL
 	
@@ -2487,14 +2487,14 @@ CUSTOMDRAWLINE =
 	PRINTL 
 	PRINTL 
 	
-	LOCAL = GETCHARA([[キャラ:히카리]])
+	LOCAL = GETCHARA([[캐릭터:히카리]])
 
 	CFLAG:LOCAL:링크악마 = -1
 	
 	;今回初습득のば아이は스킬周りを再설정
 	IF GETBIT(이벤트플래그:93:12, 6)
 		;TALENT:LOCAL:데빌시프터 = 1
-		;CFLAG:LOCAL:초기링크악마 = [[キャラ:별빛의아마테라스]]
+		;CFLAG:LOCAL:초기링크악마 = [[캐릭터:별빛의아마테라스]]
 		ABL:LOCAL:초기링크악마공격상성 = 16
 		ABL:LOCAL:초기링크악마사거리 = 3
 		ABL:LOCAL:초기링크악마공격범위 = 3

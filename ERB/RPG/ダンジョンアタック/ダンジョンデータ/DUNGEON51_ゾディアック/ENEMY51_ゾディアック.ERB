@@ -26,15 +26,15 @@ RETURN 19, 16, 20, 24
 IF RAND:100 < FLAG:인카운트율
 	IF RAND:2
 		;一色눈
-		LOCAL:4 = RAND:4 + [[キャラ:황소가면]]
+		LOCAL:4 = RAND:4 + [[캐릭터:황소가면]]
 		$CHANGE_KAMEN
 		;ニ色눈
-		LOCAL:5 = RAND:4 + [[キャラ:황소가면]]
+		LOCAL:5 = RAND:4 + [[캐릭터:황소가면]]
 		SIF LOCAL:4 == LOCAL:5
 			GOTO CHANGE_KAMEN
-		LOCAL:6 = [[キャラ:황소가면]] + RAND:2
+		LOCAL:6 = [[캐릭터:황소가면]] + RAND:2
 		;後衛타입
-		LOCAL:7 = RAND:2 + [[キャラ:전갈가면]]
+		LOCAL:7 = RAND:2 + [[캐릭터:전갈가면]]
 		SELECTCASE FLAG:현M
 			CASE 1
 				SELECTCASE RAND:100
@@ -89,16 +89,16 @@ IF RAND:100 < FLAG:인카운트율
 						CALL SET_ENEMY,15,LOCAL:7, 18,0
 					;4色1열 10%
 					CASE IS < 90
-						CALL SET_ENEMY,7, [[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,8, [[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,10, [[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,11, [[キャラ:물병가면]], 18,0
+						CALL SET_ENEMY,7, [[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,8, [[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,10, [[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,11, [[캐릭터:물병가면]], 18,0
 					;4色2列 10%
 					CASE IS < 100
-						CALL SET_ENEMY,8, [[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,10, [[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,13, [[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,15, [[キャラ:물병가면]], 18,0
+						CALL SET_ENEMY,8, [[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,10, [[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,13, [[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,15, [[캐릭터:물병가면]], 18,0
 				ENDSELECT
 			CASE 4
 				SELECTCASE RAND:100
@@ -134,26 +134,26 @@ IF RAND:100 < FLAG:인카운트율
 						CALL SET_ENEMY,15,LOCAL:7, 18,0
 					;4色1열 10%
 					CASE IS < 85
-						CALL SET_ENEMY,7,[[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,8,[[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,10,[[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,11,[[キャラ:물병가면]], 18,0
+						CALL SET_ENEMY,7,[[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,8,[[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,10,[[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,11,[[캐릭터:물병가면]], 18,0
 					;4色2列 10%
 					CASE IS < 95
-						CALL SET_ENEMY,8, [[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,10, [[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,13, [[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,15, [[キャラ:물병가면]], 18,0
+						CALL SET_ENEMY,8, [[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,10, [[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,13, [[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,15, [[캐릭터:물병가면]], 18,0
 					;4色2列B 5%
 					CASE IS < 100
-						CALL SET_ENEMY,7,[[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,8,[[キャラ:황소가면]], 18,0
-						CALL SET_ENEMY,10,[[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,11,[[キャラ:사자가면]], 18,0
-						CALL SET_ENEMY,12,[[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,13,[[キャラ:전갈가면]], 18,0
-						CALL SET_ENEMY,15,[[キャラ:물병가면]], 18,0
-						CALL SET_ENEMY,16,[[キャラ:물병가면]], 18,0
+						CALL SET_ENEMY,7,[[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,8,[[캐릭터:황소가면]], 18,0
+						CALL SET_ENEMY,10,[[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,11,[[캐릭터:사자가면]], 18,0
+						CALL SET_ENEMY,12,[[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,13,[[캐릭터:전갈가면]], 18,0
+						CALL SET_ENEMY,15,[[캐릭터:물병가면]], 18,0
+						CALL SET_ENEMY,16,[[캐릭터:물병가면]], 18,0
 				ENDSELECT
 		ENDSELECT
 	ELSE
@@ -184,42 +184,42 @@ SELECTCASE FLAG:현M
 	;１Ｆ奥での遭遇
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:이리스]],16
+				RETURN [[캐릭터:이리스]],16
 			CASE IS < 40
-				RETURN [[キャラ:니케]],16
+				RETURN [[캐릭터:니케]],16
 			CASE IS < 60
-				RETURN [[キャラ:하나코]],16
+				RETURN [[캐릭터:하나코]],16
 			CASE IS < 80
-				RETURN [[キャラ:잭프로스트]],16
+				RETURN [[캐릭터:잭프로스트]],16
 			CASE IS < 100
-				RETURN [[キャラ:가기손]],16
+				RETURN [[캐릭터:가기손]],16
 		ENDSELECT
 	CASE 2, 3
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:키요히메]], 18
+				RETURN [[캐릭터:키요히메]], 18
 			CASE IS < 40
-				RETURN [[キャラ:카시마레이코]], 18
+				RETURN [[캐릭터:카시마레이코]], 18
 			CASE IS < 60
-				RETURN [[キャラ:이리스]], 18
+				RETURN [[캐릭터:이리스]], 18
 			CASE IS < 80
-				RETURN [[キャラ:잭프로스트]], 18
+				RETURN [[캐릭터:잭프로스트]], 18
 			CASE IS < 100
-				RETURN [[キャラ:가기손]], 18
+				RETURN [[캐릭터:가기손]], 18
 		ENDSELECT
 	CASE 4
 	;3Fでの遭遇
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:루살카]],  20, 0
+				RETURN [[캐릭터:루살카]],  20, 0
 			CASE IS < 40
-				RETURN [[キャラ:카시마레이코]], 20
+				RETURN [[캐릭터:카시마레이코]], 20
 			CASE IS < 60
-				RETURN [[キャラ:랴난시]], 20
+				RETURN [[캐릭터:랴난시]], 20
 			CASE IS < 80
-				RETURN [[キャラ:노즈치]], 20
+				RETURN [[캐릭터:노즈치]], 20
 			CASE IS < 100
-				RETURN [[キャラ:코파텐구]], 20
+				RETURN [[캐릭터:코파텐구]], 20
 		ENDSELECT
 ENDSELECT
 ;가면당원の사고패턴
@@ -599,9 +599,9 @@ LOCAL:6 = -1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:가기손]] , 3 + RAND:10 , CSVBASE([[キャラ:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:가기손]] , 3 + RAND:10 , CSVBASE([[캐릭터:가기손]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:노즈치]] , 3 + RAND:10 , CSVBASE([[キャラ:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:노즈치]] , 3 + RAND:10 , CSVBASE([[캐릭터:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:코파텐구]] , 3 + RAND:10 , CSVBASE([[キャラ:코파텐구]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:코파텐구]] , 3 + RAND:10 , CSVBASE([[캐릭터:코파텐구]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

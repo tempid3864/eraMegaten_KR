@@ -11,11 +11,11 @@ IF BASE:MASTER:LV >= 10 && 이벤트플래그:12:0 == 0 || (던전플래그:72:8
 ;레벨４０이상, 大浴場クリア済み
 ELSEIF BASE:MASTER:LV >= 40 && 이벤트플래그:12:0 == 3
 	;P4주인공が전투참가가능＝조교함락済み, P4주인공がパーティメンバーにいる
-	IF FINDCHARA_B([[キャラ:P4주인공]]) == 2 && CFLAG:GETCHARA([[キャラ:P4주인공]]):전투참가불가능 == 0
+	IF FINDCHARA_B([[캐릭터:P4주인공]]) == 2 && CFLAG:GETCHARA([[캐릭터:P4주인공]]):전투참가불가능 == 0
 		RESULTS = 깊은 안개의 스튜디오：곰으로부터의 메일
 		RETURN 1
 	;P4주인공が協힘者포지션, 조교한다と전투참가に, P4주인공がパーティメンバーにいる
-	ELSEIF FINDCHARA_B([[キャラ:P4주인공]]) == 2 && CFLAG:GETCHARA([[キャラ:P4주인공]]):전투참가불가능 == -1
+	ELSEIF FINDCHARA_B([[캐릭터:P4주인공]]) == 2 && CFLAG:GETCHARA([[캐릭터:P4주인공]]):전투참가불가능 == -1
 		RESULTS = 깊은 안개의 스튜디오：갑작스러운 방문
 		RETURN 1
 	ELSE
@@ -229,7 +229,7 @@ RETURN 0
 	;大浴場クリア済み, 마가츠이나바시ㆍマガツマンダラ突入してない
 	ELSEIF 이벤트플래그:12:0 == 3 && 던전플래그:75:9 == 0
 		;P4주인공がパーティメンバーにいる, P4주인공が전투참가가능＝조교함락済み
-		IF FINDCHARA_B([[キャラ:P4주인공]]) == 2 && CFLAG:GETCHARA([[キャラ:P4주인공]]):전투참가불가능 == 0
+		IF FINDCHARA_B([[캐릭터:P4주인공]]) == 2 && CFLAG:GETCHARA([[캐릭터:P4주인공]]):전투참가불가능 == 0
 			PRINTW 『당신을 만나고 싶다곰　곰이』
 			PRINTL ＞갑자기 온 곰에게서의 메일
 			PRINTFORMW 신경이 쓰인 %조사처리(CALLNAME:MASTER,"는")%, 그 골목을 찾아보기로 했다.
@@ -259,7 +259,7 @@ RETURN 0
 			PRINTL :곰
 			PRINTL 「조금 전부터네…여기에 선생과 같은 냄새가 배여있다곰」
 			PRINTW 「앗! 선생라고 해도 선생일은 아니다곰」
-			PRINTFORMW ＞아무래도, %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%의 것 같다
+			PRINTFORMW ＞아무래도, %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%의 것 같다
 			PRINTL 
 			PRINTL :곰
 			PRINTL 「그러니, 냄새의 출처를 찾으면, 이상한…천국 같은 곳을 찾아곰!」
@@ -268,16 +268,16 @@ RETURN 0
 			PRINTW ＞천상낙토로 갈 수 있게 되었다
 			PRINTL 
 			PRINTL 
-			PRINTFORMW ＞사무실에서 조사한 결과, %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%의 사촌 여동생, 도지마 나나코가 실종되었다는 정보를 입수했다
+			PRINTFORMW ＞사무실에서 조사한 결과, %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%의 사촌 여동생, 도지마 나나코가 실종되었다는 정보를 입수했다
 			PRINTW 그녀의 유괴범으로 나마타메 타로라는 남자가 지명수배된 것 같다…
 			PRINTL 
 			PRINTW ＞저 곳에 나나코와 나마타메 두사람이 있는 걸까……?
 		;P4주인공이 파티원에 있고, P4주인공가 협력자 위치, 조교당하면 불가능
-		ELSEIF FINDCHARA_B([[キャラ:P4주인공]]) == 2 && CFLAG:GETCHARA([[キャラ:P4주인공]]):전투참가불가능 == -1
-			PRINTFORMW ＞어느날, 안색이 바뀐 %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%가(이) %CALLNAME:MASTER%의 곁으로 왔다
-			PRINTFORMW %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%에 따르면, 사촌 여동생 도지마 나나코가 마요나카 테레비에 비친 뒤 실종된 것 같다.
+		ELSEIF FINDCHARA_B([[캐릭터:P4주인공]]) == 2 && CFLAG:GETCHARA([[캐릭터:P4주인공]]):전투참가불가능 == -1
+			PRINTFORMW ＞어느날, 안색이 바뀐 %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%가(이) %CALLNAME:MASTER%의 곁으로 왔다
+			PRINTFORMW %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%에 따르면, 사촌 여동생 도지마 나나코가 마요나카 테레비에 비친 뒤 실종된 것 같다.
 			PRINTL 
-			PRINTFORMW ＞구출의 도움을 요구한 %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%와(과) 함께 곰이 있는 곳에 가기로 했다…
+			PRINTFORMW ＞구출의 도움을 요구한 %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%와(과) 함께 곰이 있는 곳에 가기로 했다…
 			PRINTL 
 			CUSTOMDRAWLINE - 
 			PRINTL 

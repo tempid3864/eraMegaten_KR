@@ -100,10 +100,10 @@ IF 이벤트플래그:38:0 == 0
 	CALL INPUTINT(0,1)
 	LOCAL = RESULT
 	IF LOCAL == 0
-		CALL ADD_NEW_COMPANION, [[キャラ:인수라-]], 500, 1
+		CALL ADD_NEW_COMPANION, [[캐릭터:인수라-]], 500, 1
 		ITEM:플러그인／곡옥마로가레 = 1
 	ELSEIF LOCAL == 1
-		CALL ADD_NEW_COMPANION, [[キャラ:인수라]], 500, 1
+		CALL ADD_NEW_COMPANION, [[캐릭터:인수라]], 500, 1
 		ITEM:플러그인／곡옥안고 = 1
 	ENDIF
 

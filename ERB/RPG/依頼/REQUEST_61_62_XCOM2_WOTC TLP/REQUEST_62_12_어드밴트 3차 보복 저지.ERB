@@ -112,21 +112,21 @@ NEXT
 	의뢰플래그:62:0 = 36 ;어쌔신의 대사가 있음.
 	;적은 18. 레벨 40 적을 소환.
 
-	CALL INCREASE_ANALYZE([[キャラ:외계인버서커]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트MEC]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트장교]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:크리살리드]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:안드로메돈]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:섹토포드]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트병사]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트방패병]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:스팩터]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:게이트키퍼]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어쌔신]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:외계인버서커]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트MEC]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트장교]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:크리살리드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:안드로메돈]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:섹토포드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트병사]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트방패병]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩터]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:게이트키퍼]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어쌔신]],1000)
 
 	;외계인버서커 체력 15 고정 (60x15 = 900 X 4 = 3600)
 	;리바이어던 사양.
-	CALL SET_ENEMY,7,[[キャラ:외계인버서커]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:외계인버서커]],40,0,0
 	BASE:(CHARANUM-1):힘 = 27
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -140,7 +140,7 @@ NEXT
 
 	;어드밴트 MEC 체력 7, 12. 체력 1당 60
 	;목표 체력 420, 720. 리바이어던 사양은 X3 = 2160, 레벨 40
-	CALL SET_ENEMY,8,[[キャラ:어드밴트MEC]],30,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트MEC]],30,0,0
 	NAME:(CHARANUM-1) = 중형 MEC
 	CALLNAME:(CHARANUM-1) = 중형 MEC
 	BASE:(CHARANUM-1):힘 = 20
@@ -157,7 +157,7 @@ NEXT
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 320, 540)
 	;장교용 리바이어던 사양 540 X 4 = 2160. 체력 수치만 같음
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],30,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1817
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2040
@@ -175,7 +175,7 @@ NEXT
 
 	;크리살리드 체력 8 고정 (480) 레벨 40 = X8 3840
 	;리바이어던 사양. 체력만 체력수치는 같음.
-	CALL SET_ENEMY,10,[[キャラ:크리살리드]],25,0,0
+	CALL SET_ENEMY,10,[[캐릭터:크리살리드]],25,0,0
 	BASE:(CHARANUM-1):힘 = 13
 	BASE:(CHARANUM-1):지혜 = 9
 	BASE:(CHARANUM-1):마력 = 6
@@ -189,7 +189,7 @@ NEXT
 
 	;페이스리스 체력 8 고정. (480) 레벨 40 = X8 3840
 	;리바이어던 사양이지만 미등장. 체력수치는 같음.
-	CALL SET_ENEMY,11,[[キャラ:페이스리스]],20,0,0
+	CALL SET_ENEMY,11,[[캐릭터:페이스리스]],20,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -204,7 +204,7 @@ NEXT
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
 	;목표 체력 7560
-	CALL SET_ENEMY,12,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,12,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6975
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 7408
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -214,7 +214,7 @@ NEXT
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;앨리트 병사는 X3 1440, 레벨 40. 리바이어던 사양.
-	CALL SET_ENEMY,13,[[キャラ:어드밴트병사]],40,0,0
+	CALL SET_ENEMY,13,[[캐릭터:어드밴트병사]],40,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -232,7 +232,7 @@ NEXT
 	;어드밴트 방패병. 체력 6, 8 (360, 480)
 	;중장갑 방패병이므로 체력 수치를 X4 1920으로
 	;리바이어던 사양에서는 X2 = 3840, 레벨 40
-	CALL SET_ENEMY,14,[[キャラ:어드밴트방패병]],30,0,0
+	CALL SET_ENEMY,14,[[캐릭터:어드밴트방패병]],30,0,0
 	BASE:(CHARANUM-1):힘 = 20
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -250,7 +250,7 @@ NEXT
 	;스펙터는 체력 1200으로 크게 상향
 	;리바이어던 사양은 X3 = 3600/레벨도 올려야함.
 	;앨리트 스팩터는 레벨 40에 체력 5400
-	CALL SET_ENEMY,15,[[キャラ:스팩터]],30,0,0
+	CALL SET_ENEMY,15,[[캐릭터:스팩터]],30,0,0
 	BASE:(CHARANUM-1):힘 = 15
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -266,7 +266,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;게이트키퍼 리바이어던 사양. HP 1800 X 4 = 7200
-	CALL SET_ENEMY,16,[[キャラ:게이트키퍼]],40,0,0
+	CALL SET_ENEMY,16,[[캐릭터:게이트키퍼]],40,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 4
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6655
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 6969
@@ -317,7 +317,7 @@ NEXT
 
 	;어쌔신. 보스 플래그를 꺼버리는 대신 스텟이 높음!
 	;HP MP 모두 15000
-	CALL SET_ENEMY,9,[[キャラ:어쌔신]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어쌔신]],40,0,0
 	BASE:(CHARANUM-1):ＭＡＧ = 1033200
 	BASE:(CHARANUM-1):힘 += 10
 	BASE:(CHARANUM-1):지혜 += 10

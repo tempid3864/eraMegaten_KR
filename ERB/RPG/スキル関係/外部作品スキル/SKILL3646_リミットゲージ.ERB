@@ -4,25 +4,25 @@
 ;スキル名
 @SKILL_NAME_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RESULTS = 리셋웨폰
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RESULTS = 광전사의맹세
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RESULTS = 오버가드
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RESULTS = 밀리언스러스트
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RESULTS = 다원발도
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RESULTS = 암흑권
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RESULTS = 메테오
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RESULTS = 사자왕초래
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RESULTS = 고속철갑탄
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RESULTS = 수수께끼의 종
 	ELSE
 		RESULTS = 행운의해머
@@ -38,26 +38,26 @@ RETURN 100
 ;　위력
 @SKILL_POWER_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 200
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 160 + MIN(MAXBASE:ARG:속도,40) * 5
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 130
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 270
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		;アギダインよりチョイ下
 		RETURN 150
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 270
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 240
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 0
 	ELSE
 		RETURN 50 + MIN(MAXBASE:ARG:운,90) * 5
@@ -68,25 +68,25 @@ ENDIF
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 5
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 1
 	ELSE
 		RETURN 1
@@ -97,25 +97,25 @@ ENDIF
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 5
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 6
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 1
 	ELSE
 		RETURN 1
@@ -128,25 +128,25 @@ ENDIF
 ;挙動が怪しくなるのでここは面倒でも指定する。
 @SKILL_COSTTYPE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 2
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 1
 	ELSE
 		RETURN 1
@@ -159,25 +159,25 @@ ENDIF
 ;　코스트량
 @SKILL_COST_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 30
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 0
 	ELSE
 		RETURN 0
@@ -191,25 +191,25 @@ ENDIF
 ;　상성
 @SKILL_TYPE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN GET_TYPE_NUM("만능")
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN GET_TYPE_NUM("검격")
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN GET_TYPE_NUM("검격")
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN GET_TYPE_NUM("타격")
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN GET_TYPE_NUM("타격")
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN GET_TYPE_NUM("만능")
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN GET_TYPE_NUM("비구")
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN GET_TYPE_NUM("만능")
 	ELSE
 		RETURN GET_TYPE_NUM("만능")
@@ -225,25 +225,25 @@ RETURN 1
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_3646, ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 0
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 2
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 0
 	ELSE
 		RETURN 1
@@ -255,25 +255,25 @@ ENDIF
 ;　대상　1 적　2 아군　3 양쪽전체　4 특수
 @SKILL_TARGET_3646
 IF U >= 0 && U <= CHARANUM && SKILLGAGE_H_GET(U,3646) == 100
-	IF NO:U == [[キャラ:프린스]]
+	IF NO:U == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:워리어]]
+	ELSEIF NO:U == [[캐릭터:워리어]]
 		RETURN 4
-	ELSEIF NO:U == [[キャラ:팔랑크스]]
+	ELSEIF NO:U == [[캐릭터:팔랑크스]]
 		RETURN 2
-	ELSEIF NO:U == [[キャラ:파이레츠]]
+	ELSEIF NO:U == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:시노비]]
+	ELSEIF NO:U == [[캐릭터:시노비]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:몽크]]
+	ELSEIF NO:U == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:조디악]]
+	ELSEIF NO:U == [[캐릭터:조디악]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:비스트킹]]
+	ELSEIF NO:U == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:발리스타]]
+	ELSEIF NO:U == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:파머]]
+	ELSEIF NO:U == [[캐릭터:파머]]
 		RETURN 1
 	ENDIF
 ELSE
@@ -283,25 +283,25 @@ ENDIF
 ;　사거리1
 @SKILL_RANGE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 2
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 1
 	ELSE
 		RETURN 1
@@ -313,25 +313,25 @@ ENDIF
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		RETURN 4
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 2
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 3
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		RETURN 3
 	ELSE
 		RETURN 1
@@ -342,25 +342,25 @@ ENDIF
 ;　 효과타입　1 공격、2 회복、3 상태변화、4 특수、5 상태회복
 @SKILL_EFECT_3646
 IF SKILLGAGE_H_GET(U,3646) == 100
-	IF NO:U == [[キャラ:프린스]]
+	IF NO:U == [[캐릭터:프린스]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:워리어]]
+	ELSEIF NO:U == [[캐릭터:워리어]]
 		RETURN 4
-	ELSEIF NO:U == [[キャラ:팔랑크스]]
+	ELSEIF NO:U == [[캐릭터:팔랑크스]]
 		RETURN 4
-	ELSEIF NO:U == [[キャラ:파이레츠]]
+	ELSEIF NO:U == [[캐릭터:파이레츠]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:시노비]]
+	ELSEIF NO:U == [[캐릭터:시노비]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:몽크]]
+	ELSEIF NO:U == [[캐릭터:몽크]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:조디악]]
+	ELSEIF NO:U == [[캐릭터:조디악]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:비스트킹]]
+	ELSEIF NO:U == [[캐릭터:비스트킹]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:발리스타]]
+	ELSEIF NO:U == [[캐릭터:발리스타]]
 		RETURN 1
-	ELSEIF NO:U == [[キャラ:파머]]
+	ELSEIF NO:U == [[캐릭터:파머]]
 		RETURN 3
 	ELSE
 		RETURN 1
@@ -385,9 +385,9 @@ RETURN 0
 @SKILL_SPEED_3646,ARG = -1
 IF SKILLGAGE_H_GET(U,3646) == 100
 	;相手より早く行動できないと無敵って意味が無い。
-	IF NO:ARG == [[キャラ:팔랑크스]]
+	IF NO:ARG == [[캐릭터:팔랑크스]]
 		RETURN 999
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		RETURN 10
 	ENDIF
 ENDIF
@@ -413,11 +413,11 @@ RETURN 1
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:몽크]]
+	IF NO:ARG == [[캐릭터:몽크]]
 		RETURN GET_STATE_NUM("CURSE")
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN GET_STATE_NUM("BIND")
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		A = RAND:9
 		IF A < 2
 			RETURN GET_STATE_NUM("BIND")
@@ -437,11 +437,11 @@ RETURN 0
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:몽크]]
+	IF NO:ARG == [[캐릭터:몽크]]
 		RETURN GET_TYPE_NUM("타격")
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN GET_TYPE_NUM("전술")
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		;即死以外は神経
 		IF A < 8
 			RETURN GET_TYPE_NUM("신경")
@@ -456,11 +456,11 @@ RETURN 0
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_3646,ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:몽크]]
+	IF NO:ARG == [[캐릭터:몽크]]
 		RETURN 30
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 30
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		;即死以外は50％
 		IF A < 8
 			RETURN 50
@@ -475,11 +475,11 @@ RETURN 0
 ;추가효과 부여확률상한
 @SKILL_ADDTIONAL_MAX_RATE_3646, ARG
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:몽크]]
+	IF NO:ARG == [[캐릭터:몽크]]
 		RETURN 60
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		RETURN 60
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		;即死以外は50％
 		IF A < 8
 			RETURN 50
@@ -548,7 +548,7 @@ RETURN 0
 @ACTION_3646,ARG,ARG:1
 ;撃ったらゲージを消し飛ばす
 IF SKILLGAGE_H_GET(ARG,3646) == 100
-	IF NO:ARG == [[キャラ:프린스]]
+	IF NO:ARG == [[캐릭터:프린스]]
 		;単体デカジャ
 		LOCAL = POS(ARG:1)
 		FOR LOCAL:1,0,6
@@ -557,36 +557,36 @@ IF SKILLGAGE_H_GET(ARG,3646) == 100
 		CALL ATTACK_SINGLE,ARG,LOCAL,3646
 		PRINTFORMW %CALLNAME:LOCAL%의 강화된 능력이 되돌아왔다！
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:워리어]]
+	ELSEIF NO:ARG == [[캐릭터:워리어]]
 		CFLAG:ARG:공격강화 = MIN(32, CFLAG:ARG:공격강화 + 12)
 		CFLAG:ARG:명중강화 = MIN(32, CFLAG:ARG:명중강화 + 12)
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:팔랑크스]]
+	ELSEIF NO:ARG == [[캐릭터:팔랑크스]]
 		CFLAG:POS(ARG:1):무효플래그 = 1
 		CALL SKILL_WALL , ARG , "만능" , CFLAG:ARG:타겟 , 1
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:파이레츠]]
+	ELSEIF NO:ARG == [[캐릭터:파이레츠]]
 		CALL ATTACK_RAND,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:시노비]]
+	ELSEIF NO:ARG == [[캐릭터:시노비]]
 		CALL ATTACK_RAND,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:몽크]]
+	ELSEIF NO:ARG == [[캐릭터:몽크]]
 		CALL ATTACK_FIELD,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:조디악]]
+	ELSEIF NO:ARG == [[캐릭터:조디악]]
 		CALL ATTACK_RAND,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:비스트킹]]
+	ELSEIF NO:ARG == [[캐릭터:비스트킹]]
 		CALL ATTACK_FIELD,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:발리스타]]
+	ELSEIF NO:ARG == [[캐릭터:발리스타]]
 		CFLAG:ARG:방어반감플래그 = 1
 		LOCAL = POS(ARG:1)
 		CALL ATTACK_SINGLE,ARG,LOCAL,3646
 		CFLAG:ARG:방어반감플래그 = 0
 		CALL SKILLGAGE_H_SET,ARG,3646,0
-	ELSEIF NO:ARG == [[キャラ:파머]]
+	ELSEIF NO:ARG == [[캐릭터:파머]]
 		CALL FIELD_BADSTATE,ARG,ARG:1,3646
 		CALL SKILLGAGE_H_SET,ARG,3646,0
 	ELSE
@@ -617,43 +617,43 @@ IF SKILLGAGE_H_GET(U,3646) < 100
 	PRINTL 리미트게이지가 추가。100％로 직업 각각의 고유스킬로 변화。
 	PRINTL 또한 게이지가 100％ 미만일 때 스킬을 사용하면、리미트게이지가 40％ 증가한다。
 ELSEIF SKILLGAGE_H_GET(U,3646) == 100
-	IF NO:U == [[キャラ:프린스]]
+	IF NO:U == [[캐릭터:프린스]]
 		PRINTL 「프린（세）스」의 리미트스킬。
 		PRINTL 적 1체의 강화를 해제하고、만능 상성의 중 데미지를 준다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:워리어]]
+	ELSEIF NO:U == [[캐릭터:워리어]]
 		PRINTL 「워리어」의 리미트스킬。
 		PRINTL 현재 HP 2할을 소비해、자신의 공격력과 명중률을 3단계 상승시킨다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:팔랑크스]]
+	ELSEIF NO:U == [[캐릭터:팔랑크스]]
 		PRINTL 「팔랑크스」의 리미트스킬。재빠르게 실행하기 쉽다。
 		PRINTL 아군 1인을 1턴간、무적으로 만든다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:파이레츠]]
+	ELSEIF NO:U == [[캐릭터:파이레츠]]
 		PRINTL 「파이레츠」의 리미트스킬。
 		PRINTL 적 전체 랜덤하게 1～3회、자신의 속도에 비례해 위력이 늘어나는 검격 상성의 공격。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:시노비]]
+	ELSEIF NO:U == [[캐릭터:시노비]]
 		PRINTL 「시노비」의 리미트스킬。재빠르게 실행하기 쉽다。
 		PRINTL 분신을 소환해、적 전열을 랜덤하게 5회 베어가른다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:몽크]]
+	ELSEIF NO:U == [[캐릭터:몽크]]
 		PRINTL 「몽크」의 리미트스킬。
 		PRINTL 적 전체에、타격 상성 대 데미지와 CURSE를 부여한다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:조디악]]
+	ELSEIF NO:U == [[캐릭터:조디악]]
 		PRINTL 「조디악」의 리미트스킬。
 		PRINTL 적 전체 랜덤하게、3～6회 타격 상성의 고화력 마법을 날린다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:비스트킹]]
+	ELSEIF NO:U == [[캐릭터:비스트킹]]
 		PRINTL 「비스트킹」의 리미트스킬。
 		PRINTL 적 전체에、전술 상성 대 데미지와 BIND를 부여한다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:발리스타]]
+	ELSEIF NO:U == [[캐릭터:발리스타]]
 		PRINTL 「발리스타」의 리미트스킬。
 		PRINTL 적 1체에、비구 상성의 방어무시의 대 데미지를 준다。
 		PRINTL 사용 후 리미트게이지는 0이 된다。
-	ELSEIF NO:U == [[キャラ:파머]]
+	ELSEIF NO:U == [[캐릭터:파머]]
 		PRINTL 「파머」의 리미트스킬。
 		PRINTL 적 전체에 신경 상성의 BIND、PALAYZE、SLIP、PANIC 중 무언가를 50％의 확률로 부여한다。드물게……
 		;PRINTL 稀に100％の確率で万能相性の即死を付与する。

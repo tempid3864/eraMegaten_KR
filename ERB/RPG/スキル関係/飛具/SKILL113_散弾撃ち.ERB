@@ -2,11 +2,11 @@
 ;스킬명
 @SKILL_NAME_113,ARG
 ;ナハトが使用する場合 Sㆍクレイモアに
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RESULTS =  Sㆍ클레이모어
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RESULTS = 토오시야
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RESULTS = 하드 레인
 ELSE
 	RESULTS = 산탄사격
@@ -14,9 +14,9 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_113, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 100
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 100
 ELSE
 	RETURN 120
@@ -24,9 +24,9 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_113, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 200
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 350
 ELSE
 	RETURN 110
@@ -46,9 +46,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_113,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코마키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코마키]])
 	RETURN 20
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 30
 ELSE
 	RETURN 4
@@ -99,7 +99,7 @@ RETURN 1
 
 ;속도보정
 @SKILL_SPEED_113, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:나하트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나하트]])
 	RETURN 3
 ELSE
 	RETURN 0
@@ -156,13 +156,13 @@ CALL ATTACK_FIELD,ARG,ARG:1,113
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_113
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:나하트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:나하트]]
 	PRINTL 적 전열에 왼팔의 실드에서 티타늄 베어링 탄을 기습적으로 퍼붓는다。
 	PRINTL 정식명칭「실드ㆍ클레이모어」
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:코마키]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:코마키]])
 	PRINTL 장거리를 쏘는 궁술의 비법。
 	PRINTL 적 1열에 비구 물리데미지를 준다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아란]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아란]])
 	PRINTL HardRain。
 	PRINTL 적 1열에 비구 물리 대 데미지를 준다。
 ELSE

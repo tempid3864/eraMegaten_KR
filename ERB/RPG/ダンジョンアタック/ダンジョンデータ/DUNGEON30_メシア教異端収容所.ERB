@@ -65,7 +65,7 @@ FLAG:현Y = 1
 ;=======================================================================
 @EVENT_DUNGEON_START_30
 FLAG:탈출스킬금지 = 1
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 CALL MESSAGE_WINDOW_D, , "＞" + CALLNAME:MASTER + "는 " + CALLNAME:LOCAL + "을 구출하기 위해 메시아교 수용소에 도달했다/＞현재 팬텀의 손에 의해 양동 작전이 펼쳐지고 있다/＞때문에 이쪽의 경비는 허술하게 된 것 같다"
 CALL MESSAGE_WINDOW_D, , "＞하지만、실패하면 다음은 없다/＞단판 승부로" + CALLNAME:LOCAL + "를 구출하지 않으면 안된다…"
@@ -73,7 +73,7 @@ CALL MESSAGE_WINDOW_D, , "＞하지만、실패하면 다음은 없다/＞단판
 ;脱出時のイベント
 ;=======================================================================
 @EVENT_DUNGEON_END_30
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 CALL MESSAGE_WINDOW_D, , "＞" + CALLNAME:MASTER + "는 무사히 " + CALLNAME:LOCAL + "을 구출 할 수 있었다/＞많이 불안했는지、" + CALLNAME:LOCAL + "은 " + CALLNAME:MASTER + "의 등에 엎혀 떨어지지 않겠다고 말하듯 찰싹 달라붙어 있다"
 CALL MESSAGE_WINDOW_D, , "＞하지만、" + CALLNAME:LOCAL + "을 노리는 세력의 수는 많다/＞그것은 펜텀도 예외가 아니다　이능자의 양산은 큰 리턴이 되기 때문이다/＞…" + CALLNAME:MASTER + "도 차후의 처신을 생각할 필요가 있을지도 모른다…"
@@ -303,7 +303,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				ENDIF
 			ELSEIF FLAG:현X == 4
 				IF 던전플래그:30:4 == 0
-					CALLF FINDCHARA_B([[キャラ:아인]])
+					CALLF FINDCHARA_B([[캐릭터:아인]])
 					LOCAL = RESULT:1
 					CALL MESSAGE_WINDOW_D, "", "＞ＩＤ:게헨나를 사용해 침입한 종교 수용소 최심부/＞그 감옥에" + CALLNAME:LOCAL + "이 있다…"
 					CALL MESSAGE_WINDOW_D, "", "＞" + CALLNAME:MASTER + "는 바로 감옥을 열어、" + CALLNAME:LOCAL+ "에게 이젠 안심해도 돼、라고 말을 걸었다…"
@@ -362,7 +362,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				ENDIF
 			ELSEIF FLAG:현X == 5 && FLAG:현Y == 10
 				IF 던전플래그:30:23 == 0
-					CALLF FINDCHARA_B([[キャラ:아인]])
+					CALLF FINDCHARA_B([[캐릭터:아인]])
 					LOCAL = RESULT:1
 					CALL MESSAGE_WINDOW_D, "소녀", "도와주세요ー！　무서워요ー！"
 					CALL MESSAGE_WINDOW_D, "", "＞도와주겠습니까？"
@@ -411,7 +411,7 @@ ENDIF
 ;==========
 IF DA:(FLAG:현X):(FLAG:현Y) == 8
 	IF 던전플래그:30:4 == 0
-		CALLF FINDCHARA_B([[キャラ:아인]])
+		CALLF FINDCHARA_B([[캐릭터:아인]])
 		LOCAL = RESULT:1
 		CALL MESSAGE_WINDOW_D, , "＞" + CALLNAME:LOCAL + "を助け出すまで脱出するわけにはいかない…"
 		RETURN 1
@@ -518,7 +518,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				ENDIF
 			ELSEIF FLAG:현X == 4
 				IF 던전플래그:30:4 == 0
-					CALLF FINDCHARA_B([[キャラ:아인]])
+					CALLF FINDCHARA_B([[캐릭터:아인]])
 					LOCAL = RESULT:1
 					CALL MESSAGE_WINDOW_D, "", "＞ＩＤ:게헨나를 사용해 침입한 종교 수용소 최심부/＞그 감옥에" + CALLNAME:LOCAL + "이 있다…"
 					CALL MESSAGE_WINDOW_D, "", "＞" + CALLNAME:MASTER + "는 바로 감옥을 열어、" + CALLNAME:LOCAL+ "에게 이젠 안심해도 돼、라고 말을 걸었다…"
@@ -577,7 +577,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				ENDIF
 			ELSEIF FLAG:현X == 5 && FLAG:현Y == 10
 				IF 던전플래그:30:23 == 0
-					CALLF FINDCHARA_B([[キャラ:아인]])
+					CALLF FINDCHARA_B([[캐릭터:아인]])
 					LOCAL = RESULT:1
 					CALL MESSAGE_WINDOW_D, "소녀", "도와주세요ー！　무서워요ー！"
 					CALL MESSAGE_WINDOW_D, "", "＞도와주겠습니까？"
@@ -610,7 +610,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		CASE 2
 			IF FLAG:현Y == 5
 				IF 던전플래그:30:3 == 0
-					CALLF FINDCHARA_B([[キャラ:아인]])
+					CALLF FINDCHARA_B([[캐릭터:아인]])
 					LOCAL = RESULT:1
 					CALL MESSAGE_WINDOW_D, "", "＞방 안에 본적 있는 남자가 있다…"
 					CALL MESSAGE_WINDOW_D, "라메드", "훗훗훗　이제야 왔는가！/메시아교에 거스르는 테러리스트들을 처형하려고 하는 순간에…/" + CALLNAME:MASTER + "、네놈은 방해하려는 건가？"

@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_2040,ARG
 ;ボス仕様用、プレイヤーは使わない
-IF SKILL_CHANGE(ARG, [[キャラ:나나]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나나]])
 	RESULTS = 칠색행복파
 ELSE
 	RESULTS = 칠색연옥파
@@ -50,7 +50,7 @@ RETURN 1
 
 ;　1 물리데미지로 계산　2 마법데미지로 계산
 @SKILL_DAMAGETYPE_2040, ARG
-IF (U > 0 && U < CHARANUM && NO:U == [[キャラ:나나]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[キャラ:나나]])
+IF (U > 0 && U < CHARANUM && NO:U == [[캐릭터:나나]]) || ((FLAG:행동순1) > 0 && NO:(FLAG:행동순1) == [[캐릭터:나나]])
 	RETURN 1
 ELSE
 	RETURN 2

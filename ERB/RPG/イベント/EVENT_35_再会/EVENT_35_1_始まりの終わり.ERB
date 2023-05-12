@@ -68,7 +68,7 @@ PRINTFORMW 「친구가 불렀다、인가。그 친구는 어떤 친구일까�
 PRINTFORMW 츠루기：
 PRINTFORMW 「…내 애인이야」
 ;나나미が함락済み
-IF FINDCHARA_B([[キャラ:나나미]])== 2 && 함락(RESULT:1)
+IF FINDCHARA_B([[캐릭터:나나미]])== 2 && 함락(RESULT:1)
 	PRINTFORML 나나미：
 	PRINTFORMW 「역시 애인이 있었군요。지금으로서는 납득、이라고 할 뿐입니다만」
 ELSE
@@ -233,7 +233,7 @@ PRINTFORMW 「위험하니까 돌아가자고요。뭔가 좋지 않아요 선�
 PRINTFORML 츠루기：
 PRINTFORMW 「나도 가능하다면 돌아가고 싶지만、여기에 사야가 있을 가능성이 있어」
 ;나나미が함락済み
-IF FINDCHARA_B([[キャラ:나나미]])== 2 && 함락(RESULT:1) && TALENT:MASTER:156
+IF FINDCHARA_B([[캐릭터:나나미]])== 2 && 함락(RESULT:1) && TALENT:MASTER:156
 	PRINTFORMW 나나미：（그렇긴 한데、나로서는 그 여자가 아무래도 상관없지만요…）
 	PRINTFORML 나나미의 연민이라고 하기에는 열이 없지만、내버려 둘 수 없다는 마음은 강한 것 같다。
 	PRINTFORMW 나나미의 마음을 읽은 %CALLNAME:MASTER%으로서는、츠루기라는 남자의 일은 아무래도 좋지만… 뭐어, 이미 올라탄 배인가。

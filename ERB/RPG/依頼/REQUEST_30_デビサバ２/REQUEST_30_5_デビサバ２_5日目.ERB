@@ -501,7 +501,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- SET:보티스
-			CALL SET_ENEMY,9,[[キャラ:보티스]],REQUEST_30_BASE_LV(5),1,1
+			CALL SET_ENEMY,9,[[캐릭터:보티스]],REQUEST_30_BASE_LV(5),1,1
 			
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
@@ -618,7 +618,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- SET:비프론스
-			CALL SET_ENEMY,9,[[キャラ:비프론스]],REQUEST_30_BASE_LV(5),1,1
+			CALL SET_ENEMY,9,[[캐릭터:비프론스]],REQUEST_30_BASE_LV(5),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):속도보정 = 10
@@ -638,11 +638,11 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
 			;- SET:雑魚　내성があろうと가드킬して焼く
-			CALL SET_ENEMY,8,[[キャラ:오로바스]],REQUEST_30_BASE_LV(5),0
+			CALL SET_ENEMY,8,[[캐릭터:오로바스]],REQUEST_30_BASE_LV(5),0
 			MAXBASE:(CHARANUM-1):화염 = 999
 			BASE:(CHARANUM-1):화염 = 999
 			ABL:(CHARANUM-1):스킬6 = [[스킬:화염가드킬]]
-			CALL SET_ENEMY,10,[[キャラ:오로바스]],REQUEST_30_BASE_LV(5),0
+			CALL SET_ENEMY,10,[[캐릭터:오로바스]],REQUEST_30_BASE_LV(5),0
 			MAXBASE:(CHARANUM-1):화염 = 999
 			BASE:(CHARANUM-1):화염 = 999
 			ABL:(CHARANUM-1):스킬6 = [[스킬:화염가드킬]]
@@ -665,9 +665,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW ＞비프론스는 막말을 내뱉고 도망쳤다…。
 		PRINTL
 		;合体解禁
-		CALL LIFTING_A_BAN([[キャラ:보티스]])
-		;FLAG:(10000 + [[キャラ:보티스]]) = 1
-		;FLAG:(10000 + [[キャラ:비프론스]]) = 1
+		CALL LIFTING_A_BAN([[캐릭터:보티스]])
+		;FLAG:(10000 + [[캐릭터:보티스]]) = 1
+		;FLAG:(10000 + [[캐릭터:비프론스]]) = 1
 		SELECTCASE LOCAL
 			;イキ顔動画が10まで進む
 			CASE IS > 7
@@ -1003,9 +1003,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW …
 		PRINTL
 		;- キャラ추가(小春)
-		CALL ADD_NEW_COMPANION,[[キャラ:코하루]]
+		CALL ADD_NEW_COMPANION,[[캐릭터:코하루]]
 		;- キャラ추가(오토메)
-		CALL ADD_NEW_COMPANION,[[キャラ:오토메]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:오토메]],200
 		;- 추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -1031,7 +1031,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW ＞오사카 본국에 도착했다…。
 		PRINTW ＞계속 보던 얼굴들이 모여있었다…。
 		PRINTL
-		L_IO_NO = GETCHARA([[キャラ:이오]])
+		L_IO_NO = GETCHARA([[캐릭터:이오]])
 		;이오를 삭제하고 있지 않다
 		IF L_IO_NO > 0
 			;음란 계열 이외의 함락을 하고 있다면 르그 フラグ ON
@@ -1084,7 +1084,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW 『원래라면 실력으로 평가해야만 하는것을 인정이니 와(和)의 정신이니 뭔지 하면서, 애매하게 얼버무렸을 뿐이잖아』
 		PRINTL 다이치：
 		PRINTW 「잠깐…어이어이어이, 이런데서 싸우지말라고！？우리들 동료니까말야！」
-		IF FINDCHARA(NO,[[キャラ:오토메]]) > 0
+		IF FINDCHARA(NO,[[캐릭터:오토메]]) > 0
 			PRINTL 오토메：
 			PRINTW 「시지마군, 그건 어쩔수 없다고 생각해。왜냐면, 야마토씨는 실력주의를 선언했는걸」
 			PRINTW 「지금까지와 다르게, 주의주장이 다른 사람이 나오는것도 당연하다고 생각해」
@@ -1219,10 +1219,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:알리오트]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:알리오트]],1000)
 		
 			;- SET:알리오트
-			CALL SET_ENEMY,9,[[キャラ:알리오트]],REQUEST_30_BASE_LV(6),1,1
+			CALL SET_ENEMY,9,[[캐릭터:알리오트]],REQUEST_30_BASE_LV(6),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 3
 			CALL SYNC_STATUS,(CHARANUM-1)
@@ -1482,10 +1482,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:미자르]],1000)
-			CALL INCREASE_ANALYZE([[キャラ:미자르분체]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:미자르]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:미자르분체]],1000)
 			;- SET:미자르
-			CALL SET_ENEMY,9,[[キャラ:미자르]],REQUEST_30_BASE_LV(6),1,1
+			CALL SET_ENEMY,9,[[캐릭터:미자르]],REQUEST_30_BASE_LV(6),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1493,8 +1493,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
 			;- SET:雑魚
-			CALL SET_ENEMY,8,[[キャラ:미자르분체]],REQUEST_30_BASE_LV(6),0
-			CALL SET_ENEMY,10,[[キャラ:미자르분체]],REQUEST_30_BASE_LV(6),0
+			CALL SET_ENEMY,8,[[캐릭터:미자르분체]],REQUEST_30_BASE_LV(6),0
+			CALL SET_ENEMY,10,[[캐릭터:미자르분체]],REQUEST_30_BASE_LV(6),0
 			
 			;- 전투開始
 			CALL BATTLE_START
@@ -1710,7 +1710,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 					PRINTL 이오는 데빌시프터의 소질을 손에 넣었다！
 					TALENT:L_IO_NO:데빌시프터 = 1
 					;초기링크악마をルーグに변경
-					CFLAG:L_IO_NO:초기링크악마 = [[キャラ:루그]]
+					CFLAG:L_IO_NO:초기링크악마 = [[캐릭터:루그]]
 					ABL:L_IO_NO:초기링크악마사거리 = 1
 					ABL:L_IO_NO:초기링크악마공격범위 = 1
 					ABL:L_IO_NO:초기링크악마최저공격횟수 = 1
@@ -1820,7 +1820,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW ……
 		PRINTW …
 		;- キャラ추가(아이리)
-		CALL ADD_NEW_COMPANION,[[キャラ:아이리]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:아이리]],200
 		;- 추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -1903,10 +1903,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		L_FLAG_EVENT_FIRST_DIGIT = L_FLAG_REQ % 10
 		
 		;아이리と오토메を삭제していない
-		SIF GETCHARA([[キャラ:아이리]]) > 0 && GETCHARA([[キャラ:오토메]]) > 0
+		SIF GETCHARA([[캐릭터:아이리]]) > 0 && GETCHARA([[캐릭터:오토메]]) > 0
 			LOCAL:2 = 1
 		;이오と아이리を삭제していない
-		SIF GETCHARA([[キャラ:이오]]) > 0 && GETCHARA([[キャラ:아이리]]) > 0
+		SIF GETCHARA([[캐릭터:이오]]) > 0 && GETCHARA([[캐릭터:아이리]]) > 0
 			LOCAL:3 = 1
 		;憂う者の이벤트をこなしている。다이치ルートの조건を満たしている。憂う者の説得に실패していない
 		SIF 이벤트플래그:85:13 == 4 && LOCAL:3 && L_FLAG_EVENT_FIRST_DIGIT != 2
@@ -2174,7 +2174,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 「아, 일단 악마가 아니라 인간취급이니까 조심해★」
 		PRINTL
 		;- キャラ추가
-		CALL ADD_NEW_COMPANION,[[キャラ:티코]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:티코]],200
 		;- 추가した場合
 		;조교の有無に関わらず전투には常に참가가능
 		SIF RESULT
@@ -2248,7 +2248,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		SETCOLOR 0xFF0000
 		
 		;미자르本体の処理
-		IF FINDCHARA_ENEMY([[キャラ:미자르]]) == 1 || FINDCHARA_ENEMY([[キャラ:미자르]]) == 2
+		IF FINDCHARA_ENEMY([[캐릭터:미자르]]) == 1 || FINDCHARA_ENEMY([[캐릭터:미자르]]) == 2
 			L_POSITION = RESULT:1
 			LOCAL = 현HP비율(L_POSITION)
 			;本体HPの減り具合によって分岐させる
@@ -2278,10 +2278,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		ENDIF
 		$MIZA_BUNTAI
 		;分体の分裂処理。空きがなければ分裂しない
-		IF FINDCHARA_ENEMY([[キャラ:미자르분체]]) == 1 || FINDCHARA_ENEMY([[キャラ:미자르분체]]) == 2
+		IF FINDCHARA_ENEMY([[캐릭터:미자르분체]]) == 1 || FINDCHARA_ENEMY([[캐릭터:미자르분체]]) == 2
 			FOR LOCAL,7,17
 				L_POSITION = POS(LOCAL)
-				SIF L_POSITION < 0 || ( NO:L_POSITION != [[キャラ:미자르분체]] )
+				SIF L_POSITION < 0 || ( NO:L_POSITION != [[캐릭터:미자르분체]] )
 					CONTINUE
 				
 				IF 현HP비율(L_POSITION) < 50 && L_I < L_CNT
@@ -2300,7 +2300,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			SIF POS(LOCAL) > 0
 				CONTINUE
 			
-			CALL SET_ENEMY,LOCAL,[[キャラ:미자르분체]],REQUEST_30_BASE_LV(6),0
+			CALL SET_ENEMY,LOCAL,[[캐릭터:미자르분체]],REQUEST_30_BASE_LV(6),0
 			
 			LOCAL = 7
 			L_I --

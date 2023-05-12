@@ -21,7 +21,7 @@ CALL MESSAGE_WINDOW, "유다", "그대인가."
 CALL MESSAGE_WINDOW, "유다", "아마미공항에서는 그대 덕분에 살았다."
 CALL MESSAGE_WINDOW, "유다", "이제부터 그대의 부하가 되겠네만 이후도 잘 부탁하네."
 CALL MESSAGE_WINDOW, "", "＞유다가 동료가 되었다."
-	CALL ADD_NEW_COMPANION,[[キャラ:유다]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:유다]],500
 	SIF RESULT
 	CFLAG:(RESULT:1):전투참가불가능 = -1
 이벤트플래그:14:0 = 1

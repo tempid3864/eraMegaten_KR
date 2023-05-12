@@ -14,21 +14,21 @@ SELECTCASE GET_BASESTATUS(ARG)
 	;信頼陥落時は全能力＋２
 	;복종陥落時、力ㆍ知＋２、契約時＋５、
 	CASE "힘" , "지혜"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "복종"
 			RETURN 5
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "복종" || RESULTS == "신뢰")
 			RETURN 2
 	;淫乱陥落時、魔ㆍ速＋２、契約時＋５
 	CASE "마력" , "속도"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "음란"
 			RETURN 5
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "음란" || RESULTS == "신뢰")
 			RETURN 2
 	;恋慕陥落時、耐ㆍ運＋２、契約時＋５
 	CASE "인내력" , "운"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "연모"
 			RETURN 5
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "연모" || RESULTS == "신뢰")
@@ -39,19 +39,19 @@ RETURN 0
 @전투능력수정_5262,ARG,ARG:1 = -1
 SELECTCASE GET_BATTLESTATUS(ARG)
 	CASE "공격" , "명중"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "복종"
 			RETURN 20
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "복종" || RESULTS == "신뢰")
 			RETURN 10
 	CASE "회피" , "마법위력"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "음란"
 			RETURN 20
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "음란" || RESULTS == "신뢰")
 			RETURN 10
 	CASE "방어" , "마법효과"
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2 && RESULTS == "연모"
 			RETURN 20
 		SIF LOCAL > 0 && 함락(LOCAL) && (RESULTS == "연모" || RESULTS == "신뢰")
@@ -67,45 +67,45 @@ RETURN 100
 @BS내성_5262,ARG,ARG:1 = -1
 SELECTCASE ARG
 	CASE GET_STATE_NUM("HAPPY")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 1
 			RETURN -100
 	CASE GET_STATE_NUM("SHOCK")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2
 			RETURN -100
 	CASE GET_STATE_NUM("PANIC")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 1
 			RETURN -100
 	CASE GET_STATE_NUM("SLEEP")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 1
 			RETURN -100
 	CASE GET_STATE_NUM("FREEZE")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2
 			RETURN -100
 	CASE GET_STATE_NUM("BIND")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 0
 			RETURN -100
 	CASE GET_STATE_NUM("CLOSE")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 0
 			RETURN -100
 	CASE GET_STATE_NUM("POISON")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 0
 			RETURN -100
 	CASE GET_STATE_NUM("BOMB")
 		RETURN 0
 	CASE GET_STATE_NUM("CHARM")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 1
 			RETURN -100
 	CASE GET_STATE_NUM("PALYZE")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 0
 			RETURN -100
 	CASE GET_STATE_NUM("CURSE")
@@ -115,11 +115,11 @@ SELECTCASE ARG
 	CASE GET_STATE_NUM("DYING")
 		RETURN 0
 	CASE GET_STATE_NUM("SLIP")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2
 			RETURN -100
 	CASE GET_STATE_NUM("FLAME")
-		LOCAL = GETCHARA([[キャラ:유마]])
+		LOCAL = GETCHARA([[캐릭터:유마]])
 		SIF LOCAL > 0 && 함락(LOCAL) > 2
 			RETURN -100
 	;ココらへんは入れないほうが良いよね

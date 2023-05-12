@@ -62,7 +62,7 @@ FOR A,1,7
 NEXT
 
 	;게이트키퍼 리바이어던 사양. HP 1800 X 4 = 7200
-	CALL SET_ENEMY,8,[[キャラ:게이트키퍼]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:게이트키퍼]],40,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 4
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6655
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 6969
@@ -72,7 +72,7 @@ NEXT
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 320, 540)
 	;장교용 리바이어던 사양 540 X 4 = 2160. 체력 수치만 같음
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],30,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1817
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2040
@@ -90,7 +90,7 @@ NEXT
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;앨리트 병사는 X3 1440, 레벨 40. 리바이어던 사양.
-	CALL SET_ENEMY,10,[[キャラ:어드밴트병사]],25,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트병사]],25,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -148,7 +148,7 @@ NEXT
 
 	;외계인버서커 체력 15 고정 (60x15 = 900 X 4 = 3600)
 	;리바이어던 사양.
-	CALL SET_ENEMY,7,[[キャラ:외계인버서커]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:외계인버서커]],40,0,0
 	BASE:(CHARANUM-1):힘 = 27
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -162,7 +162,7 @@ NEXT
 
 	;어드밴트 MEC 체력 7, 12. 체력 1당 60
 	;목표 체력 420, 720. 리바이어던 사양은 X3 = 2160, 레벨 40
-	CALL SET_ENEMY,9,[[キャラ:어드밴트MEC]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트MEC]],30,0,0
 	NAME:(CHARANUM-1) = 중형 MEC
 	CALLNAME:(CHARANUM-1) = 중형 MEC
 	BASE:(CHARANUM-1):힘 = 20
@@ -180,7 +180,7 @@ NEXT
 	;어드밴트 사제 체력 5, 10, 13 (300, 900, 780)
 	;사제의 성전사 능력. HP 40%를 사용하므로 사제는 체력이 높아야함.
 	;장교의 3배 체력. 3240 리바이어던 사양으로 X 1.5 = 4860
-	CALL SET_ENEMY,10,[[キャラ:어드밴트사제]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트사제]],40,0,0
 	BASE:(CHARANUM-1):힘 = 15
 	BASE:(CHARANUM-1):지혜 = 20
 	BASE:(CHARANUM-1):마력 = 14
@@ -196,7 +196,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;바이퍼 - 리바이어던 사양 420 X 4 = 1680
-	CALL SET_ENEMY,11,[[キャラ:바이퍼]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:바이퍼]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1124
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1469
 	BASE:(CHARANUM-1):힘 = 19
@@ -212,7 +212,7 @@ NEXT
 	;어드밴트 방패병. 체력 6, 8 (360, 480)
 	;중장갑 방패병이므로 체력 수치를 X4 1920으로
 	;리바이어던 사양에서는 X2 = 3840, 레벨 40
-	CALL SET_ENEMY,12,[[キャラ:어드밴트방패병]],30,0,0
+	CALL SET_ENEMY,12,[[캐릭터:어드밴트방패병]],30,0,0
 	BASE:(CHARANUM-1):힘 = 20
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -230,7 +230,7 @@ NEXT
 	;스펙터는 체력 1200으로 크게 상향
 	;리바이어던 사양은 X3 = 3600/레벨도 올려야함.
 	;앨리트 스팩터는 레벨 40에 체력 5400
-	CALL SET_ENEMY,13,[[キャラ:스팩터]],30,0,0
+	CALL SET_ENEMY,13,[[캐릭터:스팩터]],30,0,0
 	BASE:(CHARANUM-1):힘 = 15
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -246,7 +246,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;안드로메돈 (리바이어던 사양으로 1260 X4 = 5040)
-	CALL SET_ENEMY,14,[[キャラ:안드로메돈]],40,0,0
+	CALL SET_ENEMY,14,[[캐릭터:안드로메돈]],40,0,0
 	CSTR:(CHARANUM-1):사고패턴 = 8516
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 4490
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 4865
@@ -256,7 +256,7 @@ NEXT
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
 	;목표 체력 7560
-	CALL SET_ENEMY,15,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,15,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6975
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 7408
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -266,7 +266,7 @@ NEXT
 
 	;뮤톤 체력 8 고정 (480)
 	;리바이어던 사양일시 체력 수치 X4 1920 레벨 40
-	CALL SET_ENEMY,16,[[キャラ:뮤톤]],25,0,0
+	CALL SET_ENEMY,16,[[캐릭터:뮤톤]],25,0,0
 	BASE:(CHARANUM-1):힘 = 19
 	BASE:(CHARANUM-1):지혜 = 1
 	BASE:(CHARANUM-1):마력 = 1
@@ -300,7 +300,7 @@ NEXT
 	WAIT
 
 	;헌터 (HP 10000, MP 10000)
-	CALL SET_ENEMY,9,[[キャラ:헌터]],30,0,0
+	CALL SET_ENEMY,9,[[캐릭터:헌터]],30,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 9388
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 9797
 	CFLAG:(CHARANUM-1):행동횟수 = 3

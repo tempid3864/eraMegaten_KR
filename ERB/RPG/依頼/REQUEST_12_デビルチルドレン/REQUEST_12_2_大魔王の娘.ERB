@@ -20,13 +20,13 @@
 	CALL MESSAGE_WINDOW, "", "＞에레지는 당신을 강하게 노려보고있다。"
 	CALL MESSAGE_WINDOW, "에레지", "（가능한 한 이용하면 좋아）"
 	CALL MESSAGE_WINDOW, "", "＞에레지가 동료가 되었다！/ 아스모데우스가 중마가 되었다！/ 데모고르곤이 중마가 되었다！" , , , , , , , , , "CENTER"
-	CALL LIFTING_A_BAN([[キャラ:아스모데우스]])
-	CALL LIFTING_A_BAN([[キャラ:데모고르곤]])
+	CALL LIFTING_A_BAN([[캐릭터:아스모데우스]])
+	CALL LIFTING_A_BAN([[캐릭터:데모고르곤]])
 	;FLAG:10250 = 1
 	;FLAG:11718 = 1
-	CALL ADD_NEW_COMPANION,[[キャラ:에레지]],200
+	CALL ADD_NEW_COMPANION,[[캐릭터:에레지]],200
 	SIF RESULT
 	CFLAG:(RESULT:1):전투참가불가능 = -1
-	CALL ADD_NEW_COMPANION,[[キャラ:아스모데우스]],200
-	CALL ADD_NEW_COMPANION,[[キャラ:데모고르곤]],200
+	CALL ADD_NEW_COMPANION,[[캐릭터:아스모데우스]],200
+	CALL ADD_NEW_COMPANION,[[캐릭터:데모고르곤]],200
 	의뢰플래그:12:0 = 2

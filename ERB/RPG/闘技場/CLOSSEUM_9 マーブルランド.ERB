@@ -53,13 +53,13 @@ IF 투기장플래그:9:0 == 1
 	CALL MESSAGE_WINDOW_D, "사회자", @"그럼 바로 제1 시합을 개시하지요! 제 1시합은 %CALLNAME:MASTER%　대　나찰족의 왕 비비사나입니다!"
 	CALL MESSAGE_WINDOW_D, "비비사나", @"지혜로운 자가 마계를 얻어야 마땅하다!"
 	CALL MESSAGE_WINDOW_D, "", "＞나찰족의 왕 비비사나가 1명 나타났다!/나찰왕이 2체 나왔다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:비비사나]], 25, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:비비사나]], 25, 0, 1
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 300
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 나찰왕
 	CALLNAME:(CHARANUM-1) = 나찰왕
 	CSTR:(CHARANUM-1):종족명 = 나찰족
@@ -77,7 +77,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,10,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 나찰왕
 	CALLNAME:(CHARANUM-1) = 나찰왕
 	CSTR:(CHARANUM-1):종족명 = 나찰족
@@ -100,7 +100,7 @@ IF 투기장플래그:9:0 == 1
 	CALL MESSAGE_WINDOW_D, "사회자", @"제 2시합은 %CALLNAME:MASTER%　대　수라족의 왕 브리트라입니다!"
 	CALL MESSAGE_WINDOW_D, "브리트라", @"힘 있는 자가 이 마계를 손에 넣는 것이다!"
 	CALL MESSAGE_WINDOW_D, "", "＞수라족의 왕 브리트라가 !체 나타났다!/ 수라왕이 2체 나타났다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:브리트라(데빌칠드런)]], 25, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:브리트라(데빌칠드런)]], 25, 0, 1
 	NAME:(CHARANUM-1) = 브리트라
 	CALLNAME:(CHARANUM-1) = 브리트라
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 300
@@ -108,7 +108,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,8,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 수라왕
 	CALLNAME:(CHARANUM-1) = 수라왕
 	CSTR:(CHARANUM-1):종족명 = 수라족
@@ -120,7 +120,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,10,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 수라왕
 	CALLNAME:(CHARANUM-1) = 수라왕
 	CSTR:(CHARANUM-1):종족명 = 수라족
@@ -137,13 +137,13 @@ IF 투기장플래그:9:0 == 1
 	CALL MESSAGE_WINDOW_D, "사회자", @"제 3시합은 %CALLNAME:MASTER%　대　데바족의 왕 인드라입니다!"
 	CALL MESSAGE_WINDOW_D, "인드라", @"앞으로 두 시합을 이기면 제가 마왕입니다!"
 	CALL MESSAGE_WINDOW_D, "", "＞데바족의 왕 인드라가 1명 나타났다!/ 데바왕이 2체 나타났다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:인드라]], 25, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:인드라]], 25, 0, 1
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 300
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,8,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 데바왕
 	CALLNAME:(CHARANUM-1) = 데바왕
 	CSTR:(CHARANUM-1):종족명 = 데바족
@@ -160,7 +160,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,10,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 데바왕
 	CALLNAME:(CHARANUM-1) = 데바왕
 	CSTR:(CHARANUM-1):종족명 = 데바족
@@ -187,7 +187,7 @@ IF 투기장플래그:9:0 == 1
 		CALL MESSAGE_WINDOW_D, "에레지", @"그 녀석을 쓰러뜨리기 위해서, 네가 가지고 있는 메시아의 눈동자를 받겠어!"
 	ENDIF
 	CALL MESSAGE_WINDOW_D, "","＞수수께끼의 소녀 에레지가 1명 나타났다!/마왕 아스모데우스가 1명 나타났다!/타천사 데모고르곤이 1명 나타났다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:에레지]], 29, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:에레지]], 29, 0, 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -197,7 +197,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8,[[キャラ:아스모데우스]], 25, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:아스모데우스]], 25, 0, 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 300
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 	ABL:(CHARANUM-1):스킬1 = [[스킬:아기라오]]
@@ -207,7 +207,7 @@ IF 투기장플래그:9:0 == 1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,10,[[キャラ:데모고르곤]], 25, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:데모고르곤]], 25, 0, 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 300
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 	ABL:(CHARANUM-1):스킬1 = [[스킬:아기라오]]
@@ -249,7 +249,7 @@ ELSE
 	CALL MESSAGE_WINDOW_D, "사회자", @"Fight!!" , , , , , , , , , "CENTER"
 	CUSTOMDRAWLINE =
 	CALL MESSAGE_WINDOW_D, "", "＞나찰족 나찰왕이 1명 나타났다!/나찰이 2체 나타났다!"
-	CALL SET_ENEMY,9,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 나찰왕
 	CALLNAME:(CHARANUM-1) = 나찰왕
 	CSTR:(CHARANUM-1):종족명 = 나찰족
@@ -268,7 +268,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 나찰
 	CALLNAME:(CHARANUM-1) = 나찰
 	CSTR:(CHARANUM-1):종족명 = 나찰족
@@ -283,7 +283,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,10,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 나찰
 	CALLNAME:(CHARANUM-1) = 나찰
 	CSTR:(CHARANUM-1):종족명 = 나찰족
@@ -301,7 +301,7 @@ ELSE
 
 	CUSTOMDRAWLINE =
 	CALL MESSAGE_WINDOW_D, "", "＞수라족 수라왕이 1명 나타났다!/ 수라가 2체 나타났다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 수라왕
 	CALLNAME:(CHARANUM-1) = 수라왕
 	CSTR:(CHARANUM-1):종족명 = 수라족
@@ -314,7 +314,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 수라
 	CALLNAME:(CHARANUM-1) = 수라
 	CSTR:(CHARANUM-1):종족명 = 수라족
@@ -326,7 +326,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,10,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 수라
 	CALLNAME:(CHARANUM-1) = 수라
 	CSTR:(CHARANUM-1):종족명 = 수라족
@@ -341,7 +341,7 @@ ELSE
 
 	CUSTOMDRAWLINE =
 	CALL MESSAGE_WINDOW_D, "", "＞데바족 데바왕이 1명 나타났다!/ 데바가 2체 나타났다!" , , , , , , , , , "CENTER"
-	CALL SET_ENEMY,9,[[キャラ:오니]], 20, 0, 1
+	CALL SET_ENEMY,9,[[캐릭터:오니]], 20, 0, 1
 	NAME:(CHARANUM-1) = 데바왕
 	CALLNAME:(CHARANUM-1) = 데바왕
 	CSTR:(CHARANUM-1):종족명 = 데바족
@@ -359,7 +359,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,8,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 데바
 	CALLNAME:(CHARANUM-1) = 데바
 	CSTR:(CHARANUM-1):종족명 = 데바족
@@ -373,7 +373,7 @@ ELSE
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,10,[[キャラ:오크]], 15, 0, 1
+	CALL SET_ENEMY,10,[[캐릭터:오크]], 15, 0, 1
 	NAME:(CHARANUM-1) = 데바
 	CALLNAME:(CHARANUM-1) = 데바
 	CSTR:(CHARANUM-1):종족명 = 데바족
@@ -393,7 +393,7 @@ ELSE
 		CALL MESSAGE_WINDOW_D, "", @"＞많은 참가자를 쓰러트린 당신 앞에 검정 일색의 악마가 나타났다"
 		CALL MESSAGE_WINDOW_D, "아바돈", @"소생은 아바돈이라고 하오/사정이 있어 그대의 명을 받아가겠소!"
 		CALL MESSAGE_WINDOW_D, "","＞자객 아바돈이 1명 나타났다!" , , , , , , , , , "CENTER"
-		CALL SET_ENEMY,9,[[キャラ:아바돈(데빌칠드런)]], 25, 0, 1
+		CALL SET_ENEMY,9,[[캐릭터:아바돈(데빌칠드런)]], 25, 0, 1
 		NAME:(CHARANUM-1) = 아바돈
 		CALLNAME:(CHARANUM-1) = 아바돈
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 300
@@ -408,7 +408,7 @@ ELSE
 		CALL MESSAGE_WINDOW_D, "", @"＞많은 참가자를 쓰러트린 당신 앞에 낙타를 탄 악마가 나타났다"
 		CALL MESSAGE_WINDOW_D, "파이몬", @"나, 파이몬이라고 해/어느 분의 명령으로 네 목숨, 받아가겠어!"
 		CALL MESSAGE_WINDOW_D, "","＞자객 파이몬이 1명 나타났다!" , , , , , , , , , "CENTER"
-		CALL SET_ENEMY,9,[[キャラ:파이몬]], 25, 0, 1
+		CALL SET_ENEMY,9,[[캐릭터:파이몬]], 25, 0, 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 300
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 300
 		CFLAG:(CHARANUM-1):행동횟수 = 2

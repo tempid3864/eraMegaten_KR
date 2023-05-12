@@ -324,7 +324,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		이벤트플래그:85:0 = 1
 		
 		;- キャラ추가(다이치勢힘)
-		CALL ADD_NEW_COMPANION,[[キャラ:다이치]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:다이치]],1000
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -333,7 +333,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:준고]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:준고]],1000
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -342,7 +342,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:데빌서바２주인공]],1500
+		CALL ADD_NEW_COMPANION,[[캐릭터:데빌서바２주인공]],1500
 		;추가した場合は초기설정を行う
 		IF RESULT
 			;조교の有無に関わらず전투참가가능
@@ -351,7 +351,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;主人公用の加入後셋업処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:히나코]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:히나코]],1000
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -360,7 +360,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:후미]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:후미]],1000
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;조교の有無に関わらず전투참가가능
@@ -369,7 +369,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:케이타]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:케이타]],1000
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;조교の有無に関わらず전투참가가능
@@ -620,7 +620,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL
 		MONEY:1 += 1000
 		
-		CALL ADD_NEW_COMPANION,[[キャラ:로나우도]],700
+		CALL ADD_NEW_COMPANION,[[캐릭터:로나우도]],700
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;조교の有無に関わらず전투참가가능
@@ -629,7 +629,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　35레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:죠]],700
+		CALL ADD_NEW_COMPANION,[[캐릭터:죠]],700
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -667,9 +667,9 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			SIF TALENT:POS(LOCAL):3 || TALENT:POS(LOCAL):4 || TALENT:POS(LOCAL):5 || TALENT:POS(LOCAL):6 || TALENT:POS(LOCAL):7 || TALENT:POS(LOCAL):8
 				CONTINUE
 			SELECTCASE NO:POS(LOCAL)
-				CASE [[キャラ:이오]],  [[キャラ:히나코]], [[キャラ:마코토]], [[キャラ:후미]],[[キャラ:아이리]], [[キャラ:오토메]] 
+				CASE [[캐릭터:이오]],  [[캐릭터:히나코]], [[캐릭터:마코토]], [[캐릭터:후미]],[[캐릭터:아이리]], [[캐릭터:오토메]] 
 					CALL REMOVE_POSITION,LOCAL
-				CASE [[キャラ:데빌서바２주인공]], [[キャラ:다이치]], [[キャラ:준고]],[[キャラ:케이타]], [[キャラ:죠]], [[キャラ:로나우도]]
+				CASE [[캐릭터:데빌서바２주인공]], [[캐릭터:다이치]], [[캐릭터:준고]],[[캐릭터:케이타]], [[캐릭터:죠]], [[캐릭터:로나우도]]
 					CALL REMOVE_POSITION,LOCAL
 			ENDSELECT
 		NEXT
@@ -775,7 +775,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL
 		MONEY:1 += 1500
 		
-		CALL ADD_NEW_COMPANION,[[キャラ:야마토]],1000
+		CALL ADD_NEW_COMPANION,[[캐릭터:야마토]],1000
 		;추가した場合は레벨アップとそれに合わせた강화を行う
 		IF RESULT
 			;조교の有無に関わらず전투참가가능
@@ -942,7 +942,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTL 후미：
 		PRINTFORMW 「뭐, 그렇네. 어느쪽으로 해도 지금 할 수 있는 일은 제한되어 있고」
 		PRINTFORMW 「폴라리스의 흔적을 찾으면서 각자가 준비를 갖추고 그 때를 기다릴 수 밖에 없는 … 지」
-		IF FINDCHARA(NO,[[キャラ:오토메]]) > 0
+		IF FINDCHARA(NO,[[캐릭터:오토메]]) > 0
 			PRINTL 오토메：
 			PRINTFORMW 「에에, 그렇게 합시다」
 			PRINTFORMW 「컨디션 관리도 제대로하지 않으면, 필요할 때 움직일 수 없는 것이군요」
@@ -957,7 +957,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTW …
 		PRINTL 
 		PRINTL 
-		IF GETCHARA([[キャラ:티코]]) > 0
+		IF GETCHARA([[캐릭터:티코]]) > 0
 			PRINTFORMW ＞터미널로 향하는 퇴근길 휴대기기 단말이 수신을 알린다…。
 			PRINTL 
 			PRINTL 티코：

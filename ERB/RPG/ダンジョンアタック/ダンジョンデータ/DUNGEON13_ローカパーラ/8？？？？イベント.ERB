@@ -390,7 +390,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL BATTLE_START
 			CALL MESSAGE_WINDOW_D, "브륀힐드", "호오 역시 우리 아버지 오딘을 쓰러뜨린 만큼의 힘이 있어/우리 발키리부대를 여기까지 돌파하다니/ "
 			
-				CALL SET_ENEMY,9,[[キャラ:브륀힐드(영웅)]],72,0,1
+				CALL SET_ENEMY,9,[[캐릭터:브륀힐드(영웅)]],72,0,1
 				NAME:(CHARANUM-1) = 브륀힐드
 				CALLNAME:(CHARANUM-1) = 브륀힐드
 				CFLAG:(CHARANUM-1):BS무효플래그 = 1
@@ -666,7 +666,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
 				CALL BATTLE_START
-				FLAG:(10000+[[キャラ:오딘]]) = 1
+				FLAG:(10000+[[캐릭터:오딘]]) = 1
 				CALL MESSAGE_WINDOW_D, "", "오딘의 합체가 해금되었다 "
 				
 				CALL MESSAGE_WINDOW_D, "오딘", "크윽…설마/인간에게 내가 지다니…있을수 없다…앗/　 "
@@ -722,8 +722,8 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			
 				
 				CALL BATTLE_START
-				FLAG:(10000+[[キャラ:미트라보살]]) = 1
-				FLAG:(10000+[[キャラ:미륵보살]]) = 1
+				FLAG:(10000+[[캐릭터:미트라보살]]) = 1
+				FLAG:(10000+[[캐릭터:미륵보살]]) = 1
 				CALL MESSAGE_WINDOW_D, "", "미륵보살、미트라보살의 합체가 해금되었다 "
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
@@ -780,39 +780,39 @@ RETURN 1
 		IF ARG == 0
 			IF FLAG:현M < 51
 				SIF RAND:17 == 0		
-					RETURN [[キャラ:우샤스]]		
+					RETURN [[캐릭터:우샤스]]		
 				SIF RAND:16 == 0		
-					RETURN [[キャラ:펜리르]]		
+					RETURN [[캐릭터:펜리르]]		
 				SIF RAND:15 == 0		
-					RETURN [[キャラ:고모리]]		
+					RETURN [[캐릭터:고모리]]		
 				SIF RAND:14 == 0		
-					RETURN [[キャラ:티아마트]]		
+					RETURN [[캐릭터:티아마트]]		
 				SIF RAND:13 == 0		
-					RETURN [[キャラ:벨레트]]		
+					RETURN [[캐릭터:벨레트]]		
 				SIF RAND:12 == 0		
-					RETURN [[キャラ:아지ㆍ다하카]]		
+					RETURN [[캐릭터:아지ㆍ다하카]]		
 				SIF RAND:11 == 0		
-					RETURN [[キャラ:제천대성]]		
+					RETURN [[캐릭터:제천대성]]		
 				SIF RAND:10 == 0		
-					RETURN [[キャラ:호루스]]		
+					RETURN [[캐릭터:호루스]]		
 				SIF RAND:9 == 0		
-					RETURN [[キャラ:야리로]]		
+					RETURN [[캐릭터:야리로]]		
 				SIF RAND:8 == 0		
-					RETURN [[キャラ:알시엘]]		
+					RETURN [[캐릭터:알시엘]]		
 				SIF RAND:7 == 0		
-					RETURN [[キャラ:보후ㆍ마나흐]]		
+					RETURN [[캐릭터:보후ㆍ마나흐]]		
 				SIF RAND:6 == 0		
-					RETURN [[キャラ:아스테리아]]		
+					RETURN [[캐릭터:아스테리아]]		
 				SIF RAND:5 == 0		
-					RETURN [[キャラ:이그드라실]]		
+					RETURN [[캐릭터:이그드라실]]		
 				SIF RAND:4 == 0		
-					RETURN [[キャラ:헤카톤케일]]		
+					RETURN [[캐릭터:헤카톤케일]]		
 				SIF RAND:3 == 0		
-					RETURN [[キャラ:바수키]]		
+					RETURN [[캐릭터:바수키]]		
 				SIF RAND:2 == 0		
-					RETURN [[キャラ:쿠단]]		
+					RETURN [[캐릭터:쿠단]]		
 				
-					RETURN [[キャラ:올드원]]		
+					RETURN [[캐릭터:올드원]]		
 			ELSEIF FLAG:현M < 53
 			
 			
@@ -822,74 +822,74 @@ RETURN 1
 				SIF RAND:4 == 0		
 					RETURN 408		
 				SIF RAND:17 == 0		
-					RETURN [[キャラ:우샤스]]		
+					RETURN [[캐릭터:우샤스]]		
 				SIF RAND:16 == 0		
-					RETURN [[キャラ:펜리르]]		
+					RETURN [[캐릭터:펜리르]]		
 				SIF RAND:15 == 0		
-					RETURN [[キャラ:고모리]]		
+					RETURN [[캐릭터:고모리]]		
 				SIF RAND:14 == 0		
-					RETURN [[キャラ:티아마트]]		
+					RETURN [[캐릭터:티아마트]]		
 				SIF RAND:13 == 0		
-					RETURN [[キャラ:벨레트]]		
+					RETURN [[캐릭터:벨레트]]		
 				SIF RAND:12 == 0		
-					RETURN [[キャラ:아지ㆍ다하카]]		
+					RETURN [[캐릭터:아지ㆍ다하카]]		
 				SIF RAND:11 == 0		
-					RETURN [[キャラ:제천대성]]		
+					RETURN [[캐릭터:제천대성]]		
 				SIF RAND:10 == 0		
-					RETURN [[キャラ:호루스]]		
+					RETURN [[캐릭터:호루스]]		
 				SIF RAND:9 == 0		
-					RETURN [[キャラ:야리로]]		
+					RETURN [[캐릭터:야리로]]		
 				SIF RAND:8 == 0		
-					RETURN [[キャラ:알시엘]]		
+					RETURN [[캐릭터:알시엘]]		
 				SIF RAND:7 == 0		
-					RETURN [[キャラ:보후ㆍ마나흐]]		
+					RETURN [[캐릭터:보후ㆍ마나흐]]		
 				SIF RAND:6 == 0		
-					RETURN [[キャラ:아스테리아]]		
+					RETURN [[캐릭터:아스테리아]]		
 				SIF RAND:5 == 0		
-					RETURN [[キャラ:이그드라실]]		
+					RETURN [[캐릭터:이그드라실]]		
 				SIF RAND:4 == 0		
-					RETURN [[キャラ:헤카톤케일]]		
+					RETURN [[캐릭터:헤카톤케일]]		
 				SIF RAND:3 == 0		
-					RETURN [[キャラ:바수키]]		
+					RETURN [[캐릭터:바수키]]		
 				SIF RAND:2 == 0		
-					RETURN [[キャラ:쿠단]]		
+					RETURN [[캐릭터:쿠단]]		
 				
-					RETURN [[キャラ:올드원]]		
+					RETURN [[캐릭터:올드원]]		
 			ENDIF
 				SIF RAND:17 == 0		
-					RETURN [[キャラ:우샤스]]		
+					RETURN [[캐릭터:우샤스]]		
 				SIF RAND:16 == 0		
-					RETURN [[キャラ:펜리르]]		
+					RETURN [[캐릭터:펜리르]]		
 				SIF RAND:15 == 0		
-					RETURN [[キャラ:고모리]]		
+					RETURN [[캐릭터:고모리]]		
 				SIF RAND:14 == 0		
-					RETURN [[キャラ:티아마트]]		
+					RETURN [[캐릭터:티아마트]]		
 				SIF RAND:13 == 0		
-					RETURN [[キャラ:벨레트]]		
+					RETURN [[캐릭터:벨레트]]		
 				SIF RAND:12 == 0		
-					RETURN [[キャラ:아지ㆍ다하카]]		
+					RETURN [[캐릭터:아지ㆍ다하카]]		
 				SIF RAND:11 == 0		
-					RETURN [[キャラ:제천대성]]		
+					RETURN [[캐릭터:제천대성]]		
 				SIF RAND:10 == 0		
-					RETURN [[キャラ:호루스]]		
+					RETURN [[캐릭터:호루스]]		
 				SIF RAND:9 == 0		
-					RETURN [[キャラ:야리로]]		
+					RETURN [[캐릭터:야리로]]		
 				SIF RAND:8 == 0		
-					RETURN [[キャラ:알시엘]]		
+					RETURN [[캐릭터:알시엘]]		
 				SIF RAND:7 == 0		
-					RETURN [[キャラ:보후ㆍ마나흐]]		
+					RETURN [[캐릭터:보후ㆍ마나흐]]		
 				SIF RAND:6 == 0		
-					RETURN [[キャラ:아스테리아]]		
+					RETURN [[캐릭터:아스테리아]]		
 				SIF RAND:5 == 0		
-					RETURN [[キャラ:이그드라실]]		
+					RETURN [[캐릭터:이그드라실]]		
 				SIF RAND:4 == 0		
-					RETURN [[キャラ:헤카톤케일]]		
+					RETURN [[캐릭터:헤카톤케일]]		
 				SIF RAND:3 == 0		
-					RETURN [[キャラ:바수키]]		
+					RETURN [[캐릭터:바수키]]		
 				SIF RAND:2 == 0		
-					RETURN [[キャラ:쿠단]]		
+					RETURN [[캐릭터:쿠단]]		
 				
-					RETURN [[キャラ:올드원]]		
+					RETURN [[캐릭터:올드원]]		
 		ELSEIF ARG == 1
 			SIF FLAG:현M < 50
 				RETURN 62 + RAND:4
@@ -904,7 +904,7 @@ RETURN 1
 SIF FLAG:현M > 45
 	RETURN 0
 SELECTCASE NO:ARG
-	CASE [[キャラ:브륀힐드]]
+	CASE [[캐릭터:브륀힐드]]
 		NAME:(CHARANUM-1) = 발키리
 		CALLNAME:(CHARANUM-1) = 발키리
 ENDSELECT
@@ -945,7 +945,7 @@ LOCAL = 0
 	ENDIF
 
 @EVENT_BATTLE_kasou
-IF FINDCHARA_ENEMY([[キャラ:오딘]])
+IF FINDCHARA_ENEMY([[캐릭터:오딘]])
 	LOCAL= RESULT:1
 	LOCAL:1 = CPOS(LOCAL)
 	;SIF 현HP비율(LOCAL) <= 33

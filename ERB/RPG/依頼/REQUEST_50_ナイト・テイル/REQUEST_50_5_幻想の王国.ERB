@@ -335,7 +335,7 @@ ELSE
 	PRINTFORML 
 	
 	
-	CALL SET_ENEMY,14, [[キャラ:히노엔마]],30, 0,0
+	CALL SET_ENEMY,14, [[캐릭터:히노엔마]],30, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
@@ -432,12 +432,12 @@ PRINTFORMW ＞마가미　유우키	가 일시적으로 동료가 되어、후�
 PRINTFORMW ＞유리아ㆍ페테아스카 	가 일시적으로 동료가 되어、전위에 끼어들었습니다。
 PRINTFORML 
 
-			LOCAL = GETCHARA([[キャラ:유우키]])
+			LOCAL = GETCHARA([[캐릭터:유우키]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:유우키]], 100, 1)
+				CALL ADD_GUEST_COMPANION([[캐릭터:유우키]], 100, 1)
 				CFLAG:(CHARANUM-1):전투참가불가능 = -1
 				CFLAG:(CHARANUM-1):게스트가입플래그 = 0
-				LOCAL = GETCHARA([[キャラ:유우키]])
+				LOCAL = GETCHARA([[캐릭터:유우키]])
 				BASE:LOCAL:LV = 45
 				BASE:LOCAL:힘 = 2
 				BASE:LOCAL:지혜 = 30
@@ -483,10 +483,10 @@ PRINTFORML
 			ENDIF
 				
 			LOCAL:99 = 0
-			LOCAL = GETCHARA([[キャラ:유리아]])
+			LOCAL = GETCHARA([[캐릭터:유리아]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:유리아]], 100)
-				LOCAL = GETCHARA([[キャラ:유리아]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:유리아]], 100)
+				LOCAL = GETCHARA([[캐릭터:유리아]])
 				BASE:LOCAL:LV = 45
 				BASE:LOCAL:힘 = 45
 				BASE:LOCAL:지혜 = 2
@@ -528,15 +528,15 @@ PRINTFORML
 			ENDIF
 
 
-CALL SET_ENEMY,12, [[キャラ:에로스]],25, 0,0
+CALL SET_ENEMY,12, [[캐릭터:에로스]],25, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,14, [[キャラ:히노엔마]],30, 0,0
+CALL SET_ENEMY,14, [[캐릭터:히노엔마]],30, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,16, [[キャラ:에로스]],25, 0,0
+CALL SET_ENEMY,16, [[캐릭터:에로스]],25, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -616,11 +616,11 @@ PRINTFORMW 　이곳에서 생을 마감할테니까！」
 PRINTFORML 
 
 
-CALL SET_ENEMY,13, [[キャラ:서큐버스]],45, 0,0
+CALL SET_ENEMY,13, [[캐릭터:서큐버스]],45, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,14, [[キャラ:뱀파이어]],45, 1,1
+CALL SET_ENEMY,14, [[캐릭터:뱀파이어]],45, 1,1
 	NAME:(CHARANUM-1) = 라두
 	CALLNAME:(CHARANUM-1) = 라두
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1500
@@ -633,7 +633,7 @@ CALL SET_ENEMY,14, [[キャラ:뱀파이어]],45, 1,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,15, [[キャラ:서큐버스]],45, 0,0
+CALL SET_ENEMY,15, [[캐릭터:서큐버스]],45, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -756,7 +756,7 @@ PRINTFORMW 미칠듯이 가슴을 쥐어뜯으며 카야는 말했다。
 PRINTFORMW %마스터는%――
 
 ;카야を引き継いでいる場合は選択無し
-LOCAL = GETCHARA([[キャラ:카야]])
+LOCAL = GETCHARA([[캐릭터:카야]])
 IF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 > 0
 	CALL REQUEST50_5_KAYA_NANIMOSHINAI
 	PRINTFORML 
@@ -911,7 +911,7 @@ IF RESULT == 100
 			PRINTFORMW 애정경험 + 15
 			PRINTFORML
 			
-			LOCAL = GETCHARA([[キャラ:카야]])
+			LOCAL = GETCHARA([[캐릭터:카야]])
 			CFLAG:LOCAL:의존도 = 1000
 			BASE:LOCAL:충성도 = 10000
 			MARK:LOCAL:굴복각인 = 3
@@ -935,7 +935,7 @@ IF RESULT == 100
 			PRINTFORMW 능력에 순종Lv2 봉사정신Lv1이 추가됩니다。
 			PRINTFORML
 			
-			LOCAL = GETCHARA([[キャラ:카야]])
+			LOCAL = GETCHARA([[캐릭터:카야]])
 			TALENT:LOCAL:망신 = 1
 			ABL:LOCAL:순종 = 2
 			ABL:LOCAL:봉사정신 = 1
@@ -1079,7 +1079,7 @@ ELSEIF RESULT == 200
 		
 		CALL ADD_NEW_COMPANION,4629,5000
 		CFLAG:(RESULT:1):전투참가불가능 = -1
-		LOCAL = GETCHARA([[キャラ:카야]])
+		LOCAL = GETCHARA([[캐릭터:카야]])
 		TALENT:LOCAL:비전투원 = 0
 		IF LOCAL:1 == 100
 			;2019/01/29　　　내성を調整。지변속성を150から100に

@@ -697,7 +697,7 @@ RETURN RESULT
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 
-		CALL SET_ENEMY,9,[[キャラ:데미우르고스]],70,0,1
+		CALL SET_ENEMY,9,[[캐릭터:데미우르고스]],70,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 10000
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -716,7 +716,7 @@ RETURN RESULT
 		CALL MESSAGE_WINDOW_D, "", "＞하지만、녀석들에게 납치당한 쿠미코도, 시드ㆍ데이비스도 보이지 않았다./＞시드ㆍ데이비스는 조직도 데미우르고스도 관계없이 이나루나 공주를 부활시키려 하는지 모른다/＞당신은 일말의 불안함을 느꼇다"
 	ENDIF
 		CALL MESSAGE_WINDOW_D, "", "＞조직의 불온분자를 배제함에 따라、/＞포상으로 ￥100000가 지급되었고、명성500이 올랐다"
-		CALL LIFTING_A_BAN([[キャラ:데미우르고스]])
+		CALL LIFTING_A_BAN([[캐릭터:데미우르고스]])
 		;FLAG:11626 = 1
 		MONEY += 100000
 		FLAG:명성 += 500
@@ -927,33 +927,33 @@ ENDIF
 @ENEMY_81, ARG
 	SELECTCASE RAND:14
 		CASE IS < 1
-			RETURN [[キャラ:페리]], 51
+			RETURN [[캐릭터:페리]], 51
 		CASE IS < 2
-			RETURN [[キャラ:다키니]], 51
+			RETURN [[캐릭터:다키니]], 51
 		CASE IS < 3
-			RETURN [[キャラ:도미니온]], 52
+			RETURN [[캐릭터:도미니온]], 52
 		CASE IS < 4
-			RETURN [[キャラ:야크샤]], 52
+			RETURN [[캐릭터:야크샤]], 52
 		CASE IS < 5
-			RETURN [[キャラ:카토블레파스]], 52
+			RETURN [[캐릭터:카토블레파스]], 52
 		CASE IS < 6
-			RETURN [[キャラ:무슈후슈]], 58
+			RETURN [[캐릭터:무슈후슈]], 58
 		CASE IS < 7
-			RETURN [[キャラ:티탄]], 53
+			RETURN [[캐릭터:티탄]], 53
 		CASE IS < 8
-			RETURN [[キャラ:안주]], 53
+			RETURN [[캐릭터:안주]], 53
 		CASE IS < 9
-			RETURN [[キャラ:루흐]], 54
+			RETURN [[캐릭터:루흐]], 54
 		CASE IS < 10
-			RETURN [[キャラ:베탈라]], 54
+			RETURN [[캐릭터:베탈라]], 54
 		CASE IS < 11
-			RETURN [[キャラ:기리메칼라]], 53
+			RETURN [[캐릭터:기리메칼라]], 53
 		CASE IS < 12
-			RETURN [[キャラ:케르베로스]], 55
+			RETURN [[캐릭터:케르베로스]], 55
 		CASE IS < 13
-			RETURN [[キャラ:보티스]], 56
+			RETURN [[캐릭터:보티스]], 56
 		CASE IS < 14
-			RETURN [[キャラ:오베론]], 57
+			RETURN [[캐릭터:오베론]], 57
 		ENDSELECT	
 ;=======================================================================
 ;윤간참가악마
@@ -963,9 +963,9 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:베탈라]] , 3 + RAND:10 , CSVBASE([[キャラ:베탈라]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:베탈라]] , 3 + RAND:10 , CSVBASE([[캐릭터:베탈라]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:안주]] , 3 + RAND:10 , CSVBASE([[キャラ:안주]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:안주]] , 3 + RAND:10 , CSVBASE([[캐릭터:안주]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:야크샤]] , 3 + RAND:10 , CSVBASE([[キャラ:야크샤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야크샤]] , 3 + RAND:10 , CSVBASE([[캐릭터:야크샤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

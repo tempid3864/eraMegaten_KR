@@ -3,7 +3,7 @@
 ;====================
 @EXPLAIN_REQUEST_70_7
 PRINTL 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 PRINTFORMW ＞뭔가、중대한 결단을 재촉당하는 것 같은 생각이 든다…
 PRINTFORMW ＞그런데도、이 의뢰를 진행시킵니까？
@@ -20,7 +20,7 @@ FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 
 PRINTFORMW ＞%CALLNAME:LOCAL%을 메시아교의 이단 수용소로부터 구해 내어、%CALLNAME:MASTER%는 %CALLNAME:LOCAL%과 이번에야말로 축배를 들고 있었다…

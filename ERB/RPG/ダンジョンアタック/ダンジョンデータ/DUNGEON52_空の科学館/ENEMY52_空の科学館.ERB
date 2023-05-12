@@ -177,7 +177,7 @@ SIF LOCALS != "EMPTY"
 	CALL MESSAGE_B(LOCAL:1, LOCALS, LOCALS:1, LOCALS:2, LOCALS:3, LOCALS:4)
 
 @EVENT_BATTLE_TURNEND_DUNGEON14
-SIF !FINDCHARA_ENEMY([[キャラ:킹ㆍ레오]])
+SIF !FINDCHARA_ENEMY([[캐릭터:킹ㆍ레오]])
 	RETURN 0
 LOCAL= RESULT:1
 SIF STRFLAG_NUM_EV("니알라진행", , , ,  [[이벤트:페르소나２]]) != 3
@@ -313,7 +313,7 @@ SIF CFLAG:ARG:타겟 == -1
 RETURN 1
 ;힘技で、JOKERを最速行動させて、そこで処理を行う
 @EVENT_BATTLE_TURNTOP_DUNGEON52
-LOCAL = GETCHARA([[キャラ:스도타츠야]])
+LOCAL = GETCHARA([[캐릭터:스도타츠야]])
 SIF LOCAL == -1
 	RETURN 0
 SIF ABL:LOCAL:초기페르소나 == -1
@@ -395,7 +395,7 @@ ELSE
 		CFLAG:LOCAL:화염무효화횟수 -= 1
 	ELSE
 		LOCAL:1 = LOCAL:1 * MAXBASE:LOCAL:화염 / 100
-		SIF NO:LOCAL == [[キャラ:킹ㆍ레오]] || NO:LOCAL == [[キャラ:스도타츠야]]
+		SIF NO:LOCAL == [[캐릭터:킹ㆍ레오]] || NO:LOCAL == [[캐릭터:스도타츠야]]
 			LOCAL:1 *= 4
 	ENDIF
 ENDIF
@@ -568,16 +568,16 @@ IF ARG:1 == 0
 	ARG:2 = ARG:2 ? ARG:2 # RAND:4 + 1
 	SELECTCASE ARG:2
 		CASE 1
-			LOCAL:1 = [[キャラ:켈라이노]]
+			LOCAL:1 = [[캐릭터:켈라이노]]
 			LOCAL:2 = 28
 		CASE 2
-			LOCAL:1 = [[キャラ:카라스텐구]]
+			LOCAL:1 = [[캐릭터:카라스텐구]]
 			LOCAL:2 = 28
 		CASE 3
-			LOCAL:1 = [[キャラ:프린시펄리티]]
+			LOCAL:1 = [[캐릭터:프린시펄리티]]
 			LOCAL:2 = 28
 		CASE 4
-			LOCAL:1 = [[キャラ:모스맨]]
+			LOCAL:1 = [[캐릭터:모스맨]]
 			LOCAL:2 = 30
 	ENDSELECT
 	LOCAL:2 += ((FLAG:현M - 1) * 10 > RAND:100) * 3
@@ -586,10 +586,10 @@ ELSEIF ARG:1 == 1
 	ARG:2 = ARG:2 ? ARG:2 # RAND:2 + 1
 	SELECTCASE ARG:2
 		CASE 1
-			LOCAL:1 = [[キャラ:하우르바타트]]
+			LOCAL:1 = [[캐릭터:하우르바타트]]
 			LOCAL:2 = 28
 		CASE 2
-			LOCAL:1 = [[キャラ:아에로]]
+			LOCAL:1 = [[캐릭터:아에로]]
 			LOCAL:2 = 28
 	ENDSELECT
 	LOCAL:2 += ((FLAG:현M - 1) * 10 > RAND:100)
@@ -599,45 +599,45 @@ ELSEIF ARG:1 == 2
 	LOCAL:2 = 28 + ((FLAG:현M - 1) * 10 > RAND:100) * 2 + ((FLAG:현M - 2) * 10 > RAND:100) * 2
 	SELECTCASE ARG:2
 		CASE 1
-			LOCAL:1 = [[キャラ:황소가면]]
+			LOCAL:1 = [[캐릭터:황소가면]]
 		CASE 2
-			LOCAL:1 = [[キャラ:사자가면]]
+			LOCAL:1 = [[캐릭터:사자가면]]
 		CASE 3
-			LOCAL:1 = [[キャラ:전갈가면]]
+			LOCAL:1 = [[캐릭터:전갈가면]]
 		CASE 4
-			LOCAL:1 = [[キャラ:물병가면]]
+			LOCAL:1 = [[캐릭터:물병가면]]
 	ENDSELECT
 ENDIF
 CALL SET_ENEMY, ARG, LOCAL:1, LOCAL:2
 LOCAL = CHARANUM - 1
 SELECTCASE LOCAL:1
-	CASE [[キャラ:프린시펄리티]]
+	CASE [[캐릭터:프린시펄리티]]
 		ABL:LOCAL:스킬1 = [[스킬:아기라오]]
-	CASE [[キャラ:모스맨]]
+	CASE [[캐릭터:모스맨]]
 		IF LOCAL:2 == 1
 			ABL:LOCAL:스킬6 = [[스킬:파이어브레스]]
 		ELSE
 			ABL:LOCAL:스킬4 = [[스킬:파이어브레스]]
 		ENDIF
-	CASE [[キャラ:카라스텐구]]
+	CASE [[캐릭터:카라스텐구]]
 		ABL:LOCAL:스킬4 = [[스킬:마하ㆍ라기온]]
 		ABL:LOCAL:스킬5 = [[스킬:천구신부]]
-	CASE [[キャラ:하우르바타트]]
+	CASE [[캐릭터:하우르바타트]]
 		MAXBASE:LOCAL:충격 = 150
 		BASE:LOCAL:충격 = 150
-	CASE [[キャラ:켈라이노]]
+	CASE [[캐릭터:켈라이노]]
 		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ라기]]
 		ABL:LOCAL:스킬4 = [[스킬:아기라오]]
-	CASE [[キャラ:황소가면]]
+	CASE [[캐릭터:황소가면]]
 		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ마그나스]]
 		ABL:LOCAL:스킬3 = [[스킬:섬머솔트]]
-	CASE [[キャラ:사자가면]]
+	CASE [[캐릭터:사자가면]]
 		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ라기온]]
 		ABL:LOCAL:스킬3 = [[스킬:회전베기]]
-	CASE [[キャラ:전갈가면]]
+	CASE [[캐릭터:전갈가면]]
 		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ아쿠에스]]
 		ABL:LOCAL:스킬3 = [[스킬:메ㆍ디아라마]]
-	CASE [[キャラ:물병가면]]
+	CASE [[캐릭터:물병가면]]
 		ABL:LOCAL:스킬2 = [[스킬:마하ㆍ갈라]]
 ENDSELECT
 
@@ -660,17 +660,17 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 @ENEMY_52, ARG
 SELECTCASE RAND:100
 	CASE IS < 15
-		RETURN [[キャラ:익스타브]], 21
+		RETURN [[캐릭터:익스타브]], 21
 	CASE IS < 30
-		RETURN [[キャラ:오퀴페테]], 20
+		RETURN [[캐릭터:오퀴페테]], 20
 	CASE IS < 45
-		RETURN [[キャラ:쿠시나다히메]], 20
+		RETURN [[캐릭터:쿠시나다히메]], 20
 	CASE IS < 60
-		RETURN [[キャラ:뷔브르]], 21
+		RETURN [[캐릭터:뷔브르]], 21
 	CASE IS < 90
-		RETURN [[キャラ:오르트로스]], 21
+		RETURN [[캐릭터:오르트로스]], 21
 	CASEELSE
-		RETURN [[キャラ:잭랜턴]], 20
+		RETURN [[캐릭터:잭랜턴]], 20
 ENDSELECT
 
 ;=======================================================================
@@ -679,5 +679,5 @@ ENDSELECT
 @DUNGEON_RAPE_DEVIL_52
 ;랜덤にどの악마が出るか決定
 ;RETURN CSV번호 , 人数 , 레벨
-RETURN [[キャラ:오르트로스]] , 3 + RAND:10 , CSVBASE([[キャラ:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+RETURN [[캐릭터:오르트로스]] , 3 + RAND:10 , CSVBASE([[캐릭터:오르트로스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 

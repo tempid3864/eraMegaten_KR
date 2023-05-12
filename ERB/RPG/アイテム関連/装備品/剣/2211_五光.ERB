@@ -11,7 +11,7 @@ RETURN 0
 
 @전투능력수정_2211,ARG,ARG:1 = -1
 #LOCALSIZE 2
-LOCAL = GETCHARA([[キャラ:카즈토]])
+LOCAL = GETCHARA([[캐릭터:카즈토]])
 ;エラー防止のため、一閃の初期レベルの10を仮に入れておく
 LOCAL:1 = 10
 SIF LOCAL > 0
@@ -63,7 +63,7 @@ RETURN 0
 RETURN 1
 
 @장비조건_2211,ARG
-SIF NO:ARG == [[キャラ:카즈토]]
+SIF NO:ARG == [[캐릭터:카즈토]]
 	RETURN 1
 RETURN 0
 

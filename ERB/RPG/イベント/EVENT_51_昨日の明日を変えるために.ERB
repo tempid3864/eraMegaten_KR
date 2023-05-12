@@ -9,14 +9,14 @@
 @PLAYABLE_EVENT_51
 
 ;
-IF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 0 && FINDCHARA_B([[キャラ:코시로]]) > 0
+IF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 0 && FINDCHARA_B([[캐릭터:코시로]]) > 0
 	RESULTS = 어느날 길거리에서“a day in the...”
 	RETURN 1
-ELSEIF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 1 && FINDCHARA_B([[キャラ:코시로]]) > 0 && FLAG:나이트ㆍ테일진행도 > 2
+ELSEIF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 1 && FINDCHARA_B([[캐릭터:코시로]]) > 0 && FLAG:나이트ㆍ테일진행도 > 2
 	RESULTS = 어제의 내일을 아는 인간“There's absolutely no hope.”
 	;'
 	RETURN 1
-ELSEIF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 2 && FINDCHARA_B([[キャラ:코시로]]) > 0 && FLAG:나이트ㆍ테일진행도 > 4
+ELSEIF GETBIT(FLAG:발견ED, 52) && 이벤트플래그:51:0 == 2 && FINDCHARA_B([[캐릭터:코시로]]) > 0 && FLAG:나이트ㆍ테일진행도 > 4
 	RESULTS = 어제의 내일을 바꾸기 위하여“Break a leg！”
 	RETURN 1
 ENDIF
@@ -162,26 +162,26 @@ ELSEIF 이벤트플래그:51:0 == 1
 		LOCAL:1 = MAX(LOCAL:1 , BASE:LOCAL:LV)
 	NEXT
 	
-	CALL SET_ENEMY,12, [[キャラ:T95골렘]],LOCAL:1, 0,0
+	CALL SET_ENEMY,12, [[캐릭터:T95골렘]],LOCAL:1, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	ABL:(CHARANUM-1):스킬4 = 0
 	
-	CALL SET_ENEMY,13, [[キャラ:라비]],LOCAL:1, 0,0
+	CALL SET_ENEMY,13, [[캐릭터:라비]],LOCAL:1, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,14, [[キャラ:T95메두사]],LOCAL:1, 1,1
+	CALL SET_ENEMY,14, [[캐릭터:T95메두사]],LOCAL:1, 1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,15, [[キャラ:라비]],LOCAL:1, 0,0
+	CALL SET_ENEMY,15, [[캐릭터:라비]],LOCAL:1, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,16, [[キャラ:T95골렘]],LOCAL:1, 0,0
+	CALL SET_ENEMY,16, [[캐릭터:T95골렘]],LOCAL:1, 0,0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	ABL:(CHARANUM-1):스킬4 = 0
@@ -301,7 +301,7 @@ ELSEIF 이벤트플래그:51:0 == 2
 	NEXT
 	LOCAL:1 += 10
 	
-	CALL SET_ENEMY,13, [[キャラ:비트볼]],LOCAL:1, 1,1
+	CALL SET_ENEMY,13, [[캐릭터:비트볼]],LOCAL:1, 1,1
 		NAME:(CHARANUM-1) = 비트볼SP
 	CALLNAME:(CHARANUM-1) = 비트볼SP
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -310,7 +310,7 @@ ELSEIF 이벤트플래그:51:0 == 2
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	;시간의수레바퀴
 	ABL:(CHARANUM-1):스킬1 = 2030
-	CALL SET_ENEMY,15, [[キャラ:비트볼]],LOCAL:1, 1,1
+	CALL SET_ENEMY,15, [[캐릭터:비트볼]],LOCAL:1, 1,1
 		NAME:(CHARANUM-1) = 비트볼SP
 	CALLNAME:(CHARANUM-1) = 비트볼SP
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -320,7 +320,7 @@ ELSEIF 이벤트플래그:51:0 == 2
 	;시간의수레바퀴
 	ABL:(CHARANUM-1):스킬1 = 2030
 	
-	CALL SET_ENEMY,14, [[キャラ:레이]],LOCAL:1, 1,1
+	CALL SET_ENEMY,14, [[캐릭터:레이]],LOCAL:1, 1,1
 		NAME:(CHARANUM-1) = 佐伯
 	CALLNAME:(CHARANUM-1) = 佐伯
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000

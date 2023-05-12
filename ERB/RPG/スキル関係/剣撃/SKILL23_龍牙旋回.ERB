@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_23,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = Ｇㆍ플라즈마사이즈
 ELSE
 	RESULTS = 용아선회
@@ -137,7 +137,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,23
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_23
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 좌완 플라즈마ㆍ스테이크 3개 중 안쪽 2개를 뽑아、대형 빔 낫에 출력을 높여서
 	PRINTL 던질 대상과 그 주위에 검격 상성 ２회 데미지를 준다。후열 사용 가능。
 ELSE

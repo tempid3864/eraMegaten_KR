@@ -445,10 +445,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "남자의 목소리", "여기……의 안쪽이다……"
 				CALL MESSAGE_WINDOW_D, "", "＞쓰레기 속에서 색소폰 형태를 한 ＣＯＭＰ의 잔해를 발견했다"
 				CALL MESSAGE_WINDOW_D, "", "＞ＣＯＭＰ에 들어있던「파워ㆍ메모리」에서 악마를 손에 넣었다"
-				CALL ADD_NEW_COMPANION,[[キャラ:인큐버스]],500
-				CALL ADD_NEW_COMPANION,[[キャラ:밴시]],500
-				CALL ADD_NEW_COMPANION,[[キャラ:모무노후]],500
-				CALL ADD_NEW_COMPANION,[[キャラ:켈라이노]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:인큐버스]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:밴시]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:모무노후]],500
+				CALL ADD_NEW_COMPANION,[[캐릭터:켈라이노]],500
 				CALL MESSAGE_WINDOW_D, "남자의 목소리", "……이것으로……이 세상에……/남기는…것은…아무것도…없다…/……이젠……사라질…뿐………"
 				CALL MESSAGE_WINDOW_D, "남자의 목소리", "……하지만……/어떻게…살아…왔는가……/그것……만…이…………"
 				CALL MESSAGE_WINDOW_D, "", "…………"
@@ -487,7 +487,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:레이호우]], 35, 0, 1
+				CALL SET_ENEMY,9, [[캐릭터:레이호우]], 35, 0, 1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = +1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = +1000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -518,7 +518,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CALL INPUT_YN_D
 			IF RESULT == 0
 				CALL MESSAGE_WINDOW_D, "", "＞레이･레이호우가 노예가 되었다"
-				CALL ADD_NEW_COMPANION,[[キャラ:레이호우]],200
+				CALL ADD_NEW_COMPANION,[[캐릭터:레이호우]],200
 			ELSEIF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "유다", "알았다、그녀는 조직에서 맡지"
 			던전플래그:(FLAG:현던전):6 = 2
@@ -570,7 +570,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:윈페]], 30, 0, 1
+				CALL SET_ENEMY,9, [[캐릭터:윈페]], 30, 0, 1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = +1000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -705,69 +705,69 @@ SELECTCASE FLAG:현M
 	CASE 0 , 1
 		SELECTCASE RAND:100
 			CASE IS < 10
-				RETURN [[キャラ:모ㆍ쇼보]],20
+				RETURN [[캐릭터:모ㆍ쇼보]],20
 			CASE IS < 20
-				RETURN [[キャラ:잇폰다타라]],20
+				RETURN [[캐릭터:잇폰다타라]],20
 			CASE IS < 30
-				RETURN [[キャラ:아크엔젤]],22
+				RETURN [[캐릭터:아크엔젤]],22
 			CASE IS < 40
-				RETURN [[キャラ:야토노카미]],22
+				RETURN [[캐릭터:야토노카미]],22
 			CASE IS < 50
-				RETURN [[キャラ:빌뷔스]],21
+				RETURN [[캐릭터:빌뷔스]],21
 			CASE IS < 60
-				RETURN [[キャラ:오바리욘]],21
+				RETURN [[캐릭터:오바리욘]],21
 			CASE IS < 70
-				RETURN [[キャラ:잭프로스트]],20
+				RETURN [[캐릭터:잭프로스트]],20
 			CASE IS < 80
-				RETURN [[キャラ:토뵤]],20
+				RETURN [[캐릭터:토뵤]],20
 			CASE IS < 90
-				RETURN [[キャラ:목없는라이더]],21
+				RETURN [[캐릭터:목없는라이더]],21
 			CASEELSE
-				RETURN [[キャラ:그르르]], 21
+				RETURN [[캐릭터:그르르]], 21
 		ENDSELECT
 		;Ｂ１Ｆでの遭遇
 		CASE 2
 		SELECTCASE RAND:100
 			CASE IS < 10
-				RETURN [[キャラ:모ㆍ쇼보]],23
+				RETURN [[캐릭터:모ㆍ쇼보]],23
 			CASE IS < 20
-				RETURN [[キャラ:잇폰다타라]],23
+				RETURN [[캐릭터:잇폰다타라]],23
 			CASE IS < 30
-				RETURN [[キャラ:아크엔젤]],24
+				RETURN [[캐릭터:아크엔젤]],24
 			CASE IS < 40
-				RETURN [[キャラ:야토노카미]],24
+				RETURN [[캐릭터:야토노카미]],24
 			CASE IS < 50
-				RETURN [[キャラ:빌뷔스]],24
+				RETURN [[캐릭터:빌뷔스]],24
 			CASE IS < 60
-				RETURN [[キャラ:오바리욘]],24
+				RETURN [[캐릭터:오바리욘]],24
 			CASE IS < 70
-				RETURN [[キャラ:잭프로스트]],24
+				RETURN [[캐릭터:잭프로스트]],24
 			CASE IS < 80
-				RETURN [[キャラ:토뵤]],24
+				RETURN [[캐릭터:토뵤]],24
 			CASE IS < 90
-				RETURN [[キャラ:목없는라이더]],24
+				RETURN [[캐릭터:목없는라이더]],24
 			CASEELSE
-				RETURN [[キャラ:그르르]], 24
+				RETURN [[캐릭터:그르르]], 24
 		ENDSELECT
 		;３Ｆでの遭遇
 		CASE 3
 		SELECTCASE RAND:8
 			CASE IS == 0
-				RETURN [[キャラ:잭랜턴]], 26
+				RETURN [[캐릭터:잭랜턴]], 26
 			CASE IS == 1
-				RETURN [[キャラ:미샤구지님]],26
+				RETURN [[캐릭터:미샤구지님]],26
 			CASE IS == 2
-				RETURN [[キャラ:야토노카미]],26
+				RETURN [[캐릭터:야토노카미]],26
 			CASE IS == 3
-				RETURN [[キャラ:메즈키]],26
+				RETURN [[캐릭터:메즈키]],26
 			CASE IS == 4
-				RETURN [[キャラ:고즈키]],26
+				RETURN [[캐릭터:고즈키]],26
 			CASE IS == 5
-				RETURN [[キャラ:야토노카미]], 26
+				RETURN [[캐릭터:야토노카미]], 26
 			CASE IS == 6
-				RETURN [[キャラ:탁비]], 26
+				RETURN [[캐릭터:탁비]], 26
 			CASEELSE
-				RETURN [[キャラ:그르르]],26
+				RETURN [[캐릭터:그르르]],26
 		ENDSELECT
 	ENDSELECT
 
@@ -779,11 +779,11 @@ SELECTCASE FLAG:현M
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:토뵤]] , 3 + RAND:10 , CSVBASE([[キャラ:토뵤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:토뵤]] , 3 + RAND:10 , CSVBASE([[캐릭터:토뵤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:메즈키]] , 3 + RAND:10 , CSVBASE([[キャラ:메즈키]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:메즈키]] , 3 + RAND:10 , CSVBASE([[캐릭터:메즈키]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:고즈키]] , 3 + RAND:10 , CSVBASE([[キャラ:고즈키]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:고즈키]] , 3 + RAND:10 , CSVBASE([[캐릭터:고즈키]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 ;=======================================================================

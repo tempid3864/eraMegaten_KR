@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_1612,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RESULTS = 비수십자
 ELSE
 	RESULTS = 물살가르기
@@ -15,7 +15,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_1612, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 300
 ELSE
 	RETURN 200
@@ -36,7 +36,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_1612,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 20
 ELSE
 	RETURN 15
@@ -63,7 +63,7 @@ RETURN 1
 
 ;　사거리
 @SKILL_RANGE_1612,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:키사라기]])
+IF SKILL_CHANGE(ARG, [[캐릭터:키사라기]])
 	RETURN 1
 ELSE
 	RETURN 2
@@ -141,7 +141,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,1612
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1612
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:키사라기]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:키사라기]])
 	PRINTL 『물』의 기를 두른 칼로 십자베기를 날린다。
 	PRINTL 적 1열에 수격 물리 대 데미지를 준다。
 ELSE

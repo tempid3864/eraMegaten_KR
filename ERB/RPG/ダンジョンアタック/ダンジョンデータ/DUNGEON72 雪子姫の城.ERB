@@ -444,7 +444,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:선제기습취소 = 1
 				CUSTOMDRAWLINE =
 				WAIT
-				CALL SET_ENEMY,9,[[キャラ:치에]],15,0,1
+				CALL SET_ENEMY,9,[[캐릭터:치에]],15,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
@@ -475,14 +475,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 				던전플래그:72:9 = 1
 				던전플래그:72:1 = 3
-				CALL ADD_NEW_COMPANION,[[キャラ:치에의그림자]],5000
+				CALL ADD_NEW_COMPANION,[[캐릭터:치에의그림자]],5000
 				;加入성공の場合、초기からラブラブに
 				IF RESULT
 					LOCAL = RESULT:1
 					MARK:LOCAL:굴복각인 = 3
 					TARGET = LOCAL
 				ELSE
-					TARGET = GETCHARA([[キャラ:치에의그림자]])
+					TARGET = GETCHARA([[캐릭터:치에의그림자]])
 				ENDIF
 				FLAG:던전내조교 = 1
 				PRINTL 『앞으로 잘 부탁해라고 하던가?』
@@ -498,7 +498,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:선제기습취소 = 1
 				CUSTOMDRAWLINE =
 				WAIT
-				CALL SET_ENEMY,9,[[キャラ:치에의그림자]],15,0,1
+				CALL SET_ENEMY,9,[[캐릭터:치에의그림자]],15,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
@@ -541,8 +541,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				PRINTW 
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 				던전플래그:72:1 = 2
-				CALL ADD_NEW_COMPANION,[[キャラ:치에]],100
-				TARGET = GETCHARA([[キャラ:치에]])
+				CALL ADD_NEW_COMPANION,[[캐릭터:치에]],100
+				TARGET = GETCHARA([[캐릭터:치에]])
 				FLAG:던전내조교 = 1
 			ELSEIF RESULT == 1
 				CFLAG:MASTER:선악치 -= 8
@@ -550,7 +550,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				PRINTL 
 				PRINTL 「에!? 싫어! 잠깐! 그러지 마」
 				PRINTW 
-				CALL ADD_NEW_COMPANION,[[キャラ:치에]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:치에]],100
 				IF RESULT == 1
 					LOCAL = RESULT:1
 					TALENT:LOCAL:처녀 = 0
@@ -601,7 +601,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				PRINTW 
 				PRINTL 「그렇…겠지. 내가 무사하지 않으면 유키코가 슬퍼할 테니 말야…」
 				PRINTW 「하지만 유키코를 도와줄 수 있는 건 나뿐이니까… 나만 두고 가지 말아야 해!」 
-				CALL ADD_NEW_COMPANION,[[キャラ:치에]],200
+				CALL ADD_NEW_COMPANION,[[캐릭터:치에]],200
 				;전투참가可能で加入するが、조교で전투참가불가능になる
 				SIF RESULT
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -626,7 +626,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 			PRINTW 　계단 아래서 나타나는 것은、아마기 유키코 그 본인이었다.。
 			PRINTW 　눈이 반짝반짝 빛나는“그림자”와는 대조적으로、유키코는、머리를 안고 움츠린채、움직이지 않는다……。
 			IF 던전플래그:72:1 == 1
-				IF FINDCHARA_B([[キャラ:치에]])== 2 
+				IF FINDCHARA_B([[캐릭터:치에]])== 2 
 					PRINTL 
 					PRINTW 「유키코！」
 					PRINTL ＞간신히 찾아낸 유키코의 모습을 보고 걱정한 치에가 한 걸음 앞으로 나섰다.
@@ -668,7 +668,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					FLAG:선제기습취소 = 1
 					CUSTOMDRAWLINE =
 					WAIT
-					CALL SET_ENEMY,9,[[キャラ:유키코의그림자]],18,0,1
+					CALL SET_ENEMY,9,[[캐릭터:유키코의그림자]],18,0,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
@@ -702,7 +702,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					PRINTW 
 					PRINTL ＞분위기를 탄 두 사람을 데리고 던전에서 탈출했다.
 					PRINTW 
-					CALL ADD_NEW_COMPANION,[[キャラ:유키코]],200
+					CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],200
 					;전투참가可能で加入するが、조교で전투참가불가능になる
 					SIF RESULT
 						CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -729,14 +729,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,8,[[キャラ:유키코의그림자]],18,0,1
+						CALL SET_ENEMY,8,[[캐릭터:유키코의그림자]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						CALL SYNC_STATUS,(CHARANUM-1)
 						CALL HEALTH_CHARA,(CHARANUM-1)
 						
-						CALL SET_ENEMY,10,[[キャラ:백마탄왕자님]],18,0,1
+						CALL SET_ENEMY,10,[[캐릭터:백마탄왕자님]],18,0,1
 						CSTR:(CHARANUM-1):사고패턴 = 3341
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
@@ -766,14 +766,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					PRINTW 
 					PRINTL ＞왠지 기분 좋아보이는 유키코를 데리고 던전에서 탈출했다.
 					PRINTW 
-					CALL ADD_NEW_COMPANION,[[キャラ:유키코]],100
+					CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],100
 					;전투참가可能で加入するが、조교で전투참가불가능になる
 					SIF RESULT
 						CFLAG:(RESULT:1):전투참가불가능 = -1
 					던전플래그:72:8 = 2
 				ENDIF
 			ELSEIF 던전플래그:72:1 == 2
-				IF FINDCHARA_B([[キャラ:치에]])== 2 
+				IF FINDCHARA_B([[캐릭터:치에]])== 2 
 					PRINTL 
 					PRINTW 「유키코！」
 					PRINTL ＞간신히 찾아낸 유키코의 모습을 보고 걱정한 치에가 한 걸음 앞으로 나섰다.
@@ -818,7 +818,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					FLAG:선제기습취소 = 1
 					CUSTOMDRAWLINE =
 					WAIT
-					CALL SET_ENEMY,9,[[キャラ:유키코의그림자]],18,0,1
+					CALL SET_ENEMY,9,[[캐릭터:유키코의그림자]],18,0,1
 					CFLAG:(CHARANUM-1):행동횟수 = 2
 					MAXBASE:(CHARANUM-1):파마 = 0
 					MAXBASE:(CHARANUM-1):주살 = 0
@@ -855,8 +855,8 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							던전플래그:72:8 = 3
 							PRINTL ＞첫 교육이 가장 중요할 것이다.
 							PRINTW 　당신은 유키코를 이 자리에서 조교하기로 했다.
-							CALL ADD_NEW_COMPANION,[[キャラ:유키코]],200
-							TARGET = GETCHARA([[キャラ:유키코]])
+							CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],200
+							TARGET = GETCHARA([[캐릭터:유키코]])
 							CFLAG:이벤트가입 = 1
 							FLAG:던전내조교 = 1
 							RETURN 1
@@ -865,7 +865,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CFLAG:MASTER:질혼치 -= 8
 							PRINTL ＞첫 교육이 가장 중요할 것이다.
 							PRINTW 　당신은 치에에게 단단히 잡고 있으라고 명령하고, 유키코를 억지로 범했다.
-							CALL ADD_NEW_COMPANION,[[キャラ:유키코]],100
+							CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],100
 							IF RESULT
 								LOCAL = RESULT:1
 								TALENT:LOCAL:처녀 = 0
@@ -900,7 +900,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CFLAG:MASTER:질혼치 += 4
 							PRINTFORML 무리하게 여기서 조교해 체력을 허비할 필요는 없겠지.
 							PRINTFORMW 시간은 충분히 있으니까…
-							CALL ADD_NEW_COMPANION,[[キャラ:유키코]],300
+							CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],300
 						ENDIF
 						던전플래그:72:8 = 2
 				ELSE
@@ -928,14 +928,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,8,[[キャラ:유키코의그림자]],18,0,1
+						CALL SET_ENEMY,8,[[캐릭터:유키코의그림자]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						CALL SYNC_STATUS,(CHARANUM-1)
 						CALL HEALTH_CHARA,(CHARANUM-1)
 						
-						CALL SET_ENEMY,10,[[キャラ:백마탄왕자님]],18,0,1
+						CALL SET_ENEMY,10,[[캐릭터:백마탄왕자님]],18,0,1
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						CSTR:(CHARANUM-1):사고패턴 = 3341
@@ -965,14 +965,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					PRINTL 
 					PRINTL ＞왠지 기분 좋아보이는 유키코를 데리고 던전에서 탈출했다.
 					PRINTW 
-					CALL ADD_NEW_COMPANION,[[キャラ:유키코]],100
+					CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],100
 					;전투참가可能で加入するが、조교で전투참가불가능になる
 					SIF RESULT
 						CFLAG:(RESULT:1):전투참가불가능 = -1
 					던전플래그:72:8 = 2
 				ENDIF
 			ELSEIF 던전플래그:72:9 == 1
-				IF FINDCHARA_B([[キャラ:치에의그림자]])== 2 
+				IF FINDCHARA_B([[캐릭터:치에의그림자]])== 2 
 					PRINTL 
 					PRINTFORMW 『유키코, 찾―았다……%UNICODE(0x2661)%』
 					PRINTL ＞히죽히죽 기세등등한 웃음과 함께 치에가 한 걸음 앞으로 나섰다.
@@ -1038,7 +1038,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,9,[[キャラ:유키코]],18,0,1
+						CALL SET_ENEMY,9,[[캐릭터:유키코]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
@@ -1076,7 +1076,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						PRINTW 　멋진 운명으로……후후……저희들、이어져 있으니까요』
 						PRINTL 
 						PRINTW ＞그 뒤、당신은、바락바락 서로 으르렁 거리는 두 사람을 데리고 던전을 탈출했다……
-						CALL ADD_NEW_COMPANION,[[キャラ:유키코의그림자]],500
+						CALL ADD_NEW_COMPANION,[[캐릭터:유키코의그림자]],500
 						IF RESULT
 							;とりあえず脱がす
 							CFLAG:RESULT:모자 = 0
@@ -1110,7 +1110,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,9,[[キャラ:유키코의그림자]],18,0,1
+						CALL SET_ENEMY,9,[[캐릭터:유키코의그림자]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
@@ -1144,7 +1144,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						PRINTW 
 						PRINTL ＞들떠 있는 둘을 데리고、던전을 탈출했다。
 						PRINTW 
-						CALL ADD_NEW_COMPANION,[[キャラ:유키코]],200
+						CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],200
 						;전투참가可能で加入するが、조교で전투참가불가능になる
 						SIF RESULT
 							CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -1204,7 +1204,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,8,[[キャラ:유키코]],18,0,1
+						CALL SET_ENEMY,8,[[캐릭터:유키코]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
@@ -1228,7 +1228,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						DA:(FLAG:현X):(FLAG:현Y) = 1
 						던전플래그:72:8 = 2
 						던전플래그:72:10 = 1
-						CALL ADD_NEW_COMPANION,[[キャラ:유키코의그림자]],5000
+						CALL ADD_NEW_COMPANION,[[캐릭터:유키코의그림자]],5000
 						;加入성공の場合、초기からラブラブかつ인간화
 						IF RESULT
 							LOCAL = RESULT:1
@@ -1418,14 +1418,14 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						FLAG:선제기습취소 = 1
 						CUSTOMDRAWLINE =
 						WAIT
-						CALL SET_ENEMY,8,[[キャラ:유키코의그림자]],18,0,1
+						CALL SET_ENEMY,8,[[캐릭터:유키코의그림자]],18,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
 						CALL SYNC_STATUS,(CHARANUM-1)
 						CALL HEALTH_CHARA,(CHARANUM-1)
 						
-						CALL SET_ENEMY,10,[[キャラ:백마탄왕자님]],18,0,1
+						CALL SET_ENEMY,10,[[캐릭터:백마탄왕자님]],18,0,1
 						CSTR:(CHARANUM-1):사고패턴 = 3341
 						MAXBASE:(CHARANUM-1):파마 = 0
 						MAXBASE:(CHARANUM-1):주살 = 0
@@ -1456,7 +1456,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 						PRINTL 
 						PRINTL ＞왠지 기분 좋아보이는 유키코를 데리고 던전에서 탈출했다.
 						PRINTW 
-						CALL ADD_NEW_COMPANION,[[キャラ:유키코]],100
+						CALL ADD_NEW_COMPANION,[[캐릭터:유키코]],100
 						;전투참가可能で加入するが、조교で전투참가불가능になる
 						SIF RESULT
 							CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -1547,21 +1547,21 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 @ENEMY_72, ARG
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:풍뢰의밸런서]], 17
+		RETURN [[캐릭터:풍뢰의밸런서]], 17
 	CASE IS < 20
-		RETURN [[キャラ:T트윈즈]], 12
+		RETURN [[캐릭터:T트윈즈]], 12
 	CASE IS < 35
-		RETURN [[キャラ:사갑충]], 13
+		RETURN [[캐릭터:사갑충]], 13
 	CASE IS < 50
-		RETURN [[キャラ:잭프로스트]], 15
+		RETURN [[캐릭터:잭프로스트]], 15
 	CASE IS < 60
-		RETURN [[キャラ:광애의큐피드]], 12
+		RETURN [[캐릭터:광애의큐피드]], 12
 	CASE IS < 75
-		RETURN [[キャラ:H애니멀]], 13
+		RETURN [[캐릭터:H애니멀]], 13
 	CASE IS < 90
-		RETURN [[キャラ:드라이어드]], 12
+		RETURN [[캐릭터:드라이어드]], 12
 	CASE IS < 100
-		RETURN [[キャラ:다크엘프]], 15
+		RETURN [[캐릭터:다크엘프]], 15
 ENDSELECT
 ;=======================================================================
 ;特殊調整
@@ -1703,7 +1703,7 @@ ENDIF
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:2
 	CASE 0
-		RETURN [[キャラ:풍뢰의밸런서]] , 3 + RAND:10 , CSVBASE([[キャラ:풍뢰의밸런서]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:풍뢰의밸런서]] , 3 + RAND:10 , CSVBASE([[캐릭터:풍뢰의밸런서]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:사갑충]] , 3 + RAND:10 , CSVBASE([[キャラ:사갑충]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:사갑충]] , 3 + RAND:10 , CSVBASE([[캐릭터:사갑충]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

@@ -121,7 +121,7 @@ IF RESULT == 0
 			PRINTFORMW %조사처리(CALLNAME:MASTER,"가")% 고개를 끄덕이자.
 			PRINTFORMW 「그럼, 잘 부탁드리겠습니다.」
 			CALL ADD_NEW_COMPANION,4519,500,1
-			LOCAL = (GETCHARA([[キャラ:마키]]))
+			LOCAL = (GETCHARA([[캐릭터:마키]]))
 			CFLAG:LOCAL:전투참가불가능 = -1
 			BASE:LOCAL:LV = 30
 			BASE:LOCAL:ＭＡＧ = 10000
@@ -133,7 +133,7 @@ IF RESULT == 0
 			BASE:LOCAL:운 = 10
 			TALENT:LOCAL:꿋꿋함 = 1
 			;卒業したのにエルミン교복はさすがにコスプレ
-			ABL:LOCAL:초기페르소나 = [[キャラ:포르투나]]
+			ABL:LOCAL:초기페르소나 = [[캐릭터:포르투나]]
 			EQUIP:LOCAL:검 = 2202;양궁활
 			EQUIP:LOCAL:몸통 = 3534;수트
 			CFLAG:LOCAL:41 = 0;
@@ -176,7 +176,7 @@ ELSEIF RESULT == 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	CUSTOMDRAWLINE =
-	CALL SET_ENEMY, 9, [[キャラ:마키]], 30,0,1
+	CALL SET_ENEMY, 9, [[캐릭터:마키]], 30,0,1
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	BASE:(CHARANUM-1):GETNUM(BASE, "힘") = 10
 	BASE:(CHARANUM-1):GETNUM(BASE, "지혜") = 10
@@ -236,7 +236,7 @@ ELSEIF RESULT == 1
 		PRINTFORMW 「‥‥화풀이로 아무데나 팔아넘길 생각이었지만、그렇게 말한다면 양보해도 좋다。」
 		PRINTFORMW 「다만、대신에 돈은 주지 않는다」
 		CALL ADD_NEW_COMPANION,4519,0,1
-		LOCAL = (GETCHARA([[キャラ:마키]]))
+		LOCAL = (GETCHARA([[캐릭터:마키]]))
 		BASE:LOCAL:LV = 30
 		BASE:LOCAL:ＭＡＧ = 10000
 		BASE:LOCAL:힘 = 4
@@ -247,7 +247,7 @@ ELSEIF RESULT == 1
 		BASE:LOCAL:운 = 10
 		TALENT:LOCAL:꿋꿋함 = 1
 		TALENT:LOCAL:반항적 = 1
-		ABL:LOCAL:초기페르소나 = [[キャラ:포르투나]]
+		ABL:LOCAL:초기페르소나 = [[캐릭터:포르투나]]
 		EQUIP:LOCAL:검 = 2202;양궁활
 		EQUIP:LOCAL:몸통 = 3534;수트
 		CFLAG:LOCAL:41 = 0;

@@ -347,7 +347,7 @@ SIF TARGET > 0 && TALENT:TARGET:페르소나구사자
 #LATER
 PRINTL 조교를 종료했습니다
 ;九条나나미は처녀である限り신뢰を維持する。
-IF TARGET == GETCHARA([[キャラ:나나미]]) && CFLAG:801 == 4
+IF TARGET == GETCHARA([[캐릭터:나나미]]) && CFLAG:801 == 4
 	PRINTFORMW 이번에도 처녀가 지켜진 나나미의 신뢰는 유지되고 있다
 ;九条나나미でなければ조교で신뢰を상실する。
 ELSE

@@ -50,7 +50,7 @@ PRINTW 「 그렇지만, 나 바빠요」
 PRINT 「그래, 마야를 죽이러 가지 않으면 안되니까
 CALL HEARTB
 PRINTW 　아하하하하하하！」
-CALL SET_ENEMY,9, [[キャラ:ＪＯＫＥＲ우라라]], 32, 0 , 1
+CALL SET_ENEMY,9, [[캐릭터:ＪＯＫＥＲ우라라]], 32, 0 , 1
 LOCAL = CHARANUM - 1
 LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 CALL SET_BATTLE_STATUS(LOCAL, 40 * LOCAL:1, "ＨＰ")
@@ -109,7 +109,7 @@ IF RESULT == 0
 		PRINTL 
 		PRINTW ＞세리자와 우라라를 손에 넣엇다
 		PRINTW ＞또한, GOLD로부터 문제를 해결한 사례금으로 \25000가 입금되었다
-		CALL ADD_NEW_COMPANION, [[キャラ:우라라]],  200, 1
+		CALL ADD_NEW_COMPANION, [[캐릭터:우라라]],  200, 1
 	ENDIF
 ELSE
 	PRINTL 우라라:
@@ -139,7 +139,7 @@ ELSE
 		PRINTW 「고마워요…이런 저이지만, 지금부터 잘 부탁드립니다」
 		PRINTL 
 		PRINTW ＞세리자와 우라라가 동료가 되었다
-		CALL ADD_NEW_COMPANION, [[キャラ:우라라]],  500
+		CALL ADD_NEW_COMPANION, [[캐릭터:우라라]],  500
 		SIF RESULT
 			CFLAG:(RESULT:1):전투참가불가능 = -1 
 	ELSEIF RESULT == 1
@@ -240,7 +240,7 @@ SIF CFLAG:ARG:타겟 == -1
 RETURN 1
 ;힘技で、JOKERを最速行動させて、そこで処理を行う
 @EVENT_BATTLE_TURNTOP_REQUEST4
-LOCAL = GETCHARA([[キャラ:ＪＯＫＥＲ우라라]])
+LOCAL = GETCHARA([[캐릭터:ＪＯＫＥＲ우라라]])
 SIF LOCAL == -1
 	RETURN 0
 SIF ABL:LOCAL:초기페르소나 == -1

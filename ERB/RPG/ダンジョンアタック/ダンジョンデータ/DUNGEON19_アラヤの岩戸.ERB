@@ -13,7 +13,7 @@
 ;=======================================================================
 @PREREQUISITE_DUNGEON_19
 ;미혹의숲クリアかつ마키が存在してること
-IF 던전플래그:12:1 == 1 && 던전플래그:19:1 == 0 && GETCHARA([[キャラ:마키]]) >= 0
+IF 던전플래그:12:1 == 1 && 던전플래그:19:1 == 0 && GETCHARA([[캐릭터:마키]]) >= 0
 	RETURN 1
 ELSE
 	RETURN 0
@@ -419,13 +419,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			LOCAL:1++
 			;조건を満たす인간の数をカウント
 			SELECTCASE NO:POS(LOCAL)
-				CASE [[キャラ:에리]]
+				CASE [[캐릭터:에리]]
 					던전플래그:(FLAG:현던전):0 = 1
-				CASE [[キャラ:아야세]]
+				CASE [[캐릭터:아야세]]
 					던전플래그:(FLAG:현던전):0 = 2
-				CASE [[キャラ:마키]]
+				CASE [[캐릭터:마키]]
 					던전플래그:(FLAG:현던전):0 = 3
-			;	CASE [[キャラ:유키노상]]
+			;	CASE [[캐릭터:유키노상]]
 			;		던전플래그:(FLAG:현던전):0 = 4
 				CASEELSE
 					;4人以外の인간がいる場合は추가で人数加算することで強制的に定員オーバー
@@ -520,12 +520,12 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 							FLAG:회화불능플래그 = 1
 							FLAG:선제기습취소 = 1
 							CALL MESSAGE_WINDOW_D, "", "＞업마가 6체 나왔다"
-							CALL SET_ENEMY,7,[[キャラ:옵신]],45,0,1
-							CALL SET_ENEMY,8,[[キャラ:그리드]],47,0,1
-							CALL SET_ENEMY,9,[[キャラ:질러시]],49,0,1
-							CALL SET_ENEMY,10,[[キャラ:벨리커시티]],50,0,1
-							CALL SET_ENEMY,11,[[キャラ:레이지니스]],52,0,1
-							CALL SET_ENEMY,12,[[キャラ:앨러건스]],55,0,1
+							CALL SET_ENEMY,7,[[캐릭터:옵신]],45,0,1
+							CALL SET_ENEMY,8,[[캐릭터:그리드]],47,0,1
+							CALL SET_ENEMY,9,[[캐릭터:질러시]],49,0,1
+							CALL SET_ENEMY,10,[[캐릭터:벨리커시티]],50,0,1
+							CALL SET_ENEMY,11,[[캐릭터:레이지니스]],52,0,1
+							CALL SET_ENEMY,12,[[캐릭터:앨러건스]],55,0,1
 							CALL BATTLE_START
 							FLAG:도주불가플래그 = 0
 							FLAG:회화불능플래그 = 0
@@ -538,11 +538,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 							IF 던전플래그:(FLAG:현던전):0 == 1
 								CALL MESSAGE_WINDOW_D, "", @"＞에리는、%마스터를% 눈썹을 찌푸린 채로 노려보고 있다/＞마키를 돕기 위해서라고 해도/＞납득이 가지 않는 것 같다"
 								CALL MESSAGE_WINDOW_D, "에리", "（이렇게 하지 않으면、Maki는 살아나지 않을 지도 모릅니다만……）"
-								BASE:GETCHARA([[キャラ:에리]]):충성도 -= 500
+								BASE:GETCHARA([[캐릭터:에리]]):충성도 -= 500
 							ELSE
 								CALL MESSAGE_WINDOW_D, "", @"＞아야세는、%마스터를% 눈썹을 찌푸린 채로 노려보고 있다/＞마키를 돕기 위해서라고 해도/＞납득이 가지 않는 것 같다"
 								CALL MESSAGE_WINDOW_D, "아야세", "（……이보라구……이건 심한 게 아닐까……）"
-								BASE:GETCHARA([[キャラ:아야세]]):충성도 -= 500
+								BASE:GETCHARA([[캐릭터:아야세]]):충성도 -= 500
 							ENDIF
 							CALL MESSAGE_WINDOW_D, "", @"＞%조사처리(CALLNAME:MASTER,"는")% 비난의 시선을 무시하고 아라야의 동굴을 뒤로 했다"
 							CALL INCREASE_LD,-10
@@ -606,7 +606,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 					ELSE
 						CALL MESSAGE_WINDOW_D, "", "＞마키가 받은 건 보석의 장식물처럼 보인다/＞그것을 받은 순간, 마키의 배후에서,/＞그녀의 페르소나 「아메노우즈메」가 나타난다"
 						CALL MESSAGE_WINDOW_D, "", "＞보석은 불타는 것같이 빛을 발해,/＞아메노우즈메에 빨려 들여가듯이 사라진다/＞마키의 초기 페르소나가 성장했다！"
-						ABL:LOCAL:초기페르소나 = [[キャラ:베르단디(페르소나)]]
+						ABL:LOCAL:초기페르소나 = [[캐릭터:베르단디(페르소나)]]
 					ENDIF
 					CALL MESSAGE_WINDOW_D, ANATANAME("당신과 닮은 인영", "？"), "……그럼 안녕이다"
 					CALL SYNC_STATUS, LOCAL
@@ -731,16 +731,16 @@ RETURN ENEMY_NUM_COMMON("上級", ARG)
 @ENEMY_19, ARG
 SELECTCASE RAND:100
 	CASE IS < 20
-		RETURN [[キャラ:옵신]], 45
+		RETURN [[캐릭터:옵신]], 45
 	CASE IS < 40
-		RETURN [[キャラ:그리드]], 47
+		RETURN [[캐릭터:그리드]], 47
 	CASE IS < 60
-		RETURN [[キャラ:질러시]], 49
+		RETURN [[캐릭터:질러시]], 49
 	CASE IS < 80
-		RETURN [[キャラ:벨리커시티]], 50
+		RETURN [[캐릭터:벨리커시티]], 50
 	CASE IS < 90
-		RETURN [[キャラ:레이지니스]], 52
+		RETURN [[캐릭터:레이지니스]], 52
 	CASE IS < 100
-		RETURN [[キャラ:앨러건스]], 55
+		RETURN [[캐릭터:앨러건스]], 55
 ENDSELECT
 

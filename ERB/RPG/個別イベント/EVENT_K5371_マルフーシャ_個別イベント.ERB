@@ -124,7 +124,7 @@ CASE 1
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;PTにマルフーシャはいるか？
-			SIF NO:(FLAG:LOCALS) == [[キャラ:마르푸샤]]
+			SIF NO:(FLAG:LOCALS) == [[캐릭터:마르푸샤]]
 				RETURN 1
 		NEXT
 		RETURN 0
@@ -494,7 +494,7 @@ CASE 2
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;PTにマルフーシャはいるか？
-			SIF NO:(FLAG:LOCALS) == [[キャラ:마르푸샤]]
+			SIF NO:(FLAG:LOCALS) == [[캐릭터:마르푸샤]]
 				RETURN 1
 		NEXT
 		RETURN 0
@@ -929,7 +929,7 @@ CASE 3
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;PTにマルフーシャはいるか？
-			SIF NO:(FLAG:LOCALS) == [[キャラ:마르푸샤]]
+			SIF NO:(FLAG:LOCALS) == [[캐릭터:마르푸샤]]
 				RETURN 1
 		NEXT
 		RETURN 0
@@ -1571,7 +1571,7 @@ CASE 4
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;PTにマルフーシャはいるか？
-			SIF NO:(FLAG:LOCALS) == [[キャラ:마르푸샤]]
+			SIF NO:(FLAG:LOCALS) == [[캐릭터:마르푸샤]]
 				RETURN 1
 		NEXT
 		RETURN 0
@@ -2146,7 +2146,7 @@ CASE 4
 			スネジンカを連れてこさせた = 0
 			
 			既存キャラ = 0
-			SIF GETCHARA([[キャラ:펠리세트]]) > 0 || GETCHARA([[キャラ:벨카(Marufusha)]]) > 0 || GETCHARA([[キャラ:스트렐카(Marufusha)]]) > 0 || GETCHARA([[キャラ:비온]]) > 0 || GETCHARA([[キャラ:알리비나]]) > 0 || GETCHARA([[キャラ:에노스]]) > 0 || GETCHARA([[キャラ:라이카(Marufusha)]]) > 0
+			SIF GETCHARA([[캐릭터:펠리세트]]) > 0 || GETCHARA([[캐릭터:벨카(Marufusha)]]) > 0 || GETCHARA([[캐릭터:스트렐카(Marufusha)]]) > 0 || GETCHARA([[캐릭터:비온]]) > 0 || GETCHARA([[캐릭터:알리비나]]) > 0 || GETCHARA([[캐릭터:에노스]]) > 0 || GETCHARA([[캐릭터:라이카(Marufusha)]]) > 0
 				既存キャラ = 1
 			
 			$人員補充_START
@@ -2216,7 +2216,7 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:펠리세트]]
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:펠리세트]]
 				フェリセットを採用した = 1
 				
 				PRINTFORML 
@@ -2282,8 +2282,8 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:벨카(Marufusha)]]
-				LOCAL = GETCHARA([[キャラ:벨카(Marufusha)]])
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:벨카(Marufusha)]]
+				LOCAL = GETCHARA([[캐릭터:벨카(Marufusha)]])
 				NAME:LOCAL = 벨카
 				CALLNAME:LOCAL = 벨카
 				ベルカを採用した = 1
@@ -2330,8 +2330,8 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:스트렐카(Marufusha)]]
-				LOCAL = GETCHARA([[キャラ:스트렐카(Marufusha)]])
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:스트렐카(Marufusha)]]
+				LOCAL = GETCHARA([[캐릭터:스트렐카(Marufusha)]])
 				NAME:LOCAL = 스트렐카
 				CALLNAME:LOCAL = 스트렐카
 				ストレルカを採用した = 1
@@ -2374,7 +2374,7 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:비온]]
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:비온]]
 				ビオンを採用した = 1
 				
 				PRINTFORML 
@@ -2420,7 +2420,7 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:알리비나]]
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:알리비나]]
 				アリビナを採用した = 1
 				
 				PRINTFORML 
@@ -2459,7 +2459,7 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:에노스]]
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:에노스]]
 				エノスを採用した = 1
 				
 				PRINTFORML 
@@ -2499,8 +2499,8 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL マルフーシャ個別イベント_人員補充, ARG, [[キャラ:라이카(Marufusha)]]
-				LOCAL = GETCHARA([[キャラ:라이카(Marufusha)]])
+				CALL マルフーシャ個別イベント_人員補充, ARG, [[캐릭터:라이카(Marufusha)]]
+				LOCAL = GETCHARA([[캐릭터:라이카(Marufusha)]])
 				NAME:LOCAL = 라이카
 				CALLNAME:LOCAL = 라이카
 				ライカを採用した = 1
@@ -2547,7 +2547,7 @@ CASE 4
 					CLEARLINE 1
 					GOTO SELECT_LOOP_1
 				ENDIF
-				CALL ADD_NEW_COMPANION, [[キャラ:스네진카]], 1000
+				CALL ADD_NEW_COMPANION, [[캐릭터:스네진카]], 1000
 				スネジンカを連れてこさせた = 1
 				
 				PRINTFORML 
@@ -3109,10 +3109,10 @@ CASE 4
 		ENDIF
 		
 		;真ㆍ人員補充
-		LOCAL = GETCHARA([[キャラ:펠리세트]])
+		LOCAL = GETCHARA([[캐릭터:펠리세트]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:펠리세트]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:펠리세트]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				SIF 戦力として扱う
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -3122,10 +3122,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:벨카(Marufusha)]])
+		LOCAL = GETCHARA([[캐릭터:벨카(Marufusha)]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:벨카(Marufusha)]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:벨카(Marufusha)]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				NAME:(RESULT:1) = 벨카
 				CALLNAME:(RESULT:1) = 벨카
@@ -3137,10 +3137,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:스트렐카(Marufusha)]])
+		LOCAL = GETCHARA([[캐릭터:스트렐카(Marufusha)]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:스트렐카(Marufusha)]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:스트렐카(Marufusha)]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				NAME:(RESULT:1) = 스트렐카
 				CALLNAME:(RESULT:1) = 스트렐카
@@ -3152,10 +3152,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:비온]])
+		LOCAL = GETCHARA([[캐릭터:비온]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:비온]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:비온]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				SIF 戦力として扱う
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -3165,10 +3165,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:알리비나]])
+		LOCAL = GETCHARA([[캐릭터:알리비나]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:알리비나]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:알리비나]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				SIF 戦力として扱う
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -3178,10 +3178,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:에노스]])
+		LOCAL = GETCHARA([[캐릭터:에노스]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:에노스]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:에노스]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				SIF 戦力として扱う
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -3191,10 +3191,10 @@ CASE 4
 			ENDIF
 		ENDIF
 		
-		LOCAL = GETCHARA([[キャラ:라이카(Marufusha)]])
+		LOCAL = GETCHARA([[캐릭터:라이카(Marufusha)]])
 		IF LOCAL > 0 && CFLAG:LOCAL:게스트가입플래그 == 1
 			CALL EVENT_K5371_캐릭터삭제,LOCAL
-			CALL ADD_NEW_COMPANION, [[キャラ:라이카(Marufusha)]], 1000 + 2000 * 戦力として扱う
+			CALL ADD_NEW_COMPANION, [[캐릭터:라이카(Marufusha)]], 1000 + 2000 * 戦力として扱う
 			IF RESULT
 				NAME:(RESULT:1) = 라이카
 				CALLNAME:(RESULT:1) = 라이카
@@ -3353,7 +3353,7 @@ NEXT
 IF LOCAL:1 == -1
 	FOR 計算用変数, 1, 7
 		LOCALS = 포지션{計算用変数} 
-		IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[キャラ:메어리]] ) && (FLAG:LOCALS) != MASTER && NO:(FLAG:LOCALS) != [[キャラ:마르푸샤]] && NO:(FLAG:LOCALS) != [[キャラ:라이카(Marufusha)]] && NO:(FLAG:LOCALS) != [[キャラ:벨카(Marufusha)]] && NO:(FLAG:LOCALS) != [[キャラ:스트렐카(Marufusha)]] && NO:(FLAG:LOCALS) != [[キャラ:펠리세트]] && NO:(FLAG:LOCALS) != [[キャラ:알리비나]] && NO:(FLAG:LOCALS) != [[キャラ:비온]] && NO:(FLAG:LOCALS) != [[キャラ:에노스]]
+		IF (ABL:(FLAG:LOCALS):종족 || NO:(FLAG:LOCALS) == [[캐릭터:메어리]] ) && (FLAG:LOCALS) != MASTER && NO:(FLAG:LOCALS) != [[캐릭터:마르푸샤]] && NO:(FLAG:LOCALS) != [[캐릭터:라이카(Marufusha)]] && NO:(FLAG:LOCALS) != [[캐릭터:벨카(Marufusha)]] && NO:(FLAG:LOCALS) != [[캐릭터:스트렐카(Marufusha)]] && NO:(FLAG:LOCALS) != [[캐릭터:펠리세트]] && NO:(FLAG:LOCALS) != [[캐릭터:알리비나]] && NO:(FLAG:LOCALS) != [[캐릭터:비온]] && NO:(FLAG:LOCALS) != [[캐릭터:에노스]]
 			LOCAL:1 = 計算用変数
 			;LOCAL:2にどかすキャラを入れる
 			LOCAL:2 = POS(計算用変数)
@@ -3444,9 +3444,9 @@ SIF ARG:1 == 0
 
 ;国境門の配置
 IF INRANGE(ARG:1, 7, 9)
-	CALL ADD_GUEST_COMPANION([[キャラ:라이카(Marufusha)]], 10000, 1)
+	CALL ADD_GUEST_COMPANION([[캐릭터:라이카(Marufusha)]], 10000, 1)
 	IF RESULT:2 == 1
-		LOCAL = GETCHARA([[キャラ:라이카(Marufusha)]])
+		LOCAL = GETCHARA([[캐릭터:라이카(Marufusha)]])
 		NAME:LOCAL = 라이카
 		CALLNAME:LOCAL = 라이카
 		SIF BASE:ARG:LV > 敵レベル
@@ -3483,7 +3483,7 @@ IF INRANGE(ARG:1, 7, 9)
 		ABL:LOCAL:스킬11 = 569;シールドコワース
 		ABL:LOCAL:스킬12 = 2420;貫通
 	ELSE
-		LOCAL = GETCHARA([[キャラ:라이카(Marufusha)]])
+		LOCAL = GETCHARA([[캐릭터:라이카(Marufusha)]])
 		CFLAG:LOCAL:게스트가입플래그 = 0
 	ENDIF
 	
@@ -3506,11 +3506,11 @@ IF INRANGE(ARG:1, 7, 9)
 	ABL:LOCAL:속성LD = ABL:ARG:속성LD
 	ABL:LOCAL:속성LC = ABL:ARG:속성LC
 ELSE
-	LOCAL = GETCHARA([[キャラ:국경문]])
+	LOCAL = GETCHARA([[캐릭터:국경문]])
 	SIF LOCAL >= 0
 		CALL EVENT_K5371_캐릭터삭제,LOCAL
-	CALL ADD_GUEST_COMPANION([[キャラ:국경문]], 5000, 1)
-	LOCAL = GETCHARA([[キャラ:국경문]])
+	CALL ADD_GUEST_COMPANION([[캐릭터:국경문]], 5000, 1)
+	LOCAL = GETCHARA([[캐릭터:국경문]])
 	SIF BASE:ARG:LV > 敵レベル
 		CFLAG:LOCAL:ＨＰ보정 += (BASE:ARG:LV - 敵レベル) * 5
 	IF ARG:1 > 3
@@ -3895,11 +3895,11 @@ FLAG:선제기습취소 = 0
 
 ;国境門の除去
 IF INRANGE(ARG:1, 7, 9)
-	LOCAL = GETCHARA([[キャラ:라이카(Marufusha)]])
+	LOCAL = GETCHARA([[캐릭터:라이카(Marufusha)]])
 	SIF LOCAL >= 0 && CFLAG:LOCAL:게스트가입플래그
 		CALL EVENT_K5371_캐릭터삭제,LOCAL
 ELSE
-	LOCAL = GETCHARA([[キャラ:국경문]])
+	LOCAL = GETCHARA([[캐릭터:국경문]])
 	SIF LOCAL >= 0
 		CALL EVENT_K5371_캐릭터삭제,LOCAL
 ENDIF
@@ -4473,7 +4473,7 @@ SELECTCASE FLAG:진행중개별이벤트
 				SIF FLAG:LOCALS < 0
 					CONTINUE
 				;マルフーシャ or 国境門
-				SIF NO:(FLAG:LOCALS) != [[キャラ:마르푸샤]] && NO:(FLAG:LOCALS) != [[キャラ:국경문]]
+				SIF NO:(FLAG:LOCALS) != [[캐릭터:마르푸샤]] && NO:(FLAG:LOCALS) != [[캐릭터:국경문]]
 					CONTINUE
 				;死んでいない
 				SIF GET_STATE(CFLAG:(FLAG:LOCALS):상태이상) != "DYING" && GET_STATE(CFLAG:(FLAG:LOCALS):상태이상) != "STONE"
@@ -4549,7 +4549,7 @@ FOR LOCAL,7,17
 	LOCALS = 포지션{LOCAL}
 	SIF FLAG:LOCALS == -1
 		CONTINUE
-	SIF NO:(FLAG:LOCALS) != [[キャラ:적의그림자]]
+	SIF NO:(FLAG:LOCALS) != [[캐릭터:적의그림자]]
 		CONTINUE
 	BASE:(FLAG:LOCALS):ＨＰ -= 1 + MAXBASE:(FLAG:LOCALS):ＨＰ / CFLAG:(FLAG:LOCALS):998
 	IF BASE:(FLAG:LOCALS):ＨＰ <= 0
@@ -4562,7 +4562,7 @@ NEXT
 FOR LOCAL,7,12
 	LOCALS = 포지션{LOCAL}
 	LOCALS:1 = 포지션{LOCAL+5}
-	IF FLAG:LOCALS > -1 && ( NO:(FLAG:LOCALS) == [[キャラ:적의그림자]] || NAME:(FLAG:LOCALS) == "특대병기마라" || NAME:(FLAG:LOCALS) == "용두병기아바돈" || NAME:(FLAG:LOCALS) == "공성용기리메칼라" || NAME:(FLAG:LOCALS) == "공성용카브라칸" || NAME:(FLAG:LOCALS) == "특대기계병기" || NAME:(FLAG:LOCALS) == "대형용두병기" || NAME:(FLAG:LOCALS) == "상자형레이저병기" || (NAME:(FLAG:LOCALS) == "공성병기" && CFLAG:(FLAG:LOCALS):997 == 4) || (NAME:(FLAG:LOCALS) == "폭탄사출병기ㆍ改" && CFLAG:(FLAG:LOCALS):997 == 5) )
+	IF FLAG:LOCALS > -1 && ( NO:(FLAG:LOCALS) == [[캐릭터:적의그림자]] || NAME:(FLAG:LOCALS) == "특대병기마라" || NAME:(FLAG:LOCALS) == "용두병기아바돈" || NAME:(FLAG:LOCALS) == "공성용기리메칼라" || NAME:(FLAG:LOCALS) == "공성용카브라칸" || NAME:(FLAG:LOCALS) == "특대기계병기" || NAME:(FLAG:LOCALS) == "대형용두병기" || NAME:(FLAG:LOCALS) == "상자형레이저병기" || (NAME:(FLAG:LOCALS) == "공성병기" && CFLAG:(FLAG:LOCALS):997 == 4) || (NAME:(FLAG:LOCALS) == "폭탄사출병기ㆍ改" && CFLAG:(FLAG:LOCALS):997 == 5) )
 		SIF FLAG:(LOCALS:1) > -1 && GET_STATE(CFLAG:(FLAG:(LOCALS:1)):상태이상) != "DYING"
 			CALL CHANGE_POSITION,FLAG:LOCALS,FLAG:(LOCALS:1)
 	ENDIF
@@ -5370,7 +5370,7 @@ IF CFLAG:ARG:997 >= 1
 		SIF FLAG:LOCALS < 0
 			CONTINUE
 		;国境門
-		SIF NO:(FLAG:LOCALS) != [[キャラ:국경문]]
+		SIF NO:(FLAG:LOCALS) != [[캐릭터:국경문]]
 			CONTINUE
 		SIF CFLAG:(FLAG:LOCALS):상태이상 == GET_STATE_NUM("DYING")
 			CONTINUE
@@ -5399,7 +5399,7 @@ FOR LOCAL,6,0,-1
 	SIF FLAG:LOCALS < 0
 		CONTINUE
 	;国境門
-	SIF NO:(FLAG:LOCALS) != [[キャラ:국경문]]
+	SIF NO:(FLAG:LOCALS) != [[캐릭터:국경문]]
 		CONTINUE
 	SIF CFLAG:(FLAG:LOCALS):상태이상 == GET_STATE_NUM("DYING")
 		CONTINUE
@@ -5423,7 +5423,7 @@ IF CFLAG:ARG:997 >= 3
 		SIF FLAG:LOCALS < 0
 			CONTINUE
 		;国境門
-		SIF NO:(FLAG:LOCALS) != [[キャラ:국경문]]
+		SIF NO:(FLAG:LOCALS) != [[캐릭터:국경문]]
 			CONTINUE
 		SIF CFLAG:(FLAG:LOCALS):상태이상 == GET_STATE_NUM("DYING")
 			CONTINUE
@@ -5465,8 +5465,8 @@ IF CFLAG:ARG:997 >= 2
 	IF CFLAG:ARG:타겟 == -1
 		GOTO DECIDE_ACTION
 	;門がある限り、敵はマルフーシャを攻撃しない
-	ELSEIF GETCHARA([[キャラ:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[キャラ:마르푸샤]]))
-		SIF GETCHARA([[キャラ:국경문]]) > -1 && CFLAG:GETCHARA([[キャラ:국경문]]):상태이상 != GET_STATE_NUM("DYING")
+	ELSEIF GETCHARA([[캐릭터:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[캐릭터:마르푸샤]]))
+		SIF GETCHARA([[캐릭터:국경문]]) > -1 && CFLAG:GETCHARA([[캐릭터:국경문]]):상태이상 != GET_STATE_NUM("DYING")
 			GOTO DECIDE_ACTION
 	ENDIF
 	CFLAG:ARG:입력행동 = LOCAL:1
@@ -5500,8 +5500,8 @@ IF CFLAG:ARG:997 >= 1
 	IF CFLAG:ARG:타겟 == -1
 		GOTO DECIDE_ACTION
 	;門がある限り、敵はマルフーシャを攻撃しない
-	ELSEIF GETCHARA([[キャラ:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[キャラ:마르푸샤]]))
-		SIF GETCHARA([[キャラ:국경문]]) > -1 && CFLAG:GETCHARA([[キャラ:국경문]]):상태이상 != GET_STATE_NUM("DYING")
+	ELSEIF GETCHARA([[캐릭터:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[캐릭터:마르푸샤]]))
+		SIF GETCHARA([[캐릭터:국경문]]) > -1 && CFLAG:GETCHARA([[캐릭터:국경문]]):상태이상 != GET_STATE_NUM("DYING")
 			GOTO DECIDE_ACTION
 	ENDIF
 	CFLAG:ARG:입력행동 = LOCAL:1
@@ -5534,8 +5534,8 @@ CALLFORM SKILL_TARGET_{LOCAL:1}
 IF CFLAG:ARG:타겟 == -1
 	GOTO DECIDE_ACTION
 ;門がある限り、敵はマルフーシャを攻撃しない
-ELSEIF GETCHARA([[キャラ:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[キャラ:마르푸샤]]))
-	SIF GETCHARA([[キャラ:국경문]]) > -1 && CFLAG:GETCHARA([[キャラ:국경문]]):상태이상 != GET_STATE_NUM("DYING")
+ELSEIF GETCHARA([[캐릭터:마르푸샤]]) > -1 && CFLAG:ARG:타겟 == CPOS(GETCHARA([[캐릭터:마르푸샤]]))
+	SIF GETCHARA([[캐릭터:국경문]]) > -1 && CFLAG:GETCHARA([[캐릭터:국경문]]):상태이상 != GET_STATE_NUM("DYING")
 		GOTO DECIDE_ACTION
 ENDIF
 CFLAG:ARG:입력행동 = LOCAL:1
@@ -5652,7 +5652,7 @@ ELSEIF CFLAG:ARG:997 == 8
 			SIF FLAG:LOCALS < 0
 				CONTINUE
 			;国境門
-			SIF NO:(FLAG:LOCALS) != [[キャラ:국경문]]
+			SIF NO:(FLAG:LOCALS) != [[캐릭터:국경문]]
 				CONTINUE
 			SIF CFLAG:(FLAG:LOCALS):상태이상 == GET_STATE_NUM("DYING")
 				CONTINUE
@@ -6103,7 +6103,7 @@ RETURN 1
 ;-----------------------------------------------------------
 @증원패턴_マルフーシャ個別イベント_爆弾射出兵器, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*6/10, 0
 CALL SET_小型自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 1
@@ -6112,7 +6112,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_大型爆弾射出兵器, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*6/10, 0
 CALL SET_小型自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 2
@@ -6121,7 +6121,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_爆弾射出兵器ㆍ改, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*6/10, 0
 CALL SET_小型自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 4
@@ -6130,7 +6130,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_攻城兵器, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE CFLAG:ARG:996
 	CASE 1
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*6/10, 0
@@ -6147,7 +6147,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_大型竜頭兵器, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*6/10, 0
 CALL SET_小型自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 5
@@ -6156,7 +6156,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_特大機械兵器, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0
 CALL SET_自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 4 + RAND:2
@@ -6165,7 +6165,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_悪夢のような現実, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*(7+RAND:3)/10, 0
 CALL SET_自爆ボール, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 5 + RAND:6
@@ -6174,7 +6174,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_竜頭兵器アバドン, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*(8+RAND:2)/10, 0
 CALL SET_自爆ボールㆍ改, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 5 + RAND:6
@@ -6183,7 +6183,7 @@ RETURN 0
 
 @증원패턴_マルフーシャ個別イベント_特大兵器マーラ, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*(8+RAND:2)/10, 0
 CALL SET_自爆ボールㆍ改, (CHARANUM-1), BASE:(CHARANUM-1):LV
 SIF ARG:2 >= 4 + RAND:2
@@ -6193,7 +6193,7 @@ RETURN 0
 ;5日目 + 10日目
 @증원패턴_マルフーシャ個別イベント_1, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE RAND:3
 	CASE 0
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0
@@ -6212,7 +6212,7 @@ RETURN 0
 ;20日目 + 30日目
 @증원패턴_マルフーシャ個別イベント_2, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE RAND:8
 	CASE 0 TO 1
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0
@@ -6242,7 +6242,7 @@ RETURN RESULT
 ;50日目
 @증원패턴_マルフーシャ個別イベント_4, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE RAND:14
 	CASE 0 TO 2
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0
@@ -6278,7 +6278,7 @@ RETURN 0
 ;60日目 + 70日目
 @증원패턴_マルフーシャ個別イベント_5, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE RAND:17
 	CASE 0 TO 2
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0
@@ -6325,7 +6325,7 @@ RETURN RESULT
 ;85日目
 @증원패턴_マルフーシャ個別イベント_7, ARG, ARG:1, ARG:2
 #DIM 敵レベル
-敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[キャラ:마르푸샤]]))
+敵レベル = マルフーシャ個別イベント_レベルサーチ(GETCHARA([[캐릭터:마르푸샤]]))
 SELECTCASE RAND:17
 	CASE 0 TO 2
 		CALL SET_ENEMY,  ARG:1, 1107, 敵レベル*7/10, 0

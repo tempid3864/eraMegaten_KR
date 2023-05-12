@@ -68,16 +68,16 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:아르콘]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:코덱스]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트방패병]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:섹토포드]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:스팩터]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:섹토이드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:아르콘]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:코덱스]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트방패병]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:섹토포드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩터]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:섹토이드]],1000)
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 420, 540)
 	;레벨 15일시 체력 X2 1080
-	CALL SET_ENEMY,7,[[キャラ:어드밴트장교]],15,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트장교]],15,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 883
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1026
@@ -94,7 +94,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스펙터는 체력 1200으로 크게 상향
-	CALL SET_ENEMY,9,[[キャラ:스팩터]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:스팩터]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1141
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1166
 	CSTR:(CHARANUM-1):사고패턴 = 8514
@@ -103,7 +103,7 @@ NEXT
 
 	;어드밴트 병사. 체력 3, 6, 8 (180, 360, 480)
 	;고급 병사는 X2 960
-	CALL SET_ENEMY,10,[[キャラ:어드밴트병사]],15,0,0
+	CALL SET_ENEMY,10,[[캐릭터:어드밴트병사]],15,0,0
 	BASE:(CHARANUM-1):힘 = 12
 	BASE:(CHARANUM-1):지혜 = 3
 	BASE:(CHARANUM-1):마력 = 3
@@ -119,7 +119,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;섹토이드 체력 7 고정 (420)
-	CALL SET_ENEMY,11,[[キャラ:섹토이드]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:섹토이드]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 376
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 371
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -127,7 +127,7 @@ NEXT
 
 	;어드밴트 방패병. 체력 6, 8 (360, 480)
 	;중장갑 방패병이므로 체력 수치를 X4 1920으로
-	CALL SET_ENEMY,12,[[キャラ:어드밴트방패병]],10,0,0
+	CALL SET_ENEMY,12,[[캐릭터:어드밴트방패병]],10,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1785
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1882
 	CSTR:(CHARANUM-1):사고패턴 = 8512
@@ -135,7 +135,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;아르콘. 체력 수치를 3배로. 360 X 3 1080
-	CALL SET_ENEMY,13,[[キャラ:아르콘]],15,0,0
+	CALL SET_ENEMY,13,[[캐릭터:아르콘]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 882
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 1029
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -145,7 +145,7 @@ NEXT
 
 	;섹토포드 체력 28. 체력 1당 90. 2520
 	;섹토포드는 레벨 40으로 고정. 리바이어던 사양은 체력 X3으로 준보스급
-	CALL SET_ENEMY,14,[[キャラ:섹토포드]],40,0,0
+	CALL SET_ENEMY,14,[[캐릭터:섹토포드]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1935
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 2368
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -154,7 +154,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;코덱스. 체력 10 고정. (600)
-	CALL SET_ENEMY,15,[[キャラ:코덱스]],5,0,0
+	CALL SET_ENEMY,15,[[캐릭터:코덱스]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 541
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 566
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -164,7 +164,7 @@ NEXT
 
 	;어드밴트 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
 	;헤비는 X2 960
-	CALL SET_ENEMY,16,[[キャラ:어드밴트스턴랜서]],15,0,0
+	CALL SET_ENEMY,16,[[캐릭터:어드밴트스턴랜서]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 801
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 909
 	BASE:(CHARANUM-1):힘 = 19
@@ -225,7 +225,7 @@ NEXT
 
 	;어쌔신. 보스 플래그를 꺼버리는 대신 스텟이 높음!
 	;체력 8500
-	CALL SET_ENEMY,9,[[キャラ:어쌔신]],20,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어쌔신]],20,0,0
 	BASE:(CHARANUM-1):ＭＡＧ = 138600
 	BASE:(CHARANUM-1):힘 += 10
 	BASE:(CHARANUM-1):인내력 += 10

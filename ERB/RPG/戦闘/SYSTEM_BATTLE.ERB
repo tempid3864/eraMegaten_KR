@@ -1710,8 +1710,8 @@ ENDIF
 ;RRSULT:1 作成したキャラの登録番号を返す
 ;
 ;★샘플です。わかります★
-;CALL ADD_NEW_COMPANION,[[キャラ:기린]],충성도,이벤트플래그2,一時的に仲魔に3,인간化4,Lv指定5
-;CALL ADD_NEW_COMPANION,[[キャラ:기린]],114514,0,0,0,99
+;CALL ADD_NEW_COMPANION,[[캐릭터:기린]],충성도,이벤트플래그2,一時的に仲魔に3,인간化4,Lv指定5
+;CALL ADD_NEW_COMPANION,[[캐릭터:기린]],114514,0,0,0,99
 ;충성도114514、이벤트가입、全書표시用、特別な인간化なし、LV99で加入
 ;=================================================================
 ;---- EDIT 048 ADD START ----
@@ -2580,7 +2580,7 @@ ELSEIF CFLAG:(ARG:1):PT플래그 < 1 && GET_STATE(ARG:2) == "FLY"
 	PRINT BLOCK
 	RETURN 0
 ;相손が벨ㆍ데르ならブロック
-ELSEIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+ELSEIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 	PRINT BLOCK
 	RETURN 0
 ELSEIF AUTO_PU_SKILL_劫火の余燼(ARG,"상태이상無効") > 0 && (GET_STATE(ARG:2) == "STONE" || GET_STATE(ARG:2) == "DYING")
@@ -2858,7 +2858,7 @@ IF num > 0
 	FOR LOCAL:1, 7, 17
 		SIF POS(LOCAL:1) == -1 || CFLAG:POS(LOCAL:1):상태이상 == GET_STATE_NUM("DYING")
 			CONTINUE
-		SIF NO:(POS(LOCAL:1)) == [[キャラ:니알라]]
+		SIF NO:(POS(LOCAL:1)) == [[캐릭터:니알라]]
 			CALL SPECIAL_ACTION_3571,LOCAL:1
 	NEXT
 ENDIF

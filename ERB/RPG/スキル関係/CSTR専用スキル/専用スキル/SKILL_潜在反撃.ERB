@@ -402,8 +402,8 @@ RETURN 1
 ;		CONTINUE
 ;	SIF TALENT:LCOUNT:페르소나구사자 < 1
 ;		CONTINUE
-;	各位置のキャラ:0 ++
-;	各位置のキャラ:LCOUNT = POS(LCOUNT)
+;	各位置の캐릭터:0 ++
+;	各位置の캐릭터:LCOUNT = POS(LCOUNT)
 ;	被弾前ＨＰ:LCOUNT = BASE:POS(LCOUNT):ＨＰ
 ;NEXT
 ;
@@ -427,7 +427,7 @@ RETURN 1
 SELECTCASE ARGS
 	CASE "初期化"
 		VARSET 潜在発動キャラ,-1
-		潜在発動キャラ:0 = 0
+		潜在発動캐릭터:0 = 0
 	CASE "登録"
 		;;潜在能力が反撃or特殊でなければ中断
 		;;潜在反撃持ちだが、HPが25%以下でない、もしくはDYING済み or 潜在特殊持ちだが、HPが0以下ではない場合も中断
@@ -435,15 +435,15 @@ SELECTCASE ARGS
 		;	RETURN -1
 		SIF MATCH(潜在発動キャラ,ARG,1)
 			RETURN -1
-		潜在発動キャラ:0 ++
-		潜在発動キャラ:(潜在発動キャラ:0) = ARG
-		;PRINTFORM %CALLNAME:ARG%が{潜在発動キャラ:0}番の枠に登録されました
+		潜在発動캐릭터:0 ++
+		潜在発動캐릭터:(潜在発動캐릭터:0) = ARG
+		;PRINTFORM %CALLNAME:ARG%が{潜在発動캐릭터:0}番の枠に登録されました
 	CASE "返還"
 		RESULT = -1
 		FOR LCOUNT,1,17
-			SIF 潜在発動キャラ:LCOUNT != ARG
+			SIF 潜在発動캐릭터:LCOUNT != ARG
 				CONTINUE
-			RESULT = 潜在発動キャラ:LCOUNT
+			RESULT = 潜在発動캐릭터:LCOUNT
 		NEXT
 		RETURN RESULT
 ENDSELECT

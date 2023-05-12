@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_1718,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) || FINDCHARA_M(U, [[キャラ:사이버스터]], [[キャラ:우즈키]])
+IF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) || FINDCHARA_M(U, [[캐릭터:사이버스터]], [[캐릭터:우즈키]])
 	RESULTS = 하이패밀리어
 ELSE
 	RESULTS = 참철파
@@ -150,7 +150,7 @@ NEXT
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1718
-IF FINDCHARA_M(U, [[キャラ:사이버스터]], [[キャラ:우즈키]])
+IF FINDCHARA_M(U, [[캐릭터:사이버스터]], [[캐릭터:우즈키]])
 	PRINTL 패밀리어라는 원격조작포대를 날려보내、적 1열에 질풍 상성의 물리 중 데미지+공격력 저하
 ELSE
 	PRINTL 적 1열에 질풍 상성의 물리 중 데미지+공격력 저하

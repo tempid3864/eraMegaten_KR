@@ -41,9 +41,9 @@
 @EVENT_41_1_1
 
 #DIM NAGI_NO
-CALLF FINDCHARA_B([[キャラ:나기]])
+CALLF FINDCHARA_B([[캐릭터:나기]])
 LOCAL = RESULT:1
-NAGI_NO = GETCHARA([[キャラ:나기]])
+NAGI_NO = GETCHARA([[캐릭터:나기]])
 
 	;나기のLvが25未満だと進行できない
 	IF BASE:LOCAL:LV < 25
@@ -258,7 +258,7 @@ NAGI_NO = GETCHARA([[キャラ:나기]])
 		FLAG:선제기습취소 = 0
 
 
-		CALLF FINDCHARA_B([[キャラ:나기]])
+		CALLF FINDCHARA_B([[캐릭터:나기]])
 		LOCAL = RESULT:1
 		PRINTL 
 		PRINTL 　쥬몬지 바그너

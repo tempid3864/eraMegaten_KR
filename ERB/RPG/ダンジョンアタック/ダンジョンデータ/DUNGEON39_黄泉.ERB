@@ -410,11 +410,11 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 2
 ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 IF 던전플래그:39:0 == 0
 	CALL MESSAGE_WINDOW_D, "", "＞어딘가 온기가 느껴지는 동굴、그 심처에는 두 체의 악마가 있었다/＞하나는 본 적이 있는 표범 머리의 타천사 오세、/＞다른 하나는 쇠사슬에 묶인 은빛 남자"
-	LOCAL = GETCHARA([[キャラ:요시코]])
+	LOCAL = GETCHARA([[캐릭터:요시코]])
 	;東京黙示録にて美子をシフターにし、それが残存している（周回してても良し）
-	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[キャラ:오세]]
+	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[캐릭터:오세]]
 		;パーティ内に美子健在
-		IF FINDCHARA_B([[キャラ:요시코]]) == 2
+		IF FINDCHARA_B([[캐릭터:요시코]]) == 2
 			CALL MESSAGE_WINDOW_D, "オセ", "ほう、まさかとは思ったが、/そちらの方から連れて来てくれるとはな/『眷属』を"
 			CALL MESSAGE_WINDOW_D, "", "＞オセのエメラルドグリーンの目は、同じ目をした岸部美子を眺めている"
 			CALL MESSAGE_WINDOW_D, "ベルㆍデル", "ほぉう？/オセよ、あの女は、お前と同じニオイがするのだな"
@@ -437,9 +437,9 @@ IF 던전플래그:39:0 == 0
 	
 	
 	;東京黙示録にて美子をシフターにし、それが残存している（周回してても良し）
-	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[キャラ:오세]]
+	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[캐릭터:오세]]
 		;パーティ内に美子健在
-		IF FINDCHARA_B([[キャラ:요시코]]) == 2
+		IF FINDCHARA_B([[캐릭터:요시코]]) == 2
 		CUSTOMDRAWLINE =
 			PRINTFORML 
 			PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
@@ -486,14 +486,14 @@ IF 던전플래그:39:0 == 0
 	FLAG:선제기습취소 = 1
 	
 	;美子がパーティ内で健在ならオセはパワーアップする
-	IF FINDCHARA_B([[キャラ:요시코]]) == 2
-		CALL SET_ENEMY,8, [[キャラ:찬탈자오세(링크전용)]], 65, 1, 2
+	IF FINDCHARA_B([[캐릭터:요시코]]) == 2
+		CALL SET_ENEMY,8, [[캐릭터:찬탈자오세(링크전용)]], 65, 1, 2
 		CALLNAME:(CHARANUM-1) = 簒奪者オセ
 		ABL:(CHARANUM-1):종족 = 15
 		;魔神扱い
 		MAXBASE:(CHARANUM-1):전격 = 100
 	ELSE
-		CALL SET_ENEMY,8, [[キャラ:오세]], 65, 0, 1
+		CALL SET_ENEMY,8, [[캐릭터:오세]], 65, 0, 1
 	ENDIF
 	MAXBASE:(CHARANUM-1):파마 = 0
 	MAXBASE:(CHARANUM-1):주살 = 0
@@ -519,9 +519,9 @@ IF 던전플래그:39:0 == 0
 	FLAG:도주불가플래그 = 0
 	FLAG:회화불능플래그 = 0
 	FLAG:선제기습취소 = 0
-	LOCAL = GETCHARA([[キャラ:요시코]])
+	LOCAL = GETCHARA([[캐릭터:요시코]])
 	;東京黙示録にて美子をシフターにし、それが残存している（周回してても良し）
-	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[キャラ:오세]]
+	IF LOCAL > -1 && CFLAG:LOCAL:초기링크악마 == [[캐릭터:오세]]
 		CALL MESSAGE_WINDOW_D, "ベルㆍデル", "我が……ベルの力……が……奪われて……行く……"
 		CALL MESSAGE_WINDOW_D, "オセ", "よもや……神剣の力を以ってしても……か、敵わぬとは……グワーッ！"
 		CALL MESSAGE_WINDOW_D, "", "＞オセとベルㆍデルは消え去った"
@@ -531,14 +531,14 @@ IF 던전플래그:39:0 == 0
 		CALL MESSAGE_WINDOW_D, "", "＞猫はにゃーんなんて鳴かない。あなたは捕まえた邪悪な子猫の首を絞めた"
 		CALL MESSAGE_WINDOW_D, "オセ", "ぐえー！　やめろー！　はなせー！"
 		;美子がパーティ内で健在
-		IF FINDCHARA_B([[キャラ:요시코]]) == 2
+		IF FINDCHARA_B([[캐릭터:요시코]]) == 2
 			CALL MESSAGE_WINDOW_D, "", "＞また復活などされたら鬱陶しい/＞あなたは絶対복종の契約を力づくで結ばせ、呆然としている美子に押し付けた"
 			CALL MESSAGE_WINDOW_D, "オセ", "おお、我が眷属！　助けろ！"
 			CALL MESSAGE_WINDOW_D, "美子", "ッ……！　あなたに言いたいことは沢山ある、だけど/……私の『オセ』としての本能が、今の言葉を許さない"
 			CALL MESSAGE_WINDOW_D, "オセ", "な！？　まて、まて、まて！　取引しよう！　お前は俺の――"
 			CALL MESSAGE_WINDOW_D, "", "＞なにやら後ろで子猫の断末魔（ｷﾞﾆｬｰ!!）が聴こえたが放っておこう/＞殺害されたところで、もはや奴の帰る場所は、/　COMPかセーフハウスのストレージしかないのだ"
 			CALL MESSAGE_WINDOW_D, "美子", "今は私が『オセ』だ！　立場をわきまえろ、『眷属』ッ！！"
-			CFLAG:LOCAL:초기링크악마 = [[キャラ:찬탈자오세(링크전용)]]
+			CFLAG:LOCAL:초기링크악마 = [[캐릭터:찬탈자오세(링크전용)]]
 			CSTR:LOCAL:40 = 本来はそこで命が潰える定めであったが、偶然が重なりデビルシフターとして蘇った。
 			CSTR:LOCAL:41 = 後に黄泉で力を蓄えていたオセと戦い、これを撃破。
 			CSTR:LOCAL:42 = その際に彼の力の全てを吸い尽くし、『オセ』の力と地位を完全に簒奪したのであった。

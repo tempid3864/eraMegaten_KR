@@ -113,7 +113,7 @@ IF L_FLAG_REQ == 1
 		CUSTOMDRAWLINE =
 		WAIT
 
-		CALL SET_ENEMY, 9, [[キャラ:서왕모]], 40, 0, 1
+		CALL SET_ENEMY, 9, [[캐릭터:서왕모]], 40, 0, 1
 		LOCAL = CHARANUM -1
 		LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 		CALL SET_BATTLE_STATUS(LOCAL, 60 * LOCAL:1, "ＨＰ")
@@ -298,7 +298,7 @@ ELSEIF L_FLAG_REQ == 9
 			CUSTOMDRAWLINE =
 			WAIT
 
-			CALL SET_ENEMY, 9, [[キャラ:서왕모]], 40, 0, 1
+			CALL SET_ENEMY, 9, [[캐릭터:서왕모]], 40, 0, 1
 			LOCAL = CHARANUM -1
 			LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 			CALL SET_BATTLE_STATUS(LOCAL, 60 * LOCAL:1, "ＨＰ")
@@ -425,7 +425,7 @@ ELSEIF L_FLAG_REQ == 9
 
 			CUSTOMDRAWLINE =
 			WAIT
-			CALL SET_ENEMY, 9, [[キャラ:서왕모]], 40, 0, 1
+			CALL SET_ENEMY, 9, [[캐릭터:서왕모]], 40, 0, 1
 			LOCAL = CHARANUM -1
 			LOCAL:1 = FLAG:전투난이도 - 3 > 0 ? 120 + (FLAG:전투난이도 - 3) * 20 # 100
 			CALL SET_BATTLE_STATUS(LOCAL, 60 * LOCAL:1, "ＨＰ")

@@ -109,28 +109,28 @@ NEXT
 	CUSTOMDRAWLINE =
 	WAIT
 
-	CALL INCREASE_ANALYZE([[キャラ:외계인버서커]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:크리살리드]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:페이스리스]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:뮤톤]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:어드밴트스턴랜서]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:외계인버서커]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:크리살리드]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:페이스리스]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:뮤톤]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:어드밴트스턴랜서]],1000)
 
 	;스팩트럼 좀비1
-	CALL SET_ENEMY,7,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비2
-	CALL SET_ENEMY,8,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;장교. 체력 6. 체력 6, 8, 9 (360, 420, 540)
-	CALL SET_ENEMY,9,[[キャラ:어드밴트장교]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:어드밴트장교]],5,0,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 397
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 452
@@ -139,21 +139,21 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비3
-	CALL SET_ENEMY,10,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비4
-	CALL SET_ENEMY,11,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;어드밴트 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,12,[[キャラ:어드밴트스턴랜서]],5,0,0
+	CALL SET_ENEMY,12,[[캐릭터:어드밴트스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8508
@@ -161,7 +161,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;뮤톤 체력 8 고정 (480)
-	CALL SET_ENEMY,13,[[キャラ:뮤톤]],5,0,0
+	CALL SET_ENEMY,13,[[캐릭터:뮤톤]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 391
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 463
 	CSTR:(CHARANUM-1):사고패턴 = 8507
@@ -169,21 +169,21 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;페이스리스 체력 8 고정. (480)
-	CALL SET_ENEMY,14,[[キャラ:페이스리스]],5,0,0
+	CALL SET_ENEMY,14,[[캐릭터:페이스리스]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 394
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 463
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;외계인버서커 체력 15 고정 (60x15 = 900)
-	CALL SET_ENEMY,15,[[キャラ:외계인버서커]],5,0,0
+	CALL SET_ENEMY,15,[[캐릭터:외계인버서커]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 813
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 883
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;크리살리드 체력 8 고정 (480)
-	CALL SET_ENEMY,16,[[キャラ:크리살리드]],5,0,0
+	CALL SET_ENEMY,16,[[캐릭터:크리살리드]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 398
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 458
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -478,10 +478,10 @@ NEXT
 	WAIT
 
 	의뢰플래그:62:0 = 6
-	CALL INCREASE_ANALYZE([[キャラ:스팩트럼스턴랜서]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩트럼스턴랜서]],1000)
 
 	;어드밴트 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,7,[[キャラ:어드밴트스턴랜서]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:어드밴트스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8508
@@ -489,7 +489,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;어드밴트 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,8,[[キャラ:어드밴트스턴랜서]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:어드밴트스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8508
@@ -497,7 +497,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,9,[[キャラ:스팩트럼스턴랜서]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:스팩트럼스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8523
@@ -505,7 +505,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,10,[[キャラ:스팩트럼스턴랜서]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:스팩트럼스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8523
@@ -513,7 +513,7 @@ NEXT
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 스턴랜서. 체력 4, 7, 8 (240, 420, 480)
-	CALL SET_ENEMY,11,[[キャラ:스팩트럼스턴랜서]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:스팩트럼스턴랜서]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 411
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 454
 	CSTR:(CHARANUM-1):사고패턴 = 8523
@@ -545,7 +545,7 @@ NEXT
 	WAIT
 
 	;워록
-	CALL SET_ENEMY,9,[[キャラ:워록]],15,0,0
+	CALL SET_ENEMY,9,[[캐릭터:워록]],15,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 6742
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 6884
 	CFLAG:(CHARANUM-1):행동횟수 = 5
@@ -868,7 +868,7 @@ IF 의뢰플래그:62:0 == 4
 	PRINTFORMW ┗━━━━━━━━━━━━━━-┛
 	PRINTFORML
 
-	CALL INCREASE_ANALYZE([[キャラ:스팩트럼좀비]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:스팩트럼좀비]],1000)
 
 	RESETCOLOR
 	PRINTFORMW 선택된 자의 소리침이 들리자 갑자기 보라빛을 내는 이상한게 나타났다. 뭔지는 모르겠지만 전투가 좀 더 힘들어질듯 하다.
@@ -961,21 +961,21 @@ ELSEIF 의뢰플래그:62:0 == 5 && FLAG:경과턴수 == 5
 	PRINTFORML
 
 	;스팩트럼 좀비1
-	CALL SET_ENEMY,7,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,7,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비2
-	CALL SET_ENEMY,8,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비3
-	CALL SET_ENEMY,9,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -1021,21 +1021,21 @@ ELSEIF 의뢰플래그:62:0 == 5 && FLAG:경과턴수 == 9
 	PRINTFORML
 
 	;스팩트럼 좀비1
-	CALL SET_ENEMY,8,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,8,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비2
-	CALL SET_ENEMY,9,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비3
-	CALL SET_ENEMY,10,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -1075,21 +1075,21 @@ ELSEIF 의뢰플래그:62:0 == 5 && FLAG:경과턴수 == 12
 	PRINTFORML
 
 	;스팩트럼 좀비1
-	CALL SET_ENEMY,9,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,9,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비2
-	CALL SET_ENEMY,10,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,10,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;스팩트럼 좀비3
-	CALL SET_ENEMY,11,[[キャラ:스팩트럼좀비]],5,0,0
+	CALL SET_ENEMY,11,[[캐릭터:스팩트럼좀비]],5,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	BASE:(CHARANUM-1):힘 += 10
 	CALL SYNC_STATUS,(CHARANUM-1)

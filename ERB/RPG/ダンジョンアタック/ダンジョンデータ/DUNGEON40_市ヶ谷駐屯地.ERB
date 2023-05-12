@@ -652,9 +652,9 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		;오크
-		CALL SET_ENEMY,8,[[キャラ:오크]],23,0,0
-		CALL SET_ENEMY,9,[[キャラ:오크]],23,0,0
-		CALL SET_ENEMY,10,[[キャラ:오크]],23,0,0
+		CALL SET_ENEMY,8,[[캐릭터:오크]],23,0,0
+		CALL SET_ENEMY,9,[[캐릭터:오크]],23,0,0
+		CALL SET_ENEMY,10,[[캐릭터:오크]],23,0,0
 		CALL BATTLE_START
 		FLAG:도주불가플래그 = 0
 		FLAG:회화불능플래그 = 0
@@ -1000,7 +1000,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			;시체잔존フラグは死んだとき、HP0で場に残るようになります。적に리캄をつかわせるときなどにどうぞ
 
 			;누에Lv31（30）
-			CALL SET_ENEMY,8,[[キャラ:누에]],31,1,0
+			CALL SET_ENEMY,8,[[캐릭터:누에]],31,1,0
 			BASE:(CHARANUM-1):LV -= 1
 			;BASE:(CHARANUM-1):힘 -= 5
 			;BASE:(CHARANUM-1):지혜 -= 5
@@ -1014,7 +1014,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 	
 			;아귀　Lv4（28）
-			CALL SET_ENEMY,10,[[キャラ:아귀]],28,1,0
+			CALL SET_ENEMY,10,[[캐릭터:아귀]],28,1,0
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			;소닉펀치
 			ABL:(CHARANUM-1):스킬2 = 210
@@ -1028,7 +1028,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		
 			;고토우
-			CALL SET_ENEMY,9,[[キャラ:고토우]],30,0,1
+			CALL SET_ENEMY,9,[[캐릭터:고토우]],30,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 500
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -1094,7 +1094,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 				
 				;인간扱いに書き換える
 				;달인석세서で芸は少なめだが爆発힘高め（ただし当たらない）で
-				CALL ADD_NEW_COMPANION, [[キャラ:고토우]],0
+				CALL ADD_NEW_COMPANION, [[캐릭터:고토우]],0
 				IF RESULT == 1
 					;인간扱いに;인간なんだから파마は무효で
 					BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -1209,7 +1209,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) == 4
 			PRINTFORML 유리코는 그렇게 말하고 옅게 미소 지었다…….
 			PRINTFORML 
 			PRINTFORMW ＞유리코가 동료마로 들어왔다
-			SIF FINDCHARA_B([[キャラ:리리스]]) < 0
+			SIF FINDCHARA_B([[캐릭터:리리스]]) < 0
 				CALL ADD_NEW_COMPANION,424,500
 			PRINTW 고토우와 상호 불가침 협정을 체결한 공적으로, 조직 상층부에게서 계좌에 ￥20000이 지불되었다
 			MONEY += 20000
@@ -1275,118 +1275,118 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;25%で좀비아미랭크1　Lv15（18）
-				RETURN [[キャラ:좀비아미]], 18
+				RETURN [[캐릭터:좀비아미]], 18
 			CASE IS < 27
 				;7%で좀비독
-				RETURN [[キャラ:좀비독]], 13
+				RETURN [[캐릭터:좀비독]], 13
 			CASE IS < 40
 				;13%で오크랭크2　Lv11（17）
-				RETURN [[キャラ:오크]], 17
+				RETURN [[캐릭터:오크]], 17
 			CASE IS < 55
 				;15%で세에레랭크1　Lv16（19）
-				RETURN [[キャラ:세에레]], 19
+				RETURN [[캐릭터:세에레]], 19
 			CASE IS < 65
 				;10%で픽시랭크5　Lv3（18）
-				RETURN [[キャラ:픽시]], 18
+				RETURN [[캐릭터:픽시]], 18
 			CASE IS < 75
 				;10%で화백랭크4　Lv7（19）
-				RETURN [[キャラ:화백]], 19
+				RETURN [[캐릭터:화백]], 19
 			CASE IS < 90
 				;15%で쵸우케신랭크2　Lv12（18）
-				RETURN [[キャラ:쵸우케신]], 18
+				RETURN [[캐릭터:쵸우케신]], 18
 			CASE IS < 100
 				;10%で모ㆍ쇼보랭크1　Lv15（18）
-				RETURN [[キャラ:모ㆍ쇼보]], 18
+				RETURN [[캐릭터:모ㆍ쇼보]], 18
 		ENDSELECT
 	CASE 1
 	;1Fでの遭遇
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で좀비아미랭크1　Lv15（18）
-				RETURN [[キャラ:좀비아미]], 18
+				RETURN [[캐릭터:좀비아미]], 18
 			CASE IS < 20
 				;5%で좀비독
-				RETURN [[キャラ:좀비독]], 13
+				RETURN [[캐릭터:좀비독]], 13
 			CASE IS < 30
 				;잇폰다타라
 				RETURN 664, 18
 			CASE IS < 40
 				;10%で오크랭크2　Lv11（17）
-				RETURN [[キャラ:오크]], 17
+				RETURN [[캐릭터:오크]], 17
 			CASE IS < 50
 				;10%で세에레랭크1　Lv16（19）
-				RETURN [[キャラ:세에레]], 19
+				RETURN [[캐릭터:세에레]], 19
 			CASE IS < 60
 				;10%で광인특공대랭크1　Lv15（18）
-				RETURN [[キャラ:특공대]], 18
+				RETURN [[캐릭터:특공대]], 18
 			CASE IS < 70
 				;5%で츠치구모랭크1　Lv15（18）
-				RETURN [[キャラ:츠치구모]], 18
+				RETURN [[캐릭터:츠치구모]], 18
 			CASE IS < 80
 				;20%で다크엘프랭크1　Lv15（18）
-				RETURN [[キャラ:다크엘프]], 18
+				RETURN [[캐릭터:다크엘프]], 18
 			CASE IS < 90
 				;15%で랴난시　Lv18
-				RETURN [[キャラ:랴난시]], 19
+				RETURN [[캐릭터:랴난시]], 19
 			CASE IS < 100
 				;10%で모ㆍ쇼보랭크1　Lv15（18）
-				RETURN [[キャラ:모ㆍ쇼보]], 18
+				RETURN [[캐릭터:모ㆍ쇼보]], 18
 		ENDSELECT
 	CASE 2
 	;2Fでの遭遇
 		SELECTCASE RAND:100
 			CASE IS < 20
 				;20%で좀비아미랭크2　Lv15（21）
-				RETURN [[キャラ:좀비아미]], 21
+				RETURN [[캐릭터:좀비아미]], 21
 			CASE IS < 30
 				;10%で츠치구모랭크2　Lv15（21）
-				RETURN [[キャラ:츠치구모]], 21
+				RETURN [[캐릭터:츠치구모]], 21
 			CASE IS < 40
 				;10%で세에레랭크2　Lv16（22）
-				RETURN [[キャラ:세에레]], 22
+				RETURN [[캐릭터:세에레]], 22
 			CASE IS < 50
 				;10%で광인특공대랭크2　Lv15(21)
-				RETURN [[キャラ:특공대]], 21
+				RETURN [[캐릭터:특공대]], 21
 			CASE IS < 60
 				;잇폰다타라
 				RETURN 664, 18
 			CASE IS < 70
 				;20%で다크엘프랭크2　Lv15（21）
-				RETURN [[キャラ:다크엘프]], 18
+				RETURN [[캐릭터:다크엘프]], 18
 			CASE IS < 90
 				;20%で랴난시랭크1　Lv18（21）
-				RETURN [[キャラ:랴난시]], 19
+				RETURN [[캐릭터:랴난시]], 19
 			CASE IS < 100
 				;10%で모ㆍ쇼보랭크1　Lv15（18）
-				RETURN [[キャラ:모ㆍ쇼보]], 18
+				RETURN [[캐릭터:모ㆍ쇼보]], 18
 		ENDSELECT
 	CASE 3
 	;３Ｆでの遭遇
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15%で좀비아미랭크3　Lv15（21）
-				RETURN [[キャラ:좀비아미]], 21
+				RETURN [[캐릭터:좀비아미]], 21
 			CASE IS < 25
 				;10%で포르네우스　Lv20
-				RETURN [[キャラ:포르네우스]], 23
+				RETURN [[캐릭터:포르네우스]], 23
 			CASE IS < 35
 				;10%で오니랭크1　Lv20
-				RETURN [[キャラ:오니]], 23
+				RETURN [[캐릭터:오니]], 23
 			CASE IS < 45
 				;10%で스쿠나히코나　Lv22
-				RETURN [[キャラ:스쿠나히코나]], 22
+				RETURN [[캐릭터:스쿠나히코나]], 22
 			CASE IS < 55
 				;10%で다크엘프랭크2　Lv15（21）
-				RETURN [[キャラ:다크엘프]], 21
+				RETURN [[캐릭터:다크엘프]], 21
 			CASE IS < 70
 				;15%で루살카랭크1　Lv18（21）
-				RETURN [[キャラ:루살카]], 21
+				RETURN [[캐릭터:루살카]], 21
 			CASE IS < 85
 				;15%で랴난시랭크1　Lv18（21）
-				RETURN [[キャラ:랴난시]], 21
+				RETURN [[캐릭터:랴난시]], 21
 			CASE IS < 100
 				;15%で오퀴페테2　Lv19（22）
-				RETURN [[キャラ:오퀴페테]], 22
+				RETURN [[캐릭터:오퀴페테]], 22
 		ENDSELECT
 ENDSELECT
 @E_ICHIGAYA
@@ -1445,11 +1445,11 @@ CALL AUTOMAP
 ;RETURN CSV番号 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:세에레]] , 3 + RAND:10 , CSVBASE([[キャラ:세에레]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:세에레]] , 3 + RAND:10 , CSVBASE([[캐릭터:세에레]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:오크]] , 3 + RAND:10 , CSVBASE([[キャラ:오크]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오크]] , 3 + RAND:10 , CSVBASE([[캐릭터:오크]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:좀비아미]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비아미]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비아미]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

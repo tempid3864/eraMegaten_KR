@@ -1187,7 +1187,7 @@ FOR LCOUNT, 0, CHARANUM
 		
 		;天堂真矢例外処理（あんまり上手な処理ではｒｙ
 		;口上とセットの演出なので、CFLAG:201が一定の範囲内にあるときのみ動作
-		IF NO:LCOUNT == [[キャラ:마야（무대소녀）]] && TALENT:LCOUNT:복종 && CFLAG:LCOUNT:201 > 0 && CFLAG:LCOUNT:201 < 5
+		IF NO:LCOUNT == [[캐릭터:마야（무대소녀）]] && TALENT:LCOUNT:복종 && CFLAG:LCOUNT:201 > 0 && CFLAG:LCOUNT:201 < 5
 			;中身は天堂真矢個別イベントに飛ばす、長いので。
 			CALL EVENT_93_텐도마야_복종할지안할지고르게하는미친년, LCOUNT
 			;返り値が1ならキラめきロスト処理をGOTOで飛ばす

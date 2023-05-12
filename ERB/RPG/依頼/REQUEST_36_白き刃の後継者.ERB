@@ -66,36 +66,36 @@ IF 의뢰플래그:36:0 == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:카즈토]],15,0,1
+		CALL SET_ENEMY,9,[[캐릭터:카즈토]],15,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 300
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,14,[[キャラ:아야메]],15,0,1
+		CALL SET_ENEMY,14,[[캐릭터:아야메]],15,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:헤르만]],15,0,1
+		CALL SET_ENEMY,10,[[캐릭터:헤르만]],15,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,13,[[キャラ:엔젤]],15,0,1
+		CALL SET_ENEMY,13,[[캐릭터:엔젤]],15,0,1
 		NAME:(CHARANUM-1) = 미야코
 		CALLNAME:(CHARANUM-1) = 미야코
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,15,[[キャラ:소악마리림]],15,0,1
+		CALL SET_ENEMY,15,[[캐릭터:소악마리림]],15,0,1
 		NAME:(CHARANUM-1) = 유메코
 		CALLNAME:(CHARANUM-1) = 유메코
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:오니]],15,0,1
+		CALL SET_ENEMY,8,[[캐릭터:오니]],15,0,1
 		NAME:(CHARANUM-1) = 미즈키
 		CALLNAME:(CHARANUM-1) = 미즈키
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 100
@@ -121,9 +121,9 @@ IF 의뢰플래그:36:0 == 0
 	CALL MESSAGE_WINDOW, "", "＞아야메 헤르만 미즈키 유메코 미야코가 노예가 되었다"
 	CALL MESSAGE_WINDOW, "", "＞에이다에게서 보수 50000엔을 얻었다"
 		MONEY += 50000
-		CALL ADD_NEW_COMPANION,[[キャラ:아야메]],0
-		CALL ADD_NEW_COMPANION,[[キャラ:헤르만]],0
-		CALL ADD_NEW_COMPANION,[[キャラ:엔젤]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:아야메]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:헤르만]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:엔젤]],0
 		IF RESULT == 1
 			LOCAL = RESULT:1
 			NAME:LOCAL = 텐카와 미야코
@@ -138,10 +138,10 @@ IF 의뢰플래그:36:0 == 0
 			ABL:LOCAL:스킬4 = [[스킬:파트라]]
 			ABL:LOCAL:스킬5 = [[스킬:메ㆍ디아]]
 			ABL:LOCAL:스킬6 = [[스킬:갈]]
-			ABL:LOCAL:변이 = [[キャラ:버쳐]]
+			ABL:LOCAL:변이 = [[캐릭터:버쳐]]
 			ABL:LOCAL:변이레벨 = 38
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:소악마리림]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:소악마리림]],0
 		IF RESULT == 1
 			LOCAL = RESULT:1
 			NAME:LOCAL = 히메유리 유메코 
@@ -150,10 +150,10 @@ IF 의뢰플래그:36:0 == 0
 			ABL:LOCAL:스킬6 = [[스킬:매혹물어뜯기]]
 			ABL:LOCAL:스킬7 = [[스킬:데ㆍ카쟈]]
 			ABL:LOCAL:스킬8 = [[스킬:영면의유혹]]
-			ABL:LOCAL:변이 = [[キャラ:서큐버스]]
+			ABL:LOCAL:변이 = [[캐릭터:서큐버스]]
 			ABL:LOCAL:변이레벨 = 39
 		ENDIF
-		CALL ADD_NEW_COMPANION, [[キャラ:오니]],0
+		CALL ADD_NEW_COMPANION, [[캐릭터:오니]],0
 		IF RESULT == 1
 			LOCAL = RESULT:1
 			NAME:LOCAL = 미즈키
@@ -197,34 +197,34 @@ ELSEIF 의뢰플래그:36:0 == 1
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:카즈토]],45,0,1
+			CALL SET_ENEMY,9,[[캐릭터:카즈토]],45,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 800
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,14,[[キャラ:이쿠네]],40,0,1
+			CALL SET_ENEMY,14,[[캐릭터:이쿠네]],40,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,13,[[キャラ:히지리]],40,0,1
+			CALL SET_ENEMY,13,[[캐릭터:히지리]],40,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,15,[[キャラ:킹프로스트]],40,0,1
+			CALL SET_ENEMY,15,[[캐릭터:킹프로스트]],40,0,1
 			NAME:(CHARANUM-1) = 카펠라
 			CALLNAME:(CHARANUM-1) = 카펠라
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,8,[[キャラ:크랙]],40,0,1
+			CALL SET_ENEMY,8,[[캐릭터:크랙]],40,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
-			CALL SET_ENEMY,10,[[キャラ:비트볼]],40,0,1
+			CALL SET_ENEMY,10,[[캐릭터:비트볼]],40,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
@@ -234,10 +234,10 @@ ELSEIF 의뢰플래그:36:0 == 1
 		FLAG:회화불능플래그 = 0
 		FLAG:선제기습취소 = 0
 	CALL MESSAGE_WINDOW, "", "＞카즈토 히지리 이쿠네 카펠라 크랙 숨어있던 마리아가 노예가 되었다"
-		CALL ADD_NEW_COMPANION,[[キャラ:카즈토]],0
-		CALL ADD_NEW_COMPANION,[[キャラ:히지리]],0
-		CALL ADD_NEW_COMPANION,[[キャラ:이쿠네]],0
-		CALL ADD_NEW_COMPANION,[[キャラ:킹프로스트]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:카즈토]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:히지리]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:이쿠네]],0
+		CALL ADD_NEW_COMPANION,[[캐릭터:킹프로스트]],0
 		IF RESULT == 1
 			LOCAL = RESULT:1
 			NAME:LOCAL = 카펠라
@@ -265,7 +265,7 @@ ELSEIF 의뢰플래그:36:0 == 1
 			TALENT:LOCAL:큰체형 = 0
 			BASE:LOCAL:검격 = 50
 			BASE:LOCAL:화염 = 50
-			ABL:LOCAL:변이 = [[キャラ:흐레스벨그]]
+			ABL:LOCAL:변이 = [[캐릭터:흐레스벨그]]
 			ABL:LOCAL:변이레벨 = 68
 			CSTR:LOCAL:30 = 마담을 주인으로 모시던 악마.
 			CSTR:LOCAL:31 = 평상시에는 고양이의 모습을 하고 있는 고위직 악마다.
@@ -280,8 +280,8 @@ ELSEIF 의뢰플래그:36:0 == 1
 			CSTR:LOCAL:11 = 내
 			CSTR:LOCAL:12 = 니
 		ENDIF
-		CALL ADD_NEW_COMPANION, [[キャラ:크랙]],0
-		CALL ADD_NEW_COMPANION, [[キャラ:마리아]],0
+		CALL ADD_NEW_COMPANION, [[캐릭터:크랙]],0
+		CALL ADD_NEW_COMPANION, [[캐릭터:마리아]],0
 	CALL MESSAGE_WINDOW, "", "＞이번에는 시라하 카즈토를 놓치지 않고 사로잡았다. 카즈토를 쓰러트린 것을 에이다에게 보고했다."
 	CALL MESSAGE_WINDOW, "에이다", "의뢰완수 축하드립니다. 또 의뢰를 할 지 모르므로 그때는 잘 부탁드리겠습니다."
 	CALL MESSAGE_WINDOW, "", "＞에이다는 당신의 눈을 응시했다."
@@ -308,28 +308,28 @@ ELSEIF 의뢰플래그:36:0 == 2
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:T95메두사]],40,0,1
+		CALL SET_ENEMY,9,[[캐릭터:T95메두사]],40,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,13,[[キャラ:에이다]],50,0,1
+		CALL SET_ENEMY,13,[[캐릭터:에이다]],50,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 800
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,14,[[キャラ:아셰라]],50,0,1
+		CALL SET_ENEMY,14,[[캐릭터:아셰라]],50,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,8,[[キャラ:T95골렘]],40,0,1
+		CALL SET_ENEMY,8,[[캐릭터:T95골렘]],40,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:T95골렘]],40,0,1
+		CALL SET_ENEMY,10,[[캐릭터:T95골렘]],40,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
@@ -345,7 +345,7 @@ ELSEIF 의뢰플래그:36:0 == 2
 	CALL MESSAGE_WINDOW, "", "＞아셰라 에이다가 노예가 되었다"
 	CALL MESSAGE_WINDOW, "", "＞그녀들의 장신구를 팔아 200000엔 분의 보수를 얻었다"
 	MONEY += 200000
-	CALL ADD_NEW_COMPANION,[[キャラ:아셰라]],0
-	CALL ADD_NEW_COMPANION,[[キャラ:에이다]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:아셰라]],0
+	CALL ADD_NEW_COMPANION,[[캐릭터:에이다]],500
 	의뢰플래그:36:0 = 3
 ENDIF

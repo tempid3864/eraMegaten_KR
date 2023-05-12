@@ -24,7 +24,7 @@ PRINTFORML
 PRINTFORMW 　＞＞%CALLNAME:MASTER%のセーフハウス＜＜
 PRINTFORML 
 ;코시로ちゃん(4559)が仲間に居て戦闘可能
-IF FINDCHARA_B([[キャラ:코시로]]) >= 1 && CFLAG:GETCHARA([[キャラ:코시로]]):전투참가불가능 < 1 && FLAG:나이트ㆍ테일진행도 >= 3
+IF FINDCHARA_B([[캐릭터:코시로]]) >= 1 && CFLAG:GETCHARA([[캐릭터:코시로]]):전투참가불가능 < 1 && FLAG:나이트ㆍ테일진행도 >= 3
 	PRINTFORMW ＞古代が突然%CALLNAME:MASTER%の元を訪ねてきた。
 	PRINTFORMW 「探偵さん探偵さん探偵さぁん、探偵さんってめしあちゃんオタクですよね？」
 	PRINTFORML
@@ -41,7 +41,7 @@ IF FINDCHARA_B([[キャラ:코시로]]) >= 1 && CFLAG:GETCHARA([[キャラ:코�
 	이벤트플래그:55:9 = 1
 
 ;쇼우지(4626)が仲間におらず無事な状態で解放している:フラグ確認ＯＫ(-1､-1,0)
-ELSEIF FINDCHARA_B([[キャラ:쇼우지]]) == -1 && 던전플래그:82:1 == -1 && 던전플래그:82:6 <= 3
+ELSEIF FINDCHARA_B([[캐릭터:쇼우지]]) == -1 && 던전플래그:82:1 == -1 && 던전플래그:82:6 <= 3
 	PRINTFORMW ＞ショウジ、と名乗る女性がが%CALLNAME:MASTER%の元を訪ねてきた。
 	PRINTFORML 
 	PRINTFORMW ＞どこの誰であったか確とは思い出せなかったのだが、名刺を出されて気が付いた。
@@ -52,9 +52,9 @@ ELSEIF FINDCHARA_B([[キャラ:쇼우지]]) == -1 && 던전플래그:82:1 == -1 
 	이벤트플래그:55:9 = 2
 		
 ;베스(4501)が仲間にいて戦闘可能:フラグ確認ＯＫ(1､-1,0)
-ELSEIF FINDCHARA_B([[キャラ:베스]]) >= 1 && CFLAG:GETCHARA([[キャラ:베스]]):전투참가불가능 < 1 
+ELSEIF FINDCHARA_B([[캐릭터:베스]]) >= 1 && CFLAG:GETCHARA([[캐릭터:베스]]):전투참가불가능 < 1 
 ;베스の二人称を呼び出す
-	LOCAL = GETCHARA([[キャラ:베스]])
+	LOCAL = GETCHARA([[캐릭터:베스]])
 	PRINTFORMW ＞ベスが突然%CALLNAME:MASTER%の元を訪ねてきた。
 	PRINTFORML
 	PRINTFORMW 「実はわたくし、メシア教団の信者の方の一部と今でもつながりがございまして、

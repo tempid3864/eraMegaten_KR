@@ -4,13 +4,13 @@
 ;스킬명
 @SKILL_NAME_2,ARG
 ;古代ちゃんが使用する場合ヒートウェーブにマイナーチェンジ。射程が延びる。
-IF SKILL_CHANGE(ARG, [[キャラ:코시로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코시로]])
 	RESULTS = 히트웨이브
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:트리니트로]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]])
 	RESULTS = 테일 블레이드
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) || FINDCHARA_M(U, [[キャラ:사이버스터]], [[キャラ:우즈키]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) || FINDCHARA_M(U, [[캐릭터:사이버스터]], [[캐릭터:우즈키]])
 	RESULTS = 척참격ㆍ언월
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RESULTS = 검장ㆍ발경
 ELSE
 	RESULTS = 히트웨이브
@@ -18,7 +18,7 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_2, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:트리니트로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]])
 	RETURN 90
 ELSE
 	RETURN 100
@@ -26,11 +26,11 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_2, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:트리니트로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]])
 	RETURN 295
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) 
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) 
 	RETURN 172
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RETURN 200
 ELSE
 	RETURN 195
@@ -38,7 +38,7 @@ ENDIF
 
 ;　최저공격횟수
 @SKILL_MINATTACKNUMBER_2,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) 
+IF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) 
 	RETURN 2
 ELSE
 	RETURN 1
@@ -46,7 +46,7 @@ ENDIF
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_2,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) 
+IF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) 
 	RETURN 2
 ELSE
 	RETURN 1
@@ -60,11 +60,11 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_2,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:트리니트로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]])
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:사이버스터]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) 
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) 
 	RETURN 30
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:쿄이치]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:쿄이치]])
 	RETURN 11
 ELSE
 	RETURN 10
@@ -91,11 +91,11 @@ RETURN 1
 
 ;　사거리
 @SKILL_RANGE_2,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코시로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코시로]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:사이버스터]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:사이버스터]])
 	RETURN 2
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:트리니트로]]) || SKILL_CHANGE(ARG, [[キャラ:우즈키]]) 
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]]) || SKILL_CHANGE(ARG, [[캐릭터:우즈키]]) 
 	RETURN 3
 ELSE
 	RETURN 1
@@ -123,7 +123,7 @@ RETURN 0
 
 ;속도보정
 @SKILL_SPEED_2, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:트리니트로]])
+IF SKILL_CHANGE(ARG, [[캐릭터:트리니트로]])
 	RETURN 0
 ELSE
 	RETURN 2
@@ -177,13 +177,13 @@ CALL ATTACK_FIELD,ARG,ARG:1,2
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:코시로]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:코시로]]
 	PRINTL 손에 든 무기를 옆으로 휘둘러 적 １열을 공격한다。후열 사용 가능。
-ELSEIF  FINDCHARA_M(U, [[キャラ:사이버스터]], [[キャラ:우즈키]])
+ELSEIF  FINDCHARA_M(U, [[캐릭터:사이버스터]], [[캐릭터:우즈키]])
 	PRINTL 손에 든 무기를 옆으로 휘둘러 날카로운 참기를 날리는 연격。참기를 날리는 타입이기 때문에 후열 사용 가능。
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:트리니트로]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:트리니트로]]
 	PRINTL 적 1열에 검격 상성의 대 데미지를 준다
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:쿄이치]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:쿄이치]])
 	PRINTL 기를 두른 검술로 적을 베어넘긴다。
 	PRINTL 적 1열에 검격 물리데미지를 준다。
 ELSE

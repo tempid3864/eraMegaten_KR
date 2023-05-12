@@ -44,12 +44,12 @@ PRINTFORMW 報酬:￥90000
 	SELECTCASE GET_ALI1(ABL:MASTER:속성LD)
 		CASE "Light"
 			PRINTL 
-			CALL ADD_NEW_COMPANION, [[キャラ:라파엘]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:라파엘]], 500
 		CASE "Neutral"
-			CALL ADD_NEW_COMPANION, [[キャラ:관성제군]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:관성제군]], 500
 		CASE "Dark"
 			PRINTL 
-			CALL ADD_NEW_COMPANION, [[キャラ:아자젤]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:아자젤]], 500
 	ENDSELECT
 	PRINTL 
 	PRINTFORMW  己と魂の起源を同じくするものを仲魔にした。どう使うかは、あなた次第だ
@@ -62,7 +62,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:스사노오]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:스사노오]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -86,10 +86,10 @@ PRINTFORMW 報酬:￥90000
 	PRINTFORMW 『私の声が聞こえるか。生まれてまもない命に宿った、私の声が』
 	PRINTFORMW 『私はルシフェル。世界の終わりに遣わされた大天使の魂なり』
 	LOCAL:99 = 0
-	LOCAL = GETCHARA([[キャラ:루시퍼]])
+	LOCAL = GETCHARA([[캐릭터:루시퍼]])
 	IF LOCAL == -1
-		CALL ADD_NEW_COMPANION([[キャラ:루시퍼]], 10000)
-		LOCAL = GETCHARA([[キャラ:루시퍼]])
+		CALL ADD_NEW_COMPANION([[캐릭터:루시퍼]], 10000)
+		LOCAL = GETCHARA([[캐릭터:루시퍼]])
 		BASE:LOCAL:LV = 66
 		BASE:LOCAL:힘 = 14
 		BASE:LOCAL:지혜 = 21
@@ -134,7 +134,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:아에슈마]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:아에슈마]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -158,7 +158,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:드루즈]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:드루즈]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -179,7 +179,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:인드라]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:인드라]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -200,7 +200,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:팔라스아테나]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:팔라스아테나]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -221,7 +221,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:아바돈]],68, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:아바돈]],68, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -242,7 +242,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:시바]],72, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:시바]],72, 1,0
 	NAME:(CHARANUM-1) = サルワ
 	CALLNAME:(CHARANUM-1) = サルワ
 	CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -269,7 +269,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:아카ㆍ마나흐]],72, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:아카ㆍ마나흐]],72, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -290,7 +290,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:아지ㆍ다하카]],72, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:아지ㆍ다하카]],72, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -313,7 +313,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:앙리ㆍ만유]],72, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:앙리ㆍ만유]],72, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -336,7 +336,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:앙리ㆍ만유]],76, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:앙리ㆍ만유]],76, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -358,7 +358,7 @@ PRINTFORMW 報酬:￥90000
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:앙리ㆍ만유]],80, 1,1
+	CALL SET_ENEMY,9, [[캐릭터:앙리ㆍ만유]],80, 1,1
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 10000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
@@ -382,7 +382,7 @@ PRINTFORMW 報酬:￥90000
 	PRINTFORML 『今の私を使いたいなら、この形になる。この舞台の赤子は、そうゆうものだろう？』
 
 
-	CALL LIFTING_A_BAN([[キャラ:루시퍼]])
+	CALL LIFTING_A_BAN([[캐릭터:루시퍼]])
 	PRINTW 報酬として名声400 \90000手に入れた。
 	MONEY += 90000
 	FLAG:명성 += 400

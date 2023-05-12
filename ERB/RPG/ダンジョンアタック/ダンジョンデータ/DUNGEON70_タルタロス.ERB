@@ -1009,7 +1009,7 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:프리스티스]],10,0,1
+				CALL SET_ENEMY,9,[[캐릭터:프리스티스]],10,0,1
 				ABL:(CHARANUM-1):스킬4 = 802
 				ABL:(CHARANUM-1):스킬5 = 2416
 				ABL:(CHARANUM-1):스킬6 = 2415
@@ -1056,7 +1056,7 @@ CASE 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,8,[[キャラ:엠프레스]],16,0,1
+					CALL SET_ENEMY,8,[[캐릭터:엠프레스]],16,0,1
 					ABL:(CHARANUM-1):아이템1 = 1012
 					ABL:(CHARANUM-1):입수확률1 = 100
 					ABL:(CHARANUM-1):스킬3 = 604;패러다임시프트
@@ -1067,7 +1067,7 @@ CASE 4
 					ABL:(CHARANUM-1):스킬8 = 2404
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
-					CALL SET_ENEMY,10,[[キャラ:엠퍼러]],16,0,1
+					CALL SET_ENEMY,10,[[캐릭터:엠퍼러]],16,0,1
 					ABL:(CHARANUM-1):아이템1 = 1013
 					ABL:(CHARANUM-1):입수확률1 = 100
 					ABL:(CHARANUM-1):스킬2 = 208
@@ -1127,7 +1127,7 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:하이에로펀트]],24,0,1
+				CALL SET_ENEMY,9,[[캐릭터:하이에로펀트]],24,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 3325
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):스킬8 = 2413
@@ -1142,7 +1142,7 @@ CASE 4
 				PRINTL 러버즈가 나타났다!
 				PRINTW 
 				FLAG:기습플래그 = 1
-				CALL SET_ENEMY,9,[[キャラ:러버즈]],25,0,1
+				CALL SET_ENEMY,9,[[캐릭터:러버즈]],25,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 3326
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):스킬6 = 2402
@@ -1174,7 +1174,7 @@ CASE 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:아이기스]],30,0,1
+					CALL SET_ENEMY,9,[[캐릭터:아이기스]],30,0,1
 					EQUIP:(CHARANUM-1):검 = [[아이템:섀도우니들]]
 					EQUIP:(CHARANUM-1):총 = [[아이템:귀뢰포]]
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
@@ -1209,7 +1209,7 @@ CASE 4
 					ELSEIF RESULT == 1
 						던전플래그:70:70 = 2
 						PRINTW 아이기스를 손에 넣었다.
-						CALL ADD_NEW_COMPANION,[[キャラ:아이기스]],200
+						CALL ADD_NEW_COMPANION,[[캐릭터:아이기스]],200
 						PRINTW 보수로 ￥50000을 얻었다.
 						MONEY += 50000
 						던전플래그:70:(16) = (-1)
@@ -1243,12 +1243,12 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:체리옷]],32,0,1
+				CALL SET_ENEMY,9,[[캐릭터:체리옷]],32,0,1
 				ABL:(CHARANUM-1):아이템1 = 1010
 				ABL:(CHARANUM-1):입수확률1 = 100
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
-				CALL SET_ENEMY,14,[[キャラ:저스티스]],32,0,1
+				CALL SET_ENEMY,14,[[캐릭터:저스티스]],32,0,1
 				ABL:(CHARANUM-1):아이템1 = 1014
 				ABL:(CHARANUM-1):입수확률1 = 100
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -1272,7 +1272,7 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:허밋]],40,0,1
+				CALL SET_ENEMY,9,[[캐릭터:허밋]],40,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):아이템1 = 1011
 				ABL:(CHARANUM-1):입수확률1 = 100
@@ -1310,7 +1310,7 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:스트렝스]],47,0,1
+				CALL SET_ENEMY,9,[[캐릭터:스트렝스]],47,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):아이템1 = 1010
 				ABL:(CHARANUM-1):입수확률1 = 100
@@ -1327,7 +1327,7 @@ CASE 4
 				MAXBASE:(CHARANUM-1):전술 = -50
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
-				CALL SET_ENEMY,14,[[キャラ:포츈]],47,0,1
+				CALL SET_ENEMY,14,[[캐릭터:포츈]],47,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):아이템1 = 1015
 				ABL:(CHARANUM-1):입수확률1 = 100
@@ -1385,7 +1385,7 @@ CASE 4
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:치도리]],57,0,1
+					CALL SET_ENEMY,9,[[캐릭터:치도리]],57,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					EQUIP:(CHARANUM-1):악세서리 = [[아이템:스테미너벨트]]
 					MAXBASE:(CHARANUM-1):힘   += 2
@@ -1440,7 +1440,7 @@ CASE 4
 					ELSEIF RESULT == 1
 						던전플래그:70:71 = 2
 						PRINTW 치도리를 손에 넣었다.
-						CALL ADD_NEW_COMPANION,[[キャラ:치도리]],200
+						CALL ADD_NEW_COMPANION,[[캐릭터:치도리]],200
 					ELSE
 						GOTO INPUT_LOOP_CHIDORI
 					ENDIF
@@ -1484,21 +1484,21 @@ CASE 4
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				CALL SET_ENEMY,7,3229,50,1,0
-				CALL SET_ENEMY,8,[[キャラ:석상]],50,0,0
+				CALL SET_ENEMY,8,[[캐릭터:석상]],50,0,0
 				ABL:(CHARANUM-1):스킬1=703
-				CALL SET_ENEMY,9,[[キャラ:석상]],50,0,0
+				CALL SET_ENEMY,9,[[캐릭터:석상]],50,0,0
 				ABL:(CHARANUM-1):스킬1=903
 				BASE:(CHARANUM-1):인내력 += 5
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
-				CALL SET_ENEMY,10,[[キャラ:석상]],50,0,0
+				CALL SET_ENEMY,10,[[캐릭터:석상]],50,0,0
 				ABL:(CHARANUM-1):스킬1=803
 				CALL SET_ENEMY,11,3229,50,1,0
 				CALL SET_ENEMY,12,3229,50,1,0
 				CALL SET_ENEMY,13,3229,50,1,0
 				CALL SET_ENEMY,15,3229,50,1,0
 				CALL SET_ENEMY,16,3229,50,1,0
-				CALL SET_ENEMY,14,[[キャラ:행드맨]],64,0,1
+				CALL SET_ENEMY,14,[[캐릭터:행드맨]],64,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 3332
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				ABL:(CHARANUM-1):스킬1 = 2402
@@ -1790,7 +1790,7 @@ CASE 4
 					PRINTW 엘리자베스를 손에 넣었다.
 					CALL ADD_NEW_COMPANION,4555,200
 					IF RESULT == 1 
-						LOCAL = (GETCHARA([[キャラ:엘리자베스]]))
+						LOCAL = (GETCHARA([[캐릭터:엘리자베스]]))
 						CFLAG:LOCAL:전투참가불가능 = -1
 						;新페르소나処理
 						IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -2359,7 +2359,7 @@ ELSEIF 던전플래그:70:(50) > 39 &&던전플래그:70:(50) < 44
 			RETURN 1010, 54
 		CASE IS < 90
 			;10%で천사스로네
-			RETURN [[キャラ:스로네]], 57
+			RETURN [[캐릭터:스로네]], 57
 		CASE IS < 100
 			;10%で용신케찰코아틀
 			RETURN 758, 59
@@ -2378,7 +2378,7 @@ ELSEIF 던전플래그:70:(50) > 44 &&던전플래그:70:(50) < 48
 			RETURN 3226, 61
 		CASE IS < 40
 			;10%で탐욕의마야
-			RETURN [[キャラ:탐욕의마야]], 60
+			RETURN [[캐릭터:탐욕의마야]], 60
 		CASE IS < 55
 			;15%で박애의큐피드
 			RETURN 3224, 60
@@ -2393,7 +2393,7 @@ ELSEIF 던전플래그:70:(50) > 44 &&던전플래그:70:(50) < 48
 			RETURN 914, 64
 		CASE IS < 90
 			;10%で영조쟈타유
-			RETURN [[キャラ:쟈타유]], 65
+			RETURN [[캐릭터:쟈타유]], 65
 		CASE IS < 95
 			;5%で지모신두르가
 			RETURN 6, 65
@@ -3600,7 +3600,7 @@ RETURN 0
 		PRINTFORMW ＊앗 이런＊
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9,[[キャラ:거둬들이는자]],LOCAL:10,0,0
+		CALL SET_ENEMY,9,[[캐릭터:거둬들이는자]],LOCAL:10,0,0
 		MAXBASE:(CHARANUM-1):만능 = 100
 		ABL:(CHARANUM-1):스킬1 = 706
 		ABL:(CHARANUM-1):스킬2 = 1606
@@ -4362,7 +4362,7 @@ CFLAG:ARG:입력행동 = LOCAL:1
 ;
 @EVENT_BATTLE_ACTEND_DUNGEON70
 #DIM CHARA
-IF NO:(CHARANUM-1) == [[キャラ:뉵스아바타]]
+IF NO:(CHARANUM-1) == [[캐릭터:뉵스아바타]]
 	CHARA = CHARANUM - 1
 	IF CFLAG:CHARA:이악물기플래그
 		FOR LOCAL,0,17
@@ -5954,7 +5954,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:P3남주인공]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:P3남주인공]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6001,7 +6001,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:P3여주인공]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:P3여주인공]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6048,7 +6048,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:유카리]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:유카리]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6092,7 +6092,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:준페이]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:준페이]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6125,7 +6125,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:사나다]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:사나다]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6172,7 +6172,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:미츠루]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:미츠루]],LOCAL,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 미츠루
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
@@ -6223,7 +6223,7 @@ RETURN 0
 					FLAG:선제기습취소 = 1
 					SIF LOCAL < 30
 						LOCAL = 30
-					CALL SET_ENEMY,9,[[キャラ:아이기스]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:아이기스]],LOCAL,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
@@ -6258,7 +6258,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:코로마루]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:코로마루]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6298,7 +6298,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:아마다]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:아마다]],LOCAL,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -6344,7 +6344,7 @@ RETURN 0
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9,[[キャラ:아라가키]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:아라가키]],LOCAL,0,1
 					EQUIP:(CHARANUM-1):몸통 = [[아이템:보스의갑옷]]
 					CFLAG:(CHARANUM-1):ＨＰ보정 = +500
 					CFLAG:(CHARANUM-1):ＭＰ보정 = +500
@@ -6392,7 +6392,7 @@ RETURN 0
 					FLAG:선제기습취소 = 1
 					SIF LOCAL < 60
 						LOCAL = 60
-					CALL SET_ENEMY,9,[[キャラ:메티스]],LOCAL,0,1
+					CALL SET_ENEMY,9,[[캐릭터:메티스]],LOCAL,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데카쟈요원
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 					CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -6463,57 +6463,57 @@ RETURN 0
 		PRINTW 을(를) 손에 넣었다
 	$TARGETSLAVE
 		IF 던전플래그:70:93 == 1
-			CALL ADD_NEW_COMPANION,[[キャラ:P3남주인공]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:P3남주인공]],200
 			SIF 던전플래그:70:10 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:10 = (-1)
 		ELSEIF 던전플래그:70:93 == 2
-			CALL ADD_NEW_COMPANION,[[キャラ:P3여주인공]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:P3여주인공]],200
 			SIF 던전플래그:70:11 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:11 = (-1)
 		ELSEIF 던전플래그:70:93 == 3
-			CALL ADD_NEW_COMPANION,[[キャラ:유카리]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:유카리]],200
 			SIF 던전플래그:70:12 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:12 = (-1)
 		ELSEIF 던전플래그:70:93 == 4
-			CALL ADD_NEW_COMPANION,[[キャラ:준페이]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:준페이]],200
 			SIF 던전플래그:70:13 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:13 = (-1)
 		ELSEIF 던전플래그:70:93 == 5
-			CALL ADD_NEW_COMPANION,[[キャラ:사나다]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:사나다]],200
 			SIF 던전플래그:70:14 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:14 = (-1)
 		ELSEIF 던전플래그:70:93 == 6
-			CALL ADD_NEW_COMPANION,[[キャラ:미츠루]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:미츠루]],200
 			SIF 던전플래그:70:15 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:15 = (-1)
 		ELSEIF 던전플래그:70:93 == 7
-			CALL ADD_NEW_COMPANION,[[キャラ:아이기스]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:아이기스]],200
 			SIF 던전플래그:70:16 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:16 = (-1)
 		ELSEIF 던전플래그:70:93 == 8
-			CALL ADD_NEW_COMPANION,[[キャラ:코로마루]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:코로마루]],200
 			SIF 던전플래그:70:17 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:17 = (-1)
 		ELSEIF 던전플래그:70:93 == 9
-			CALL ADD_NEW_COMPANION,[[キャラ:아마다]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:아마다]],200
 			SIF 던전플래그:70:18 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:18 = (-1)
 		ELSEIF 던전플래그:70:93 == 10
-			CALL ADD_NEW_COMPANION,[[キャラ:아라가키]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:아라가키]],200
 			SIF 던전플래그:70:19 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:19 = (-1)
 		ELSEIF 던전플래그:70:93 == 11
-			CALL ADD_NEW_COMPANION,[[キャラ:메티스]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:메티스]],200
 			SIF 던전플래그:70:21 >= 8
 			CALL BATTLE_POSSIBLE
 			던전플래그:70:21 = (-1)
@@ -6611,48 +6611,48 @@ RETURN
 SELECTCASE RAND:21
 	CASE 0
 		SIF RAND:10 == 1
-			RETURN [[キャラ:거둬들이는자]] , 3 + RAND:3 , CSVBASE([[キャラ:거둬들이는자]] , GETNUM(BASE , "LV") , 0) + RAND:3
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+			RETURN [[캐릭터:거둬들이는자]] , 3 + RAND:3 , CSVBASE([[캐릭터:거둬들이는자]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:사갑충]] , 3 + RAND:10 , CSVBASE([[キャラ:사갑충]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:사갑충]] , 3 + RAND:10 , CSVBASE([[캐릭터:사갑충]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:H애니멀]] , 3 + RAND:10 , CSVBASE([[キャラ:H애니멀]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:H애니멀]] , 3 + RAND:10 , CSVBASE([[캐릭터:H애니멀]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:R포트]] , 3 + RAND:10 , CSVBASE([[キャラ:R포트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:R포트]] , 3 + RAND:10 , CSVBASE([[캐릭터:R포트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 4
-		RETURN [[キャラ:강철의기가스]] , 3 + RAND:10 , CSVBASE([[キャラ:강철의기가스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:강철의기가스]] , 3 + RAND:10 , CSVBASE([[캐릭터:강철의기가스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 5
-		RETURN [[キャラ:풍뢰의밸런서]] , 3 + RAND:10 , CSVBASE([[キャラ:풍뢰의밸런서]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:풍뢰의밸런서]] , 3 + RAND:10 , CSVBASE([[캐릭터:풍뢰의밸런서]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 6
-		RETURN [[キャラ:아크엔젤]] , 3 + RAND:10 , CSVBASE([[キャラ:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아크엔젤]] , 3 + RAND:10 , CSVBASE([[캐릭터:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 7
-		RETURN [[キャラ:교조의탑]] , 3 + RAND:10 , CSVBASE([[キャラ:교조의탑]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:교조의탑]] , 3 + RAND:10 , CSVBASE([[캐릭터:교조의탑]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 8
-		RETURN [[キャラ:황금충]] , 3 + RAND:10 , CSVBASE([[キャラ:황금충]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:황금충]] , 3 + RAND:10 , CSVBASE([[캐릭터:황금충]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 9
-		RETURN [[キャラ:정의의검]] , 3 + RAND:10 , CSVBASE([[キャラ:정의의검]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:정의의검]] , 3 + RAND:10 , CSVBASE([[캐릭터:정의의검]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 10
-		RETURN [[キャラ:미노타4호]] , 3 + RAND:10 , CSVBASE([[キャラ:미노타4호]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:미노타4호]] , 3 + RAND:10 , CSVBASE([[캐릭터:미노타4호]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 11
-		RETURN [[キャラ:마탄의포좌]] , 3 + RAND:10 , CSVBASE([[キャラ:마탄의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:마탄의포좌]] , 3 + RAND:10 , CSVBASE([[캐릭터:마탄의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 12
-		RETURN [[キャラ:개선의기사]] , 3 + RAND:10 , CSVBASE([[キャラ:개선의기사]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:개선의기사]] , 3 + RAND:10 , CSVBASE([[캐릭터:개선의기사]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 13
-		RETURN [[キャラ:백호]] , 3 + RAND:10 , CSVBASE([[キャラ:백호]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:백호]] , 3 + RAND:10 , CSVBASE([[캐릭터:백호]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 14
-		RETURN [[キャラ:진홍의포좌]] , 3 + RAND:10 , CSVBASE([[キャラ:진홍의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:진홍의포좌]] , 3 + RAND:10 , CSVBASE([[캐릭터:진홍의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 15
-		RETURN [[キャラ:스로네]] , 3 + RAND:10 , CSVBASE([[キャラ:스로네]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:스로네]] , 3 + RAND:10 , CSVBASE([[캐릭터:스로네]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 16
-		RETURN [[キャラ:피의헤카톤케일]] , 3 + RAND:10 , CSVBASE([[キャラ:피의헤카톤케일]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:피의헤카톤케일]] , 3 + RAND:10 , CSVBASE([[캐릭터:피의헤카톤케일]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 17
-		RETURN [[キャラ:킹캐슬]] , 3 + RAND:10 , CSVBASE([[キャラ:킹캐슬]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:킹캐슬]] , 3 + RAND:10 , CSVBASE([[캐릭터:킹캐슬]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 18
-		RETURN [[キャラ:펜리르]] , 3 + RAND:10 , CSVBASE([[キャラ:펜리르]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:펜리르]] , 3 + RAND:10 , CSVBASE([[캐릭터:펜리르]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 19
-		RETURN [[キャラ:슈브＝니그라스]] , 3 + RAND:10 , CSVBASE([[キャラ:슈브＝니그라스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:슈브＝니그라스]] , 3 + RAND:10 , CSVBASE([[캐릭터:슈브＝니그라스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 20
-		RETURN [[キャラ:세례의포좌]] , 3 + RAND:10 , CSVBASE([[キャラ:세례의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:세례의포좌]] , 3 + RAND:10 , CSVBASE([[캐릭터:세례의포좌]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

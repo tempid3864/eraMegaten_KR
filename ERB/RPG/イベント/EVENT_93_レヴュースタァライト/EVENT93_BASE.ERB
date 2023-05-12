@@ -58,7 +58,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 	LOADGLOBAL
 	
 	;仕様変更に伴うセーブデータの互換を保つ処理
-	LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 	;顔グラ解禁されてない場合
 	IF LOCAL > -1 && CFLAG:LOCAL:제한얼굴이미지개방 < 1
 		;愛城華恋トップスタァイベントを通過しているのなら
@@ -80,7 +80,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 		ENDIF
 	ENDIF
 	;以下同じ（For使えという意見は甘んじて受け入れる）
-	LOCAL = GETCHARA([[キャラ:쥰나]])
+	LOCAL = GETCHARA([[캐릭터:쥰나]])
 	IF LOCAL > -1 && CFLAG:LOCAL:제한얼굴이미지개방 < 1
 		IF 다이바나나의기억:3:3
 			CFLAG:LOCAL:제한얼굴이미지개방 = 1
@@ -95,7 +95,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 				CFLAG:LOCAL:SHOP얼굴이미지 = 0
 		ENDIF
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 	IF LOCAL > -1 && CFLAG:LOCAL:제한얼굴이미지개방 < 1
 		IF 다이바나나의기억:3:5
 			CFLAG:LOCAL:제한얼굴이미지개방 = 1
@@ -110,7 +110,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 				CFLAG:LOCAL:SHOP얼굴이미지 = 0
 		ENDIF
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 	IF LOCAL > -1 && CFLAG:LOCAL:제한얼굴이미지개방 < 1
 		IF 다이바나나의기억:3:8
 			CFLAG:LOCAL:제한얼굴이미지개방 = 1
@@ -125,7 +125,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 				CFLAG:LOCAL:SHOP얼굴이미지 = 0
 		ENDIF
 	ENDIF
-	LOCAL = GETCHARA([[キャラ:클로딘]])
+	LOCAL = GETCHARA([[캐릭터:클로딘]])
 	IF LOCAL > -1 && CFLAG:LOCAL:제한얼굴이미지개방 < 1
 		IF 다이바나나의기억:3:9
 			CFLAG:LOCAL:제한얼굴이미지개방 = 1
@@ -156,7 +156,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 		IF 보컬리스트ㆍ세이렌진행 > 1
 			FOR LOCAL, 0, CHARANUM
 				;劇場憑きのセイレーンはここで判定
-				IF NO:LOCAL == [[キャラ:세이렌]] && CFLAG:LOCAL:998 == 1
+				IF NO:LOCAL == [[캐릭터:세이렌]] && CFLAG:LOCAL:998 == 1
 					先生の数 ++
 					BREAK
 				ENDIF
@@ -166,7 +166,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 		IF 시나리오라이터ㆍ지크프리트진행 > 1
 			FOR LOCAL, 0, CHARANUM
 				;劇場憑きのジークフリートはここで判定
-				IF NO:LOCAL == [[キャラ:지크프리트]] && CFLAG:LOCAL:998 == 1
+				IF NO:LOCAL == [[캐릭터:지크프리트]] && CFLAG:LOCAL:998 == 1
 					先生の数 ++
 					BREAK
 				ENDIF
@@ -195,7 +195,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 		RETURN 1
 	;先生ズとの顔合わせ後、劇場憑き悪魔のうち、セイレーンとジークフリートがいる
 	;2022/04/30　全員実装
-	ELSEIF 이벤트플래그:93:0 == 11 && 先生の数 > 1 && (이벤트플래그:93:10 == [[キャラ:카렌（무대소녀）]] || 이벤트플래그:93:10 == [[キャラ:히카리]] || 이벤트플래그:93:10 == [[キャラ:마히루]] || 이벤트플래그:93:10 == [[キャラ:쥰나]] || 이벤트플래그:93:10 == [[キャラ:후타바（무대소녀）]] || 이벤트플래그:93:10 == [[キャラ:카오루코]] || 이벤트플래그:93:10 == [[キャラ:나나]] || 이벤트플래그:93:10 == [[キャラ:마야（무대소녀）]] || 이벤트플래그:93:10 == [[キャラ:클로딘]]) && (EVENT93_人数確認() > 8)
+	ELSEIF 이벤트플래그:93:0 == 11 && 先生の数 > 1 && (이벤트플래그:93:10 == [[캐릭터:카렌（무대소녀）]] || 이벤트플래그:93:10 == [[캐릭터:히카리]] || 이벤트플래그:93:10 == [[캐릭터:마히루]] || 이벤트플래그:93:10 == [[캐릭터:쥰나]] || 이벤트플래그:93:10 == [[캐릭터:후타바（무대소녀）]] || 이벤트플래그:93:10 == [[캐릭터:카오루코]] || 이벤트플래그:93:10 == [[캐릭터:나나]] || 이벤트플래그:93:10 == [[캐릭터:마야（무대소녀）]] || 이벤트플래그:93:10 == [[캐릭터:클로딘]]) && (EVENT93_人数確認() > 8)
 		LOCAL = EVENT93_推しの位置取得()
 		;推しのレベルが低すぎる場合、怒られる
 		IF BASE:LOCAL:LV < 40
@@ -207,7 +207,7 @@ SIF GETBIT(FLAG:이벤트출현2,93 - 64)
 	;合宿に送ったあと
 	ELSEIF (이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13) && 先生の数 > 1 && 이벤트플래그:93:10 > 0
 		SELECTCASE 이벤트플래그:93:10
-			CASE [[キャラ:나나]]
+			CASE [[캐릭터:나나]]
 				IF 다이바나나의기억_L:0:1 < 3
 					RESULTS = （EX:RSL）빛나는 무지개와도 같은 행복한 나날을, 영원히
 				ELSE
@@ -252,7 +252,7 @@ IF 이벤트플래그:93:0 > 8
 	IF 보컬리스트ㆍ세이렌진행 > 1
 		FOR LOCAL, 0, CHARANUM
 			;劇場憑きのセイレーンはここで判定
-			IF NO:LOCAL == [[キャラ:세이렌]] && CFLAG:LOCAL:998 == 1
+			IF NO:LOCAL == [[캐릭터:세이렌]] && CFLAG:LOCAL:998 == 1
 				先生の数 ++
 				BREAK
 			ENDIF
@@ -262,7 +262,7 @@ IF 이벤트플래그:93:0 > 8
 	IF 시나리오라이터ㆍ지크프리트진행 > 1
 		FOR LOCAL, 0, CHARANUM
 			;劇場憑きのジークフリートはここで判定
-			IF NO:LOCAL == [[キャラ:지크프리트]] && CFLAG:LOCAL:998 == 1
+			IF NO:LOCAL == [[캐릭터:지크프리트]] && CFLAG:LOCAL:998 == 1
 				先生の数 ++
 				BREAK
 			ENDIF
@@ -272,7 +272,7 @@ ENDIF
 
 
 ;FOR LOCAL, 0, CHARANUM
-;	IF GROUPMATCH(NO:LOCAL, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
+;	IF GROUPMATCH(NO:LOCAL, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
 ;		わたしたちは舞台少女 += @"%CSVCALLNAME(NO:LOCAL)%_"
 ;		舞台少女の人数 += 1
 ;	ENDIF
@@ -577,7 +577,7 @@ ELSEIF 이벤트플래그:93:0 == 9
 ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生の数 > 1
 		PRINTL 
 		;大場の場合
-		IF 이벤트플래그:93:10 == [[キャラ:나나]]
+		IF 이벤트플래그:93:10 == [[캐릭터:나나]]
 			;톱스타 경험이 완료된 경우, 파박 끝난다
 			IF 다이바나나의기억_L:0:1 > 4
 				PRINTW 당신이 지하극장으로 발길을 옮기자, 이미 모든 것이 끝나 있었다.
@@ -706,7 +706,7 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 		IF RESULT == 0
 			
 			;大場の場合
-			IF 이벤트플래그:93:10 == [[キャラ:나나]]
+			IF 이벤트플래그:93:10 == [[캐릭터:나나]]
 				;まだループを認識してない
 				IF 다이바나나의기억_L:0:1 < 3
 					PRINTW 당신이 지하극장에 뛰어들어가니, 다이바 나나가 웃고 있었다.
@@ -729,7 +729,7 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 					PRINTW 푸욱. 무거운 소리를 내며, 나나는 일본도를 무대의 한가운데에 꽂아세웠다.
 					PRINTL
 					PRINTW 「내가 바로 스타다」
-					LOCAL:0 = GETCHARA([[キャラ:나나]])
+					LOCAL:0 = GETCHARA([[캐릭터:나나]])
 					BASE:(LOCAL:0):힘 += 3
 					BASE:(LOCAL:0):지혜 += 3
 					BASE:(LOCAL:0):마력 += 3
@@ -806,7 +806,7 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 						PRINTL
 						PRINTW 그녀의 좌우에는, 여덟 켤레의 부츠가, 쓰러진 것처럼 널브러져 있었다.
 						
-						LOCAL:0 = GETCHARA([[キャラ:나나]])
+						LOCAL:0 = GETCHARA([[캐릭터:나나]])
 						BASE:(LOCAL:0):힘 += 3
 						BASE:(LOCAL:0):지혜 += 3
 						BASE:(LOCAL:0):마력 += 3
@@ -982,15 +982,15 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 			
 			;エラー落ち避けのおまじない
 			SELECTCASE 이벤트플래그:93:10
-				CASE [[キャラ:카렌（무대소녀）]]
-				CASE [[キャラ:히카리]]
-				CASE [[キャラ:쥰나]]
-				CASE [[キャラ:마히루]]
-				CASE [[キャラ:후타바（무대소녀）]]
-				CASE [[キャラ:카오루코]]
-				CASE [[キャラ:나나]]
-				CASE [[キャラ:마야（무대소녀）]]
-				CASE [[キャラ:클로딘]]
+				CASE [[캐릭터:카렌（무대소녀）]]
+				CASE [[캐릭터:히카리]]
+				CASE [[캐릭터:쥰나]]
+				CASE [[캐릭터:마히루]]
+				CASE [[캐릭터:후타바（무대소녀）]]
+				CASE [[캐릭터:카오루코]]
+				CASE [[캐릭터:나나]]
+				CASE [[캐릭터:마야（무대소녀）]]
+				CASE [[캐릭터:클로딘]]
 				;該当なし（バグった）
 				CASEELSE
 					PRINTW 『읏！　최애 무대소녀를 제대로 못 얻었구나！』
@@ -1009,23 +1009,23 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 			CALL INSERT_POSITION, 3, EVENT93_推しの位置取得()
 			
 			SELECTCASE 이벤트플래그:93:10
-				CASE [[キャラ:카렌（무대소녀）]]
+				CASE [[캐릭터:카렌（무대소녀）]]
 					CALL EVENT_93_愛城華恋_04
-				CASE [[キャラ:히카리]]
+				CASE [[캐릭터:히카리]]
 					CALL EVENT_93_神楽ひかり_04
-				CASE [[キャラ:쥰나]]
+				CASE [[캐릭터:쥰나]]
 					CALL EVENT_93_星見純那_04
-				CASE [[キャラ:마히루]]
+				CASE [[캐릭터:마히루]]
 					CALL EVENT_93_露崎まひる_04
-				CASE [[キャラ:후타바（무대소녀）]]
+				CASE [[캐릭터:후타바（무대소녀）]]
 					CALL EVENT_93_石動双葉_04
-				CASE [[キャラ:카오루코]]
+				CASE [[캐릭터:카오루코]]
 					CALL EVENT_93_花柳香子_04
-				CASE [[キャラ:나나]]
+				CASE [[캐릭터:나나]]
 					CALL EVENT_93_大場なな_04
-				CASE [[キャラ:마야（무대소녀）]]
+				CASE [[캐릭터:마야（무대소녀）]]
 					CALL EVENT_93_天堂真矢_04
-				CASE [[キャラ:클로딘]]
+				CASE [[캐릭터:클로딘]]
 					CALL EVENT_93_西條クロディーヌ_04
 					
 				;該当なし（バグった）
@@ -1059,7 +1059,7 @@ ELSEIF 이벤트플래그:93:0 == 12 || 이벤트플래그:93:0 == 13 && 先生�
 			CALL EVENT_93_FLAG_RESET
 		ELSE
 			;大場の場合
-			IF 이벤트플래그:93:10 == [[キャラ:나나]]
+			IF 이벤트플래그:93:10 == [[캐릭터:나나]]
 				;とくになし
 			ELSEIF 이벤트플래그:93:0 == 12
 				PRINTW 「……서둘러, 저녀석들을 소중하게 생각한다면」
@@ -1099,7 +1099,7 @@ CUSTOMDRAWLINE =
 	ELSE
 		;存在しない、または崩壊している、または服従系陥落、または戦闘参加不能
 		;その場合はイベントが進行しない
-		LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+		LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 		IF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			SETCOLOR 0x2e2e41
 				PRINTL [-]공연미정
@@ -1120,7 +1120,7 @@ CUSTOMDRAWLINE =
 	;ELSE
 		;存在しない、または崩壊している、または服従系陥落、または戦闘参加不能
 		;その場合はイベントが進行しない
-		LOCAL = GETCHARA([[キャラ:히카리]])
+		LOCAL = GETCHARA([[캐릭터:히카리]])
 		IF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			SETCOLOR 0x2e2e41
 				PRINTL [-]공연미정
@@ -1154,7 +1154,7 @@ CUSTOMDRAWLINE =
 	ELSE
 		;存在しない、または非戦闘員化している、または崩壊している、または服従系陥落、または戦闘参加不能
 		;その場合はイベントが進行しない
-		LOCAL = GETCHARA([[キャラ:쥰나]])
+		LOCAL = GETCHARA([[캐릭터:쥰나]])
 		IF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			SETCOLOR 0x2e2e41
 				PRINTL [-]공연미정
@@ -1189,7 +1189,7 @@ CUSTOMDRAWLINE =
 	ELSE
 		;存在しない、または非戦闘員化している、または崩壊している、または服従系陥落、または戦闘参加不能
 		;その場合はイベントが進行しない
-		LOCAL = GETCHARA([[キャラ:마히루]])
+		LOCAL = GETCHARA([[캐릭터:마히루]])
 		IF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			SETCOLOR 0x2e2e41
 				PRINTL [-]공연미정
@@ -1226,10 +1226,10 @@ CUSTOMDRAWLINE =
 		;その場合はイベントが進行しない
 		;京都組はセットで判定
 		LOCAL:1 = 0
-		LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+		LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 		SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			LOCAL:1 = -1
-		LOCAL = GETCHARA([[キャラ:카오루코]])
+		LOCAL = GETCHARA([[캐릭터:카오루코]])
 		SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			LOCAL:1 = -1
 		
@@ -1252,10 +1252,10 @@ CUSTOMDRAWLINE =
 	;その場合はイベントが進行しない
 	;京都組はセットで判定
 	LOCAL:1 = 0
-	LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 	SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 		LOCAL:1 = -1
-	LOCAL = GETCHARA([[キャラ:카오루코]])
+	LOCAL = GETCHARA([[캐릭터:카오루코]])
 	SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 		LOCAL:1 = -1
 	;ぶぶ漬け
@@ -1299,7 +1299,7 @@ CUSTOMDRAWLINE =
 	ELSE
 		;存在しない、または非戦闘員化している、または崩壊している、または服従系陥落、または戦闘参加不能
 		;その場合はイベントが進行しない
-		LOCAL = GETCHARA([[キャラ:나나]])
+		LOCAL = GETCHARA([[캐릭터:나나]])
 		IF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			SETCOLOR 0x2e2e41
 				PRINTL [-]공연미정
@@ -1336,10 +1336,10 @@ CUSTOMDRAWLINE =
 		;その場合はイベントが進行しない
 		;마야（무대소녀）クロはセットで判定
 		LOCAL:2 = 0
-		LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+		LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 		SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			LOCAL:2 = -1
-		LOCAL = GETCHARA([[キャラ:클로딘]])
+		LOCAL = GETCHARA([[캐릭터:클로딘]])
 		SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 			LOCAL:2 = -1
 		
@@ -1368,10 +1368,10 @@ CUSTOMDRAWLINE =
 	;その場合はイベントが進行しない
 	;마야（무대소녀）クロはセットで判定
 	LOCAL:2 = 0
-	LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+	LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 	SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 		LOCAL:2 = -1
-	LOCAL = GETCHARA([[キャラ:클로딘]])
+	LOCAL = GETCHARA([[캐릭터:클로딘]])
 	SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 		LOCAL:2 = -1
 		
@@ -1391,10 +1391,10 @@ CUSTOMDRAWLINE =
 		;クロちゃんイベント3は天堂真矢イベント3のあとで
 		ELSEIF GETBIT(이벤트플래그:93:9,2) && GETBIT(이벤트플래그:93:9,3) == 0 && GETBIT(이벤트플래그:93:8,3)
 			LOCAL:3 = 0
-			LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+			LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 			SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 				LOCAL:3 = -1
-			LOCAL = GETCHARA([[キャラ:히카리]])
+			LOCAL = GETCHARA([[캐릭터:히카리]])
 			SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 				LOCAL:3 = -1
 			;がっつり殺し合いを経たクロちゃん（かれひかも居ないと進まない）
@@ -1422,28 +1422,28 @@ INPUT
 
 ;もう一度京都判定
 LOCAL:1 = 0
-LOCAL = GETCHARA([[キャラ:후타바（무대소녀）]])
+LOCAL = GETCHARA([[캐릭터:후타바（무대소녀）]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:1 = -1
-LOCAL = GETCHARA([[キャラ:카오루코]])
+LOCAL = GETCHARA([[캐릭터:카오루코]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:1 = -1
 
 ;もう一度真矢クロ判定
 LOCAL:2 = 0
-LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:2 = -1
-LOCAL = GETCHARA([[キャラ:클로딘]])
+LOCAL = GETCHARA([[캐릭터:클로딘]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:2 = -1
 
 ;もう一度かれひか判定
 LOCAL:3 = 0
-LOCAL = GETCHARA([[キャラ:카렌（무대소녀）]])
+LOCAL = GETCHARA([[캐릭터:카렌（무대소녀）]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:3 = -1
-LOCAL = GETCHARA([[キャラ:히카리]])
+LOCAL = GETCHARA([[캐릭터:히카리]])
 SIF LOCAL == -1 || TALENT:LOCAL:비전투원 || TALENT:LOCAL:붕괴 || TALENT:LOCAL:복종 || TALENT:LOCAL:예속 || (CFLAG:LOCAL:전투참가불가능 > 0)
 	LOCAL:3 = -1
 
@@ -2321,7 +2321,7 @@ RETURN
 #DIMS DYNAMIC 舞台少女点呼 = "_"
 
 FOR ループ用, 0, CHARANUM
-	SIF GROUPMATCH(NO:ループ用, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:ループ用:전투참가불가능 < 1 && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
+	SIF GROUPMATCH(NO:ループ用, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:ループ用:전투참가불가능 < 1 && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
 		舞台少女点呼 += @"%CSVCALLNAME(NO:ループ用)%_"
 NEXT
 
@@ -2335,7 +2335,7 @@ RETURNF 舞台少女点呼
 #DIM DYNAMIC 舞台少女点呼
 
 FOR ループ用, 0, CHARANUM
-	SIF GROUPMATCH(NO:ループ用, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:ループ用:전투참가불가능 < 1 && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
+	SIF GROUPMATCH(NO:ループ用, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:ループ用:전투참가불가능 < 1 && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
 		舞台少女点呼++
 NEXT
 RETURNF 舞台少女点呼
@@ -2348,7 +2348,7 @@ RETURNF 舞台少女点呼
 #DIM DYNAMIC 舞台少女点呼
 
 FOR ループ用, 0, CHARANUM
-	SIF GROUPMATCH(NO:ループ用, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
+	SIF GROUPMATCH(NO:ループ用, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
 		舞台少女点呼++
 NEXT
 RETURNF 舞台少女点呼
@@ -2392,7 +2392,7 @@ RETURNF 舞台少女点呼
 #DIM DYNAMIC 個別ポイント, 9
 
 FOR ループ用, 0, CHARANUM
-	IF GROUPMATCH(NO:ループ用, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]])
+	IF GROUPMATCH(NO:ループ用, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]])
 		;ひとつでも取得しちゃってる場合は-1点で固定ですニャン
 		IF CFLAG:ループ用:전투참가불가능 < 1 && TALENT:ループ用:비전투원 < 1 && TALENT:ループ用:예속 < 1 && TALENT:ループ用:복종 < 1 && TALENT:ループ用:붕괴 < 1
 			;計算領域ゼロクリア
@@ -2458,31 +2458,31 @@ FOR ループ用, 0, CHARANUM
 		
 		;キャラ番号とか記憶
 		SELECTCASE NO:ループ用
-			CASE [[キャラ:카렌（무대소녀）]]
+			CASE [[캐릭터:카렌（무대소녀）]]
 				個別ポイント:0 = ポイント計算用
 				個別番号:0 = ループ用
-			CASE [[キャラ:히카리]]
+			CASE [[캐릭터:히카리]]
 				個別ポイント:1 = ポイント計算用
 				個別番号:1 = ループ用
-			CASE [[キャラ:쥰나]]
+			CASE [[캐릭터:쥰나]]
 				個別ポイント:2 = ポイント計算用
 				個別番号:2 = ループ用
-			CASE [[キャラ:마히루]]
+			CASE [[캐릭터:마히루]]
 				個別ポイント:3 = ポイント計算用
 				個別番号:3 = ループ用
-			CASE [[キャラ:후타바（무대소녀）]]
+			CASE [[캐릭터:후타바（무대소녀）]]
 				個別ポイント:4 = ポイント計算用
 				個別番号:4 = ループ用
-			CASE [[キャラ:카오루코]]
+			CASE [[캐릭터:카오루코]]
 				個別ポイント:5 = ポイント計算用
 				個別番号:5 = ループ用
-			CASE [[キャラ:나나]]
+			CASE [[캐릭터:나나]]
 				個別ポイント:6 = ポイント計算用
 				個別番号:6 = ループ用
-			CASE [[キャラ:마야（무대소녀）]]
+			CASE [[캐릭터:마야（무대소녀）]]
 				個別ポイント:7 = ポイント計算用
 				個別番号:7 = ループ用
-			CASE [[キャラ:클로딘]]
+			CASE [[캐릭터:클로딘]]
 				個別ポイント:8 = ポイント計算用
 				個別番号:8 = ループ用
 		ENDSELECT
@@ -2611,55 +2611,55 @@ PRINTL
 #DIM DYNAMIC ループ用
 
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:카렌（무대소녀）]]
+	IF NO:ループ用 == [[캐릭터:카렌（무대소녀）]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:히카리]]
+	IF NO:ループ用 == [[캐릭터:히카리]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:마히루]]
+	IF NO:ループ用 == [[캐릭터:마히루]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:쥰나]]
+	IF NO:ループ用 == [[캐릭터:쥰나]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:후타바（무대소녀）]]
+	IF NO:ループ用 == [[캐릭터:후타바（무대소녀）]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:카오루코]]
+	IF NO:ループ用 == [[캐릭터:카오루코]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:나나]]
+	IF NO:ループ用 == [[캐릭터:나나]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:마야（무대소녀）]]
+	IF NO:ループ用 == [[캐릭터:마야（무대소녀）]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
 NEXT
 FOR ループ用, 0, CHARANUM
-	IF NO:ループ用 == [[キャラ:클로딘]]
+	IF NO:ループ用 == [[캐릭터:클로딘]]
 		CALL 캐릭터삭제(ループ用)
 		BREAK
 	ENDIF
@@ -2782,23 +2782,23 @@ RETURN
 #DIM DYNAMIC 誰のティアラ
 
 SELECTCASE NO:(EVENT93_推しの位置取得())
-	CASE [[キャラ:카렌（무대소녀）]]
+	CASE [[캐릭터:카렌（무대소녀）]]
 		誰のティアラ = 1
-	CASE [[キャラ:히카리]]
+	CASE [[캐릭터:히카리]]
 		誰のティアラ = 2
-	CASE [[キャラ:쥰나]] 
+	CASE [[캐릭터:쥰나]] 
 		誰のティアラ = 3
-	CASE [[キャラ:마히루]]
+	CASE [[캐릭터:마히루]]
 		誰のティアラ = 4
-	CASE [[キャラ:후타바（무대소녀）]]
+	CASE [[캐릭터:후타바（무대소녀）]]
 		誰のティアラ = 5
-	CASE [[キャラ:카오루코]]
+	CASE [[캐릭터:카오루코]]
 		誰のティアラ = 6
-	CASE [[キャラ:나나]]
+	CASE [[캐릭터:나나]]
 		誰のティアラ = 7
-	CASE [[キャラ:마야（무대소녀）]]
+	CASE [[캐릭터:마야（무대소녀）]]
 		誰のティアラ = 8
-	CASE [[キャラ:클로딘]]
+	CASE [[캐릭터:클로딘]]
 		誰のティアラ = 9
 	;該当なし（バグった）
 	CASEELSE

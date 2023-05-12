@@ -154,7 +154,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:집스국원]],37
+			CALL SET_ENEMY,8,[[캐릭터:집스국원]],37
 			NAME:(CHARANUM-1) = カルマ兵
 			CALLNAME:(CHARANUM-1) = カルマ兵
 			ABL:(CHARANUM-1):스킬1 = 111
@@ -165,7 +165,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:집스국원]],37
+			CALL SET_ENEMY,10,[[캐릭터:집스국원]],37
 			NAME:(CHARANUM-1) = カルマ兵
 			CALLNAME:(CHARANUM-1) = カルマ兵
 			ABL:(CHARANUM-1):스킬1 = 111
@@ -198,11 +198,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:오세]],38
+			CALL SET_ENEMY,8,[[캐릭터:오세]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:슈텐도지]],38
+			CALL SET_ENEMY,10,[[캐릭터:슈텐도지]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -231,11 +231,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:디스]],38
+			CALL SET_ENEMY,8,[[캐릭터:디스]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:이바라키도지]],38
+			CALL SET_ENEMY,10,[[캐릭터:이바라키도지]],38
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -280,7 +280,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL MESSAGE_WINDOW_D, "트리브바나 천", "빠져나갈 수 있으면 빠져나가봐！ "
 			
 			
-			CALL SET_ENEMY,8,[[キャラ:커시]],40,0,1
+			CALL SET_ENEMY,8,[[캐릭터:커시]],40,0,1
 				;충격、질풍
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				CFLAG:(CHARANUM-1):속도보정 = 4000
@@ -314,7 +314,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,9,[[キャラ:우벨루리]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:우벨루리]],40,0,1
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 4000
 				MAXBASE:(CHARANUM-1):검격 = 10
 				BASE:(CHARANUM-1):검격 = 10
@@ -350,7 +350,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:강가]],40,0,1
+			CALL SET_ENEMY,10,[[캐릭터:강가]],40,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:엑스트라원]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:파이어스톰]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:아이온의비]]
@@ -486,9 +486,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL MESSAGE_WINDOW_D, "히트", "그렇게 됐다/이제 그때처럼 되지는 않아… "
 				CALL MESSAGE_WINDOW_D, "히트", "진심으로 덤벼라、서프！ "
 				CALL MESSAGE_WINDOW_D, "서프", "…알겠다。 상대해주지！ "
-				IF FINDCHARA_B([[キャラ:서프]]) < 2
-					IF GETCHARA([[キャラ:서프]]) > 0
-						LOCAL = GETCHARA([[キャラ:서프]])
+				IF FINDCHARA_B([[캐릭터:서프]]) < 2
+					IF GETCHARA([[캐릭터:서프]]) > 0
+						LOCAL = GETCHARA([[캐릭터:서프]])
 						FOR LOCAL:1, 1, 7
 							IF POS(7 - LOCAL:1) == -1 || ABL:POS(7 - LOCAL:1):종족 > 0
 								CALL INSERT_POSITION, 7 - LOCAL:1, LOCAL
@@ -503,7 +503,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:히트]],50,0,1
+				CALL SET_ENEMY,9,[[캐릭터:히트]],50,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:인페르노]]
@@ -538,7 +538,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL SYNC_STATUS, (CHARANUM-1)
 				CALL HEALTH_CHARA, (CHARANUM-1)
 				
-				CALL SET_ENEMY,8,[[キャラ:무스펠]],47,0,1
+				CALL SET_ENEMY,8,[[캐릭터:무스펠]],47,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데카쟈요원
 				ABL:(CHARANUM-1):스킬3 = [[스킬:화쇄열풍파]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:기간피스트]]
@@ -564,7 +564,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL SYNC_STATUS, (CHARANUM-1)
 				CALL HEALTH_CHARA, (CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:사투르누스]],47,0,1
+				CALL SET_ENEMY,10,[[캐릭터:사투르누스]],47,0,1
 				CSTR:(CHARANUM-1):사고패턴 = 데쿤다요원
 				ABL:(CHARANUM-1):스킬1 = [[스킬:베어넘기기]]
 				ABL:(CHARANUM-1):스킬4 = [[스킬:번개의벽]]
@@ -590,7 +590,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALL SYNC_STATUS, (CHARANUM-1)
 				CALL HEALTH_CHARA, (CHARANUM-1)
 				
-				CALL SET_ENEMY,14,[[キャラ:사티]],47,0,1
+				CALL SET_ENEMY,14,[[캐릭터:사티]],47,0,1
 				CSTR:(CHARANUM-1):사고패턴 = カルマ協会ㆍサティ
 				CFLAG:(CHARANUM-1):속도보정 = 4000
 				ABL:(CHARANUM-1):스킬1 = [[스킬:라쿠ㆍ카쟈]]
@@ -658,11 +658,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,8,[[キャラ:스튐팔리데스]],45
+			CALL SET_ENEMY,8,[[캐릭터:스튐팔리데스]],45
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
-			CALL SET_ENEMY,10,[[キャラ:청우괴]],45
+			CALL SET_ENEMY,10,[[캐릭터:청우괴]],45
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			
@@ -725,14 +725,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		CALL MESSAGE_WINDOW_D, "제나", "가、우물쭈물거리지 마 "
 		CALL MESSAGE_WINDOW_D, "", "당신들은 자이로콥터로 탈출했다 "
 		
-				SIF GETCHARA([[キャラ:마코토(페르소나5)]]) > 0
-					CFLAG:GETCHARA([[キャラ:마코토(페르소나5)]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:유스케]]) > 0
-					CFLAG:GETCHARA([[キャラ:유스케]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:시에로]]) > 0
-					CFLAG:GETCHARA([[キャラ:시에로]]):이자리에없는플래그 = 0
-				SIF GETCHARA([[キャラ:알지라]]) > 0
-					CFLAG:GETCHARA([[キャラ:알지라]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:마코토(페르소나5)]]) > 0
+					CFLAG:GETCHARA([[캐릭터:마코토(페르소나5)]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:유스케]]) > 0
+					CFLAG:GETCHARA([[캐릭터:유스케]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:시에로]]) > 0
+					CFLAG:GETCHARA([[캐릭터:시에로]]):이자리에없는플래그 = 0
+				SIF GETCHARA([[캐릭터:알지라]]) > 0
+					CFLAG:GETCHARA([[캐릭터:알지라]]):이자리에없는플래그 = 0
 				던전플래그:13:1 = 5
 				CALL DUNGEON_WORP,0,14,18
 					
@@ -1004,27 +1004,27 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 					
-					CALL SET_ENEMY,8,[[キャラ:팔라스아테나]],45,0,0
+					CALL SET_ENEMY,8,[[캐릭터:팔라스아테나]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,9,[[キャラ:도플갱어]],45,0,0
+					CALL SET_ENEMY,9,[[캐릭터:도플갱어]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,10,[[キャラ:썬더버드]],45,0,0
+					CALL SET_ENEMY,10,[[캐릭터:썬더버드]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 				
-					CALL SET_ENEMY,13,[[キャラ:스라오샤]],45,0,0
+					CALL SET_ENEMY,13,[[캐릭터:스라오샤]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 					
-					CALL SET_ENEMY,14,[[キャラ:섀도우]],45,0,0
+					CALL SET_ENEMY,14,[[캐릭터:섀도우]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 						
-					CALL SET_ENEMY,15,[[キャラ:천선낭랑]],45,0,0
+					CALL SET_ENEMY,15,[[캐릭터:천선낭랑]],45,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 					
@@ -1067,41 +1067,41 @@ RETURN 1
 @kyoukai_enemy, ARG
 		IF ARG == 0
 			IF RAND:18 == 0
-				RETURN [[キャラ:젤라론즈]]
+				RETURN [[캐릭터:젤라론즈]]
 			ELSEIF RAND:17 == 0
-				RETURN [[キャラ:오시치]]
+				RETURN [[캐릭터:오시치]]
 			ELSEIF RAND:16 == 0
-				RETURN [[キャラ:파이몬]]
+				RETURN [[캐릭터:파이몬]]
 			ELSEIF RAND:15 == 0
-				RETURN [[キャラ:디스]]
+				RETURN [[캐릭터:디스]]
 			ELSEIF RAND:14 == 0
-				RETURN [[キャラ:이바라키도지]]
+				RETURN [[캐릭터:이바라키도지]]
 			ELSEIF RAND:13 == 0
-				RETURN [[キャラ:칼리아흐베라]]
+				RETURN [[캐릭터:칼리아흐베라]]
 			ELSEIF RAND:12 == 0
-				RETURN [[キャラ:하트호르]]
+				RETURN [[캐릭터:하트호르]]
 			ELSEIF RAND:11 == 0
-				RETURN [[キャラ:네반]]
+				RETURN [[캐릭터:네반]]
 			ELSEIF RAND:10== 0
-				RETURN [[キャラ:나가ㆍ칸냐]]
+				RETURN [[캐릭터:나가ㆍ칸냐]]
 			ELSEIF RAND:9 == 0
-				RETURN [[キャラ:스튐팔리데스]]
+				RETURN [[캐릭터:스튐팔리데스]]
 			ELSEIF RAND:8 == 0
-				RETURN [[キャラ:돈]]
+				RETURN [[캐릭터:돈]]
 			ELSEIF RAND:7 == 0
-				RETURN [[キャラ:오세]]
+				RETURN [[캐릭터:오세]]
 			ELSEIF RAND:6 == 0
-				RETURN [[キャラ:오로바스]]
+				RETURN [[캐릭터:오로바스]]
 			ELSEIF RAND:5 == 0
-				RETURN [[キャラ:청우괴]]
+				RETURN [[캐릭터:청우괴]]
 			ELSEIF RAND:4 == 0
-				RETURN [[キャラ:슈텐도지]]
+				RETURN [[캐릭터:슈텐도지]]
 			ELSEIF RAND:3 == 0
-				RETURN [[キャラ:오로바스]]
+				RETURN [[캐릭터:오로바스]]
 			ELSEIF RAND:2 == 0
-				RETURN [[キャラ:아라하바키]]
+				RETURN [[캐릭터:아라하바키]]
 			ELSE
-				RETURN [[キャラ:잠바반]]
+				RETURN [[캐릭터:잠바반]]
 			ENDIF
 		ELSEIF ARG == 1
 			

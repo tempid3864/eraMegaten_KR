@@ -21,7 +21,7 @@ RETURN 0
 	PRINTL 과거의 공적을 감안해 경고만으로 끝내준 온정도 잊고, 어리석게도 반항한 들개를 처리하라.
 	PRINTFORML 보수：￥15000
 ;마요네が仲間にいる
-IF FINDCHARA_B([[キャラ:마요네]]) >= 1
+IF FINDCHARA_B([[캐릭터:마요네]]) >= 1
 	PRINTL 「우라베…일선에서 물러났다고는 해도, 과거에는 일류의 서머너로서 두려움의 대상이었던 남자랍니다……」
 	PRINTL 「주제넘은 말이지만, 도전하시려면 충분한 준비를 갖춰주세요……」
 	PRINTL 언제나 짓고 있던 사람을 잡아먹어버릴 것 같은 불길한 웃음은 사라지고, 마요네의 얼굴은 마냥 진지했다.
@@ -52,7 +52,7 @@ IF 투기장플래그:6:0 == 1
 	PRINTFORML %조사처리(CALLNAME:MASTER,"는")% 전산실에 들어가 타겟인 우라베와 접촉했다.
 	PRINTL 실력 좋은 서머너라는 평판대로, 이미 우라베를 지키는 모양새로 소환된 동료마들이 진형을 짜고 있다.
 	;마요네がＰＴにいる
-	IF FINDCHARA_B([[キャラ:마요네]]) == 2
+	IF FINDCHARA_B([[캐릭터:마요네]]) == 2
 		PRINTL 「후후훗……우라베, 마중나왔어요. 지옥으로 지만요」
 		PRINTL 『다、당신은…！？　큿… 마요네인가…！！』
 		PRINTL 「나쁜 장난도 여기까지… 체크메이트이네요？」
@@ -60,7 +60,7 @@ IF 투기장플래그:6:0 == 1
 		PRINTFORMW 자신의 실력과 %CALLNAME:MASTER%에게 전폭적인 신뢰를 보내고 있는 마요네는 여유로운 미소를 띄우고 있다。
 	ENDIF
 	;네밋사がＰＴにいる
-	IF FINDCHARA_B([[キャラ:네밋사(밝음)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) == 2
+	IF FINDCHARA_B([[캐릭터:네밋사(밝음)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) == 2
 		PRINTL 「뭐지… 이 느낌…」
 		PRINTL 「이 사람과 싸워서는 안 될 것 같은 기분이 들어…」
 		PRINTFORML 네밋사는 그렇게 말은 했지만, %CALLNAME:MASTER%의 지시를 거역할 생각은 없는 것 같다.
@@ -115,19 +115,19 @@ IF 투기장플래그:6:0 == 1
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;오르트로스　Lv24
-	CALL SET_ENEMY,8,[[キャラ:오르트로스]],24,0,0
+	CALL SET_ENEMY,8,[[캐릭터:오르트로스]],24,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;드베르가　Lv24
-	CALL SET_ENEMY,9,[[キャラ:드베르가]],24,0,0
+	CALL SET_ENEMY,9,[[캐릭터:드베르가]],24,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;랴난시　Lv24
-	CALL SET_ENEMY,10,[[キャラ:랴난시]],24,0,0
+	CALL SET_ENEMY,10,[[캐릭터:랴난시]],24,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
@@ -147,7 +147,7 @@ IF 투기장플래그:6:0 == 1
 	INPUT
 	IF RESULT == 0
 		;랴난시が仲間にいる
-		IF FINDCHARA_NO_C([[キャラ:랴난시]]) > -1
+		IF FINDCHARA_NO_C([[캐릭터:랴난시]]) > -1
 			PRINTL 
 			PRINTL 하지만, 이미 COMP에는 같은 악마가 있다！
 			PRINTW 
@@ -169,7 +169,7 @@ IF 투기장플래그:6:0 == 1
 		;主人が女か오토코노코
 		IF TALENT:MASTER:140 == 0 || TALENT:MASTER:157 == 1
 			;마요네がＰＴにいる
-			IF FINDCHARA_B([[キャラ:마요네]]) == 2
+			IF FINDCHARA_B([[캐릭터:마요네]]) == 2
 				PRINTL 
 				PRINTL 마요네가 불러낸 악마들이 저항조차 못하는 가련한 랴난시를 붙잡았다。
 				PRINTW 
@@ -239,7 +239,7 @@ IF 투기장플래그:6:0 == 1
 		;主人が男
 		ELSE
 			;마요네がＰＴにいる
-			IF FINDCHARA_B([[キャラ:마요네]]) == 2
+			IF FINDCHARA_B([[캐릭터:마요네]]) == 2
 				PRINTL 
 				PRINTL 마요네가 불러낸 악마들이 저항 한 번 못하는 가련한 랴난시를 붙잡았다…….
 				PRINTW 
@@ -282,7 +282,7 @@ IF 투기장플래그:6:0 == 1
 			ENDIF
 		ENDIF
 		;랴난시が仲間にいる
-		IF FINDCHARA_NO_C([[キャラ:랴난시]]) > -1
+		IF FINDCHARA_NO_C([[캐릭터:랴난시]]) > -1
 			PRINTL 
 			PRINTFORML 수없이 범해져, 더러워진 랴난시는 %CALLNAME:MASTER%에게 용서를 구하며 복종할 것을 맹세한다…….
 			PRINTW 
@@ -332,7 +332,7 @@ ELSE
 	PRINTFORML %조사처리(CALLNAME:MASTER,"는")% 전산실에 들어가, 타겟인 우라베와 접촉했다.
 	PRINTL 실력 좋은 서머너라는 평판을 들었지만, 우라베는 악마를 부를 기색이 없다.
 	;마요네がＰＴにいる
-	IF FINDCHARA_B([[キャラ:마요네]]) == 2
+	IF FINDCHARA_B([[캐릭터:마요네]]) == 2
 		PRINTL 「후후훗……우라베, 마중나왔어요. 지옥으로 지만요」
 		PRINTL 『다, 당신은…！？　큿…마요네인가…！！』
 		PRINTL 「어라… 상당히 쓸쓸한 마중이네요…여기 오기까지 악마를 전부 잃었나보죠？」
@@ -341,7 +341,7 @@ ELSE
 		PRINTFORMW 자신의 실력과 %CALLNAME:MASTER%에게 전폭적인 신뢰를 보내는 마요네는 여유로운 웃음마저 띄우고 있다.
 	ENDIF
 	;네밋사がＰＴにいる
-	IF FINDCHARA_B([[キャラ:네밋사(밝음)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(섹시)]]) == 2 || FINDCHARA_B([[キャラ:네밋사(쿨)]]) == 2
+	IF FINDCHARA_B([[캐릭터:네밋사(밝음)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(섹시)]]) == 2 || FINDCHARA_B([[캐릭터:네밋사(쿨)]]) == 2
 		PRINTL 「뭐지… 이 느낌…」
 		PRINTL 「이 사람과 싸워서는 안 될 것 같은 기분이 들어…」
 		PRINTFORML 네밋사는 그렇게 말은 했지만, %CALLNAME:MASTER%의 지시를 거역할 생각은 없는 것 같다.

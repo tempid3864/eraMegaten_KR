@@ -3,7 +3,7 @@
 
 #DIMS 참가キャラ = "_"
 FOR LOCAL, 0, CHARANUM
-	SIF GROUPMATCH(NO:LOCAL, [[キャラ:고토우]], [[キャラ:쇼고]], [[キャラ:카츠야]], [[キャラ:토오루]]) && CFLAG:LOCAL:전투참가불가능 < 1
+	SIF GROUPMATCH(NO:LOCAL, [[캐릭터:고토우]], [[캐릭터:쇼고]], [[캐릭터:카츠야]], [[캐릭터:토오루]]) && CFLAG:LOCAL:전투참가불가능 < 1
 		참가キャラ += @"%CSVCALLNAME(NO:LOCAL)%_"
 NEXT
 
@@ -87,21 +87,21 @@ PRINTL
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,9,[[キャラ:인큐버스]],40,0,1
+			CALL SET_ENEMY,9,[[캐릭터:인큐버스]],40,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,8,[[キャラ:잭ㆍ더ㆍ리퍼]],40,0,1
+			CALL SET_ENEMY,8,[[캐릭터:잭ㆍ더ㆍ리퍼]],40,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,14,[[キャラ:서큐버스]],45,0,1
+			CALL SET_ENEMY,14,[[캐릭터:서큐버스]],45,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
@@ -166,28 +166,28 @@ PRINTW
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			
-			CALL SET_ENEMY,9,[[キャラ:바포멧트]],45,0,1
+			CALL SET_ENEMY,9,[[캐릭터:바포멧트]],45,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,8,[[キャラ:비프론스]],45,0,1
+			CALL SET_ENEMY,8,[[캐릭터:비프론스]],45,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,7,[[キャラ:바포멧트]],45,0,1
+			CALL SET_ENEMY,7,[[캐릭터:바포멧트]],45,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)	
 			
-			CALL SET_ENEMY,14,[[キャラ:게데]],47,0,1
+			CALL SET_ENEMY,14,[[캐릭터:게데]],47,0,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):속도보정 += 5
@@ -234,13 +234,13 @@ INPUT
 IF RESULT == 0
 	PRINTFORML 
 	PRINTL ＞龍造寺梨花　上田リリン　孫翔　が仲間になりました。
-	CALL ADD_NEW_COMPANION,[[キャラ:리카]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:리카]],500
 	SIF RESULT
 	CFLAG:(RESULT:1):전투참가불가능 = -1
-	CALL ADD_NEW_COMPANION,[[キャラ:손샨]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:손샨]],500
 	SIF RESULT
 	CFLAG:(RESULT:1):전투참가불가능 = -1
-	CALL ADD_NEW_COMPANION,[[キャラ:리린]],500
+	CALL ADD_NEW_COMPANION,[[캐릭터:리린]],500
 	SIF RESULT
 	CFLAG:(RESULT:1):전투참가불가능 = -1
 	이벤트플래그:65:0 = 3

@@ -460,7 +460,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 					PRINTW 바이브 달린 의자를 한쪽 손에 들고 있다
 				ENDIF
 				PRINTW 칸지의그림자는 멋대로 ＣＯＭＰ의 안으로 들러갔다。
-				CALL ADD_NEW_COMPANION,[[キャラ:칸지의그림자]],200
+				CALL ADD_NEW_COMPANION,[[캐릭터:칸지의그림자]],200
 			ELSEIF RESULT == 1
 				PRINTW …곰의 요청대로 그를 도왔다
 				PRINTW 『후후…후후후후후…나는 신、신이다아아아！！』
@@ -470,7 +470,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:선제기습취소 = 1
 				CUSTOMDRAWLINE =
 				WAIT
-				CALL SET_ENEMY,9,[[キャラ:칸지의그림자]],35,0,1
+				CALL SET_ENEMY,9,[[캐릭터:칸지의그림자]],35,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 				MAXBASE:(CHARANUM-1):파마 = 0
@@ -478,13 +478,13 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,8,[[キャラ:나이스가이]],35,0,1
+				CALL SET_ENEMY,8,[[캐릭터:나이스가이]],35,0,1
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 				
-				CALL SET_ENEMY,10,[[キャラ:터프가이]],35,0,1
+				CALL SET_ENEMY,10,[[캐릭터:터프가이]],35,0,1
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -642,23 +642,23 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 @ENEMY_73, ARG
 SELECTCASE RAND:100
 	CASE IS < 10
-	RETURN [[キャラ:세에레]],25
+	RETURN [[캐릭터:세에레]],25
 	CASE IS < 20
-	RETURN [[キャラ:목없는라이더]],24
+	RETURN [[캐릭터:목없는라이더]],24
 	CASE IS < 30
-	RETURN [[キャラ:미샤구지님]],26
+	RETURN [[캐릭터:미샤구지님]],26
 	CASE IS < 40
-	RETURN [[キャラ:프라이데이]],24
+	RETURN [[캐릭터:프라이데이]],24
 	CASE IS < 50
-	RETURN [[キャラ:나가]],28
+	RETURN [[캐릭터:나가]],28
 	CASE IS < 60
-	RETURN [[キャラ:강철의기가스]],25
+	RETURN [[캐릭터:강철의기가스]],25
 	CASE IS < 75
-	RETURN [[キャラ:인큐버스]],29
+	RETURN [[캐릭터:인큐버스]],29
 	CASE IS < 85
-	RETURN [[キャラ:좀비군]],25
+	RETURN [[캐릭터:좀비군]],25
 	CASE IS < 100
-	RETURN [[キャラ:오니]],26
+	RETURN [[캐릭터:오니]],26
 ENDSELECT
 ;=======================================================================
 ;特殊調整
@@ -754,13 +754,13 @@ RETURN 1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:5
 	CASE 0
-		RETURN [[キャラ:인큐버스]] , 3 + RAND:10 , CSVBASE([[キャラ:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:인큐버스]] , 3 + RAND:10 , CSVBASE([[캐릭터:인큐버스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:강철의기가스]] , 3 + RAND:10 , CSVBASE([[キャラ:강철의기가스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:강철의기가스]] , 3 + RAND:10 , CSVBASE([[캐릭터:강철의기가스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:나가]] , 3 + RAND:10 , CSVBASE([[キャラ:나가]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:나가]] , 3 + RAND:10 , CSVBASE([[캐릭터:나가]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 4
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

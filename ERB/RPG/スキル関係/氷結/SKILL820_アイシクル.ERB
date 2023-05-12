@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_820,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아키라（무대소녀）]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아키라（무대소녀）]])
 	RESULTS = 빙결의 스텝
 ELSE
 	RESULTS = 아이시클
@@ -134,7 +134,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,820
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_820
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아키라（무대소녀）]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:아키라（무대소녀）]]
 	PRINTL 얼음을 휘감으며 적진에 뛰어든다
 	PRINTL 대상과 그 주위에 빙결 상성 물리 소 데미지+FREEZE。
 ELSE

@@ -255,20 +255,20 @@ ELSE
 		PRINTFORMW 「また邪魔者か。大事な祭儀の途中だと言うのに」
 	ENDIF
 ENDIF
-CALL SET_ENEMY,8, [[キャラ:안드라스]],25, 1, 1
+CALL SET_ENEMY,8, [[캐릭터:안드라스]],25, 1, 1
 ;スキルがよわよわなので補強。ついでに原作にあった剣撃描写も拾う
 ABL:(CHARANUM-1):스킬1 = [[스킬:아기다인]]
 ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ라기온]]
 ABL:(CHARANUM-1):스킬3 = [[스킬:데스바운드]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:기가리온]]
 CFLAG:(CHARANUM-1):ＭＰ보정 += 500
-CALL SET_ENEMY,11, [[キャラ:암두시아스]], 25, 1, 1
+CALL SET_ENEMY,11, [[캐릭터:암두시아스]], 25, 1, 1
 ABL:(CHARANUM-1):스킬1 = [[스킬:포효]]
 ABL:(CHARANUM-1):스킬2 = [[스킬:랜더마이저]]
 ABL:(CHARANUM-1):스킬3 = [[스킬:최면파]]
 ABL:(CHARANUM-1):스킬4 = [[스킬:포효]]
 CFLAG:(CHARANUM-1):ＭＰ보정 += 500
-CALL SET_ENEMY,16, [[キャラ:아키토]],30, 1, 1
+CALL SET_ENEMY,16, [[캐릭터:아키토]],30, 1, 1
 ;今の基準だとかなり弱いのでもーちょいボスっぽく
 CALLNAME:(CHARANUM-1) = 小林
 CFLAG:(CHARANUM-1):ＨＰ보정 += 100

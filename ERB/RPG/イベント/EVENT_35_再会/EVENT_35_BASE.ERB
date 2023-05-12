@@ -19,24 +19,24 @@ IF BASE:MASTER:LV >= 10 && 이벤트플래그:35:0 == 0
 	RESULTS = 사교의관에서
 	RETURN 1
 ;EVENT_35_사교의관にて で나나미を仲魔にして夜間パーティ内に据えると発生する。
-ELSEIF 이벤트플래그:35:0 == 1 && FINDCHARA_B([[キャラ:나나미]]) == 2 && TIME == 3
+ELSEIF 이벤트플래그:35:0 == 1 && FINDCHARA_B([[캐릭터:나나미]]) == 2 && TIME == 3
 	RESULTS = ＴＲＰＧ플레이_재회_제１화
 	RETURN 1
 ;EVENT_35_1_第１話 始まりの終わりをクリアして나나미をパーティ内に据えると発生する。
-ELSEIF 이벤트플래그:35:0 == 2 && FINDCHARA_B([[キャラ:나나미]]) == 2
+ELSEIF 이벤트플래그:35:0 == 2 && FINDCHARA_B([[캐릭터:나나미]]) == 2
 	RESULTS = ＴＲＰＧ리플레이재회_제２화
 	RETURN 1
 ;EVENT_35_2_第２話 ボルテクス界をクリアして나나미をパーティ内に据えると発生する。
-ELSEIF 이벤트플래그:35:0 == 3 && FINDCHARA_B([[キャラ:나나미]]) == 2
+ELSEIF 이벤트플래그:35:0 == 3 && FINDCHARA_B([[캐릭터:나나미]]) == 2
 	RESULTS = ＴＲＰＧ리플레이재회_제３화
 	RETURN 1
 ;EVENT_35_3_第３話 人形の夢をクリアして나나미をパーティ内に据えると発生する。
-ELSEIF 이벤트플래그:35:0 == 4 && FINDCHARA_B([[キャラ:나나미]]) == 2
+ELSEIF 이벤트플래그:35:0 == 4 && FINDCHARA_B([[캐릭터:나나미]]) == 2
 	RESULTS = ＴＲＰＧ리플레이재회_제４화
 	RETURN 1
 ;EVENT_35_4_第４話 蜃気楼の龍をクリアして나나미をパーティ内に据えると発生する。
 ;마타도르戦⇒초인戦
-;ELSEIF 이벤트플래그:35:0 == 5 && FINDCHARA_B([[キャラ:나나미]]) == 2
+;ELSEIF 이벤트플래그:35:0 == 5 && FINDCHARA_B([[캐릭터:나나미]]) == 2
 ;	RESULTS = ＴＲＰＧ리플레이재회_第５화 재회 〜 See you again next world 〜
 ;	RETURN 1
 ENDIF

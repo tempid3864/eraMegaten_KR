@@ -208,11 +208,11 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORML 「알았다고 서머너！모두, 전력으로 시바를 친다！」
 			PRINTFORMW 등뒤를 동료들에게 맡기고, %CALLNAME:MASTER%는 다이치 일행과 맞선다。
 			PRINTL 
-			IF FINDCHARA_B([[キャラ:오토메]]) == 2
+			IF FINDCHARA_B([[캐릭터:오토메]]) == 2
 				PRINTL 오토메：
 				PRINTFORML 「미안해요…。난폭한 짓은 하고싶지 않지만, 방법이 이것밖에 없으니까…！」
 			ENDIF
-			IF FINDCHARA_B([[キャラ:아이리]]) == 2
+			IF FINDCHARA_B([[캐릭터:아이리]]) == 2
 				PRINTL 아이리：
 				PRINTFORML 「참아달라고！이젠 두번 다시 싸우고 싶지 않으니까…지금, 싸우는거다！」
 			ENDIF
@@ -325,7 +325,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		PRINTFORMW 1000마카를 입수했습니다
 		MONEY:1 += 1000
 		;- キャラ추가(로나우도勢힘)
-		CALL ADD_NEW_COMPANION,[[キャラ:로나우도]],500
+		CALL ADD_NEW_COMPANION,[[캐릭터:로나우도]],500
 		;추가した場合
 		IF RESULT
 			;조교有無関係なしに전투に참가できる
@@ -334,7 +334,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:죠]],500
+		CALL ADD_NEW_COMPANION,[[캐릭터:죠]],500
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -343,7 +343,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			;デビサバ２用の加入後레벨上げ処理　레벨で加入させる
 			CALL REQUEST_30_GETAFTER_SETUP((CHARANUM - 1),35)
 		ENDIF
-		CALL ADD_NEW_COMPANION,[[キャラ:준고]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:준고]],200
 		;추가した場合
 		IF RESULT
 			;전투참가가능で加入するが、조교で전투참가불가능になる
@@ -605,7 +605,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 			PRINTFORMW 「응…잠깐, 무슨짓을…읏…」
 			PRINTFORMW ＞%CALLNAME:MASTER%는 후미를 기절시켜서 들쳐매고는, 슬그머니 그 장소를 떠났다…。
 			;- キャラ추가(후미)
-			CALL ADD_NEW_COMPANION,[[キャラ:후미]],0
+			CALL ADD_NEW_COMPANION,[[캐릭터:후미]],0
 			;추가した場合
 			IF RESULT
 				CFLAG:(CHARANUM-1):이벤트가입 = 10
@@ -1212,25 +1212,25 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;--------------------------------------------------------
 		PRINTFORMW 「최후의 싸움이다…！세계에 평화와 평등을 가져오겠어！」
 		PRINTL 
-		IF FINDCHARA_B([[キャラ:죠]]) == 2
+		IF FINDCHARA_B([[캐릭터:죠]]) == 2
 			PRINTL 죠：
 			PRINTFORMW 「하하…폴라리스가 상댄가。뭐, 평등사화를 위해서라면 나라도 힘낸다고」
 			PRINTFORMW 「조오~았어, 해버릴지도 몰라…나라고 해도말이지！」
 			PRINTL 
 		ENDIF
-		IF FINDCHARA_B([[キャラ:아이리]]) == 2
+		IF FINDCHARA_B([[캐릭터:아이리]]) == 2
 			PRINTL 아이리：
 			PRINTFORMW 「폴라리스를 쓰러뜨리면, 드디어 모두 평등해질 수 있어…！」
 			PRINTFORMW 「그걸 위해서라면 나, 힘낼거야！」
 			PRINTL 
 		ENDIF
-		IF FINDCHARA_B([[キャラ:오토메]]) == 2
+		IF FINDCHARA_B([[캐릭터:오토메]]) == 2
 			PRINTL 오토메：
 			PRINTFORMW 「이게 폴라리스…！으음, 무서워하고 있을순 없어！」
 			PRINTFORMW 「갑니다…！평등한 세계를 아이들에게 남겨주고 싶으니까요…！」
 			PRINTL 
 		ENDIF
-		IF FINDCHARA_B([[キャラ:로나우도]]) == 2
+		IF FINDCHARA_B([[캐릭터:로나우도]]) == 2
 			PRINTL 로나우도：
 			PRINTFORMW 「좋아, 간다！우리들의 이상을, 모두의 행복을 이 주먹에 건다！」
 			PRINTFORMW 「간다, 폴라리스！내…아니, 인간의 권을 받아라！」

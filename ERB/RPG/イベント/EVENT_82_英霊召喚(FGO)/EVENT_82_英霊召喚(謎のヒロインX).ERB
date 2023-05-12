@@ -23,12 +23,12 @@
 ;※召喚は이벤트플래그:82:1が必ず4以上から。
 
 IF 이벤트플래그:82:1 > 3
-	IF GETCHARA([[キャラ:수수께끼의히로인X]]) > 0
+	IF GETCHARA([[캐릭터:수수께끼의히로인X]]) > 0
 		RESULTS = 비검！ 세이버 죽이기(수수께끼의 히로인 X)
 		RESULTS:1 = 필요 촉매：영웅 아서(함락)　수수께끼의 히로인 X 가입완료
 		RETURN 0
-	ELSEIF GETCHARA([[キャラ:아서]]) > 0
-		IF !함락(GETCHARA([[キャラ:아서]]))
+	ELSEIF GETCHARA([[캐릭터:아서]]) > 0
+		IF !함락(GETCHARA([[캐릭터:아서]]))
 			RESULTS = 비검！ 세이버 죽이기(수수께끼의 히로인 X)
 			RESULTS:1 = 필요 촉매：영웅 아서(함락)　미함락
 			RETURN 0
@@ -59,7 +59,7 @@ ENDIF
 #DIM L_COUNT
 ;■イベント本文を記載■
 
-	対象 = [[キャラ:수수께끼의히로인X]]
+	対象 = [[캐릭터:수수께끼의히로인X]]
 	;バトルイベント識別のために이벤트플래그を特定値に設定
 	이벤트플래그:82:5 = 10
 	PRINTFORML  「자、소환술은 다음 스테이지로
@@ -71,7 +71,7 @@ ENDIF
 	;キャラリストの下から順にキャラ検索
 	;該当するキャラを発見した場合、それを削除する
 	FOR L_COUNT,CHARANUM,-1,-1
-		IF L_COUNT == GETCHARA([[キャラ:아서]])
+		IF L_COUNT == GETCHARA([[캐릭터:아서]])
 			SIF !함락(L_COUNT)
 				CONTINUE
 			CALL 캐릭터삭제, L_COUNT
@@ -151,7 +151,7 @@ ENDIF
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9,[[キャラ:수수께끼의히로인X]],50,1,3
+	CALL SET_ENEMY,9,[[캐릭터:수수께끼의히로인X]],50,1,3
 	CFLAG:(CHARANUM-1):불사신플래그 = 1
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = (MAXBASE:(CHARANUM-1):ＨＰ / 2)

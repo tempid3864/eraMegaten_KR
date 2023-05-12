@@ -3,7 +3,7 @@
 우리들은무대소녀 = %EVENT93_出席確認()%
 
 ;FOR LOCAL, 0, CHARANUM
-;	SIF GROUPMATCH(NO:LOCAL, [[キャラ:카렌（무대소녀）]], [[キャラ:히카리]], [[キャラ:마히루]], [[キャラ:쥰나]], [[キャラ:후타바（무대소녀）]], [[キャラ:카오루코]], [[キャラ:나나]], [[キャラ:마야（무대소녀）]], [[キャラ:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
+;	SIF GROUPMATCH(NO:LOCAL, [[캐릭터:카렌（무대소녀）]], [[캐릭터:히카리]], [[캐릭터:마히루]], [[캐릭터:쥰나]], [[캐릭터:후타바（무대소녀）]], [[캐릭터:카오루코]], [[캐릭터:나나]], [[캐릭터:마야（무대소녀）]], [[캐릭터:클로딘]]) && CFLAG:LOCAL:전투참가불가능 < 1 && TALENT:LOCAL:비전투원 < 1
 ;		우리들은무대소녀 += @"%CSVCALLNAME(NO:LOCAL)%_"
 ;NEXT
 
@@ -112,7 +112,7 @@ CUSTOMDRAWLINE =
 	
 	;- SET:마히루
 		;지변と파마
-		CALL SET_ENEMY,7,[[キャラ:바스테트]],LOCAL:98,1,(LOCAL:97 - 1)
+		CALL SET_ENEMY,7,[[캐릭터:바스테트]],LOCAL:98,1,(LOCAL:97 - 1)
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -131,7 +131,7 @@ CUSTOMDRAWLINE =
 		LOCAL = CHARANUM-1
 
 		;전술と주살
-		CALL SET_ENEMY,8,[[キャラ:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
+		CALL SET_ENEMY,8,[[캐릭터:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -150,7 +150,7 @@ CUSTOMDRAWLINE =
 		LOCAL = CHARANUM-1
 
 		;타격と
-		CALL SET_ENEMY,9,[[キャラ:고양이의날것]],LOCAL:98,1,LOCAL:97
+		CALL SET_ENEMY,9,[[캐릭터:고양이의날것]],LOCAL:98,1,LOCAL:97
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*3
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -175,7 +175,7 @@ CUSTOMDRAWLINE =
 		ABL:(CHARANUM-1):스킬7 = 0
 		ABL:(CHARANUM-1):스킬8 = 0
 
-		CALL SET_ENEMY,10,[[キャラ:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
+		CALL SET_ENEMY,10,[[캐릭터:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -192,7 +192,7 @@ CUSTOMDRAWLINE =
 		CSTR:(CHARANUM-1):종족명 = 마스코트
 		LOCAL = CHARANUM-1
 
-		CALL SET_ENEMY,11,[[キャラ:바스테트]],LOCAL:98,1,(LOCAL:97 - 1)
+		CALL SET_ENEMY,11,[[캐릭터:바스테트]],LOCAL:98,1,(LOCAL:97 - 1)
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -209,7 +209,7 @@ CUSTOMDRAWLINE =
 		ABL:(CHARANUM-1):스킬7 = 0
 		ABL:(CHARANUM-1):스킬8 = 0
 
-		CALL SET_ENEMY,12,[[キャラ:비트볼]],(LOCAL:98 - 1),1,0
+		CALL SET_ENEMY,12,[[캐릭터:비트볼]],(LOCAL:98 - 1),1,0
 		;HP보정は無し
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -228,9 +228,9 @@ CUSTOMDRAWLINE =
 
 		;決戦時は도플갱어でも置いておこう
 		IF LOCAL:99 > 5
-			CALL SET_ENEMY,13,[[キャラ:마히루]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,13,[[캐릭터:마히루]],LOCAL:98,1,(LOCAL:97 - 1)
 		ELSE
-			CALL SET_ENEMY,13,[[キャラ:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,13,[[캐릭터:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
 		ENDIF
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -252,7 +252,7 @@ CUSTOMDRAWLINE =
 		CSTR:(CHARANUM-1):종족명 = 마스코트
 		LOCAL = CHARANUM-1
 
-		CALL SET_ENEMY,14,[[キャラ:마히루]],(LOCAL:98),1,LOCAL:97
+		CALL SET_ENEMY,14,[[캐릭터:마히루]],(LOCAL:98),1,LOCAL:97
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -271,9 +271,9 @@ CUSTOMDRAWLINE =
 
 		;決戦時は華恋っぽいものが
 		IF LOCAL:99 > 5
-			CALL SET_ENEMY,15,[[キャラ:카렌（무대소녀）]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,15,[[캐릭터:카렌（무대소녀）]],LOCAL:98,1,(LOCAL:97 - 1)
 		ELSE
-			CALL SET_ENEMY,15,[[キャラ:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
+			CALL SET_ENEMY,15,[[캐릭터:네코마타]],LOCAL:98,1,(LOCAL:97 - 1)
 		ENDIF
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:(CHARANUM-1):ＨＰ*2
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -295,7 +295,7 @@ CUSTOMDRAWLINE =
 		CSTR:(CHARANUM-1):종족명 = 마스코트
 		LOCAL = CHARANUM-1
 
-		CALL SET_ENEMY,16,[[キャラ:비트볼]],(LOCAL:98 - 1),1,0
+		CALL SET_ENEMY,16,[[캐릭터:비트볼]],(LOCAL:98 - 1),1,0
 		;HP보정は無し
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 		CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -502,7 +502,7 @@ CUSTOMDRAWLINE =
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;解析度MAX処理
-		CALL INCREASE_ANALYZE([[キャラ:마히루]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:마히루]],1000)
 		
 	CALL BATTLE_START
 

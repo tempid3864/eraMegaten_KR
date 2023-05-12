@@ -5,7 +5,7 @@
 
 ;스킬명
 @SKILL_NAME_424,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RESULTS = 천사의 빛
 ELSE
 	RESULTS = 영세의기도
@@ -34,7 +34,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_424, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RETURN 130
 ELSE
 	RETURN 100
@@ -188,7 +188,7 @@ WAIT
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_424
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아오이(마인학원)]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아오이(마인학원)]])
 	PRINTL 아군을 향한 자애의 기도로、천사의 힘을 최대로 행사한다。
 	PRINTL 아군 전체의 ＨＰ회복을 행하고、DYING 이외의 상태이상도 회복한다。
 ELSE

@@ -3,7 +3,7 @@
 ;====================
 @EXPLAIN_REQUEST_70_6
 PRINTL 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 PRINTFORMW ＞%CALLNAME:MASTER%는 꿈쩍도 하지 않고、팬텀의 연락을 기다리고 있었다。
 PRINTFORMW ＞%CALLNAME:LOCAL%의 행방을 조사하려면 %CALLNAME:MASTER% 개인의 힘으론 부족하다、그것은 알고는 있었다。
@@ -19,7 +19,7 @@ FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 CUSTOMDRAWLINE =
 
-CALLF FINDCHARA_B([[キャラ:아인]])
+CALLF FINDCHARA_B([[캐릭터:아인]])
 LOCAL = RESULT:1
 
 IF 이벤트플래그:1:0 == 3

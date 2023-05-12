@@ -4,13 +4,13 @@
 ;스킬명
 @SKILL_NAME_3,ARG
 ;ファントムが使用する場合Gㆍスラッシュリッパーに
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]]) || FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]]) || FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	RESULTS = Gㆍ슬래시리퍼
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:백베어드]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:백베어드]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 촉수커터
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:슬레이브]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:슬레이브]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 회전파동
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:나가스네히코]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:나가스네히코]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 형의 누바타마
 ELSE
 	RESULTS = 회전베기
@@ -18,7 +18,7 @@ ENDIF
 
 ;　명중
 @SKILL_HITRATE_3, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 110
 ELSE
 	RETURN 100
@@ -26,7 +26,7 @@ ENDIF
 
 ;　위력
 @SKILL_POWER_3, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 195
 ELSE
 	RETURN 185
@@ -51,7 +51,7 @@ RETURN 16
 
 ;　상성
 @SKILL_TYPE_3,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 1
 ELSE
 ;검격
@@ -98,7 +98,7 @@ RETURN 0
 
 ;속도보정
 @SKILL_SPEED_3, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:팬텀]]) || SKILL_CHANGE(ARG, [[キャラ:팻]])
+IF SKILL_CHANGE(ARG, [[캐릭터:팬텀]]) || SKILL_CHANGE(ARG, [[캐릭터:팻]])
 	RETURN 0
 ELSE
 	RETURN -1
@@ -117,7 +117,7 @@ RETURN 0
 RETURN 8
 
 @SKILL_RANKUP_3
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	D:1 = 116
 	RETURN 1
 ENDIF
@@ -157,7 +157,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,3
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3
-IF FINDCHARA_M(U, [[キャラ:팬텀]], [[キャラ:팻]])
+IF FINDCHARA_M(U, [[캐릭터:팬텀]], [[캐릭터:팻]])
 	PRINTL 등부 웨폰랙에 장착된 대형 회전날을 던져、적 전체에 비구 상성의 중 데미지를 준다
 	PRINTL 정식명칭「그랑･슬래시리퍼」。
 ELSE

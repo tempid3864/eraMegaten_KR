@@ -34,9 +34,9 @@ WAIT
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
-CALL SET_ENEMY,8,[[キャラ:나이트메어]], 8
-CALL SET_ENEMY,9,[[キャラ:라타토스크]], 8
-CALL SET_ENEMY,10,[[キャラ:나이트메어]], 8
+CALL SET_ENEMY,8,[[캐릭터:나이트메어]], 8
+CALL SET_ENEMY,9,[[캐릭터:라타토스크]], 8
+CALL SET_ENEMY,10,[[캐릭터:나이트메어]], 8
 CALL BATTLE_START
 FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
@@ -184,7 +184,7 @@ SELECTCASE ARG
 	CASE 0
 		PRINTFORMW ＞상자에는 양초와 채찍이 들어있다….
 		PRINTL 
-		IF FINDCHARA_B([[キャラ:에이키치]]) == 2
+		IF FINDCHARA_B([[캐릭터:에이키치]]) == 2
 			PRINTW ＞에이키치가 상자 안을 들여다보고는 멍한 표정을 지었다.
 			PRINTL 
 			PRINTL 에이키치:
@@ -198,7 +198,7 @@ SELECTCASE ARG
 			PRINTFORMW 「아니, 아무것도 아니야. 어쨌든 이건 안 돼!」
 			PRINTL 
 			PRINTFORMW ＞에이키치는 당황하며 리사를 상자에서 끌어냈다….
-		ELSEIF FINDCHARA_B([[キャラ:우라라]]) == 2
+		ELSEIF FINDCHARA_B([[캐릭터:우라라]]) == 2
 			PRINTFORMW 우라라는 상자안을 들여다보고는 눈을 동그랗게 떴다.
 			PRINTL 
 			PRINTL 우라라:
@@ -231,11 +231,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 0
 		PRINTFORMW ＞주차장에 훌륭한 바이크가 놓여져 있다
 		PRINTL 
-		IF FINDCHARA_B([[キャラ:타츠야]]) == 2
+		IF FINDCHARA_B([[캐릭터:타츠야]]) == 2
 			PRINTL 리사:
 			PRINTFORMW 「아, 역시 자기의 바이크 멋져―!」
 			PRINTFORMW 「또 뒤에 태워줘!」
-		ELSEIF FINDCHARA_B([[キャラ:카츠야]]) == 2
+		ELSEIF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 			PRINTL 카츠야:
 			PRINTFORMW 「이것은…… 역시 타츠야는 교내에 있는 건가…. 무사하면 좋겠는데…」
 			PRINTFORMW 「아니, 미안하다. 이 바이크는 동생 것이어서…」
@@ -257,7 +257,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9, [[キャラ:부키미쨩]], 10, 0,1
+			CALL SET_ENEMY,9, [[캐릭터:부키미쨩]], 10, 0,1
 			;HP1000
 			LOCAL = FLAG:전투난이도 - 3 > 0 ? 100 + (FLAG:전투난이도 - 3) * 20 # 100
 			CALL SET_BATTLE_STATUS(CHARANUM-1, 6 * LOCAL, "ＨＰ")
@@ -373,9 +373,9 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,8,[[キャラ:좀비군]], 12
-			CALL SET_ENEMY,9,[[キャラ:좀비군]], 12
-			CALL SET_ENEMY,10,[[キャラ:좀비군]], 12
+			CALL SET_ENEMY,8,[[캐릭터:좀비군]], 12
+			CALL SET_ENEMY,9,[[캐릭터:좀비군]], 12
+			CALL SET_ENEMY,10,[[캐릭터:좀비군]], 12
 			CALL BATTLE_START
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
@@ -430,10 +430,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTFORML ＞페르소나 구사자 스오 타츠야가 파티에 참가했다.
 			PRINTFORML ＞페르소나 구사자 리사 실버맨이 파티에 참가했다.
 			PRINTFORML ＞페르소나 구사자 미시나 에이키치가 파티에 참가했다.
-			LOCAL = GETCHARA([[キャラ:타츠야]])
+			LOCAL = GETCHARA([[캐릭터:타츠야]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:타츠야]], 100)
-				LOCAL = GETCHARA([[キャラ:타츠야]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:타츠야]], 100)
+				LOCAL = GETCHARA([[캐릭터:타츠야]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 8
 				BASE:LOCAL:지혜 = 5 
@@ -453,10 +453,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					ENDIF
 				NEXT
 			ENDIF
-			LOCAL = GETCHARA([[キャラ:리사]])
+			LOCAL = GETCHARA([[캐릭터:리사]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:리사]], 100)
-				LOCAL = GETCHARA([[キャラ:리사]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:리사]], 100)
+				LOCAL = GETCHARA([[캐릭터:리사]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 6
 				BASE:LOCAL:지혜 = 4 
@@ -476,10 +476,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					ENDIF
 				NEXT
 			ENDIF
-			LOCAL = GETCHARA([[キャラ:에이키치]])
+			LOCAL = GETCHARA([[캐릭터:에이키치]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:에이키치]], 100)
-				LOCAL = GETCHARA([[キャラ:에이키치]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:에이키치]], 100)
+				LOCAL = GETCHARA([[캐릭터:에이키치]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 8
 				BASE:LOCAL:지혜 = 2 
@@ -504,7 +504,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
 			;旧페르소나処理
 			ELSE
-				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[キャラ:노커]]
+				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[캐릭터:노커]]
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("힘") = 7
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("지혜") = 2
@@ -524,7 +524,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LD") = 2
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LC") = 2
 
-				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[キャラ:실키]]
+				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[캐릭터:실키]]
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("힘") = 1
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("지혜") = 12
@@ -544,7 +544,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LD") = 2
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LC") = 2
 
-				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[キャラ:하피]]
+				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[캐릭터:하피]]
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("힘") = 6
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("지혜") = 2
@@ -643,10 +643,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTFORMW ＞페르소나 구사자 아마노 마야가 파티에 참가했다.
 			PRINTFORMW ＞페르소나 구사자 세리자와 우라라가 파티에 참가했다.
 			PRINTFORMW ＞페르소나 구사자 스오 카츠야가 파티에 참가했다.
-			LOCAL = GETCHARA([[キャラ:마야(기자)]])
+			LOCAL = GETCHARA([[캐릭터:마야(기자)]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:마야(기자)]], 100)
-				LOCAL = GETCHARA([[キャラ:마야(기자)]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:마야(기자)]], 100)
+				LOCAL = GETCHARA([[캐릭터:마야(기자)]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 2
 				BASE:LOCAL:지혜 = 9 
@@ -665,10 +665,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					ENDIF
 				NEXT
 			ENDIF
-			LOCAL = GETCHARA([[キャラ:우라라]])
+			LOCAL = GETCHARA([[캐릭터:우라라]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:우라라]], 100)
-				LOCAL = GETCHARA([[キャラ:우라라]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:우라라]], 100)
+				LOCAL = GETCHARA([[캐릭터:우라라]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 5
 				BASE:LOCAL:지혜 = 4 
@@ -688,10 +688,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					ENDIF
 				NEXT
 			ENDIF
-			LOCAL = GETCHARA([[キャラ:카츠야]])
+			LOCAL = GETCHARA([[캐릭터:카츠야]])
 			IF LOCAL == -1
-				CALL ADD_GUEST_COMPANION([[キャラ:카츠야]], 100)
-				LOCAL = GETCHARA([[キャラ:카츠야]])
+				CALL ADD_GUEST_COMPANION([[캐릭터:카츠야]], 100)
+				LOCAL = GETCHARA([[캐릭터:카츠야]])
 				BASE:LOCAL:LV = 10
 				BASE:LOCAL:힘 = 8
 				BASE:LOCAL:지혜 = 6 
@@ -717,7 +717,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			
 			;旧페르소나処理
 			ELSE
-				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[キャラ:리림]]
+				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("NO") = [[캐릭터:리림]]
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("힘") = 2
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("지혜") = 5
@@ -737,7 +737,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LD") = 3
 				DITEMTYPE:페르소나("게스트페르소나1"):페르소나("속성LC") = 3
 
-				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[キャラ:잭프로스트]]
+				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("NO") = [[캐릭터:잭프로스트]]
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("힘") = 5
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("지혜") = 3
@@ -757,7 +757,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LD") = 2
 				DITEMTYPE:페르소나("게스트페르소나2"):페르소나("속성LC") = 2
 				
-				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[キャラ:엔젤]]
+				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("NO") = [[캐릭터:엔젤]]
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("LV") = 10
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("힘") = 4
 				DITEMTYPE:페르소나("게스트페르소나3"):페르소나("지혜") = 7
@@ -820,7 +820,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 ;			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9, [[キャラ:한냐교장]], 12, 0, 1
+			CALL SET_ENEMY,9, [[캐릭터:한냐교장]], 12, 0, 1
 			;HP1000
 			LOCAL = FLAG:전투난이도 - 3 > 0 ? 100 + (FLAG:전투난이도 - 3) * 20 # 100
 			CALL SET_BATTLE_STATUS(CHARANUM-1, 10 * LOCAL, "ＨＰ")
@@ -885,14 +885,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTFORMW ＞페르소나 구사자 미시나 에이키치가 파티에서 떠났다.
 			PRINTL 
 			PRINTW ＞일을 보고하기 위해 직원실까지 가자.
-			LOCAL = GETCHARA([[キャラ:타츠야]])
+			LOCAL = GETCHARA([[캐릭터:타츠야]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
-			LOCAL = GETCHARA([[キャラ:리사]])
+			LOCAL = GETCHARA([[캐릭터:리사]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
 			PRINTFORML 
-			LOCAL = GETCHARA([[キャラ:에이키치]])
+			LOCAL = GETCHARA([[캐릭터:에이키치]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
 		ELSE
@@ -924,7 +924,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9, [[キャラ:ＪＯＫＥＲ노리코]], 12, 0, 1
+			CALL SET_ENEMY,9, [[캐릭터:ＪＯＫＥＲ노리코]], 12, 0, 1
 			;HP1000
 			LOCAL = FLAG:전투난이도 - 3 > 0 ? 100 + (FLAG:전투난이도 - 3) * 20 # 100
 			CALL SET_BATTLE_STATUS(CHARANUM-1, 10 * LOCAL, "ＨＰ")
@@ -1126,13 +1126,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			PRINTFORMW ＞페르소나 구사자 스오우 카츠야가 파티에서 떠났다.
 			PRINTL 
 			PRINTFORMW ＞%조사처리(CALLNAME:MASTER,"는")% 사건의 보고를 하기 위해서 직원실로 향했다.
-			LOCAL = GETCHARA([[キャラ:마야(기자)]])
+			LOCAL = GETCHARA([[캐릭터:마야(기자)]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
-			LOCAL = GETCHARA([[キャラ:우라라]])
+			LOCAL = GETCHARA([[캐릭터:우라라]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
-			LOCAL = GETCHARA([[キャラ:카츠야]])
+			LOCAL = GETCHARA([[캐릭터:카츠야]])
 			SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 				CALL DEL_GUEST, LOCAL
 		ENDIF
@@ -1614,10 +1614,10 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL INCREASE_LC, 8
 			CALL INCREASE_LD, 2
 		ENDIF
-		IF FINDCHARA_B([[キャラ:타츠야]]) == 2
+		IF FINDCHARA_B([[캐릭터:타츠야]]) == 2
 			PRINTFORMW ＞타츠야는 %마스터를% 비난하는 눈으로 보았지만
 			PRINTW ＞한숨을 쉬고는 무기를 들었다.
-		ELSEIF FINDCHARA_B([[キャラ:마야(기자)]]) == 2
+		ELSEIF FINDCHARA_B([[캐릭터:마야(기자)]]) == 2
 			PRINTFORMW ＞마야는 %마스터를% 비난하는 눈으로 보았지만
 			PRINTW ＞한숨을 쉬고는 무기를 들었다.
 		ENDIF
@@ -1629,7 +1629,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,9, [[キャラ:좀비쨩]], 12
+		CALL SET_ENEMY,9, [[캐릭터:좀비쨩]], 12
 		ABL:(CHARANUM-1):아이템1 = [[아이템:인내력의향]]
 		ABL:(CHARANUM-1):입수확률1 = 100
 		CALL BATTLE_START
@@ -1713,7 +1713,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	CASE 102
 		IF STRFLAG_EV("죄루트", 0, [[이벤트:페르소나２]])
 			PRINTL 남학생:
-			IF FINDCHARA_B([[キャラ:리사]]) == 2
+			IF FINDCHARA_B([[캐릭터:리사]]) == 2
 				IF !STRFLAG_D("안경GET", 1)
 					PRINTW 「리사 씨!! 이것을 써 주세요!」
 					PRINTL 
@@ -1759,7 +1759,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			ENDIF
 		ELSE
 			PRINTL 여학생:
-			IF FINDCHARA_B([[キャラ:카츠야]]) == 2
+			IF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 				IF !STRFLAG_D("안경GET", 1)
 					PRINTW 「하… 멋진 안경의 남자분」
 					PRINTW 「그래, 그렇구나! 이건 운명이에요!」
@@ -1885,7 +1885,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		ENDIF
 	CASE 106
 		IF !STRFLAG_D("보스격파", 0, [[던전:페르소나２]])
-			IF FINDCHARA_B([[キャラ:리사]]) == 2
+			IF FINDCHARA_B([[캐릭터:리사]]) == 2
 				IF !STRFLAG_D("미포회화", 1)
 					PRINTL 여학생:
 					PRINTFORMW 「아, 리사. 무사했구나…. 다행이다…」
@@ -1958,11 +1958,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				GOTO BUKIMISTART
 			ELSE
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:우라라]]) == 2
+				IF FINDCHARA_B([[캐릭터:우라라]]) == 2
 					PRINTL 우라라:
 					PRINTW 「……평화주의자라고 하는데?」
 					PRINTW 「으응, 악마는 악마지」
-				ELSEIF FINDCHARA_B([[キャラ:에이키치]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:에이키치]]) == 2
 					PRINTL 에이키치:
 					PRINTW 「진심? 전혀 해는 없을 거 같은데」
 					PRINTW 「아니, 프로인 네가 한다고 하면… 따르지」
@@ -1977,7 +1977,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:라타토스크]], 12
+				CALL SET_ENEMY,9, [[캐릭터:라타토스크]], 12
 				CALL BATTLE_START
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
@@ -1985,11 +1985,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				CALLF STRFLAG_D("라타토스크퇴치", 1)
 				DA:(FLAG:현X):(FLAG:현Y) = 1
 				PRINTL 
-				IF FINDCHARA_B([[キャラ:우라라]]) == 2
+				IF FINDCHARA_B([[캐릭터:우라라]]) == 2
 					PRINTL 우라라:
 					PRINTW 「…그런데 정말 이래도 괜찮을까」
 					PRINTW 「으응, 생각해봐도 어쩔 수 없지」
-				ELSEIF FINDCHARA_B([[キャラ:에이키치]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:에이키치]]) == 2
 					PRINTL 에이키치:
 					PRINTW 「…정말 이래도 괜찮은 걸까」
 					PRINTW 「아니, 생각해봤자 바뀔 건 없나」
@@ -2066,7 +2066,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					FLAG:도주불가플래그 = 1
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
-					CALL SET_ENEMY,9, [[キャラ:라타토스크]], 12
+					CALL SET_ENEMY,9, [[캐릭터:라타토스크]], 12
 					CALL BATTLE_START
 					FLAG:도주불가플래그 = 0
 					FLAG:회화불능플래그 = 0
@@ -2164,7 +2164,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					PRINTFORMW 「\@TALENT:MASTER:남자 ? 오빠 #  언니\@가 꼭 나이트메어가 필요하다면 어쩔 수 없나아」
 					PRINTFORMW 「나이트메어 친구로 삼아줄 테니까! 고맙게 생각해요!」
 					PRINTFORMW ＞나이트메어가 동료마가 되었다.
-					CALL ADD_NEW_COMPANION, [[キャラ:나이트메어]], 500, 1
+					CALL ADD_NEW_COMPANION, [[캐릭터:나이트메어]], 500, 1
 					IF RESULT == 1
 						BASE:(RESULT:1):LV = 10
 						BASE:(RESULT:1):힘 = 3
@@ -2215,11 +2215,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				PRINTL 나이트메어:
 				PRINTW 「좋은 대답이에요」
 				PRINTW 「그럼 기대하고 있을게요」
-				IF FINDCHARA_B([[キャラ:카츠야]]) == 2
+				IF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 					PRINTL 카츠야:
 					PRINTW 「으음. 악마에게 공물이라…」
 					PRINTW 「뭐, 평화적으로 해결할 수 있다면 최선이지만… 뭐랄까」
-				ELSEIF FINDCHARA_B([[キャラ:리사]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:리사]]) == 2
 					PRINTL 리사:
 					PRINTW 「우―웅, 영리하고 아름다운데 딱 맞는 거라…」
 					PRINTW 「뭘까? 교과서 같은 건 좋아하지 않으려나」
@@ -2229,11 +2229,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				PRINTW 「그렇다면 나가주세요」
 				PRINTW 「나이트메어는 공물도 가지고 오지 않는 녀석과는 이야기 안 해요」
 				PRINTW 「나이트메어와 이야기하고 싶으면 뭔가 가져와요」
-				IF FINDCHARA_B([[キャラ:카츠야]]) == 2
+				IF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 					PRINTL 카츠야:
 					PRINTW 「으으음… 방치해둬도 괜찮겠지…」
 					PRINTW 「뭐, 다른 학생들의 모습을 보아하니 괜찮을 터」
-				ELSEIF FINDCHARA_B([[キャラ:리사]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:리사]]) == 2
 					PRINTL 리사:
 					PRINTW 「그러고 보니, 여기, 그 아이의 영토라고 그러던데」
 					PRINTW 「하긴 무슨 곤란한 사람도 없어보이니 내버려둬도 괜찮겠지」
@@ -2246,11 +2246,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					CALL INCREASE_LC, -8
 					CALL INCREASE_LD, -8
 				ENDIF
-				IF FINDCHARA_B([[キャラ:카츠야]]) == 2
+				IF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 					PRINTL 카츠야:
 					PRINTW 「……해는 없어보이지만, 정말로 하는 건가?」
 					PRINTW 「아니, 악마는 악마지. 지금은 괜찮아도 무슨 일이 있을지 모른다는 건가」
-				ELSEIF FINDCHARA_B([[キャラ:리사]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:리사]]) == 2
 					PRINTL 리사:
 					PRINTW 「하이메? 이 아이를 쓰러뜨린다고?」
 					PRINTW 「해도 없어보이고 귀여운데」
@@ -2263,7 +2263,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9, [[キャラ:나이트메어]], 12
+				CALL SET_ENEMY,9, [[캐릭터:나이트메어]], 12
 				ABL:(CHARANUM-1):아이템1 = [[아이템:운의향]]
 				ABL:(CHARANUM-1):입수확률1 = 100
 				CALL BATTLE_START
@@ -2272,11 +2272,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:선제기습취소 = 0
 				CALLF STRFLAG_D("나이트메어퇴치", 1)
 				DA:(FLAG:현X):(FLAG:현Y) = 1
-				IF FINDCHARA_B([[キャラ:카츠야]]) == 2
+				IF FINDCHARA_B([[캐릭터:카츠야]]) == 2
 					PRINTL 카츠야:
 					PRINTW 「이걸로 시민을 지킬 수 있지만……」
 					PRINTW 「말이 통한다는 것이 이렇게 괴로운 것일 줄이야」
-				ELSEIF FINDCHARA_B([[キャラ:리사]]) == 2
+				ELSEIF FINDCHARA_B([[캐릭터:리사]]) == 2
 					PRINTL 리사:
 					PRINTW 「호―린. 역시 불쌍해…」
 					PRINTW 「이런 곳에 안 왔으면 좋았을 텐데…」

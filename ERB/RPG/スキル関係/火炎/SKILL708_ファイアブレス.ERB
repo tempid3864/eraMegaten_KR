@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_708,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:메이팡]])
+IF SKILL_CHANGE(ARG, [[캐릭터:메이팡]])
 	RESULTS = 정열의 스텝
 ELSE
 	RESULTS = 파이어브레스
@@ -137,7 +137,7 @@ CALL ATTACK_SPREAD,ARG,ARG:1,708
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_708
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:메이팡]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:메이팡]]
 	PRINTL 불꽃을 휘감으며 적진에 뛰어든다
 	PRINTL 대상과 그 주위에 화염 상성 물리 소 데미지。
 ELSE

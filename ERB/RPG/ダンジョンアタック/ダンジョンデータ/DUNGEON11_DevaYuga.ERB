@@ -799,7 +799,7 @@ SELECTCASE RAND:100
 		RETURN 355, 31,0
 	CASE IS < 90
 		;10%で용왕미즈치LV33(31)
-		RETURN [[キャラ:미즈치]], 31
+		RETURN [[캐릭터:미즈치]], 31
 	CASE IS < 100
 		;10%で알라우네
 		RETURN 405, 31,0
@@ -812,10 +812,10 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:프린시펄리티]] , 3 + RAND:10 , CSVBASE([[キャラ:프린시펄리티]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:프린시펄리티]] , 3 + RAND:10 , CSVBASE([[캐릭터:프린시펄리티]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:모스맨]] , 3 + RAND:10 , CSVBASE([[キャラ:모스맨]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:모스맨]] , 3 + RAND:10 , CSVBASE([[캐릭터:모스맨]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:SSS]] , 3 + RAND:10 , CSVBASE([[キャラ:SSS]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:SSS]] , 3 + RAND:10 , CSVBASE([[캐릭터:SSS]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

@@ -306,10 +306,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- 악마解析度증가処理(1000でMAX)
-			CALL INCREASE_ANALYZE([[キャラ:두베]],1000)
+			CALL INCREASE_ANALYZE([[캐릭터:두베]],1000)
 
 			;- SET:두베
-			CALL SET_ENEMY,9,[[キャラ:두베]],REQUEST_30_BASE_LV(1),1,1
+			CALL SET_ENEMY,9,[[캐릭터:두베]],REQUEST_30_BASE_LV(1),1,1
 			CFLAG:(CHARANUM-1):행동횟수 = 2
 			
 			;내성(全속성무효)
@@ -373,7 +373,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;- CHK:전투フラグ
 		IF L_BTL_FLG
 			;- SET:두베
-			CALL SET_ENEMY,9,[[キャラ:두베]],REQUEST_30_BASE_LV(1),1,1
+			CALL SET_ENEMY,9,[[캐릭터:두베]],REQUEST_30_BASE_LV(1),1,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 1000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -403,8 +403,8 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		FLAG:회화불능플래그 = 0
 		FLAG:선제기습취소 = 0
 		;合体解禁
-		CALL LIFTING_A_BAN([[キャラ:두베]])
-		FLAG:(10000 + [[キャラ:두베]]) = 1
+		CALL LIFTING_A_BAN([[캐릭터:두베]])
+		FLAG:(10000 + [[캐릭터:두베]]) = 1
 		
 		PRINTFORMW ＞두베를 격파한 직후、야마토가 모습을 나타나냈다。
 		PRINTFORMW ＞…아무래도 보고 있었던 것 같다。
@@ -659,7 +659,7 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 		;-----------------------------
 
 		;- キャラ추가(이오)
-		CALL ADD_NEW_COMPANION,[[キャラ:이오]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:이오]],200
 		L_ADD_RESULT = RESULT
 
 		;조교の有無に関わらず전투には常に참가가능
@@ -721,10 +721,10 @@ SELECTCASE L_FLAG_EVENT_DIGIT
 				;데빌 옥션 처리
 				;매각된 캐릭터의 조교에 관한 능력、소질、경험、가격을 보존
 				;아헤 얼굴로 음란화한 이오를 즉매각 했을 경우보다 아주 조금 싼 가격
-				CALL CHARASELL_AFTER_デビオク, GETCHARA([[キャラ:이오]]), 1000
+				CALL CHARASELL_AFTER_デビオク, GETCHARA([[캐릭터:이오]]), 1000
 				
 				;キャラクタ－삭제
-				CALL 캐릭터삭제, GETCHARA([[キャラ:이오]])
+				CALL 캐릭터삭제, GETCHARA([[캐릭터:이오]])
 			ENDIF
 			;--------------------------------------------
 			;PRINTFORMW …
@@ -996,10 +996,10 @@ IF L_BAD
 		;데빌 옥션 처리
 		;매각된 캐릭터의 조교에 관한 능력、소질、경험、가격을 보존
 		;아헤 얼굴로 음란화한 이오를 즉매각 했을 경우보다 아주 조금 싼 가격
-		CALL CHARASELL_AFTER_デビオク, GETCHARA([[キャラ:이오]]), 1000
+		CALL CHARASELL_AFTER_デビオク, GETCHARA([[캐릭터:이오]]), 1000
 		
 		;キャラクタ－삭제
-		CALL 캐릭터삭제, GETCHARA([[キャラ:이오]])
+		CALL 캐릭터삭제, GETCHARA([[캐릭터:이오]])
 	ENDIF
 	RETURN
 ENDIF
@@ -1124,7 +1124,7 @@ IF L_BTL_FLG
 	;-----------------------------
 
 	L_LV = REQUEST_30_BASE_LV(1)
-	L_ENEMY = [[キャラ:집스국원]]
+	L_ENEMY = [[캐릭터:집스국원]]
 
 	;- 악마解析度증가処理(1000でMAX)
 	CALL INCREASE_ANALYZE(L_ENEMY,1000)

@@ -1450,7 +1450,7 @@ ELSE
 ENDIF
 PRINTL 
 IF 이벤트플래그:12:0 >= 3
-	PRINTFORML ＞다시 곰과 만났다. 「선생」이라고 불린 %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))% 동료마가 되었다.
+	PRINTFORML ＞다시 곰과 만났다. 「선생」이라고 불린 %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))% 동료마가 되었다.
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　이벤트：깊은 안개의 스튜디오를 실시한다.
@@ -1458,8 +1458,8 @@ ELSE
 ENDIF
 PRINTL 
 IF 이벤트플래그:12:0 >= 4
-	PRINTFORML ＞%CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))%의 사촌 동생 도지마 나나코가 나마타로 타로라는 남자에게 납치당한 모양이다.
-	PRINTFORML 　곰이 말하기를 %CALLNAME:(FINDCHARA(NO, [[キャラ:P4주인공]]))% 비슷한 냄새가 나는 천국 같은 곳에 있다고 한다. 나나코는 거기에 있는 것일까?
+	PRINTFORML ＞%CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))%의 사촌 동생 도지마 나나코가 나마타로 타로라는 남자에게 납치당한 모양이다.
+	PRINTFORML 　곰이 말하기를 %CALLNAME:(FINDCHARA(NO, [[캐릭터:P4주인공]]))% 비슷한 냄새가 나는 천국 같은 곳에 있다고 한다. 나나코는 거기에 있는 것일까?
 ELSE
 	SETCOLORBYNAME Gray
 	PRINTL ＞Next　이벤트：깊은 안개의 스튜디오를 실시한다.
@@ -1526,9 +1526,9 @@ PRINTL ================================
 PRINTL 
 IF 던전플래그:61:0 == 5
 	IF 던전플래그:61:1 == 1
-		PRINTFORML ＞하라주쿠에서 데빌 칠드런 %CALLNAME:(FINDCHARA(NO, [[キャラ:세츠나]]))%라는 소년을 입수했다.
+		PRINTFORML ＞하라주쿠에서 데빌 칠드런 %CALLNAME:(FINDCHARA(NO, [[캐릭터:세츠나]]))%라는 소년을 입수했다.
 	ELSE
-		PRINTFORML ＞하라주쿠에서 데빌 칠드런 %CALLNAME:(FINDCHARA(NO, [[キャラ:미라이]]))%라는 소녀를 입수했다.
+		PRINTFORML ＞하라주쿠에서 데빌 칠드런 %CALLNAME:(FINDCHARA(NO, [[캐릭터:미라이]]))%라는 소녀를 입수했다.
 	ENDIF
 ELSE
 	SETCOLORBYNAME Gray

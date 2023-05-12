@@ -9,7 +9,7 @@ RETURN 90
 ;　위력
 @SKILL_POWER_346, ARG
 ;ばななが使用する場合威力を盛る（マルカジリ相当
-IF SKILL_CHANGE(ARG, [[キャラ:나나]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나나]])
 	RETURN 410
 ELSE
 	RETURN 325
@@ -31,7 +31,7 @@ RETURN 3
 ;　코스트량
 @SKILL_COST_346,ARG
 ;ば나나が사용する場合소비を盛る（マルカジリより多い
-IF SKILL_CHANGE(ARG, [[キャラ:나나]])
+IF SKILL_CHANGE(ARG, [[캐릭터:나나]])
 	RETURN 40
 ELSE
 	RETURN 30

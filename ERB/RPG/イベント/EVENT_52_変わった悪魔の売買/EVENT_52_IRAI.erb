@@ -173,7 +173,7 @@
 					PRINTFORML 「이 의뢰를 받아줄건가？」
 					CALL INPUT_YN
 					IF RESULT == 0
-						IF GETCHARA([[キャラ:마요네]]) > 0 && 예속(GETCHARA([[キャラ:마요네]]))
+						IF GETCHARA([[캐릭터:마요네]]) > 0 && 예속(GETCHARA([[캐릭터:마요네]]))
 							PRINTFORML %마스터는%  의뢰를 완수하기 위해 점주를 세이프 하우스에 초대했다。
 							PRINTFORML 「엑、말해보긴 했는데、진짜로 조교해버렸네、이 녀석」
 							PRINTFORML 점주 앞에는 입에 재갈을 물고、밧줄로 자유를 빼앗긴 마요네가 나뒹굴고 있다。
@@ -189,7 +189,7 @@
 							MONEY:1 += 5000
 							이벤트플래그:52:3 = 1
 							GOTO INPUT_LOOP_IRAI
-						ELSEIF GETCHARA([[キャラ:마요네]]) > 0 && 친애(GETCHARA([[キャラ:마요네]]))
+						ELSEIF GETCHARA([[캐릭터:마요네]]) > 0 && 친애(GETCHARA([[캐릭터:마요네]]))
 							PRINTFORML %마스터는%  의뢰를 얼버무리기위해 점주를 세이프하우스에 초대했다。
 							PRINTFORML 「……있잖아、너、사람의 눈을 옹이구멍이라고 생각하고 있지」
 							PRINTFORML 점주의 앞에는 밧줄로 자유를 빼앗긴 마요네가 나뒹굴고 있다。
@@ -201,7 +201,7 @@
 							MONEY:1 += 1000
 							이벤트플래그:52:3 = 1
 							GOTO INPUT_LOOP_IRAI
-						ELSEIF GETCHARA([[キャラ:마요네]]) > 0 && 창부(GETCHARA([[キャラ:마요네]]))
+						ELSEIF GETCHARA([[캐릭터:마요네]]) > 0 && 창부(GETCHARA([[캐릭터:마요네]]))
 							PRINTFORML %마스터는%  의뢰를 완수하기 위해 점주에게 한 편의 비디오를 건냈다。
 							PRINTFORML 「비디오？　마요네의 AV？　에、보는거야？」
 							PRINTFORML 별로 내키지 않아보이는 점주를 의자에 앉히고、%마스터는%  비디오를 재생했다。
@@ -378,7 +378,7 @@
 					PRINTFORML 「보수는 2000마카다。이 의뢰를 받겠어？」
 					CALL INPUT_YN
 					IF RESULT == 0
-						IF GETCHARA([[キャラ:롱기누스１３]]) > 0 && GETCHARA([[キャラ:롱기누스１２]]) > 0 && GETCHARA([[キャラ:롱기누스１１]]) > 0 && GETCHARA([[キャラ:롱기누스１０]]) > 0 && GETCHARA([[キャラ:롱기누스９]]) > 0 && GETCHARA([[キャラ:롱기누스８]]) > 0 && GETCHARA([[キャラ:롱기누스７]]) > 0 && GETCHARA([[キャラ:롱기누스６]]) > 0 && GETCHARA([[キャラ:롱기누스５]]) > 0 && GETCHARA([[キャラ:롱기누스４]]) > 0 && GETCHARA([[キャラ:롱기누스３]]) > 0 && GETCHARA([[キャラ:롱기누스２]]) > 0 && GETCHARA([[キャラ:롱기누스１]]) > 0 
+						IF GETCHARA([[캐릭터:롱기누스１３]]) > 0 && GETCHARA([[캐릭터:롱기누스１２]]) > 0 && GETCHARA([[캐릭터:롱기누스１１]]) > 0 && GETCHARA([[캐릭터:롱기누스１０]]) > 0 && GETCHARA([[캐릭터:롱기누스９]]) > 0 && GETCHARA([[캐릭터:롱기누스８]]) > 0 && GETCHARA([[캐릭터:롱기누스７]]) > 0 && GETCHARA([[캐릭터:롱기누스６]]) > 0 && GETCHARA([[캐릭터:롱기누스５]]) > 0 && GETCHARA([[캐릭터:롱기누스４]]) > 0 && GETCHARA([[캐릭터:롱기누스３]]) > 0 && GETCHARA([[캐릭터:롱기누스２]]) > 0 && GETCHARA([[캐릭터:롱기누스１]]) > 0 
 							PRINTFORML %마스터가% 전화하자、곧바로 롱기누스들이 나타났다。
 							PRINTFORML 「오옷、이 녀석이、어라、숫자가 많은 것 같은데」
 							PRINTFORML 「기다려！　기다려 기다려！　몇 명 오는 거야！　이봐！」
@@ -390,7 +390,7 @@
 							MONEY:1 += 20000
 							이벤트플래그:52:6 = 1
 							GOTO INPUT_LOOP_IRAI
-						ELSEIF GETCHARA([[キャラ:롱기누스１３]]) > 0 ||GETCHARA([[キャラ:롱기누스１２]]) > 0 ||GETCHARA([[キャラ:롱기누스１１]]) > 0 ||GETCHARA([[キャラ:롱기누스１０]]) > 0 ||GETCHARA([[キャラ:롱기누스９]]) > 0 ||GETCHARA([[キャラ:롱기누스８]]) > 0 ||GETCHARA([[キャラ:롱기누스７]]) > 0 ||GETCHARA([[キャラ:롱기누스６]]) > 0 ||GETCHARA([[キャラ:롱기누스５]]) > 0 ||GETCHARA([[キャラ:롱기누스４]]) > 0 ||GETCHARA([[キャラ:롱기누스３]]) > 0 ||GETCHARA([[キャラ:롱기누스２]]) > 0 ||GETCHARA([[キャラ:롱기누스１]]) > 0
+						ELSEIF GETCHARA([[캐릭터:롱기누스１３]]) > 0 ||GETCHARA([[캐릭터:롱기누스１２]]) > 0 ||GETCHARA([[캐릭터:롱기누스１１]]) > 0 ||GETCHARA([[캐릭터:롱기누스１０]]) > 0 ||GETCHARA([[캐릭터:롱기누스９]]) > 0 ||GETCHARA([[캐릭터:롱기누스８]]) > 0 ||GETCHARA([[캐릭터:롱기누스７]]) > 0 ||GETCHARA([[캐릭터:롱기누스６]]) > 0 ||GETCHARA([[캐릭터:롱기누스５]]) > 0 ||GETCHARA([[캐릭터:롱기누스４]]) > 0 ||GETCHARA([[캐릭터:롱기누스３]]) > 0 ||GETCHARA([[캐릭터:롱기누스２]]) > 0 ||GETCHARA([[캐릭터:롱기누스１]]) > 0
 							PRINTFORML %마스터가% 전화하자 곧바로 롱기누스가 나타났다。
 							PRINTFORML 「오옷、설마 실물을 볼 날이 온다고는」
 							PRINTFORML 

@@ -4349,7 +4349,7 @@ $START
 PRINTL [0] 회복한다
 PRINTL [1] 세이브한다
 PRINTL [2] 성적인 서비스
-트리슈 = GETCHARA([[キャラ:트리슈(샘)]])
+트리슈 = GETCHARA([[캐릭터:트리슈(샘)]])
 SIF 트리슈 > -1 && 함락(트리슈) >= 2
 	PRINTL [3] 트리슈를 테이크 아웃한다
 PRINTL [9] 별거 없다
@@ -4371,8 +4371,8 @@ IF FLAG:트리슈조교 != -2
 		WEND
 		가격보정 = MAX(2500, 가격보정) * MAX(MARK:트리슈:반발각인 * 3, 1)
 	ELSE
-		CALL ADD_NEW_COMPANION, [[キャラ:트리슈(샘)]], 200
-		트리슈 = GETCHARA([[キャラ:트리슈(샘)]])
+		CALL ADD_NEW_COMPANION, [[캐릭터:트리슈(샘)]], 200
+		트리슈 = GETCHARA([[캐릭터:트리슈(샘)]])
 		SIF BASE:트리슈:LV < 15
 			BASE:트리슈:LV = 15
 		CFLAG:트리슈:이자리에없는플래그 = 1

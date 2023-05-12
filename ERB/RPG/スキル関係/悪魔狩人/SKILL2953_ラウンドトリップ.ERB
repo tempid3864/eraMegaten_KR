@@ -115,7 +115,7 @@ RETURN 95
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_2953,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:트리쉬(DMC)]]) == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:트리쉬(DMC)]]) == 1
 	CALL SKILLGAGE_D_SET,ARG,2953,4
 ENDIF
 CALL ATTACK_FIELD,ARG,ARG:1,2953
@@ -131,10 +131,10 @@ CALL ATTACK_FIELD,ARG,ARG:1,2953
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2953
-IF SKILL_CHANGE(U, [[キャラ:단테]])
+IF SKILL_CHANGE(U, [[캐릭터:단테]])
 	PRINTL 아버지의 유품인 검을 내던져
 	PRINTL 적 전체에、전격 상성 대 데미지를 주고、감전시킨다
-ELSEIF SKILL_CHANGE(U, [[キャラ:트리쉬(DMC)]])
+ELSEIF SKILL_CHANGE(U, [[캐릭터:트리쉬(DMC)]])
 	PRINTL 마검 스파다를 내던져
 	PRINTL 적 전체에、전격 상성 대 데미지를 주고、감전시킨다
 	PRINTL 전격의 마력이 수속되어、4T간、다른 기술로 파생 가능해진다

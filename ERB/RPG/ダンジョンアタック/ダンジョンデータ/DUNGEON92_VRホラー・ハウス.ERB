@@ -1109,23 +1109,23 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 @ENEMY_92, ARG
 	SELECTCASE RAND:100
 		CASE IS < 14
-			RETURN [[キャラ:프린시펄리티]], 29
+			RETURN [[캐릭터:프린시펄리티]], 29
 		CASE IS < 28
-			RETURN [[キャラ:노즈치]], 29
+			RETURN [[캐릭터:노즈치]], 29
 		CASE IS < 42
-			RETURN [[キャラ:네코마타]], 28
+			RETURN [[캐릭터:네코마타]], 28
 		CASE IS < 56
-			RETURN [[キャラ:스코그스라]], 30
+			RETURN [[캐릭터:스코그스라]], 30
 		CASE IS < 70
-			RETURN [[キャラ:야카]], 29
+			RETURN [[캐릭터:야카]], 29
 		CASE IS < 80
-			RETURN [[キャラ:시완나]], 32
+			RETURN [[캐릭터:시완나]], 32
 		CASE IS < 90
-			RETURN [[キャラ:와일드헌트]], 33
+			RETURN [[캐릭터:와일드헌트]], 33
 		CASE IS < 95
-			RETURN [[キャラ:비프론스]], 34
+			RETURN [[캐릭터:비프론스]], 34
 		CASE IS < 100
-			RETURN [[キャラ:가샤도쿠로]], 34
+			RETURN [[캐릭터:가샤도쿠로]], 34
 	ENDSELECT
 
 ;=======================================================================
@@ -1209,7 +1209,7 @@ ENDIF
 @EVENT_BATTLE_ACTEND_DUNGEON92
 #DIM L_ENEMY
 ;에리카死亡
-IF FINDCHARA_ENEMY([[キャラ:에리카]]) == 3 && !GETBIT(L_ENEMY,0)
+IF FINDCHARA_ENEMY([[캐릭터:에리카]]) == 3 && !GETBIT(L_ENEMY,0)
 	SETCOLOR 0xff0033
 	PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃신고……도망…쳐……　　　　　　　　　┃
@@ -1218,18 +1218,18 @@ IF FINDCHARA_ENEMY([[キャラ:에리카]]) == 3 && !GETBIT(L_ENEMY,0)
 	RESETCOLOR
 ENDIF
 ;에리카存命でないと返る
-SIF FINDCHARA_ENEMY([[キャラ:에리카]]) != 1
+SIF FINDCHARA_ENEMY([[캐릭터:에리카]]) != 1
 	RETURN
 VARSET LOCALS
-IF FINDCHARA_ENEMY([[キャラ:고기]]) == 3 && !GETBIT(L_ENEMY,1)
+IF FINDCHARA_ENEMY([[캐릭터:고기]]) == 3 && !GETBIT(L_ENEMY,1)
 	LOCALS = 고기！
 	SETBIT L_ENEMY,1
 ENDIF
-IF FINDCHARA_ENEMY([[キャラ:루게이에]]) == 3 && !GETBIT(L_ENEMY,2)
+IF FINDCHARA_ENEMY([[캐릭터:루게이에]]) == 3 && !GETBIT(L_ENEMY,2)
 	LOCALS = %LOCALS%루게이에！
 	SETBIT L_ENEMY,2
 ENDIF
-IF FINDCHARA_ENEMY([[キャラ:버그스]]) == 3 && !GETBIT(L_ENEMY,3)
+IF FINDCHARA_ENEMY([[캐릭터:버그스]]) == 3 && !GETBIT(L_ENEMY,3)
 	LOCALS = %LOCALS%버그스！
 	SETBIT L_ENEMY,3
 ENDIF
@@ -1443,9 +1443,9 @@ ENDIF
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:야카]] , 3 + RAND:10 , CSVBASE([[キャラ:야카]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야카]] , 3 + RAND:10 , CSVBASE([[캐릭터:야카]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:비프론스]] , 3 + RAND:10 , CSVBASE([[キャラ:비프론스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:비프론스]] , 3 + RAND:10 , CSVBASE([[캐릭터:비프론스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:와일드헌트]] , 3 + RAND:10 , CSVBASE([[キャラ:와일드헌트]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:와일드헌트]] , 3 + RAND:10 , CSVBASE([[캐릭터:와일드헌트]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT

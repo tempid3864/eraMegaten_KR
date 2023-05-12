@@ -129,7 +129,7 @@ FLAG:선제기습취소 = 1
 
 ;Talulah전。 더 이상 걸을 수 없는 탈룰～라 투사 탈룰라 쪽이 아니다。
 ;뭐 CSV 준비하지 않았기 때문에 아크나이츠와 마찬가지로 기존의 개조물이지만、베헤헤
-CALL SET_ENEMY,9,[[キャラ:청룡]],70,1,3
+CALL SET_ENEMY,9,[[캐릭터:청룡]],70,1,3
 NAME:(CHARANUM-1) = 탈룰라
 CALLNAME:(CHARANUM-1) = 탈룰라
 CFLAG:(CHARANUM-1):ＨＰ보정 += 7500
@@ -197,7 +197,7 @@ CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;제국 포격 아틸러리。
-CALL SET_ENEMY,14,[[キャラ:T95메두사]],68,1,1
+CALL SET_ENEMY,14,[[캐릭터:T95메두사]],68,1,1
 NAME:(CHARANUM-1) = 제국 아틸러리 타게티어
 CALLNAME:(CHARANUM-1) = 제국 아틸러리 타게티어
 CFLAG:(CHARANUM-1):ＨＰ보정 += 4500
@@ -247,7 +247,7 @@ FOR LCOUNT,7,17
 	SIF LCOUNT == 9 || LCOUNT == 14
 		CONTINUE
 	;帝国精鋭先鋒
-	CALL SET_ENEMY,LCOUNT,[[キャラ:터미네이터]],65,1,1
+	CALL SET_ENEMY,LCOUNT,[[캐릭터:터미네이터]],65,1,1
 	NAME:(CHARANUM-1) = 제국 정예 선봉
 	CALLNAME:(CHARANUM-1) = 제국 정예 선봉
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2400

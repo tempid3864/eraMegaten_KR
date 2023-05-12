@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_507,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RESULTS = 호러스크림
 ELSE
 	RESULTS = 라쿤ㆍ다
@@ -32,7 +32,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_507,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RETURN 13
 ELSE
 	RETURN 16
@@ -131,7 +131,7 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 	SIF POS(LOCAL) < 0
 		CONTINUE
 		
-	IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 		CFLAG:POS(LOCAL):방어강화 = MIN(32, CFLAG:POS(LOCAL):방어강화 - ((SKILLGAGE_H_GET(ARG,3622)/5)+1)*4)
 	ELSE
 		CFLAG:POS(LOCAL):방어강화 = MAX(-16, CFLAG:POS(LOCAL):방어강화 - 4)
@@ -139,7 +139,7 @@ FOR LOCAL,LOCAL:1,LOCAL:2
 NEXT
 
 IF SKILL_CHANGE(ARG, 5611)
-	SELECTCASE SKILLGAGE_H_GET(ARG,[[キャラ:코우메]])
+	SELECTCASE SKILLGAGE_H_GET(ARG,[[캐릭터:코우메]])
 	CASE 0 TO 4
 		PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 방어력을 낮췄다！
 	CASE 5 TO 10
@@ -170,7 +170,7 @@ ENDIF
 ;　 설명문 표시
 @SKILL_EXPLAIN_507
 
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:코우메]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:코우메]]
 	PRINTL 적의 방어력을 낮춘다。감소량은 현재 자신의 사령 카운터의 양에 따라 변화한다。
 	PRINTL 자신의 사령 카운터를 3 소비한다。
 ELSE
@@ -182,7 +182,7 @@ RETURN 1
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_507,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 ;小梅が使用する場合は固有ゲージが3以上ないと発動できない。
 	SIF SKILLGAGE_H_GET(ARG,3622) >= 3
 		RETURN 1

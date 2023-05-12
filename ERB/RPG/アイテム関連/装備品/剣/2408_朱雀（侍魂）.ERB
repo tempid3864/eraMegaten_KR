@@ -36,7 +36,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 288
 		LOCAL = 195
-		IF NO:(ARG:1) == [[キャラ:카즈키]]
+		IF NO:(ARG:1) == [[캐릭터:카즈키]]
 			LOCAL += 93 * (MIN(MAX(51,MAXBASE:(ARG:1):LV),70) - 50) / 20
 		ELSEIF ABL:(ARG:1):속성LC == 3 && MAXBASE:(ARG:1):LV > 69
 			SIF TALENT:(ARG:1):아픔에강함
@@ -53,7 +53,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 141
 		LOCAL = 101
-		IF NO:(ARG:1) == [[キャラ:카즈키]]
+		IF NO:(ARG:1) == [[캐릭터:카즈키]]
 			LOCAL += MIN(MAX(50,MAXBASE:(ARG:1):LV),70) - 50 * 2
 		ELSEIF ABL:(ARG:1):속성LC == 3 && MAXBASE:(ARG:1):LV > 69
 			SIF TALENT:(ARG:1):솔직함
@@ -66,7 +66,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 80
 		LOCAL = 50
-		IF NO:(ARG:1) == [[キャラ:카즈키]]
+		IF NO:(ARG:1) == [[캐릭터:카즈키]]
 			;LOCAL += 163 * (MIN(MAX(51,MAXBASE:(ARG:1):LV),70) - 50) / 20
 			LOCAL += MIN(MAX(50,MAXBASE:(ARG:1):LV),70) - 50 * 3/2
 		ELSEIF ABL:(ARG:1):속성LC == 3 && MAXBASE:(ARG:1):LV > 69
@@ -113,7 +113,7 @@ RETURN 0
 RETURN GET_EQUIPNUM("검")
 
 @장비추가스킬_2408,ARG,ARG:1 = -1
-IF ARG:1 < 0 || NO:(ARG:1) == [[キャラ:카즈키]]
+IF ARG:1 < 0 || NO:(ARG:1) == [[캐릭터:카즈키]]
 	SELECTCASE ARG
 	CASE 0
 		RETURN 3553
@@ -129,7 +129,7 @@ RETURN 0
 ;一体まで
 SIF EQUIPMENT_COUNT(2408) >= 1
 	RETURN 0
-SIF NO:ARG == [[キャラ:카즈키]]
+SIF NO:ARG == [[캐릭터:카즈키]]
 	RETURN 1
 SIF ABL:ARG:속성LC != 3
 	RETURN 0

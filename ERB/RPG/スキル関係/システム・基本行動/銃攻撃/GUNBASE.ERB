@@ -135,14 +135,14 @@ LOCAL = RESULT
 ;		;貫通持ちは耐性と無効を無視
 ;		LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSEIF CFLAG:(ARG:1):(GET_TYPE(ARG:3) + "가드킬") && (MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) < 100 || MAXBASE:(ARG:1):(GET_TYPE(ARG:3)) == 999)
 ;		;ガードキル効果：耐性以上を完全に無視
 ;		LOCAL *= 100
 ;		;LOCAL *= MAX(100,MAXBASE:(ARG:1):(GET_TYPE(ARG:3)))
 ;		;ベルㆍデルは貫通でも0ダメージに
-;		SIF NO:(ARG:1) == [[キャラ:벨ㆍ데르]]
+;		SIF NO:(ARG:1) == [[캐릭터:벨ㆍ데르]]
 ;			LOCAL = 0
 ;	ELSE
 ;		LOCAL *= MAXBASE:(ARG:1):(GET_TYPE(ARG:3))
@@ -389,7 +389,7 @@ FOR LOCAL:10,0,LOCAL:1
 		;口上用に数値確保
 		CALL BATTLE_EVENT_ATTACK, ARG, ARG:1, 0, 2
 ;---- EDIT 003 ADD START -------------------------
-		SIF TFLAG:스웨이리액트 && NO:(ARG:1) == [[キャラ:로어＝아＝루아]]
+		SIF TFLAG:스웨이리액트 && NO:(ARG:1) == [[캐릭터:로어＝아＝루아]]
 			num = num + 1
 ;---- EDIT 003 ADD END ---------------------------
 	ENDIF
@@ -548,7 +548,7 @@ FOR LOCAL:9,LOCAL:7,LOCAL:8
 			;口上用に数値確保
 			CALL BATTLE_EVENT_ATTACK, ARG, FLAG:LOCALS, 0, 2
 ;---- EDIT 003 ADD START -------------------------
-			SIF TFLAG:스웨이리액트 && NO:(POS(LOCAL:9)) == [[キャラ:로어＝아＝루아]]
+			SIF TFLAG:스웨이리액트 && NO:(POS(LOCAL:9)) == [[캐릭터:로어＝아＝루아]]
 				num = num + 1
 				num1 = FLAG:LOCALS
 ;---- EDIT 003 ADD END ---------------------------
@@ -716,7 +716,7 @@ FOR LOCAL,0,LOCAL:1
 		;口上用に数値確保
 		CALL BATTLE_EVENT_ATTACK, ARG, FLAG:LOCALS, 0, 2
 ;---- EDIT 003 ADD START -------------------------
-		SIF TFLAG:스웨이리액트 && NO:(FLAG:LOCALS) == [[キャラ:로어＝아＝루아]]
+		SIF TFLAG:스웨이리액트 && NO:(FLAG:LOCALS) == [[캐릭터:로어＝아＝루아]]
 			num = num + 1
 			num1 = FLAG:LOCALS
 ;---- EDIT 003 ADD END ---------------------------

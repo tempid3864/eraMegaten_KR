@@ -4,7 +4,7 @@
 ;스킬명
 @SKILL_NAME_1424,ARG
 ;京都人が使用する場合京ことばに
-IF SKILL_CHANGE(ARG, [[キャラ:카오루코]])
+IF SKILL_CHANGE(ARG, [[캐릭터:카오루코]])
 	RESULTS = 뒈져아이가
 ELSE
 	RESULTS = 저주의언령
@@ -133,7 +133,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,1424
 ;　 설명문 표시
 @SKILL_EXPLAIN_1424
 ;京都人が사용する場合京ことばに
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:카오루코]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:카오루코]]
 	SELECTCASE RAND:4
 		CASE 0
 			PRINTL 꽤 건강해보이는디？

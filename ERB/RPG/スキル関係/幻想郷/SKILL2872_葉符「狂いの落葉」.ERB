@@ -146,7 +146,7 @@ NEXT
 PRINTFORMW \@ CFLAG:ARG:PT플래그 == 2 ? 적 # 아군 \@의 명중률이 낮아졌다！
 
 ;静葉が使用時、かつPTに穣子がいる場合
-IF SKILL_CHANGE(ARG, [[キャラ:시즈하]]) &&  FINDCHARA_B(4837) == 2
+IF SKILL_CHANGE(ARG, [[캐릭터:시즈하]]) &&  FINDCHARA_B(4837) == 2
 	IF RAND:2 == 0
 		FOR LOCAL,LOCAL:1,LOCAL:2
 			SIF POS(LOCAL) < 0

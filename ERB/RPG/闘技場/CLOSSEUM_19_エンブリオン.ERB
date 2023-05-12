@@ -45,7 +45,7 @@ CALL MESSAGE_WINDOW, "", @"＞%마스터가% 관객석을 둘러보자 주의의
 CALL MESSAGE_WINDOW, "소녀", "내가、해야 해", , , , , 4
 CALL MESSAGE_WINDOW, "", @"＞소녀는 입을 굳게 다물더니 손에 든 총을 %CALLNAME:MASTER%에게 겨누었다", , , , , 4
 CALL MESSAGE_WINDOW, "", "식노 세라가 １체 나타났다！", , , , , 4
-CALL SET_ENEMY,14,[[キャラ:세라]],17,0,1
+CALL SET_ENEMY,14,[[캐릭터:세라]],17,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 CFLAG:(CHARANUM-1):속도보정 += 10
 CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -61,7 +61,7 @@ CALL MESSAGE_WINDOW, "", "소녀를 쓰러뜨리자/그 소녀는 환영처럼 �
 ;CALL MESSAGE_WINDOW, "", "＞확인하듯이 보고 있던 여자는 흥미를 잃은 것처럼 떠나갔다", , , , , 4
 ;CALL MESSAGE_WINDOW, "", "＞상품으로 기절한 소녀를 손에 넣고 링을 뒤로했다", , , , , 4
 ;CALL MESSAGE_WINDOW, "", "세라가 노예가 되었다", , , , , 4
-;	CALL ADD_NEW_COMPANION,[[キャラ:세라]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:세라]],100
 FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0
@@ -96,7 +96,7 @@ CALL MESSAGE_WINDOW, "로알드", "난 너희들에게 협력하고 있었을 �
 CALL MESSAGE_WINDOW, "", "＞세 남자들은 악마로 변신했다！", , , , , 4
 CALL MESSAGE_WINDOW, "", "식노 시에로가 １체 나타났다!/식노 게일이 １체 나타났다!/식노 로알드가 １체 나타났다!", , , , , 4
 
-CALL SET_ENEMY,13,[[キャラ:시에로]],30,0,1
+CALL SET_ENEMY,13,[[캐릭터:시에로]],30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -110,7 +110,7 @@ ABL:(CHARANUM-1):스킬4 = [[스킬:스쿠ㆍ카쟈]]
 CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
-CALL SET_ENEMY,14,[[キャラ:게일]],30,0,1
+CALL SET_ENEMY,14,[[캐릭터:게일]],30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -125,7 +125,7 @@ ABL:(CHARANUM-1):스킬5 = [[스킬:뇌정축]]
 CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
-CALL SET_ENEMY,15,[[キャラ:로알드]],30,0,1
+CALL SET_ENEMY,15,[[캐릭터:로알드]],30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -143,9 +143,9 @@ CALL BATTLE_START
 CALL MESSAGE_WINDOW, "", "＞엠브리온의 3인에게 승리했다", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞세 명은 환영처럼 사라졌다", , , , , 4
 ;CALL MESSAGE_WINDOW, "", "시에로、게일、로알드가 노예가 되었다", , , , , 4
-;	CALL ADD_NEW_COMPANION,[[キャラ:시에로]],100
-;	CALL ADD_NEW_COMPANION,[[キャラ:게일]],100
-;	CALL ADD_NEW_COMPANION,[[キャラ:로알드]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:시에로]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:게일]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:로알드]],100
 FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0
@@ -172,7 +172,7 @@ CALL MESSAGE_WINDOW, "알지라", "여기까지 이겨나간 건 우리뿐인 �
 CALL MESSAGE_WINDOW, "히트", "세라를 찾고 싶다고/얼른 끝내자 리더", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞리더 같은 인물이 조용히 고개를 끄덕이자 그들은 악마로 변신했다！", , , , , 4
 CALL MESSAGE_WINDOW, "", "식노 서프가 １체 나타났다!/식노 히트가 １체 나타났다!/식노 알지라가 １체 나타났다!", , , , , 4
-CALL SET_ENEMY,13,[[キャラ:히트]],40,0,1
+CALL SET_ENEMY,13,[[캐릭터:히트]],40,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -187,7 +187,7 @@ ABL:(CHARANUM-1):스킬5 = [[스킬:물고늘어지기]]
 CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
-CALL SET_ENEMY,14,[[キャラ:서프]],40,0,1
+CALL SET_ENEMY,14,[[캐릭터:서프]],40,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -202,7 +202,7 @@ ABL:(CHARANUM-1):스킬5 = [[스킬:돌격]]
 CALL SYNC_STATUS, (CHARANUM-1)
 CALL HEALTH_CHARA, (CHARANUM-1)
 
-CALL SET_ENEMY,15,[[キャラ:알지라]],40,0,1
+CALL SET_ENEMY,15,[[캐릭터:알지라]],40,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -220,9 +220,9 @@ CALL BATTLE_START
 CALL MESSAGE_WINDOW, "", "＞엠브리온의 3인에게 승리했다", , , , , 4
 CALL MESSAGE_WINDOW, "", "＞세 명은 환영처럼 사라졌다", , , , , 4
 ;CALL MESSAGE_WINDOW, "", "서프、히트、알지라가 노예가 되었다", , , , , 4
-;	CALL ADD_NEW_COMPANION,[[キャラ:서프]],100
-;	CALL ADD_NEW_COMPANION,[[キャラ:히트]],100
-;	CALL ADD_NEW_COMPANION,[[キャラ:알지라]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:서프]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:히트]],100
+;	CALL ADD_NEW_COMPANION,[[캐릭터:알지라]],100
 FLAG:도주불가플래그 = 0
 FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0

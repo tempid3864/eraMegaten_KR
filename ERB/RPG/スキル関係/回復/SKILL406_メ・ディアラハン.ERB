@@ -4,9 +4,9 @@
 ;스킬명
 @SKILL_NAME_406,ARG
 LOCALS = 마를로네
-IF SKILL_CHANGE(ARG, [[キャラ:무명의대학생]]) && NAME:ARG == LOCALS
+IF SKILL_CHANGE(ARG, [[캐릭터:무명의대학생]]) && NAME:ARG == LOCALS
 	RESULTS = 엘릭실제
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RESULTS = 기적의 바람
 ELSE
 	RESULTS = 메ㆍ디아라한
@@ -187,10 +187,10 @@ WAIT
 ;　 설명문 표시
 @SKILL_EXPLAIN_406
 LOCALS = 마를로네
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:무명의대학생]] && NAME:U == LOCALS
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:무명의대학생]] && NAME:U == LOCALS
 	PRINTL 어떠한 부상이나 병이라도 낫는다고 하는 물약。
 	PRINTL 아군 전체의 ＨＰ를 전부 회복한다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아오이(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아오이(마인학원)]])
 	PRINTL 【수성：야타】의 성스러운 힘으로 기도해、기적의 바람을 발한다。
 	PRINTL 아군 전체의 ＨＰ를 전부 회복한다。
 ELSE

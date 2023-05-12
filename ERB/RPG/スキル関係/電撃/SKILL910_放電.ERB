@@ -3,7 +3,7 @@
 
 ;스킬명
 @SKILL_NAME_910,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미샤구지님]])
+IF SKILL_CHANGE(ARG, [[캐릭터:미샤구지님]])
 	RESULTS = 타타리염전
 ELSE
 	RESULTS = 방전
@@ -15,7 +15,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_910, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:지고와트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:지고와트]])
 	RETURN 280
 ELSE
 	RETURN 140
@@ -27,7 +27,7 @@ RETURN 1
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_910,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:지고와트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:지고와트]])
 	RETURN 1
 ELSE
 	RETURN 5
@@ -67,7 +67,7 @@ RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_910,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:지고와트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:지고와트]])
 	RETURN 2
 ELSE
 	RETURN 3
@@ -114,9 +114,9 @@ RETURN 1
 ;템플릿용、추가효과 시리즈
 ;추가효과 스테이터스
 @SKILL_ADDTIONAL_STATE_910,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미샤구지님]])
+IF SKILL_CHANGE(ARG, [[캐릭터:미샤구지님]])
 	RETURN 10
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:지고와트]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:지고와트]])
 	RETURN GET_STATE_NUM("PALYZE")
 ELSE
 	RETURN 2
@@ -124,7 +124,7 @@ ENDIF
 
 ;추가효과 상성
 @SKILL_ADDTIONAL_TYPE_910,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미샤구지님]])
+IF SKILL_CHANGE(ARG, [[캐릭터:미샤구지님]])
 	RETURN 9
 ELSE
 	RETURN 6
@@ -143,7 +143,7 @@ RETURN 95
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_910,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:지고와트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:지고와트]])
 	CALL ATTACK_FIELD,ARG,ARG:1,910
 ELSE
 	CALL ATTACK_RAND,ARG,ARG:1,910
@@ -161,10 +161,10 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_910
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:미샤구지님]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:미샤구지님]]
 	PRINTL 적 전체에서 랜덤하게１～５회 대미지＋CHARM。
 	PRINTL 요염한 움직임과 함께 방출되는 미샤구지님의 필살 전격。
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:지고와트]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:지고와트]]
 	PRINTL 적 1열에 전격 상성의 중 데미지＋PALYZE 효과를 부여한다
 ELSE
 	PRINTL 전격으로 적 전체에 랜덤으로 １～５회 데미지＋SHOCK。

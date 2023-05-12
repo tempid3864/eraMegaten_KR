@@ -17,7 +17,7 @@ RETURN 100
 	;呪殺相性スキルの数に応じて威力増加
 	;『闇』『暗黒』というワードが含まれるスキルに応じて威力増加
 	威力 = 0
-	IF SKILL_CHANGE(ARG, [[キャラ:란코]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:란코]])
 		FOR LOCAL, 1, 13
 			LOCALS = 스킬{LOCAL}
 			IF ABL:ARG:LOCALS > 0
@@ -182,7 +182,7 @@ RETURN 75
 	;呪殺相性スキル及び『闇』『暗黒』というワードが含まれるスキルの個数次第で呪殺ガーキル
 	;個数が１６以上で呪殺ガードキル
 	個数 = 0
-	IF SKILL_CHANGE(ARG, [[キャラ:란코]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:란코]])
 		FOR LOCAL, 1, 13
 			LOCALS = 스킬{LOCAL}
 			IF ABL:ARG:LOCALS > 0

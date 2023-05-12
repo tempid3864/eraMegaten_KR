@@ -331,8 +331,8 @@ CASE 4
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,8,[[キャラ:잔트만]],35,0,1
-			CALL SET_ENEMY,10,[[キャラ:인큐버스]],35,0,1
+			CALL SET_ENEMY,8,[[캐릭터:잔트만]],35,0,1
+			CALL SET_ENEMY,10,[[캐릭터:인큐버스]],35,0,1
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			CALL BATTLE_START
@@ -360,7 +360,7 @@ CASE 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:단탈리안]],40,0,1
+				CALL SET_ENEMY,9,[[캐릭터:단탈리안]],40,0,1
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
@@ -487,25 +487,25 @@ RETURN ENEMY_NUM_COMMON("中級", ARG)
 @ENEMY_86, ARG
 SELECTCASE RAND:10
 	CASE IS < 1
-		RETURN [[キャラ:탁비]],33
+		RETURN [[캐릭터:탁비]],33
 	CASE IS < 2
-		RETURN [[キャラ:뷔브르]],30
+		RETURN [[캐릭터:뷔브르]],30
 	CASE IS < 3
-		RETURN [[キャラ:칼라드리우스]],30
+		RETURN [[캐릭터:칼라드리우스]],30
 	CASE IS < 4
-		RETURN [[キャラ:프린시펄리티]],29
+		RETURN [[캐릭터:프린시펄리티]],29
 	CASE IS < 5
-		RETURN [[キャラ:로렐라이]],31
+		RETURN [[캐릭터:로렐라이]],31
 	CASE IS < 6
-		RETURN [[キャラ:성성이]],32
+		RETURN [[캐릭터:성성이]],32
 	CASE IS < 7
-		RETURN [[キャラ:잔트만]],30
+		RETURN [[캐릭터:잔트만]],30
 	CASE IS < 8
-		RETURN [[キャラ:인큐버스]],34
+		RETURN [[캐릭터:인큐버스]],34
 	CASE IS < 9
-		RETURN [[キャラ:스튐팔리데스]],32
+		RETURN [[캐릭터:스튐팔리데스]],32
 	CASE IS < 10
-		RETURN [[キャラ:누에]],31
+		RETURN [[캐릭터:누에]],31
 ENDSELECT
 
 ;=======================================================================
@@ -516,10 +516,10 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:성성이]] , 3 + RAND:10 , CSVBASE([[キャラ:성성이]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:성성이]] , 3 + RAND:10 , CSVBASE([[캐릭터:성성이]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:잔트만]] , 3 + RAND:10 , CSVBASE([[キャラ:잔트만]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:잔트만]] , 3 + RAND:10 , CSVBASE([[캐릭터:잔트만]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:탁비]] , 3 + RAND:10 , CSVBASE([[キャラ:탁비]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:탁비]] , 3 + RAND:10 , CSVBASE([[캐릭터:탁비]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

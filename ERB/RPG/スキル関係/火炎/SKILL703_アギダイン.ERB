@@ -3,11 +3,11 @@
 ;스킬명
 @SKILL_NAME_703,ARG
 LOCALS = 마를로네
-IF SKILL_CHANGE(ARG, [[キャラ:암법사]]) && 던전플래그:25:13 == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:암법사]]) && 던전플래그:25:13 == 1
 	RESULTS = 일회용소환술
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:무명의대학생]]) && NAME:ARG == LOCALS
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:무명의대학생]]) && NAME:ARG == LOCALS
 	RESULTS = 메가플럼
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RESULTS = 듀미나스 레이
 ELSE
 	RESULTS = 아기다인
@@ -19,7 +19,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_703, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 350
 ELSE
 	RETURN 330
@@ -40,7 +40,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_703,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 15
 ELSE
 	RETURN 12
@@ -136,7 +136,7 @@ RETURN 0
 @ACTION_703,ARG,ARG:1
 LOCAL = POS(ARG:1)
 
-IF SKILL_CHANGE(ARG, [[キャラ:암법사]]) && 던전플래그:25:13 == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:암법사]]) && 던전플래그:25:13 == 1
 	SETCOLOR 0xff0033
 	PRINTFORML ┏> MESSAGE 　　　━━━━━━━━━━━━━━━━━┓
 	PRINTFORML ┃男の振るう”管”から火柱が解き放たれる！　　　　　┃
@@ -158,7 +158,7 @@ CALL ATTACK_SINGLE,ARG,LOCAL,703
 ;　 설명문 표시
 @SKILL_EXPLAIN_703
 LOCALS = 마를로네
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:무명의대학생]] && NAME:U == LOCALS
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:무명의대학생]] && NAME:U == LOCALS
 	PRINTL 위험도 100%인 폭탄。1체에 화속성의 대 데미지를 준다。
 ELSE
 	PRINTL 불덩어리를 쏘아 공격한다。

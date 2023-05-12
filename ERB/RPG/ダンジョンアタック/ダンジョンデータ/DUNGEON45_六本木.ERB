@@ -538,17 +538,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 	IF 던전플래그:45:2 == 1
 		CALL MESSAGE_WINDOW_D, "울음소리", "……으엥―… 으엥―… 으엥―…"
 		CALL MESSAGE_WINDOW_D, "", "＞강대한 악마의 기척이 있다…"
-		IF (RAND:100 < 10) || (FINDCHARA_B([[キャラ:베리얼]],1) == 2 || FINDCHARA_B([[キャラ:네비로스]],1) == 2)
-			SIF  FINDCHARA_B([[キャラ:네비로스]],1) == 2
+		IF (RAND:100 < 10) || (FINDCHARA_B([[캐릭터:베리얼]],1) == 2 || FINDCHARA_B([[캐릭터:네비로스]],1) == 2)
+			SIF  FINDCHARA_B([[캐릭터:네비로스]],1) == 2
 				CALL MESSAGE_WINDOW_D, "네비로스", "미아가 된 앨리스의 영혼을 여기로 불러들이자"
-			SIF  FINDCHARA_B([[キャラ:베리얼]],1) == 2
+			SIF  FINDCHARA_B([[캐릭터:베리얼]],1) == 2
 				CALL MESSAGE_WINDOW_D, "벨리알", "내 기척에 앨리스가 다가오고 있군/나머지는 네놈 하기 나름이다"
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 				CALL MESSAGE_WINDOW_D, "", "＞마인 앨리스가 1체 나타났다!"
 				;마인앨리스Lv39　랭크4
-				CALL SET_ENEMY,9,[[キャラ:앨리스]],65,0,1
+				CALL SET_ENEMY,9,[[캐릭터:앨리스]],65,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -589,21 +589,21 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
 			FLAG:선제기습취소 = 0
-				IF 던전플래그:45:0 == 3 && (FINDCHARA_B([[キャラ:베리얼]],1) == 2 || FINDCHARA_B([[キャラ:네비로스]],1) == 2)
-					SIF  FINDCHARA_B([[キャラ:네비로스]],1) == 2
+				IF 던전플래그:45:0 == 3 && (FINDCHARA_B([[캐릭터:베리얼]],1) == 2 || FINDCHARA_B([[캐릭터:네비로스]],1) == 2)
+					SIF  FINDCHARA_B([[캐릭터:네비로스]],1) == 2
 						CALL MESSAGE_WINDOW_D, "네비로스", "앨리스여、눈을 뜨려무나"
-					SIF  FINDCHARA_B([[キャラ:베리얼]],1) == 2
+					SIF  FINDCHARA_B([[캐릭터:베리얼]],1) == 2
 						CALL MESSAGE_WINDOW_D, "벨리알", "맞으러 왔노라、앨리스"
-						CALL MESSAGE_WINDOW_D, "앨리스",@"\@FINDCHARA_B([[キャラ:베리얼]],1) == 2 ?빨간 아저씨…、#\@\@FINDCHARA_B([[キャラ:네비로스]],1) == 2 ?검은 아저씨…#\@/날 마중 나와준 거야？"
-					SIF  FINDCHARA_B([[キャラ:네비로스]],1) == 2
-						CALL MESSAGE_WINDOW_D, "네비로스", @"아아、그렇단다/지금은 이 \@던전플래그:45:4 ?오빠#언니\@에게 힘을 빌려주고 있어\@!(FINDCHARA_B([[キャラ:베리얼]],1) == 2) ?/앨리스의 힘도 빌려주지 않겠니？#\@"
-					SIF  FINDCHARA_B([[キャラ:베리얼]],1) == 2
-						CALL MESSAGE_WINDOW_D, "벨리알", @"\@FINDCHARA_B([[キャラ:네비로스]],1) == 2 ?우리#나\@와 함께 있는 /이 \@던전플래그:45:4 ?오빠#언니\@에게 힘을 빌려주지 않겠나"
+						CALL MESSAGE_WINDOW_D, "앨리스",@"\@FINDCHARA_B([[캐릭터:베리얼]],1) == 2 ?빨간 아저씨…、#\@\@FINDCHARA_B([[캐릭터:네비로스]],1) == 2 ?검은 아저씨…#\@/날 마중 나와준 거야？"
+					SIF  FINDCHARA_B([[캐릭터:네비로스]],1) == 2
+						CALL MESSAGE_WINDOW_D, "네비로스", @"아아、그렇단다/지금은 이 \@던전플래그:45:4 ?오빠#언니\@에게 힘을 빌려주고 있어\@!(FINDCHARA_B([[캐릭터:베리얼]],1) == 2) ?/앨리스의 힘도 빌려주지 않겠니？#\@"
+					SIF  FINDCHARA_B([[캐릭터:베리얼]],1) == 2
+						CALL MESSAGE_WINDOW_D, "벨리알", @"\@FINDCHARA_B([[캐릭터:네비로스]],1) == 2 ?우리#나\@와 함께 있는 /이 \@던전플래그:45:4 ?오빠#언니\@에게 힘을 빌려주지 않겠나"
 						CALL MESSAGE_WINDOW_D, "앨리스", @"응…… \@던전플래그:45:4 ?오빠#언니\@는 내 \@던전플래그:45:31 ?노예#친구\@니까/같이 놀아줄게♪"
 						CALL MESSAGE_WINDOW_D, "", "＞마인 앨리스가 동료마로 들어왔다"
 					CALL ADD_NEW_COMPANION,4104,200,1
 					IF RESULT == 1
-						LOCAL = GETCHARA([[キャラ:앨리스]])
+						LOCAL = GETCHARA([[캐릭터:앨리스]])
 						IF 던전플래그:45:31 > 0
 							ABL:LOCAL:새드끼 = 1
 							EXP:LOCAL:가학쾌락경험  += 10
@@ -728,7 +728,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 						;전투後の경험치処理をスキップする
 						FLAG:RESULT스킵 = 1
 						;마왕베리얼Lv50　랭크2
-						CALL SET_ENEMY,9,[[キャラ:베리얼]],60,0,1
+						CALL SET_ENEMY,9,[[캐릭터:베리얼]],60,0,1
 						CFLAG:(CHARANUM-1):행동횟수 = 2
 						CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 						CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -754,12 +754,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 						CALL MESSAGE_WINDOW_D, "벨리알", "대단한 놈이군…"
 						CALL MESSAGE_WINDOW_D, "벨리알", "이 마왕 벨리알、네놈에게 힘을 빌려주겠다"
 						CALL MESSAGE_WINDOW_D, "", "＞마왕 벨리알이 동료마로 들어왔다"
-						CALL ADD_NEW_COMPANION,[[キャラ:베리얼]],500,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:베리얼]],500,1
 						SIF RESULT == 1
 							ABL:(RESULT:1):순종 = 1
 						던전플래그:45:41 = 2
-						CALL LIFTING_A_BAN([[キャラ:베리얼]])
-						CALL LIFTING_A_BAN([[キャラ:앨리스]])
+						CALL LIFTING_A_BAN([[캐릭터:베리얼]])
+						CALL LIFTING_A_BAN([[캐릭터:앨리스]])
 						;FLAG:10252 = 1
 						;FLAG:14104 = 1
 						SIF FLAG:20252 < 100
@@ -834,12 +834,12 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 						CALL MESSAGE_WINDOW_D, "네비로스", "이 타천사 네비로스의 힘이 없으면、그녀를 구해낼 수는 없다"
 						CALL MESSAGE_WINDOW_D, "네비로스", "앨리스를 생각한다면 나를 데려가도록 하라"
 						CALL MESSAGE_WINDOW_D, "", "＞타천사 네비로스가 동료마로 들어왔다"
-						CALL ADD_NEW_COMPANION,[[キャラ:네비로스]],500,1
+						CALL ADD_NEW_COMPANION,[[캐릭터:네비로스]],500,1
 						SIF RESULT == 1
 							ABL:(RESULT:1):순종 = 1
 						던전플래그:45:10 = 7
-						CALL LIFTING_A_BAN([[キャラ:네비로스]])
-						CALL LIFTING_A_BAN([[キャラ:앨리스]])
+						CALL LIFTING_A_BAN([[캐릭터:네비로스]])
+						CALL LIFTING_A_BAN([[캐릭터:앨리스]])
 						FLAG:11710 = 1
 						FLAG:14104 = 1
 						SIF FLAG:21710 < 100
@@ -872,7 +872,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:선제기습취소 = 1
 				IF !RAND:3
 					CALL MESSAGE_WINDOW_D, "", "＞마인 마타도르가 １체 나왔다！"
-					CALL SET_ENEMY,9,[[キャラ:마타도르]],40,0,1
+					CALL SET_ENEMY,9,[[캐릭터:마타도르]],40,0,1
 					BASE:(CHARANUM-1):지혜 += 10
 					BASE:(CHARANUM-1):마력 += 10
 					BASE:(CHARANUM-1):운 += 10
@@ -885,7 +885,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					;FLAG:14101 = 1
 				ELSEIF RAND:2
 					CALL MESSAGE_WINDOW_D, "", "＞마인 헬즈엔젤이 １체 나왔다！"
-					CALL SET_ENEMY,9,[[キャラ:헬즈엔젤]],56,0,1
+					CALL SET_ENEMY,9,[[캐릭터:헬즈엔젤]],56,0,1
 					BASE:(CHARANUM-1):지혜 += 10
 					BASE:(CHARANUM-1):마력 += 10
 					BASE:(CHARANUM-1):운 += 15
@@ -898,7 +898,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 					;FLAG:14102 = 1
 				ELSE
 					CALL MESSAGE_WINDOW_D, "", "＞마인 대승정이 １체 나왔다！"
-					CALL SET_ENEMY,9,[[キャラ:대승정]],82,0,1
+					CALL SET_ENEMY,9,[[캐릭터:대승정]],82,0,1
 					BASE:(CHARANUM-1):운 += 25
 					CFLAG:(CHARANUM-1):ＨＰ보정 = 3605
 					CFLAG:(CHARANUM-1):ＭＰ보정 = 9000
@@ -1237,7 +1237,7 @@ ELSE
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	CALL MESSAGE_WINDOW_D, "", "＞마왕 벨리알이 1체 나타났다！"
-	CALL SET_ENEMY,9,[[キャラ:베리얼]],50,0,1
+	CALL SET_ENEMY,9,[[캐릭터:베리얼]],50,0,1
 	ABL:(CHARANUM-1):스킬5 = 0
 	ABL:(CHARANUM-1):스킬6 = 0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
@@ -1296,7 +1296,7 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 	;타천사네비로스Lv40　랭크5
-	CALL SET_ENEMY,9,[[キャラ:네비로스]],52,0,1
+	CALL SET_ENEMY,9,[[캐릭터:네비로스]],52,0,1
 		IF 던전플래그:45:0 == 2 
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 2000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -1468,111 +1468,111 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 25
 				;25%で서큐버스　Lv44
-				RETURN [[キャラ:서큐버스]], 44
+				RETURN [[캐릭터:서큐버스]], 44
 			CASE IS < 35
 				;10%で좀비쨩　Lv4　랭크12
-				RETURN [[キャラ:좀비쨩]], 40
+				RETURN [[캐릭터:좀비쨩]], 40
 			CASE IS < 45
 				;10%で좀비너스　Lv8　랭크11
-				RETURN [[キャラ:좀비너스]], 41
+				RETURN [[캐릭터:좀비너스]], 41
 			CASE IS < 55
 				;10%で좀비사무라이　Lv30　랭크4
-				RETURN [[キャラ:좀비사무라이]], 42
+				RETURN [[캐릭터:좀비사무라이]], 42
 			CASE IS < 65
 				;10%で좀비헌병　Lv30　랭크4
-				RETURN [[キャラ:좀비헌병]], 42
+				RETURN [[캐릭터:좀비헌병]], 42
 			CASE IS < 75
 				;10%で좀비군　Lv7　랭크11
-				RETURN [[キャラ:좀비군]], 40
+				RETURN [[캐릭터:좀비군]], 40
 			CASE IS < 85
 				;10%で좀비캅　Lv9　랭크11
-				RETURN [[キャラ:좀비캅]], 42
+				RETURN [[캐릭터:좀비캅]], 42
 			CASE IS < 95
 				;10%で　콥스 Lv32　랭크4
-				RETURN [[キャラ:콥스]], 44
+				RETURN [[캐릭터:콥스]], 44
 			CASE IS < 100
 				;10%で레기온　Lv40　랭크1
-				RETURN [[キャラ:레기온]], 43
+				RETURN [[캐릭터:레기온]], 43
 		ENDSELECT
 	CASE 1 , 3
 	;좀비ーズ
 	SELECTCASE RAND:13
 		CASE IS < 1
-			RETURN [[キャラ:좀비쨩]], 43
+			RETURN [[캐릭터:좀비쨩]], 43
 		CASE IS < 2
-			RETURN [[キャラ:좀비너스]], 44
+			RETURN [[캐릭터:좀비너스]], 44
 		CASE IS < 3
-			RETURN [[キャラ:좀비사무라이]], 45
+			RETURN [[캐릭터:좀비사무라이]], 45
 		CASE IS < 4
-			RETURN [[キャラ:좀비헌병]], 45
+			RETURN [[캐릭터:좀비헌병]], 45
 		CASE IS < 5
-			RETURN [[キャラ:좀비군]], 43
+			RETURN [[캐릭터:좀비군]], 43
 		CASE IS < 6
-			RETURN [[キャラ:좀비캅]], 45
+			RETURN [[캐릭터:좀비캅]], 45
 		CASE IS < 7
-			RETURN [[キャラ:콥스]], 47
+			RETURN [[캐릭터:콥스]], 47
 		CASE IS < 8
-			RETURN [[キャラ:레기온]], 46
+			RETURN [[캐릭터:레기온]], 46
 		CASE IS < 9
-			RETURN [[キャラ:맨이터]], 45
+			RETURN [[캐릭터:맨이터]], 45
 		CASE IS < 10
-			RETURN [[キャラ:섀도우]], 49
+			RETURN [[캐릭터:섀도우]], 49
 		CASE IS < 11
-			RETURN [[キャラ:보디코니언]], 44
+			RETURN [[캐릭터:보디코니언]], 44
 		CASE IS < 12
-			RETURN [[キャラ:좀비독]], 40
+			RETURN [[캐릭터:좀비독]], 40
 		CASE IS < 13
-			RETURN [[キャラ:피샤차]], 45
+			RETURN [[캐릭터:피샤차]], 45
 		ENDSELECT
 	CASE 2
 	;앨리스のお友達
 	SELECTCASE RAND:11
 		CASE IS < 1
-			RETURN [[キャラ:픽시]], 43
+			RETURN [[캐릭터:픽시]], 43
 		CASE IS < 2
-			RETURN [[キャラ:리림]], 44
+			RETURN [[캐릭터:리림]], 44
 		CASE IS < 3
-			RETURN [[キャラ:나쟈]], 45
+			RETURN [[캐릭터:나쟈]], 45
 		CASE IS < 4
-			RETURN [[キャラ:이나바흰토끼]], 45
+			RETURN [[캐릭터:이나바흰토끼]], 45
 		CASE IS < 5
-			RETURN [[キャラ:좀비너스]], 43
+			RETURN [[캐릭터:좀비너스]], 43
 		CASE IS < 6
-			RETURN [[キャラ:하나코]], 45
+			RETURN [[캐릭터:하나코]], 45
 		CASE IS < 7
-			RETURN [[キャラ:보디코니언]], 45
+			RETURN [[캐릭터:보디코니언]], 45
 		CASE IS < 8
-			RETURN [[キャラ:좀비독]], 46
+			RETURN [[캐릭터:좀비독]], 46
 		CASE IS < 9
-			RETURN [[キャラ:좀비쨩]], 45
+			RETURN [[캐릭터:좀비쨩]], 45
 		CASE IS < 10
-			RETURN [[キャラ:콥스]], 44
+			RETURN [[캐릭터:콥스]], 44
 		CASE IS < 11
-			RETURN [[キャラ:탐ㆍ린]], 44
+			RETURN [[캐릭터:탐ㆍ린]], 44
 		ENDSELECT
 	CASE 4
 	;ロリコンの階
 	SELECTCASE RAND:10
 		CASE IS < 1
-			RETURN [[キャラ:알프]], 43
+			RETURN [[캐릭터:알프]], 43
 		CASE IS < 2
-			RETURN [[キャラ:리림]], 44
+			RETURN [[캐릭터:리림]], 44
 		CASE IS < 3
-			RETURN [[キャラ:나쟈]], 45
+			RETURN [[캐릭터:나쟈]], 45
 		CASE IS < 4
-			RETURN [[キャラ:아체리]], 45
+			RETURN [[캐릭터:아체리]], 45
 		CASE IS < 5
-			RETURN [[キャラ:화백]], 43
+			RETURN [[캐릭터:화백]], 43
 		CASE IS < 6
-			RETURN [[キャラ:하나코]], 45
+			RETURN [[캐릭터:하나코]], 45
 		CASE IS < 7
-			RETURN [[キャラ:모ㆍ쇼보]], 45
+			RETURN [[캐릭터:모ㆍ쇼보]], 45
 		CASE IS < 8
-			RETURN [[キャラ:고획조]], 46
+			RETURN [[캐릭터:고획조]], 46
 		CASE IS < 9
-			RETURN [[キャラ:하피]], 45
+			RETURN [[캐릭터:하피]], 45
 		CASE IS < 10
-			RETURN [[キャラ:실프]], 47
+			RETURN [[캐릭터:실프]], 47
 	ENDSELECT
 ENDSELECT
 
@@ -1581,38 +1581,38 @@ ENDSELECT
 ;=======================================================================
 @SET_ENEMY_STATUS_45, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:좀비군]], 43
+	CASE [[캐릭터:좀비군]], 43
 		ABL:(CHARANUM-1):스킬1 = 302
 		ABL:(CHARANUM-1):스킬2 = 322
 		ABL:(CHARANUM-1):스킬3 = 1202
-	CASE [[キャラ:좀비너스]], 44
+	CASE [[캐릭터:좀비너스]], 44
 		ABL:(CHARANUM-1):스킬1 = 101
 		ABL:(CHARANUM-1):스킬2 = 1212
 		ABL:(CHARANUM-1):스킬3 = 102
 		ABL:(CHARANUM-1):스킬4 = 303
-	CASE [[キャラ:좀비쨩]], 43
+	CASE [[캐릭터:좀비쨩]], 43
 		ABL:(CHARANUM-1):스킬1 = 302
 		ABL:(CHARANUM-1):스킬2 = 322
 		ABL:(CHARANUM-1):스킬3 = 1212
-	CASE [[キャラ:좀비캅]]
+	CASE [[캐릭터:좀비캅]]
 		ABL:(CHARANUM-1):스킬4 = 302
 		ABL:(CHARANUM-1):스킬5 = 112
-	CASE [[キャラ:픽시]]
+	CASE [[캐릭터:픽시]]
 		ABL:(CHARANUM-1):스킬1 = [[스킬:방전]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:해피스텝]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:디아라마]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:날개짓]]
-	CASE [[キャラ:리림]]
+	CASE [[캐릭터:리림]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:섹시댄스]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:사랑의채찍]]
 		ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ지온가]]
-	CASE [[キャラ:나쟈]]
+	CASE [[캐릭터:나쟈]]
 		ABL:(CHARANUM-1):스킬1 = [[스킬:지오다인]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:메ㆍ디아라마]]
-	CASE [[キャラ:하나코]]
+	CASE [[캐릭터:하나코]]
 		ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ아쿠아]]
 		ABL:(CHARANUM-1):스킬2 = [[스킬:바인드보이스]]
-	CASE [[キャラ:피샤차]]
+	CASE [[캐릭터:피샤차]]
 		ABL:(CHARANUM-1):스킬4 = [[스킬:태풍의난무]]
 		ABL:(CHARANUM-1):스킬5 = [[스킬:마하ㆍ지온가]]
 		ABL:(CHARANUM-1):스킬6 = [[스킬:데ㆍ쿤다]]
@@ -1672,13 +1672,13 @@ CALL GAME_OVER
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:좀비캅]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비캅]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비캅]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:좀비사무라이]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비사무라이]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비사무라이]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비사무라이]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:좀비헌병]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비헌병]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비헌병]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비헌병]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:좀비군]] , 3 + RAND:10 , CSVBASE([[キャラ:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:좀비군]] , 3 + RAND:10 , CSVBASE([[캐릭터:좀비군]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

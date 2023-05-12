@@ -167,7 +167,7 @@
 			FLAG:회화불능플래그 = 1
 			;FLAG:기습플래그 = 1
 			FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:마타도르]],35,0,1
+				CALL SET_ENEMY,9,[[캐릭터:마타도르]],35,0,1
 				ABL:(CHARANUM-1):스킬1 = 41
 				ABL:(CHARANUM-1):스킬2 = 1005
 				ABL:(CHARANUM-1):스킬3 = 505
@@ -654,7 +654,7 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:대승정]],42,0,1
+				CALL SET_ENEMY,9,[[캐릭터:대승정]],42,0,1
 				ABL:(CHARANUM-1):스킬1 = 1320
 				ABL:(CHARANUM-1):스킬2 = 1316
 				ABL:(CHARANUM-1):스킬3 = 1413
@@ -719,7 +719,7 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:헬즈엔젤]],47,0,1
+				CALL SET_ENEMY,9,[[캐릭터:헬즈엔젤]],47,0,1
 				ABL:(CHARANUM-1):스킬1 = 327
 				ABL:(CHARANUM-1):스킬2 = 740
 				ABL:(CHARANUM-1):스킬3 = 1037
@@ -993,7 +993,7 @@
 			FLAG:기습플래그 = 0
 			FLAG:선제기습취소 = 1
 			FOR LOCAL,7,17
-				CALL SET_ENEMY,LOCAL,[[キャラ:엘리고르]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:엘리고르]],55,0,0
 			NEXT
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1014,7 +1014,7 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:선제기습취소 = 1
 			FOR LOCAL,7,17
-				CALL SET_ENEMY,LOCAL,[[キャラ:아크엔젤]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:아크엔젤]],55,0,0
 			NEXT
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1035,7 +1035,7 @@
 			FLAG:기습플래그 = 0
 			FLAG:선제기습취소 = 1
 			FOR LOCAL,7,17
-				CALL SET_ENEMY,LOCAL,[[キャラ:파워]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:파워]],55,0,0
 			NEXT
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1056,7 +1056,7 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:선제기습취소 = 1
 			FOR LOCAL,7,17
-				CALL SET_ENEMY,LOCAL,[[キャラ:오세]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:오세]],55,0,0
 			NEXT
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1078,10 +1078,10 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:선제기습취소 = 1
 			FOR LOCAL,7,17,2
-				CALL SET_ENEMY,LOCAL,[[キャラ:버쳐]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:버쳐]],55,0,0
 			NEXT
 			FOR LOCAL,8,17,2
-				CALL SET_ENEMY,LOCAL,[[キャラ:데카라비아]],55,0,0
+				CALL SET_ENEMY,LOCAL,[[캐릭터:데카라비아]],55,0,0
 			NEXT
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
@@ -1151,7 +1151,7 @@
 			FLAG:도주불가플래그 = 1
 			FLAG:선제기습취소 = 1
 			FLAG:기습플래그 = 0
-				CALL SET_ENEMY,9,[[キャラ:하세베]],73,0,1
+				CALL SET_ENEMY,9,[[캐릭터:하세베]],73,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 4000
 				CFLAG:(CHARANUM-1):행동횟수 = 2
 				CSTR:(CHARANUM-1):증원패턴 = 長谷部の
@@ -1164,14 +1164,14 @@
 				ABL:(CHARANUM-1):입수확률3 = 100
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
-			CALL SET_ENEMY,7,[[キャラ:파워]],60,0,1
-			CALL SET_ENEMY,8,[[キャラ:아크엔젤]],60,0,1
-			CALL SET_ENEMY,10,[[キャラ:엘리고르]],60,0,1
-			CALL SET_ENEMY,11,[[キャラ:오세]],60,0,1
-			CALL SET_ENEMY,12,[[キャラ:버쳐]],60,0,1
-			CALL SET_ENEMY,13,[[キャラ:스로네]],60,0,1
-			CALL SET_ENEMY,15,[[キャラ:아가레스]],60,0,1
-			CALL SET_ENEMY,16,[[キャラ:데카라비아]],60,0,1
+			CALL SET_ENEMY,7,[[캐릭터:파워]],60,0,1
+			CALL SET_ENEMY,8,[[캐릭터:아크엔젤]],60,0,1
+			CALL SET_ENEMY,10,[[캐릭터:엘리고르]],60,0,1
+			CALL SET_ENEMY,11,[[캐릭터:오세]],60,0,1
+			CALL SET_ENEMY,12,[[캐릭터:버쳐]],60,0,1
+			CALL SET_ENEMY,13,[[캐릭터:스로네]],60,0,1
+			CALL SET_ENEMY,15,[[캐릭터:아가레스]],60,0,1
+			CALL SET_ENEMY,16,[[캐릭터:데카라비아]],60,0,1
 			CALL BATTLE_START
 			DA:(FLAG:현X):(FLAG:현Y) = 1
 			ITEM:지식의메노라 += 1
@@ -1233,7 +1233,7 @@
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			FLAG:기습플래그 = 0
-				CALL SET_ENEMY,9,[[キャラ:마더해롯]],74,0,1
+				CALL SET_ENEMY,9,[[캐릭터:마더해롯]],74,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:여신의리비도]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:사신의만성]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ지오다인]]
@@ -1311,7 +1311,7 @@
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			FLAG:기습플래그 = 0
-				CALL SET_ENEMY,9,[[キャラ:트럼페터]],82,0,1
+				CALL SET_ENEMY,9,[[캐릭터:트럼페터]],82,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:신은의나팔]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마연의나팔]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ라기다인]]
@@ -1338,7 +1338,7 @@
 			FLAG:선제기습취소 = 0
 
 			;合体解禁しておく
-			CALL LIFTING_A_BAN([[キャラ:트럼페터]])
+			CALL LIFTING_A_BAN([[캐릭터:트럼페터]])
 			;FLAG:14112 = 1
 			ITEM:신위의메노라 += 1
 
@@ -1395,7 +1395,7 @@
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			FLAG:기습플래그 = 0
-				CALL SET_ENEMY,9,[[キャラ:벨제붑]],90,0,1
+				CALL SET_ENEMY,9,[[캐릭터:벨제붑]],90,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:죽은파리의장례]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:마하ㆍ지오다인]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ잔다인]]
@@ -1822,7 +1822,7 @@
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
 			FLAG:기습플래그 = 0
-				CALL SET_ENEMY,9,[[キャラ:메타트론]],95,0,1
+				CALL SET_ENEMY,9,[[캐릭터:메타트론]],95,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:마한마온]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:메기도라온]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:타루ㆍ카쟈]]
@@ -1850,7 +1850,7 @@
 			FLAG:도주불가플래그 = 0
 			FLAG:선제기습취소 = 0
 			FLAG:속성고정LD = 3
-			CALL LIFTING_A_BAN([[キャラ:메타트론]])
+			CALL LIFTING_A_BAN([[캐릭터:메타트론]])
 			;FLAG:10369 = 1
 			PRINTW 
 			던전플래그:68:51 = 1
@@ -1972,7 +1972,7 @@
 					LOCAL:1 = BASE:LOCAL:LV
 			NEXT
 
-				CALL SET_ENEMY,9,[[キャラ:루시퍼]],LOCAL:1+10,0,1
+				CALL SET_ENEMY,9,[[캐릭터:루시퍼]],LOCAL:1+10,0,1
 				ABL:(CHARANUM-1):스킬1 = [[스킬:왕중의왕]]
 				ABL:(CHARANUM-1):스킬2 = [[스킬:태초에숨은악]]
 				ABL:(CHARANUM-1):스킬3 = [[스킬:마하ㆍ라기다인]]
@@ -2286,21 +2286,21 @@ ENDIF
 RETURN 0
 @증원패턴_長谷部の, ARG, ARG:1, ARG:2
 IF RAND:8 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:파워]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:파워]],60,0,0
 ELSEIF RAND:7 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:아크엔젤]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:아크엔젤]],60,0,0
 ELSEIF RAND:6 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:엘리고르]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:엘리고르]],60,0,0
 ELSEIF RAND:5 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:오세]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:오세]],60,0,0
 ELSEIF RAND:4 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:버쳐]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:버쳐]],60,0,0
 ELSEIF RAND:3 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:스로네]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:스로네]],60,0,0
 ELSEIF RAND:2 == 1
-	CALL SET_ENEMY,ARG:1,[[キャラ:아가레스]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:아가레스]],60,0,0
 ELSE
-	CALL SET_ENEMY,ARG:1,[[キャラ:데카라비아]],60,0,0
+	CALL SET_ENEMY,ARG:1,[[캐릭터:데카라비아]],60,0,0
 ENDIF
 CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 CFLAG:(CHARANUM-1):ＭＰ보정 += 100

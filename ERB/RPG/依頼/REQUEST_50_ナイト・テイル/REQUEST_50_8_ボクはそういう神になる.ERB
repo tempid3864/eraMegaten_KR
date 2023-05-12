@@ -37,7 +37,7 @@ PRINTFORML （이것이 마지막 싸움입니다。승리할 수 있다면、�
 ;めんどくさいので最初に各キャラが전투可能か判断して保存。
 #DIMS 참가캐릭터 = "_"
 FOR LOCAL, 0, CHARANUM
-	SIF GROUPMATCH(NO:LOCAL, [[キャラ:유리아]], [[キャラ:마야NT]], [[キャラ:쇼고]], [[キャラ:코우린]], [[キャラ:유우키]], [[キャラ:키쿠에]], [[キャラ:고토우]]) && CFLAG:LOCAL:전투참가불가능 < 1
+	SIF GROUPMATCH(NO:LOCAL, [[캐릭터:유리아]], [[캐릭터:마야NT]], [[캐릭터:쇼고]], [[캐릭터:코우린]], [[캐릭터:유우키]], [[캐릭터:키쿠에]], [[캐릭터:고토우]]) && CFLAG:LOCAL:전투참가불가능 < 1
 		참가캐릭터 += @"%CSVCALLNAME(NO:LOCAL)%_"
 NEXT
 
@@ -213,7 +213,7 @@ ENDIF
 		PRINTFORML 
 		
 	;마요네가 있고、전투참가 멤버에는 없다
-	IF FINDCHARA_B([[キャラ:마요네]]) == 1
+	IF FINDCHARA_B([[캐릭터:마요네]]) == 1
 		PRINTFORMW 문득、시선을 알아차린다。
 		PRINTFORMW 먼、작은 전망대 위에、파라솔형COMP로 아침해와 자외선을 피하면서、이쪽을 보고 있는 귀부인이 있었다。
 		PRINTFORMW 거리가 너무 멀어、그 표정은 보이지 않았지만、이상하게 그녀가 무엇을 생각하고 있는지는 상상할 수 있었다。
@@ -319,7 +319,7 @@ PRINTFORML
 		GOTO LVUP_LOOP_1
 
 ;重量過多はアカン→중력弱点
-CALL SET_ENEMY,7, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,7, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 기병ㆍ전차군단
 	CALLNAME:(CHARANUM-1) = 기병ㆍ전차군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -352,7 +352,7 @@ CALL SET_ENEMY,7, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;ろくに장비が無いので数で補っている→密集→ドミノ倒し→충격弱点
-CALL SET_ENEMY,8, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,8, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 경장보병군단
 	CALLNAME:(CHARANUM-1) = 경장보병군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -382,7 +382,7 @@ CALL SET_ENEMY,8, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;槍が長いので雷が落ちやすい＝전격弱点
-CALL SET_ENEMY,9, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,9, [[캐릭터:아레스]],LOCAL:1, 0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	NAME:(CHARANUM-1) = 중장보병군단
 	CALLNAME:(CHARANUM-1) = 중장보병군단
@@ -412,7 +412,7 @@ CALL SET_ENEMY,9, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;ろくに장비が無いので数で補っている→密集→ドミノ倒し→충격弱点
-CALL SET_ENEMY,10, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,10, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 경장보병군단
 	CALLNAME:(CHARANUM-1) = 경장보병군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -442,7 +442,7 @@ CALL SET_ENEMY,10, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;重量過多はアカン→중력弱点
-CALL SET_ENEMY,11, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,11, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 기병ㆍ전차군단
 	CALLNAME:(CHARANUM-1) = 기병ㆍ전차군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -477,7 +477,7 @@ CALL SET_ENEMY,11, [[キャラ:아레스]],LOCAL:1, 0,0
 
 
 ;ぞうさん寒いのに弱そう→빙결弱点
-CALL SET_ENEMY,12, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,12, [[캐릭터:아레스]],LOCAL:1, 0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	NAME:(CHARANUM-1) = 코끼리병
 	CALLNAME:(CHARANUM-1) = 코끼리병
@@ -511,7 +511,7 @@ CALL SET_ENEMY,12, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;ろくに장비が無いので数で補っている→密集→ドミノ倒し→충격弱点
-CALL SET_ENEMY,13, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,13, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 경장보병군단
 	CALLNAME:(CHARANUM-1) = 경장보병군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -541,7 +541,7 @@ CALL SET_ENEMY,13, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;槍が長いので雷が落ちやすい＝전격弱点
-CALL SET_ENEMY,14, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,14, [[캐릭터:아레스]],LOCAL:1, 0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	NAME:(CHARANUM-1) = 중장보병군단
 	CALLNAME:(CHARANUM-1) = 중장보병군단
@@ -571,7 +571,7 @@ CALL SET_ENEMY,14, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;ろくに장비が無いので数で補っている→密集→ドミノ倒し→충격弱点
-CALL SET_ENEMY,15, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,15, [[캐릭터:아레스]],LOCAL:1, 0,0
 	NAME:(CHARANUM-1) = 경장보병군단
 	CALLNAME:(CHARANUM-1) = 경장보병군단
 	MAXBASE:(CHARANUM-1):타격 = 50
@@ -601,7 +601,7 @@ CALL SET_ENEMY,15, [[キャラ:아레스]],LOCAL:1, 0,0
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;ぞうさん寒いのに弱そう→빙결弱点
-CALL SET_ENEMY,16, [[キャラ:아레스]],LOCAL:1, 0,0
+CALL SET_ENEMY,16, [[캐릭터:아레스]],LOCAL:1, 0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 	NAME:(CHARANUM-1) = 코끼리병
 	CALLNAME:(CHARANUM-1) = 코끼리병
@@ -678,7 +678,7 @@ PRINTFORMW 땅울림과 함께、지표를 함몰시키면서 일행의 앞에 �
 		GOTO LVUP_LOOP_2
 
 ;すげー勢いで능력강화してくるのでアレ
-CALL SET_ENEMY,8, [[キャラ:아레스]],LOCAL:1, 1,1
+CALL SET_ENEMY,8, [[캐릭터:아레스]],LOCAL:1, 1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 	ABL:(CHARANUM-1):스킬1 = 4205
 	ABL:(CHARANUM-1):스킬2 = 517
@@ -690,7 +690,7 @@ CALL SET_ENEMY,8, [[キャラ:아레스]],LOCAL:1, 1,1
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 ;すげー勢いでぶん殴ってくるのでアレ
-CALL SET_ENEMY,10, [[キャラ:에뉴오]],LOCAL:1, 1,1
+CALL SET_ENEMY,10, [[캐릭터:에뉴오]],LOCAL:1, 1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 	ABL:(CHARANUM-1):스킬1 = 213
 	ABL:(CHARANUM-1):스킬2 = 10
@@ -905,7 +905,7 @@ ENDIF
 	SIF LOCAL:1 < 80
 		GOTO LVUP_LOOP_3
 
-CALL SET_ENEMY,8, [[キャラ:제우스]],LOCAL:1, 1,1
+CALL SET_ENEMY,8, [[캐릭터:제우스]],LOCAL:1, 1,1
 		NAME:(CHARANUM-1) = 천공의질투
 	CALLNAME:(CHARANUM-1) = 천공의질투
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -940,7 +940,7 @@ CALL SET_ENEMY,8, [[キャラ:제우스]],LOCAL:1, 1,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,10, [[キャラ:제우스]],LOCAL:1, 1,1
+CALL SET_ENEMY,10, [[캐릭터:제우스]],LOCAL:1, 1,1
 		NAME:(CHARANUM-1) = 천공의분노
 	CALLNAME:(CHARANUM-1) = 천공의분노
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
@@ -975,7 +975,7 @@ CALL SET_ENEMY,10, [[キャラ:제우스]],LOCAL:1, 1,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,9, [[キャラ:제우스]],LOCAL:1, 1,1
+CALL SET_ENEMY,9, [[캐릭터:제우스]],LOCAL:1, 1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 15000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 15000
 	ABL:(CHARANUM-1):스킬1 = 912
@@ -1009,7 +1009,7 @@ CUSTOMDRAWLINE =
 PRINTFORML 
 
 ;ゼウス開放。
-FLAG:(10000 + [[キャラ:제우스]]) = 1
+FLAG:(10000 + [[캐릭터:제우스]]) = 1
 
 	PRINTFORMW 모든 공격을 그 몸에 받아、만신창이가 된 제우스지만、돌연 거대한 웃음소리를 냈다。
 	PRINTFORML 
@@ -1169,7 +1169,7 @@ FLAG:(10000 + [[キャラ:제우스]]) = 1
 	PRINTFORMW 그녀는 마구 화풀이 하듯이 마력을 끌어올려、이쪽을 향해 분노의 소리를 질렀다！
 	
 
-CALL SET_ENEMY,9, [[キャラ:티타니아]],51, 0,1
+CALL SET_ENEMY,9, [[캐릭터:티타니아]],51, 0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 3000
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -1197,7 +1197,7 @@ PRINTFORMW 티타니아는、고개를 들었다。
 
 ;코시로가 전투멤버에 있다  코시로가 연모 or 신회 루트이고 당신의 속성이 선이다
 ;이에 더해、나이트ㆍ테일 멤버＋마야가 모여 있다
-IF FINDCHARA_B([[キャラ:코시로]]) == 2 && (친애(RESULT:1) != 0 || 연모(RESULT:1) != 0 || TALENT:(RESULT:1):신뢰 || TALENT:(RESULT:1):동료) && CFLAG:MASTER:선악치 > 170 && (STRCOUNT(참가캐릭터, "마야NT") && STRCOUNT(참가캐릭터, "쇼고") && STRCOUNT(참가캐릭터, "코우린") && STRCOUNT(참가캐릭터, "유우키") && STRCOUNT(참가캐릭터, "유리아"))
+IF FINDCHARA_B([[캐릭터:코시로]]) == 2 && (친애(RESULT:1) != 0 || 연모(RESULT:1) != 0 || TALENT:(RESULT:1):신뢰 || TALENT:(RESULT:1):동료) && CFLAG:MASTER:선악치 > 170 && (STRCOUNT(참가캐릭터, "마야NT") && STRCOUNT(참가캐릭터, "쇼고") && STRCOUNT(참가캐릭터, "코우린") && STRCOUNT(참가캐릭터, "유우키") && STRCOUNT(참가캐릭터, "유리아"))
 	PRINTFORML 
 	PRINTFORML [100]　당신은、불길한 예감에 습격당했다
 	PRINTFORML [200]　당신은、모든 것이 끝났다고 확신했다
@@ -1462,7 +1462,7 @@ PRINTFORMW 그 몸은 애처로운 변형을 시작했다。
 	SIF LOCAL:1 < 80
 		GOTO LVUP_LOOP_5
 
-CALL SET_ENEMY,7, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,7, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):화염 = 999
 	BASE:(CHARANUM-1):화염 = 999
@@ -1472,7 +1472,7 @@ CALL SET_ENEMY,7, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	ABL:(CHARANUM-1):스킬2 = 704
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-CALL SET_ENEMY,8, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,8, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):빙결 = 999
 	BASE:(CHARANUM-1):빙결 = 999
@@ -1482,7 +1482,7 @@ CALL SET_ENEMY,8, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	ABL:(CHARANUM-1):스킬2 = 804
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-CALL SET_ENEMY,9, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,9, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):전격 = 999
 	BASE:(CHARANUM-1):전격 = 999
@@ -1492,7 +1492,7 @@ CALL SET_ENEMY,9, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	ABL:(CHARANUM-1):스킬2 = 904
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-CALL SET_ENEMY,10, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,10, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):지변 = 999
 	BASE:(CHARANUM-1):지변 = 999
@@ -1502,7 +1502,7 @@ CALL SET_ENEMY,10, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	ABL:(CHARANUM-1):스킬2 = 1504
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-CALL SET_ENEMY,11, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,11, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):질풍 = 999
 	BASE:(CHARANUM-1):질풍 = 999
@@ -1513,7 +1513,7 @@ CALL SET_ENEMY,11, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-CALL SET_ENEMY,13, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,13, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):중력 = 999
 	BASE:(CHARANUM-1):중력 = 999
@@ -1523,7 +1523,7 @@ CALL SET_ENEMY,13, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	ABL:(CHARANUM-1):스킬2 = 1804
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
-CALL SET_ENEMY,15, [[キャラ:마스터테리온]],LOCAL:1, 1,1
+CALL SET_ENEMY,15, [[캐릭터:마스터테리온]],LOCAL:1, 1,1
 	CALL EVENT_REQUEST50_8_L_MT_SMN
 	MAXBASE:(CHARANUM-1):충격 = 999
 	BASE:(CHARANUM-1):충격 = 999
@@ -1535,7 +1535,7 @@ CALL SET_ENEMY,15, [[キャラ:마스터테리온]],LOCAL:1, 1,1
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 
-CALL SET_ENEMY,14, [[キャラ:마더해롯]],LOCAL:1, 0,1
+CALL SET_ENEMY,14, [[캐릭터:마더해롯]],LOCAL:1, 0,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 15000
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 15000
 	CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -1722,7 +1722,7 @@ FLAG:회화불능플래그 = 0
 FLAG:선제기습취소 = 0
 
 ;マザハー開放。
-FLAG:(10000 + [[キャラ:마더해롯]]) = 1
+FLAG:(10000 + [[캐릭터:마더해롯]]) = 1
 
 FLAG:나이트ㆍ테일진행도 = 999999
 
@@ -2055,7 +2055,7 @@ ELSEIF FLAG:나이트ㆍ테일진행도 == 843000 && 현HP비율(CHARANUM-1) < 4
 ;마더해롯(残り20％　불결이가득찬황금의잔、묵시록
 ELSEIF FLAG:나이트ㆍ테일진행도 == 844000 && 현HP비율(CHARANUM-1) < 20
 	;姫宮키쿠에が居て、전투メンバーではない＆宮下が居る
-	IF FINDCHARA_B([[キャラ:쇼고]]) > 0 && FINDCHARA_B([[キャラ:키쿠에]]) > 0 && FINDCHARA_B([[キャラ:키쿠에]]) != 2
+	IF FINDCHARA_B([[캐릭터:쇼고]]) > 0 && FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && FINDCHARA_B([[캐릭터:키쿠에]]) != 2
 		PRINTFORML 
 		SETCOLOR 0x33ffcc
 		PRINTFORML ┏>MESSAGE━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -2566,7 +2566,7 @@ PRINTFORMW 「구、구에에에、항복！　항복！　정말로 너는 저 
 ;=====================총Ｐによる加筆====================================
 ;2019/01/15　(ﾟдﾟ)が再加筆　すまねえ　すまねえ　でも弄りたくなっちまったんだ急に
 ;코시로ちゃんが아내or남편or맹우だと母ちゃんダヌー＆おやぢ加入
-IF FINDCHARA_B([[キャラ:코시로]]) == 2 && (TALENT:(RESULT:1):아내 != 0 || TALENT:(RESULT:1):남편 != 0 || TALENT:(RESULT:1):맹우)
+IF FINDCHARA_B([[캐릭터:코시로]]) == 2 && (TALENT:(RESULT:1):아내 != 0 || TALENT:(RESULT:1):남편 != 0 || TALENT:(RESULT:1):맹우)
 	PRINTFORMW 「하아、하아……이、이렇게되면、저도 뒤를 쫓을 테니까요。터미널을！」
 	PRINTFORMW 「우왓、진심이야？
 	PRINTFORMW 　진정한 지모신이 된 네가 다시 지구를 떠난다면、이번에야말로 유럽에서 기근이 일어날지도 몰라。
@@ -2578,7 +2578,7 @@ IF FINDCHARA_B([[キャラ:코시로]]) == 2 && (TALENT:(RESULT:1):아내 != 0 |
 	PRINTFORML 
 	PRINTFORMW 「근원 회귀인가……」
 	;
-	IF FINDCHARA_B([[キャラ:코시로]]) == 2 && (TALENT:(RESULT:1):아내 != 0 || TALENT:(RESULT:1):남편 != 0 || TALENT:(RESULT:1):맹우)
+	IF FINDCHARA_B([[캐릭터:코시로]]) == 2 && (TALENT:(RESULT:1):아내 != 0 || TALENT:(RESULT:1):남편 != 0 || TALENT:(RESULT:1):맹우)
 		PRINTFORMW 「당연하죠！　자、가죠」
 		PRINTFORMW 「에고、나도？」
 		PRINTFORMW 「물론이에요。좌표에 장난친 것은 당신이니깐요、거기다、
@@ -2597,7 +2597,7 @@ ENDIF
 PRINTFORML 
 PRINTFORMW 악마가 솟아나오는 세계는、변함없이 혼미한 채이다。
 PRINTFORMW 사람은 강한 것에 의지하고、신들은 자기 이권을 확대하려고 벼르고 있다。
-IF FINDCHARA_B([[キャラ:레이]]) > -1
+IF FINDCHARA_B([[캐릭터:레이]]) > -1
 	PRINTFORML 
 	PRINTFORMW 「훗、유우지 녀석、나보다 훨씬 못생긴 주제에、좋은 아내를 붙잡았군。
 	PRINTFORMW 　코시로쨩、그리고、“탐정씨”여。미래는 확실히 달라졌군。

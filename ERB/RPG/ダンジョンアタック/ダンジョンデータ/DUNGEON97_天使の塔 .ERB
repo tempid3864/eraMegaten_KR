@@ -92,7 +92,7 @@ IF 던전플래그:97:1 == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1		
-	CALL SET_ENEMY,9,[[キャラ:메피스토]],59,0,0
+	CALL SET_ENEMY,9,[[캐릭터:메피스토]],59,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 	NAME:(CHARANUM-1) = メフィスト
@@ -113,7 +113,7 @@ IF 던전플래그:97:1 == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1		
-	CALL SET_ENEMY,9,[[キャラ:헤이룽]],59,0,0
+	CALL SET_ENEMY,9,[[캐릭터:헤이룽]],59,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 50
 	NAME:(CHARANUM-1) = メフィスト
@@ -452,125 +452,125 @@ SELECTCASE FLAG:현M
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15％　死神アンクウ
-				RETURN [[キャラ:앙쿠]], 59
+				RETURN [[캐릭터:앙쿠]], 59
 			CASE IS < 30
 				;15%　女神クロト　
-				RETURN [[キャラ:클로토]], 57
+				RETURN [[캐릭터:클로토]], 57
 			CASE IS < 40
 				;10%　堕天使ゼパール　
-				RETURN [[キャラ:제파르]], 57
+				RETURN [[캐릭터:제파르]], 57
 			CASE IS < 60
 				;15%　妖鳥フェニックス　Lv50
-				RETURN [[キャラ:피닉스]], 50
+				RETURN [[캐릭터:피닉스]], 50
 			CASE IS < 75
 				;15%　天使アムルタート　Lv59
-				RETURN [[キャラ:아무르타트]], 59
+				RETURN [[캐릭터:아무르타트]], 59
 			CASE IS < 90
 				;10%　天使ガムビエル　
-				RETURN [[キャラ:감비엘]], 58
+				RETURN [[캐릭터:감비엘]], 58
 			CASE IS < 100
 				;15%　天使バキエル　
-				RETURN [[キャラ:바키엘]], 58
+				RETURN [[캐릭터:바키엘]], 58
 		ENDSELECT
 	CASE 1
 	;二階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;10%　堕天使ゼパール　Lv57
-				RETURN [[キャラ:제파르]], 57
+				RETURN [[캐릭터:제파르]], 57
 			CASE IS < 30
 				;15%　女神ラケシス　Lv54
-				RETURN [[キャラ:라케시스]], 54
+				RETURN [[캐릭터:라케시스]], 54
 			CASE IS < 40
 				;15％　死神アンクウ
-				RETURN [[キャラ:앙쿠]], 59
+				RETURN [[캐릭터:앙쿠]], 59
 			CASE IS < 60
 				;15%　妖鳥フェニックス　Lv50
-				RETURN [[キャラ:피닉스]], 50
+				RETURN [[캐릭터:피닉스]], 50
 			CASE IS < 75
 				;15%　天使アムルタート　Lv59
-				RETURN [[キャラ:아무르타트]], 59
+				RETURN [[캐릭터:아무르타트]], 59
 			CASE IS < 90
 				;10%　天使ガムビエル　Lv58
-				RETURN [[キャラ:감비엘]], 58
+				RETURN [[캐릭터:감비엘]], 58
 			CASE IS < 100
 				;20%　天使バキエル　Lv58
-				RETURN [[キャラ:바키엘]], 58
+				RETURN [[캐릭터:바키엘]], 58
 		ENDSELECT
 	CASE 2
 	;三階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;10%　堕天使ゼパール　Lv57
-				RETURN [[キャラ:제파르]], 57
+				RETURN [[캐릭터:제파르]], 57
 			CASE IS < 30
 				;15%　女神アトロポス　Lv51
-				RETURN [[キャラ:아트로포스]], 51
+				RETURN [[캐릭터:아트로포스]], 51
 			CASE IS < 40
 				;15％　死神アンクウ
-				RETURN [[キャラ:앙쿠]], 59
+				RETURN [[캐릭터:앙쿠]], 59
 	         	CASE IS < 60
 				;15%　妖鳥フェニックス　Lv50
-				RETURN [[キャラ:피닉스]], 50
+				RETURN [[캐릭터:피닉스]], 50
 			CASE IS < 75
 				;15%　天使アムルタート　Lv59
-				RETURN [[キャラ:아무르타트]], 59
+				RETURN [[캐릭터:아무르타트]], 59
 			CASE IS < 90
 				;10%　天使ガムビエル　Lv58
-				RETURN [[キャラ:감비엘]], 58
+				RETURN [[캐릭터:감비엘]], 58
 			CASE IS < 100
 				;20%　天使バキエル　Lv58
-				RETURN [[キャラ:바키엘]], 58
+				RETURN [[캐릭터:바키엘]], 58
 		ENDSELECT
 	CASE 3
 	;四階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15％　女神アリアンフロッドLv59
-				RETURN [[キャラ:아리안로드]], 59
+				RETURN [[캐릭터:아리안로드]], 59
 			CASE IS < 30
 				;10%　堕天使ゼパール　Lv57
-				RETURN [[キャラ:제파르]], 57
+				RETURN [[캐릭터:제파르]], 57
 			CASE IS < 45
 				;15％　死神アンクウ
-				RETURN [[キャラ:앙쿠]], 59
+				RETURN [[캐릭터:앙쿠]], 59
 			CASE IS < 60
 				;15%　妖鳥フェニックス　Lv50
-				RETURN [[キャラ:피닉스]], 50
+				RETURN [[캐릭터:피닉스]], 50
 			CASE IS < 75
 				;15%　天使アムルタート　Lv59
-				RETURN [[キャラ:아무르타트]], 59
+				RETURN [[캐릭터:아무르타트]], 59
 			CASE IS < 90
 				;15%　天使ガムビエル　Lv58
-				RETURN [[キャラ:감비엘]], 58
+				RETURN [[캐릭터:감비엘]], 58
 			CASE IS < 100
 				;15%　天使バキエル　Lv58
-				RETURN [[キャラ:바키엘]], 58
+				RETURN [[캐릭터:바키엘]], 58
 		ENDSELECT
 	CASE 4
 	;地下一階
 		SELECTCASE RAND:100
 			CASE IS < 15
 				;15％　女神スカアハLv59
-				RETURN [[キャラ:스카아하]], 59
+				RETURN [[캐릭터:스카아하]], 59
 			CASE IS < 30
 				;15%　堕天使ゼパール　Lv57
-				RETURN [[キャラ:제파르]], 57
+				RETURN [[캐릭터:제파르]], 57
 			CASE IS < 45
 				;15％　死神アンクウ
-				RETURN [[キャラ:앙쿠]], 59
+				RETURN [[캐릭터:앙쿠]], 59
 			CASE IS < 60
 				;15%　妖鳥フェニックス　Lv50
-				RETURN [[キャラ:피닉스]], 50
+				RETURN [[캐릭터:피닉스]], 50
 			CASE IS < 75
 				;15%　天使アムルタート　Lv59
-				RETURN [[キャラ:아무르타트]], 59
+				RETURN [[캐릭터:아무르타트]], 59
 			CASE IS < 90
 				;10%　天使ガムビエル　Lv58
-				RETURN [[キャラ:감비엘]], 58
+				RETURN [[캐릭터:감비엘]], 58
 			CASE IS < 100
 				;15%　天使バキエル　Lv58
-				RETURN [[キャラ:바키엘]], 58
+				RETURN [[캐릭터:바키엘]], 58
 
 		ENDSELECT
 	CASEELSE
@@ -603,7 +603,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 		IF FLAG:전투난이도 >= 3 && FLAG:주회횟수 >= 1 && BASE:MASTER:LV >= 21
 			던전플래그:97:19 = 1
 			;レミエル
-			CALL SET_ENEMY,8,[[キャラ:레미엘]],60,0,1
+			CALL SET_ENEMY,8,[[캐릭터:레미엘]],60,0,1
 			;マハㆍマグナス
 			ABL:(CHARANUM-1):스킬5 = 1505
 			;タルカジャ
@@ -615,7 +615,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 			;レミエル
-			CALL SET_ENEMY,10,[[キャラ:레미엘]],60,0,1
+			CALL SET_ENEMY,10,[[캐릭터:레미엘]],60,0,1
 			;マハㆍマグナス
 			ABL:(CHARANUM-1):스킬5 = 1505
 			;タルカジャ
@@ -628,7 +628,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL HEALTH_CHARA,(CHARANUM-1)
 
 		;レナ
-			CALL SET_ENEMY,9,[[キャラ:레나]],62,0,1
+			CALL SET_ENEMY,9,[[캐릭터:레나]],62,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -638,7 +638,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			CALL SYNC_STATUS,(CHARANUM-1)
 			CALL HEALTH_CHARA,(CHARANUM-1)
 		ELSE
-			CALL SET_ENEMY,9,[[キャラ:레나]],66,0,1
+			CALL SET_ENEMY,9,[[캐릭터:레나]],66,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 			CSTR:(CHARANUM-1):사고패턴 = 611
@@ -678,16 +678,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,7,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,8,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,9,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,10,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,11,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,12,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,13,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,14,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,15,[[キャラ:카마이타치]],53,0,0
-			CALL SET_ENEMY,16,[[キャラ:카마이타치]],53,0,0
+			CALL SET_ENEMY,7,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,8,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,9,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,10,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,11,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,12,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,13,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,14,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,15,[[캐릭터:카마이타치]],53,0,0
+			CALL SET_ENEMY,16,[[캐릭터:카마이타치]],53,0,0
 			CALL BATTLE_START
 			FLAG:도주불가플래그 = 0
 			FLAG:회화불능플래그 = 0
@@ -780,16 +780,16 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) / 10
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,7,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,8,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,9,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,10,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,11,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,12,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,13,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,14,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,15,[[キャラ:카마이타치]],53,0,0
-				CALL SET_ENEMY,16,[[キャラ:카마이타치]],53,0,0
+				CALL SET_ENEMY,7,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,8,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,9,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,10,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,11,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,12,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,13,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,14,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,15,[[캐릭터:카마이타치]],53,0,0
+				CALL SET_ENEMY,16,[[캐릭터:카마이타치]],53,0,0
 				CALL BATTLE_START
 				FLAG:도주불가플래그 = 0
 				FLAG:회화불능플래그 = 0
@@ -1156,11 +1156,11 @@ ENDIF
 ;RETURN CSV番号 , 人数 , レベル
 SELECTCASE RAND:5
 	CASE 0
-		RETURN [[キャラ:앙쿠]] , 3 + RAND:10 , CSVBASE([[キャラ:앙쿠]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:앙쿠]] , 3 + RAND:10 , CSVBASE([[캐릭터:앙쿠]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:카마이타치]] , 3 + RAND:10 , CSVBASE([[キャラ:카마이타치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:카마이타치]] , 3 + RAND:10 , CSVBASE([[캐릭터:카마이타치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:피닉스]] , 3 + RAND:10 , CSVBASE([[キャラ:피닉스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:피닉스]] , 3 + RAND:10 , CSVBASE([[캐릭터:피닉스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	
 ENDSELECT
 

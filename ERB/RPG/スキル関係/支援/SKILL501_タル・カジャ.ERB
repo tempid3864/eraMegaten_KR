@@ -3,12 +3,12 @@
 
 ;스킬명
 @SKILL_NAME_501,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	RESULTS = 힘모으기
 ;小梅発動時はナイトメアソングに
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RESULTS = 나이트메어 송
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아오이(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아오이(마인학원)]])
 	RESULTS = 지천사의 청
 ELSE
 	RESULTS = 타루ㆍ카쟈
@@ -37,9 +37,9 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_501,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	RETURN 24
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	RETURN 10
 ELSE
 	RETURN 12
@@ -139,17 +139,17 @@ ENDIF
 FOR LOCAL,LOCAL:1,LOCAL:2
 	SIF POS(LOCAL) < 0
 		CONTINUE
-	IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+	IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 		CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 8)
-	ELSEIF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+	ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 		CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + ((SKILLGAGE_H_GET(ARG,3622)/5)+1)*4)
 	ELSE
 		CFLAG:POS(LOCAL):공격강화 = MIN(32, CFLAG:POS(LOCAL):공격강화 + 4)
 	ENDIF
 NEXT
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력이 크게 높아졌다！
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 	SELECTCASE SKILLGAGE_H_GET(ARG,3622)
 	CASE 0 TO 4
 		PRINTFORMW \@ CFLAG:ARG:PT플래그 == 0 ? 적 # 아군 \@의 공격력이 높아졌다！
@@ -180,12 +180,12 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_501
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:재버워크]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:재버워크]]
 	PRINTL 공격력이 크게 상승한다
-ELSEIF U > 0 && U < CHARANUM && NO:U == [[キャラ:코우메]]
+ELSEIF U > 0 && U < CHARANUM && NO:U == [[캐릭터:코우메]]
 	PRINTL 아군의 공격력을 증가시킨다。증가량은 현재 자신의 사령 카운터의 양에 따라 변화한다。
 	PRINTL 자신의 사령 카운터를 3 소비한다。
-ELSEIF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아오이(마인학원)]])
+ELSEIF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아오이(마인학원)]])
 	PRINTL 지천사에게 기도를 올려、아군에게 샘솟는 힘을 부여한다。
 	PRINTL 아군 전체의 공격력을 상승시킨다。
 ELSE
@@ -198,7 +198,7 @@ RETURN 1
 
 ;사용조건
 @SKILL_SPECIAL_ACTIONABLE_501,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:코우메]])
+IF SKILL_CHANGE(ARG, [[캐릭터:코우메]])
 ;小梅が使用する場合は固有ゲージが3以上ないと発動できない。
 	SIF SKILLGAGE_H_GET(ARG,3622) >= 3
 		RETURN 1

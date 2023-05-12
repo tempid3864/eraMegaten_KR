@@ -64,7 +64,7 @@ RETURN 3
 
 ;　범위　1 1체　2 1열　3 전체　4 적아군전체
 @SKILL_SPHERE_1813,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:츠쿠요미]]) == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:츠쿠요미]]) == 1
 	RETURN 3
 ELSE
 	RETURN 1
@@ -128,7 +128,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_1813,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:츠쿠요미]])
+IF SKILL_CHANGE(ARG, [[캐릭터:츠쿠요미]])
 	CALL ATTACK_FIELD,ARG,ARG:1,1813
 ELSE
 	LOCAL = POS(ARG:1)
@@ -145,7 +145,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_1813
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:츠쿠요미]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:츠쿠요미]]
 	PRINTL 적 전체에 중력 상성의 특대 데미지
 ELSE
 	PRINTL 적 1체에 중력 상성의 특대 데미지

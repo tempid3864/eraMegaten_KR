@@ -318,7 +318,7 @@ IF 던전플래그:13:23 > 0 && GETBIT(던전플래그:13:22,0) && !GETBIT(던�
 	CALL MESSAGE_WINDOW_D, "후타바", "잘 부탁해 "
 	CALL MESSAGE_WINDOW_D, "", "후타바는 충분한 훈련을 받아서 전투에 참가할 수 있게 되었다"
 	CALL MESSAGE_WINDOW_D, "", "사쿠라 후타바가 동료가 되었다 "
-	CALL ADD_NEW_COMPANION,[[キャラ:후타바]],100
+	CALL ADD_NEW_COMPANION,[[캐릭터:후타바]],100
 				IF RESULT
 					TALENT:(RESULT:1):비전투원 = 0
 					CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -327,7 +327,7 @@ IF 던전플래그:13:23 > 0 && GETBIT(던전플래그:13:22,0) && !GETBIT(던�
 	SETBIT 던전플래그:13:22,1
 ENDIF
 
-IF GETCHARA([[キャラ:치하야]]) > 0 && 함락(GETCHARA([[キャラ:치하야]])) > 0 && 던전플래그:13:6 < 3 && 던전플래그:13:1 > 2
+IF GETCHARA([[캐릭터:치하야]]) > 0 && 함락(GETCHARA([[캐릭터:치하야]])) > 0 && 던전플래그:13:6 < 3 && 던전플래그:13:1 > 2
 	IF 던전플래그:13:6 == 2
 		CALL MESSAGE_WINDOW_D, "", "치하야가 카르마 시티에서 점술가를 재개한 것 같다"
 	ELSE
@@ -572,7 +572,7 @@ ELSEIF 던전플래그:13:1 == 9
 					CALL HEALTH_CHARA,(RESULT:1)
 					;CALL CHECK_LEVEL_UP, (RESULT:1)
 				ENDIF
-				CALL ADD_NEW_COMPANION,[[キャラ:히트]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:히트]],100
 				IF RESULT
 					BASE:(RESULT:1):LV = 60
 					BASE:(RESULT:1):힘 = 34
@@ -690,8 +690,8 @@ IF 던전플래그:13:1 == 1
 	FLAG:명성 += 40
 ENDIF
 
-IF GETCHARA([[キャラ:치하야]]) > 0 && 함락(GETCHARA([[キャラ:치하야]])) > 0 && 던전플래그:13:6 == 3 && 던전플래그:13:1 > 2
-	LOCAL = (50+ RAND:100) * 함락(GETCHARA([[キャラ:치하야]]))
+IF GETCHARA([[캐릭터:치하야]]) > 0 && 함락(GETCHARA([[캐릭터:치하야]])) > 0 && 던전플래그:13:6 == 3 && 던전플래그:13:1 > 2
+	LOCAL = (50+ RAND:100) * 함락(GETCHARA([[캐릭터:치하야]]))
 	CALL MESSAGE_WINDOW_D, "", @"치하야는" + TOSTR(LOCAL) + "마카를 벌어왔다"
 	MONEY:1 += LOCAL
 	
@@ -1902,47 +1902,47 @@ SELECTCASE FLAG:현M
 	;地下街
 	CASE IS < 4
 		IF RAND:7 == 0
-			RETURN [[キャラ:랴난시]], 18 + RAND:2
+			RETURN [[캐릭터:랴난시]], 18 + RAND:2
 		ELSEIF RAND:6 == 0
-			RETURN [[キャラ:루살카]], 18 + RAND:2
+			RETURN [[캐릭터:루살카]], 18 + RAND:2
 		ELSEIF RAND:5 == 0
-			RETURN [[キャラ:오퀴페테]], 18 + RAND:2
+			RETURN [[캐릭터:오퀴페테]], 18 + RAND:2
 		ELSEIF RAND:4 == 0
-			RETURN [[キャラ:잔트만]], 18 + RAND:2
+			RETURN [[캐릭터:잔트만]], 18 + RAND:2
 		ELSEIF RAND:3 == 0
-			RETURN [[キャラ:세에레]], 18 + RAND:2
+			RETURN [[캐릭터:세에레]], 18 + RAND:2
 		ELSEIF RAND:2 == 0
-			RETURN [[キャラ:키마리스]], 18 + RAND:2
+			RETURN [[캐릭터:키마리스]], 18 + RAND:2
 		ELSE
-			RETURN [[キャラ:야마치치]], 18 + RAND:2
+			RETURN [[캐릭터:야마치치]], 18 + RAND:2
 		ENDIF
 	CASE 4,5
 		IF RAND:13 == 0
-			RETURN [[キャラ:랴난시]], 18 + RAND:2
+			RETURN [[캐릭터:랴난시]], 18 + RAND:2
 		ELSEIF RAND:12 == 0
-			RETURN [[キャラ:루살카]], 18 + RAND:2
+			RETURN [[캐릭터:루살카]], 18 + RAND:2
 		ELSEIF RAND:11 == 0
-			RETURN [[キャラ:오퀴페테]], 18 + RAND:2
+			RETURN [[캐릭터:오퀴페테]], 18 + RAND:2
 		ELSEIF RAND:10 == 0
-			RETURN [[キャラ:잔트만]], 18 + RAND:2
+			RETURN [[캐릭터:잔트만]], 18 + RAND:2
 		ELSEIF RAND:9 == 0
-			RETURN [[キャラ:세에레]], 18 + RAND:2
+			RETURN [[캐릭터:세에레]], 18 + RAND:2
 		ELSEIF RAND:8 == 0
-			RETURN [[キャラ:키마리스]], 18 + RAND:2
+			RETURN [[캐릭터:키마리스]], 18 + RAND:2
 		ELSEIF RAND:7 == 0
-			RETURN [[キャラ:야마치치]], 18 + RAND:2
+			RETURN [[캐릭터:야마치치]], 18 + RAND:2
 		ELSEIF RAND:6 == 0
-			RETURN [[キャラ:아리안로드]], 19 + RAND:4
+			RETURN [[캐릭터:아리안로드]], 19 + RAND:4
 		ELSEIF RAND:5 == 0
-			RETURN [[キャラ:스세리비메]],19 + RAND:4
+			RETURN [[캐릭터:스세리비메]],19 + RAND:4
 		ELSEIF RAND:4 == 0
-			RETURN [[キャラ:가름]], 19 + RAND:4
+			RETURN [[캐릭터:가름]], 19 + RAND:4
 		ELSEIF RAND:3 == 0
-			RETURN [[キャラ:오니]], 19 + RAND:4
+			RETURN [[캐릭터:오니]], 19 + RAND:4
 		ELSEIF RAND:2 == 0
-			RETURN [[キャラ:유키죠로]], 19 + RAND:4
+			RETURN [[캐릭터:유키죠로]], 19 + RAND:4
 		ELSE
-			RETURN [[キャラ:세탄타]], 19 + RAND:4
+			RETURN [[캐릭터:세탄타]], 19 + RAND:4
 		ENDIF
 	CASE IS < 14
 		CALL shuyoujo_enemy(0)

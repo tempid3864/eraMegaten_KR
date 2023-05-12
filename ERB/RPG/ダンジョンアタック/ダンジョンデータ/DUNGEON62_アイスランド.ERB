@@ -597,7 +597,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			IF RESULT == 0;y
 				CALL MESSAGE_WINDOW_D, "더스트", "앞으로 잘 부탁한다야!"
 				CALL MESSAGE_WINDOW_D, "", "＞더스트가 동료마로 들어왔다!"
-					CALL ADD_NEW_COMPANION,[[キャラ:예티]],200
+					CALL ADD_NEW_COMPANION,[[캐릭터:예티]],200
 					IF RESULT == 1
 						NAME:(RESULT:1) = ダスト
 						CALLNAME:(RESULT:1) = ダスト
@@ -629,7 +629,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			IF RESULT == 0;y
 				CALL MESSAGE_WINDOW_D, "네코마타", "응, 잘 부탁할게"
 				CALL MESSAGE_WINDOW_D, "", "＞네코마타가 동료마로 들어왔다!"
-					CALL ADD_NEW_COMPANION,[[キャラ:네코마타]],200
+					CALL ADD_NEW_COMPANION,[[캐릭터:네코마타]],200
 					던전플래그:62:3 = 1
 			ELSEIF RESULT == 1;n
 					CALL MESSAGE_WINDOW_D, "네코마타", "언제든 말 붙여줘……"
@@ -643,7 +643,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			IF RESULT == 0;y
 				CALL MESSAGE_WINDOW_D, "더스트", "앞으로 잘 부탁한다야!"
 				CALL MESSAGE_WINDOW_D, "", "＞더스트가 동료마로 들어왔다!"
-					CALL ADD_NEW_COMPANION,[[キャラ:예티]],200
+					CALL ADD_NEW_COMPANION,[[캐릭터:예티]],200
 					IF RESULT == 1
 						NAME:(RESULT:1) = ダスト
 						CALLNAME:(RESULT:1) = ダスト
@@ -673,7 +673,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			IF RESULT == 0;y
 				CALL MESSAGE_WINDOW_D, "네코마타", "응, 잘 부탁할게"
 				CALL MESSAGE_WINDOW_D, "", "＞네코마타가 동료마로 들어왔다!"
-					CALL ADD_NEW_COMPANION,[[キャラ:네코마타]],200
+					CALL ADD_NEW_COMPANION,[[캐릭터:네코마타]],200
 					던전플래그:62:3 = 1
 			ELSEIF RESULT == 1;n
 					CALL MESSAGE_WINDOW_D, "네코마타", "언제든 말 붙여줘……"
@@ -718,13 +718,13 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-		CALL SET_ENEMY,8,[[キャラ:잭프로스트]],15,0,1
+		CALL SET_ENEMY,8,[[캐릭터:잭프로스트]],15,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 200
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,9,[[キャラ:킹프로스트]],20,0,1
+		CALL SET_ENEMY,9,[[캐릭터:킹프로스트]],20,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 500
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -741,7 +741,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 
-		CALL SET_ENEMY,10,[[キャラ:잭프로스트]],15,0,1
+		CALL SET_ENEMY,10,[[캐릭터:잭프로스트]],15,0,1
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 200
 		CALL SYNC_STATUS,(CHARANUM-1)
@@ -764,7 +764,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		IF RESULT == 0;y
 			CALL MESSAGE_WINDOW_D, "다이아나", "고마워! 앞으로도 잘 부탁해!"
 			CALL MESSAGE_WINDOW_D, "", "＞다이아나가 동료마로 들어왔다!"
-			CALL ADD_NEW_COMPANION,[[キャラ:딸기프로스트]],200
+			CALL ADD_NEW_COMPANION,[[캐릭터:딸기프로스트]],200
 			IF RESULT == 1
 			LOCAL = RESULT:1
 			NAME:LOCAL = 다이아나
@@ -908,23 +908,23 @@ SELECTCASE FLAG:현M
 CASE 3 TO 5
 SELECTCASE RAND:100
 	CASE IS < 25
-		RETURN [[キャラ:잭프로스트]], 15
+		RETURN [[캐릭터:잭프로스트]], 15
 	CASE IS < 40
-		RETURN [[キャラ:놈]],15
+		RETURN [[캐릭터:놈]],15
 	CASE IS < 50
-		RETURN [[キャラ:케트시]],15
+		RETURN [[캐릭터:케트시]],15
 	CASE IS < 60
-		RETURN [[キャラ:아즈미]], 15
+		RETURN [[캐릭터:아즈미]], 15
 	CASE IS < 70
-		RETURN [[キャラ:엠푸사]], 15
+		RETURN [[캐릭터:엠푸사]], 15
 	CASE IS < 80
-		RETURN [[キャラ:토뵤]], 15
+		RETURN [[캐릭터:토뵤]], 15
 	CASE IS < 90
-		RETURN [[キャラ:야마치치]], 16
+		RETURN [[캐릭터:야마치치]], 16
 	CASE IS < 95
-		RETURN [[キャラ:아케트라브]], 17
+		RETURN [[캐릭터:아케트라브]], 17
 	CASE IS < 100
-		RETURN [[キャラ:니케]], 17
+		RETURN [[캐릭터:니케]], 17
 ENDSELECT
 
 
@@ -932,41 +932,41 @@ ENDSELECT
 CASE 7 TO 9
 SELECTCASE RAND:100
 	CASE IS < 30
-		RETURN [[キャラ:쁘띠프로스트]], 9
+		RETURN [[캐릭터:쁘띠프로스트]], 9
 	CASE IS < 40
-		RETURN [[キャラ:리림]], 9
+		RETURN [[캐릭터:리림]], 9
 	CASE IS < 50
-		RETURN [[キャラ:실키]], 9
+		RETURN [[캐릭터:실키]], 9
 	CASE IS < 60
-		RETURN [[キャラ:임프]], 9
+		RETURN [[캐릭터:임프]], 9
 	CASE IS < 70
-		RETURN [[キャラ:유킨코]], 7
+		RETURN [[캐릭터:유킨코]], 7
 	CASE IS < 80
-		RETURN [[キャラ:알프]], 7
+		RETURN [[캐릭터:알프]], 7
 	CASE IS < 90
-		RETURN [[キャラ:빌뷔스]], 8
+		RETURN [[캐릭터:빌뷔스]], 8
 	CASE IS < 100
-		RETURN [[キャラ:나하트코볼트]], 7
+		RETURN [[캐릭터:나하트코볼트]], 7
 ENDSELECT
 
 CASEELSE
 SELECTCASE RAND:100
 	CASE IS < 25
-		RETURN [[キャラ:잭프로스트]], 12
+		RETURN [[캐릭터:잭프로스트]], 12
 	CASE IS < 40
-		RETURN [[キャラ:뷔디네]], 12
+		RETURN [[캐릭터:뷔디네]], 12
 	CASE IS < 50
-		RETURN [[キャラ:필방]],10
+		RETURN [[캐릭터:필방]],10
 	CASE IS < 60
-		RETURN [[キャラ:이누가미]], 13
+		RETURN [[캐릭터:이누가미]], 13
 	CASE IS < 70
-		RETURN [[キャラ:가기손]], 12
+		RETURN [[캐릭터:가기손]], 12
 	CASE IS < 80
-		RETURN [[キャラ:커시]], 11
+		RETURN [[캐릭터:커시]], 11
 	CASE IS < 90
-		RETURN [[キャラ:케트시]], 12
+		RETURN [[캐릭터:케트시]], 12
 	CASE IS < 100
-		RETURN [[キャラ:오바리욘]], 11
+		RETURN [[캐릭터:오바리욘]], 11
 ENDSELECT
 
 ENDSELECT
@@ -1002,10 +1002,10 @@ RETURN 1
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:임프]] , 3 + RAND:10 , CSVBASE([[キャラ:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:임프]] , 3 + RAND:10 , CSVBASE([[캐릭터:임프]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:빌뷔스]] , 3 + RAND:10 , CSVBASE([[キャラ:빌뷔스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:빌뷔스]] , 3 + RAND:10 , CSVBASE([[캐릭터:빌뷔스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:토뵤]] , 3 + RAND:10 , CSVBASE([[キャラ:토뵤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:토뵤]] , 3 + RAND:10 , CSVBASE([[캐릭터:토뵤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

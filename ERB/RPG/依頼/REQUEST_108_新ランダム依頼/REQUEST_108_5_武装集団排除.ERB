@@ -34,7 +34,7 @@ SELECTCASE FLAG:현M
 			FLAG:선제기습취소 = 1
 			
 			FOR LOCAL:2, 7, 12
-				CALL SET_ENEMY, LOCAL:2 ,[[キャラ:모무노후]],25+RAND:5,1,0
+				CALL SET_ENEMY, LOCAL:2 ,[[캐릭터:모무노후]],25+RAND:5,1,0
 				NAME:(CHARANUM-1) = ガイア教徒
 				CALLNAME:(CHARANUM-1) = ガイア教徒
 				CALL SYNC_STATUS,(CHARANUM-1)

@@ -317,7 +317,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:아푸스]],50,0,1
+			CALL SET_ENEMY,9,[[캐릭터:아푸스]],50,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 5000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -344,11 +344,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		MONEY += 30000
 		FLAG:명성 += 100
 		FLAG:탈출스킬금지 = 0
-		LOCAL = GETCHARA([[キャラ:나오미]])
+		LOCAL = GETCHARA([[캐릭터:나오미]])
 		SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 		CALL DEL_GUEST, LOCAL, "큰곰자리별의활", "알즈ㆍ록", "백칠겁팔식철귀", "맥시밀리언", "라우린의반지", "미라주부츠", "도사뱃지"
 		던전플래그:95:0 = 2
-		CALL LIFTING_A_BAN([[キャラ:아푸스]])
+		CALL LIFTING_A_BAN([[캐릭터:아푸스]])
 		;FLAG:11561 = 1
 		FLAG:탈출 = 1
 		CASE 2
@@ -369,7 +369,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:티아마트]],50,0,1
+			CALL SET_ENEMY,9,[[캐릭터:티아마트]],50,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 5000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 5000
 			CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -418,7 +418,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 		MONEY += 30000
 		FLAG:명성 += 100
 		FLAG:탈출스킬금지 = 0
-		LOCAL = GETCHARA([[キャラ:나오미]])
+		LOCAL = GETCHARA([[캐릭터:나오미]])
 		SIF LOCAL >= 0 && CFLAG:LOCAL:인계횟수 == 0
 		CALL DEL_GUEST, LOCAL, "큰곰자리별의활", "알즈ㆍ록", "백칠겁팔식철귀", "맥시밀리언", "라우린의반지", "미라주부츠", "도사뱃지"
 		던전플래그:95:0 = 2
@@ -454,12 +454,12 @@ ENDSELECT
 ;ゲストキャラ
 ;-----------------------------------------------------------------------
 @SET_GUEST_D95
-	CALL ADD_GUEST_COMPANION([[キャラ:나오미]], 300)
+	CALL ADD_GUEST_COMPANION([[캐릭터:나오미]], 300)
 	SIF RESULT:1 >= 0
 		PRINTFORMW %조사처리(CALLNAME:(RESULT:1), "를")% COMP로 되돌렸으므로 주의해주세요
 	;新規加入ならRESULT:2は1、引継ぎキャラならRESULT:2は0
 	IF RESULT:2 == 1
-		LOCAL = GETCHARA([[キャラ:나오미]])
+		LOCAL = GETCHARA([[캐릭터:나오미]])
 		BASE:LOCAL:ＭＡＧ = 50000
 	ENDIF
 	CALL SYNC_STATUS, LOCAL
@@ -506,53 +506,53 @@ SELECTCASE FLAG:현M
 CASE 0
 SELECTCASE RAND:7
 	CASE IS < 1
-		RETURN [[キャラ:드베르가]], 35
+		RETURN [[캐릭터:드베르가]], 35
 	CASE IS < 2
-		RETURN [[キャラ:누에]],35
+		RETURN [[캐릭터:누에]],35
 	CASE IS < 3
-		RETURN [[キャラ:다프네]], 35
+		RETURN [[캐릭터:다프네]], 35
 	CASE IS < 4
-		RETURN [[キャラ:알라우네]], 35
+		RETURN [[캐릭터:알라우네]], 35
 	CASE IS < 5
-		RETURN [[キャラ:스튐팔리데스]], 38
+		RETURN [[캐릭터:스튐팔리데스]], 38
 	CASE IS < 6
-		RETURN [[キャラ:웬디고]], 36
+		RETURN [[캐릭터:웬디고]], 36
 	CASE IS < 7
-		RETURN [[キャラ:콥스]], 35
+		RETURN [[캐릭터:콥스]], 35
 ENDSELECT
 
 CASE 1
 SELECTCASE RAND:7
 	CASE IS < 1
-		RETURN [[キャラ:미즈치]], 39
+		RETURN [[캐릭터:미즈치]], 39
 	CASE IS < 2
-		RETURN [[キャラ:오르트로스]], 39
+		RETURN [[캐릭터:오르트로스]], 39
 	CASE IS < 3
-		RETURN [[キャラ:틀랄테쿠흐틀리]], 39
+		RETURN [[캐릭터:틀랄테쿠흐틀리]], 39
 	CASE IS < 4
-		RETURN [[キャラ:쿠드락]], 39
+		RETURN [[캐릭터:쿠드락]], 39
 	CASE IS < 5
-		RETURN [[キャラ:발로르]], 37
+		RETURN [[캐릭터:발로르]], 37
 	CASE IS < 6
-		RETURN [[キャラ:카마조츠]], 37
+		RETURN [[캐릭터:카마조츠]], 37
 	CASE IS < 7
-		RETURN [[キャラ:쿠치사케]], 38
+		RETURN [[캐릭터:쿠치사케]], 38
 ENDSELECT
 
 CASE 2 , 3 , 4
 SELECTCASE RAND:6
 	CASE IS < 1
-		RETURN [[キャラ:파이몬]], 42
+		RETURN [[캐릭터:파이몬]], 42
 	CASE IS < 2
-		RETURN [[キャラ:그레이맨]], 42
+		RETURN [[캐릭터:그레이맨]], 42
 	CASE IS < 3
-		RETURN [[キャラ:무슈후슈]],40
+		RETURN [[캐릭터:무슈후슈]],40
 	CASE IS < 4
-		RETURN [[キャラ:비비안]], 43
+		RETURN [[캐릭터:비비안]], 43
 	CASE IS < 5
-		RETURN [[キャラ:스코그스라]], 42
+		RETURN [[캐릭터:스코그스라]], 42
 	CASE IS < 6
-		RETURN [[キャラ:치치미틀]], 41
+		RETURN [[캐릭터:치치미틀]], 41
 ENDSELECT
 
 ENDSELECT
@@ -565,10 +565,10 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:누에]] , 3 + RAND:10 , CSVBASE([[キャラ:누에]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:누에]] , 3 + RAND:10 , CSVBASE([[캐릭터:누에]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:쿠드락]] , 3 + RAND:10 , CSVBASE([[キャラ:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:쿠드락]] , 3 + RAND:10 , CSVBASE([[캐릭터:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:무슈후슈]] , 3 + RAND:10 , CSVBASE([[キャラ:무슈후슈]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:무슈후슈]] , 3 + RAND:10 , CSVBASE([[캐릭터:무슈후슈]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 

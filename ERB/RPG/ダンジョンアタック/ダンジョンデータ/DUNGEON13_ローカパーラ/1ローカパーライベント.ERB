@@ -438,7 +438,7 @@ SELECTCASE RESULT
 			CALL INPUT_SELECT_D, "[0]카와카미를 노예로 만든다/[1]아무것도 안 한다 "
 			IF RESULT == 0
 					CALL MESSAGE_WINDOW_D, "카와카미", "자…잠깐, 뭐야！？ "
-					CALL ADD_NEW_COMPANION,[[キャラ:사다요]],100
+					CALL ADD_NEW_COMPANION,[[캐릭터:사다요]],100
 					CALL MESSAGE_WINDOW_D, "", "카와카미 사다요를 노예로 만들었다 "
 				던전플래그:13:9 *= 17
 			ENDIF
@@ -471,7 +471,7 @@ SELECTCASE RESULT
 			CALL INPUT_SELECT_D, "[0]토고를 노예로 만든다/[1]아무것도 안 한다 "
 			IF RESULT == 0
 					CALL MESSAGE_WINDOW_D, "토고", "아니…뭐、뭔가요！？ "
-					CALL ADD_NEW_COMPANION,[[キャラ:히후미]],100
+					CALL ADD_NEW_COMPANION,[[캐릭터:히후미]],100
 					CALL MESSAGE_WINDOW_D, "", "토고 히후미를 노예로 만들었다 "
 				던전플래그:13:9 *= 19
 			ENDIF
@@ -508,7 +508,7 @@ SELECTCASE RESULT
 		IF RESULT == 0
 				CALL MESSAGE_WINDOW_D, "서프", "후타바를 잘 부탁한다 "
 				CALL MESSAGE_WINDOW_D, "후타바", "아아 잘 부탁해 "
-				CALL ADD_NEW_COMPANION,[[キャラ:후타바]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:후타바]],100
 				CALL MESSAGE_WINDOW_D, "", "사쿠라 후타바를 노예로 만들었다 "
 		ELSEIF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "서프", "내가 가르쳐 주마/여기에는 훈련할 수 있는 곳이 많이 있으니까 "
@@ -566,7 +566,7 @@ SELECTCASE RESULT
 		CALL INPUT_SELECT_D, "[0]타케미를 노예로 만든다/[1]아무것도 안한다 "
 		IF RESULT == 0
 			CALL MESSAGE_WINDOW_D, "타케미", "꺄악！…뭐　뭐야！？ "
-			CALL ADD_NEW_COMPANION,[[キャラ:타에]],100
+			CALL ADD_NEW_COMPANION,[[캐릭터:타에]],100
 			PRINTFORML 타케미 타에를 손에 넣었다
 			SETBIT 던전플래그:13:22,2
 		ENDIF
@@ -736,7 +736,7 @@ IF 던전플래그:13:1 == 0
 				CALL MESSAGE_WINDOW_D, "프레드（검은 피부의 소년）", "기억했어。내 이름은 프레드/가자구、서프 "
 				CALL MESSAGE_WINDOW_D, "", "서프、게일、알지라가 동료가 되었다 "
 				
-				CALL ADD_NEW_COMPANION,[[キャラ:서프]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:서프]],100
 				IF RESULT
 					BASE:(RESULT:1):LV = 20
 					BASE:(RESULT:1):힘 = 8
@@ -767,7 +767,7 @@ IF 던전플래그:13:1 == 0
 					ABL:(RESULT:1):초기변신악마스킬8 = [[스킬:씹어흩뿌리기]]
 					;CALL CHECK_LEVEL_UP, (RESULT:1)
 				ENDIF
-				CALL ADD_NEW_COMPANION,[[キャラ:게일]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:게일]],100
 				IF RESULT
 					BASE:(RESULT:1):LV = 20
 					BASE:(RESULT:1):힘 = 11
@@ -798,7 +798,7 @@ IF 던전플래그:13:1 == 0
 					ABL:(RESULT:1):초기변신악마스킬8 = [[스킬:주살브레이크]]
 					;CALL CHECK_LEVEL_UP, (RESULT:1)
 				ENDIF
-				CALL ADD_NEW_COMPANION,[[キャラ:알지라]],100
+				CALL ADD_NEW_COMPANION,[[캐릭터:알지라]],100
 				IF RESULT
 					BASE:(RESULT:1):LV = 20
 					BASE:(RESULT:1):힘 = 6
@@ -1193,14 +1193,14 @@ ELSEIF 던전플래그:13:1 == 4
 			IF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "마코토", "그럼 우리는 동료를 구출하러 갈게요/여러분、무운을"
 				CALL MESSAGE_WINDOW_D, "서프", "그래、그쪽이야말로 조심해…"
-				SIF GETCHARA([[キャラ:마코토(페르소나5)]]) > 0
-					CFLAG:GETCHARA([[キャラ:마코토(페르소나5)]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:유스케]]) > 0
-					CFLAG:GETCHARA([[キャラ:유스케]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:시에로]]) > 0
-					CFLAG:GETCHARA([[キャラ:시에로]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:알지라]]) > 0
-					CFLAG:GETCHARA([[キャラ:알지라]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:마코토(페르소나5)]]) > 0
+					CFLAG:GETCHARA([[캐릭터:마코토(페르소나5)]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:유스케]]) > 0
+					CFLAG:GETCHARA([[캐릭터:유스케]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:시에로]]) > 0
+					CFLAG:GETCHARA([[캐릭터:시에로]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:알지라]]) > 0
+					CFLAG:GETCHARA([[캐릭터:알지라]]):이자리에없는플래그 = 1
 				
 				던전플래그:13:12 = 1
 				CALL DUNGEON_WORP,16,8,22
@@ -1228,16 +1228,16 @@ ELSEIF 던전플래그:13:1 == 4
 			IF RESULT == 1
 				CALL MESSAGE_WINDOW_D, "서프", "우리는 카르마 협회로 향하지/마코토、유스케、죽지마라"
 				CALL MESSAGE_WINDOW_D, "마코토", "네/여러분、무운을"
-				SIF GETCHARA([[キャラ:안]]) > 0
-					CFLAG:GETCHARA([[キャラ:안]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:류지]]) > 0
-					CFLAG:GETCHARA([[キャラ:류지]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:서프]]) > 0
-					CFLAG:GETCHARA([[キャラ:서프]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:게일]]) > 0
-					CFLAG:GETCHARA([[キャラ:게일]]):이자리에없는플래그 = 1
-				SIF GETCHARA([[キャラ:로알드]]) > 0
-					CFLAG:GETCHARA([[キャラ:로알드]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:안]]) > 0
+					CFLAG:GETCHARA([[캐릭터:안]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:류지]]) > 0
+					CFLAG:GETCHARA([[캐릭터:류지]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:서프]]) > 0
+					CFLAG:GETCHARA([[캐릭터:서프]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:게일]]) > 0
+					CFLAG:GETCHARA([[캐릭터:게일]]):이자리에없는플래그 = 1
+				SIF GETCHARA([[캐릭터:로알드]]) > 0
+					CFLAG:GETCHARA([[캐릭터:로알드]]):이자리에없는플래그 = 1
 				
 				던전플래그:13:13 = 1
 				CALL DUNGEON_WORP,26,1,1
@@ -2311,16 +2311,16 @@ ENDIF
 @ROKA_DOREI
 
 $DOREI
-;SIF 던전플래그:13:1 > 0 && GETCHARA([[キャラ:카스미]]) < 1
+;SIF 던전플래그:13:1 > 0 && GETCHARA([[캐릭터:카스미]]) < 1
 ;	PRINTFORML [ 1] 요시자와 카스미
 PRINTFORML [99] 買わない
 
 INPUT
-;IF RESULT == 1 && 던전플래그:13:1 > 6 && 던전플래그:13:1 > 0 && GETCHARA([[キャラ:카스미]]) < 1
+;IF RESULT == 1 && 던전플래그:13:1 > 6 && 던전플래그:13:1 > 0 && GETCHARA([[캐릭터:카스미]]) < 1
 ;	PRINTFORML 타케미의 인지를 구매하시겠습니까？
 ;	CALL INPUT_YN
 ;	IF RESULT == 0
-;		CALL ADD_NEW_COMPANION,[[キャラ:카스미]],100
+;		CALL ADD_NEW_COMPANION,[[캐릭터:카스미]],100
 ;		IF RESULT == 1
 ;			MONEY:1 -= 1000
 ;			PRINTFORML 요시자와 카스미를 손에 넣었다

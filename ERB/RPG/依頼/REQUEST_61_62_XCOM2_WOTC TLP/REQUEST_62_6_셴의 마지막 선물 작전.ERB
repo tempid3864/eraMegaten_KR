@@ -176,16 +176,16 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 
 	의뢰플래그:62:1 = 21 ;조우전용 플래그
 
-	CALL INCREASE_ANALYZE([[キャラ:버려진MEC]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:낡은포탑]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:프라탈막스40]],1000) ;이제 인외이므로 애널라이즈 필요.
-	CALL INCREASE_ANALYZE([[キャラ:제인켈리41]],1000) ;이제 인외이므로 애널라이즈 필요.
-	CALL INCREASE_ANALYZE([[キャラ:릴리셴40]],1000) ;이제 인외이므로 애널라이즈 필요.
-	CALL INCREASE_ANALYZE([[キャラ:엘레나드라그노바40]],1000) ;이제 인외이므로 애널라이즈 필요.
-	CALL INCREASE_ANALYZE([[キャラ:템플러아나타]],1000) ;이제 인외이므로 애널라이즈 필요.
-	CALL INCREASE_ANALYZE([[キャラ:SPARK001]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:줄리안]],1000)
-	CALL INCREASE_ANALYZE([[キャラ:줄리안SPARK]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:버려진MEC]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:낡은포탑]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:프라탈막스40]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:제인켈리41]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:릴리셴40]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:엘레나드라그노바40]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:템플러아나타]],1000) ;이제 인외이므로 애널라이즈 필요.
+	CALL INCREASE_ANALYZE([[캐릭터:SPARK001]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:줄리안]],1000)
+	CALL INCREASE_ANALYZE([[캐릭터:줄리안SPARK]],1000)
 
 	CALL DISABLE_MY_COMP ;동료마 강제 청소. 아무도 부를 수 없음.
 
@@ -366,7 +366,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	ENDIF
 
 	;버려진 MEC
-	CALL SET_ENEMY,7,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -374,7 +374,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -382,7 +382,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -390,7 +390,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -398,7 +398,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -406,7 +406,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,13,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,13,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -414,7 +414,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,15,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,15,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -517,7 +517,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	의뢰플래그:62:1 = 22 ;두번째 조우전용 플래그. MEC 터지고 줄리안의 말
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -525,7 +525,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -629,7 +629,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -637,7 +637,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -786,7 +786,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -794,7 +794,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -802,7 +802,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -810,7 +810,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -890,7 +890,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -898,7 +898,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -906,7 +906,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -914,7 +914,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1002,7 +1002,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	의뢰플래그:62:1 = 24 ;새로운 전투 시작 대사 기쁜 소식 어쩌구..
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1010,7 +1010,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1018,7 +1018,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1026,7 +1026,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1129,7 +1129,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	의뢰플래그:62:1 = 25 ;(하지만 모든 유기체가 그렇듯이)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1137,7 +1137,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1145,7 +1145,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1153,7 +1153,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1198,7 +1198,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	의뢰플래그:62:1 = 26 ;(하지만 내 생각이 짧았어)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1206,7 +1206,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1214,7 +1214,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1222,7 +1222,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1274,7 +1274,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	의뢰플래그:62:1 = 27 ; (평화적으로 해결할 수도 있었다)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1282,7 +1282,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1290,7 +1290,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1298,7 +1298,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8536 ;프라임 자폭 사용가능
@@ -1549,28 +1549,28 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	ENDIF
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,10,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,11,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -1835,21 +1835,21 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -1929,21 +1929,21 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,10,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -2025,21 +2025,21 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,10,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -2123,14 +2123,14 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,10,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -2244,35 +2244,35 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;낡은 포탑
-	CALL SET_ENEMY,7,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,10,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,11,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
@@ -2357,21 +2357,21 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2453,21 +2453,21 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;낡은 포탑
-	CALL SET_ENEMY,8,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;낡은 포탑
-	CALL SET_ENEMY,9,[[キャラ:낡은포탑]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:낡은포탑]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 406 ;HP 1080으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 891
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2475,7 +2475,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2483,7 +2483,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,12,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,12,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2563,7 +2563,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2571,7 +2571,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2579,7 +2579,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2661,7 +2661,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	WAIT
 
 	;버려진 MEC
-	CALL SET_ENEMY,7,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2669,7 +2669,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2677,7 +2677,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2685,7 +2685,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2693,7 +2693,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2806,7 +2806,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;버려진 MEC
-	CALL SET_ENEMY,7,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2814,7 +2814,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2822,7 +2822,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2830,7 +2830,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2838,7 +2838,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2947,7 +2947,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;버려진 MEC
-	CALL SET_ENEMY,7,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2955,7 +2955,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2963,7 +2963,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,9,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2971,7 +2971,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2979,7 +2979,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2987,7 +2987,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,12,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,12,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -2995,7 +2995,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,13,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,13,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3003,7 +3003,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,14,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,14,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3011,7 +3011,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,15,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,15,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3019,7 +3019,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,16,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,16,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3306,7 +3306,7 @@ CALL REMOVE_POSITION,LOCAL:3 ;주인공을 파티에서 지우기
 	CALL HEALTH_CHARA, LOCAL
 
 	;줄리안 섹토포드 체력 6만
-	CALL SET_ENEMY,9,[[キャラ:줄리안]],40,0,0
+	CALL SET_ENEMY,9,[[캐릭터:줄리안]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 59032
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 59800
 	CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -3921,7 +3921,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 2
 	RESETCOLOR
 
 	;버려진 MEC
-	CALL SET_ENEMY,7,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,7,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3929,7 +3929,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 2
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,8,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,8,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3937,7 +3937,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 2
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,10,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,10,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3945,7 +3945,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 2
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,11,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,11,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3962,7 +3962,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 3
 	RESETCOLOR
 
 	;버려진 MEC
-	CALL SET_ENEMY,12,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,12,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3970,7 +3970,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,13,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,13,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3978,7 +3978,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,14,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,14,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3986,7 +3986,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,15,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,15,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535
@@ -3994,7 +3994,7 @@ ELSEIF 의뢰플래그:62:1 == 37 && FLAG:경과턴수 == 3
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
 	;버려진 MEC
-	CALL SET_ENEMY,16,[[キャラ:버려진MEC]],40,0,0
+	CALL SET_ENEMY,16,[[캐릭터:버려진MEC]],40,0,0
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 118 ;HP 720으로 고정
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 576
 	CSTR:(CHARANUM-1):사고패턴 = 8535

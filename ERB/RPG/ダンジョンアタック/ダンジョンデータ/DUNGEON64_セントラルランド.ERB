@@ -81,7 +81,7 @@ IF 던전플래그:64:2 == 0
 	CALL MESSAGE_WINDOW_D, "", "＞마계의 중심지　센트럴랜드"
 	CALL MESSAGE_WINDOW_D, "", "＞도시에는 악마의 모습이 거의 보이지 않고、몇 안 되는 거리에 있던 악마에게 이야기를 들어보니 / 악마들은 대마왕이 있는 다크 팰리스에 있는 것 같다"
 	CALL MESSAGE_WINDOW_D, "", "＞대마왕 아젤은 그 곳에서 당신을 맞아 싸울 생각인 것 같다"
-	SIF FINDCHARA_B([[キャラ:에레지]])== 2
+	SIF FINDCHARA_B([[캐릭터:에레지]])== 2
 		CALL MESSAGE_WINDOW_D, "에레지", "여기에 있는 건가、아버지"
 던전플래그:64:2 = 1
 ENDIF
@@ -544,7 +544,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:바수키]], 53, 0, 1
+			CALL SET_ENEMY,9,[[캐릭터:바수키]], 53, 0, 1
 			CFLAG:(CHARANUM-1):ＨＰ보정 = 1000
 			CFLAG:(CHARANUM-1):ＭＰ보정 = 500
 			CALL SYNC_STATUS,(CHARANUM-1)
@@ -566,62 +566,62 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,7,[[キャラ:트리글라프]], 55, 0, 0
+				CALL SET_ENEMY,7,[[캐릭터:트리글라프]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,8,[[キャラ:스트리고이]], 55, 0, 1
+				CALL SET_ENEMY,8,[[캐릭터:스트리고이]], 55, 0, 1
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,9,[[キャラ:도플갱어]],55,0,0
+				CALL SET_ENEMY,9,[[캐릭터:도플갱어]],55,0,0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,10,[[キャラ:섀도우]], 55, 0, 0
+				CALL SET_ENEMY,10,[[캐릭터:섀도우]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,11,[[キャラ:쿠드락]], 55, 0, 0
+				CALL SET_ENEMY,11,[[캐릭터:쿠드락]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,12,[[キャラ:베르세르크]], 55, 0, 0
+				CALL SET_ENEMY,12,[[캐릭터:베르세르크]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,13,[[キャラ:아마존]], 55, 0, 0
+				CALL SET_ENEMY,13,[[캐릭터:아마존]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
 
-				CALL SET_ENEMY,14,[[キャラ:오베론]], 55, 0, 0
+				CALL SET_ENEMY,14,[[캐릭터:오베론]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,15,[[キャラ:티타니아]], 55, 0, 0
+				CALL SET_ENEMY,15,[[캐릭터:티타니아]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
 
-				CALL SET_ENEMY,16,[[キャラ:뱀파이어]], 55, 0, 0
+				CALL SET_ENEMY,16,[[캐릭터:뱀파이어]], 55, 0, 0
 				NAME:(CHARANUM-1) = 아젤
 				CALLNAME:(CHARANUM-1) = 아젤
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -641,7 +641,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			IF 던전플래그:61:1 == 1
 				CALL MESSAGE_WINDOW_D, "", "＞소녀가 데빌라이저를 가지고 기다리고 있었다"
 				CALL MESSAGE_WINDOW_D, "미라이", "아빠를 위해 당신을 쓰러뜨리겠습니다！"
-				IF FINDCHARA_B([[キャラ:세츠나]])== 2
+				IF FINDCHARA_B([[캐릭터:세츠나]])== 2
 					CALL MESSAGE_WINDOW_D, "세츠나", "그만둬 미라이！"
 					CALL MESSAGE_WINDOW_D, "미라이", "세츠나… 미안해…"
 				ENDIF
@@ -653,14 +653,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 
-					CALL SET_ENEMY,14,[[キャラ:미라이]],58,0,1
+					CALL SET_ENEMY,14,[[캐릭터:미라이]],58,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 					CSTR:(CHARANUM-1):사고패턴 = 데빌칠드런
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,9,[[キャラ:벨4]],60,0,1
+					CALL SET_ENEMY,9,[[캐릭터:벨4]],60,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 					NAME:(CHARANUM-1) = 벨
@@ -671,19 +671,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,8,[[キャラ:란다]],55,0,0
+					CALL SET_ENEMY,8,[[캐릭터:란다]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,10,[[キャラ:듀라한]],55,0,0
+					CALL SET_ENEMY,10,[[캐릭터:듀라한]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,13,[[キャラ:비비안]],55,0,0
+					CALL SET_ENEMY,13,[[캐릭터:비비안]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,15,[[キャラ:코아틀리쿠에]],55,0,0
+					CALL SET_ENEMY,15,[[캐릭터:코아틀리쿠에]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -697,11 +697,11 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "", "＞카나메 미라이가 노예가 되었다"
 				CALL ADD_NEW_COMPANION,4504,300
 				CALL MESSAGE_WINDOW_D, "", "＞킹그리폰 벨이 동료마로 들어왔다"
-				CALL ADD_NEW_COMPANION,[[キャラ:벨4]],200,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:벨4]],200,1
 			ELSEIF 던전플래그:61:1 == 2
 				CALL MESSAGE_WINDOW_D, "", "＞소년이 데빌라이저를 가지고 기다리고 있었다"
 				CALL MESSAGE_WINDOW_D, "세츠나", "아버지를 위해 너를 쓰러뜨려주겠어！"
-				IF FINDCHARA_B([[キャラ:미라이]])== 2
+				IF FINDCHARA_B([[캐릭터:미라이]])== 2
 				CALL MESSAGE_WINDOW_D, "미라이", "그만 둬 세츠나！"
 				CALL MESSAGE_WINDOW_D, "세츠나", "미라이… 미안…"
 				ENDIF
@@ -713,14 +713,14 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					FLAG:회화불능플래그 = 1
 					FLAG:선제기습취소 = 1
 
-					CALL SET_ENEMY,14,[[キャラ:세츠나]],58,0,1
+					CALL SET_ENEMY,14,[[캐릭터:세츠나]],58,0,1
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
 					CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 					CSTR:(CHARANUM-1):사고패턴 = 데빌칠드런
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,9,[[キャラ:쿨4]],60,0,1
+					CALL SET_ENEMY,9,[[캐릭터:쿨4]],60,0,1
 					NAME:(CHARANUM-1) = 쿨
 					CALLNAME:(CHARANUM-1) = 쿨
 					CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -731,19 +731,19 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,8,[[キャラ:도철]],55,0,0
+					CALL SET_ENEMY,8,[[캐릭터:도철]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,10,[[キャラ:나타태자]],55,0,0
+					CALL SET_ENEMY,10,[[캐릭터:나타태자]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,13,[[キャラ:쿠라마텐구]],55,0,0
+					CALL SET_ENEMY,13,[[캐릭터:쿠라마텐구]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
-					CALL SET_ENEMY,15,[[キャラ:쿠엘레브레]],55,0,0
+					CALL SET_ENEMY,15,[[캐릭터:쿠엘레브레]],55,0,0
 					CALL SYNC_STATUS,(CHARANUM-1)
 					CALL HEALTH_CHARA,(CHARANUM-1)
 
@@ -756,7 +756,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "", "＞카이 세츠나가 노예가 되었다"
 				CALL ADD_NEW_COMPANION,4529,300
 				CALL MESSAGE_WINDOW_D, "", "＞킹케르베로스 쿨이 동료마로 들어왔다"
-				CALL ADD_NEW_COMPANION,[[キャラ:쿨4]],200,1
+				CALL ADD_NEW_COMPANION,[[캐릭터:쿨4]],200,1
 			ENDIF
 			던전플래그:64:0 = 3
 		ENDIF
@@ -766,22 +766,22 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 			CALL MESSAGE_WINDOW_D, "아젤", "어서 와라 / 용케 여기까지 왔구나"
 			CALL MESSAGE_WINDOW_D, "", "＞그의 배후에는 십자가에 쇠사슬로 묶인 남자가 있다。"
 			CALL MESSAGE_WINDOW_D, "아젤", "아아、그는 나의 형인 전 대마왕……/ 루시퍼다。"
-			IF FINDCHARA_B([[キャラ:세츠나]])== 2
+			IF FINDCHARA_B([[캐릭터:세츠나]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞세츠나는 십자가에 걸려진 사람을 보고있다"
 				CALL MESSAGE_WINDOW_D, "세츠나", "아버지…인가…？"
 			ENDIF
-			IF FINDCHARA_B([[キャラ:미라이]])== 2
+			IF FINDCHARA_B([[캐릭터:미라이]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞미라이는 십자가에 걸려진 사람을 보고있다"
 				CALL MESSAGE_WINDOW_D, "미라이", "아빠…？　아빠야！？"
 				ENDIF
-			SIF FINDCHARA_B([[キャラ:미라이]])== 2 || FINDCHARA_B([[キャラ:미라이]])== 2
+			SIF FINDCHARA_B([[캐릭터:미라이]])== 2 || FINDCHARA_B([[캐릭터:미라이]])== 2
 				CALL MESSAGE_WINDOW_D, "아젤", "아아、감동의 재회로군！"
-			IF FINDCHARA_B([[キャラ:에레지]])== 2
+			IF FINDCHARA_B([[캐릭터:에레지]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞아젤은 에레지를 무시하고있다"
 				CALL MESSAGE_WINDOW_D, "에레지", "아버지―！ 날 무시하지 마！"
 				CALL MESSAGE_WINDOW_D, "", "＞에레지는 아젤을 보고 격분하고 있다"
 			ENDIF
-			IF FINDCHARA_B([[キャラ:제트]])== 2
+			IF FINDCHARA_B([[캐릭터:제트]])== 2
 				CALL MESSAGE_WINDOW_D, "아젤", "역시 그쪽에 간 건가"
 				CALL MESSAGE_WINDOW_D, "제트", "이쪽에 가망이 있으니까요"
 			ENDIF
@@ -797,7 +797,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 
-				CALL SET_ENEMY,9,[[キャラ:아젤]],65,0,1
+				CALL SET_ENEMY,9,[[캐릭터:아젤]],65,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
 				CSTR:(CHARANUM-1):종족명 = 대마왕
@@ -816,17 +816,17 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				FLAG:선제기습취소 = 0
 
 			CALL MESSAGE_WINDOW_D, "", "＞대마왕　아젤은 쓰러졌다……"
-			IF FINDCHARA_B([[キャラ:에레지]])== 2
+			IF FINDCHARA_B([[캐릭터:에레지]])== 2
 				CALL MESSAGE_WINDOW_D, "에레지", "작별이야…… 아버지……"
 			ENDIF
-			IF FINDCHARA_B([[キャラ:세츠나]]) == 2 && FINDCHARA_B([[キャラ:미라이]])== 2
+			IF FINDCHARA_B([[캐릭터:세츠나]]) == 2 && FINDCHARA_B([[캐릭터:미라이]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞세츠나와 미라이는 십자가에 걸린 남자를 구해냈다"
 				CALL MESSAGE_WINDOW_D, "세츠나", "아버지！"
 				CALL MESSAGE_WINDOW_D, "미라이", "아빠…！"
-			ELSEIF FINDCHARA_B([[キャラ:세츠나]])== 2
+			ELSEIF FINDCHARA_B([[캐릭터:세츠나]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞세츠나는 십자가에 걸린 남자를 구해냈다"
 				CALL MESSAGE_WINDOW_D, "세츠나", "아버지！"
-			ELSEIF FINDCHARA_B([[キャラ:미라이]])== 2
+			ELSEIF FINDCHARA_B([[캐릭터:미라이]])== 2
 				CALL MESSAGE_WINDOW_D, "", "＞미라이는 십자가에 걸린 남자를 구해냈다"
 				CALL MESSAGE_WINDOW_D, "미라이", "아빠…！"
 			ELSE
@@ -886,7 +886,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL MESSAGE_WINDOW_D, "", "＞그리고… 새로운 호시가미가 태어났다"
 							CALL MESSAGE_WINDOW_D, "", "―― Ending No.061 (데빌칠드런　호시가미 End)" , , , , , , , , , "CENTER"
 							;ＥＤボーナス：아젤解禁
-							CALL LIFTING_A_BAN([[キャラ:아젤]])
+							CALL LIFTING_A_BAN([[캐릭터:아젤]])
 							;FLAG:10280 = 1
 							FLAG:5 = 9
 							SETBIT FLAG:취소된ED,61
@@ -903,7 +903,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 							CALL MESSAGE_WINDOW_D, "호시가미", "너의 승리다…"
 							CALL MESSAGE_WINDOW_D, "호시가미", "그러면 이제부터는 너의 것이다…"
 							CALL MESSAGE_WINDOW_D, "", "＞호시가미가 노예가 되었다"
-							CALL ADD_NEW_COMPANION,[[キャラ:호시가미]],300
+							CALL ADD_NEW_COMPANION,[[캐릭터:호시가미]],300
 
 							던전플래그:64:1 = 2
 							던전플래그:64:0 = 6
@@ -927,7 +927,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "호시가미", "너의 승리다…"
 				CALL MESSAGE_WINDOW_D, "호시가미", "그러면 이제부터는 너의 것이다…"
 				CALL MESSAGE_WINDOW_D, "", "＞호시가미가 노예가 되었다"
-				CALL ADD_NEW_COMPANION,[[キャラ:호시가미]],300
+				CALL ADD_NEW_COMPANION,[[캐릭터:호시가미]],300
 				던전플래그:64:1 = 2
 
 			CASE 2
@@ -954,7 +954,7 @@ SELECTCASE DA:(FLAG:현X):(FLAG:현Y) % 10
 				CALL MESSAGE_WINDOW_D, "호시가미", "……아아、네 힘을 인정해주마……"
 				CALL MESSAGE_WINDOW_D, "호시가미", "나는 호시가미 앞으로도 잘 부탁해……"
 				던전플래그:64:1 = 3
-				CALL LIFTING_A_BAN([[キャラ:호시가미]])
+				CALL LIFTING_A_BAN([[캐릭터:호시가미]])
 
 			CASE 2
 				CALL MESSAGE_WINDOW_D, "호시가미", "그런가……"
@@ -975,7 +975,7 @@ RETURN 1
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,9,[[キャラ:호시가미]],70,0,1
+			CALL SET_ENEMY,9,[[캐릭터:호시가미]],70,0,1
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 10000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
 			BASE:(CHARANUM-1):힘 += 5
@@ -1014,7 +1014,7 @@ RETURN 1
 		FLAG:도주불가플래그 = 1
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,14,[[キャラ:호시가미]],100,0,1
+			CALL SET_ENEMY,14,[[캐릭터:호시가미]],100,0,1
 			CSTR:(CHARANUM-1):사고패턴 = URAホシガミ
 			CFLAG:(CHARANUM-1):ＨＰ보정 += 8000
 			CFLAG:(CHARANUM-1):ＭＰ보정 += 10000
@@ -1051,7 +1051,7 @@ RETURN 1
 
 			;ゼブルモデルㆍホシガミ
 			;蠅声の王
-			CALL SET_ENEMY,8,[[キャラ:호시가미]],80,0,1
+			CALL SET_ENEMY,8,[[캐릭터:호시가미]],80,0,1
 			CSTR:(CHARANUM-1):종족명 = 分霊
 			NAME:(CHARANUM-1) = サバエノオウ
 			CALLNAME:(CHARANUM-1) = サバエノオウ
@@ -1085,7 +1085,7 @@ RETURN 1
 
 			;ルシファーモデルㆍホシガミ
 			;暁の明星
-			CALL SET_ENEMY,9,[[キャラ:호시가미]],80,0,1
+			CALL SET_ENEMY,9,[[캐릭터:호시가미]],80,0,1
 			CSTR:(CHARANUM-1):종족명 = 分霊
 			NAME:(CHARANUM-1) = アケノホシ
 			CALLNAME:(CHARANUM-1) = アケノホシ
@@ -1119,7 +1119,7 @@ RETURN 1
 
 			;ミカエルモデルㆍホシガミ
 			;焔の剣
-			CALL SET_ENEMY,10,[[キャラ:호시가미]],80,0,1
+			CALL SET_ENEMY,10,[[캐릭터:호시가미]],80,0,1
 			CSTR:(CHARANUM-1):종족명 = 分霊
 			NAME:(CHARANUM-1) = ホムラノツルギ
 			CALLNAME:(CHARANUM-1) = ホムラノツルギ
@@ -1282,80 +1282,80 @@ SELECTCASE FLAG:현M
 CASE 0 , 1
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:오베론]], 50
+		RETURN [[캐릭터:오베론]], 50
 	CASE IS < 20
-		RETURN [[キャラ:티타니아]], 50
+		RETURN [[캐릭터:티타니아]], 50
 	CASE IS < 30
-		RETURN [[キャラ:뱀파이어]], 50
+		RETURN [[캐릭터:뱀파이어]], 50
 	CASE IS < 40
-		RETURN [[キャラ:코아틀리쿠에]], 50
+		RETURN [[캐릭터:코아틀리쿠에]], 50
 	CASE IS < 50
-		RETURN [[キャラ:모리안]], 50
+		RETURN [[캐릭터:모리안]], 50
 	CASE IS < 60
-		RETURN [[キャラ:쿠드락]], 50
+		RETURN [[캐릭터:쿠드락]], 50
 	CASE IS < 75
-		RETURN [[キャラ:나타태자]], 50
+		RETURN [[캐릭터:나타태자]], 50
 	CASE IS < 80
-		RETURN [[キャラ:이참나]], 51
+		RETURN [[캐릭터:이참나]], 51
 	CASE IS < 85
-		RETURN [[キャラ:요르문간드]], 53
+		RETURN [[캐릭터:요르문간드]], 53
 	CASE IS < 90
-		RETURN [[キャラ:도플갱어]], 53
+		RETURN [[캐릭터:도플갱어]], 53
 	CASE IS < 95
-		RETURN [[キャラ:란다]], 53
+		RETURN [[캐릭터:란다]], 53
 	CASE IS < 100
-		RETURN [[キャラ:달기]], 53
+		RETURN [[캐릭터:달기]], 53
 ENDSELECT
 
 
 CASE 2 TO 4
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:오베론]], 53
+		RETURN [[캐릭터:오베론]], 53
 	CASE IS < 20
-		RETURN [[キャラ:티타니아]], 53
+		RETURN [[캐릭터:티타니아]], 53
 	CASE IS < 30
-		RETURN [[キャラ:도플갱어]], 53
+		RETURN [[캐릭터:도플갱어]], 53
 	CASE IS < 40
-		RETURN [[キャラ:코아틀리쿠에]], 53
+		RETURN [[캐릭터:코아틀리쿠에]], 53
 	CASE IS < 50
-		RETURN [[キャラ:모리안]], 53
+		RETURN [[캐릭터:모리안]], 53
 	CASE IS < 60
-		RETURN [[キャラ:쿠드락]], 53
+		RETURN [[캐릭터:쿠드락]], 53
 	CASE IS < 70
-		RETURN [[キャラ:나타태자]], 53
+		RETURN [[캐릭터:나타태자]], 53
 	CASE IS < 80
-		RETURN [[キャラ:케르베로스]], 53
+		RETURN [[캐릭터:케르베로스]], 53
 	CASE IS < 90
-		RETURN [[キャラ:쿠엘레브레]], 56
+		RETURN [[캐릭터:쿠엘레브레]], 56
 	CASE IS < 100
-		RETURN [[キャラ:아만]], 56
+		RETURN [[캐릭터:아만]], 56
 ENDSELECT
 
 CASEELSE
 SELECTCASE RAND:100
 	CASE IS < 10
-		RETURN [[キャラ:란다]], 55
+		RETURN [[캐릭터:란다]], 55
 	CASE IS < 20
-		RETURN [[キャラ:발키리]], 55
+		RETURN [[캐릭터:발키리]], 55
 	CASE IS < 30
-		RETURN [[キャラ:하누만]], 55
+		RETURN [[캐릭터:하누만]], 55
 	CASE IS < 40
-		RETURN [[キャラ:도올]], 55
+		RETURN [[캐릭터:도올]], 55
 	CASE IS < 50
-		RETURN [[キャラ:파프니르]], 56
+		RETURN [[캐릭터:파프니르]], 56
 	CASE IS < 60
-		RETURN [[キャラ:사이클롭스]], 55
+		RETURN [[캐릭터:사이클롭스]], 55
 	CASE IS < 70
-		RETURN [[キャラ:펜드래곤]], 56
+		RETURN [[캐릭터:펜드래곤]], 56
 	CASE IS < 80
-		RETURN [[キャラ:야마타노오로치]],56
+		RETURN [[캐릭터:야마타노오로치]],56
 	CASE IS < 90
-		RETURN [[キャラ:그렌델]], 57
+		RETURN [[캐릭터:그렌델]], 57
 	CASE IS < 95
-		RETURN [[キャラ:헤카톤케일]], 60
+		RETURN [[캐릭터:헤카톤케일]], 60
 	CASE IS < 100
-		RETURN [[キャラ:탈로스]], 60
+		RETURN [[캐릭터:탈로스]], 60
 ENDSELECT
 
 ENDSELECT
@@ -1367,11 +1367,11 @@ ENDSELECT
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:3
 	CASE 0
-		RETURN [[キャラ:쿠드락]] , 3 + RAND:10 , CSVBASE([[キャラ:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:쿠드락]] , 3 + RAND:10 , CSVBASE([[캐릭터:쿠드락]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:야마타노오로치]] , 3 + RAND:10 , CSVBASE([[キャラ:야마타노오로치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:야마타노오로치]] , 3 + RAND:10 , CSVBASE([[캐릭터:야마타노오로치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:케르눈노스]] , 3 + RAND:10 , CSVBASE([[キャラ:케르눈노스]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:케르눈노스]] , 3 + RAND:10 , CSVBASE([[캐릭터:케르눈노스]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

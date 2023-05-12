@@ -1,6 +1,6 @@
 ﻿;스킬명
 @SKILL_NAME_3537,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	RESULTS = 블러드 리액트
 ELSE
 	RESULTS = 스웨이 리액트
@@ -115,7 +115,7 @@ RETURN 0
 ;====================================================
 @ACTION_3537,ARG,ARG:1
 TFLAG:스웨이리액트 = MAX(1, TFLAG:스웨이리액트)
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	PRINTFORMW %ARG는% 재행동의 기회를 노리고 있다……
 ELSE
 	PRINTFORMW %ARG는% 공격의 회피에 성공했을 경우、추가 행동을 할 수 있게 되었다！
@@ -124,11 +124,11 @@ ENDIF
 @SPECIAL_ACTION_3537,ARG,ARG:1
 ;ARG:0 使用者
 ;ARG:1 対象
-IF SKILL_CHANGE(ARG, [[キャラ:재버워크]])
+IF SKILL_CHANGE(ARG, [[캐릭터:재버워크]])
 	FOR LOCAL, 7, 17
 		SIF POS(LOCAL) == -1 || CFLAG:POS(LOCAL):상태이상 == GET_STATE_NUM("DYING")
 			CONTINUE
-		IF NO:(POS(LOCAL)) == [[キャラ:재버워크]]
+		IF NO:(POS(LOCAL)) == [[캐릭터:재버워크]]
 			IF RAND:2 == 0
 				;디아라마
 				SETCOLOR 0xff0033
@@ -179,7 +179,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_3537
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:재버워크]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:재버워크]]
 	PRINTL 특정 공격의 실행 시에 재행동을 하게 된다
 ELSE
 	PRINTL 공격 회피시에 적을 빈사시킨다

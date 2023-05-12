@@ -161,16 +161,16 @@ IF FLAG:백합의꽃루트 == 11 &&던전플래그:4:33 == 1
 ;レミエルのリンケージ用の処理を追加
 ;========================================================================================================================
 ELSE
-	IF FINDCHARA_ENEMY([[キャラ:레미엘]])
+	IF FINDCHARA_ENEMY([[캐릭터:레미엘]])
 		LOCAL = RESULT:1
 		IF CFLAG:LOCAL:입력행동 == [[스킬:아이스브레이크]]
-			LOCAL:1 = [[キャラ:하우르바타트]]
+			LOCAL:1 = [[캐릭터:하우르바타트]]
 			LOCAL:2 = [[스킬:부흐다인]]
 		ELSEIF CFLAG:LOCAL:입력행동 == [[스킬:그래비티브레이크]]
-			LOCAL:1 = [[キャラ:아무르타트]]
+			LOCAL:1 = [[캐릭터:아무르타트]]
 			LOCAL:2 = [[스킬:그라다인]]
 		ELSEIF CFLAG:LOCAL:입력행동 == [[스킬:소닉브레이크]]
-			LOCAL:1 = [[キャラ:라이라]]
+			LOCAL:1 = [[캐릭터:라이라]]
 			LOCAL:2 = [[스킬:잔다인]]
 		ELSE
 			RETURN 0
@@ -214,11 +214,11 @@ ELSE
 	ENDIF
 	SIF !TFLAG:436
 		RETURN 0
-	IF FINDCHARA_ENEMY([[キャラ:이자ㆍ벨]]) && CFLAG:(RESULT:1):마법반사플래그 && CFLAG:(RESULT:1):집중플래그
+	IF FINDCHARA_ENEMY([[캐릭터:이자ㆍ벨]]) && CFLAG:(RESULT:1):마법반사플래그 && CFLAG:(RESULT:1):집중플래그
 		TFLAG:400 = 1
 		CFLAG:(RESULT:1):마법반사플래그 = 0
 	ENDIF
-	IF TFLAG:400 && FINDCHARA_ENEMY([[キャラ:이자ㆍ벨]]) && !CFLAG:(RESULT:1):집중플래그
+	IF TFLAG:400 && FINDCHARA_ENEMY([[캐릭터:이자ㆍ벨]]) && !CFLAG:(RESULT:1):집중플래그
 		TFLAG:400 = 0
 		CFLAG:(RESULT:1):마법반사플래그 = 1
 	ENDIF
@@ -232,11 +232,11 @@ ENDIF
 
 @증원패턴_レミエル, ARG, ARG:1, ARG:2
 IF RAND:3 == 0
-	CALL SET_ENEMY, ARG:1, [[キャラ:하우르바타트]], 던전플래그:(FLAG:현던전):6 - 5
+	CALL SET_ENEMY, ARG:1, [[캐릭터:하우르바타트]], 던전플래그:(FLAG:현던전):6 - 5
 ELSEIF RAND:2
-	CALL SET_ENEMY, ARG:1, [[キャラ:아무르타트]], 던전플래그:(FLAG:현던전):6 - 5
+	CALL SET_ENEMY, ARG:1, [[캐릭터:아무르타트]], 던전플래그:(FLAG:현던전):6 - 5
 ELSE
-	CALL SET_ENEMY, ARG:1, [[キャラ:라이라]], 던전플래그:(FLAG:현던전):6 - 5
+	CALL SET_ENEMY, ARG:1, [[캐릭터:라이라]], 던전플래그:(FLAG:현던전):6 - 5
 ENDIF
 CALL SET_ENEMY_D4_ST, CHARANUM - 1
 SIF ARG:2 < 2
@@ -246,7 +246,7 @@ RETURN 1
 
 @SET_ENEMY_D4_ST, ARG
 SELECTCASE NO:ARG
-	CASE [[キャラ:하우르바타트]]
+	CASE [[캐릭터:하우르바타트]]
 		CSTR:ARG:사고패턴 = レミエル取り巻き
 		ABL:ARG:스킬1 = [[스킬:라쿠ㆍ카쟈]] 
 		ABL:ARG:스킬2 = [[스킬:부흐다인]]
@@ -254,7 +254,7 @@ SELECTCASE NO:ARG
 		ABL:ARG:스킬4 = [[스킬:엔젤애로]]
 		CFLAG:ARG:ＨＰ보정 = 250
 		CFLAG:ARG:ＭＰ보정 = 250
-	CASE [[キャラ:아무르타트]]
+	CASE [[캐릭터:아무르타트]]
 		CSTR:ARG:사고패턴 = レミエル取り巻き
 		ABL:ARG:스킬1 = [[스킬:마카ㆍ카쟈]] 
 		ABL:ARG:스킬2 = [[스킬:그라다인]]
@@ -262,7 +262,7 @@ SELECTCASE NO:ARG
 		ABL:ARG:스킬4 = [[스킬:엔젤애로]]
 		CFLAG:ARG:ＨＰ보정 = 250
 		CFLAG:ARG:ＭＰ보정 = 250
-	CASE [[キャラ:라이라]]
+	CASE [[캐릭터:라이라]]
 		CSTR:ARG:사고패턴 = レミエル取り巻き
 		ABL:ARG:스킬1 = [[스킬:스쿠ㆍ카쟈]] 
 		ABL:ARG:스킬2 = [[스킬:잔다인]]
@@ -285,7 +285,7 @@ IF CFLAG:ARG:행동한횟수 == 0 && CFLAG:ARG:１more플래그 == 0
 		LOCAL = POS(LOCAL:1)
 		SIF LOCAL == -1
 			CONTINUE
-		IF NO:LOCAL == [[キャラ:하우르바타트]]
+		IF NO:LOCAL == [[캐릭터:하우르바타트]]
 			CALL CHECK_ACTIONABLE, LOCAL, [[스킬:부흐다인]]
 			IF RESULT == 1
 				IF !TFLAG:401
@@ -295,7 +295,7 @@ IF CFLAG:ARG:행동한횟수 == 0 && CFLAG:ARG:１more플래그 == 0
 				ENDIF
 			ENDIF
 		ENDIF
-		IF NO:LOCAL == [[キャラ:아무르타트]]
+		IF NO:LOCAL == [[캐릭터:아무르타트]]
 			CALL CHECK_ACTIONABLE, LOCAL, [[스킬:그라다인]]
 			IF RESULT == 1
 				IF !TFLAG:404
@@ -305,7 +305,7 @@ IF CFLAG:ARG:행동한횟수 == 0 && CFLAG:ARG:１more플래그 == 0
 				ENDIF
 			ENDIF
 		ENDIF
-		IF NO:LOCAL == [[キャラ:라이라]]
+		IF NO:LOCAL == [[캐릭터:라이라]]
 			CALL CHECK_ACTIONABLE, LOCAL, [[스킬:잔다인]]
 			IF RESULT == 1
 				IF !TFLAG:407

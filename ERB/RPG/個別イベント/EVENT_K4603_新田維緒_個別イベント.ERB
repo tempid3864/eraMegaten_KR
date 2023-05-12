@@ -84,7 +84,7 @@ CASE 0
 				SIF FLAG:LOCALS < 0
 					CONTINUE
 				;PTにイオはいるか？
-				IF NO:(FLAG:LOCALS) == [[キャラ:이오]]
+				IF NO:(FLAG:LOCALS) == [[캐릭터:이오]]
 					PRINTFORML ルーグとの対決を決めた時、%CALLNAME:ARG%があなたの側に居た。
 					PRINTFORMW 
 					PRINTFORML %CALLNAME:ARG%
@@ -111,7 +111,7 @@ CASE 0
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 		
-				CALL SET_ENEMY, 9, [[キャラ:루그＝라우파다(링크전용)]], 75, 1, 2
+				CALL SET_ENEMY, 9, [[캐릭터:루그＝라우파다(링크전용)]], 75, 1, 2
 				NAME:(CHARANUM-1) = 루그＝라우파다
 				CALLNAME:(CHARANUM-1) = 루그＝라우파다
 				CFLAG:(CHARANUM-1):ＨＰ보정 += 7500
@@ -163,9 +163,9 @@ CASE 0
 				PRINTFORML その後、ルーグの力を取り込んだ%CALLNAME:ARG%は、その力を完全に制御することに成功。
 				PRINTFORML %CALLNAME:ARG%はデビルシフターとして、さらなる力を得たのだった……。
 				
-				IF CFLAG:ARG:초기링크악마 == [[キャラ:루그]]
+				IF CFLAG:ARG:초기링크악마 == [[캐릭터:루그]]
 					;初期リンク悪魔を強化ルーグに変更
-					CFLAG:ARG:초기링크악마 = [[キャラ:루그＝라우파다(링크전용)]]
+					CFLAG:ARG:초기링크악마 = [[캐릭터:루그＝라우파다(링크전용)]]
 					ABL:ARG:초기링크악마사거리 = 3
 					ABL:ARG:초기링크악마공격범위 = 3
 					ABL:ARG:초기링크악마최저공격횟수 = 1
@@ -256,9 +256,9 @@ CASE 0
 					PRINTFORML %CALLNAME:ARG%へ無事にルーグを適合させることに成功。
 					PRINTFORMW %CALLNAME:ARG%はデビルシフターとして、さらなる力を得たのだった……。
 					
-					IF CFLAG:ARG:초기링크악마 == [[キャラ:루그]]
+					IF CFLAG:ARG:초기링크악마 == [[캐릭터:루그]]
 						;初期リンク悪魔を強化ルーグに変更
-						CFLAG:ARG:초기링크악마 = [[キャラ:루그＝라우파다(링크전용)]]
+						CFLAG:ARG:초기링크악마 = [[캐릭터:루그＝라우파다(링크전용)]]
 						ABL:ARG:초기링크악마사거리 = 3
 						ABL:ARG:초기링크악마공격범위 = 3
 						ABL:ARG:초기링크악마최저공격횟수 = 1
@@ -486,9 +486,9 @@ CASE 0
 							ENDIF
 						ENDIF
 						
-						IF CFLAG:ARG:초기링크악마 == [[キャラ:루그]]
+						IF CFLAG:ARG:초기링크악마 == [[캐릭터:루그]]
 							;初期リンク悪魔を強化ルーグに変更
-							CFLAG:ARG:초기링크악마 = [[キャラ:루그＝라우파다(링크전용)]]
+							CFLAG:ARG:초기링크악마 = [[캐릭터:루그＝라우파다(링크전용)]]
 							ABL:ARG:초기링크악마사거리 = 3
 							ABL:ARG:초기링크악마공격범위 = 3
 							ABL:ARG:초기링크악마최저공격횟수 = 1
@@ -727,9 +727,9 @@ CASE 0
 				
 				RESETCOLOR
 				
-				IF CFLAG:ARG:초기링크악마 == [[キャラ:루그]]
+				IF CFLAG:ARG:초기링크악마 == [[캐릭터:루그]]
 					;初期リンク悪魔を強化ルーグに変更
-					CFLAG:ARG:초기링크악마 = [[キャラ:루그＝라우파다(링크전용)]]
+					CFLAG:ARG:초기링크악마 = [[캐릭터:루그＝라우파다(링크전용)]]
 					ABL:ARG:초기링크악마사거리 = 3
 					ABL:ARG:초기링크악마공격범위 = 3
 					ABL:ARG:초기링크악마최저공격횟수 = 1
@@ -826,9 +826,9 @@ CASE 0
 				PRINTFORML その後、奇跡的というべきか%CALLNAME:ARG%はルーグの力を御し、完全に適合してみせた。
 				PRINTFORMW %CALLNAME:ARG%はデビルシフターとして、さらなる力を得たのだった……。
 				
-				IF CFLAG:ARG:초기링크악마 == [[キャラ:루그]]
+				IF CFLAG:ARG:초기링크악마 == [[캐릭터:루그]]
 					;初期リンク悪魔を強化ルーグに変更
-					CFLAG:ARG:초기링크악마 = [[キャラ:루그＝라우파다(링크전용)]]
+					CFLAG:ARG:초기링크악마 = [[캐릭터:루그＝라우파다(링크전용)]]
 					
 					ABL:ARG:초기링크악마사거리 = 3
 					ABL:ARG:초기링크악마공격범위 = 3

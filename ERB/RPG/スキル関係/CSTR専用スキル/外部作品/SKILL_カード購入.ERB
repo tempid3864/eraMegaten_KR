@@ -142,7 +142,7 @@ FOR LOCAL,0,CHARANUM
 		;イベント用
 		IF CFLAG:ARG:998 == 2
 			;자신의 行動の場合＋完全防衛手当
-			SIF ARG == ARG:1 && GETCHARA([[キャラ:국경문]]) > -1 && BASE:GETCHARA([[キャラ:국경문]]):ＨＰ >= MAXBASE:GETCHARA([[キャラ:국경문]]):ＨＰ * 6 / 10
+			SIF ARG == ARG:1 && GETCHARA([[캐릭터:국경문]]) > -1 && BASE:GETCHARA([[캐릭터:국경문]]):ＨＰ >= MAXBASE:GETCHARA([[캐릭터:국경문]]):ＨＰ * 6 / 10
 				CALL SKILLGAGE_F_ADD,ARG,SKILL_NUM,1
 		ELSE
 			;자신의 行動の場合＋完全防衛手当
@@ -410,7 +410,7 @@ IF CFLAG:ARG:포지션 < 7
 		SIF FLAG:LOCALS < 0
 			CONTINUE
 		;イベント用
-		SIF CFLAG:ARG:998 == 2 && GETCHARA([[キャラ:국경문]]) > -1 && FLAG:LOCALS != GETCHARA([[キャラ:국경문]])
+		SIF CFLAG:ARG:998 == 2 && GETCHARA([[캐릭터:국경문]]) > -1 && FLAG:LOCALS != GETCHARA([[캐릭터:국경문]])
 			CONTINUE
 		LOCAL ++
 		SIF BASE:(FLAG:LOCALS):ＨＰ < MAXBASE:(FLAG:LOCALS):ＨＰ * 7 / 10
@@ -437,7 +437,7 @@ FOR LOOP_NUM, 1, 5
 			CARD_TEMP:LOOP_NUM = 1 + RAND:15
 		CASE 5 TO 7
 			;武器(3)
-			IF SKILL_CHANGE(ARG, [[キャラ:마르푸샤]])
+			IF SKILL_CHANGE(ARG, [[캐릭터:마르푸샤]])
 				CARD_TEMP:LOOP_NUM = 16 + RAND:7
 				;パイルショット
 				SIF CARD_TEMP:LOOP_NUM == 22
@@ -1050,10 +1050,10 @@ SELECTCASE ARG:1
 		;ＥＭＰＴＹ
 ENDSELECT
 ;イベント用　国境門
-IF CFLAG:ARG:998 == 2 && GETCHARA([[キャラ:국경문]]) > -1
+IF CFLAG:ARG:998 == 2 && GETCHARA([[캐릭터:국경문]]) > -1
 	;全能力の同期化
 	FOR LOCAL,0,6
-		CFLAG:GETCHARA([[キャラ:국경문]]):(GET_BATTLESTATUS(LOCAL) + "강화") = MAX(CFLAG:GETCHARA([[キャラ:국경문]]):(GET_BATTLESTATUS(LOCAL) + "강화"), CFLAG:ARG:(GET_BATTLESTATUS(LOCAL) + "강화"))
+		CFLAG:GETCHARA([[캐릭터:국경문]]):(GET_BATTLESTATUS(LOCAL) + "강화") = MAX(CFLAG:GETCHARA([[캐릭터:국경문]]):(GET_BATTLESTATUS(LOCAL) + "강화"), CFLAG:ARG:(GET_BATTLESTATUS(LOCAL) + "강화"))
 	NEXT
 ENDIF
 

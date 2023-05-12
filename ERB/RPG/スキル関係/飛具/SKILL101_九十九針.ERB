@@ -3,15 +3,15 @@
 @SKILL_NAME_101,ARG
 IF SKILL_CHANGE(ARG, 5054)
 	RESULTS = 흑건
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:블랙맨]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:블랙맨]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 기총속사
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:나가스네히코]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:나가스네히코]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 弟のあづさゆみ
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:스쿠나히코나]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:스쿠나히코나]]) && 이벤트플래그:86:2 == 1
 	RESULTS = あなかしこ
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야소마가츠히]]) && 이벤트플래그:86:2 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야소마가츠히]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 초력포탄
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:아란]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RESULTS = 불스아이
 ELSE
 	RESULTS = 백발침
@@ -23,7 +23,7 @@ RETURN 120
 
 ;　위력
 @SKILL_POWER_101, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아란]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 180
 ELSE
 	RETURN 115
@@ -44,7 +44,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_101,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아란]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아란]])
 	RETURN 7
 ELSE
 	RETURN 2
@@ -140,7 +140,7 @@ RETURN 0
 ;스킬 및 행동의 실행
 ;====================================================
 @ACTION_101,ARG,ARG:1
-IF SKILL_CHANGE(ARG, [[キャラ:스쿠나히코나]]) && 이벤트플래그:86:2 == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:스쿠나히코나]]) && 이벤트플래그:86:2 == 1
 	IF POS(ARG:1) > 0 && ABL:POS(ARG:1):종족 > 0 && CFLAG:POS(ARG:1):소속ＣＯＭＰ != -1
 		PRINTFORMW 　　%조사처리(CALLNAME:POS(ARG:1),"는")% ＣＯＭＰ로 되돌려져 버렸다！
 		CALL REMOVE_POSITION, ARG:1
@@ -161,7 +161,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_101
-IF U > 0 && U < CHARANUM && NO:U == ([[キャラ:아란]])
+IF U > 0 && U < CHARANUM && NO:U == ([[캐릭터:아란]])
 	PRINTL Bull'sEye。
 	PRINTL 적 1체에 고 명중의 비구 물리 데미지를 준다。
 ELSE

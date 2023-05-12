@@ -15,7 +15,7 @@ RETURN 90
 ;リリーズジェイルㆍニブルヘイムよりはきっと弱い
 @SKILL_POWER_817, ARG
 ;氷結版데들리번
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 420
 ELSE
 	RETURN 140
@@ -28,14 +28,14 @@ RETURN 1
 
 ;　최대공격횟수
 @SKILL_MAXATTACKNUMBER_817,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 1
 ELSE
 	RETURN 16
 ENDIF
 ;一体辺りの最大ＨＩＴ数
 @SKILL_MAXATK_PER_817,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 1
 ELSE
 	RETURN 5
@@ -43,7 +43,7 @@ ENDIF
 
 ;一体辺りの最低ＨＩＴ数
 @SKILL_MINATK_PER_817,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 1
 ELSE
 	RETURN 0
@@ -56,7 +56,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_817,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 35
 ELSE
 	RETURN 44
@@ -79,7 +79,7 @@ RETURN 2
 
 ;　대상　1 적　2 아군　3 양쪽전체　4 특수
 @SKILL_TARGET_817
-;IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
+;IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3953
 ;	RETURN 3
 ;ELSE
 ;	RETURN 1
@@ -140,7 +140,7 @@ RETURN GET_TYPE_NUM("빙결")
 
 ;추가효과 기본부여확률
 @SKILL_ADDTIONAL_BASE_RATE_817,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
+IF SKILL_CHANGE(ARG, [[캐릭터:미츠루]]) && BASE:ARG:LV >= 50 && EQUIP:ARG:장비페르소나 == 0 && DITEMTYPE:(CFLAG:ARG:초기페르소나넘버):페르소나("NO") == 3593
 	RETURN 30
 ELSE
 	RETURN 20
@@ -166,7 +166,7 @@ CALL ATTACK_RAND,ARG,ARG:1,817
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_817
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:미츠루]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:미츠루]]
 	PRINTL 적 전체에 빙결 속성으로 대위력의 공격을 행한다。FREEZE의 추가효과。
 ELSE
 	PRINTL 냉기로 적 전체에 랜덤으로 여러 차례 공격한다。

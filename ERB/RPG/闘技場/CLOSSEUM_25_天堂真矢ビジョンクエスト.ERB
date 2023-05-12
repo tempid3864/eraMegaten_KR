@@ -12,7 +12,7 @@
 ;====================
 @PLAYABLE_COLOSSEUM_25
 ;天堂真矢が居ない
-IF 투기장플래그:25:0 == 0 && GETCHARA([[キャラ:마야（무대소녀）]]) < 0
+IF 투기장플래그:25:0 == 0 && GETCHARA([[캐릭터:마야（무대소녀）]]) < 0
 	;DEBUG時のみ作動
 	[IF_DEBUG]
 		;RESULTS = Vision Quest:Star Divine
@@ -48,8 +48,8 @@ FOR LOCAL, 1, 7
 NEXT
 
 ;ゲストとして天堂真矢を配置する
-CALL ADD_GUEST_COMPANION([[キャラ:마야（무대소녀）]], 0)
-LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+CALL ADD_GUEST_COMPANION([[캐릭터:마야（무대소녀）]], 0)
+LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 ;何かつけとかないと전투不能扱いになって即敗北する（天堂真矢が연모とか解釈違いなんですけど）
 TALENT:LOCAL:연모 = 1
 
@@ -106,7 +106,7 @@ FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
-CALL SET_ENEMY,9,[[キャラ:나나]],99,0,1
+CALL SET_ENEMY,9,[[캐릭터:나나]],99,0,1
 CFLAG:(CHARANUM-1):속도보정 += 20
 CFLAG:(CHARANUM-1):ＨＰ보정 = (MAXBASE:(CHARANUM-1):ＨＰ / 2)
 CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -150,7 +150,7 @@ CALL MESSAGE_WINDOW_D, "기린", "레뷰 종료입니다"
 PRINTW ＞이겼을텐데 느낌이 없다
 PRINTW ＞정신을 차리고보니, 자신의 겉옷이 없어져 있었다
 ;天堂真矢をＰＴから外す
-LOCAL = GETCHARA([[キャラ:마야（무대소녀）]])
+LOCAL = GETCHARA([[캐릭터:마야（무대소녀）]])
 CALL DEL_GUEST, LOCAL
 PRINTL
 PRINTW ──꿈의 시간은 끝났다. 당신의 의식은 급격하게 각성한다.

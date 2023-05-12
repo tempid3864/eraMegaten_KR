@@ -640,7 +640,7 @@ SELECTCASE FLAG:현M
 					CALL MESSAGE_WINDOW_D, "", "＞" + CALLNAME:MASTER + " 일행은 열쇠를 부수었다…"
 					CALL MESSAGE_WINDOW_D, "아메노우즈메", "고마워！/보답으로 동료마가 되어줄게！"
 					CALL MESSAGE_WINDOW_D, "", "＞여신　아메노우즈메가 동료마로 들어왔다" , , , , , , , , , "CENTER"
-					CALL ADD_NEW_COMPANION,[[キャラ:아메노우즈메]],2000
+					CALL ADD_NEW_COMPANION,[[캐릭터:아메노우즈메]],2000
 					IF RESULT == 1
 						BASE:(RESULT:1):LV = 35
 						BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3
@@ -666,7 +666,7 @@ SELECTCASE FLAG:현M
 					CALL MESSAGE_WINDOW_D, "", "＞" + CALLNAME:MASTER + " 일행은 열쇠를 부수었다…"
 					CALL MESSAGE_WINDOW_D, "아메노우즈메", "고마워！/보답으로 동료마가 되어줄게！"
 					CALL MESSAGE_WINDOW_D, "", "＞여신　아메노우즈메가 동료마로 들어왔다" , , , , , , , , , "CENTER"
-					CALL ADD_NEW_COMPANION,[[キャラ:아메노우즈메]],2000
+					CALL ADD_NEW_COMPANION,[[캐릭터:아메노우즈메]],2000
 					IF RESULT == 1
 						BASE:(RESULT:1):LV = 35
 						BASE:(RESULT:1):ＥＸＰ = 5*(BASE:(RESULT:1):LV - 1)*(BASE:(RESULT:1):LV)*(BASE:(RESULT:1):LV + 1)/3

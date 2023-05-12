@@ -82,7 +82,7 @@ IF RESULT == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:아스모데우스]], 30, 1, 1
+	CALL SET_ENEMY,9, [[캐릭터:아스모데우스]], 30, 1, 1
 	NAME:(CHARANUM-1) = 섀도 카모시다 아스모데우스 스구루
 	CALLNAME:(CHARANUM-1) = 섀도 카모시다
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 500
@@ -135,7 +135,7 @@ IF RESULT == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:맘몬]], 50, 1, 1
+	CALL SET_ENEMY,9, [[캐릭터:맘몬]], 50, 1, 1
 	NAME:(CHARANUM-1) = 섀도 오쿠무라 맘몬 쿠니카즈
 	CALLNAME:(CHARANUM-1) = 섀도 오쿠무라 
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 1000
@@ -180,7 +180,7 @@ IF RESULT == 0
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	
-	CALL SET_ENEMY,8, [[キャラ:쥐스틴]], 60, 1, 1
+	CALL SET_ENEMY,8, [[캐릭터:쥐스틴]], 60, 1, 1
 	;쥐스틴
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 20000
@@ -211,7 +211,7 @@ IF RESULT == 0
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 	
-	CALL SET_ENEMY,9, [[キャラ:카롤린]], 60, 1, 1
+	CALL SET_ENEMY,9, [[캐릭터:카롤린]], 60, 1, 1
 	;카롤린
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 2500
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 20000
@@ -449,8 +449,8 @@ IF RESULT == 0
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
 	
-	;CALL INCREASE_ANALYZE([[キャラ:성배]],1000)
-	CALL SET_ENEMY,9,[[キャラ:성배]],60,1,1
+	;CALL INCREASE_ANALYZE([[캐릭터:성배]],1000)
+	CALL SET_ENEMY,9,[[캐릭터:성배]],60,1,1
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
@@ -491,7 +491,7 @@ IF RESULT == 0
 	
 	CALL MESSAGE_WINDOW_D, "", "/　　　통제신 얄다바오트가 １체 나타났다！"
 	
-	CALL SET_ENEMY,9,[[キャラ:통제신ㆍ얄다바오트]],70,1,1
+	CALL SET_ENEMY,9,[[캐릭터:통제신ㆍ얄다바오트]],70,1,1
 	CFLAG:(CHARANUM-1):ＨＰ보정 = 3000
 	CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
 	CFLAG:(CHARANUM-1):행동횟수 = 3
@@ -731,7 +731,7 @@ IF RESULT == 0
 		
 		;얄다바오트 풀파워
 		;트릭스터 없이 싸울 이유가 있나?
-		CALL SET_ENEMY,9,[[キャラ:통제신ㆍ얄다바오트]],85,1,1
+		CALL SET_ENEMY,9,[[캐릭터:통제신ㆍ얄다바오트]],85,1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 4
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 4000
 		CFLAG:(CHARANUM-1):ＭＰ보정 = 50000

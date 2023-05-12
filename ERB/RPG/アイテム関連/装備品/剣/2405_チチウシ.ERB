@@ -40,7 +40,7 @@ SELECTCASE ARG
 		SIF ARG:1 == -1
 			RETURN 117
 		LOCAL = 117
-		IF NO:(ARG:1) == [[キャラ:나코루루]]
+		IF NO:(ARG:1) == [[캐릭터:나코루루]]
 			LOCAL += 163 * (MIN(MAX(51,MAXBASE:(ARG:1):LV),70) - 50) / 20
 		ELSEIF ABL:(ARG:1):속성LC == 1 && MAXBASE:(ARG:1):LV > 69
 			SIF TALENT:(ARG:1):회복빠름
@@ -96,7 +96,7 @@ RETURN 0
 RETURN GET_EQUIPNUM("검")
 
 @장비추가스킬_2405,ARG,ARG:1 = -1
-IF ARG:1 < 0 || NO:(ARG:1) == [[キャラ:나코루루]]
+IF ARG:1 < 0 || NO:(ARG:1) == [[캐릭터:나코루루]]
 	SELECTCASE ARG
 	CASE 0
 		RETURN 3531
@@ -112,7 +112,7 @@ RETURN 0
 ;一体まで
 SIF EQUIPMENT_COUNT(2405) >= 1
 	RETURN 0
-SIF NO:ARG == [[キャラ:나코루루]]
+SIF NO:ARG == [[캐릭터:나코루루]]
 	RETURN 1
 SIF ABL:ARG:속성LC != 1
 	RETURN 0

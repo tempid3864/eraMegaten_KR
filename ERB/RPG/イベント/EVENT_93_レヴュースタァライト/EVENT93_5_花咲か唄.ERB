@@ -98,7 +98,7 @@ RESETCOLOR
 	
 		
 	;- SET:후타바
-		CALL SET_ENEMY,9,[[キャラ:후타바（무대소녀）]],LOCAL:98,1,LOCAL:97
+		CALL SET_ENEMY,9,[[캐릭터:후타바（무대소녀）]],LOCAL:98,1,LOCAL:97
 		CALLNAME:(CHARANUM-1) = 후타바
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:ARG:ＨＰ*3
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 5000
@@ -126,7 +126,7 @@ RESETCOLOR
 
 
 	;- SET:카오루코
-		CALL SET_ENEMY,14,[[キャラ:카오루코]],LOCAL:98,1,LOCAL:97
+		CALL SET_ENEMY,14,[[캐릭터:카오루코]],LOCAL:98,1,LOCAL:97
 		;CFLAG:(CHARANUM-1):ＨＰ보정 = MAXBASE:ARG:ＨＰ*2
 		;ぶぶ漬けはＭＰ보정無しで
 		CFLAG:(CHARANUM-1):행동횟수 = 2
@@ -210,8 +210,8 @@ RESETCOLOR
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
 		;解析度MAX処理
-		CALL INCREASE_ANALYZE([[キャラ:후타바（무대소녀）]],1000)
-		CALL INCREASE_ANALYZE([[キャラ:카오루코]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:후타바（무대소녀）]],1000)
+		CALL INCREASE_ANALYZE([[캐릭터:카오루코]],1000)
 
 	;ふたかお復活フラグ
 	SETBIT 이벤트플래그:93:15, 1

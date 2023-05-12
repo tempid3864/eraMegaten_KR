@@ -162,12 +162,12 @@ CASE 0
 			PRINTFORML 
 			PRINTFORMW 「다시 상대해주시길 부탁드립니다. 이번에는…… 『상드리용』과 함께입니다！」
 			
-			CALL ADD_GUEST_COMPANION([[キャラ:카스미]], 100, 1)
+			CALL ADD_GUEST_COMPANION([[캐릭터:카스미]], 100, 1)
 			;新規加入ならRESULT:2は1、인계된 캐릭터ならRESULT:2は0
 			IF RESULT:2 == 1
 				;초기레벨だとワンパンで死ぬのでゲスト参戦時は레벨上げとく
 				;引継ぎかつ전투に一切出してないとワンパンで死ぬんだが潜在復活あるしいいだろう……
-				LOCAL = GETCHARA([[キャラ:카스미]])
+				LOCAL = GETCHARA([[캐릭터:카스미]])
 				LOCAL:2 = 1
 				BASE:LOCAL:LV = 30
 				BASE:LOCAL:힘 = 15;+5
@@ -215,7 +215,7 @@ CASE 0
 			FLAG:선제기습취소 = 1
 			
 			;P5R仕様의 명칭に변경
-			CALL SET_ENEMY,9, [[キャラ:비야키]], 38, 0
+			CALL SET_ENEMY,9, [[캐릭터:비야키]], 38, 0
 			NAME:(CHARANUM-1) = 사악을 숭배하는 합성체
 			CALLNAME:(CHARANUM-1) = 사악을 숭배하는 합성체
 			;P5R仕様の祝福弱点。さっそく코우하で弱点をついてやろう
@@ -232,7 +232,7 @@ CASE 0
 			
 			;ゲスト参戦なら消す
 			IF LOCAL:2 == 1
-				LOCAL = GETCHARA([[キャラ:카스미]])
+				LOCAL = GETCHARA([[캐릭터:카스미]])
 				CALL DEL_GUEST, LOCAL
 			ENDIF
 			PRINTFORMW 「후우…… 감사합니다. 물을 기회가 없었습니다만, 당신은 대체……？」
@@ -286,7 +286,7 @@ CASE 0
 			PRINTFORMW 쉽게 꺾이지 않을 분위기를 느꼈기 때문에, 받아들여주기로 했다.
 			PRINTFORML 
 			PRINTFORMW 이후, 요시자와 카스미가 협력해주게 되었다.
-			CALL ADD_NEW_COMPANION,[[キャラ:카스미]],0
+			CALL ADD_NEW_COMPANION,[[캐릭터:카스미]],0
 			IF RESULT > 0
 				CSTR:(RESULT:1):이인칭 = %CALLNAME:MASTER% 선배
 				CFLAG:(RESULT:1):전투참가불가능 = -1
@@ -451,8 +451,8 @@ CASE 4
 	ELSEIF ARG:1 == 1
 		;発生조건
 		;키쿠에が加入상태で인계플래그が0、함락しておらず、監視塔クリア보수で2,키쿠에を選択。１度でも조교した場合
-		LOCAL =GETCHARA([[キャラ:키쿠에]])
-		SIF FINDCHARA_B([[キャラ:키쿠에]]) > 0 && CFLAG:(LOCAL):인계플래그 == 0 && 함락(LOCAL) == 0 &&의뢰플래그:38:4 == 2 && CFLAG:(LOCAL):피조교횟수 > 0 
+		LOCAL =GETCHARA([[캐릭터:키쿠에]])
+		SIF FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && CFLAG:(LOCAL):인계플래그 == 0 && 함락(LOCAL) == 0 &&의뢰플래그:38:4 == 2 && CFLAG:(LOCAL):피조교횟수 > 0 
 			RETURN 1
 	ELSEIF ARG:1 == 2
 		;이벤트内容
@@ -514,7 +514,7 @@ CASE 4
 			PRINTL
 			;メガテン系이벤트불허가or염라대왕タイカOFFなら도구지식lv3취득、반발각인があれば0に
 			;야마타이가 EX이벤트 필터 삭제로 조건문 주석처리
-			LOCAL = GETCHARA([[キャラ:키쿠에]])
+			LOCAL = GETCHARA([[캐릭터:키쿠에]])
 			;IF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0 || GETBIT(FLAG:EXTRA이벤트필터, 8) == 1 
 				TALENT:(LOCAL):도구지식 = 3
 				PRINTFORMW %CALLNAME:LOCAL%는 %CALLNAME:MASTER%를 따를 각오를 굳혔다.
@@ -665,7 +665,7 @@ CASE 6
 		ENDIF
 		
 		
-		IF CFLAG:MASTER:당신의전공분야1 == [[キャラ:디바(클래스)]] || CFLAG:MASTER:당신의전공분야2 == [[キャラ:디바(클래스)]]
+		IF CFLAG:MASTER:당신의전공분야1 == [[캐릭터:디바(클래스)]] || CFLAG:MASTER:당신의전공분야2 == [[캐릭터:디바(클래스)]]
 			PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 			PRINTL ┃――！？　　　　　　　　　　　　　　　　　　┃
 			PRINTL ┃뭐야, 뭐냐고, 그 힘！　　　　　　　　		 ┃
@@ -673,7 +673,7 @@ CASE 6
 			PRINTL ┗━━━━━━━━━━━━━━━━━━━━━━┛
 			PRINTW 보컬리스트ㆍ세이렌 이 나타났다！
 		
-		ELSEIF CFLAG:MASTER:당신의전공분야1 == [[キャラ:아이돌(클래스)]] || CFLAG:MASTER:당신의전공분야2 == [[キャラ:아이돌(클래스)]] 
+		ELSEIF CFLAG:MASTER:당신의전공분야1 == [[캐릭터:아이돌(클래스)]] || CFLAG:MASTER:당신의전공분야2 == [[캐릭터:아이돌(클래스)]] 
 			PRINTL ┏>MESSAGE━━━━━━━━━━━━━━━━━━┓
 			PRINTL ┃더러워, 돈으로 모두를 휘두르고　　　　　  　┃
 			PRINTL ┃왜 알지 못해？　　　　　　　　　　　	   　┃
@@ -694,7 +694,7 @@ CASE 6
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		
-		CALL SET_ENEMY,9, [[キャラ:세이렌]], 45, 1, 1
+		CALL SET_ENEMY,9, [[캐릭터:세이렌]], 45, 1, 1
 		CALLNAME:(CHARANUM-1) = Voㆍ세이렌
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 1500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
@@ -734,7 +734,7 @@ CASE 6
 		PRINTW 손 안의 COMP에 동료마의 스테이터스가 늘어 있었다……。
 		PRINTW ＞보컬리스트ㆍ세이렌 이 동료마가 되었다
 		
-		CALL ADD_NEW_COMPANION, [[キャラ:세이렌]], 2000
+		CALL ADD_NEW_COMPANION, [[캐릭터:세이렌]], 2000
 		IF RESULT > 0
 			;いろいろいじろう
 			NAME:(RESULT:1) = Voㆍ세이렌
@@ -970,7 +970,7 @@ CASE 7
 		FLAG:회화불능플래그 = 1
 		FLAG:선제기습취소 = 1
 		
-		CALL SET_ENEMY,9, [[キャラ:지크프리트]], 55, 1, 1
+		CALL SET_ENEMY,9, [[캐릭터:지크프리트]], 55, 1, 1
 		CALLNAME:(CHARANUM-1) = Swㆍ지크프리트
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
@@ -1005,7 +1005,7 @@ CASE 7
 		PRINTW 손 안의 COMP에 동료마의 스테이터스가 늘어간다……。
 		PRINTW ＞시나리오라이터ㆍ지크프리트 가 억지로 동료마가 되었다
 		
-		CALL ADD_NEW_COMPANION, [[キャラ:지크프리트]], 2000
+		CALL ADD_NEW_COMPANION, [[캐릭터:지크프리트]], 2000
 		IF RESULT > 0
 			;いろいろいじろう
 			NAME:(RESULT:1) = Swㆍ지크프리트
@@ -1253,7 +1253,7 @@ CASE 8
 		
 		TFLAG:0 = 0
 		
-		CALL SET_ENEMY,9, [[キャラ:디오니소스]], 65, 1, 3
+		CALL SET_ENEMY,9, [[캐릭터:디오니소스]], 65, 1, 3
 		CALLNAME:(CHARANUM-1) = 『관객』디오니소스
 		CFLAG:(CHARANUM-1):ＨＰ보정 = 2500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 9999
@@ -1282,7 +1282,7 @@ CASE 8
 		PRINTW 　그럼에도 간다고 하는 거군요.
 		PRINTW 　당신은, 간다고, 하는 거군요」
 		
-		CALL ADD_NEW_COMPANION, [[キャラ:디오니소스]], 2000
+		CALL ADD_NEW_COMPANION, [[캐릭터:디오니소스]], 2000
 		IF RESULT > 0
 			NAME:(RESULT:1) = 『관객』디오니소스
 			CALLNAME:(RESULT:1) = 『관객』디오니소스
@@ -1777,7 +1777,7 @@ CASE 19
 			RESULTS = 아이돌을 지망하는 북유럽 여신
 		ELSEIF ARG:1 == 1
 			;로키파라의 오딘을 때려눕힌 적이 있고、%CALLNAME:MASTER%의 전투레벨 40 이상.
-			SIF FLAG:(10000+[[キャラ:오딘]]) > 0 && BASE:MASTER:LV >= 40
+			SIF FLAG:(10000+[[캐릭터:오딘]]) > 0 && BASE:MASTER:LV >= 40
 				RETURN 1
 		ELSEIF ARG:1 == 2
 			PRINTFORML 
@@ -1830,7 +1830,7 @@ CASE 19
 				CALL INPUTINT, 0 , 1 ,2
 					IF RESULT == 0
 						PRINTFORMW 「배우자가 있는 나에게 처녀가 되라니, 사치스럽네…… 상관없지만」
-						CALL ADD_NEW_COMPANION, [[キャラ:이둔]], 100
+						CALL ADD_NEW_COMPANION, [[캐릭터:이둔]], 100
 							IF RESULT > 0
 								TALENT:(RESULT:1):처녀 = 1
 								TALENT:(RESULT:1):일선을넘지않음 = 1
@@ -1844,7 +1844,7 @@ CASE 19
 							ENDIF
 					ELSEIF RESULT == 1
 						PRINTFORMW 「엣치한 편이 좋아？　……팔아치워버리면, 싫다구？」
-						CALL ADD_NEW_COMPANION, [[キャラ:이둔]], 100
+						CALL ADD_NEW_COMPANION, [[캐릭터:이둔]], 100
 							IF RESULT > 0
 								TALENT:(RESULT:1):불결무시 = 1
 								TALENT:(RESULT:1):정조관결여 = 1
@@ -1862,7 +1862,7 @@ CASE 19
 							ENDIF
 					ELSEIF RESULT == 2
 						PRINTFORMW 「소재의 맛을 중요하게 여기는 걸까나. 그럼, 그대로, 말이구나」
-						CALL ADD_NEW_COMPANION, [[キャラ:이둔]], 1000
+						CALL ADD_NEW_COMPANION, [[캐릭터:이둔]], 1000
 					ENDIF
 			PRINTFORML 
 			PRINTFORML ＞여신　이둔　이 가입했다.
@@ -1872,7 +1872,7 @@ CASE 19
 			PRINTFORMW 　화백ㆍ아메노우즈메ㆍ파르바티 로 합체가 가능합니다.
 				FORCEWAIT
 			RESETCOLOR
-			FLAG:(10000+[[キャラ:이둔]]) = 1
+			FLAG:(10000+[[캐릭터:이둔]]) = 1
 			RETURN 1
 		ENDIF
 
@@ -1932,7 +1932,7 @@ CASE 20
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY, 9, [[キャラ:아르테미스（Ⅴ）]], 40, 1, 1
+				CALL SET_ENEMY, 9, [[캐릭터:아르테미스（Ⅴ）]], 40, 1, 1
 				NAME:(CHARANUM-1) = 아르테미스
 				CALLNAME:(CHARANUM-1) = 아르테미스
 ;				CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
@@ -1982,7 +1982,7 @@ CASE 20
 					IF RESULT == 0
 						PRINTFORML 
 						PRINTFORMW 「그럼, 스승으로 섬기도록 하마. 앞으로도 잘 부탁한다！」
-						CALL ADD_NEW_COMPANION, [[キャラ:아르테미스（Ⅴ）]], 1000
+						CALL ADD_NEW_COMPANION, [[캐릭터:아르테미스（Ⅴ）]], 1000
 						IF RESULT > 0
 							CSTR:(CHARANUM-1):46 = eramegaten에서도、 명성이 있는 %CALLNAME:MASTER%와 겨루어보고 싶다고 도전을 해왔지만
 							CSTR:(CHARANUM-1):47 = 무엇을 하는지에 대해서는 인식하고 있지 않아, 소질이 매우 성가시다.
@@ -1991,7 +1991,7 @@ CASE 20
 					ELSEIF RESULT == 1
 						PRINTFORML 
 						PRINTFORMW 「괜찮다. 꺾이지 않으마, 엄한 지도를 해주게！」
-						CALL ADD_NEW_COMPANION, [[キャラ:아르테미스（Ⅴ）]], 1000
+						CALL ADD_NEW_COMPANION, [[캐릭터:아르테미스（Ⅴ）]], 1000
 						IF RESULT > 0
 							CSTR:(CHARANUM-1):46 = eramegaten에서도、 명성이 있는 %CALLNAME:MASTER%와 겨루어보고 싶다고 도전을 해왔지만
 							CSTR:(CHARANUM-1):47 = 무엇을 하는지에 대해서는 인식하고 있지 않아, 소질이 매우 성가시다.
@@ -2025,7 +2025,7 @@ CASE 20
 							FLAG:회화불능플래그 = 1
 							FLAG:선제기습취소 = 1
 							
-							CALL SET_ENEMY, 9, [[キャラ:아르테미스（Ⅴ）]], 70, 1, 1
+							CALL SET_ENEMY, 9, [[캐릭터:아르테미스（Ⅴ）]], 70, 1, 1
 							NAME:(CHARANUM-1) = 필사적인 아르테미스
 							CALLNAME:(CHARANUM-1) = 필사적인 아르테미스
 							CFLAG:(CHARANUM-1):ＨＰ보정 += 5000
@@ -2074,7 +2074,7 @@ CASE 20
 									PRINTFORMW %CALLNAME:MASTER%의 목에 쭈뼛쭈뼛 팔을 감는 아르테미스의 시선을 느끼며,
 									PRINTFORMW 아르테미스를 구호실로 데려갔다……。
 									PRINTFORML 
-									CALL ADD_NEW_COMPANION, [[キャラ:아르테미스（Ⅴ）]], 1000
+									CALL ADD_NEW_COMPANION, [[캐릭터:아르테미스（Ⅴ）]], 1000
 										IF RESULT > 0
 											CSTR:(RESULT:1):일인칭 = 나
 											CSTR:(CHARANUM-1):46 = eramegaten에서도、 명성이 있는 %CALLNAME:MASTER%와 겨루어보고 싶다고 도전을 해왔지만
@@ -2113,7 +2113,7 @@ CASE 20
 									PRINTFORMW 그리하여, 힘이 다한 아르테미스의 얼마 남지 않은 체력이,
 									PRINTFORMW 더욱 깎여, 움직이지 않게 될 때까지, 아르테미스의 몸을 희롱했다.
 									PRINTFORML 
-									CALL ADD_NEW_COMPANION, [[キャラ:아르테미스（Ⅴ）]], 100
+									CALL ADD_NEW_COMPANION, [[캐릭터:아르테미스（Ⅴ）]], 100
 										IF RESULT > 0
 											CSTR:(RESULT:1):일인칭 = 나
 											CSTR:(CHARANUM-1):46 = eramegaten에서도、 명성이 있는 %CALLNAME:MASTER%와 겨루어보고 싶다고 도전을 해왔지만
@@ -2143,7 +2143,7 @@ CASE 20
 									PRINTFORML 
 									PRINTFORMW ……그리하여, 아르테미스가 모기만한 목소리로 용서를 빌 때까지, １０ 분 정도 소요되었다.
 									PRINTFORML 
-									CALL ADD_NEW_COMPANION, [[キャラ:아르테미스（Ⅴ）]], 100
+									CALL ADD_NEW_COMPANION, [[캐릭터:아르테미스（Ⅴ）]], 100
 										IF RESULT > 0
 											TALENT:(RESULT:1):저항 = 0
 											CSTR:(RESULT:1):일인칭 = 나
@@ -2173,7 +2173,7 @@ CASE 21
 			RESULTS = 신들의 여왕의 내방（선택지에 따라 전투있음）
 		ELSEIF ARG:1 == 1
 			;나이트테일 「나는 그런 신이 된다」or「신들의 황혼」 클리어 완료、%CALLNAME:MASTER%의 전투 레벨 60 이상
-			SIF FLAG:(10000+[[キャラ:제우스]]) > 0 && BASE:MASTER:LV >= 60
+			SIF FLAG:(10000+[[캐릭터:제우스]]) > 0 && BASE:MASTER:LV >= 60
 				RETURN 1
 		ELSEIF ARG:1 == 2
 			PRINTFORML 
@@ -2487,7 +2487,7 @@ CASE 1
 			PRINTFORMW 「나도 방으로 돌아갈까
 			PRINTFORMW 　나의 힘이 필요하다면 언제든지 말해. 그럼」
 			PRINTFORMW 시아노도 떠나갔다
-			CALL ADD_NEW_COMPANION,[[キャラ:시아노]],500
+			CALL ADD_NEW_COMPANION,[[캐릭터:시아노]],500
 			IF RESULT
 				CFLAG:(CHARANUM - 1):전투참가불가능 = -1
 				SIF LOCALS == "100,000엔"
@@ -2512,7 +2512,7 @@ CASE 2
 		SIF BASE:MASTER:LV < 60
 			RETURN 0
 		;リムルルが함락상태だと出る
-		SIF GETCHARA([[キャラ:리무루루]]) > -1 && 함락(GETCHARA([[キャラ:리무루루]]))
+		SIF GETCHARA([[캐릭터:리무루루]]) > -1 && 함락(GETCHARA([[캐릭터:리무루루]]))
 			RETURN 1
 		;カオスかダークだと出ない
 		SIF ABL:MASTER:속성LD == 3 || ABL:MASTER:속성LC == 3
@@ -2562,9 +2562,9 @@ CASE 4
 		SIF 던전플래그:40:23 != 1
 			RETURN 0
 		;고토우がいる＆전투참가可能（不能になったかな？まあ念のため）
-		SIF GETCHARA([[キャラ:고토우]]) < 0
+		SIF GETCHARA([[캐릭터:고토우]]) < 0
 			RETURN 0
-		SIF CFLAG:(GETCHARA([[キャラ:고토우]])):전투참가불가능 > 0
+		SIF CFLAG:(GETCHARA([[캐릭터:고토우]])):전투참가불가능 > 0
 			RETURN 0
 
 		;「마도마기 이벤트에서 호무라 루트가 아님, 또는 아직 클리어 안 함」이며, 엔딩을 본 적 없다
@@ -2575,7 +2575,7 @@ CASE 4
 			ENDIF
 		ENDIF
 		;호무라가 동료로 존재 ※악마호무라、안경호무라는 안됨
-		SIF GETCHARA([[キャラ:호무라]]) < 0
+		SIF GETCHARA([[캐릭터:호무라]]) < 0
 			RETURN 0
 	
 		RETURN 1
@@ -2635,7 +2635,7 @@ CASE 7
 		SIF BASE:MASTER:LV < 60
 			RETURN 0
 		;ナコルルが함락상태だと出る
-		SIF GETCHARA([[キャラ:나코루루]]) > -1 && 함락(GETCHARA([[キャラ:나코루루]]))
+		SIF GETCHARA([[캐릭터:나코루루]]) > -1 && 함락(GETCHARA([[캐릭터:나코루루]]))
 			RETURN 1
 		;ダークだと出ない
 		SIF ABL:MASTER:속성LD == 3
@@ -2675,12 +2675,12 @@ CASE 8
 			FLAG:도주불가플래그 = 1
 			FLAG:회화불능플래그 = 1
 			FLAG:선제기습취소 = 1
-			CALL SET_ENEMY,8, [[キャラ:E졸다트]],30,0,1
-			CALL SET_ENEMY,9, [[キャラ:E졸다트]],30,0,1
-			CALL SET_ENEMY,10, [[キャラ:E졸다트]],30,0,1
-			CALL SET_ENEMY,13, [[キャラ:E졸다트]],30,0,1
-			CALL SET_ENEMY,14, [[キャラ:뇌광전차]],50,0,1
-			CALL SET_ENEMY,15, [[キャラ:E졸다트]],30,0,1
+			CALL SET_ENEMY,8, [[캐릭터:E졸다트]],30,0,1
+			CALL SET_ENEMY,9, [[캐릭터:E졸다트]],30,0,1
+			CALL SET_ENEMY,10, [[캐릭터:E졸다트]],30,0,1
+			CALL SET_ENEMY,13, [[캐릭터:E졸다트]],30,0,1
+			CALL SET_ENEMY,14, [[캐릭터:뇌광전차]],50,0,1
+			CALL SET_ENEMY,15, [[캐릭터:E졸다트]],30,0,1
 
 			CALL BATTLE_START
 
@@ -2698,14 +2698,14 @@ CASE 8
 				MONEY += 100000
 			ELSEIF RESULT == 1
 				PRINTFORMW 전차를 이쪽의 전력으로 삼기로 했다
-				CALL ADD_NEW_COMPANION,[[キャラ:뇌광전차]],200
+				CALL ADD_NEW_COMPANION,[[캐릭터:뇌광전차]],200
 			ENDIF
 			PRINTFORMW ……쓰러진 병사들 중 아직 숨이 붙어있는 자를 발견했다
 			PRINTFORMW 확보합니까？
 	 		CALL INPUT_YN
 			IF RESULT == 0
 				PRINTFORMW 병사를 확보했다
-				CALL ADD_NEW_COMPANION,[[キャラ:E졸다트]],200
+				CALL ADD_NEW_COMPANION,[[캐릭터:E졸다트]],200
 			ELSEIF RESULT == 1
 				PRINTFORML 내버려두기로 했다
 				PRINTFORMW 나머지는 팬텀 쪽 인간이 처리를 해주겠지……
@@ -2765,11 +2765,11 @@ CASE 10
 		;엑스트라 이벤트 가챠와 마찬가지로, 엑스트라 이벤트를 허용하고 있으며, 가챠레벨 설정 80일 때만 출현.
 		;다만, 기묘한 발바토스, 모락스, 바알이 모두 있는 경우에는 튕겨냄.
 			LOCAL:1 = 0
-			SIF FINDCHARA_B([[キャラ:기묘한바르바토스]]) > -1
+			SIF FINDCHARA_B([[캐릭터:기묘한바르바토스]]) > -1
 				LOCAL:1 += 1
-			SIF FINDCHARA_B([[キャラ:기묘한모라쿠스]]) > -1
+			SIF FINDCHARA_B([[캐릭터:기묘한모라쿠스]]) > -1
 				LOCAL:1 += 10
-			SIF FINDCHARA_B([[キャラ:기묘한바알]]) > -1
+			SIF FINDCHARA_B([[캐릭터:기묘한바알]]) > -1
 				LOCAL:1 += 100
 			SIF LOCAL:1 == 111
 				RETURN 0

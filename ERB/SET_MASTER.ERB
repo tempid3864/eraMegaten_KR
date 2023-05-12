@@ -1573,7 +1573,7 @@ ELSEIF RESULT == 108
 		DITEMTYPE:LOCAL:페르소나("습득LV10") = 50
 	ENDIF
 ELSEIF RESULT == 109
-	ABL:MASTER:초기페르소나 = [[キャラ:사라스바티]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:사라스바티]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1627,7 +1627,7 @@ ELSEIF RESULT == 109
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 110
-	ABL:MASTER:초기페르소나 = [[キャラ:스카아하]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:스카아하]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1681,7 +1681,7 @@ ELSEIF RESULT == 110
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 111
-	ABL:MASTER:초기페르소나 = [[キャラ:키쿠리히메]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:키쿠리히메]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1735,7 +1735,7 @@ ELSEIF RESULT == 111
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 112
-	ABL:MASTER:초기페르소나 = [[キャラ:엔젤]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:엔젤]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1789,7 +1789,7 @@ ELSEIF RESULT == 112
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 113
-	ABL:MASTER:초기페르소나 = [[キャラ:잭프로스트]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:잭프로스트]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1843,7 +1843,7 @@ ELSEIF RESULT == 113
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 114
-	ABL:MASTER:초기페르소나 = [[キャラ:모코이]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:모코이]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1897,7 +1897,7 @@ ELSEIF RESULT == 114
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 115
-	ABL:MASTER:초기페르소나 = [[キャラ:모ㆍ쇼보]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:모ㆍ쇼보]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -1951,7 +1951,7 @@ ELSEIF RESULT == 115
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 116
-	ABL:MASTER:초기페르소나 = [[キャラ:좀비쨩]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:좀비쨩]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -2005,7 +2005,7 @@ ELSEIF RESULT == 116
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 117
-	ABL:MASTER:초기페르소나 = [[キャラ:리림]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:리림]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -2059,7 +2059,7 @@ ELSEIF RESULT == 117
 		DITEMTYPE:LOCAL:페르소나("습득LV16") = 75
 	ENDIF
 ELSEIF RESULT == 118
-	ABL:MASTER:초기페르소나 = [[キャラ:맨이터]]
+	ABL:MASTER:초기페르소나 = [[캐릭터:맨이터]]
 	CALL SYNC_STATUS, MASTER
 	;新페르소나処理
 	IF BATTLE_SETTING_IS_PERSONA_NEW_FUNCTION()
@@ -2996,8 +2996,8 @@ SIF GETBIT(FLAG:발견ED2, 9)
 			TALENT:MASTER:비구 = 1
 			TALENT:MASTER:신경 = 1
 			TALENT:MASTER:방어 = 1
-			CFLAG:MASTER:초기링크악마 = [[キャラ:마미]]
-			CFLAG:MASTER:링크악마 = [[キャラ:마미]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:마미]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:마미]]
 			CSTR:MASTER:30 = 팬텀 소사이어티의 합체실험에 의해 탄생한 악마 빙의자.
 
 			ABL:MASTER:초기링크악마공격상성 = 1
@@ -3081,8 +3081,8 @@ IF TALENT:MASTER:남자 == 1
 	CALL INPUTINT,0,1,2,3,4,5,6,7,8,9
 	SELECTCASE RESULT
 		CASE 0
-			CFLAG:MASTER:초기링크악마 = [[キャラ:타나토스]]
-			CFLAG:MASTER:링크악마 = [[キャラ:타나토스]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:타나토스]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:타나토스]]
 			TALENT:MASTER:주살 = 1
 			TALENT:MASTER:파마 = 1
 			TALENT:MASTER:검격 = 1
@@ -3116,8 +3116,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:메기도라온]]
 			ABL:MASTER:초기변신악마습득LV12 = 70
 		CASE 1
-			CFLAG:MASTER:초기링크악마 = [[キャラ:크르스니크]]
-			CFLAG:MASTER:링크악마 = [[キャラ:크르스니크]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:크르스니크]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:크르스니크]]
 			TALENT:MASTER:검격 = 1
 			;TALENT:MASTER:비구 = 1
 			;TALENT:MASTER:파마 = 1
@@ -3153,8 +3153,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:허공참파]]
 			ABL:MASTER:초기변신악마습득LV12 = 70
 		CASE 2
-			CFLAG:MASTER:초기링크악마 = [[キャラ:쿠라마텐구]]
-			CFLAG:MASTER:링크악마 = [[キャラ:쿠라마텐구]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:쿠라마텐구]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:쿠라마텐구]]
 			TALENT:MASTER:비구 = 1
 			TALENT:MASTER:충격 = 1
 			TALENT:MASTER:파마 = 1
@@ -3186,8 +3186,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬11 = [[스킬:고천열풍탄]]
 			ABL:MASTER:초기변신악마습득LV11 = 62
 		CASE 3
-			CFLAG:MASTER:초기링크악마 = [[キャラ:인큐버스]]
-			CFLAG:MASTER:링크악마 = [[キャラ:인큐버스]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:인큐버스]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:인큐버스]]
 			TALENT:MASTER:신경 = 1
 			TALENT:MASTER:정신 = 1
 			TALENT:MASTER:지원 = 1
@@ -3219,8 +3219,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬11 = [[스킬:랜더마이저]]
 			ABL:MASTER:초기변신악마습득LV11 = 60
 		CASE 4
-			CFLAG:MASTER:초기링크악마 = [[キャラ:잭랜턴]]
-			CFLAG:MASTER:링크악마 = [[キャラ:잭랜턴]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:잭랜턴]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:잭랜턴]]
 			TALENT:MASTER:화염 = 1
 			TALENT:MASTER:핵열 = 1
 			;TALENT:MASTER: = 1
@@ -3254,8 +3254,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:데들리번]]
 			ABL:MASTER:초기변신악마습득LV12 = 70
 		CASE 5
-			CFLAG:MASTER:초기링크악마 = [[キャラ:쿠쿠노치]]
-			CFLAG:MASTER:링크악마 = [[キャラ:쿠쿠노치]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:쿠쿠노치]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:쿠쿠노치]]
 			TALENT:MASTER:비구 = 1
 			TALENT:MASTER:방어 = 1
 			TALENT:MASTER:충격 = 1
@@ -3290,8 +3290,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:라스타캔디]]
 			ABL:MASTER:초기변신악마습득LV12 = 60
 		CASE 6
-			CFLAG:MASTER:초기링크악마 = [[キャラ:락샤사]]
-			CFLAG:MASTER:링크악마 = [[キャラ:락샤사]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:락샤사]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:락샤사]]
 			TALENT:MASTER:비구 = 1
 			TALENT:MASTER:타격 = 1
 			TALENT:MASTER:검격 = 1
@@ -3325,8 +3325,8 @@ IF TALENT:MASTER:남자 == 1
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:허공참파]]
 			ABL:MASTER:초기변신악마습득LV12 = 70
 		CASE 7
-			CFLAG:MASTER:초기링크악마 = [[キャラ:피닉스]]
-			CFLAG:MASTER:링크악마 = [[キャラ:피닉스]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:피닉스]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:피닉스]]
 			TALENT:MASTER:회복 = 1
 			TALENT:MASTER:화염 = 1
 			TALENT:MASTER:핵열 = 1
@@ -3374,8 +3374,8 @@ ELSE
 	CALL INPUTINT,0,1,2,3,4,5,6,7,8,9
 	SELECTCASE RESULT
 		CASE 0
-			CFLAG:MASTER:초기링크악마 = [[キャラ:쿠시나다히메]]
-			CFLAG:MASTER:링크악마 = [[キャラ:쿠시나다히메]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:쿠시나다히메]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:쿠시나다히메]]
 			TALENT:MASTER:회복 = 1
 			TALENT:MASTER:지원 = 1
 			;TALENT:MASTER:방어 = 1
@@ -3409,8 +3409,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:라스타캔디]]
 			ABL:MASTER:초기변신악마습득LV12 = 56
 		CASE 1
-			CFLAG:MASTER:초기링크악마 = [[キャラ:포르투나]]
-			CFLAG:MASTER:링크악마 = [[キャラ:포르투나]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:포르투나]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:포르투나]]
 			TALENT:MASTER:회복 = 1
 			TALENT:MASTER:충격 = 1
 			TALENT:MASTER:질풍 = 1
@@ -3444,8 +3444,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:선풍진]]
 			ABL:MASTER:초기변신악마습득LV12 = 60
 		CASE 2
-			CFLAG:MASTER:초기링크악마 = [[キャラ:팔라스아테나]]
-			CFLAG:MASTER:링크악마 = [[キャラ:팔라스아테나]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:팔라스아테나]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:팔라스아테나]]
 			TALENT:MASTER:검격 = 1
 			TALENT:MASTER:방어 = 1
 			TALENT:MASTER:지원 = 1
@@ -3477,8 +3477,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬11 = [[스킬:허공참파]]
 			ABL:MASTER:초기변신악마습득LV11 = 70
 		CASE 3
-			CFLAG:MASTER:초기링크악마 = [[キャラ:듀라한]]
-			CFLAG:MASTER:링크악마 = [[キャラ:듀라한]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:듀라한]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:듀라한]]
 			TALENT:MASTER:검격 = 1
 			TALENT:MASTER:타격 = 1
 			TALENT:MASTER:주살 = 1
@@ -3510,8 +3510,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬11 = [[스킬:불굴의투지]]
 			ABL:MASTER:초기변신악마습득LV11 = 70
 		CASE 4
-			CFLAG:MASTER:초기링크악마 = [[キャラ:서큐버스]]
-			CFLAG:MASTER:링크악마 = [[キャラ:서큐버스]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:서큐버스]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:서큐버스]]
 			TALENT:MASTER:전격 = 1
 			TALENT:MASTER:정신 = 1
 			TALENT:MASTER:주살 = 1
@@ -3545,8 +3545,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬12 = [[스킬:메기도라온]]
 			ABL:MASTER:초기변신악마습득LV12 = 70
 		CASE 5
-			CFLAG:MASTER:초기링크악마 = [[キャラ:로렐라이]]
-			CFLAG:MASTER:링크악마 = [[キャラ:로렐라이]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:로렐라이]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:로렐라이]]
 			TALENT:MASTER:중력 = 1
 			TALENT:MASTER:정신 = 1
 			;TALENT:MASTER:빙결 = 1
@@ -3588,8 +3588,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬14 = 2832;『봄버걸』[[스킬:]]
 			ABL:MASTER:초기변신악마습득LV14 = 40
 		CASE 6
-			CFLAG:MASTER:초기링크악마 = [[キャラ:유키죠로]]
-			CFLAG:MASTER:링크악마 = [[キャラ:유키죠로]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:유키죠로]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:유키죠로]]
 			TALENT:MASTER:빙결 = 1
 			TALENT:MASTER:정신 = 1
 			TALENT:MASTER:주살 = 1
@@ -3621,8 +3621,8 @@ ELSE
 			ABL:MASTER:초기변신악마습득스킬11 = [[스킬:대냉계]]
 			ABL:MASTER:초기변신악마습득LV11 = 70
 		CASE 7
-			CFLAG:MASTER:초기링크악마 = [[キャラ:블랙위도우]]
-			CFLAG:MASTER:링크악마 = [[キャラ:블랙위도우]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:블랙위도우]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:블랙위도우]]
 			TALENT:MASTER:전술 = 1
 			TALENT:MASTER:비구 = 1
 			TALENT:MASTER:신경 = 1
@@ -3660,8 +3660,8 @@ ENDIF
 
 	SELECTCASE RESULT
 		CASE 8
-			CFLAG:MASTER:초기링크악마 = [[キャラ:오니]]
-			CFLAG:MASTER:링크악마 = [[キャラ:오니]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:오니]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:오니]]
 			TALENT:MASTER:검격 = 1
 			TALENT:MASTER:화염 = 1
 			TALENT:MASTER:지변 = 1
@@ -3697,8 +3697,8 @@ ENDIF
 			ABL:MASTER:초기변신악마습득스킬13 = [[스킬:허공참파]]
 			ABL:MASTER:초기변신악마습득LV13 = 70
 		CASE 9
-			CFLAG:MASTER:초기링크악마 = [[キャラ:모무노후]]
-			CFLAG:MASTER:링크악마 = [[キャラ:모무노후]]
+			CFLAG:MASTER:초기링크악마 = [[캐릭터:모무노후]]
+			CFLAG:MASTER:링크악마 = [[캐릭터:모무노후]]
 			LOCALS:1 = 고대 일본 신화의 무신. 무에 모든 것을 바친 자들의 영혼.
 			TALENT:MASTER:검격 = 1
 			TALENT:MASTER:타격 = 1
@@ -4456,7 +4456,7 @@ ENDIF
 
 @PRESENT_PIXIE
 ;一旦악마をキャラ登録
-CALL ADD_NEW_COMPANION,[[キャラ:픽시]],200,1
+CALL ADD_NEW_COMPANION,[[캐릭터:픽시]],200,1
 ;MASTERと相性を持たせる
 CFLAG:(RESULT:1):캐릭터상성1 = 0
 CFLAG:(RESULT:1):캐릭터상성치1 = 150
@@ -4485,13 +4485,13 @@ IF STRFLAG_NUM_CPD_FIND("NO", NO:(RESULT:1)) > -1
 		IF LOCAL:4 >= 100000
 			PRINT 強化しすぎです、通常のピクシーとなります
 			DELCHARA RESULT:1
-			CALL ADD_NEW_COMPANION,[[キャラ:픽시]],200,1
+			CALL ADD_NEW_COMPANION,[[캐릭터:픽시]],200,1
 			ABL:(RESULT:1):스킬3 = [[스킬:아기]]
 		;악마の레벨>主人の레벨だった場合も不可
 		ELSEIF BASE:(RESULT:1):LV > (BASE:MASTER:LV + FLAG:경험ED수)
 			PRINTW レベルが高すぎます、通常のピクシーとなります
 			DELCHARA RESULT:1
-			CALL ADD_NEW_COMPANION,[[キャラ:픽시]],200,1
+			CALL ADD_NEW_COMPANION,[[캐릭터:픽시]],200,1
 			ABL:(RESULT:1):스킬3 = [[스킬:아기]]
 		ENDIF
 	ELSE
@@ -4600,7 +4600,7 @@ IF FLAG:주인출신 == 2 && FLAG:주회횟수 == 0
 		PRINTW 　
 		PRINTW 　
 		PRINTW ＞……마지막에 혀를 씹은 것은 보지 않은 것으로 해 두자
-		CALL ADD_NEW_COMPANION,[[キャラ:체페이(꼬리두개)]],200,1
+		CALL ADD_NEW_COMPANION,[[캐릭터:체페이(꼬리두개)]],200,1
 		BASE:(CHARANUM-1):LV = 5
 		BASE:(CHARANUM-1):힘 = 1
 		BASE:(CHARANUM-1):지혜 = 3
@@ -4639,7 +4639,7 @@ ELSEIF ITEM:여우가면
 		PRINTW ＞여우에게 홀리는 것도 나쁘지 않다……………… 그런 느낌이 들었다.
 		PRINTL 
 		PRINTW ＞여우가면은 사라졌습니다
-		CALL ADD_NEW_COMPANION,[[キャラ:체페이(꼬리두개)]],200,1
+		CALL ADD_NEW_COMPANION,[[캐릭터:체페이(꼬리두개)]],200,1
 		IF RESULT == 1
 			BASE:(CHARANUM-1):LV = 5
 			BASE:(CHARANUM-1):힘 = 1

@@ -125,7 +125,7 @@ ENDIF
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
-CALL SET_ENEMY,9,[[キャラ:오니]],30,0,1
+CALL SET_ENEMY,9,[[캐릭터:오니]],30,0,1
 CFLAG:(CHARANUM-1):행동횟수 = 2
 CFLAG:(CHARANUM-1):ＨＰ보정 += 1500
 ABL:(CHARANUM-1):스킬1 = [[스킬:마구날뛰기]]
@@ -159,12 +159,12 @@ FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
 
-CALL SET_ENEMY,13,[[キャラ:그르르]],23,0,1
-CALL SET_ENEMY,13,[[キャラ:잭랜턴]],24,0,1
+CALL SET_ENEMY,13,[[캐릭터:그르르]],23,0,1
+CALL SET_ENEMY,13,[[캐릭터:잭랜턴]],24,0,1
 
-CALL SET_ENEMY,9,[[キャラ:노즈치]],24,0,1
+CALL SET_ENEMY,9,[[캐릭터:노즈치]],24,0,1
 ;오니
-CALL SET_ENEMY,14,[[キャラ:오니]],30,0,1
+CALL SET_ENEMY,14,[[캐릭터:오니]],30,0,1
 ;CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 ABL:(CHARANUM-1):스킬1 = [[스킬:마구날뛰기]]
 ABL:(CHARANUM-1):스킬2 = [[스킬:대나무베기]]
@@ -180,9 +180,9 @@ CALL SYNC_STATUS,(CHARANUM-1)
 CALL HEALTH_CHARA,(CHARANUM-1)
 
 
-CALL SET_ENEMY,10,[[キャラ:코파텐구]],23,0,1
+CALL SET_ENEMY,10,[[캐릭터:코파텐구]],23,0,1
 
-CALL SET_ENEMY,11,[[キャラ:잇폰다타라]],20,0,1
+CALL SET_ENEMY,11,[[캐릭터:잇폰다타라]],20,0,1
 
 
 CALL BATTLE_START
@@ -203,7 +203,7 @@ FLAG:선제기습취소 = 0
 FLAG:도주불가플래그 = 1
 FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
-CALL SET_ENEMY,9,[[キャラ:오니]],30,0,1
+CALL SET_ENEMY,9,[[캐릭터:오니]],30,0,1
 CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 ABL:(CHARANUM-1):스킬1 = [[스킬:마구날뛰기]]
 ABL:(CHARANUM-1):스킬2 = [[스킬:대나무베기]]
@@ -235,14 +235,14 @@ FLAG:회화불능플래그 = 1
 FLAG:선제기습취소 = 1
 
 
-CALL SET_ENEMY,8,[[キャラ:노즈치]],24,0,1
-CALL SET_ENEMY,13,[[キャラ:코파텐구]],23,0,1
+CALL SET_ENEMY,8,[[캐릭터:노즈치]],24,0,1
+CALL SET_ENEMY,13,[[캐릭터:코파텐구]],23,0,1
 
-CALL SET_ENEMY,9,[[キャラ:잇폰다타라]],20,0,1
-CALL SET_ENEMY,14,[[キャラ:잭랜턴]],24,0,1
+CALL SET_ENEMY,9,[[캐릭터:잇폰다타라]],20,0,1
+CALL SET_ENEMY,14,[[캐릭터:잭랜턴]],24,0,1
 
-CALL SET_ENEMY,10,[[キャラ:잇폰다타라]],19,0,1
-CALL SET_ENEMY,15,[[キャラ:그르르]],24,0,1
+CALL SET_ENEMY,10,[[캐릭터:잇폰다타라]],19,0,1
+CALL SET_ENEMY,15,[[캐릭터:그르르]],24,0,1
 
 CALL BATTLE_START
 FLAG:도주불가플래그 = 0

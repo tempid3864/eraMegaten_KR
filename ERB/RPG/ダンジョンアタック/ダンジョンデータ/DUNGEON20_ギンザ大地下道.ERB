@@ -823,59 +823,59 @@ SELECTCASE FLAG:현M
 				;적の포지션はそのまま、ここでのLOCALは7~16중 하나になりますので모든位置に出てくる가능性があるということです
 				;강화랭크は約3레벨分、強くなり、また레벨があがることで습득予定스킬を覚えた상태で登場します
 				;시체잔존フラグは死んだとき、HP0で場に残るようになります。적に리캄をつかわせるときなどにどうぞ
-				RETURN [[キャラ:니케]], 17
+				RETURN [[캐릭터:니케]], 17
 				;参考例　以下の記述でも動きます。数字を指定するのと文字列を指定するのは好みでどうぞ
 				;なお、文字列指定は予め、_Rename.csvで등록していないと無理です。ｃｓｖを見てみましょう
-				;CALL SET_ENEMY,LOCAL, [[キャラ:픽시]],0,0
+				;CALL SET_ENEMY,LOCAL, [[캐릭터:픽시]],0,0
 			CASE IS < 40
-				RETURN [[キャラ:랴난시]], 18
+				RETURN [[캐릭터:랴난시]], 18
 			CASE IS < 60
-				RETURN [[キャラ:네코마타]], 18
+				RETURN [[캐릭터:네코마타]], 18
 			CASE IS < 80
-				RETURN [[キャラ:이누가미]], 15
+				RETURN [[캐릭터:이누가미]], 15
 			CASEELSE
-				RETURN [[キャラ:잭프로스트]], 18
+				RETURN [[캐릭터:잭프로스트]], 18
 		ENDSELECT
 	CASE 1,2
 	;Ｂ１ＦㆍＢ２Ｆ東での遭遇
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:랴난시]], 21
+				RETURN [[캐릭터:랴난시]], 21
 			CASE IS < 40
-				RETURN [[キャラ:루살카]], 21
+				RETURN [[캐릭터:루살카]], 21
 			CASE IS < 60
-				RETURN [[キャラ:유키죠로]], 21
+				RETURN [[캐릭터:유키죠로]], 21
 			CASE IS < 70
 				;야마치치
 				RETURN 963,20
 			CASE IS < 80
-				RETURN [[キャラ:오퀴페테]], 19
+				RETURN [[캐릭터:오퀴페테]], 19
 			CASE IS < 90
-				RETURN [[キャラ:노즈치]], 18
+				RETURN [[캐릭터:노즈치]], 18
 			CASEELSE
-				RETURN [[キャラ:잭프로스트]], 20
+				RETURN [[캐릭터:잭프로스트]], 20
 		ENDSELECT
 	CASE 3
 	;マネカタ集落での遭遇
-		RETURN [[キャラ:이소라]], 25
+		RETURN [[캐릭터:이소라]], 25
 	CASE 4,5
 	;Ｂ１ＦㆍＢ２Ｆ東での遭遇
 		SELECTCASE RAND:100
 			CASE IS < 20
-				RETURN [[キャラ:세이렌]], 24
+				RETURN [[캐릭터:세이렌]], 24
 			CASE IS < 40
-				RETURN [[キャラ:하우르바타트]], 25
+				RETURN [[캐릭터:하우르바타트]], 25
 			CASE IS < 60
-				RETURN [[キャラ:유키죠로]], 24
+				RETURN [[캐릭터:유키죠로]], 24
 			CASE IS < 70
 				;야마치치
 				RETURN 963, 24
 			CASE IS < 80
-				RETURN [[キャラ:뷔브르]], 23
+				RETURN [[캐릭터:뷔브르]], 23
 			CASE IS < 90
-				RETURN [[キャラ:오니]], 24
+				RETURN [[캐릭터:오니]], 24
 			CASEELSE
-				RETURN [[キャラ:아크엔젤]], 24
+				RETURN [[캐릭터:아크엔젤]], 24
 		ENDSELECT
 ENDSELECT
 
@@ -1001,13 +1001,13 @@ RETURN 0
 ;RETURN CSV번호 , 人数 , 레벨
 SELECTCASE RAND:4
 	CASE 0
-		RETURN [[キャラ:노즈치]] , 3 + RAND:10 , CSVBASE([[キャラ:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:노즈치]] , 3 + RAND:10 , CSVBASE([[캐릭터:노즈치]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 1
-		RETURN [[キャラ:이누가미]] , 3 + RAND:10 , CSVBASE([[キャラ:이누가미]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:이누가미]] , 3 + RAND:10 , CSVBASE([[캐릭터:이누가미]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 2
-		RETURN [[キャラ:오니]] , 3 + RAND:10 , CSVBASE([[キャラ:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:오니]] , 3 + RAND:10 , CSVBASE([[캐릭터:오니]] , GETNUM(BASE , "LV") , 0) + RAND:3
 	CASE 3
-		RETURN [[キャラ:아크엔젤]] , 3 + RAND:10 , CSVBASE([[キャラ:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
+		RETURN [[캐릭터:아크엔젤]] , 3 + RAND:10 , CSVBASE([[캐릭터:아크엔젤]] , GETNUM(BASE , "LV") , 0) + RAND:3
 ENDSELECT
 
 

@@ -96,7 +96,7 @@ IF RESULT == 0
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:팔척님]],50, 1,1
+	CALL SET_ENEMY,9, [[캐릭터:팔척님]],50, 1,1
 	CFLAG:(CHARANUM-1):행동횟수 = 2
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 4000
 	ABL:(CHARANUM-1):스킬1 = 265
@@ -170,7 +170,7 @@ IF RESULT == 0
 	PRINTFORMW 
 	;ここでのみ팔척님は加入。合体は불가。
 	PRINTFORML ＞괴이　팔척님이(가) 동료가 되었다。
-	CALL ADD_NEW_COMPANION,[[キャラ:팔척님]],200
+	CALL ADD_NEW_COMPANION,[[캐릭터:팔척님]],200
 	PRINTFORMW ＞%CALLNAME:MASTER%의 ＭＡＧ가 대량으로 소실되었다…
 	;당신のＭＡＧが10万이상なら10万、以下なら1万残す。
 	IF BASE:MASTER:ＭＡＧ > 109999
@@ -234,7 +234,7 @@ ELSEIF RESULT == 1
 	FLAG:도주불가플래그 = 1
 	FLAG:회화불능플래그 = 1
 	FLAG:선제기습취소 = 1
-	CALL SET_ENEMY,9, [[キャラ:팔척님]],70, 1,1
+	CALL SET_ENEMY,9, [[캐릭터:팔척님]],70, 1,1
 	;행동횟수が３．백열찌르기→천열찌르기、무드온→도무디、열풍격추가。힘＋１０
 	CFLAG:(CHARANUM-1):행동횟수 = 3
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 4000
@@ -363,7 +363,7 @@ ELSEIF RESULT == 1
 		PRINTFORML %CALLNAME:MASTER%은 손가락 하나 까딱하기 힘든 상태로, 팔척님을 올려다보며 그렇게 생각했다。
 		PRINTFORMW 
 		PRINTFORMW ＞괴이　팔척님이(가) 동료가 되었다。
-		CALL ADD_NEW_COMPANION,[[キャラ:팔척님]],200
+		CALL ADD_NEW_COMPANION,[[캐릭터:팔척님]],200
 		;また分岐　
 		IF (TALENT:MASTER:남자 || TALENT:MASTER:후타나리)
 		;ちんこあり分岐

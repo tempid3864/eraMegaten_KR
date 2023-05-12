@@ -2,9 +2,9 @@
 
 ;스킬명
 @SKILL_NAME_702,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:블랙맨]]) && 이벤트플래그:86:2 == 1
+IF SKILL_CHANGE(ARG, [[캐릭터:블랙맨]]) && 이벤트플래그:86:2 == 1
 	RESULTS = 분노의열화
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RESULTS = 사바오ㆍ피닉스
 ELSE
 	RESULTS = 아기라오
@@ -16,7 +16,7 @@ RETURN 100
 
 ;　위력
 @SKILL_POWER_702, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 250
 ELSE
 	RETURN 235
@@ -37,7 +37,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_702,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:마리(마인학원)]])
+IF SKILL_CHANGE(ARG, [[캐릭터:마리(마인학원)]])
 	RETURN 9
 ELSE
 	RETURN 6

@@ -4,9 +4,9 @@
 ;스킬명
 @SKILL_NAME_2001,ARG
 ;アーベントが使用する場合PㆍランチャーEに
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RESULTS = Pㆍ런처E
-ELSEIF SKILL_CHANGE(ARG, [[キャラ:야타가라스]]) && 던전플래그:25:14 == 1
+ELSEIF SKILL_CHANGE(ARG, [[캐릭터:야타가라스]]) && 던전플래그:25:14 == 1
 	RESULTS = 기의 응집덩어리
 ELSEIF SKILL_CHANGE(ARG, 5313) && 의뢰플래그:2:1 ==63
 	RESULTS = 매지컬ㆍ빔
@@ -15,14 +15,14 @@ ELSE
 ENDIF
 ;　명중
 @SKILL_HITRATE_2001, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 100
 ELSE
 	RETURN 90
 ENDIF
 ;　위력
 @SKILL_POWER_2001, ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 140
 ELSE
 	RETURN 220
@@ -43,7 +43,7 @@ RETURN 3
 
 ;　코스트량
 @SKILL_COST_2001,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:아벤트]])
+IF SKILL_CHANGE(ARG, [[캐릭터:아벤트]])
 	RETURN 10
 ELSE
 	RETURN 20
@@ -158,7 +158,7 @@ CALL ATTACK_FIELD,ARG,ARG:1,2001
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_2001
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:아벤트]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:아벤트]]
 	PRINTL 적 전체에 빔으로 베어넘기는 공격을 행한다。
 	PRINTL 정식명칭「파르티잔ㆍ런처 E 모드」。하단의 총신에서 빔을 발사한다。
 ELSE

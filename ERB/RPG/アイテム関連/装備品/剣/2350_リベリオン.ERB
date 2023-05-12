@@ -7,21 +7,21 @@
 @기본능력수정_2350,ARG,ARG:1 = -1
 #LOCALSIZE 1
 #LOCALSSIZE 1
-LOCAL = GETCHARA([[キャラ:단테]])
+LOCAL = GETCHARA([[캐릭터:단테]])
 SIF LOCAL < 0
 	RETURN 0
 SIF ARG:1 < 0
 	RETURN 0
-SIF ARG:1 == GETCHARA([[キャラ:단테]]) || (FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL))
+SIF ARG:1 == GETCHARA([[캐릭터:단테]]) || (FAVORITE_1(LOCAL) == ARG:1 && 함락(LOCAL))
 	RETURN BASE:LOCAL:GET_BASESTATUS(ARG) / 10
 RETURN 0
 @전투능력수정_2350,ARG,ARG:1 = -1
 #LOCALSIZE 3
-LOCAL = GETCHARA([[キャラ:단테]])
+LOCAL = GETCHARA([[캐릭터:단테]])
 LOCAL:1 = 0
 LOCAL:2 = 40
 ;剣のレベル設定。ダンテが陥落している場合、ダンテのレベルの半分が加算される
-SIF ARG:1 >=0 && LOCAL >= 0 && (NO:(ARG:1) == [[キャラ:단테]] || 함락(LOCAL, ARG:1))
+SIF ARG:1 >=0 && LOCAL >= 0 && (NO:(ARG:1) == [[캐릭터:단테]] || 함락(LOCAL, ARG:1))
 	LOCAL:2 += MIN(BASE:LOCAL:LV / 2, 40)
 LOCAL:2 += 5
 ;レベルによる戦闘能力値
@@ -36,7 +36,7 @@ SELECTCASE GET_BATTLESTATUS(ARG)
 		LOCAL:1 = LOCAL:2
 ENDSELECT
 ;STATUSによる能力値　ダンテありはダンテ陥落でステータスによって性能が加算される
-IF ARG:1 >= 0 && (NO:(ARG:1) == [[キャラ:단테]] || (LOCAL >=0 && 함락(LOCAL, ARG:1)))
+IF ARG:1 >= 0 && (NO:(ARG:1) == [[캐릭터:단테]] || (LOCAL >=0 && 함락(LOCAL, ARG:1)))
 	SELECTCASE GET_BATTLESTATUS(ARG)
 		CASE "공격"
 			LOCAL:1 +=  BASE:(ARG:1):힘*3/2 + BASE:(ARG:1):인내력 / 2
@@ -94,7 +94,7 @@ RETURN 1
 RETURN GET_EQUIPNUM("검")
 
 @장비추가스킬_2350,ARG,ARG:1 = -1
-IF ARG:1 > -1 && ARG:1 == GETCHARA([[キャラ:단테]])
+IF ARG:1 > -1 && ARG:1 == GETCHARA([[캐릭터:단테]])
 	SELECTCASE ARG
 		CASE 0
 			RETURN [[스킬:데빌트리거]]

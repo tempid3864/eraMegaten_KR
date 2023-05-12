@@ -96,9 +96,9 @@ ELSE
 			PRINTFORMW 　いいわ、邪魔をするというのなら……！」
 			PRINTL
 			PRINTFORMW 女は%CALLNAME:MASTER%の方に向き直り、悪魔を召喚した。
-			CALL SET_ENEMY,10, [[キャラ:알케니]], 30, 0
-			CALL SET_ENEMY,11, [[キャラ:엘리고르]], 30, 0
-			CALL SET_ENEMY,12, [[キャラ:나가]], 30, 0
+			CALL SET_ENEMY,10, [[캐릭터:알케니]], 30, 0
+			CALL SET_ENEMY,11, [[캐릭터:엘리고르]], 30, 0
+			CALL SET_ENEMY,12, [[캐릭터:나가]], 30, 0
 			CALL BATTLE_START
 			CUSTOMDRAWLINE =
 			PRINTFORMW %CALLNAME:MASTER%が悪魔を退けた頃には、既に女は姿を消していた。
@@ -347,7 +347,7 @@ ELSE
 	PRINTFORMW ……『八神の花咲く娘』、それの意味するところは分からないが、この娘からは凄まじいＭＡＧを感じる。
 	PRINTFORMW ……鍛えて戦闘員とするもよし、便器にでも突っ込んでＭＡＧタンクとするもよし。持ち帰らない道理はない。
 	PRINTFORMW ＞八神 咲を奴隷にした
-	CALL ADD_NEW_COMPANION, [[キャラ:사키]], 100
+	CALL ADD_NEW_COMPANION, [[캐릭터:사키]], 100
 	PRINTL
 	PRINTFORMW さて、残りは死体だが――
 	PRINTFORMW 脳梁をまき散らし絶命した、悪魔使いの異能者にして乙女より愛らしい美少年、小林章人。
@@ -355,7 +355,7 @@ ELSE
 	PRINTFORMW 綺麗な顏、強力な異能力、そして、この程度で現世の苦しみから逃れられると思っている可愛らしさ――
 	PRINTFORMW こんなものはセーフハウスの設備であっという間に生き返る。%CALLNAME:MASTER%は死体を持ち帰るため死体袋に詰めた。
 	PRINTFORMW ＞小林 章人を奴隷にした
-	CALL ADD_NEW_COMPANION, [[キャラ:아키토]], 100
+	CALL ADD_NEW_COMPANION, [[캐릭터:아키토]], 100
 	PRINTL
 	PRINTFORMW 少年の円滑な蘇生のため、地道に脳梁を集めていた%CALLNAME:MASTER%の足が、細い何かに引っかかった。
 	PRINTFORMW 野良悪魔か？　視線を降ろすと、しなびたボロ雑巾のようなミイラが、その指を%CALLNAME:MASTER%に引っ掛けていた。
@@ -395,7 +395,7 @@ ELSE
 		PRINTFORMW 　　高校三年生、18歳、ごく普通の女子高生……COMPから改めてプロフィールを確認してみると良いだろう――
 		PRINTL
 		;そのまま加入
-		CALL ADD_NEW_COMPANION, [[キャラ:요시코]], 100
+		CALL ADD_NEW_COMPANION, [[캐릭터:요시코]], 100
 		
 	;オセ
 	ELSEIF RESULT == 1
@@ -436,12 +436,12 @@ ELSE
 		PRINTL
 		PRINTFORMW ＞岸部 美子を仲魔にした
 		;存在判定
-		LOCAL = GETCHARA([[キャラ:요시코]])
+		LOCAL = GETCHARA([[캐릭터:요시코]])
 		;いなければ実行
 		IF LOCAL == -1
 			;デビルシフターとなって加入
-			CALL ADD_NEW_COMPANION, [[キャラ:요시코]], 100
-			LOCAL = GETCHARA([[キャラ:요시코]])
+			CALL ADD_NEW_COMPANION, [[캐릭터:요시코]], 100
+			LOCAL = GETCHARA([[캐릭터:요시코]])
 			
 			;調教するまで戦闘可能
 			CFLAG:LOCAL:전투참가불가능 = -1
@@ -453,7 +453,7 @@ ELSE
 			TALENT:LOCAL:갈퀴 = 1
 			TALENT:LOCAL:꼬리 = 1
 			TALENT:LOCAL:동물귀 = 1
-			CFLAG:LOCAL:초기링크악마 = [[キャラ:오세]]
+			CFLAG:LOCAL:초기링크악마 = [[캐릭터:오세]]
 			ABL:LOCAL:초기링크악마공격상성 = 3
 			ABL:LOCAL:초기링크악마사거리 = 1
 			ABL:LOCAL:초기링크악마공격범위 = 1

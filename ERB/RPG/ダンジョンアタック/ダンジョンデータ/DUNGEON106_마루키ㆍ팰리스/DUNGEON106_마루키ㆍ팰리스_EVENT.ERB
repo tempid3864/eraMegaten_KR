@@ -205,7 +205,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "…후, 후후, 하하하! 그래/너와 나는 라이벌이었지, 조커"
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "그렇다면 임시 협력이다/좋아. 이 팰리스 안에서는 함께 싸워 주지"
 							
-							CALL ADD_NEW_COMPANION,[[キャラ:고로]],0
+							CALL ADD_NEW_COMPANION,[[캐릭터:고로]],0
 							CFLAG:(CHARANUM - 1):전투참가불가능 = -1
 							
 							CALL MESSAGE_WINDOW_D, "", "＞아케치 고로가 동료가 되어주었다"
@@ -258,7 +258,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CALL MESSAGE_WINDOW_D, "", "＞란의 이야기가 틀린 것은 없지 않나. 당신은 그렇게 덧붙였다./＞아케치 고로는 한숨을 토해냈다"
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "좋아, 힘을 합치지. 이 팰리스를 통과할 때까지, 석양의 괴도단이라는 것과 같이 가겠어."
 							
-							CALL ADD_NEW_COMPANION,[[キャラ:고로]],0
+							CALL ADD_NEW_COMPANION,[[캐릭터:고로]],0
 							CFLAG:(CHARANUM - 1):전투참가불가능 = -1
 							
 							CALL MESSAGE_WINDOW_D, "", "＞아케치 고로가 동료가 되어주었다"
@@ -364,7 +364,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:크툴루]],80,0,1
+				CALL SET_ENEMY,9,[[캐릭터:크툴루]],80,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -483,7 +483,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:도주불가플래그 = 1
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
-				CALL SET_ENEMY,9,[[キャラ:하스터]],80,0,1
+				CALL SET_ENEMY,9,[[캐릭터:하스터]],80,0,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 2000
 				CALL SYNC_STATUS,(CHARANUM-1)
 				CALL HEALTH_CHARA,(CHARANUM-1)
@@ -1232,7 +1232,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				FLAG:회화불능플래그 = 1
 				FLAG:선제기습취소 = 1
 				
-				CALL SET_ENEMY,9,[[キャラ:아자토스]],90,1,1
+				CALL SET_ENEMY,9,[[캐릭터:아자토스]],90,1,1
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 5000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
 				CALL SYNC_STATUS,(CHARANUM-1)
@@ -1244,7 +1244,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				ABL:(CHARANUM-1):스킬4 = [[스킬:휘감기]]
 				
 				
-				CALL SET_ENEMY,14,[[キャラ:마루키ㆍ타쿠토]],90,1,1 ;마루키 타쿠토	
+				CALL SET_ENEMY,14,[[캐릭터:마루키ㆍ타쿠토]],90,1,1 ;마루키 타쿠토	
 				CFLAG:(CHARANUM-1):ＨＰ보정 = 1500
 				;CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
 				CSTR:(CHARANUM-1):사고패턴 = P5_Maruki
@@ -1263,7 +1263,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				EQUIP:(CHARANUM-1):발 = [[아이템:야크트레그]]
 				CFLAG:(CHARANUM-1):행동횟수 = 1
 				
-				CALL SET_ENEMY,7,[[キャラ:아자토스의촉수]],70,1,1
+				CALL SET_ENEMY,7,[[캐릭터:아자토스의촉수]],70,1,1
 				CALLNAME:(CHARANUM-1) = 회복의 촉수
 				CFLAG:(CHARANUM-1):ＨＰ보정 = -1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
@@ -1288,7 +1288,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				MAXBASE:(CHARANUM-1):중력 = 999
 				MAXBASE:(CHARANUM-1):핵열 = 150
 				
-				CALL SET_ENEMY,8,[[キャラ:아자토스의촉수]],70,1,1
+				CALL SET_ENEMY,8,[[캐릭터:아자토스의촉수]],70,1,1
 				CALLNAME:(CHARANUM-1) = 방호의 촉수
 				CFLAG:(CHARANUM-1):ＨＰ보정 = -1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
@@ -1315,7 +1315,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				MAXBASE:(CHARANUM-1):중력 = 999
 				MAXBASE:(CHARANUM-1):핵열 = 999
 				
-				CALL SET_ENEMY,10,[[キャラ:아자토스의촉수]],70,1,1
+				CALL SET_ENEMY,10,[[캐릭터:아자토스의촉수]],70,1,1
 				CALLNAME:(CHARANUM-1) = 보좌의 촉수
 				CFLAG:(CHARANUM-1):ＨＰ보정 = -1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
@@ -1335,7 +1335,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 				MAXBASE:(CHARANUM-1):파마 = 0
 				MAXBASE:(CHARANUM-1):주살 = 0
 				
-				CALL SET_ENEMY,11,[[キャラ:아자토스의촉수]],70,1,1
+				CALL SET_ENEMY,11,[[캐릭터:아자토스의촉수]],70,1,1
 				CALLNAME:(CHARANUM-1) = 보좌의 촉수
 				CFLAG:(CHARANUM-1):ＨＰ보정 = -1000
 				CFLAG:(CHARANUM-1):ＭＰ보정 = 50000
@@ -1611,7 +1611,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "…후, 후후, 하하하! 그래/너와 나는 라이벌이었지, 조커"
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "그렇다면 임시 협력이다/좋아. 이 팰리스 안에서는 함께 싸워 주지"
 							
-							CALL ADD_NEW_COMPANION,[[キャラ:고로]],0
+							CALL ADD_NEW_COMPANION,[[캐릭터:고로]],0
 							CFLAG:(CHARANUM - 1):전투참가불가능 = -1
 							
 							CALL MESSAGE_WINDOW_D, "", "＞아케치 고로가 동료가 되어주었다"
@@ -1664,7 +1664,7 @@ ELSEIF DA:(FLAG:현X):(FLAG:현Y) % 10 == 4
 							CALL MESSAGE_WINDOW_D, "", "＞란의 이야기가 틀린 것은 없지 않나. 당신은 그렇게 덧붙였다./＞아케치 고로는 한숨을 토해냈다"
 							CALL MESSAGE_WINDOW_D, "아케치 고로", "좋아, 힘을 합치지. 이 팰리스를 통과할 때까지, 석양의 괴도단이라는 것과 같이 가겠어."
 							
-							CALL ADD_NEW_COMPANION,[[キャラ:고로]],0
+							CALL ADD_NEW_COMPANION,[[캐릭터:고로]],0
 							CFLAG:(CHARANUM - 1):전투참가불가능 = -1
 							
 							CALL MESSAGE_WINDOW_D, "", "＞아케치 고로가 동료가 되어주었다"

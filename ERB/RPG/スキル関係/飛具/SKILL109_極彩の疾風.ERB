@@ -5,7 +5,7 @@
 
 ;스킬명
 @SKILL_NAME_109,ARG
-IF SKILL_CHANGE(ARG, [[キャラ:야치호]])
+IF SKILL_CHANGE(ARG, [[캐릭터:야치호]])
 	RESULTS = 리턴
 ELSE
 	RESULTS = 극채의질풍
@@ -81,7 +81,7 @@ RETURN 1
 
 ;속도보정
 @SKILL_SPEED_109, ARG = -1
-IF SKILL_CHANGE(ARG, [[キャラ:야치호]])
+IF SKILL_CHANGE(ARG, [[캐릭터:야치호]])
 	RETURN 6
 ELSE
 	RETURN 0
@@ -110,7 +110,7 @@ RETURN 6
 ;CALL PAY_COST,ARG,109
 
 ;実行
-IF SKILL_CHANGE(ARG, [[キャラ:야치호]])
+IF SKILL_CHANGE(ARG, [[캐릭터:야치호]])
 	IF ARG < 0
 		CALL SKILL_WALL , ARG , "비구" , CFLAG:ARG:타겟 , 1
 	ELSEIF 함락(ARG) == 0
@@ -135,7 +135,7 @@ ENDIF
 
 ;　 설명문 표시
 @SKILL_EXPLAIN_109
-IF U > 0 && U < CHARANUM && NO:U == [[キャラ:야치호]]
+IF U > 0 && U < CHARANUM && NO:U == [[캐릭터:야치호]]
 	PRINTL 그 손의 라켓으로 정확하게 리턴을 돌려준다
 	PRINTL 그 정확성은 무려 비구 상성의 공격을 막는 벽을 아군 전체에（※최대）３회분 치는 것에 해당한다
 ELSE

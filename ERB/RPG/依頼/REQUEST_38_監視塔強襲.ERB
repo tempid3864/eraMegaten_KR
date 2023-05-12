@@ -252,7 +252,7 @@ PRINTFORMW 작전 당일 도쿄 모처 브리핑 룸에서
 PRINTFORML
 PRINTFORML
 	;●菊枝が仲間に加入している場合(信頼状態かどうかは問わない)
-	IF FINDCHARA_B([[キャラ:키쿠에]]) >= 0 && 던전플래그:[[던전:팩토리]]:15 <=3
+	IF FINDCHARA_B([[캐릭터:키쿠에]]) >= 0 && 던전플래그:[[던전:팩토리]]:15 <=3
 		PRINTFORMW 당신은 마중을 나온 히루코 옹과 함께, 지정된 집합장소에 도착했다. 삼엄한 분위기이다.
 		PRINTFORML
 		PRINTFORMW 집합한 가이아교의 에이전트들 중 하나인, 심홍색의 무구로 몸을 방어하는 청년이 말을 걸었다. 인간과 동떨어진 아우라가 느껴진다……。
@@ -317,14 +317,14 @@ PRINTFORML
 PRINTFORMW 『협의한 대로, 너는 지원팀과 함께 퇴로 확보에 임해줘. 적당히, 판단은 맡기지』
 	
 	;●菊枝が仲間に加入している場合(信頼状態かどうかは問わない)
-	IF FINDCHARA_B([[キャラ:키쿠에]]) >= 0 && 던전플래그:[[던전:팩토리]]:15 <=3
+	IF FINDCHARA_B([[캐릭터:키쿠에]]) >= 0 && 던전플래그:[[던전:팩토리]]:15 <=3
 		PRINTFORMW 『히메미야 누님은 강습 팀의 서포트를 부탁해. 선별은 했다지만 기본적으로는 폭력이 특기인 놈들뿐이라서 말이지』
 		
 		;키쿠에が戦列に참가している場合、戦列から外す
 		FOR LOCAL:0,1,7
 		SIF POS(LOCAL:0) == -1
 			CONTINUE
-		SIF NO:(POS(LOCAL:0)) == [[キャラ:키쿠에]]
+		SIF NO:(POS(LOCAL:0)) == [[캐릭터:키쿠에]]
 			CALL REMOVE_POSITION,LOCAL:0
 		NEXT
 		
@@ -401,7 +401,7 @@ PRINTFORML
 PRINTFORML
 PRINTFORMW 계단을 올라온 %CALLNAME:MASTER%의 귀에, 남자와 여자의 신음소리가 들려왔다.
 ;菊枝が仲間に居る
-IF FINDCHARA_B([[キャラ:키쿠에]]) >= 0
+IF FINDCHARA_B([[캐릭터:키쿠에]]) >= 0
 	;키쿠에を팩토리から無傷で救出していた場合
 	IF 던전플래그:[[던전:팩토리]]:15 == 1
 		PRINTFORML 
@@ -564,7 +564,7 @@ IF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0 || GETBIT(FLAG:EXTRA이벤트필터
 	PRINTFORMW 그렇게 말하며 여성이 가르친 홀의 저편.
 	PRINTFORML 
 	PRINTFORML 기계의 중심, 투명한 캡슐과 같은 용기에
-	IF (FLAG:백합의꽃루트  > 0 && FINDCHARA_B([[キャラ:하루]]) < 1)|| (FLAG:나오야루트 > 0 && FINDCHARA_B([[キャラ:리세]]) < 1)
+	IF (FLAG:백합의꽃루트  > 0 && FINDCHARA_B([[캐릭터:하루]]) < 1)|| (FLAG:나오야루트 > 0 && FINDCHARA_B([[캐릭터:리세]]) < 1)
 		PRINTFORMW 인간 여성이 하나 구속되어 있었다.
 	ELSE
 		PRINTFORMW 요마 여성이 하나 구속되어 있었다.
@@ -580,14 +580,14 @@ IF GETBIT(FLAG:EXTRA이벤트설정, 0) == 0 || GETBIT(FLAG:EXTRA이벤트필터
 	ELSE
 	ENDIF
 	;●백합의꽃루트で하루がいなければ하루が　ナオヤルートで리세がいなければ리세が捕まる。そうでなければ세이렌が捕まっている。
-	IF (FLAG:백합의꽃루트  > 0 && FINDCHARA_B([[キャラ:하루]]) < 1)|| (FLAG:나오야루트 > 0 && FINDCHARA_B([[キャラ:리세]]) < 1)
+	IF (FLAG:백합의꽃루트  > 0 && FINDCHARA_B([[캐릭터:하루]]) < 1)|| (FLAG:나오야루트 > 0 && FINDCHARA_B([[캐릭터:리세]]) < 1)
 		PRINTFORMW 「저 아이의 목소리를 노래로 변환하고 있어」
 		
 		PRINTFORML 「이전까지 사용하고 있던 세이렌은 결국 못쓰게 되어버려서, 새로운 부품을 찾고 있었는데,
 		PRINTFORM 「신주쿠에서 스카우트한 이 아이는 대단해！……그래,
-		IF FLAG:백합의꽃루트 > 0 && FINDCHARA_B([[キャラ:하루]]) < 1
+		IF FLAG:백합의꽃루트 > 0 && FINDCHARA_B([[캐릭터:하루]]) < 1
 			PRINTFORM 하루
-		ELSEIF FLAG:나오야루트 > 0 && FINDCHARA_B([[キャラ:리세]]) < 1
+		ELSEIF FLAG:나오야루트 > 0 && FINDCHARA_B([[캐릭터:리세]]) < 1
 			PRINTFORM 리세
 		ENDIF
 			PRINTFORMW ,라고 했던가」
@@ -661,7 +661,7 @@ ELSE
 		
 		CALL REQUEST38_BATTLE
 		;モデウスさんがすでに仲間に居ると逃げる
-		IF FINDCHARA_B([[キャラ:모데우스]]) >= 0
+		IF FINDCHARA_B([[캐릭터:모데우스]]) >= 0
 			PRINTFORML 「……당ー했ー다ー아ー」
 			PRINTFORMW 여악마는 어쩐지 연극 같은 몸짓으로 쓰러진 후, 스르르 사라졌다. 도망친 듯 하다.
 		ELSE
@@ -697,10 +697,10 @@ PRINTL [0]와규！소고기를 먹자꾸나！！
 SIF 의뢰플래그:38:2 == 3 && 의뢰플래그:38:3 != 4
 	PRINTL [1]기계 속 여자아이를 챙겨가면 어떨까.
 ;菊枝(4624)が仲間にいる
-SIF FINDCHARA_B([[キャラ:키쿠에]]) >= 0  && 던전플래그:[[던전:팩토리]]:15 <=3
+SIF FINDCHARA_B([[캐릭터:키쿠에]]) >= 0  && 던전플래그:[[던전:팩토리]]:15 <=3
 	PRINTL [2]아니 이딴 생각 하기 전에 밖에 있는 키쿠에 씨 어찌 됐냐？
 ;ヘルテイカールートに入ってモデウスを倒しており、モデウスが仲間に居ない場合。	
-SIF 의뢰플래그:38:3 == 4 && FINDCHARA_B([[キャラ:모데우스]]) < 1
+SIF 의뢰플래그:38:3 == 4 && FINDCHARA_B([[캐릭터:모데우스]]) < 1
 	PRINTL [3]이 가슴 큰 악마 소녀를 가져가자.
 CALL INPUTINT,0,1,2,3
 
@@ -713,7 +713,7 @@ SELECTCASE RESULT
 		PRINTFORML
 		PRINTFORML 최면파 발생장치에 폭탄을 장치하고 방 밖으로 나온 %조사처리(CALLNAME:MASTER,"는")%,
 		PRINTFORM 쓰러져 있는 %SAVESTR:카오스히어로CALLNAME%를 발로 까서 일으키고,
-			SIF FINDCHARA_B([[キャラ:키쿠에]]) > 0  && 던전플래그:[[던전:팩토리]]:15 <=3
+			SIF FINDCHARA_B([[캐릭터:키쿠에]]) > 0  && 던전플래그:[[던전:팩토리]]:15 <=3
 				PRINTFORM 키쿠에를 들쳐맨 후 
 		PRINTFORMW 감시탑을 떠났다。
 		PRINTFORML 계획된 철수 경로로 도망치는 에이전트들을 미끼로 삼아, 데미난디 식육가공공장에 잠입한 %조사처리(CALLNAME:MASTER,"는")%
@@ -735,7 +735,7 @@ SELECTCASE RESULT
 		PRINTFORMW %조사처리(CALLNAME:MASTER,"는")% 최면파 발생장치의 해치를 개봉하고, 소녀의 구속과 각종 장치, 시야를 가리는 헬멧을 벗겨주었다……
 		PRINTFORML
 		;하루
-		IF FLAG:백합의꽃루트 > 0 && FINDCHARA_B([[キャラ:하루]]) < 1
+		IF FLAG:백합의꽃루트 > 0 && FINDCHARA_B([[캐릭터:하루]]) < 1
 			PRINTFORMW 「아아아아…… 싫어, 멈추면, 아아아앗！！」
 			PRINTFORML 
 			PRINTFORMW 구해준 여자는 %CALLNAME:MASTER%의 팔에 손톱을 박으며 무언가 지껄이고 있다.
@@ -753,7 +753,7 @@ SELECTCASE RESULT
 			PRINTFORML
 			PRINTFORML
 			PRINTFORMW 하루사와　요시노　를 손에 넣었다
-			CALL ADD_NEW_COMPANION, [[キャラ:하루]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:하루]], 500
 			IF RESULT
 				TALENT:(RESULT:1):처녀 = 1
 				;淫紋ついてるイメージ。バストサイズ1랭크アップ。お손軽だが음란確定。
@@ -778,7 +778,7 @@ SELECTCASE RESULT
 				EXP:(RESULT:1):이상경험 = 2
 			ENDIF
 		;리세
-		ELSEIF FLAG:나오야루트 > 0 && FINDCHARA_B([[キャラ:리세]]) < 1
+		ELSEIF FLAG:나오야루트 > 0 && FINDCHARA_B([[캐릭터:리세]]) < 1
 			PRINTFORMW 「아아아아…… 싫어, 멈추면, 아아아앗！！」
 			PRINTFORML 
 			PRINTFORMW 구해준 소녀는 %CALLNAME:MASTER%의 팔에 손톱을 박으며 무언가 지껄인다.
@@ -799,7 +799,7 @@ SELECTCASE RESULT
 			PRINTFORML
 			PRINTFORML
 			PRINTFORMW 쿠지카와　리세　를 손에 넣었다
-			CALL ADD_NEW_COMPANION, [[キャラ:리세]], 500
+			CALL ADD_NEW_COMPANION, [[캐릭터:리세]], 500
 			IF RESULT
 				TALENT:(RESULT:1):처녀 = 1
 				;淫紋ついてるイメージ。バストサイズもアップ。お손軽だが음란確定。
@@ -868,7 +868,7 @@ SELECTCASE RESULT
 		의뢰플래그:38:4 = 1
 	CASE 2
 		;菊枝が未加入なら選択不能
-		SIF FINDCHARA_B([[キャラ:키쿠에]]) < 0
+		SIF FINDCHARA_B([[캐릭터:키쿠에]]) < 0
 			GOTO OMIYAGE_LOOP
 
 		PRINTFORMW ──밖에 있던 둘은 어떻게 됐지？
@@ -877,7 +877,7 @@ SELECTCASE RESULT
 
 	CASE 3
 		;モデウスちゃんを倒してないと選択不能
-		SIF 의뢰플래그:38:3 != 4 && FINDCHARA_B([[キャラ:모데우스]]) <= 0
+		SIF 의뢰플래그:38:3 != 4 && FINDCHARA_B([[캐릭터:모데우스]]) <= 0
 			GOTO OMIYAGE_LOOP
 	;前の戦闘で機械を壊していない時、特別メッセージ。
 	IF 의뢰플래그:38:2 == 3
@@ -908,7 +908,7 @@ IF 의뢰플래그:38:4 > 0
 	PRINTFORML
 	PRINTFORML
 	PRINTFORM 방을 나오니, %SAVESTR:카오스히어로CALLNAME%가 얼굴을 찌푸리며 일어섰다.
-	IF FINDCHARA_B([[キャラ:키쿠에]]) > 0
+	IF FINDCHARA_B([[캐릭터:키쿠에]]) > 0
 		IF 던전플래그:[[던전:팩토리]]:15 == 1
 			PRINTFORMW 키쿠에도 평정을 되찾은 듯 하다. 새빨개진 얼굴로 차림새를 정리하고 있다.
 		;ELSEIF 던전플래그:[[던전:팩토리]]:15 <= 3 && FLAG:ＮＴＲ하드모드	
@@ -962,7 +962,7 @@ IF 의뢰플래그:38:4 > 0
 					CFLAG:MASTER:선악치 -= 8
 				ENDIF
 				;菊枝が仲間に居て、救出時の洗脳レベルが「軽度」の場合。菊枝さんはカオスヒーローが背負う。
-				SIF FINDCHARA_B([[キャラ:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
+				SIF FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
 					PRINTFORMW 「일단 히메미야 누님은 내가 데려가지」
 			CASE 1
 				IF 의뢰플래그:38:4 == 1
@@ -977,7 +977,7 @@ IF 의뢰플래그:38:4 > 0
 					PRINTFORMW %SAVESTR:카오스히어로CALLNAME%는 껄껄 웃었다.
 					CFLAG:MASTER:선악치 += 8
 				ENDIF
-				SIF FINDCHARA_B([[キャラ:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
+				SIF FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
 					PRINTFORMW 「그럼, 히메미야 누님은 내가 데리고 가마. 무얼, 오늘은 네가 히어로야. 분하지만 말이야」
 			CASE 2
 				IF 의뢰플래그:38:4 == 1
@@ -985,7 +985,7 @@ IF 의뢰플래그:38:4 > 0
 				ELSE
 					PRINTFORMW 「헤에, 고문이라는 건가…… 나는 할 수 없는 일이구만. 뭔가 알게 되면 우리에게도 정보 공유해줬으면 좋겠다」
 				ENDIF
-				SIF FINDCHARA_B([[キャラ:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
+				SIF FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && 던전플래그:[[던전:팩토리]]:15 <= 3
 					PRINTFORMW 「그럼, 히메미야 누님은 내가 데리고 가마. 무얼, 오늘은 네가 히어로야. 분하지만 말이야」
 			ENDSELECT
 		ENDIF
@@ -1003,7 +1003,7 @@ IF 의뢰플래그:38:4 > 0
 	IF 의뢰플래그:38:4 == 2 && 던전플래그:[[던전:팩토리]]:15 <= 3
 		PRINTFORML 
 		PRINTFORML 
-		LOCAL = GETCHARA([[キャラ:키쿠에]])
+		LOCAL = GETCHARA([[캐릭터:키쿠에]])
 		PRINTFORMW 그날 밤, 키쿠에가 %CALLNAME:MASTER%를 찾아왔다.
 		PRINTFORML 
 		PRINTFORMW 「오늘은, 폐를 끼쳤습니다」
@@ -1012,7 +1012,7 @@ IF 의뢰플래그:38:4 > 0
 		PRINTFORMW 그녀는 아직 뭔가 할말이 있는지, 심각한 모습으로 고개를 숙인 채 자리를 뜨려고 하질 않았다.
 		PRINTFORML 
 		;菊枝が陥落している
-		IF FINDCHARA_B([[キャラ:키쿠에]]) > 0 && 함락(LOCAL) > 1
+		IF FINDCHARA_B([[캐릭터:키쿠에]]) > 0 && 함락(LOCAL) > 1
 			PRINTFORML 
 			PRINTFORMW 「……부끄러움을 무릅쓰고, 부탁드릴 것이, 있습니다」
 			PRINTFORML 
@@ -1181,7 +1181,7 @@ CUSTOMDRAWLINE =
 PRINTFORML 
 
 IF 의뢰플래그:38:3 < 2
-	CALL SET_ENEMY,7, [[キャラ:템플나이트]],40, 1,0
+	CALL SET_ENEMY,7, [[캐릭터:템플나이트]],40, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1197,7 +1197,7 @@ IF 의뢰플래그:38:3 < 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,8, [[キャラ:템플나이트(여성)]],40, 1,0
+	CALL SET_ENEMY,8, [[캐릭터:템플나이트(여성)]],40, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1211,7 +1211,7 @@ IF 의뢰플래그:38:3 < 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,9, [[キャラ:템플나이트]],40, 1,0
+	CALL SET_ENEMY,9, [[캐릭터:템플나이트]],40, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1227,7 +1227,7 @@ IF 의뢰플래그:38:3 < 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,10, [[キャラ:템플나이트(여성)]],40, 1,0
+	CALL SET_ENEMY,10, [[캐릭터:템플나이트(여성)]],40, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1241,7 +1241,7 @@ IF 의뢰플래그:38:3 < 2
 	CALL SYNC_STATUS,(CHARANUM-1)
 	CALL HEALTH_CHARA,(CHARANUM-1)
 
-	CALL SET_ENEMY,11, [[キャラ:템플나이트]],40, 1,0
+	CALL SET_ENEMY,11, [[캐릭터:템플나이트]],40, 1,0
 	CFLAG:(CHARANUM-1):행동횟수 = 1
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 100
 	CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1256,7 +1256,7 @@ IF 의뢰플래그:38:3 < 2
 
 ;3戦눈にはターミネイターが참가
 ELSEIF 의뢰플래그:38:3 == 2
-		CALL SET_ENEMY,8, [[キャラ:터미네이터]],45, 1,0
+		CALL SET_ENEMY,8, [[캐릭터:터미네이터]],45, 1,0
 		CFLAG:(CHARANUM-1):행동횟수 = 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1271,7 +1271,7 @@ ELSEIF 의뢰플래그:38:3 == 2
 		CALL SYNC_STATUS,(CHARANUM-1)
 		CALL HEALTH_CHARA,(CHARANUM-1)
 		
-		CALL SET_ENEMY,10, [[キャラ:터미네이터]],45, 1,0
+		CALL SET_ENEMY,10, [[캐릭터:터미네이터]],45, 1,0
 		CFLAG:(CHARANUM-1):행동횟수 = 1
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 200
@@ -1287,7 +1287,7 @@ ELSEIF 의뢰플래그:38:3 == 2
 		CALL HEALTH_CHARA,(CHARANUM-1)	
 		
 ELSEIF 의뢰플래그:38:3 >= 3
-	CALL SET_ENEMY,14, [[キャラ:비트볼]],40, 1,1
+	CALL SET_ENEMY,14, [[캐릭터:비트볼]],40, 1,1
 	CALLNAME:(CHARANUM-1) = 최면파발생장치
 	CFLAG:(CHARANUM-1):ＨＰ보정 += 200
 	BASE:(CHARANUM-1):속도 = 99
@@ -1301,7 +1301,7 @@ ELSEIF 의뢰플래그:38:3 >= 3
 	ABL:(CHARANUM-1):스킬8 = 0
 	
 	IF 의뢰플래그:38:3 == 3
-		CALL SET_ENEMY,9, [[キャラ:벨페고르]],45, 1,1
+		CALL SET_ENEMY,9, [[캐릭터:벨페고르]],45, 1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 500
@@ -1314,7 +1314,7 @@ ELSEIF 의뢰플래그:38:3 >= 3
 		BASE:(CHARANUM-1):속도 += 2
 		BASE:(CHARANUM-1):운 += 2
 	ELSE
-		CALL SET_ENEMY,9, [[キャラ:모데우스]],45, 1,1
+		CALL SET_ENEMY,9, [[캐릭터:모데우스]],45, 1,1
 		CFLAG:(CHARANUM-1):행동횟수 = 2
 		CFLAG:(CHARANUM-1):ＨＰ보정 += 500
 		CFLAG:(CHARANUM-1):ＭＰ보정 += 500
